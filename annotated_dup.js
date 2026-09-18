@@ -162,6 +162,7 @@ var annotated_dup =
     [ "NullMoist", "classNullMoist.html", "classNullMoist" ],
     [ "NullSurf", "classNullSurf.html", "classNullSurf" ],
     [ "NullWindFarm", "classNullWindFarm.html", "classNullWindFarm" ],
+    [ "OpenBCPatch", "structOpenBCPatch.html", "structOpenBCPatch" ],
     [ "PBLDerivativeDzInv", "structPBLDerivativeDzInv.html", "structPBLDerivativeDzInv" ],
     [ "PBLDerivativeDzInv_N", "structPBLDerivativeDzInv__N.html", "structPBLDerivativeDzInv__N" ],
     [ "PBLDerivativeDzInv_S", "structPBLDerivativeDzInv__S.html", "structPBLDerivativeDzInv__S" ],

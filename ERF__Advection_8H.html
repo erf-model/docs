@@ -83,6 +83,8 @@ $(document).ready(function(){initNavTree('ERF__Advection_8H.html',''); initResiz
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_Advection.H File Reference</div>  </div>
@@ -214,14 +216,27 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="ERF__Advection_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structOpenBCPatch.html">OpenBCPatch</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a3cc8de22318f19d5e4c9c1a41c47b59c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a> : int { <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a> = -1
+, <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca334c4a4c42fdb79d7ebc3e73b517e6f8">none</a> = 0
+, <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a> = 1
+ }</td></tr>
+<tr class="separator:a3cc8de22318f19d5e4c9c1a41c47b59c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1bbb1b8a1434bf45894d6a908f48cc60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a1bbb1b8a1434bf45894d6a908f48cc60">AdvectionSrcForRho</a> (const amrex::Box &amp;bx, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;src, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__InitCustomPertVels__MovingTerrain_8H.html#abc4882e65a32506bb94a14360eb8ee34">omega</a>, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;avg_xmom, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;avg_ymom, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;avg_zmom, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;ax_arr, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;ay_arr, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;az_arr, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;detJ, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_mx, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_my, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_uy, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_vx, const amrex::GpuArray&lt; const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr, const bool fixed_rho)</td></tr>
 <tr class="separator:a1bbb1b8a1434bf45894d6a908f48cc60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66ed183383248930e3dcac9f522e9fc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a66ed183383248930e3dcac9f522e9fc9">AdvectionSrcForScalars</a> (const amrex::Box &amp;bx, const int icomp, const int ncomp, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;avg_xmom, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;avg_ymom, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;avg_zmom, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_prim, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;src, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;vf_arr, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_mx, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_my, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> horiz_upw_frac, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vert_upw_frac, const amrex::GpuArray&lt; const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr_h)</td></tr>
 <tr class="separator:a66ed183383248930e3dcac9f522e9fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab52062c0bae80497906b1c694fd1944a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#ab52062c0bae80497906b1c694fd1944a">AdvectionSrcForMom</a> (const amrex::MFIter &amp;mfi, const amrex::Box &amp;bx, const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Vector&lt; amrex::Box &gt; &amp;bxx_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxy_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxz_grown, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u_rhs, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v_rhs, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;Omega, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;z_nd, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;ax, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;ay, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;az, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;detJ, amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_d, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_mx, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_ux, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_vx, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_my, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_uy, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_vy, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> horiz_upw_frac, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vert_upw_frac, MeshType &amp;mesh_type, TerrainType &amp;terrain_type, const <a class="el" href="classeb__.html">eb_</a> &amp;ebfact, amrex::GpuArray&lt; amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;, AMREX_SPACEDIM &gt; &amp;flx_u_arr, amrex::GpuArray&lt; amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;, AMREX_SPACEDIM &gt; &amp;flx_v_arr, amrex::GpuArray&lt; amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;, AMREX_SPACEDIM &gt; &amp;flx_w_arr, const amrex::Vector&lt; amrex::iMultiFab &gt; &amp;physbnd_mask, const bool already_on_centroids, const int lo_z_face, const int hi_z_face, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr_h)</td></tr>
-<tr class="separator:ab52062c0bae80497906b1c694fd1944a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a7a657b6c9ae27e459e45d728694ce5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a0a7a657b6c9ae27e459e45d728694ce5">AdvectionSrcForMom</a> (const amrex::MFIter &amp;mfi, const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Vector&lt; amrex::Box &gt; &amp;bxx_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxy_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxz_grown, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u_rhs, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v_rhs, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;Omega, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;z_nd, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;ax, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;ay, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;az, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;detJ, amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_d, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_mx, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_ux, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_vx, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_my, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_uy, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_vy, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> horiz_upw_frac, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vert_upw_frac, MeshType &amp;mesh_type, TerrainType &amp;terrain_type, const <a class="el" href="classeb__.html">eb_</a> &amp;ebfact, amrex::GpuArray&lt; amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;, AMREX_SPACEDIM &gt; &amp;flx_u_arr, amrex::GpuArray&lt; amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;, AMREX_SPACEDIM &gt; &amp;flx_v_arr, amrex::GpuArray&lt; amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;, AMREX_SPACEDIM &gt; &amp;flx_w_arr, const amrex::Vector&lt; amrex::iMultiFab &gt; &amp;physbnd_mask, const bool already_on_centroids, const int lo_z_face, const int hi_z_face, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr_h)</td></tr>
+<tr class="separator:a0a7a657b6c9ae27e459e45d728694ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9a8d37768ec4b09f19e4cd8b734d303"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#ac9a8d37768ec4b09f19e4cd8b734d303">AdvectionSrcForMom_ConstantDz</a> (const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u_rhs, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v_rhs, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;Omega, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_d, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_mx, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_ux, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_vx, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_my, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_uy, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_vy, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> horiz_upw_frac, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vert_upw_frac, TerrainType &amp;terrain_type, const int lo_z_face, const int hi_z_face)</td></tr>
 <tr class="separator:ac9a8d37768ec4b09f19e4cd8b734d303"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a496c963c97ad055c4f9081b8b42aeb82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a496c963c97ad055c4f9081b8b42aeb82">AdvectionSrcForMom_StretchedDz</a> (const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u_rhs, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v_rhs, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;Omega, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_d, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_mx, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_ux, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_vx, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_my, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_uy, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_vy, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> horiz_upw_frac, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vert_upw_frac, const int lo_z_face, const int hi_z_face)</td></tr>
@@ -230,24 +245,65 @@ Functions</h2></td></tr>
 <tr class="separator:a820354a4fceb73de77f26e694e887b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a490b90b446599a30107176bd2731fe7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a490b90b446599a30107176bd2731fe7c">AdvectionSrcForMom_EB</a> (const amrex::MFIter &amp;mfi, const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Vector&lt; amrex::Box &gt; &amp;bxx_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxy_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxz_grown, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u_rhs, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v_rhs, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;Omega, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_mx, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_ux, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_vx, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_my, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_uy, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_vy, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> horiz_upw_frac, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vert_upw_frac, const <a class="el" href="classeb__.html">eb_</a> &amp;ebfact, amrex::GpuArray&lt; amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;, AMREX_SPACEDIM &gt; &amp;flx_u_arr, amrex::GpuArray&lt; amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;, AMREX_SPACEDIM &gt; &amp;flx_v_arr, amrex::GpuArray&lt; amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;, AMREX_SPACEDIM &gt; &amp;flx_w_arr, const amrex::Vector&lt; amrex::iMultiFab &gt; &amp;physbnd_mask, const bool already_on_centroids, const int lo_z_face, const int hi_z_face, const amrex::Box &amp;domain)</td></tr>
 <tr class="separator:a490b90b446599a30107176bd2731fe7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe396822a4a870f41c2ea0260c203cdd"><td class="memItemLeft" align="right" valign="top">amrex::Box&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#afe396822a4a870f41c2ea0260c203cdd">ShrinkZmomBoxAtDomainEnds</a> (amrex::Box b, const amrex::Box &amp;domain)</td></tr>
+<tr class="separator:afe396822a4a870f41c2ea0260c203cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20fee06341ff7c405d6eb41bf0cd2ed8"><td class="memItemLeft" align="right" valign="top">amrex::Box&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a20fee06341ff7c405d6eb41bf0cd2ed8">TrimOpenBCCorner</a> (amrex::Box b, const int dim, const amrex::Box &amp;domain, const bool lo_open, const bool hi_open)</td></tr>
+<tr class="separator:a20fee06341ff7c405d6eb41bf0cd2ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed3f80fb3f02d1a3dc438ff2100627b7"><td class="memItemLeft" align="right" valign="top">amrex::Box&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#aed3f80fb3f02d1a3dc438ff2100627b7">OpenBCCornerBox</a> (amrex::Box b, const amrex::Box &amp;domain, const <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a> x_side, const <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a> y_side)</td></tr>
+<tr class="separator:aed3f80fb3f02d1a3dc438ff2100627b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3caa6928f023a593958b7f7ac4aa95c0"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; <a class="el" href="structOpenBCPatch.html">OpenBCPatch</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a3caa6928f023a593958b7f7ac4aa95c0">OpenBCTangentPatches</a> (const amrex::Box &amp;b, const amrex::Box &amp;domain, const bool xlo_open, const bool xhi_open, const bool ylo_open, const bool yhi_open)</td></tr>
+<tr class="separator:a3caa6928f023a593958b7f7ac4aa95c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a93a1f4fa830e853896360758c1185c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a8a93a1f4fa830e853896360758c1185c">AdvectionSrcForOpenBC_Normal</a> (const amrex::Box &amp;bx, const int &amp;dir, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rhs_arr, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;vel_norm_arr, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_data_arr, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;<a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, const bool do_lo=false)</td></tr>
 <tr class="separator:a8a93a1f4fa830e853896360758c1185c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77a3da224ebc848d774a465bc4edbb6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a77a3da224ebc848d774a465bc4edbb6d">AdvectionSrcForOpenBC_Tangent_Xmom</a> (const amrex::Box &amp;bxx, const int &amp;dir, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u_rhs, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;Omega, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;ax, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;az, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;detJ, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const bool do_lo=false)</td></tr>
 <tr class="separator:a77a3da224ebc848d774a465bc4edbb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ff38549b044becdf35e0331f8361756"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a4ff38549b044becdf35e0331f8361756">AdvectionSrcForOpenBC_Tangent_Ymom</a> (const amrex::Box &amp;bxy, const int &amp;dir, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v_rhs, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;Omega, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;ay, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;az, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;detJ, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const bool do_lo=false)</td></tr>
 <tr class="separator:a4ff38549b044becdf35e0331f8361756"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac890a386e0e9ef50f62ae1ae7a3297fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#ac890a386e0e9ef50f62ae1ae7a3297fb">AdvectionSrcForOpenBC_Tangent_Zmom</a> (const amrex::Box &amp;bxz, const int &amp;dir, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;Omega, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;ax, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;ay, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;az, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;detJ, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const int domhi_z, const bool do_lo=false)</td></tr>
-<tr class="separator:ac890a386e0e9ef50f62ae1ae7a3297fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd84d0909db1f87c22b5a92aae03e919"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#abd84d0909db1f87c22b5a92aae03e919">AdvectionSrcForOpenBC_Tangent_Cons</a> (const amrex::Box &amp;bx, const int &amp;dir, const int &amp;icomp, const int &amp;ncomp, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_rhs, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_prim, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;avg_xmom, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;avg_ymom, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;avg_zmom, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;detJ, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const bool do_lo=false)</td></tr>
-<tr class="separator:abd84d0909db1f87c22b5a92aae03e919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4d07833466bece194f24b9dec1609b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#af4d07833466bece194f24b9dec1609b2">AdvectionSrcForOpenBC_Tangent_Zmom</a> (const amrex::Box &amp;bxz, const <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a> x_side, const <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a> y_side, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;Omega, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;ax, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;ay, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;az, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;detJ, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const int domhi_z)</td></tr>
+<tr class="separator:af4d07833466bece194f24b9dec1609b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a836a03245a86846aee752d52e1b3286a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a836a03245a86846aee752d52e1b3286a">AdvectionSrcForOpenBC_Tangent_Cons</a> (const amrex::Box &amp;bx, const <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a> x_side, const <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a> y_side, const int &amp;icomp, const int &amp;ncomp, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_rhs, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_prim, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;avg_xmom, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;avg_ymom, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;avg_zmom, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;detJ, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</td></tr>
+<tr class="separator:a836a03245a86846aee752d52e1b3286a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0aafe8d39448868a229ed291f363d5b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#ab0aafe8d39448868a229ed291f363d5b">AdvectionSrcForOpenBC_Tangent</a> (const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;nprim, const int &amp;dir, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;prim_tang_arr, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mom_norm_arr, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, const bool do_lo=false)</td></tr>
 <tr class="separator:ab0aafe8d39448868a229ed291f363d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff14fe9e4f76b499843517b2c41c0fbb"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#aff14fe9e4f76b499843517b2c41c0fbb">EfficientAdvType</a> (int nrk, <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> adv_type)</td></tr>
 <tr class="separator:aff14fe9e4f76b499843517b2c41c0fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a3cc8de22318f19d5e4c9c1a41c47b59c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cc8de22318f19d5e4c9c1a41c47b59c">&#9670;&nbsp;</a></span>OpenSide</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a> : int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Which side of the domain is open in one coordinate direction, as seen by the cells an open-boundary kernel is about to update. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe"></a>lo&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3cc8de22318f19d5e4c9c1a41c47b59ca334c4a4c42fdb79d7ebc3e73b517e6f8"></a>none&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b"></a>hi&#160;</td><td class="fielddoc"></td></tr>
+</table>
+<div class="fragment"><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;: <span class="keywordtype">int</span> { <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a> = -1, <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca334c4a4c42fdb79d7ebc3e73b517e6f8">none</a> = 0, <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a> = 1 };</div>
+<div class="ttc" id="aERF__Advection_8H_html_a3cc8de22318f19d5e4c9c1a41c47b59ca334c4a4c42fdb79d7ebc3e73b517e6f8"><div class="ttname"><a href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca334c4a4c42fdb79d7ebc3e73b517e6f8">OpenSide::none</a></div><div class="ttdeci">@ none</div></div>
+<div class="ttc" id="aERF__Advection_8H_html_a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b"><div class="ttname"><a href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">OpenSide::hi</a></div><div class="ttdeci">@ hi</div></div>
+<div class="ttc" id="aERF__Advection_8H_html_a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe"><div class="ttname"><a href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">OpenSide::lo</a></div><div class="ttdeci">@ lo</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab52062c0bae80497906b1c694fd1944a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab52062c0bae80497906b1c694fd1944a">&#9670;&nbsp;</a></span>AdvectionSrcForMom()</h2>
+<a id="a0a7a657b6c9ae27e459e45d728694ce5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a7a657b6c9ae27e459e45d728694ce5">&#9670;&nbsp;</a></span>AdvectionSrcForMom()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -257,12 +313,6 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const amrex::MFIter &amp;&#160;</td>
           <td class="paramname"><em>mfi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Box &amp;&#160;</td>
-          <td class="paramname"><em>bx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -547,8 +597,8 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__Advection_8H_ab52062c0bae80497906b1c694fd1944a_icgraph.png" border="0" usemap="#aERF__Advection_8H_ab52062c0bae80497906b1c694fd1944a_icgraph" alt=""/></div>
-<map name="aERF__Advection_8H_ab52062c0bae80497906b1c694fd1944a_icgraph" id="aERF__Advection_8H_ab52062c0bae80497906b1c694fd1944a_icgraph">
+<div class="center"><img src="ERF__Advection_8H_a0a7a657b6c9ae27e459e45d728694ce5_icgraph.png" border="0" usemap="#aERF__Advection_8H_a0a7a657b6c9ae27e459e45d728694ce5_icgraph" alt=""/></div>
+<map name="aERF__Advection_8H_a0a7a657b6c9ae27e459e45d728694ce5_icgraph" id="aERF__Advection_8H_a0a7a657b6c9ae27e459e45d728694ce5_icgraph">
 <area shape="rect" title=" " alt="" coords="185,5,345,32"/>
 <area shape="rect" href="ERF__SlowRhsPre_8cpp.html#a14e30212e987a0f29662700f300234ca" title=" " alt="" coords="5,5,137,32"/>
 </map>
@@ -733,14 +783,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for all components of momentum when dz is constant </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Advection_8H_ac9a8d37768ec4b09f19e4cd8b734d303_icgraph.png" border="0" usemap="#aERF__Advection_8H_ac9a8d37768ec4b09f19e4cd8b734d303_icgraph" alt=""/></div>
 <map name="aERF__Advection_8H_ac9a8d37768ec4b09f19e4cd8b734d303_icgraph" id="aERF__Advection_8H_ac9a8d37768ec4b09f19e4cd8b734d303_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,373,47"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa" title=" " alt="" coords="5,13,165,39"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a" title=" " alt="" coords="5,13,165,39"/>
 </map>
 </div>
 
@@ -977,14 +1027,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for all components of momentum when using EB for terrain </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Advection_8H_a490b90b446599a30107176bd2731fe7c_icgraph.png" border="0" usemap="#aERF__Advection_8H_a490b90b446599a30107176bd2731fe7c_icgraph" alt=""/></div>
 <map name="aERF__Advection_8H_a490b90b446599a30107176bd2731fe7c_icgraph" id="aERF__Advection_8H_a490b90b446599a30107176bd2731fe7c_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,397,32"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa" title=" " alt="" coords="5,5,165,32"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a" title=" " alt="" coords="5,5,165,32"/>
 </map>
 </div>
 
@@ -1161,14 +1211,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for all components of momentum when dz is stretched </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Advection_8H_a496c963c97ad055c4f9081b8b42aeb82_icgraph.png" border="0" usemap="#aERF__Advection_8H_a496c963c97ad055c4f9081b8b42aeb82_icgraph" alt=""/></div>
 <map name="aERF__Advection_8H_a496c963c97ad055c4f9081b8b42aeb82_icgraph" id="aERF__Advection_8H_a496c963c97ad055c4f9081b8b42aeb82_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,373,47"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa" title=" " alt="" coords="5,13,165,39"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a" title=" " alt="" coords="5,13,165,39"/>
 </map>
 </div>
 
@@ -1369,14 +1419,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for all components of momentum for TERRAIN-FITTED COORDS only </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Advection_8H_a820354a4fceb73de77f26e694e887b5a_icgraph.png" border="0" usemap="#aERF__Advection_8H_a820354a4fceb73de77f26e694e887b5a_icgraph" alt=""/></div>
 <map name="aERF__Advection_8H_a820354a4fceb73de77f26e694e887b5a_icgraph" id="aERF__Advection_8H_a820354a4fceb73de77f26e694e887b5a_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,396,32"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa" title=" " alt="" coords="5,5,165,32"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a" title=" " alt="" coords="5,5,165,32"/>
 </map>
 </div>
 
@@ -1439,14 +1489,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for all normal components of momentum </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Advection_8H_a8a93a1f4fa830e853896360758c1185c_icgraph.png" border="0" usemap="#aERF__Advection_8H_a8a93a1f4fa830e853896360758c1185c_icgraph" alt=""/></div>
 <map name="aERF__Advection_8H_a8a93a1f4fa830e853896360758c1185c_icgraph" id="aERF__Advection_8H_a8a93a1f4fa830e853896360758c1185c_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,392,47"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa" title=" " alt="" coords="5,13,165,39"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a" title=" " alt="" coords="5,13,165,39"/>
 </map>
 </div>
 
@@ -1523,8 +1573,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="abd84d0909db1f87c22b5a92aae03e919"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd84d0909db1f87c22b5a92aae03e919">&#9670;&nbsp;</a></span>AdvectionSrcForOpenBC_Tangent_Cons()</h2>
+<a id="a836a03245a86846aee752d52e1b3286a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a836a03245a86846aee752d52e1b3286a">&#9670;&nbsp;</a></span>AdvectionSrcForOpenBC_Tangent_Cons()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1538,8 +1588,14 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>dir</em>, </td>
+          <td class="paramtype">const <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a>&#160;</td>
+          <td class="paramname"><em>x_side</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a>&#160;</td>
+          <td class="paramname"><em>y_side</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1593,13 +1649,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cellSizeInv</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>do_lo</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>cellSizeInv</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1608,14 +1658,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Compute advection tendencies for conserved variables tangential to open BC </p>
+<p>Compute advection tendencies for conserved variables tangential to open BC <code>x_side</code> and <code>y_side</code> say which lateral boundaries the cells being updated lie on; both are set at a corner, where neither direction may be differenced across. </p>
 
 <p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForState_8cpp.html#aac8fb949586776f39a1b4bb217643d87">AdvectionSrcForScalars()</a>, and <a class="el" href="ERF__EBAdvectionSrcForState_8cpp.html#a244aa0250aa8b00b72cdef06c88b1137">EBAdvectionSrcForScalars()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__Advection_8H_abd84d0909db1f87c22b5a92aae03e919_icgraph.png" border="0" usemap="#aERF__Advection_8H_abd84d0909db1f87c22b5a92aae03e919_icgraph" alt=""/></div>
-<map name="aERF__Advection_8H_abd84d0909db1f87c22b5a92aae03e919_icgraph" id="aERF__Advection_8H_abd84d0909db1f87c22b5a92aae03e919_icgraph">
+<div class="center"><img src="ERF__Advection_8H_a836a03245a86846aee752d52e1b3286a_icgraph.png" border="0" usemap="#aERF__Advection_8H_a836a03245a86846aee752d52e1b3286a_icgraph" alt=""/></div>
+<map name="aERF__Advection_8H_a836a03245a86846aee752d52e1b3286a_icgraph" id="aERF__Advection_8H_a836a03245a86846aee752d52e1b3286a_icgraph">
 <area shape="rect" title=" " alt="" coords="244,23,423,65"/>
 <area shape="rect" href="ERF__AdvectionSrcForState_8cpp.html#aac8fb949586776f39a1b4bb217643d87" title=" " alt="" coords="13,5,188,32"/>
 <area shape="rect" href="ERF__EBAdvectionSrcForState_8cpp.html#a244aa0250aa8b00b72cdef06c88b1137" title="Compute the EB advective tendency for scalars." alt="" coords="5,56,196,83"/>
@@ -1711,14 +1761,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for u momentum tangent to open BC </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Advection_8H_a77a3da224ebc848d774a465bc4edbb6d_icgraph.png" border="0" usemap="#aERF__Advection_8H_a77a3da224ebc848d774a465bc4edbb6d_icgraph" alt=""/></div>
 <map name="aERF__Advection_8H_a77a3da224ebc848d774a465bc4edbb6d_icgraph" id="aERF__Advection_8H_a77a3da224ebc848d774a465bc4edbb6d_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,392,47"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa" title=" " alt="" coords="5,13,165,39"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a" title=" " alt="" coords="5,13,165,39"/>
 </map>
 </div>
 
@@ -1811,21 +1861,21 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for v momentum tangent to open BC </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Advection_8H_a4ff38549b044becdf35e0331f8361756_icgraph.png" border="0" usemap="#aERF__Advection_8H_a4ff38549b044becdf35e0331f8361756_icgraph" alt=""/></div>
 <map name="aERF__Advection_8H_a4ff38549b044becdf35e0331f8361756_icgraph" id="aERF__Advection_8H_a4ff38549b044becdf35e0331f8361756_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,392,47"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa" title=" " alt="" coords="5,13,165,39"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a" title=" " alt="" coords="5,13,165,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ac890a386e0e9ef50f62ae1ae7a3297fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac890a386e0e9ef50f62ae1ae7a3297fb">&#9670;&nbsp;</a></span>AdvectionSrcForOpenBC_Tangent_Zmom()</h2>
+<a id="af4d07833466bece194f24b9dec1609b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4d07833466bece194f24b9dec1609b2">&#9670;&nbsp;</a></span>AdvectionSrcForOpenBC_Tangent_Zmom()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1839,8 +1889,14 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>dir</em>, </td>
+          <td class="paramtype">const <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a>&#160;</td>
+          <td class="paramname"><em>x_side</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a>&#160;</td>
+          <td class="paramname"><em>y_side</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1906,13 +1962,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>domhi_z</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>do_lo</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>domhi_z</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1921,16 +1971,16 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Compute advection tendencies for w momentum tangent to open BC </p>
+<p>Compute advection tendencies for w momentum tangent to open BC <code>x_side</code> and <code>y_side</code> say which lateral boundaries the cells being updated lie on; both are set at a corner, where neither direction may be differenced across. </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__Advection_8H_ac890a386e0e9ef50f62ae1ae7a3297fb_icgraph.png" border="0" usemap="#aERF__Advection_8H_ac890a386e0e9ef50f62ae1ae7a3297fb_icgraph" alt=""/></div>
-<map name="aERF__Advection_8H_ac890a386e0e9ef50f62ae1ae7a3297fb_icgraph" id="aERF__Advection_8H_ac890a386e0e9ef50f62ae1ae7a3297fb_icgraph">
+<div class="center"><img src="ERF__Advection_8H_af4d07833466bece194f24b9dec1609b2_icgraph.png" border="0" usemap="#aERF__Advection_8H_af4d07833466bece194f24b9dec1609b2_icgraph" alt=""/></div>
+<map name="aERF__Advection_8H_af4d07833466bece194f24b9dec1609b2_icgraph" id="aERF__Advection_8H_af4d07833466bece194f24b9dec1609b2_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,392,47"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa" title=" " alt="" coords="5,13,165,39"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a" title=" " alt="" coords="5,13,165,39"/>
 </map>
 </div>
 
@@ -2247,42 +2297,42 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Return the effective advection type used for the requested Runge-Kutta stage. </p>
-<div class="fragment"><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;{</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> eff_adv_type;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">if</span> (nrk == 0) {</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        eff_adv_type = <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nrk == 1) {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">if</span> ( (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>) ||</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;             (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>)   ||</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;             (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>) ||</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;             (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada35597e5f00fa867fe6e39d651a2195">AdvType::Weno_3</a>)       ||</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;             (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a9c29b64a7627155706a1cd93682b4351">AdvType::Weno_3Z</a>)      ||</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;             (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af8b942d20ed08b25df71ea1c87244210">AdvType::Weno_3MZQ</a>)    )</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                eff_adv_type = <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a>) ||</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                        (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af2429e8de544f3ebd7c9668e3dbebaa8">AdvType::Weno_5</a>)     ||</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                        (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70aeb75f5943c7837da80e2048f2b344efc">AdvType::Weno_5Z</a>)    )</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            {</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                eff_adv_type = <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            } <span class="keywordflow">else</span> { <span class="comment">// (adv_type == AdvType::Centered_6th)</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            eff_adv_type = <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        }</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        eff_adv_type = adv_type;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    }</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">return</span>(eff_adv_type);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;{</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> eff_adv_type;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="keywordflow">if</span> (nrk == 0) {</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        eff_adv_type = <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nrk == 1) {</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordflow">if</span> ( (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>) ||</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;             (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>)   ||</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;             (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>) ||</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;             (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada35597e5f00fa867fe6e39d651a2195">AdvType::Weno_3</a>)       ||</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;             (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a9c29b64a7627155706a1cd93682b4351">AdvType::Weno_3Z</a>)      ||</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;             (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af8b942d20ed08b25df71ea1c87244210">AdvType::Weno_3MZQ</a>)    )</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            {</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                eff_adv_type = <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160; </div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a>) ||</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                        (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af2429e8de544f3ebd7c9668e3dbebaa8">AdvType::Weno_5</a>)     ||</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                        (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70aeb75f5943c7837da80e2048f2b344efc">AdvType::Weno_5Z</a>)    )</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            {</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                eff_adv_type = <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>;</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160; </div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;            } <span class="keywordflow">else</span> { <span class="comment">// (adv_type == AdvType::Centered_6th)</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            eff_adv_type = <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>;</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        }</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        eff_adv_type = adv_type;</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    }</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    <span class="keywordflow">return</span>(eff_adv_type);</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a></div><div class="ttdeci">AdvType</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:309</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a></div><div class="ttdeci">@ Upwind_3rd</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a></div><div class="ttdeci">@ Centered_4th</div></div>
@@ -2302,6 +2352,363 @@ Here is the caller graph for this function:</div>
 <map name="aERF__Advection_8H_aff14fe9e4f76b499843517b2c41c0fbb_icgraph" id="aERF__Advection_8H_aff14fe9e4f76b499843517b2c41c0fbb_icgraph">
 <area shape="rect" title=" " alt="" coords="192,5,323,32"/>
 <area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a0e446c6807aba73bc7f8c15db815b870" title=" " alt="" coords="5,5,144,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aed3f80fb3f02d1a3dc438ff2100627b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed3f80fb3f02d1a3dc438ff2100627b7">&#9670;&nbsp;</a></span>OpenBCCornerBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Box OpenBCCornerBox </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Box&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a>&#160;</td>
+          <td class="paramname"><em>x_side</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a>&#160;</td>
+          <td class="paramname"><em>y_side</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Build the one-cell-wide box where the <code>x_side</code> and <code>y_side</code> open boundaries meet, or an empty box if <code>b</code> does not reach both of them. </p>
+<div class="fragment"><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;{</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(x_side != <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca334c4a4c42fdb79d7ebc3e73b517e6f8">OpenSide::none</a> &amp;&amp; y_side != <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca334c4a4c42fdb79d7ebc3e73b517e6f8">OpenSide::none</a>);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">if</span> (!b.ok()) { <span class="keywordflow">return</span> amrex::Box(); }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a> side[2] = {x_side, y_side};</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dim(0); dim &lt; 2; ++dim) {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> = (side[dim] == <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">OpenSide::lo</a>) ?</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                         domain.smallEnd(dim) :</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                         domain.bigEnd(dim) + (b.ixType().nodeCentered(dim) ? 1 : 0);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> &lt; b.smallEnd(dim) || <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> &gt; b.bigEnd(dim)) { <span class="keywordflow">return</span> amrex::Box(); }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        b = amrex::makeSlab(b, dim, <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordflow">return</span> b;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;}</div>
+<div class="ttc" id="aERF__Advection_8H_html_a3cc8de22318f19d5e4c9c1a41c47b59c"><div class="ttname"><a href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a></div><div class="ttdeci">OpenSide</div><div class="ttdef"><b>Definition:</b> ERF_Advection.H:214</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
+<div class="ttc" id="aERF__InitForEnsemble_8cpp_html_a221b1f8dc1b747f1e88990c65e3681de"><div class="ttname"><a href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int idx(int i, int j, int k, int nx, int ny)</div><div class="ttdef"><b>Definition:</b> ERF_InitForEnsemble.cpp:396</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__Advection_8H.html#a3caa6928f023a593958b7f7ac4aa95c0">OpenBCTangentPatches()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__Advection_8H_aed3f80fb3f02d1a3dc438ff2100627b7_cgraph.png" border="0" usemap="#aERF__Advection_8H_aed3f80fb3f02d1a3dc438ff2100627b7_cgraph" alt=""/></div>
+<map name="aERF__Advection_8H_aed3f80fb3f02d1a3dc438ff2100627b7_cgraph" id="aERF__Advection_8H_aed3f80fb3f02d1a3dc438ff2100627b7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,148,57"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="196,5,379,32"/>
+<area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="266,56,309,83"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__Advection_8H_aed3f80fb3f02d1a3dc438ff2100627b7_icgraph.png" border="0" usemap="#aERF__Advection_8H_aed3f80fb3f02d1a3dc438ff2100627b7_icgraph" alt=""/></div>
+<map name="aERF__Advection_8H_aed3f80fb3f02d1a3dc438ff2100627b7_icgraph" id="aERF__Advection_8H_aed3f80fb3f02d1a3dc438ff2100627b7_icgraph">
+<area shape="rect" title=" " alt="" coords="467,56,609,83"/>
+<area shape="rect" href="ERF__Advection_8H.html#a3caa6928f023a593958b7f7ac4aa95c0" title=" " alt="" coords="244,56,419,83"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a" title=" " alt="" coords="21,5,181,32"/>
+<area shape="rect" href="ERF__AdvectionSrcForState_8cpp.html#aac8fb949586776f39a1b4bb217643d87" title=" " alt="" coords="13,56,188,83"/>
+<area shape="rect" href="ERF__EBAdvectionSrcForState_8cpp.html#a244aa0250aa8b00b72cdef06c88b1137" title="Compute the EB advective tendency for scalars." alt="" coords="5,107,196,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3caa6928f023a593958b7f7ac4aa95c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3caa6928f023a593958b7f7ac4aa95c0">&#9670;&nbsp;</a></span>OpenBCTangentPatches()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;<a class="el" href="structOpenBCPatch.html">OpenBCPatch</a>&gt; OpenBCTangentPatches </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>xlo_open</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>xhi_open</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ylo_open</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>yhi_open</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Enumerate the boxes on which the open-boundary tangential operator must be applied for a quantity that has no boundary-normal owner at a lateral corner &ndash; that is, w and the cell-centered state, both of which are tangent to every lateral boundary.</p>
+<p>The returned boxes are disjoint and together cover every cell of <code>b</code> that lies on an open lateral boundary: the four edges, trimmed so they do not reach into a corner, plus the corners themselves, which carry both sides so the kernel differences across neither open boundary there. </p>
+<div class="fragment"><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;{</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    amrex::Vector&lt;OpenBCPatch&gt; patches;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">if</span> (!b.ok()) { <span class="keywordflow">return</span> patches; }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    patches.reserve(8);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dom_xhi = domain.bigEnd(0) + (b.ixType().nodeCentered(0) ? 1 : 0);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dom_yhi = domain.bigEnd(1) + (b.ixType().nodeCentered(1) ? 1 : 0);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">// Edges: each is trimmed by the open boundaries perpendicular to it, which own</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">// the corner cells by way of the corner patches added below.</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">if</span> (xlo_open &amp;&amp; b.smallEnd(0) == domain.smallEnd(0)) {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        amrex::Box e = <a class="code" href="ERF__Advection_8H.html#a20fee06341ff7c405d6eb41bf0cd2ed8">TrimOpenBCCorner</a>(amrex::makeSlab(b,0,domain.smallEnd(0)), 1, domain, ylo_open, yhi_open);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">if</span> (e.ok()) { patches.push_back({e, <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">OpenSide::lo</a>, <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca334c4a4c42fdb79d7ebc3e73b517e6f8">OpenSide::none</a>}); }</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    }</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">if</span> (xhi_open &amp;&amp; b.bigEnd(0) == dom_xhi) {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        amrex::Box e = <a class="code" href="ERF__Advection_8H.html#a20fee06341ff7c405d6eb41bf0cd2ed8">TrimOpenBCCorner</a>(amrex::makeSlab(b,0,dom_xhi), 1, domain, ylo_open, yhi_open);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keywordflow">if</span> (e.ok()) { patches.push_back({e, <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">OpenSide::hi</a>, <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca334c4a4c42fdb79d7ebc3e73b517e6f8">OpenSide::none</a>}); }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    }</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">if</span> (ylo_open &amp;&amp; b.smallEnd(1) == domain.smallEnd(1)) {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        amrex::Box e = <a class="code" href="ERF__Advection_8H.html#a20fee06341ff7c405d6eb41bf0cd2ed8">TrimOpenBCCorner</a>(amrex::makeSlab(b,1,domain.smallEnd(1)), 0, domain, xlo_open, xhi_open);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keywordflow">if</span> (e.ok()) { patches.push_back({e, <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca334c4a4c42fdb79d7ebc3e73b517e6f8">OpenSide::none</a>, <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">OpenSide::lo</a>}); }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">if</span> (yhi_open &amp;&amp; b.bigEnd(1) == dom_yhi) {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        amrex::Box e = <a class="code" href="ERF__Advection_8H.html#a20fee06341ff7c405d6eb41bf0cd2ed8">TrimOpenBCCorner</a>(amrex::makeSlab(b,1,dom_yhi), 0, domain, xlo_open, xhi_open);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">if</span> (e.ok()) { patches.push_back({e, <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca334c4a4c42fdb79d7ebc3e73b517e6f8">OpenSide::none</a>, <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">OpenSide::hi</a>}); }</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    }</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">// Corners</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a> x_side : {<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">OpenSide::lo</a>, <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">OpenSide::hi</a>}) {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">if</span> (!((x_side == <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">OpenSide::lo</a>) ? xlo_open : xhi_open)) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c">OpenSide</a> y_side : {<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">OpenSide::lo</a>, <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">OpenSide::hi</a>}) {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="keywordflow">if</span> (!((y_side == <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">OpenSide::lo</a>) ? ylo_open : yhi_open)) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            amrex::Box c = <a class="code" href="ERF__Advection_8H.html#aed3f80fb3f02d1a3dc438ff2100627b7">OpenBCCornerBox</a>(b, domain, x_side, y_side);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            <span class="keywordflow">if</span> (c.ok()) { patches.push_back({c, x_side, y_side}); }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        }</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">return</span> patches;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;}</div>
+<div class="ttc" id="aERF__Advection_8H_html_a20fee06341ff7c405d6eb41bf0cd2ed8"><div class="ttname"><a href="ERF__Advection_8H.html#a20fee06341ff7c405d6eb41bf0cd2ed8">TrimOpenBCCorner</a></div><div class="ttdeci">amrex::Box TrimOpenBCCorner(amrex::Box b, const int dim, const amrex::Box &amp;domain, const bool lo_open, const bool hi_open)</div><div class="ttdef"><b>Definition:</b> ERF_Advection.H:237</div></div>
+<div class="ttc" id="aERF__Advection_8H_html_aed3f80fb3f02d1a3dc438ff2100627b7"><div class="ttname"><a href="ERF__Advection_8H.html#aed3f80fb3f02d1a3dc438ff2100627b7">OpenBCCornerBox</a></div><div class="ttdeci">amrex::Box OpenBCCornerBox(amrex::Box b, const amrex::Box &amp;domain, const OpenSide x_side, const OpenSide y_side)</div><div class="ttdef"><b>Definition:</b> ERF_Advection.H:259</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a">AdvectionSrcForMom()</a>, <a class="el" href="ERF__AdvectionSrcForState_8cpp.html#aac8fb949586776f39a1b4bb217643d87">AdvectionSrcForScalars()</a>, and <a class="el" href="ERF__EBAdvectionSrcForState_8cpp.html#a244aa0250aa8b00b72cdef06c88b1137">EBAdvectionSrcForScalars()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__Advection_8H_a3caa6928f023a593958b7f7ac4aa95c0_cgraph.png" border="0" usemap="#aERF__Advection_8H_a3caa6928f023a593958b7f7ac4aa95c0_cgraph" alt=""/></div>
+<map name="aERF__Advection_8H_a3caa6928f023a593958b7f7ac4aa95c0_cgraph" id="aERF__Advection_8H_a3caa6928f023a593958b7f7ac4aa95c0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,180,83"/>
+<area shape="rect" href="ERF__Advection_8H.html#aed3f80fb3f02d1a3dc438ff2100627b7" title=" " alt="" coords="229,31,372,57"/>
+<area shape="rect" href="ERF__Advection_8H.html#a20fee06341ff7c405d6eb41bf0cd2ed8" title=" " alt="" coords="228,81,373,108"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="421,5,604,32"/>
+<area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="491,56,534,83"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__Advection_8H_a3caa6928f023a593958b7f7ac4aa95c0_icgraph.png" border="0" usemap="#aERF__Advection_8H_a3caa6928f023a593958b7f7ac4aa95c0_icgraph" alt=""/></div>
+<map name="aERF__Advection_8H_a3caa6928f023a593958b7f7ac4aa95c0_icgraph" id="aERF__Advection_8H_a3caa6928f023a593958b7f7ac4aa95c0_icgraph">
+<area shape="rect" title=" " alt="" coords="244,56,419,83"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a" title=" " alt="" coords="21,5,181,32"/>
+<area shape="rect" href="ERF__AdvectionSrcForState_8cpp.html#aac8fb949586776f39a1b4bb217643d87" title=" " alt="" coords="13,56,188,83"/>
+<area shape="rect" href="ERF__EBAdvectionSrcForState_8cpp.html#a244aa0250aa8b00b72cdef06c88b1137" title="Compute the EB advective tendency for scalars." alt="" coords="5,107,196,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afe396822a4a870f41c2ea0260c203cdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe396822a4a870f41c2ea0260c203cdd">&#9670;&nbsp;</a></span>ShrinkZmomBoxAtDomainEnds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Box ShrinkZmomBoxAtDomainEnds </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Box&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Shrink a z-momentum box away from the bottom and top of the domain, where no z-momentum source term is computed.</p>
+<p>The shrink must be applied only at an end that actually coincides with the domain, which is why this takes <code>domain</code> rather than shrinking unconditionally: on a grid decomposed in z, an unconditional shrink also removes the w-face at every internal split, and any operator run on the result silently skips those faces.</p>
+<p><code>b</code> is z-nodal; <code>domain</code> is cell-centered. </p>
+<div class="fragment"><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;{</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">if</span> (b.smallEnd(2) == domain.smallEnd(2))   { b.growLo(2,-1); }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">if</span> (b.bigEnd(2)   == domain.bigEnd(2) + 1) { b.growHi(2,-1); }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">return</span> b;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPre_8cpp.html#a14e30212e987a0f29662700f300234ca">erf_slow_rhs_pre()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__Advection_8H_afe396822a4a870f41c2ea0260c203cdd_icgraph.png" border="0" usemap="#aERF__Advection_8H_afe396822a4a870f41c2ea0260c203cdd_icgraph" alt=""/></div>
+<map name="aERF__Advection_8H_afe396822a4a870f41c2ea0260c203cdd_icgraph" id="aERF__Advection_8H_afe396822a4a870f41c2ea0260c203cdd_icgraph">
+<area shape="rect" title=" " alt="" coords="185,5,412,32"/>
+<area shape="rect" href="ERF__SlowRhsPre_8cpp.html#a14e30212e987a0f29662700f300234ca" title=" " alt="" coords="5,5,137,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a20fee06341ff7c405d6eb41bf0cd2ed8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20fee06341ff7c405d6eb41bf0cd2ed8">&#9670;&nbsp;</a></span>TrimOpenBCCorner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Box TrimOpenBCCorner </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Box&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>dim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>lo_open</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>hi_open</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Remove from an open-boundary box the cells that also sit on a perpendicular open boundary, so that no cell is updated by two different open-boundary kernels.</p>
+<p><code>b</code> is trimmed in dimension <code>dim</code> only at an end that actually coincides with the corresponding end of <code>domain</code>. The domain-level open flags by themselves are not a sufficient test: <code>b</code> is a per-box (or per-tile) slab whose ends generally lie in the interior, and trimming those would silently drop interior cells from the open-boundary treatment and make the answer depend on the grid decomposition.</p>
+<p><code>domain</code> is cell-centered; the index of the boundary is taken in the index space of <code>b</code>, which may be node-centered in <code>dim</code>. </p>
+<div class="fragment"><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;{</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">if</span> (!b.ok()) { <span class="keywordflow">return</span> b; }</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dom_lo = domain.smallEnd(dim);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dom_hi = domain.bigEnd(dim) + (b.ixType().nodeCentered(dim) ? 1 : 0);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">if</span> (lo_open &amp;&amp; b.smallEnd(dim) == dom_lo) { b.growLo(dim,-1); }</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">if</span> (hi_open &amp;&amp; b.bigEnd(dim)   == dom_hi) { b.growHi(dim,-1); }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">return</span> b;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a">AdvectionSrcForMom()</a>, and <a class="el" href="ERF__Advection_8H.html#a3caa6928f023a593958b7f7ac4aa95c0">OpenBCTangentPatches()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__Advection_8H_a20fee06341ff7c405d6eb41bf0cd2ed8_icgraph.png" border="0" usemap="#aERF__Advection_8H_a20fee06341ff7c405d6eb41bf0cd2ed8_icgraph" alt=""/></div>
+<map name="aERF__Advection_8H_a20fee06341ff7c405d6eb41bf0cd2ed8_icgraph" id="aERF__Advection_8H_a20fee06341ff7c405d6eb41bf0cd2ed8_icgraph">
+<area shape="rect" title=" " alt="" coords="467,31,612,57"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a64550d4cb3d194eed74cf70f8ef7985a" title=" " alt="" coords="21,5,181,32"/>
+<area shape="rect" href="ERF__Advection_8H.html#a3caa6928f023a593958b7f7ac4aa95c0" title=" " alt="" coords="244,56,419,83"/>
+<area shape="rect" href="ERF__AdvectionSrcForState_8cpp.html#aac8fb949586776f39a1b4bb217643d87" title=" " alt="" coords="13,56,188,83"/>
+<area shape="rect" href="ERF__EBAdvectionSrcForState_8cpp.html#a244aa0250aa8b00b72cdef06c88b1137" title="Compute the EB advective tendency for scalars." alt="" coords="5,107,196,133"/>
 </map>
 </div>
 

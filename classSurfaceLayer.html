@@ -5251,10 +5251,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;                      amrex::Box <span class="keyword">const</span>&amp; bx, amrex::Array4&lt;int const&gt; <span class="keyword">const</span>&amp; lm_arr) -&gt; <span class="keywordtype">int</span></div>
 <div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;                      {</div>
 <div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;                          <span class="keywordtype">int</span> locmin = std::numeric_limits&lt;int&gt;::max();</div>
-<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;                          <span class="keyword">const</span> <span class="keyword">auto</span> lo = lbound(bx);</div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;                          <span class="keyword">const</span> <span class="keyword">auto</span> hi = ubound(bx);</div>
-<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;                          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;                              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;                          <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a> = lbound(bx);</div>
+<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;                          <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a> = ubound(bx);</div>
+<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;                          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>.y; j &lt;= <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>.y; ++j) {</div>
+<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;                              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>.x; i &lt;= <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>.x; ++i) {</div>
 <div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;                                  locmin = std::min(locmin, lm_arr(i, j, 0));</div>
 <div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;                              }</div>
 <div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;                          }</div>
@@ -5263,6 +5263,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160; </div>
 <div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;      <span class="keywordflow">return</span> lmask_min;</div>
 <div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;  }</div>
+<div class="ttc" id="aERF__Advection_8H_html_a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b"><div class="ttname"><a href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">OpenSide::hi</a></div><div class="ttdeci">@ hi</div></div>
+<div class="ttc" id="aERF__Advection_8H_html_a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe"><div class="ttname"><a href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">OpenSide::lo</a></div><div class="ttdeci">@ lo</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50">make_SurfaceLayer_at_level()</a>.</p>
 <div class="dynheader">

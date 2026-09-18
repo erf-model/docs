@@ -124,6 +124,7 @@ var hierarchy =
       [ "SimpleAD", "classSimpleAD.html", null ],
       [ "WindFarm", "classWindFarm.html", null ]
     ] ],
+    [ "OpenBCPatch", "structOpenBCPatch.html", null ],
     [ "TwoStreamRadiation::OrbitalCache", "structTwoStreamRadiation_1_1OrbitalCache.html", null ],
     [ "erf_wall_scalar_bc::ParsedWallFaceScalars", "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html", null ],
     [ "erf_wall_scalar_bc::ParsedWallScalarBC", "structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html", null ],
