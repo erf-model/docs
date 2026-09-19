@@ -66,6 +66,18 @@ var namespaces_dup =
     ] ],
     [ "EddyDiff", "namespaceEddyDiff.html", null ],
     [ "ERF", "namespaceERF.html", "namespaceERF" ],
+    [ "erf_checkpoint_surface_temperature", "namespaceerf__checkpoint__surface__temperature.html", [
+      [ "ContractReadStatus", "namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4", [
+        [ "Valid", "namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4a3ac705f2acd51a4613f9188c05c91d0d", null ],
+        [ "Malformed", "namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4a0dc7301026e66d38061d7eaba481c9a5", null ],
+        [ "UnknownVersion", "namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4a44766ce89c0a6bd59c7e1860e782fc78", null ]
+      ] ],
+      [ "first_legacy_surface_temperature_level", "namespaceerf__checkpoint__surface__temperature.html#a4bd1bbd5b9f06eeb834c6f7bc8dbd6bf", null ],
+      [ "legacy_metgrid_surface_temperature_is_unsafe", "namespaceerf__checkpoint__surface__temperature.html#a659dd3a244c2404f0cd4e199fd99d9d1", null ],
+      [ "read_contract_version", "namespaceerf__checkpoint__surface__temperature.html#a04ef199886242e32ed4c9b84e002ae1f", null ],
+      [ "write_contract_version", "namespaceerf__checkpoint__surface__temperature.html#ae175f2698846df94ca3d25d853be6a6b", null ],
+      [ "contract_version", "namespaceerf__checkpoint__surface__temperature.html#a1a0baec3ffeee14e71e243070e1870bd", null ]
+    ] ],
     [ "erf_cloud_chamber", "namespaceerf__cloud__chamber.html", "namespaceerf__cloud__chamber" ],
     [ "erf_cloud_chamber_wall_dt_guard", "namespaceerf__cloud__chamber__wall__dt__guard.html", [
       [ "enforce_fixed_dt_limit", "namespaceerf__cloud__chamber__wall__dt__guard.html#a746a20f2e661da63a6d0af43dac6f37c", null ],
@@ -108,6 +120,14 @@ var namespaces_dup =
     [ "erf_provenance", "namespaceerf__provenance.html", "namespaceerf__provenance" ],
     [ "erf_resolved_wall_flux", "namespaceerf__resolved__wall__flux.html", [
       [ "apply", "namespaceerf__resolved__wall__flux.html#af4bb1fd6bad609edefd5f661c60672ef", null ]
+    ] ],
+    [ "erf_surface_temperature", "namespaceerf__surface__temperature.html", [
+      [ "pressure_at_boundary_from_cell", "namespaceerf__surface__temperature.html#a80efa527a259b57d2d2826f1fc63d87d", null ],
+      [ "pressure_at_surface", "namespaceerf__surface__temperature.html#a0d44f9d42128457beaab296839569b5e", null ],
+      [ "temperature_to_theta", "namespaceerf__surface__temperature.html#a0e54a32154f7a2327fad71b277e2bd2e", null ],
+      [ "theta_to_temperature", "namespaceerf__surface__temperature.html#aa97f737767e883b152887e497e706c3b", null ],
+      [ "valid_pressure", "namespaceerf__surface__temperature.html#a84dca0169ccf8237a8902ddb28895b30", null ],
+      [ "valid_temperature", "namespaceerf__surface__temperature.html#ae9dc62e9cb2f12051d9b6562f7bdce25", null ]
     ] ],
     [ "erf_wall_scalar_bc", "namespaceerf__wall__scalar__bc.html", "namespaceerf__wall__scalar__bc" ],
     [ "erf_wall_thermodynamics", "namespaceerf__wall__thermodynamics.html", "namespaceerf__wall__thermodynamics" ],
@@ -772,7 +792,7 @@ var namespaces_dup =
       [ "limit_to_bounds_2d", "namespacerrtmgp.html#a8179e28926650ddbac40ebf2aecbe1a7", null ],
       [ "mixing_ratio_to_cloud_mass", "namespacerrtmgp.html#a88d561ab08b6cffb186a838b5840b274", null ],
       [ "radiation_do", "namespacerrtmgp.html#a330f3ddc4245c802986216ff51504e50", null ],
-      [ "resolve_surface_temperature", "namespacerrtmgp.html#adc9aecf882cb82c5460175133e6af645", null ],
+      [ "resolve_surface_temperature", "namespacerrtmgp.html#a5c54e62d4c33c2b002f6b016c9850479", null ],
       [ "rrtmgp_finalize", "namespacerrtmgp.html#a009ddf7de8b3d47a8732243e945e431c", null ],
       [ "rrtmgp_initialize", "namespacerrtmgp.html#a71b108ea480a6f323cedec4c27ab4944", null ],
       [ "rrtmgp_lw", "namespacerrtmgp.html#aa920f756cc57d6c9fe755483ac1b4582", null ],
@@ -783,7 +803,10 @@ var namespaces_dup =
       [ "initialized", "namespacerrtmgp.html#ac823ff1c3775e0e3a1e231b5ae5a9e3d", null ],
       [ "k_dist_lw_k", "namespacerrtmgp.html#a8f137c1917fdc1c4dfd576fcb672e01a", null ],
       [ "k_dist_sw_k", "namespacerrtmgp.html#a623070abd11c95464bfdbf6eb8dad630", null ],
-      [ "kokkos_mem_pool", "namespacerrtmgp.html#a6f617b76fca562b13696bc6bb84fcddc", null ]
+      [ "kokkos_mem_pool", "namespacerrtmgp.html#a6f617b76fca562b13696bc6bb84fcddc", null ],
+      [ "pool_max_ncol", "namespacerrtmgp.html#ad78225e817cf15b05744d0bd6e1a4658", null ],
+      [ "pool_max_nlay", "namespacerrtmgp.html#af307fdffe766ff2ed3d66955aef2e695", null ],
+      [ "pool_nvar", "namespacerrtmgp.html#a3fcf0bcb7d46375b21aa58a6684c105f", null ]
     ] ],
     [ "saturation_funcs", "namespacesaturation__funcs.html", [
       [ "compute_saturation_pressure_H2O", "namespacesaturation__funcs.html#aab3649a423971059794f41d2a34c234a", null ],

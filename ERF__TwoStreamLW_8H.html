@@ -244,7 +244,7 @@ Called within a device-side kernel; must be GPU-safe. </dd></dl>
 <div class="ttc" id="aERF__TwoStreamLW_8H_html_a3ba613b52567ca25084a575470f1f867"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_thermal_intensity(amrex::Real T, amrex::Real sigma)</div><div class="ttdoc">Compute thermal (LW) intensity for a given temperature.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:92</div></div>
 <div class="ttc" id="aERF__TwoStreamLW_8H_html_a55698ed2ad1a4884d243676c3cc4aa12"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_lw_transmit(amrex::Real tau_lw)</div><div class="ttdoc">Compute transmission coefficient through an absorbing layer.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:123</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -261,7 +261,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__TwoStreamLW_8H_a154681d0926cf97507573920affa177c_icgraph.png" border="0" usemap="#aERF__TwoStreamLW_8H_a154681d0926cf97507573920affa177c_icgraph" alt=""/></div>
 <map name="aERF__TwoStreamLW_8H_a154681d0926cf97507573920affa177c_icgraph" id="aERF__TwoStreamLW_8H_a154681d0926cf97507573920affa177c_icgraph">
 <area shape="rect" title="Compute downwelling LW flux in one layer of a two&#45;stream sweep." alt="" coords="412,13,587,39"/>
-<area shape="rect" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
+<area shape="rect" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
 <area shape="rect" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
@@ -330,7 +330,7 @@ Called within a device-side kernel; must be GPU-safe. </dd></dl>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordflow">return</span> F_up_below * transmit + I_layer * absorb;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -347,7 +347,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__TwoStreamLW_8H_aeee203326dce5fe74ca3e265b674b156_icgraph.png" border="0" usemap="#aERF__TwoStreamLW_8H_aeee203326dce5fe74ca3e265b674b156_icgraph" alt=""/></div>
 <map name="aERF__TwoStreamLW_8H_aeee203326dce5fe74ca3e265b674b156_icgraph" id="aERF__TwoStreamLW_8H_aeee203326dce5fe74ca3e265b674b156_icgraph">
 <area shape="rect" title="Compute upwelling LW flux in one layer of a two&#45;stream sweep." alt="" coords="412,13,567,39"/>
-<area shape="rect" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
+<area shape="rect" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
 <area shape="rect" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
@@ -437,14 +437,14 @@ For terrain-aware grids, pass dz = z_cc(k+1) - z_cc(k) for each level. </dd></dl
 <div class="ttc" id="anamespaceWDM6SedCellScratch_html_ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:272</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_ad91cf5134671388384cd1d2b3139b7a4"><div class="ttname"><a href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">module_model_constants::cp</a></div><div class="ttdeci">real(c_double), parameter cp</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:22</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__TwoStreamLW_8H_aa3548bea20e09844cf7a2392a3272a8e_icgraph.png" border="0" usemap="#aERF__TwoStreamLW_8H_aa3548bea20e09844cf7a2392a3272a8e_icgraph" alt=""/></div>
 <map name="aERF__TwoStreamLW_8H_aa3548bea20e09844cf7a2392a3272a8e_icgraph" id="aERF__TwoStreamLW_8H_aa3548bea20e09844cf7a2392a3272a8e_icgraph">
 <area shape="rect" title="Compute LW heating rate from net flux divergence." alt="" coords="412,13,603,39"/>
-<area shape="rect" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
+<area shape="rect" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
 <area shape="rect" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
@@ -499,7 +499,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="Compute transmission coefficient through an absorbing layer." alt="" coords="635,31,797,57"/>
 <area shape="rect" href="ERF__TwoStreamLW_8H.html#a154681d0926cf97507573920affa177c" title="Compute downwelling LW flux in one layer of a two&#45;stream sweep." alt="" coords="412,5,587,32"/>
 <area shape="rect" href="ERF__TwoStreamLW_8H.html#aeee203326dce5fe74ca3e265b674b156" title="Compute upwelling LW flux in one layer of a two&#45;stream sweep." alt="" coords="422,56,577,83"/>
-<area shape="rect" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,23,364,65"/>
+<area shape="rect" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,23,364,65"/>
 <area shape="rect" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd" title="One radiation call at one level." alt="" coords="5,23,161,65"/>
 </map>
 </div>
@@ -556,7 +556,7 @@ For typical terrestrial temperatures (200-400 K), this ranges from ~1 W/m^2 to ~
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="ttc" id="anamespaceRealBdyVars_html_a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79"><div class="ttname"><a href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">RealBdyVars::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:128</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamLW_8H.html#a154681d0926cf97507573920affa177c">compute_lw_flux_down()</a>, <a class="el" href="ERF__TwoStreamLW_8H.html#aeee203326dce5fe74ca3e265b674b156">compute_lw_flux_up()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamLW_8H.html#a154681d0926cf97507573920affa177c">compute_lw_flux_down()</a>, <a class="el" href="ERF__TwoStreamLW_8H.html#aeee203326dce5fe74ca3e265b674b156">compute_lw_flux_up()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -564,7 +564,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__TwoStreamLW_8H_a3ba613b52567ca25084a575470f1f867_icgraph" id="aERF__TwoStreamLW_8H_a3ba613b52567ca25084a575470f1f867_icgraph">
 <area shape="rect" title="Compute thermal (LW) intensity for a given temperature." alt="" coords="635,56,836,83"/>
 <area shape="rect" href="ERF__TwoStreamLW_8H.html#a154681d0926cf97507573920affa177c" title="Compute downwelling LW flux in one layer of a two&#45;stream sweep." alt="" coords="412,5,587,32"/>
-<area shape="rect" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,49,364,90"/>
+<area shape="rect" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,49,364,90"/>
 <area shape="rect" href="ERF__TwoStreamLW_8H.html#aeee203326dce5fe74ca3e265b674b156" title="Compute upwelling LW flux in one layer of a two&#45;stream sweep." alt="" coords="422,107,577,133"/>
 <area shape="rect" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd" title="One radiation call at one level." alt="" coords="5,49,161,90"/>
 </map>
@@ -595,7 +595,7 @@ Here is the caller graph for this function:</div>
 
 <p>Stefan-Boltzmann constant [W/(m^2 K^4)] used by the two-stream LW model. </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 
 </div>
 </div>

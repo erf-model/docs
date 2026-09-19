@@ -5,7 +5,7 @@ var classTwoStreamRadiation =
     [ "TwoStreamRadiation", "classTwoStreamRadiation.html#a24f5984550ff5e062aae765fa8a63f12", null ],
     [ "active", "classTwoStreamRadiation.html#a729a742dd46a93c80bcceb6c5fb423f9", null ],
     [ "advance", "classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd", null ],
-    [ "define_level", "classTwoStreamRadiation.html#a839056538066145b9daf9ed7acbb3a12", null ],
+    [ "define_level", "classTwoStreamRadiation.html#a4ec1e7600ec00d40fe3637e001ebf4ba", null ],
     [ "read_checkpoint", "classTwoStreamRadiation.html#a2eb6aa62660001677ac4cbb72d9900dc", null ],
     [ "resize", "classTwoStreamRadiation.html#a8a4710347071825a40a0caaef176dedc", null ],
     [ "write_checkpoint", "classTwoStreamRadiation.html#a5496af7ce778eb5c24df116169f6e7b1", null ],
@@ -21,6 +21,7 @@ var classTwoStreamRadiation =
     [ "m_q_deep", "classTwoStreamRadiation.html#a61c276e999709150b8a06838a4d6a9e2", null ],
     [ "m_q_sfc", "classTwoStreamRadiation.html#a16ec0ca86cbf42291038627ccd3cfa7f", null ],
     [ "m_rad", "classTwoStreamRadiation.html#aec774e3e193681eefc427e09e9c81586", null ],
+    [ "m_rdOcp", "classTwoStreamRadiation.html#a6585afd704a38ee0db7f55dcc00bfb79", null ],
     [ "m_sw_flux_sfc", "classTwoStreamRadiation.html#aaad5f2435800c7a9239dd7357d5193b3", null ],
     [ "m_t_deep", "classTwoStreamRadiation.html#ab658d563f857d6fd1a2014ce23fe8014", null ],
     [ "m_t_sfc", "classTwoStreamRadiation.html#a96a37511ad069269b71bf90256e1f264", null ]

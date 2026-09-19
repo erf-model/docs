@@ -145,6 +145,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af34487f3ca47848919204d61c75c410f inherit pub_methods_classIRadiation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afebf8a822642ddf2a5285b6f60157319 inherit pub_methods_classIRadiation"><td class="memItemLeft" align="right" valign="top">virtual amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#afebf8a822642ddf2a5285b6f60157319">get_lsm_output_varnames</a> ()</td></tr>
 <tr class="separator:afebf8a822642ddf2a5285b6f60157319 inherit pub_methods_classIRadiation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9752cd3320c4015e18b82891da1b3b20 inherit pub_methods_classIRadiation"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#a9752cd3320c4015e18b82891da1b3b20">is_nested_patch</a> () const</td></tr>
+<tr class="separator:a9752cd3320c4015e18b82891da1b3b20 inherit pub_methods_classIRadiation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75a399c98c8696ffca01b1af72297451 inherit pub_methods_classIRadiation"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#a75a399c98c8696ffca01b1af72297451">setupDataLog</a> ()</td></tr>
 <tr class="separator:a75a399c98c8696ffca01b1af72297451 inherit pub_methods_classIRadiation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a869627344662a3d31c962dc8bc615868 inherit pub_methods_classIRadiation"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#a869627344662a3d31c962dc8bc615868">setDataLogFrequency</a> (const int nstep)</td></tr>
@@ -245,7 +247,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="astructMoistureComponentIndices_html_a5182498a079eeba7a43c0f96ed742991"><div class="ttname"><a href="structMoistureComponentIndices.html#a5182498a079eeba7a43c0f96ed742991">MoistureComponentIndices::qi</a></div><div class="ttdeci">int qi</div><div class="ttdoc">cloud ice</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:236</div></div>
 <div class="ttc" id="astructMoistureComponentIndices_html_a6e5a18c589f998753e87ccb458a5374b"><div class="ttname"><a href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">MoistureComponentIndices::qv</a></div><div class="ttdeci">int qv</div><div class="ttdoc">water vapor</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:234</div></div>
 <div class="ttc" id="astructMoistureComponentIndices_html_ab99846e54aa46d95389fd611836723e3"><div class="ttname"><a href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">MoistureComponentIndices::qc</a></div><div class="ttdeci">int qc</div><div class="ttdoc">cloud liquid water</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:235</div></div>
-<div class="ttc" id="astructSolverChoice_html_ad82941f981c865d555d426246add956d"><div class="ttname"><a href="structSolverChoice.html#ad82941f981c865d555d426246add956d">SolverChoice::moisture_indices</a></div><div class="ttdeci">MoistureComponentIndices moisture_indices</div><div class="ttdoc">Index map of the moisture data carried by the active scheme: conserved-state components for the speci...</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:2259</div></div>
+<div class="ttc" id="astructSolverChoice_html_ad82941f981c865d555d426246add956d"><div class="ttname"><a href="structSolverChoice.html#ad82941f981c865d555d426246add956d">SolverChoice::moisture_indices</a></div><div class="ttdeci">MoistureComponentIndices moisture_indices</div><div class="ttdoc">Index map of the moisture data carried by the active scheme: conserved-state components for the speci...</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:2263</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -745,7 +747,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
-<div class="ttc" id="aclassIRadiation_html_a6046bc1cdbe95458b1d65c624058f1b4"><div class="ttname"><a href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">IRadiation::datalog</a></div><div class="ttdeci">std::unique_ptr&lt; std::fstream &gt; datalog</div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:86</div></div>
+<div class="ttc" id="aclassIRadiation_html_a6046bc1cdbe95458b1d65c624058f1b4"><div class="ttname"><a href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">IRadiation::datalog</a></div><div class="ttdeci">std::unique_ptr&lt; std::fstream &gt; datalog</div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:94</div></div>
 </div><!-- fragment -->
 </div>
 </div>

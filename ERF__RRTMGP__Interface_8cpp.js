@@ -22,5 +22,8 @@ var ERF__RRTMGP__Interface_8cpp =
     [ "initialized", "ERF__RRTMGP__Interface_8cpp.html#ac823ff1c3775e0e3a1e231b5ae5a9e3d", null ],
     [ "k_dist_lw_k", "ERF__RRTMGP__Interface_8cpp.html#a8f137c1917fdc1c4dfd576fcb672e01a", null ],
     [ "k_dist_sw_k", "ERF__RRTMGP__Interface_8cpp.html#a623070abd11c95464bfdbf6eb8dad630", null ],
-    [ "kokkos_mem_pool", "ERF__RRTMGP__Interface_8cpp.html#a6f617b76fca562b13696bc6bb84fcddc", null ]
+    [ "kokkos_mem_pool", "ERF__RRTMGP__Interface_8cpp.html#a6f617b76fca562b13696bc6bb84fcddc", null ],
+    [ "pool_max_ncol", "ERF__RRTMGP__Interface_8cpp.html#ad78225e817cf15b05744d0bd6e1a4658", null ],
+    [ "pool_max_nlay", "ERF__RRTMGP__Interface_8cpp.html#af307fdffe766ff2ed3d66955aef2e695", null ],
+    [ "pool_nvar", "ERF__RRTMGP__Interface_8cpp.html#a3fcf0bcb7d46375b21aa58a6684c105f", null ]
 ];

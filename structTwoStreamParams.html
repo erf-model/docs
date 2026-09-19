@@ -142,6 +142,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a4bf1bba41b7ec746b522cf8484a7d91f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa68ecc097648a603076f3f6c3819fc94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwoStreamParams.html#aa68ecc097648a603076f3f6c3819fc94">t_sfc_default</a> = 300.0</td></tr>
 <tr class="separator:aa68ecc097648a603076f3f6c3819fc94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca2af88ff0b7d0b7d1f315f682f4785b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwoStreamParams.html#aca2af88ff0b7d0b7d1f315f682f4785b">rdOcp</a> = <a class="el" href="ERF__Constants_8H.html#af138df04a1c81f39657c2a5a3337f4bb">RdoCp</a></td></tr>
+<tr class="separator:aca2af88ff0b7d0b7d1f315f682f4785b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c97640720a8669050eccba118f35655"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwoStreamParams.html#a3c97640720a8669050eccba118f35655">tau_sw_dynamic_enable</a> = false</td></tr>
 <tr class="separator:a3c97640720a8669050eccba118f35655"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af20b152dd639b66f4c3d4255b27a8135"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwoStreamParams.html#af20b152dd639b66f4c3d4255b27a8135">tau_lw_dynamic_enable</a> = false</td></tr>
@@ -211,7 +213,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Trivially copyable subset of <a class="el" href="structRadChoice.html" title="Container holding radiation-related choices and parameters.">RadChoice</a> used by the column kernels. </p>
-<p><a class="el" href="structRadChoice.html" title="Container holding radiation-related choices and parameters.">RadChoice</a> carries std::string members (diagnostics file name, call-site mode) and therefore cannot be captured by value in a GPU device lambda. The level driver builds one <a class="el" href="structTwoStreamParams.html" title="Trivially copyable subset of RadChoice used by the column kernels.">TwoStreamParams</a> per call with <a class="el" href="ERF__TwoStreamColumn_8H.html#a7d49cad32682539c4969e797c461b2c6" title="Copy the column-kernel parameters out of a RadChoice.">make_two_stream_params()</a> and passes that to <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa" title="GPU-safe per-column vertical integration kernel for two-stream radiation, computing either the clear-...">vertical_two_stream_sweep()</a> and its helpers. Field names match <a class="el" href="structRadChoice.html" title="Container holding radiation-related choices and parameters.">RadChoice</a>. </p>
+<p><a class="el" href="structRadChoice.html" title="Container holding radiation-related choices and parameters.">RadChoice</a> carries std::string members (diagnostics file name, call-site mode) and therefore cannot be captured by value in a GPU device lambda. The level driver builds one <a class="el" href="structTwoStreamParams.html" title="Trivially copyable subset of RadChoice used by the column kernels.">TwoStreamParams</a> per call with <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c" title="Copy the column-kernel parameters out of a RadChoice.">make_two_stream_params()</a> and passes that to <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780" title="GPU-safe per-column vertical integration kernel for two-stream radiation, computing either the clear-...">vertical_two_stream_sweep()</a> and its helpers. Field names match <a class="el" href="structRadChoice.html" title="Container holding radiation-related choices and parameters.">RadChoice</a>. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a454724af339ae14e6c3a1a09c54d019b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a454724af339ae14e6c3a1a09c54d019b">&#9670;&nbsp;</a></span>aerosol_enable</h2>
@@ -321,7 +323,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 
 </div>
 </div>
@@ -481,7 +483,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 
 </div>
 </div>
@@ -497,7 +499,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 
 </div>
 </div>
@@ -513,7 +515,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 
 </div>
 </div>
@@ -529,7 +531,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 
 </div>
 </div>
@@ -545,7 +547,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 
 </div>
 </div>
@@ -613,6 +615,22 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aca2af88ff0b7d0b7d1f315f682f4785b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca2af88ff0b7d0b7d1f315f682f4785b">&#9670;&nbsp;</a></span>rdOcp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> TwoStreamParams::rdOcp = <a class="el" href="ERF__Constants_8H.html#af138df04a1c81f39657c2a5a3337f4bb">RdoCp</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
+
+</div>
+</div>
 <a id="a6f3498a0998b361cfa0c0a63ad6b41ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f3498a0998b361cfa0c0a63ad6b41ce">&#9670;&nbsp;</a></span>S0</h2>
 
@@ -625,7 +643,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 
 </div>
 </div>
@@ -657,7 +675,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 
 </div>
 </div>
@@ -689,7 +707,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 
 </div>
 </div>
@@ -753,7 +771,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 
 </div>
 </div>
@@ -833,7 +851,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#afb3f3fd340b004e41272312be4ccbe82">resolve_surface_temp_k()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#acd4308093febfc6a671b742f27245a66">resolve_surface_temp_k()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 
 </div>
 </div>
@@ -897,7 +915,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 
 </div>
 </div>
@@ -929,7 +947,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a9ee33c8a90fdf313d55ad67e3bd7c7aa">vertical_two_stream_sweep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 
 </div>
 </div>

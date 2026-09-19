@@ -100,6 +100,7 @@ var structSolverChoice =
     [ "implicit_momentum_diffusion", "structSolverChoice.html#aeb70a8f7e6b342ab1f09d506b3a926c6", null ],
     [ "implicit_thermal_diffusion", "structSolverChoice.html#a4fbee8f5dfaafda8f79166b32bbec945", null ],
     [ "init_type", "structSolverChoice.html#a0c585849961f95947c2cb00ef04d2025", null ],
+    [ "interp_atmos_from_coarse", "structSolverChoice.html#a490ffeacd19a9db485f7d4193a4054aa", null ],
     [ "io_hurricane_eye_tracker", "structSolverChoice.html#a1018f270d5914a7ca67089161075954c", null ],
     [ "is_init_for_ensemble", "structSolverChoice.html#a8a746ce61c8755c5e321beea01bff55b", null ],
     [ "is_land", "structSolverChoice.html#aaa8cc5fbba74165646c04cc362e6e67e", null ],

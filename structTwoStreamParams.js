@@ -25,6 +25,7 @@ var structTwoStreamParams =
     [ "lw_kabs_dry", "structTwoStreamParams.html#af54f5b12a3ad1791f5aa04556beec3fb", null ],
     [ "lw_kabs_vapor", "structTwoStreamParams.html#ae55ed039a89198962419b8f1ff4c734e", null ],
     [ "lw_mass_absorption_enable", "structTwoStreamParams.html#a1062a8996e6981c46a0f3d1073127840", null ],
+    [ "rdOcp", "structTwoStreamParams.html#aca2af88ff0b7d0b7d1f315f682f4785b", null ],
     [ "S0", "structTwoStreamParams.html#a6f3498a0998b361cfa0c0a63ad6b41ce", null ],
     [ "single_scattering_albedo", "structTwoStreamParams.html#a6cfe92b03289f3d337ba2d380144bc34", null ],
     [ "solar_dynamic", "structTwoStreamParams.html#adf9a6374a86372d18f71794ea1fc774a", null ],

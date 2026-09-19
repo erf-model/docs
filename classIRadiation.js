@@ -5,6 +5,7 @@ var classIRadiation =
     [ "get_lsm_output_varnames", "classIRadiation.html#afebf8a822642ddf2a5285b6f60157319", null ],
     [ "hasDatalog", "classIRadiation.html#a077cf4e3cdf2e521e4bf856b27c4c871", null ],
     [ "Init", "classIRadiation.html#a93a49facdea9a509245196a463491013", null ],
+    [ "is_nested_patch", "classIRadiation.html#a9752cd3320c4015e18b82891da1b3b20", null ],
     [ "Run", "classIRadiation.html#a06fc7cde3d192a7a336c1a295110dec3", null ],
     [ "setDataLogFrequency", "classIRadiation.html#a869627344662a3d31c962dc8bc615868", null ],
     [ "setRecordDataInfo", "classIRadiation.html#ae113ac6df98c25c0a48ab4452461dd2e", null ],
