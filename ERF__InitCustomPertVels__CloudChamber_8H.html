@@ -111,10 +111,10 @@ Variables</h2></td></tr>
 <tr class="separator:a7f74e9554c1ab66998e1319960f1e82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9fd06f7fe187d6c39d38c7473e19c7c"><td class="memItemLeft" align="right" valign="top">const GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a></td></tr>
 <tr class="separator:aa9fd06f7fe187d6c39d38c7473e19c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae130889f2d9b097b11dacc77d5f1db69"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__CloudChamber_8H.html#ae130889f2d9b097b11dacc77d5f1db69">prob_hi</a> = geomdata.ProbHi()</td></tr>
-<tr class="separator:ae130889f2d9b097b11dacc77d5f1db69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aada30199a52709bfe69b46aa5a2b9731"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__CloudChamber_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = geomdata.CellSize()</td></tr>
-<tr class="separator:aada30199a52709bfe69b46aa5a2b9731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad2ed5327e8a8796f3ff18734035a20b"><td class="memItemLeft" align="right" valign="top">const GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__CloudChamber_8H.html#aad2ed5327e8a8796f3ff18734035a20b">prob_hi</a></td></tr>
+<tr class="separator:aad2ed5327e8a8796f3ff18734035a20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f3b481e7aa974743b56c5f4b2835cc"><td class="memItemLeft" align="right" valign="top">const GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a00f3b481e7aa974743b56c5f4b2835cc">dx</a></td></tr>
+<tr class="separator:a00f3b481e7aa974743b56c5f4b2835cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d340509023c65150ab762f72adc72bb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a3d340509023c65150ab762f72adc72bb">lx</a> = <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[0] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]</td></tr>
 <tr class="separator:a3d340509023c65150ab762f72adc72bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb60f95b3747834ea184a796c683dc05"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__CloudChamber_8H.html#afb60f95b3747834ea184a796c683dc05">ly</a> = <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[1] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[1]</td></tr>
@@ -289,18 +289,20 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="aada30199a52709bfe69b46aa5a2b9731"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aada30199a52709bfe69b46aa5a2b9731">&#9670;&nbsp;</a></span>dx</h2>
+<a id="a00f3b481e7aa974743b56c5f4b2835cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f3b481e7aa974743b56c5f4b2835cc">&#9670;&nbsp;</a></span>dx</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto dx = geomdata.CellSize()</td>
+          <td class="memname">const GpuArray&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM&gt; dx</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">        geomdata.CellSize(0), geomdata.CellSize(1), geomdata.CellSize(2)}</div>
+</div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__CloudChamber_8H.html#acdb1fdc603728fdb4223145c4a4592ce">ParallelFor()</a>.</p>
 
 </div>
@@ -401,18 +403,20 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ae130889f2d9b097b11dacc77d5f1db69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae130889f2d9b097b11dacc77d5f1db69">&#9670;&nbsp;</a></span>prob_hi</h2>
+<a id="aad2ed5327e8a8796f3ff18734035a20b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad2ed5327e8a8796f3ff18734035a20b">&#9670;&nbsp;</a></span>prob_hi</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto prob_hi = geomdata.ProbHi()</td>
+          <td class="memname">const GpuArray&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM&gt; prob_hi</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">        geomdata.ProbHi(0), geomdata.ProbHi(1), geomdata.ProbHi(2)}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa9fd06f7fe187d6c39d38c7473e19c7c"></a>
@@ -461,12 +465,12 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceerf__cloud__chamber.html#a351d1b3b0e1974d66be40f53d0c72d36">erf_cloud_chamber::staggered_velocity_v_scale</a>(</div>
-<div class="line">        <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a3d340509023c65150ab762f72adc72bb">lx</a>, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#afb60f95b3747834ea184a796c683dc05">ly</a>, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[0], <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[1], <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>)</div>
-<div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a3d340509023c65150ab762f72adc72bb"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a3d340509023c65150ab762f72adc72bb">lx</a></div><div class="ttdeci">const Real lx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:8</div></div>
-<div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a4f88110916f09b2adef33396203ff015"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a></div><div class="ttdeci">const int nx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:12</div></div>
-<div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a811734e12750524808dba01c57e92c66"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a></div><div class="ttdeci">const int ny</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:13</div></div>
-<div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_aada30199a52709bfe69b46aa5a2b9731"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a></div><div class="ttdeci">const auto dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:7</div></div>
-<div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_afb60f95b3747834ea184a796c683dc05"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#afb60f95b3747834ea184a796c683dc05">ly</a></div><div class="ttdeci">const Real ly</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:9</div></div>
+<div class="line">        <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a3d340509023c65150ab762f72adc72bb">lx</a>, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#afb60f95b3747834ea184a796c683dc05">ly</a>, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a00f3b481e7aa974743b56c5f4b2835cc">dx</a>[0], <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a00f3b481e7aa974743b56c5f4b2835cc">dx</a>[1], <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>)</div>
+<div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a00f3b481e7aa974743b56c5f4b2835cc"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a00f3b481e7aa974743b56c5f4b2835cc">dx</a></div><div class="ttdeci">const GpuArray&lt; Real, AMREX_SPACEDIM &gt; dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:8</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a3d340509023c65150ab762f72adc72bb"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a3d340509023c65150ab762f72adc72bb">lx</a></div><div class="ttdeci">const Real lx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:10</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a4f88110916f09b2adef33396203ff015"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a></div><div class="ttdeci">const int nx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:14</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a811734e12750524808dba01c57e92c66"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a></div><div class="ttdeci">const int ny</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:15</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_afb60f95b3747834ea184a796c683dc05"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#afb60f95b3747834ea184a796c683dc05">ly</a></div><div class="ttdeci">const Real ly</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:11</div></div>
 <div class="ttc" id="anamespaceerf__cloud__chamber_html_a351d1b3b0e1974d66be40f53d0c72d36"><div class="ttname"><a href="namespaceerf__cloud__chamber.html#a351d1b3b0e1974d66be40f53d0c72d36">erf_cloud_chamber::staggered_velocity_v_scale</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_HOST_DEVICE amrex::Real staggered_velocity_v_scale(amrex::Real lx, amrex::Real ly, amrex::Real dx, amrex::Real dy, int nx, int ny) noexcept</div><div class="ttdoc">Discrete derivative ratio for the staggered initial velocity field.</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamber.H:211</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber.html#afd26525f3c6aeca1d4527922bd6897e1">erf_cloud_chamber::initial_v_velocity_perturbation()</a>, and <a class="el" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a7c165024f295aab48c651f6628dc4012">ParallelFor()</a>.</p>
