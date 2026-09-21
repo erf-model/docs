@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('ERF__AerosolOpticalDepth_8H.html','');
 <p>Prescribed bulk aerosol/turbidity optical depth diagnosis.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;AMReX_GpuControl.H&gt;</code><br />
+<code>#include &lt;AMReX_Math.H&gt;</code><br />
 <code>#include &lt;AMReX_FArrayBox.H&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -99,10 +100,11 @@ Include dependency graph for ERF_AerosolOpticalDepth.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__AerosolOpticalDepth_8H__incl.png" border="0" usemap="#aSource_2Radiation_2TwoStream_2ERF__AerosolOpticalDepth_8H" alt=""/></div>
 <map name="aSource_2Radiation_2TwoStream_2ERF__AerosolOpticalDepth_8H" id="aSource_2Radiation_2TwoStream_2ERF__AerosolOpticalDepth_8H">
-<area shape="rect" title="Prescribed bulk aerosol/turbidity optical depth diagnosis." alt="" coords="167,5,375,47"/>
+<area shape="rect" title="Prescribed bulk aerosol/turbidity optical depth diagnosis." alt="" coords="231,5,439,47"/>
 <area shape="rect" title=" " alt="" coords="5,95,168,121"/>
-<area shape="rect" title=" " alt="" coords="193,95,349,121"/>
-<area shape="rect" title=" " alt="" coords="373,95,435,121"/>
+<area shape="rect" title=" " alt="" coords="192,95,315,121"/>
+<area shape="rect" title=" " alt="" coords="339,95,495,121"/>
+<area shape="rect" title=" " alt="" coords="519,95,582,121"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -165,19 +167,19 @@ References:</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Clamped aerosol optical depth [0, 100] </dd></dl>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Guard against invalid input</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (!std::isfinite(tau_aerosol_const)) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Clamp to physically reasonable range [0, 100]</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tau_clipped = tau_aerosol_const;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (tau_clipped &lt; 0.0) tau_clipped = 0.0;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (tau_clipped &gt; 100.0) tau_clipped = 100.0;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> tau_clipped;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Guard against invalid input</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (!amrex::Math::isfinite(tau_aerosol_const)) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Clamp to physically reasonable range [0, 100]</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tau_clipped = tau_aerosol_const;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (tau_clipped &lt; 0.0) tau_clipped = 0.0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (tau_clipped &gt; 100.0) tau_clipped = 100.0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> tau_clipped;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#acbee78c38354b2ca83c9c90f7709eeda">diagnose_layer_tau()</a>.</p>
@@ -247,35 +249,35 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Clamped aerosol optical depth [0, 100] </dd></dl>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (!std::isfinite(z_level) || !std::isfinite(<a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a>) ||</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        !std::isfinite(tau_surface) || !std::isfinite(scale_height_m)) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> (scale_height_m &lt;= 0.0 || <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a> &lt;= 0.0) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (tau_surface &lt; 0.0) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (z_level &lt; 0.0) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        z_level = 0.0;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> arg = -z_level / scale_height_m;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (arg &lt; -100.0) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Per-layer contribution = (tau_surface / scale_height) * dz * exp(-z/H)</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// so the vertical integral over all layers approaches tau_surface as domain height &gt;&gt; H</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tau_aerosol = (tau_surface / scale_height_m) * <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a> * std::exp(arg);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> (tau_aerosol &lt; 0.0)   tau_aerosol = 0.0;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">if</span> (tau_aerosol &gt; 100.0) tau_aerosol = 100.0;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">return</span> tau_aerosol;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (!amrex::Math::isfinite(z_level) || !amrex::Math::isfinite(<a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a>) ||</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        !amrex::Math::isfinite(tau_surface) || !amrex::Math::isfinite(scale_height_m)) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (scale_height_m &lt;= 0.0 || <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a> &lt;= 0.0) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (tau_surface &lt; 0.0) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (z_level &lt; 0.0) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        z_level = 0.0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> arg = -z_level / scale_height_m;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span> (arg &lt; -100.0) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Per-layer contribution = (tau_surface / scale_height) * dz * exp(-z/H)</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// so the vertical integral over all layers approaches tau_surface as domain height &gt;&gt; H</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tau_aerosol = (tau_surface / scale_height_m) * <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a> * std::exp(arg);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">if</span> (tau_aerosol &lt; 0.0)   tau_aerosol = 0.0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span> (tau_aerosol &gt; 100.0) tau_aerosol = 100.0;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span> tau_aerosol;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
 <div class="ttc" id="anamespaceWDM6SedCellScratch_html_ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:272</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#acbee78c38354b2ca83c9c90f7709eeda">diagnose_layer_tau()</a>.</p>
@@ -319,12 +321,12 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Zero </dd></dl>
-<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// Future extension: implement per-level table lookup</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// For now, return 0 (no contribution)</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    (void)k;  <span class="comment">// Suppress unused parameter warning</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// Future extension: implement per-level table lookup</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// For now, return 0 (no contribution)</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    (void)k;  <span class="comment">// Suppress unused parameter warning</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#acbee78c38354b2ca83c9c90f7709eeda">diagnose_layer_tau()</a>.</p>
 <div class="dynheader">

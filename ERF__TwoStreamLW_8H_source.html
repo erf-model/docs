@@ -90,262 +90,263 @@ $(document).ready(function(){initNavTree('ERF__TwoStreamLW_8H_source.html',''); 
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ERF_TWO_STREAM_LW_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;AMReX_GpuControl.H&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;AMReX_FArrayBox.H&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;AMReX_REAL.H&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/// Stefan-Boltzmann constant [W/(m^2 K^4)] used by the two-stream LW model.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="ERF__TwoStreamLW_8H.html#a9a2efecc264e0743ed28a8743ac2d3f8">   10</a></span>&#160;<span class="comment"></span>constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__TwoStreamLW_8H.html#a9a2efecc264e0743ed28a8743ac2d3f8">stefan_boltzmann</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.670374419e-8);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * @file ERF_TwoStreamLW.H</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @brief Longwave (thermal) radiation using gray-gas two-stream model.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * Implements a simplified, clear-sky longwave radiation model</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * using the gray-gas two-stream approximation (Toon et al. 1989):</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Vertical orientation follows ERF: the vertical index k increases upward,</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * so layer k = kmin touches the surface and k = kmax the top of the domain.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * Fluxes live on layer interfaces m = k - kmin (bottom of layer k) and</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * m + 1 (top of layer k); m = 0 is the surface, m = nlev the TOA.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * UPWARD SWEEP (from surface to TOA):</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * -----------</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *   F_up(m+1) = F_up(m) * exp(-tau_lw) + sigma * T(k)^4 * (1 - exp(-tau_lw))</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *   Initial condition: F_up(0) = emissivity * sigma * T_surface^4</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *                            + (1 - emissivity) * F_down(0)</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *   (gray surface: emitted plus reflected downwelling flux, so the</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *   downward sweep must be completed before the upward sweep starts)</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * DOWNWARD SWEEP (from TOA to surface):</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * ---------------</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> *   F_down(m) = F_down(m+1) * exp(-tau_lw) + sigma * T(k)^4 * (1 - exp(-tau_lw))</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> *   Initial condition: F_down(nlev) = 0 (no incoming from space)</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> * NET FLUX AND HEATING:</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> * ---------------------</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> *   F_net(m) = F_up(m) - F_down(m)          (positive upward)</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> *   Q_lw(k)  = -(1 / (rho * cp)) * [F_net(m+1) - F_net(m)] / dz(k)   [K/s]</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> *   A layer that emits more than it absorbs has F_net increasing with</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> *   height, so Q_lw &lt; 0 (radiative cooling).</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> * Layer temperature T(k) is the absolute temperature obtained from</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> * rho*theta through the Exner function (see get_temperature_from_rhotheta()</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> * in ERF_TwoStreamRadiation.cpp), not the potential temperature.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> * MODEL SIMPLIFICATIONS:</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> * -------------------------</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> * - Uniform optical depth (tau_lw) per layer</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> * - No scattering</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> * - No clouds</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> * References:</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> * -----------</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> * - Toon, O. B., C. P. McKay, T. P. Ackerman, and K. Santhanam, 1989:</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> *   Rapid calculation of radiative heating rates and photodissociation rates</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> *   in inhomogeneous multiple scattering atmospheres. J. Geophys. Res., 94,</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> *   16387-16405. https://doi.org/10.1029/JD094iD13p16387</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> * - Kirchhoff, G., 1860: Ueber den Zusammenhang zwischen den</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> *   Emissionsvermögen und den Absorptionsvermögen der Körper für Wärmestrahlung.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"> *   Monatsberichte der Akademie der Wissenschaften zu Berlin, 783-787.</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> * @brief Compute thermal (LW) intensity for a given temperature.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> * Using the Stefan-Boltzmann law, compute the upwelling or downwelling</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> * thermal radiation intensity:</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"> *   I_rad = sigma * T^4</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"> * where sigma is the Stefan-Boltzmann constant and T is absolute temperature.</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"> * This is a GPU-safe inline function.</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"> * @param[in] T Absolute temperature [K]. Must be positive.</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"> * @param[in] sigma Stefan-Boltzmann constant [W/(m^2·K^4)].</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> * @return Radiative intensity [W/m^2]. Always non-negative.</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> * @note If T ≤ 0, returns 0 (unphysical, but defensive).</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> * @note For typical terrestrial temperatures (200-400 K), this ranges</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> *       from ~1 W/m^2 to ~1500 W/m^2.</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">   92</a></span>&#160;<a class="code" href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> &lt;= 0.0) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"> * @brief Compute transmission coefficient through an absorbing layer.</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"> * For a layer with optical depth tau_lw, the fraction of incident radiation</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"> * that is transmitted (not absorbed or scattered) is:</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"> *   transmit = exp(-tau_lw)</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"> * The fraction absorbed/scattered is:</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"> *   absorb = 1 - exp(-tau_lw)</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> * This is used in the two-stream upward/downward sweep formulas.</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"> * @param[in] tau_lw Optical depth of the layer [unitless]. Must be ≥ 0.</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"> * @return Transmission fraction [0, 1]. Satisfies transmit + absorb = 1.</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment"> * @note If tau_lw = 0, returns 1 (fully transparent).</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment"> * @note If tau_lw &gt;&gt; 1, returns ≈ 0 (fully opaque).</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">  123</a></span>&#160;<a class="code" href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tau_lw)</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">if</span> (tau_lw &lt; 0.0) {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">return</span> 1.0;  <span class="comment">// Unphysical, but defensive</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordflow">return</span> std::exp(-tau_lw);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment"> * @brief Compute upwelling LW flux in one layer of a two-stream sweep.</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment"> * Implements the upward flux formula in the gray-gas two-stream model:</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment"> *   F_up_current = F_up_below * exp(-tau_lw) + sigma * T^4 * (1 - exp(-tau_lw))</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment"> * This is called iteratively from the surface (where</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment"> * F_up_surface = emissivity * sigma * T_surface^4 + (1 - emissivity) * F_down_surface)</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment"> * upward to the TOA.</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment"> * @param[in] F_up_below Upwelling flux from the layer below [W/m^2].</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment"> * @param[in] T_layer Temperature of the current layer [K].</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment"> * @param[in] sigma Stefan-Boltzmann constant [W/(m^2·K^4)].</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"> * @param[in] tau_lw Optical depth of the current layer [unitless].</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"> * @return Upwelling flux at the top of the current layer [W/m^2].</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment"> * @note This function assumes each layer acts as a semi-infinite slab</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment"> *       with uniform temperature and optical depth.</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment"> * @note Called within a device-side kernel; must be GPU-safe.</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="ERF__TwoStreamLW_8H.html#aeee203326dce5fe74ca3e265b674b156">  155</a></span>&#160;<a class="code" href="ERF__TwoStreamLW_8H.html#aeee203326dce5fe74ca3e265b674b156">compute_lw_flux_up</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> F_up_below, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T_layer,</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                   <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tau_lw)</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> transmit = <a class="code" href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a>(tau_lw);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> absorb = 1.0 - transmit;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> I_layer = <a class="code" href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a>(T_layer, <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordflow">return</span> F_up_below * transmit + I_layer * absorb;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment"> * @brief Compute downwelling LW flux in one layer of a two-stream sweep.</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment"> * Implements the downward flux formula in the gray-gas two-stream model:</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment"> *   F_down_current = F_down_above * exp(-tau_lw) + sigma * T^4 * (1 - exp(-tau_lw))</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment"> * This is called iteratively from the TOA (where F_down_toa = 0)</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment"> * downward to the surface.</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"> * @param[in] F_down_above Downwelling flux from the layer above [W/m^2].</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment"> * @param[in] T_layer Temperature of the current layer [K].</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment"> * @param[in] sigma Stefan-Boltzmann constant [W/(m^2·K^4)].</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment"> * @param[in] tau_lw Optical depth of the current layer [unitless].</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment"> * @return Downwelling flux at the bottom of the current layer [W/m^2].</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment"> * @note This function assumes each layer acts as a semi-infinite slab</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment"> *       with uniform temperature and optical depth.</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment"> * @note Called within a device-side kernel; must be GPU-safe.</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="ERF__TwoStreamLW_8H.html#a154681d0926cf97507573920affa177c">  187</a></span>&#160;<a class="code" href="ERF__TwoStreamLW_8H.html#a154681d0926cf97507573920affa177c">compute_lw_flux_down</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> F_down_above, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T_layer,</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                     <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tau_lw)</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;{</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> transmit = <a class="code" href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a>(tau_lw);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> absorb = 1.0 - transmit;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> I_layer = <a class="code" href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a>(T_layer, <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordflow">return</span> F_down_above * transmit + I_layer * absorb;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment"> * @brief Compute LW heating rate from net flux divergence.</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment"> * Given the net LW flux (F_up - F_down, positive upward) at the top and</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment"> * bottom interfaces of a layer, compute the radiative heating rate:</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment"> *   dF_net/dz = [F_net_top - F_net_bot] / dz</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment"> *   Q_lw = -dF_net/dz / (rho * cp)  [K/s]</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment"> * Net upward flux increasing with height means the layer loses more</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment"> * energy through its top than it gains through its bottom, i.e. the layer</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment"> * cools (Q_lw &lt; 0). This is the same sign convention as the SW heating</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment"> * rate: energy converging into the layer warms it.</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment"> * **Nonuniform dz Support &amp; Sanity Checks**</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment"> * This function accepts per-level dz values to support terrain-aware or</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment"> * nonuniform vertical grids. When dz &lt;= 0, or rho &lt;= 0, or cp &lt;= 0,</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment"> * returns 0 (heating rate is undefined or unphysical).</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment"> * The computed heating rate is guarded against NaN/Inf via the same</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment"> * parameter validation.</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment"> * @param[in] F_net_top Net flux at the top of the layer [W/m^2].</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment"> * @param[in] F_net_bot Net flux at the bottom of the layer [W/m^2].</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment"> * @param[in] dz Vertical thickness of the layer [m]. Must be positive.</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment"> *              For nonuniform grids, use per-level spacing.</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment"> * @param[in] rho Density [kg/m^3]. Must be positive.</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment"> * @param[in] cp Specific heat at constant pressure [J/(kg·K)]. Must be positive.</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment"> * @return Heating rate [K/s]. Positive values indicate warming.</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment"> *         Returns 0 if inputs are unphysical (dz, rho, cp &lt;= 0).</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment"> * @note The sign convention is: positive dF_net/dz (net upward flux</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment"> *       increasing with height) corresponds to cooling (dT/dt &lt; 0).</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment"> * @note For terrain-aware grids, pass dz = z_cc(k+1) - z_cc(k) for each level.</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="ERF__TwoStreamLW_8H.html#aa3548bea20e09844cf7a2392a3272a8e">  235</a></span>&#160;<a class="code" href="ERF__TwoStreamLW_8H.html#aa3548bea20e09844cf7a2392a3272a8e">compute_lw_heating_rate</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> F_net_top, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> F_net_bot,</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">rho</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">cp</a>)</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;{</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a> &lt;= 0.0 || <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">rho</a> &lt;= 0.0 || <a class="code" href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">cp</a> &lt;= 0.0) {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  }</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="comment">// Net flux divergence: (W/m^2) / (m) = W/m^3</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> flux_divergence = (F_net_top - F_net_bot) / <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a>;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="comment">// Heating rate: -(W/m^3) / (kg/m^3 * J/(kg*K)) = K/s</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="comment">// Check for NaN/Inf as defensive sanity check</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> heating = -flux_divergence / (<a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">rho</a> * <a class="code" href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">cp</a>);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordflow">if</span> (!std::isfinite(heating)) {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  }</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <span class="keywordflow">return</span> heating;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;}</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_TWO_STREAM_LW_H_</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;AMReX_Math.H&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;AMReX_FArrayBox.H&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;AMReX_REAL.H&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/// Stefan-Boltzmann constant [W/(m^2 K^4)] used by the two-stream LW model.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="ERF__TwoStreamLW_8H.html#a9a2efecc264e0743ed28a8743ac2d3f8">   11</a></span>&#160;<span class="comment"></span>constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__TwoStreamLW_8H.html#a9a2efecc264e0743ed28a8743ac2d3f8">stefan_boltzmann</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.670374419e-8);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @file ERF_TwoStreamLW.H</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * @brief Longwave (thermal) radiation using gray-gas two-stream model.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * Implements a simplified, clear-sky longwave radiation model</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * using the gray-gas two-stream approximation (Toon et al. 1989):</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Vertical orientation follows ERF: the vertical index k increases upward,</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * so layer k = kmin touches the surface and k = kmax the top of the domain.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * Fluxes live on layer interfaces m = k - kmin (bottom of layer k) and</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * m + 1 (top of layer k); m = 0 is the surface, m = nlev the TOA.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * UPWARD SWEEP (from surface to TOA):</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * -----------</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *   F_up(m+1) = F_up(m) * exp(-tau_lw) + sigma * T(k)^4 * (1 - exp(-tau_lw))</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *   Initial condition: F_up(0) = emissivity * sigma * T_surface^4</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *                            + (1 - emissivity) * F_down(0)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *   (gray surface: emitted plus reflected downwelling flux, so the</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *   downward sweep must be completed before the upward sweep starts)</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * DOWNWARD SWEEP (from TOA to surface):</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * ---------------</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> *   F_down(m) = F_down(m+1) * exp(-tau_lw) + sigma * T(k)^4 * (1 - exp(-tau_lw))</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> *   Initial condition: F_down(nlev) = 0 (no incoming from space)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> * NET FLUX AND HEATING:</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> * ---------------------</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> *   F_net(m) = F_up(m) - F_down(m)          (positive upward)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> *   Q_lw(k)  = -(1 / (rho * cp)) * [F_net(m+1) - F_net(m)] / dz(k)   [K/s]</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> *   A layer that emits more than it absorbs has F_net increasing with</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> *   height, so Q_lw &lt; 0 (radiative cooling).</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> * Layer temperature T(k) is the absolute temperature obtained from</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> * rho*theta through the Exner function (see get_temperature_from_rhotheta()</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> * in ERF_TwoStreamRadiation.cpp), not the potential temperature.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> * MODEL SIMPLIFICATIONS:</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> * -------------------------</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> * - Uniform optical depth (tau_lw) per layer</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> * - No scattering</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> * - No clouds</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> * References:</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> * -----------</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> * - Toon, O. B., C. P. McKay, T. P. Ackerman, and K. Santhanam, 1989:</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> *   Rapid calculation of radiative heating rates and photodissociation rates</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> *   in inhomogeneous multiple scattering atmospheres. J. Geophys. Res., 94,</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"> *   16387-16405. https://doi.org/10.1029/JD094iD13p16387</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> * - Kirchhoff, G., 1860: Ueber den Zusammenhang zwischen den</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"> *   Emissionsvermögen und den Absorptionsvermögen der Körper für Wärmestrahlung.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"> *   Monatsberichte der Akademie der Wissenschaften zu Berlin, 783-787.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> * @brief Compute thermal (LW) intensity for a given temperature.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> * Using the Stefan-Boltzmann law, compute the upwelling or downwelling</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> * thermal radiation intensity:</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> *   I_rad = sigma * T^4</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> * where sigma is the Stefan-Boltzmann constant and T is absolute temperature.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"> * This is a GPU-safe inline function.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"> * @param[in] T Absolute temperature [K]. Must be positive.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> * @param[in] sigma Stefan-Boltzmann constant [W/(m^2·K^4)].</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> * @return Radiative intensity [W/m^2]. Always non-negative.</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> * @note If T ≤ 0, returns 0 (unphysical, but defensive).</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> * @note For typical terrestrial temperatures (200-400 K), this ranges</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> *       from ~1 W/m^2 to ~1500 W/m^2.</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">   93</a></span>&#160;<a class="code" href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> &lt;= 0.0) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> * @brief Compute transmission coefficient through an absorbing layer.</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"> * For a layer with optical depth tau_lw, the fraction of incident radiation</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"> * that is transmitted (not absorbed or scattered) is:</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment"> *   transmit = exp(-tau_lw)</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"> * The fraction absorbed/scattered is:</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"> *   absorb = 1 - exp(-tau_lw)</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> * This is used in the two-stream upward/downward sweep formulas.</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"> * @param[in] tau_lw Optical depth of the layer [unitless]. Must be ≥ 0.</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment"> * @return Transmission fraction [0, 1]. Satisfies transmit + absorb = 1.</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment"> * @note If tau_lw = 0, returns 1 (fully transparent).</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment"> * @note If tau_lw &gt;&gt; 1, returns ≈ 0 (fully opaque).</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">  124</a></span>&#160;<a class="code" href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tau_lw)</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordflow">if</span> (tau_lw &lt; 0.0) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> 1.0;  <span class="comment">// Unphysical, but defensive</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">return</span> std::exp(-tau_lw);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment"> * @brief Compute upwelling LW flux in one layer of a two-stream sweep.</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment"> * Implements the upward flux formula in the gray-gas two-stream model:</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment"> *   F_up_current = F_up_below * exp(-tau_lw) + sigma * T^4 * (1 - exp(-tau_lw))</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment"> * This is called iteratively from the surface (where</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment"> * F_up_surface = emissivity * sigma * T_surface^4 + (1 - emissivity) * F_down_surface)</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment"> * upward to the TOA.</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment"> * @param[in] F_up_below Upwelling flux from the layer below [W/m^2].</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment"> * @param[in] T_layer Temperature of the current layer [K].</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"> * @param[in] sigma Stefan-Boltzmann constant [W/(m^2·K^4)].</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"> * @param[in] tau_lw Optical depth of the current layer [unitless].</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment"> * @return Upwelling flux at the top of the current layer [W/m^2].</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment"> * @note This function assumes each layer acts as a semi-infinite slab</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment"> *       with uniform temperature and optical depth.</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment"> * @note Called within a device-side kernel; must be GPU-safe.</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="ERF__TwoStreamLW_8H.html#aeee203326dce5fe74ca3e265b674b156">  156</a></span>&#160;<a class="code" href="ERF__TwoStreamLW_8H.html#aeee203326dce5fe74ca3e265b674b156">compute_lw_flux_up</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> F_up_below, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T_layer,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                   <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tau_lw)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;{</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> transmit = <a class="code" href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a>(tau_lw);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> absorb = 1.0 - transmit;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> I_layer = <a class="code" href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a>(T_layer, <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordflow">return</span> F_up_below * transmit + I_layer * absorb;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment"> * @brief Compute downwelling LW flux in one layer of a two-stream sweep.</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment"> * Implements the downward flux formula in the gray-gas two-stream model:</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment"> *   F_down_current = F_down_above * exp(-tau_lw) + sigma * T^4 * (1 - exp(-tau_lw))</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment"> * This is called iteratively from the TOA (where F_down_toa = 0)</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment"> * downward to the surface.</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment"> * @param[in] F_down_above Downwelling flux from the layer above [W/m^2].</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment"> * @param[in] T_layer Temperature of the current layer [K].</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment"> * @param[in] sigma Stefan-Boltzmann constant [W/(m^2·K^4)].</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment"> * @param[in] tau_lw Optical depth of the current layer [unitless].</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment"> * @return Downwelling flux at the bottom of the current layer [W/m^2].</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment"> * @note This function assumes each layer acts as a semi-infinite slab</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment"> *       with uniform temperature and optical depth.</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment"> * @note Called within a device-side kernel; must be GPU-safe.</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="ERF__TwoStreamLW_8H.html#a154681d0926cf97507573920affa177c">  188</a></span>&#160;<a class="code" href="ERF__TwoStreamLW_8H.html#a154681d0926cf97507573920affa177c">compute_lw_flux_down</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> F_down_above, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T_layer,</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                     <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tau_lw)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> transmit = <a class="code" href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a>(tau_lw);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> absorb = 1.0 - transmit;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> I_layer = <a class="code" href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a>(T_layer, <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">return</span> F_down_above * transmit + I_layer * absorb;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment"> * @brief Compute LW heating rate from net flux divergence.</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment"> * Given the net LW flux (F_up - F_down, positive upward) at the top and</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment"> * bottom interfaces of a layer, compute the radiative heating rate:</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment"> *   dF_net/dz = [F_net_top - F_net_bot] / dz</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment"> *   Q_lw = -dF_net/dz / (rho * cp)  [K/s]</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment"> * Net upward flux increasing with height means the layer loses more</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment"> * energy through its top than it gains through its bottom, i.e. the layer</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment"> * cools (Q_lw &lt; 0). This is the same sign convention as the SW heating</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment"> * rate: energy converging into the layer warms it.</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment"> * **Nonuniform dz Support &amp; Sanity Checks**</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment"> * This function accepts per-level dz values to support terrain-aware or</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment"> * nonuniform vertical grids. When dz &lt;= 0, or rho &lt;= 0, or cp &lt;= 0,</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment"> * returns 0 (heating rate is undefined or unphysical).</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment"> * The computed heating rate is guarded against NaN/Inf via the same</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment"> * parameter validation.</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment"> * @param[in] F_net_top Net flux at the top of the layer [W/m^2].</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment"> * @param[in] F_net_bot Net flux at the bottom of the layer [W/m^2].</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment"> * @param[in] dz Vertical thickness of the layer [m]. Must be positive.</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment"> *              For nonuniform grids, use per-level spacing.</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment"> * @param[in] rho Density [kg/m^3]. Must be positive.</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment"> * @param[in] cp Specific heat at constant pressure [J/(kg·K)]. Must be positive.</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment"> * @return Heating rate [K/s]. Positive values indicate warming.</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment"> *         Returns 0 if inputs are unphysical (dz, rho, cp &lt;= 0).</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment"> * @note The sign convention is: positive dF_net/dz (net upward flux</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment"> *       increasing with height) corresponds to cooling (dT/dt &lt; 0).</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment"> * @note For terrain-aware grids, pass dz = z_cc(k+1) - z_cc(k) for each level.</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="ERF__TwoStreamLW_8H.html#aa3548bea20e09844cf7a2392a3272a8e">  236</a></span>&#160;<a class="code" href="ERF__TwoStreamLW_8H.html#aa3548bea20e09844cf7a2392a3272a8e">compute_lw_heating_rate</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> F_net_top, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> F_net_bot,</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">rho</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">cp</a>)</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;{</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a> &lt;= 0.0 || <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">rho</a> &lt;= 0.0 || <a class="code" href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">cp</a> &lt;= 0.0) {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  }</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="comment">// Net flux divergence: (W/m^2) / (m) = W/m^3</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> flux_divergence = (F_net_top - F_net_bot) / <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a>;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="comment">// Heating rate: -(W/m^3) / (kg/m^3 * J/(kg*K)) = K/s</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="comment">// Check for NaN/Inf as defensive sanity check</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> heating = -flux_divergence / (<a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">rho</a> * <a class="code" href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">cp</a>);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordflow">if</span> (!amrex::Math::isfinite(heating)) {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  <span class="keywordflow">return</span> heating;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;}</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_TWO_STREAM_LW_H_</span></div>
 <div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_a5e9caa74b9ef9befb527201d7e904801"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a></div><div class="ttdeci">amrex::Real sigma</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_DataAssimilation_ISV.H:11</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aERF__TwoStreamLW_8H_html_a154681d0926cf97507573920affa177c"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#a154681d0926cf97507573920affa177c">compute_lw_flux_down</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_lw_flux_down(amrex::Real F_down_above, amrex::Real T_layer, amrex::Real sigma, amrex::Real tau_lw)</div><div class="ttdoc">Compute downwelling LW flux in one layer of a two-stream sweep.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:187</div></div>
-<div class="ttc" id="aERF__TwoStreamLW_8H_html_a3ba613b52567ca25084a575470f1f867"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_thermal_intensity(amrex::Real T, amrex::Real sigma)</div><div class="ttdoc">Compute thermal (LW) intensity for a given temperature.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:92</div></div>
-<div class="ttc" id="aERF__TwoStreamLW_8H_html_a55698ed2ad1a4884d243676c3cc4aa12"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_lw_transmit(amrex::Real tau_lw)</div><div class="ttdoc">Compute transmission coefficient through an absorbing layer.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:123</div></div>
-<div class="ttc" id="aERF__TwoStreamLW_8H_html_a9a2efecc264e0743ed28a8743ac2d3f8"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#a9a2efecc264e0743ed28a8743ac2d3f8">stefan_boltzmann</a></div><div class="ttdeci">constexpr amrex::Real stefan_boltzmann</div><div class="ttdoc">Stefan-Boltzmann constant [W/(m^2 K^4)] used by the two-stream LW model.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:10</div></div>
-<div class="ttc" id="aERF__TwoStreamLW_8H_html_aa3548bea20e09844cf7a2392a3272a8e"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#aa3548bea20e09844cf7a2392a3272a8e">compute_lw_heating_rate</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_lw_heating_rate(amrex::Real F_net_top, amrex::Real F_net_bot, amrex::Real dz, amrex::Real rho, amrex::Real cp)</div><div class="ttdoc">Compute LW heating rate from net flux divergence.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:235</div></div>
-<div class="ttc" id="aERF__TwoStreamLW_8H_html_aeee203326dce5fe74ca3e265b674b156"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#aeee203326dce5fe74ca3e265b674b156">compute_lw_flux_up</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_lw_flux_up(amrex::Real F_up_below, amrex::Real T_layer, amrex::Real sigma, amrex::Real tau_lw)</div><div class="ttdoc">Compute upwelling LW flux in one layer of a two-stream sweep.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:155</div></div>
+<div class="ttc" id="aERF__TwoStreamLW_8H_html_a154681d0926cf97507573920affa177c"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#a154681d0926cf97507573920affa177c">compute_lw_flux_down</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_lw_flux_down(amrex::Real F_down_above, amrex::Real T_layer, amrex::Real sigma, amrex::Real tau_lw)</div><div class="ttdoc">Compute downwelling LW flux in one layer of a two-stream sweep.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:188</div></div>
+<div class="ttc" id="aERF__TwoStreamLW_8H_html_a3ba613b52567ca25084a575470f1f867"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_thermal_intensity(amrex::Real T, amrex::Real sigma)</div><div class="ttdoc">Compute thermal (LW) intensity for a given temperature.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:93</div></div>
+<div class="ttc" id="aERF__TwoStreamLW_8H_html_a55698ed2ad1a4884d243676c3cc4aa12"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_lw_transmit(amrex::Real tau_lw)</div><div class="ttdoc">Compute transmission coefficient through an absorbing layer.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:124</div></div>
+<div class="ttc" id="aERF__TwoStreamLW_8H_html_a9a2efecc264e0743ed28a8743ac2d3f8"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#a9a2efecc264e0743ed28a8743ac2d3f8">stefan_boltzmann</a></div><div class="ttdeci">constexpr amrex::Real stefan_boltzmann</div><div class="ttdoc">Stefan-Boltzmann constant [W/(m^2 K^4)] used by the two-stream LW model.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:11</div></div>
+<div class="ttc" id="aERF__TwoStreamLW_8H_html_aa3548bea20e09844cf7a2392a3272a8e"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#aa3548bea20e09844cf7a2392a3272a8e">compute_lw_heating_rate</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_lw_heating_rate(amrex::Real F_net_top, amrex::Real F_net_bot, amrex::Real dz, amrex::Real rho, amrex::Real cp)</div><div class="ttdoc">Compute LW heating rate from net flux divergence.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:236</div></div>
+<div class="ttc" id="aERF__TwoStreamLW_8H_html_aeee203326dce5fe74ca3e265b674b156"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#aeee203326dce5fe74ca3e265b674b156">compute_lw_flux_up</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_lw_flux_up(amrex::Real F_up_below, amrex::Real T_layer, amrex::Real sigma, amrex::Real tau_lw)</div><div class="ttdoc">Compute upwelling LW flux in one layer of a two-stream sweep.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:156</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:25</div></div>
 <div class="ttc" id="anamespaceRealBdyVars_html_a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79"><div class="ttname"><a href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">RealBdyVars::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:128</div></div>
 <div class="ttc" id="anamespaceWDM6SedCellScratch_html_ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:272</div></div>

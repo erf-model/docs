@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('ERF__TwoStreamLW_8H.html',''); initRes
 <p>Longwave (thermal) radiation using gray-gas two-stream model.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;AMReX_GpuControl.H&gt;</code><br />
+<code>#include &lt;AMReX_Math.H&gt;</code><br />
 <code>#include &lt;AMReX_FArrayBox.H&gt;</code><br />
 <code>#include &lt;AMReX_REAL.H&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
@@ -101,11 +102,12 @@ Include dependency graph for ERF_TwoStreamLW.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__TwoStreamLW_8H__incl.png" border="0" usemap="#aSource_2Radiation_2TwoStream_2ERF__TwoStreamLW_8H" alt=""/></div>
 <map name="aSource_2Radiation_2TwoStream_2ERF__TwoStreamLW_8H" id="aSource_2Radiation_2TwoStream_2ERF__TwoStreamLW_8H">
-<area shape="rect" title="Longwave (thermal) radiation using gray&#45;gas two&#45;stream model." alt="" coords="248,5,456,47"/>
+<area shape="rect" title="Longwave (thermal) radiation using gray&#45;gas two&#45;stream model." alt="" coords="313,5,521,47"/>
 <area shape="rect" title=" " alt="" coords="5,95,168,121"/>
-<area shape="rect" title=" " alt="" coords="193,95,349,121"/>
-<area shape="rect" title=" " alt="" coords="373,95,496,121"/>
-<area shape="rect" title=" " alt="" coords="521,95,583,121"/>
+<area shape="rect" title=" " alt="" coords="192,95,315,121"/>
+<area shape="rect" title=" " alt="" coords="339,95,495,121"/>
+<area shape="rect" title=" " alt="" coords="520,95,643,121"/>
+<area shape="rect" title=" " alt="" coords="667,95,730,121"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -233,16 +235,16 @@ References:</h2>
 <dl class="section note"><dt>Note</dt><dd>This function assumes each layer acts as a semi-infinite slab with uniform temperature and optical depth. </dd>
 <dd>
 Called within a device-side kernel; must be GPU-safe. </dd></dl>
-<div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;{</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> transmit = <a class="code" href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a>(tau_lw);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> absorb = 1.0 - transmit;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> I_layer = <a class="code" href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a>(T_layer, <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordflow">return</span> F_down_above * transmit + I_layer * absorb;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> transmit = <a class="code" href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a>(tau_lw);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> absorb = 1.0 - transmit;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> I_layer = <a class="code" href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a>(T_layer, <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">return</span> F_down_above * transmit + I_layer * absorb;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_a5e9caa74b9ef9befb527201d7e904801"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a></div><div class="ttdeci">amrex::Real sigma</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_DataAssimilation_ISV.H:11</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aERF__TwoStreamLW_8H_html_a3ba613b52567ca25084a575470f1f867"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_thermal_intensity(amrex::Real T, amrex::Real sigma)</div><div class="ttdoc">Compute thermal (LW) intensity for a given temperature.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:92</div></div>
-<div class="ttc" id="aERF__TwoStreamLW_8H_html_a55698ed2ad1a4884d243676c3cc4aa12"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_lw_transmit(amrex::Real tau_lw)</div><div class="ttdoc">Compute transmission coefficient through an absorbing layer.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:123</div></div>
+<div class="ttc" id="aERF__TwoStreamLW_8H_html_a3ba613b52567ca25084a575470f1f867"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_thermal_intensity(amrex::Real T, amrex::Real sigma)</div><div class="ttdoc">Compute thermal (LW) intensity for a given temperature.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:93</div></div>
+<div class="ttc" id="aERF__TwoStreamLW_8H_html_a55698ed2ad1a4884d243676c3cc4aa12"><div class="ttname"><a href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real compute_lw_transmit(amrex::Real tau_lw)</div><div class="ttdoc">Compute transmission coefficient through an absorbing layer.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamLW.H:124</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 <div class="dynheader">
@@ -323,12 +325,12 @@ Here is the caller graph for this function:</div>
 <dl class="section note"><dt>Note</dt><dd>This function assumes each layer acts as a semi-infinite slab with uniform temperature and optical depth. </dd>
 <dd>
 Called within a device-side kernel; must be GPU-safe. </dd></dl>
-<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> transmit = <a class="code" href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a>(tau_lw);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> absorb = 1.0 - transmit;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> I_layer = <a class="code" href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a>(T_layer, <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordflow">return</span> F_up_below * transmit + I_layer * absorb;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;{</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> transmit = <a class="code" href="ERF__TwoStreamLW_8H.html#a55698ed2ad1a4884d243676c3cc4aa12">compute_lw_transmit</a>(tau_lw);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> absorb = 1.0 - transmit;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> I_layer = <a class="code" href="ERF__TwoStreamLW_8H.html#a3ba613b52567ca25084a575470f1f867">compute_thermal_intensity</a>(T_layer, <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordflow">return</span> F_up_below * transmit + I_layer * absorb;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
 <div class="dynheader">
@@ -419,20 +421,20 @@ Here is the caller graph for this function:</div>
 <dl class="section note"><dt>Note</dt><dd>The sign convention is: positive dF_net/dz (net upward flux increasing with height) corresponds to cooling (dT/dt &lt; 0). </dd>
 <dd>
 For terrain-aware grids, pass dz = z_cc(k+1) - z_cc(k) for each level. </dd></dl>
-<div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;{</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a> &lt;= 0.0 || <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">rho</a> &lt;= 0.0 || <a class="code" href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">cp</a> &lt;= 0.0) {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  }</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="comment">// Net flux divergence: (W/m^2) / (m) = W/m^3</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> flux_divergence = (F_net_top - F_net_bot) / <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a>;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="comment">// Heating rate: -(W/m^3) / (kg/m^3 * J/(kg*K)) = K/s</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="comment">// Check for NaN/Inf as defensive sanity check</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> heating = -flux_divergence / (<a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">rho</a> * <a class="code" href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">cp</a>);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordflow">if</span> (!std::isfinite(heating)) {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  }</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <span class="keywordflow">return</span> heating;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;{</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a> &lt;= 0.0 || <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">rho</a> &lt;= 0.0 || <a class="code" href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">cp</a> &lt;= 0.0) {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  }</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="comment">// Net flux divergence: (W/m^2) / (m) = W/m^3</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> flux_divergence = (F_net_top - F_net_bot) / <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a>;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="comment">// Heating rate: -(W/m^3) / (kg/m^3 * J/(kg*K)) = K/s</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="comment">// Check for NaN/Inf as defensive sanity check</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> heating = -flux_divergence / (<a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">rho</a> * <a class="code" href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">cp</a>);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordflow">if</span> (!amrex::Math::isfinite(heating)) {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  <span class="keywordflow">return</span> heating;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;}</div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:25</div></div>
 <div class="ttc" id="anamespaceWDM6SedCellScratch_html_ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:272</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_ad91cf5134671388384cd1d2b3139b7a4"><div class="ttname"><a href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">module_model_constants::cp</a></div><div class="ttdeci">real(c_double), parameter cp</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:22</div></div>
@@ -483,12 +485,12 @@ Here is the caller graph for this function:</div>
 <dl class="section note"><dt>Note</dt><dd>If tau_lw = 0, returns 1 (fully transparent). </dd>
 <dd>
 If tau_lw &gt;&gt; 1, returns ≈ 0 (fully opaque). </dd></dl>
-<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">if</span> (tau_lw &lt; 0.0) {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">return</span> 1.0;  <span class="comment">// Unphysical, but defensive</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordflow">return</span> std::exp(-tau_lw);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordflow">if</span> (tau_lw &lt; 0.0) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> 1.0;  <span class="comment">// Unphysical, but defensive</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">return</span> std::exp(-tau_lw);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__TwoStreamLW_8H.html#a154681d0926cf97507573920affa177c">compute_lw_flux_down()</a>, and <a class="el" href="ERF__TwoStreamLW_8H.html#aeee203326dce5fe74ca3e265b674b156">compute_lw_flux_up()</a>.</p>
 <div class="dynheader">
@@ -548,12 +550,12 @@ Here is the caller graph for this function:</div>
 <dl class="section note"><dt>Note</dt><dd>If T ≤ 0, returns 0 (unphysical, but defensive). </dd>
 <dd>
 For typical terrestrial temperatures (200-400 K), this ranges from ~1 W/m^2 to ~1500 W/m^2. </dd></dl>
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> &lt;= 0.0) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> &lt;= 0.0) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> * <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
 <div class="ttc" id="anamespaceRealBdyVars_html_a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79"><div class="ttname"><a href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">RealBdyVars::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:128</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__TwoStreamLW_8H.html#a154681d0926cf97507573920affa177c">compute_lw_flux_down()</a>, <a class="el" href="ERF__TwoStreamLW_8H.html#aeee203326dce5fe74ca3e265b674b156">compute_lw_flux_up()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>

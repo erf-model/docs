@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('ERF__SimplifiedSEB_8H.html',''); initR
 <p>Simplified SEB — Diagnostic mode residual computation.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;AMReX_GpuControl.H&gt;</code><br />
+<code>#include &lt;AMReX_Math.H&gt;</code><br />
 <code>#include &lt;AMReX_FArrayBox.H&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;<a class="el" href="ERF__Constants_8H_source.html">ERF_Constants.H</a>&gt;</code><br />
@@ -101,15 +102,16 @@ Include dependency graph for ERF_SimplifiedSEB.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SimplifiedSEB_8H__incl.png" border="0" usemap="#aSource_2Radiation_2TwoStream_2ERF__SimplifiedSEB_8H" alt=""/></div>
 <map name="aSource_2Radiation_2TwoStream_2ERF__SimplifiedSEB_8H" id="aSource_2Radiation_2TwoStream_2ERF__SimplifiedSEB_8H">
-<area shape="rect" title="Simplified SEB — Diagnostic mode residual computation." alt="" coords="283,5,491,47"/>
+<area shape="rect" title="Simplified SEB — Diagnostic mode residual computation." alt="" coords="371,5,579,47"/>
 <area shape="rect" title=" " alt="" coords="5,95,168,121"/>
-<area shape="rect" title=" " alt="" coords="193,95,349,121"/>
-<area shape="rect" title=" " alt="" coords="355,169,418,196"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="424,95,557,121"/>
-<area shape="rect" href="ERF__MicrophysicsConstants_8H.html" title="Physical constants and tuning parameters used only by the moisture and cloud&#45;physics code." alt="" coords="581,95,800,121"/>
-<area shape="rect" title=" " alt="" coords="443,169,501,196"/>
-<area shape="rect" title=" " alt="" coords="615,244,737,271"/>
-<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="576,169,776,196"/>
+<area shape="rect" title=" " alt="" coords="192,95,315,121"/>
+<area shape="rect" title=" " alt="" coords="339,95,495,121"/>
+<area shape="rect" title=" " alt="" coords="502,169,565,196"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="571,95,704,121"/>
+<area shape="rect" href="ERF__MicrophysicsConstants_8H.html" title="Physical constants and tuning parameters used only by the moisture and cloud&#45;physics code." alt="" coords="728,95,947,121"/>
+<area shape="rect" title=" " alt="" coords="589,169,648,196"/>
+<area shape="rect" title=" " alt="" coords="761,244,884,271"/>
+<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="723,169,923,196"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -200,7 +202,7 @@ References:</h2>
 </div><div class="memdoc">
 
 <p>Diagnose the surface energy balance residual. </p>
-<p>Computes the SEB residual from net radiative flux and turbulent/ground heat fluxes. All inputs are guarded with std::isfinite() to safely handle NaN/Inf; if any input is non-finite, returns 0.0 (safe no-op).</p>
+<p>Computes the SEB residual from net radiative flux and turbulent/ground heat fluxes. All inputs are guarded with amrex::Math::isfinite() to safely handle NaN/Inf; if any input is non-finite, returns 0.0 (safe no-op).</p>
 <p><b>GPU Safety</b>:</p><ul>
 <li>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</li>
 <li>No host-side I/O</li>
@@ -218,21 +220,21 @@ References:</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>SEB residual [W/m^2] = (sw_net + lw_net) - hfx - lh - grdflx Returns 0.0 if any input is non-finite (NaN or Inf) </dd></dl>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Guard all inputs against non-finite values (NaN, Inf)</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (!std::isfinite(sw_net) || !std::isfinite(lw_net) ||</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        !std::isfinite(hfx) || !std::isfinite(lh) || !std::isfinite(grdflx)) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> 0.0;  <span class="comment">// Safe no-op: return zero residual if any input is invalid</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Compute net radiation</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> r_net = sw_net + lw_net;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// Compute SEB residual</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> seb_residual = r_net - hfx - lh - grdflx;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> seb_residual;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Guard all inputs against non-finite values (NaN, Inf)</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (!amrex::Math::isfinite(sw_net) || !amrex::Math::isfinite(lw_net) ||</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        !amrex::Math::isfinite(hfx) || !amrex::Math::isfinite(lh) || !amrex::Math::isfinite(grdflx)) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> 0.0;  <span class="comment">// Safe no-op: return zero residual if any input is invalid</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// Compute net radiation</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> r_net = sw_net + lw_net;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Compute SEB residual</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> seb_residual = r_net - hfx - lh - grdflx;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> seb_residual;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>.</p>
@@ -298,7 +300,7 @@ Here is the caller graph for this function:</div>
 <li>L_v = 2.5e6 J/kg (latent heat of vaporization)</li>
 <li>rhor = 1000.0 kg/m^3 (water density, from ERF_Constants.H)</li>
 </ul>
-<p>All inputs are guarded with std::isfinite() to safely handle NaN/Inf; if any input is non-finite, any parameter is non-positive (d_s &lt;= 0, tau_q &lt;= 0), returns 0.0 (safe no-op).</p>
+<p>All inputs are guarded with amrex::Math::isfinite() to safely handle NaN/Inf; if any input is non-finite, any parameter is non-positive (d_s &lt;= 0, tau_q &lt;= 0), returns 0.0 (safe no-op).</p>
 <p><b>GPU Safety</b>:</p><ul>
 <li>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</li>
 <li>No host-side I/O</li>
@@ -316,28 +318,28 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Moisture tendency dq_s/dt [kg/kg/s] Returns 0.0 if any input is non-finite or any parameter is non-positive </dd></dl>
-<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="comment">// Guard all inputs against non-finite values</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span> (!std::isfinite(le) || !std::isfinite(q_s) ||</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        !std::isfinite(q_deep) || !std::isfinite(d_s) || !std::isfinite(tau_q)) {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">return</span> 0.0;  <span class="comment">// Safe no-op</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">// Validate parameter ranges</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span> (d_s &lt;= 0.0 || tau_q &lt;= 0.0) {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">return</span> 0.0;  <span class="comment">// Safe no-op for invalid parameters</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">// L_v and rhor both come from ERF_Constants.H. A local L_v here shadowed</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="comment">// the global one, and a local water density duplicated rhor.</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">// Compute tendency: -(LE / (L_v * rhor * d_s)) - (1/tau_q) * (q_s - q_deep)</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> le_term = -(le / (<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a> * <a class="code" href="ERF__MicrophysicsConstants_8H.html#ad6e28022b74cd595f282e2cc97c2c0d8">rhor</a> * d_s));</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> restore_term = (1.0 / tau_q) * (q_s - q_deep);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dq_s_dt = le_term - restore_term;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">return</span> dq_s_dt;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="comment">// Guard all inputs against non-finite values</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">if</span> (!amrex::Math::isfinite(le) || !amrex::Math::isfinite(q_s) ||</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        !amrex::Math::isfinite(q_deep) || !amrex::Math::isfinite(d_s) || !amrex::Math::isfinite(tau_q)) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">return</span> 0.0;  <span class="comment">// Safe no-op</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">// Validate parameter ranges</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">if</span> (d_s &lt;= 0.0 || tau_q &lt;= 0.0) {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">return</span> 0.0;  <span class="comment">// Safe no-op for invalid parameters</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="comment">// L_v and rhor both come from ERF_Constants.H. A local L_v here shadowed</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="comment">// the global one, and a local water density duplicated rhor.</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">// Compute tendency: -(LE / (L_v * rhor * d_s)) - (1/tau_q) * (q_s - q_deep)</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> le_term = -(le / (<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a> * <a class="code" href="ERF__MicrophysicsConstants_8H.html#ad6e28022b74cd595f282e2cc97c2c0d8">rhor</a> * d_s));</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> restore_term = (1.0 / tau_q) * (q_s - q_deep);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dq_s_dt = le_term - restore_term;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">return</span> dq_s_dt;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_aee80ef06f62b6528b776d02de062cdd5"><div class="ttname"><a href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a></div><div class="ttdeci">constexpr amrex::Real L_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:51</div></div>
 <div class="ttc" id="aERF__MicrophysicsConstants_8H_html_ad6e28022b74cd595f282e2cc97c2c0d8"><div class="ttname"><a href="ERF__MicrophysicsConstants_8H.html#ad6e28022b74cd595f282e2cc97c2c0d8">rhor</a></div><div class="ttdeci">constexpr amrex::Real rhor</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsConstants.H:39</div></div>
 </div><!-- fragment -->
@@ -400,7 +402,7 @@ Here is the caller graph for this function:</div>
 
 <p>Compute prognostic surface temperature tendency using force-restore formulation. </p>
 <p>Computes dT_s/dt from SEB residual and restoring term toward deep soil temperature: dT_s/dt = SEB_residual / C_s - (2*pi/tau) * (T_s - T_deep)</p>
-<p>All inputs are guarded with std::isfinite() to safely handle NaN/Inf; if any input is non-finite, any parameter is non-positive (C_s &lt;= 0, tau &lt;= 0), returns 0.0 (safe no-op).</p>
+<p>All inputs are guarded with amrex::Math::isfinite() to safely handle NaN/Inf; if any input is non-finite, any parameter is non-positive (C_s &lt;= 0, tau &lt;= 0), returns 0.0 (safe no-op).</p>
 <p><b>GPU Safety</b>:</p><ul>
 <li>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</li>
 <li>No host-side I/O</li>
@@ -418,25 +420,25 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Temperature tendency dT_s/dt [K/s] Returns 0.0 if any input is non-finite or any parameter is non-positive </dd></dl>
-<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// Guard all inputs against non-finite values</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (!std::isfinite(seb_residual) || !std::isfinite(t_s) ||</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        !std::isfinite(t_deep) || !std::isfinite(c_s) || !std::isfinite(tau)) {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">return</span> 0.0;  <span class="comment">// Safe no-op</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">// Validate parameter ranges</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span> (c_s &lt;= 0.0 || tau &lt;= 0.0) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">return</span> 0.0;  <span class="comment">// Safe no-op for invalid parameters</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// Compute tendency: SEB_residual / C_s - (2*pi/tau) * (T_s - T_deep)</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> seb_term = seb_residual / c_s;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> restore_term = (2.0 * <a class="code" href="ERF__NumericalConstants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> / tau) * (t_s - t_deep);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt_s_dt = seb_term - restore_term;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> dt_s_dt;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// Guard all inputs against non-finite values</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (!amrex::Math::isfinite(seb_residual) || !amrex::Math::isfinite(t_s) ||</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        !amrex::Math::isfinite(t_deep) || !amrex::Math::isfinite(c_s) || !amrex::Math::isfinite(tau)) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">return</span> 0.0;  <span class="comment">// Safe no-op</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// Validate parameter ranges</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span> (c_s &lt;= 0.0 || tau &lt;= 0.0) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">return</span> 0.0;  <span class="comment">// Safe no-op for invalid parameters</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// Compute tendency: SEB_residual / C_s - (2*pi/tau) * (T_s - T_deep)</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> seb_term = seb_residual / c_s;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> restore_term = (2.0 * <a class="code" href="ERF__NumericalConstants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> / tau) * (t_s - t_deep);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt_s_dt = seb_term - restore_term;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">return</span> dt_s_dt;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:31</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>.</p>
