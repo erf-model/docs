@@ -1,8 +1,8 @@
 var ERF__InitCustomPert__TurbulentInflow_8H =
 [
-    [ "if", "ERF__InitCustomPert__TurbulentInflow_8H.html#aeaf756a3f8a333ac6739ba67f75c15f3", null ],
+    [ "if", "ERF__InitCustomPert__TurbulentInflow_8H.html#a861f3a0e37e4f9568407b620e5776438", null ],
     [ "if", "ERF__InitCustomPert__TurbulentInflow_8H.html#afa36b585cf4468f615e2d4739bc65905", null ],
-    [ "ParallelForRNG", "ERF__InitCustomPert__TurbulentInflow_8H.html#acfb460310984e967df09e4589a11624b", null ],
+    [ "ParallelForRNG", "ERF__InitCustomPert__TurbulentInflow_8H.html#a601ebf8188e84f97ae2473249071dfc3", null ],
     [ "pp", "ERF__InitCustomPert__TurbulentInflow_8H.html#a560a8df64f1b30c30d0d100ee051a1fb", null ],
     [ "query", "ERF__InitCustomPert__TurbulentInflow_8H.html#a5dfa7762d2fa171ebc488bb4925c0c12", null ],
     [ "query", "ERF__InitCustomPert__TurbulentInflow_8H.html#a8aba4fa4aa728799e8bcd3ff115cd4c2", null ],
@@ -27,6 +27,7 @@ var ERF__InitCustomPert__TurbulentInflow_8H =
     [ "KE_0", "ERF__InitCustomPert__TurbulentInflow_8H.html#a370a8c6d8cd16bcab796b27f432af610", null ],
     [ "KE_decay_height", "ERF__InitCustomPert__TurbulentInflow_8H.html#aa7afdcd044716fc11dc4368cf956f419", null ],
     [ "KE_decay_order", "ERF__InitCustomPert__TurbulentInflow_8H.html#a9606931f6c3974abd83909feac7cdad8", null ],
+    [ "klo", "ERF__InitCustomPert__TurbulentInflow_8H.html#a0bf09411f9d81d1b592910222600fb45", null ],
     [ "pert_deltaU", "ERF__InitCustomPert__TurbulentInflow_8H.html#a9d009471e1150853fe277cbb7bec9ede", null ],
     [ "pert_deltaV", "ERF__InitCustomPert__TurbulentInflow_8H.html#a7779eabadf76ed62e14a341c9d4df0a7", null ],
     [ "pert_periods_U", "ERF__InitCustomPert__TurbulentInflow_8H.html#aa05b7d1441862703a8be2d911afdb9c5", null ],
@@ -40,6 +41,7 @@ var ERF__InitCustomPert__TurbulentInflow_8H =
     [ "T_0_Pert_Mag", "ERF__InitCustomPert__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769", null ],
     [ "U_0", "ERF__InitCustomPert__TurbulentInflow_8H.html#a7f74e9554c1ab66998e1319960f1e82c", null ],
     [ "U_0_Pert_Mag", "ERF__InitCustomPert__TurbulentInflow_8H.html#a5bf801819283c236eabaa9d973db9f28", null ],
+    [ "use_eb", "ERF__InitCustomPert__TurbulentInflow_8H.html#aed00ad22578e3e1116178a2d586f95b6", null ],
     [ "V_0", "ERF__InitCustomPert__TurbulentInflow_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb", null ],
     [ "V_0_Pert_Mag", "ERF__InitCustomPert__TurbulentInflow_8H.html#ad2836cac7bb2dd93a45a998b431b5b69", null ],
     [ "W_0", "ERF__InitCustomPert__TurbulentInflow_8H.html#acd69dd589ed4831828bc6de35ee45844", null ],

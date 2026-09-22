@@ -91,7 +91,8 @@ $(document).ready(function(){initNavTree('ERF__CheckpointSurfaceTemperature_8H.h
 <div class="title">ERF_CheckpointSurfaceTemperature.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;istream&gt;</code><br />
+<div class="textblock"><code>#include &lt;cctype&gt;</code><br />
+<code>#include &lt;istream&gt;</code><br />
 <code>#include &lt;ostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;AMReX_PlotFileUtil.H&gt;</code><br />
@@ -101,12 +102,13 @@ Include dependency graph for ERF_CheckpointSurfaceTemperature.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__CheckpointSurfaceTemperature_8H__incl.png" border="0" usemap="#aSource_2IO_2ERF__CheckpointSurfaceTemperature_8H" alt=""/></div>
 <map name="aSource_2IO_2ERF__CheckpointSurfaceTemperature_8H" id="aSource_2IO_2ERF__CheckpointSurfaceTemperature_8H">
-<area shape="rect" title=" " alt="" coords="135,5,329,47"/>
-<area shape="rect" title=" " alt="" coords="5,95,77,121"/>
-<area shape="rect" title=" " alt="" coords="102,95,178,121"/>
-<area shape="rect" title=" " alt="" coords="203,95,261,121"/>
-<area shape="rect" title=" " alt="" coords="286,95,447,121"/>
-<area shape="rect" title=" " alt="" coords="472,95,600,121"/>
+<area shape="rect" title=" " alt="" coords="179,5,372,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,71,121"/>
+<area shape="rect" title=" " alt="" coords="95,95,167,121"/>
+<area shape="rect" title=" " alt="" coords="192,95,268,121"/>
+<area shape="rect" title=" " alt="" coords="293,95,351,121"/>
+<area shape="rect" title=" " alt="" coords="376,95,537,121"/>
+<area shape="rect" title=" " alt="" coords="562,95,690,121"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -133,6 +135,16 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4a44766ce89c0a6bd59c7e1860e782fc78">erf_checkpoint_surface_temperature::UnknownVersion</a>
  }</td></tr>
 <tr class="separator:a768e2f06d02c852b77a92e1c3f3a2bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c99be1058301fec83ca1f2e9842aa7e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__checkpoint__surface__temperature.html#a5c99be1058301fec83ca1f2e9842aa7e">erf_checkpoint_surface_temperature::LegacyInitType</a> { <a class="el" href="namespaceerf__checkpoint__surface__temperature.html#a5c99be1058301fec83ca1f2e9842aa7ead82a7a3abd42ab64290b196adc9863be">erf_checkpoint_surface_temperature::WRFInput</a>
+, <a class="el" href="namespaceerf__checkpoint__surface__temperature.html#a5c99be1058301fec83ca1f2e9842aa7eaeaa694fdc691d84a487ba196865b03ee">erf_checkpoint_surface_temperature::Metgrid</a>
+, <a class="el" href="namespaceerf__checkpoint__surface__temperature.html#a5c99be1058301fec83ca1f2e9842aa7ea88183b946cc5f0e8c96b2e66e1c74a7e">erf_checkpoint_surface_temperature::Unknown</a>
+ }</td></tr>
+<tr class="separator:a5c99be1058301fec83ca1f2e9842aa7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d05f2030bed11f067f65f171d13f514"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__checkpoint__surface__temperature.html#a8d05f2030bed11f067f65f171d13f514">erf_checkpoint_surface_temperature::LegacySurfaceTemperatureCompatibility</a> { <a class="el" href="namespaceerf__checkpoint__surface__temperature.html#a8d05f2030bed11f067f65f171d13f514a923b5fd7dc0ac6f70f77bcc7ec3f5546">erf_checkpoint_surface_temperature::Compatible</a>
+, <a class="el" href="namespaceerf__checkpoint__surface__temperature.html#a8d05f2030bed11f067f65f171d13f514a1442bda6d3347fd202d397c8248f37ad">erf_checkpoint_surface_temperature::UnsafeMetgrid</a>
+, <a class="el" href="namespaceerf__checkpoint__surface__temperature.html#a8d05f2030bed11f067f65f171d13f514aec8e6e30a6f75ffb6b9ec91a76ca5239">erf_checkpoint_surface_temperature::UnknownProvenance</a>
+ }</td></tr>
+<tr class="separator:a8d05f2030bed11f067f65f171d13f514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -140,10 +152,14 @@ Functions</h2></td></tr>
 <tr class="separator:ae175f2698846df94ca3d25d853be6a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bd1bbd5b9f06eeb834c6f7bc8dbd6bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__checkpoint__surface__temperature.html#a4bd1bbd5b9f06eeb834c6f7bc8dbd6bf">erf_checkpoint_surface_temperature::first_legacy_surface_temperature_level</a> (const std::string &amp;checkpointname, const int finest_level)</td></tr>
 <tr class="separator:a4bd1bbd5b9f06eeb834c6f7bc8dbd6bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f96e51e47eaa12021104e7376442b49"><td class="memItemLeft" align="right" valign="top">LegacyInitType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__checkpoint__surface__temperature.html#a0f96e51e47eaa12021104e7376442b49">erf_checkpoint_surface_temperature::parse_legacy_init_type_value</a> (std::string value)</td></tr>
+<tr class="separator:a0f96e51e47eaa12021104e7376442b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04ef199886242e32ed4c9b84e002ae1f"><td class="memItemLeft" align="right" valign="top">ContractReadStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__checkpoint__surface__temperature.html#a04ef199886242e32ed4c9b84e002ae1f">erf_checkpoint_surface_temperature::read_contract_version</a> (std::istream &amp;input, int &amp;version)</td></tr>
 <tr class="separator:a04ef199886242e32ed4c9b84e002ae1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a659dd3a244c2404f0cd4e199fd99d9d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__checkpoint__surface__temperature.html#a659dd3a244c2404f0cd4e199fd99d9d1">erf_checkpoint_surface_temperature::legacy_metgrid_surface_temperature_is_unsafe</a> (const bool marker_present, const bool is_metgrid, const bool has_sst, const bool has_tsk)</td></tr>
-<tr class="separator:a659dd3a244c2404f0cd4e199fd99d9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa82796f3196b271cb8bba2942abb8112"><td class="memItemLeft" align="right" valign="top">LegacyInitType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__checkpoint__surface__temperature.html#aa82796f3196b271cb8bba2942abb8112">erf_checkpoint_surface_temperature::parse_legacy_init_type_from_job_info</a> (std::istream &amp;input)</td></tr>
+<tr class="separator:aa82796f3196b271cb8bba2942abb8112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6d6015b08b0d7b3b1c8f46437a440fb"><td class="memItemLeft" align="right" valign="top">LegacySurfaceTemperatureCompatibility&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__checkpoint__surface__temperature.html#af6d6015b08b0d7b3b1c8f46437a440fb">erf_checkpoint_surface_temperature::classify_legacy_surface_temperature_checkpoint</a> (const bool marker_present, const bool has_surface_arrays, const LegacyInitType legacy_init_type)</td></tr>
+<tr class="separator:af6d6015b08b0d7b3b1c8f46437a440fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>

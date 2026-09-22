@@ -8,6 +8,7 @@ var ERF__NumericalConstants_8H =
     [ "one", "ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf", null ],
     [ "PI", "ERF__NumericalConstants_8H.html#a988c4efd6fd0d855e241e77a73191428", null ],
     [ "PIoTwo", "ERF__NumericalConstants_8H.html#ad51e17db99d11b190b2b57a23a518f7e", null ],
+    [ "real_eps", "ERF__NumericalConstants_8H.html#a2c48ae0f73264d2e88e15a0a587a370c", null ],
     [ "third", "ERF__NumericalConstants_8H.html#add6073d12dffaf7f237e9bc83a3419fb", null ],
     [ "three", "ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd", null ],
     [ "two", "ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a", null ],

@@ -1,5 +1,15 @@
 var NAVTREEINDEX2 =
 {
+"ERF__DiffStruct_8H.html":[3,0,1,3,4],
+"ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735":[3,0,1,3,4,1],
+"ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6adf97f83acf6453d4a6a4b1070f3754":[3,0,1,3,4,1,0],
+"ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288":[3,0,1,3,4,1,2],
+"ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255":[3,0,1,3,4,1,1],
+"ERF__DiffStruct_8H_source.html":[3,0,1,3,4],
+"ERF__DiffusionSrcForMom_8cpp.html":[3,0,1,5,14],
+"ERF__DiffusionSrcForMom_8cpp.html#a8de3cb2bc86712b2d639377af2d25ef6":[3,0,1,5,14,0],
+"ERF__DiffusionSrcForMom__EB_8cpp.html":[3,0,1,5,15],
+"ERF__DiffusionSrcForMom__EB_8cpp.html#a217f28098691e31e956a8d7d8d0bc555":[3,0,1,5,15,1],
 "ERF__DiffusionSrcForMom__EB_8cpp.html#af649d1fa34f4a931364e62ed1dff776a":[3,0,1,5,15,0],
 "ERF__DiffusionSrcForState__EB_8cpp.html":[3,0,1,5,16],
 "ERF__DiffusionSrcForState__EB_8cpp.html#aecdd18bae29758175ea67c19a2e1c9e9":[3,0,1,5,16,0],
@@ -239,15 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__IBSEBSolar_8H_source.html":[3,0,1,7,8],
 "ERF__IBSEB_8cpp.html":[3,0,1,7,2],
 "ERF__IceFall_8cpp.html":[3,0,1,13,4,1],
-"ERF__ImmersedForcing_8H.html":[3,0,1,20,10],
-"ERF__ImmersedForcing_8H.html#a0b897e7f908d8820eb9873408bcd11ce":[3,0,1,20,10,6],
-"ERF__ImmersedForcing_8H.html#a410bd82a3801bed2d698942838525a4a":[3,0,1,20,10,5],
-"ERF__ImmersedForcing_8H.html#a48a6dd3d87339415d807e7e1beeb5e77":[3,0,1,20,10,0],
-"ERF__ImmersedForcing_8H.html#a5a07a91b5e726458d5adea03f3513b8d":[3,0,1,20,10,2],
-"ERF__ImmersedForcing_8H.html#a6d34ad92f5677e43352f16e905b409e9":[3,0,1,20,10,7],
-"ERF__ImmersedForcing_8H.html#a7b4b5289c17f96f1479e879cb8366d26":[3,0,1,20,10,4],
-"ERF__ImmersedForcing_8H.html#a934c28f2c60e0aabe8e268218e9fd91c":[3,0,1,20,10,1],
-"ERF__ImmersedForcing_8H.html#ae9c21f2cc3bc2c7baf91605e0effb6cc":[3,0,1,20,10,3],
-"ERF__ImmersedForcing_8H_source.html":[3,0,1,20,10],
-"ERF__ImmersedForcing_8cpp.html":[3,0,1,20,9]
+"ERF__ImmersedForcing_8H.html":[3,0,1,20,10]
 };

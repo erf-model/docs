@@ -1,9 +1,9 @@
 var ERF__InitCustomPert__ABL_8H =
 [
     [ "if", "ERF__InitCustomPert__ABL_8H.html#a6c46a69128f452296073c117eba76e1d", null ],
-    [ "if", "ERF__InitCustomPert__ABL_8H.html#aeaf756a3f8a333ac6739ba67f75c15f3", null ],
+    [ "if", "ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438", null ],
     [ "if", "ERF__InitCustomPert__ABL_8H.html#afa36b585cf4468f615e2d4739bc65905", null ],
-    [ "ParallelForRNG", "ERF__InitCustomPert__ABL_8H.html#ab827dfc1dec64ec7f4b030f313aa28f5", null ],
+    [ "ParallelForRNG", "ERF__InitCustomPert__ABL_8H.html#ab98ef496b5076d2ebe5f7014f7e202ec", null ],
     [ "pp_prob", "ERF__InitCustomPert__ABL_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb", null ],
     [ "query", "ERF__InitCustomPert__ABL_8H.html#a904c8bb11b89d16604c707aeeacc3337", null ],
     [ "query", "ERF__InitCustomPert__ABL_8H.html#a66ffc27047f5d767b19fe4bb0a216192", null ],
@@ -33,6 +33,7 @@ var ERF__InitCustomPert__ABL_8H =
     [ "KE_0", "ERF__InitCustomPert__ABL_8H.html#a370a8c6d8cd16bcab796b27f432af610", null ],
     [ "KE_decay_height", "ERF__InitCustomPert__ABL_8H.html#aa7afdcd044716fc11dc4368cf956f419", null ],
     [ "KE_decay_order", "ERF__InitCustomPert__ABL_8H.html#a9606931f6c3974abd83909feac7cdad8", null ],
+    [ "klo", "ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45", null ],
     [ "pert_deltaT", "ERF__InitCustomPert__ABL_8H.html#aedf1b659dde25e03fb554d7607ecae72", null ],
     [ "pert_deltaU", "ERF__InitCustomPert__ABL_8H.html#a9d009471e1150853fe277cbb7bec9ede", null ],
     [ "pert_deltaV", "ERF__InitCustomPert__ABL_8H.html#a7779eabadf76ed62e14a341c9d4df0a7", null ],
@@ -53,6 +54,7 @@ var ERF__InitCustomPert__ABL_8H =
     [ "T_0_Pert_Mag", "ERF__InitCustomPert__ABL_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769", null ],
     [ "temperature_hash_comp", "ERF__InitCustomPert__ABL_8H.html#a66b1fed2940dc2f9feb3dd2c1b1a76b5", null ],
     [ "tfac", "ERF__InitCustomPert__ABL_8H.html#a8b51796f6f3292f27987e55f034f2d29", null ],
+    [ "use_eb", "ERF__InitCustomPert__ABL_8H.html#aed00ad22578e3e1116178a2d586f95b6", null ],
     [ "use_moisture", "ERF__InitCustomPert__ABL_8H.html#a33262a65bbaa6911bb4b2d4a38f2168a", null ],
     [ "xc", "ERF__InitCustomPert__ABL_8H.html#ae5450596e2e56e7d0353b95763c4a722", null ],
     [ "yc", "ERF__InitCustomPert__ABL_8H.html#a4c151aeab700260c0ef118ec07764346", null ],

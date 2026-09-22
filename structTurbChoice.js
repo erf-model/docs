@@ -36,7 +36,6 @@ var structTurbChoice =
     [ "l_g_max", "structTurbChoice.html#a499f022a98e45d31a9eb83c27d0d4e65", null ],
     [ "les_type", "structTurbChoice.html#a873127194cdbde39ea20a15679b04486", null ],
     [ "mix_isotropic", "structTurbChoice.html#a7328d6742c4f1da1659f0b4332de235b", null ],
-    [ "mrf_moistvars", "structTurbChoice.html#a62f3441d6383a1781c7a3312d3c20ded", null ],
     [ "pbl_blend_c_max", "structTurbChoice.html#a6e6c9d129b441cb7ac784180143567bd", null ],
     [ "pbl_blend_cs", "structTurbChoice.html#a644e9df40861d026841f64357b0a53b9", null ],
     [ "pbl_blend_length", "structTurbChoice.html#a1b969b4c89785d27a46f6112ff28f12b", null ],

@@ -52,10 +52,7 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     ] ],
     [ "ERF_SurfaceDiagnosticSource.H", "ERF__SurfaceDiagnosticSource_8H.html", "ERF__SurfaceDiagnosticSource_8H" ],
     [ "ERF_SurfaceLayer.cpp", "ERF__SurfaceLayer_8cpp.html", null ],
-    [ "ERF_SurfaceLayer.H", "ERF__SurfaceLayer_8H.html", [
-      [ "SurfaceLayer", "classSurfaceLayer.html", "classSurfaceLayer" ],
-      [ "PBLHColumns", "structSurfaceLayer_1_1PBLHColumns.html", "structSurfaceLayer_1_1PBLHColumns" ]
-    ] ],
+    [ "ERF_SurfaceLayer.H", "ERF__SurfaceLayer_8H.html", "ERF__SurfaceLayer_8H" ],
     [ "ERF_SurfaceLayerStress.H", "ERF__SurfaceLayerStress_8H.html", "ERF__SurfaceLayerStress_8H" ],
     [ "ERF_TimeInterpolatedData.H", "ERF__TimeInterpolatedData_8H.html", [
       [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ]
