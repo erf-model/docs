@@ -388,6 +388,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af67d3faefab8c66484fef9f76f7250eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a348849a5ec30756b97f7a50e10cdaad2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a348849a5ec30756b97f7a50e10cdaad2">WriteGenericPlotfileHeaderWithTerrain</a> (std::ostream &amp;HeaderFile, int nlevels, const amrex::Vector&lt; amrex::BoxArray &gt; &amp;bArray, const amrex::Vector&lt; std::string &gt; &amp;varnames, const amrex::Vector&lt; amrex::Geometry &gt; &amp;my_geom, double time, const amrex::Vector&lt; int &gt; &amp;level_steps, const amrex::Vector&lt; amrex::IntVect &gt; &amp;my_ref_ratio, const std::string &amp;versionName, const std::string &amp;levelPrefix, const std::string &amp;mfPrefix) const</td></tr>
 <tr class="separator:a348849a5ec30756b97f7a50e10cdaad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a093ca0c9d6a4188ab7cd21560d8feec9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a093ca0c9d6a4188ab7cd21560d8feec9">BuildPlot3DScratch</a> (const amrex::Vector&lt; std::string &gt; &amp;plot_var_names, <a class="el" href="structERF_1_1Plot3DScratch.html">Plot3DScratch</a> &amp;scratch, int max_lev=-1, bool sync_solution=true)</td></tr>
+<tr class="separator:a093ca0c9d6a4188ab7cd21560d8feec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29929644893f3e44beb5ed9403cbdaac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a29929644893f3e44beb5ed9403cbdaac">erf_enforce_hse</a> (int lev, amrex::MultiFab &amp;dens, amrex::MultiFab &amp;pres, amrex::MultiFab &amp;pi, amrex::MultiFab &amp;th, amrex::MultiFab &amp;qv, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_cc)</td></tr>
 <tr class="separator:a29929644893f3e44beb5ed9403cbdaac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2908bcd920ab5e3fef171a37302853ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec">init_from_input_sounding</a> (int lev)</td></tr>
@@ -617,8 +619,6 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a5fa03e1202cf07d822b399a972f967ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7758f75dc7c9029eddc4c58ac0567654"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a7758f75dc7c9029eddc4c58ac0567654">appendPlotVariables</a> (const std::string &amp;pp_plot_var_names, amrex::Vector&lt; std::string &gt; &amp;plot_var_names)</td></tr>
 <tr class="separator:a7758f75dc7c9029eddc4c58ac0567654"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a093ca0c9d6a4188ab7cd21560d8feec9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a093ca0c9d6a4188ab7cd21560d8feec9">BuildPlot3DScratch</a> (const amrex::Vector&lt; std::string &gt; &amp;plot_var_names, <a class="el" href="structERF_1_1Plot3DScratch.html">Plot3DScratch</a> &amp;scratch, int max_lev=-1, bool sync_solution=true)</td></tr>
-<tr class="separator:a093ca0c9d6a4188ab7cd21560d8feec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28f17564c3c43617c5f7e3a309c1f91a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a28f17564c3c43617c5f7e3a309c1f91a">init_stations</a> ()</td></tr>
 <tr class="separator:a28f17564c3c43617c5f7e3a309c1f91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca5c5a0bb4b5404a68e51411e7125e96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#aca5c5a0bb4b5404a68e51411e7125e96">resolve_station_positions</a> ()</td></tr>
@@ -3942,7 +3942,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    }</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
-<div class="ttc" id="aclassERF_html_a59df30e7a5537c8543bb00772bd98b58"><div class="ttname"><a href="classERF.html#a59df30e7a5537c8543bb00772bd98b58">ERF::pp_prefix</a></div><div class="ttdeci">std::string pp_prefix</div><div class="ttdef"><b>Definition:</b> ERF.H:804</div></div>
+<div class="ttc" id="aclassERF_html_a59df30e7a5537c8543bb00772bd98b58"><div class="ttname"><a href="classERF.html#a59df30e7a5537c8543bb00772bd98b58">ERF::pp_prefix</a></div><div class="ttdeci">std::string pp_prefix</div><div class="ttdef"><b>Definition:</b> ERF.H:830</div></div>
 <div class="ttc" id="aclassERF_html_a6caac25d37d358096103bbc14013edbc"><div class="ttname"><a href="classERF.html#a6caac25d37d358096103bbc14013edbc">ERF::appendPlot3DVariables</a></div><div class="ttdeci">void appendPlot3DVariables(const amrex::Vector&lt; std::string &gt; &amp;plot_var_names, amrex::Vector&lt; std::string &gt; &amp;a_plot_var_names)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile.cpp:219</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -4227,9 +4227,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;    }</div>
 <div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;}</div>
 <div class="ttc" id="aclassERF_html_a0443022f1256fcff9e645ce43a4f046b"><div class="ttname"><a href="classERF.html#a0443022f1256fcff9e645ce43a4f046b">ERF::GetOceanToAtmosSurfaceLayout</a></div><div class="ttdeci">void GetOceanToAtmosSurfaceLayout(amrex::BoxArray &amp;ba, amrex::DistributionMapping &amp;dm)</div><div class="ttdef"><b>Definition:</b> ERF_to_REMORA.cpp:263</div></div>
-<div class="ttc" id="aclassERF_html_a6cccf0325742d782db1464f0c16d1cd4"><div class="ttname"><a href="classERF.html#a6cccf0325742d782db1464f0c16d1cd4">ERF::m_coupled_sst_valid</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::iMultiFab &gt; m_coupled_sst_valid</div><div class="ttdef"><b>Definition:</b> ERF.H:917</div></div>
-<div class="ttc" id="aclassERF_html_acc3d18c8659734e80a5307d5cab421f9"><div class="ttname"><a href="classERF.html#acc3d18c8659734e80a5307d5cab421f9">ERF::m_warned_coupled_sst_declined</a></div><div class="ttdeci">bool m_warned_coupled_sst_declined</div><div class="ttdef"><b>Definition:</b> ERF.H:920</div></div>
-<div class="ttc" id="aclassERF_html_af912226e3a21599be45ea6d7ddcbccfa"><div class="ttname"><a href="classERF.html#af912226e3a21599be45ea6d7ddcbccfa">ERF::m_coupled_sst</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; m_coupled_sst</div><div class="ttdef"><b>Definition:</b> ERF.H:916</div></div>
+<div class="ttc" id="aclassERF_html_a6cccf0325742d782db1464f0c16d1cd4"><div class="ttname"><a href="classERF.html#a6cccf0325742d782db1464f0c16d1cd4">ERF::m_coupled_sst_valid</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::iMultiFab &gt; m_coupled_sst_valid</div><div class="ttdef"><b>Definition:</b> ERF.H:943</div></div>
+<div class="ttc" id="aclassERF_html_acc3d18c8659734e80a5307d5cab421f9"><div class="ttname"><a href="classERF.html#acc3d18c8659734e80a5307d5cab421f9">ERF::m_warned_coupled_sst_declined</a></div><div class="ttdeci">bool m_warned_coupled_sst_declined</div><div class="ttdef"><b>Definition:</b> ERF.H:946</div></div>
+<div class="ttc" id="aclassERF_html_af912226e3a21599be45ea6d7ddcbccfa"><div class="ttname"><a href="classERF.html#af912226e3a21599be45ea6d7ddcbccfa">ERF::m_coupled_sst</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; m_coupled_sst</div><div class="ttdef"><b>Definition:</b> ERF.H:942</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:15</div></div>
 <div class="ttc" id="astructSolverChoice_html_a00dd4f3a673552e9a4e43f1151b9f568"><div class="ttname"><a href="structSolverChoice.html#a00dd4f3a673552e9a4e43f1151b9f568">SolverChoice::use_coupled_sst</a></div><div class="ttdeci">bool use_coupled_sst</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:2250</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -4659,9 +4659,6 @@ Here is the call graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ERF::BuildPlot3DScratch </td>
@@ -4693,11 +4690,6 @@ Here is the call graph for this function:</div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;{</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keyword">auto</span>&amp; mf_cc_vel = scratch.mf_cc_vel;</div>
@@ -6879,9 +6871,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <a class="code" href="classERF.html#ac02c9c39a5ac4d557b0021f5a49c7f8f">m_driver_uses_two_way_coupling</a> = use_two_way_coupling;</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <a class="code" href="classERF.html#af82e90fba867f0110fb8d79b369547c1">m_driver_atm2ocn_uses_state_contract</a> = use_state_contract;</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div>
-<div class="ttc" id="aclassERF_html_ab9ff1959cb6114ed469666186c650cb8"><div class="ttname"><a href="classERF.html#ab9ff1959cb6114ed469666186c650cb8">ERF::m_driver_has_atm2ocn_coupling</a></div><div class="ttdeci">bool m_driver_has_atm2ocn_coupling</div><div class="ttdef"><b>Definition:</b> ERF.H:907</div></div>
-<div class="ttc" id="aclassERF_html_ac02c9c39a5ac4d557b0021f5a49c7f8f"><div class="ttname"><a href="classERF.html#ac02c9c39a5ac4d557b0021f5a49c7f8f">ERF::m_driver_uses_two_way_coupling</a></div><div class="ttdeci">bool m_driver_uses_two_way_coupling</div><div class="ttdef"><b>Definition:</b> ERF.H:908</div></div>
-<div class="ttc" id="aclassERF_html_af82e90fba867f0110fb8d79b369547c1"><div class="ttname"><a href="classERF.html#af82e90fba867f0110fb8d79b369547c1">ERF::m_driver_atm2ocn_uses_state_contract</a></div><div class="ttdeci">bool m_driver_atm2ocn_uses_state_contract</div><div class="ttdef"><b>Definition:</b> ERF.H:909</div></div>
+<div class="ttc" id="aclassERF_html_ab9ff1959cb6114ed469666186c650cb8"><div class="ttname"><a href="classERF.html#ab9ff1959cb6114ed469666186c650cb8">ERF::m_driver_has_atm2ocn_coupling</a></div><div class="ttdeci">bool m_driver_has_atm2ocn_coupling</div><div class="ttdef"><b>Definition:</b> ERF.H:933</div></div>
+<div class="ttc" id="aclassERF_html_ac02c9c39a5ac4d557b0021f5a49c7f8f"><div class="ttname"><a href="classERF.html#ac02c9c39a5ac4d557b0021f5a49c7f8f">ERF::m_driver_uses_two_way_coupling</a></div><div class="ttdeci">bool m_driver_uses_two_way_coupling</div><div class="ttdef"><b>Definition:</b> ERF.H:934</div></div>
+<div class="ttc" id="aclassERF_html_af82e90fba867f0110fb8d79b369547c1"><div class="ttname"><a href="classERF.html#af82e90fba867f0110fb8d79b369547c1">ERF::m_driver_atm2ocn_uses_state_contract</a></div><div class="ttdeci">bool m_driver_atm2ocn_uses_state_contract</div><div class="ttdef"><b>Definition:</b> ERF.H:935</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -16652,7 +16644,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l03838"></a><span class="lineno"> 3838</span>&#160;    }</div>
 <div class="line"><a name="l03839"></a><span class="lineno"> 3839</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l03840"></a><span class="lineno"> 3840</span>&#160;}</div>
-<div class="ttc" id="aclassERF_html_a8218d54fb42afcaf603fc79f8d315077"><div class="ttname"><a href="classERF.html#a8218d54fb42afcaf603fc79f8d315077">ERF::user_specified_inputs</a></div><div class="ttdeci">std::set&lt; std::string &gt; user_specified_inputs</div><div class="ttdef"><b>Definition:</b> ERF.H:812</div></div>
+<div class="ttc" id="aclassERF_html_a8218d54fb42afcaf603fc79f8d315077"><div class="ttname"><a href="classERF.html#a8218d54fb42afcaf603fc79f8d315077">ERF::user_specified_inputs</a></div><div class="ttdeci">std::set&lt; std::string &gt; user_specified_inputs</div><div class="ttdef"><b>Definition:</b> ERF.H:838</div></div>
 </div><!-- fragment -->
 </div>
 </div>
