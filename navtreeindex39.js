@@ -1,6 +1,5 @@
 var NAVTREEINDEX39 =
 {
-"structSAMPrimitiveCell.html#a513c67e1a3f11a9295da81b56605c71d":[2,0,116,1],
 "structSAMPrimitiveCell.html#a68f038fd03dc538e50bff64b9e42628e":[2,0,116,9],
 "structSAMPrimitiveCell.html#a7b31d1dedcf2db24f83a383f0f10f3c8":[2,0,116,11],
 "structSAMPrimitiveCell.html#a7d06dfbfbffe18eb0540dc33d4253059":[2,0,116,5],
@@ -249,5 +248,6 @@ var NAVTREEINDEX39 =
 "structShocRuntimeOptions.html#a487c81ee3eb35946163ba760996311cc":[2,0,136,35],
 "structShocRuntimeOptions.html#a4e22ebcbb77314e6b92462bca22878fc":[2,0,136,11],
 "structShocRuntimeOptions.html#a4f3f1842fc6deb790ad9ddd79e317b21":[2,0,136,28],
-"structShocRuntimeOptions.html#a59316dca37611807bcdda91243f917ba":[2,0,136,16]
+"structShocRuntimeOptions.html#a59316dca37611807bcdda91243f917ba":[2,0,136,16],
+"structShocRuntimeOptions.html#a5c9fc07fda806629e01a1767447de278":[2,0,136,2]
 };

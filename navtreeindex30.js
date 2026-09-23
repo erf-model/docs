@@ -1,6 +1,5 @@
 var NAVTREEINDEX30 =
 {
-"dir_bdd53b4ab41f9298767ca9bc7bc670ad.html":[3,0,1,24,3],
 "dir_c0ecaa2a95c53166943329f844e22402.html":[3,0,1,22],
 "dir_c5966e4c77938253f8e5309ef0179056.html":[3,0,1,16],
 "dir_c8749696970aa4fa13f489a2933a5716.html":[3,0,1,13,4],
@@ -61,8 +60,8 @@ var NAVTREEINDEX30 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -189,8 +188,8 @@ var NAVTREEINDEX30 =
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,9,0,1],
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,9,0,0],
 "interfacemodule__libmassv_1_1vsqrt.html":[2,0,9,1],
-"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,9,1,0],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,9,1,1],
+"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,9,1,0],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,9,1,3],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,9,1,2],
 "main_8cpp.html":[3,0,1,38],
@@ -249,5 +248,6 @@ var NAVTREEINDEX30 =
 "namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7":[1,0,28,2],
 "namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0":[1,0,28,7],
 "namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58":[1,0,28,4],
-"namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656":[1,0,28,1]
+"namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656":[1,0,28,1],
+"namespaceHSEutils.html#aace33d14958f235a111e6cead400a61e":[1,0,28,16]
 };

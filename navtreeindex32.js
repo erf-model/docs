@@ -1,6 +1,5 @@
 var NAVTREEINDEX32 =
 {
-"namespaceerf__problem__dispatch.html":[1,0,19],
 "namespaceerf__problem__dispatch.html#a084bccc2b3a5b2dacd15f6ac65355034":[1,0,19,1],
 "namespaceerf__problem__dispatch.html#a96a71506ff56c48e90646db1761713f7":[1,0,19,0],
 "namespaceerf__problem__dispatch.html#a96a71506ff56c48e90646db1761713f7a6adf97f83acf6453d4a6a4b1070f3754":[1,0,19,0,0],
@@ -188,8 +187,8 @@ var NAVTREEINDEX32 =
 "namespacemembers_type.html":[1,1,3],
 "namespacemembers_u.html":[1,1,0,19],
 "namespacemembers_v.html":[1,1,0,20],
-"namespacemembers_vars.html":[1,1,2,0],
 "namespacemembers_vars.html":[1,1,2],
+"namespacemembers_vars.html":[1,1,2,0],
 "namespacemembers_vars_b.html":[1,1,2,1],
 "namespacemembers_vars_c.html":[1,1,2,2],
 "namespacemembers_vars_d.html":[1,1,2,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX32 =
 "namespacemodule__model__constants.html#a42f0f80d87715d7fe6e73e57cfa700d2":[1,0,44,56],
 "namespacemodule__model__constants.html#a438907911bddbb24cab5e76b7a871a73":[1,0,44,61],
 "namespacemodule__model__constants.html#a4ad772736a7aaecbec35eb9f99723896":[1,0,44,18],
-"namespacemodule__model__constants.html#a4c9794a33c7f6a5fb1074690b5f64cbd":[1,0,44,91]
+"namespacemodule__model__constants.html#a4c9794a33c7f6a5fb1074690b5f64cbd":[1,0,44,91],
+"namespacemodule__model__constants.html#a4fdb9d2ec61d6894ec20f71687ad84c4":[1,0,44,57]
 };

@@ -374,7 +374,6 @@ var classERF =
     [ "last_subvol_step", "classERF.html#abcbf74ff3cd7505ac39e0b3dfa219730", null ],
     [ "last_subvol_time", "classERF.html#a480dac736d5510dffb1a3c4f6ce03ad1", null ],
     [ "lat_m", "classERF.html#aec0145fc1c92b03f63475bbbc67fd241", null ],
-    [ "latlon_are_edge_staggered", "classERF.html#a0d69a27584c4719a3131e1f26959faf1", null ],
     [ "line_sampler", "classERF.html#aeec380ce3d61d2d12bb1deb8796701a9", null ],
     [ "line_sampling_interval", "classERF.html#ae2f5166286304c4cc2b5355a94656ab9", null ],
     [ "line_sampling_per", "classERF.html#a52cf802f9132dffb9d74aa0b32f2af0f", null ],

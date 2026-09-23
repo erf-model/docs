@@ -582,18 +582,22 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            <a class="code" href="classNOAHMP.html#a3c66d1a1ea05dc92935b09dabb34837c">read_results</a>(mfi, blk, bx, gbx, cons_in);</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        }</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <span class="comment">// Advance the snapshots now that this call&#39;s RAINBL/SR have been consumed.</span></div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <a class="code" href="classNOAHMP.html#aecc70baf8cee5acdcda4c957d3894719">advance_precip_snapshots</a>(lev, precip);</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        <span class="comment">// Report any cells the guards clamped / rescaled (never silent).</span></div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <a class="code" href="classNOAHMP.html#a760c1a92eca943f5896533f04e37a76a">report_precip_diagnostics</a>(lev, clamped_cells, invariant_cells);</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> ivar = 0; ivar &lt; <a class="code" href="namespaceLsmFlux__NOAHMP.html#a1ecc2b9a0f1afa9b596c755beca94fb4a95d7201295c651f503c14a90d07916f5">LsmFlux_NOAHMP::NumVars</a>; ++ivar) {</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[ivar]-&gt;FillBoundary(<a class="code" href="classNOAHMP.html#af06273a8838563fd46d42e86032d795f">m_geom</a>.periodicity());</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        }</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        Print () &lt;&lt; <span class="stringliteral">&quot;Noah-MP driver at level &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; completed&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    }</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;}</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <span class="comment">// Retire the firing index only after every block has consumed it, so the first</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="comment">// firing reports ITIMESTEP == 1 and reaches Noah-MP&#39;s first-call init (#3618).</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        <a class="code" href="classNOAHMP.html#a859bc0849345b3752b2bc94a7f858333">m_itimestep</a> += 1;   <span class="comment">// once per firing, in lockstep on every rank</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="comment">// Advance the snapshots now that this call&#39;s RAINBL/SR have been consumed.</span></div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <a class="code" href="classNOAHMP.html#aecc70baf8cee5acdcda4c957d3894719">advance_precip_snapshots</a>(lev, precip);</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        <span class="comment">// Report any cells the guards clamped / rescaled (never silent).</span></div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <a class="code" href="classNOAHMP.html#a760c1a92eca943f5896533f04e37a76a">report_precip_diagnostics</a>(lev, clamped_cells, invariant_cells);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> ivar = 0; ivar &lt; <a class="code" href="namespaceLsmFlux__NOAHMP.html#a1ecc2b9a0f1afa9b596c755beca94fb4a95d7201295c651f503c14a90d07916f5">LsmFlux_NOAHMP::NumVars</a>; ++ivar) {</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[ivar]-&gt;FillBoundary(<a class="code" href="classNOAHMP.html#af06273a8838563fd46d42e86032d795f">m_geom</a>.periodicity());</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        }</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        Print () &lt;&lt; <span class="stringliteral">&quot;Noah-MP driver at level &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; completed&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    }</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:45</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:75</div></div>
 <div class="ttc" id="aclassNOAHMP_html_a312d74035627fd45feba087875ed0ca1"><div class="ttname"><a href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">NOAHMP::lsm_fab_flux</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmFlux_NOAHMP::NumVars &gt; lsm_fab_flux</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:381</div></div>
@@ -611,7 +615,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassNOAHMP_html_ab5371a22f98e970fa5d75b0fc9db8dc7"><div class="ttname"><a href="classNOAHMP.html#ab5371a22f98e970fa5d75b0fc9db8dc7">NOAHMP::interp_from_lev0</a></div><div class="ttdeci">void interp_from_lev0(const int &amp;lev, amrex::MultiFab &amp;cons_in, const int &amp;nstep)</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Advance.cpp:24</div></div>
 <div class="ttc" id="aclassNOAHMP_html_aecc70baf8cee5acdcda4c957d3894719"><div class="ttname"><a href="classNOAHMP.html#aecc70baf8cee5acdcda4c957d3894719">NOAHMP::advance_precip_snapshots</a></div><div class="ttdeci">void advance_precip_snapshots(const int &amp;lev, const erf_noahmp::PrecipSlots &amp;precip)</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Precip.cpp:66</div></div>
 <div class="ttc" id="aclassNOAHMP_html_af06273a8838563fd46d42e86032d795f"><div class="ttname"><a href="classNOAHMP.html#af06273a8838563fd46d42e86032d795f">NOAHMP::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:341</div></div>
-<div class="ttc" id="aclassNOAHMP_html_af193deb567d9d67dc1e9cfcec31a13e0"><div class="ttname"><a href="classNOAHMP.html#af193deb567d9d67dc1e9cfcec31a13e0">NOAHMP::time_to_fire</a></div><div class="ttdeci">bool time_to_fire(const amrex::Real &amp;elapsed_time)</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Advance.cpp:73</div></div>
+<div class="ttc" id="aclassNOAHMP_html_af193deb567d9d67dc1e9cfcec31a13e0"><div class="ttname"><a href="classNOAHMP.html#af193deb567d9d67dc1e9cfcec31a13e0">NOAHMP::time_to_fire</a></div><div class="ttdeci">bool time_to_fire(const amrex::Real &amp;elapsed_time)</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Advance.cpp:74</div></div>
 <div class="ttc" id="anamespaceLsmFlux__NOAHMP_html_a1ecc2b9a0f1afa9b596c755beca94fb4a95d7201295c651f503c14a90d07916f5"><div class="ttname"><a href="namespaceLsmFlux__NOAHMP.html#a1ecc2b9a0f1afa9b596c755beca94fb4a95d7201295c651f503c14a90d07916f5">LsmFlux_NOAHMP::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Fields.H:122</div></div>
 <div class="ttc" id="astructerf__noahmp_1_1NoahmpBlockViews_html"><div class="ttname"><a href="structerf__noahmp_1_1NoahmpBlockViews.html">erf_noahmp::NoahmpBlockViews</a></div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:50</div></div>
 <div class="ttc" id="astructerf__noahmp_1_1PrecipSlots_html"><div class="ttname"><a href="structerf__noahmp_1_1PrecipSlots.html">erf_noahmp::PrecipSlots</a></div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:34</div></div>
@@ -2426,15 +2430,14 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> NOAH_time = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(<a class="code" href="classNOAHMP.html#a859bc0849345b3752b2bc94a7f858333">m_itimestep</a>-1) * <a class="code" href="classNOAHMP.html#ab186430bca202f7e580657363ebbc664">m_dtbl</a>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (elapsed_time &lt; NOAH_time) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classNOAHMP.html#a324693abeb0fd2acfabaac1048481c81">m_updated</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="classNOAHMP.html#a324693abeb0fd2acfabaac1048481c81">m_updated</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="classNOAHMP.html#a859bc0849345b3752b2bc94a7f858333">m_itimestep</a> += 1;   <span class="comment">// advance once per firing, in lockstep on every rank</span></div>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> NOAH_time = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(<a class="code" href="classNOAHMP.html#a859bc0849345b3752b2bc94a7f858333">m_itimestep</a>-1) * <a class="code" href="classNOAHMP.html#ab186430bca202f7e580657363ebbc664">m_dtbl</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (elapsed_time &lt; NOAH_time) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classNOAHMP.html#a324693abeb0fd2acfabaac1048481c81">m_updated</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="classNOAHMP.html#a324693abeb0fd2acfabaac1048481c81">m_updated</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 </div><!-- fragment -->
