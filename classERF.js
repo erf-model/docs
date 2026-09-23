@@ -78,7 +78,7 @@ var classERF =
     [ "GetEnsembleCheckpointName", "classERF.html#a4cab14cd6c46cbaf8b1bb5b207a360cf", null ],
     [ "GetFillableAtmosToOceanLanes", "classERF.html#a400686d4e67214c7ddf4e7bacf63b33b", null ],
     [ "GetLandMask", "classERF.html#ae03a7c7b55a4856e1a2d742527570dbc", null ],
-    [ "GetOceanToAtmosCornerCoordinates", "classERF.html#a76d58f6ea3611f5b55b220597ed5bf0c", null ],
+    [ "GetOceanToAtmosCellCenterLonLat", "classERF.html#afebf67b4f00e68f86202adaeb36377db", null ],
     [ "GetOceanToAtmosSurfaceLayout", "classERF.html#a0443022f1256fcff9e645ce43a4f046b", null ],
     [ "GotoNextLine", "classERF.html#aaee255b031e63bd9b5807f6612739dbd", null ],
     [ "grids_are_split_in_z", "classERF.html#a5cb5eed4615c475c112887f2d1b8be25", null ],

@@ -130,7 +130,7 @@ var searchData=
   ['getnonconstebcellflags_8492',['getNonConstEBCellFlags',['../classeb__.html#a113a041eb564cdc3f50b7957b8c030c5',1,'eb_']]],
   ['getnonconstfacecent_8493',['getNonConstFaceCent',['../classeb__.html#a8fdb5cd33458c754de1c46e38b2d5dc7',1,'eb_']]],
   ['getnonconstvolfrac_8494',['getNonConstVolFrac',['../classeb__.html#a7d2bf2fbda20ea8bc2514c200093fa65',1,'eb_']]],
-  ['getoceantoatmoscornercoordinates_8495',['GetOceanToAtmosCornerCoordinates',['../classERF.html#a76d58f6ea3611f5b55b220597ed5bf0c',1,'ERF']]],
+  ['getoceantoatmoscellcenterlonlat_8495',['GetOceanToAtmosCellCenterLonLat',['../classERF.html#afebf67b4f00e68f86202adaeb36377db',1,'ERF']]],
   ['getoceantoatmossurfacelayout_8496',['GetOceanToAtmosSurfaceLayout',['../classERF.html#a0443022f1256fcff9e645ce43a4f046b',1,'ERF']]],
   ['getpgivenrth_8497',['getPgivenRTh',['../ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9',1,'ERF_EOS.H']]],
   ['getplotvar_8498',['GetPlotVar',['../classMorrison.html#aa835995cc246144c5de532c119c2d8be',1,'Morrison::GetPlotVar()'],['../classEulerianMicrophysics.html#aa1c4f2bee3a05609e796da336854ca89',1,'EulerianMicrophysics::GetPlotVar()'],['../classMicrophysics.html#ae16d9801d3db01fcc424345e54a47d3b',1,'Microphysics::GetPlotVar()'],['../classMorrison.html#a4758477b981620315ed79d08e8acc5dd',1,'Morrison::GetPlotVar()'],['../classNullMoist.html#a2f37a246b6a0ffcde7fa9e2ca4c8d63e',1,'NullMoist::GetPlotVar(const std::string &amp;, amrex::MultiFab &amp;) const'],['../classNullMoist.html#a56d502e7343315bb1115c2489852acbe',1,'NullMoist::GetPlotVar(const std::string &amp;a_name, amrex::MultiFab &amp;a_mf, const int) const']]],
