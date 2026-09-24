@@ -14,6 +14,7 @@ var ERF__Advection_8H =
     [ "AdvectionSrcForOpenBC_Normal", "ERF__Advection_8H.html#a8a93a1f4fa830e853896360758c1185c", null ],
     [ "AdvectionSrcForOpenBC_Tangent", "ERF__Advection_8H.html#ab0aafe8d39448868a229ed291f363d5b", null ],
     [ "AdvectionSrcForOpenBC_Tangent_Cons", "ERF__Advection_8H.html#a836a03245a86846aee752d52e1b3286a", null ],
+    [ "AdvectionSrcForOpenBC_Tangent_Scalars", "ERF__Advection_8H.html#aadf14ad590711c3f89dfb77035009d65", null ],
     [ "AdvectionSrcForOpenBC_Tangent_Xmom", "ERF__Advection_8H.html#a77a3da224ebc848d774a465bc4edbb6d", null ],
     [ "AdvectionSrcForOpenBC_Tangent_Ymom", "ERF__Advection_8H.html#a4ff38549b044becdf35e0331f8361756", null ],
     [ "AdvectionSrcForOpenBC_Tangent_Zmom", "ERF__Advection_8H.html#af4d07833466bece194f24b9dec1609b2", null ],

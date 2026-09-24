@@ -1,5 +1,10 @@
 var NAVTREEINDEX8 =
 {
+"ERF__InitDensityHSE_8H.html#a06963d7ee774ab4b864478b38cee7ead":[3,0,1,17,47,2],
+"ERF__InitDensityHSE_8H.html#a34ab896915f05a0d580a4b1eb1258d0a":[3,0,1,17,47,0],
+"ERF__InitDensityHSE_8H.html#aa8787512ee3cc1e62a429eeae8ff5eeb":[3,0,1,17,47,4],
+"ERF__InitDensityHSE_8H.html#ab69c03b611b51f3fe4531d97e268b994":[3,0,1,17,47,1],
+"ERF__InitDensityHSE_8H.html#ab73f3a6e798cc452e3c79d93e8a6bd65":[3,0,1,17,47,3],
 "ERF__InitDensityHSE_8H_source.html":[3,0,1,17,47],
 "ERF__InitForEnsemble_8cpp.html":[3,0,1,8,4],
 "ERF__InitForEnsemble_8cpp.html#a08cce1a23e551dac900062fd55ef9269":[3,0,1,8,4,5],
@@ -244,10 +249,5 @@ var NAVTREEINDEX8 =
 "ERF__MicrophysicsConstants_8H.html#ac16a7511bec41b7d5a558b5841e8f3b1":[3,0,1,13,12,18],
 "ERF__MicrophysicsConstants_8H.html#ad6e28022b74cd595f282e2cc97c2c0d8":[3,0,1,13,12,35],
 "ERF__MicrophysicsConstants_8H.html#adf319f31edb7d4f2b4b712096189734b":[3,0,1,13,12,4],
-"ERF__MicrophysicsConstants_8H.html#ae56996ced8497f129d813e2f9c94786e":[3,0,1,13,12,29],
-"ERF__MicrophysicsConstants_8H.html#aeb6d6f09d27c3f646bc4d91b7b88e570":[3,0,1,13,12,5],
-"ERF__MicrophysicsConstants_8H.html#aedc41c83fba50dcbd5e1385007d3edec":[3,0,1,13,12,12],
-"ERF__MicrophysicsConstants_8H.html#aee22c64edc9a6e972b3866ee44c575fc":[3,0,1,13,12,9],
-"ERF__MicrophysicsConstants_8H.html#af5689377f29be012360a846bd447e278":[3,0,1,13,12,20],
-"ERF__MicrophysicsConstants_8H.html#af90fa8b6a26f98067ce125597f35d983":[3,0,1,13,12,17]
+"ERF__MicrophysicsConstants_8H.html#ae56996ced8497f129d813e2f9c94786e":[3,0,1,13,12,29]
 };

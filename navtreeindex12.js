@@ -1,5 +1,10 @@
 var NAVTREEINDEX12 =
 {
+"ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379":[3,0,1,23,34,0],
+"ERF__RefineBox_8cpp.html":[3,0,1,19,0],
+"ERF__RefineHurricane_8cpp.html":[3,0,1,19,1],
+"ERF__RefineHurricane_8cpp.html#a661478614baa822c243e10e73731de2a":[3,0,1,19,1,0],
+"ERF__ResolvedWallFlux_8H.html":[3,0,1,5,27],
 "ERF__ResolvedWallFlux_8H.html#af4bb1fd6bad609edefd5f661c60672ef":[3,0,1,5,27,0],
 "ERF__ResolvedWallFlux_8H_source.html":[3,0,1,5,27],
 "ERF__RichardsonNumber_8H.html":[3,0,1,5,28],
@@ -244,10 +249,5 @@ var NAVTREEINDEX12 =
 "ERF__StationSampler_8H.html#a8893dd2a3d31a103e7a5dc28f9ca7348":[3,0,1,9,45,5],
 "ERF__StationSampler_8H_source.html":[3,0,1,9,45],
 "ERF__StationSampler_8cpp.html":[3,0,1,9,44],
-"ERF__StormDiagnostics_8H.html":[3,0,1,23,37],
-"ERF__StormDiagnostics_8H.html#a6e341f0ba1bec18d7b56a69f0d45e6fe":[3,0,1,23,37,0],
-"ERF__StormDiagnostics_8H_source.html":[3,0,1,23,37],
-"ERF__Substep__MT_8cpp.html":[3,0,1,21,14],
-"ERF__Substep__MT_8cpp.html#af54b8124774096370deb09aca7570927":[3,0,1,21,14,0],
-"ERF__Substep__NS_8cpp.html":[3,0,1,21,15]
+"ERF__StormDiagnostics_8H.html":[3,0,1,23,37]
 };

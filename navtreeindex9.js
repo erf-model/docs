@@ -1,5 +1,10 @@
 var NAVTREEINDEX9 =
 {
+"ERF__MicrophysicsConstants_8H.html#aeb6d6f09d27c3f646bc4d91b7b88e570":[3,0,1,13,12,5],
+"ERF__MicrophysicsConstants_8H.html#aedc41c83fba50dcbd5e1385007d3edec":[3,0,1,13,12,12],
+"ERF__MicrophysicsConstants_8H.html#aee22c64edc9a6e972b3866ee44c575fc":[3,0,1,13,12,9],
+"ERF__MicrophysicsConstants_8H.html#af5689377f29be012360a846bd447e278":[3,0,1,13,12,20],
+"ERF__MicrophysicsConstants_8H.html#af90fa8b6a26f98067ce125597f35d983":[3,0,1,13,12,17],
 "ERF__MicrophysicsConstants_8H.html#afb7d1700c60728d56ef525934fe6a098":[3,0,1,13,12,41],
 "ERF__MicrophysicsConstants_8H.html#afddfdf9f48fef3929914f786ce79022a":[3,0,1,13,12,3],
 "ERF__MicrophysicsConstants_8H_source.html":[3,0,1,13,12],
@@ -244,10 +249,5 @@ var NAVTREEINDEX9 =
 "ERF__PlaneAverage_8H_source.html":[3,0,1,23,32],
 "ERF__Plotfile2DCatalog_8H.html":[3,0,1,9,13],
 "ERF__Plotfile2DCatalog_8H.html#a0613dde6ea83d4510e535cab71c0c157":[3,0,1,9,13,5],
-"ERF__Plotfile2DCatalog_8H.html#a0ed70bc8256f5893480c5539f085dcc8":[3,0,1,9,13,7],
-"ERF__Plotfile2DCatalog_8H.html#a176affa62ade3b3a46ee6594a4a10f54":[3,0,1,9,13,10],
-"ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2":[3,0,1,9,13,2],
-"ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a07b06a381d234d7f19a2f94e4d339e7a":[3,0,1,9,13,2,46],
-"ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a0c814a3691c2acd6cf57c5e62d90a8e7":[3,0,1,9,13,2,27],
-"ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a1458238083a5c17d9cbb7787861a4558":[3,0,1,9,13,2,51]
+"ERF__Plotfile2DCatalog_8H.html#a0ed70bc8256f5893480c5539f085dcc8":[3,0,1,9,13,7]
 };
