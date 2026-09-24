@@ -618,8 +618,8 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classMOSTAverage.html#ac140e262fd58291f9535e62a1d2255de" title=" " alt="" coords="502,633,665,674"/>
 <area shape="rect" href="classMOSTAverage.html#a958132e508b0415f27ab9de0af39bdca" title=" " alt="" coords="491,515,675,557"/>
 <area shape="rect" href="classMOSTAverage.html#af9751b66e98ab40abc0fe4604447cec0" title=" " alt="" coords="490,699,677,725"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce" title=" " alt="" coords="495,800,672,827"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7" title=" " alt="" coords="499,851,667,877"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a1bd1550a0467cfa83e96893d943b1047" title=" " alt="" coords="495,800,672,827"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ae4903e73bbdfe155d450a88e02c7336a" title=" " alt="" coords="499,851,667,877"/>
 </map>
 </div>
 
@@ -4616,7 +4616,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(ubx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        {</div>
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;            <span class="comment">// Elements of first tangent vector</span></div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_xi    = <a class="code" href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a>(i,j,k,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>,z_phys_arr);</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_xi    = <a class="code" href="ERF__TerrainMetrics_8H.html#ae4903e73bbdfe155d450a88e02c7336a">Compute_h_xi_AtIface</a>(i,j,k,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>,z_phys_arr);</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            u_rot_arr(i,j,k) = (u_arr(i,j,k) + met_h_xi*w_arr(i,j,k))</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                             / std::sqrt(met_h_xi*met_h_xi + <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>);</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        });</div>
@@ -4625,7 +4625,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        {</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;            <span class="comment">// Elements of second tangent vector</span></div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_eta   = <a class="code" href="ERF__TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a>(i,j,k,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>,z_phys_arr);</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_eta   = <a class="code" href="ERF__TerrainMetrics_8H.html#a1bd1550a0467cfa83e96893d943b1047">Compute_h_eta_AtJface</a>(i,j,k,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>,z_phys_arr);</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            v_rot_arr(i,j,k) = (v_arr(i,j,k) + met_h_eta*w_arr(i,j,k))</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                             / std::sqrt(met_h_eta*met_h_eta + <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>);</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        });</div>
@@ -4635,8 +4635,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    MultiFab::Copy(*rot_fields[3],*fields[3],0,0,1,rot_fields[3]-&gt;nGrowVect());</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    <span class="keywordflow">if</span> (fields[4]) MultiFab::Copy(*rot_fields[4],*fields[4],0,0,1,rot_fields[4]-&gt;nGrowVect());</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;}</div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_a2116df83b61a39fb50b9a2d7474c00d7"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_xi_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:292</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_ae609a5c1f84347b66e9a8b712271c4ce"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:385</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_a1bd1550a0467cfa83e96893d943b1047"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a1bd1550a0467cfa83e96893d943b1047">Compute_h_eta_AtJface</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:385</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_ae4903e73bbdfe155d450a88e02c7336a"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#ae4903e73bbdfe155d450a88e02c7336a">Compute_h_xi_AtIface</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_xi_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:292</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#a41ef10e076e2099d0fd845e318fd00a0">compute_averages()</a>.</p>
 <div class="dynheader">
@@ -4645,8 +4645,8 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classMOSTAverage_a4b14ba1b568a0106ffd883d8c1c8f53c_cgraph.png" border="0" usemap="#aclassMOSTAverage_a4b14ba1b568a0106ffd883d8c1c8f53c_cgraph" alt=""/></div>
 <map name="aclassMOSTAverage_a4b14ba1b568a0106ffd883d8c1c8f53c_cgraph" id="aclassMOSTAverage_a4b14ba1b568a0106ffd883d8c1c8f53c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,74,200,115"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce" title=" " alt="" coords="248,5,425,32"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7" title=" " alt="" coords="253,56,421,83"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a1bd1550a0467cfa83e96893d943b1047" title=" " alt="" coords="248,5,425,32"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ae4903e73bbdfe155d450a88e02c7336a" title=" " alt="" coords="253,56,421,83"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="291,107,382,133"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="300,157,373,184"/>
 </map>

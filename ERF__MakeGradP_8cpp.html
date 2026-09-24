@@ -272,7 +272,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classeb__.html#abfdaa6b21118610551e115d123390be9" title="Return the ERF auxiliary y&#45;face EB factory." alt="" coords="394,376,578,403"/>
 <area shape="rect" href="classeb__aux__.html#aa782343e2bd11203f360485eb4395a29" title="Return the reconstructed EB cell flags." alt="" coords="371,107,601,133"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="441,157,531,184"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0" title=" " alt="" coords="391,5,581,32"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a9c5637d9d729688798e176620f1f1e65" title=" " alt="" coords="391,5,581,32"/>
 <area shape="rect" href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae" title="Return the ERF auxiliary z&#45;face EB factory." alt="" coords="393,56,579,83"/>
 </map>
 </div>
@@ -511,7 +511,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        {</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;            <span class="comment">// Note: identical to gradp_type == 0</span></div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_zeta = (l_use_terrain_fitted_coords) ? <a class="code" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i, j, k, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, z_nd_arr) : 1;</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_zeta = (l_use_terrain_fitted_coords) ? <a class="code" href="ERF__TerrainMetrics_8H.html#a9c5637d9d729688798e176620f1f1e65">Compute_h_zeta_AtKface</a>(i, j, k, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, z_nd_arr) : 1;</div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;            gpz_arr(i,j,k) = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>[2] * ( p_arr(i,j,k)-p_arr(i,j,k-1) )  / met_h_zeta;</div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        });</div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    } <span class="comment">// mfi</span></div>
@@ -522,7 +522,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:34</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_a48f57e72ac183fdf1a984f58f3d24ee0"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtKface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:409</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_a9c5637d9d729688798e176620f1f1e65"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a9c5637d9d729688798e176620f1f1e65">Compute_h_zeta_AtKface</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtKface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:409</div></div>
 <div class="ttc" id="aERF__Utils_8H_html_a8a7082410a1edc74e8646da2befba604"><div class="ttname"><a href="ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604">quad_interp_1d</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real quad_interp_1d(amrex::Real z, amrex::Real z0, amrex::Real p0, amrex::Real z1, amrex::Real p1, amrex::Real z2, amrex::Real p2)</div><div class="ttdef"><b>Definition:</b> ERF_Utils.H:753</div></div>
 <div class="ttc" id="anamespaceGpVars_html_a9d57bd0a92833902fdece82d1046a72ea7490c53ed57352abcd4a219cd12bf517"><div class="ttname"><a href="namespaceGpVars.html#a9d57bd0a92833902fdece82d1046a72ea7490c53ed57352abcd4a219cd12bf517">GpVars::gpz</a></div><div class="ttdeci">@ gpz</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:226</div></div>
 <div class="ttc" id="anamespaceGpVars_html_a9d57bd0a92833902fdece82d1046a72ea8b32fb9218fd4f10ccc5736e6a61a72d"><div class="ttname"><a href="namespaceGpVars.html#a9d57bd0a92833902fdece82d1046a72ea8b32fb9218fd4f10ccc5736e6a61a72d">GpVars::gpy</a></div><div class="ttdeci">@ gpy</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:225</div></div>
@@ -536,7 +536,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__MakeGradP_8cpp_a160f930429f773f474fa8f7f4553371c_cgraph.png" border="0" usemap="#aERF__MakeGradP_8cpp_a160f930429f773f474fa8f7f4553371c_cgraph" alt=""/></div>
 <map name="aERF__MakeGradP_8cpp_a160f930429f773f474fa8f7f4553371c_cgraph" id="aERF__MakeGradP_8cpp_a160f930429f773f474fa8f7f4553371c_cgraph">
 <area shape="rect" title="Compute the pressure gradient using vertical interpolation." alt="" coords="5,56,180,83"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0" title=" " alt="" coords="228,5,417,32"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a9c5637d9d729688798e176620f1f1e65" title=" " alt="" coords="228,5,417,32"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="277,56,368,83"/>
 <area shape="rect" href="ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604" title=" " alt="" coords="261,107,384,133"/>
 </map>
@@ -1007,7 +1007,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbz, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            {</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_zeta = (l_use_terrain_fitted_coords) ? <a class="code" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i, j, k, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, z_nd_arr) : 1;</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_zeta = (l_use_terrain_fitted_coords) ? <a class="code" href="ERF__TerrainMetrics_8H.html#a9c5637d9d729688798e176620f1f1e65">Compute_h_zeta_AtKface</a>(i, j, k, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, z_nd_arr) : 1;</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                gpz_arr(i,j,k) = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>[2] * ( p_arr(i,j,k)-p_arr(i,j,k-1) )  / met_h_zeta;</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            });</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160; </div>
@@ -1103,7 +1103,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__MakeGradP_8cpp_a608c11337867fc132f0ac05c03dd99bc_cgraph.png" border="0" usemap="#aERF__MakeGradP_8cpp_a608c11337867fc132f0ac05c03dd99bc_cgraph" alt=""/></div>
 <map name="aERF__MakeGradP_8cpp_a608c11337867fc132f0ac05c03dd99bc_cgraph" id="aERF__MakeGradP_8cpp_a608c11337867fc132f0ac05c03dd99bc_cgraph">
 <area shape="rect" title="Compute the vertical component of the pressure gradient." alt="" coords="5,148,143,175"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0" title=" " alt="" coords="211,5,401,32"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a9c5637d9d729688798e176620f1f1e65" title=" " alt="" coords="211,5,401,32"/>
 <area shape="rect" href="ERF__EBSlopes_8H.html#af77db2c09d5b34ca21e60e3918cdf257" title="Compute centered least&#45;squares slopes from cell data to a staggered query grid." alt="" coords="233,57,379,98"/>
 <area shape="rect" href="classeb__.html#a74b48b1a80f3292f6002592f1d1d2bcd" title="Return the cell&#45;centered EB factory." alt="" coords="221,123,391,149"/>
 <area shape="rect" href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae" title="Return the ERF auxiliary z&#45;face EB factory." alt="" coords="213,173,399,200"/>
@@ -1313,7 +1313,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__MakeGradP_8cpp.html#ac79f2ed4bb2424ddf081b0b2f205b1ca" title="Compute the horizontal components of the pressure gradient." alt="" coords="234,241,381,268"/>
 <area shape="rect" href="ERF__MakeGradP_8cpp.html#a608c11337867fc132f0ac05c03dd99bc" title="Compute the vertical component of the pressure gradient." alt="" coords="239,183,376,209"/>
 <area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="252,292,363,319"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0" title=" " alt="" coords="495,56,685,83"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a9c5637d9d729688798e176620f1f1e65" title=" " alt="" coords="495,56,685,83"/>
 <area shape="rect" href="ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604" title=" " alt="" coords="529,5,651,32"/>
 <area shape="rect" href="ERF__EBSlopes_8H.html#af77db2c09d5b34ca21e60e3918cdf257" title="Compute centered least&#45;squares slopes from cell data to a staggered query grid." alt="" coords="517,209,663,250"/>
 <area shape="rect" href="classeb__.html#a74b48b1a80f3292f6002592f1d1d2bcd" title="Return the cell&#45;centered EB factory." alt="" coords="505,275,675,301"/>

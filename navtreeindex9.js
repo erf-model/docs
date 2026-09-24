@@ -153,6 +153,9 @@ var NAVTREEINDEX9 =
 "ERF__NOAHMP__ResultPolicy_8H.html#a02ef00815eda9cb4f4d6675464231889":[3,0,1,10,0,6,3],
 "ERF__NOAHMP__ResultPolicy_8H.html#a5a3a23214e58b11387a1f2804483c167":[3,0,1,10,0,6,2],
 "ERF__NOAHMP__ResultPolicy_8H_source.html":[3,0,1,10,0,6],
+"ERF__NativeScalarDiffusion_8H.html":[3,0,1,5,26],
+"ERF__NativeScalarDiffusion_8H.html#afcd0530ce2d8e4352736690d314d96cc":[3,0,1,5,26,1],
+"ERF__NativeScalarDiffusion_8H_source.html":[3,0,1,5,26],
 "ERF__NearSurfaceDiagnostics_8H.html":[3,0,1,4,1],
 "ERF__NearSurfaceDiagnostics_8H.html#a2f4be658d9cf5b201eb9e294ce1483a2":[3,0,1,4,1,8],
 "ERF__NearSurfaceDiagnostics_8H.html#a4c1ec787428244113797fb8511d673c9":[3,0,1,4,1,12],
@@ -246,8 +249,5 @@ var NAVTREEINDEX9 =
 "ERF__PlanarBoundary_8H_source.html":[3,0,1,23,31],
 "ERF__PlanarBoundary_8cpp.html":[3,0,1,23,30],
 "ERF__PlaneAverage_8H.html":[3,0,1,23,32],
-"ERF__PlaneAverage_8H_source.html":[3,0,1,23,32],
-"ERF__Plotfile2DCatalog_8H.html":[3,0,1,9,13],
-"ERF__Plotfile2DCatalog_8H.html#a0613dde6ea83d4510e535cab71c0c157":[3,0,1,9,13,5],
-"ERF__Plotfile2DCatalog_8H.html#a0ed70bc8256f5893480c5539f085dcc8":[3,0,1,9,13,7]
+"ERF__PlaneAverage_8H_source.html":[3,0,1,23,32]
 };
