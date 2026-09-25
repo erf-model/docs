@@ -41,6 +41,8 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
       [ "WENO_Z7", "structWENO__Z7.html", "structWENO__Z7" ]
     ] ],
     [ "ERF_InterpolationUtils.H", "ERF__InterpolationUtils_8H.html", "ERF__InterpolationUtils_8H" ],
+    [ "ERF_LatLonMap.cpp", "ERF__LatLonMap_8cpp.html", "ERF__LatLonMap_8cpp" ],
+    [ "ERF_LatLonMap.H", "ERF__LatLonMap_8H.html", "ERF__LatLonMap_8H" ],
     [ "ERF_MakeSubdomains.cpp", "ERF__MakeSubdomains_8cpp.html", null ],
     [ "ERF_MicrophysicsUtils.H", "ERF__MicrophysicsUtils_8H.html", "ERF__MicrophysicsUtils_8H" ],
     [ "ERF_MoistUtils.H", "ERF__MoistUtils_8H.html", "ERF__MoistUtils_8H" ],
@@ -67,6 +69,8 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_TerrainConversion.H", "ERF__TerrainConversion_8H.html", "ERF__TerrainConversion_8H" ],
     [ "ERF_TerrainMetrics.cpp", "ERF__TerrainMetrics_8cpp.html", "ERF__TerrainMetrics_8cpp" ],
     [ "ERF_TerrainMetrics.H", "ERF__TerrainMetrics_8H.html", "ERF__TerrainMetrics_8H" ],
+    [ "ERF_TerrainSurfaceSlab.cpp", "ERF__TerrainSurfaceSlab_8cpp.html", "ERF__TerrainSurfaceSlab_8cpp" ],
+    [ "ERF_TerrainSurfaceSlab.H", "ERF__TerrainSurfaceSlab_8H.html", "ERF__TerrainSurfaceSlab_8H" ],
     [ "ERF_ThinBodyWallDist.cpp", "ERF__ThinBodyWallDist_8cpp.html", "ERF__ThinBodyWallDist_8cpp" ],
     [ "ERF_TileNoZ.H", "ERF__TileNoZ_8H.html", "ERF__TileNoZ_8H" ],
     [ "ERF_TimeAvgVel.cpp", "ERF__TimeAvgVel_8cpp.html", "ERF__TimeAvgVel_8cpp" ],

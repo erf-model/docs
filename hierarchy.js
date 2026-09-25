@@ -12,6 +12,7 @@ var hierarchy =
     ] ],
     [ "erf_provenance::ArtifactProvenance", "structerf__provenance_1_1ArtifactProvenance.html", null ],
     [ "BaseStateParams", "structBaseStateParams.html", null ],
+    [ "BelowGroundGhostSync", "structBelowGroundGhostSync.html", null ],
     [ "PlanarBoundary::Buffer", "structPlanarBoundary_1_1Buffer.html", null ],
     [ "SHOCInterface::Buffer", "structSHOCInterface_1_1Buffer.html", null ],
     [ "BuildingsIF", "classBuildingsIF.html", null ],
@@ -69,6 +70,8 @@ var hierarchy =
     [ "KesslerSourceTerms", "structKesslerSourceTerms.html", null ],
     [ "LandSurface", "classLandSurface.html", null ],
     [ "LargeScaleForcingData", "structLargeScaleForcingData.html", null ],
+    [ "LatLonLocation", "structLatLonLocation.html", null ],
+    [ "LatLonMap", "classLatLonMap.html", null ],
     [ "erf_interval_means::LevelMetadata", "structerf__interval__means_1_1LevelMetadata.html", null ],
     [ "LineSampler", "structLineSampler.html", null ],
     [ "MaterialPropertiesCore", "structMaterialPropertiesCore.html", [

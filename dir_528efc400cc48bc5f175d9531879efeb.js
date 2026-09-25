@@ -44,6 +44,7 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     [ "ERF_MOSTUtils.H", "ERF__MOSTUtils_8H.html", "ERF__MOSTUtils_8H" ],
     [ "ERF_PhysBCFunct.cpp", "ERF__PhysBCFunct_8cpp.html", null ],
     [ "ERF_PhysBCFunct.H", "ERF__PhysBCFunct_8H.html", [
+      [ "BelowGroundGhostSync", "structBelowGroundGhostSync.html", "structBelowGroundGhostSync" ],
       [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html", "classERFPhysBCFunct__cons" ],
       [ "ERFPhysBCFunct_u", "classERFPhysBCFunct__u.html", "classERFPhysBCFunct__u" ],
       [ "ERFPhysBCFunct_v", "classERFPhysBCFunct__v.html", "classERFPhysBCFunct__v" ],
