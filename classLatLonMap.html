@@ -110,6 +110,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a71f3f8349dc87bac84df8178c51dacf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c7bc6182212990ed33c227013902f71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__LatLonMap_8H.html#a275b926b13227ee2ac884995fe7648ac">LatLonStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLatLonMap.html#a0c7bc6182212990ed33c227013902f71">locate</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> req_lat, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> req_lon, <a class="el" href="structLatLonLocation.html">LatLonLocation</a> &amp;loc) const</td></tr>
 <tr class="separator:a0c7bc6182212990ed33c227013902f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a083c50b0b76d7e37eacdb7bdcffc583d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLatLonMap.html#a083c50b0b76d7e37eacdb7bdcffc583d">rotation_at</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__Plotfile2DInterpolator_8cpp.html#aafb67b15d0c8c7fa7b1df54753e37e91">cos_alpha</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__Plotfile2DInterpolator_8cpp.html#a10356618abd6ef4f319606a36a9039a8">sin_alpha</a>) const</td></tr>
+<tr class="separator:a083c50b0b76d7e37eacdb7bdcffc583d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -166,36 +168,36 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    : <a class="code" href="classLatLonMap.html#a60bfcc164f1dd4c365e024d11f11edd5">m_problo</a>(geom0.ProbLoArray()),</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      <a class="code" href="classLatLonMap.html#a50c1f67cc3c0798522eb233129f88eb5">m_dx</a>(geom0.CellSizeArray())</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">m_dom</a> = geom0.Domain();</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">m_dom</a>.setRange(2,0);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// Gather the level-0 mass-point latitude and longitude onto the IO rank.</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// This is a setup-time, level-0, 2D array, so the gather is affordable and</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// keeps the search and the inverse map as plain host code.</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="comment">// The ceiling is one rank holding 2 Reals per level-0 column -- 100 MB or</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">// so for the largest domains ERF is run on -- and a search of that array</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="comment">// per point, once.</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    MultiFab latlon(ba2d, dm, 2, 0);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="ERF__LatLonMap_8cpp.html#a2ba92d944556e9ad48b51f6dac9a81df">pack_latlon</a>(latlon, lat, lon);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    BoxArray ba_one(<a class="code" href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">m_dom</a>);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    Vector&lt;int&gt; pmap(1, ParallelDescriptor::IOProcessorNumber());</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    DistributionMapping dm_one(pmap);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="classLatLonMap.html#acbaeba497ad248c87fbd6d636180fd43">m_ll</a>.define(ba_one, dm_one, 2, 0, MFInfo().SetArena(The_Pinned_Arena()));</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="classLatLonMap.html#acbaeba497ad248c87fbd6d636180fd43">m_ll</a>.ParallelCopy(latlon, 0, 0, 2);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">// The copy is device-side in a GPU build; the searches are host code</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    Gpu::streamSynchronize();</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    : <a class="code" href="classLatLonMap.html#a60bfcc164f1dd4c365e024d11f11edd5">m_problo</a>(geom0.ProbLoArray()),</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <a class="code" href="classLatLonMap.html#a50c1f67cc3c0798522eb233129f88eb5">m_dx</a>(geom0.CellSizeArray())</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">m_dom</a> = geom0.Domain();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">m_dom</a>.setRange(2,0);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// Gather the level-0 mass-point latitude and longitude onto the IO rank.</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// This is a setup-time, level-0, 2D array, so the gather is affordable and</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// keeps the search and the inverse map as plain host code.</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">// The ceiling is one rank holding 2 Reals per level-0 column -- 100 MB or</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="comment">// so for the largest domains ERF is run on -- and a search of that array</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// per point, once.</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    MultiFab latlon(ba2d, dm, 2, 0);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="ERF__LatLonMap_8cpp.html#a2ba92d944556e9ad48b51f6dac9a81df">pack_latlon</a>(latlon, lat, lon);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    BoxArray ba_one(<a class="code" href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">m_dom</a>);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    Vector&lt;int&gt; pmap(1, ParallelDescriptor::IOProcessorNumber());</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    DistributionMapping dm_one(pmap);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="classLatLonMap.html#acbaeba497ad248c87fbd6d636180fd43">m_ll</a>.define(ba_one, dm_one, 2, 0, MFInfo().SetArena(The_Pinned_Arena()));</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <a class="code" href="classLatLonMap.html#acbaeba497ad248c87fbd6d636180fd43">m_ll</a>.ParallelCopy(latlon, 0, 0, 2);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">// The copy is device-side in a GPU build; the searches are host code</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    Gpu::streamSynchronize();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
 <div class="ttc" id="aERF__LatLonMap_8cpp_html_a2ba92d944556e9ad48b51f6dac9a81df"><div class="ttname"><a href="ERF__LatLonMap_8cpp.html#a2ba92d944556e9ad48b51f6dac9a81df">pack_latlon</a></div><div class="ttdeci">void pack_latlon(MultiFab &amp;latlon, const MultiFab &amp;lat, const MultiFab &amp;lon)</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.cpp:46</div></div>
-<div class="ttc" id="aclassLatLonMap_html_a30d48ecebdcfb1f8f62c94ef3b3921b2"><div class="ttname"><a href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">LatLonMap::m_dom</a></div><div class="ttdeci">amrex::Box m_dom</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:137</div></div>
-<div class="ttc" id="aclassLatLonMap_html_a50c1f67cc3c0798522eb233129f88eb5"><div class="ttname"><a href="classLatLonMap.html#a50c1f67cc3c0798522eb233129f88eb5">LatLonMap::m_dx</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; m_dx</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:139</div></div>
-<div class="ttc" id="aclassLatLonMap_html_a60bfcc164f1dd4c365e024d11f11edd5"><div class="ttname"><a href="classLatLonMap.html#a60bfcc164f1dd4c365e024d11f11edd5">LatLonMap::m_problo</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; m_problo</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:138</div></div>
-<div class="ttc" id="aclassLatLonMap_html_acbaeba497ad248c87fbd6d636180fd43"><div class="ttname"><a href="classLatLonMap.html#acbaeba497ad248c87fbd6d636180fd43">LatLonMap::m_ll</a></div><div class="ttdeci">amrex::MultiFab m_ll</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:136</div></div>
+<div class="ttc" id="aclassLatLonMap_html_a30d48ecebdcfb1f8f62c94ef3b3921b2"><div class="ttname"><a href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">LatLonMap::m_dom</a></div><div class="ttdeci">amrex::Box m_dom</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:159</div></div>
+<div class="ttc" id="aclassLatLonMap_html_a50c1f67cc3c0798522eb233129f88eb5"><div class="ttname"><a href="classLatLonMap.html#a50c1f67cc3c0798522eb233129f88eb5">LatLonMap::m_dx</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; m_dx</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:161</div></div>
+<div class="ttc" id="aclassLatLonMap_html_a60bfcc164f1dd4c365e024d11f11edd5"><div class="ttname"><a href="classLatLonMap.html#a60bfcc164f1dd4c365e024d11f11edd5">LatLonMap::m_problo</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; m_problo</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:160</div></div>
+<div class="ttc" id="aclassLatLonMap_html_acbaeba497ad248c87fbd6d636180fd43"><div class="ttname"><a href="classLatLonMap.html#acbaeba497ad248c87fbd6d636180fd43">LatLonMap::m_ll</a></div><div class="ttdeci">amrex::MultiFab m_ll</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:158</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -241,48 +243,53 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> out[7] = {<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0),</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                   <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0)};</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <a class="code" href="structLatLonLocation.html">LatLonLocation</a> l;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__LatLonMap_8H.html#a275b926b13227ee2ac884995fe7648ac">LatLonStatus</a> status = <a class="code" href="ERF__LatLonMap_8cpp.html#a6c2ca7c877c5a9af26781db0ee4a95f3">locate_latlon_on_grid</a>(<a class="code" href="classLatLonMap.html#acbaeba497ad248c87fbd6d636180fd43">m_ll</a>.const_array(0), <a class="code" href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">m_dom</a>, <a class="code" href="classLatLonMap.html#a60bfcc164f1dd4c365e024d11f11edd5">m_problo</a>, <a class="code" href="classLatLonMap.html#a50c1f67cc3c0798522eb233129f88eb5">m_dx</a>,</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                                          req_lat, req_lon, l);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        out[0] = l.<a class="code" href="structLatLonLocation.html#a2c7b22b45f96515bb26edd03df5a92ae">x</a>;        out[1] = l.<a class="code" href="structLatLonLocation.html#ae7e68feb5d7a6c01a14fe5e4e208e426">y</a>;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        out[2] = l.<a class="code" href="structLatLonLocation.html#a2c6bdbc9c542f132a8abdfcf626bdacd">lat</a>;      out[3] = l.<a class="code" href="structLatLonLocation.html#afaf710f26589464a71101b48e194018b">lon</a>;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        out[4] = l.<a class="code" href="structLatLonLocation.html#a6e254ec2123c0917253a3658ddfb0fde">near_lat</a>; out[5] = l.<a class="code" href="structLatLonLocation.html#af7ad9de53ca85c1808f82aef197bced7">near_lon</a>;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        out[6] = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(status));</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    ParallelDescriptor::Bcast(out, 7, ParallelDescriptor::IOProcessorNumber());</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    loc.<a class="code" href="structLatLonLocation.html#a2c7b22b45f96515bb26edd03df5a92ae">x</a> = out[0];        loc.<a class="code" href="structLatLonLocation.html#ae7e68feb5d7a6c01a14fe5e4e208e426">y</a> = out[1];</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    loc.<a class="code" href="structLatLonLocation.html#a2c6bdbc9c542f132a8abdfcf626bdacd">lat</a> = out[2];      loc.<a class="code" href="structLatLonLocation.html#afaf710f26589464a71101b48e194018b">lon</a> = out[3];</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    loc.<a class="code" href="structLatLonLocation.html#a6e254ec2123c0917253a3658ddfb0fde">near_lat</a> = out[4]; loc.<a class="code" href="structLatLonLocation.html#af7ad9de53ca85c1808f82aef197bced7">near_lon</a> = out[5];</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__LatLonMap_8H.html#a275b926b13227ee2ac884995fe7648ac">LatLonStatus</a><span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::lround(out[6])));</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
-<div class="ttc" id="aERF__LatLonMap_8H_html_a275b926b13227ee2ac884995fe7648ac"><div class="ttname"><a href="ERF__LatLonMap_8H.html#a275b926b13227ee2ac884995fe7648ac">LatLonStatus</a></div><div class="ttdeci">LatLonStatus</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:96</div></div>
-<div class="ttc" id="aERF__LatLonMap_8cpp_html_a6c2ca7c877c5a9af26781db0ee4a95f3"><div class="ttname"><a href="ERF__LatLonMap_8cpp.html#a6c2ca7c877c5a9af26781db0ee4a95f3">locate_latlon_on_grid</a></div><div class="ttdeci">LatLonStatus locate_latlon_on_grid(const Array4&lt; const Real &gt; &amp;ll, const Box &amp;dom, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;problo, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dx, Real req_lat, Real req_lon, LatLonLocation &amp;loc)</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.cpp:62</div></div>
+<div class="fragment"><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> out[9] = {<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0),</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                   <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0)};</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="structLatLonLocation.html">LatLonLocation</a> l;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__LatLonMap_8H.html#a275b926b13227ee2ac884995fe7648ac">LatLonStatus</a> status = <a class="code" href="ERF__LatLonMap_8cpp.html#a6c2ca7c877c5a9af26781db0ee4a95f3">locate_latlon_on_grid</a>(<a class="code" href="classLatLonMap.html#acbaeba497ad248c87fbd6d636180fd43">m_ll</a>.const_array(0), <a class="code" href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">m_dom</a>, <a class="code" href="classLatLonMap.html#a60bfcc164f1dd4c365e024d11f11edd5">m_problo</a>, <a class="code" href="classLatLonMap.html#a50c1f67cc3c0798522eb233129f88eb5">m_dx</a>,</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                                                          req_lat, req_lon, l);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        out[0] = l.<a class="code" href="structLatLonLocation.html#a2c7b22b45f96515bb26edd03df5a92ae">x</a>;        out[1] = l.<a class="code" href="structLatLonLocation.html#ae7e68feb5d7a6c01a14fe5e4e208e426">y</a>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        out[2] = l.<a class="code" href="structLatLonLocation.html#a2c6bdbc9c542f132a8abdfcf626bdacd">lat</a>;      out[3] = l.<a class="code" href="structLatLonLocation.html#afaf710f26589464a71101b48e194018b">lon</a>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        out[4] = l.<a class="code" href="structLatLonLocation.html#a6e254ec2123c0917253a3658ddfb0fde">near_lat</a>; out[5] = l.<a class="code" href="structLatLonLocation.html#af7ad9de53ca85c1808f82aef197bced7">near_lon</a>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        out[6] = l.<a class="code" href="structLatLonLocation.html#a0713b40cf2f1c569dadb1aef759ce9c3">cos_alpha</a>; out[7] = l.<a class="code" href="structLatLonLocation.html#af53783792bbcadbb4efef487b0b1c621">sin_alpha</a>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        out[8] = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(status));</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    ParallelDescriptor::Bcast(out, 9, ParallelDescriptor::IOProcessorNumber());</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    loc.<a class="code" href="structLatLonLocation.html#a2c7b22b45f96515bb26edd03df5a92ae">x</a> = out[0];        loc.<a class="code" href="structLatLonLocation.html#ae7e68feb5d7a6c01a14fe5e4e208e426">y</a> = out[1];</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    loc.<a class="code" href="structLatLonLocation.html#a2c6bdbc9c542f132a8abdfcf626bdacd">lat</a> = out[2];      loc.<a class="code" href="structLatLonLocation.html#afaf710f26589464a71101b48e194018b">lon</a> = out[3];</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    loc.<a class="code" href="structLatLonLocation.html#a6e254ec2123c0917253a3658ddfb0fde">near_lat</a> = out[4]; loc.<a class="code" href="structLatLonLocation.html#af7ad9de53ca85c1808f82aef197bced7">near_lon</a> = out[5];</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    loc.<a class="code" href="structLatLonLocation.html#a0713b40cf2f1c569dadb1aef759ce9c3">cos_alpha</a> = out[6]; loc.<a class="code" href="structLatLonLocation.html#af53783792bbcadbb4efef487b0b1c621">sin_alpha</a> = out[7];</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__LatLonMap_8H.html#a275b926b13227ee2ac884995fe7648ac">LatLonStatus</a><span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::lround(out[8])));</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
+<div class="ttc" id="aERF__LatLonMap_8H_html_a275b926b13227ee2ac884995fe7648ac"><div class="ttname"><a href="ERF__LatLonMap_8H.html#a275b926b13227ee2ac884995fe7648ac">LatLonStatus</a></div><div class="ttdeci">LatLonStatus</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:105</div></div>
+<div class="ttc" id="aERF__LatLonMap_8cpp_html_a6c2ca7c877c5a9af26781db0ee4a95f3"><div class="ttname"><a href="ERF__LatLonMap_8cpp.html#a6c2ca7c877c5a9af26781db0ee4a95f3">locate_latlon_on_grid</a></div><div class="ttdeci">LatLonStatus locate_latlon_on_grid(const Array4&lt; const Real &gt; &amp;ll, const Box &amp;dom, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;problo, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dx, Real req_lat, Real req_lon, LatLonLocation &amp;loc)</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.cpp:86</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="astructLatLonLocation_html"><div class="ttname"><a href="structLatLonLocation.html">LatLonLocation</a></div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:81</div></div>
-<div class="ttc" id="astructLatLonLocation_html_a2c6bdbc9c542f132a8abdfcf626bdacd"><div class="ttname"><a href="structLatLonLocation.html#a2c6bdbc9c542f132a8abdfcf626bdacd">LatLonLocation::lat</a></div><div class="ttdeci">amrex::Real lat</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:88</div></div>
-<div class="ttc" id="astructLatLonLocation_html_a2c7b22b45f96515bb26edd03df5a92ae"><div class="ttname"><a href="structLatLonLocation.html#a2c7b22b45f96515bb26edd03df5a92ae">LatLonLocation::x</a></div><div class="ttdeci">amrex::Real x</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:83</div></div>
-<div class="ttc" id="astructLatLonLocation_html_a6e254ec2123c0917253a3658ddfb0fde"><div class="ttname"><a href="structLatLonLocation.html#a6e254ec2123c0917253a3658ddfb0fde">LatLonLocation::near_lat</a></div><div class="ttdeci">amrex::Real near_lat</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:92</div></div>
-<div class="ttc" id="astructLatLonLocation_html_ae7e68feb5d7a6c01a14fe5e4e208e426"><div class="ttname"><a href="structLatLonLocation.html#ae7e68feb5d7a6c01a14fe5e4e208e426">LatLonLocation::y</a></div><div class="ttdeci">amrex::Real y</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:84</div></div>
-<div class="ttc" id="astructLatLonLocation_html_af7ad9de53ca85c1808f82aef197bced7"><div class="ttname"><a href="structLatLonLocation.html#af7ad9de53ca85c1808f82aef197bced7">LatLonLocation::near_lon</a></div><div class="ttdeci">amrex::Real near_lon</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:93</div></div>
-<div class="ttc" id="astructLatLonLocation_html_afaf710f26589464a71101b48e194018b"><div class="ttname"><a href="structLatLonLocation.html#afaf710f26589464a71101b48e194018b">LatLonLocation::lon</a></div><div class="ttdeci">amrex::Real lon</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:89</div></div>
+<div class="ttc" id="astructLatLonLocation_html"><div class="ttname"><a href="structLatLonLocation.html">LatLonLocation</a></div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:86</div></div>
+<div class="ttc" id="astructLatLonLocation_html_a0713b40cf2f1c569dadb1aef759ce9c3"><div class="ttname"><a href="structLatLonLocation.html#a0713b40cf2f1c569dadb1aef759ce9c3">LatLonLocation::cos_alpha</a></div><div class="ttdeci">amrex::Real cos_alpha</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:101</div></div>
+<div class="ttc" id="astructLatLonLocation_html_a2c6bdbc9c542f132a8abdfcf626bdacd"><div class="ttname"><a href="structLatLonLocation.html#a2c6bdbc9c542f132a8abdfcf626bdacd">LatLonLocation::lat</a></div><div class="ttdeci">amrex::Real lat</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:93</div></div>
+<div class="ttc" id="astructLatLonLocation_html_a2c7b22b45f96515bb26edd03df5a92ae"><div class="ttname"><a href="structLatLonLocation.html#a2c7b22b45f96515bb26edd03df5a92ae">LatLonLocation::x</a></div><div class="ttdeci">amrex::Real x</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:88</div></div>
+<div class="ttc" id="astructLatLonLocation_html_a6e254ec2123c0917253a3658ddfb0fde"><div class="ttname"><a href="structLatLonLocation.html#a6e254ec2123c0917253a3658ddfb0fde">LatLonLocation::near_lat</a></div><div class="ttdeci">amrex::Real near_lat</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:97</div></div>
+<div class="ttc" id="astructLatLonLocation_html_ae7e68feb5d7a6c01a14fe5e4e208e426"><div class="ttname"><a href="structLatLonLocation.html#ae7e68feb5d7a6c01a14fe5e4e208e426">LatLonLocation::y</a></div><div class="ttdeci">amrex::Real y</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:89</div></div>
+<div class="ttc" id="astructLatLonLocation_html_af53783792bbcadbb4efef487b0b1c621"><div class="ttname"><a href="structLatLonLocation.html#af53783792bbcadbb4efef487b0b1c621">LatLonLocation::sin_alpha</a></div><div class="ttdeci">amrex::Real sin_alpha</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:102</div></div>
+<div class="ttc" id="astructLatLonLocation_html_af7ad9de53ca85c1808f82aef197bced7"><div class="ttname"><a href="structLatLonLocation.html#af7ad9de53ca85c1808f82aef197bced7">LatLonLocation::near_lon</a></div><div class="ttdeci">amrex::Real near_lon</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:98</div></div>
+<div class="ttc" id="astructLatLonLocation_html_afaf710f26589464a71101b48e194018b"><div class="ttname"><a href="structLatLonLocation.html#afaf710f26589464a71101b48e194018b">LatLonLocation::lon</a></div><div class="ttdeci">amrex::Real lon</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.H:94</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#aca5c5a0bb4b5404a68e51411e7125e96">ERF::resolve_station_positions()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classObsNudging.html#a4547782e55d3b8c4c5efa32c4144781b">ObsNudging::resolve_positions()</a>, and <a class="el" href="classERF.html#aca5c5a0bb4b5404a68e51411e7125e96">ERF::resolve_station_positions()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLatLonMap_a0c7bc6182212990ed33c227013902f71_cgraph.png" border="0" usemap="#aclassLatLonMap_a0c7bc6182212990ed33c227013902f71_cgraph" alt=""/></div>
 <map name="aclassLatLonMap_a0c7bc6182212990ed33c227013902f71_cgraph" id="aclassLatLonMap_a0c7bc6182212990ed33c227013902f71_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,147,57"/>
-<area shape="rect" href="ERF__LatLonMap_8cpp.html#a6c2ca7c877c5a9af26781db0ee4a95f3" title=" " alt="" coords="195,31,356,57"/>
-<area shape="rect" href="ERF__LatLonMap_8H.html#a8893dd2a3d31a103e7a5dc28f9ca7348" title=" " alt="" coords="427,5,575,32"/>
-<area shape="rect" href="ERF__LatLonMap_8H.html#a4eb3ffe89ab28d8f106403b196ccbd1d" title=" " alt="" coords="404,56,599,83"/>
+<area shape="rect" title=" " alt="" coords="5,71,147,98"/>
+<area shape="rect" href="ERF__LatLonMap_8cpp.html#a6c2ca7c877c5a9af26781db0ee4a95f3" title=" " alt="" coords="195,71,356,98"/>
+<area shape="rect" href="ERF__LatLonMap_8cpp.html#afa85fe85c790ac388345a9942b3a96f3" title=" " alt="" coords="407,5,549,47"/>
+<area shape="rect" href="ERF__LatLonMap_8H.html#a4eb3ffe89ab28d8f106403b196ccbd1d" title=" " alt="" coords="600,42,795,69"/>
+<area shape="rect" href="ERF__LatLonMap_8H.html#a8893dd2a3d31a103e7a5dc28f9ca7348" title=" " alt="" coords="404,122,552,149"/>
 </map>
 </div>
 <div class="dynheader">
@@ -290,8 +297,90 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLatLonMap_a0c7bc6182212990ed33c227013902f71_icgraph.png" border="0" usemap="#aclassLatLonMap_a0c7bc6182212990ed33c227013902f71_icgraph" alt=""/></div>
 <map name="aclassLatLonMap_a0c7bc6182212990ed33c227013902f71_icgraph" id="aclassLatLonMap_a0c7bc6182212990ed33c227013902f71_icgraph">
-<area shape="rect" title=" " alt="" coords="208,13,349,39"/>
-<area shape="rect" href="classERF.html#aca5c5a0bb4b5404a68e51411e7125e96" title=" " alt="" coords="5,5,160,47"/>
+<area shape="rect" title=" " alt="" coords="211,46,352,73"/>
+<area shape="rect" href="classObsNudging.html#a4547782e55d3b8c4c5efa32c4144781b" title=" " alt="" coords="5,5,163,47"/>
+<area shape="rect" href="classERF.html#aca5c5a0bb4b5404a68e51411e7125e96" title=" " alt="" coords="7,71,161,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a083c50b0b76d7e37eacdb7bdcffc583d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a083c50b0b76d7e37eacdb7bdcffc583d">&#9670;&nbsp;</a></span>rotation_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LatLonMap::rotation_at </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramname"><em>cos_alpha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramname"><em>sin_alpha</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;{</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> out[2] = {<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0)};</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> i = std::clamp(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::floor((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - <a class="code" href="classLatLonMap.html#a60bfcc164f1dd4c365e024d11f11edd5">m_problo</a>[0]) / <a class="code" href="classLatLonMap.html#a50c1f67cc3c0798522eb233129f88eb5">m_dx</a>[0])),</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                                 <a class="code" href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">m_dom</a>.smallEnd(0), <a class="code" href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">m_dom</a>.bigEnd(0));</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> j = std::clamp(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::floor((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> - <a class="code" href="classLatLonMap.html#a60bfcc164f1dd4c365e024d11f11edd5">m_problo</a>[1]) / <a class="code" href="classLatLonMap.html#a50c1f67cc3c0798522eb233129f88eb5">m_dx</a>[1])),</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                                 <a class="code" href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">m_dom</a>.smallEnd(1), <a class="code" href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">m_dom</a>.bigEnd(1));</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <a class="code" href="ERF__LatLonMap_8cpp.html#afa85fe85c790ac388345a9942b3a96f3">grid_rotation_from_latlon</a>(<a class="code" href="classLatLonMap.html#acbaeba497ad248c87fbd6d636180fd43">m_ll</a>.const_array(0), <a class="code" href="classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2">m_dom</a>, i, j, out[0], out[1]);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    ParallelDescriptor::Bcast(out, 2, ParallelDescriptor::IOProcessorNumber());</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#aafb67b15d0c8c7fa7b1df54753e37e91">cos_alpha</a> = out[0];</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a10356618abd6ef4f319606a36a9039a8">sin_alpha</a> = out[1];</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
+<div class="ttc" id="aERF__LatLonMap_8cpp_html_afa85fe85c790ac388345a9942b3a96f3"><div class="ttname"><a href="ERF__LatLonMap_8cpp.html#afa85fe85c790ac388345a9942b3a96f3">grid_rotation_from_latlon</a></div><div class="ttdeci">void grid_rotation_from_latlon(const Array4&lt; const Real &gt; &amp;ll, const Box &amp;dom, int i, int j, Real &amp;cos_alpha, Real &amp;sin_alpha)</div><div class="ttdef"><b>Definition:</b> ERF_LatLonMap.cpp:62</div></div>
+<div class="ttc" id="aERF__Plotfile2DInterpolator_8cpp_html_a10356618abd6ef4f319606a36a9039a8"><div class="ttname"><a href="ERF__Plotfile2DInterpolator_8cpp.html#a10356618abd6ef4f319606a36a9039a8">sin_alpha</a></div><div class="ttdeci">Real sin_alpha</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DInterpolator.cpp:28</div></div>
+<div class="ttc" id="aERF__Plotfile2DInterpolator_8cpp_html_aafb67b15d0c8c7fa7b1df54753e37e91"><div class="ttname"><a href="ERF__Plotfile2DInterpolator_8cpp.html#aafb67b15d0c8c7fa7b1df54753e37e91">cos_alpha</a></div><div class="ttdeci">Real cos_alpha</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DInterpolator.cpp:27</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classObsNudging.html#a4547782e55d3b8c4c5efa32c4144781b">ObsNudging::resolve_positions()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classLatLonMap_a083c50b0b76d7e37eacdb7bdcffc583d_cgraph.png" border="0" usemap="#aclassLatLonMap_a083c50b0b76d7e37eacdb7bdcffc583d_cgraph" alt=""/></div>
+<map name="aclassLatLonMap_a083c50b0b76d7e37eacdb7bdcffc583d_cgraph" id="aclassLatLonMap_a083c50b0b76d7e37eacdb7bdcffc583d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,177,39"/>
+<area shape="rect" href="ERF__LatLonMap_8cpp.html#afa85fe85c790ac388345a9942b3a96f3" title=" " alt="" coords="225,5,368,47"/>
+<area shape="rect" href="ERF__LatLonMap_8H.html#a4eb3ffe89ab28d8f106403b196ccbd1d" title=" " alt="" coords="416,13,611,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classLatLonMap_a083c50b0b76d7e37eacdb7bdcffc583d_icgraph.png" border="0" usemap="#aclassLatLonMap_a083c50b0b76d7e37eacdb7bdcffc583d_icgraph" alt=""/></div>
+<map name="aclassLatLonMap_a083c50b0b76d7e37eacdb7bdcffc583d_icgraph" id="aclassLatLonMap_a083c50b0b76d7e37eacdb7bdcffc583d_icgraph">
+<area shape="rect" title=" " alt="" coords="211,13,383,39"/>
+<area shape="rect" href="classObsNudging.html#a4547782e55d3b8c4c5efa32c4144781b" title=" " alt="" coords="5,5,163,47"/>
 </map>
 </div>
 
@@ -318,7 +407,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classLatLonMap.html#a71f3f8349dc87bac84df8178c51dacf3">LatLonMap()</a>, and <a class="el" href="classLatLonMap.html#a0c7bc6182212990ed33c227013902f71">locate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classLatLonMap.html#a71f3f8349dc87bac84df8178c51dacf3">LatLonMap()</a>, <a class="el" href="classLatLonMap.html#a0c7bc6182212990ed33c227013902f71">locate()</a>, and <a class="el" href="classLatLonMap.html#a083c50b0b76d7e37eacdb7bdcffc583d">rotation_at()</a>.</p>
 
 </div>
 </div>
@@ -342,7 +431,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classLatLonMap.html#a0c7bc6182212990ed33c227013902f71">locate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classLatLonMap.html#a0c7bc6182212990ed33c227013902f71">locate()</a>, and <a class="el" href="classLatLonMap.html#a083c50b0b76d7e37eacdb7bdcffc583d">rotation_at()</a>.</p>
 
 </div>
 </div>
@@ -366,7 +455,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classLatLonMap.html#a71f3f8349dc87bac84df8178c51dacf3">LatLonMap()</a>, and <a class="el" href="classLatLonMap.html#a0c7bc6182212990ed33c227013902f71">locate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classLatLonMap.html#a71f3f8349dc87bac84df8178c51dacf3">LatLonMap()</a>, <a class="el" href="classLatLonMap.html#a0c7bc6182212990ed33c227013902f71">locate()</a>, and <a class="el" href="classLatLonMap.html#a083c50b0b76d7e37eacdb7bdcffc583d">rotation_at()</a>.</p>
 
 </div>
 </div>
@@ -390,7 +479,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classLatLonMap.html#a0c7bc6182212990ed33c227013902f71">locate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classLatLonMap.html#a0c7bc6182212990ed33c227013902f71">locate()</a>, and <a class="el" href="classLatLonMap.html#a083c50b0b76d7e37eacdb7bdcffc583d">rotation_at()</a>.</p>
 
 </div>
 </div>

@@ -1,9 +1,10 @@
 var classRadiationDiagnostics =
 [
-    [ "RadiationDiagnostics", "classRadiationDiagnostics.html#aad98613d7efe6d266eaa480cd931d77c", null ],
+    [ "RadiationDiagnostics", "classRadiationDiagnostics.html#a78007c9f4933177b5498968c17257818", null ],
     [ "~RadiationDiagnostics", "classRadiationDiagnostics.html#ad4d3d359c4bc90b838706c816c3e3f63", null ],
     [ "append", "classRadiationDiagnostics.html#ac38fd038b6247298d0ad20cb9b1f43e9", null ],
     [ "write_header_if_needed", "classRadiationDiagnostics.html#a76638e7b4246a8f18b4cb3853cf3117a", null ],
+    [ "m_amr_level", "classRadiationDiagnostics.html#a71bf26b52ea0db945de77f18d9c805ed", null ],
     [ "m_diag_callsite_mode", "classRadiationDiagnostics.html#aa335fb1b151abbb0c9655f9dad1aeada", null ],
     [ "m_diag_csv_enable", "classRadiationDiagnostics.html#ae518644fd00f676606eae12c200f876c", null ],
     [ "m_diag_dedup_tol", "classRadiationDiagnostics.html#ace97bcb766bc37fddb180674aad277cf", null ],

@@ -786,6 +786,7 @@ var namespaces_dup =
     [ "NoahmpInputComp", "namespaceNoahmpInputComp.html", null ],
     [ "NoahmpOutputComp", "namespaceNoahmpOutputComp.html", null ],
     [ "NoahmpPrecipSlot", "namespaceNoahmpPrecipSlot.html", null ],
+    [ "obs_nudging", "namespaceobs__nudging.html", "namespaceobs__nudging" ],
     [ "plotfile2d", "namespaceplotfile2d.html", "namespaceplotfile2d" ],
     [ "RealBdyHydrometeorVars", "namespaceRealBdyHydrometeorVars.html", null ],
     [ "RealBdyVars", "namespaceRealBdyVars.html", null ],

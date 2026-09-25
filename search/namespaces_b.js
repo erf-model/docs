@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['realbdyhydrometeorvars_7264',['RealBdyHydrometeorVars',['../namespaceRealBdyHydrometeorVars.html',1,'']]],
-  ['realbdyvars_7265',['RealBdyVars',['../namespaceRealBdyVars.html',1,'']]],
-  ['rrtmgp_7266',['rrtmgp',['../namespacerrtmgp.html',1,'']]]
+  ['plotfile2d_7350',['plotfile2d',['../namespaceplotfile2d.html',1,'']]]
 ];

@@ -14,6 +14,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "LinearSolvers", "dir_9e99115d7ddbb12c0597e51707e61330.html", "dir_9e99115d7ddbb12c0597e51707e61330" ],
     [ "MaterialProperties", "dir_62358ddc7484f5a2f546a9892c126ed2.html", "dir_62358ddc7484f5a2f546a9892c126ed2" ],
     [ "Microphysics", "dir_988434024952cd186327a8c7555a3c66.html", "dir_988434024952cd186327a8c7555a3c66" ],
+    [ "ObsNudging", "dir_6bcd38e0f38c45483124bff73646bdb6.html", "dir_6bcd38e0f38c45483124bff73646bdb6" ],
     [ "Particles", "dir_fbd11baa4baa1a8b78c4a3d08373cbc6.html", "dir_fbd11baa4baa1a8b78c4a3d08373cbc6" ],
     [ "PBL", "dir_ae0b7467bb3c74d292c83ac9fdeb56bf.html", "dir_ae0b7467bb3c74d292c83ac9fdeb56bf" ],
     [ "PhysicsInterfaces", "dir_c5966e4c77938253f8e5309ef0179056.html", "dir_c5966e4c77938253f8e5309ef0179056" ],

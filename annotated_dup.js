@@ -70,6 +70,12 @@ var annotated_dup =
       [ "FluxSelection", "structnoahmp__result__policy_1_1FluxSelection.html", "structnoahmp__result__policy_1_1FluxSelection" ],
       [ "CellPolicy", "structnoahmp__result__policy_1_1CellPolicy.html", "structnoahmp__result__policy_1_1CellPolicy" ]
     ] ],
+    [ "obs_nudging", "namespaceobs__nudging.html", [
+      [ "ObsNudgingView", "structobs__nudging_1_1ObsNudgingView.html", "structobs__nudging_1_1ObsNudgingView" ],
+      [ "StationRecord", "structobs__nudging_1_1StationRecord.html", "structobs__nudging_1_1StationRecord" ],
+      [ "StationSeries", "structobs__nudging_1_1StationSeries.html", "structobs__nudging_1_1StationSeries" ],
+      [ "Profile", "structobs__nudging_1_1Profile.html", "structobs__nudging_1_1Profile" ]
+    ] ],
     [ "plotfile2d", "namespaceplotfile2d.html", [
       [ "DiagnosticDescriptor", "structplotfile2d_1_1DiagnosticDescriptor.html", "structplotfile2d_1_1DiagnosticDescriptor" ],
       [ "SampledBracket", "structplotfile2d_1_1SampledBracket.html", "structplotfile2d_1_1SampledBracket" ],
@@ -166,6 +172,8 @@ var annotated_dup =
     [ "NullMoist", "classNullMoist.html", "classNullMoist" ],
     [ "NullSurf", "classNullSurf.html", "classNullSurf" ],
     [ "NullWindFarm", "classNullWindFarm.html", "classNullWindFarm" ],
+    [ "ObsNudging", "classObsNudging.html", "classObsNudging" ],
+    [ "ObsNudgingStation", "structObsNudgingStation.html", "structObsNudgingStation" ],
     [ "OpenBCPatch", "structOpenBCPatch.html", "structOpenBCPatch" ],
     [ "PBLDerivativeDzInv", "structPBLDerivativeDzInv.html", "structPBLDerivativeDzInv" ],
     [ "PBLDerivativeDzInv_N", "structPBLDerivativeDzInv__N.html", "structPBLDerivativeDzInv__N" ],

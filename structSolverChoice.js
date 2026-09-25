@@ -119,6 +119,7 @@ var structSolverChoice =
     [ "n_ensemble", "structSolverChoice.html#a01eb02821e0d2b4af93f01e3e4508674", null ],
     [ "ncorr", "structSolverChoice.html#a341d61a88aa621a166e71850ea19a110", null ],
     [ "nudging_from_input_sounding", "structSolverChoice.html#afb205bf9571eb7854484dbc11cbdc5b4", null ],
+    [ "nudging_from_observations", "structSolverChoice.html#aa1aef847cab581dd58c592e1be74ada9", null ],
     [ "nudging_q", "structSolverChoice.html#a32fe36ae02384f161f4969f291d1e138", null ],
     [ "nudging_q_z1", "structSolverChoice.html#a99c764e20b01840d7236923070fa9e16", null ],
     [ "nudging_q_z2", "structSolverChoice.html#a61a21453467f1f2193afddb4f79b7379", null ],
