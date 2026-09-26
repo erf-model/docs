@@ -214,7 +214,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__TwoStreamSW_8H_a90ce366285b9451eb168103d7f11a8ab_icgraph" id="aERF__TwoStreamSW_8H_a90ce366285b9451eb168103d7f11a8ab_icgraph">
 <area shape="rect" title="Compute Beer&#45;Lambert direct&#45;beam flux at a given optical depth." alt="" coords="412,13,591,39"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
-<area shape="rect" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 
@@ -279,21 +279,21 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Heating rate [K/s]. Positive values indicate warming. </dd></dl>
 <div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a> &lt;= 0.0 || <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">rho</a> &lt;= 0.0 || <a class="code" href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">cp</a> &lt;= 0.0) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespaceWDM6SedCellScratch.html#a3c792271a2d2577da86a9b7907a7304daeaf93dae2185f9a45d471709664f2de7">dz</a> &lt;= 0.0 || <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a> &lt;= 0.0 || <a class="code" href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">cp</a> &lt;= 0.0) {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="comment">// Flux divergence: (W/m^2) / (m) = W/m^3</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> flux_divergence = (flux_top - flux_bot) / <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> flux_divergence = (flux_top - flux_bot) / <a class="code" href="namespaceWDM6SedCellScratch.html#a3c792271a2d2577da86a9b7907a7304daeaf93dae2185f9a45d471709664f2de7">dz</a>;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="comment">// Heating rate: (W/m^3) / (kg/m^3 * J/(kg*K)) = K/s</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> heating = flux_divergence / (<a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">rho</a> * <a class="code" href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">cp</a>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> heating = flux_divergence / (<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a> * <a class="code" href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">cp</a>);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">if</span> (!amrex::Math::isfinite(heating)) {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">return</span> heating;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="anamespaceMicVar__Kess_html_a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:25</div></div>
-<div class="ttc" id="anamespaceWDM6SedCellScratch_html_ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:272</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:25</div></div>
+<div class="ttc" id="anamespaceWDM6SedCellScratch_html_a3c792271a2d2577da86a9b7907a7304daeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#a3c792271a2d2577da86a9b7907a7304daeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:272</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_ad91cf5134671388384cd1d2b3139b7a4"><div class="ttname"><a href="namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4">module_model_constants::cp</a></div><div class="ttdeci">real(c_double), parameter cp</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:22</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780">vertical_two_stream_sweep()</a>.</p>
@@ -304,7 +304,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__TwoStreamSW_8H_a94e6b06653b31c769618c8a652d1e8e8_icgraph" id="aERF__TwoStreamSW_8H_a94e6b06653b31c769618c8a652d1e8e8_icgraph">
 <area shape="rect" title="Compute the shortwave heating rate of a layer from the net (downward positive) flux at its top and bo..." alt="" coords="412,13,605,39"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
-<area shape="rect" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 
@@ -378,7 +378,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    L.<a class="code" href="structTwoStreamLayerSW.html#aff5e99d626dbbf65fcb1049a00cac786">T_noscat</a> = 0.0;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  }</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> w0 = <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a93264ee6dc9b23e994674a68250a2f16">omega</a>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> w0 = <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordflow">if</span> (!(w0 &gt; 0.0) || !amrex::Math::isfinite(w0)) w0 = 0.0;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="keywordflow">if</span> (w0 &gt; 1.0) w0 = 1.0;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> asym = <a class="code" href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">g</a>;</div>
@@ -451,7 +451,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  L.T_dir = T_dir;</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keywordflow">return</span> L;</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89a93264ee6dc9b23e994674a68250a2f16"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a93264ee6dc9b23e994674a68250a2f16">MicVar_Morr::omega</a></div><div class="ttdeci">@ omega</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:55</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16"><div class="ttname"><a href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">MicVar_Morr::omega</a></div><div class="ttdeci">@ omega</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:55</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a1f0c74f0fd17b1b38de53299cadb3fdf"><div class="ttname"><a href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">module_model_constants::g</a></div><div class="ttdeci">real(c_double), parameter g</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:19</div></div>
 <div class="ttc" id="astructTwoStreamLayerSW_html"><div class="ttname"><a href="structTwoStreamLayerSW.html">TwoStreamLayerSW</a></div><div class="ttdoc">Two-stream reflectance and transmittance of one homogeneous layer.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamSW.H:132</div></div>
 <div class="ttc" id="astructTwoStreamLayerSW_html_aff5e99d626dbbf65fcb1049a00cac786"><div class="ttname"><a href="structTwoStreamLayerSW.html#aff5e99d626dbbf65fcb1049a00cac786">TwoStreamLayerSW::T_noscat</a></div><div class="ttdeci">amrex::Real T_noscat</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamSW.H:137</div></div>
@@ -464,7 +464,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__TwoStreamSW_8H_a9a01c1336cd44576e9c1486cfd27c743_icgraph" id="aERF__TwoStreamSW_8H_a9a01c1336cd44576e9c1486cfd27c743_icgraph">
 <area shape="rect" title="Compute the two&#45;stream layer solution for shortwave radiation." alt="" coords="412,5,587,47"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#a838319165ffd594a23bb16157d176780" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
-<area shape="rect" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 

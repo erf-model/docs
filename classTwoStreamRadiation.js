@@ -4,7 +4,7 @@ var classTwoStreamRadiation =
     [ "OrbitalCache", "structTwoStreamRadiation_1_1OrbitalCache.html", "structTwoStreamRadiation_1_1OrbitalCache" ],
     [ "TwoStreamRadiation", "classTwoStreamRadiation.html#a24f5984550ff5e062aae765fa8a63f12", null ],
     [ "active", "classTwoStreamRadiation.html#a729a742dd46a93c80bcceb6c5fb423f9", null ],
-    [ "advance", "classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd", null ],
+    [ "advance", "classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928", null ],
     [ "define_level", "classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92", null ],
     [ "read_checkpoint", "classTwoStreamRadiation.html#a2eb6aa62660001677ac4cbb72d9900dc", null ],
     [ "resize", "classTwoStreamRadiation.html#a8a4710347071825a40a0caaef176dedc", null ],

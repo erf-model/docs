@@ -5,7 +5,7 @@ var classRadiationSimple =
     [ "get_radlwdn", "classRadiationSimple.html#ae7468df38d2b8a433fd0c46c3e4b6277", null ],
     [ "get_radqrlw", "classRadiationSimple.html#a67caf8c72c972ea190fb9ee2ddd2d009", null ],
     [ "Init", "classRadiationSimple.html#a7236402f81fdbed48467a3c67b25f3e6", null ],
-    [ "Run", "classRadiationSimple.html#a5451f5e6a08bae35ace1c7251de937f6", null ],
+    [ "Run", "classRadiationSimple.html#a081881d73e7a80265f2afbf12f5103bb", null ],
     [ "WriteDataLog", "classRadiationSimple.html#ad17d203f960fa01eb0a8b458a442c686", null ],
     [ "deltaq", "classRadiationSimple.html#a33916e849e305f54ca250cbe3593798f", null ],
     [ "flux", "classRadiationSimple.html#ab09366df386ba613092b2b705341e7b5", null ],

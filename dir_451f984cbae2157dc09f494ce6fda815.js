@@ -24,6 +24,7 @@ var dir_451f984cbae2157dc09f494ce6fda815 =
     [ "ERF_InitCustomPert_ScalarAdvDiff.H", "ERF__InitCustomPert__ScalarAdvDiff_8H.html", "ERF__InitCustomPert__ScalarAdvDiff_8H" ],
     [ "ERF_InitCustomPert_SDMCongestus3D.H", "ERF__InitCustomPert__SDMCongestus3D_8H.html", "ERF__InitCustomPert__SDMCongestus3D_8H" ],
     [ "ERF_InitCustomPert_SDMCongestus3DCold.H", "ERF__InitCustomPert__SDMCongestus3DCold_8H.html", "ERF__InitCustomPert__SDMCongestus3DCold_8H" ],
+    [ "ERF_InitCustomPert_SLM.H", "ERF__InitCustomPert__SLM_8H.html", "ERF__InitCustomPert__SLM_8H" ],
     [ "ERF_InitCustomPert_SquallLine.H", "ERF__InitCustomPert__SquallLine_8H.html", "ERF__InitCustomPert__SquallLine_8H" ],
     [ "ERF_InitCustomPert_StokesSecondProblem.H", "ERF__InitCustomPert__StokesSecondProblem_8H.html", "ERF__InitCustomPert__StokesSecondProblem_8H" ],
     [ "ERF_InitCustomPert_SuperCell.H", "ERF__InitCustomPert__SuperCell_8H.html", "ERF__InitCustomPert__SuperCell_8H" ],

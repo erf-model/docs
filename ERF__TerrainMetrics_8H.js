@@ -40,6 +40,7 @@ var ERF__TerrainMetrics_8H =
     [ "rotate_scalar_flux", "ERF__TerrainMetrics_8H.html#a26ff28d8e0387cc0cb634ecff18aeb7b", null ],
     [ "rotate_stress_tensor", "ERF__TerrainMetrics_8H.html#ae69ea9f45ab883c6456e9d0ffcdfa2fe", null ],
     [ "update_stretched_dz", "ERF__TerrainMetrics_8H.html#aa12259218315ea9e55b53683cce38442", null ],
+    [ "validate_flat_terrain", "ERF__TerrainMetrics_8H.html#a3f78747a2efa388dbde8732289ce10ca", null ],
     [ "WFromOmega", "ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a", null ],
     [ "which_fine_terrain", "ERF__TerrainMetrics_8H.html#a5a9e39d96b7ebe9f9dbd5d32560e7d3a", null ]
 ];

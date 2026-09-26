@@ -990,9 +990,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;      <span class="keywordflow">if</span> (!std::isfinite(<a class="code" href="structRadChoice.html#a863c72be0fa9bc9e0bb5917b0c6ca543">seb_prognostic_t_min_k</a>)) <a class="code" href="structRadChoice.html#a863c72be0fa9bc9e0bb5917b0c6ca543">seb_prognostic_t_min_k</a> = 200.0;</div>
 <div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;      <span class="keywordflow">if</span> (!std::isfinite(<a class="code" href="structRadChoice.html#a7da38793c53ae932a56a9769a632d041">seb_prognostic_t_max_k</a>)) <a class="code" href="structRadChoice.html#a7da38793c53ae932a56a9769a632d041">seb_prognostic_t_max_k</a> = 340.0;</div>
 <div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structRadChoice.html#a863c72be0fa9bc9e0bb5917b0c6ca543">seb_prognostic_t_min_k</a> &gt; <a class="code" href="structRadChoice.html#a7da38793c53ae932a56a9769a632d041">seb_prognostic_t_max_k</a>) {</div>
-<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;          <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWSM6SedCellScratch.html#a78ab3570591ae950f775ecc7820717c6a381cd8133166e8909183cb00eaec8da1">tmp</a> = <a class="code" href="structRadChoice.html#a863c72be0fa9bc9e0bb5917b0c6ca543">seb_prognostic_t_min_k</a>;</div>
+<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;          <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a> = <a class="code" href="structRadChoice.html#a863c72be0fa9bc9e0bb5917b0c6ca543">seb_prognostic_t_min_k</a>;</div>
 <div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;          <a class="code" href="structRadChoice.html#a863c72be0fa9bc9e0bb5917b0c6ca543">seb_prognostic_t_min_k</a> = <a class="code" href="structRadChoice.html#a7da38793c53ae932a56a9769a632d041">seb_prognostic_t_max_k</a>;</div>
-<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;          <a class="code" href="structRadChoice.html#a7da38793c53ae932a56a9769a632d041">seb_prognostic_t_max_k</a> = <a class="code" href="namespaceWSM6SedCellScratch.html#a78ab3570591ae950f775ecc7820717c6a381cd8133166e8909183cb00eaec8da1">tmp</a>;</div>
+<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;          <a class="code" href="structRadChoice.html#a7da38793c53ae932a56a9769a632d041">seb_prognostic_t_max_k</a> = <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>;</div>
 <div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;      }</div>
 <div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160; </div>
 <div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;      <span class="comment">// Clamp moisture bounds</span></div>
@@ -1001,9 +1001,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;      <a class="code" href="structRadChoice.html#aecf4a87c9294c67baeb533ba76e9dcbf">seb_prognostic_q_min</a> = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), amrex::min(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0), <a class="code" href="structRadChoice.html#aecf4a87c9294c67baeb533ba76e9dcbf">seb_prognostic_q_min</a>));</div>
 <div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;      <a class="code" href="structRadChoice.html#aae2e0933516452b9572479e8a97a1890">seb_prognostic_q_max</a> = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), amrex::min(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0), <a class="code" href="structRadChoice.html#aae2e0933516452b9572479e8a97a1890">seb_prognostic_q_max</a>));</div>
 <div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structRadChoice.html#aecf4a87c9294c67baeb533ba76e9dcbf">seb_prognostic_q_min</a> &gt; <a class="code" href="structRadChoice.html#aae2e0933516452b9572479e8a97a1890">seb_prognostic_q_max</a>) {</div>
-<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;          <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWSM6SedCellScratch.html#a78ab3570591ae950f775ecc7820717c6a381cd8133166e8909183cb00eaec8da1">tmp</a> = <a class="code" href="structRadChoice.html#aecf4a87c9294c67baeb533ba76e9dcbf">seb_prognostic_q_min</a>;</div>
+<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;          <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a> = <a class="code" href="structRadChoice.html#aecf4a87c9294c67baeb533ba76e9dcbf">seb_prognostic_q_min</a>;</div>
 <div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;          <a class="code" href="structRadChoice.html#aecf4a87c9294c67baeb533ba76e9dcbf">seb_prognostic_q_min</a> = <a class="code" href="structRadChoice.html#aae2e0933516452b9572479e8a97a1890">seb_prognostic_q_max</a>;</div>
-<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;          <a class="code" href="structRadChoice.html#aae2e0933516452b9572479e8a97a1890">seb_prognostic_q_max</a> = <a class="code" href="namespaceWSM6SedCellScratch.html#a78ab3570591ae950f775ecc7820717c6a381cd8133166e8909183cb00eaec8da1">tmp</a>;</div>
+<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;          <a class="code" href="structRadChoice.html#aae2e0933516452b9572479e8a97a1890">seb_prognostic_q_max</a> = <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>;</div>
 <div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;      }</div>
 <div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160; </div>
 <div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;      <span class="comment">// The prognostic surface energy balance is a single-level feature: it evolves the</span></div>
@@ -1028,7 +1028,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="anamespaceWSM6SedCellScratch_html_a78ab3570591ae950f775ecc7820717c6a381cd8133166e8909183cb00eaec8da1"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a78ab3570591ae950f775ecc7820717c6a381cd8133166e8909183cb00eaec8da1">WSM6SedCellScratch::tmp</a></div><div class="ttdeci">@ tmp</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:116</div></div>
+<div class="ttc" id="anamespaceWSM6SedCellScratch_html_a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">WSM6SedCellScratch::tmp</a></div><div class="ttdeci">@ tmp</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:116</div></div>
 <div class="ttc" id="astructRadChoice_html_a02ec8de938e7dced12ada806766bc331"><div class="ttname"><a href="structRadChoice.html#a02ec8de938e7dced12ada806766bc331">RadChoice::lw_kabs_dry</a></div><div class="ttdeci">amrex::Real lw_kabs_dry</div><div class="ttdoc">Dry-air gray LW mass absorption coefficient [m^2/kg].</div><div class="ttdef"><b>Definition:</b> ERF_RadStruct.H:188</div></div>
 <div class="ttc" id="astructRadChoice_html_a031f61509e05d3a6f46d23f4c1187d81"><div class="ttname"><a href="structRadChoice.html#a031f61509e05d3a6f46d23f4c1187d81">RadChoice::aerosol_enable</a></div><div class="ttdeci">bool aerosol_enable</div><div class="ttdoc">Enable prescribed bulk aerosol/turbidity optical depth. When true, aerosol optical depth is added on ...</div><div class="ttdef"><b>Definition:</b> ERF_RadStruct.H:577</div></div>
 <div class="ttc" id="astructRadChoice_html_a038244f3a67db264cb970fec96692918"><div class="ttname"><a href="structRadChoice.html#a038244f3a67db264cb970fec96692918">RadChoice::tau_model</a></div><div class="ttdeci">TauModel tau_model</div><div class="ttdoc">Optical depth model: &quot;per_layer&quot; (default, fixed tau per layer) or &quot;mass&quot; (from the layer mass path i...</div><div class="ttdef"><b>Definition:</b> ERF_RadStruct.H:155</div></div>
@@ -1248,7 +1248,7 @@ Here is the caller graph for this function:</div>
 
 <p>Enable prescribed bulk aerosol/turbidity optical depth. When true, aerosol optical depth is added on top of existing tau_base + cloud + dynamic-moisture contributions. When false (default), there is no aerosol contribution. Only used by the two-stream model and sw_enabled == true. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1271,7 +1271,7 @@ Here is the caller graph for this function:</div>
 <li>Table: per-level tau prescribed via lookup (future extension, currently not supported). Default Constant. Only used when aerosol_enable == true. </li>
 </ul>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1289,7 +1289,7 @@ Here is the caller graph for this function:</div>
 
 <p>Scale height for exponential aerosol profile [m]. Controls decay rate: tau_aerosol(k) = aerosol_tau_surface * exp(-<a class="el" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z(k)</a> / scale_height). Default 2000.0 m (typical scale height for tropospheric aerosols). Only used when aerosol_enable == true and aerosol_profile_type == Exponential. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1307,7 +1307,7 @@ Here is the caller graph for this function:</div>
 
 <p>Constant aerosol optical depth per layer [dimensionless]. Used for AerosolProfileType::Constant profile. Default 0.0 (no aerosol contribution). Only used when aerosol_enable == true and aerosol_profile_type == Constant. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1325,7 +1325,7 @@ Here is the caller graph for this function:</div>
 
 <p>Total-column aerosol optical depth at surface [dimensionless]. Used for AerosolProfileType::Exponential profile as the surface boundary condition. Default 0.0 (no aerosol contribution). Only used when aerosol_enable == true and aerosol_profile_type == Exponential. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1346,7 +1346,7 @@ Here is the caller graph for this function:</div>
 </blockquote>
 </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1364,7 +1364,7 @@ Here is the caller graph for this function:</div>
 
 <p>Cloud scattering asymmetry factor in [-1, 1], used instead of asymmetry_factor for levels where the cloud-layer optical depth enhancement applies. Default 0.0. Typical liquid water cloud droplet values are around 0.85 (strongly forward-scattering). Only meaningful when cloud_single_scattering_albedo &gt; 0. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1382,7 +1382,7 @@ Here is the caller graph for this function:</div>
 
 <p>Cloud layer base height [m]. Only used when tau_profile_type == CloudLayer. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1400,7 +1400,7 @@ Here is the caller graph for this function:</div>
 
 <p>Cloud fraction in [0, 1] used to blend clear-sky and cloudy-column fluxes: F = (1 - cloud_fraction) * F_clear + cloud_fraction * F_cloudy. Default 0.0 (fully clear sky), which reduces exactly to the clear-sky column regardless of tau_profile_type. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1418,7 +1418,7 @@ Here is the caller graph for this function:</div>
 
 <p>Enable prognostic cloud fraction diagnosis from RH/qc. When true, cloud fraction is computed per-level from relative humidity and cloud water. When false (default), uses the static cloud_fraction. Only used by the two-stream model. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1436,7 +1436,7 @@ Here is the caller graph for this function:</div>
 
 <p>Cloud water [kg/kg] at which the liquid-water term alone gives a cloud fraction of 1: cf += min(1, qc / cloud_fraction_qc_scale). Default 1.0e-3 kg/kg, so a typical stratus cloud water saturates the term. Only used when cloud_fraction_prog_enable == true. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1454,7 +1454,7 @@ Here is the caller graph for this function:</div>
 
 <p>Maximum relative humidity threshold for cloud fraction diagnosis [0, 1]. Must be &gt;= cloud_fraction_rh_min. Cloud fraction saturates to 1 at this RH. Default 1.0 means cloud fraction increases linearly from rh_min to 1.0 RH. Only used when cloud_fraction_prog_enable == true. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1472,7 +1472,7 @@ Here is the caller graph for this function:</div>
 
 <p>Minimum relative humidity threshold for cloud fraction diagnosis [0, 1]. Cloud fraction ramps from 0 at rh &lt; cloud_fraction_rh_min to 1 at rh &gt;= cloud_fraction_rh_max. Default 0.0 means cloud fraction depends primarily on qc content. Only used when cloud_fraction_prog_enable == true. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1490,7 +1490,7 @@ Here is the caller graph for this function:</div>
 
 <p>Cloud single-scattering albedo in [0, 1], used instead of single_scattering_albedo for levels where the cloud-layer optical depth enhancement applies (i.e., within [cloud_base_height_m, cloud_top_height_m] on the "cloudy" column evaluation). Default 0.0 leaves the cloud band non-scattering for SW_Cloud_Layer unless explicitly configured otherwise. Typical liquid water cloud values are close to 1 (e.g., 0.9999). Only used when tau_profile_type == CloudLayer. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1508,7 +1508,7 @@ Here is the caller graph for this function:</div>
 
 <p>Additional optical depth per layer contributed by the cloud, added on top of the clear-sky tau_per_layer/tau_lw_per_layer background within [cloud_base_height_m, cloud_top_height_m]. Only used when tau_profile_type == CloudLayer. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1526,7 +1526,7 @@ Here is the caller graph for this function:</div>
 
 <p>Cloud layer top height [m]. Only used when tau_profile_type == CloudLayer. Must be &gt;= cloud_base_height_m. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1544,7 +1544,7 @@ Here is the caller graph for this function:</div>
 
 <p>Call-site filtering mode: "both" (pre+post rows), "pre_only", or "post_only". </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1562,7 +1562,7 @@ Here is the caller graph for this function:</div>
 
 <p>Enable CSV file append behavior. When false, no file writes; other enabled streams may still print. Default true. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1580,7 +1580,7 @@ Here is the caller graph for this function:</div>
 
 <p>Tolerance for time equality in duplicate guard [s]. Times within this tolerance are considered equal. Default 1e-12. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1598,7 +1598,7 @@ Here is the caller graph for this function:</div>
 
 <p>Master switch for radiation diagnostics emission. When false, no diagnostics output (stdout/tagged/regtest/csv). Default false: a run that did not ask for the diagnostics should not write a CSV row and a stdout block on every step. The per-stream switches below stay on by default, so setting this one input to true turns the whole set on. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1616,7 +1616,7 @@ Here is the caller graph for this function:</div>
 
 <p>Output file path for radiation diagnostics CSV. Paths are relative to the simulation working directory. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1634,7 +1634,7 @@ Here is the caller graph for this function:</div>
 
 <p>Enable RADIATION_DIAG: line emission. Controls regtest-parsing diagnostics line. Default true. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1652,7 +1652,7 @@ Here is the caller graph for this function:</div>
 
 <p>Enable human-readable stdout diagnostics block. Controls tagged [RAD][...] debug line emission (when verbosity &gt;= 1). Default true. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1670,7 +1670,7 @@ Here is the caller graph for this function:</div>
 
 <p>Enable tagged [RAD][...] debug lines. Controls emission of bracketed-tag debug output. Default true. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1706,7 +1706,7 @@ Here is the caller graph for this function:</div>
 
 <p>erf.fixed_solar_zenith_angle: the COSINE of the solar zenith angle (mu0), as RRTMGP takes it, applied to every column when &gt; 0. Otherwise (default) the sun follows the calendar: start_datetime sets the date and time, the position is evaluated at rad_cons_lat/lon or at the per-column latitude and longitude when the grid carries them. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1724,7 +1724,7 @@ Here is the caller graph for this function:</div>
 
 <p>erf.fixed_total_solar_irradiance: top-of-atmosphere irradiance [W/m^2] when &gt;= 0. Otherwise (default) 1360.9 W/m^2 scaled by the Earth-Sun distance factor of the date, as RRTMGP does. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1742,7 +1742,7 @@ Here is the caller graph for this function:</div>
 
 <p>Enable longwave (thermal) radiation computation. Only used by the two-stream model. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1760,7 +1760,7 @@ Here is the caller graph for this function:</div>
 
 <p>Cloud-water LW mass absorption coefficient <a href="Stephens 1978: 0.158 m^2/g">m^2/kg</a>. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1778,7 +1778,7 @@ Here is the caller graph for this function:</div>
 
 <p>Dry-air gray LW mass absorption coefficient [m^2/kg]. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1796,7 +1796,7 @@ Here is the caller graph for this function:</div>
 
 <p>Water-vapor gray LW mass absorption coefficient [m^2/kg]. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1814,7 +1814,7 @@ Here is the caller graph for this function:</div>
 
 <p>Gray longwave optical depth from the layer mass path instead of the fixed tau_lw_per_layer (also selected by tau_model = mass): tau_lw(k) = rho dz (lw_kabs_dry + lw_kabs_vapor qv + lw_kabs_cloud qc) The cloud term is the Stephens (1978) emissivity, eps = 1 - exp(-a LWP) with a = 0.158 m^2/g, written as an optical depth. The column optical depth is then independent of the vertical resolution. The cloud-band, moisture-coefficient and aerosol additions still apply on top. Default false keeps tau_lw_per_layer. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1832,7 +1832,7 @@ Here is the caller graph for this function:</div>
 
 <p>erf.rad_cons_lat / erf.rad_cons_lon: site latitude and longitude [degrees] when the grid has no lat/lon fields (RRTMGP defaults). </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1848,7 +1848,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1932,7 +1932,7 @@ Here is the caller graph for this function:</div>
 
 <p>erf.rad_t_sfc: surface temperature [K] used as the longwave boundary condition wherever no land-surface model, surface layer or prognostic surface energy balance supplies one; also the initial value of the prognostic surface temperature. Required, as for RRTMGP. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1950,7 +1950,7 @@ Here is the caller graph for this function:</div>
 
 <p>Enable diagnostic SEB residual computation and reporting. When true, computes and reports SEB residual = (SW_net + LW_net) - H - LE - G. When false (default), no residual computation or new diagnostic output. Requires seb_enable=true to be meaningful; if false but seb_enable=true, auto-enables internally. Note: this is diagnostic-only; it makes no prognostic T_s or flux update. Set seb_prognostic_enable for that. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1968,7 +1968,7 @@ Here is the caller graph for this function:</div>
 
 <p>Master switch for simplified SEB infrastructure. When false (default), no SEB MultiFabs are allocated and behavior is unchanged. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1986,7 +1986,7 @@ Here is the caller graph for this function:</div>
 
 <p>Fallback SEB ground heat flux [W/m^2]. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2004,7 +2004,7 @@ Here is the caller graph for this function:</div>
 
 <p>Fallback SEB sensible heat flux [W/m^2]. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2022,7 +2022,7 @@ Here is the caller graph for this function:</div>
 
 <p>Fallback SEB latent heat flux [W/m^2]. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2040,7 +2040,7 @@ Here is the caller graph for this function:</div>
 
 <p>Fallback SEB surface net longwave flux [W/m^2]. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2058,7 +2058,7 @@ Here is the caller graph for this function:</div>
 
 <p>Effective surface moisture layer depth [m]. Used in force-restore prognostic q_s equation: dq_s/dt = -(LE/(L_v*rho_w*d_s)) - (1/tau_q)*(q_s - q_deep). Default 0.1 m represents a thin surface-active moisture layer. Only used when seb_prognostic_enable=true. Validated &gt; 0 in <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2076,7 +2076,7 @@ Here is the caller graph for this function:</div>
 
 <p>Force-restore timescale for surface moisture [s]. Relaxation time constant toward q_deep in prognostic q_s equation. Default 86400.0 s (1 day) provides weak damping on diurnal timescales. Only used when seb_prognostic_enable=true. Validated &gt; 0 in <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2094,7 +2094,7 @@ Here is the caller graph for this function:</div>
 
 <p>Enable prognostic SEB surface temperature and moisture evolution. When true, integrates SEB residual forward in time to evolve T_s and q_s using force-restore formulation. When false (default), no prognostic update occurs. Requires seb_enable=true and seb_diagnostic_enable=true; auto-enables internally if needed. Only active when Noah-MP is NOT driving LSM fields at that level. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2112,7 +2112,7 @@ Here is the caller graph for this function:</div>
 
 <p>Maximum clamping bound for prognostic surface moisture [kg/kg]. After each Euler update, q_s is clamped to [seb_prognostic_q_min, seb_prognostic_q_max]. Default 1.0 kg/kg ensures physically meaningful moisture. Only used when seb_prognostic_enable=true. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2130,7 +2130,7 @@ Here is the caller graph for this function:</div>
 
 <p>Minimum clamping bound for prognostic surface moisture [kg/kg]. After each Euler update, q_s is clamped to [seb_prognostic_q_min, seb_prognostic_q_max]. Default 0.0 kg/kg prevents negative moisture. Only used when seb_prognostic_enable=true. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2148,7 +2148,7 @@ Here is the caller graph for this function:</div>
 
 <p>Maximum clamping bound for prognostic surface temperature [K]. After each Euler update, T_s is clamped to [seb_prognostic_t_min_k, seb_prognostic_t_max_k]. Default 340.0 K (above typical surface temperatures, but prevents unrealistic excursions). Only used when seb_prognostic_enable=true. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2166,7 +2166,7 @@ Here is the caller graph for this function:</div>
 
 <p>Minimum clamping bound for prognostic surface temperature [K]. After each Euler update, T_s is clamped to [seb_prognostic_t_min_k, seb_prognostic_t_max_k] to prevent instability if dt is large relative to C_s/tau. Default 200.0 K (far below realistic surface temperatures). Only used when seb_prognostic_enable=true. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2184,7 +2184,7 @@ Here is the caller graph for this function:</div>
 
 <p>Fallback SEB deep soil moisture [kg/kg]. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2202,7 +2202,7 @@ Here is the caller graph for this function:</div>
 
 <p>Fallback SEB surface moisture [kg/kg]. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2220,7 +2220,7 @@ Here is the caller graph for this function:</div>
 
 <p>Force-restore timescale for surface temperature [s]. Relaxation time constant toward T_deep in prognostic T_s equation. Default 86400.0 s (1 day) provides weak damping on diurnal timescales. Only used when seb_prognostic_enable=true. Validated &gt; 0 in <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2238,7 +2238,7 @@ Here is the caller graph for this function:</div>
 
 <p>Effective surface heat capacity [J/(m^2*K)]. Used in force-restore prognostic T_s equation: dT_s/dt = SEB_residual / C_s - (2*pi/tau)*(T_s - T_deep). Default 2.0e4 J/(m^2*K) represents a thin surface-active layer. Only used when seb_prognostic_enable=true. Validated &gt; 0 in <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2256,7 +2256,7 @@ Here is the caller graph for this function:</div>
 
 <p>Fallback SEB surface net shortwave flux [W/m^2]. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2274,7 +2274,7 @@ Here is the caller graph for this function:</div>
 
 <p>Fallback SEB deep soil temperature [K]. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2292,7 +2292,7 @@ Here is the caller graph for this function:</div>
 
 <p>Take the SEB's net surface shortwave and longwave fluxes from the two-stream sweep itself (per column, absorbed fluxes positive) wherever the LSM does not expose them. When false (default) those fluxes are the LSM fields or, without an LSM, the seb_sw_flux_default and seb_lw_flux_default constants. Sensible, latent and ground heat fluxes are unaffected. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2310,7 +2310,7 @@ Here is the caller graph for this function:</div>
 
 <p>Clear-sky (background gas) single-scattering albedo in [0, 1] for the SW diffuse (scattering) two-stream calculation. Default 0.0 means the clear-sky column is purely absorbing, and the diffuse SW contribution from the clear-sky column is exactly zero — reducing exactly to the direct-beam-only result. Only used by the two-stream model and sw_enabled == true. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2328,7 +2328,7 @@ Here is the caller graph for this function:</div>
 
 <p>Shortwave surface albedo fallback [0, 1] for per-column heterogeneous-surface-property resolution. Used when per-column LSM/radiation interface albedo field is unavailable or invalid. Default 0.3 represents typical land/water reflectivity. Only used when hetero surface fields not present or disabled. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2346,7 +2346,7 @@ Here is the caller graph for this function:</div>
 
 <p>Shortwave surface albedo for diffuse light [0,1]. A negative value (default) uses surface_albedo_sw for both direct and diffuse light. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2364,7 +2364,7 @@ Here is the caller graph for this function:</div>
 
 <p>Longwave surface emissivity fallback [0, 1] for per-column heterogeneous-surface-property resolution. Used when per-column LSM/radiation interface emissivity field is unavailable or invalid. Default 0.99 represents typical land/water/ice emissivity (nearly blackbody). Only used when hetero surface fields not present or disabled. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, <a class="el" href="classTwoStreamRadiation.html#a25e5d4806d54faab27e4fee55dc09f92">TwoStreamRadiation::define_level()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2382,7 +2382,7 @@ Here is the caller graph for this function:</div>
 
 <p>Mass model, SW: cloud-water asymmetry factor. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2400,7 +2400,7 @@ Here is the caller graph for this function:</div>
 
 <p>Mass model, SW: cloud-water single-scattering albedo. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2418,7 +2418,7 @@ Here is the caller graph for this function:</div>
 
 <p>Enable shortwave (solar) radiation computation. Only used by the two-stream model. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2436,7 +2436,7 @@ Here is the caller graph for this function:</div>
 
 <p>Mass model, SW: dry-air gray absorption coefficient [m^2/kg]. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2454,7 +2454,7 @@ Here is the caller graph for this function:</div>
 
 <p>Mass model, SW: water-vapor gray absorption coefficient [m^2/kg]. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2472,7 +2472,7 @@ Here is the caller graph for this function:</div>
 
 <p>Mass model, SW: cloud-water extinction coefficient <a href="~1.5/r_e with r_e = 10 um">m^2/kg</a>. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2490,7 +2490,7 @@ Here is the caller graph for this function:</div>
 
 <p>Mass model, SW: dry-air (Rayleigh) scattering coefficient [m^2/kg], omega = 1, g = 0. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2508,7 +2508,7 @@ Here is the caller graph for this function:</div>
 
 <p>Longwave optical depth coefficient for cloud liquid water [dimensionless]. Default 0.0. When both coefficients are 0, dynamic path still invoked but yields tau_lw_per_layer unchanged. Only used when tau_lw_dynamic_enable == true. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2526,7 +2526,7 @@ Here is the caller graph for this function:</div>
 
 <p>Longwave optical depth coefficient for water vapor [dimensionless]. Dynamic LW tau = tau_lw_coeff_qv * qv + tau_lw_coeff_qc * qc + tau_lw_per_layer. Default 0.0 means tau is purely from static tau_lw_per_layer (no dynamic component). Only used when tau_lw_dynamic_enable == true. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2544,7 +2544,7 @@ Here is the caller graph for this function:</div>
 
 <p>Enable dynamic longwave optical depth diagnosis from moisture/clouds. When true, LW optical depth is computed per-level from qv and qc. When false (default), uses the static tau_lw_per_layer. Only used by the two-stream model and lw_enabled == true. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2562,7 +2562,7 @@ Here is the caller graph for this function:</div>
 
 <p>Longwave optical depth per layer (constant for all layers). Used in gray-gas LW two-stream solver. Only used by the two-stream model. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2580,7 +2580,7 @@ Here is the caller graph for this function:</div>
 
 <p>Optical depth model: "per_layer" (default, fixed tau per layer) or "mass" (from the layer mass path in both bands; see TauModel). </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2598,7 +2598,7 @@ Here is the caller graph for this function:</div>
 
 <p>Shortwave optical depth per layer (constant for all layers). Used in Beer-Lambert direct-beam formula. Only used by the two-stream model. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2616,7 +2616,7 @@ Here is the caller graph for this function:</div>
 
 <p>Optical depth profile type: "constant" (default, the thickness-independent tau) or "cloud_layer" (adds height-varying cloud optical depth between cloud_base_height_m and cloud_top_height_m). </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2634,7 +2634,7 @@ Here is the caller graph for this function:</div>
 
 <p>Shortwave optical depth coefficient for cloud liquid water [dimensionless]. Default 0.0. When both coefficients are 0, dynamic path still invoked but yields tau_per_layer unchanged. Only used when tau_sw_dynamic_enable == true. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2652,7 +2652,7 @@ Here is the caller graph for this function:</div>
 
 <p>Shortwave optical depth coefficient for water vapor [dimensionless]. Dynamic SW tau = tau_sw_coeff_qv * qv + tau_sw_coeff_qc * qc + tau_per_layer. Default 0.0 means tau is purely from static tau_per_layer (no dynamic component). Only used when tau_sw_dynamic_enable == true. </p>
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2668,7 +2668,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c">make_two_stream_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2686,7 +2686,7 @@ Here is the caller graph for this function:</div>
 
 <p>Debug verbosity level (0=off, 1+=debug output). Gated debug prints only emit when this is &gt;= 1. </p>
 
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ad959a5445b04cbd341c27c2ebc9ff0cd">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>, and <a class="el" href="structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b">init_params()</a>.</p>
 
 </div>
 </div>

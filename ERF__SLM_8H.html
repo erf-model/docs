@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('ERF__SLM_8H.html',''); initResizable()
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_SLM.H File Reference</div>  </div>
@@ -93,57 +94,70 @@ $(document).ready(function(){initNavTree('ERF__SLM_8H.html',''); initResizable()
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
 <code>#include &lt;AMReX_FArrayBox.H&gt;</code><br />
 <code>#include &lt;AMReX_Geometry.H&gt;</code><br />
 <code>#include &lt;AMReX_MultiFabUtil.H&gt;</code><br />
+<code>#include &lt;AMReX_iMultiFab.H&gt;</code><br />
+<code>#include &lt;AMReX_TableData.H&gt;</code><br />
+<code>#include &lt;AMReX_ParmParse.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="ERF__NullSurf_8H_source.html">ERF_NullSurf.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="ERF__IndexDefines_8H_source.html">ERF_IndexDefines.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="ERF__DataStruct_8H_source.html">ERF_DataStruct.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__TerrainMetrics_8H_source.html">ERF_TerrainMetrics.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__LSM__Types_8H_source.html">ERF_LSM_Types.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__NCInterface_8H_source.html">ERF_NCInterface.H</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_SLM.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SLM_8H__incl.png" border="0" usemap="#aSource_2LandSurfaceModel_2SLM_2ERF__SLM_8H" alt=""/></div>
 <map name="aSource_2LandSurfaceModel_2SLM_2ERF__SLM_8H" id="aSource_2LandSurfaceModel_2SLM_2ERF__SLM_8H">
-<area shape="rect" title=" " alt="" coords="430,5,620,47"/>
-<area shape="rect" title=" " alt="" coords="1758,319,1817,345"/>
-<area shape="rect" title=" " alt="" coords="96,95,159,121"/>
-<area shape="rect" title=" " alt="" coords="184,95,261,121"/>
-<area shape="rect" title=" " alt="" coords="286,95,442,121"/>
-<area shape="rect" title=" " alt="" coords="114,319,267,345"/>
-<area shape="rect" title=" " alt="" coords="522,319,690,345"/>
-<area shape="rect" href="ERF__NullSurf_8H.html" title=" " alt="" coords="466,95,584,121"/>
-<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="1222,169,1359,196"/>
-<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="2104,319,2258,345"/>
-<area shape="rect" title=" " alt="" coords="402,169,534,196"/>
-<area shape="rect" href="ERF__SurfacePrecipitation_8H.html" title=" " alt="" coords="179,169,378,196"/>
-<area shape="rect" title=" " alt="" coords="1326,319,1406,345"/>
-<area shape="rect" title=" " alt="" coords="1575,319,1734,345"/>
-<area shape="rect" title=" " alt="" coords="1430,319,1550,345"/>
-<area shape="rect" title=" " alt="" coords="1186,319,1302,345"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="1132,468,1265,495"/>
-<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="996,244,1126,271"/>
-<area shape="rect" href="ERF__DampingStruct_8H.html" title=" " alt="" coords="1630,244,1796,271"/>
-<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="1151,244,1280,271"/>
-<area shape="rect" href="ERF__EBStruct_8H.html" title=" " alt="" coords="1305,244,1428,271"/>
-<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="1452,244,1606,271"/>
-<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="1892,319,2025,345"/>
-<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="660,244,819,271"/>
-<area shape="rect" href="ERF__RadStruct_8H.html" title="Radiation model type and control parameters." alt="" coords="1921,244,2052,271"/>
-<area shape="rect" href="ERF__ShocTransportStruct_8H.html" title=" " alt="" coords="2228,244,2425,271"/>
-<area shape="rect" title=" " alt="" coords="1650,543,1712,569"/>
-<area shape="rect" title=" " alt="" coords="1068,617,1126,644"/>
-<area shape="rect" title=" " alt="" coords="1169,617,1292,644"/>
-<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="961,543,1161,569"/>
-<area shape="rect" title=" " alt="" coords="2150,393,2278,420"/>
-<area shape="rect" title=" " alt="" coords="1650,393,1854,420"/>
-<area shape="rect" href="ERF__MYNNStruct_8H.html" title=" " alt="" coords="1878,393,2025,420"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="803,319,922,345"/>
-<area shape="rect" title=" " alt="" coords="714,319,778,345"/>
-<area shape="rect" title=" " alt="" coords="821,393,904,420"/>
-<area shape="rect" title=" " alt="" coords="2380,319,2465,345"/>
-<area shape="rect" title=" " alt="" coords="2290,319,2355,345"/>
-<area shape="rect" title=" " alt="" coords="48,244,226,271"/>
-<area shape="rect" title=" " alt="" coords="251,244,396,271"/>
+<area shape="rect" title=" " alt="" coords="926,5,1117,47"/>
+<area shape="rect" title=" " alt="" coords="1941,319,2000,345"/>
+<area shape="rect" title=" " alt="" coords="305,95,367,121"/>
+<area shape="rect" title=" " alt="" coords="392,95,469,121"/>
+<area shape="rect" title=" " alt="" coords="493,95,552,121"/>
+<area shape="rect" title=" " alt="" coords="577,95,733,121"/>
+<area shape="rect" title=" " alt="" coords="609,319,762,345"/>
+<area shape="rect" title=" " alt="" coords="416,319,584,345"/>
+<area shape="rect" title=" " alt="" coords="859,95,1008,121"/>
+<area shape="rect" title=" " alt="" coords="1032,95,1187,121"/>
+<area shape="rect" title=" " alt="" coords="2025,319,2183,345"/>
+<area shape="rect" href="ERF__NullSurf_8H.html" title=" " alt="" coords="162,95,281,121"/>
+<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="1489,169,1626,196"/>
+<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="889,319,1042,345"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html" title=" " alt="" coords="721,244,881,271"/>
+<area shape="rect" href="ERF__LSM__Types_8H.html" title=" " alt="" coords="2847,95,2985,121"/>
+<area shape="rect" href="ERF__NCInterface_8H.html" title=" " alt="" coords="3010,95,3155,121"/>
+<area shape="rect" title=" " alt="" coords="306,169,438,196"/>
+<area shape="rect" href="ERF__SurfacePrecipitation_8H.html" title=" " alt="" coords="33,244,231,271"/>
+<area shape="rect" title=" " alt="" coords="1687,319,1767,345"/>
+<area shape="rect" title=" " alt="" coords="1543,319,1663,345"/>
+<area shape="rect" title=" " alt="" coords="1791,319,1907,345"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="1451,468,1584,495"/>
+<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="1241,244,1372,271"/>
+<area shape="rect" href="ERF__DampingStruct_8H.html" title=" " alt="" coords="1644,244,1809,271"/>
+<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="2013,244,2142,271"/>
+<area shape="rect" href="ERF__EBStruct_8H.html" title=" " alt="" coords="1447,244,1569,271"/>
+<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="1833,244,1988,271"/>
+<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="2272,319,2405,345"/>
+<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="1007,244,1166,271"/>
+<area shape="rect" href="ERF__RadStruct_8H.html" title="Radiation model type and control parameters." alt="" coords="2167,244,2297,271"/>
+<area shape="rect" href="ERF__ShocTransportStruct_8H.html" title=" " alt="" coords="2524,244,2721,271"/>
+<area shape="rect" title=" " alt="" coords="1391,543,1454,569"/>
+<area shape="rect" title=" " alt="" coords="1376,617,1435,644"/>
+<area shape="rect" title=" " alt="" coords="1040,617,1163,644"/>
+<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="1168,543,1368,569"/>
+<area shape="rect" title=" " alt="" coords="944,393,1072,420"/>
+<area shape="rect" title=" " alt="" coords="2041,393,2245,420"/>
+<area shape="rect" href="ERF__MYNNStruct_8H.html" title=" " alt="" coords="2269,393,2416,420"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="1155,319,1274,345"/>
+<area shape="rect" title=" " alt="" coords="1067,319,1131,345"/>
+<area shape="rect" title=" " alt="" coords="837,393,920,420"/>
+<area shape="rect" title=" " alt="" coords="2636,319,2721,345"/>
+<area shape="rect" title=" " alt="" coords="2546,319,2611,345"/>
+<area shape="rect" title=" " alt="" coords="43,319,221,345"/>
+<area shape="rect" title=" " alt="" coords="246,319,391,345"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -151,12 +165,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SLM_8H__dep__incl.png" border="0" usemap="#aSource_2LandSurfaceModel_2SLM_2ERF__SLM_8Hdep" alt=""/></div>
 <map name="aSource_2LandSurfaceModel_2SLM_2ERF__SLM_8Hdep" id="aSource_2LandSurfaceModel_2SLM_2ERF__SLM_8Hdep">
-<area shape="rect" title=" " alt="" coords="4935,5,5125,47"/>
-<area shape="rect" href="ERF__LandSurface_8H.html" title=" " alt="" coords="4828,95,5019,136"/>
-<area shape="rect" href="ERF__SLM_8cpp.html" title=" " alt="" coords="5043,95,5233,136"/>
-<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="4915,273,5022,300"/>
-<area shape="rect" href="ERF__Radiation_8H.html" title=" " alt="" coords="4828,184,5019,225"/>
-<area shape="rect" href="ERF__TwoStreamRadiation_8H.html" title=" " alt="" coords="5043,184,5251,225"/>
+<area shape="rect" title=" " alt="" coords="7540,5,7731,47"/>
+<area shape="rect" href="ERF__LandSurface_8H.html" title=" " alt="" coords="5235,95,5425,136"/>
+<area shape="rect" href="ERF__SLM_8cpp.html" title=" " alt="" coords="9593,348,9784,389"/>
+<area shape="rect" href="ERF__SLM__IO_8cpp.html" title=" " alt="" coords="7673,95,7864,136"/>
+<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="5031,273,5138,300"/>
+<area shape="rect" href="ERF__Radiation_8H.html" title=" " alt="" coords="5123,184,5313,225"/>
+<area shape="rect" href="ERF__TwoStreamRadiation_8H.html" title=" " alt="" coords="5338,184,5546,225"/>
 <area shape="rect" href="ERF__BoundaryConditionsBndryReg_8cpp.html" title=" " alt="" coords="5,348,284,389"/>
 <area shape="rect" href="ERF__BoundaryConditionsRealbdy_8cpp.html" title=" " alt="" coords="309,348,575,389"/>
 <area shape="rect" href="ERF__FillBdyCCVels_8cpp.html" title=" " alt="" coords="600,348,801,389"/>
@@ -200,7 +215,6 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" href="ERF__Write1DProfiles__stag_8cpp.html" title=" " alt="" coords="8878,348,9099,389"/>
 <area shape="rect" href="ERF__WriteJobInfo_8cpp.html" title=" " alt="" coords="9123,355,9350,382"/>
 <area shape="rect" href="ERF__WriteScalarProfiles_8cpp.html" title=" " alt="" coords="9374,348,9569,389"/>
-<area shape="rect" href="ERF__WriteSubvolume_8cpp.html" title=" " alt="" coords="9593,355,9848,382"/>
 </map>
 </div>
 </div>
@@ -215,14 +229,192 @@ Classes</h2></td></tr>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceLsmVar__SLM"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLsmVar__SLM.html">LsmVar_SLM</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceLsmFlux__SLM"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLsmFlux__SLM.html">LsmFlux_SLM</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceSLM__NetRad"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSLM__NetRad.html">SLM_NetRad</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceSLM__Diag"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSLM__Diag.html">SLM_Diag</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceSLM__DST"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSLM__DST.html">SLM_DST</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceSLM__DSW"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSLM__DSW.html">SLM_DSW</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a6b38318ab101c9844a79d051c7176b01"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SLM_8H.html#a6b38318ab101c9844a79d051c7176b01">SLMParameterTable</a> = std::unordered_map&lt; std::string, amrex::Vector&lt; std::pair&lt; std::string, amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&gt; &gt;</td></tr>
+<tr class="separator:a6b38318ab101c9844a79d051c7176b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aade57530ecba051b2aa9978992798ad4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="namespaceLsmVar__SLM.html#aade57530ecba051b2aa9978992798ad4a8cbbe7ff58f91759c10f65b097bcfc0f">LsmVar_SLM::theta</a> = 0
-, <a class="el" href="namespaceLsmVar__SLM.html#aade57530ecba051b2aa9978992798ad4a46379e2639967ccb36fdea0aa7fbda61">LsmVar_SLM::NumVars</a>
+<tr class="memitem:adf96bce35168a066b3bad1e88600990b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bacfdf5a8073113170f3ac49899fe4035c">LsmVar_SLM::tsurf</a> = 0
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">LsmVar_SLM::ustar</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bafd3a1dd0da7f3c8a67e6f98613475206">LsmVar_SLM::tstar</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bacfbc57f087f4a8b516cfe1a4d846be86">LsmVar_SLM::qstar</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba89b8852626463ef27f3acf68be307aa7">LsmVar_SLM::tref</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba587e452de21366dbb1977b11a8cf12bb">LsmVar_SLM::qref</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba0e8b06a90928587c76f3d47949c3aaf0">LsmVar_SLM::pref</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990babe56af520b58d9f2030354c214292878">LsmVar_SLM::dref</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1165d92c492cfcc74e4ff189a48ee686">LsmVar_SLM::uref</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba3429d60e0f757eb5f9dc311b74208749">LsmVar_SLM::vref</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990baed354e17449d66fb165b44b84d1315f5">LsmVar_SLM::precipref</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1764f1fb38676edee66c7268062ec7c4">LsmVar_SLM::swdsvisxyref</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba7045f34771809ab5f3c5a2b503327c6b">LsmVar_SLM::swdsnirxyref</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bab00a680c1168388f3c21950b59aacdc2">LsmVar_SLM::swdsvisdxyref</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bad2f134d36f962dfd97f4e6a124b2439a">LsmVar_SLM::swdsnirdxyref</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990baecd97a44e7bc885921e773ee538869e0">LsmVar_SLM::lwref</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bab3f3c75f08d76e7e3f62a5a384d4b613">LsmVar_SLM::coszrsxy</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bacc410e8ef18d942e7fe8e646a206fafd">LsmVar_SLM::tv</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba023d46cd782952599a1fd46b39b839bd">LsmVar_SLM::mv</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990badd791d19031dabe74aaf2270574913ca">LsmVar_SLM::soilt</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba62e7183f3824caeda80332a4c4b0b73e">LsmVar_SLM::soilw</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bae86927b58b5dba592aaed27309360652">LsmVar_SLM::sand</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba66f1477d6bd4fe0342fb89a1d69297f0">LsmVar_SLM::clay</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba8e90f5d44e7a2c00afa6cbf5c43846d4">LsmVar_SLM::s_depth</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bab1edf3b84746142ebfec0df94d5de999">LsmVar_SLM::node_z</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba7a5d8dad5ab9c305e64d58a72435e45b">LsmVar_SLM::interface_z</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba7948103e0f16b7b40a8755cc07f99159">LsmVar_SLM::soilw_nudge</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba7e780b531c845b949d8ce82f10e795da">LsmVar_SLM::soilt_nudge</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba6ca0870254eee2e271d5339736e9109c">LsmVar_SLM::sw_over_sat</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bacb196c0ef9b0403fc3035289edf60f11">LsmVar_SLM::soil_relax_hgt</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba3757aa137b9845b72b9d22c0893d93d9">LsmVar_SLM::soilt_obs</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bae332ff904e6dedb94e3b6a7a818e9a5a">LsmVar_SLM::soilw_obs</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990baec0cb5e5a7d1444fa42e2cf2b7a5bd96">LsmVar_SLM::soil_transp_frac</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bafae7bc940dc452e1014666b1ea1d67f3">LsmVar_SLM::w_s_FC</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba957ec7af3ad986a5bd6960be9bb303f5">LsmVar_SLM::w_s_WP</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990baaeb855e64400e5f27938e37b46f6de31">LsmVar_SLM::sst_capa</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba311d9b9144811752984f673321383a35">LsmVar_SLM::sst_cond</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba7e9494cc15737d3e029b77d361d7add4">LsmVar_SLM::poro_soil</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba0cd65b266d46daad04744543c32e425d">LsmVar_SLM::theta_FC</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba525530b6ffb9e29b8000b2813fe9b132">LsmVar_SLM::theta_WP</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba7955f84c91a206f5de12e186ad117c61">LsmVar_SLM::m_pot_sat</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bab1e7c19f53e261b1f0ad670928feeaf0">LsmVar_SLM::Bconst</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba27450e77762bfb71907476c21ea1b8a4">LsmVar_SLM::ks</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bad906bc218149194fbe1804b5be5ef2a2">LsmVar_SLM::lai</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba725a62d82ec16ea31ceca0b48b4172f4">LsmVar_SLM::vegtype</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba75b0af53a24b6c55da389968660f3149">LsmVar_SLM::soiltype</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990babb923e0ff8fd8165e993d36bce45723f">LsmVar_SLM::veg_frac</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bad7bd6f60d66570bf12d6d7dacf66ba06">LsmVar_SLM::veg_frac_min</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bac73e4f0ed8599f05756c3465ff0a235f">LsmVar_SLM::veg_frac_max</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba3294c745abab29ace8c36fc85a6207c4">LsmVar_SLM::flbu</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba544b86687e60af9d94472cee3152b0e4">LsmVar_SLM::flbv</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990baaf063f6ee4570c7e56df0f600463f4eb">LsmVar_SLM::flbq</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bab9eea5e6fe1791cfadafcefed90da79b">LsmVar_SLM::flbt</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bad6aa846c16b5cbbb3dfd01c4fc7d7348">LsmVar_SLM::prsfc</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba3f32b0cc8b76604735cf14940f46f557">LsmVar_SLM::emis_sfc</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990bada269f5e5cbcd0dd56516a2e7ce61c18">LsmVar_SLM::alb_nir_sfc</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990baca97c2a2abfe940acde3c69c3c82f34e">LsmVar_SLM::alb_vis_sfc</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1e1217b0b1719a85361abaf7e0b32331">LsmVar_SLM::alb_nir_sfc_diff</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990baaf244fe895ad263c226fd6908f8fbd36">LsmVar_SLM::alb_vis_sfc_diff</a>
+, <a class="el" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba46379e2639967ccb36fdea0aa7fbda61">LsmVar_SLM::NumVars</a>
+<br />
  }</td></tr>
-<tr class="separator:aade57530ecba051b2aa9978992798ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:adf96bce35168a066b3bad1e88600990b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f10cdebf09fc26d2dff3a0761c2a34"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="namespaceLsmFlux__SLM.html#a19f10cdebf09fc26d2dff3a0761c2a34a08019944fd0f59fa2655267bd5f06825">LsmFlux_SLM::t_flux</a> = 0
+, <a class="el" href="namespaceLsmFlux__SLM.html#a19f10cdebf09fc26d2dff3a0761c2a34a6bd90efd992e2ab4efc091482b1db3cd">LsmFlux_SLM::q_flux</a>
+, <a class="el" href="namespaceLsmFlux__SLM.html#a19f10cdebf09fc26d2dff3a0761c2a34a4b3653f4893dfd53d26b970a43ccdb1a">LsmFlux_SLM::tau13</a>
+, <a class="el" href="namespaceLsmFlux__SLM.html#a19f10cdebf09fc26d2dff3a0761c2a34a19be6065db7b1e1b87bd408dca8caf59">LsmFlux_SLM::tau23</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLsmFlux__SLM.html#a19f10cdebf09fc26d2dff3a0761c2a34a8e5922e369c4f0f17a3ab601871b293e">LsmFlux_SLM::olen</a>
+, <a class="el" href="namespaceLsmFlux__SLM.html#a19f10cdebf09fc26d2dff3a0761c2a34a06d70cfa69fedf689c8ad8abc7e57f45">LsmFlux_SLM::NumVars</a>
+<br />
+ }</td></tr>
+<tr class="separator:a19f10cdebf09fc26d2dff3a0761c2a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa498011bf3489c199b2777fe15019adb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adbaafd349f7e0e24d29b7d815da476e0a4a">SLM_NetRad::net_swup1</a> = 0
+, <a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adbab775f2e4e49ddb1f5f7724340cd26bb2">SLM_NetRad::net_swup2</a>
+, <a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adba2a7ed256051207cd84413c7c80ccf767">SLM_NetRad::net_swdn1</a>
+, <a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adba753b5448de5da811b290afb7220cd75a">SLM_NetRad::net_swdn2</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adba43de24427a8d43a618bbd078095d1381">SLM_NetRad::net_sw1</a>
+, <a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adba8034dbf79d75743bb36a3444fa09fe45">SLM_NetRad::net_sw2</a>
+, <a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adbab0be77b7280f3078484529ede83d6804">SLM_NetRad::tir1</a>
+, <a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adba7d1d3401d0ae7cad7d69d1c82a207637">SLM_NetRad::tir2</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adba8be2e2f25b25ee4c3cdcbb4b7018c5f9">SLM_NetRad::net_lwup1</a>
+, <a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adbad35b2e5ad12e77f94bb24cdcba90120d">SLM_NetRad::net_lwup2</a>
+, <a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adba29b11e2b0d64dc17527202fbcf74c1e7">SLM_NetRad::net_lwdn1</a>
+, <a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adba8441fdeeaeecaf4d087e4097744f5800">SLM_NetRad::net_lwdn2</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adba92d220062e2153eddea7ac287cec2fbb">SLM_NetRad::net_lw1</a>
+, <a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adba6f40b651cf5ce433ea4d587617aad39f">SLM_NetRad::net_lw2</a>
+, <a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adbac037ee2c78f848960ff377162c7026f5">SLM_NetRad::net_rad1</a>
+, <a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adba74710251a3d3c8cd6807d07b740ccba7">SLM_NetRad::net_rad2</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adba2d87d26e0fb156adac29e3814bcc43ab">SLM_NetRad::NumVars</a>
+<br />
+ }</td></tr>
+<tr class="separator:aa498011bf3489c199b2777fe15019adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1b414cead6bc88d52a9bc90793ebffe"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="namespaceSLM__Diag.html#aa1b414cead6bc88d52a9bc90793ebffeabceff7cd5cf953c05b835345cfcdd4f9">SLM_Diag::precip</a> = 0
+, <a class="el" href="namespaceSLM__Diag.html#aa1b414cead6bc88d52a9bc90793ebffeaacba0223b9bcac16e8cba8d130a198e7">SLM_Diag::precip_in</a>
+, <a class="el" href="namespaceSLM__Diag.html#aa1b414cead6bc88d52a9bc90793ebffea5ccea4e900e44d69f36a90609e2942bd">SLM_Diag::precip_sfc</a>
+, <a class="el" href="namespaceSLM__Diag.html#aa1b414cead6bc88d52a9bc90793ebffeac0a1f81915802a0f5ee0f93e819ae063">SLM_Diag::run_off_sfc</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceSLM__Diag.html#aa1b414cead6bc88d52a9bc90793ebffea91122a29f5d7ad6c1136fd477ba94a02">SLM_Diag::drain</a>
+, <a class="el" href="namespaceSLM__Diag.html#aa1b414cead6bc88d52a9bc90793ebffeabfd26606b4a1053815a38bed3f081e5c">SLM_Diag::drain_flux</a>
+, <a class="el" href="namespaceSLM__Diag.html#aa1b414cead6bc88d52a9bc90793ebffea576886a7926ded6c7569c91425366a93">SLM_Diag::evapo_wet</a>
+, <a class="el" href="namespaceSLM__Diag.html#aa1b414cead6bc88d52a9bc90793ebffea6248c1d401c3ebc713a549f8e719ad1e">SLM_Diag::grflux</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceSLM__Diag.html#aa1b414cead6bc88d52a9bc90793ebffea838cb41a683b7390cbf4cdfb0d257ee2">SLM_Diag::NumVars</a>
+<br />
+ }</td></tr>
+<tr class="separator:aa1b414cead6bc88d52a9bc90793ebffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad76fd0969f8b36689bee737b22da53a7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7af2da45f822a18a6dbba08244542ac02a">SLM_DST::st_cond</a>
+, <a class="el" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7abf0ced4c586455348cd93ef6443f4098">SLM_DST::st_capa</a>
+, <a class="el" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a174ae49f361bf4a618bfcf66c96975e2">SLM_DST::st_eff_cond</a>
+, <a class="el" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a8d1810892e965b63cab3b5472dde85cb">SLM_DST::alpha</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7">SLM_DST::beta</a>
+, <a class="el" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7aa56ec5ab3cd4582d8b0f96ade3ff628b">SLM_DST::NumVars</a>
+<br />
+ }</td></tr>
+<tr class="separator:ad76fd0969f8b36689bee737b22da53a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5950fafc7413a99d7898ed0439843ce"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="namespaceSLM__DSW.html#af5950fafc7413a99d7898ed0439843cea0297b27d74f95e684a90c0394de7a763">SLM_DSW::sw_wgt</a>
+, <a class="el" href="namespaceSLM__DSW.html#af5950fafc7413a99d7898ed0439843cea33009b907652aae1e8bdeae6fb47dd2e">SLM_DSW::sh_eff_cond</a>
+, <a class="el" href="namespaceSLM__DSW.html#af5950fafc7413a99d7898ed0439843cea5d3dccbb825a577929ae987781f41130">SLM_DSW::sh_eff_vel</a>
+, <a class="el" href="namespaceSLM__DSW.html#af5950fafc7413a99d7898ed0439843cea5699fc3fef9cf944d895151f5d67215f">SLM_DSW::alpha</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceSLM__DSW.html#af5950fafc7413a99d7898ed0439843cea4922a2e33488435cdb2952e2cb1d4dee">SLM_DSW::beta</a>
+, <a class="el" href="namespaceSLM__DSW.html#af5950fafc7413a99d7898ed0439843cead339e8a03c7bccd85f2bae5bfd448455">SLM_DSW::sdepth_mm</a>
+, <a class="el" href="namespaceSLM__DSW.html#af5950fafc7413a99d7898ed0439843cea3fcbf56276374f6e3e1fb98d167959ad">SLM_DSW::NumVars</a>
+<br />
+ }</td></tr>
+<tr class="separator:af5950fafc7413a99d7898ed0439843ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a6b38318ab101c9844a79d051c7176b01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b38318ab101c9844a79d051c7176b01">&#9670;&nbsp;</a></span>SLMParameterTable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="ERF__SLM_8H.html#a6b38318ab101c9844a79d051c7176b01">SLMParameterTable</a> =  std::unordered_map&lt;std::string, amrex::Vector&lt;std::pair&lt;std::string, amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt;&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

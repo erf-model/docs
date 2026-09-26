@@ -55,6 +55,8 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     [ "ERF_SurfaceLayer.cpp", "ERF__SurfaceLayer_8cpp.html", null ],
     [ "ERF_SurfaceLayer.H", "ERF__SurfaceLayer_8H.html", "ERF__SurfaceLayer_8H" ],
     [ "ERF_SurfaceLayerStress.H", "ERF__SurfaceLayerStress_8H.html", "ERF__SurfaceLayerStress_8H" ],
+    [ "ERF_SurfaceModel.cpp", "ERF__SurfaceModel_8cpp.html", null ],
+    [ "ERF_SurfaceModel.H", "ERF__SurfaceModel_8H.html", "ERF__SurfaceModel_8H" ],
     [ "ERF_TimeInterpolatedData.H", "ERF__TimeInterpolatedData_8H.html", [
       [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ]
     ] ],

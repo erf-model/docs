@@ -332,7 +332,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            SetModel&lt;SatAdj&gt;();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_model_type == MoistureType::MoistNoCondensation) {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            SetModel&lt;MoistNoCondensation&gt;();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_model_type == MoistureType::None) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_model_type == <a class="code" href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75">MoistureType::None</a>) {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            SetModel&lt;NullMoist&gt;();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;EulerianMicrophysics: Dont know this moisture_type!&quot;</span>) ;</div>
@@ -340,6 +340,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="ttc" id="aclassEulerianMicrophysics_html_a3d8916fc5900c54728d7549c68b21048"><div class="ttname"><a href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">EulerianMicrophysics::m_moist_model</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; NullMoist &gt; &gt; m_moist_model</div><div class="ttdef"><b>Definition:</b> ERF_EulerianMicrophysics.H:202</div></div>
 <div class="ttc" id="aclassMicrophysics_html_ac10e6fce2e6cb49373d56ca0e1a5b366"><div class="ttname"><a href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">Microphysics::modelType</a></div><div class="ttdeci">static MoistureModelType modelType(const MoistureType a_moisture_type)</div><div class="ttdoc">query if a specified moisture model is Eulerian or Lagrangian</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics.H:121</div></div>
+<div class="ttc" id="anamespaceLSM__Type_html_a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75"><div class="ttname"><a href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75">LSM_Type::None</a></div><div class="ttdeci">@ None</div><div class="ttdef"><b>Definition:</b> ERF_LSM_Types.H:6</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
