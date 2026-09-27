@@ -1,6 +1,7 @@
 var dir_74389ed8173ad57b461b9d623a1f3867 =
 [
     [ "Advection", "dir_87c27e56fd01e6f1a6e2085b6fe8a1a5.html", "dir_87c27e56fd01e6f1a6e2085b6fe8a1a5" ],
+    [ "AuxiliaryState", "dir_8dd67685c059edca071acd1d85352651.html", "dir_8dd67685c059edca071acd1d85352651" ],
     [ "BoundaryConditions", "dir_528efc400cc48bc5f175d9531879efeb.html", "dir_528efc400cc48bc5f175d9531879efeb" ],
     [ "Coupling", "dir_58f27a96fd931cbc9962bfd410d9f3ba.html", "dir_58f27a96fd931cbc9962bfd410d9f3ba" ],
     [ "DataStructs", "dir_aba9de7b86b72c00c61e401832cdb2fc.html", "dir_aba9de7b86b72c00c61e401832cdb2fc" ],

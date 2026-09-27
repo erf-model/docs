@@ -1,5 +1,12 @@
 var annotated_dup =
 [
+    [ "erf_auxiliary", "namespaceerf__auxiliary.html", [
+      [ "ProjectionRule", "structerf__auxiliary_1_1ProjectionRule.html", "structerf__auxiliary_1_1ProjectionRule" ],
+      [ "ProjectionValidation", "structerf__auxiliary_1_1ProjectionValidation.html", "structerf__auxiliary_1_1ProjectionValidation" ],
+      [ "AuxiliaryProjection", "classerf__auxiliary_1_1AuxiliaryProjection.html", "classerf__auxiliary_1_1AuxiliaryProjection" ],
+      [ "ComponentDescriptor", "structerf__auxiliary_1_1ComponentDescriptor.html", "structerf__auxiliary_1_1ComponentDescriptor" ],
+      [ "AuxiliaryStateLayout", "classerf__auxiliary_1_1AuxiliaryStateLayout.html", "classerf__auxiliary_1_1AuxiliaryStateLayout" ]
+    ] ],
     [ "erf_cloud_chamber", "namespaceerf__cloud__chamber.html", [
       [ "WallSpec", "structerf__cloud__chamber_1_1WallSpec.html", "structerf__cloud__chamber_1_1WallSpec" ],
       [ "Config", "structerf__cloud__chamber_1_1Config.html", "structerf__cloud__chamber_1_1Config" ],
@@ -37,6 +44,28 @@ var annotated_dup =
       [ "ArtifactProvenance", "structerf__provenance_1_1ArtifactProvenance.html", "structerf__provenance_1_1ArtifactProvenance" ],
       [ "ProvenanceRecord", "structerf__provenance_1_1ProvenanceRecord.html", "structerf__provenance_1_1ProvenanceRecord" ],
       [ "ProvenanceParseResult", "structerf__provenance_1_1ProvenanceParseResult.html", "structerf__provenance_1_1ProvenanceParseResult" ]
+    ] ],
+    [ "erf_sbm", "namespaceerf__sbm.html", [
+      [ "BulkProjection", "structerf__sbm_1_1BulkProjection.html", "structerf__sbm_1_1BulkProjection" ],
+      [ "SBMBulkProjection", "classerf__sbm_1_1SBMBulkProjection.html", "classerf__sbm_1_1SBMBulkProjection" ],
+      [ "ConstraintTerm", "structerf__sbm_1_1ConstraintTerm.html", "structerf__sbm_1_1ConstraintTerm" ],
+      [ "LinearConstraint", "structerf__sbm_1_1LinearConstraint.html", "structerf__sbm_1_1LinearConstraint" ],
+      [ "ConstraintGroup", "structerf__sbm_1_1ConstraintGroup.html", "structerf__sbm_1_1ConstraintGroup" ],
+      [ "ConstraintDescriptor", "structerf__sbm_1_1ConstraintDescriptor.html", "structerf__sbm_1_1ConstraintDescriptor" ],
+      [ "AttachedPropertySupportDescriptor", "structerf__sbm_1_1AttachedPropertySupportDescriptor.html", "structerf__sbm_1_1AttachedPropertySupportDescriptor" ],
+      [ "ConstraintClosureChunk", "structerf__sbm_1_1ConstraintClosureChunk.html", "structerf__sbm_1_1ConstraintClosureChunk" ],
+      [ "EndpointTransform", "structerf__sbm_1_1EndpointTransform.html", "structerf__sbm_1_1EndpointTransform" ],
+      [ "SpectralPopulationSpec", "structerf__sbm_1_1SpectralPopulationSpec.html", "structerf__sbm_1_1SpectralPopulationSpec" ],
+      [ "LiquidProjectionSpec", "structerf__sbm_1_1LiquidProjectionSpec.html", "structerf__sbm_1_1LiquidProjectionSpec" ],
+      [ "AttachedPropertyDescriptor", "structerf__sbm_1_1AttachedPropertyDescriptor.html", "structerf__sbm_1_1AttachedPropertyDescriptor" ],
+      [ "PopulationLayout", "structerf__sbm_1_1PopulationLayout.html", "structerf__sbm_1_1PopulationLayout" ],
+      [ "SBMLayoutSpec", "structerf__sbm_1_1SBMLayoutSpec.html", "structerf__sbm_1_1SBMLayoutSpec" ],
+      [ "LayoutValidation", "structerf__sbm_1_1LayoutValidation.html", "structerf__sbm_1_1LayoutValidation" ],
+      [ "SBMLayout", "classerf__sbm_1_1SBMLayout.html", "classerf__sbm_1_1SBMLayout" ],
+      [ "SBMStateManager", "classerf__sbm_1_1SBMStateManager.html", "classerf__sbm_1_1SBMStateManager" ],
+      [ "SpectralGridSpec", "structerf__sbm_1_1SpectralGridSpec.html", "structerf__sbm_1_1SpectralGridSpec" ],
+      [ "GridValidation", "structerf__sbm_1_1GridValidation.html", "structerf__sbm_1_1GridValidation" ],
+      [ "SpectralGrid", "classerf__sbm_1_1SpectralGrid.html", "classerf__sbm_1_1SpectralGrid" ]
     ] ],
     [ "erf_wall_scalar_bc", "namespaceerf__wall__scalar__bc.html", [
       [ "ParsedWallScalarBC", "structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html", "structerf__wall__scalar__bc_1_1ParsedWallScalarBC" ],
@@ -208,6 +237,7 @@ var annotated_dup =
     [ "SAMSurfaceAccumulation", "structSAMSurfaceAccumulation.html", "structSAMSurfaceAccumulation" ],
     [ "SatAdj", "classSatAdj.html", "classSatAdj" ],
     [ "SatMethods", "classSatMethods.html", "classSatMethods" ],
+    [ "SBMNullMoist", "classSBMNullMoist.html", "classSBMNullMoist" ],
     [ "ScalarDiffusionCoefficientMode", "structScalarDiffusionCoefficientMode.html", "structScalarDiffusionCoefficientMode" ],
     [ "ScalarDiffusionCoefficients", "structScalarDiffusionCoefficients.html", "structScalarDiffusionCoefficients" ],
     [ "ScalarDiffusionFieldViews", "structScalarDiffusionFieldViews.html", "structScalarDiffusionFieldViews" ],

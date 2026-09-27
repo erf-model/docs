@@ -1,15 +1,7 @@
 var searchData=
 [
-  ['sampledcoordinate_14284',['SampledCoordinate',['../namespaceplotfile2d.html#a2d37635bf101911abc61c5e51be5ab29',1,'plotfile2d']]],
-  ['sampledfieldid_14285',['SampledFieldID',['../namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6d',1,'plotfile2d']]],
-  ['sampledinterpolation_14286',['SampledInterpolation',['../namespaceplotfile2d.html#a1f5b1450fa27f9d52c08d5e2ebdb6478',1,'plotfile2d']]],
-  ['scalar_14287',['Scalar',['../classCloudChamberBudget.html#a81994e964d9362cfed23ad775ae5e572',1,'CloudChamberBudget']]],
-  ['scalarchannel_14288',['ScalarChannel',['../namespaceerf__cloud__chamber__wall__flux.html#a7d287264b0a3f33cc39ed5308255e5a9',1,'erf_cloud_chamber_wall_flux']]],
-  ['scalarmodel_14289',['ScalarModel',['../namespaceerf__wall__thermodynamics.html#a8049a8e10dc09eaf6fcf3f27e9da6363',1,'erf_wall_thermodynamics']]],
-  ['shocmomentumtransport_14290',['ShocMomentumTransport',['../ERF__ShocTransportStruct_8H.html#a46f049c905e222c86ebb0cf19549ab48',1,'ERF_ShocTransportStruct.H']]],
-  ['shoctransportmode_14291',['ShocTransportMode',['../ERF__ShocTransportStruct_8H.html#afeb44c2565539dcc7b6083629bfda26d',1,'ERF_ShocTransportStruct.H']]],
-  ['solidwallkind_14292',['SolidWallKind',['../namespaceerf__wall__scalar__bc.html#ac8375e1cfb77df511e98a87a9d9d7bf9',1,'erf_wall_scalar_bc']]],
-  ['sponge_14293',['Sponge',['../ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcb',1,'ERF_DataStruct.H']]],
-  ['surfacediagnosticsource_14294',['SurfaceDiagnosticSource',['../namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccf',1,'surface_diagnostics']]],
-  ['surfacemodeltype_14295',['SurfaceModelType',['../ERF__SurfaceModel_8H.html#aee4129a23327ef05502fcec2d6b71c2a',1,'ERF_SurfaceModel.H']]]
+  ['rayhit_14701',['RayHit',['../namespaceibseb.html#a9db8f40527e725d5fb80d8fad2018d3c',1,'ibseb']]],
+  ['rayleigh_14702',['Rayleigh',['../ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239',1,'ERF_DataStruct.H']]],
+  ['rayleighdampingtype_14703',['RayleighDampingType',['../ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1',1,'ERF_DampingStruct.H']]],
+  ['roughcalctype_14704',['RoughCalcType',['../classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05',1,'SurfaceLayer']]]
 ];

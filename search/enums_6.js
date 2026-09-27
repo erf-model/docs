@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['latlonstatus_14261',['LatLonStatus',['../ERF__LatLonMap_8H.html#a275b926b13227ee2ac884995fe7648ac',1,'ERF_LatLonMap.H']]],
-  ['legacyinittype_14262',['LegacyInitType',['../namespaceerf__checkpoint__surface__temperature.html#a5c99be1058301fec83ca1f2e9842aa7e',1,'erf_checkpoint_surface_temperature']]],
-  ['legacysurfacetemperaturecompatibility_14263',['LegacySurfaceTemperatureCompatibility',['../namespaceerf__checkpoint__surface__temperature.html#a8d05f2030bed11f067f65f171d13f514',1,'erf_checkpoint_surface_temperature']]],
-  ['lineagestatus_14264',['LineageStatus',['../namespaceerf__provenance.html#a50ddd644451a1661544a6dd65055d006',1,'erf_provenance']]],
-  ['lsmtransfermode_14265',['LSMTransferMode',['../ERF__NullSurf_8H.html#a292f40de9be64e60eba567298b2c74c9',1,'ERF_NullSurf.H']]]
+  ['initializationmode_14674',['InitializationMode',['../namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7',1,'erf_cloud_chamber']]],
+  ['initrunon_14675',['InitRunOn',['../namespaceshoc.html#a0fd3544e2e21f10cd9d621c81fd419db',1,'shoc']]]
 ];

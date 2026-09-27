@@ -66,6 +66,7 @@ var namespaces_dup =
     ] ],
     [ "EddyDiff", "namespaceEddyDiff.html", null ],
     [ "ERF", "namespaceERF.html", "namespaceERF" ],
+    [ "erf_auxiliary", "namespaceerf__auxiliary.html", "namespaceerf__auxiliary" ],
     [ "erf_checkpoint_surface_temperature", "namespaceerf__checkpoint__surface__temperature.html", [
       [ "ContractReadStatus", "namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4", [
         [ "Valid", "namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4a3ac705f2acd51a4613f9188c05c91d0d", null ],
@@ -133,6 +134,7 @@ var namespaces_dup =
     [ "erf_resolved_wall_flux", "namespaceerf__resolved__wall__flux.html", [
       [ "apply", "namespaceerf__resolved__wall__flux.html#af4bb1fd6bad609edefd5f661c60672ef", null ]
     ] ],
+    [ "erf_sbm", "namespaceerf__sbm.html", "namespaceerf__sbm" ],
     [ "erf_surface_layer", "namespaceerf__surface__layer.html", [
       [ "planar_sources_supported_for_terrain", "namespaceerf__surface__layer.html#ab5b83491e05460dd63f196ebee0a1ca7", null ]
     ] ],

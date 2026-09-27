@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['initializationmode_14259',['InitializationMode',['../namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7',1,'erf_cloud_chamber']]],
-  ['initrunon_14260',['InitRunOn',['../namespaceshoc.html#a0fd3544e2e21f10cd9d621c81fd419db',1,'shoc']]]
+  ['hostwritepath_14673',['HostWritePath',['../namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284e',1,'erf_sbm']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['openside_14276',['OpenSide',['../ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59c',1,'ERF_Advection.H']]],
-  ['ownedchannel_14277',['OwnedChannel',['../namespaceerf__cloud__chamber__wall__flux.html#ac8d912a5ee54a8523347a9fb550a47dd',1,'erf_cloud_chamber_wall_flux']]]
+  ['nc_5fdata_5fdims_5ftype_14691',['NC_Data_Dims_Type',['../ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06',1,'ERF_NCWpsFile.H']]]
 ];

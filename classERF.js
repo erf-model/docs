@@ -520,6 +520,7 @@ var classERF =
     [ "samplepoint", "classERF.html#ae8a57b7fbf5a67c99d04b7d4f43ad100", null ],
     [ "sampleptlog", "classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08", null ],
     [ "sampleptlogname", "classERF.html#a8fbfa8bb47c0a3b53e244081aa1e8ad3", null ],
+    [ "sbm_state_manager", "classERF.html#ab1e70ec697bdd9c7a88970776c78dad6", null ],
     [ "SFS_diss_lev", "classERF.html#a6e1ad417e3bd062468d74830b65911fb", null ],
     [ "SFS_hfx1_lev", "classERF.html#a25174b4ae6cfcac8f7d183ce5c9fe67b", null ],
     [ "SFS_hfx2_lev", "classERF.html#acb607b2e675b45fdcabc09b640ce5ae2", null ],
