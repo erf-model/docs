@@ -247,6 +247,7 @@ var classERF =
     [ "WriteSubvolume", "classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f", null ],
     [ "WriteVTKPolyline", "classERF.html#ad3613d455e3c246e5addf88054fa41db", null ],
     [ "advflux_reg", "classERF.html#a86a0bc8e41668411ee0ab5801d4688a7", null ],
+    [ "auxiliary_inert_tracer", "classERF.html#aca6735f0d3c94b0384a95c9de0554d3c", null ],
     [ "avg_xmom", "classERF.html#a0be7f38e1bb70dae91377a4fc7ecab40", null ],
     [ "avg_ymom", "classERF.html#ae287ff9d63638e63c8222747beebda9c", null ],
     [ "avg_zmom", "classERF.html#afcf3ee7571e17210d318b86f39474038", null ],

@@ -1,0 +1,19 @@
+var classerf__auxiliary_1_1CompletedStepFluxLedger =
+[
+    [ "CompletedStepFluxLedger", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a2a9a922033805134aa01374c3679bd8f", null ],
+    [ "CompletedStepFluxLedger", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a5bbaaa331fe443ec2a6110ab2f2f7348", null ],
+    [ "accept_stage", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a1136e7902d3567fb5ab3bffecf158696", null ],
+    [ "define", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#aa286e57b355b60353abf9625e3c57273", null ],
+    [ "integrated_flux", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a45d510aee0adb290173cc997599484c6", null ],
+    [ "is_defined", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#acbfc4475766a6ba6bfcf8959a17bbc33", null ],
+    [ "next_stage", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#aea6280894f504f11f044422c67330cb9", null ],
+    [ "operator=", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#ab1490d30dc601fa09ecd71d771e7db4e", null ],
+    [ "step_active", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a9da8aca59b888ff02ce1c9bfeebe7ee5", null ],
+    [ "step_complete", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a7c3fe1796e1e7fc35991b0b86e22a512", null ],
+    [ "m_integral", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94", null ],
+    [ "m_method", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a5121f200413652a501912f8d8c8308cd", null ],
+    [ "m_next_stage", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa", null ],
+    [ "m_step_active", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a", null ],
+    [ "m_step_complete", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a7940399c5323c6f03299ccee624c70f5", null ],
+    [ "m_step_old_time", "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a8f1aa50265809e986da190d3d34fd188", null ]
+];

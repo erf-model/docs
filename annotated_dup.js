@@ -1,9 +1,19 @@
 var annotated_dup =
 [
     [ "erf_auxiliary", "namespaceerf__auxiliary.html", [
+      [ "AuxiliaryInertTracer", "classerf__auxiliary_1_1AuxiliaryInertTracer.html", "classerf__auxiliary_1_1AuxiliaryInertTracer" ],
+      [ "MappedFaceFluxRateTag", "structerf__auxiliary_1_1MappedFaceFluxRateTag.html", null ],
+      [ "IntegratedMappedFaceFluxTag", "structerf__auxiliary_1_1IntegratedMappedFaceFluxTag.html", null ],
+      [ "MappedFaceField", "classerf__auxiliary_1_1MappedFaceField.html", "classerf__auxiliary_1_1MappedFaceField" ],
       [ "ProjectionRule", "structerf__auxiliary_1_1ProjectionRule.html", "structerf__auxiliary_1_1ProjectionRule" ],
       [ "ProjectionValidation", "structerf__auxiliary_1_1ProjectionValidation.html", "structerf__auxiliary_1_1ProjectionValidation" ],
       [ "AuxiliaryProjection", "classerf__auxiliary_1_1AuxiliaryProjection.html", "classerf__auxiliary_1_1AuxiliaryProjection" ],
+      [ "ConstTimedFieldView", "structerf__auxiliary_1_1ConstTimedFieldView.html", "structerf__auxiliary_1_1ConstTimedFieldView" ],
+      [ "MutableTimedFieldView", "structerf__auxiliary_1_1MutableTimedFieldView.html", "structerf__auxiliary_1_1MutableTimedFieldView" ],
+      [ "HostCarrierFluxView", "structerf__auxiliary_1_1HostCarrierFluxView.html", "structerf__auxiliary_1_1HostCarrierFluxView" ],
+      [ "AuxiliaryStageRecipe", "structerf__auxiliary_1_1AuxiliaryStageRecipe.html", "structerf__auxiliary_1_1AuxiliaryStageRecipe" ],
+      [ "AuxiliaryStageContext", "structerf__auxiliary_1_1AuxiliaryStageContext.html", "structerf__auxiliary_1_1AuxiliaryStageContext" ],
+      [ "CompletedStepFluxLedger", "classerf__auxiliary_1_1CompletedStepFluxLedger.html", "classerf__auxiliary_1_1CompletedStepFluxLedger" ],
       [ "ComponentDescriptor", "structerf__auxiliary_1_1ComponentDescriptor.html", "structerf__auxiliary_1_1ComponentDescriptor" ],
       [ "AuxiliaryStateLayout", "classerf__auxiliary_1_1AuxiliaryStateLayout.html", "classerf__auxiliary_1_1AuxiliaryStateLayout" ]
     ] ],
@@ -288,6 +298,7 @@ var annotated_dup =
     [ "surface_temp_eb", "structsurface__temp__eb.html", "structsurface__temp__eb" ],
     [ "surface_temp_mod_charnock", "structsurface__temp__mod__charnock.html", "structsurface__temp__mod__charnock" ],
     [ "surface_temp_wave_coupled", "structsurface__temp__wave__coupled.html", "structsurface__temp__wave__coupled" ],
+    [ "SurfaceFluxView", "structSurfaceFluxView.html", "structSurfaceFluxView" ],
     [ "SurfaceLayer", "classSurfaceLayer.html", "classSurfaceLayer" ],
     [ "SurfaceModel", "classSurfaceModel.html", "classSurfaceModel" ],
     [ "SurfacePrecipAccumulationSource", "structSurfacePrecipAccumulationSource.html", "structSurfacePrecipAccumulationSource" ],
