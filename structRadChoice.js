@@ -2,7 +2,7 @@ var structRadChoice =
 [
     [ "clamp_high", "structRadChoice.html#a2a8a519f944e5d3ee43b1a55702970d6", null ],
     [ "clamp_low", "structRadChoice.html#a9f0a6c09f68870ec3155711e48281ba4", null ],
-    [ "init_params", "structRadChoice.html#a24ded9d3e3f0a2e07850bc958fd7dc1b", null ],
+    [ "init_params", "structRadChoice.html#a4ea2593a6aa37cd8b1755e666f483034", null ],
     [ "reset_nonpositive", "structRadChoice.html#a0f806723023b7bf00f148850556a4676", null ],
     [ "uses_two_stream_radiation", "structRadChoice.html#a6bd18e7734d05329dc5102bf6533caf6", null ],
     [ "aerosol_enable", "structRadChoice.html#a031f61509e05d3a6f46d23f4c1187d81", null ],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX15 =
 {
+"ERF__TwoStreamRadiation_8H_source.html":[3,0,1,20,2,8],
+"ERF__TwoStreamRadiation_8cpp.html":[3,0,1,20,2,7],
 "ERF__TwoStreamSW_8H.html":[3,0,1,20,2,9],
 "ERF__TwoStreamSW_8H.html#a90ce366285b9451eb168103d7f11a8ab":[3,0,1,20,2,9,1],
 "ERF__TwoStreamSW_8H.html#a94e6b06653b31c769618c8a652d1e8e8":[3,0,1,20,2,9,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX15 =
 "ERF__WDM6_8H.html#a8412e642f4bdba3c5ef09bd0d3fbbd48":[3,0,1,14,8,8,2],
 "ERF__WDM6_8H.html#a8a6a96e9ec36723232466066d16d2a5c":[3,0,1,14,8,8,3],
 "ERF__WDM6_8H.html#af03567346c720321bbf522322a2dc1d5":[3,0,1,14,8,8,1],
-"ERF__WDM6_8H_source.html":[3,0,1,14,8,8],
-"ERF__WDM6__Fortran__Interface_8H.html":[3,0,1,14,8,9],
-"ERF__WDM6__Fortran__Interface_8H.html#a4fb13aeccc3f3d40df55078c17d0b790":[3,0,1,14,8,9,1]
+"ERF__WDM6_8H_source.html":[3,0,1,14,8,8]
 };

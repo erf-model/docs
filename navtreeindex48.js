@@ -1,5 +1,15 @@
 var NAVTREEINDEX48 =
 {
+"structerf__sbm_1_1SBMLayoutSpec.html#a03b1d2db54c1c16158827797d0dbdd84":[2,0,8,13,2],
+"structerf__sbm_1_1SBMLayoutSpec.html#a9ca15a97f4a80567920d35be97045c61":[2,0,8,13,0],
+"structerf__sbm_1_1SpectralGridSpec.html":[2,0,8,17],
+"structerf__sbm_1_1SpectralGridSpec.html#a92ff789ceab304008f703930e5af09dc":[2,0,8,17,1],
+"structerf__sbm_1_1SpectralGridSpec.html#ab1c38eeb1e3ecf666400b1934978422d":[2,0,8,17,3],
+"structerf__sbm_1_1SpectralGridSpec.html#ac45794dd5289baa3e52da51fe29affac":[2,0,8,17,2],
+"structerf__sbm_1_1SpectralGridSpec.html#ad0804b6874aa3c801df5c086dbdff521":[2,0,8,17,0],
+"structerf__sbm_1_1SpectralPopulationSpec.html":[2,0,8,9],
+"structerf__sbm_1_1SpectralPopulationSpec.html#a300d061d6b6aac2fcf9cd8d11ae57635":[2,0,8,9,1],
+"structerf__sbm_1_1SpectralPopulationSpec.html#a5b2ddaae548d9765ce836ddc185bec06":[2,0,8,9,2],
 "structerf__sbm_1_1SpectralPopulationSpec.html#a904f6ddb6e810c0606444073b73548f3":[2,0,8,9,4],
 "structerf__sbm_1_1SpectralPopulationSpec.html#a960c533427981ea9ad5c43691e6dab48":[2,0,8,9,3],
 "structerf__sbm_1_1SpectralPopulationSpec.html#acb6ee21f6e65045a0ab826cd6718f03d":[2,0,8,9,0],
@@ -239,15 +249,5 @@ var NAVTREEINDEX48 =
 "structrotate__flux.html#a549e6de1252f05c7915c09d5c344e0f4":[2,0,114,0],
 "structrotate__flux.html#a892c03056aa2196ad0b6312c98816f01":[2,0,114,2],
 "structrotate__flux.html#a97049ebe59bdad68a8b1778343759dcb":[2,0,114,1],
-"structrotate__flux.html#ad984a89ab8bc937ff6cba340750d394e":[2,0,114,3],
-"structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11":[2,0,114,5],
-"structrotate__flux.html#aee103547330a4333f4bd89a5c05d2bf2":[2,0,114,4],
-"structshoc_1_1ShocEnergyFixerView.html":[2,0,17,0],
-"structshoc_1_1ShocEnergyFixerView.html#a01457b420211fdf3562c7220db5e0778":[2,0,17,0,8],
-"structshoc_1_1ShocEnergyFixerView.html#a17f4f8e3dcca90745bc3d083a56b38b2":[2,0,17,0,4],
-"structshoc_1_1ShocEnergyFixerView.html#a1bea251d8b1f01dfeea5cc7fc2fc378f":[2,0,17,0,12],
-"structshoc_1_1ShocEnergyFixerView.html#a221340cd5611d5d3e938d9959e627897":[2,0,17,0,10],
-"structshoc_1_1ShocEnergyFixerView.html#a3acbbc2ea7cba157968603af683fd30b":[2,0,17,0,3],
-"structshoc_1_1ShocEnergyFixerView.html#a53244ba7d149fe61aea510b051bcc2ad":[2,0,17,0,16],
-"structshoc_1_1ShocEnergyFixerView.html#a53af20b7be0949bb8c88587f8ea4df55":[2,0,17,0,20]
+"structrotate__flux.html#ad984a89ab8bc937ff6cba340750d394e":[2,0,114,3]
 };
