@@ -1,7 +1,5 @@
 var NAVTREEINDEX42 =
 {
-"structMaterialPropertiesCore.html#ae69eb2fc1cc20dd6df12cfa7aff4061b":[2,0,73,11],
-"structMaterialPropertiesCore.html#aed66c95ff85d807210ef99310a1bda54":[2,0,73,17],
 "structMaterialPropertiesCore.html#af8ef44bfde759566f97c19dac1ea640f":[2,0,73,4],
 "structMicrophysicsThermoState.html":[2,0,75],
 "structMicrophysicsThermoState.html#a008e266c33bf39b3b49c8e11bb147675":[2,0,75,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX42 =
 "structSAMPrecipCellDiagnostics.html#a00aec052e0cb147b679acee08c7ef2bc":[2,0,120,3],
 "structSAMPrecipCellDiagnostics.html#a2885e87ee78d16caa7fac54d20e57786":[2,0,120,4],
 "structSAMPrecipCellDiagnostics.html#a2d4535851eb17996b6b60c12c711d1a1":[2,0,120,6],
-"structSAMPrecipCellDiagnostics.html#a4dad2815abc056e86d8c9d069a4c2ac0":[2,0,120,7]
+"structSAMPrecipCellDiagnostics.html#a4dad2815abc056e86d8c9d069a4c2ac0":[2,0,120,7],
+"structSAMPrecipCellDiagnostics.html#a4e9f06b890acc7e469e5e2495005cc06":[2,0,120,8],
+"structSAMPrecipCellDiagnostics.html#aab344ea820f4efd28d109041d14ee04d":[2,0,120,2]
 };

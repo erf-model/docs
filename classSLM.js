@@ -18,7 +18,6 @@ var classSLM =
     [ "GotoNextLine", "classSLM.html#a49424a664e55a7b3f88e8369dd1abf0b", null ],
     [ "groundalb_noahmp", "classSLM.html#aea25daf890fc3c066c2522980d89f157", null ],
     [ "Init", "classSLM.html#a1f3524fc1bb0b983978b1bf17b67cf5c", null ],
-    [ "Init", "classSLM.html#a9eb09a79d143f611682419bcbf77a9ac", null ],
     [ "Init", "classSLM.html#a193f0eb707ae0abea945ecc7ebceefe4", null ],
     [ "Init", "classSLM.html#aba16e5f59f970449b08c6c31624f8064", null ],
     [ "init_from_inputs", "classSLM.html#a2d4663512644b4a3bfb041e7447e6bb7", null ],
