@@ -1,5 +1,8 @@
 var NAVTREEINDEX13 =
 {
+"ERF__SBMOwnership_8cpp.html#a324be1ab342d1c6dcabc42eb4fbcc6fb":[3,0,1,14,6,8,0],
+"ERF__SBMOwnership_8cpp.html#a51023f46558c85c4f92d54b91da1c08c":[3,0,1,14,6,8,3],
+"ERF__SBMOwnership_8cpp.html#a6318b323a37f32bbd622517e16702284":[3,0,1,14,6,8,4],
 "ERF__SBMOwnership_8cpp.html#ab9eea6bfebcb3ad260b8ef6046e68467":[3,0,1,14,6,8,1],
 "ERF__SBMRestart_8H.html":[3,0,1,14,6,11],
 "ERF__SBMRestart_8H.html#a3295b9022d57ceb70bd712eb2e2a4162":[3,0,1,14,6,11,2],
@@ -58,8 +61,8 @@ var NAVTREEINDEX13 =
 "ERF__SatAdj_8H.html":[3,0,1,14,5,2],
 "ERF__SatAdj_8H_source.html":[3,0,1,14,5,2],
 "ERF__SatAdj_8cpp.html":[3,0,1,14,5,1],
-"ERF__SatMethods_8H.html":[3,0,1,26,37],
-"ERF__SatMethods_8H_source.html":[3,0,1,26,37],
+"ERF__SatMethods_8H.html":[3,0,1,26,38],
+"ERF__SatMethods_8H_source.html":[3,0,1,26,38],
 "ERF__ScalarDiffusion_8H.html":[3,0,1,6,30],
 "ERF__ScalarDiffusion_8H.html#a0a3e7a69af5fdc2cdb69db58d01fa179":[3,0,1,6,30,14],
 "ERF__ScalarDiffusion_8H.html#a10127d25f04f1733ab1f4a4c97541d87":[3,0,1,6,30,24],
@@ -223,9 +226,9 @@ var NAVTREEINDEX13 =
 "ERF__SlowRhsPost_8cpp.html#a227d656134aef6ca848159c5fb3ca9b0":[3,0,1,23,13,0],
 "ERF__SlowRhsPre_8cpp.html":[3,0,1,23,14],
 "ERF__SlowRhsPre_8cpp.html#a14e30212e987a0f29662700f300234ca":[3,0,1,23,14,0],
-"ERF__SolveTridiag_8H.html":[3,0,1,26,38],
-"ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a":[3,0,1,26,38,0],
-"ERF__SolveTridiag_8H_source.html":[3,0,1,26,38],
+"ERF__SolveTridiag_8H.html":[3,0,1,26,39],
+"ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a":[3,0,1,26,39,0],
+"ERF__SolveTridiag_8H_source.html":[3,0,1,26,39],
 "ERF__SolveWithEBMLMG_8cpp.html":[3,0,1,12,7],
 "ERF__SolveWithEBMLMG_8cpp.html#a107da7bd2e6038750f7763c95925ec7d":[3,0,1,12,7,0],
 "ERF__SolveWithEBMLMG_8cpp.html#a408b85b0e876adc4ba51d2784213233e":[3,0,1,12,7,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX13 =
 "ERF__SpectralGrid_8H.html#ac748334cf2d172c571ea20ef82111313":[3,0,1,14,6,15,3],
 "ERF__SpectralGrid_8H.html#ac748334cf2d172c571ea20ef82111313ad1106ccca74e98877ed6d7890c70bb2c":[3,0,1,14,6,15,3,1],
 "ERF__SpectralGrid_8H.html#ac748334cf2d172c571ea20ef82111313aff2864d6f652ee0ac254814f1ae4f4a8":[3,0,1,14,6,15,3,0],
-"ERF__SpectralGrid_8H_source.html":[3,0,1,14,6,15],
-"ERF__SpectralGrid_8cpp.html":[3,0,1,14,6,14],
-"ERF__SpongeStruct_8H.html":[3,0,1,4,11],
-"ERF__SpongeStruct_8H.html#a48f9d020b55b25ea2d8e4802334b8c95":[3,0,1,4,11,1]
+"ERF__SpectralGrid_8H_source.html":[3,0,1,14,6,15]
 };

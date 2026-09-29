@@ -1,5 +1,6 @@
 var ERF__Constants_8H =
 [
+    [ "is_valid_lsm_value", "ERF__Constants_8H.html#ad55ff38ef48061af3c7b25b272a3b31e", null ],
     [ "avogadro", "ERF__Constants_8H.html#a3b2a75494e18c62ae8e6f6ebb231c3fa", null ],
     [ "bogus_large_value", "ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7", null ],
     [ "boltz", "ERF__Constants_8H.html#a6700ceab4c13f15657c8137f8dd8c039", null ],

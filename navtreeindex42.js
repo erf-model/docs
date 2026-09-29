@@ -1,5 +1,13 @@
 var NAVTREEINDEX42 =
 {
+"structMaterialPropertiesCore.html#aa8352d82fbd5410927d15d84c56096ba":[2,0,73,16],
+"structMaterialPropertiesCore.html#ab1343e48a073947925e3aae04dd16064":[2,0,73,1],
+"structMaterialPropertiesCore.html#ac6b20a8f9a6868218697f4a30cfb7243":[2,0,73,5],
+"structMaterialPropertiesCore.html#acba13083a9f70ac18c863ad655f571fd":[2,0,73,8],
+"structMaterialPropertiesCore.html#acca961b9917b1b923067debd10cbe67a":[2,0,73,21],
+"structMaterialPropertiesCore.html#ae18da73944b5e6c4d2c7586581afc2df":[2,0,73,2],
+"structMaterialPropertiesCore.html#ae69eb2fc1cc20dd6df12cfa7aff4061b":[2,0,73,11],
+"structMaterialPropertiesCore.html#aed66c95ff85d807210ef99310a1bda54":[2,0,73,17],
 "structMaterialPropertiesCore.html#af8ef44bfde759566f97c19dac1ea640f":[2,0,73,4],
 "structMicrophysicsThermoState.html":[2,0,75],
 "structMicrophysicsThermoState.html#a008e266c33bf39b3b49c8e11bb147675":[2,0,75,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX42 =
 "structSAMFaceState.html#ad1eecd24465385e3f0681a0ec7493b80":[2,0,118,2],
 "structSAMPhaseFractions.html":[2,0,119],
 "structSAMPhaseFractions.html#a20c9d09227a84d37d871914970c7e65c":[2,0,119,0],
-"structSAMPhaseFractions.html#a6369f0c62d9b61c96720a53547ceac72":[2,0,119,2],
-"structSAMPhaseFractions.html#a73f8e00f9b519a6e38b288bb05ddc93f":[2,0,119,1],
-"structSAMPrecipCellDiagnostics.html":[2,0,120],
-"structSAMPrecipCellDiagnostics.html#a00aec052e0cb147b679acee08c7ef2bc":[2,0,120,3],
-"structSAMPrecipCellDiagnostics.html#a2885e87ee78d16caa7fac54d20e57786":[2,0,120,4],
-"structSAMPrecipCellDiagnostics.html#a2d4535851eb17996b6b60c12c711d1a1":[2,0,120,6],
-"structSAMPrecipCellDiagnostics.html#a4dad2815abc056e86d8c9d069a4c2ac0":[2,0,120,7],
-"structSAMPrecipCellDiagnostics.html#a4e9f06b890acc7e469e5e2495005cc06":[2,0,120,8],
-"structSAMPrecipCellDiagnostics.html#aab344ea820f4efd28d109041d14ee04d":[2,0,120,2]
+"structSAMPhaseFractions.html#a6369f0c62d9b61c96720a53547ceac72":[2,0,119,2]
 };

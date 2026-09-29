@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('ERF__Constants_8H.html',''); initResiz
 
 <div class="header">
   <div class="summary">
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_Constants.H File Reference</div>  </div>
@@ -91,22 +92,31 @@ $(document).ready(function(){initNavTree('ERF__Constants_8H.html',''); initResiz
 <div class="textblock"><code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;AMReX_REAL.H&gt;</code><br />
+<code>#include &lt;AMReX_GpuQualifiers.H&gt;</code><br />
+<code>#include &lt;AMReX_Math.H&gt;</code><br />
 <code>#include &quot;<a class="el" href="ERF__NumericalConstants_8H_source.html">ERF_NumericalConstants.H</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_Constants.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Constants_8H__incl.png" border="0" usemap="#aSource_2ERF__Constants_8H" alt=""/></div>
 <map name="aSource_2ERF__Constants_8H" id="aSource_2ERF__Constants_8H">
-<area shape="rect" title=" " alt="" coords="83,5,265,32"/>
+<area shape="rect" title=" " alt="" coords="259,5,441,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,68,107"/>
 <area shape="rect" title=" " alt="" coords="151,155,210,181"/>
 <area shape="rect" title=" " alt="" coords="245,155,367,181"/>
+<area shape="rect" title=" " alt="" coords="367,80,546,107"/>
+<area shape="rect" title=" " alt="" coords="570,80,693,107"/>
 <area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="143,80,343,107"/>
 </map>
 </div>
 </div>
 <p><a href="ERF__Constants_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ad55ff38ef48061af3c7b25b272a3b31e"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Constants_8H.html#ad55ff38ef48061af3c7b25b272a3b31e">is_valid_lsm_value</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v)</td></tr>
+<tr class="separator:ad55ff38ef48061af3c7b25b272a3b31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a319ff1c970342978d83ed3795c78afa7"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.e150)</td></tr>
@@ -164,6 +174,40 @@ Variables</h2></td></tr>
 <tr class="memitem:a432b0c6e52c518d2923bd05ba945f17d"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Constants_8H.html#a432b0c6e52c518d2923bd05ba945f17d">ORB_UNDEF_INT</a> = 2000000000</td></tr>
 <tr class="separator:a432b0c6e52c518d2923bd05ba945f17d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ad55ff38ef48061af3c7b25b272a3b31e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad55ff38ef48061af3c7b25b272a3b31e">&#9670;&nbsp;</a></span>is_valid_lsm_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool is_valid_lsm_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> amrex::Math::isfinite(v) &amp;&amp; v &lt; <a class="code" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="ttc" id="aERF__Constants_8H_html_aedc589a54f2b3ed39a16c75375014017"><div class="ttname"><a href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a></div><div class="ttdeci">constexpr amrex::Real lsm_undefined</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:28</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classNOAHMP.html#a4fe330708ef3ad6cdba4687b0f372c9f">NOAHMP::stage_forcing()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__Constants_8H_ad55ff38ef48061af3c7b25b272a3b31e_icgraph.png" border="0" usemap="#aERF__Constants_8H_ad55ff38ef48061af3c7b25b272a3b31e_icgraph" alt=""/></div>
+<map name="aERF__Constants_8H_ad55ff38ef48061af3c7b25b272a3b31e_icgraph" id="aERF__Constants_8H_ad55ff38ef48061af3c7b25b272a3b31e_icgraph">
+<area shape="rect" title=" " alt="" coords="231,5,377,32"/>
+<area shape="rect" href="classNOAHMP.html#a4fe330708ef3ad6cdba4687b0f372c9f" title=" " alt="" coords="5,5,183,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a3b2a75494e18c62ae8e6f6ebb231c3fa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b2a75494e18c62ae8e6f6ebb231c3fa">&#9670;&nbsp;</a></span>avogadro</h2>
@@ -589,7 +633,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#ad35eefe71ee96294dfab06727d316da9">SurfaceLayer::compute_sfc_params_from_lsm_fluxes()</a>, <a class="el" href="classSurfaceLayer.html#a4f57753d5aa5893c395ffe3a9aa14a33">SurfaceLayer::compute_SurfaceLayer_bcs()</a>, <a class="el" href="classSurfaceLayer.html#a48710baca749922263cbc9e3e7a06c75">SurfaceLayer::get_lsm_tsurf()</a>, <a class="el" href="classNOAHMP.html#a46e30153bacad3c8fcb61002a97e89ea">NOAHMP::Init()</a>, <a class="el" href="classRadiation.html#a0f4ddbf3696945fd595bf2c1c66862b3">Radiation::mf_to_kokkos_buffers()</a>, <a class="el" href="classNOAHMP.html#a3c66d1a1ea05dc92935b09dabb34837c">NOAHMP::read_results()</a>, <a class="el" href="namespacenoahmp__result__policy.html#a5a3a23214e58b11387a1f2804483c167">noahmp_result_policy::result_is_valid()</a>, <a class="el" href="namespacenear__surface__diagnostics.html#ac22e985a9ccbc51fd5ea9f3362998b9a">near_surface_diagnostics::valid_noahmp_component()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#aa49b1716d474d6e3f4fb7d67aa5740f9">valid_surface_temperature()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classNOAHMP.html#ab8aa96815cb01a8aa37962c68bbdb84b">NOAHMP::Advance_With_State()</a>, <a class="el" href="classSurfaceLayer.html#ad35eefe71ee96294dfab06727d316da9">SurfaceLayer::compute_sfc_params_from_lsm_fluxes()</a>, <a class="el" href="classSurfaceLayer.html#a4f57753d5aa5893c395ffe3a9aa14a33">SurfaceLayer::compute_SurfaceLayer_bcs()</a>, <a class="el" href="classSurfaceLayer.html#a48710baca749922263cbc9e3e7a06c75">SurfaceLayer::get_lsm_tsurf()</a>, <a class="el" href="classNOAHMP.html#a46e30153bacad3c8fcb61002a97e89ea">NOAHMP::Init()</a>, <a class="el" href="ERF__Constants_8H.html#ad55ff38ef48061af3c7b25b272a3b31e">is_valid_lsm_value()</a>, <a class="el" href="classRadiation.html#a0f4ddbf3696945fd595bf2c1c66862b3">Radiation::mf_to_kokkos_buffers()</a>, <a class="el" href="classNOAHMP.html#a3c66d1a1ea05dc92935b09dabb34837c">NOAHMP::read_results()</a>, <a class="el" href="namespacenoahmp__result__policy.html#a5a3a23214e58b11387a1f2804483c167">noahmp_result_policy::result_is_valid()</a>, <a class="el" href="namespacenear__surface__diagnostics.html#ac22e985a9ccbc51fd5ea9f3362998b9a">near_surface_diagnostics::valid_noahmp_component()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#aa49b1716d474d6e3f4fb7d67aa5740f9">valid_surface_temperature()</a>.</p>
 
 </div>
 </div>

@@ -8,6 +8,7 @@ var structSolverChoice =
     [ "host_owns_vertical_scalar_diffusion", "structSolverChoice.html#ad9861d4e33ddb42d03fd03873e2e7a9c", null ],
     [ "init_params", "structSolverChoice.html#a76659aa69edd3370626e3648cbead9be", null ],
     [ "pbl_suppresses_microphysics_condensation", "structSolverChoice.html#a1bb82d88ed912d726fb41dafc87ef531", null ],
+    [ "rad_feeds_lsm", "structSolverChoice.html#acfe9c7bbc2f8c96ac84ad7ffd9933619", null ],
     [ "rad_uses_interface", "structSolverChoice.html#aaff28ab2edf1c0232875745e39c0019b", null ],
     [ "read_int_string", "structSolverChoice.html#a31e016e3da7c175ac02427767286bc42", null ],
     [ "set_mesh_type", "structSolverChoice.html#afb997b932bbc5dfb58145ea90580d518", null ],
