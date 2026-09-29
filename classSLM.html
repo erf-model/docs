@@ -10050,7 +10050,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l05321"></a><span class="lineno"> 5321</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tmp0,<a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aaa747cefdca89e85467b44d7e99ce03c5">tmp1</a>,<a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aacbc734eba6e44d51bfa3e4d16a9f86c5">tmp2</a>,<a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa51c001b0ce66f268dd1d55b7fd4245c0">tmp3</a>,tmp4,tmp5,tmp6,tmp7,tmp8,tmp9;</div>
 <div class="line"><a name="l05322"></a><span class="lineno"> 5322</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> p1,p2,p3,p4,s1,s2,u1,u2,u3;</div>
 <div class="line"><a name="l05323"></a><span class="lineno"> 5323</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> b,c,d,d1,d2,f,h,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10;</div>
-<div class="line"><a name="l05324"></a><span class="lineno"> 5324</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> phi1,phi2,<a class="code" href="classSLM.html#aff422c4d153a18f2733d864224252172">sigma</a>;</div>
+<div class="line"><a name="l05324"></a><span class="lineno"> 5324</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> phi1,phi2,sigma_ts;</div>
 <div class="line"><a name="l05325"></a><span class="lineno"> 5325</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ftds,ftis,fres;</div>
 <div class="line"><a name="l05326"></a><span class="lineno"> 5326</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> denfveg;</div>
 <div class="line"><a name="l05327"></a><span class="lineno"> 5327</span>&#160;    <span class="comment">//jref:start</span></div>
@@ -10155,8 +10155,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l05426"></a><span class="lineno"> 5426</span>&#160;    f = tmp0 * <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>*(1.0-betad);</div>
 <div class="line"><a name="l05427"></a><span class="lineno"> 5427</span>&#160;    <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aaa747cefdca89e85467b44d7e99ce03c5">tmp1</a> = b*b - c*c;</div>
 <div class="line"><a name="l05428"></a><span class="lineno"> 5428</span>&#160;    h = std::sqrt(<a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aaa747cefdca89e85467b44d7e99ce03c5">tmp1</a>) / avmu;</div>
-<div class="line"><a name="l05429"></a><span class="lineno"> 5429</span>&#160;    <a class="code" href="classSLM.html#aff422c4d153a18f2733d864224252172">sigma</a> = tmp0*tmp0 - <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aaa747cefdca89e85467b44d7e99ce03c5">tmp1</a>;</div>
-<div class="line"><a name="l05430"></a><span class="lineno"> 5430</span>&#160;        <span class="keywordflow">if</span> ( std::abs(<a class="code" href="classSLM.html#aff422c4d153a18f2733d864224252172">sigma</a>) &lt; 1.0e-6 ) <a class="code" href="classSLM.html#aff422c4d153a18f2733d864224252172">sigma</a> = (<a class="code" href="classSLM.html#aff422c4d153a18f2733d864224252172">sigma</a> &gt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) ? 1.0e-6 : -1.0e-6;</div>
+<div class="line"><a name="l05429"></a><span class="lineno"> 5429</span>&#160;    sigma_ts = tmp0*tmp0 - <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aaa747cefdca89e85467b44d7e99ce03c5">tmp1</a>;</div>
+<div class="line"><a name="l05430"></a><span class="lineno"> 5430</span>&#160;        <span class="keywordflow">if</span> ( std::abs(sigma_ts) &lt; 1.0e-6 ) sigma_ts = (sigma_ts &gt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) ? 1.0e-6 : -1.0e-6;</div>
 <div class="line"><a name="l05431"></a><span class="lineno"> 5431</span>&#160;    p1 = b + avmu*h;</div>
 <div class="line"><a name="l05432"></a><span class="lineno"> 5432</span>&#160;    p2 = b - avmu*h;</div>
 <div class="line"><a name="l05433"></a><span class="lineno"> 5433</span>&#160;    p3 = b + tmp0;</div>
@@ -10179,12 +10179,12 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l05450"></a><span class="lineno"> 5450</span>&#160;    tmp5 = u2 - avmu*h;</div>
 <div class="line"><a name="l05451"></a><span class="lineno"> 5451</span>&#160;    d2 = tmp4/s1 - tmp5*s1;</div>
 <div class="line"><a name="l05452"></a><span class="lineno"> 5452</span>&#160;    h1 = -d*p4 - c*f;</div>
-<div class="line"><a name="l05453"></a><span class="lineno"> 5453</span>&#160;    tmp6 = d - h1*p3/<a class="code" href="classSLM.html#aff422c4d153a18f2733d864224252172">sigma</a>;</div>
-<div class="line"><a name="l05454"></a><span class="lineno"> 5454</span>&#160;    tmp7 = ( d - c - h1/<a class="code" href="classSLM.html#aff422c4d153a18f2733d864224252172">sigma</a>*(u1+tmp0) ) * s2;</div>
+<div class="line"><a name="l05453"></a><span class="lineno"> 5453</span>&#160;    tmp6 = d - h1*p3/sigma_ts;</div>
+<div class="line"><a name="l05454"></a><span class="lineno"> 5454</span>&#160;    tmp7 = ( d - c - h1/sigma_ts*(u1+tmp0) ) * s2;</div>
 <div class="line"><a name="l05455"></a><span class="lineno"> 5455</span>&#160;    h2 = ( tmp6*<a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aacbc734eba6e44d51bfa3e4d16a9f86c5">tmp2</a>/s1 - p2*tmp7 ) / d1;</div>
 <div class="line"><a name="l05456"></a><span class="lineno"> 5456</span>&#160;    h3 = - ( tmp6*<a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa51c001b0ce66f268dd1d55b7fd4245c0">tmp3</a>*s1 - p1*tmp7 ) / d1;</div>
 <div class="line"><a name="l05457"></a><span class="lineno"> 5457</span>&#160;    h4 = -f*p3 - c*d;</div>
-<div class="line"><a name="l05458"></a><span class="lineno"> 5458</span>&#160;    tmp8 = h4/<a class="code" href="classSLM.html#aff422c4d153a18f2733d864224252172">sigma</a>;</div>
+<div class="line"><a name="l05458"></a><span class="lineno"> 5458</span>&#160;    tmp8 = h4/sigma_ts;</div>
 <div class="line"><a name="l05459"></a><span class="lineno"> 5459</span>&#160;    tmp9 = ( u3 - tmp8*(u2-tmp0) ) * s2;</div>
 <div class="line"><a name="l05460"></a><span class="lineno"> 5460</span>&#160;    h5 = - ( tmp8*tmp4/s1 + tmp9 ) / d2;</div>
 <div class="line"><a name="l05461"></a><span class="lineno"> 5461</span>&#160;    h6 = ( tmp8*tmp5*s1 + tmp9 ) / d2;</div>
@@ -10198,7 +10198,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l05469"></a><span class="lineno"> 5469</span>&#160; </div>
 <div class="line"><a name="l05470"></a><span class="lineno"> 5470</span>&#160;    <span class="keywordflow">if</span> (ic == 0) {</div>
 <div class="line"><a name="l05471"></a><span class="lineno"> 5471</span>&#160;        ftds = s2                           *(1.0-gap) + gap;</div>
-<div class="line"><a name="l05472"></a><span class="lineno"> 5472</span>&#160;        ftis = (h4*s2/<a class="code" href="classSLM.html#aff422c4d153a18f2733d864224252172">sigma</a> + h5*s1 + h6/s1)*(1.0-gap);</div>
+<div class="line"><a name="l05472"></a><span class="lineno"> 5472</span>&#160;        ftis = (h4*s2/sigma_ts + h5*s1 + h6/s1)*(1.0-gap);</div>
 <div class="line"><a name="l05473"></a><span class="lineno"> 5473</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l05474"></a><span class="lineno"> 5474</span>&#160;        ftds = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l05475"></a><span class="lineno"> 5475</span>&#160;        ftis = (h9*s1 + h10/s1)*(1.0-kopen) + kopen;</div>
@@ -10209,8 +10209,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l05480"></a><span class="lineno"> 5480</span>&#160;    <span class="comment">// flux reflected by the surface (veg. and ground)</span></div>
 <div class="line"><a name="l05481"></a><span class="lineno"> 5481</span>&#160; </div>
 <div class="line"><a name="l05482"></a><span class="lineno"> 5482</span>&#160;    <span class="keywordflow">if</span> (ic == 0) {</div>
-<div class="line"><a name="l05483"></a><span class="lineno"> 5483</span>&#160;        fres   = (h1/<a class="code" href="classSLM.html#aff422c4d153a18f2733d864224252172">sigma</a> + h2 + h3)*(1.0-gap  ) + albgrd[ib]*gap;</div>
-<div class="line"><a name="l05484"></a><span class="lineno"> 5484</span>&#160;        freveg = (h1/<a class="code" href="classSLM.html#aff422c4d153a18f2733d864224252172">sigma</a> + h2 + h3)*(1.0-gap  );</div>
+<div class="line"><a name="l05483"></a><span class="lineno"> 5483</span>&#160;        fres   = (h1/sigma_ts + h2 + h3)*(1.0-gap  ) + albgrd[ib]*gap;</div>
+<div class="line"><a name="l05484"></a><span class="lineno"> 5484</span>&#160;        freveg = (h1/sigma_ts + h2 + h3)*(1.0-gap  );</div>
 <div class="line"><a name="l05485"></a><span class="lineno"> 5485</span>&#160;        frebar = albgrd[ib]*gap;                   <span class="comment">//jref - separate veg. and ground reflection</span></div>
 <div class="line"><a name="l05486"></a><span class="lineno"> 5486</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l05487"></a><span class="lineno"> 5487</span>&#160;        fres   = (h7 + h8) *(1.0-kopen) + albgri[ib]*kopen;</div>
