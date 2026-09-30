@@ -1,5 +1,9 @@
 var NAVTREEINDEX33 =
 {
+"classerf__auxiliary_1_1CompletedStepFluxLedger.html#a8f1aa50265809e986da190d3d34fd188":[2,0,0,12,15],
+"classerf__auxiliary_1_1CompletedStepFluxLedger.html#a9da8aca59b888ff02ce1c9bfeebe7ee5":[2,0,0,12,8],
+"classerf__auxiliary_1_1CompletedStepFluxLedger.html#aa286e57b355b60353abf9625e3c57273":[2,0,0,12,3],
+"classerf__auxiliary_1_1CompletedStepFluxLedger.html#ab1490d30dc601fa09ecd71d771e7db4e":[2,0,0,12,7],
 "classerf__auxiliary_1_1CompletedStepFluxLedger.html#acbfc4475766a6ba6bfcf8959a17bbc33":[2,0,0,12,5],
 "classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa":[2,0,0,12,12],
 "classerf__auxiliary_1_1CompletedStepFluxLedger.html#aea6280894f504f11f044422c67330cb9":[2,0,0,12,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX33 =
 "functions_y.html":[2,3,0,24],
 "functions_z.html":[2,3,0,25],
 "functions_~.html":[2,3,0,26],
-"globals.html":[3,1,0],
-"globals.html":[3,1,0,0],
-"globals_b.html":[3,1,0,1],
-"globals_c.html":[3,1,0,2],
-"globals_d.html":[3,1,0,3]
+"globals.html":[3,1,0]
 };

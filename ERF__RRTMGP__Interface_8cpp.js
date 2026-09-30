@@ -14,7 +14,7 @@ var ERF__RRTMGP__Interface_8cpp =
     [ "get_wavelength_index_sw", "ERF__RRTMGP__Interface_8cpp.html#a28e3587b50833fd1f2c5a910b1392c43", null ],
     [ "rrtmgp_finalize", "ERF__RRTMGP__Interface_8cpp.html#a009ddf7de8b3d47a8732243e945e431c", null ],
     [ "rrtmgp_initialize", "ERF__RRTMGP__Interface_8cpp.html#a71b108ea480a6f323cedec4c27ab4944", null ],
-    [ "rrtmgp_lw", "ERF__RRTMGP__Interface_8cpp.html#aa920f756cc57d6c9fe755483ac1b4582", null ],
+    [ "rrtmgp_lw", "ERF__RRTMGP__Interface_8cpp.html#aa56c9f2cd795f809ec423ae88e0e2cc1", null ],
     [ "rrtmgp_main", "ERF__RRTMGP__Interface_8cpp.html#a38b1a9281557b02960339297bd401ef1", null ],
     [ "rrtmgp_sw", "ERF__RRTMGP__Interface_8cpp.html#a83b2e0892e5b475f2f464b4285edfe47", null ],
     [ "cloud_optics_lw_k", "ERF__RRTMGP__Interface_8cpp.html#abdc3f481e2737031e19284d105197d74", null ],

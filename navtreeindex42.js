@@ -1,5 +1,10 @@
 var NAVTREEINDEX42 =
 {
+"structMaterialPropertiesCore.html#a70d69c8c88e93f929632cb2f7ab87431":[2,0,73,18],
+"structMaterialPropertiesCore.html#a76e6e85c61cd9bfa01175d3adc7b3e9e":[2,0,73,14],
+"structMaterialPropertiesCore.html#a7a633689fe9eef033518399491e5163d":[2,0,73,10],
+"structMaterialPropertiesCore.html#a8a91e683aa96a912705cef59d60b3703":[2,0,73,6],
+"structMaterialPropertiesCore.html#aa7200632698fbb46dc3d1584e63c7fd5":[2,0,73,0],
 "structMaterialPropertiesCore.html#aa8352d82fbd5410927d15d84c56096ba":[2,0,73,16],
 "structMaterialPropertiesCore.html#ab1343e48a073947925e3aae04dd16064":[2,0,73,1],
 "structMaterialPropertiesCore.html#ac6b20a8f9a6868218697f4a30cfb7243":[2,0,73,5],
@@ -244,10 +249,5 @@ var NAVTREEINDEX42 =
 "structSAMCoefficientRow.html#aea617a09401352c4a109f313485bea36":[2,0,117,10],
 "structSAMFaceState.html":[2,0,118],
 "structSAMFaceState.html#a3e997dd570cb321b330fb445c3838e7d":[2,0,118,1],
-"structSAMFaceState.html#a5fce43d045ea97733c971188ebd1d866":[2,0,118,0],
-"structSAMFaceState.html#a8ec6b3bcb00afc9d8e864761f846f2a3":[2,0,118,3],
-"structSAMFaceState.html#ad1eecd24465385e3f0681a0ec7493b80":[2,0,118,2],
-"structSAMPhaseFractions.html":[2,0,119],
-"structSAMPhaseFractions.html#a20c9d09227a84d37d871914970c7e65c":[2,0,119,0],
-"structSAMPhaseFractions.html#a6369f0c62d9b61c96720a53547ceac72":[2,0,119,2]
+"structSAMFaceState.html#a5fce43d045ea97733c971188ebd1d866":[2,0,118,0]
 };

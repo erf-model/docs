@@ -2,7 +2,7 @@ var structLargeScaleForcingData =
 [
     [ "LargeScaleForcingData", "structLargeScaleForcingData.html#af8cbd2f2f91838bc1f061b855e5edac7", null ],
     [ "get_columns_in_str", "structLargeScaleForcingData.html#ac7d4dc1c44084cf0920db8e1b9434298", null ],
-    [ "get_forcing_time_coeffs", "structLargeScaleForcingData.html#acb6283dda276339dc2a2826531f4a99a", null ],
+    [ "get_forcing_time_coeffs", "structLargeScaleForcingData.html#a39515ee6abee849347eb7ddd0c35dd72", null ],
     [ "host_to_device", "structLargeScaleForcingData.html#ae1275b32f31a3d3461e608149208d5df", null ],
     [ "interp_forcing", "structLargeScaleForcingData.html#abb3bacd9f5e4150782878d75cb443ac7", null ],
     [ "read_forcing_file", "structLargeScaleForcingData.html#a1d342cee4a22ba2ace7b9629abb68127", null ],

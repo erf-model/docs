@@ -1,5 +1,10 @@
 var NAVTREEINDEX47 =
 {
+"structWENO7.html#a4e973458a5b3cfab8acf5b22b7617194":[2,0,202,4],
+"structWENO7.html#a51bb3b4aafa54396917073e91d53140b":[2,0,202,5],
+"structWENO7.html#a5bc057e9b0e1f937a32733802539acff":[2,0,202,9],
+"structWENO7.html#a6da9486392dffd024784b275584612b1":[2,0,202,8],
+"structWENO7.html#a6fd89490f6c6a0c209bf34e7fee67d6b":[2,0,202,7],
 "structWENO7.html#a7d4fbd627c2cf088cde83639058b631c":[2,0,202,2],
 "structWENO7.html#a847542024dd131b3455ac46c10969f57":[2,0,202,6],
 "structWENO7.html#a98752679e3240438cc4455aafd9f0aaa":[2,0,202,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX47 =
 "structerf__cloud__chamber__wall__flux_1_1MostStabilityResult.html#a0174dc500bba801f5c71044c9d2cef19":[2,0,2,2,0],
 "structerf__cloud__chamber__wall__flux_1_1MostStabilityResult.html#aaeb9256a8314e22fef0adfc10de00d2e":[2,0,2,2,1],
 "structerf__cloud__chamber__wall__flux_1_1NeutralLogMomentumState.html":[2,0,2,4],
-"structerf__cloud__chamber__wall__flux_1_1NeutralLogMomentumState.html#a13015bae40b7797e13d204fb43058e39":[2,0,2,4,0],
-"structerf__cloud__chamber__wall__flux_1_1NeutralLogMomentumState.html#a5dbcc4316afa4cdef9c6e5a8b0ace58a":[2,0,2,4,2],
-"structerf__cloud__chamber__wall__flux_1_1NeutralLogMomentumState.html#ae86a3838673509a4fd4e47d7f97d73ae":[2,0,2,4,1],
-"structerf__cloud__chamber__wall__flux_1_1ScalarFluxReplacement.html":[2,0,2,6],
-"structerf__cloud__chamber__wall__flux_1_1ScalarFluxReplacement.html#a7a7c8e3c8615748f7abf7f2bc77c3d42":[2,0,2,6,0],
-"structerf__cloud__chamber__wall__flux_1_1ScalarFluxReplacement.html#acba4d37089c205a56656e41e13884f20":[2,0,2,6,1]
+"structerf__cloud__chamber__wall__flux_1_1NeutralLogMomentumState.html#a13015bae40b7797e13d204fb43058e39":[2,0,2,4,0]
 };

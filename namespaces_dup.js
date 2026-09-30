@@ -816,6 +816,7 @@ var namespaces_dup =
       [ "resolve_surface_temperature", "namespacerrtmgp.html#abe0424eff009566c0f357c0855d3fe3f", null ],
       [ "rrtmgp_finalize", "namespacerrtmgp.html#a009ddf7de8b3d47a8732243e945e431c", null ],
       [ "rrtmgp_initialize", "namespacerrtmgp.html#a71b108ea480a6f323cedec4c27ab4944", null ],
+      [ "rrtmgp_lw", "namespacerrtmgp.html#aa56c9f2cd795f809ec423ae88e0e2cc1", null ],
       [ "rrtmgp_lw", "namespacerrtmgp.html#aa920f756cc57d6c9fe755483ac1b4582", null ],
       [ "rrtmgp_main", "namespacerrtmgp.html#a38b1a9281557b02960339297bd401ef1", null ],
       [ "rrtmgp_sw", "namespacerrtmgp.html#a83b2e0892e5b475f2f464b4285edfe47", null ],
