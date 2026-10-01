@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"ERF__SpectralGrid_8H.html#ac748334cf2d172c571ea20ef82111313aff2864d6f652ee0ac254814f1ae4f4a8":[3,0,1,14,6,15,3,0],
+"ERF__SpectralGrid_8H_source.html":[3,0,1,14,6,15],
 "ERF__SpectralGrid_8cpp.html":[3,0,1,14,6,14],
 "ERF__SpongeStruct_8H.html":[3,0,1,4,11],
 "ERF__SpongeStruct_8H.html#a48f9d020b55b25ea2d8e4802334b8c95":[3,0,1,4,11,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "ERF__TurbPertStruct_8H.html#ac5d6f12e32794be38d7e68b8786d65cf":[3,0,1,4,12,2],
 "ERF__TurbPertStruct_8H_source.html":[3,0,1,4,12],
 "ERF__TurbStruct_8H.html":[3,0,1,4,13],
-"ERF__TurbStruct_8H.html#a366eb3a7d508374fda1324a610da7ece":[3,0,1,4,13,3],
-"ERF__TurbStruct_8H.html#a454c17db1a1fb2e88057dc6399effcd8":[3,0,1,4,13,1],
-"ERF__TurbStruct_8H.html#a4eae7b00dc1804725e10ef874ffe9e0b":[3,0,1,4,13,6]
+"ERF__TurbStruct_8H.html#a366eb3a7d508374fda1324a610da7ece":[3,0,1,4,13,3]
 };

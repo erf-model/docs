@@ -1,5 +1,7 @@
 var NAVTREEINDEX40 =
 {
+"namespaceplotfile2d.html#aeb39831ce22b67e3631a8d20e60a3be9":[1,0,63,23],
+"namespaceplotfile2d.html#aee0c54e52d986ec450e95dc0e6daa1d8":[1,0,63,44],
 "namespaceplotfile2d.html#aee93e5a77a0e1179387f786a491abaa1":[1,0,63,88],
 "namespaceplotfile2d.html#af9195a5eb19b3a9581aa7dca46a2d3cd":[1,0,63,26],
 "namespaceplotfile2d.html#af9c43bbc9289bc52a16c0c83e76b2b9b":[1,0,63,74],
@@ -247,7 +249,5 @@ var NAVTREEINDEX40 =
 "structIBFaceSet_1_1SunState.html#a654f49a460adb41898e1d219366559ac":[2,0,57,0,4],
 "structIBFaceSet_1_1SunState.html#a8edf92de02577fadb03bb2cb20385ced":[2,0,57,0,3],
 "structIBFaceSet_1_1SunState.html#aac43d32e7bca826daae1bf846e0ff7be":[2,0,57,0,0],
-"structIBFaceSet_1_1SunState.html#adb78183fdccdd445da964efc19a2c5cb":[2,0,57,0,5],
-"structIBSEBMaterial.html":[2,0,58],
-"structIBSEBMaterial.html#a034ba9a7cc163e11a7b042904d3693c5":[2,0,58,0]
+"structIBFaceSet_1_1SunState.html#adb78183fdccdd445da964efc19a2c5cb":[2,0,57,0,5]
 };

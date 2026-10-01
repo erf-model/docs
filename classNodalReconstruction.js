@@ -1,7 +1,7 @@
 var classNodalReconstruction =
 [
     [ "Real", "classNodalReconstruction.html#ad5556f510f1f1bca500b05865cc2ca6c", null ],
-    [ "NodalReconstruction", "classNodalReconstruction.html#a5af687ff6ac70dbcbcfebae4a9b93460", null ],
+    [ "NodalReconstruction", "classNodalReconstruction.html#a5912c7457728336ecf631e019adabb1f", null ],
     [ "applyA", "classNodalReconstruction.html#a587bf9174406597888c8db687f330cae", null ],
     [ "applyAT", "classNodalReconstruction.html#a3f735be7012e4c42755a9d98b17c332e", null ],
     [ "applyD", "classNodalReconstruction.html#a5d091a1b4c30255a903e1875b2b47baa", null ],
@@ -24,8 +24,6 @@ var classNodalReconstruction =
     [ "solve", "classNodalReconstruction.html#a7e35dad639fa0884b87a96ca8f5c42af", null ],
     [ "totalSquaredVariation", "classNodalReconstruction.html#a4e589df9daac90b7c7c880fdd0c2bf61", null ],
     [ "deviation_factor", "classNodalReconstruction.html#aa6a6da6439e65c940b961029f446169a", null ],
-    [ "m_cc_scratch", "classNodalReconstruction.html#a8791677715a4a4c7d5047db083cdc361", null ],
-    [ "m_cc_slice_box", "classNodalReconstruction.html#ac00c775c5c1311a0d9828b8f957ef99f", null ],
     [ "m_difx", "classNodalReconstruction.html#a8864afa49e5c1248b1bdd5e2c2f2cfe4", null ],
     [ "m_dify", "classNodalReconstruction.html#ada821f2eb4c4fd01083a57c393bd7843", null ],
     [ "m_gx", "classNodalReconstruction.html#ab683e43b65893edfb12ef9bebdb64e25", null ],
@@ -43,6 +41,8 @@ var classNodalReconstruction =
     [ "m_nd_scratch", "classNodalReconstruction.html#a696791422fe65dc618fcbde979d10984", null ],
     [ "m_nodal_box", "classNodalReconstruction.html#a7b1d7db02090ed61989484c0c535e1a0", null ],
     [ "m_var_op", "classNodalReconstruction.html#a48822cd05cc97322aa1bcc38f649395e", null ],
+    [ "m_w_face_scratch", "classNodalReconstruction.html#a6d8d44ad7ebe44364bb9a8ead877580b", null ],
+    [ "m_w_face_slice_box", "classNodalReconstruction.html#ac1121f10ce2cde81e984590f9f44a131", null ],
     [ "m_x_edge_box", "classNodalReconstruction.html#a0d535eeda553cdad5a0c887b301f6a7f", null ],
     [ "m_y_edge_box", "classNodalReconstruction.html#a6dec40684e8416cd2e5503229177fa73", null ],
     [ "max_attempts", "classNodalReconstruction.html#aecd3a16255429fed26c5da5ec8ecadc6", null ],

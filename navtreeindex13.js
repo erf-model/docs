@@ -1,5 +1,7 @@
 var NAVTREEINDEX13 =
 {
+"ERF__SBMOwnership_8cpp.html":[3,0,1,14,6,8],
+"ERF__SBMOwnership_8cpp.html#a181e3d55ad4eb4f53244a260bbd2d2a8":[3,0,1,14,6,8,2],
 "ERF__SBMOwnership_8cpp.html#a324be1ab342d1c6dcabc42eb4fbcc6fb":[3,0,1,14,6,8,0],
 "ERF__SBMOwnership_8cpp.html#a51023f46558c85c4f92d54b91da1c08c":[3,0,1,14,6,8,3],
 "ERF__SBMOwnership_8cpp.html#a6318b323a37f32bbd622517e16702284":[3,0,1,14,6,8,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX13 =
 "ERF__SpectralGrid_8H.html#a7f59152e618498d33e89c2fad84dfc26a7b3c1f15e2215f5080ffc55047412241":[3,0,1,14,6,15,4,1],
 "ERF__SpectralGrid_8H.html#a7f59152e618498d33e89c2fad84dfc26ad99e89d4dc3240dd5f4ed719b75dcb62":[3,0,1,14,6,15,4,0],
 "ERF__SpectralGrid_8H.html#ac748334cf2d172c571ea20ef82111313":[3,0,1,14,6,15,3],
-"ERF__SpectralGrid_8H.html#ac748334cf2d172c571ea20ef82111313ad1106ccca74e98877ed6d7890c70bb2c":[3,0,1,14,6,15,3,1],
-"ERF__SpectralGrid_8H.html#ac748334cf2d172c571ea20ef82111313aff2864d6f652ee0ac254814f1ae4f4a8":[3,0,1,14,6,15,3,0],
-"ERF__SpectralGrid_8H_source.html":[3,0,1,14,6,15]
+"ERF__SpectralGrid_8H.html#ac748334cf2d172c571ea20ef82111313ad1106ccca74e98877ed6d7890c70bb2c":[3,0,1,14,6,15,3,1]
 };

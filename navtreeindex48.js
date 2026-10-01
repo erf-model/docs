@@ -1,5 +1,7 @@
 var NAVTREEINDEX48 =
 {
+"structerf__cloud__chamber__wall__flux_1_1NeutralLogMomentumState.html":[2,0,2,4],
+"structerf__cloud__chamber__wall__flux_1_1NeutralLogMomentumState.html#a13015bae40b7797e13d204fb43058e39":[2,0,2,4,0],
 "structerf__cloud__chamber__wall__flux_1_1NeutralLogMomentumState.html#a5dbcc4316afa4cdef9c6e5a8b0ace58a":[2,0,2,4,2],
 "structerf__cloud__chamber__wall__flux_1_1NeutralLogMomentumState.html#ae86a3838673509a4fd4e47d7f97d73ae":[2,0,2,4,1],
 "structerf__cloud__chamber__wall__flux_1_1ScalarFluxReplacement.html":[2,0,2,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX48 =
 "structmoeng__flux__eb.html#a6871545da775183b5434d284a7d1e8b9":[2,0,77,6],
 "structmoeng__flux__eb.html#a72497eaa811a7fd2ad55483374b6133b":[2,0,77,0],
 "structmoeng__flux__eb.html#a8380f8f3dbd4f6ed5bc8b93d00646e04":[2,0,77,2],
-"structmoeng__flux__eb.html#a8f982115ffb0a0874df9781ef9aba5e4":[2,0,77,4],
-"structmoeng__flux__eb.html#aac739cb1b91c92c0306c58ad00a394c7":[2,0,77,1],
-"structmoeng__flux__eb.html#ae87b9cba8e39106cccc46d20031f0d15":[2,0,77,5]
+"structmoeng__flux__eb.html#a8f982115ffb0a0874df9781ef9aba5e4":[2,0,77,4]
 };

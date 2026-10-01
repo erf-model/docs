@@ -1,5 +1,7 @@
 var NAVTREEINDEX43 =
 {
+"structSAMFaceState.html#a3e997dd570cb321b330fb445c3838e7d":[2,0,118,1],
+"structSAMFaceState.html#a5fce43d045ea97733c971188ebd1d866":[2,0,118,0],
 "structSAMFaceState.html#a8ec6b3bcb00afc9d8e864761f846f2a3":[2,0,118,3],
 "structSAMFaceState.html#ad1eecd24465385e3f0681a0ec7493b80":[2,0,118,2],
 "structSAMPhaseFractions.html":[2,0,119],
@@ -247,7 +249,5 @@ var NAVTREEINDEX43 =
 "structScalarDiffusionFieldViews.html#addc37c995ee5ec380d591667413437bd":[2,0,133,10],
 "structScalarDiffusionFieldViews.html#afef24d71114779f62df1c6d454965176":[2,0,133,2],
 "structScalarDiffusionFluxPolicy.html":[2,0,134],
-"structScalarDiffusionFluxPolicy.html#a07116a20dd0a510711de8936c44b6dab":[2,0,134,2],
-"structScalarDiffusionFluxPolicy.html#aa54afe4678e3cf864789f68a51c7a709":[2,0,134,3],
-"structScalarDiffusionFluxPolicy.html#aa77bdb5e377f21bf69c0dbcd59eaf33b":[2,0,134,0]
+"structScalarDiffusionFluxPolicy.html#a07116a20dd0a510711de8936c44b6dab":[2,0,134,2]
 };

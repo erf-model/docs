@@ -1,5 +1,7 @@
 var NAVTREEINDEX42 =
 {
+"structMaterialPropertiesCore.html#a62f4fe116d4c0126d3bb402fa6047150":[2,0,73,15],
+"structMaterialPropertiesCore.html#a6e3af712aeb6badeedf867422b241413":[2,0,73,3],
 "structMaterialPropertiesCore.html#a70d69c8c88e93f929632cb2f7ab87431":[2,0,73,18],
 "structMaterialPropertiesCore.html#a76e6e85c61cd9bfa01175d3adc7b3e9e":[2,0,73,14],
 "structMaterialPropertiesCore.html#a7a633689fe9eef033518399491e5163d":[2,0,73,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX42 =
 "structSAMCoefficientRow.html#a9dbbc4288ed884182a1df7989e622437":[2,0,117,2],
 "structSAMCoefficientRow.html#add81a882ca19836cecc5bee4b3309ca4":[2,0,117,9],
 "structSAMCoefficientRow.html#aea617a09401352c4a109f313485bea36":[2,0,117,10],
-"structSAMFaceState.html":[2,0,118],
-"structSAMFaceState.html#a3e997dd570cb321b330fb445c3838e7d":[2,0,118,1],
-"structSAMFaceState.html#a5fce43d045ea97733c971188ebd1d866":[2,0,118,0]
+"structSAMFaceState.html":[2,0,118]
 };

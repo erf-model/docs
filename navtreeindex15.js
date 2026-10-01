@@ -1,5 +1,7 @@
 var NAVTREEINDEX15 =
 {
+"ERF__TurbStruct_8H.html#a454c17db1a1fb2e88057dc6399effcd8":[3,0,1,4,13,1],
+"ERF__TurbStruct_8H.html#a4eae7b00dc1804725e10ef874ffe9e0b":[3,0,1,4,13,6],
 "ERF__TurbStruct_8H.html#aa04592b5e585ba63b39acf1e065191e3":[3,0,1,4,13,5],
 "ERF__TurbStruct_8H.html#aae63bb540db934adb5f1eae4aad5f5e1":[3,0,1,4,13,2],
 "ERF__TurbStruct_8H.html#abf8846591b6ec65580e80d118f08a4b1":[3,0,1,4,13,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX15 =
 "ERF__UpdateWSubsidence__SineMassFlux_8H_source.html":[3,0,1,19,75],
 "ERF__Urban_8H.html":[3,0,1,25,1],
 "ERF__Urban_8H_source.html":[3,0,1,25,1],
-"ERF__Utils_8H.html":[3,0,1,26,53],
-"ERF__Utils_8H.html#a05d64b70fcd8d62e0946cc27a429ab69":[3,0,1,26,53,28],
-"ERF__Utils_8H.html#a0b812d5c2bdd531d6df797b1b227b335":[3,0,1,26,53,16]
+"ERF__Utils_8H.html":[3,0,1,26,53]
 };
