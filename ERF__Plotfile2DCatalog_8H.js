@@ -31,6 +31,8 @@ var ERF__Plotfile2DCatalog_8H =
       [ "OLR", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a5393ba719b65cba0b5fd37e73d17c9cf", null ],
       [ "SebTsfc", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a0a2c036cc8d6eedaded8072ce64346a5", null ],
       [ "SebQsfc", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a35f36b09aee4e07b93803891d47c8899", null ],
+      [ "SebHfx", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2adf2f5016a53ae09ce3a9b030704fc2e6", null ],
+      [ "SebLh", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2aa7a948a2d2c54823269e46e06dac034c", null ],
       [ "SensFlux", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ac4310fc628fc5f0408a2ef1cefa1d8f9", null ],
       [ "LatenFlux", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ab3956a7240dabc798cd72ed10e0ef218", null ],
       [ "SurfPres", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a5f7e7cf65fbb3ce112b40e636e18f505", null ],

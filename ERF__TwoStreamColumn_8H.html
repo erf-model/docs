@@ -274,7 +274,7 @@ Variables</h2></td></tr>
 <div class="textblock"><p>Per-column two-stream radiation kernels. </p>
 <p>Everything needed to evaluate one (i,j) column of the two-stream model: temperature from the equation of state, per-column surface properties, per-layer optical depth assembly, and <a class="el" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU-safe per-column vertical integration kernel for two-stream radiation, computing either the clear-...">vertical_two_stream_sweep()</a>, which performs the SW and LW sweeps and writes per-level heating rates.</p>
 <p>Vertical orientation follows <a class="el" href="classERF.html">ERF</a>: k = kmin is the surface layer and k = kmax the top layer. SW sweeps downward from kmax to kmin; LW sweeps downward (TOA -&gt; surface) and then upward (surface -&gt; TOA) on layer interfaces. Layer temperature is obtained from rho*theta through the Exner function.</p>
-<p>The functions are header-only and GPU-safe so that the column physics can be exercised directly by unit tests (Tests/Unit/Radiation) as well as by the level driver in <a class="el" href="ERF__TwoStreamRadiation_8cpp.html" title="TwoStreamRadiation: the two-stream radiation model and its surface state.">ERF_TwoStreamRadiation.cpp</a> (<a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level.">TwoStreamRadiation::advance</a>). </p>
+<p>The functions are header-only and GPU-safe so that the column physics can be exercised directly by unit tests (Tests/Unit/Radiation) as well as by the level driver in <a class="el" href="ERF__TwoStreamRadiation_8cpp.html" title="TwoStreamRadiation: the two-stream radiation model and its surface state.">ERF_TwoStreamRadiation.cpp</a> (<a class="el" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level.">TwoStreamRadiation::advance</a>). </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a4eddb061cf71b1bf8a90f01ab2dee90c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4eddb061cf71b1bf8a90f01ab2dee90c">&#9670;&nbsp;</a></span>diagnose_cloud_fraction_prognostic()</h2>
@@ -406,7 +406,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#a65d4e59ff2170aae9b23976f892e5270" title="Optical depth, single&#45;scattering albedo and asymmetry factor of layer k for one band,..." alt="" coords="412,5,579,32"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#acbee78c38354b2ca83c9c90f7709eeda" title="GPU&#45;safe helper to assemble the total per&#45;layer optical depth at level k for either the SW or the LW ..." alt="" coords="627,56,776,83"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,23,364,65"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,23,161,65"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,23,161,65"/>
 </map>
 </div>
 
@@ -633,7 +633,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__TwoStreamColumn_8H_a65d4e59ff2170aae9b23976f892e5270_icgraph" id="aERF__TwoStreamColumn_8H_a65d4e59ff2170aae9b23976f892e5270_icgraph">
 <area shape="rect" title="Optical depth, single&#45;scattering albedo and asymmetry factor of layer k for one band,..." alt="" coords="412,13,579,39"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 
@@ -842,7 +842,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="GPU&#45;safe helper to assemble the total per&#45;layer optical depth at level k for either the SW or the LW ..." alt="" coords="627,31,776,57"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#a65d4e59ff2170aae9b23976f892e5270" title="Optical depth, single&#45;scattering albedo and asymmetry factor of layer k for one band,..." alt="" coords="412,5,579,32"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,23,364,65"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,23,161,65"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,23,161,65"/>
 </map>
 </div>
 
@@ -926,7 +926,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#acbee78c38354b2ca83c9c90f7709eeda" title="GPU&#45;safe helper to assemble the total per&#45;layer optical depth at level k for either the SW or the LW ..." alt="" coords="627,31,776,57"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#a65d4e59ff2170aae9b23976f892e5270" title="Optical depth, single&#45;scattering albedo and asymmetry factor of layer k for one band,..." alt="" coords="412,5,579,32"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,23,364,65"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,23,161,65"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,23,161,65"/>
 </map>
 </div>
 
@@ -1000,7 +1000,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__TwoStreamColumn_8H_a16f94178cc4f56932356247e2f8fad96_icgraph" id="aERF__TwoStreamColumn_8H_a16f94178cc4f56932356247e2f8fad96_icgraph">
 <area shape="rect" title="Inverse Exner function 1/pi at (i,j,k) from the state, with pi = (p / p_0)^(R_d/c_p) evaluated by get..." alt="" coords="412,13,555,39"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 
@@ -1067,7 +1067,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#a65d4e59ff2170aae9b23976f892e5270" title="Optical depth, single&#45;scattering albedo and asymmetry factor of layer k for one band,..." alt="" coords="412,31,579,57"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#acbee78c38354b2ca83c9c90f7709eeda" title="GPU&#45;safe helper to assemble the total per&#45;layer optical depth at level k for either the SW or the LW ..." alt="" coords="627,81,776,108"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,49,364,90"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,49,161,90"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,49,161,90"/>
 </map>
 </div>
 
@@ -1135,7 +1135,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,123,364,164"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#acbee78c38354b2ca83c9c90f7709eeda" title="GPU&#45;safe helper to assemble the total per&#45;layer optical depth at level k for either the SW or the LW ..." alt="" coords="627,106,776,133"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#a16f94178cc4f56932356247e2f8fad96" title="Inverse Exner function 1/pi at (i,j,k) from the state, with pi = (p / p_0)^(R_d/c_p) evaluated by get..." alt="" coords="630,210,773,237"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,123,161,164"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,123,161,164"/>
 </map>
 </div>
 
@@ -1225,7 +1225,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,49,364,90"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#a65d4e59ff2170aae9b23976f892e5270" title="Optical depth, single&#45;scattering albedo and asymmetry factor of layer k for one band,..." alt="" coords="412,5,579,32"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#acbee78c38354b2ca83c9c90f7709eeda" title="GPU&#45;safe helper to assemble the total per&#45;layer optical depth at level k for either the SW or the LW ..." alt="" coords="627,56,776,83"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,49,161,90"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,49,161,90"/>
 </map>
 </div>
 
@@ -1285,7 +1285,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#ab79cb02c966114cdf893b1d9806f4a67" title="GPU&#45;safe helper to select the single&#45;scattering albedo and asymmetry factor to use for level k&#39;s diff..." alt="" coords="627,33,803,59"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#a690a3d038f2aae1efd89197122913cac" title="GPU&#45;safe helper to compute the per&#45;layer optical depth at level k, given the base (clear&#45;sky) optical..." alt="" coords="851,83,977,110"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,101,364,143"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,101,161,143"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,101,161,143"/>
 </map>
 </div>
 
@@ -1386,14 +1386,14 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceWSM6Ind_html_aa8a7457dea83963215b3a5410a777f61ad6cb403596ec7a348234a3a3bf0221bc"><div class="ttname"><a href="namespaceWSM6Ind.html#aa8a7457dea83963215b3a5410a777f61ad6cb403596ec7a348234a3a3bf0221bc">WSM6Ind::p</a></div><div class="ttdeci">@ p</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:280</div></div>
 <div class="ttc" id="astructTwoStreamParams_html"><div class="ttname"><a href="structTwoStreamParams.html">TwoStreamParams</a></div><div class="ttdoc">Trivially copyable subset of RadChoice used by the column kernels.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamColumn.H:57</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071">TwoStreamRadiation::advance()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__TwoStreamColumn_8H_a1008289521b9417c2e96145a7954912c_icgraph.png" border="0" usemap="#aERF__TwoStreamColumn_8H_a1008289521b9417c2e96145a7954912c_icgraph" alt=""/></div>
 <map name="aERF__TwoStreamColumn_8H_a1008289521b9417c2e96145a7954912c_icgraph" id="aERF__TwoStreamColumn_8H_a1008289521b9417c2e96145a7954912c_icgraph">
 <area shape="rect" title="Copy the column&#45;kernel parameters out of a RadChoice." alt="" coords="209,13,408,39"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 
@@ -1481,7 +1481,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__TwoStreamColumn_8H_a3a848476441bae36e68525ab97df1252_icgraph" id="aERF__TwoStreamColumn_8H_a3a848476441bae36e68525ab97df1252_icgraph">
 <area shape="rect" title="Resolve per&#45;column shortwave surface albedo from hetero field or fallback." alt="" coords="412,13,613,39"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 
@@ -1569,7 +1569,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__TwoStreamColumn_8H_ac7a48722f2cf2a15fc06d02c1b4e5d22_icgraph" id="aERF__TwoStreamColumn_8H_ac7a48722f2cf2a15fc06d02c1b4e5d22_icgraph">
 <area shape="rect" title="Resolve per&#45;column longwave surface emissivity from hetero field or fallback." alt="" coords="412,13,635,39"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 
@@ -1723,7 +1723,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__TwoStreamColumn_8H_acd4308093febfc6a671b742f27245a66_icgraph" id="aERF__TwoStreamColumn_8H_acd4308093febfc6a671b742f27245a66_icgraph">
 <area shape="rect" title="Resolve the per&#45;column surface&#45;temperature boundary condition." alt="" coords="412,13,593,39"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 
@@ -1819,7 +1819,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="GPU&#45;safe helper to select the single&#45;scattering albedo and asymmetry factor to use for level k&#39;s diff..." alt="" coords="627,13,803,39"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#a65d4e59ff2170aae9b23976f892e5270" title="Optical depth, single&#45;scattering albedo and asymmetry factor of layer k for one band,..." alt="" coords="412,13,579,39"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 
@@ -1904,7 +1904,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#a65d4e59ff2170aae9b23976f892e5270" title="Optical depth, single&#45;scattering albedo and asymmetry factor of layer k for one band,..." alt="" coords="412,5,579,32"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#acbee78c38354b2ca83c9c90f7709eeda" title="GPU&#45;safe helper to assemble the total per&#45;layer optical depth at level k for either the SW or the LW ..." alt="" coords="627,56,776,83"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,23,364,65"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,23,161,65"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,23,161,65"/>
 </map>
 </div>
 
@@ -1998,7 +1998,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__TwoStreamColumn_8H_a0f8b0d1bad6ad2b78e18acf1ff5a851d_icgraph" id="aERF__TwoStreamColumn_8H_a0f8b0d1bad6ad2b78e18acf1ff5a851d_icgraph">
 <area shape="rect" title="Cosine of the solar zenith angle over column (i,j) for one call." alt="" coords="412,13,587,39"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 
@@ -2078,14 +2078,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    coszen = (cos_zenith &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) ? cos_zenith : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071">TwoStreamRadiation::advance()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__TwoStreamColumn_8H_a4c372005b47961078cec14825e92e984_icgraph.png" border="0" usemap="#aERF__TwoStreamColumn_8H_a4c372005b47961078cec14825e92e984_icgraph" alt=""/></div>
 <map name="aERF__TwoStreamColumn_8H_a4c372005b47961078cec14825e92e984_icgraph" id="aERF__TwoStreamColumn_8H_a4c372005b47961078cec14825e92e984_icgraph">
 <area shape="rect" title="The radiative forcing a land&#45;surface model integrates on, for column (i,j)." alt="" coords="209,13,396,39"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 
@@ -2122,14 +2122,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="keywordflow">return</span> sbx;</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071">TwoStreamRadiation::advance()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__TwoStreamColumn_8H_a55c38dd9b82c5131ce6401de8f800c26_icgraph.png" border="0" usemap="#aERF__TwoStreamColumn_8H_a55c38dd9b82c5131ce6401de8f800c26_icgraph" alt=""/></div>
 <map name="aERF__TwoStreamColumn_8H_a55c38dd9b82c5131ce6401de8f800c26_icgraph" id="aERF__TwoStreamColumn_8H_a55c38dd9b82c5131ce6401de8f800c26_icgraph">
 <area shape="rect" title="Box of the scratch FArrayBox a sweep over box bx needs." alt="" coords="209,13,393,39"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 
@@ -2166,7 +2166,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="Check whether a heterogeneous absolute surface temperature is valid." alt="" coords="641,13,839,39"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#acd4308093febfc6a671b742f27245a66" title="Resolve the per&#45;column surface&#45;temperature boundary condition." alt="" coords="412,13,593,39"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 
@@ -2757,7 +2757,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="astructTwoStreamParams_html_aca2af88ff0b7d0b7d1f315f682f4785b"><div class="ttname"><a href="structTwoStreamParams.html#aca2af88ff0b7d0b7d1f315f682f4785b">TwoStreamParams::rdOcp</a></div><div class="ttdeci">amrex::Real rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamColumn.H:77</div></div>
 <div class="ttc" id="astructTwoStreamParams_html_acb0c109f780e7dbe1ca788e3d9e856ee"><div class="ttname"><a href="structTwoStreamParams.html#acb0c109f780e7dbe1ca788e3d9e856ee">TwoStreamParams::tau_per_layer</a></div><div class="ttdeci">amrex::Real tau_per_layer</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamColumn.H:60</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928">TwoStreamRadiation::advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071">TwoStreamRadiation::advance()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2818,7 +2818,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__TwoStreamColumn_8H_aebc34e4b8fb1adb89b89a8e4116edbbc_icgraph.png" border="0" usemap="#aERF__TwoStreamColumn_8H_aebc34e4b8fb1adb89b89a8e4116edbbc_icgraph" alt=""/></div>
 <map name="aERF__TwoStreamColumn_8H_aebc34e4b8fb1adb89b89a8e4116edbbc_icgraph" id="aERF__TwoStreamColumn_8H_aebc34e4b8fb1adb89b89a8e4116edbbc_icgraph">
 <area shape="rect" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="209,5,364,47"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a89eb2132067990bba21f621b12a37928" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 
