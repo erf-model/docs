@@ -19,6 +19,7 @@ var classSurfaceModel =
     [ "get_field", "classSurfaceModel.html#af0056014660ff8d8ccde2c257cb96272", null ],
     [ "get_qstar", "classSurfaceModel.html#ae8e9bf9f792a393fc09980da5a7a9e75", null ],
     [ "get_radiation_fields", "classSurfaceModel.html#a3353d2d6ca672c0080ae65755cdb6f8c", null ],
+    [ "get_radiation_output_field", "classSurfaceModel.html#a0ebc534f68b997b105883763d642f582", null ],
     [ "get_radiation_output_fields", "classSurfaceModel.html#a613e6a059acea5acc214092e262fab08", null ],
     [ "get_surface_flux_view", "classSurfaceModel.html#a544ad9b11de1eb27876b8970b839a8a0", null ],
     [ "get_tstar", "classSurfaceModel.html#a4491866636433178737c6c18cb66e75f", null ],

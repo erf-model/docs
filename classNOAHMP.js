@@ -66,6 +66,7 @@ var classNOAHMP =
     [ "m_precip_accum_prev", "classNOAHMP.html#aaa0e149d2a7ac6eb633f4c694ae38ee4", null ],
     [ "m_precip_accum_restored", "classNOAHMP.html#adb010410b812030b3832379c128f69d6", null ],
     [ "m_radiation_feeds_lsm", "classNOAHMP.html#a503ac8565922f61b017b5e8e31bf234d", null ],
+    [ "m_radiation_model_name", "classNOAHMP.html#ab9d86b6261d1d109811bd3e33d71db47", null ],
     [ "m_refRatio", "classNOAHMP.html#a60641c76857f0d6d37e424fcfe51362b", null ],
     [ "m_updated", "classNOAHMP.html#a324693abeb0fd2acfabaac1048481c81", null ],
     [ "m_warned_radiation_inputs", "classNOAHMP.html#ac4b1959651a5d96e9bd86cf3ff62e9ec", null ],

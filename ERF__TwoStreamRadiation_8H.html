@@ -83,7 +83,8 @@ $(document).ready(function(){initNavTree('ERF__TwoStreamRadiation_8H.html',''); 
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_TwoStreamRadiation.H File Reference</div>  </div>
 </div><!--header-->
@@ -225,7 +226,45 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwoStreamRadiation_1_1FluxDiag.html">TwoStreamRadiation::FluxDiag</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ae7901d6393288372b9c1a2bf616fe29c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TwoStreamRadiation_8H.html#ae7901d6393288372b9c1a2bf616fe29c">copy_surface_plane</a> (const amrex::MultiFab &amp;src2d, amrex::MultiFab &amp;dst)</td></tr>
+<tr class="memdesc:ae7901d6393288372b9c1a2bf616fe29c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a 2D field (k = 0 only) into the k = 0 plane of a surface-model field.  <a href="ERF__TwoStreamRadiation_8H.html#ae7901d6393288372b9c1a2bf616fe29c">More...</a><br /></td></tr>
+<tr class="separator:ae7901d6393288372b9c1a2bf616fe29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ae7901d6393288372b9c1a2bf616fe29c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7901d6393288372b9c1a2bf616fe29c">&#9670;&nbsp;</a></span>copy_surface_plane()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void copy_surface_plane </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>src2d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>dst</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy a 2D field (k = 0 only) into the k = 0 plane of a surface-model field. </p>
+<p>Surface-model fields keep their surface values in the k = 0 plane, which may lie in the field's z ghost region (<a class="el" href="classSLM.html">SLM</a> stores soil layers at k &lt; 0), and carry x/y ghost cells the source need not have. Only the i,j extent of each destination VALID box is written, so ghost columns and every other k are left alone. The two fields must share a horizontal layout: the destination's boxes flattened to k = 0 equal the source's, on the same DistributionMapping &ndash; which holds for <a class="el" href="classERF.html">ERF</a>'s ba2d and a land model's data built from the same level grids, and is asserted rather than assumed. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
