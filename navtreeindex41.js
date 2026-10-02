@@ -1,5 +1,7 @@
 var NAVTREEINDEX41 =
 {
+"namespacesea__level__pressure__diagnostics.html#a6d0476adac51852c88e0a52078a4f6e9":[1,0,68,5],
+"namespacesea__level__pressure__diagnostics.html#a7182f3ca49cd8040b55b84ad03de57c3":[1,0,68,6],
 "namespacesea__level__pressure__diagnostics.html#aa3e64cc189ab3a3018433c0685987e23":[1,0,68,12],
 "namespacesea__level__pressure__diagnostics.html#aeb56fd8051445953315558cb7e76ec1b":[1,0,68,4],
 "namespacesea__level__pressure__diagnostics.html#aec4fb27f0083d746f76c7942f6247649":[1,0,68,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX41 =
 "structIBSEBParams.html#af51204f62161756304c3e32459d04814":[2,0,59,41],
 "structIBSEBParams.html#af62d7f294e02c746b604c6c4701b9676":[2,0,59,47],
 "structIBSEBParams.html#af8f349f81d8f118e66d29399f8554601":[2,0,59,12],
-"structIBSEBParams.html#afefffff7cbf005c0b83e8808de30c0f7":[2,0,59,24],
-"structInputSoundingData.html":[2,0,60],
-"structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8":[2,0,60,3]
+"structIBSEBParams.html#afefffff7cbf005c0b83e8808de30c0f7":[2,0,59,24]
 };

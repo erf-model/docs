@@ -1,5 +1,7 @@
 var NAVTREEINDEX47 =
 {
+"structTurbChoice.html#af85ee41e7f98e65534b8b158b6ddde3e":[2,0,189,27],
+"structTurbChoice.html#afda6be5303ff955c7cc5415d5deb8f18":[2,0,189,3],
 "structTurbChoice.html#afed7342f6f7793fd46fe8dce2c556e90":[2,0,189,82],
 "structTurbulentPerturbation.html":[2,0,190],
 "structTurbulentPerturbation.html#a02c84e7a60ba4fc6381a56af28a46a12":[2,0,190,38],
@@ -247,7 +249,5 @@ var NAVTREEINDEX47 =
 "structadiabatic.html#afdc69c66b9c49f67d4f2409bc1f3ce29":[2,0,19,2],
 "structadiabatic__charnock.html":[2,0,20],
 "structadiabatic__charnock.html#a0e78cee7d7f845969fe2da8b72ef7955":[2,0,20,5],
-"structadiabatic__charnock.html#a5c11064c35d6eefd22558180155d6ede":[2,0,20,2],
-"structadiabatic__charnock.html#a6084d37c809512df4159a0425a3c5a51":[2,0,20,0],
-"structadiabatic__charnock.html#a934885ca943ddef47931168f22f5ce0b":[2,0,20,1]
+"structadiabatic__charnock.html#a5c11064c35d6eefd22558180155d6ede":[2,0,20,2]
 };

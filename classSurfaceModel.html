@@ -786,7 +786,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                                            {</div>
+<div class="fragment"><div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                                             {</div>
 <div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;  --- building radiation field list&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160; </div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;        <span class="comment">// loop over fields and check against names of radiation variables</span></div>
@@ -1618,7 +1618,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the registered field, or nullptr if it is unknown. </dd></dl>
-<div class="fragment"><div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                                                                 {</div>
+<div class="fragment"><div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                                                                  {</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">auto</span> field = <a class="code" href="classSurfaceModel.html#a4b92f5426ea2bac67dcab024655392ef">fieldmap</a>.find(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>); field != <a class="code" href="classSurfaceModel.html#a4b92f5426ea2bac67dcab024655392ef">fieldmap</a>.end()) {</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            <a class="code" href="classSurfaceModel.html#a21588a73dd29078f93f33e02cb4c71a6">activate_field_map</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classSurfaceModel.html#ac18d483cd980560dfae1471549cce2ad">fields</a>[field-&gt;second.mf_ind][lev].get();</div>
@@ -1670,7 +1670,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the weighted q-star or vapor-flux field. </dd></dl>
-<div class="fragment"><div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                                             {</div>
+<div class="fragment"><div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                                              {</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSurfaceModel.html#a45072ba91dce39ee3610c38c203b9dcd">q_star</a>[lev].get();</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    }</div>
 </div><!-- fragment -->
@@ -1709,7 +1709,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classRadiation.html">Radiation</a> fields in the order expected by RRTMGP. </dd></dl>
-<div class="fragment"><div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                                                                              {</div>
+<div class="fragment"><div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                                                                               {</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        <span class="comment">// check if we need to build the radiation list (for first time step,)</span></div>
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSurfaceModel.html#ad1188b770cd087a6e3053aa8e25bce85">rad_fields</a>[lev].size() == 0) {</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;            <a class="code" href="classSurfaceModel.html#a907ae3de0a97c53f215010258d520969">build_radiation_fieldlist</a>(lev);</div>
@@ -1964,7 +1964,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the weighted t-star or heat-flux field. </dd></dl>
-<div class="fragment"><div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                                             {</div>
+<div class="fragment"><div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                                              {</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSurfaceModel.html#a8e5a01d10b1b56fc3942ef05d4b4cad4">t_star</a>[lev].get();</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    }</div>
 </div><!-- fragment -->
@@ -2002,7 +2002,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the weighted surface-temperature field. </dd></dl>
-<div class="fragment"><div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                                             {</div>
+<div class="fragment"><div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                                              {</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSurfaceModel.html#a50133d3a7912e2fac2f05a6d3d868db2">t_surf</a>[lev].get();</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    }</div>
 </div><!-- fragment -->
@@ -2040,7 +2040,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the weighted u-star or momentum-flux field. </dd></dl>
-<div class="fragment"><div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                                             {</div>
+<div class="fragment"><div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                                              {</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSurfaceModel.html#a6ea5609742fd726d647b40376ddfe242">u_star</a>[lev].get();</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    }</div>
 </div><!-- fragment -->
@@ -2078,7 +2078,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the weighting-factor field. </dd></dl>
-<div class="fragment"><div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                                                    {</div>
+<div class="fragment"><div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                                                     {</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        <a class="code" href="classSurfaceModel.html#ac012814a2a3e2cd3bc6ce05b545234a9">ensure_weight_factors</a>(lev);</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSurfaceModel.html#ad2526c1a4892afba5d122819686920c1">wavg</a>[lev].get();</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    }</div>

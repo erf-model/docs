@@ -197,7 +197,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">bool</span> MultiplyMolecularByDensity, <span class="keywordtype">bool</span> AddTurbulence&gt;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a37c463d68fc60f09935f0a180dea7b02">  112</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a37c463d68fc60f09935f0a180dea7b02">ScalarDiffusionFaceCoefficient</a>(</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a37c463d68fc60f09935f0a180dea7b02">  112</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a37c463d68fc60f09935f0a180dea7b02">ScalarDiffusionFaceCoefficient</a> (</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a>,</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> rho_comp,</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; mu_turb,</div>
@@ -229,7 +229,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;};</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="structStretchedDiffusionBoundaryWeights.html">StretchedDiffusionBoundaryWeights</a></div>
-<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a14db4e5fe3d108576dcc27ab69fd4a4f">  144</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a14db4e5fe3d108576dcc27ab69fd4a4f">StretchedDiffusionDirichletWeights</a>(</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a14db4e5fe3d108576dcc27ab69fd4a4f">  144</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a14db4e5fe3d108576dcc27ab69fd4a4f">StretchedDiffusionDirichletWeights</a> (</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dz_near, <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dz_next) noexcept</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> f = dz_next / dz_near + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2.0);</div>
@@ -248,7 +248,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> Direction&gt;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a12407e303d4109d5a988d3f6425381e3">  163</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a12407e303d4109d5a988d3f6425381e3">ScalarDiffusionFlux_N</a>(</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a12407e303d4109d5a988d3f6425381e3">  163</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a12407e303d4109d5a988d3f6425381e3">ScalarDiffusionFlux_N</a> (</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; scalar,</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> scalar_comp,</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> i,</div>
@@ -322,7 +322,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">/** Existing S-grid vertical-center gradient, including boundary and tile-edge</span></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment"> * spacing. */</span></div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#ac51c3f849f3b9281c961d91224e7d952">  237</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#ac51c3f849f3b9281c961d91224e7d952">StretchedScalarGradient</a>(</div>
+<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#ac51c3f849f3b9281c961d91224e7d952">  237</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#ac51c3f849f3b9281c961d91224e7d952">StretchedScalarGradient</a> (</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; scalar,</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> scalar_comp,</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> i,</div>
@@ -361,7 +361,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment"> * adjustment kernel. */</span></div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> Direction&gt;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a8697fb3347f142987e66eed8f240819e">  276</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a8697fb3347f142987e66eed8f240819e">ScalarDiffusionFlux_S_Horizontal</a>(</div>
+<div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a8697fb3347f142987e66eed8f240819e">  276</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a8697fb3347f142987e66eed8f240819e">ScalarDiffusionFlux_S_Horizontal</a> (</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; scalar,</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> scalar_comp,</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> i,</div>
@@ -381,7 +381,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;}</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00296"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a10127d25f04f1733ab1f4a4c97541d87">  296</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a10127d25f04f1733ab1f4a4c97541d87">ScalarDiffusionFlux_Tx</a>(</div>
+<div class="line"><a name="l00296"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a10127d25f04f1733ab1f4a4c97541d87">  296</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a10127d25f04f1733ab1f4a4c97541d87">ScalarDiffusionFlux_Tx</a> (</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> coeff,</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> face_map,</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> grad_xi,</div>
@@ -392,7 +392,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a7c511184248bce5cd334b96ffbd88e57">  307</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a7c511184248bce5cd334b96ffbd88e57">ScalarDiffusionFlux_Ty</a>(</div>
+<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a7c511184248bce5cd334b96ffbd88e57">  307</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a7c511184248bce5cd334b96ffbd88e57">ScalarDiffusionFlux_Ty</a> (</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> coeff,</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> face_map,</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> grad_eta,</div>
@@ -409,7 +409,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="comment"> * this geometry primitive.</span></div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00324"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#acab27cf8f54efaad5badf96674aca64c">  324</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#acab27cf8f54efaad5badf96674aca64c">TerrainScalarDiffusionFluxAtIFace</a>(</div>
+<div class="line"><a name="l00324"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#acab27cf8f54efaad5badf96674aca64c">  324</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#acab27cf8f54efaad5badf96674aca64c">TerrainScalarDiffusionFluxAtIFace</a> (</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; scalar,</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> scalar_comp,</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> coeff,</div>
@@ -439,7 +439,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="comment">/** Terrain y-face raw diffusion flux, including ERF&#39;s y-face map factor. */</span></div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00354"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a66f6ab94a0232d7475bc21f3e6bd1fba">  354</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a66f6ab94a0232d7475bc21f3e6bd1fba">TerrainScalarDiffusionFluxAtJFace</a>(</div>
+<div class="line"><a name="l00354"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a66f6ab94a0232d7475bc21f3e6bd1fba">  354</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a66f6ab94a0232d7475bc21f3e6bd1fba">TerrainScalarDiffusionFluxAtJFace</a> (</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; scalar,</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> scalar_comp,</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> coeff,</div>
@@ -473,7 +473,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="comment"> * remains separate boundary policy.</span></div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00388"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a85a2b0642fbb685cec2237043951da47">  388</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a85a2b0642fbb685cec2237043951da47">TerrainScalarDiffusionFluxAtKFace</a>(</div>
+<div class="line"><a name="l00388"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a85a2b0642fbb685cec2237043951da47">  388</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a85a2b0642fbb685cec2237043951da47">TerrainScalarDiffusionFluxAtKFace</a> (</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; scalar,</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> scalar_comp,</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> coeff,</div>
@@ -528,7 +528,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="comment"> * F_z - m_x h_xi Fbar_x - m_y h_eta Fbar_y; T_z=G_z/(m_x m_y).</span></div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00443"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a189adb928ff0e9a2d88912fdd4d18859">  443</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a189adb928ff0e9a2d88912fdd4d18859">TerrainDiffusionGz</a>(</div>
+<div class="line"><a name="l00443"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a189adb928ff0e9a2d88912fdd4d18859">  443</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a189adb928ff0e9a2d88912fdd4d18859">TerrainDiffusionGz</a> (</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> raw_Fz,</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mx,</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_xi,</div>
@@ -541,7 +541,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;}</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160; </div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00456"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#af0d482c8c9b9fc47157c28724bfa4edd">  456</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#af0d482c8c9b9fc47157c28724bfa4edd">TerrainDiffusionMappedTx</a>(</div>
+<div class="line"><a name="l00456"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#af0d482c8c9b9fc47157c28724bfa4edd">  456</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#af0d482c8c9b9fc47157c28724bfa4edd">TerrainDiffusionMappedTx</a> (</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> raw_Fx,</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_zeta,</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> my) noexcept</div>
@@ -550,7 +550,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;}</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160; </div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00465"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#adc99877243e2308fcf9123b4e23b7238">  465</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#adc99877243e2308fcf9123b4e23b7238">TerrainDiffusionMappedTy</a>(</div>
+<div class="line"><a name="l00465"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#adc99877243e2308fcf9123b4e23b7238">  465</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#adc99877243e2308fcf9123b4e23b7238">TerrainDiffusionMappedTy</a> (</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> raw_Fy,</div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_zeta,</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mx) noexcept</div>
@@ -564,7 +564,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;<span class="comment"> * measure; callers must not apply that measure again in the divergence.</span></div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00479"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a486b2a881c0116cfd891ea21de3af57c">  479</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a486b2a881c0116cfd891ea21de3af57c">ScalarDiffusionMappedHorizontalTransfer</a>(</div>
+<div class="line"><a name="l00479"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a486b2a881c0116cfd891ea21de3af57c">  479</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a486b2a881c0116cfd891ea21de3af57c">ScalarDiffusionMappedHorizontalTransfer</a> (</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> raw_flux,</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> face_area) noexcept</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;{</div>
@@ -573,7 +573,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;<span class="comment">/** Convert a raw vertical diffusion flux to the mapped face-transfer space. */</span></div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00488"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a549d1007b6506146ebad46c29e522079">  488</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a549d1007b6506146ebad46c29e522079">ScalarDiffusionMappedVerticalTransfer</a>(</div>
+<div class="line"><a name="l00488"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a549d1007b6506146ebad46c29e522079">  488</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a549d1007b6506146ebad46c29e522079">ScalarDiffusionMappedVerticalTransfer</a> (</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> raw_flux,</div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mx,</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> my) noexcept</div>
@@ -587,7 +587,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="comment"> * terrain cross terms; native divergence consumes G_z directly.</span></div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00502"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#ae49ce136a07e91fb73405cfd56357591">  502</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#ae49ce136a07e91fb73405cfd56357591">TerrainScalarDiffusionGzAtKFace</a>(</div>
+<div class="line"><a name="l00502"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#ae49ce136a07e91fb73405cfd56357591">  502</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#ae49ce136a07e91fb73405cfd56357591">TerrainScalarDiffusionGzAtKFace</a> (</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> i,</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> j,</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> kface,</div>
@@ -659,7 +659,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;<span class="comment"> * uses one-sided extrapolation and needs no out-of-domain z layer.</span></div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00574"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a8bfb418da12c0613350471254b6f2b98">  574</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a8bfb418da12c0613350471254b6f2b98">TerrainScalarDiffusionMappedTransferAtKFace</a>(</div>
+<div class="line"><a name="l00574"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a8bfb418da12c0613350471254b6f2b98">  574</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a8bfb418da12c0613350471254b6f2b98">TerrainScalarDiffusionMappedTransferAtKFace</a> (</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> i,</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> j,</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> kface,</div>
@@ -688,7 +688,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;<span class="comment"> * subtracts this value from the existing RHS.</span></div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00603"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a50f9922589ec4cd97bab057057a72061">  603</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a50f9922589ec4cd97bab057057a72061">ScalarDiffusionMappedFluxDivergence</a>(</div>
+<div class="line"><a name="l00603"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a50f9922589ec4cd97bab057057a72061">  603</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a50f9922589ec4cd97bab057057a72061">ScalarDiffusionMappedFluxDivergence</a> (</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fx_hi,</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fx_lo,</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fy_hi,</div>
@@ -712,7 +712,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;<span class="comment">/** Native terrain divergence in the legacy arithmetic association. */</span></div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00627"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#aa5b5e166d65331c31207d7bb541b99ce">  627</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#aa5b5e166d65331c31207d7bb541b99ce">TerrainDiffusionDivergence_T</a>(</div>
+<div class="line"><a name="l00627"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#aa5b5e166d65331c31207d7bb541b99ce">  627</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#aa5b5e166d65331c31207d7bb541b99ce">TerrainDiffusionDivergence_T</a> (</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mapped_Fx_hi,</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mapped_Fx_lo,</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mapped_Fy_hi,</div>
@@ -740,7 +740,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">bool</span> MultiplyMolecularByDensity, <span class="keywordtype">bool</span> AddTurbulence&gt;</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00655"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#aa4f6d41e7620dec56d3236fcac1920d3">  655</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#aa4f6d41e7620dec56d3236fcac1920d3">BuildScalarDiffusionFluxes_N_Impl</a>(</div>
+<div class="line"><a name="l00655"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#aa4f6d41e7620dec56d3236fcac1920d3">  655</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#aa4f6d41e7620dec56d3236fcac1920d3">BuildScalarDiffusionFluxes_N_Impl</a> (</div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; domain,</div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;  <span class="keyword">const</span> <a class="code" href="structScalarDiffusionFieldViews.html">ScalarDiffusionFieldViews</a>&amp; field,</div>
@@ -897,7 +897,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;<span class="comment">/** Build all native N-grid face fluxes for any intensive scalar field. */</span></div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00812"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a159e7aeace9cc2e38324166d9cd753e1">  812</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a159e7aeace9cc2e38324166d9cd753e1">BuildScalarDiffusionFluxes_N</a>(</div>
+<div class="line"><a name="l00812"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a159e7aeace9cc2e38324166d9cd753e1">  812</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a159e7aeace9cc2e38324166d9cd753e1">BuildScalarDiffusionFluxes_N</a> (</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
 <div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; domain,</div>
 <div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;  <span class="keyword">const</span> <a class="code" href="structScalarDiffusionFieldViews.html">ScalarDiffusionFieldViews</a>&amp; field,</div>
@@ -936,7 +936,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160; </div>
 <div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">bool</span> MultiplyMolecularByDensity, <span class="keywordtype">bool</span> AddTurbulence&gt;</div>
 <div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00851"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a17a7ea1ad5775314281eed395b32d759">  851</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a17a7ea1ad5775314281eed395b32d759">BuildScalarDiffusionFluxes_S_Impl</a>(</div>
+<div class="line"><a name="l00851"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a17a7ea1ad5775314281eed395b32d759">  851</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a17a7ea1ad5775314281eed395b32d759">BuildScalarDiffusionFluxes_S_Impl</a> (</div>
 <div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
 <div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; domain,</div>
 <div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;  <span class="keyword">const</span> <a class="code" href="structScalarDiffusionFieldViews.html">ScalarDiffusionFieldViews</a>&amp; field,</div>
@@ -1047,7 +1047,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;<span class="comment">/** Build and map-adjust all native S-grid face fluxes for an intensive field. */</span></div>
 <div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00962"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a0a3e7a69af5fdc2cdb69db58d01fa179">  962</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a0a3e7a69af5fdc2cdb69db58d01fa179">BuildScalarDiffusionFluxes_S</a>(</div>
+<div class="line"><a name="l00962"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a0a3e7a69af5fdc2cdb69db58d01fa179">  962</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a0a3e7a69af5fdc2cdb69db58d01fa179">BuildScalarDiffusionFluxes_S</a> (</div>
 <div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
 <div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; domain,</div>
 <div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;  <span class="keyword">const</span> <a class="code" href="structScalarDiffusionFieldViews.html">ScalarDiffusionFieldViews</a>&amp; field,</div>
@@ -1088,7 +1088,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160; </div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">bool</span> MultiplyMolecularByDensity, <span class="keywordtype">bool</span> AddTurbulence&gt;</div>
 <div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l01003"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a2a9e97067cb2f386cafcdb6a67562488"> 1003</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a2a9e97067cb2f386cafcdb6a67562488">BuildScalarDiffusionFluxes_T_Impl</a>(</div>
+<div class="line"><a name="l01003"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a2a9e97067cb2f386cafcdb6a67562488"> 1003</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a2a9e97067cb2f386cafcdb6a67562488">BuildScalarDiffusionFluxes_T_Impl</a> (</div>
 <div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
 <div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; domain,</div>
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;  <span class="keyword">const</span> <a class="code" href="structScalarDiffusionFieldViews.html">ScalarDiffusionFieldViews</a>&amp; field,</div>
@@ -1205,7 +1205,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;<span class="comment">/** Build all native terrain-grid face fluxes, including the grown horizontal</span></div>
 <div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;<span class="comment"> * face regions needed by the mapped z-face transfer. */</span></div>
 <div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l01120"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#afc640acb65c2df3bd94d6bad037a3fdf"> 1120</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#afc640acb65c2df3bd94d6bad037a3fdf">BuildScalarDiffusionFluxes_T</a>(</div>
+<div class="line"><a name="l01120"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#afc640acb65c2df3bd94d6bad037a3fdf"> 1120</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#afc640acb65c2df3bd94d6bad037a3fdf">BuildScalarDiffusionFluxes_T</a> (</div>
 <div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
 <div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; domain,</div>
 <div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;  <span class="keyword">const</span> <a class="code" href="structScalarDiffusionFieldViews.html">ScalarDiffusionFieldViews</a>&amp; field,</div>
@@ -1247,7 +1247,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;<span class="comment"> * the cell-centered horizontal map-factor product.</span></div>
 <div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l01162"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a609484b863d5d6aa8826cdbd67d06ebc"> 1162</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a609484b863d5d6aa8826cdbd67d06ebc">BuildScalarDiffusionMappedTransfers_N</a>(</div>
+<div class="line"><a name="l01162"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a609484b863d5d6aa8826cdbd67d06ebc"> 1162</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a609484b863d5d6aa8826cdbd67d06ebc">BuildScalarDiffusionMappedTransfers_N</a> (</div>
 <div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
 <div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; raw_x,</div>
 <div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> raw_x_comp,</div>
@@ -1293,7 +1293,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;<span class="comment"> * computational z spacing are supplied separately to the mapped divergence.</span></div>
 <div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l01208"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a5642151d8861071b90fc24ee07ec73b5"> 1208</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a5642151d8861071b90fc24ee07ec73b5">BuildScalarDiffusionMappedTransfers_S</a>(</div>
+<div class="line"><a name="l01208"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a5642151d8861071b90fc24ee07ec73b5"> 1208</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a5642151d8861071b90fc24ee07ec73b5">BuildScalarDiffusionMappedTransfers_S</a> (</div>
 <div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
 <div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; raw_x,</div>
 <div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> raw_x_comp,</div>
@@ -1354,7 +1354,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;<span class="comment"> * already provide this z coverage.</span></div>
 <div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l01269"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#afa6c9029980ff536d1bb29206281a1d8"> 1269</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#afa6c9029980ff536d1bb29206281a1d8">BuildScalarDiffusionMappedTransfers_T</a>(</div>
+<div class="line"><a name="l01269"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#afa6c9029980ff536d1bb29206281a1d8"> 1269</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#afa6c9029980ff536d1bb29206281a1d8">BuildScalarDiffusionMappedTransfers_T</a> (</div>
 <div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
 <div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; domain,</div>
 <div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; raw_x,</div>
@@ -1413,7 +1413,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;<span class="comment"> * zeroes such cells.</span></div>
 <div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l01328"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a9a707e4dc68d9d318ed11b3a826acd7d"> 1328</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a9a707e4dc68d9d318ed11b3a826acd7d">ApplyScalarMappedFluxDivergence</a>(</div>
+<div class="line"><a name="l01328"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a9a707e4dc68d9d318ed11b3a826acd7d"> 1328</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a9a707e4dc68d9d318ed11b3a826acd7d">ApplyScalarMappedFluxDivergence</a> (</div>
 <div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
 <div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; mapped_x,</div>
 <div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> mapped_x_comp,</div>
@@ -1448,7 +1448,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;<span class="comment">/** Apply native terrain diffusion in one kernel, mapping each face inline. */</span></div>
 <div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l01363"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a9f74b4fb1f6e64f2bfb3b22cfd4c9b98"> 1363</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a9f74b4fb1f6e64f2bfb3b22cfd4c9b98">ApplyScalarDiffusionMappedDivergence_T</a>(</div>
+<div class="line"><a name="l01363"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a9f74b4fb1f6e64f2bfb3b22cfd4c9b98"> 1363</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a9f74b4fb1f6e64f2bfb3b22cfd4c9b98">ApplyScalarDiffusionMappedDivergence_T</a> (</div>
 <div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
 <div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; domain,</div>
 <div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;  <span class="keyword">const</span> <a class="code" href="structScalarDiffusionFieldViews.html">ScalarDiffusionFieldViews</a>&amp; field,</div>
@@ -1505,7 +1505,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;<span class="comment"> * component. Face scratch is component-selected independently in each view.</span></div>
 <div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l01420"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a37661c21a58f57110e22e67f8016bdfb"> 1420</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a37661c21a58f57110e22e67f8016bdfb">ApplyScalarDiffusionFluxDivergence_N</a>(</div>
+<div class="line"><a name="l01420"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a37661c21a58f57110e22e67f8016bdfb"> 1420</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a37661c21a58f57110e22e67f8016bdfb">ApplyScalarDiffusionFluxDivergence_N</a> (</div>
 <div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
 <div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; xflux,</div>
 <div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; yflux,</div>
@@ -1534,7 +1534,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;<span class="comment">/** S-grid conservative divergence; vertical cell width is the receiver&#39;s dz[k].</span></div>
 <div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l01449"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a6b562496d25c18c2f1cfd0e6746933d8"> 1449</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a6b562496d25c18c2f1cfd0e6746933d8">ApplyScalarDiffusionFluxDivergence_S</a>(</div>
+<div class="line"><a name="l01449"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a6b562496d25c18c2f1cfd0e6746933d8"> 1449</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a6b562496d25c18c2f1cfd0e6746933d8">ApplyScalarDiffusionFluxDivergence_S</a> (</div>
 <div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
 <div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; xflux,</div>
 <div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; yflux,</div>
@@ -1563,7 +1563,7 @@ $(document).ready(function(){initNavTree('ERF__ScalarDiffusion_8H_source.html','
 <div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;<span class="comment">/** Scale only raw F_z for the explicit integration fraction. */</span></div>
 <div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l01478"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a595a7b5d07cc6fbb8768dd760d0c3ebe"> 1478</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a595a7b5d07cc6fbb8768dd760d0c3ebe">ScaleScalarDiffusionVerticalFlux</a>(</div>
+<div class="line"><a name="l01478"></a><span class="lineno"><a class="line" href="ERF__ScalarDiffusion_8H.html#a595a7b5d07cc6fbb8768dd760d0c3ebe"> 1478</a></span>&#160;<a class="code" href="ERF__ScalarDiffusion_8H.html#a595a7b5d07cc6fbb8768dd760d0c3ebe">ScaleScalarDiffusionVerticalFlux</a> (</div>
 <div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; zbx,</div>
 <div class="line"><a name="l01480"></a><span class="lineno"> 1480</span>&#160;  <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; raw_Fz,</div>
 <div class="line"><a name="l01481"></a><span class="lineno"> 1481</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> flux_comp,</div>

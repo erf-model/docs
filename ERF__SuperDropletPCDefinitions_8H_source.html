@@ -151,9 +151,9 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ridx_a(<span class="keyword">const</span> <span class="keywordtype">int</span> a_i, <span class="comment">/*!&lt; Species index */</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                  <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                  <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ridx_a (<span class="keyword">const</span> <span class="keywordtype">int</span> a_i, <span class="comment">/*!&lt; Species index */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    amrex::ignore_unused(a_num_a);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    amrex::ignore_unused(a_num_s);</div>
@@ -162,9 +162,9 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ridx_s(<span class="keyword">const</span> <span class="keywordtype">int</span> a_i, <span class="comment">/*!&lt; Species index */</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                  <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                  <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ridx_s (<span class="keyword">const</span> <span class="keywordtype">int</span> a_i, <span class="comment">/*!&lt; Species index */</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    amrex::ignore_unused(a_num_s);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span>    SDPCDefn::SuperDropletsRealIdxSoA_RT::ncomps</div>
@@ -173,24 +173,24 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> idx_a(<span class="keyword">const</span> <span class="keywordtype">int</span> a_i, <span class="comment">/*!&lt; Species index */</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> idx_a (<span class="keyword">const</span> <span class="keywordtype">int</span> a_i, <span class="comment">/*!&lt; Species index */</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                  <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                  <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> SDPCDefn::SuperDropletsRealIdx::ncomps + ridx_a(a_i,a_num_a,a_num_s);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> idx_s(<span class="keyword">const</span> <span class="keywordtype">int</span> a_i, <span class="comment">/*!&lt; Species index */</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> idx_s (<span class="keyword">const</span> <span class="keywordtype">int</span> a_i, <span class="comment">/*!&lt; Species index */</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                  <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                  <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> SDPCDefn::SuperDropletsRealIdx::ncomps + ridx_s(a_i,a_num_a,a_num_s);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ridx_ice_Tfz(<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ridx_ice_Tfz (<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">return</span>   SDPCDefn::SuperDropletsRealIdxSoA_RT::ncomps</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;           + a_num_a</div>
@@ -199,8 +199,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ridx_ice_a(<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ridx_ice_a (<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span>   SDPCDefn::SuperDropletsRealIdxSoA_RT::ncomps</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;           + a_num_a</div>
@@ -209,8 +209,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ridx_ice_c(<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ridx_ice_c (<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span>   SDPCDefn::SuperDropletsRealIdxSoA_RT::ncomps</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;           + a_num_a</div>
@@ -219,8 +219,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ridx_ice_mrime(<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                          <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ridx_ice_mrime (<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                           <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;{</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span>   SDPCDefn::SuperDropletsRealIdxSoA_RT::ncomps</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;           + a_num_a</div>
@@ -229,8 +229,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ridx_ice_nmono(<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                          <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ridx_ice_nmono (<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                           <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">return</span>   SDPCDefn::SuperDropletsRealIdxSoA_RT::ncomps</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;           + a_num_a</div>
@@ -239,44 +239,44 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> idx_ice_Tfz(<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> idx_ice_Tfz (<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">return</span> SDPCDefn::SuperDropletsRealIdx::ncomps + ridx_ice_Tfz(a_num_a,a_num_s);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> idx_ice_a(<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                     <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> idx_ice_a (<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">return</span> SDPCDefn::SuperDropletsRealIdx::ncomps + ridx_ice_a(a_num_a,a_num_s);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> idx_ice_c(<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                     <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> idx_ice_c (<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">return</span> SDPCDefn::SuperDropletsRealIdx::ncomps + ridx_ice_c(a_num_a,a_num_s);</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> idx_ice_mrime(<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> idx_ice_mrime (<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                          <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;{</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">return</span> SDPCDefn::SuperDropletsRealIdx::ncomps + ridx_ice_mrime(a_num_a,a_num_s);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> idx_ice_nmono(<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> idx_ice_nmono (<span class="keyword">const</span> <span class="keywordtype">int</span> a_num_a, <span class="comment">/*!&lt; Number of aerosols */</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                          <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_s  <span class="comment">/*!&lt; Number of species */</span>)</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;{</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">return</span> SDPCDefn::SuperDropletsRealIdx::ncomps + ridx_ice_nmono(a_num_a,a_num_s);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keyword">static</span> <span class="keyword">auto</span> ice_rho(<span class="keyword">const</span> amrex::ParticleReal a_a, <span class="comment">/*!&lt; polar radius */</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    <span class="keyword">const</span> amrex::ParticleReal a_c, <span class="comment">/*!&lt; equatorial radius */</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                    <span class="keyword">const</span> amrex::ParticleReal a_mass <span class="comment">/*!&lt; mass */</span> )</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keyword">static</span> <span class="keyword">auto</span> ice_rho (<span class="keyword">const</span> amrex::ParticleReal a_a, <span class="comment">/*!&lt; polar radius */</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                     <span class="keyword">const</span> amrex::ParticleReal a_c, <span class="comment">/*!&lt; equatorial radius */</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                     <span class="keyword">const</span> amrex::ParticleReal a_mass <span class="comment">/*!&lt; mass */</span> )</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;{</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keyword">auto</span> vol = <span class="keyword">static_cast&lt;</span>amrex::ParticleReal<span class="keyword">&gt;</span>(<a class="code" href="ERF__NumericalConstants_8H.html#aee9241d04ff505346b552544969d619a">four_thirds_pi</a>)*a_a*a_a*a_c;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">if</span> (vol == amrex::ParticleReal(0)) {</div>
@@ -289,7 +289,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">/*! \brief Compute total mass of a droplet from its components */</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;AMREX_GPU_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="keyword">static</span> amrex::ParticleReal SD_total_mass( <span class="keyword">const</span> <span class="keywordtype">int</span> a_idx, <span class="comment">/*!&lt; Particle index */</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="keyword">static</span> amrex::ParticleReal SD_total_mass ( <span class="keyword">const</span> <span class="keywordtype">int</span> a_idx, <span class="comment">/*!&lt; Particle index */</span></div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                           <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_sp,   <span class="comment">/*!&lt; number of species */</span></div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                           <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_ae,   <span class="comment">/*!&lt; number of aerosols */</span></div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                           <span class="keyword">const</span> SDPCDefn::SDSpeciesMassArr&amp; a_sp_mass, <span class="comment">/*!&lt; species masses */</span></div>
@@ -307,7 +307,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">/*! \brief Compute effective radius of a droplet from its components */</span></div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;AMREX_GPU_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keyword">static</span> amrex::ParticleReal SD_effective_radius( <span class="keyword">const</span> <span class="keywordtype">int</span> a_idx, <span class="comment">/*!&lt; Particle index */</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keyword">static</span> amrex::ParticleReal SD_effective_radius ( <span class="keyword">const</span> <span class="keywordtype">int</span> a_idx, <span class="comment">/*!&lt; Particle index */</span></div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">int</span> a_idx_w, <span class="comment">/*!&lt; Species index of water */</span></div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                 amrex::ParticleReal a_rho_w,  <span class="comment">/*!&lt; density of water */</span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_sp,   <span class="comment">/*!&lt; number of species */</span></div>
@@ -352,7 +352,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">/*! \brief Compute &quot;dry&quot; radius of a droplet from its insoluble components */</span></div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;AMREX_GPU_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="keyword">static</span> amrex::ParticleReal SD_dry_radius( <span class="keyword">const</span> <span class="keywordtype">int</span> a_idx, <span class="comment">/*!&lt; Particle index */</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="keyword">static</span> amrex::ParticleReal SD_dry_radius ( <span class="keyword">const</span> <span class="keywordtype">int</span> a_idx, <span class="comment">/*!&lt; Particle index */</span></div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                           <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_sp,   <span class="comment">/*!&lt; number of species */</span></div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                           <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_ae,   <span class="comment">/*!&lt; number of aerosols */</span></div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                           <span class="keyword">const</span> <span class="keywordtype">int</span>* <span class="keyword">const</span> a_sp_sol_arr, <span class="comment">/*!&lt; solubility of species */</span></div>
@@ -392,7 +392,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="comment"> *  BSD 2-Clause License</span></div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;AMREX_GPU_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keyword">static</span> amrex::ParticleReal SD_INP_surface_area(</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keyword">static</span> amrex::ParticleReal SD_INP_surface_area (</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> a_idx,                              <span class="comment">/*!&lt; Particle index */</span></div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_sp,                           <span class="comment">/*!&lt; number of species */</span></div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> a_num_ae,                           <span class="comment">/*!&lt; number of aerosols */</span></div>
@@ -458,7 +458,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="comment">     *  n_s(T) = a0 * exp(-a1*T + a2)  [active sites per m^2]</span></div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="comment">     *  where T is in degrees Celsius */</span></div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> n_s(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T_degC)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> n_s (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T_degC)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keywordflow">return</span> a0 * std::exp(-a1 * T_degC + <a class="code" href="namespacemodule__model__constants.html#a8fa4176fb4dc3b202ead3420f03950c4">a2</a>);</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    }</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment"></span> </div>
@@ -466,7 +466,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment">     *  P(T) = 1 - exp(-A * n_s(T))</span></div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment">     *  where A is the INP surface area */</span></div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> P_freeze(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T_degC, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceTwoStreamScratch.html#a2aafc499c48282a5ee5f76fb6bc1f1fe">A</a>)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> P_freeze (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T_degC, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceTwoStreamScratch.html#a2aafc499c48282a5ee5f76fb6bc1f1fe">A</a>)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordflow">return</span> 1.0 - std::exp(-<a class="code" href="namespaceTwoStreamScratch.html#a2aafc499c48282a5ee5f76fb6bc1f1fe">A</a> * n_s(T_degC));</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    }</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="comment"></span> </div>
@@ -479,7 +479,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="comment">     *  freezing temperature determined by its coldest active site.</span></div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sample_Tfz(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceTwoStreamScratch.html#a2aafc499c48282a5ee5f76fb6bc1f1fe">A</a>)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sample_Tfz (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceTwoStreamScratch.html#a2aafc499c48282a5ee5f76fb6bc1f1fe">A</a>)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="comment">// No INP surface area -&gt; homogeneous freezing</span></div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceTwoStreamScratch.html#a2aafc499c48282a5ee5f76fb6bc1f1fe">A</a> &lt;= 0.0) {</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <span class="keywordflow">return</span> Tfz_homogeneous + 273.15;</div>
@@ -519,7 +519,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="comment">/*! \brief Liquid mass fraction of an SD: m_water/(m_water+m_ice).</span></div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="comment"> *  Returns 1 for pure water and 0 for pure ice. */</span></div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;AMREX_GPU_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="keyword">static</span> <span class="keyword">auto</span> SD_liquid_fraction( <span class="keyword">const</span> <span class="keywordtype">int</span> a_p, <span class="comment">/*!&lt; Particle index */</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="keyword">static</span> <span class="keyword">auto</span> SD_liquid_fraction ( <span class="keyword">const</span> <span class="keywordtype">int</span> a_p, <span class="comment">/*!&lt; Particle index */</span></div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                                <span class="keyword">const</span> <span class="keywordtype">int</span> a_i_w, <span class="comment">/*!&lt; Species index of water */</span></div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                                <span class="keyword">const</span> <span class="keywordtype">int</span> a_i_i, <span class="comment">/*!&lt; Species index of ice */</span></div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                                <span class="keyword">const</span> SDPCDefn::SDSpeciesMassArr&amp; a_sp_mass  <span class="comment">/*!&lt; species masses */</span>)</div>
@@ -533,7 +533,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;<span class="comment">/*! \brief Is the SD pure ice, pure water, or a mixed ice-water particle? */</span></div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;AMREX_GPU_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;<span class="keyword">static</span> <span class="keyword">auto</span> SD_phase( <span class="keyword">const</span> <span class="keywordtype">int</span> a_p, <span class="comment">/*!&lt; Particle index */</span></div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;<span class="keyword">static</span> <span class="keyword">auto</span> SD_phase ( <span class="keyword">const</span> <span class="keywordtype">int</span> a_p, <span class="comment">/*!&lt; Particle index */</span></div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span> a_i_w, <span class="comment">/*!&lt; Species index of water */</span></div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span> a_i_i, <span class="comment">/*!&lt; Species index of ice */</span></div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                      <span class="keyword">const</span> SDPCDefn::SDSpeciesMassArr&amp; a_sp_mass  <span class="comment">/*!&lt; species masses */</span>)</div>

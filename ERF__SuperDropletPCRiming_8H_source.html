@@ -140,7 +140,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCRiming_8H_source.ht
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     *  where w = log10(St)</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">auto</span> impactVelocity_RasmussenHeymsfield1985( <span class="keyword">const</span> ParticleReal a_Re, <span class="comment">/*!&lt; Reynolds number */</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">auto</span> impactVelocity_RasmussenHeymsfield1985 ( <span class="keyword">const</span> ParticleReal a_Re, <span class="comment">/*!&lt; Reynolds number */</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                                 <span class="keyword">const</span> ParticleReal a_St  <span class="comment">/*!&lt; Stokes number */</span> )</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment">// the fits only apply for St &gt;= 0.1; log10(0) raises FE_DIVBYZERO under fpe_trap_zero</span></div>
@@ -191,7 +191,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCRiming_8H_source.ht
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">    /*! \brief Ice surface temperature */</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    ParticleReal iceSurfaceTemperature( <span class="keyword">const</span> ParticleReal a_T, <span class="comment">/*!&lt; temperature */</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    ParticleReal iceSurfaceTemperature ( <span class="keyword">const</span> ParticleReal a_T, <span class="comment">/*!&lt; temperature */</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                        <span class="keyword">const</span> ParticleReal a_P, <span class="comment">/*!&lt; pressure */</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                        <span class="keyword">const</span> ParticleReal a_qv, <span class="comment">/*!&lt; vapour fraction */</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                        <span class="keyword">const</span> ParticleReal a_D, <span class="comment">/*!&lt; diffusivity coeff */</span></div>
@@ -222,7 +222,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCRiming_8H_source.ht
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">     *  Output bounded to 0.1 &lt;= rho_rime &lt;= 0.91 g/cm^3 (100-910 kg/m^3)</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">auto</span> rimeDensity_HeymsfieldPflaum1985( <span class="keyword">const</span> ParticleReal a_radius,      <span class="comment">/*!&lt; droplet radius [m] */</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">auto</span> rimeDensity_HeymsfieldPflaum1985 ( <span class="keyword">const</span> ParticleReal a_radius,      <span class="comment">/*!&lt; droplet radius [m] */</span></div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                                           <span class="keyword">const</span> ParticleReal a_a,           <span class="comment">/*!&lt; ice particle equatorial radius [m] */</span></div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                                           <span class="keyword">const</span> ParticleReal a_c,           <span class="comment">/*!&lt; ice particle polar radius [m] */</span></div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                                           <span class="keyword">const</span> ParticleReal a_vz_w,        <span class="comment">/*!&lt; vertical velocity of water droplet [m/s] */</span></div>

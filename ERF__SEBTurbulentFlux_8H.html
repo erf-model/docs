@@ -157,12 +157,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a78ca98452224b41f06e8679dc8fabc21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532">SEBFluxOrigin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SEBTurbulentFlux_8H.html#a78ca98452224b41f06e8679dc8fabc21">fill_seb_turbulent_flux</a> (amrex::MultiFab &amp;seb_flux, <a class="el" href="ERF__SEBTurbulentFlux_8H.html#a90a56c14e23c0b3d911980d3438d70d5">SEBTurbulentFlux</a> kind, const amrex::MultiFab *land_surface_field, const amrex::MultiFab *surface_layer_flux, int surface_k, SEBTurbulentFluxSource source, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fallback)</td></tr>
 <tr class="memdesc:a78ca98452224b41f06e8679dc8fabc21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the SEB's H or LE [W/m^2] on the valid cells of seb_flux.  <a href="ERF__SEBTurbulentFlux_8H.html#a78ca98452224b41f06e8679dc8fabc21">More...</a><br /></td></tr>
 <tr class="separator:a78ca98452224b41f06e8679dc8fabc21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1025338c07a65482c0f05461f529df6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SEBTurbulentFlux_8H.html#a1025338c07a65482c0f05461f529df6a">fill_seb_field_from_land_surface</a> (amrex::MultiFab &amp;seb_field, const amrex::MultiFab *field, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fallback, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> scale=<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0), const amrex::MultiFab *add_field=nullptr)</td></tr>
+<tr class="memdesc:a1025338c07a65482c0f05461f529df6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill one 2D surface-energy-balance input from land-surface model fields, cell by cell.  <a href="ERF__SEBTurbulentFlux_8H.html#a1025338c07a65482c0f05461f529df6a">More...</a><br /></td></tr>
+<tr class="separator:a1025338c07a65482c0f05461f529df6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Where the simplified surface energy balance takes its sensible (H) and latent (LE) heat fluxes from. </p>
 <p>The force-restore update removes H + LE from the ground. The air above receives the flux the lower surface layer applies, which it computes from the same skin temperature. Unless the two are the same flux the ground never loses what the air gains, so by default the balance takes the surface layer's flux.</p>
-<p>Precedence, per field and per level:</p><ol type="1">
-<li>a land-surface model field of that name ("hfx" or "lh");</li>
+<p>Precedence, per field, per level and per cell:</p><ol type="1">
+<li>a land-surface model field of that name ("hfx" or "lh") where it holds a valid value (is_valid_lsm_value: finite and below the lsm_undefined placeholder a land model leaves in cells it does not process);</li>
 <li>the surface layer's applied flux, with seb_turbulent_flux_source = surface_layer and the flux field allocated: a zlo surface layer with any diffusion or closure, not on EB terrain; the latent flux only with a moisture model. An adiabatic surface layer has the field and a zero flux, so H (or LE) is then 0, and <a class="el" href="classERF.html">ERF</a> warns at start-up if the scalar default it replaces is nonzero;</li>
 <li>the scalar default (seb_hfx_default or seb_lh_default).</li>
 </ol>
@@ -194,7 +197,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a458980b49c0f8bdd68460060f9280532a7cb98542596c7e6f323260a3a29df48f"></a>SurfaceLayer&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a458980b49c0f8bdd68460060f9280532a7a1920d61156abc05a60135aefe8bc67"></a>Default&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{ <a class="code" href="classLandSurface.html">LandSurface</a>, <a class="code" href="classSurfaceLayer.html">SurfaceLayer</a>, <a class="code" href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532a7a1920d61156abc05a60135aefe8bc67">Default</a> };</div>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{ <a class="code" href="classLandSurface.html">LandSurface</a>, <a class="code" href="classSurfaceLayer.html">SurfaceLayer</a>, <a class="code" href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532a7a1920d61156abc05a60135aefe8bc67">Default</a> };</div>
 <div class="ttc" id="aERF__SEBTurbulentFlux_8H_html_a458980b49c0f8bdd68460060f9280532a7a1920d61156abc05a60135aefe8bc67"><div class="ttname"><a href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532a7a1920d61156abc05a60135aefe8bc67">SEBFluxOrigin::Default</a></div><div class="ttdeci">@ Default</div></div>
 <div class="ttc" id="aclassLandSurface_html"><div class="ttname"><a href="classLandSurface.html">LandSurface</a></div><div class="ttdoc">Wrapper class for managing land surface models across AMR levels.</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:19</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html"><div class="ttname"><a href="classSurfaceLayer.html">SurfaceLayer</a></div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:60</div></div>
@@ -226,13 +229,72 @@ Functions</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a90a56c14e23c0b3d911980d3438d70d5aa18041730f670599c005dca36be1cc0f"></a>Sensible&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a90a56c14e23c0b3d911980d3438d70d5a275dfccfece442bef6586d62ab24d475"></a>Latent&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{ <a class="code" href="ERF__SEBTurbulentFlux_8H.html#a90a56c14e23c0b3d911980d3438d70d5aa18041730f670599c005dca36be1cc0f">Sensible</a>, <a class="code" href="ERF__SEBTurbulentFlux_8H.html#a90a56c14e23c0b3d911980d3438d70d5a275dfccfece442bef6586d62ab24d475">Latent</a> };</div>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{ <a class="code" href="ERF__SEBTurbulentFlux_8H.html#a90a56c14e23c0b3d911980d3438d70d5aa18041730f670599c005dca36be1cc0f">Sensible</a>, <a class="code" href="ERF__SEBTurbulentFlux_8H.html#a90a56c14e23c0b3d911980d3438d70d5a275dfccfece442bef6586d62ab24d475">Latent</a> };</div>
 <div class="ttc" id="aERF__SEBTurbulentFlux_8H_html_a90a56c14e23c0b3d911980d3438d70d5a275dfccfece442bef6586d62ab24d475"><div class="ttname"><a href="ERF__SEBTurbulentFlux_8H.html#a90a56c14e23c0b3d911980d3438d70d5a275dfccfece442bef6586d62ab24d475">SEBTurbulentFlux::Latent</a></div><div class="ttdeci">@ Latent</div></div>
 <div class="ttc" id="aERF__SEBTurbulentFlux_8H_html_a90a56c14e23c0b3d911980d3438d70d5aa18041730f670599c005dca36be1cc0f"><div class="ttname"><a href="ERF__SEBTurbulentFlux_8H.html#a90a56c14e23c0b3d911980d3438d70d5aa18041730f670599c005dca36be1cc0f">SEBTurbulentFlux::Sensible</a></div><div class="ttdeci">@ Sensible</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a1025338c07a65482c0f05461f529df6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1025338c07a65482c0f05461f529df6a">&#9670;&nbsp;</a></span>fill_seb_field_from_land_surface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fill_seb_field_from_land_surface </td>
+          <td>(</td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>seb_field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab *&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>fallback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>scale</em> = <code><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab *&#160;</td>
+          <td class="paramname"><em>add_field</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill one 2D surface-energy-balance input from land-surface model fields, cell by cell. </p>
+<p>Each valid cell of seb_field is set to scale * field + add_field where both values are valid land-surface values (is_valid_lsm_value), and to fallback elsewhere. A land model leaves the lsm_undefined placeholder in cells it does not process (Noah-MP: open water and sea ice) and everywhere before its first step, which runs after the first radiation call; those cells take the scalar default rather than the placeholder. The halo always holds the fallback; only valid cells take land-surface values.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">seb_field</td><td>2D SEB field (k = 0), laid out like the land-surface fields </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>land-surface field, or nullptr </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fallback</td><td>the scalar default </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">scale</td><td>factor on field (Noah-MP's fira is positive upward; the balance wants the absorbed flux, so -1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">add_field</td><td>second land-surface field added on top, or nullptr (Noah-MP splits the absorbed shortwave into sav and sag) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a78ca98452224b41f06e8679dc8fabc21"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78ca98452224b41f06e8679dc8fabc21">&#9670;&nbsp;</a></span>fill_seb_turbulent_flux()</h2>
 
@@ -290,12 +352,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fill the SEB's H or LE [W/m^2] on the valid cells of seb_flux. </p>
-<p>Only the valid cells are written in the land-surface and surface-layer cases (the default case sets the halo too): the force-restore update, the residual diagnostic and the seb_hfx/seb_lh outputs all read valid cells only, so the halo is never consumed. A consumer that needs it must fill it first.</p>
+<p>The selected values go to the valid cells; the halo always holds the fallback. The force-restore update, the residual diagnostic and the seb_hfx/seb_lh outputs read valid cells only. A consumer that needs neighbouring values in the halo must fill it first (FillBoundary).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">seb_flux</td><td>2D SEB field (k = 0), laid out like the level's state </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">kind</td><td>sensible or latent </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">land_surface_field</td><td>land-surface field of that name, or nullptr </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">land_surface_field</td><td>land-surface field of that name, or nullptr; cells holding no valid value take the next source </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">surface_layer_flux</td><td>conservative z-face flux the surface layer applies (rho w'theta' or rho w'qv'), or nullptr </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">surface_k</td><td>z index of the surface face in surface_layer_flux </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>erf.radiation.seb_turbulent_flux_source </td></tr>
@@ -303,7 +365,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the source the field was filled from </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the highest-precedence source the field was filled from (cells of a land-surface field without a valid value take the next one) </dd></dl>
 
 </div>
 </div>
@@ -356,13 +418,13 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (land_surface_field_present) { <span class="keywordflow">return</span> <a class="code" href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532ab8789e5e42a8520aaeef9eeca507f38a">SEBFluxOrigin::LandSurface</a>; }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (source == SEBTurbulentFluxSource::SurfaceLayer &amp;&amp; surface_layer_flux_present) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532a7cb98542596c7e6f323260a3a29df48f">SEBFluxOrigin::SurfaceLayer</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532a7a1920d61156abc05a60135aefe8bc67">SEBFluxOrigin::Default</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (land_surface_field_present) { <span class="keywordflow">return</span> <a class="code" href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532ab8789e5e42a8520aaeef9eeca507f38a">SEBFluxOrigin::LandSurface</a>; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (source == SEBTurbulentFluxSource::SurfaceLayer &amp;&amp; surface_layer_flux_present) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532a7cb98542596c7e6f323260a3a29df48f">SEBFluxOrigin::SurfaceLayer</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532a7a1920d61156abc05a60135aefe8bc67">SEBFluxOrigin::Default</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 <div class="ttc" id="aERF__SEBTurbulentFlux_8H_html_a458980b49c0f8bdd68460060f9280532a7cb98542596c7e6f323260a3a29df48f"><div class="ttname"><a href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532a7cb98542596c7e6f323260a3a29df48f">SEBFluxOrigin::SurfaceLayer</a></div><div class="ttdeci">@ SurfaceLayer</div></div>
 <div class="ttc" id="aERF__SEBTurbulentFlux_8H_html_a458980b49c0f8bdd68460060f9280532ab8789e5e42a8520aaeef9eeca507f38a"><div class="ttname"><a href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532ab8789e5e42a8520aaeef9eeca507f38a">SEBFluxOrigin::LandSurface</a></div><div class="ttdeci">@ LandSurface</div></div>
 </div><!-- fragment -->

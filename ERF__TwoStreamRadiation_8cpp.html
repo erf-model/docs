@@ -221,21 +221,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;{</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    BoxList flat = dst.boxArray().boxList();</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordflow">for</span> (Box&amp; b : flat) { b.setRange(2, 0); }</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        BoxArray(std::move(flat)) == src2d.boxArray() &amp;&amp;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        dst.DistributionMap() == src2d.DistributionMap(),</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="stringliteral">&quot;copy_surface_plane: the destination&#39;s horizontal grids differ from the source&#39;s&quot;</span>);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(dst); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keyword">const</span> Box&amp; fab_box = dst[mfi].box();</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(fab_box.smallEnd(2) &lt;= 0 &amp;&amp; fab_box.bigEnd(2) &gt;= 0,</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <span class="stringliteral">&quot;copy_surface_plane: the destination must hold the k = 0 plane in its valid or ghost region&quot;</span>);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keyword">const</span> Box plane = makeSlab(mfi.validbox(), 2, 0);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        dst[mfi].template copy&lt;RunOn::Device&gt;(src2d[mfi], plane, 0, plane, 0, 1);</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    }</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;{</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    BoxList flat = dst.boxArray().boxList();</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">for</span> (Box&amp; b : flat) { b.setRange(2, 0); }</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        BoxArray(std::move(flat)) == src2d.boxArray() &amp;&amp;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        dst.DistributionMap() == src2d.DistributionMap(),</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="stringliteral">&quot;copy_surface_plane: the destination&#39;s horizontal grids differ from the source&#39;s&quot;</span>);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(dst); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keyword">const</span> Box&amp; fab_box = dst[mfi].box();</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(fab_box.smallEnd(2) &lt;= 0 &amp;&amp; fab_box.bigEnd(2) &gt;= 0,</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            <span class="stringliteral">&quot;copy_surface_plane: the destination must hold the k = 0 plane in its valid or ghost region&quot;</span>);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keyword">const</span> Box plane = makeSlab(mfi.validbox(), 2, 0);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        dst[mfi].template copy&lt;RunOn::Device&gt;(src2d[mfi], plane, 0, plane, 0, 1);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    }</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a07d57cf8a24c40b70ea40ec8d52741d6">TwoStreamRadiation::write_land_forcing()</a>.</p>
