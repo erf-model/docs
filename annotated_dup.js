@@ -36,6 +36,10 @@ var annotated_dup =
       [ "UniformGridMetadata", "structerf__grid__utils_1_1UniformGridMetadata.html", "structerf__grid__utils_1_1UniformGridMetadata" ],
       [ "InterpolationStencil", "structerf__grid__utils_1_1InterpolationStencil.html", "structerf__grid__utils_1_1InterpolationStencil" ]
     ] ],
+    [ "erf_inputs_detail", "namespaceerf__inputs__detail.html", [
+      [ "EntryInfo", "structerf__inputs__detail_1_1EntryInfo.html", "structerf__inputs__detail_1_1EntryInfo" ],
+      [ "ScanState", "structerf__inputs__detail_1_1ScanState.html", "structerf__inputs__detail_1_1ScanState" ]
+    ] ],
     [ "erf_interval_means", "namespaceerf__interval__means.html", [
       [ "LevelMetadata", "structerf__interval__means_1_1LevelMetadata.html", "structerf__interval__means_1_1LevelMetadata" ],
       [ "Metadata", "structerf__interval__means_1_1Metadata.html", "structerf__interval__means_1_1Metadata" ]

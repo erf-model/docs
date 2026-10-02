@@ -119,6 +119,7 @@ var namespaces_dup =
       [ "hash_uniform", "namespaceerf__hash__rng.html#ae89d02b60008a0c8afdd38b3f1728da1", null ],
       [ "splitmix64", "namespaceerf__hash__rng.html#a3c58b34f95b150cc36eabdca82d7b4a8", null ]
     ] ],
+    [ "erf_inputs_detail", "namespaceerf__inputs__detail.html", "namespaceerf__inputs__detail" ],
     [ "erf_interval_means", "namespaceerf__interval__means.html", "namespaceerf__interval__means" ],
     [ "erf_noahmp", "namespaceerf__noahmp.html", "namespaceerf__noahmp" ],
     [ "erf_plotfile", "namespaceerf__plotfile.html", "namespaceerf__plotfile" ],

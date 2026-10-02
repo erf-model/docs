@@ -53,6 +53,7 @@ var hierarchy =
     [ "eb_cut_cell_", "classeb__cut__cell__.html", null ],
     [ "EBChoice", "structEBChoice.html", null ],
     [ "erf_sbm::EndpointTransform", "structerf__sbm_1_1EndpointTransform.html", null ],
+    [ "erf_inputs_detail::EntryInfo", "structerf__inputs__detail_1_1EntryInfo.html", null ],
     [ "ERFFillPatcher", "classERFFillPatcher.html", null ],
     [ "ERFPhysBCFunct_base", "classERFPhysBCFunct__base.html", null ],
     [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html", null ],
@@ -241,6 +242,7 @@ var hierarchy =
     [ "erf_cloud_chamber_wall_flux::ScalarFluxReplacement", "structerf__cloud__chamber__wall__flux_1_1ScalarFluxReplacement.html", null ],
     [ "erf_wall_thermodynamics::ScalarTransfer", "structerf__wall__thermodynamics_1_1ScalarTransfer.html", null ],
     [ "erf_cloud_chamber_wall_flux::ScalarWallSample", "structerf__cloud__chamber__wall__flux_1_1ScalarWallSample.html", null ],
+    [ "erf_inputs_detail::ScanState", "structerf__inputs__detail_1_1ScanState.html", null ],
     [ "SDDistributionParams", "structSDDistributionParams.html", null ],
     [ "SDInitProperties", "classSDInitProperties.html", [
       [ "SDInitialization", "classSDInitialization.html", null ],
