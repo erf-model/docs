@@ -150,9 +150,15 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa37c5e33bbeb79e5a25c31162da17ebc4">AnelasticMidPoint</a>
  }</td></tr>
 <tr class="separator:a6bb3d48f526c8560395d6fede7c3622a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38f7bc2b27f146e2cefe97ec9581eb08"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08">AuxiliaryFieldValidationPolicy</a> { <a class="el" href="namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08a4cc6684df7b4a92b1dec6fce3264fac8">Global</a>
+, <a class="el" href="namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08ae0b4b5d13bf9e622d51f68e6646fe656">AssumeValid</a>
+ }</td></tr>
+<tr class="separator:a38f7bc2b27f146e2cefe97ec9581eb08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:adfccc5d117c2f176b357d3712b4cc592"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">SameCellLayout</a> (const amrex::MultiFab &amp;lhs, const amrex::MultiFab &amp;rhs)</td></tr>
+<tr class="separator:adfccc5d117c2f176b357d3712b4cc592"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c9f140deff66b4c8fdf8fd9483b6ca6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a0c9f140deff66b4c8fdf8fd9483b6ca6">BuildMappedCellMeasure</a> (amrex::MultiFab &amp;<a class="el" href="ERF__InitCustomPertVels__MovingTerrain_8H.html#abc4882e65a32506bb94a14360eb8ee34">omega</a>, const amrex::MultiFab &amp;detJ, const amrex::MultiFab &amp;mx, const amrex::MultiFab &amp;my, std::string &amp;diagnostic)</td></tr>
 <tr class="separator:a0c9f140deff66b4c8fdf8fd9483b6ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a8f6f6e469c0049efbc4eec062ad367"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a9a8f6f6e469c0049efbc4eec062ad367">ValidatePositiveFiniteComponent</a> (const amrex::MultiFab &amp;field, const int component, std::string &amp;diagnostic)</td></tr>
@@ -163,6 +169,15 @@ Functions</h2></td></tr>
 <tr class="separator:a48c64f2a0bc1e093bb8ec6d64d177889"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b828db99bd66fb5cc21a0e01a892c50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a3b828db99bd66fb5cc21a0e01a892c50">AccumulateIntegratedFaceFlux</a> (<a class="el" href="namespaceerf__auxiliary.html#aa0930083629ba1368b23f314b9996f22">IntegratedMappedFaceFlux</a> &amp;ledger, const <a class="el" href="namespaceerf__auxiliary.html#a78ec59cd7624a9b502af94b7727a9712">MappedFaceFluxRate</a> &amp;rate, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> weight)</td></tr>
 <tr class="separator:a3b828db99bd66fb5cc21a0e01a892c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc9ab4c6f70613a12dd467ffd9bb2695"><td class="memTemplParams" colspan="2">template&lt;typename Tag &gt; </td></tr>
+<tr class="memitem:abc9ab4c6f70613a12dd467ffd9bb2695"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#abc9ab4c6f70613a12dd467ffd9bb2695">MappedFaceLayoutMatchesCellLayout</a> (const <a class="el" href="classerf__auxiliary_1_1MappedFaceField.html">MappedFaceField</a>&lt; Tag &gt; &amp;faces, const amrex::BoxArray &amp;cell_ba, const amrex::DistributionMapping &amp;dm)</td></tr>
+<tr class="separator:abc9ab4c6f70613a12dd467ffd9bb2695"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4950dfd4785000a45560bba35907f787"><td class="memTemplParams" colspan="2">template&lt;typename Tag &gt; </td></tr>
+<tr class="memitem:a4950dfd4785000a45560bba35907f787"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a4950dfd4785000a45560bba35907f787">MappedFaceLayoutMatchesCellLayout</a> (const <a class="el" href="classerf__auxiliary_1_1MappedFaceField.html">MappedFaceField</a>&lt; Tag &gt; &amp;faces, const amrex::MultiFab &amp;cell)</td></tr>
+<tr class="separator:a4950dfd4785000a45560bba35907f787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b38e575d2e3ef2765351ec709f60f4"><td class="memTemplParams" colspan="2">template&lt;typename LhsTag , typename RhsTag &gt; </td></tr>
+<tr class="memitem:af8b38e575d2e3ef2765351ec709f60f4"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#af8b38e575d2e3ef2765351ec709f60f4">SameMappedFaceLayout</a> (const <a class="el" href="classerf__auxiliary_1_1MappedFaceField.html">MappedFaceField</a>&lt; LhsTag &gt; &amp;lhs, const <a class="el" href="classerf__auxiliary_1_1MappedFaceField.html">MappedFaceField</a>&lt; RhsTag &gt; &amp;rhs)</td></tr>
+<tr class="separator:af8b38e575d2e3ef2765351ec709f60f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab967a4eabbe6e144c9ddfefc152cf76c"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c">ComputationalMappedDivergence</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fx_hi, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fx_lo, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fy_hi, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fy_lo, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fz_hi, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fz_lo, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dx_inv, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dy_inv, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dzeta_inv) noexcept</td></tr>
 <tr class="separator:ab967a4eabbe6e144c9ddfefc152cf76c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4566c3cfec768d75c51f61bcf063fe93"><td class="memTemplParams" colspan="2">template&lt;typename Tag &gt; </td></tr>
@@ -172,8 +187,10 @@ Functions</h2></td></tr>
 <tr class="separator:ae34e7d10af171e40a2ba238505a44551"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a930629866bdc0239b7c2328a9246eb62"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a930629866bdc0239b7c2328a9246eb62">MakeAuxiliaryStageRecipe</a> (const <a class="el" href="namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622a">HostIntegrator</a> method, const int stage, const double host_stage_interval, <a class="el" href="structerf__auxiliary_1_1AuxiliaryStageRecipe.html">AuxiliaryStageRecipe</a> &amp;recipe, std::string &amp;diagnostic)</td></tr>
 <tr class="separator:a930629866bdc0239b7c2328a9246eb62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34662371559f1b721b34b51ce0235262"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a34662371559f1b721b34b51ce0235262">BuildAuxiliaryIntensiveState</a> (const <a class="el" href="structerf__auxiliary_1_1ConstTimedFieldView.html">ConstTimedFieldView</a> &amp;state_input, const <a class="el" href="structerf__auxiliary_1_1ConstTimedFieldView.html">ConstTimedFieldView</a> &amp;rho_input, const double input_time, amrex::MultiFab &amp;intensive, std::string &amp;diagnostic)</td></tr>
-<tr class="separator:a34662371559f1b721b34b51ce0235262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3907395fc6f12fb9c233accef46ba8f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#ae3907395fc6f12fb9c233accef46ba8f">BuildAuxiliaryIntensiveState</a> (const <a class="el" href="structerf__auxiliary_1_1ConstTimedFieldView.html">ConstTimedFieldView</a> &amp;state_input, const <a class="el" href="structerf__auxiliary_1_1ConstTimedFieldView.html">ConstTimedFieldView</a> &amp;rho_input, const double input_time, amrex::MultiFab &amp;intensive, const <a class="el" href="namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08">AuxiliaryFieldValidationPolicy</a> validation, std::string &amp;diagnostic)</td></tr>
+<tr class="separator:ae3907395fc6f12fb9c233accef46ba8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25368e9217271e6d57bdb152f71e5138"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a25368e9217271e6d57bdb152f71e5138">AuxiliaryStageTargetIsDisjoint</a> (const <a class="el" href="structerf__auxiliary_1_1AuxiliaryStageContext.html">AuxiliaryStageContext</a> &amp;context)</td></tr>
+<tr class="separator:a25368e9217271e6d57bdb152f71e5138"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25f090ba55ee2afbd3c76c92e4101bfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a25f090ba55ee2afbd3c76c92e4101bfb">ApplyAuxiliaryMappedStage</a> (const <a class="el" href="structerf__auxiliary_1_1AuxiliaryStageContext.html">AuxiliaryStageContext</a> &amp;context, const <a class="el" href="namespaceerf__auxiliary.html#a78ec59cd7624a9b502af94b7727a9712">MappedFaceFluxRate</a> &amp;rate, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;dx_inv, const int rate_component)</td></tr>
 <tr class="separator:a25f090ba55ee2afbd3c76c92e4101bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -207,6 +224,47 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a38f7bc2b27f146e2cefe97ec9581eb08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38f7bc2b27f146e2cefe97ec9581eb08">&#9670;&nbsp;</a></span>AuxiliaryFieldValidationPolicy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08">erf_auxiliary::AuxiliaryFieldValidationPolicy</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a38f7bc2b27f146e2cefe97ec9581eb08a4cc6684df7b4a92b1dec6fce3264fac8"></a>Global&#160;</td><td class="fielddoc"><p>Perform global positive-density and finite-result validation. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a38f7bc2b27f146e2cefe97ec9581eb08ae0b4b5d13bf9e622d51f68e6646fe656"></a>AssumeValid&#160;</td><td class="fielddoc"><p>Skip global checks. The caller guarantees every input state value is finite, density is finite and strictly positive, and each state/density quotient is finite and representable in amrex::Real. No global reduction is performed by this policy. </p>
+</td></tr>
+</table>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                          {<span class="comment"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">    /** Perform global positive-density and finite-result validation. */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08a4cc6684df7b4a92b1dec6fce3264fac8">Global</a>,<span class="comment"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">    /**</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     * Skip global checks. The caller guarantees every input state value is</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     * finite, density is finite and strictly positive, and each state/density</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     * quotient is finite and representable in amrex::Real. No global</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     * reduction is performed by this policy.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08ae0b4b5d13bf9e622d51f68e6646fe656">AssumeValid</a></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_a38f7bc2b27f146e2cefe97ec9581eb08a4cc6684df7b4a92b1dec6fce3264fac8"><div class="ttname"><a href="namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08a4cc6684df7b4a92b1dec6fce3264fac8">erf_auxiliary::AuxiliaryFieldValidationPolicy::Global</a></div><div class="ttdeci">@ Global</div></div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_a38f7bc2b27f146e2cefe97ec9581eb08ae0b4b5d13bf9e622d51f68e6646fe656"><div class="ttname"><a href="namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08ae0b4b5d13bf9e622d51f68e6646fe656">erf_auxiliary::AuxiliaryFieldValidationPolicy::AssumeValid</a></div><div class="ttdeci">@ AssumeValid</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a6bb3d48f526c8560395d6fede7c3622a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6bb3d48f526c8560395d6fede7c3622a">&#9670;&nbsp;</a></span>HostIntegrator</h2>
 
@@ -341,14 +399,16 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;{</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ledger.is_defined() &amp;&amp; rate.is_defined());</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ledger.nComp() == rate.nComp());</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(std::isfinite(weight) &amp;&amp; weight &gt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        amrex::MultiFab::Saxpy(ledger.dir(dir), weight, rate.dir(dir),</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                               0, 0, ledger.nComp(), 0);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#af8b38e575d2e3ef2765351ec709f60f4">SameMappedFaceLayout</a>(ledger, rate));</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(std::isfinite(weight) &amp;&amp; weight &gt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        amrex::MultiFab::Saxpy(ledger.dir(dir), weight, rate.dir(dir),</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                               0, 0, ledger.nComp(), 0);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_af8b38e575d2e3ef2765351ec709f60f4"><div class="ttname"><a href="namespaceerf__auxiliary.html#af8b38e575d2e3ef2765351ec709f60f4">erf_auxiliary::SameMappedFaceLayout</a></div><div class="ttdeci">bool SameMappedFaceLayout(const MappedFaceField&lt; LhsTag &gt; &amp;lhs, const MappedFaceField&lt; RhsTag &gt; &amp;rhs)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.H:104</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a1136e7902d3567fb5ab3bffecf158696">erf_auxiliary::CompletedStepFluxLedger::accept_stage()</a>.</p>
 <div class="dynheader">
@@ -356,11 +416,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__auxiliary_a3b828db99bd66fb5cc21a0e01a892c50_cgraph.png" border="0" usemap="#anamespaceerf__auxiliary_a3b828db99bd66fb5cc21a0e01a892c50_cgraph" alt=""/></div>
 <map name="anamespaceerf__auxiliary_a3b828db99bd66fb5cc21a0e01a892c50_cgraph" id="anamespaceerf__auxiliary_a3b828db99bd66fb5cc21a0e01a892c50_cgraph">
-<area shape="rect" title=" " alt="" coords="5,65,193,107"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="481,10,664,37"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a8a208bb7a27b8c089b8ced578cdaee61" title=" " alt="" coords="241,32,433,73"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e" title=" " alt="" coords="241,97,433,139"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43" title=" " alt="" coords="241,163,433,204"/>
+<area shape="rect" title=" " alt="" coords="5,91,193,133"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="729,125,912,152"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a8a208bb7a27b8c089b8ced578cdaee61" title=" " alt="" coords="489,26,681,67"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e" title=" " alt="" coords="489,91,681,133"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43" title=" " alt="" coords="245,150,437,191"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#af8b38e575d2e3ef2765351ec709f60f4" title=" " alt="" coords="241,33,441,74"/>
 </map>
 </div>
 <div class="dynheader">
@@ -413,86 +474,94 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Apply H_target = a H_anchor + b H_input - c D_xi(F_rate). </p>
-<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(context.level &gt;= 0 &amp;&amp; context.stage &gt;= 0);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(std::isfinite(context.step_old_time));</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(std::isfinite(context.input_time));</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(std::isfinite(context.target_time));</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.state_anchor, context.step_old_time));</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.state_input, context.input_time));</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(context.state_target.field != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(context.state_target.component &gt;= 0 &amp;&amp;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                        context.state_target.component &lt; context.state_target.field-&gt;nComp());</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(std::isfinite(context.state_target.time) &amp;&amp;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                        context.state_target.time == context.target_time);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.rho_anchor, context.step_old_time));</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.rho_input, context.input_time));</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.rho_target, context.target_time));</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.measure_anchor, context.step_old_time));</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.measure_input, context.input_time));</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.measure_target, context.target_time));</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(context.carrier.x != <span class="keyword">nullptr</span> &amp;&amp; context.carrier.y != <span class="keyword">nullptr</span> &amp;&amp;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                        context.carrier.z != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(rate.is_defined() &amp;&amp; rate_component &gt;= 0 &amp;&amp;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                        rate_component &lt; rate.nComp());</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; target = *context.state_target.field;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; anchor = *context.state_anchor.field;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; input = *context.state_input.field;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; omega_anchor = *context.measure_anchor.field;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; omega_input = *context.measure_input.field;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; omega_target = *context.measure_target.field;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(same_layout(target, anchor));</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(same_layout(target, input));</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(same_layout(target, omega_anchor));</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(same_layout(target, omega_input));</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(same_layout(target, omega_target));</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> anchor_weight = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(context.recurrence.anchor_weight);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> input_weight = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(context.recurrence.input_weight);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> face_weight =</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(context.recurrence.face_rate_time_coefficient);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = dx_inv[0];</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a> = dx_inv[1];</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWDM6SedCellScratch.html#a3c792271a2d2577da86a9b7907a7304daeaf93dae2185f9a45d471709664f2de7">dz</a> = dx_inv[2];</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(target, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keyword">const</span> amrex::Box bx = mfi.tilebox();</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> ua = anchor.const_array(mfi);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> ui = input.const_array(mfi);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> ut = context.state_target.field-&gt;array(mfi);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> oa = omega_anchor.const_array(mfi);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> oi = omega_input.const_array(mfi);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> omega_target_array = omega_target.const_array(mfi);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> fx = rate.dir(0).const_array(mfi);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> fy = rate.dir(1).const_array(mfi);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> fz = rate.dir(2).const_array(mfi);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ua_comp = context.state_anchor.component;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ui_comp = context.state_input.component;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ut_comp = context.state_target.component;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> oa_comp = context.measure_anchor.component;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> oi_comp = context.measure_input.component;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> omega_target_component = context.measure_target.component;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> div = <a class="code" href="namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c">ComputationalMappedDivergence</a>(</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                fx(i + 1, j, k, rate_component), fx(i, j, k, rate_component),</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                fy(i, j + 1, k, rate_component), fy(i, j, k, rate_component),</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                fz(i, j, k + 1, rate_component), fz(i, j, k, rate_component),</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>, <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a>, <a class="code" href="namespaceWDM6SedCellScratch.html#a3c792271a2d2577da86a9b7907a7304daeaf93dae2185f9a45d471709664f2de7">dz</a>);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_target =</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                anchor_weight * oa(i, j, k, oa_comp) * ua(i, j, k, ua_comp) +</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                input_weight * oi(i, j, k, oi_comp) * ui(i, j, k, ui_comp) -</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                face_weight * div;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            ut(i, j, k, ut_comp) = h_target /</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                omega_target_array(i, j, k, omega_target_component);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        });</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;{</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(context.level &gt;= 0 &amp;&amp; context.stage &gt;= 0);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(std::isfinite(context.step_old_time));</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(std::isfinite(context.input_time));</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(std::isfinite(context.target_time));</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.state_anchor, context.step_old_time));</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.state_input, context.input_time));</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(context.state_target.field != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(context.state_target.component &gt;= 0 &amp;&amp;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                        context.state_target.component &lt; context.state_target.field-&gt;nComp());</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(std::isfinite(context.state_target.time) &amp;&amp;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                        context.state_target.time == context.target_time);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.rho_anchor, context.step_old_time));</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.rho_input, context.input_time));</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.rho_target, context.target_time));</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.measure_anchor, context.step_old_time));</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.measure_input, context.input_time));</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(valid_const_view(context.measure_target, context.target_time));</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(context.carrier.x != <span class="keyword">nullptr</span> &amp;&amp; context.carrier.y != <span class="keyword">nullptr</span> &amp;&amp;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                        context.carrier.z != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(rate.is_defined() &amp;&amp; rate_component &gt;= 0 &amp;&amp;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                        rate_component &lt; rate.nComp());</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#a25368e9217271e6d57bdb152f71e5138">AuxiliaryStageTargetIsDisjoint</a>(context));</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; target = *context.state_target.field;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; anchor = *context.state_anchor.field;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; input = *context.state_input.field;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; omega_anchor = *context.measure_anchor.field;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; omega_input = *context.measure_input.field;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; omega_target = *context.measure_target.field;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">SameCellLayout</a>(target, anchor));</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">SameCellLayout</a>(target, input));</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">SameCellLayout</a>(target, *context.rho_anchor.field));</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">SameCellLayout</a>(target, *context.rho_input.field));</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">SameCellLayout</a>(target, *context.rho_target.field));</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">SameCellLayout</a>(target, omega_anchor));</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">SameCellLayout</a>(target, omega_input));</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">SameCellLayout</a>(target, omega_target));</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#abc9ab4c6f70613a12dd467ffd9bb2695">MappedFaceLayoutMatchesCellLayout</a>(rate, target));</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> anchor_weight = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(context.recurrence.anchor_weight);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> input_weight = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(context.recurrence.input_weight);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> face_weight =</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(context.recurrence.face_rate_time_coefficient);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = dx_inv[0];</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a> = dx_inv[1];</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWDM6SedCellScratch.html#a3c792271a2d2577da86a9b7907a7304daeaf93dae2185f9a45d471709664f2de7">dz</a> = dx_inv[2];</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(target, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keyword">const</span> amrex::Box bx = mfi.tilebox();</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> ua = anchor.const_array(mfi);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> ui = input.const_array(mfi);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> ut = context.state_target.field-&gt;array(mfi);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> oa = omega_anchor.const_array(mfi);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> oi = omega_input.const_array(mfi);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> omega_target_array = omega_target.const_array(mfi);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> fx = rate.dir(0).const_array(mfi);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> fy = rate.dir(1).const_array(mfi);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> fz = rate.dir(2).const_array(mfi);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ua_comp = context.state_anchor.component;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ui_comp = context.state_input.component;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ut_comp = context.state_target.component;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> oa_comp = context.measure_anchor.component;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> oi_comp = context.measure_input.component;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> omega_target_component = context.measure_target.component;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> div = <a class="code" href="namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c">ComputationalMappedDivergence</a>(</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                fx(i + 1, j, k, rate_component), fx(i, j, k, rate_component),</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                fy(i, j + 1, k, rate_component), fy(i, j, k, rate_component),</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                fz(i, j, k + 1, rate_component), fz(i, j, k, rate_component),</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>, <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a>, <a class="code" href="namespaceWDM6SedCellScratch.html#a3c792271a2d2577da86a9b7907a7304daeaf93dae2185f9a45d471709664f2de7">dz</a>);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_target =</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                anchor_weight * oa(i, j, k, oa_comp) * ua(i, j, k, ua_comp) +</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                input_weight * oi(i, j, k, oi_comp) * ui(i, j, k, ui_comp) -</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                face_weight * div;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            ut(i, j, k, ut_comp) = h_target /</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                omega_target_array(i, j, k, omega_target_component);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        });</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a3d480c71a8d13543a4a79124b1b694e5"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a></div><div class="ttdeci">const Real dy</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:45</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:44</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="anamespaceWDM6SedCellScratch_html_a3c792271a2d2577da86a9b7907a7304daeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#a3c792271a2d2577da86a9b7907a7304daeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:272</div></div>
-<div class="ttc" id="anamespaceerf__auxiliary_html_ab967a4eabbe6e144c9ddfefc152cf76c"><div class="ttname"><a href="namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c">erf_auxiliary::ComputationalMappedDivergence</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real ComputationalMappedDivergence(const amrex::Real fx_hi, const amrex::Real fx_lo, const amrex::Real fy_hi, const amrex::Real fy_lo, const amrex::Real fz_hi, const amrex::Real fz_lo, const amrex::Real dx_inv, const amrex::Real dy_inv, const amrex::Real dzeta_inv) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.H:76</div></div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_a25368e9217271e6d57bdb152f71e5138"><div class="ttname"><a href="namespaceerf__auxiliary.html#a25368e9217271e6d57bdb152f71e5138">erf_auxiliary::AuxiliaryStageTargetIsDisjoint</a></div><div class="ttdeci">bool AuxiliaryStageTargetIsDisjoint(const AuxiliaryStageContext &amp;context)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.cpp:154</div></div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_ab967a4eabbe6e144c9ddfefc152cf76c"><div class="ttname"><a href="namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c">erf_auxiliary::ComputationalMappedDivergence</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real ComputationalMappedDivergence(const amrex::Real fx_hi, const amrex::Real fx_lo, const amrex::Real fy_hi, const amrex::Real fy_lo, const amrex::Real fz_hi, const amrex::Real fz_lo, const amrex::Real dx_inv, const amrex::Real dy_inv, const amrex::Real dzeta_inv) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.H:119</div></div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_abc9ab4c6f70613a12dd467ffd9bb2695"><div class="ttname"><a href="namespaceerf__auxiliary.html#abc9ab4c6f70613a12dd467ffd9bb2695">erf_auxiliary::MappedFaceLayoutMatchesCellLayout</a></div><div class="ttdeci">bool MappedFaceLayoutMatchesCellLayout(const MappedFaceField&lt; Tag &gt; &amp;faces, const amrex::BoxArray &amp;cell_ba, const amrex::DistributionMapping &amp;dm)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.H:79</div></div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_adfccc5d117c2f176b357d3712b4cc592"><div class="ttname"><a href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">erf_auxiliary::SameCellLayout</a></div><div class="ttdeci">bool SameCellLayout(const amrex::MultiFab &amp;lhs, const amrex::MultiFab &amp;rhs)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.cpp:34</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece">erf_auxiliary::AuxiliaryInertTracer::advance_stage()</a>.</p>
 <div class="dynheader">
@@ -500,13 +569,16 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__auxiliary_a25f090ba55ee2afbd3c76c92e4101bfb_cgraph.png" border="0" usemap="#anamespaceerf__auxiliary_a25f090ba55ee2afbd3c76c92e4101bfb_cgraph" alt=""/></div>
 <map name="anamespaceerf__auxiliary_a25f090ba55ee2afbd3c76c92e4101bfb_cgraph" id="anamespaceerf__auxiliary_a25f090ba55ee2afbd3c76c92e4101bfb_cgraph">
-<area shape="rect" title=" " alt="" coords="5,134,212,175"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="515,47,697,73"/>
-<area shape="rect" href="namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c" title=" " alt="" coords="260,35,467,77"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a8a208bb7a27b8c089b8ced578cdaee61" title=" " alt="" coords="267,101,459,142"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e" title=" " alt="" coords="267,166,459,207"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43" title=" " alt="" coords="267,231,459,273"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="318,297,409,324"/>
+<area shape="rect" title=" " alt="" coords="5,243,212,284"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="765,101,948,128"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#a25368e9217271e6d57bdb152f71e5138" title=" " alt="" coords="284,60,453,102"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c" title=" " alt="" coords="265,126,472,167"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a8a208bb7a27b8c089b8ced578cdaee61" title=" " alt="" coords="525,184,717,226"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e" title=" " alt="" coords="525,275,717,316"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#abc9ab4c6f70613a12dd467ffd9bb2695" title=" " alt="" coords="273,243,465,284"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43" title=" " alt="" coords="273,360,465,402"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="323,426,414,453"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592" title=" " alt="" coords="260,477,477,504"/>
 </map>
 </div>
 <div class="dynheader">
@@ -580,53 +652,97 @@ template&lt;typename Tag &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Apply -D_xi(flux)/omega into one selected output component. The supplied face values are already in <a class="el" href="classERF.html">ERF</a>'s mapped coordinate convention. </p>
-<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(flux.is_defined());</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(flux_comp &gt;= 0 &amp;&amp; flux_comp &lt; flux.nComp());</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(omega_comp &gt;= 0 &amp;&amp; omega_comp &lt; <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>.nComp());</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(tendency_comp &gt;= 0 &amp;&amp; tendency_comp &lt; tendency.nComp());</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(tendency, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keyword">const</span> amrex::Box bx = mfi.tilebox();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> fx = flux.dir(0).const_array(mfi);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> fy = flux.dir(1).const_array(mfi);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> fz = flux.dir(2).const_array(mfi);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> measure = <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>.const_array(mfi);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> out = tendency.array(mfi);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = dx_inv[0];</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a> = dx_inv[1];</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="namespaceWDM6SedCellScratch.html#a3c792271a2d2577da86a9b7907a7304daeaf93dae2185f9a45d471709664f2de7">dz</a> = dx_inv[2];</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> div = <a class="code" href="namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c">ComputationalMappedDivergence</a>(</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                fx(i + 1, j, k, flux_comp), fx(i, j, k, flux_comp),</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                fy(i, j + 1, k, flux_comp), fy(i, j, k, flux_comp),</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                fz(i, j, k + 1, flux_comp), fz(i, j, k, flux_comp),</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>, <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a>, <a class="code" href="namespaceWDM6SedCellScratch.html#a3c792271a2d2577da86a9b7907a7304daeaf93dae2185f9a45d471709664f2de7">dz</a>);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            out(i, j, k, tendency_comp) = -div / measure(i, j, k, omega_comp);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        });</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;{</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(flux.is_defined());</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(flux_comp &gt;= 0 &amp;&amp; flux_comp &lt; flux.nComp());</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(omega_comp &gt;= 0 &amp;&amp; omega_comp &lt; <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>.nComp());</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(tendency_comp &gt;= 0 &amp;&amp; tendency_comp &lt; tendency.nComp());</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">SameCellLayout</a>(<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>, tendency));</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#a4950dfd4785000a45560bba35907f787">MappedFaceLayoutMatchesCellLayout</a>(flux, tendency));</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(tendency, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keyword">const</span> amrex::Box bx = mfi.tilebox();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> fx = flux.dir(0).const_array(mfi);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> fy = flux.dir(1).const_array(mfi);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> fz = flux.dir(2).const_array(mfi);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> measure = <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>.const_array(mfi);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> out = tendency.array(mfi);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = dx_inv[0];</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a> = dx_inv[1];</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="namespaceWDM6SedCellScratch.html#a3c792271a2d2577da86a9b7907a7304daeaf93dae2185f9a45d471709664f2de7">dz</a> = dx_inv[2];</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> div = <a class="code" href="namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c">ComputationalMappedDivergence</a>(</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                fx(i + 1, j, k, flux_comp), fx(i, j, k, flux_comp),</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                fy(i, j + 1, k, flux_comp), fy(i, j, k, flux_comp),</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                fz(i, j, k + 1, flux_comp), fz(i, j, k, flux_comp),</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>, <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a>, <a class="code" href="namespaceWDM6SedCellScratch.html#a3c792271a2d2577da86a9b7907a7304daeaf93dae2185f9a45d471709664f2de7">dz</a>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            out(i, j, k, tendency_comp) = -div / measure(i, j, k, omega_comp);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        });</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16"><div class="ttname"><a href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">MicVar_Morr::omega</a></div><div class="ttdeci">@ omega</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:55</div></div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_a4950dfd4785000a45560bba35907f787"><div class="ttname"><a href="namespaceerf__auxiliary.html#a4950dfd4785000a45560bba35907f787">erf_auxiliary::MappedFaceLayoutMatchesCellLayout</a></div><div class="ttdeci">bool MappedFaceLayoutMatchesCellLayout(const MappedFaceField&lt; Tag &gt; &amp;faces, const amrex::MultiFab &amp;cell)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.H:96</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__auxiliary_a4566c3cfec768d75c51f61bcf063fe93_cgraph.png" border="0" usemap="#anamespaceerf__auxiliary_a4566c3cfec768d75c51f61bcf063fe93_cgraph" alt=""/></div>
 <map name="anamespaceerf__auxiliary_a4566c3cfec768d75c51f61bcf063fe93_cgraph" id="anamespaceerf__auxiliary_a4566c3cfec768d75c51f61bcf063fe93_cgraph">
-<area shape="rect" title=" " alt="" coords="5,134,205,176"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="508,47,691,74"/>
-<area shape="rect" href="namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c" title=" " alt="" coords="253,36,460,77"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a8a208bb7a27b8c089b8ced578cdaee61" title=" " alt="" coords="261,101,453,142"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e" title=" " alt="" coords="261,166,453,208"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43" title=" " alt="" coords="261,232,453,273"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="311,298,402,324"/>
+<area shape="rect" title=" " alt="" coords="5,208,205,249"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="759,69,941,95"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c" title=" " alt="" coords="259,61,465,103"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a8a208bb7a27b8c089b8ced578cdaee61" title=" " alt="" coords="519,120,711,161"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e" title=" " alt="" coords="519,211,711,252"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#abc9ab4c6f70613a12dd467ffd9bb2695" title=" " alt="" coords="266,179,458,220"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43" title=" " alt="" coords="266,296,458,337"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="317,362,407,389"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592" title=" " alt="" coords="253,413,471,439"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a34662371559f1b721b34b51ce0235262"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34662371559f1b721b34b51ce0235262">&#9670;&nbsp;</a></span>BuildAuxiliaryIntensiveState()</h2>
+<a id="a25368e9217271e6d57bdb152f71e5138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25368e9217271e6d57bdb152f71e5138">&#9670;&nbsp;</a></span>AuxiliaryStageTargetIsDisjoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool erf_auxiliary::AuxiliaryStageTargetIsDisjoint </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structerf__auxiliary_1_1AuxiliaryStageContext.html">AuxiliaryStageContext</a> &amp;&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Whether the mutable stage target is a distinct MultiFab from both inputs. </p>
+<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">return</span> context.state_target.field != <span class="keyword">nullptr</span> &amp;&amp;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;           (context.state_anchor.field == <span class="keyword">nullptr</span> ||</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            !storage_overlaps(*context.state_target.field, *context.state_anchor.field)) &amp;&amp;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;           (context.state_input.field == <span class="keyword">nullptr</span> ||</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            !storage_overlaps(*context.state_target.field, *context.state_input.field));</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a25f090ba55ee2afbd3c76c92e4101bfb">ApplyAuxiliaryMappedStage()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__auxiliary_a25368e9217271e6d57bdb152f71e5138_icgraph.png" border="0" usemap="#anamespaceerf__auxiliary_a25368e9217271e6d57bdb152f71e5138_icgraph" alt=""/></div>
+<map name="anamespaceerf__auxiliary_a25368e9217271e6d57bdb152f71e5138_icgraph" id="anamespaceerf__auxiliary_a25368e9217271e6d57bdb152f71e5138_icgraph">
+<area shape="rect" title=" " alt="" coords="692,5,861,47"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#a25f090ba55ee2afbd3c76c92e4101bfb" title=" " alt="" coords="437,5,644,47"/>
+<area shape="rect" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece" title=" " alt="" coords="192,5,389,47"/>
+<area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a227d656134aef6ca848159c5fb3ca9b0" title=" " alt="" coords="5,13,144,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae3907395fc6f12fb9c233accef46ba8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3907395fc6f12fb9c233accef46ba8f">&#9670;&nbsp;</a></span>BuildAuxiliaryIntensiveState()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -658,6 +774,12 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08">AuxiliaryFieldValidationPolicy</a>&#160;</td>
+          <td class="paramname"><em>validation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">std::string &amp;&#160;</td>
           <td class="paramname"><em>diagnostic</em>&#160;</td>
         </tr>
@@ -669,60 +791,68 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Form z=U_input/rho_input from the explicit input-time views. </p>
-<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    diagnostic.clear();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span> (!std::isfinite(input_time) ||</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        !valid_const_view(state_input, input_time) ||</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        !valid_const_view(rho_input, input_time)) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        diagnostic = <span class="stringliteral">&quot;auxiliary intensive state requires state and density views at input_time&quot;</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span> (!same_layout(intensive, *state_input.field) ||</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        !same_layout(intensive, *rho_input.field) ||</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        intensive.nComp() &lt; 1) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        diagnostic = <span class="stringliteral">&quot;auxiliary intensive state fields must share a cell layout&quot;</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__auxiliary.html#a9a8f6f6e469c0049efbc4eec062ad367">ValidatePositiveFiniteComponent</a>(*rho_input.field, rho_input.component, diagnostic)) {</div>
+<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    diagnostic.clear();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (!std::isfinite(input_time) ||</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        !valid_const_view(state_input, input_time) ||</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        !valid_const_view(rho_input, input_time)) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        diagnostic = <span class="stringliteral">&quot;auxiliary intensive state requires state and density views at input_time&quot;</span>;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(intensive, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keyword">const</span> amrex::Box bx = mfi.tilebox();</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> state = state_input.field-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a> = rho_input.field-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> out = intensive.array(mfi);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> state_comp = state_input.component;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> rho_comp = rho_input.component;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            out(i, j, k, 0) = state(i, j, k, state_comp) / <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a>(i, j, k, rho_comp);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        });</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__auxiliary.html#a4eafed90679495b6b748f1e9dff0264b">ValidateFiniteComponent</a>(intensive, 0, diagnostic)) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">SameCellLayout</a>(intensive, *state_input.field) ||</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        !<a class="code" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">SameCellLayout</a>(intensive, *rho_input.field) ||</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        intensive.nComp() &lt; 1) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        diagnostic = <span class="stringliteral">&quot;auxiliary intensive state fields must share a cell layout&quot;</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">if</span> (validation == AuxiliaryFieldValidationPolicy::Global) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__auxiliary.html#a9a8f6f6e469c0049efbc4eec062ad367">ValidatePositiveFiniteComponent</a>(*rho_input.field, rho_input.component, diagnostic)) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (validation != AuxiliaryFieldValidationPolicy::AssumeValid) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        diagnostic = <span class="stringliteral">&quot;auxiliary intensive state received an unknown validation policy&quot;</span>;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(intensive, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keyword">const</span> amrex::Box bx = mfi.tilebox();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> state = state_input.field-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a> = rho_input.field-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> out = intensive.array(mfi);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> state_comp = state_input.component;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> rho_comp = rho_input.component;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            out(i, j, k, 0) = state(i, j, k, state_comp) / <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a>(i, j, k, rho_comp);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        });</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span> (validation == AuxiliaryFieldValidationPolicy::Global) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__auxiliary.html#a4eafed90679495b6b748f1e9dff0264b">ValidateFiniteComponent</a>(intensive, 0, diagnostic)) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:25</div></div>
-<div class="ttc" id="anamespaceerf__auxiliary_html_a4eafed90679495b6b748f1e9dff0264b"><div class="ttname"><a href="namespaceerf__auxiliary.html#a4eafed90679495b6b748f1e9dff0264b">erf_auxiliary::ValidateFiniteComponent</a></div><div class="ttdeci">bool ValidateFiniteComponent(const amrex::MultiFab &amp;field, const int component, std::string &amp;diagnostic)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.cpp:115</div></div>
-<div class="ttc" id="anamespaceerf__auxiliary_html_a9a8f6f6e469c0049efbc4eec062ad367"><div class="ttname"><a href="namespaceerf__auxiliary.html#a9a8f6f6e469c0049efbc4eec062ad367">erf_auxiliary::ValidatePositiveFiniteComponent</a></div><div class="ttdeci">bool ValidatePositiveFiniteComponent(const amrex::MultiFab &amp;field, const int component, std::string &amp;diagnostic)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.cpp:87</div></div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_a4eafed90679495b6b748f1e9dff0264b"><div class="ttname"><a href="namespaceerf__auxiliary.html#a4eafed90679495b6b748f1e9dff0264b">erf_auxiliary::ValidateFiniteComponent</a></div><div class="ttdeci">bool ValidateFiniteComponent(const amrex::MultiFab &amp;field, const int component, std::string &amp;diagnostic)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.cpp:116</div></div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_a9a8f6f6e469c0049efbc4eec062ad367"><div class="ttname"><a href="namespaceerf__auxiliary.html#a9a8f6f6e469c0049efbc4eec062ad367">erf_auxiliary::ValidatePositiveFiniteComponent</a></div><div class="ttdeci">bool ValidatePositiveFiniteComponent(const amrex::MultiFab &amp;field, const int component, std::string &amp;diagnostic)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.cpp:88</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece">erf_auxiliary::AuxiliaryInertTracer::advance_stage()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespaceerf__auxiliary_a34662371559f1b721b34b51ce0235262_cgraph.png" border="0" usemap="#anamespaceerf__auxiliary_a34662371559f1b721b34b51ce0235262_cgraph" alt=""/></div>
-<map name="anamespaceerf__auxiliary_a34662371559f1b721b34b51ce0235262_cgraph" id="anamespaceerf__auxiliary_a34662371559f1b721b34b51ce0235262_cgraph">
-<area shape="rect" title=" " alt="" coords="5,29,208,70"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="520,36,611,63"/>
-<area shape="rect" href="namespaceerf__auxiliary.html#a4eafed90679495b6b748f1e9dff0264b" title=" " alt="" coords="264,29,464,70"/>
-<area shape="rect" href="namespaceerf__auxiliary.html#a9a8f6f6e469c0049efbc4eec062ad367" title=" " alt="" coords="256,94,472,135"/>
+<div class="center"><img src="namespaceerf__auxiliary_ae3907395fc6f12fb9c233accef46ba8f_cgraph.png" border="0" usemap="#anamespaceerf__auxiliary_ae3907395fc6f12fb9c233accef46ba8f_cgraph" alt=""/></div>
+<map name="anamespaceerf__auxiliary_ae3907395fc6f12fb9c233accef46ba8f_cgraph" id="anamespaceerf__auxiliary_ae3907395fc6f12fb9c233accef46ba8f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,57,208,98"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="521,93,612,120"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592" title=" " alt="" coords="256,35,473,61"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#a4eafed90679495b6b748f1e9dff0264b" title=" " alt="" coords="265,86,465,127"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#a9a8f6f6e469c0049efbc4eec062ad367" title=" " alt="" coords="257,151,473,193"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespaceerf__auxiliary_a34662371559f1b721b34b51ce0235262_icgraph.png" border="0" usemap="#anamespaceerf__auxiliary_a34662371559f1b721b34b51ce0235262_icgraph" alt=""/></div>
-<map name="anamespaceerf__auxiliary_a34662371559f1b721b34b51ce0235262_icgraph" id="anamespaceerf__auxiliary_a34662371559f1b721b34b51ce0235262_icgraph">
+<div class="center"><img src="namespaceerf__auxiliary_ae3907395fc6f12fb9c233accef46ba8f_icgraph.png" border="0" usemap="#anamespaceerf__auxiliary_ae3907395fc6f12fb9c233accef46ba8f_icgraph" alt=""/></div>
+<map name="anamespaceerf__auxiliary_ae3907395fc6f12fb9c233accef46ba8f_icgraph" id="anamespaceerf__auxiliary_ae3907395fc6f12fb9c233accef46ba8f_icgraph">
 <area shape="rect" title=" " alt="" coords="437,5,640,47"/>
 <area shape="rect" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece" title=" " alt="" coords="192,5,389,47"/>
 <area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a227d656134aef6ca848159c5fb3ca9b0" title=" " alt="" coords="5,13,144,39"/>
@@ -775,60 +905,61 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Build omega=detJ/(mx*my), returning false and a diagnostic on invalid cells. </p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    diagnostic.clear();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>.nComp() != 1 || detJ.nComp() &lt; 1 || mx.nComp() &lt; 1 || my.nComp() &lt; 1 ||</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        !same_cell_layout(<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>, detJ) || !same_horizontal_layout(<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>, mx) ||</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        !same_horizontal_layout(<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>, my) ||</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        mx.boxArray() != my.boxArray() || mx.DistributionMap() != my.DistributionMap()) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        diagnostic = <span class="stringliteral">&quot;mapped measure requires a cell-centered Jacobian, matching horizontal map-factor layouts, and one output component&quot;</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    amrex::MultiFab invalid(<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>.boxArray(), <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>.DistributionMap(), 1, 0);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    invalid.setVal(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">const</span> amrex::Box bx = mfi.tilebox();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> det = detJ.const_array(mfi);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> map_x = mx.const_array(mfi);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> map_y = my.const_array(mfi);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> out = <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>.array(mfi);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> bad = invalid.array(mfi);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> d = det(i, j, k, 0);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="comment">// ERF&#39;s horizontal map factors are vertically invariant and all</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="comment">// native mapped divergence paths read them from k=0.</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = map_x(i, j, 0, 0);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = map_y(i, j, 0, 0);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> measure = d / (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">bool</span> valid = amrex::Math::isfinite(d) &amp;&amp; d &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                               amrex::Math::isfinite(x) &amp;&amp; <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                               amrex::Math::isfinite(y) &amp;&amp; <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                               amrex::Math::isfinite(measure) &amp;&amp; measure &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            out(i, j, k, 0) = valid ? measure : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            bad(i, j, k, 0) = valid ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) : <a class="code" href="namespaceamrex.html">amrex</a>::<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        });</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> invalid_count = invalid.sum(0);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> (invalid_count != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        diagnostic = <span class="stringliteral">&quot;detJ, horizontal map factors, and mapped measure must be finite and positive&quot;</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    diagnostic.clear();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>.nComp() != 1 || detJ.nComp() &lt; 1 || mx.nComp() &lt; 1 || my.nComp() &lt; 1 ||</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        !<a class="code" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">SameCellLayout</a>(<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>, detJ) || !same_horizontal_layout(<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>, mx) ||</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        !same_horizontal_layout(<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>, my) ||</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        mx.boxArray() != my.boxArray() || mx.DistributionMap() != my.DistributionMap()) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        diagnostic = <span class="stringliteral">&quot;mapped measure requires a cell-centered Jacobian, matching horizontal map-factor layouts, and one output component&quot;</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    amrex::MultiFab invalid(<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>.boxArray(), <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>.DistributionMap(), 1, 0);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    invalid.setVal(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">const</span> amrex::Box bx = mfi.tilebox();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> det = detJ.const_array(mfi);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> map_x = mx.const_array(mfi);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> map_y = my.const_array(mfi);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> out = <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a93264ee6dc9b23e994674a68250a2f16">omega</a>.array(mfi);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> bad = invalid.array(mfi);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> d = det(i, j, k, 0);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="comment">// ERF&#39;s horizontal map factors are vertically invariant and all</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="comment">// native mapped divergence paths read them from k=0.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = map_x(i, j, 0, 0);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = map_y(i, j, 0, 0);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> measure = d / (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">bool</span> valid = amrex::Math::isfinite(d) &amp;&amp; d &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                               amrex::Math::isfinite(x) &amp;&amp; <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                               amrex::Math::isfinite(y) &amp;&amp; <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                               amrex::Math::isfinite(measure) &amp;&amp; measure &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            out(i, j, k, 0) = valid ? measure : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            bad(i, j, k, 0) = valid ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) : <a class="code" href="namespaceamrex.html">amrex</a>::<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        });</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> invalid_count = invalid.sum(0);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (invalid_count != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        diagnostic = <span class="stringliteral">&quot;detJ, horizontal map factors, and mapped measure must be finite and positive&quot;</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:15</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#aa526389855cf0292f14b619626eef352">erf_auxiliary::AuxiliaryInertTracer::define()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#ae16042cf94d7f5dca9c6554a4b70ed86">erf_auxiliary::AuxiliaryInertTracer::rebuild_static_measure()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__auxiliary_a0c9f140deff66b4c8fdf8fd9483b6ca6_cgraph.png" border="0" usemap="#anamespaceerf__auxiliary_a0c9f140deff66b4c8fdf8fd9483b6ca6_cgraph" alt=""/></div>
 <map name="anamespaceerf__auxiliary_a0c9f140deff66b4c8fdf8fd9483b6ca6_cgraph" id="anamespaceerf__auxiliary_a0c9f140deff66b4c8fdf8fd9483b6ca6_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,201,47"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="249,13,340,39"/>
+<area shape="rect" title=" " alt="" coords="5,23,201,65"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="313,5,403,32"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592" title=" " alt="" coords="249,56,467,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -836,8 +967,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__auxiliary_a0c9f140deff66b4c8fdf8fd9483b6ca6_icgraph.png" border="0" usemap="#anamespaceerf__auxiliary_a0c9f140deff66b4c8fdf8fd9483b6ca6_icgraph" alt=""/></div>
 <map name="anamespaceerf__auxiliary_a0c9f140deff66b4c8fdf8fd9483b6ca6_icgraph" id="anamespaceerf__auxiliary_a0c9f140deff66b4c8fdf8fd9483b6ca6_icgraph">
-<area shape="rect" title=" " alt="" coords="223,5,419,47"/>
-<area shape="rect" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#aa526389855cf0292f14b619626eef352" title=" " alt="" coords="5,5,175,47"/>
+<area shape="rect" title=" " alt="" coords="240,13,436,54"/>
+<area shape="rect" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#ae16042cf94d7f5dca9c6554a4b70ed86" title=" " alt="" coords="5,5,192,61"/>
 </map>
 </div>
 
@@ -919,11 +1050,11 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Computational-coordinate divergence only: no metric or physical face area. </p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> (fx_hi - fx_lo) * dx_inv +</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;           (fy_hi - fy_lo) * dy_inv +</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;           (fz_hi - fz_lo) * dzeta_inv;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> (fx_hi - fx_lo) * dx_inv +</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;           (fy_hi - fy_lo) * dy_inv +</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;           (fz_hi - fz_lo) * dzeta_inv;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece">erf_auxiliary::AuxiliaryInertTracer::advance_stage()</a>, <a class="el" href="namespaceerf__auxiliary.html#a25f090ba55ee2afbd3c76c92e4101bfb">ApplyAuxiliaryMappedStage()</a>, and <a class="el" href="namespaceerf__auxiliary.html#a4566c3cfec768d75c51f61bcf063fe93">ApplyMappedFluxTendency()</a>.</p>
 <div class="dynheader">
@@ -964,14 +1095,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">switch</span> (method) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">case</span> HostIntegrator::CompressibleRK3: <span class="keywordflow">return</span> <span class="stringliteral">&quot;CompressibleRK3&quot;</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">case</span> HostIntegrator::AnelasticHeun: <span class="keywordflow">return</span> <span class="stringliteral">&quot;AnelasticHeun&quot;</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">case</span> HostIntegrator::AnelasticMidPoint: <span class="keywordflow">return</span> <span class="stringliteral">&quot;AnelasticMidPoint&quot;</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown&quot;</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">switch</span> (method) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">case</span> HostIntegrator::CompressibleRK3: <span class="keywordflow">return</span> <span class="stringliteral">&quot;CompressibleRK3&quot;</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">case</span> HostIntegrator::AnelasticHeun: <span class="keywordflow">return</span> <span class="stringliteral">&quot;AnelasticHeun&quot;</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">case</span> HostIntegrator::AnelasticMidPoint: <span class="keywordflow">return</span> <span class="stringliteral">&quot;AnelasticMidPoint&quot;</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown&quot;</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece">erf_auxiliary::AuxiliaryInertTracer::advance_stage()</a>.</p>
 <div class="dynheader">
@@ -1031,51 +1162,43 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Return the explicit <a class="el" href="classERF.html">ERF</a> recurrence recipe for one supported host stage. </p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    diagnostic.clear();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    recipe = {};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (!std::isfinite(host_stage_interval) || !(host_stage_interval &gt; 0.0)) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        diagnostic = <span class="stringliteral">&quot;host stage interval must be finite and positive&quot;</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> (method == HostIntegrator::AnelasticMidPoint) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        diagnostic = <span class="stringliteral">&quot;AnelasticMidPoint is represented but is not qualified by the M2 fixture&quot;</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (stage &lt; 0 || stage &gt;= stage_count(method)) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        diagnostic = <span class="stringliteral">&quot;stage index is outside the selected host integrator sequence&quot;</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (method == HostIntegrator::CompressibleRK3) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        recipe.anchor_weight = 1.0;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span> (stage == 0) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            recipe.limiter_trial_interval = host_stage_interval;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            recipe.face_rate_time_coefficient = host_stage_interval;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stage == 1) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            recipe.limiter_trial_interval = host_stage_interval;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            recipe.face_rate_time_coefficient = host_stage_interval;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            recipe.limiter_trial_interval = host_stage_interval;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            recipe.face_rate_time_coefficient = host_stage_interval;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            recipe.completed_ledger_time = host_stage_interval;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (method == HostIntegrator::AnelasticHeun) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (stage == 0) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            recipe.anchor_weight = 1.0;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            recipe.limiter_trial_interval = host_stage_interval;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            recipe.face_rate_time_coefficient = host_stage_interval;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            recipe.completed_ledger_time = 0.5 * host_stage_interval;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            recipe.anchor_weight = 0.5;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            recipe.input_weight = 0.5;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            recipe.limiter_trial_interval = host_stage_interval;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            recipe.face_rate_time_coefficient = 0.5 * host_stage_interval;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            recipe.completed_ledger_time = 0.5 * host_stage_interval;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    diagnostic.clear();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    recipe = {};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (!std::isfinite(host_stage_interval) || !(host_stage_interval &gt; 0.0)) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        diagnostic = <span class="stringliteral">&quot;host stage interval must be finite and positive&quot;</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (method == HostIntegrator::AnelasticMidPoint) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        diagnostic = <span class="stringliteral">&quot;AnelasticMidPoint is represented but is not qualified by the M2 fixture&quot;</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> (stage &lt; 0 || stage &gt;= stage_count(method)) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        diagnostic = <span class="stringliteral">&quot;stage index is outside the selected host integrator sequence&quot;</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> (method == HostIntegrator::CompressibleRK3) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        recipe.anchor_weight = 1.0;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        recipe.limiter_trial_interval = host_stage_interval;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        recipe.face_rate_time_coefficient = host_stage_interval;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span> (stage == 2) { recipe.completed_ledger_time = host_stage_interval; }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (method == HostIntegrator::AnelasticHeun) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> (stage == 0) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            recipe.anchor_weight = 1.0;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            recipe.limiter_trial_interval = host_stage_interval;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            recipe.face_rate_time_coefficient = host_stage_interval;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            recipe.completed_ledger_time = 0.5 * host_stage_interval;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            recipe.anchor_weight = 0.5;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            recipe.input_weight = 0.5;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            recipe.limiter_trial_interval = host_stage_interval;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            recipe.face_rate_time_coefficient = 0.5 * host_stage_interval;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            recipe.completed_ledger_time = 0.5 * host_stage_interval;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece">erf_auxiliary::AuxiliaryInertTracer::advance_stage()</a>.</p>
 <div class="dynheader">
@@ -1086,6 +1209,126 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="437,5,641,47"/>
 <area shape="rect" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece" title=" " alt="" coords="192,5,389,47"/>
 <area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a227d656134aef6ca848159c5fb3ca9b0" title=" " alt="" coords="5,13,144,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abc9ab4c6f70613a12dd467ffd9bb2695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc9ab4c6f70613a12dd467ffd9bb2695">&#9670;&nbsp;</a></span>MappedFaceLayoutMatchesCellLayout() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Tag &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool erf_auxiliary::MappedFaceLayoutMatchesCellLayout </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classerf__auxiliary_1_1MappedFaceField.html">MappedFaceField</a>&lt; Tag &gt; &amp;&#160;</td>
+          <td class="paramname"><em>faces</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::BoxArray &amp;&#160;</td>
+          <td class="paramname"><em>cell_ba</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::DistributionMapping &amp;&#160;</td>
+          <td class="paramname"><em>dm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check directional face staggering and ownership against a cell layout. </p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (!faces.is_defined()) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; face = faces.dir(dir);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">if</span> (face.boxArray() !=</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                amrex::convert(cell_ba, amrex::IntVect::TheDimensionVector(dir)) ||</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            face.DistributionMap() != dm) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a25f090ba55ee2afbd3c76c92e4101bfb">ApplyAuxiliaryMappedStage()</a>, <a class="el" href="namespaceerf__auxiliary.html#a4566c3cfec768d75c51f61bcf063fe93">ApplyMappedFluxTendency()</a>, and <a class="el" href="namespaceerf__auxiliary.html#a4950dfd4785000a45560bba35907f787">MappedFaceLayoutMatchesCellLayout()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__auxiliary_abc9ab4c6f70613a12dd467ffd9bb2695_cgraph.png" border="0" usemap="#anamespaceerf__auxiliary_abc9ab4c6f70613a12dd467ffd9bb2695_cgraph" alt=""/></div>
+<map name="anamespaceerf__auxiliary_abc9ab4c6f70613a12dd467ffd9bb2695_cgraph" id="anamespaceerf__auxiliary_abc9ab4c6f70613a12dd467ffd9bb2695_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,197,80"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a8a208bb7a27b8c089b8ced578cdaee61" title=" " alt="" coords="245,5,437,47"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e" title=" " alt="" coords="245,71,437,112"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="485,13,668,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__auxiliary_abc9ab4c6f70613a12dd467ffd9bb2695_icgraph.png" border="0" usemap="#anamespaceerf__auxiliary_abc9ab4c6f70613a12dd467ffd9bb2695_icgraph" alt=""/></div>
+<map name="anamespaceerf__auxiliary_abc9ab4c6f70613a12dd467ffd9bb2695_icgraph" id="anamespaceerf__auxiliary_abc9ab4c6f70613a12dd467ffd9bb2695_icgraph">
+<area shape="rect" title=" " alt="" coords="692,71,884,112"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#a25f090ba55ee2afbd3c76c92e4101bfb" title=" " alt="" coords="437,5,644,47"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#a4566c3cfec768d75c51f61bcf063fe93" title=" " alt="" coords="441,71,641,112"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#a4950dfd4785000a45560bba35907f787" title=" " alt="" coords="445,136,637,177"/>
+<area shape="rect" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece" title=" " alt="" coords="192,5,389,47"/>
+<area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a227d656134aef6ca848159c5fb3ca9b0" title=" " alt="" coords="5,13,144,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4950dfd4785000a45560bba35907f787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4950dfd4785000a45560bba35907f787">&#9670;&nbsp;</a></span>MappedFaceLayoutMatchesCellLayout() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Tag &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool erf_auxiliary::MappedFaceLayoutMatchesCellLayout </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classerf__auxiliary_1_1MappedFaceField.html">MappedFaceField</a>&lt; Tag &gt; &amp;&#160;</td>
+          <td class="paramname"><em>faces</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>cell</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceerf__auxiliary.html#a4950dfd4785000a45560bba35907f787">MappedFaceLayoutMatchesCellLayout</a>(faces, cell.boxArray(), cell.DistributionMap());</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__auxiliary_a4950dfd4785000a45560bba35907f787_cgraph.png" border="0" usemap="#anamespaceerf__auxiliary_a4950dfd4785000a45560bba35907f787_cgraph" alt=""/></div>
+<map name="anamespaceerf__auxiliary_a4950dfd4785000a45560bba35907f787_cgraph" id="anamespaceerf__auxiliary_a4950dfd4785000a45560bba35907f787_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,197,80"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#abc9ab4c6f70613a12dd467ffd9bb2695" title=" " alt="" coords="245,39,437,80"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a8a208bb7a27b8c089b8ced578cdaee61" title=" " alt="" coords="485,5,677,47"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e" title=" " alt="" coords="485,71,677,112"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="725,13,908,39"/>
 </map>
 </div>
 
@@ -1129,16 +1372,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Return the max absolute difference between two component-selected face fields. </p>
-<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lhs.is_defined() &amp;&amp; rhs.is_defined());</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lhs_comp &gt;= 0 &amp;&amp; lhs_comp &lt; lhs.nComp());</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(rhs_comp &gt;= 0 &amp;&amp; rhs_comp &lt; rhs.nComp());</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> maximum = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; a = lhs.dir(dir);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; b = rhs.dir(dir);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(a.boxArray() == b.boxArray());</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(a.DistributionMap() == b.DistributionMap());</div>
+<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lhs.is_defined() &amp;&amp; rhs.is_defined());</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lhs_comp &gt;= 0 &amp;&amp; lhs_comp &lt; lhs.nComp());</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(rhs_comp &gt;= 0 &amp;&amp; rhs_comp &lt; rhs.nComp());</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#af8b38e575d2e3ef2765351ec709f60f4">SameMappedFaceLayout</a>(lhs, rhs));</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> maximum = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; a = lhs.dir(dir);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; b = rhs.dir(dir);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        amrex::MultiFab difference(a.boxArray(), a.DistributionMap(), 1, 0);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(difference, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keyword">const</span> amrex::Box bx = mfi.tilebox();</div>
@@ -1161,12 +1403,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__auxiliary_a48c64f2a0bc1e093bb8ec6d64d177889_cgraph.png" border="0" usemap="#anamespaceerf__auxiliary_a48c64f2a0bc1e093bb8ec6d64d177889_cgraph" alt=""/></div>
 <map name="anamespaceerf__auxiliary_a48c64f2a0bc1e093bb8ec6d64d177889_cgraph" id="anamespaceerf__auxiliary_a48c64f2a0bc1e093bb8ec6d64d177889_cgraph">
-<area shape="rect" title=" " alt="" coords="5,102,204,143"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="492,14,675,41"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a8a208bb7a27b8c089b8ced578cdaee61" title=" " alt="" coords="252,36,444,78"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e" title=" " alt="" coords="252,102,444,143"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43" title=" " alt="" coords="252,167,444,208"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="303,233,393,260"/>
+<area shape="rect" title=" " alt="" coords="5,124,204,165"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="740,18,923,45"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a8a208bb7a27b8c089b8ced578cdaee61" title=" " alt="" coords="500,40,692,81"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e" title=" " alt="" coords="500,185,692,227"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43" title=" " alt="" coords="256,156,448,197"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="307,222,397,249"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#af8b38e575d2e3ef2765351ec709f60f4" title=" " alt="" coords="252,91,452,132"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1177,6 +1420,123 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="437,5,636,47"/>
 <area shape="rect" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece" title=" " alt="" coords="192,5,389,47"/>
 <area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a227d656134aef6ca848159c5fb3ca9b0" title=" " alt="" coords="5,13,144,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adfccc5d117c2f176b357d3712b4cc592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfccc5d117c2f176b357d3712b4cc592">&#9670;&nbsp;</a></span>SameCellLayout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool erf_auxiliary::SameCellLayout </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Exact cell-centered BoxArray and DistributionMapping identity. </p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> lhs.boxArray() == rhs.boxArray() &amp;&amp;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;           lhs.DistributionMap() == rhs.DistributionMap();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a25f090ba55ee2afbd3c76c92e4101bfb">ApplyAuxiliaryMappedStage()</a>, <a class="el" href="namespaceerf__auxiliary.html#a4566c3cfec768d75c51f61bcf063fe93">ApplyMappedFluxTendency()</a>, <a class="el" href="namespaceerf__auxiliary.html#ae3907395fc6f12fb9c233accef46ba8f">BuildAuxiliaryIntensiveState()</a>, and <a class="el" href="namespaceerf__auxiliary.html#a0c9f140deff66b4c8fdf8fd9483b6ca6">BuildMappedCellMeasure()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__auxiliary_adfccc5d117c2f176b357d3712b4cc592_icgraph.png" border="0" usemap="#anamespaceerf__auxiliary_adfccc5d117c2f176b357d3712b4cc592_icgraph" alt=""/></div>
+<map name="anamespaceerf__auxiliary_adfccc5d117c2f176b357d3712b4cc592_icgraph" id="anamespaceerf__auxiliary_adfccc5d117c2f176b357d3712b4cc592_icgraph">
+<area shape="rect" title=" " alt="" coords="692,111,909,138"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#a25f090ba55ee2afbd3c76c92e4101bfb" title=" " alt="" coords="437,5,644,47"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#a4566c3cfec768d75c51f61bcf063fe93" title=" " alt="" coords="441,71,641,112"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#ae3907395fc6f12fb9c233accef46ba8f" title=" " alt="" coords="439,136,642,177"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#a0c9f140deff66b4c8fdf8fd9483b6ca6" title=" " alt="" coords="443,201,639,243"/>
+<area shape="rect" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece" title=" " alt="" coords="192,67,389,108"/>
+<area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a227d656134aef6ca848159c5fb3ca9b0" title=" " alt="" coords="5,74,144,101"/>
+<area shape="rect" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#ae16042cf94d7f5dca9c6554a4b70ed86" title=" " alt="" coords="197,194,384,250"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af8b38e575d2e3ef2765351ec709f60f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8b38e575d2e3ef2765351ec709f60f4">&#9670;&nbsp;</a></span>SameMappedFaceLayout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LhsTag , typename RhsTag &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool erf_auxiliary::SameMappedFaceLayout </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classerf__auxiliary_1_1MappedFaceField.html">MappedFaceField</a>&lt; LhsTag &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classerf__auxiliary_1_1MappedFaceField.html">MappedFaceField</a>&lt; RhsTag &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check that two semantically tagged face fields have identical face layouts. </p>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (!lhs.is_defined() || !rhs.is_defined()) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">if</span> (lhs.dir(dir).boxArray() != rhs.dir(dir).boxArray() ||</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            lhs.dir(dir).DistributionMap() != rhs.dir(dir).DistributionMap()) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a1136e7902d3567fb5ab3bffecf158696">erf_auxiliary::CompletedStepFluxLedger::accept_stage()</a>, <a class="el" href="namespaceerf__auxiliary.html#a3b828db99bd66fb5cc21a0e01a892c50">AccumulateIntegratedFaceFlux()</a>, and <a class="el" href="namespaceerf__auxiliary.html#a48c64f2a0bc1e093bb8ec6d64d177889">MaxFaceFieldDifference()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__auxiliary_af8b38e575d2e3ef2765351ec709f60f4_cgraph.png" border="0" usemap="#anamespaceerf__auxiliary_af8b38e575d2e3ef2765351ec709f60f4_cgraph" alt=""/></div>
+<map name="anamespaceerf__auxiliary_af8b38e575d2e3ef2765351ec709f60f4_cgraph" id="anamespaceerf__auxiliary_af8b38e575d2e3ef2765351ec709f60f4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,205,80"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a8a208bb7a27b8c089b8ced578cdaee61" title=" " alt="" coords="253,5,445,47"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e" title=" " alt="" coords="253,71,445,112"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="493,13,676,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__auxiliary_af8b38e575d2e3ef2765351ec709f60f4_icgraph.png" border="0" usemap="#anamespaceerf__auxiliary_af8b38e575d2e3ef2765351ec709f60f4_icgraph" alt=""/></div>
+<map name="anamespaceerf__auxiliary_af8b38e575d2e3ef2765351ec709f60f4_icgraph" id="anamespaceerf__auxiliary_af8b38e575d2e3ef2765351ec709f60f4_icgraph">
+<area shape="rect" title=" " alt="" coords="704,35,904,76"/>
+<area shape="rect" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a1136e7902d3567fb5ab3bffecf158696" title=" " alt="" coords="192,5,409,47"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#a3b828db99bd66fb5cc21a0e01a892c50" title=" " alt="" coords="463,35,651,76"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#a48c64f2a0bc1e093bb8ec6d64d177889" title=" " alt="" coords="457,100,656,141"/>
+<area shape="rect" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece" title=" " alt="" coords="202,100,399,141"/>
+<area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a227d656134aef6ca848159c5fb3ca9b0" title=" " alt="" coords="5,107,144,134"/>
 </map>
 </div>
 
@@ -1214,31 +1574,31 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Check that a selected cell-centered component is finite. </p>
-<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    diagnostic.clear();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">if</span> (component &lt; 0 || component &gt;= field.nComp()) {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        diagnostic = <span class="stringliteral">&quot;finite field validation received an invalid component&quot;</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    amrex::MultiFab invalid(field.boxArray(), field.DistributionMap(), 1, 0);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    invalid.setVal(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(field, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">const</span> amrex::Box bx = mfi.tilebox();</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> values = field.const_array(mfi);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> bad = invalid.array(mfi);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            bad(i, j, k, 0) = amrex::Math::isfinite(values(i, j, k, component)) ?</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) : <a class="code" href="namespaceamrex.html">amrex</a>::<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        });</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span> (invalid.sum(0) != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        diagnostic = <span class="stringliteral">&quot;selected field component must be finite in every valid cell&quot;</span>;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    diagnostic.clear();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> (component &lt; 0 || component &gt;= field.nComp()) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        diagnostic = <span class="stringliteral">&quot;finite field validation received an invalid component&quot;</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    amrex::MultiFab invalid(field.boxArray(), field.DistributionMap(), 1, 0);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    invalid.setVal(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(field, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keyword">const</span> amrex::Box bx = mfi.tilebox();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> values = field.const_array(mfi);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> bad = invalid.array(mfi);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            bad(i, j, k, 0) = amrex::Math::isfinite(values(i, j, k, component)) ?</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) : <a class="code" href="namespaceamrex.html">amrex</a>::<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        });</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">if</span> (invalid.sum(0) != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        diagnostic = <span class="stringliteral">&quot;selected field component must be finite in every valid cell&quot;</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece">erf_auxiliary::AuxiliaryInertTracer::advance_stage()</a>, <a class="el" href="namespaceerf__auxiliary.html#a34662371559f1b721b34b51ce0235262">BuildAuxiliaryIntensiveState()</a>, and <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#ad7701eff23428ad9f70eb9f901dfc3c2">erf_auxiliary::AuxiliaryInertTracer::initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece">erf_auxiliary::AuxiliaryInertTracer::advance_stage()</a>, <a class="el" href="namespaceerf__auxiliary.html#ae3907395fc6f12fb9c233accef46ba8f">BuildAuxiliaryIntensiveState()</a>, and <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#ad7701eff23428ad9f70eb9f901dfc3c2">erf_auxiliary::AuxiliaryInertTracer::initialize()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1255,7 +1615,7 @@ Here is the caller graph for this function:</div>
 <map name="anamespaceerf__auxiliary_a4eafed90679495b6b748f1e9dff0264b_icgraph" id="anamespaceerf__auxiliary_a4eafed90679495b6b748f1e9dff0264b_icgraph">
 <area shape="rect" title=" " alt="" coords="688,35,888,76"/>
 <area shape="rect" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece" title=" " alt="" coords="192,5,389,47"/>
-<area shape="rect" href="namespaceerf__auxiliary.html#a34662371559f1b721b34b51ce0235262" title=" " alt="" coords="437,35,640,76"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#ae3907395fc6f12fb9c233accef46ba8f" title=" " alt="" coords="437,35,640,76"/>
 <area shape="rect" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#ad7701eff23428ad9f70eb9f901dfc3c2" title=" " alt="" coords="454,100,623,141"/>
 <area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a227d656134aef6ca848159c5fb3ca9b0" title=" " alt="" coords="5,13,144,39"/>
 </map>
@@ -1295,32 +1655,32 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Check that a selected cell-centered component is finite and strictly positive. </p>
-<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    diagnostic.clear();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (component &lt; 0 || component &gt;= field.nComp()) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        diagnostic = <span class="stringliteral">&quot;positive finite field validation received an invalid component&quot;</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    amrex::MultiFab invalid(field.boxArray(), field.DistributionMap(), 1, 0);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    invalid.setVal(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(field, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">const</span> amrex::Box bx = mfi.tilebox();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> values = field.const_array(mfi);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> bad = invalid.array(mfi);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> value = values(i, j, k, component);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">bool</span> valid = amrex::Math::isfinite(value) &amp;&amp; value &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            bad(i, j, k, 0) = valid ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) : <a class="code" href="namespaceamrex.html">amrex</a>::<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        });</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span> (invalid.sum(0) != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        diagnostic = <span class="stringliteral">&quot;selected field component must be finite and positive in every valid cell&quot;</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    diagnostic.clear();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (component &lt; 0 || component &gt;= field.nComp()) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        diagnostic = <span class="stringliteral">&quot;positive finite field validation received an invalid component&quot;</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    amrex::MultiFab invalid(field.boxArray(), field.DistributionMap(), 1, 0);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    invalid.setVal(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(field, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">const</span> amrex::Box bx = mfi.tilebox();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> values = field.const_array(mfi);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> bad = invalid.array(mfi);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> value = values(i, j, k, component);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">bool</span> valid = amrex::Math::isfinite(value) &amp;&amp; value &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            bad(i, j, k, 0) = valid ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) : <a class="code" href="namespaceamrex.html">amrex</a>::<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        });</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span> (invalid.sum(0) != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        diagnostic = <span class="stringliteral">&quot;selected field component must be finite and positive in every valid cell&quot;</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece">erf_auxiliary::AuxiliaryInertTracer::advance_stage()</a>, <a class="el" href="namespaceerf__auxiliary.html#a34662371559f1b721b34b51ce0235262">BuildAuxiliaryIntensiveState()</a>, and <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#ad7701eff23428ad9f70eb9f901dfc3c2">erf_auxiliary::AuxiliaryInertTracer::initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece">erf_auxiliary::AuxiliaryInertTracer::advance_stage()</a>, <a class="el" href="namespaceerf__auxiliary.html#ae3907395fc6f12fb9c233accef46ba8f">BuildAuxiliaryIntensiveState()</a>, and <a class="el" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#ad7701eff23428ad9f70eb9f901dfc3c2">erf_auxiliary::AuxiliaryInertTracer::initialize()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1337,7 +1697,7 @@ Here is the caller graph for this function:</div>
 <map name="anamespaceerf__auxiliary_a9a8f6f6e469c0049efbc4eec062ad367_icgraph" id="anamespaceerf__auxiliary_a9a8f6f6e469c0049efbc4eec062ad367_icgraph">
 <area shape="rect" title=" " alt="" coords="688,35,904,76"/>
 <area shape="rect" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece" title=" " alt="" coords="192,5,389,47"/>
-<area shape="rect" href="namespaceerf__auxiliary.html#a34662371559f1b721b34b51ce0235262" title=" " alt="" coords="437,35,640,76"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#ae3907395fc6f12fb9c233accef46ba8f" title=" " alt="" coords="437,35,640,76"/>
 <area shape="rect" href="classerf__auxiliary_1_1AuxiliaryInertTracer.html#ad7701eff23428ad9f70eb9f901dfc3c2" title=" " alt="" coords="454,100,623,141"/>
 <area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a227d656134aef6ca848159c5fb3ca9b0" title=" " alt="" coords="5,13,144,39"/>
 </map>

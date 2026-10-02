@@ -10,7 +10,7 @@ var classerf__sbm_1_1SpectralGrid =
     [ "pivot", "classerf__sbm_1_1SpectralGrid.html#a32323f8af1038026a31b46c1bfb7f09b", null ],
     [ "pivots", "classerf__sbm_1_1SpectralGrid.html#a2868f9105a679eaab5e8bcc48b38d60c", null ],
     [ "two_moment_realizable", "classerf__sbm_1_1SpectralGrid.html#a3a6bf953cc53af6c0426697d50802f4e", null ],
-    [ "two_moment_to_endpoints", "classerf__sbm_1_1SpectralGrid.html#a9824cfc938e4612a6cd1e1bd2691a3a3", null ],
+    [ "two_moment_to_endpoints", "classerf__sbm_1_1SpectralGrid.html#abaa5e6c89072acd88f03092458fb22e2", null ],
     [ "validate", "classerf__sbm_1_1SpectralGrid.html#ac821171de1ede9b309bd8c70fa7101cf", null ],
     [ "m_spec", "classerf__sbm_1_1SpectralGrid.html#a8bcdf6beaf406565aa75fb218fd63ee9", null ]
 ];

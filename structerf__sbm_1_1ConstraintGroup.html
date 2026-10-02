@@ -142,7 +142,7 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a79fb01f227c0189b7d36664f193844a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Complete atomic transport group. The component offsets are physical layout offsets reused as bounded scratch offsets: for a two-moment population the mass slot contains L and the number slot contains H only while transport scratch is active. Checkpoint/storage remains (M,C). </p>
+<div class="textblock"><p>Complete atomic constraint group over one population bin. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aaaa697e399d1bc8a3a0d042e9af92947"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaaa697e399d1bc8a3a0d042e9af92947">&#9670;&nbsp;</a></span>admissible()</h2>
@@ -209,7 +209,7 @@ Public Attributes</h2></td></tr>
 <div class="ttc" id="anamespaceerf__cloud__chamber_html_ad6386a142314152cfe77637718c16780"><div class="ttname"><a href="namespaceerf__cloud__chamber.html#ad6386a142314152cfe77637718c16780">erf_cloud_chamber::finite</a></div><div class="ttdeci">bool finite(amrex::Real value) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamber.H:342</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
 <div class="ttc" id="astructerf__sbm_1_1ConstraintGroup_html_a6b2d7bee487efebd80a9da9cc471a609"><div class="ttname"><a href="structerf__sbm_1_1ConstraintGroup.html#a6b2d7bee487efebd80a9da9cc471a609">erf_sbm::ConstraintGroup::evaluate</a></div><div class="ttdeci">amrex::Real evaluate(const LinearConstraint &amp;constraint, const std::vector&lt; amrex::Real &gt; &amp;state) const</div><div class="ttdef"><b>Definition:</b> ERF_SBMConstraintGroups.cpp:30</div></div>
-<div class="ttc" id="astructerf__sbm_1_1ConstraintGroup_html_a79fb01f227c0189b7d36664f193844a2"><div class="ttname"><a href="structerf__sbm_1_1ConstraintGroup.html#a79fb01f227c0189b7d36664f193844a2">erf_sbm::ConstraintGroup::constraints</a></div><div class="ttdeci">std::vector&lt; LinearConstraint &gt; constraints</div><div class="ttdef"><b>Definition:</b> ERF_SBMConstraintGroups.H:40</div></div>
+<div class="ttc" id="astructerf__sbm_1_1ConstraintGroup_html_a79fb01f227c0189b7d36664f193844a2"><div class="ttname"><a href="structerf__sbm_1_1ConstraintGroup.html#a79fb01f227c0189b7d36664f193844a2">erf_sbm::ConstraintGroup::constraints</a></div><div class="ttdeci">std::vector&lt; LinearConstraint &gt; constraints</div><div class="ttdef"><b>Definition:</b> ERF_SBMConstraintGroups.H:39</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -250,7 +250,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">int</span> member : <a class="code" href="structerf__sbm_1_1ConstraintGroup.html#a5e4412ea66aecf141c79edc43bbf3273">members</a>) <span class="keywordflow">if</span> (member == component) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="ttc" id="astructerf__sbm_1_1ConstraintGroup_html_a5e4412ea66aecf141c79edc43bbf3273"><div class="ttname"><a href="structerf__sbm_1_1ConstraintGroup.html#a5e4412ea66aecf141c79edc43bbf3273">erf_sbm::ConstraintGroup::members</a></div><div class="ttdeci">std::vector&lt; int &gt; members</div><div class="ttdef"><b>Definition:</b> ERF_SBMConstraintGroups.H:37</div></div>
+<div class="ttc" id="astructerf__sbm_1_1ConstraintGroup_html_a5e4412ea66aecf141c79edc43bbf3273"><div class="ttname"><a href="structerf__sbm_1_1ConstraintGroup.html#a5e4412ea66aecf141c79edc43bbf3273">erf_sbm::ConstraintGroup::members</a></div><div class="ttdeci">std::vector&lt; int &gt; members</div><div class="ttdef"><b>Definition:</b> ERF_SBMConstraintGroups.H:36</div></div>
 </div><!-- fragment -->
 </div>
 </div>

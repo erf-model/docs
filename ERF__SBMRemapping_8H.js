@@ -1,0 +1,60 @@
+var ERF__SBMRemapping_8H =
+[
+    [ "PopulationRemapView", "structerf__sbm_1_1PopulationRemapView.html", "structerf__sbm_1_1PopulationRemapView" ],
+    [ "RouteDestination", "structerf__sbm_1_1RouteDestination.html", "structerf__sbm_1_1RouteDestination" ],
+    [ "PacketRoutingPlan", "structerf__sbm_1_1PacketRoutingPlan.html", "structerf__sbm_1_1PacketRoutingPlan" ],
+    [ "PacketApplicationCoreResult", "structerf__sbm_1_1PacketApplicationCoreResult.html", "structerf__sbm_1_1PacketApplicationCoreResult" ],
+    [ "ReconstructionDeltaView", "structerf__sbm_1_1ReconstructionDeltaView.html", "structerf__sbm_1_1ReconstructionDeltaView" ],
+    [ "IntegratedMomentsCoreResult", "structerf__sbm_1_1IntegratedMomentsCoreResult.html", "structerf__sbm_1_1IntegratedMomentsCoreResult" ],
+    [ "PacketApplicationResult", "structerf__sbm_1_1PacketApplicationResult.html", "structerf__sbm_1_1PacketApplicationResult" ],
+    [ "ReconstructionDelta", "structerf__sbm_1_1ReconstructionDelta.html", "structerf__sbm_1_1ReconstructionDelta" ],
+    [ "IntegratedMoments", "structerf__sbm_1_1IntegratedMoments.html", "structerf__sbm_1_1IntegratedMoments" ],
+    [ "ProductStatus", "ERF__SBMRemapping_8H.html#a40bea6a3a7b504cca12a50039ea4eb97", [
+      [ "Ok", "ERF__SBMRemapping_8H.html#a40bea6a3a7b504cca12a50039ea4eb97aa60852f204ed8028c1c58808b746d115", null ],
+      [ "Underflow", "ERF__SBMRemapping_8H.html#a40bea6a3a7b504cca12a50039ea4eb97a07f6a565e17a0b5f7341422b6f9101cc", null ],
+      [ "Invalid", "ERF__SBMRemapping_8H.html#a40bea6a3a7b504cca12a50039ea4eb97a4bbb8f967da6d1a610596d7257179c2b", null ]
+    ] ],
+    [ "QuotientStatus", "ERF__SBMRemapping_8H.html#ad45c01765bf661a2eb3a51cef4c48654", [
+      [ "Ok", "ERF__SBMRemapping_8H.html#ad45c01765bf661a2eb3a51cef4c48654aa60852f204ed8028c1c58808b746d115", null ],
+      [ "Underflow", "ERF__SBMRemapping_8H.html#ad45c01765bf661a2eb3a51cef4c48654a07f6a565e17a0b5f7341422b6f9101cc", null ],
+      [ "Invalid", "ERF__SBMRemapping_8H.html#ad45c01765bf661a2eb3a51cef4c48654a4bbb8f967da6d1a610596d7257179c2b", null ]
+    ] ],
+    [ "ReconstructionStatus", "ERF__SBMRemapping_8H.html#ad5918a6238dc30e2d841730f93e82a23", [
+      [ "Populated", "ERF__SBMRemapping_8H.html#ad5918a6238dc30e2d841730f93e82a23aec206880a6a54bfc12aafa4f1a9a2993", null ],
+      [ "Empty", "ERF__SBMRemapping_8H.html#ad5918a6238dc30e2d841730f93e82a23ace2c8aed9c2fa0cfbed56cbda4d8bf07", null ],
+      [ "Invalid", "ERF__SBMRemapping_8H.html#ad5918a6238dc30e2d841730f93e82a23a4bbb8f967da6d1a610596d7257179c2b", null ]
+    ] ],
+    [ "RemapStatus", "ERF__SBMRemapping_8H.html#a75c2d7b043b74b8ca25c2739cde7d9b1", [
+      [ "Ok", "ERF__SBMRemapping_8H.html#a75c2d7b043b74b8ca25c2739cde7d9b1aa60852f204ed8028c1c58808b746d115", null ],
+      [ "ZeroWaterResidual", "ERF__SBMRemapping_8H.html#a75c2d7b043b74b8ca25c2739cde7d9b1ad340578aa8dae2d687bf56317fa2c485", null ],
+      [ "BelowSupportedGrid", "ERF__SBMRemapping_8H.html#a75c2d7b043b74b8ca25c2739cde7d9b1ac3f87a6bb67eed1cb5f926866cdf2588", null ],
+      [ "Overflow", "ERF__SBMRemapping_8H.html#a75c2d7b043b74b8ca25c2739cde7d9b1a129e8109f319870e328cc7a1d5b5cae3", null ],
+      [ "NumericalUnderflow", "ERF__SBMRemapping_8H.html#a75c2d7b043b74b8ca25c2739cde7d9b1a1d63296a6652a409957bab1064517db6", null ],
+      [ "Invalid", "ERF__SBMRemapping_8H.html#a75c2d7b043b74b8ca25c2739cde7d9b1a4bbb8f967da6d1a610596d7257179c2b", null ]
+    ] ],
+    [ "apply_packet_routing", "ERF__SBMRemapping_8H.html#a9abe9f8fdd0303702c6247418d5919b0", null ],
+    [ "apply_packet_routing_core", "ERF__SBMRemapping_8H.html#af967f578f26e936c2752a8cb22458a07", null ],
+    [ "canonical_one_moment_bin_state", "ERF__SBMRemapping_8H.html#ae9d64d54b66aa201300c4fdc867c496c", null ],
+    [ "canonical_persisted_bin_state", "ERF__SBMRemapping_8H.html#aac78cd61cfa78470bb02e16db3d1252e", null ],
+    [ "canonical_two_moment_bin_state", "ERF__SBMRemapping_8H.html#a22189aa9d7b2f80c15d6d5f9088c2aed", null ],
+    [ "canonical_two_moment_moments", "ERF__SBMRemapping_8H.html#a04cb65e1f5cfb15248107c43ab261225", null ],
+    [ "checked_product", "ERF__SBMRemapping_8H.html#a3150d172d3a2420b343a5c4cd66b67b3", null ],
+    [ "checked_quotient", "ERF__SBMRemapping_8H.html#aca43196217d0bcaec29de6b359226077", null ],
+    [ "finite_nonnegative", "ERF__SBMRemapping_8H.html#a7d48ce6144947d257e83430e76f3274f", null ],
+    [ "finite_product", "ERF__SBMRemapping_8H.html#ae646aa2df10080be9c79e890f7375356", null ],
+    [ "integrate_interval", "ERF__SBMRemapping_8H.html#a5643e20531a1b81ce6a989853ba4e1c6", null ],
+    [ "integrate_interval_core", "ERF__SBMRemapping_8H.html#a5b6a31885b9fa463a92ddb814696040a", null ],
+    [ "plan_packet_routing", "ERF__SBMRemapping_8H.html#a7a2d0bbc1fe5a3abaa25911b46fab503", null ],
+    [ "population_remap_view", "ERF__SBMRemapping_8H.html#ad1ce6e0015cab4a083bab48f02b800e1", null ],
+    [ "project_reconstruction_bin", "ERF__SBMRemapping_8H.html#a196324656da9600ee64b63799251386f", null ],
+    [ "project_reconstruction_bin_core", "ERF__SBMRemapping_8H.html#a1995df4a24a58bba5b15ee769dbb21c8", null ],
+    [ "reconstruct_bin", "ERF__SBMRemapping_8H.html#abe9bbf56d9d1d449d3672972d4068eb5", null ],
+    [ "reconstruct_bin_core", "ERF__SBMRemapping_8H.html#ab2ac66871a920cc77a0fc483fef030c0", null ],
+    [ "remap_product_status", "ERF__SBMRemapping_8H.html#a935b712c95fbd88fd8818b85ee64a810", null ],
+    [ "remap_quotient_status", "ERF__SBMRemapping_8H.html#ace5be8d2430757b1fd2b273cb0d5621e", null ],
+    [ "route_plan_is_consistent", "ERF__SBMRemapping_8H.html#a95f1c1573e5a95e6703e89e6496c5145", null ],
+    [ "same_population_context", "ERF__SBMRemapping_8H.html#aa2c421a1b417efaabcacfd4460561baf", null ],
+    [ "valid_population_remap_context", "ERF__SBMRemapping_8H.html#aba44d9b8f38cce33f1f176ef9934a8e0", null ],
+    [ "valid_population_remap_view", "ERF__SBMRemapping_8H.html#ae0204ef3558b27d727051ec91ca63c2e", null ],
+    [ "within_boundary_roundoff", "ERF__SBMRemapping_8H.html#a684b16d29f85402b6f14dfd56ba5abe3", null ]
+];

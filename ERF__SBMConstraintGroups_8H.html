@@ -91,7 +91,9 @@ $(document).ready(function(){initNavTree('ERF__SBMConstraintGroups_8H.html','');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="ERF__SBMLayout_8H_source.html">ERF_SBMLayout.H</a>&quot;</code><br />
+<code>#include &lt;AMReX_GpuQualifiers.H&gt;</code><br />
 <code>#include &lt;AMReX_REAL.H&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -100,16 +102,19 @@ Include dependency graph for ERF_SBMConstraintGroups.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SBMConstraintGroups_8H__incl.png" border="0" usemap="#aSource_2Microphysics_2SBM_2ERF__SBMConstraintGroups_8H" alt=""/></div>
 <map name="aSource_2Microphysics_2SBM_2ERF__SBMConstraintGroups_8H" id="aSource_2Microphysics_2SBM_2ERF__SBMConstraintGroups_8H">
-<area shape="rect" title=" " alt="" coords="314,5,561,47"/>
-<area shape="rect" href="ERF__SBMLayout_8H.html" title=" " alt="" coords="367,95,508,121"/>
+<area shape="rect" title=" " alt="" coords="455,5,702,47"/>
+<area shape="rect" href="ERF__SBMLayout_8H.html" title=" " alt="" coords="616,95,757,121"/>
 <area shape="rect" title=" " alt="" coords="5,244,128,271"/>
-<area shape="rect" title=" " alt="" coords="708,244,767,271"/>
-<area shape="rect" title=" " alt="" coords="554,244,614,271"/>
-<area shape="rect" title=" " alt="" coords="201,244,263,271"/>
-<area shape="rect" href="ERF__SpectralGrid_8H.html" title=" " alt="" coords="158,169,306,196"/>
-<area shape="rect" href="ERF__AuxiliaryStateLayout_8H.html" title=" " alt="" coords="414,169,618,196"/>
-<area shape="rect" href="ERF__AuxiliaryProjection_8H.html" title=" " alt="" coords="642,169,833,196"/>
-<area shape="rect" title=" " alt="" coords="331,169,389,196"/>
+<area shape="rect" title=" " alt="" coords="152,244,331,271"/>
+<area shape="rect" title=" " alt="" coords="355,244,418,271"/>
+<area shape="rect" title=" " alt="" coords="672,244,731,271"/>
+<area shape="rect" title=" " alt="" coords="814,244,874,271"/>
+<area shape="rect" title=" " alt="" coords="953,244,1015,271"/>
+<area shape="rect" href="ERF__SpectralGrid_8H.html" title=" " alt="" coords="393,169,541,196"/>
+<area shape="rect" title=" " alt="" coords="443,244,501,271"/>
+<area shape="rect" href="ERF__AuxiliaryStateLayout_8H.html" title=" " alt="" coords="882,169,1086,196"/>
+<area shape="rect" href="ERF__AuxiliaryProjection_8H.html" title=" " alt="" coords="667,169,858,196"/>
+<area shape="rect" title=" " alt="" coords="525,244,648,271"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -136,11 +141,11 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ConstraintDescriptor.html">erf_sbm::ConstraintDescriptor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1FlattenedConstraintSet.html">erf_sbm::FlattenedConstraintSet</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1AttachedPropertySupportDescriptor.html">erf_sbm::AttachedPropertySupportDescriptor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ConstraintClosureChunk.html">erf_sbm::ConstraintClosureChunk</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1EndpointTransform.html">erf_sbm::EndpointTransform</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -150,10 +155,14 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a2f375ba5ef8a77221cfb8f2c8da425d2"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a2f375ba5ef8a77221cfb8f2c8da425d2">erf_sbm::evaluate_constraint_descriptor</a> (const ConstraintDescriptor &amp;constraint, const ConstraintTerm *terms, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *state) noexcept</td></tr>
+<tr class="separator:a2f375ba5ef8a77221cfb8f2c8da425d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33847b341c9c23519f0027bfd51d465d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; ConstraintGroup &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a33847b341c9c23519f0027bfd51d465d">erf_sbm::make_constraint_groups</a> (const SBMLayout &amp;layout)</td></tr>
 <tr class="separator:a33847b341c9c23519f0027bfd51d465d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30a51b964f78bfa012962ced67dc470e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; ConstraintDescriptor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a30a51b964f78bfa012962ced67dc470e">erf_sbm::make_constraint_descriptors</a> (const SBMLayout &amp;layout)</td></tr>
-<tr class="separator:a30a51b964f78bfa012962ced67dc470e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acacdd16a2ffcdb7d9cb98f1810f97cda"><td class="memItemLeft" align="right" valign="top">FlattenedConstraintSet&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#acacdd16a2ffcdb7d9cb98f1810f97cda">erf_sbm::make_constraint_descriptors</a> (const SBMLayout &amp;layout)</td></tr>
+<tr class="separator:acacdd16a2ffcdb7d9cb98f1810f97cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64d28846f2779804054e45458a29510f"><td class="memItemLeft" align="right" valign="top">FlattenedConstraintSet&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a64d28846f2779804054e45458a29510f">erf_sbm::flatten_constraint_groups</a> (const std::vector&lt; ConstraintGroup &gt; &amp;groups, const int state_components)</td></tr>
+<tr class="separator:a64d28846f2779804054e45458a29510f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67ec52ca3666f8e7493b40230dc7788f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; AttachedPropertySupportDescriptor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a67ec52ca3666f8e7493b40230dc7788f">erf_sbm::make_attached_property_support_descriptors</a> (const SBMLayout &amp;layout)</td></tr>
 <tr class="separator:a67ec52ca3666f8e7493b40230dc7788f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c51b19c29c8ad286b0664759b0fe3f3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; ConstraintClosureChunk &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a8c51b19c29c8ad286b0664759b0fe3f3">erf_sbm::make_constraint_closure_chunks</a> (const SBMLayout &amp;layout, const int max_groups)</td></tr>

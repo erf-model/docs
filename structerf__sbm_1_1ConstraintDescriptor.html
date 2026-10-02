@@ -96,9 +96,8 @@ Collaboration diagram for erf_sbm::ConstraintDescriptor:</div>
 <div class="dyncontent">
 <div class="center"><img src="structerf__sbm_1_1ConstraintDescriptor__coll__graph.png" border="0" usemap="#aerf__sbm_1_1ConstraintDescriptor_coll__map" alt="Collaboration graph"/></div>
 <map name="aerf__sbm_1_1ConstraintDescriptor_coll__map" id="aerf__sbm_1_1ConstraintDescriptor_coll__map">
-<area shape="rect" title=" " alt="" coords="5,183,223,209"/>
-<area shape="rect" title=" " alt="" coords="25,5,64,32"/>
-<area shape="rect" title=" " alt="" coords="159,5,210,32"/>
+<area shape="rect" title=" " alt="" coords="5,168,223,195"/>
+<area shape="rect" title=" " alt="" coords="95,5,133,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -112,19 +111,13 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a67c239d6f1999f8cf3a42c0173877a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed88bd42f07c95db0899761d1c2b67f5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ConstraintDescriptor.html#aed88bd42f07c95db0899761d1c2b67f5">constraint_index</a> {0}</td></tr>
 <tr class="separator:aed88bd42f07c95db0899761d1c2b67f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29cc1f6ca9ac1a7b163d17a98e7c7596"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ConstraintDescriptor.html#a29cc1f6ca9ac1a7b163d17a98e7c7596">term_offset</a> {0}</td></tr>
+<tr class="separator:a29cc1f6ca9ac1a7b163d17a98e7c7596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3bfc891018e2fffe0d3d5678bad1ae0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ConstraintDescriptor.html#ae3bfc891018e2fffe0d3d5678bad1ae0">term_count</a> {0}</td></tr>
 <tr class="separator:ae3bfc891018e2fffe0d3d5678bad1ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f5938dcbc0c00f3d11d541a8bff306f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ConstraintDescriptor.html#a5f5938dcbc0c00f3d11d541a8bff306f">component0</a> {-1}</td></tr>
-<tr class="separator:a5f5938dcbc0c00f3d11d541a8bff306f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab39916113a0901c6232464a0056d0898"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ConstraintDescriptor.html#ab39916113a0901c6232464a0056d0898">component1</a> {-1}</td></tr>
-<tr class="separator:ab39916113a0901c6232464a0056d0898"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cbce5571859f6e6753840aa1d142783"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ConstraintDescriptor.html#a6cbce5571859f6e6753840aa1d142783">coefficient0</a> {<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)}</td></tr>
-<tr class="separator:a6cbce5571859f6e6753840aa1d142783"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9aa44975687d88d36b6ab18d66027d2f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ConstraintDescriptor.html#a9aa44975687d88d36b6ab18d66027d2f">coefficient1</a> {<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)}</td></tr>
-<tr class="separator:a9aa44975687d88d36b6ab18d66027d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Device-ready flattened form of one semantic constraint. P2 constraint groups are deliberately linear and currently have at most two terms; this representation lets the production limiter and validation path consume the exact same group definition without capturing host strings or vectors in a GPU kernel. </p>
+<div class="textblock"><p>Device-ready flattened form of one semantic constraint. Terms are stored in one sparse array and addressed by offset/count, with no fixed term limit. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a67c239d6f1999f8cf3a42c0173877a8a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a67c239d6f1999f8cf3a42c0173877a8a">&#9670;&nbsp;</a></span>bin</h2>
@@ -134,62 +127,6 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">int erf_sbm::ConstraintDescriptor::bin {0}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6cbce5571859f6e6753840aa1d142783"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cbce5571859f6e6753840aa1d142783">&#9670;&nbsp;</a></span>coefficient0</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> erf_sbm::ConstraintDescriptor::coefficient0 {<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9aa44975687d88d36b6ab18d66027d2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9aa44975687d88d36b6ab18d66027d2f">&#9670;&nbsp;</a></span>coefficient1</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> erf_sbm::ConstraintDescriptor::coefficient1 {<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5f5938dcbc0c00f3d11d541a8bff306f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f5938dcbc0c00f3d11d541a8bff306f">&#9670;&nbsp;</a></span>component0</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int erf_sbm::ConstraintDescriptor::component0 {-1}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab39916113a0901c6232464a0056d0898"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab39916113a0901c6232464a0056d0898">&#9670;&nbsp;</a></span>component1</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int erf_sbm::ConstraintDescriptor::component1 {-1}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -246,6 +183,20 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">int erf_sbm::ConstraintDescriptor::term_count {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a29cc1f6ca9ac1a7b163d17a98e7c7596"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29cc1f6ca9ac1a7b163d17a98e7c7596">&#9670;&nbsp;</a></span>term_offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int erf_sbm::ConstraintDescriptor::term_offset {0}</td>
         </tr>
       </table>
 </div><div class="memdoc">

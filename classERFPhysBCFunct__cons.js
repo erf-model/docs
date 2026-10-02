@@ -1,6 +1,6 @@
 var classERFPhysBCFunct__cons =
 [
-    [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html#a1033c83dcb200beecbb6fefb359677cf", null ],
+    [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html#aad9bc5ddcb7919a03da68223d85198f2", null ],
     [ "~ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html#ab1f895ffdda9477b380a088bdf48a6de", null ],
     [ "impose_lateral_cons_bcs", "classERFPhysBCFunct__cons.html#a8a208e8874c2a6ee75b935c3b82a655c", null ],
     [ "impose_vertical_cons_bcs", "classERFPhysBCFunct__cons.html#a8467d70225a1e97d0a0ac8caa4c9a8f8", null ],
@@ -14,6 +14,7 @@ var classERFPhysBCFunct__cons =
     [ "m_lev", "classERFPhysBCFunct__cons.html#ad393b48c02e838f75be60a655eed9fa6", null ],
     [ "m_terrain_type", "classERFPhysBCFunct__cons.html#ab3f926a00d34177a184d44097edfee53", null ],
     [ "m_th_bc_data", "classERFPhysBCFunct__cons.html#ab4277ae1615be21f58e455b16554360c", null ],
+    [ "m_th_file_face", "classERFPhysBCFunct__cons.html#adf312b71260e66d4e36cedb2b1671141", null ],
     [ "m_use_real_bcs", "classERFPhysBCFunct__cons.html#a0e54453355d6a7c96044113c8827a008", null ],
     [ "m_z_phys_nd", "classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd", null ]
 ];

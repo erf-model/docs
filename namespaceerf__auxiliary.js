@@ -17,6 +17,10 @@ var namespaceerf__auxiliary =
     [ "AuxiliaryStateLayout", "classerf__auxiliary_1_1AuxiliaryStateLayout.html", "classerf__auxiliary_1_1AuxiliaryStateLayout" ],
     [ "IntegratedMappedFaceFlux", "namespaceerf__auxiliary.html#aa0930083629ba1368b23f314b9996f22", null ],
     [ "MappedFaceFluxRate", "namespaceerf__auxiliary.html#a78ec59cd7624a9b502af94b7727a9712", null ],
+    [ "AuxiliaryFieldValidationPolicy", "namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08", [
+      [ "Global", "namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08a4cc6684df7b4a92b1dec6fce3264fac8", null ],
+      [ "AssumeValid", "namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08ae0b4b5d13bf9e622d51f68e6646fe656", null ]
+    ] ],
     [ "HostIntegrator", "namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622a", [
       [ "CompressibleRK3", "namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa3956c6b08b3dc65198c71b8950938e50", null ],
       [ "AnelasticHeun", "namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa79e3b4cefbed88dc49a6781ab0320824", null ],
@@ -36,12 +40,17 @@ var namespaceerf__auxiliary =
     [ "AccumulateIntegratedFaceFlux", "namespaceerf__auxiliary.html#a3b828db99bd66fb5cc21a0e01a892c50", null ],
     [ "ApplyAuxiliaryMappedStage", "namespaceerf__auxiliary.html#a25f090ba55ee2afbd3c76c92e4101bfb", null ],
     [ "ApplyMappedFluxTendency", "namespaceerf__auxiliary.html#a4566c3cfec768d75c51f61bcf063fe93", null ],
-    [ "BuildAuxiliaryIntensiveState", "namespaceerf__auxiliary.html#a34662371559f1b721b34b51ce0235262", null ],
+    [ "AuxiliaryStageTargetIsDisjoint", "namespaceerf__auxiliary.html#a25368e9217271e6d57bdb152f71e5138", null ],
+    [ "BuildAuxiliaryIntensiveState", "namespaceerf__auxiliary.html#ae3907395fc6f12fb9c233accef46ba8f", null ],
     [ "BuildMappedCellMeasure", "namespaceerf__auxiliary.html#a0c9f140deff66b4c8fdf8fd9483b6ca6", null ],
     [ "ComputationalMappedDivergence", "namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c", null ],
     [ "HostIntegratorName", "namespaceerf__auxiliary.html#ae34e7d10af171e40a2ba238505a44551", null ],
     [ "MakeAuxiliaryStageRecipe", "namespaceerf__auxiliary.html#a930629866bdc0239b7c2328a9246eb62", null ],
+    [ "MappedFaceLayoutMatchesCellLayout", "namespaceerf__auxiliary.html#abc9ab4c6f70613a12dd467ffd9bb2695", null ],
+    [ "MappedFaceLayoutMatchesCellLayout", "namespaceerf__auxiliary.html#a4950dfd4785000a45560bba35907f787", null ],
     [ "MaxFaceFieldDifference", "namespaceerf__auxiliary.html#a48c64f2a0bc1e093bb8ec6d64d177889", null ],
+    [ "SameCellLayout", "namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592", null ],
+    [ "SameMappedFaceLayout", "namespaceerf__auxiliary.html#af8b38e575d2e3ef2765351ec709f60f4", null ],
     [ "ValidateFiniteComponent", "namespaceerf__auxiliary.html#a4eafed90679495b6b748f1e9dff0264b", null ],
     [ "ValidatePositiveFiniteComponent", "namespaceerf__auxiliary.html#a9a8f6f6e469c0049efbc4eec062ad367", null ]
 ];

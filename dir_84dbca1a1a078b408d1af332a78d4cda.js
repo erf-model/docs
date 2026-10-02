@@ -8,6 +8,7 @@ var dir_84dbca1a1a078b408d1af332a78d4cda =
     [ "ERF_SBMCanonicalIdentity.H", "ERF__SBMCanonicalIdentity_8H.html", "ERF__SBMCanonicalIdentity_8H" ],
     [ "ERF_SBMConstraintGroups.cpp", "ERF__SBMConstraintGroups_8cpp.html", "ERF__SBMConstraintGroups_8cpp" ],
     [ "ERF_SBMConstraintGroups.H", "ERF__SBMConstraintGroups_8H.html", "ERF__SBMConstraintGroups_8H" ],
+    [ "ERF_SBMFixtureValidation.H", "ERF__SBMFixtureValidation_8H.html", "ERF__SBMFixtureValidation_8H" ],
     [ "ERF_SBMLayout.cpp", "ERF__SBMLayout_8cpp.html", null ],
     [ "ERF_SBMLayout.H", "ERF__SBMLayout_8H.html", "ERF__SBMLayout_8H" ],
     [ "ERF_SBMNullMoist.H", "ERF__SBMNullMoist_8H.html", [
@@ -15,6 +16,9 @@ var dir_84dbca1a1a078b408d1af332a78d4cda =
     ] ],
     [ "ERF_SBMOwnership.cpp", "ERF__SBMOwnership_8cpp.html", "ERF__SBMOwnership_8cpp" ],
     [ "ERF_SBMOwnership.H", "ERF__SBMOwnership_8H.html", "ERF__SBMOwnership_8H" ],
+    [ "ERF_SBMRemapping.cpp", "ERF__SBMRemapping_8cpp.html", "ERF__SBMRemapping_8cpp" ],
+    [ "ERF_SBMRemapping.H", "ERF__SBMRemapping_8H.html", "ERF__SBMRemapping_8H" ],
+    [ "ERF_SBMRepresentation.H", "ERF__SBMRepresentation_8H.html", "ERF__SBMRepresentation_8H" ],
     [ "ERF_SBMRestart.cpp", "ERF__SBMRestart_8cpp.html", "ERF__SBMRestart_8cpp" ],
     [ "ERF_SBMRestart.H", "ERF__SBMRestart_8H.html", "ERF__SBMRestart_8H" ],
     [ "ERF_SBMStateManager.cpp", "ERF__SBMStateManager_8cpp.html", null ],

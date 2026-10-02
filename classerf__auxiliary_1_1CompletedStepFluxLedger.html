@@ -254,95 +254,103 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;{</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    diagnostic.clear();</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#acbfc4475766a6ba6bfcf8959a17bbc33">is_defined</a>() || !rate.is_defined() || rate.nComp() != <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>.<a class="code" href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43">nComp</a>()) {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        diagnostic = <span class="stringliteral">&quot;completed-step ledger and face-rate layouts are not defined compatibly&quot;</span>;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    }</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (method == <a class="code" href="namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa37c5e33bbeb79e5a25c31162da17ebc4">HostIntegrator::AnelasticMidPoint</a>) {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        diagnostic = <span class="stringliteral">&quot;AnelasticMidPoint completed-step ledger is not qualified by M2&quot;</span>;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">if</span> (stage &lt; 0 || stage &gt;= stage_count(method)) {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        diagnostic = <span class="stringliteral">&quot;stage index is outside the completed-step ledger sequence&quot;</span>;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">if</span> (!std::isfinite(step_old_time) ||</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        !finite_nonnegative(recipe.anchor_weight) ||</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        !finite_nonnegative(recipe.input_weight) ||</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        !std::isfinite(recipe.limiter_trial_interval) || recipe.limiter_trial_interval &lt;= 0.0 ||</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        !std::isfinite(recipe.face_rate_time_coefficient) || recipe.face_rate_time_coefficient &lt;= 0.0 ||</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        !finite_nonnegative(recipe.completed_ledger_time)) {</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        diagnostic = <span class="stringliteral">&quot;completed-step ledger received an invalid temporal coefficient&quot;</span>;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">if</span> (stage == 0) {</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a">m_step_active</a>) {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            diagnostic = <span class="stringliteral">&quot;stage 0 arrived while the previous auxiliary step was unfinished&quot;</span>;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>.<a class="code" href="classerf__auxiliary_1_1MappedFaceField.html#acf0bed05429e61a7ef008ac5f158eeb7">setVal</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a">m_step_active</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a7940399c5323c6f03299ccee624c70f5">m_step_complete</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a5121f200413652a501912f8d8c8308cd">m_method</a> = method;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a8f1aa50265809e986da190d3d34fd188">m_step_old_time</a> = step_old_time;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa">m_next_stage</a> = 0;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a">m_step_active</a>) {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            diagnostic = <span class="stringliteral">&quot;auxiliary stage arrived before stage 0&quot;</span>;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        }</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">if</span> (method != <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a5121f200413652a501912f8d8c8308cd">m_method</a>) {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            diagnostic = <span class="stringliteral">&quot;host integrator changed during an auxiliary timestep&quot;</span>;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        }</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordflow">if</span> (step_old_time != <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a8f1aa50265809e986da190d3d34fd188">m_step_old_time</a>) {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            diagnostic = <span class="stringliteral">&quot;step-old time changed during an auxiliary timestep&quot;</span>;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        }</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    }</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">if</span> (stage != <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa">m_next_stage</a>) {</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        diagnostic = <span class="stringliteral">&quot;duplicate, skipped, or out-of-order auxiliary stage&quot;</span>;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    }</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="namespaceerf__auxiliary.html#a3b828db99bd66fb5cc21a0e01a892c50">AccumulateIntegratedFaceFlux</a>(<a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>, rate,</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(recipe.completed_ledger_time));</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    ++<a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa">m_next_stage</a>;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa">m_next_stage</a> == stage_count(method)) {</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a">m_step_active</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a7940399c5323c6f03299ccee624c70f5">m_step_complete</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    diagnostic.clear();</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#acbfc4475766a6ba6bfcf8959a17bbc33">is_defined</a>() || !rate.is_defined() || rate.nComp() != <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>.<a class="code" href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43">nComp</a>()) {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        diagnostic = <span class="stringliteral">&quot;completed-step ledger and face-rate layouts are not defined compatibly&quot;</span>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__auxiliary.html#af8b38e575d2e3ef2765351ec709f60f4">SameMappedFaceLayout</a>(<a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>, rate)) {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        diagnostic = <span class="stringliteral">&quot;completed-step ledger and face-rate BoxArray/DistributionMapping do not match&quot;</span>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">if</span> (method == <a class="code" href="namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa37c5e33bbeb79e5a25c31162da17ebc4">HostIntegrator::AnelasticMidPoint</a>) {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        diagnostic = <span class="stringliteral">&quot;AnelasticMidPoint completed-step ledger is not qualified by M2&quot;</span>;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">if</span> (stage &lt; 0 || stage &gt;= stage_count(method)) {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        diagnostic = <span class="stringliteral">&quot;stage index is outside the completed-step ledger sequence&quot;</span>;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">if</span> (!std::isfinite(step_old_time) ||</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        !<a class="code" href="namespaceerf__sbm_1_1remap__detail.html#a7d48ce6144947d257e83430e76f3274f">finite_nonnegative</a>(recipe.anchor_weight) ||</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        !<a class="code" href="namespaceerf__sbm_1_1remap__detail.html#a7d48ce6144947d257e83430e76f3274f">finite_nonnegative</a>(recipe.input_weight) ||</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        !std::isfinite(recipe.limiter_trial_interval) || recipe.limiter_trial_interval &lt;= 0.0 ||</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        !std::isfinite(recipe.face_rate_time_coefficient) || recipe.face_rate_time_coefficient &lt;= 0.0 ||</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        !<a class="code" href="namespaceerf__sbm_1_1remap__detail.html#a7d48ce6144947d257e83430e76f3274f">finite_nonnegative</a>(recipe.completed_ledger_time)) {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        diagnostic = <span class="stringliteral">&quot;completed-step ledger received an invalid temporal coefficient&quot;</span>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">if</span> (stage == 0) {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a">m_step_active</a>) {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            diagnostic = <span class="stringliteral">&quot;stage 0 arrived while the previous auxiliary step was unfinished&quot;</span>;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>.<a class="code" href="classerf__auxiliary_1_1MappedFaceField.html#acf0bed05429e61a7ef008ac5f158eeb7">setVal</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a">m_step_active</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a7940399c5323c6f03299ccee624c70f5">m_step_complete</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a5121f200413652a501912f8d8c8308cd">m_method</a> = method;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a8f1aa50265809e986da190d3d34fd188">m_step_old_time</a> = step_old_time;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa">m_next_stage</a> = 0;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a">m_step_active</a>) {</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            diagnostic = <span class="stringliteral">&quot;auxiliary stage arrived before stage 0&quot;</span>;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        }</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">if</span> (method != <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a5121f200413652a501912f8d8c8308cd">m_method</a>) {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            diagnostic = <span class="stringliteral">&quot;host integrator changed during an auxiliary timestep&quot;</span>;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">if</span> (step_old_time != <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a8f1aa50265809e986da190d3d34fd188">m_step_old_time</a>) {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            diagnostic = <span class="stringliteral">&quot;step-old time changed during an auxiliary timestep&quot;</span>;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordflow">if</span> (stage != <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa">m_next_stage</a>) {</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        diagnostic = <span class="stringliteral">&quot;duplicate, skipped, or out-of-order auxiliary stage&quot;</span>;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    }</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <a class="code" href="namespaceerf__auxiliary.html#a3b828db99bd66fb5cc21a0e01a892c50">AccumulateIntegratedFaceFlux</a>(<a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>, rate,</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(recipe.completed_ledger_time));</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    ++<a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa">m_next_stage</a>;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa">m_next_stage</a> == stage_count(method)) {</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a">m_step_active</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a7940399c5323c6f03299ccee624c70f5">m_step_complete</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    }</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;}</div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_html_a28df11709463fc3c4a347f2a5315686a"><div class="ttname"><a href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a">erf_auxiliary::CompletedStepFluxLedger::m_step_active</a></div><div class="ttdeci">bool m_step_active</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.H:119</div></div>
-<div class="ttc" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_html_a5121f200413652a501912f8d8c8308cd"><div class="ttname"><a href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a5121f200413652a501912f8d8c8308cd">erf_auxiliary::CompletedStepFluxLedger::m_method</a></div><div class="ttdeci">HostIntegrator m_method</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.H:121</div></div>
-<div class="ttc" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_html_a671f88237cb3bf53cf66f0a374296a94"><div class="ttname"><a href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">erf_auxiliary::CompletedStepFluxLedger::m_integral</a></div><div class="ttdeci">IntegratedMappedFaceFlux m_integral</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.H:118</div></div>
-<div class="ttc" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_html_a7940399c5323c6f03299ccee624c70f5"><div class="ttname"><a href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a7940399c5323c6f03299ccee624c70f5">erf_auxiliary::CompletedStepFluxLedger::m_step_complete</a></div><div class="ttdeci">bool m_step_complete</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.H:120</div></div>
-<div class="ttc" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_html_a8f1aa50265809e986da190d3d34fd188"><div class="ttname"><a href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a8f1aa50265809e986da190d3d34fd188">erf_auxiliary::CompletedStepFluxLedger::m_step_old_time</a></div><div class="ttdeci">double m_step_old_time</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.H:123</div></div>
-<div class="ttc" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_html_acbfc4475766a6ba6bfcf8959a17bbc33"><div class="ttname"><a href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#acbfc4475766a6ba6bfcf8959a17bbc33">erf_auxiliary::CompletedStepFluxLedger::is_defined</a></div><div class="ttdeci">bool is_defined() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.H:109</div></div>
-<div class="ttc" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_html_ae6304f3cf59617dd174b71f9931fdffa"><div class="ttname"><a href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa">erf_auxiliary::CompletedStepFluxLedger::m_next_stage</a></div><div class="ttdeci">int m_next_stage</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.H:122</div></div>
+<div class="ttc" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_html_a28df11709463fc3c4a347f2a5315686a"><div class="ttname"><a href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a">erf_auxiliary::CompletedStepFluxLedger::m_step_active</a></div><div class="ttdeci">bool m_step_active</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.H:135</div></div>
+<div class="ttc" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_html_a5121f200413652a501912f8d8c8308cd"><div class="ttname"><a href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a5121f200413652a501912f8d8c8308cd">erf_auxiliary::CompletedStepFluxLedger::m_method</a></div><div class="ttdeci">HostIntegrator m_method</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.H:137</div></div>
+<div class="ttc" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_html_a671f88237cb3bf53cf66f0a374296a94"><div class="ttname"><a href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">erf_auxiliary::CompletedStepFluxLedger::m_integral</a></div><div class="ttdeci">IntegratedMappedFaceFlux m_integral</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.H:134</div></div>
+<div class="ttc" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_html_a7940399c5323c6f03299ccee624c70f5"><div class="ttname"><a href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a7940399c5323c6f03299ccee624c70f5">erf_auxiliary::CompletedStepFluxLedger::m_step_complete</a></div><div class="ttdeci">bool m_step_complete</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.H:136</div></div>
+<div class="ttc" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_html_a8f1aa50265809e986da190d3d34fd188"><div class="ttname"><a href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a8f1aa50265809e986da190d3d34fd188">erf_auxiliary::CompletedStepFluxLedger::m_step_old_time</a></div><div class="ttdeci">double m_step_old_time</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.H:139</div></div>
+<div class="ttc" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_html_acbfc4475766a6ba6bfcf8959a17bbc33"><div class="ttname"><a href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#acbfc4475766a6ba6bfcf8959a17bbc33">erf_auxiliary::CompletedStepFluxLedger::is_defined</a></div><div class="ttdeci">bool is_defined() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.H:125</div></div>
+<div class="ttc" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_html_ae6304f3cf59617dd174b71f9931fdffa"><div class="ttname"><a href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa">erf_auxiliary::CompletedStepFluxLedger::m_next_stage</a></div><div class="ttdeci">int m_next_stage</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryStage.H:138</div></div>
 <div class="ttc" id="aclasserf__auxiliary_1_1MappedFaceField_html_a832e6d8aaf089d12d1f52c540c717f43"><div class="ttname"><a href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43">erf_auxiliary::MappedFaceField::nComp</a></div><div class="ttdeci">int nComp() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.H:44</div></div>
 <div class="ttc" id="aclasserf__auxiliary_1_1MappedFaceField_html_acf0bed05429e61a7ef008ac5f158eeb7"><div class="ttname"><a href="classerf__auxiliary_1_1MappedFaceField.html#acf0bed05429e61a7ef008ac5f158eeb7">erf_auxiliary::MappedFaceField::setVal</a></div><div class="ttdeci">void setVal(const amrex::Real value)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.H:60</div></div>
 <div class="ttc" id="anamespaceerf__auxiliary_html_a3b828db99bd66fb5cc21a0e01a892c50"><div class="ttname"><a href="namespaceerf__auxiliary.html#a3b828db99bd66fb5cc21a0e01a892c50">erf_auxiliary::AccumulateIntegratedFaceFlux</a></div><div class="ttdeci">void AccumulateIntegratedFaceFlux(IntegratedMappedFaceFlux &amp;ledger, const MappedFaceFluxRate &amp;rate, const amrex::Real weight)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.cpp:172</div></div>
 <div class="ttc" id="anamespaceerf__auxiliary_html_a6bb3d48f526c8560395d6fede7c3622aa37c5e33bbeb79e5a25c31162da17ebc4"><div class="ttname"><a href="namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa37c5e33bbeb79e5a25c31162da17ebc4">erf_auxiliary::HostIntegrator::AnelasticMidPoint</a></div><div class="ttdeci">@ AnelasticMidPoint</div></div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_af8b38e575d2e3ef2765351ec709f60f4"><div class="ttname"><a href="namespaceerf__auxiliary.html#af8b38e575d2e3ef2765351ec709f60f4">erf_auxiliary::SameMappedFaceLayout</a></div><div class="ttdeci">bool SameMappedFaceLayout(const MappedFaceField&lt; LhsTag &gt; &amp;lhs, const MappedFaceField&lt; RhsTag &gt; &amp;rhs)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.H:104</div></div>
+<div class="ttc" id="anamespaceerf__sbm_1_1remap__detail_html_a7d48ce6144947d257e83430e76f3274f"><div class="ttname"><a href="namespaceerf__sbm_1_1remap__detail.html#a7d48ce6144947d257e83430e76f3274f">erf_sbm::remap_detail::finite_nonnegative</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool finite_nonnegative(const amrex::Real value) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SBMRemapping.H:164</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classerf__auxiliary_1_1CompletedStepFluxLedger_a1136e7902d3567fb5ab3bffecf158696_cgraph.png" border="0" usemap="#aclasserf__auxiliary_1_1CompletedStepFluxLedger_a1136e7902d3567fb5ab3bffecf158696_cgraph" alt=""/></div>
 <map name="aclasserf__auxiliary_1_1CompletedStepFluxLedger_a1136e7902d3567fb5ab3bffecf158696_cgraph" id="aclasserf__auxiliary_1_1CompletedStepFluxLedger_a1136e7902d3567fb5ab3bffecf158696_cgraph">
-<area shape="rect" title=" " alt="" coords="5,181,223,223"/>
-<area shape="rect" href="namespaceerf__auxiliary.html#a3b828db99bd66fb5cc21a0e01a892c50" title=" " alt="" coords="275,116,463,157"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e" title=" " alt="" coords="516,240,708,281"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43" title=" " alt="" coords="516,5,708,47"/>
-<area shape="rect" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#acbfc4475766a6ba6bfcf8959a17bbc33" title=" " alt="" coords="271,299,468,340"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#acf0bed05429e61a7ef008ac5f158eeb7" title=" " alt="" coords="273,181,465,223"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="756,130,939,157"/>
-<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a8a208bb7a27b8c089b8ced578cdaee61" title=" " alt="" coords="516,123,708,164"/>
+<area shape="rect" title=" " alt="" coords="5,275,223,316"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#a3b828db99bd66fb5cc21a0e01a892c50" title=" " alt="" coords="275,140,463,181"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e" title=" " alt="" coords="764,283,956,324"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43" title=" " alt="" coords="520,5,712,47"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#af8b38e575d2e3ef2765351ec709f60f4" title=" " alt="" coords="516,224,716,265"/>
+<area shape="rect" href="namespaceerf__sbm_1_1remap__detail.html#a7d48ce6144947d257e83430e76f3274f" title=" " alt="" coords="285,333,454,375"/>
+<area shape="rect" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#acbfc4475766a6ba6bfcf8959a17bbc33" title=" " alt="" coords="271,399,468,440"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#acf0bed05429e61a7ef008ac5f158eeb7" title=" " alt="" coords="520,392,712,433"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="1004,178,1187,205"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a8a208bb7a27b8c089b8ced578cdaee61" title=" " alt="" coords="764,171,956,212"/>
 </map>
 </div>
 
@@ -379,14 +387,14 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;{</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>.<a class="code" href="classerf__auxiliary_1_1MappedFaceField.html#aad19b94db05b0ed5b2ca756275997258">define</a>(cell_ba, dm, ncomp, 0);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>.<a class="code" href="classerf__auxiliary_1_1MappedFaceField.html#acf0bed05429e61a7ef008ac5f158eeb7">setVal</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a">m_step_active</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a7940399c5323c6f03299ccee624c70f5">m_step_complete</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa">m_next_stage</a> = 0;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a8f1aa50265809e986da190d3d34fd188">m_step_old_time</a> = 0.0;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;{</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>.<a class="code" href="classerf__auxiliary_1_1MappedFaceField.html#aad19b94db05b0ed5b2ca756275997258">define</a>(cell_ba, dm, ncomp, 0);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>.<a class="code" href="classerf__auxiliary_1_1MappedFaceField.html#acf0bed05429e61a7ef008ac5f158eeb7">setVal</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a">m_step_active</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a7940399c5323c6f03299ccee624c70f5">m_step_complete</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa">m_next_stage</a> = 0;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a8f1aa50265809e986da190d3d34fd188">m_step_old_time</a> = 0.0;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;}</div>
 <div class="ttc" id="aclasserf__auxiliary_1_1MappedFaceField_html_aad19b94db05b0ed5b2ca756275997258"><div class="ttname"><a href="classerf__auxiliary_1_1MappedFaceField.html#aad19b94db05b0ed5b2ca756275997258">erf_auxiliary::MappedFaceField::define</a></div><div class="ttdeci">void define(const amrex::BoxArray &amp;cell_ba, const amrex::DistributionMapping &amp;dm, const int ncomp, const int ngrow=0)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.H:28</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -426,9 +434,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                                                                   {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                                                                   {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -454,7 +462,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>.<a class="code" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e">is_defined</a>(); }</div>
+<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94">m_integral</a>.<a class="code" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e">is_defined</a>(); }</div>
 <div class="ttc" id="aclasserf__auxiliary_1_1MappedFaceField_html_aa271784d8d9f32237ddad638d048fc6e"><div class="ttname"><a href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e">erf_auxiliary::MappedFaceField::is_defined</a></div><div class="ttdeci">bool is_defined() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.H:43</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a1136e7902d3567fb5ab3bffecf158696">accept_stage()</a>.</p>
@@ -501,7 +509,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa">m_next_stage</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa">m_next_stage</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -553,7 +561,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a">m_step_active</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a28df11709463fc3c4a347f2a5315686a">m_step_active</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -579,7 +587,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a7940399c5323c6f03299ccee624c70f5">m_step_complete</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a7940399c5323c6f03299ccee624c70f5">m_step_complete</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>

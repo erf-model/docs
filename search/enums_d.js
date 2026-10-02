@@ -1,19 +1,9 @@
 var searchData=
 [
-  ['sampledcoordinate_15036',['SampledCoordinate',['../namespaceplotfile2d.html#a2d37635bf101911abc61c5e51be5ab29',1,'plotfile2d']]],
-  ['sampledfieldid_15037',['SampledFieldID',['../namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6d',1,'plotfile2d']]],
-  ['sampledinterpolation_15038',['SampledInterpolation',['../namespaceplotfile2d.html#a1f5b1450fa27f9d52c08d5e2ebdb6478',1,'plotfile2d']]],
-  ['scalar_15039',['Scalar',['../classCloudChamberBudget.html#a81994e964d9362cfed23ad775ae5e572',1,'CloudChamberBudget']]],
-  ['scalarchannel_15040',['ScalarChannel',['../namespaceerf__cloud__chamber__wall__flux.html#a7d287264b0a3f33cc39ed5308255e5a9',1,'erf_cloud_chamber_wall_flux']]],
-  ['scalarmodel_15041',['ScalarModel',['../namespaceerf__wall__thermodynamics.html#a8049a8e10dc09eaf6fcf3f27e9da6363',1,'erf_wall_thermodynamics']]],
-  ['sebfluxorigin_15042',['SEBFluxOrigin',['../ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532',1,'ERF_SEBTurbulentFlux.H']]],
-  ['sebturbulentflux_15043',['SEBTurbulentFlux',['../ERF__SEBTurbulentFlux_8H.html#a90a56c14e23c0b3d911980d3438d70d5',1,'ERF_SEBTurbulentFlux.H']]],
-  ['shocmomentumtransport_15044',['ShocMomentumTransport',['../ERF__ShocTransportStruct_8H.html#a46f049c905e222c86ebb0cf19549ab48',1,'ERF_ShocTransportStruct.H']]],
-  ['shoctransportmode_15045',['ShocTransportMode',['../ERF__ShocTransportStruct_8H.html#afeb44c2565539dcc7b6083629bfda26d',1,'ERF_ShocTransportStruct.H']]],
-  ['solidwallkind_15046',['SolidWallKind',['../namespaceerf__wall__scalar__bc.html#ac8375e1cfb77df511e98a87a9d9d7bf9',1,'erf_wall_scalar_bc']]],
-  ['sponge_15047',['Sponge',['../ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcb',1,'ERF_DataStruct.H']]],
-  ['supportrequirement_15048',['SupportRequirement',['../namespaceerf__sbm.html#a759e7fa184b977db22f4cccb31cb24ff',1,'erf_sbm']]],
-  ['surfacediagnosticsource_15049',['SurfaceDiagnosticSource',['../namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccf',1,'surface_diagnostics']]],
-  ['surfacemodeltype_15050',['SurfaceModelType',['../ERF__SurfaceModel_8H.html#aee4129a23327ef05502fcec2d6b71c2a',1,'ERF_SurfaceModel.H']]],
-  ['surfaceprovidermode_15051',['SurfaceProviderMode',['../ERF__SurfaceModel_8H.html#abe8d3c91e03e68dd691887e3b789d7f6',1,'ERF_SurfaceModel.H']]]
+  ['rayhit_15194',['RayHit',['../namespaceibseb.html#a9db8f40527e725d5fb80d8fad2018d3c',1,'ibseb']]],
+  ['rayleigh_15195',['Rayleigh',['../ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239',1,'ERF_DataStruct.H']]],
+  ['rayleighdampingtype_15196',['RayleighDampingType',['../ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1',1,'ERF_DampingStruct.H']]],
+  ['reconstructionstatus_15197',['ReconstructionStatus',['../namespaceerf__sbm.html#ad5918a6238dc30e2d841730f93e82a23',1,'erf_sbm']]],
+  ['remapstatus_15198',['RemapStatus',['../namespaceerf__sbm.html#a75c2d7b043b74b8ca25c2739cde7d9b1',1,'erf_sbm']]],
+  ['roughcalctype_15199',['RoughCalcType',['../classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05',1,'SurfaceLayer']]]
 ];

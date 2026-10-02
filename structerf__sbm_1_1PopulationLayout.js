@@ -9,5 +9,6 @@ var structerf__sbm_1_1PopulationLayout =
     [ "number_state_units", "structerf__sbm_1_1PopulationLayout.html#adddb730ea370c55b0c719fb2049e1b70", null ],
     [ "phase", "structerf__sbm_1_1PopulationLayout.html#aa77369b046f6028ebf668d71ec7892c8", null ],
     [ "population_id", "structerf__sbm_1_1PopulationLayout.html#afc67aa35f6c5ea8a59e28a5ce0fa932d", null ],
+    [ "property_component_offsets", "structerf__sbm_1_1PopulationLayout.html#ab8c39d2b1e16cb0c55cf59a794d1a9ac", null ],
     [ "semantic_id", "structerf__sbm_1_1PopulationLayout.html#a85c4e7cdc23b85b38b25af883bd0bcc9", null ]
 ];

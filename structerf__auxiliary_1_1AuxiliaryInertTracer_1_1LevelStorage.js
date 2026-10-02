@@ -6,7 +6,9 @@ var structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage =
     [ "ledger", "structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage.html#ab734d2eaf084733d7d937dfe76bf9b14", null ],
     [ "max_stage_rate_delta", "structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage.html#a3f9b4c20dd25b1a2b0e8392c7b281357", null ],
     [ "measure", "structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage.html#a9de7c2b2e440211347f3148b18ab552a", null ],
+    [ "measure_ready", "structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage.html#a85522a3d6b3a8cf36b52e808efdacf9f", null ],
     [ "previous_rate", "structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage.html#a400ebe150aa478ed45bd590371e56e62", null ],
     [ "rate", "structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage.html#a7fb729ba583756502b9f476779e6c5ff", null ],
-    [ "state", "structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage.html#aca813330d79d70b4c4e6f7bff84bb81b", null ]
+    [ "state", "structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage.html#aca813330d79d70b4c4e6f7bff84bb81b", null ],
+    [ "target", "structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage.html#a6eeb28225d533fa0840297a5cc110a9c", null ]
 ];
