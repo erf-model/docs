@@ -181,6 +181,7 @@ var hierarchy =
     [ "PBLDerivativeDzInv_S", "structPBLDerivativeDzInv__S.html", null ],
     [ "PBLDerivativeDzInv_T", "structPBLDerivativeDzInv__T.html", null ],
     [ "SurfaceLayer::PBLHColumns", "structSurfaceLayer_1_1PBLHColumns.html", null ],
+    [ "PBLSurfaceLayerGradient", "structPBLSurfaceLayerGradient.html", null ],
     [ "PlanarBoundary", "classPlanarBoundary.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
     [ "PlaneSampler", "structPlaneSampler.html", null ],

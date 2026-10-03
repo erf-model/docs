@@ -1,5 +1,7 @@
 var structsimilarity__funs =
 [
+    [ "calc_phi_h", "structsimilarity__funs.html#a162d7d1aa4113335a7d5ad9d0c184c75", null ],
+    [ "calc_phi_m", "structsimilarity__funs.html#aac794cc508a1f13ae22b0a1320890f35", null ],
     [ "calc_psi_h", "structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2", null ],
     [ "calc_psi_h2", "structsimilarity__funs.html#a38b867a4d10be55d2329ff85040889d3", null ],
     [ "calc_psi_m", "structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2", null ],

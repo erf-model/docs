@@ -1,5 +1,9 @@
 var NAVTREEINDEX49 =
 {
+"structerf__grid__utils_1_1GeometricStretch.html#ac0ebada72b910f1aa320143978432258":[2,0,3,1,0],
+"structerf__grid__utils_1_1GeometricStretch.html#ac5b7bbd8abc09bbb17c7e1f69a425fc6":[2,0,3,1,4],
+"structerf__grid__utils_1_1GeometricStretch.html#ac779eebce9162cab5d42ba647cfab037":[2,0,3,1,1],
+"structerf__grid__utils_1_1InterpolationStencil.html":[2,0,3,2],
 "structerf__grid__utils_1_1InterpolationStencil.html#a1c570a601861e2fa950fa6122a946254":[2,0,3,2,1],
 "structerf__grid__utils_1_1InterpolationStencil.html#a4fe7561ed4c9e210e57a8f0a216ab064":[2,0,3,2,0],
 "structerf__grid__utils_1_1InterpolationStencil.html#a79489fd33cac6ff31e30ad6640a1bceb":[2,0,3,2,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX49 =
 "structerf__sbm_1_1RouteDestination.html#a669a9bff4e1e8345c655b15703ffa581":[2,0,9,18,0],
 "structerf__sbm_1_1SBMLayoutSpec.html":[2,0,9,14],
 "structerf__sbm_1_1SBMLayoutSpec.html#a0295717ac34e8283a979ebab6d333094":[2,0,9,14,1],
-"structerf__sbm_1_1SBMLayoutSpec.html#a03b1d2db54c1c16158827797d0dbdd84":[2,0,9,14,2],
-"structerf__sbm_1_1SBMLayoutSpec.html#a9ca15a97f4a80567920d35be97045c61":[2,0,9,14,0],
-"structerf__sbm_1_1SpectralGridSpec.html":[2,0,9,28],
-"structerf__sbm_1_1SpectralGridSpec.html#a92ff789ceab304008f703930e5af09dc":[2,0,9,28,1],
-"structerf__sbm_1_1SpectralGridSpec.html#ab1c38eeb1e3ecf666400b1934978422d":[2,0,9,28,3]
+"structerf__sbm_1_1SBMLayoutSpec.html#a03b1d2db54c1c16158827797d0dbdd84":[2,0,9,14,2]
 };

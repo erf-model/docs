@@ -236,6 +236,7 @@ var annotated_dup =
     [ "PBLDerivativeDzInv_N", "structPBLDerivativeDzInv__N.html", "structPBLDerivativeDzInv__N" ],
     [ "PBLDerivativeDzInv_S", "structPBLDerivativeDzInv__S.html", "structPBLDerivativeDzInv__S" ],
     [ "PBLDerivativeDzInv_T", "structPBLDerivativeDzInv__T.html", "structPBLDerivativeDzInv__T" ],
+    [ "PBLSurfaceLayerGradient", "structPBLSurfaceLayerGradient.html", "structPBLSurfaceLayerGradient" ],
     [ "PlanarBoundary", "classPlanarBoundary.html", "classPlanarBoundary" ],
     [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ],
     [ "PlaneSampler", "structPlaneSampler.html", "structPlaneSampler" ],
