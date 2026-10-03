@@ -191,5 +191,6 @@ var structSolverChoice =
     [ "windfarm_type", "structSolverChoice.html#acddd5372805f12abc492a8d91527a7f4", null ],
     [ "windfarm_x_shift", "structSolverChoice.html#a96d78f7fbfc3fa502ff56311d3c94604", null ],
     [ "windfarm_y_shift", "structSolverChoice.html#a3916105f740621994c94e04dd2196c60", null ],
+    [ "wrfinput_zlevels_from_file", "structSolverChoice.html#a85621404f1610950710e3ab878b0170b", null ],
     [ "zsurf", "structSolverChoice.html#abdc912a0217986577b485ce2c809695e", null ]
 ];

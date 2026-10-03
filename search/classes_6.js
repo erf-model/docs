@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['generalad_8020',['GeneralAD',['../classGeneralAD.html',1,'']]],
-  ['gridvalidation_8021',['GridValidation',['../structerf__sbm_1_1GridValidation.html',1,'erf_sbm']]]
+  ['generalad_8039',['GeneralAD',['../classGeneralAD.html',1,'']]],
+  ['geometricstretch_8040',['GeometricStretch',['../structerf__grid__utils_1_1GeometricStretch.html',1,'erf_grid_utils']]],
+  ['gridvalidation_8041',['GridValidation',['../structerf__sbm_1_1GridValidation.html',1,'erf_sbm']]]
 ];

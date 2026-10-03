@@ -34,6 +34,7 @@ var annotated_dup =
     ] ],
     [ "erf_grid_utils", "namespaceerf__grid__utils.html", [
       [ "UniformGridMetadata", "structerf__grid__utils_1_1UniformGridMetadata.html", "structerf__grid__utils_1_1UniformGridMetadata" ],
+      [ "GeometricStretch", "structerf__grid__utils_1_1GeometricStretch.html", "structerf__grid__utils_1_1GeometricStretch" ],
       [ "InterpolationStencil", "structerf__grid__utils_1_1InterpolationStencil.html", "structerf__grid__utils_1_1InterpolationStencil" ]
     ] ],
     [ "erf_inputs_detail", "namespaceerf__inputs__detail.html", [

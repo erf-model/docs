@@ -46,6 +46,7 @@ var classSurfaceLayer =
     [ "computes_w_star", "classSurfaceLayer.html#a4c6180431efcbe86bc99d6d4159bd834", null ],
     [ "define_pblh_columns", "classSurfaceLayer.html#af675cf05720b37e857a780c58dcd446f", null ],
     [ "fill_lateral_surface_parameter_ghosts", "classSurfaceLayer.html#a8d14aff376fdda7f29f84858f976df58", null ],
+    [ "fill_pblh_from_coarser", "classSurfaceLayer.html#a287cca8ba2cf4b476bb9ceed9c4a8459", null ],
     [ "fill_planar_boundary", "classSurfaceLayer.html#aa5a9a5ae71905c6ac32a144d98dde018", null ],
     [ "fill_qsurf_with_qsat", "classSurfaceLayer.html#a49a97b3f9132567b9437015b10771fef", null ],
     [ "fill_tsurf_with_coupled_sst", "classSurfaceLayer.html#a4f31e6f3fddbc6f074c34c81eb131ff6", null ],

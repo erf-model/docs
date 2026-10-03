@@ -70,6 +70,7 @@ var hierarchy =
     [ "TwoStreamRadiation::FluxDiag", "structTwoStreamRadiation_1_1FluxDiag.html", null ],
     [ "noahmp_result_policy::FluxSelection", "structnoahmp__result__policy_1_1FluxSelection.html", null ],
     [ "ForestDrag", "classForestDrag.html", null ],
+    [ "erf_grid_utils::GeometricStretch", "structerf__grid__utils_1_1GeometricStretch.html", null ],
     [ "amrex::GPUable", null, [
       [ "TerrainIF", "classTerrainIF.html", null ]
     ] ],

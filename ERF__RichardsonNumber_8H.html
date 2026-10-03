@@ -460,65 +460,132 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> inv_theta;</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dtheta_dz;</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordtype">bool</span> is_covered_kp1 = c_cflag(i,j,k+1).isCovered();</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">bool</span> is_covered_km1 = c_cflag(i,j,k-1).isCovered();</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> is_covered_kp1 = c_cflag(i,j,k+1).isCovered();</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> is_covered_km1 = c_cflag(i,j,k-1).isCovered();</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">if</span> (saturated &amp;&amp; qc_index &gt;= 0) {</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l    = <a class="code" href="ERF__MoistUtils_8H.html#aac240ae9b9b33e8d8e61174bcbfd61f0">GetThetal</a>(i, j, k  , cell_data, moisture_indices);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_kp1= <a class="code" href="ERF__MoistUtils_8H.html#aac240ae9b9b33e8d8e61174bcbfd61f0">GetThetal</a>(i, j, k+1, cell_data, moisture_indices);</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_km1= <a class="code" href="ERF__MoistUtils_8H.html#aac240ae9b9b33e8d8e61174bcbfd61f0">GetThetal</a>(i, j, k-1, cell_data, moisture_indices);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        inv_theta = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / theta_l;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">if</span> (is_covered_kp1) {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_km2= <a class="code" href="ERF__MoistUtils_8H.html#aac240ae9b9b33e8d8e61174bcbfd61f0">GetThetal</a>(i, j, k-2, cell_data, moisture_indices);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            dtheta_dz = (<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*theta_l - <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_l_km1 + theta_l_km2) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_covered_km1) {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_kp2= <a class="code" href="ERF__MoistUtils_8H.html#aac240ae9b9b33e8d8e61174bcbfd61f0">GetThetal</a>(i, j, k+2, cell_data, moisture_indices);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            dtheta_dz = (-theta_l_kp2 + <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_l_kp1 - <a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*theta_l) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            dtheta_dz = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (theta_l_kp1 - theta_l_km1) * dzInv;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        }</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (qv_index &gt;= 0) {</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v    = <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i, j, k  , cell_data, moisture_indices);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_kp1= <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i, j, k+1, cell_data, moisture_indices);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_km1= <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i, j, k-1, cell_data, moisture_indices);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        inv_theta = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / theta_v;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">if</span> (is_covered_kp1) {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_km2= <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i, j, k-2, cell_data, moisture_indices);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            dtheta_dz = (<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*theta_v - <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_v_km1 + theta_v_km2) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_covered_km1) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_kp2= <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i, j, k+2, cell_data, moisture_indices);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            dtheta_dz = (-theta_v_kp2 + <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_v_kp1 - <a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*theta_v) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            dtheta_dz = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (theta_v_kp1 - theta_v_km1) * dzInv;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l = <a class="code" href="ERF__MoistUtils_8H.html#aac240ae9b9b33e8d8e61174bcbfd61f0">GetThetal</a>(i, j, k  , cell_data, moisture_indices);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        inv_theta = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / theta_l;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">if</span> (is_covered_kp1) {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordflow">if</span> (is_covered_km1) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            }</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_km1 = <a class="code" href="ERF__MoistUtils_8H.html#aac240ae9b9b33e8d8e61174bcbfd61f0">GetThetal</a>(i, j, k-1, cell_data, moisture_indices);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordflow">if</span> (c_cflag(i,j,k-2).isCovered()) {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                dtheta_dz = (theta_l - theta_l_km1) * dzInv;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_km2 = <a class="code" href="ERF__MoistUtils_8H.html#aac240ae9b9b33e8d8e61174bcbfd61f0">GetThetal</a>(i, j, k-2, cell_data, moisture_indices);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                dtheta_dz = (<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*theta_l - <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_l_km1 + theta_l_km2) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            }</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_covered_km1) {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_kp1 = <a class="code" href="ERF__MoistUtils_8H.html#aac240ae9b9b33e8d8e61174bcbfd61f0">GetThetal</a>(i, j, k+1, cell_data, moisture_indices);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="keywordflow">if</span> (c_cflag(i,j,k+2).isCovered()) {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                dtheta_dz = (theta_l_kp1 - theta_l) * dzInv;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_kp2 = <a class="code" href="ERF__MoistUtils_8H.html#aac240ae9b9b33e8d8e61174bcbfd61f0">GetThetal</a>(i, j, k+2, cell_data, moisture_indices);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                dtheta_dz = (-theta_l_kp2 + <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_l_kp1 - <a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*theta_l) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            }</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = cell_data(i, j, k, rhoTheta_comp) / <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_kp1 = cell_data(i, j, k+1, rhoTheta_comp) / cell_data(i, j, k+1, rho_comp);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_km1 = cell_data(i, j, k-1, rhoTheta_comp) / cell_data(i, j, k-1, rho_comp);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_kp1 = <a class="code" href="ERF__MoistUtils_8H.html#aac240ae9b9b33e8d8e61174bcbfd61f0">GetThetal</a>(i, j, k+1, cell_data, moisture_indices);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_km1 = <a class="code" href="ERF__MoistUtils_8H.html#aac240ae9b9b33e8d8e61174bcbfd61f0">GetThetal</a>(i, j, k-1, cell_data, moisture_indices);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            dtheta_dz = (theta_l_kp1 - theta_l_km1) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        }</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        inv_theta = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (qv_index &gt;= 0) {</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keywordflow">if</span> (is_covered_kp1) {</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_km2 = cell_data(i, j, k-2, rhoTheta_comp) / cell_data(i, j, k-2, rho_comp);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            dtheta_dz = (<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> - <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_km1 + theta_km2) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_covered_km1) {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_kp2 = cell_data(i, j, k+2, rhoTheta_comp) / cell_data(i, j, k+2, rho_comp);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            dtheta_dz = (-theta_kp2 + <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_kp1 - <a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            dtheta_dz = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (theta_kp1 - theta_km1) * dzInv;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">return</span> const_grav * inv_theta * dtheta_dz;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;}</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v = <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i, j, k, cell_data, moisture_indices);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        inv_theta = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / theta_v;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">if</span> (is_covered_kp1) {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordflow">if</span> (is_covered_km1) {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_km1 = <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i, j, k-1, cell_data, moisture_indices);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keywordflow">if</span> (c_cflag(i,j,k-2).isCovered()) {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                dtheta_dz = (theta_v - theta_v_km1) * dzInv;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_km2 = <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i, j, k-2, cell_data, moisture_indices);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                dtheta_dz = (<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*theta_v - <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_v_km1 + theta_v_km2) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_covered_km1) {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_kp1 = <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i, j, k+1, cell_data, moisture_indices);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="keywordflow">if</span> (c_cflag(i,j,k+2).isCovered()) {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                dtheta_dz = (theta_v_kp1 - theta_v) * dzInv;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_kp2 = <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i, j, k+2, cell_data, moisture_indices);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                dtheta_dz = (-theta_v_kp2 + <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_v_kp1 - <a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*theta_v) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_kp1 = <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i, j, k+1, cell_data, moisture_indices);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_km1 = <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i, j, k-1, cell_data, moisture_indices);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            dtheta_dz = (theta_v_kp1 - theta_v_km1) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = cell_data(i, j, k, rhoTheta_comp) / <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        inv_theta = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="keywordflow">if</span> (is_covered_kp1) {</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <span class="keywordflow">if</span> (is_covered_km1) {</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_km1 = cell_data(i, j, k-1, rhoTheta_comp) / cell_data(i, j, k-1, rho_comp);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <span class="keywordflow">if</span> (c_cflag(i,j,k-2).isCovered()) {</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                dtheta_dz = (<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> - theta_km1) * dzInv;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_km2 = cell_data(i, j, k-2, rhoTheta_comp) / cell_data(i, j, k-2, rho_comp);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                dtheta_dz = (<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> - <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_km1 + theta_km2) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_covered_km1) {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_kp1 = cell_data(i, j, k+1, rhoTheta_comp) / cell_data(i, j, k+1, rho_comp);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="keywordflow">if</span> (c_cflag(i,j,k+2).isCovered()) {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                dtheta_dz = (theta_kp1 - <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>) * dzInv;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_kp2 = cell_data(i, j, k+2, rhoTheta_comp) / cell_data(i, j, k+2, rho_comp);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                dtheta_dz = (-theta_kp2 + <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_kp1 - <a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            }</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_kp1 = cell_data(i, j, k+1, rhoTheta_comp) / cell_data(i, j, k+1, rho_comp);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_km1 = cell_data(i, j, k-1, rhoTheta_comp) / cell_data(i, j, k-1, rho_comp);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            dtheta_dz = (theta_kp1 - theta_km1) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        }</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">return</span> const_grav * inv_theta * dtheta_dz;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;}</div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a0aec04a101a1a92c2f32ff394b510bfd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a></div><div class="ttdeci">constexpr amrex::Real three</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:39</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a27fee4dc66c221a7e27477953168d232"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a></div><div class="ttdeci">constexpr amrex::Real four</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:40</div></div>
+<div class="ttc" id="aERF__NumericalConstants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:36</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB()</a>.</p>
 <div class="dynheader">
@@ -584,10 +651,10 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Ri_moist = N²_moist / S²_vert [dimensionless] </dd></dl>
-<div class="fragment"><div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;{</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> S2_safe = amrex::max(S2_vert, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-10));</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keywordflow">return</span> N2_moist / S2_safe;</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;{</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> S2_safe = amrex::max(S2_vert, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-10));</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="keywordflow">return</span> N2_moist / S2_safe;</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ae2dce36c0088a0243d29d3c90b38c21c">ComputeTurbulentViscosityLES()</a>, and <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB()</a>.</p>
 <div class="dynheader">
@@ -674,20 +741,20 @@ DISCRETIZATION:</h2>
 <h2><a class="anchor" id="autotoc_md9"></a>
 UNITS:</h2>
 <p>Input: dzInv [1/m], u, v [m/s] Output: S²_vert [1/s²] </p>
-<div class="fragment"><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;{</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_km1 = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (u(i, j, k-1) + u(i+1, j, k-1));</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_kp1 = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (u(i, j, k+1) + u(i+1, j, k+1));</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_km1 = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (v(i, j, k-1) + v(i, j+1, k-1));</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_kp1 = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (v(i, j, k+1) + v(i, j+1, k+1));</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> du_dz = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (u_c_kp1 - u_c_km1) * dzInv;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dv_dz = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (v_c_kp1 - v_c_km1) * dzInv;</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> S2_vert = du_dz * du_dz + dv_dz * dv_dz;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">return</span> S2_vert;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;{</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_km1 = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (u(i, j, k-1) + u(i+1, j, k-1));</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_kp1 = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (u(i, j, k+1) + u(i+1, j, k+1));</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_km1 = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (v(i, j, k-1) + v(i, j+1, k-1));</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_kp1 = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (v(i, j, k+1) + v(i, j+1, k+1));</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> du_dz = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (u_c_kp1 - u_c_km1) * dzInv;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dv_dz = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (v_c_kp1 - v_c_km1) * dzInv;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> S2_vert = du_dz * du_dz + dv_dz * dv_dz;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordflow">return</span> S2_vert;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ae2dce36c0088a0243d29d3c90b38c21c">ComputeTurbulentViscosityLES()</a>, and <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB()</a>.</p>
 <div class="dynheader">
@@ -788,55 +855,186 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>vertical shear squared </dd></dl>
-<div class="fragment"><div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;{</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> du_dz;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dv_dz;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c = ( u_vfrac(i,j,k) * u(i, j, k) + u_vfrac(i+1,j,k) * u(i+1, j, k) )</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                    / ( u_vfrac(i,j,k) + u_vfrac(i+1,j,k) );</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c = ( v_vfrac(i,j,k) * v(i, j, k) + v_vfrac(i,j+1,k) * v(i, j+1, k) )</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                    / ( v_vfrac(i,j,k) + v_vfrac(i,j+1,k) );</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">if</span> (c_cflag(i,j,k+1).isCovered()) {</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_km1 = ( u_vfrac(i,j,k-1) * u(i, j, k-1) + u_vfrac(i+1,j,k-1) * u(i+1, j, k-1) )</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                            / ( u_vfrac(i,j,k-1) + u_vfrac(i+1,j,k-1) );</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_km2 = ( u_vfrac(i,j,k-2) * u(i, j, k-2) + u_vfrac(i+1,j,k-2) * u(i+1, j, k-2) )</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                            / ( u_vfrac(i,j,k-2) + u_vfrac(i+1,j,k-2) );</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_km1 = ( v_vfrac(i,j,k-1) * v(i, j, k-1) + v_vfrac(i,j+1,k-1) * v(i, j+1, k-1) )</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                            / ( v_vfrac(i,j,k-1) + v_vfrac(i,j+1,k-1) );</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_km2 = ( v_vfrac(i,j,k-2) * v(i, j, k-2) + v_vfrac(i,j+1,k-2) * v(i, j+1, k-2) )</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                            / ( v_vfrac(i,j,k-2) + v_vfrac(i,j+1,k-2) );</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        du_dz = (<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*u_c - <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*u_c_km1 + u_c_km2) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        dv_dz = (<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*v_c - <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*v_c_km1 + v_c_km2) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c_cflag(i,j,k-1).isCovered()) {</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_kp1 = ( u_vfrac(i,j,k+1) * u(i, j, k+1) + u_vfrac(i+1,j,k+1) * u(i+1, j, k+1) )</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                            / ( u_vfrac(i,j,k+1) + u_vfrac(i+1,j,k+1) );</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_kp2 = ( u_vfrac(i,j,k+2) * u(i, j, k+2) + u_vfrac(i+1,j,k+2) * u(i+1, j, k+2) )</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                            / ( u_vfrac(i,j,k+2) + u_vfrac(i+1,j,k+2) );</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_kp1 = ( v_vfrac(i,j,k+1) * v(i, j, k+1) + v_vfrac(i,j+1,k+1) * v(i, j+1, k+1) )</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                            / ( v_vfrac(i,j,k+1) + v_vfrac(i,j+1,k+1) );</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_kp2 = ( v_vfrac(i,j,k+2) * v(i, j, k+2) + v_vfrac(i,j+1,k+2) * v(i, j+1, k+2) )</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                            / ( v_vfrac(i,j,k+2) + v_vfrac(i,j+1,k+2) );</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        du_dz = (-u_c_kp2 + <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*u_c_kp1 - <a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*u_c) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        dv_dz = (-v_c_kp2 + <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*v_c_kp1 - <a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*v_c) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_km1 = ( u_vfrac(i,j,k-1) * u(i, j, k-1) + u_vfrac(i+1,j,k-1) * u(i+1, j, k-1) )</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                            / ( u_vfrac(i,j,k-1) + u_vfrac(i+1,j,k-1) );</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_kp1 = ( u_vfrac(i,j,k+1) * u(i, j, k+1) + u_vfrac(i+1,j,k+1) * u(i+1, j, k+1) )</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                            / ( u_vfrac(i,j,k+1) + u_vfrac(i+1,j,k+1) );</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_km1 = ( v_vfrac(i,j,k-1) * v(i, j, k-1) + v_vfrac(i,j+1,k-1) * v(i, j+1, k-1) )</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                            / ( v_vfrac(i,j,k-1) + v_vfrac(i,j+1,k-1) );</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_kp1 = ( v_vfrac(i,j,k+1) * v(i, j, k+1) + v_vfrac(i,j+1,k+1) * v(i, j+1, k+1) )</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                            / ( v_vfrac(i,j,k+1) + v_vfrac(i,j+1,k+1) );</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        du_dz = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (u_c_kp1 - u_c_km1) * dzInv;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        dv_dz = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (v_c_kp1 - v_c_km1) * dzInv;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    }</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> S2_vert = du_dz * du_dz + dv_dz * dv_dz;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="keywordflow">return</span> S2_vert;</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;{</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> du_dz, dv_dz;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> f0, f1, fsum;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    f0 = u_vfrac(i,   j, k);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    f1 = u_vfrac(i+1, j, k);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    fsum = f0 + f1;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c = (fsum &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) ?</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                        ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * u(i,   j, k) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                        (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * u(i+1, j, k) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    f0 = v_vfrac(i, j,   k);</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    f1 = v_vfrac(i, j+1, k);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    fsum = f0 + f1;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c = (fsum &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) ?</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                        ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * v(i, j,   k) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                        (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * v(i, j+1, k) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; </div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <span class="keywordflow">if</span> (c_cflag(i,j,k+1).isCovered()) {</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keywordflow">if</span> (c_cflag(i,j,k-1).isCovered()) {</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        }</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> c_km1, c_km2;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        <span class="comment">// u, k-1</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        f0 = u_vfrac(i,   j, k-1);</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        f1 = u_vfrac(i+1, j, k-1);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        fsum = f0 + f1;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="keywordflow">if</span> (fsum &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        }</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        c_km1 = ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * u(i,   j, k-1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                 (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * u(i+1, j, k-1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum;</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <span class="keywordflow">if</span> (c_cflag(i,j,k-2).isCovered()) {</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            du_dz = (u_c - c_km1) * dzInv;</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            <span class="comment">// u, k-2</span></div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            f0 = u_vfrac(i,   j, k-2);</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            f1 = u_vfrac(i+1, j, k-2);</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            fsum = f0 + f1;</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            <span class="keywordflow">if</span> (fsum &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                du_dz = (u_c - c_km1) * dzInv;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                c_km2 = ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * u(i,   j, k-2) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                         (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * u(i+1, j, k-2) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum;</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                du_dz = (<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a> * u_c - <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a> * c_km1 + c_km2) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            }</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        }</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        <span class="comment">// v, k-1</span></div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        f0 = v_vfrac(i, j,   k-1);</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        f1 = v_vfrac(i, j+1, k-1);</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        fsum = f0 + f1;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        <span class="keywordflow">if</span> (fsum &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        }</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        c_km1 = ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * v(i, j,   k-1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                 (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * v(i, j+1, k-1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum;</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        <span class="keywordflow">if</span> (c_cflag(i,j,k-2).isCovered()) {</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;            dv_dz = (v_c - c_km1) * dzInv;</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;            <span class="comment">// v, k-2</span></div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;            f0 = v_vfrac(i, j,   k-2);</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            f1 = v_vfrac(i, j+1, k-2);</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;            fsum = f0 + f1;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;            <span class="keywordflow">if</span> (fsum &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                dv_dz = (v_c - c_km1) * dzInv;</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                c_km2 = ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * v(i, j,   k-2) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                         (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * v(i, j+1, k-2) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum;</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                dv_dz = (<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a> * v_c - <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a> * c_km1 + c_km2) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;            }</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        }</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160; </div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c_cflag(i,j,k-1).isCovered()) {</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160; </div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        <span class="comment">// Note: k+1 is guaranteed not covered (outer if-else structure)</span></div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> c_kp1, c_kp2;</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        <span class="comment">// u, k+1</span></div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        f0 = u_vfrac(i,   j, k+1);</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        f1 = u_vfrac(i+1, j, k+1);</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        fsum = f0 + f1;</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        <span class="keywordflow">if</span> (fsum &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        }</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        c_kp1 = ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * u(i,   j, k+1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;                 (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * u(i+1, j, k+1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160; </div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        <span class="keywordflow">if</span> (c_cflag(i,j,k+2).isCovered()) {</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;            du_dz = (c_kp1 - u_c) * dzInv;</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;            <span class="comment">// u, k+2</span></div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;            f0 = u_vfrac(i,   j, k+2);</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;            f1 = u_vfrac(i+1, j, k+2);</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;            fsum = f0 + f1;</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;            <span class="keywordflow">if</span> (fsum &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                du_dz = (c_kp1 - u_c) * dzInv;</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                c_kp2 = ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * u(i,   j, k+2) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                         (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * u(i+1, j, k+2) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum;</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                du_dz = (-c_kp2 + <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a> * c_kp1 - <a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a> * u_c) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;            }</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        }</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;        <span class="comment">// v, k+1</span></div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        f0 = v_vfrac(i, j,   k+1);</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        f1 = v_vfrac(i, j+1, k+1);</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        fsum = f0 + f1;</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        <span class="keywordflow">if</span> (fsum &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        }</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        c_kp1 = ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * v(i, j,   k+1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                 (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * v(i, j+1, k+1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum;</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160; </div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        <span class="keywordflow">if</span> (c_cflag(i,j,k+2).isCovered()) {</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            dv_dz = (c_kp1 - v_c) * dzInv;</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;            <span class="comment">// v, k+2</span></div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;            f0 = v_vfrac(i, j,   k+2);</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            f1 = v_vfrac(i, j+1, k+2);</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;            fsum = f0 + f1;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;            <span class="keywordflow">if</span> (fsum &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                dv_dz = (c_kp1 - v_c) * dzInv;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                c_kp2 = ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * v(i, j,   k+2) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                         (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * v(i, j+1, k+2) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum;</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                dv_dz = (-c_kp2 + <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a> * c_kp1 - <a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a> * v_c) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            }</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        }</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160; </div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160; </div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> c_km1, c_kp1;</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160; </div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;        <span class="comment">// u, k-1</span></div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;        f0 = u_vfrac(i,   j, k-1);</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;        f1 = u_vfrac(i+1, j, k-1);</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        fsum = f0 + f1;</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        c_km1 = (fsum &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) ?</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;            ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * u(i,   j, k-1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;            (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * u(i+1, j, k-1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160; </div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        <span class="comment">// u, k+1</span></div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        f0 = u_vfrac(i,   j, k+1);</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        f1 = u_vfrac(i+1, j, k+1);</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        fsum = f0 + f1;</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        c_kp1 = (fsum &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) ?</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * u(i,   j, k+1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;            (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * u(i+1, j, k+1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160; </div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        du_dz = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (c_kp1 - c_km1) * dzInv;</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160; </div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        <span class="comment">// v, k-1</span></div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        f0 = v_vfrac(i, j,   k-1);</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        f1 = v_vfrac(i, j+1, k-1);</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        fsum = f0 + f1;</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;        c_km1 = (fsum &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) ?</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * v(i, j,   k-1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * v(i, j+1, k-1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160; </div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;        <span class="comment">// v, k+1</span></div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;        f0 = v_vfrac(i, j,   k+1);</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        f1 = v_vfrac(i, j+1, k+1);</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        fsum = f0 + f1;</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        c_kp1 = (fsum &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) ?</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * v(i, j,   k+1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * v(i, j+1, k+1) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160; </div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        dv_dz = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (c_kp1 - c_km1) * dzInv;</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    }</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160; </div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> S2_vert = du_dz * du_dz + dv_dz * dv_dz;</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <span class="keywordflow">return</span> S2_vert;</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB()</a>.</p>
 <div class="dynheader">
@@ -971,17 +1169,17 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>f(Ri) ∈ [0, 1] [dimensionless] </dd></dl>
-<div class="fragment"><div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;{</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stability_factor = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.);</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordflow">if</span> (Ri &gt;= Ri_crit) {</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        stability_factor = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.);</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Ri &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.) &amp;&amp; Ri &lt; Ri_crit) {</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        stability_factor = std::sqrt(amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.) - Ri / Ri_crit));</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        stability_factor = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.);</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    }</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keywordflow">return</span> stability_factor;</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;{</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stability_factor = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.);</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="keywordflow">if</span> (Ri &gt;= Ri_crit) {</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        stability_factor = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.);</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Ri &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.) &amp;&amp; Ri &lt; Ri_crit) {</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        stability_factor = std::sqrt(amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.) - Ri / Ri_crit));</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        stability_factor = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.);</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    }</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <span class="keywordflow">return</span> stability_factor;</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ae2dce36c0088a0243d29d3c90b38c21c">ComputeTurbulentViscosityLES()</a>, and <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB()</a>.</p>
 <div class="dynheader">

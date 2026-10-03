@@ -15,6 +15,7 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
     [ "ERF_MRI.H", "ERF__MRI_8H.html", [
       [ "MRISplitIntegrator", "classMRISplitIntegrator.html", "classMRISplitIntegrator" ]
     ] ],
+    [ "ERF_ScalarLimitPost.H", "ERF__ScalarLimitPost_8H.html", "ERF__ScalarLimitPost_8H" ],
     [ "ERF_SlowRhsPost.cpp", "ERF__SlowRhsPost_8cpp.html", "ERF__SlowRhsPost_8cpp" ],
     [ "ERF_SlowRhsPre.cpp", "ERF__SlowRhsPre_8cpp.html", "ERF__SlowRhsPre_8cpp" ],
     [ "ERF_Substep_MT.cpp", "ERF__Substep__MT_8cpp.html", "ERF__Substep__MT_8cpp" ],
