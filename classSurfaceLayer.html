@@ -6569,7 +6569,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassSurfaceLayer_html_a07168bc6be4d07fd31d0877a347975b0"><div class="ttname"><a href="classSurfaceLayer.html#a07168bc6be4d07fd31d0877a347975b0">SurfaceLayer::m_lsm_data_name</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_lsm_data_name</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1680</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a1dcdb82f4a2c3676732791255cfa9656"><div class="ttname"><a href="classSurfaceLayer.html#a1dcdb82f4a2c3676732791255cfa9656">SurfaceLayer::m_has_lsm_tsurf</a></div><div class="ttdeci">bool m_has_lsm_tsurf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1594</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a4110ab7c1edcce288acc3f626466e6df"><div class="ttname"><a href="classSurfaceLayer.html#a4110ab7c1edcce288acc3f626466e6df">SurfaceLayer::m_has_lsm_fluxes</a></div><div class="ttdeci">bool m_has_lsm_fluxes</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1593</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_ac253b81d735eb529d6443bba9f79675f"><div class="ttname"><a href="classSurfaceLayer.html#ac253b81d735eb529d6443bba9f79675f">SurfaceLayer::read_cols</a></div><div class="ttdeci">static amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; read_cols(const std::string &amp;fname, const int skip_nlines=1)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:2914</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_ac253b81d735eb529d6443bba9f79675f"><div class="ttname"><a href="classSurfaceLayer.html#ac253b81d735eb529d6443bba9f79675f">SurfaceLayer::read_cols</a></div><div class="ttdeci">static amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; read_cols(const std::string &amp;fname, const int skip_nlines=1)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:2934</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_ad24660428c8d517756200d0f327aa37a"><div class="ttname"><a href="classSurfaceLayer.html#ad24660428c8d517756200d0f327aa37a">SurfaceLayer::m_use_sfc_sst</a></div><div class="ttdeci">bool m_use_sfc_sst</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1599</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_ae0fd46e99ed7d1c1a4b34701c84562ea"><div class="ttname"><a href="classSurfaceLayer.html#ae0fd46e99ed7d1c1a4b34701c84562ea">SurfaceLayer::m_use_coupled_sst</a></div><div class="ttdeci">bool m_use_coupled_sst</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1609</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_af866fe6c505ef4e5a551486d9aa3941b"><div class="ttname"><a href="classSurfaceLayer.html#af866fe6c505ef4e5a551486d9aa3941b">SurfaceLayer::read_custom_roughness</a></div><div class="ttdeci">void read_custom_roughness(const int &amp;lev, const std::string &amp;fname)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:2786</div></div>
@@ -6658,65 +6658,65 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Vector containing each column in the file as a vector </dd></dl>
-<div class="fragment"><div class="line"><a name="l02915"></a><span class="lineno"> 2915</span>&#160;{</div>
-<div class="line"><a name="l02916"></a><span class="lineno"> 2916</span>&#160;    std::ifstream ifs(fname);</div>
-<div class="line"><a name="l02917"></a><span class="lineno"> 2917</span>&#160;    <span class="keywordflow">if</span> (!ifs.is_open())</div>
-<div class="line"><a name="l02918"></a><span class="lineno"> 2918</span>&#160;    {</div>
-<div class="line"><a name="l02919"></a><span class="lineno"> 2919</span>&#160;        amrex::Error(<span class="stringliteral">&quot;Error opening input file &quot;</span> + fname);</div>
-<div class="line"><a name="l02920"></a><span class="lineno"> 2920</span>&#160;    }</div>
-<div class="line"><a name="l02921"></a><span class="lineno"> 2921</span>&#160; </div>
-<div class="line"><a name="l02922"></a><span class="lineno"> 2922</span>&#160;    amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt;&gt; col_data;</div>
-<div class="line"><a name="l02923"></a><span class="lineno"> 2923</span>&#160;    std::string line;</div>
-<div class="line"><a name="l02924"></a><span class="lineno"> 2924</span>&#160;    <span class="keywordtype">int</span> nlines = 0;</div>
-<div class="line"><a name="l02925"></a><span class="lineno"> 2925</span>&#160;    <span class="keywordtype">int</span> ncols = -1;</div>
-<div class="line"><a name="l02926"></a><span class="lineno"> 2926</span>&#160; </div>
-<div class="line"><a name="l02927"></a><span class="lineno"> 2927</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> print_err = [](<span class="keyword">const</span> std::string &amp;err_fname, <span class="keywordtype">int</span> lineno, <span class="keywordtype">int</span> cols, <span class="keywordtype">int</span> expected_cols) {</div>
-<div class="line"><a name="l02928"></a><span class="lineno"> 2928</span>&#160;        amrex::Error(<span class="stringliteral">&quot;Error reading file &#39;&quot;</span> + err_fname + <span class="stringliteral">&quot;&#39;: expected line &quot;</span> +</div>
-<div class="line"><a name="l02929"></a><span class="lineno"> 2929</span>&#160;                     std::to_string(lineno) + <span class="stringliteral">&quot; to have &quot;</span> + std::to_string(expected_cols) +</div>
-<div class="line"><a name="l02930"></a><span class="lineno"> 2930</span>&#160;                     <span class="stringliteral">&quot; columns, but got &quot;</span> + std::to_string(cols));</div>
-<div class="line"><a name="l02931"></a><span class="lineno"> 2931</span>&#160;    };</div>
-<div class="line"><a name="l02932"></a><span class="lineno"> 2932</span>&#160; </div>
-<div class="line"><a name="l02933"></a><span class="lineno"> 2933</span>&#160;    <span class="keywordflow">while</span> (std::getline(ifs, line))</div>
-<div class="line"><a name="l02934"></a><span class="lineno"> 2934</span>&#160;    {</div>
-<div class="line"><a name="l02935"></a><span class="lineno"> 2935</span>&#160;        nlines++;</div>
-<div class="line"><a name="l02936"></a><span class="lineno"> 2936</span>&#160;        <span class="keywordflow">if</span> (nlines &lt;= skip_nlines) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l02937"></a><span class="lineno"> 2937</span>&#160;        <span class="keywordflow">if</span> (line.empty()) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l02938"></a><span class="lineno"> 2938</span>&#160; </div>
-<div class="line"><a name="l02939"></a><span class="lineno"> 2939</span>&#160;        std::istringstream iss(line);</div>
-<div class="line"><a name="l02940"></a><span class="lineno"> 2940</span>&#160; </div>
-<div class="line"><a name="l02941"></a><span class="lineno"> 2941</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>;</div>
-<div class="line"><a name="l02942"></a><span class="lineno"> 2942</span>&#160;        <span class="comment">// Get the number of columns in the file</span></div>
-<div class="line"><a name="l02943"></a><span class="lineno"> 2943</span>&#160;        <span class="keywordflow">if</span> (ncols == -1) {</div>
-<div class="line"><a name="l02944"></a><span class="lineno"> 2944</span>&#160;            <span class="keywordtype">int</span> j = 0;</div>
-<div class="line"><a name="l02945"></a><span class="lineno"> 2945</span>&#160;            <span class="keywordflow">while</span> (iss &gt;&gt; <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>) {</div>
-<div class="line"><a name="l02946"></a><span class="lineno"> 2946</span>&#160;                col_data.push_back(amrex::Vector&lt;amrex::Real&gt;());</div>
-<div class="line"><a name="l02947"></a><span class="lineno"> 2947</span>&#160;                j+= 1;</div>
-<div class="line"><a name="l02948"></a><span class="lineno"> 2948</span>&#160;            }</div>
-<div class="line"><a name="l02949"></a><span class="lineno"> 2949</span>&#160; </div>
-<div class="line"><a name="l02950"></a><span class="lineno"> 2950</span>&#160;            ncols = j;</div>
-<div class="line"><a name="l02951"></a><span class="lineno"> 2951</span>&#160;            iss = std::istringstream(line);</div>
-<div class="line"><a name="l02952"></a><span class="lineno"> 2952</span>&#160;        }</div>
-<div class="line"><a name="l02953"></a><span class="lineno"> 2953</span>&#160; </div>
-<div class="line"><a name="l02954"></a><span class="lineno"> 2954</span>&#160;        <span class="keywordtype">int</span> j = 0;</div>
-<div class="line"><a name="l02955"></a><span class="lineno"> 2955</span>&#160;        <span class="keywordflow">while</span> (iss &gt;&gt; <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>) {</div>
-<div class="line"><a name="l02956"></a><span class="lineno"> 2956</span>&#160;            <span class="comment">// verify each line has the same number of columns</span></div>
-<div class="line"><a name="l02957"></a><span class="lineno"> 2957</span>&#160;            <span class="keywordflow">if</span> (j &gt;= ncols) {</div>
-<div class="line"><a name="l02958"></a><span class="lineno"> 2958</span>&#160;                print_err(fname, nlines, j+1, ncols);</div>
-<div class="line"><a name="l02959"></a><span class="lineno"> 2959</span>&#160;            }</div>
-<div class="line"><a name="l02960"></a><span class="lineno"> 2960</span>&#160;            col_data[j].push_back(<a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>);</div>
-<div class="line"><a name="l02961"></a><span class="lineno"> 2961</span>&#160;            j+= 1;</div>
-<div class="line"><a name="l02962"></a><span class="lineno"> 2962</span>&#160;        }</div>
-<div class="line"><a name="l02963"></a><span class="lineno"> 2963</span>&#160; </div>
-<div class="line"><a name="l02964"></a><span class="lineno"> 2964</span>&#160;        <span class="comment">// throw error if there are fewer columns in the line than expected</span></div>
-<div class="line"><a name="l02965"></a><span class="lineno"> 2965</span>&#160;        <span class="keywordflow">if</span> (j != ncols) {</div>
-<div class="line"><a name="l02966"></a><span class="lineno"> 2966</span>&#160;            print_err(fname, nlines, j, ncols);</div>
-<div class="line"><a name="l02967"></a><span class="lineno"> 2967</span>&#160;        }</div>
-<div class="line"><a name="l02968"></a><span class="lineno"> 2968</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l02935"></a><span class="lineno"> 2935</span>&#160;{</div>
+<div class="line"><a name="l02936"></a><span class="lineno"> 2936</span>&#160;    std::ifstream ifs(fname);</div>
+<div class="line"><a name="l02937"></a><span class="lineno"> 2937</span>&#160;    <span class="keywordflow">if</span> (!ifs.is_open())</div>
+<div class="line"><a name="l02938"></a><span class="lineno"> 2938</span>&#160;    {</div>
+<div class="line"><a name="l02939"></a><span class="lineno"> 2939</span>&#160;        amrex::Error(<span class="stringliteral">&quot;Error opening input file &quot;</span> + fname);</div>
+<div class="line"><a name="l02940"></a><span class="lineno"> 2940</span>&#160;    }</div>
+<div class="line"><a name="l02941"></a><span class="lineno"> 2941</span>&#160; </div>
+<div class="line"><a name="l02942"></a><span class="lineno"> 2942</span>&#160;    amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt;&gt; col_data;</div>
+<div class="line"><a name="l02943"></a><span class="lineno"> 2943</span>&#160;    std::string line;</div>
+<div class="line"><a name="l02944"></a><span class="lineno"> 2944</span>&#160;    <span class="keywordtype">int</span> nlines = 0;</div>
+<div class="line"><a name="l02945"></a><span class="lineno"> 2945</span>&#160;    <span class="keywordtype">int</span> ncols = -1;</div>
+<div class="line"><a name="l02946"></a><span class="lineno"> 2946</span>&#160; </div>
+<div class="line"><a name="l02947"></a><span class="lineno"> 2947</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> print_err = [](<span class="keyword">const</span> std::string &amp;err_fname, <span class="keywordtype">int</span> lineno, <span class="keywordtype">int</span> cols, <span class="keywordtype">int</span> expected_cols) {</div>
+<div class="line"><a name="l02948"></a><span class="lineno"> 2948</span>&#160;        amrex::Error(<span class="stringliteral">&quot;Error reading file &#39;&quot;</span> + err_fname + <span class="stringliteral">&quot;&#39;: expected line &quot;</span> +</div>
+<div class="line"><a name="l02949"></a><span class="lineno"> 2949</span>&#160;                     std::to_string(lineno) + <span class="stringliteral">&quot; to have &quot;</span> + std::to_string(expected_cols) +</div>
+<div class="line"><a name="l02950"></a><span class="lineno"> 2950</span>&#160;                     <span class="stringliteral">&quot; columns, but got &quot;</span> + std::to_string(cols));</div>
+<div class="line"><a name="l02951"></a><span class="lineno"> 2951</span>&#160;    };</div>
+<div class="line"><a name="l02952"></a><span class="lineno"> 2952</span>&#160; </div>
+<div class="line"><a name="l02953"></a><span class="lineno"> 2953</span>&#160;    <span class="keywordflow">while</span> (std::getline(ifs, line))</div>
+<div class="line"><a name="l02954"></a><span class="lineno"> 2954</span>&#160;    {</div>
+<div class="line"><a name="l02955"></a><span class="lineno"> 2955</span>&#160;        nlines++;</div>
+<div class="line"><a name="l02956"></a><span class="lineno"> 2956</span>&#160;        <span class="keywordflow">if</span> (nlines &lt;= skip_nlines) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l02957"></a><span class="lineno"> 2957</span>&#160;        <span class="keywordflow">if</span> (line.empty()) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l02958"></a><span class="lineno"> 2958</span>&#160; </div>
+<div class="line"><a name="l02959"></a><span class="lineno"> 2959</span>&#160;        std::istringstream iss(line);</div>
+<div class="line"><a name="l02960"></a><span class="lineno"> 2960</span>&#160; </div>
+<div class="line"><a name="l02961"></a><span class="lineno"> 2961</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>;</div>
+<div class="line"><a name="l02962"></a><span class="lineno"> 2962</span>&#160;        <span class="comment">// Get the number of columns in the file</span></div>
+<div class="line"><a name="l02963"></a><span class="lineno"> 2963</span>&#160;        <span class="keywordflow">if</span> (ncols == -1) {</div>
+<div class="line"><a name="l02964"></a><span class="lineno"> 2964</span>&#160;            <span class="keywordtype">int</span> j = 0;</div>
+<div class="line"><a name="l02965"></a><span class="lineno"> 2965</span>&#160;            <span class="keywordflow">while</span> (iss &gt;&gt; <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>) {</div>
+<div class="line"><a name="l02966"></a><span class="lineno"> 2966</span>&#160;                col_data.push_back(amrex::Vector&lt;amrex::Real&gt;());</div>
+<div class="line"><a name="l02967"></a><span class="lineno"> 2967</span>&#160;                j+= 1;</div>
+<div class="line"><a name="l02968"></a><span class="lineno"> 2968</span>&#160;            }</div>
 <div class="line"><a name="l02969"></a><span class="lineno"> 2969</span>&#160; </div>
-<div class="line"><a name="l02970"></a><span class="lineno"> 2970</span>&#160;    ifs.close();</div>
-<div class="line"><a name="l02971"></a><span class="lineno"> 2971</span>&#160; </div>
-<div class="line"><a name="l02972"></a><span class="lineno"> 2972</span>&#160;    <span class="keywordflow">return</span> col_data;</div>
-<div class="line"><a name="l02973"></a><span class="lineno"> 2973</span>&#160;}</div>
+<div class="line"><a name="l02970"></a><span class="lineno"> 2970</span>&#160;            ncols = j;</div>
+<div class="line"><a name="l02971"></a><span class="lineno"> 2971</span>&#160;            iss = std::istringstream(line);</div>
+<div class="line"><a name="l02972"></a><span class="lineno"> 2972</span>&#160;        }</div>
+<div class="line"><a name="l02973"></a><span class="lineno"> 2973</span>&#160; </div>
+<div class="line"><a name="l02974"></a><span class="lineno"> 2974</span>&#160;        <span class="keywordtype">int</span> j = 0;</div>
+<div class="line"><a name="l02975"></a><span class="lineno"> 2975</span>&#160;        <span class="keywordflow">while</span> (iss &gt;&gt; <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>) {</div>
+<div class="line"><a name="l02976"></a><span class="lineno"> 2976</span>&#160;            <span class="comment">// verify each line has the same number of columns</span></div>
+<div class="line"><a name="l02977"></a><span class="lineno"> 2977</span>&#160;            <span class="keywordflow">if</span> (j &gt;= ncols) {</div>
+<div class="line"><a name="l02978"></a><span class="lineno"> 2978</span>&#160;                print_err(fname, nlines, j+1, ncols);</div>
+<div class="line"><a name="l02979"></a><span class="lineno"> 2979</span>&#160;            }</div>
+<div class="line"><a name="l02980"></a><span class="lineno"> 2980</span>&#160;            col_data[j].push_back(<a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>);</div>
+<div class="line"><a name="l02981"></a><span class="lineno"> 2981</span>&#160;            j+= 1;</div>
+<div class="line"><a name="l02982"></a><span class="lineno"> 2982</span>&#160;        }</div>
+<div class="line"><a name="l02983"></a><span class="lineno"> 2983</span>&#160; </div>
+<div class="line"><a name="l02984"></a><span class="lineno"> 2984</span>&#160;        <span class="comment">// throw error if there are fewer columns in the line than expected</span></div>
+<div class="line"><a name="l02985"></a><span class="lineno"> 2985</span>&#160;        <span class="keywordflow">if</span> (j != ncols) {</div>
+<div class="line"><a name="l02986"></a><span class="lineno"> 2986</span>&#160;            print_err(fname, nlines, j, ncols);</div>
+<div class="line"><a name="l02987"></a><span class="lineno"> 2987</span>&#160;        }</div>
+<div class="line"><a name="l02988"></a><span class="lineno"> 2988</span>&#160;    }</div>
+<div class="line"><a name="l02989"></a><span class="lineno"> 2989</span>&#160; </div>
+<div class="line"><a name="l02990"></a><span class="lineno"> 2990</span>&#160;    ifs.close();</div>
+<div class="line"><a name="l02991"></a><span class="lineno"> 2991</span>&#160; </div>
+<div class="line"><a name="l02992"></a><span class="lineno"> 2992</span>&#160;    <span class="keywordflow">return</span> col_data;</div>
+<div class="line"><a name="l02993"></a><span class="lineno"> 2993</span>&#160;}</div>
 <div class="ttc" id="anamespaceWSM6SedCellScratch_html_a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">WSM6SedCellScratch::tmp</a></div><div class="ttdeci">@ tmp</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:116</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50">make_SurfaceLayer_at_level()</a>.</p>
@@ -6781,115 +6781,135 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l02793"></a><span class="lineno"> 2793</span>&#160;        <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()) {</div>
 <div class="line"><a name="l02794"></a><span class="lineno"> 2794</span>&#160;            Print()&lt;&lt;<span class="stringliteral">&quot;Reading MOST roughness file at level &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; : &quot;</span> &lt;&lt; fname &lt;&lt; std::endl;</div>
 <div class="line"><a name="l02795"></a><span class="lineno"> 2795</span>&#160;            std::ifstream file(fname);</div>
-<div class="line"><a name="l02796"></a><span class="lineno"> 2796</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> value1,value2,value3;</div>
-<div class="line"><a name="l02797"></a><span class="lineno"> 2797</span>&#160;            <span class="keywordflow">while</span>(file&gt;&gt;value1&gt;&gt;value2&gt;&gt;value3){</div>
-<div class="line"><a name="l02798"></a><span class="lineno"> 2798</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.push_back(value1);</div>
-<div class="line"><a name="l02799"></a><span class="lineno"> 2799</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.push_back(value2);</div>
-<div class="line"><a name="l02800"></a><span class="lineno"> 2800</span>&#160;                m_z0.push_back(value3);</div>
-<div class="line"><a name="l02801"></a><span class="lineno"> 2801</span>&#160;            }</div>
-<div class="line"><a name="l02802"></a><span class="lineno"> 2802</span>&#160;            file.close();</div>
-<div class="line"><a name="l02803"></a><span class="lineno"> 2803</span>&#160; </div>
-<div class="line"><a name="l02804"></a><span class="lineno"> 2804</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.size());</div>
-<div class="line"><a name="l02805"></a><span class="lineno"> 2805</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == m_z0.size());</div>
-<div class="line"><a name="l02806"></a><span class="lineno"> 2806</span>&#160;        }</div>
+<div class="line"><a name="l02796"></a><span class="lineno"> 2796</span>&#160;            <span class="keywordflow">if</span> (!file.is_open()) {</div>
+<div class="line"><a name="l02797"></a><span class="lineno"> 2797</span>&#160;                Abort(<span class="stringliteral">&quot;Could not open the MOST roughness file \&quot;&quot;</span> + fname + <span class="stringliteral">&quot;\&quot; given as &quot;</span></div>
+<div class="line"><a name="l02798"></a><span class="lineno"> 2798</span>&#160;                      <span class="stringliteral">&quot;erf.most.roughness_file_name -- please check the file name in the inputs file&quot;</span>);</div>
+<div class="line"><a name="l02799"></a><span class="lineno"> 2799</span>&#160;            }</div>
+<div class="line"><a name="l02800"></a><span class="lineno"> 2800</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> value1,value2,value3;</div>
+<div class="line"><a name="l02801"></a><span class="lineno"> 2801</span>&#160;            <span class="keywordflow">while</span>(file&gt;&gt;value1&gt;&gt;value2&gt;&gt;value3){</div>
+<div class="line"><a name="l02802"></a><span class="lineno"> 2802</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.push_back(value1);</div>
+<div class="line"><a name="l02803"></a><span class="lineno"> 2803</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.push_back(value2);</div>
+<div class="line"><a name="l02804"></a><span class="lineno"> 2804</span>&#160;                m_z0.push_back(value3);</div>
+<div class="line"><a name="l02805"></a><span class="lineno"> 2805</span>&#160;            }</div>
+<div class="line"><a name="l02806"></a><span class="lineno"> 2806</span>&#160;            file.close();</div>
 <div class="line"><a name="l02807"></a><span class="lineno"> 2807</span>&#160; </div>
-<div class="line"><a name="l02808"></a><span class="lineno"> 2808</span>&#160;        <span class="comment">// Broadcast the whole domain to every rank</span></div>
-<div class="line"><a name="l02809"></a><span class="lineno"> 2809</span>&#160;        <span class="keywordtype">int</span> ioproc = ParallelDescriptor::IOProcessorNumber();</div>
-<div class="line"><a name="l02810"></a><span class="lineno"> 2810</span>&#160;        <span class="keywordtype">int</span> nnode = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size());</div>
-<div class="line"><a name="l02811"></a><span class="lineno"> 2811</span>&#160;        ParallelDescriptor::Bcast(&amp;nnode, 1, ioproc);</div>
-<div class="line"><a name="l02812"></a><span class="lineno"> 2812</span>&#160; </div>
-<div class="line"><a name="l02813"></a><span class="lineno"> 2813</span>&#160;        <span class="keywordflow">if</span> (!ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l02814"></a><span class="lineno"> 2814</span>&#160;            <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.resize(nnode);</div>
-<div class="line"><a name="l02815"></a><span class="lineno"> 2815</span>&#160;            <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.resize(nnode);</div>
-<div class="line"><a name="l02816"></a><span class="lineno"> 2816</span>&#160;            m_z0.resize(nnode);</div>
-<div class="line"><a name="l02817"></a><span class="lineno"> 2817</span>&#160;        }</div>
-<div class="line"><a name="l02818"></a><span class="lineno"> 2818</span>&#160;        ParallelDescriptor::Bcast(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.data() , nnode, ioproc);</div>
-<div class="line"><a name="l02819"></a><span class="lineno"> 2819</span>&#160;        ParallelDescriptor::Bcast(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.data() , nnode, ioproc);</div>
-<div class="line"><a name="l02820"></a><span class="lineno"> 2820</span>&#160;        ParallelDescriptor::Bcast(m_z0.data(), nnode, ioproc);</div>
-<div class="line"><a name="l02821"></a><span class="lineno"> 2821</span>&#160; </div>
-<div class="line"><a name="l02822"></a><span class="lineno"> 2822</span>&#160;        <span class="comment">// Copy data to the GPU</span></div>
-<div class="line"><a name="l02823"></a><span class="lineno"> 2823</span>&#160;        Gpu::DeviceVector&lt;Real&gt; d_x(nnode),d_y(nnode),d_z0(nnode);</div>
-<div class="line"><a name="l02824"></a><span class="lineno"> 2824</span>&#160;        Gpu::copy(Gpu::hostToDevice, <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.begin(), <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.end(), d_x.begin());</div>
-<div class="line"><a name="l02825"></a><span class="lineno"> 2825</span>&#160;        Gpu::copy(Gpu::hostToDevice, <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.begin(), <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.end(), d_y.begin());</div>
-<div class="line"><a name="l02826"></a><span class="lineno"> 2826</span>&#160;        Gpu::copy(Gpu::hostToDevice, m_z0.begin(), m_z0.end(), d_z0.begin());</div>
-<div class="line"><a name="l02827"></a><span class="lineno"> 2827</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* xp  = d_x.data();</div>
-<div class="line"><a name="l02828"></a><span class="lineno"> 2828</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* yp  = d_y.data();</div>
-<div class="line"><a name="l02829"></a><span class="lineno"> 2829</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* z0p = d_z0.data();</div>
-<div class="line"><a name="l02830"></a><span class="lineno"> 2830</span>&#160; </div>
-<div class="line"><a name="l02831"></a><span class="lineno"> 2831</span>&#160;        <span class="comment">// Each rank populates it&#39;s z_0[lev] MultiFab</span></div>
-<div class="line"><a name="l02832"></a><span class="lineno"> 2832</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(2);</div>
-<div class="line"><a name="l02833"></a><span class="lineno"> 2833</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(<a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev]); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l02834"></a><span class="lineno"> 2834</span>&#160;        {</div>
-<div class="line"><a name="l02835"></a><span class="lineno"> 2835</span>&#160;            Box gtbx = mfi.growntilebox();</div>
-<div class="line"><a name="l02836"></a><span class="lineno"> 2836</span>&#160; </div>
-<div class="line"><a name="l02837"></a><span class="lineno"> 2837</span>&#160;            <span class="keywordflow">if</span> (gtbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a name="l02838"></a><span class="lineno"> 2838</span>&#160; </div>
-<div class="line"><a name="l02839"></a><span class="lineno"> 2839</span>&#160;            <span class="comment">// Populate z_phys data</span></div>
-<div class="line"><a name="l02840"></a><span class="lineno"> 2840</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tol = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0e-4);</div>
-<div class="line"><a name="l02841"></a><span class="lineno"> 2841</span>&#160;            <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].CellSizeArray();</div>
-<div class="line"><a name="l02842"></a><span class="lineno"> 2842</span>&#160;            <span class="keyword">auto</span> ProbLoArr = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].ProbLoArray();</div>
-<div class="line"><a name="l02843"></a><span class="lineno"> 2843</span>&#160;            <span class="keywordtype">int</span> ilo = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(0);</div>
-<div class="line"><a name="l02844"></a><span class="lineno"> 2844</span>&#160;            <span class="keywordtype">int</span> jlo = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(1);</div>
-<div class="line"><a name="l02845"></a><span class="lineno"> 2845</span>&#160;            <span class="keywordtype">int</span> ihi = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().bigEnd(0);</div>
-<div class="line"><a name="l02846"></a><span class="lineno"> 2846</span>&#160;            <span class="keywordtype">int</span> jhi = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().bigEnd(1);</div>
-<div class="line"><a name="l02847"></a><span class="lineno"> 2847</span>&#160; </div>
-<div class="line"><a name="l02848"></a><span class="lineno"> 2848</span>&#160;            Array4&lt;Real&gt; <span class="keyword">const</span>&amp; z0_arr = <a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev].array(mfi);</div>
-<div class="line"><a name="l02849"></a><span class="lineno"> 2849</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gtbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
-<div class="line"><a name="l02850"></a><span class="lineno"> 2850</span>&#160;            {</div>
-<div class="line"><a name="l02851"></a><span class="lineno"> 2851</span>&#160;                <span class="comment">// Clip indices for ghost-cells</span></div>
-<div class="line"><a name="l02852"></a><span class="lineno"> 2852</span>&#160;                <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,ilo),ihi);</div>
-<div class="line"><a name="l02853"></a><span class="lineno"> 2853</span>&#160;                <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j,jlo),jhi);</div>
-<div class="line"><a name="l02854"></a><span class="lineno"> 2854</span>&#160; </div>
-<div class="line"><a name="l02855"></a><span class="lineno"> 2855</span>&#160;                <span class="comment">// Location of nodes</span></div>
-<div class="line"><a name="l02856"></a><span class="lineno"> 2856</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = ProbLoArr[0]  + ii  * <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[0];</div>
-<div class="line"><a name="l02857"></a><span class="lineno"> 2857</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = ProbLoArr[1]  + jj  * <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[1];</div>
-<div class="line"><a name="l02858"></a><span class="lineno"> 2858</span>&#160;                <span class="keywordtype">int</span> inode = ii + jj * (ihi-ilo+2); <span class="comment">// stride is Nx+1</span></div>
-<div class="line"><a name="l02859"></a><span class="lineno"> 2859</span>&#160;                <span class="keywordflow">if</span> (std::sqrt(amrex::Math::powi&lt;2&gt;(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-xp[inode])+amrex::Math::powi&lt;2&gt;(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-yp[inode])) &lt; tol) {</div>
-<div class="line"><a name="l02860"></a><span class="lineno"> 2860</span>&#160;                    z0_arr(i,j,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) = z0p[inode];</div>
-<div class="line"><a name="l02861"></a><span class="lineno"> 2861</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l02862"></a><span class="lineno"> 2862</span>&#160;                    <span class="comment">// Unexpected list order, do brute force search</span></div>
-<div class="line"><a name="l02863"></a><span class="lineno"> 2863</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z0loc = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l02864"></a><span class="lineno"> 2864</span>&#160;                    <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l02865"></a><span class="lineno"> 2865</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;nnode; ++n) {</div>
-<div class="line"><a name="l02866"></a><span class="lineno"> 2866</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> delta=std::sqrt(amrex::Math::powi&lt;2&gt;(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-xp[n])+amrex::Math::powi&lt;2&gt;(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-yp[n]));</div>
-<div class="line"><a name="l02867"></a><span class="lineno"> 2867</span>&#160;                        <span class="keywordflow">if</span> (delta &lt; tol) {</div>
-<div class="line"><a name="l02868"></a><span class="lineno"> 2868</span>&#160;                            found = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l02869"></a><span class="lineno"> 2869</span>&#160;                            z0loc = z0p[n];</div>
-<div class="line"><a name="l02870"></a><span class="lineno"> 2870</span>&#160;                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l02871"></a><span class="lineno"> 2871</span>&#160;                        }</div>
-<div class="line"><a name="l02872"></a><span class="lineno"> 2872</span>&#160;                    }</div>
-<div class="line"><a name="l02873"></a><span class="lineno"> 2873</span>&#160;                    <a class="code" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a>(found, <span class="stringliteral">&quot;Location read from terrain file does not match the grid!&quot;</span>);</div>
-<div class="line"><a name="l02874"></a><span class="lineno"> 2874</span>&#160;                    amrex::ignore_unused(found);</div>
-<div class="line"><a name="l02875"></a><span class="lineno"> 2875</span>&#160;                    z0_arr(i,j,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) = z0loc;</div>
-<div class="line"><a name="l02876"></a><span class="lineno"> 2876</span>&#160;                }</div>
-<div class="line"><a name="l02877"></a><span class="lineno"> 2877</span>&#160;            });</div>
-<div class="line"><a name="l02878"></a><span class="lineno"> 2878</span>&#160;        } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l02879"></a><span class="lineno"> 2879</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l02880"></a><span class="lineno"> 2880</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lev &gt; 0);</div>
-<div class="line"><a name="l02881"></a><span class="lineno"> 2881</span>&#160; </div>
-<div class="line"><a name="l02882"></a><span class="lineno"> 2882</span>&#160;        Print()&lt;&lt;<span class="stringliteral">&quot;Interpolating MOST roughness at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
-<div class="line"><a name="l02883"></a><span class="lineno"> 2883</span>&#160; </div>
-<div class="line"><a name="l02884"></a><span class="lineno"> 2884</span>&#160;        <span class="comment">// Create a BC mapper that uses FOEXTRAP at domain bndry</span></div>
-<div class="line"><a name="l02885"></a><span class="lineno"> 2885</span>&#160;        Vector&lt;int&gt; bc_lo(3,<a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>);</div>
-<div class="line"><a name="l02886"></a><span class="lineno"> 2886</span>&#160;        Vector&lt;int&gt; bc_hi(3,<a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>);</div>
-<div class="line"><a name="l02887"></a><span class="lineno"> 2887</span>&#160;        Vector&lt;BCRec&gt; bcr; bcr.push_back(BCRec(bc_lo.data(),bc_hi.data()));</div>
-<div class="line"><a name="l02888"></a><span class="lineno"> 2888</span>&#160; </div>
-<div class="line"><a name="l02889"></a><span class="lineno"> 2889</span>&#160;        <span class="comment">// Create ref ratio</span></div>
-<div class="line"><a name="l02890"></a><span class="lineno"> 2890</span>&#160;        IntVect ratio;</div>
-<div class="line"><a name="l02891"></a><span class="lineno"> 2891</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
-<div class="line"><a name="l02892"></a><span class="lineno"> 2892</span>&#160;            ratio[idim] = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().length(idim) / <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[0].Domain().length(idim);</div>
-<div class="line"><a name="l02893"></a><span class="lineno"> 2893</span>&#160;        }</div>
-<div class="line"><a name="l02894"></a><span class="lineno"> 2894</span>&#160; </div>
-<div class="line"><a name="l02895"></a><span class="lineno"> 2895</span>&#160;        <span class="comment">// Create interp object and interpolate from the coarsest grid</span></div>
-<div class="line"><a name="l02896"></a><span class="lineno"> 2896</span>&#160;        MFInterpolater* interp = &amp;mf_cell_cons_interp;</div>
-<div class="line"><a name="l02897"></a><span class="lineno"> 2897</span>&#160;        interp-&gt;interp(<a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[0]  , 0,</div>
-<div class="line"><a name="l02898"></a><span class="lineno"> 2898</span>&#160;                       <a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev], 0,</div>
-<div class="line"><a name="l02899"></a><span class="lineno"> 2899</span>&#160;                       1, <a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev].nGrowVect(),</div>
-<div class="line"><a name="l02900"></a><span class="lineno"> 2900</span>&#160;                       <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[0], <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev],</div>
-<div class="line"><a name="l02901"></a><span class="lineno"> 2901</span>&#160;                       <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain(),ratio,</div>
-<div class="line"><a name="l02902"></a><span class="lineno"> 2902</span>&#160;                       bcr, 0);</div>
-<div class="line"><a name="l02903"></a><span class="lineno"> 2903</span>&#160;    }</div>
-<div class="line"><a name="l02904"></a><span class="lineno"> 2904</span>&#160;}</div>
+<div class="line"><a name="l02808"></a><span class="lineno"> 2808</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.size());</div>
+<div class="line"><a name="l02809"></a><span class="lineno"> 2809</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == m_z0.size());</div>
+<div class="line"><a name="l02810"></a><span class="lineno"> 2810</span>&#160; </div>
+<div class="line"><a name="l02811"></a><span class="lineno"> 2811</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.empty()) {</div>
+<div class="line"><a name="l02812"></a><span class="lineno"> 2812</span>&#160;                Abort(<span class="stringliteral">&quot;The MOST roughness file \&quot;&quot;</span> + fname + <span class="stringliteral">&quot;\&quot; holds no (x, y, z0) triples&quot;</span>);</div>
+<div class="line"><a name="l02813"></a><span class="lineno"> 2813</span>&#160;            }</div>
+<div class="line"><a name="l02814"></a><span class="lineno"> 2814</span>&#160;        }</div>
+<div class="line"><a name="l02815"></a><span class="lineno"> 2815</span>&#160; </div>
+<div class="line"><a name="l02816"></a><span class="lineno"> 2816</span>&#160;        <span class="comment">// Broadcast the whole domain to every rank</span></div>
+<div class="line"><a name="l02817"></a><span class="lineno"> 2817</span>&#160;        <span class="keywordtype">int</span> ioproc = ParallelDescriptor::IOProcessorNumber();</div>
+<div class="line"><a name="l02818"></a><span class="lineno"> 2818</span>&#160;        <span class="keywordtype">int</span> nnode = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size());</div>
+<div class="line"><a name="l02819"></a><span class="lineno"> 2819</span>&#160;        ParallelDescriptor::Bcast(&amp;nnode, 1, ioproc);</div>
+<div class="line"><a name="l02820"></a><span class="lineno"> 2820</span>&#160; </div>
+<div class="line"><a name="l02821"></a><span class="lineno"> 2821</span>&#160;        <span class="keywordflow">if</span> (!ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l02822"></a><span class="lineno"> 2822</span>&#160;            <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.resize(nnode);</div>
+<div class="line"><a name="l02823"></a><span class="lineno"> 2823</span>&#160;            <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.resize(nnode);</div>
+<div class="line"><a name="l02824"></a><span class="lineno"> 2824</span>&#160;            m_z0.resize(nnode);</div>
+<div class="line"><a name="l02825"></a><span class="lineno"> 2825</span>&#160;        }</div>
+<div class="line"><a name="l02826"></a><span class="lineno"> 2826</span>&#160;        ParallelDescriptor::Bcast(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.data() , nnode, ioproc);</div>
+<div class="line"><a name="l02827"></a><span class="lineno"> 2827</span>&#160;        ParallelDescriptor::Bcast(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.data() , nnode, ioproc);</div>
+<div class="line"><a name="l02828"></a><span class="lineno"> 2828</span>&#160;        ParallelDescriptor::Bcast(m_z0.data(), nnode, ioproc);</div>
+<div class="line"><a name="l02829"></a><span class="lineno"> 2829</span>&#160; </div>
+<div class="line"><a name="l02830"></a><span class="lineno"> 2830</span>&#160;        <span class="comment">// The loop below indexes the file&#39;s values as nodes of this level&#39;s grid, so a file</span></div>
+<div class="line"><a name="l02831"></a><span class="lineno"> 2831</span>&#160;        <span class="comment">// holding fewer values than the grid has nodes would be read past its end</span></div>
+<div class="line"><a name="l02832"></a><span class="lineno"> 2832</span>&#160;        {</div>
+<div class="line"><a name="l02833"></a><span class="lineno"> 2833</span>&#160;            <span class="keyword">const</span> Box&amp; dom = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain();</div>
+<div class="line"><a name="l02834"></a><span class="lineno"> 2834</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> nnode_needed = dom.bigEnd(0) + dom.bigEnd(1) * (dom.length(0)+1) + 1;</div>
+<div class="line"><a name="l02835"></a><span class="lineno"> 2835</span>&#160;            <span class="keywordflow">if</span> (nnode &lt; nnode_needed) {</div>
+<div class="line"><a name="l02836"></a><span class="lineno"> 2836</span>&#160;                Abort(<span class="stringliteral">&quot;The MOST roughness file \&quot;&quot;</span> + fname + <span class="stringliteral">&quot;\&quot; holds &quot;</span> + std::to_string(nnode) +</div>
+<div class="line"><a name="l02837"></a><span class="lineno"> 2837</span>&#160;                      <span class="stringliteral">&quot; values but the grid at level &quot;</span> + std::to_string(lev) + <span class="stringliteral">&quot; needs at least &quot;</span> +</div>
+<div class="line"><a name="l02838"></a><span class="lineno"> 2838</span>&#160;                      std::to_string(nnode_needed) + <span class="stringliteral">&quot; -- is this file written for this grid?&quot;</span>);</div>
+<div class="line"><a name="l02839"></a><span class="lineno"> 2839</span>&#160;            }</div>
+<div class="line"><a name="l02840"></a><span class="lineno"> 2840</span>&#160;        }</div>
+<div class="line"><a name="l02841"></a><span class="lineno"> 2841</span>&#160; </div>
+<div class="line"><a name="l02842"></a><span class="lineno"> 2842</span>&#160;        <span class="comment">// Copy data to the GPU</span></div>
+<div class="line"><a name="l02843"></a><span class="lineno"> 2843</span>&#160;        Gpu::DeviceVector&lt;Real&gt; d_x(nnode),d_y(nnode),d_z0(nnode);</div>
+<div class="line"><a name="l02844"></a><span class="lineno"> 2844</span>&#160;        Gpu::copy(Gpu::hostToDevice, <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.begin(), <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.end(), d_x.begin());</div>
+<div class="line"><a name="l02845"></a><span class="lineno"> 2845</span>&#160;        Gpu::copy(Gpu::hostToDevice, <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.begin(), <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.end(), d_y.begin());</div>
+<div class="line"><a name="l02846"></a><span class="lineno"> 2846</span>&#160;        Gpu::copy(Gpu::hostToDevice, m_z0.begin(), m_z0.end(), d_z0.begin());</div>
+<div class="line"><a name="l02847"></a><span class="lineno"> 2847</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* xp  = d_x.data();</div>
+<div class="line"><a name="l02848"></a><span class="lineno"> 2848</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* yp  = d_y.data();</div>
+<div class="line"><a name="l02849"></a><span class="lineno"> 2849</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* z0p = d_z0.data();</div>
+<div class="line"><a name="l02850"></a><span class="lineno"> 2850</span>&#160; </div>
+<div class="line"><a name="l02851"></a><span class="lineno"> 2851</span>&#160;        <span class="comment">// Each rank populates it&#39;s z_0[lev] MultiFab</span></div>
+<div class="line"><a name="l02852"></a><span class="lineno"> 2852</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l02853"></a><span class="lineno"> 2853</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(<a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev]); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l02854"></a><span class="lineno"> 2854</span>&#160;        {</div>
+<div class="line"><a name="l02855"></a><span class="lineno"> 2855</span>&#160;            Box gtbx = mfi.growntilebox();</div>
+<div class="line"><a name="l02856"></a><span class="lineno"> 2856</span>&#160; </div>
+<div class="line"><a name="l02857"></a><span class="lineno"> 2857</span>&#160;            <span class="keywordflow">if</span> (gtbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l02858"></a><span class="lineno"> 2858</span>&#160; </div>
+<div class="line"><a name="l02859"></a><span class="lineno"> 2859</span>&#160;            <span class="comment">// Populate z_phys data</span></div>
+<div class="line"><a name="l02860"></a><span class="lineno"> 2860</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tol = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0e-4);</div>
+<div class="line"><a name="l02861"></a><span class="lineno"> 2861</span>&#160;            <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].CellSizeArray();</div>
+<div class="line"><a name="l02862"></a><span class="lineno"> 2862</span>&#160;            <span class="keyword">auto</span> ProbLoArr = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].ProbLoArray();</div>
+<div class="line"><a name="l02863"></a><span class="lineno"> 2863</span>&#160;            <span class="keywordtype">int</span> ilo = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(0);</div>
+<div class="line"><a name="l02864"></a><span class="lineno"> 2864</span>&#160;            <span class="keywordtype">int</span> jlo = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(1);</div>
+<div class="line"><a name="l02865"></a><span class="lineno"> 2865</span>&#160;            <span class="keywordtype">int</span> ihi = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().bigEnd(0);</div>
+<div class="line"><a name="l02866"></a><span class="lineno"> 2866</span>&#160;            <span class="keywordtype">int</span> jhi = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().bigEnd(1);</div>
+<div class="line"><a name="l02867"></a><span class="lineno"> 2867</span>&#160; </div>
+<div class="line"><a name="l02868"></a><span class="lineno"> 2868</span>&#160;            Array4&lt;Real&gt; <span class="keyword">const</span>&amp; z0_arr = <a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev].array(mfi);</div>
+<div class="line"><a name="l02869"></a><span class="lineno"> 2869</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gtbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
+<div class="line"><a name="l02870"></a><span class="lineno"> 2870</span>&#160;            {</div>
+<div class="line"><a name="l02871"></a><span class="lineno"> 2871</span>&#160;                <span class="comment">// Clip indices for ghost-cells</span></div>
+<div class="line"><a name="l02872"></a><span class="lineno"> 2872</span>&#160;                <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,ilo),ihi);</div>
+<div class="line"><a name="l02873"></a><span class="lineno"> 2873</span>&#160;                <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j,jlo),jhi);</div>
+<div class="line"><a name="l02874"></a><span class="lineno"> 2874</span>&#160; </div>
+<div class="line"><a name="l02875"></a><span class="lineno"> 2875</span>&#160;                <span class="comment">// Location of nodes</span></div>
+<div class="line"><a name="l02876"></a><span class="lineno"> 2876</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = ProbLoArr[0]  + ii  * <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[0];</div>
+<div class="line"><a name="l02877"></a><span class="lineno"> 2877</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = ProbLoArr[1]  + jj  * <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[1];</div>
+<div class="line"><a name="l02878"></a><span class="lineno"> 2878</span>&#160;                <span class="keywordtype">int</span> inode = ii + jj * (ihi-ilo+2); <span class="comment">// stride is Nx+1</span></div>
+<div class="line"><a name="l02879"></a><span class="lineno"> 2879</span>&#160;                <span class="keywordflow">if</span> (std::sqrt(amrex::Math::powi&lt;2&gt;(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-xp[inode])+amrex::Math::powi&lt;2&gt;(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-yp[inode])) &lt; tol) {</div>
+<div class="line"><a name="l02880"></a><span class="lineno"> 2880</span>&#160;                    z0_arr(i,j,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) = z0p[inode];</div>
+<div class="line"><a name="l02881"></a><span class="lineno"> 2881</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l02882"></a><span class="lineno"> 2882</span>&#160;                    <span class="comment">// Unexpected list order, do brute force search</span></div>
+<div class="line"><a name="l02883"></a><span class="lineno"> 2883</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z0loc = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l02884"></a><span class="lineno"> 2884</span>&#160;                    <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l02885"></a><span class="lineno"> 2885</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;nnode; ++n) {</div>
+<div class="line"><a name="l02886"></a><span class="lineno"> 2886</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> delta=std::sqrt(amrex::Math::powi&lt;2&gt;(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-xp[n])+amrex::Math::powi&lt;2&gt;(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-yp[n]));</div>
+<div class="line"><a name="l02887"></a><span class="lineno"> 2887</span>&#160;                        <span class="keywordflow">if</span> (delta &lt; tol) {</div>
+<div class="line"><a name="l02888"></a><span class="lineno"> 2888</span>&#160;                            found = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l02889"></a><span class="lineno"> 2889</span>&#160;                            z0loc = z0p[n];</div>
+<div class="line"><a name="l02890"></a><span class="lineno"> 2890</span>&#160;                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l02891"></a><span class="lineno"> 2891</span>&#160;                        }</div>
+<div class="line"><a name="l02892"></a><span class="lineno"> 2892</span>&#160;                    }</div>
+<div class="line"><a name="l02893"></a><span class="lineno"> 2893</span>&#160;                    <a class="code" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a>(found, <span class="stringliteral">&quot;Location read from terrain file does not match the grid!&quot;</span>);</div>
+<div class="line"><a name="l02894"></a><span class="lineno"> 2894</span>&#160;                    amrex::ignore_unused(found);</div>
+<div class="line"><a name="l02895"></a><span class="lineno"> 2895</span>&#160;                    z0_arr(i,j,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) = z0loc;</div>
+<div class="line"><a name="l02896"></a><span class="lineno"> 2896</span>&#160;                }</div>
+<div class="line"><a name="l02897"></a><span class="lineno"> 2897</span>&#160;            });</div>
+<div class="line"><a name="l02898"></a><span class="lineno"> 2898</span>&#160;        } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l02899"></a><span class="lineno"> 2899</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l02900"></a><span class="lineno"> 2900</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lev &gt; 0);</div>
+<div class="line"><a name="l02901"></a><span class="lineno"> 2901</span>&#160; </div>
+<div class="line"><a name="l02902"></a><span class="lineno"> 2902</span>&#160;        Print()&lt;&lt;<span class="stringliteral">&quot;Interpolating MOST roughness at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
+<div class="line"><a name="l02903"></a><span class="lineno"> 2903</span>&#160; </div>
+<div class="line"><a name="l02904"></a><span class="lineno"> 2904</span>&#160;        <span class="comment">// Create a BC mapper that uses FOEXTRAP at domain bndry</span></div>
+<div class="line"><a name="l02905"></a><span class="lineno"> 2905</span>&#160;        Vector&lt;int&gt; bc_lo(3,<a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>);</div>
+<div class="line"><a name="l02906"></a><span class="lineno"> 2906</span>&#160;        Vector&lt;int&gt; bc_hi(3,<a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>);</div>
+<div class="line"><a name="l02907"></a><span class="lineno"> 2907</span>&#160;        Vector&lt;BCRec&gt; bcr; bcr.push_back(BCRec(bc_lo.data(),bc_hi.data()));</div>
+<div class="line"><a name="l02908"></a><span class="lineno"> 2908</span>&#160; </div>
+<div class="line"><a name="l02909"></a><span class="lineno"> 2909</span>&#160;        <span class="comment">// Create ref ratio</span></div>
+<div class="line"><a name="l02910"></a><span class="lineno"> 2910</span>&#160;        IntVect ratio;</div>
+<div class="line"><a name="l02911"></a><span class="lineno"> 2911</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
+<div class="line"><a name="l02912"></a><span class="lineno"> 2912</span>&#160;            ratio[idim] = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().length(idim) / <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[0].Domain().length(idim);</div>
+<div class="line"><a name="l02913"></a><span class="lineno"> 2913</span>&#160;        }</div>
+<div class="line"><a name="l02914"></a><span class="lineno"> 2914</span>&#160; </div>
+<div class="line"><a name="l02915"></a><span class="lineno"> 2915</span>&#160;        <span class="comment">// Create interp object and interpolate from the coarsest grid</span></div>
+<div class="line"><a name="l02916"></a><span class="lineno"> 2916</span>&#160;        MFInterpolater* interp = &amp;mf_cell_cons_interp;</div>
+<div class="line"><a name="l02917"></a><span class="lineno"> 2917</span>&#160;        interp-&gt;interp(<a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[0]  , 0,</div>
+<div class="line"><a name="l02918"></a><span class="lineno"> 2918</span>&#160;                       <a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev], 0,</div>
+<div class="line"><a name="l02919"></a><span class="lineno"> 2919</span>&#160;                       1, <a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev].nGrowVect(),</div>
+<div class="line"><a name="l02920"></a><span class="lineno"> 2920</span>&#160;                       <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[0], <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev],</div>
+<div class="line"><a name="l02921"></a><span class="lineno"> 2921</span>&#160;                       <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain(),ratio,</div>
+<div class="line"><a name="l02922"></a><span class="lineno"> 2922</span>&#160;                       bcr, 0);</div>
+<div class="line"><a name="l02923"></a><span class="lineno"> 2923</span>&#160;    }</div>
+<div class="line"><a name="l02924"></a><span class="lineno"> 2924</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a></div><div class="ttdeci">@ m_y</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:38</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a></div><div class="ttdeci">@ m_x</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:37</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
