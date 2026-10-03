@@ -1203,234 +1203,243 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;        <span class="comment">//  Prognostic SEB surface temperature and moisture evolution</span></div>
 <div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;        <span class="comment">// Only advance the force-restore state when TwoStream owns the</span></div>
 <div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;        <span class="comment">// surface-temperature boundary at this level.</span></div>
-<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;        <span class="keywordflow">if</span> (rad_choice.<a class="code" href="structRadChoice.html#a819bc206fe0ae806487eb9c4d2620671">seb_prognostic_enable</a> &amp;&amp; seb_active &amp;&amp;</div>
-<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;            call_site == <span class="stringliteral">&quot;post_dycore&quot;</span>) {</div>
-<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;            <span class="keywordflow">if</span> (!has_external_surface_temperature) {</div>
-<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;                <span class="comment">// No external provider owns the boundary; advance TwoStream&#39;s state.</span></div>
-<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160; </div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;                <span class="comment">// Initialize diagnostics for T_s and q_s</span></div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_s_sum = 0.0;</div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_s_max_val = -std::numeric_limits&lt;amrex::Real&gt;::max();</div>
-<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_s_sum = 0.0;</div>
-<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_s_max_val = -std::numeric_limits&lt;amrex::Real&gt;::max();</div>
-<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;                amrex::Long n_prog_columns = 0;</div>
-<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160; </div>
-<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;                <span class="comment">// Third loop over boxes for prognostic SEB update. Untiled for</span></div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;                <span class="comment">// the same reason as above, and here it also matters for</span></div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;                <span class="comment">// correctness: the force-restore update is applied in place, so</span></div>
-<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;                <span class="comment">// visiting a column twice would advance it twice in one step.</span></div>
-<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;                <span class="keywordflow">for</span> (MFIter mfi(state_cons, <span class="keyword">false</span>); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;                    <span class="keyword">const</span> Box&amp; bx = mfi.validbox();</div>
-<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a> = bx.loVect();</div>
-<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a> = bx.hiVect();</div>
-<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;                    Box xy_box(IntVect(<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>[0], <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>[1], 0), IntVect(<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>[0], <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>[1], 0));</div>
-<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160; </div>
-<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;                    <span class="comment">// Get SEB field arrays (read-only)</span></div>
-<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;                    Array4&lt;const amrex::Real&gt; sw_flux_arr = <a class="code" href="classTwoStreamRadiation.html#aaad5f2435800c7a9239dd7357d5193b3">m_sw_flux_sfc</a>[lev]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;                    Array4&lt;const amrex::Real&gt; lw_flux_arr = <a class="code" href="classTwoStreamRadiation.html#a5e35f02e04938f0aa98955cd0154bd41">m_lw_flux_sfc</a>[lev]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;                    Array4&lt;const amrex::Real&gt; hfx_arr = <a class="code" href="classTwoStreamRadiation.html#af56365d16ab545e90a0667bbb2f7a4b6">m_hfx_sfc</a>[lev]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;                    Array4&lt;const amrex::Real&gt; lh_arr = <a class="code" href="classTwoStreamRadiation.html#a9d067d296f7bd1849a37594cae612c82">m_lh_sfc</a>[lev]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;                    Array4&lt;const amrex::Real&gt; grdflx_arr = <a class="code" href="classTwoStreamRadiation.html#a4ffd080c72f8b9b196b702998a9019b8">m_grdflx_sfc</a>[lev]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;                    Array4&lt;const amrex::Real&gt; t_deep_arr = <a class="code" href="classTwoStreamRadiation.html#ab658d563f857d6fd1a2014ce23fe8014">m_t_deep</a>[lev]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;                    Array4&lt;const amrex::Real&gt; q_deep_arr = <a class="code" href="classTwoStreamRadiation.html#a61c276e999709150b8a06838a4d6a9e2">m_q_deep</a>[lev]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;        <span class="comment">// With the surface radiation taken from the sweep, also wait for this level&#39;s</span></div>
+<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;        <span class="comment">// first sweep. Until then m_sw_flux_sfc / m_lw_flux_sfc hold what define_level</span></div>
+<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;        <span class="comment">// left, and advancing on them would apply the scalar defaults for that step. That</span></div>
+<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;        <span class="comment">// is the first step of a level built by interp_atmos_from_coarse, whose pre-dycore</span></div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;        <span class="comment">// sweep ERF::advance_radiation skips (the level&#39;s state is not yet consistent),</span></div>
+<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;        <span class="comment">// while this post-dycore call still arrives.</span></div>
+<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> seb_radiation_ready = <a class="code" href="classTwoStreamRadiation.html#a66a39e766bb8e783ba6bbfde9ce2275c">m_flux_diag</a>[lev].valid ||</div>
+<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;                                         !(sw_flux_from_rad || lw_flux_from_rad);</div>
+<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;        <span class="keywordflow">if</span> (rad_choice.<a class="code" href="structRadChoice.html#a819bc206fe0ae806487eb9c4d2620671">seb_prognostic_enable</a> &amp;&amp; seb_active &amp;&amp;</div>
+<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;            call_site == <span class="stringliteral">&quot;post_dycore&quot;</span> &amp;&amp; seb_radiation_ready) {</div>
+<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;            <span class="keywordflow">if</span> (!has_external_surface_temperature) {</div>
+<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;                <span class="comment">// No external provider owns the boundary; advance TwoStream&#39;s state.</span></div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160; </div>
+<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;                <span class="comment">// Initialize diagnostics for T_s and q_s</span></div>
+<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_s_sum = 0.0;</div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_s_max_val = -std::numeric_limits&lt;amrex::Real&gt;::max();</div>
+<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_s_sum = 0.0;</div>
+<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_s_max_val = -std::numeric_limits&lt;amrex::Real&gt;::max();</div>
+<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;                amrex::Long n_prog_columns = 0;</div>
+<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160; </div>
+<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;                <span class="comment">// Third loop over boxes for prognostic SEB update. Untiled for</span></div>
+<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;                <span class="comment">// the same reason as above, and here it also matters for</span></div>
+<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;                <span class="comment">// correctness: the force-restore update is applied in place, so</span></div>
+<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;                <span class="comment">// visiting a column twice would advance it twice in one step.</span></div>
+<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;                <span class="keywordflow">for</span> (MFIter mfi(state_cons, <span class="keyword">false</span>); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;                    <span class="keyword">const</span> Box&amp; bx = mfi.validbox();</div>
+<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a> = bx.loVect();</div>
+<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a> = bx.hiVect();</div>
+<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;                    Box xy_box(IntVect(<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>[0], <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>[1], 0), IntVect(<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>[0], <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>[1], 0));</div>
 <div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160; </div>
-<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;                    <span class="comment">// Get SEB state arrays (read-write for prognostic update)</span></div>
-<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;                    Array4&lt;amrex::Real&gt; t_s_arr = <a class="code" href="classTwoStreamRadiation.html#a96a37511ad069269b71bf90256e1f264">m_t_sfc</a>[lev]-&gt;array(mfi);</div>
-<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;                    Array4&lt;amrex::Real&gt; q_s_arr = <a class="code" href="classTwoStreamRadiation.html#a16ec0ca86cbf42291038627ccd3cfa7f">m_q_sfc</a>[lev]-&gt;array(mfi);</div>
-<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;                    <span class="comment">// Count columns and prepare for reductions</span></div>
-<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;                    amrex::Long n_cols_box = <span class="keyword">static_cast&lt;</span>amrex::Long<span class="keyword">&gt;</span>(bx.length(0)) *</div>
-<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;                                             <span class="keyword">static_cast&lt;</span>amrex::Long<span class="keyword">&gt;</span>(bx.length(1));</div>
-<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_s_sum_box = 0.0;</div>
-<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_s_max_box = -std::numeric_limits&lt;amrex::Real&gt;::max();</div>
-<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_s_sum_box = 0.0;</div>
-<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_s_max_box = -std::numeric_limits&lt;amrex::Real&gt;::max();</div>
-<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160; </div>
-<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;                    <span class="comment">// GPU-safe update for prognostic T_s and q_s with reductions</span></div>
-<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;                    ReduceOps&lt;ReduceOpSum, ReduceOpMax, ReduceOpSum, ReduceOpMax&gt; prog_reduce_ops;</div>
-<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;                    ReduceData&lt;amrex::Real, amrex::Real, amrex::Real, amrex::Real&gt; prog_reduce_data(prog_reduce_ops);</div>
-<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160; </div>
-<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;                    <span class="keyword">using</span> ProgReduceTuple = <span class="keyword">typename</span> decltype(prog_reduce_data)::Type;</div>
-<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160; </div>
-<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;                    prog_reduce_ops.eval(xy_box, prog_reduce_data,</div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;                            [=,  C_s=rad_choice.<a class="code" href="structRadChoice.html#afaedbd1b01f4cfc036a567d29a2b339b">seb_surface_heat_capacity</a>,</div>
-<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;                            tau=rad_choice.<a class="code" href="structRadChoice.html#a37770d5c5a25e46546a38d718ef2ef6b">seb_restore_timescale_s</a>,</div>
-<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;                            d_s=rad_choice.<a class="code" href="structRadChoice.html#acdfeb97aaea08e82f62d8700927d57b4">seb_moisture_layer_depth_m</a>,</div>
-<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;                            tau_q=rad_choice.<a class="code" href="structRadChoice.html#a4fc7ac70cb4b49e2906c9186ed16848a">seb_moisture_restore_timescale_s</a>,</div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;                            t_min=rad_choice.<a class="code" href="structRadChoice.html#a863c72be0fa9bc9e0bb5917b0c6ca543">seb_prognostic_t_min_k</a>,</div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;                            t_max=rad_choice.<a class="code" href="structRadChoice.html#a7da38793c53ae932a56a9769a632d041">seb_prognostic_t_max_k</a>,</div>
-<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;                            q_min=rad_choice.<a class="code" href="structRadChoice.html#aecf4a87c9294c67baeb533ba76e9dcbf">seb_prognostic_q_min</a>,</div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;                            q_max=rad_choice.<a class="code" href="structRadChoice.html#aae2e0933516452b9572479e8a97a1890">seb_prognostic_q_max</a>]</div>
-<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;                            AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k_unused*/</span>) -&gt; ProgReduceTuple {</div>
-<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_s_old = t_s_arr(i, j, 0);</div>
-<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_s_old = q_s_arr(i, j, 0);</div>
-<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160; </div>
-<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;                            <span class="comment">// Read forcing data</span></div>
-<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sw_net = sw_flux_arr(i, j, 0);</div>
-<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lw_net = lw_flux_arr(i, j, 0);</div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> hfx = hfx_arr(i, j, 0);</div>
-<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lh = lh_arr(i, j, 0);</div>
-<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> grdflx = grdflx_arr(i, j, 0);</div>
-<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_deep_val = t_deep_arr(i, j, 0);</div>
-<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_deep_val = q_deep_arr(i, j, 0);</div>
+<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;                    <span class="comment">// Get SEB field arrays (read-only)</span></div>
+<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;                    Array4&lt;const amrex::Real&gt; sw_flux_arr = <a class="code" href="classTwoStreamRadiation.html#aaad5f2435800c7a9239dd7357d5193b3">m_sw_flux_sfc</a>[lev]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;                    Array4&lt;const amrex::Real&gt; lw_flux_arr = <a class="code" href="classTwoStreamRadiation.html#a5e35f02e04938f0aa98955cd0154bd41">m_lw_flux_sfc</a>[lev]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;                    Array4&lt;const amrex::Real&gt; hfx_arr = <a class="code" href="classTwoStreamRadiation.html#af56365d16ab545e90a0667bbb2f7a4b6">m_hfx_sfc</a>[lev]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;                    Array4&lt;const amrex::Real&gt; lh_arr = <a class="code" href="classTwoStreamRadiation.html#a9d067d296f7bd1849a37594cae612c82">m_lh_sfc</a>[lev]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;                    Array4&lt;const amrex::Real&gt; grdflx_arr = <a class="code" href="classTwoStreamRadiation.html#a4ffd080c72f8b9b196b702998a9019b8">m_grdflx_sfc</a>[lev]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;                    Array4&lt;const amrex::Real&gt; t_deep_arr = <a class="code" href="classTwoStreamRadiation.html#ab658d563f857d6fd1a2014ce23fe8014">m_t_deep</a>[lev]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;                    Array4&lt;const amrex::Real&gt; q_deep_arr = <a class="code" href="classTwoStreamRadiation.html#a61c276e999709150b8a06838a4d6a9e2">m_q_deep</a>[lev]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160; </div>
+<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;                    <span class="comment">// Get SEB state arrays (read-write for prognostic update)</span></div>
+<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;                    Array4&lt;amrex::Real&gt; t_s_arr = <a class="code" href="classTwoStreamRadiation.html#a96a37511ad069269b71bf90256e1f264">m_t_sfc</a>[lev]-&gt;array(mfi);</div>
+<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;                    Array4&lt;amrex::Real&gt; q_s_arr = <a class="code" href="classTwoStreamRadiation.html#a16ec0ca86cbf42291038627ccd3cfa7f">m_q_sfc</a>[lev]-&gt;array(mfi);</div>
+<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;                    <span class="comment">// Count columns and prepare for reductions</span></div>
+<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;                    amrex::Long n_cols_box = <span class="keyword">static_cast&lt;</span>amrex::Long<span class="keyword">&gt;</span>(bx.length(0)) *</div>
+<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;                                             <span class="keyword">static_cast&lt;</span>amrex::Long<span class="keyword">&gt;</span>(bx.length(1));</div>
+<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_s_sum_box = 0.0;</div>
+<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_s_max_box = -std::numeric_limits&lt;amrex::Real&gt;::max();</div>
+<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_s_sum_box = 0.0;</div>
+<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_s_max_box = -std::numeric_limits&lt;amrex::Real&gt;::max();</div>
+<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160; </div>
+<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;                    <span class="comment">// GPU-safe update for prognostic T_s and q_s with reductions</span></div>
+<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;                    ReduceOps&lt;ReduceOpSum, ReduceOpMax, ReduceOpSum, ReduceOpMax&gt; prog_reduce_ops;</div>
+<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;                    ReduceData&lt;amrex::Real, amrex::Real, amrex::Real, amrex::Real&gt; prog_reduce_data(prog_reduce_ops);</div>
+<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160; </div>
+<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;                    <span class="keyword">using</span> ProgReduceTuple = <span class="keyword">typename</span> decltype(prog_reduce_data)::Type;</div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160; </div>
+<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;                    prog_reduce_ops.eval(xy_box, prog_reduce_data,</div>
+<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;                            [=,  C_s=rad_choice.<a class="code" href="structRadChoice.html#afaedbd1b01f4cfc036a567d29a2b339b">seb_surface_heat_capacity</a>,</div>
+<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;                            tau=rad_choice.<a class="code" href="structRadChoice.html#a37770d5c5a25e46546a38d718ef2ef6b">seb_restore_timescale_s</a>,</div>
+<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;                            d_s=rad_choice.<a class="code" href="structRadChoice.html#acdfeb97aaea08e82f62d8700927d57b4">seb_moisture_layer_depth_m</a>,</div>
+<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;                            tau_q=rad_choice.<a class="code" href="structRadChoice.html#a4fc7ac70cb4b49e2906c9186ed16848a">seb_moisture_restore_timescale_s</a>,</div>
+<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;                            t_min=rad_choice.<a class="code" href="structRadChoice.html#a863c72be0fa9bc9e0bb5917b0c6ca543">seb_prognostic_t_min_k</a>,</div>
+<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;                            t_max=rad_choice.<a class="code" href="structRadChoice.html#a7da38793c53ae932a56a9769a632d041">seb_prognostic_t_max_k</a>,</div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;                            q_min=rad_choice.<a class="code" href="structRadChoice.html#aecf4a87c9294c67baeb533ba76e9dcbf">seb_prognostic_q_min</a>,</div>
+<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;                            q_max=rad_choice.<a class="code" href="structRadChoice.html#aae2e0933516452b9572479e8a97a1890">seb_prognostic_q_max</a>]</div>
+<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;                            AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k_unused*/</span>) -&gt; ProgReduceTuple {</div>
+<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_s_old = t_s_arr(i, j, 0);</div>
+<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_s_old = q_s_arr(i, j, 0);</div>
 <div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160; </div>
-<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;                            <span class="comment">// Compute SEB residual</span></div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> seb_res = <a class="code" href="ERF__SimplifiedSEB_8H.html#a9ed064493453798d60ce8542cbcf62e9">diagnose_seb_residual</a>(sw_net, lw_net, hfx, lh, grdflx);</div>
-<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160; </div>
-<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;                            <span class="comment">// Compute tendencies</span></div>
-<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dT_s_dt = <a class="code" href="ERF__SimplifiedSEB_8H.html#af429dd2fd00d3c78dc603dc755536881">prognostic_dTs_dt</a>(seb_res, t_s_old, t_deep_val,</div>
-<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;                                                                     C_s, tau);</div>
-<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dq_s_dt = <a class="code" href="ERF__SimplifiedSEB_8H.html#aaf69965b0f37c75c0f74eea4a398e6d2">prognostic_dqs_dt</a>(lh, q_s_old, q_deep_val,</div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;                                                                     d_s, tau_q);</div>
+<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;                            <span class="comment">// Read forcing data</span></div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sw_net = sw_flux_arr(i, j, 0);</div>
+<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lw_net = lw_flux_arr(i, j, 0);</div>
+<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> hfx = hfx_arr(i, j, 0);</div>
+<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lh = lh_arr(i, j, 0);</div>
+<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> grdflx = grdflx_arr(i, j, 0);</div>
+<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_deep_val = t_deep_arr(i, j, 0);</div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_deep_val = q_deep_arr(i, j, 0);</div>
 <div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160; </div>
-<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;                            <span class="comment">// Explicit Euler update over the step size</span></div>
-<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_s_new = t_s_old + dt_step * dT_s_dt;</div>
-<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_s_new = q_s_old + dt_step * dq_s_dt;</div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160; </div>
-<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;                            <span class="comment">// Clamp to valid ranges</span></div>
-<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;                            t_s_new = amrex::max(t_min, amrex::min(t_max, t_s_new));</div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;                            q_s_new = amrex::max(q_min, amrex::min(q_max, q_s_new));</div>
-<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160; </div>
-<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;                            <span class="comment">// Write back updated values (this modifies the device array)</span></div>
-<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;                            t_s_arr(i, j, 0) = t_s_new;</div>
-<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;                            q_s_arr(i, j, 0) = q_s_new;</div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160; </div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;                            <span class="comment">// Return for reduction: sum T_s, max T_s, sum q_s, max q_s</span></div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;                            <span class="keywordflow">return</span> {t_s_new, std::abs(t_s_new), q_s_new, std::abs(q_s_new)};</div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;                        });</div>
-<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160; </div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;                    <span class="comment">// Copy results from device to host</span></div>
-<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;                    amrex::Gpu::synchronize();</div>
-<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;                    <span class="keyword">auto</span> prog_reduce_tuple = prog_reduce_data.value(prog_reduce_ops);</div>
-<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;                    t_s_sum_box = amrex::get&lt;0&gt;(prog_reduce_tuple);</div>
-<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;                    t_s_max_box = amrex::get&lt;1&gt;(prog_reduce_tuple);</div>
-<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;                    q_s_sum_box = amrex::get&lt;2&gt;(prog_reduce_tuple);</div>
-<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;                    q_s_max_box = amrex::get&lt;3&gt;(prog_reduce_tuple);</div>
-<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160; </div>
-<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;                    <span class="comment">// Accumulate into global results</span></div>
-<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;                    t_s_sum += t_s_sum_box;</div>
-<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;                    t_s_max_val = std::max(t_s_max_val, t_s_max_box);</div>
-<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;                    q_s_sum += q_s_sum_box;</div>
-<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;                    q_s_max_val = std::max(q_s_max_val, q_s_max_box);</div>
-<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;                    n_prog_columns += n_cols_box;</div>
-<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;                }</div>
-<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160; </div>
-<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;                <span class="comment">// The force-restore kernels return a zero tendency on any</span></div>
-<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;                <span class="comment">// non-finite input, so a NaN here means the state itself was</span></div>
-<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;                <span class="comment">// corrupted (a bad restart file, or an overwrite elsewhere).</span></div>
-<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classTwoStreamRadiation.html#a96a37511ad069269b71bf90256e1f264">m_t_sfc</a>[lev]-&gt;contains_nan(0, 1, 0) || <a class="code" href="classTwoStreamRadiation.html#a16ec0ca86cbf42291038627ccd3cfa7f">m_q_sfc</a>[lev]-&gt;contains_nan(0, 1, 0)) {</div>
-<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;                    amrex::Abort(<span class="stringliteral">&quot;TwoStreamRadiation: non-finite surface temperature or moisture &quot;</span></div>
-<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;                                 <span class="stringliteral">&quot;after the force-restore update at level &quot;</span> + std::to_string(lev) +</div>
-<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;                                 <span class="stringliteral">&quot;, step &quot;</span> + std::to_string(nstep));</div>
+<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;                            <span class="comment">// Compute SEB residual</span></div>
+<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> seb_res = <a class="code" href="ERF__SimplifiedSEB_8H.html#a9ed064493453798d60ce8542cbcf62e9">diagnose_seb_residual</a>(sw_net, lw_net, hfx, lh, grdflx);</div>
+<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160; </div>
+<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;                            <span class="comment">// Compute tendencies</span></div>
+<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dT_s_dt = <a class="code" href="ERF__SimplifiedSEB_8H.html#af429dd2fd00d3c78dc603dc755536881">prognostic_dTs_dt</a>(seb_res, t_s_old, t_deep_val,</div>
+<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;                                                                     C_s, tau);</div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dq_s_dt = <a class="code" href="ERF__SimplifiedSEB_8H.html#aaf69965b0f37c75c0f74eea4a398e6d2">prognostic_dqs_dt</a>(lh, q_s_old, q_deep_val,</div>
+<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;                                                                     d_s, tau_q);</div>
+<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160; </div>
+<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;                            <span class="comment">// Explicit Euler update over the step size</span></div>
+<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_s_new = t_s_old + dt_step * dT_s_dt;</div>
+<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_s_new = q_s_old + dt_step * dq_s_dt;</div>
+<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160; </div>
+<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;                            <span class="comment">// Clamp to valid ranges</span></div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;                            t_s_new = amrex::max(t_min, amrex::min(t_max, t_s_new));</div>
+<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;                            q_s_new = amrex::max(q_min, amrex::min(q_max, q_s_new));</div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160; </div>
+<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;                            <span class="comment">// Write back updated values (this modifies the device array)</span></div>
+<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;                            t_s_arr(i, j, 0) = t_s_new;</div>
+<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;                            q_s_arr(i, j, 0) = q_s_new;</div>
+<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160; </div>
+<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;                            <span class="comment">// Return for reduction: sum T_s, max T_s, sum q_s, max q_s</span></div>
+<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;                            <span class="keywordflow">return</span> {t_s_new, std::abs(t_s_new), q_s_new, std::abs(q_s_new)};</div>
+<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;                        });</div>
+<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160; </div>
+<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;                    <span class="comment">// Copy results from device to host</span></div>
+<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;                    amrex::Gpu::synchronize();</div>
+<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;                    <span class="keyword">auto</span> prog_reduce_tuple = prog_reduce_data.value(prog_reduce_ops);</div>
+<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;                    t_s_sum_box = amrex::get&lt;0&gt;(prog_reduce_tuple);</div>
+<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;                    t_s_max_box = amrex::get&lt;1&gt;(prog_reduce_tuple);</div>
+<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;                    q_s_sum_box = amrex::get&lt;2&gt;(prog_reduce_tuple);</div>
+<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;                    q_s_max_box = amrex::get&lt;3&gt;(prog_reduce_tuple);</div>
+<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160; </div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;                    <span class="comment">// Accumulate into global results</span></div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;                    t_s_sum += t_s_sum_box;</div>
+<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;                    t_s_max_val = std::max(t_s_max_val, t_s_max_box);</div>
+<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;                    q_s_sum += q_s_sum_box;</div>
+<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;                    q_s_max_val = std::max(q_s_max_val, q_s_max_box);</div>
+<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;                    n_prog_columns += n_cols_box;</div>
 <div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;                }</div>
 <div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160; </div>
-<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;                {</div>
-<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sums[2] = {t_s_sum, q_s_sum};</div>
-<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;                    ParallelDescriptor::ReduceRealSum(sums, 2);</div>
-<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;                    t_s_sum = sums[0]; q_s_sum = sums[1];</div>
-<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;                    ParallelDescriptor::ReduceRealMax(t_s_max_val);</div>
-<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;                    ParallelDescriptor::ReduceRealMax(q_s_max_val);</div>
-<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;                    ParallelDescriptor::ReduceLongSum(n_prog_columns);</div>
+<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;                <span class="comment">// The force-restore kernels return a zero tendency on any</span></div>
+<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;                <span class="comment">// non-finite input, so a NaN here means the state itself was</span></div>
+<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;                <span class="comment">// corrupted (a bad restart file, or an overwrite elsewhere).</span></div>
+<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classTwoStreamRadiation.html#a96a37511ad069269b71bf90256e1f264">m_t_sfc</a>[lev]-&gt;contains_nan(0, 1, 0) || <a class="code" href="classTwoStreamRadiation.html#a16ec0ca86cbf42291038627ccd3cfa7f">m_q_sfc</a>[lev]-&gt;contains_nan(0, 1, 0)) {</div>
+<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;                    amrex::Abort(<span class="stringliteral">&quot;TwoStreamRadiation: non-finite surface temperature or moisture &quot;</span></div>
+<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;                                 <span class="stringliteral">&quot;after the force-restore update at level &quot;</span> + std::to_string(lev) +</div>
+<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;                                 <span class="stringliteral">&quot;, step &quot;</span> + std::to_string(nstep));</div>
 <div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;                }</div>
 <div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160; </div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;                <span class="comment">// Compute mean values from sums</span></div>
-<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;                <span class="keywordflow">if</span> (n_prog_columns &gt; 0) {</div>
-<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;                    t_s_mean = t_s_sum / <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(n_prog_columns);</div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;                    t_s_max = t_s_max_val;</div>
-<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;                    q_s_mean = q_s_sum / <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(n_prog_columns);</div>
-<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;                    q_s_max = q_s_max_val;</div>
-<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;                    t_s_mean = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
-<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;                    t_s_max = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
-<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;                    q_s_mean = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
-<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;                    q_s_max = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
-<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;                }</div>
-<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;                <span class="comment">// An external provider owns the boundary; leave the unused</span></div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;                <span class="comment">// TwoStream state untouched and do not report it as active.</span></div>
-<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;                t_s_mean = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
-<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;                t_s_max = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
-<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;                q_s_mean = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
-<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;                q_s_max = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
-<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;            }</div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;        }</div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;        <span class="comment">// equivalent to a single-column value for spatially UNIFORM atmospheres</span></div>
-<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;        <span class="comment">// (as in the current SW_ClearSky_Analytical / LW_Isothermal RegTests).</span></div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;        <span class="comment">// Cloud layer and scattering tests are ALSO spatially uniform (identical</span></div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;        <span class="comment">// cloud/tau/scattering parameters applied to every column), so the</span></div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;        <span class="comment">// domain-averaged value still equals the true single-column flux there.</span></div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;        <span class="comment">// True horizontal heterogeneity (e.g., patchy clouds varying by column)</span></div>
-<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;        <span class="comment">// remains deferred to future work.</span></div>
-<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;        <span class="keywordflow">if</span> (do_sweep) {</div>
-<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;            <span class="keywordflow">if</span> (n_columns_total &gt; 0) {</div>
-<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> inv_n = 1.0 / <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(n_columns_total);</div>
-<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;                SW_surface     = sw_surface_sum * inv_n;</div>
-<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;                SW_TOA         = sw_toa_sum * inv_n;</div>
-<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;                SW_up_TOA      = sw_up_toa_sum * inv_n;</div>
-<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;                LW_net_surface = lw_net_sum * inv_n;</div>
-<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;                LW_up_TOA      = lw_up_toa_sum * inv_n;</div>
-<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;            }</div>
-<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;            heating_rate_max = max_heating_global;</div>
-<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;            <a class="code" href="classTwoStreamRadiation.html#a66a39e766bb8e783ba6bbfde9ce2275c">m_flux_diag</a>[lev] = FluxDiag{<span class="keyword">true</span>, SW_surface, SW_TOA, SW_up_TOA,</div>
-<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;                                        LW_net_surface, LW_up_TOA,</div>
-<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;                                        heating_rate_max};</div>
-<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;            <span class="keyword">const</span> FluxDiag&amp; cached = <a class="code" href="classTwoStreamRadiation.html#a66a39e766bb8e783ba6bbfde9ce2275c">m_flux_diag</a>[lev];</div>
-<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;            <span class="keywordflow">if</span> (!cached.valid) {</div>
-<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;                <span class="comment">// No sweep has run on this level yet, so there is nothing to report. This</span></div>
-<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;                <span class="comment">// happens on the first step of a level built by interp_atmos_from_coarse:</span></div>
-<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;                <span class="comment">// ERF::advance_radiation interpolates that level&#39;s fields and returns</span></div>
-<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;                <span class="comment">// before the pre-dycore sweep, while this post-dycore call still arrives</span></div>
-<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;                <span class="comment">// from ERF::Advance. Emitting here would write a row of zeros that reads</span></div>
-<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;                <span class="comment">// exactly like a real zero-flux result. A nested patch already contributes</span></div>
-<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;                <span class="comment">// no rows for the same reason; this is the same rule for a level that</span></div>
-<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;                <span class="comment">// simply has not swept yet.</span></div>
-<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;            }</div>
-<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;            SW_surface       = cached.SW_surface;</div>
-<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;            SW_TOA           = cached.SW_TOA;</div>
-<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;            SW_up_TOA        = cached.SW_up_TOA;</div>
-<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;            LW_net_surface   = cached.LW_net_surface;</div>
-<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;            LW_up_TOA        = cached.LW_up_TOA;</div>
-<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;            heating_rate_max = cached.heating_rate_max;</div>
-<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;        }</div>
-<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160; </div>
-<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;        <span class="comment">// Compute SEB residual mean from sum</span></div>
-<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;        <span class="keywordflow">if</span> (rad_choice.<a class="code" href="structRadChoice.html#aff3a8885f7efd3fbe26653c818c3205d">seb_diagnostic_enable</a> &amp;&amp; seb_active &amp;&amp; n_seb_columns &gt; 0) {</div>
-<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;            seb_residual_mean = seb_residual_sum / <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(n_seb_columns);</div>
-<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;            <span class="comment">// When feature is disabled, use NaN for backward compatibility</span></div>
-<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;            seb_residual_mean = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
-<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;            seb_residual_max = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
+<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;                {</div>
+<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sums[2] = {t_s_sum, q_s_sum};</div>
+<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;                    ParallelDescriptor::ReduceRealSum(sums, 2);</div>
+<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;                    t_s_sum = sums[0]; q_s_sum = sums[1];</div>
+<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;                    ParallelDescriptor::ReduceRealMax(t_s_max_val);</div>
+<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;                    ParallelDescriptor::ReduceRealMax(q_s_max_val);</div>
+<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;                    ParallelDescriptor::ReduceLongSum(n_prog_columns);</div>
+<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;                }</div>
+<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160; </div>
+<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;                <span class="comment">// Compute mean values from sums</span></div>
+<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;                <span class="keywordflow">if</span> (n_prog_columns &gt; 0) {</div>
+<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;                    t_s_mean = t_s_sum / <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(n_prog_columns);</div>
+<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;                    t_s_max = t_s_max_val;</div>
+<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;                    q_s_mean = q_s_sum / <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(n_prog_columns);</div>
+<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;                    q_s_max = q_s_max_val;</div>
+<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;                    t_s_mean = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
+<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;                    t_s_max = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;                    q_s_mean = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
+<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;                    q_s_max = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;                }</div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;                <span class="comment">// An external provider owns the boundary; leave the unused</span></div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;                <span class="comment">// TwoStream state untouched and do not report it as active.</span></div>
+<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;                t_s_mean = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
+<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;                t_s_max = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
+<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;                q_s_mean = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
+<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;                q_s_max = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
+<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;            }</div>
+<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;        }</div>
+<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;        <span class="comment">// equivalent to a single-column value for spatially UNIFORM atmospheres</span></div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;        <span class="comment">// (as in the current SW_ClearSky_Analytical / LW_Isothermal RegTests).</span></div>
+<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;        <span class="comment">// Cloud layer and scattering tests are ALSO spatially uniform (identical</span></div>
+<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;        <span class="comment">// cloud/tau/scattering parameters applied to every column), so the</span></div>
+<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;        <span class="comment">// domain-averaged value still equals the true single-column flux there.</span></div>
+<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;        <span class="comment">// True horizontal heterogeneity (e.g., patchy clouds varying by column)</span></div>
+<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;        <span class="comment">// remains deferred to future work.</span></div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;        <span class="keywordflow">if</span> (do_sweep) {</div>
+<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;            <span class="keywordflow">if</span> (n_columns_total &gt; 0) {</div>
+<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> inv_n = 1.0 / <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(n_columns_total);</div>
+<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;                SW_surface     = sw_surface_sum * inv_n;</div>
+<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;                SW_TOA         = sw_toa_sum * inv_n;</div>
+<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;                SW_up_TOA      = sw_up_toa_sum * inv_n;</div>
+<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;                LW_net_surface = lw_net_sum * inv_n;</div>
+<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;                LW_up_TOA      = lw_up_toa_sum * inv_n;</div>
+<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;            }</div>
+<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;            heating_rate_max = max_heating_global;</div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;            <a class="code" href="classTwoStreamRadiation.html#a66a39e766bb8e783ba6bbfde9ce2275c">m_flux_diag</a>[lev] = FluxDiag{<span class="keyword">true</span>, SW_surface, SW_TOA, SW_up_TOA,</div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;                                        LW_net_surface, LW_up_TOA,</div>
+<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;                                        heating_rate_max};</div>
+<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;            <span class="keyword">const</span> FluxDiag&amp; cached = <a class="code" href="classTwoStreamRadiation.html#a66a39e766bb8e783ba6bbfde9ce2275c">m_flux_diag</a>[lev];</div>
+<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;            <span class="keywordflow">if</span> (!cached.valid) {</div>
+<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;                <span class="comment">// No sweep has run on this level yet, so there is nothing to report. This</span></div>
+<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;                <span class="comment">// happens on the first step of a level built by interp_atmos_from_coarse:</span></div>
+<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;                <span class="comment">// ERF::advance_radiation interpolates that level&#39;s fields and returns</span></div>
+<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;                <span class="comment">// before the pre-dycore sweep, while this post-dycore call still arrives</span></div>
+<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;                <span class="comment">// from ERF::Advance. Emitting here would write a row of zeros that reads</span></div>
+<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;                <span class="comment">// exactly like a real zero-flux result. A nested patch already contributes</span></div>
+<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;                <span class="comment">// no rows for the same reason; this is the same rule for a level that</span></div>
+<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;                <span class="comment">// simply has not swept yet.</span></div>
+<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;            }</div>
+<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;            SW_surface       = cached.SW_surface;</div>
+<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;            SW_TOA           = cached.SW_TOA;</div>
+<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;            SW_up_TOA        = cached.SW_up_TOA;</div>
+<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;            LW_net_surface   = cached.LW_net_surface;</div>
+<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;            LW_up_TOA        = cached.LW_up_TOA;</div>
+<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;            heating_rate_max = cached.heating_rate_max;</div>
 <div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;        }</div>
 <div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160; </div>
-<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;    }</div>
-<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160; </div>
-<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;    <span class="comment">// Logging output</span></div>
-<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;    <span class="keywordflow">if</span> (rad_choice.<a class="code" href="structRadChoice.html#af9f51fb0950e07e74c3253266a42bc88">verbosity</a> &gt;= 1 &amp;&amp; ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;Radiation diagnostics at step &quot;</span> &lt;&lt; nstep &lt;&lt; <span class="stringliteral">&quot;:\n&quot;</span></div>
-<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;  SW TOA = &quot;</span> &lt;&lt; SW_TOA &lt;&lt; <span class="stringliteral">&quot; W/m^2\n&quot;</span></div>
-<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;  SW surface = &quot;</span> &lt;&lt; SW_surface &lt;&lt; <span class="stringliteral">&quot; W/m^2\n&quot;</span></div>
-<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;  SW up (TOA) = &quot;</span> &lt;&lt; SW_up_TOA &lt;&lt; <span class="stringliteral">&quot; W/m^2\n&quot;</span></div>
-<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;  LW net (surface) = &quot;</span> &lt;&lt; LW_net_surface &lt;&lt; <span class="stringliteral">&quot; W/m^2\n&quot;</span></div>
-<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;  LW up (TOA) = &quot;</span> &lt;&lt; LW_up_TOA &lt;&lt; <span class="stringliteral">&quot; W/m^2\n&quot;</span></div>
-<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;  Max heating rate = &quot;</span> &lt;&lt; heating_rate_max &lt;&lt; <span class="stringliteral">&quot; K/s\n&quot;</span>;</div>
-<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;        <span class="keywordflow">if</span> (rad_choice.<a class="code" href="structRadChoice.html#aff3a8885f7efd3fbe26653c818c3205d">seb_diagnostic_enable</a> &amp;&amp; std::isfinite(seb_residual_mean)) {</div>
-<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;  SEB residual (mean) = &quot;</span> &lt;&lt; seb_residual_mean &lt;&lt; <span class="stringliteral">&quot; W/m^2\n&quot;</span></div>
-<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;  SEB residual (max) = &quot;</span> &lt;&lt; seb_residual_max &lt;&lt; <span class="stringliteral">&quot; W/m^2\n&quot;</span>;</div>
-<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;        }</div>
-<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;        <span class="keywordflow">if</span> (rad_choice.<a class="code" href="structRadChoice.html#a819bc206fe0ae806487eb9c4d2620671">seb_prognostic_enable</a> &amp;&amp; std::isfinite(t_s_mean)) {</div>
-<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;  Surface temperature (mean) = &quot;</span> &lt;&lt; t_s_mean &lt;&lt; <span class="stringliteral">&quot; K\n&quot;</span></div>
-<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;  Surface temperature (max) = &quot;</span> &lt;&lt; t_s_max &lt;&lt; <span class="stringliteral">&quot; K\n&quot;</span></div>
-<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;  Surface moisture (mean) = &quot;</span> &lt;&lt; q_s_mean &lt;&lt; <span class="stringliteral">&quot; kg/kg\n&quot;</span></div>
-<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;  Surface moisture (max) = &quot;</span> &lt;&lt; q_s_max &lt;&lt; <span class="stringliteral">&quot; kg/kg\n&quot;</span>;</div>
-<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;        }</div>
-<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;    }</div>
-<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160; </div>
-<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;    rad_diag.<a class="code" href="classRadiationDiagnostics.html#ac38fd038b6247298d0ad20cb9b1f43e9">append</a>(nstep, time, call_site, SW_surface, SW_TOA,</div>
-<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;                    SW_up_TOA, LW_net_surface, LW_up_TOA, heating_rate_max,</div>
-<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;                    seb_residual_mean, seb_residual_max,</div>
-<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;                    t_s_mean, t_s_max, q_s_mean, q_s_max);</div>
-<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;}</div>
+<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;        <span class="comment">// Compute SEB residual mean from sum</span></div>
+<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;        <span class="keywordflow">if</span> (rad_choice.<a class="code" href="structRadChoice.html#aff3a8885f7efd3fbe26653c818c3205d">seb_diagnostic_enable</a> &amp;&amp; seb_active &amp;&amp; n_seb_columns &gt; 0) {</div>
+<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;            seb_residual_mean = seb_residual_sum / <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(n_seb_columns);</div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;            <span class="comment">// When feature is disabled, use NaN for backward compatibility</span></div>
+<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;            seb_residual_mean = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
+<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;            seb_residual_max = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
+<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;        }</div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160; </div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;    }</div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160; </div>
+<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;    <span class="comment">// Logging output</span></div>
+<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;    <span class="keywordflow">if</span> (rad_choice.<a class="code" href="structRadChoice.html#af9f51fb0950e07e74c3253266a42bc88">verbosity</a> &gt;= 1 &amp;&amp; ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;Radiation diagnostics at step &quot;</span> &lt;&lt; nstep &lt;&lt; <span class="stringliteral">&quot;:\n&quot;</span></div>
+<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;  SW TOA = &quot;</span> &lt;&lt; SW_TOA &lt;&lt; <span class="stringliteral">&quot; W/m^2\n&quot;</span></div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;  SW surface = &quot;</span> &lt;&lt; SW_surface &lt;&lt; <span class="stringliteral">&quot; W/m^2\n&quot;</span></div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;  SW up (TOA) = &quot;</span> &lt;&lt; SW_up_TOA &lt;&lt; <span class="stringliteral">&quot; W/m^2\n&quot;</span></div>
+<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;  LW net (surface) = &quot;</span> &lt;&lt; LW_net_surface &lt;&lt; <span class="stringliteral">&quot; W/m^2\n&quot;</span></div>
+<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;  LW up (TOA) = &quot;</span> &lt;&lt; LW_up_TOA &lt;&lt; <span class="stringliteral">&quot; W/m^2\n&quot;</span></div>
+<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;  Max heating rate = &quot;</span> &lt;&lt; heating_rate_max &lt;&lt; <span class="stringliteral">&quot; K/s\n&quot;</span>;</div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;        <span class="keywordflow">if</span> (rad_choice.<a class="code" href="structRadChoice.html#aff3a8885f7efd3fbe26653c818c3205d">seb_diagnostic_enable</a> &amp;&amp; std::isfinite(seb_residual_mean)) {</div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;  SEB residual (mean) = &quot;</span> &lt;&lt; seb_residual_mean &lt;&lt; <span class="stringliteral">&quot; W/m^2\n&quot;</span></div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;  SEB residual (max) = &quot;</span> &lt;&lt; seb_residual_max &lt;&lt; <span class="stringliteral">&quot; W/m^2\n&quot;</span>;</div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;        }</div>
+<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;        <span class="keywordflow">if</span> (rad_choice.<a class="code" href="structRadChoice.html#a819bc206fe0ae806487eb9c4d2620671">seb_prognostic_enable</a> &amp;&amp; std::isfinite(t_s_mean)) {</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;  Surface temperature (mean) = &quot;</span> &lt;&lt; t_s_mean &lt;&lt; <span class="stringliteral">&quot; K\n&quot;</span></div>
+<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;  Surface temperature (max) = &quot;</span> &lt;&lt; t_s_max &lt;&lt; <span class="stringliteral">&quot; K\n&quot;</span></div>
+<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;  Surface moisture (mean) = &quot;</span> &lt;&lt; q_s_mean &lt;&lt; <span class="stringliteral">&quot; kg/kg\n&quot;</span></div>
+<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;  Surface moisture (max) = &quot;</span> &lt;&lt; q_s_max &lt;&lt; <span class="stringliteral">&quot; kg/kg\n&quot;</span>;</div>
+<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;        }</div>
+<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;    }</div>
+<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160; </div>
+<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;    rad_diag.<a class="code" href="classRadiationDiagnostics.html#ac38fd038b6247298d0ad20cb9b1f43e9">append</a>(nstep, time, call_site, SW_surface, SW_TOA,</div>
+<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;                    SW_up_TOA, LW_net_surface, LW_up_TOA, heating_rate_max,</div>
+<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;                    seb_residual_mean, seb_residual_max,</div>
+<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;                    t_s_mean, t_s_max, q_s_mean, q_s_max);</div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;}</div>
 <div class="ttc" id="aERF__Advection_8H_html_a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b"><div class="ttname"><a href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">OpenSide::hi</a></div><div class="ttdeci">@ hi</div></div>
 <div class="ttc" id="aERF__Advection_8H_html_a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe"><div class="ttname"><a href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">OpenSide::lo</a></div><div class="ttdeci">@ lo</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>

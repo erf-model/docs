@@ -176,6 +176,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad3b6c30e50dcd0ff5dae2027cd7a6fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab87eef475d975085cffffec277ecbdff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandSurface.html#ab87eef475d975085cffffec277ecbdff">Get_LSM_Update_Status</a> (const int &amp;lev)</td></tr>
 <tr class="separator:ab87eef475d975085cffffec277ecbdff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1775ba7a317c534e5fd8ddabfb3cdcde"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandSurface.html#a1775ba7a317c534e5fd8ddabfb3cdcde">Runs_Own_Land_Driver</a> (const int &amp;lev) const</td></tr>
+<tr class="separator:a1775ba7a317c534e5fd8ddabfb3cdcde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09b7ee5d357ed95f7ddf64223ecccaa5"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandSurface.html#a09b7ee5d357ed95f7ddf64223ecccaa5">Get_WRFInputNames</a> ()</td></tr>
 <tr class="separator:a09b7ee5d357ed95f7ddf64223ecccaa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64b3d7cf4056f77863c66724c460c834"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandSurface.html#a64b3d7cf4056f77863c66724c460c834">Get_LSM_Step</a> (const int &amp;lev) const</td></tr>
@@ -369,7 +371,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                             updated_lev0, z_nd);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aclassLandSurface_html_a7415e46b046f76ef34902fa6ef1ef628"><div class="ttname"><a href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">LandSurface::m_lsm_model</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; NullSurf &gt; &gt; m_lsm_model</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:448</div></div>
+<div class="ttc" id="aclassLandSurface_html_a7415e46b046f76ef34902fa6ef1ef628"><div class="ttname"><a href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">LandSurface::m_lsm_model</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; NullSurf &gt; &gt; m_lsm_model</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:455</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -981,7 +983,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;Get_LSM_Step(); }</div>
+<div class="fragment"><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;Get_LSM_Step(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1037,9 +1039,9 @@ template&lt;class SurfModelType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                                                  {</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>SurfModelType*<span class="keyword">&gt;</span>(<a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev].get());</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                                                  {</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>SurfModelType*<span class="keyword">&gt;</span>(<a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev].get());</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1065,7 +1067,7 @@ template&lt;class SurfModelType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[0]-&gt;Lsm_WRFInputNames(); }</div>
+<div class="fragment"><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[0]-&gt;Lsm_WRFInputNames(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1441,84 +1443,84 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    {</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="comment">// Note we must use finest_level here rather than m_lsm_model.size(), which is</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="comment">//    (max_level+1) -- the models at levels that have not (yet) been created</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="comment">//    have been allocated but not Define&#39;d or Init&#39;ed, so their data pointers</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="comment">//    are still null</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordtype">int</span> nlev = finest_level + 1;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordtype">int</span> nlev_valid = finest_level + 1;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordtype">int</span> nvar = this-&gt;<a class="code" href="classLandSurface.html#a2652af07555cc98d15d3516371fa42e6">Get_Data_Size</a>();</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        amrex::Vector&lt;std::string&gt; varnames;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="comment">// Only write if we have valid pointers</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classLandSurface.html#af125bc0c5860b3564afdfce10ec253ea">Get_Data_Ptr</a>(0,0)) {</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            varnames.resize(nvar);</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <a class="code" href="classLandSurface.html#a06a0bb4f12e604dbbd844bd4d2b0903f">m_lsm_geom_lev</a>.resize(nlev);</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <a class="code" href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">m_lsm_data_lev</a>.resize(nlev);</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            std::string plotfilename = amrex::Concatenate(<a class="code" href="classLandSurface.html#af9c26970ce04b58725b9529fcc2fc62f">plot_file_lsm</a>, level_steps[0], 5);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; ++lev) {</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                <a class="code" href="classLandSurface.html#a06a0bb4f12e604dbbd844bd4d2b0903f">m_lsm_geom_lev</a>[lev] = this-&gt;<a class="code" href="classLandSurface.html#a368a57f198d060805dcd615677366c3c">Get_Lsm_Geom</a>(lev);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classLandSurface.html#a06a0bb4f12e604dbbd844bd4d2b0903f">m_lsm_geom_lev</a>[lev].Domain().isEmpty()) {</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                    nlev_valid--;</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                }</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                amrex::MultiFab* mf_lsm = this-&gt;<a class="code" href="classLandSurface.html#af125bc0c5860b3564afdfce10ec253ea">Get_Data_Ptr</a>(lev,0);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                amrex::IntVect <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>(0,0,0);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                amrex::BoxArray ba = mf_lsm-&gt;boxArray();</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                amrex::DistributionMapping dm = mf_lsm-&gt;DistributionMap();</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                <a class="code" href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">m_lsm_data_lev</a>[lev].define(ba, dm, nvar, <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n(0); n&lt;nvar; ++n) {</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                    mf_lsm = this-&gt;<a class="code" href="classLandSurface.html#af125bc0c5860b3564afdfce10ec253ea">Get_Data_Ptr</a>(lev,n);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                    amrex::MultiFab::Copy(<a class="code" href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">m_lsm_data_lev</a>[lev],*(mf_lsm),0,n,1,0);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                    <span class="keywordflow">if</span> (lev==0) varnames[n] = this-&gt;<a class="code" href="classLandSurface.html#a5f7107ef18334fd2dfcfcdf884ee18e5">Get_DataName</a>(n);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                }</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            }</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            <span class="keywordflow">if</span> (plotfile_type == PlotFileType::Amrex</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;#ifdef ERF_USE_NETCDF</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                || plotfile_type == PlotFileType::Netcdf</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;#endif</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                ) {</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                <span class="comment">// NetCDF output of the land-surface fields is not implemented yet, so fall back</span></div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                <span class="comment">// to the AMReX format -- which is what these plotfiles were before the plotfile</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                <span class="comment">// type was consulted here -- rather than silently writing nothing at all.</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                warn_nc_lsm_plot_fallback(plotfile_type);</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                WriteMultiLevelPlotfile (plotfilename, nlev_valid, GetVecOfConstPtrs(<a class="code" href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">m_lsm_data_lev</a>),</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                                            varnames, <a class="code" href="classLandSurface.html#a06a0bb4f12e604dbbd844bd4d2b0903f">m_lsm_geom_lev</a>, <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(time),</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                                            level_steps, ref_ratio);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                amrex::Abort(<span class="stringliteral">&quot;Dont know this plotfile_type&quot;</span>);</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            }</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            <a class="code" href="classLandSurface.html#a06a0bb4f12e604dbbd844bd4d2b0903f">m_lsm_geom_lev</a>.clear();</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            <a class="code" href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">m_lsm_data_lev</a>.clear();</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        }</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordflow">if</span> (nlev_valid &gt; 0 &amp;&amp; <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[0]-&gt;Lsm_Type() == <a class="code" href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263a3e1d8e64ee857df91bf47ac8b2340e4d">LSM_Type::SLM</a>)</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        {</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            amrex::Vector&lt;amrex::MultiFab&gt; fab_2d(finest_level+1);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            amrex::Vector&lt;amrex::Geometry&gt; geom_2d(finest_level+1);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            amrex::Vector&lt;std::string&gt; varnames_2d;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            std::string plotfilename_2d = amrex::Concatenate(<a class="code" href="classLandSurface.html#af9c26970ce04b58725b9529fcc2fc62f">plot_file_lsm</a> + <span class="stringliteral">&quot;2D_&quot;</span>, level_steps[0], 5);</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; ++lev) {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                <span class="keyword">static_cast&lt;</span><a class="code" href="classSLM.html">SLM</a>*<span class="keyword">&gt;</span>(<a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev].get())-&gt;writeSLM_Data(plotfile_type, <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(time), <a class="code" href="classLandSurface.html#af9c26970ce04b58725b9529fcc2fc62f">plot_file_lsm</a>, level_steps[0], lev, finest_level, fab_2d[lev], geom_2d[lev], varnames_2d);</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            }</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="comment">// For a NetCDF run writeSLM_Data has already written these fields itself, one file</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="comment">// per level, so only the AMReX format is assembled here.</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            <span class="keywordflow">if</span> (plotfile_type == PlotFileType::Amrex) {</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                amrex::WriteMultiLevelPlotfile(plotfilename_2d, finest_level+1, GetVecOfConstPtrs(fab_2d), varnames_2d, geom_2d, <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(time), level_steps, ref_ratio);</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            }</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        }</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    }</div>
-<div class="ttc" id="aclassLandSurface_html_a06a0bb4f12e604dbbd844bd4d2b0903f"><div class="ttname"><a href="classLandSurface.html#a06a0bb4f12e604dbbd844bd4d2b0903f">LandSurface::m_lsm_geom_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Geometry &gt; m_lsm_geom_lev</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:454</div></div>
+<div class="fragment"><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="comment">// Note we must use finest_level here rather than m_lsm_model.size(), which is</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="comment">//    (max_level+1) -- the models at levels that have not (yet) been created</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="comment">//    have been allocated but not Define&#39;d or Init&#39;ed, so their data pointers</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="comment">//    are still null</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordtype">int</span> nlev = finest_level + 1;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordtype">int</span> nlev_valid = finest_level + 1;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keywordtype">int</span> nvar = this-&gt;<a class="code" href="classLandSurface.html#a2652af07555cc98d15d3516371fa42e6">Get_Data_Size</a>();</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        amrex::Vector&lt;std::string&gt; varnames;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="comment">// Only write if we have valid pointers</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classLandSurface.html#af125bc0c5860b3564afdfce10ec253ea">Get_Data_Ptr</a>(0,0)) {</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            varnames.resize(nvar);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            <a class="code" href="classLandSurface.html#a06a0bb4f12e604dbbd844bd4d2b0903f">m_lsm_geom_lev</a>.resize(nlev);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <a class="code" href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">m_lsm_data_lev</a>.resize(nlev);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            std::string plotfilename = amrex::Concatenate(<a class="code" href="classLandSurface.html#af9c26970ce04b58725b9529fcc2fc62f">plot_file_lsm</a>, level_steps[0], 5);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; ++lev) {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                <a class="code" href="classLandSurface.html#a06a0bb4f12e604dbbd844bd4d2b0903f">m_lsm_geom_lev</a>[lev] = this-&gt;<a class="code" href="classLandSurface.html#a368a57f198d060805dcd615677366c3c">Get_Lsm_Geom</a>(lev);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classLandSurface.html#a06a0bb4f12e604dbbd844bd4d2b0903f">m_lsm_geom_lev</a>[lev].Domain().isEmpty()) {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                    nlev_valid--;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                amrex::MultiFab* mf_lsm = this-&gt;<a class="code" href="classLandSurface.html#af125bc0c5860b3564afdfce10ec253ea">Get_Data_Ptr</a>(lev,0);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                amrex::IntVect <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>(0,0,0);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                amrex::BoxArray ba = mf_lsm-&gt;boxArray();</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                amrex::DistributionMapping dm = mf_lsm-&gt;DistributionMap();</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                <a class="code" href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">m_lsm_data_lev</a>[lev].define(ba, dm, nvar, <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n(0); n&lt;nvar; ++n) {</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                    mf_lsm = this-&gt;<a class="code" href="classLandSurface.html#af125bc0c5860b3564afdfce10ec253ea">Get_Data_Ptr</a>(lev,n);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                    amrex::MultiFab::Copy(<a class="code" href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">m_lsm_data_lev</a>[lev],*(mf_lsm),0,n,1,0);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                    <span class="keywordflow">if</span> (lev==0) varnames[n] = this-&gt;<a class="code" href="classLandSurface.html#a5f7107ef18334fd2dfcfcdf884ee18e5">Get_DataName</a>(n);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                }</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <span class="keywordflow">if</span> (plotfile_type == PlotFileType::Amrex</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;#ifdef ERF_USE_NETCDF</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                || plotfile_type == PlotFileType::Netcdf</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;#endif</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                ) {</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                <span class="comment">// NetCDF output of the land-surface fields is not implemented yet, so fall back</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                <span class="comment">// to the AMReX format -- which is what these plotfiles were before the plotfile</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                <span class="comment">// type was consulted here -- rather than silently writing nothing at all.</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                warn_nc_lsm_plot_fallback(plotfile_type);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                WriteMultiLevelPlotfile (plotfilename, nlev_valid, GetVecOfConstPtrs(<a class="code" href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">m_lsm_data_lev</a>),</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                                            varnames, <a class="code" href="classLandSurface.html#a06a0bb4f12e604dbbd844bd4d2b0903f">m_lsm_geom_lev</a>, <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(time),</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                                            level_steps, ref_ratio);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                amrex::Abort(<span class="stringliteral">&quot;Dont know this plotfile_type&quot;</span>);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            }</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <a class="code" href="classLandSurface.html#a06a0bb4f12e604dbbd844bd4d2b0903f">m_lsm_geom_lev</a>.clear();</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <a class="code" href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">m_lsm_data_lev</a>.clear();</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        }</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">if</span> (nlev_valid &gt; 0 &amp;&amp; <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[0]-&gt;Lsm_Type() == <a class="code" href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263a3e1d8e64ee857df91bf47ac8b2340e4d">LSM_Type::SLM</a>)</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        {</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            amrex::Vector&lt;amrex::MultiFab&gt; fab_2d(finest_level+1);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            amrex::Vector&lt;amrex::Geometry&gt; geom_2d(finest_level+1);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            amrex::Vector&lt;std::string&gt; varnames_2d;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            std::string plotfilename_2d = amrex::Concatenate(<a class="code" href="classLandSurface.html#af9c26970ce04b58725b9529fcc2fc62f">plot_file_lsm</a> + <span class="stringliteral">&quot;2D_&quot;</span>, level_steps[0], 5);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; ++lev) {</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                <span class="keyword">static_cast&lt;</span><a class="code" href="classSLM.html">SLM</a>*<span class="keyword">&gt;</span>(<a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev].get())-&gt;writeSLM_Data(plotfile_type, <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(time), <a class="code" href="classLandSurface.html#af9c26970ce04b58725b9529fcc2fc62f">plot_file_lsm</a>, level_steps[0], lev, finest_level, fab_2d[lev], geom_2d[lev], varnames_2d);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            }</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            <span class="comment">// For a NetCDF run writeSLM_Data has already written these fields itself, one file</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            <span class="comment">// per level, so only the AMReX format is assembled here.</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            <span class="keywordflow">if</span> (plotfile_type == PlotFileType::Amrex) {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                amrex::WriteMultiLevelPlotfile(plotfilename_2d, finest_level+1, GetVecOfConstPtrs(fab_2d), varnames_2d, geom_2d, <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(time), level_steps, ref_ratio);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            }</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        }</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    }</div>
+<div class="ttc" id="aclassLandSurface_html_a06a0bb4f12e604dbbd844bd4d2b0903f"><div class="ttname"><a href="classLandSurface.html#a06a0bb4f12e604dbbd844bd4d2b0903f">LandSurface::m_lsm_geom_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Geometry &gt; m_lsm_geom_lev</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:461</div></div>
 <div class="ttc" id="aclassLandSurface_html_a368a57f198d060805dcd615677366c3c"><div class="ttname"><a href="classLandSurface.html#a368a57f198d060805dcd615677366c3c">LandSurface::Get_Lsm_Geom</a></div><div class="ttdeci">amrex::Geometry Get_Lsm_Geom(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:159</div></div>
-<div class="ttc" id="aclassLandSurface_html_a5a134e93d42328bfaa9611a9e625e1bb"><div class="ttname"><a href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">LandSurface::m_lsm_data_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab &gt; m_lsm_data_lev</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:457</div></div>
+<div class="ttc" id="aclassLandSurface_html_a5a134e93d42328bfaa9611a9e625e1bb"><div class="ttname"><a href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">LandSurface::m_lsm_data_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab &gt; m_lsm_data_lev</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:464</div></div>
 <div class="ttc" id="aclassLandSurface_html_af125bc0c5860b3564afdfce10ec253ea"><div class="ttname"><a href="classLandSurface.html#af125bc0c5860b3564afdfce10ec253ea">LandSurface::Get_Data_Ptr</a></div><div class="ttdeci">amrex::MultiFab * Get_Data_Ptr(const int &amp;lev, const int &amp;varIdx)</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:142</div></div>
-<div class="ttc" id="aclassLandSurface_html_af9c26970ce04b58725b9529fcc2fc62f"><div class="ttname"><a href="classLandSurface.html#af9c26970ce04b58725b9529fcc2fc62f">LandSurface::plot_file_lsm</a></div><div class="ttdeci">std::string plot_file_lsm</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:451</div></div>
+<div class="ttc" id="aclassLandSurface_html_af9c26970ce04b58725b9529fcc2fc62f"><div class="ttname"><a href="classLandSurface.html#af9c26970ce04b58725b9529fcc2fc62f">LandSurface::plot_file_lsm</a></div><div class="ttdeci">std::string plot_file_lsm</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:458</div></div>
 <div class="ttc" id="aclassSLM_html"><div class="ttname"><a href="classSLM.html">SLM</a></div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:185</div></div>
 <div class="ttc" id="anamespaceLSM__Type_html_a9d49e9b75bcf353e7edffdf36d048263a3e1d8e64ee857df91bf47ac8b2340e4d"><div class="ttname"><a href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263a3e1d8e64ee857df91bf47ac8b2340e4d">LSM_Type::SLM</a></div><div class="ttdeci">@ SLM</div><div class="ttdef"><b>Definition:</b> ERF_LSM_Types.H:8</div></div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:50</div></div>
@@ -1570,7 +1572,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{ <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;Read_Lsm_Restart(dir); }</div>
+<div class="fragment"><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;{ <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;Read_Lsm_Restart(dir); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1607,9 +1609,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    {</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;ReadCheckpoint(lev, checkpointname);</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    {</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;ReadCheckpoint(lev, checkpointname);</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1779,6 +1781,36 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a1775ba7a317c534e5fd8ddabfb3cdcde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1775ba7a317c534e5fd8ddabfb3cdcde">&#9670;&nbsp;</a></span>Runs_Own_Land_Driver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LandSurface::Runs_Own_Land_Driver </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>lev</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    {</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">return</span> lev &gt;= 0 &amp;&amp; lev &lt; static_cast&lt;int&gt;(<a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>.size()) &amp;&amp; <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev] &amp;&amp;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;               <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;Runs_Own_Land_Driver();</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a5408c8431b8d66558ce3a689e899dae1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5408c8431b8d66558ce3a689e899dae1">&#9670;&nbsp;</a></span>Set_Lev0_Data_Ptr()</h2>
 
@@ -1910,9 +1942,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    {</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;set_precip_input(<a class="code" href="namespaceSLM__Diag.html#aa1b414cead6bc88d52a9bc90793ebffeaacba0223b9bcac16e8cba8d130a198e7">precip_in</a>);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    {</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;set_precip_input(<a class="code" href="namespaceSLM__Diag.html#aa1b414cead6bc88d52a9bc90793ebffeaacba0223b9bcac16e8cba8d130a198e7">precip_in</a>);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    }</div>
 <div class="ttc" id="anamespaceSLM__Diag_html_aa1b414cead6bc88d52a9bc90793ebffeaacba0223b9bcac16e8cba8d130a198e7"><div class="ttname"><a href="namespaceSLM__Diag.html#aa1b414cead6bc88d52a9bc90793ebffeaacba0223b9bcac16e8cba8d130a198e7">SLM_Diag::precip_in</a></div><div class="ttdeci">@ precip_in</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:134</div></div>
 </div><!-- fragment -->
 </div>
@@ -1950,7 +1982,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;{ <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;Set_LSM_Step(step); }</div>
+<div class="fragment"><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;{ <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;Set_LSM_Step(step); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1993,9 +2025,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    {</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;set_terrain_inputs(sst_in[lev], lmask_in[lev]);</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    {</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;set_terrain_inputs(sst_in[lev], lmask_in[lev]);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2278,7 +2310,7 @@ template&lt;class NewSurfModel &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;{ <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;Write_Lsm_Restart(dir); }</div>
+<div class="fragment"><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;{ <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;Write_Lsm_Restart(dir); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2315,9 +2347,9 @@ template&lt;class NewSurfModel &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    {</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;WriteCheckpoint(lev, checkpointname);</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    {</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;WriteCheckpoint(lev, checkpointname);</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2390,7 +2422,7 @@ template&lt;class NewSurfModel &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classLandSurface.html#a9ed6bc426a394b9f5804dd7c36054928">Advance()</a>, <a class="el" href="classLandSurface.html#ae2087847b83c6a9e4453ccaa110134ce">Define()</a>, <a class="el" href="classLandSurface.html#af125bc0c5860b3564afdfce10ec253ea">Get_Data_Ptr()</a>, <a class="el" href="classLandSurface.html#a2652af07555cc98d15d3516371fa42e6">Get_Data_Size()</a>, <a class="el" href="classLandSurface.html#a98f17de631a0ea055d788ed04c928f0d">Get_DataIdx()</a>, <a class="el" href="classLandSurface.html#a5f7107ef18334fd2dfcfcdf884ee18e5">Get_DataName()</a>, <a class="el" href="classLandSurface.html#a54efce4a3efcacd5399c6a608f67be9c">Get_DataNames()</a>, <a class="el" href="classLandSurface.html#a967a4b0772dc721d0242d38613ac430e">Get_Flux_Ptr()</a>, <a class="el" href="classLandSurface.html#ae21d7d4affc90b75f46bc1694a93d9fb">Get_Flux_Size()</a>, <a class="el" href="classLandSurface.html#a0a6643abe1f8bec54491e11b34961fe9">Get_FluxIdx()</a>, <a class="el" href="classLandSurface.html#a733b31ba358415cae19737ef499a1214">Get_FluxName()</a>, <a class="el" href="classLandSurface.html#a368a57f198d060805dcd615677366c3c">Get_Lsm_Geom()</a>, <a class="el" href="classLandSurface.html#a64b3d7cf4056f77863c66724c460c834">Get_LSM_Step()</a>, <a class="el" href="classLandSurface.html#ab87eef475d975085cffffec277ecbdff">Get_LSM_Update_Status()</a>, <a class="el" href="classLandSurface.html#a3afba8302e18341bf3ecb62202704817">get_model_lev()</a>, <a class="el" href="classLandSurface.html#a09b7ee5d357ed95f7ddf64223ecccaa5">Get_WRFInputNames()</a>, <a class="el" href="classLandSurface.html#af9a3276f0bdb9a0345fb2c851ccf24d6">Has_Model()</a>, <a class="el" href="classLandSurface.html#a4561aef7fd4582be843cec880d1907cd">Init()</a>, <a class="el" href="classLandSurface.html#ab24f1618bb8d0bdb4c91ecd3addde230">Initialize_From_Source()</a>, <a class="el" href="classLandSurface.html#a4ee0eb34736ea67b8de898bc3dc045ce">Plot()</a>, <a class="el" href="classLandSurface.html#a1f2d63b59fabcadc126cdf5b00293c36">Plot_Lsm_Data()</a>, <a class="el" href="classLandSurface.html#a3bdcd06d33be9f3fde998de23c1530ba">Read_Lsm_Restart()</a>, <a class="el" href="classLandSurface.html#a95b3479e2cb47aab8992e5f187a472a5">ReadCheckpoint()</a>, <a class="el" href="classLandSurface.html#a138116d2fa2b98eeb1a12aa49fd5b33e">Remake_Level()</a>, <a class="el" href="classLandSurface.html#a58bc8a6e1b1369cd863f8b4f424a6270">ReSize()</a>, <a class="el" href="classLandSurface.html#a5408c8431b8d66558ce3a689e899dae1">Set_Lev0_Data_Ptr()</a>, <a class="el" href="classLandSurface.html#ad3b6c30e50dcd0ff5dae2027cd7a6fc1">Set_Lev0_Flux_Ptr()</a>, <a class="el" href="classLandSurface.html#a9090edb82f819307c0b8279b8cf4b2af">set_LSM_precip_input()</a>, <a class="el" href="classLandSurface.html#a7f95e61b99bae607f988afa5cf7b831c">Set_LSM_Step()</a>, <a class="el" href="classLandSurface.html#aec9cf6040952676dc5f2c00518411f98">set_LSM_terrain_inputs()</a>, <a class="el" href="classLandSurface.html#a5ca29ff5c3233c3cece9e1cb3675a254">Set_Source_Ptrs()</a>, <a class="el" href="classLandSurface.html#a91df3382b60a6566b78a23c87b46f065">SetModel()</a>, <a class="el" href="classLandSurface.html#a3b3e9689bfbf433e3ba995ee3c7ff356">Update_Lsm_Vars_Lev()</a>, <a class="el" href="classLandSurface.html#afcb150f2d64cc46a8fbdc817d6fb9872">Update_Micro_Vars_Lev()</a>, <a class="el" href="classLandSurface.html#adc42b59dad9dc817ee882778a2b3d273">Update_State_Vars_Lev()</a>, <a class="el" href="classLandSurface.html#af47bbf3ff714cedf5bc64705f2e26023">Write_Lsm_Restart()</a>, and <a class="el" href="classLandSurface.html#a48ceaa918d97e2e3c65e984a32b8974b">WriteCheckpoint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classLandSurface.html#a9ed6bc426a394b9f5804dd7c36054928">Advance()</a>, <a class="el" href="classLandSurface.html#ae2087847b83c6a9e4453ccaa110134ce">Define()</a>, <a class="el" href="classLandSurface.html#af125bc0c5860b3564afdfce10ec253ea">Get_Data_Ptr()</a>, <a class="el" href="classLandSurface.html#a2652af07555cc98d15d3516371fa42e6">Get_Data_Size()</a>, <a class="el" href="classLandSurface.html#a98f17de631a0ea055d788ed04c928f0d">Get_DataIdx()</a>, <a class="el" href="classLandSurface.html#a5f7107ef18334fd2dfcfcdf884ee18e5">Get_DataName()</a>, <a class="el" href="classLandSurface.html#a54efce4a3efcacd5399c6a608f67be9c">Get_DataNames()</a>, <a class="el" href="classLandSurface.html#a967a4b0772dc721d0242d38613ac430e">Get_Flux_Ptr()</a>, <a class="el" href="classLandSurface.html#ae21d7d4affc90b75f46bc1694a93d9fb">Get_Flux_Size()</a>, <a class="el" href="classLandSurface.html#a0a6643abe1f8bec54491e11b34961fe9">Get_FluxIdx()</a>, <a class="el" href="classLandSurface.html#a733b31ba358415cae19737ef499a1214">Get_FluxName()</a>, <a class="el" href="classLandSurface.html#a368a57f198d060805dcd615677366c3c">Get_Lsm_Geom()</a>, <a class="el" href="classLandSurface.html#a64b3d7cf4056f77863c66724c460c834">Get_LSM_Step()</a>, <a class="el" href="classLandSurface.html#ab87eef475d975085cffffec277ecbdff">Get_LSM_Update_Status()</a>, <a class="el" href="classLandSurface.html#a3afba8302e18341bf3ecb62202704817">get_model_lev()</a>, <a class="el" href="classLandSurface.html#a09b7ee5d357ed95f7ddf64223ecccaa5">Get_WRFInputNames()</a>, <a class="el" href="classLandSurface.html#af9a3276f0bdb9a0345fb2c851ccf24d6">Has_Model()</a>, <a class="el" href="classLandSurface.html#a4561aef7fd4582be843cec880d1907cd">Init()</a>, <a class="el" href="classLandSurface.html#ab24f1618bb8d0bdb4c91ecd3addde230">Initialize_From_Source()</a>, <a class="el" href="classLandSurface.html#a4ee0eb34736ea67b8de898bc3dc045ce">Plot()</a>, <a class="el" href="classLandSurface.html#a1f2d63b59fabcadc126cdf5b00293c36">Plot_Lsm_Data()</a>, <a class="el" href="classLandSurface.html#a3bdcd06d33be9f3fde998de23c1530ba">Read_Lsm_Restart()</a>, <a class="el" href="classLandSurface.html#a95b3479e2cb47aab8992e5f187a472a5">ReadCheckpoint()</a>, <a class="el" href="classLandSurface.html#a138116d2fa2b98eeb1a12aa49fd5b33e">Remake_Level()</a>, <a class="el" href="classLandSurface.html#a58bc8a6e1b1369cd863f8b4f424a6270">ReSize()</a>, <a class="el" href="classLandSurface.html#a1775ba7a317c534e5fd8ddabfb3cdcde">Runs_Own_Land_Driver()</a>, <a class="el" href="classLandSurface.html#a5408c8431b8d66558ce3a689e899dae1">Set_Lev0_Data_Ptr()</a>, <a class="el" href="classLandSurface.html#ad3b6c30e50dcd0ff5dae2027cd7a6fc1">Set_Lev0_Flux_Ptr()</a>, <a class="el" href="classLandSurface.html#a9090edb82f819307c0b8279b8cf4b2af">set_LSM_precip_input()</a>, <a class="el" href="classLandSurface.html#a7f95e61b99bae607f988afa5cf7b831c">Set_LSM_Step()</a>, <a class="el" href="classLandSurface.html#aec9cf6040952676dc5f2c00518411f98">set_LSM_terrain_inputs()</a>, <a class="el" href="classLandSurface.html#a5ca29ff5c3233c3cece9e1cb3675a254">Set_Source_Ptrs()</a>, <a class="el" href="classLandSurface.html#a91df3382b60a6566b78a23c87b46f065">SetModel()</a>, <a class="el" href="classLandSurface.html#a3b3e9689bfbf433e3ba995ee3c7ff356">Update_Lsm_Vars_Lev()</a>, <a class="el" href="classLandSurface.html#afcb150f2d64cc46a8fbdc817d6fb9872">Update_Micro_Vars_Lev()</a>, <a class="el" href="classLandSurface.html#adc42b59dad9dc817ee882778a2b3d273">Update_State_Vars_Lev()</a>, <a class="el" href="classLandSurface.html#af47bbf3ff714cedf5bc64705f2e26023">Write_Lsm_Restart()</a>, and <a class="el" href="classLandSurface.html#a48ceaa918d97e2e3c65e984a32b8974b">WriteCheckpoint()</a>.</p>
 
 </div>
 </div>
