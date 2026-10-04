@@ -16,9 +16,9 @@ var classProblemBase =
     [ "name", "classProblemBase.html#ad6cd20513f20d84578acc9732d3e0791", null ],
     [ "read_custom_terrain", "classProblemBase.html#a9a654c18cb5e4c393cf9aea268c3609a", null ],
     [ "terrain_is_specified", "classProblemBase.html#a73a89f95a3f2251b2aac762c7347bb62", null ],
-    [ "update_geostrophic_profile", "classProblemBase.html#a43f81043af75fc7ed4fca33167d9a374", null ],
-    [ "update_rhoqt_sources", "classProblemBase.html#a956d9a1b9a9e57e0f20a397cae483113", null ],
-    [ "update_rhotheta_sources", "classProblemBase.html#a50e61a69c8e4429e6f2321bad3c03d9d", null ],
-    [ "update_w_subsidence", "classProblemBase.html#a0515dad450ce41ddd29978c5c3999d34", null ],
+    [ "update_geostrophic_profile", "classProblemBase.html#a2834ecceda4e6884a3643917939460ae", null ],
+    [ "update_rhoqt_sources", "classProblemBase.html#afe66df34c57d9f670a957bbf10f23d87", null ],
+    [ "update_rhotheta_sources", "classProblemBase.html#a3dd9b64c326dbf1ba6b2d425b7c67dd5", null ],
+    [ "update_w_subsidence", "classProblemBase.html#a8774496eb06b5273c0a34909ec7d02a3", null ],
     [ "base_parms", "classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda", null ]
 ];

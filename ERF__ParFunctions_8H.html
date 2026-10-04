@@ -88,7 +88,25 @@ $(document).ready(function(){initNavTree('ERF__ParFunctions_8H.html',''); initRe
 <div class="title">ERF_ParFunctions.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;AMReX_MultiFab.H&gt;</code><br />
+<code>#include &lt;AMReX_ParallelDescriptor.H&gt;</code><br />
+<code>#include &lt;AMReX_Reduce.H&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for ERF_ParFunctions.H:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__ParFunctions_8H__incl.png" border="0" usemap="#aSource_2Utils_2ERF__ParFunctions_8H" alt=""/></div>
+<map name="aSource_2Utils_2ERF__ParFunctions_8H" id="aSource_2Utils_2ERF__ParFunctions_8H">
+<area shape="rect" title=" " alt="" coords="147,5,379,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,64,107"/>
+<area shape="rect" title=" " alt="" coords="88,80,165,107"/>
+<area shape="rect" title=" " alt="" coords="190,80,335,107"/>
+<area shape="rect" title=" " alt="" coords="359,80,563,107"/>
+<area shape="rect" title=" " alt="" coords="588,80,727,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__ParFunctions_8H__dep__incl.png" border="0" usemap="#aSource_2Utils_2ERF__ParFunctions_8Hdep" alt=""/></div>
@@ -105,12 +123,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae0f0ec55ed7951e173987f3e511f082e"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ParFunctions_8H.html#ae0f0ec55ed7951e173987f3e511f082e">reduce_to_max_per_height</a> (amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;v, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mf)</td></tr>
-<tr class="separator:ae0f0ec55ed7951e173987f3e511f082e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f6f2cfb45b2c8113ccf6b4658b7d63b"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ParFunctions_8H.html#a9f6f2cfb45b2c8113ccf6b4658b7d63b">reduce_to_max_per_height</a> (amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;v, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mf, const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;zlevels_stag)</td></tr>
+<tr class="separator:a9f6f2cfb45b2c8113ccf6b4658b7d63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae0f0ec55ed7951e173987f3e511f082e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0f0ec55ed7951e173987f3e511f082e">&#9670;&nbsp;</a></span>reduce_to_max_per_height()</h2>
+<a id="a9f6f2cfb45b2c8113ccf6b4658b7d63b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f6f2cfb45b2c8113ccf6b4658b7d63b">&#9670;&nbsp;</a></span>reduce_to_max_per_height()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,7 +143,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td>
-          <td class="paramname"><em>mf</em>&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>zlevels_stag</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -134,30 +158,69 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Reduce a multifab to a vector of max values at each height </p>
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    amrex::MultiArray4&lt;const amrex::Real&gt; <span class="keyword">const</span>&amp; <a class="code" href="namespacemodule__mp__morr__two__moment.html#a52bebdd2e0ad908dcfd57354462d286c">ma</a> = mf-&gt;const_arrays();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; v.size(); k++) {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        v[k] = amrex::ParReduce(amrex::TypeList&lt;amrex::ReduceOpMax&gt;{},</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                amrex::TypeList&lt;amrex::Real&gt;{},</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                *mf,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                amrex::IntVect(0),</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> box_no, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            -&gt; amrex::GpuTuple&lt;amrex::Real&gt;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">return</span> { <a class="code" href="namespacemodule__mp__morr__two__moment.html#a52bebdd2e0ad908dcfd57354462d286c">ma</a>[box_no](i,j,k) };</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        });</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    amrex::ParallelDescriptor::ReduceRealMax(v.data(), v.size());</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_a52bebdd2e0ad908dcfd57354462d286c"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#a52bebdd2e0ad908dcfd57354462d286c">module_mp_morr_two_moment::ma</a></div><div class="ttdeci">real(c_double), private ma</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:223</div></div>
+<p>Reduce a multifab of heights to a vector of max values at each height: v[k] is the largest valid value of mf at index k over all boxes of the level. A box contributes only the k it holds, since the boxes of a level need not span the column (a refined region that does not reach the top or the ground, or grids split in z). A k that no box holds gets the nominal height of the level from zlevels_stag (the face height if mf is nodal in z, the mean of the two faces otherwise), so every entry of v is a height and no caller has to test for a k that is not covered.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">v</td><td>max of mf per k </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf</td><td>heights (z_phys_cc or z_phys_nd of a level) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zlevels_stag</td><td>nominal heights of the z faces of the level </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>  nk      = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(v.size());</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> nodal_z = mf-&gt;ixType().nodeCentered(2);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(zlevels_stag.size()) &gt;= (nodal_z ? nk : nk+1),</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="stringliteral">&quot;reduce_to_max_per_height: zlevels_stag is shorter than the column&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// the identity of ReduceOpMax: the value of a k that no box holds</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> not_covered = std::numeric_limits&lt;amrex::Real&gt;::lowest();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nk; k++) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        amrex::ReduceOps&lt;amrex::ReduceOpMax&gt; reduce_op;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        amrex::ReduceData&lt;amrex::Real&gt; reduce_data(reduce_op);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::Type;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(*mf); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            amrex::Box bx = mfi.validbox();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> (k &lt; bx.smallEnd(2) || k &gt; bx.bigEnd(2)) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            bx.setSmall(2, k);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            bx.setBig(2, k);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const&gt; a = mf-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            reduce_op.eval(bx, reduce_data,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> kk) noexcept -&gt; ReduceTuple</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">return</span> { a(i,j,kk) };</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            });</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        v[k] = amrex::get&lt;0&gt;(reduce_data.value(reduce_op));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    amrex::ParallelDescriptor::ReduceRealMax(v.data(), nk);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nk; k++) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (v[k] == not_covered) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            v[k] = nodal_z ? zlevels_stag[k]</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                           : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.5) * (zlevels_stag[k] + zlevels_stag[k+1]);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#ae27a45d751287a887769df20dea60633">ERF::setSpongeRefFromSounding()</a>.</p>
 <div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__ParFunctions_8H_a9f6f2cfb45b2c8113ccf6b4658b7d63b_cgraph.png" border="0" usemap="#aERF__ParFunctions_8H_a9f6f2cfb45b2c8113ccf6b4658b7d63b_cgraph" alt=""/></div>
+<map name="aERF__ParFunctions_8H_a9f6f2cfb45b2c8113ccf6b4658b7d63b_cgraph" id="aERF__ParFunctions_8H_a9f6f2cfb45b2c8113ccf6b4658b7d63b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,204,39"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="252,5,435,47"/>
+</map>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__ParFunctions_8H_ae0f0ec55ed7951e173987f3e511f082e_icgraph.png" border="0" usemap="#aERF__ParFunctions_8H_ae0f0ec55ed7951e173987f3e511f082e_icgraph" alt=""/></div>
-<map name="aERF__ParFunctions_8H_ae0f0ec55ed7951e173987f3e511f082e_icgraph" id="aERF__ParFunctions_8H_ae0f0ec55ed7951e173987f3e511f082e_icgraph">
+<div class="center"><img src="ERF__ParFunctions_8H_a9f6f2cfb45b2c8113ccf6b4658b7d63b_icgraph.png" border="0" usemap="#aERF__ParFunctions_8H_a9f6f2cfb45b2c8113ccf6b4658b7d63b_icgraph" alt=""/></div>
+<map name="aERF__ParFunctions_8H_a9f6f2cfb45b2c8113ccf6b4658b7d63b_icgraph" id="aERF__ParFunctions_8H_a9f6f2cfb45b2c8113ccf6b4658b7d63b_icgraph">
 <area shape="rect" title=" " alt="" coords="291,5,489,32"/>
 <area shape="rect" href="classERF.html#ae27a45d751287a887769df20dea60633" title="Set sponge mean profiles from input sounding." alt="" coords="5,5,243,32"/>
 </map>
