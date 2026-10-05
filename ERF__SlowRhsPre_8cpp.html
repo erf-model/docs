@@ -1416,14 +1416,14 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;            <span class="keywordtype">int</span> strt_comp_reflux = (l_fixed_rho) ? 1 : 0;</div>
 <div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;            <span class="keywordtype">int</span>  num_comp_reflux = 1;</div>
 <div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;            <span class="keywordflow">if</span> (level &lt; finest_level) {</div>
-<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;                fr_as_crse-&gt;CrseAdd(mfi,</div>
-<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
-<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;                    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>, <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(dt), strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;                fr_as_crse-&gt;CrseAdd(mfi, {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
+<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;                                    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>, <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(dt), strt_comp_reflux, strt_comp_reflux,</div>
+<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;                                    num_comp_reflux, RunOn::Device);</div>
 <div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;            }</div>
 <div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;            <span class="keywordflow">if</span> (level &gt; 0) {</div>
-<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;                fr_as_fine-&gt;FineAdd(mfi,</div>
-<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
-<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;                    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>, <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(dt), strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;                fr_as_fine-&gt;FineAdd(mfi, {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;                                    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>, <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(dt), strt_comp_reflux, strt_comp_reflux,</div>
+<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;                                    num_comp_reflux, RunOn::Device);</div>
 <div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;            }</div>
 <div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160; </div>
 <div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;        } <span class="comment">// two-way coupling</span></div>
