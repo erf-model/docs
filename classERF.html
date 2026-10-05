@@ -4974,24 +4974,24 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">// Mask for zeroing covered cells</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    AMREX_ASSERT(level &gt; 0);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    BoxArray cba            = grids[level-1];</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    DistributionMapping cdm = dmap[level-1];</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    BoxArray fba            = grids[level];</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    iMultiFab ifine_mask_lev = makeFineMask(cba, cdm, fba, ref_ratio[level-1], 1, 0);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>  fma =  fine_mask_lev.arrays();</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> ifma = ifine_mask_lev.arrays();</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(fine_mask_lev, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> bno, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;       fma[bno](i,j,k) = ifma[bno](i,j,k);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    });</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">// Mask for zeroing covered cells</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    AMREX_ASSERT(level &gt; 0);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    BoxArray cba            = grids[level-1];</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    DistributionMapping cdm = dmap[level-1];</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    BoxArray fba            = grids[level];</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    iMultiFab ifine_mask_lev = makeFineMask(cba, cdm, fba, ref_ratio[level-1], 1, 0);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>  fma =  fine_mask_lev.arrays();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> ifma = ifine_mask_lev.arrays();</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(fine_mask_lev, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> bno, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;       fma[bno](i,j,k) = ifma[bno](i,j,k);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    });</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -10995,7 +10995,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__Tagging_8cpp_html_a661478614baa822c243e10e73731de2a"><div class="ttname"><a href="ERF__Tagging_8cpp.html#a661478614baa822c243e10e73731de2a">tag_on_distance_from_eye</a></div><div class="ttdeci">void tag_on_distance_from_eye(const Geometry &amp;cgeom, TagBoxArray *tags, const Real eye_x, const Real eye_y, const Real rad_tag)</div><div class="ttdoc">Tag cells based on 2D distance from the storm eye.</div><div class="ttdef"><b>Definition:</b> ERF_RefineHurricane.cpp:111</div></div>
 <div class="ttc" id="aclassERF_html_a050dbd236c9bf246554a53008e09f683"><div class="ttname"><a href="classERF.html#a050dbd236c9bf246554a53008e09f683">ERF::boxes_at_level</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Box &gt; &gt; boxes_at_level</div><div class="ttdef"><b>Definition:</b> ERF.H:1258</div></div>
 <div class="ttc" id="aclassERF_html_a06f0d5e4f528b8f0ddea06569b582599"><div class="ttname"><a href="classERF.html#a06f0d5e4f528b8f0ddea06569b582599">ERF::HurricaneTracker</a></div><div class="ttdeci">void HurricaneTracker(int lev, double time, const amrex::MultiFab &amp;cc_vel, const amrex::Real velmag_threshold, amrex::TagBoxArray *tags=nullptr)</div><div class="ttdef"><b>Definition:</b> ERF_RefineHurricane.cpp:147</div></div>
-<div class="ttc" id="aclassERF_html_a1b601757b2d24225cf9e7980e9a16c51"><div class="ttname"><a href="classERF.html#a1b601757b2d24225cf9e7980e9a16c51">ERF::volWgtColumnSum</a></div><div class="ttdeci">void volWgtColumnSum(int lev, const amrex::MultiFab &amp;mf, int comp, amrex::MultiFab &amp;mf_2d, const amrex::MultiFab &amp;dJ)</div><div class="ttdef"><b>Definition:</b> ERF_VolWgtSum.cpp:92</div></div>
+<div class="ttc" id="aclassERF_html_a1b601757b2d24225cf9e7980e9a16c51"><div class="ttname"><a href="classERF.html#a1b601757b2d24225cf9e7980e9a16c51">ERF::volWgtColumnSum</a></div><div class="ttdeci">void volWgtColumnSum(int lev, const amrex::MultiFab &amp;mf, int comp, amrex::MultiFab &amp;mf_2d, const amrex::MultiFab &amp;dJ)</div><div class="ttdef"><b>Definition:</b> ERF_VolWgtSum.cpp:103</div></div>
 <div class="ttc" id="aclassERF_html_a349b9c3fb955c7091b4821307fc347e8"><div class="ttname"><a href="classERF.html#a349b9c3fb955c7091b4821307fc347e8">ERF::update_box_for_refinement</a></div><div class="ttdeci">void update_box_for_refinement(std::string &amp;ref_prefix, int &amp;lev_for_box, amrex::RealBox &amp;real_box, const double time)</div><div class="ttdef"><b>Definition:</b> ERF_RefineBox.cpp:372</div></div>
 <div class="ttc" id="aclassERF_html_a7ef14f6028b577eba70aef46b508be19"><div class="ttname"><a href="classERF.html#a7ef14f6028b577eba70aef46b508be19">ERF::nc_init_file</a></div><div class="ttdeci">static amrex::Vector&lt; amrex::Vector&lt; std::string &gt; &gt; nc_init_file</div><div class="ttdef"><b>Definition:</b> ERF.H:1783</div></div>
 <div class="ttc" id="aclassERF_html_a8d5b2774042012a14bf02d30baf95fc9"><div class="ttname"><a href="classERF.html#a8d5b2774042012a14bf02d30baf95fc9">ERF::subdomains</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::BoxArray &gt; &gt; subdomains</div><div class="ttdef"><b>Definition:</b> ERF.H:1942</div></div>
@@ -21479,7 +21479,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_a1f035a01fe56833f83e99195bd610535"><div class="ttname"><a href="classERF.html#a1f035a01fe56833f83e99195bd610535">ERF::wrf_MUB</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; wrf_MUB</div><div class="ttdef"><b>Definition:</b> ERF.H:1846</div></div>
 <div class="ttc" id="aclassERF_html_a204b62f43b6eaed4b84c9f27fce50d50"><div class="ttname"><a href="classERF.html#a204b62f43b6eaed4b84c9f27fce50d50">ERF::wrf_C1H</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; wrf_C1H</div><div class="ttdef"><b>Definition:</b> ERF.H:1844</div></div>
 <div class="ttc" id="aclassERF_html_a42bc3f4b5273c279f23cfea2059cd7d6"><div class="ttname"><a href="classERF.html#a42bc3f4b5273c279f23cfea2059cd7d6">ERF::wrf_PHB</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; wrf_PHB</div><div class="ttdef"><b>Definition:</b> ERF.H:1848</div></div>
-<div class="ttc" id="aclassERF_html_a544e918fa814be3996d52654b05e5a30"><div class="ttname"><a href="classERF.html#a544e918fa814be3996d52654b05e5a30">ERF::build_fine_mask</a></div><div class="ttdeci">void build_fine_mask(int lev, amrex::MultiFab &amp;fine_mask)</div><div class="ttdef"><b>Definition:</b> ERF_VolWgtSum.cpp:144</div></div>
+<div class="ttc" id="aclassERF_html_a544e918fa814be3996d52654b05e5a30"><div class="ttname"><a href="classERF.html#a544e918fa814be3996d52654b05e5a30">ERF::build_fine_mask</a></div><div class="ttdeci">void build_fine_mask(int lev, amrex::MultiFab &amp;fine_mask)</div><div class="ttdef"><b>Definition:</b> ERF_VolWgtSum.cpp:155</div></div>
 <div class="ttc" id="aclassERF_html_a867babcbe4653dcc6716ceff64b411a4"><div class="ttname"><a href="classERF.html#a867babcbe4653dcc6716ceff64b411a4">ERF::define_column_kextent</a></div><div class="ttdeci">void define_column_kextent(int lev, const amrex::BoxArray &amp;ba, const amrex::DistributionMapping &amp;dm)</div><div class="ttdef"><b>Definition:</b> ERF_MakeNewArrays.cpp:645</div></div>
 <div class="ttc" id="aclassERF_html_ac4b6769d2561dd0d25b41c6062e58d75"><div class="ttname"><a href="classERF.html#ac4b6769d2561dd0d25b41c6062e58d75">ERF::wrf_RDNW</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; wrf_RDNW</div><div class="ttdef"><b>Definition:</b> ERF.H:1847</div></div>
 <div class="ttc" id="aclassERF_html_afc44734413bab0709f16b65aa03508a4"><div class="ttname"><a href="classERF.html#afc44734413bab0709f16b65aa03508a4">ERF::wrf_C2H</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; wrf_C2H</div><div class="ttdef"><b>Definition:</b> ERF.H:1845</div></div>
@@ -36948,7 +36948,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lev == 0);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keyword">auto</span>&amp; mfx0 = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[0][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>];</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keyword">auto</span>&amp; mfy0 = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[0][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>];</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keyword">auto</span>&amp; mfy0 = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[0][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">MapFacType::m_y</a>];</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">auto</span>&amp;  dJ0 = *<a class="code" href="classERF.html#a30f8b851ed29d38695d44cff257f14e6">detJ_cc</a>[0];</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// ************************************************************************</span></div>
@@ -37117,7 +37117,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordtype">int</span> lev = 0;</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keyword">auto</span>&amp; mfx0 = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[0][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>];</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keyword">auto</span>&amp; mfy0 = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[0][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>];</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keyword">auto</span>&amp; mfy0 = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[0][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">MapFacType::m_y</a>];</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keyword">auto</span>&amp;  dJ0 = *<a class="code" href="classERF.html#a30f8b851ed29d38695d44cff257f14e6">detJ_cc</a>[0];</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lev == 0);</div>
@@ -37307,14 +37307,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span> local = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">auto</span>&amp; mfx0 = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[0][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>];</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">auto</span>&amp; mfy0 = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[0][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>];</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">auto</span>&amp; mfy0 = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[0][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">MapFacType::m_y</a>];</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">auto</span>&amp;  dJ0 = *<a class="code" href="classERF.html#a30f8b851ed29d38695d44cff257f14e6">detJ_cc</a>[0];</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    mass_sl = <a class="code" href="classERF.html#a95d6b706cdf0192a149b5f1aa3239800">volWgtSumMF</a>(0,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[0][<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>,dJ0,mfx0,mfy0,<span class="keyword">false</span>,local);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++) {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">auto</span>&amp; mfx = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>];</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">auto</span>&amp; mfy = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>];</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">auto</span>&amp; mfy = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">MapFacType::m_y</a>];</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">auto</span>&amp;  dJ = *<a class="code" href="classERF.html#a30f8b851ed29d38695d44cff257f14e6">detJ_cc</a>[lev];</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        mass_ml += <a class="code" href="classERF.html#a95d6b706cdf0192a149b5f1aa3239800">volWgtSumMF</a>(lev,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>,dJ,mfx,mfy,<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
@@ -37331,7 +37331,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++) {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">auto</span>&amp; mfx = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>];</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">auto</span>&amp; mfy = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>];</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">auto</span>&amp; mfy = *<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">MapFacType::m_y</a>];</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">auto</span>&amp;  dJ = *<a class="code" href="classERF.html#a30f8b851ed29d38695d44cff257f14e6">detJ_cc</a>[lev];</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        rhth_ml += <a class="code" href="classERF.html#a95d6b706cdf0192a149b5f1aa3239800">volWgtSumMF</a>(lev,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>], <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>,dJ,mfx,mfy,<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        scal_ml += <a class="code" href="classERF.html#a95d6b706cdf0192a149b5f1aa3239800">volWgtSumMF</a>(lev,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],<a class="code" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>,dJ,mfx,mfy,<span class="keyword">true</span>);</div>
@@ -38692,47 +38692,47 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;ERF::volWgtSumColumnMF()&quot;</span>);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    mf_2d.setVal(0.);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// The quantity that is conserved is not (rho S), but rather (rho S / m^2) where</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// m is the map scale factor at cell centers</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// NOTE: TileNoZ, not TilingIfNotGPU: the atomic adds accumulate a whole column into</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">//       dst_arr(i,j,0), so if the grid were tiled in z the tiles covering one column</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">//       would add into the same entry concurrently.  On the host HostDevice::Atomic::Add</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">//       is &quot;#pragma omp atomic&quot; -- atomic but unordered -- so the column sum would then</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">//       depend on thread scheduling in its last bits.  Keeping each column inside a</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">//       single tile makes the k accumulation serial and the result independent of both</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">//       the tile size and the thread count.</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(mf_to_be_summed, <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keyword">const</span> Box&amp; bx   = mfi.tilebox();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>  dst_arr = mf_2d.array(mfi);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>  src_arr = mf_to_be_summed.array(mfi);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structSolverChoice.html#a6c7ccf82f261f51e0b963f54979c36c8">SolverChoice::mesh_type</a> == MeshType::ConstantDz) {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                amrex::HostDevice::Atomic::Add(&amp;dst_arr(i,j,0),src_arr(i,j,k,comp));</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            });</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dJ_arr = dJ.const_array(mfi);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                amrex::HostDevice::Atomic::Add(&amp;dst_arr(i,j,0),src_arr(i,j,k,comp)*dJ_arr(i,j,k));</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            });</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geom[lev].CellSizeArray();</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    mf_2d.mult(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[2]);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;ERF::volWgtSumColumnMF()&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    mf_2d.setVal(0.);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// The quantity that is conserved is not (rho S), but rather (rho S / m^2) where</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// m is the map scale factor at cell centers</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// NOTE: TileNoZ, not TilingIfNotGPU: the atomic adds accumulate a whole column into</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">//       dst_arr(i,j,0), so if the grid were tiled in z the tiles covering one column</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">//       would add into the same entry concurrently.  On the host HostDevice::Atomic::Add</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">//       is &quot;#pragma omp atomic&quot; -- atomic but unordered -- so the column sum would then</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">//       depend on thread scheduling in its last bits.  Keeping each column inside a</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">//       single tile makes the k accumulation serial and the result independent of both</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">//       the tile size and the thread count.</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(mf_to_be_summed, <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keyword">const</span> Box&amp; bx   = mfi.tilebox();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>  dst_arr = mf_2d.array(mfi);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>  src_arr = mf_to_be_summed.array(mfi);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structSolverChoice.html#a6c7ccf82f261f51e0b963f54979c36c8">SolverChoice::mesh_type</a> == MeshType::ConstantDz) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                amrex::HostDevice::Atomic::Add(&amp;dst_arr(i,j,0),src_arr(i,j,k,comp));</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            });</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dJ_arr = dJ.const_array(mfi);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                amrex::HostDevice::Atomic::Add(&amp;dst_arr(i,j,0),src_arr(i,j,k,comp)*dJ_arr(i,j,k));</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            });</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geom[lev].CellSizeArray();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    mf_2d.mult(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[2]);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -38863,19 +38863,30 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (lev &lt; finest_level &amp;&amp; finemask) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        MultiFab::Multiply(<a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>, *<a class="code" href="classERF.html#a89fb9dab8bc5e5cb0910517aecad7683">fine_mask</a>[lev+1].<a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a>(), 0, 0, 1, 0);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// If local = true  then &quot;sum&quot; will be the sum only over the FABs on each rank</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// If local = false then &quot;sum&quot; will be the sum over the whole MultiFab, and will be broadcast to all ranks</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    sum = <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>.sum(0,local);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geom[lev].CellSizeArray();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    sum *= <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[0]*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[1]*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[2];</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> sum;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="comment">// fine_mask[lev+1] lives on grids[lev] but is only rebuilt when level lev+1 is made,</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="comment">// so any path that changes grids[lev] alone leaves it stale: RemakeLevel(0) on restart,</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">// and AmrMesh&#39;s iterate_grids pass, which remakes a level from scratch without</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="comment">// remaking the unchanged level above it.  Rebuild it here if it no longer matches.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classERF.html#a89fb9dab8bc5e5cb0910517aecad7683">fine_mask</a>[lev+1] ||</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="classERF.html#a89fb9dab8bc5e5cb0910517aecad7683">fine_mask</a>[lev+1]-&gt;boxArray()        != <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>.boxArray() ||</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="classERF.html#a89fb9dab8bc5e5cb0910517aecad7683">fine_mask</a>[lev+1]-&gt;DistributionMap() != <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>.DistributionMap())</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="classERF.html#a89fb9dab8bc5e5cb0910517aecad7683">fine_mask</a>[lev+1] = std::make_unique&lt;MultiFab&gt;(<a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>.boxArray(), <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>.DistributionMap(), 1, 0);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="classERF.html#a544e918fa814be3996d52654b05e5a30">build_fine_mask</a>(lev+1, *<a class="code" href="classERF.html#a89fb9dab8bc5e5cb0910517aecad7683">fine_mask</a>[lev+1]);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        MultiFab::Multiply(<a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>, *<a class="code" href="classERF.html#a89fb9dab8bc5e5cb0910517aecad7683">fine_mask</a>[lev+1].<a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a>(), 0, 0, 1, 0);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// If local = true  then &quot;sum&quot; will be the sum only over the FABs on each rank</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// If local = false then &quot;sum&quot; will be the sum over the whole MultiFab, and will be broadcast to all ranks</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    sum = <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>.sum(0,local);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geom[lev].CellSizeArray();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    sum *= <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[0]*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[1]*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[2];</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
