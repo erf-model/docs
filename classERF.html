@@ -33858,7 +33858,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;    <span class="comment">// init_stuff rebuilds the flux register on the lev-1 / lev interface, but the one on the</span></div>
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    <span class="comment">// lev / lev+1 interface also holds this level&#39;s grids. AmrCore::regrid remakes lev+1 after</span></div>
 <div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;    <span class="comment">// lev and rebuilds it there, but a direct call (e.g. the level-0 regrid in restart) does not.</span></div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;    <span class="keywordflow">if</span> (lev &lt; finest_level) {</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;    <span class="keywordflow">if</span> (lev &lt; finest_level &amp;&amp; !grids[lev+1].empty()) {</div>
 <div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;        <a class="code" href="classERF.html#aade3ecf1dc43821268a88f9728154ae0">make_flux_register</a>(lev+1);</div>
 <div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;    }</div>
 <div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160; </div>
