@@ -224,6 +224,8 @@ var annotated_dup =
     [ "NativeScalarDiffusionPolicy", "structNativeScalarDiffusionPolicy.html", "structNativeScalarDiffusionPolicy" ],
     [ "NDArray", "structNDArray.html", "structNDArray" ],
     [ "NOAHMP", "classNOAHMP.html", "classNOAHMP" ],
+    [ "NoahMPSoilParams", "structNoahMPSoilParams.html", "structNoahMPSoilParams" ],
+    [ "NoahMPVegetationParams", "structNoahMPVegetationParams.html", "structNoahMPVegetationParams" ],
     [ "NodalReconstruction", "classNodalReconstruction.html", "classNodalReconstruction" ],
     [ "NullMoist", "classNullMoist.html", "classNullMoist" ],
     [ "NullSurf", "classNullSurf.html", "classNullSurf" ],

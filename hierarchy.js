@@ -142,6 +142,8 @@ var hierarchy =
     [ "NDArray< DataType >", "structNDArray.html", null ],
     [ "erf_cloud_chamber_wall_flux::NeutralLogMomentumState", "structerf__cloud__chamber__wall__flux_1_1NeutralLogMomentumState.html", null ],
     [ "erf_noahmp::NoahmpBlockViews", "structerf__noahmp_1_1NoahmpBlockViews.html", null ],
+    [ "NoahMPSoilParams", "structNoahMPSoilParams.html", null ],
+    [ "NoahMPVegetationParams", "structNoahMPVegetationParams.html", null ],
     [ "NodalReconstruction", "classNodalReconstruction.html", null ],
     [ "NullMoist", "classNullMoist.html", [
       [ "Kessler", "classKessler.html", null ],

@@ -139,6 +139,23 @@ var namespaces_dup =
     [ "erf_surface_layer", "namespaceerf__surface__layer.html", [
       [ "planar_sources_supported_for_terrain", "namespaceerf__surface__layer.html#ab5b83491e05460dd63f196ebee0a1ca7", null ]
     ] ],
+    [ "erf_surface_moisture", "namespaceerf__surface__moisture.html", [
+      [ "Component", "namespaceerf__surface__moisture.html#ad52981881b38f49aa4f92ded62999e8a", [
+        [ "SoilFactor", "namespaceerf__surface__moisture.html#ad52981881b38f49aa4f92ded62999e8aaf87503fc3dcdd129353aa836faca5c9b", null ],
+        [ "VegetationFraction", "namespaceerf__surface__moisture.html#ad52981881b38f49aa4f92ded62999e8aa25dfce9797cc5644eb58553f46c80d7f", null ],
+        [ "CanopyResistanceWithoutVPD", "namespaceerf__surface__moisture.html#ad52981881b38f49aa4f92ded62999e8aaabdf2a48acd30893b97d6ffdfc3de58c", null ],
+        [ "SoilResistance", "namespaceerf__surface__moisture.html#ad52981881b38f49aa4f92ded62999e8aa21dccdf1904002be7647b7f47f857708", null ],
+        [ "GroundRelativeHumidity", "namespaceerf__surface__moisture.html#ad52981881b38f49aa4f92ded62999e8aa0b402ae475615a80855b15987ef0cca1", null ],
+        [ "NumComponents", "namespaceerf__surface__moisture.html#ad52981881b38f49aa4f92ded62999e8aa5af32f819265f7a0b9128953b8a65d40", null ]
+      ] ],
+      [ "aerodynamic_resistance", "namespaceerf__surface__moisture.html#ab881e64ab9b28f7d7dc2a827b131fe00", null ],
+      [ "canopy_resistance", "namespaceerf__surface__moisture.html#a5f903861ac3af3cfbc90e09e950f4cb6", null ],
+      [ "surface_layer_aerodynamic_resistance", "namespaceerf__surface__moisture.html#a805a562b6c9271bf51a9b75252174d4d", null ],
+      [ "surface_mixing_ratio", "namespaceerf__surface__moisture.html#a08aa991026634aa9c133cb8c4988805a", null ],
+      [ "two_source_surface_mixing_ratio", "namespaceerf__surface__moisture.html#a9cb78ab1242bbb7cd3f1f07b96c21626", null ],
+      [ "vapour_deficit_factor", "namespaceerf__surface__moisture.html#ae18e92b1c5ae6ca8233cf8ccd2e8498c", null ],
+      [ "no_flux_resistance", "namespaceerf__surface__moisture.html#aa07504dfbf19402354c996f1b486de45", null ]
+    ] ],
     [ "erf_surface_temperature", "namespaceerf__surface__temperature.html", [
       [ "pressure_at_boundary_from_cell", "namespaceerf__surface__temperature.html#a80efa527a259b57d2d2826f1fc63d87d", null ],
       [ "pressure_at_surface", "namespaceerf__surface__temperature.html#a0d44f9d42128457beaab296839569b5e", null ],
