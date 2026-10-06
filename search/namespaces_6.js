@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['ibseb_8342',['ibseb',['../namespaceibseb.html',1,'']]],
-  ['intvars_8343',['IntVars',['../namespaceIntVars.html',1,'']]]
+  ['ib_5fstability_8357',['ib_stability',['../namespaceib__stability.html',1,'']]],
+  ['ibseb_8358',['ibseb',['../namespaceibseb.html',1,'']]],
+  ['intvars_8359',['IntVars',['../namespaceIntVars.html',1,'']]]
 ];

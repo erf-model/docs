@@ -187,6 +187,16 @@ var namespaces_dup =
       [ "MAX_ITER", "namespaceHSEutils.html#a10de540cb8ad96aea8cd080f4d1e72fa", null ],
       [ "TOL", "namespaceHSEutils.html#aace33d14958f235a111e6cead400a61e", null ]
     ] ],
+    [ "ib_stability", "namespaceib__stability.html", [
+      [ "bounded_obukhov_length", "namespaceib__stability.html#addc905fab94ebc6cdd420422673074d4", null ],
+      [ "bounded_zeta", "namespaceib__stability.html#aa4a8c7eac48f79506300f4d559067571", null ],
+      [ "capped_psi", "namespaceib__stability.html#acb924e2cb557cbebdee270c98daefab6", null ],
+      [ "clamped_ustar", "namespaceib__stability.html#af094ae3d8c4991023c9e091707a6b901", null ],
+      [ "floored_wind", "namespaceib__stability.html#ab53edcce871c55c73a569dd159d6d0c5", null ],
+      [ "psi_cap", "namespaceib__stability.html#a65c1646f34deee13a5c00d856f5fb26a", null ],
+      [ "psi_m_for_ustar", "namespaceib__stability.html#ae43ffe1c3472b8968e6aef758b19e770", null ],
+      [ "zeta_max", "namespaceib__stability.html#af7b5594e36344033f4e2a55b7487cb08", null ]
+    ] ],
     [ "ibseb", "namespaceibseb.html", [
       [ "RayHit", "namespaceibseb.html#a9db8f40527e725d5fb80d8fad2018d3c", [
         [ "RAY_SKY", "namespaceibseb.html#a9db8f40527e725d5fb80d8fad2018d3cacd0c46ca98dea1554b6bad6fa6860df9", null ],
