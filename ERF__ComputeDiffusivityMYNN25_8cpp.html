@@ -369,7 +369,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="comment">// Not multiplying by dz: it&#39;s constant and would fall out when we divide qint0/qint1 anyway</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Zval = gdata.ProbLo(2) + (k + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)*gdata.CellSize(2);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Zval = (k + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)*gdata.CellSize(2);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                Gpu::Atomic::Add(&amp;qint(i,j,0,0), Zval*qvel(i,j,k));</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                Gpu::Atomic::Add(&amp;qint(i,j,0,1),      qvel(i,j,k));</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            });</div>
@@ -423,7 +423,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            }</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> l_obukhov;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">if</span> (std::abs(surface_heat_flux) &gt; eps) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">if</span> (std::abs(surface_heat_flux) &gt; eps &amp;&amp; u_star_arr(i,j,0) &gt; eps) {</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                l_obukhov = -( theta0 * u_star_arr(i,j,0)*u_star_arr(i,j,0)*u_star_arr(i,j,0) )</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                           / ( d_kappa * d_gravity * surface_heat_flux );</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -433,7 +433,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <span class="comment">// Surface-layer length scale (NN09, Eqn. 53)</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            AMREX_ASSERT(l_obukhov != 0);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zval = use_terrain_fitted_coords ? <a class="code" href="ERF__TerrainMetrics_8H.html#a9d219e21fae5c4b160abff2956b35e76">Compute_Zrel_AtCellCenter</a>(i,j,k,z_nd_arr) :</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                                                          gdata.ProbLo(2) + (k + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)*gdata.CellSize(2);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                                                          (k + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)*gdata.CellSize(2);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zeta = zval/l_obukhov;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> l_S;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordflow">if</span> (zeta &gt;= <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>) {</div>
