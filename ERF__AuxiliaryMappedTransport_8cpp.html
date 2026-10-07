@@ -92,17 +92,21 @@ $(document).ready(function(){initNavTree('ERF__AuxiliaryMappedTransport_8cpp.htm
 <div class="textblock"><code>#include &quot;<a class="el" href="ERF__AuxiliaryMappedTransport_8H_source.html">ERF_AuxiliaryMappedTransport.H</a>&quot;</code><br />
 <code>#include &lt;AMReX_Math.H&gt;</code><br />
 <code>#include &lt;AMReX_ParallelDescriptor.H&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_AuxiliaryMappedTransport.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__AuxiliaryMappedTransport_8cpp__incl.png" border="0" usemap="#aSource_2AuxiliaryState_2ERF__AuxiliaryMappedTransport_8cpp" alt=""/></div>
 <map name="aSource_2AuxiliaryState_2ERF__AuxiliaryMappedTransport_8cpp" id="aSource_2AuxiliaryState_2ERF__AuxiliaryMappedTransport_8cpp">
-<area shape="rect" title=" " alt="" coords="717,5,971,47"/>
+<area shape="rect" title=" " alt="" coords="895,5,1150,47"/>
 <area shape="rect" href="ERF__AuxiliaryMappedTransport_8H.html" title=" " alt="" coords="426,95,665,121"/>
 <area shape="rect" title=" " alt="" coords="689,95,812,121"/>
 <area shape="rect" title=" " alt="" coords="837,95,1041,121"/>
-<area shape="rect" title=" " alt="" coords="1065,95,1127,121"/>
+<area shape="rect" title=" " alt="" coords="1065,95,1151,121"/>
+<area shape="rect" title=" " alt="" coords="1175,95,1238,121"/>
+<area shape="rect" title=" " alt="" coords="1263,95,1321,121"/>
 <area shape="rect" title=" " alt="" coords="5,169,139,196"/>
 <area shape="rect" title=" " alt="" coords="163,169,245,196"/>
 <area shape="rect" title=" " alt="" coords="269,169,448,196"/>
@@ -124,6 +128,14 @@ Functions</h2></td></tr>
 <tr class="separator:adfccc5d117c2f176b357d3712b4cc592"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c9f140deff66b4c8fdf8fd9483b6ca6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a0c9f140deff66b4c8fdf8fd9483b6ca6">erf_auxiliary::BuildMappedCellMeasure</a> (amrex::MultiFab &amp;<a class="el" href="ERF__InitCustomPertVels__MovingTerrain_8H.html#abc4882e65a32506bb94a14360eb8ee34">omega</a>, const amrex::MultiFab &amp;detJ, const amrex::MultiFab &amp;mx, const amrex::MultiFab &amp;my, std::string &amp;diagnostic)</td></tr>
 <tr class="separator:a0c9f140deff66b4c8fdf8fd9483b6ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79382f0a251cc4ecd8f868358abc9f8d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a79382f0a251cc4ecd8f868358abc9f8d">erf_auxiliary::BuildMappedDryAirCarrierFluxRate</a> (MappedFaceFluxRate &amp;rate, const amrex::MultiFab &amp;rho_u, const amrex::MultiFab &amp;rho_v, const amrex::MultiFab &amp;<a class="el" href="ERF__InitCustomPertVels__MovingTerrain_8H.html#abc4882e65a32506bb94a14360eb8ee34">omega</a>, const amrex::MultiFab &amp;ax, const amrex::MultiFab &amp;ay, const amrex::MultiFab &amp;az, const amrex::MultiFab &amp;mf_uy, const amrex::MultiFab &amp;mf_vx, const amrex::MultiFab &amp;mx, const amrex::MultiFab &amp;my, std::string &amp;diagnostic)</td></tr>
+<tr class="separator:a79382f0a251cc4ecd8f868358abc9f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72565fcb8b90b8bb5b86e18a214a1154"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a72565fcb8b90b8bb5b86e18a214a1154">erf_auxiliary::CopyNativeMappedDryAirCarrierFluxRate</a> (MappedFaceFluxRate &amp;rate, const amrex::MultiFab &amp;rho_u, const amrex::MultiFab &amp;rho_v, const amrex::MultiFab &amp;rho_w, std::string &amp;diagnostic)</td></tr>
+<tr class="separator:a72565fcb8b90b8bb5b86e18a214a1154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a411a1f70c9683e58c0249a9d612f30d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a411a1f70c9683e58c0249a9d612f30d0">erf_auxiliary::ComputeMaxMappedOutgoingRate</a> (const MappedFaceFluxRate &amp;rate, const amrex::MultiFab &amp;measure, const amrex::MultiFab &amp;conserved, const int density_component, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;dx_inv, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;max_rate, std::string &amp;diagnostic)</td></tr>
+<tr class="separator:a411a1f70c9683e58c0249a9d612f30d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af88d6cddb925fe25cb4fdd914f012777"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#af88d6cddb925fe25cb4fdd914f012777">erf_auxiliary::FixedDtExceedsMappedDonorLimit</a> (const double fixed_dt, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> max_outgoing_rate, double &amp;hard_limit) noexcept</td></tr>
+<tr class="separator:af88d6cddb925fe25cb4fdd914f012777"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a8f6f6e469c0049efbc4eec062ad367"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a9a8f6f6e469c0049efbc4eec062ad367">erf_auxiliary::ValidatePositiveFiniteComponent</a> (const amrex::MultiFab &amp;field, const int component, std::string &amp;diagnostic)</td></tr>
 <tr class="separator:a9a8f6f6e469c0049efbc4eec062ad367"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4eafed90679495b6b748f1e9dff0264b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__auxiliary.html#a4eafed90679495b6b748f1e9dff0264b">erf_auxiliary::ValidateFiniteComponent</a> (const amrex::MultiFab &amp;field, const int component, std::string &amp;diagnostic)</td></tr>

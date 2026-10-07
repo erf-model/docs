@@ -1,0 +1,27 @@
+var classerf__sbm_1_1SBMTransport =
+[
+    [ "DeviceMetadata", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata" ],
+    [ "LevelStorage", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html", "structerf__sbm_1_1SBMTransport_1_1LevelStorage" ],
+    [ "SBMTransport", "classerf__sbm_1_1SBMTransport.html#a194d9e8c6789473f12698beb2779e074", null ],
+    [ "~SBMTransport", "classerf__sbm_1_1SBMTransport.html#ad74c250717341eabf9c958efed676a9b", null ],
+    [ "SBMTransport", "classerf__sbm_1_1SBMTransport.html#a54f20a1f491e52eed04e012b914575b5", null ],
+    [ "advance_stage", "classerf__sbm_1_1SBMTransport.html#a8258ca8b22af13751efa929ad947c59c", null ],
+    [ "advance_stage_from_host", "classerf__sbm_1_1SBMTransport.html#a49249b6e78f4b78fcaf3a4e5f3f047f1", null ],
+    [ "define", "classerf__sbm_1_1SBMTransport.html#a38727fdecac66f2e79fd22ed09a3553f", null ],
+    [ "destroy", "classerf__sbm_1_1SBMTransport.html#a71aa9a6e48f17c3de512e3dfeb6e90a1", null ],
+    [ "is_defined", "classerf__sbm_1_1SBMTransport.html#a571eb41ef11c4a94b15050f2e71ff339", null ],
+    [ "measure_is_ready", "classerf__sbm_1_1SBMTransport.html#a2b541c27d9f0e3f4c571def1639ce7bc", null ],
+    [ "operator=", "classerf__sbm_1_1SBMTransport.html#a0e96849eca28c42e14d628bb38c59e66", null ],
+    [ "projected_ledger", "classerf__sbm_1_1SBMTransport.html#a90cfc0c3e0c86085a9ce915705362205", null ],
+    [ "rebuild_static_measure", "classerf__sbm_1_1SBMTransport.html#ae3b6146416baf121208ce2f9491ac5b3", null ],
+    [ "static_measure", "classerf__sbm_1_1SBMTransport.html#a0dc605cbbc7b8379cc603fb14368e26e", null ],
+    [ "m_chunks", "classerf__sbm_1_1SBMTransport.html#a5cf5137a326c9d49551943d2e3062ad6", null ],
+    [ "m_device_metadata", "classerf__sbm_1_1SBMTransport.html#a19bb5aeb1029641a5653532a967baf17", null ],
+    [ "m_flat_constraints", "classerf__sbm_1_1SBMTransport.html#ae42a3c3475d37012206e43dcf08aa079", null ],
+    [ "m_groups", "classerf__sbm_1_1SBMTransport.html#a7b15dc4c3a88b52679df99265ed9cd3a", null ],
+    [ "m_layout", "classerf__sbm_1_1SBMTransport.html#ae5a33a3610b1aa5c853b01c0072c1bf1", null ],
+    [ "m_levels", "classerf__sbm_1_1SBMTransport.html#a7c3b10fdce3fcfa0260848a38be3da2a", null ],
+    [ "m_max_constraints_per_group", "classerf__sbm_1_1SBMTransport.html#acc8361b3e7556d00c3ef22cde8886439", null ],
+    [ "m_projection", "classerf__sbm_1_1SBMTransport.html#a5df4c7b2b4e0dda46fd2b7f03ff56c55", null ],
+    [ "m_property_support", "classerf__sbm_1_1SBMTransport.html#a8fc73b39d2a83ed5426999f405c3043c", null ]
+];

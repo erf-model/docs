@@ -1,29 +1,8 @@
 var namespaceerf__sbm =
 [
-    [ "remap_detail", "namespaceerf__sbm_1_1remap__detail.html", [
-      [ "ProductStatus", "namespaceerf__sbm_1_1remap__detail.html#a40bea6a3a7b504cca12a50039ea4eb97", [
-        [ "Ok", "namespaceerf__sbm_1_1remap__detail.html#a40bea6a3a7b504cca12a50039ea4eb97aa60852f204ed8028c1c58808b746d115", null ],
-        [ "Underflow", "namespaceerf__sbm_1_1remap__detail.html#a40bea6a3a7b504cca12a50039ea4eb97a07f6a565e17a0b5f7341422b6f9101cc", null ],
-        [ "Invalid", "namespaceerf__sbm_1_1remap__detail.html#a40bea6a3a7b504cca12a50039ea4eb97a4bbb8f967da6d1a610596d7257179c2b", null ]
-      ] ],
-      [ "QuotientStatus", "namespaceerf__sbm_1_1remap__detail.html#ad45c01765bf661a2eb3a51cef4c48654", [
-        [ "Ok", "namespaceerf__sbm_1_1remap__detail.html#ad45c01765bf661a2eb3a51cef4c48654aa60852f204ed8028c1c58808b746d115", null ],
-        [ "Underflow", "namespaceerf__sbm_1_1remap__detail.html#ad45c01765bf661a2eb3a51cef4c48654a07f6a565e17a0b5f7341422b6f9101cc", null ],
-        [ "Invalid", "namespaceerf__sbm_1_1remap__detail.html#ad45c01765bf661a2eb3a51cef4c48654a4bbb8f967da6d1a610596d7257179c2b", null ]
-      ] ],
-      [ "canonical_one_moment_bin_state", "namespaceerf__sbm_1_1remap__detail.html#ae9d64d54b66aa201300c4fdc867c496c", null ],
-      [ "canonical_persisted_bin_state", "namespaceerf__sbm_1_1remap__detail.html#aac78cd61cfa78470bb02e16db3d1252e", null ],
-      [ "canonical_two_moment_bin_state", "namespaceerf__sbm_1_1remap__detail.html#a22189aa9d7b2f80c15d6d5f9088c2aed", null ],
-      [ "canonical_two_moment_moments", "namespaceerf__sbm_1_1remap__detail.html#a04cb65e1f5cfb15248107c43ab261225", null ],
-      [ "checked_product", "namespaceerf__sbm_1_1remap__detail.html#a3150d172d3a2420b343a5c4cd66b67b3", null ],
-      [ "checked_quotient", "namespaceerf__sbm_1_1remap__detail.html#aca43196217d0bcaec29de6b359226077", null ],
-      [ "finite_nonnegative", "namespaceerf__sbm_1_1remap__detail.html#a7d48ce6144947d257e83430e76f3274f", null ],
-      [ "finite_product", "namespaceerf__sbm_1_1remap__detail.html#ae646aa2df10080be9c79e890f7375356", null ],
-      [ "remap_product_status", "namespaceerf__sbm_1_1remap__detail.html#a935b712c95fbd88fd8818b85ee64a810", null ],
-      [ "remap_quotient_status", "namespaceerf__sbm_1_1remap__detail.html#ace5be8d2430757b1fd2b273cb0d5621e", null ],
-      [ "route_plan_is_consistent", "namespaceerf__sbm_1_1remap__detail.html#a95f1c1573e5a95e6703e89e6496c5145", null ],
-      [ "within_boundary_roundoff", "namespaceerf__sbm_1_1remap__detail.html#a684b16d29f85402b6f14dfd56ba5abe3", null ]
-    ] ],
+    [ "remap_detail", "namespaceerf__sbm_1_1remap__detail.html", "namespaceerf__sbm_1_1remap__detail" ],
+    [ "AdvectionFacePolicyInput", "structerf__sbm_1_1AdvectionFacePolicyInput.html", "structerf__sbm_1_1AdvectionFacePolicyInput" ],
+    [ "AdvectionFacePolicy", "structerf__sbm_1_1AdvectionFacePolicy.html", "structerf__sbm_1_1AdvectionFacePolicy" ],
     [ "BulkProjection", "structerf__sbm_1_1BulkProjection.html", "structerf__sbm_1_1BulkProjection" ],
     [ "SBMBulkProjection", "classerf__sbm_1_1SBMBulkProjection.html", "classerf__sbm_1_1SBMBulkProjection" ],
     [ "ConstraintTerm", "structerf__sbm_1_1ConstraintTerm.html", "structerf__sbm_1_1ConstraintTerm" ],
@@ -52,10 +31,26 @@ var namespaceerf__sbm =
     [ "IntegratedMoments", "structerf__sbm_1_1IntegratedMoments.html", "structerf__sbm_1_1IntegratedMoments" ],
     [ "RepresentationIdentity", "structerf__sbm_1_1RepresentationIdentity.html", "structerf__sbm_1_1RepresentationIdentity" ],
     [ "SBMStateManager", "classerf__sbm_1_1SBMStateManager.html", "classerf__sbm_1_1SBMStateManager" ],
+    [ "SBMTransport", "classerf__sbm_1_1SBMTransport.html", "classerf__sbm_1_1SBMTransport" ],
     [ "SpectralGridSpec", "structerf__sbm_1_1SpectralGridSpec.html", "structerf__sbm_1_1SpectralGridSpec" ],
     [ "GridValidation", "structerf__sbm_1_1GridValidation.html", "structerf__sbm_1_1GridValidation" ],
     [ "EndpointTransform", "structerf__sbm_1_1EndpointTransform.html", "structerf__sbm_1_1EndpointTransform" ],
     [ "SpectralGrid", "classerf__sbm_1_1SpectralGrid.html", "classerf__sbm_1_1SpectralGrid" ],
+    [ "AdvectionFaceAction", "namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0c", [
+      [ "PeriodicSharedFace", "namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca337b351a16eec0266760deed722bab69", null ],
+      [ "ZeroNormalFlux", "namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca3a13ac2c152c8fb33c6ef585a4ceb85b", null ],
+      [ "InteriorDonor", "namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca9627ccd4a844bbec92f01bec3076d074", null ],
+      [ "ExplicitSpectralInflow", "namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca5f0ec470eaa0c6d07d93ec56d517dc9c", null ],
+      [ "RejectInwardOutflow", "namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca8b01c4ced3a5e115cd39425026d627be", null ],
+      [ "RejectMissingInflowState", "namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca3e26c9dd94428ed4f56d31010ab55df1", null ],
+      [ "RejectIncompleteInflowState", "namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0cae475a03e12a2936a051160c7c9daa6b0", null ]
+    ] ],
+    [ "AdvectionFaceKind", "namespaceerf__sbm.html#ac7ab1e3124a0b2b4d43c1b97e848b894", [
+      [ "Periodic", "namespaceerf__sbm.html#ac7ab1e3124a0b2b4d43c1b97e848b894acdcc32a064503184053bd2018d1c0e7e", null ],
+      [ "ImpermeableWall", "namespaceerf__sbm.html#ac7ab1e3124a0b2b4d43c1b97e848b894acf7ba4eaeac6c9a94a674887623685e9", null ],
+      [ "AdvectiveOutflow", "namespaceerf__sbm.html#ac7ab1e3124a0b2b4d43c1b97e848b894a16b96d4b4c0d2f9e8dae5948b8703fca", null ],
+      [ "PrescribedInflow", "namespaceerf__sbm.html#ac7ab1e3124a0b2b4d43c1b97e848b894aece1d809a7e53aa4dd8ab7c28b3c786f", null ]
+    ] ],
     [ "CoordinateKind", "namespaceerf__sbm.html#ac748334cf2d172c571ea20ef82111313", [
       [ "Mass", "namespaceerf__sbm.html#ac748334cf2d172c571ea20ef82111313aff2864d6f652ee0ac254814f1ae4f4a8", null ],
       [ "Radius", "namespaceerf__sbm.html#ac748334cf2d172c571ea20ef82111313ad1106ccca74e98877ed6d7890c70bb2c", null ]
@@ -110,6 +105,7 @@ var namespaceerf__sbm =
     [ "apply_packet_routing_core", "namespaceerf__sbm.html#af967f578f26e936c2752a8cb22458a07", null ],
     [ "authoritative_state_admissible", "namespaceerf__sbm.html#af81849687213b3467610b65f5168ba8e", null ],
     [ "canonical_real", "namespaceerf__sbm.html#a374c79fbf0661234b40046f4262b660c", null ],
+    [ "copy_host_slow_component", "namespaceerf__sbm.html#a21c52ec77245b080663ff2262e128096", null ],
     [ "evaluate_constraint_descriptor", "namespaceerf__sbm.html#a2f375ba5ef8a77221cfb8f2c8da425d2", null ],
     [ "flatten_constraint_groups", "namespaceerf__sbm.html#a64d28846f2779804054e45458a29510f", null ],
     [ "host_write_allowed", "namespaceerf__sbm.html#a324be1ab342d1c6dcabc42eb4fbcc6fb", null ],
@@ -118,6 +114,7 @@ var namespaceerf__sbm =
     [ "integrate_interval", "namespaceerf__sbm.html#a5643e20531a1b81ce6a989853ba4e1c6", null ],
     [ "integrate_interval_core", "namespaceerf__sbm.html#a5b6a31885b9fa463a92ddb814696040a", null ],
     [ "inverse_two_moment", "namespaceerf__sbm.html#a076860e7882aee6127d51b661e87b742", null ],
+    [ "make_advection_face_policy", "namespaceerf__sbm.html#a41bad3d43e0108b30fe429902d42ffc5", null ],
     [ "make_attached_property_support_descriptors", "namespaceerf__sbm.html#a67ec52ca3666f8e7493b40230dc7788f", null ],
     [ "make_constraint_closure_chunks", "namespaceerf__sbm.html#a8c51b19c29c8ad286b0664759b0fe3f3", null ],
     [ "make_constraint_descriptors", "namespaceerf__sbm.html#acacdd16a2ffcdb7d9cb98f1810f97cda", null ],

@@ -26,6 +26,10 @@ var namespaceerf__auxiliary =
       [ "AnelasticHeun", "namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa79e3b4cefbed88dc49a6781ab0320824", null ],
       [ "AnelasticMidPoint", "namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa37c5e33bbeb79e5a25c31162da17ebc4", null ]
     ] ],
+    [ "LimiterTrialBase", "namespaceerf__auxiliary.html#abf9c1a9d3c44bf16781b83e143602473", [
+      [ "Anchor", "namespaceerf__auxiliary.html#abf9c1a9d3c44bf16781b83e143602473aa34285645af2703a9501db6fc881e5df", null ],
+      [ "Input", "namespaceerf__auxiliary.html#abf9c1a9d3c44bf16781b83e143602473a324118a6721dd6b8a9b9f4e327df2bf5", null ]
+    ] ],
     [ "ProjectionSourceKind", "namespaceerf__auxiliary.html#a771ec62d568054a7f3cf03a314f1a2a6", [
       [ "AuxiliaryMass", "namespaceerf__auxiliary.html#a771ec62d568054a7f3cf03a314f1a2a6ac3258725f41c3168bd68aea44789d5ce", null ],
       [ "AuxiliaryNumber", "namespaceerf__auxiliary.html#a771ec62d568054a7f3cf03a314f1a2a6abb7185eb8fbddce3055170e6e4cedddf", null ],
@@ -43,11 +47,16 @@ var namespaceerf__auxiliary =
     [ "AuxiliaryStageTargetIsDisjoint", "namespaceerf__auxiliary.html#a25368e9217271e6d57bdb152f71e5138", null ],
     [ "BuildAuxiliaryIntensiveState", "namespaceerf__auxiliary.html#ae3907395fc6f12fb9c233accef46ba8f", null ],
     [ "BuildMappedCellMeasure", "namespaceerf__auxiliary.html#a0c9f140deff66b4c8fdf8fd9483b6ca6", null ],
+    [ "BuildMappedDryAirCarrierFluxRate", "namespaceerf__auxiliary.html#a79382f0a251cc4ecd8f868358abc9f8d", null ],
     [ "ComputationalMappedDivergence", "namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c", null ],
+    [ "ComputeMaxMappedOutgoingRate", "namespaceerf__auxiliary.html#a411a1f70c9683e58c0249a9d612f30d0", null ],
+    [ "CopyNativeMappedDryAirCarrierFluxRate", "namespaceerf__auxiliary.html#a72565fcb8b90b8bb5b86e18a214a1154", null ],
+    [ "FixedDtExceedsMappedDonorLimit", "namespaceerf__auxiliary.html#af88d6cddb925fe25cb4fdd914f012777", null ],
     [ "HostIntegratorName", "namespaceerf__auxiliary.html#ae34e7d10af171e40a2ba238505a44551", null ],
     [ "MakeAuxiliaryStageRecipe", "namespaceerf__auxiliary.html#a930629866bdc0239b7c2328a9246eb62", null ],
     [ "MappedFaceLayoutMatchesCellLayout", "namespaceerf__auxiliary.html#abc9ab4c6f70613a12dd467ffd9bb2695", null ],
     [ "MappedFaceLayoutMatchesCellLayout", "namespaceerf__auxiliary.html#a4950dfd4785000a45560bba35907f787", null ],
+    [ "MappedOutgoingDemandRate", "namespaceerf__auxiliary.html#ac1472de9585593195cae2778264db85f", null ],
     [ "MaxFaceFieldDifference", "namespaceerf__auxiliary.html#a48c64f2a0bc1e093bb8ec6d64d177889", null ],
     [ "SameCellLayout", "namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592", null ],
     [ "SameMappedFaceLayout", "namespaceerf__auxiliary.html#af8b38e575d2e3ef2765351ec709f60f4", null ],

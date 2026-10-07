@@ -15,6 +15,10 @@ var ERF__AuxiliaryStage_8H =
       [ "AnelasticHeun", "ERF__AuxiliaryStage_8H.html#a6bb3d48f526c8560395d6fede7c3622aa79e3b4cefbed88dc49a6781ab0320824", null ],
       [ "AnelasticMidPoint", "ERF__AuxiliaryStage_8H.html#a6bb3d48f526c8560395d6fede7c3622aa37c5e33bbeb79e5a25c31162da17ebc4", null ]
     ] ],
+    [ "LimiterTrialBase", "ERF__AuxiliaryStage_8H.html#abf9c1a9d3c44bf16781b83e143602473", [
+      [ "Anchor", "ERF__AuxiliaryStage_8H.html#abf9c1a9d3c44bf16781b83e143602473aa34285645af2703a9501db6fc881e5df", null ],
+      [ "Input", "ERF__AuxiliaryStage_8H.html#abf9c1a9d3c44bf16781b83e143602473a324118a6721dd6b8a9b9f4e327df2bf5", null ]
+    ] ],
     [ "ApplyAuxiliaryMappedStage", "ERF__AuxiliaryStage_8H.html#a25f090ba55ee2afbd3c76c92e4101bfb", null ],
     [ "AuxiliaryStageTargetIsDisjoint", "ERF__AuxiliaryStage_8H.html#a25368e9217271e6d57bdb152f71e5138", null ],
     [ "BuildAuxiliaryIntensiveState", "ERF__AuxiliaryStage_8H.html#ae3907395fc6f12fb9c233accef46ba8f", null ],

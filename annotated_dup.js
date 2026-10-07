@@ -61,6 +61,11 @@ var annotated_dup =
       [ "ProvenanceParseResult", "structerf__provenance_1_1ProvenanceParseResult.html", "structerf__provenance_1_1ProvenanceParseResult" ]
     ] ],
     [ "erf_sbm", "namespaceerf__sbm.html", [
+      [ "remap_detail", "namespaceerf__sbm_1_1remap__detail.html", [
+        [ "RemapCellStateView", "structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html", "structerf__sbm_1_1remap__detail_1_1RemapCellStateView" ]
+      ] ],
+      [ "AdvectionFacePolicyInput", "structerf__sbm_1_1AdvectionFacePolicyInput.html", "structerf__sbm_1_1AdvectionFacePolicyInput" ],
+      [ "AdvectionFacePolicy", "structerf__sbm_1_1AdvectionFacePolicy.html", "structerf__sbm_1_1AdvectionFacePolicy" ],
       [ "BulkProjection", "structerf__sbm_1_1BulkProjection.html", "structerf__sbm_1_1BulkProjection" ],
       [ "SBMBulkProjection", "classerf__sbm_1_1SBMBulkProjection.html", "classerf__sbm_1_1SBMBulkProjection" ],
       [ "ConstraintTerm", "structerf__sbm_1_1ConstraintTerm.html", "structerf__sbm_1_1ConstraintTerm" ],
@@ -89,6 +94,7 @@ var annotated_dup =
       [ "IntegratedMoments", "structerf__sbm_1_1IntegratedMoments.html", "structerf__sbm_1_1IntegratedMoments" ],
       [ "RepresentationIdentity", "structerf__sbm_1_1RepresentationIdentity.html", "structerf__sbm_1_1RepresentationIdentity" ],
       [ "SBMStateManager", "classerf__sbm_1_1SBMStateManager.html", "classerf__sbm_1_1SBMStateManager" ],
+      [ "SBMTransport", "classerf__sbm_1_1SBMTransport.html", "classerf__sbm_1_1SBMTransport" ],
       [ "SpectralGridSpec", "structerf__sbm_1_1SpectralGridSpec.html", "structerf__sbm_1_1SpectralGridSpec" ],
       [ "GridValidation", "structerf__sbm_1_1GridValidation.html", "structerf__sbm_1_1GridValidation" ],
       [ "EndpointTransform", "structerf__sbm_1_1EndpointTransform.html", "structerf__sbm_1_1EndpointTransform" ],
