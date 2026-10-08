@@ -320,6 +320,8 @@ var hierarchy =
     [ "TwoStreamLayerSW", "structTwoStreamLayerSW.html", null ],
     [ "TwoStreamParams", "structTwoStreamParams.html", null ],
     [ "TwoStreamRadiation", "classTwoStreamRadiation.html", null ],
+    [ "IBFaceSet::TwoStreamSun", "structIBFaceSet_1_1TwoStreamSun.html", null ],
+    [ "TwoStreamSunDate", "structTwoStreamSunDate.html", null ],
     [ "erf_grid_utils::UniformGridMetadata", "structerf__grid__utils_1_1UniformGridMetadata.html", null ],
     [ "UPWIND3", "structUPWIND3.html", null ],
     [ "UPWIND3SL", "structUPWIND3SL.html", null ],

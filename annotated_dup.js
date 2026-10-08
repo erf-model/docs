@@ -337,6 +337,7 @@ var annotated_dup =
     [ "TwoStreamLayerSW", "structTwoStreamLayerSW.html", "structTwoStreamLayerSW" ],
     [ "TwoStreamParams", "structTwoStreamParams.html", "structTwoStreamParams" ],
     [ "TwoStreamRadiation", "classTwoStreamRadiation.html", "classTwoStreamRadiation" ],
+    [ "TwoStreamSunDate", "structTwoStreamSunDate.html", "structTwoStreamSunDate" ],
     [ "UPWIND3", "structUPWIND3.html", "structUPWIND3" ],
     [ "UPWIND3SL", "structUPWIND3SL.html", "structUPWIND3SL" ],
     [ "UPWIND5", "structUPWIND5.html", "structUPWIND5" ],

@@ -3,7 +3,8 @@ var dir_474797bc848e6fb9c6c58a517f541e7d =
     [ "ERF_IBFaceSet.cpp", "ERF__IBFaceSet_8cpp.html", null ],
     [ "ERF_IBFaceSet.H", "ERF__IBFaceSet_8H.html", [
       [ "IBFaceSet", "classIBFaceSet.html", "classIBFaceSet" ],
-      [ "SunState", "structIBFaceSet_1_1SunState.html", "structIBFaceSet_1_1SunState" ]
+      [ "SunState", "structIBFaceSet_1_1SunState.html", "structIBFaceSet_1_1SunState" ],
+      [ "TwoStreamSun", "structIBFaceSet_1_1TwoStreamSun.html", "structIBFaceSet_1_1TwoStreamSun" ]
     ] ],
     [ "ERF_IBSEB.cpp", "ERF__IBSEB_8cpp.html", null ],
     [ "ERF_IBSEBBalance.H", "ERF__IBSEBBalance_8H.html", "ERF__IBSEBBalance_8H" ],

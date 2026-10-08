@@ -227,6 +227,7 @@ var namespaces_dup =
       [ "earth_sun_distance_factor", "namespaceibseb.html#a849b3e7a3e19b288368057fb7843510d", null ],
       [ "equation_of_time", "namespaceibseb.html#a79a87dfcb56f3bd0dda0763680a92c0c", null ],
       [ "hemisphere_direction", "namespaceibseb.html#a2bf43b74765b9d05ae01ba6c27c4cc35", null ],
+      [ "orbital_hour_angle", "namespaceibseb.html#a68b72fa022d84204be8fccd9cd49220a", null ],
       [ "ray_blocked", "namespaceibseb.html#ad4ae6f986a380bb7afbb5be45a1d67e6", null ],
       [ "ray_hit", "namespaceibseb.html#a55851f15f94fb25c3ba24150b1be7f20", null ],
       [ "slab_skin_response", "namespaceibseb.html#aae2de5b68841434998310504d0a3ea69", null ],

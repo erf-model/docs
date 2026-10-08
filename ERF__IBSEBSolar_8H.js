@@ -11,6 +11,7 @@ var ERF__IBSEBSolar_8H =
     [ "earth_sun_distance_factor", "ERF__IBSEBSolar_8H.html#a849b3e7a3e19b288368057fb7843510d", null ],
     [ "equation_of_time", "ERF__IBSEBSolar_8H.html#a79a87dfcb56f3bd0dda0763680a92c0c", null ],
     [ "hemisphere_direction", "ERF__IBSEBSolar_8H.html#a2bf43b74765b9d05ae01ba6c27c4cc35", null ],
+    [ "orbital_hour_angle", "ERF__IBSEBSolar_8H.html#a68b72fa022d84204be8fccd9cd49220a", null ],
     [ "ray_blocked", "ERF__IBSEBSolar_8H.html#ad4ae6f986a380bb7afbb5be45a1d67e6", null ],
     [ "ray_hit", "ERF__IBSEBSolar_8H.html#a55851f15f94fb25c3ba24150b1be7f20", null ],
     [ "solar_azimuth", "ERF__IBSEBSolar_8H.html#ad5cd2dad18e4e2d6824495e169b7ee9c", null ],

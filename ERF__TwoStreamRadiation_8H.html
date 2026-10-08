@@ -84,7 +84,8 @@ $(document).ready(function(){initNavTree('ERF__TwoStreamRadiation_8H.html',''); 
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_TwoStreamRadiation.H File Reference</div>  </div>
 </div><!--header-->
@@ -226,12 +227,24 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwoStreamRadiation_1_1FluxDiag.html">TwoStreamRadiation::FluxDiag</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwoStreamSunDate.html">TwoStreamSunDate</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The calendar sun of the two-stream model at one time (see <a class="el" href="ERF__TwoStreamRadiation_8cpp.html#a0f0467b71baf040e5e59eca06cfa460e" title="The calendar sun of the two-stream model at a UTC epoch time (start_time + t).">two_stream_sun_date()</a>).  <a href="structTwoStreamSunDate.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae7901d6393288372b9c1a2bf616fe29c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TwoStreamRadiation_8H.html#ae7901d6393288372b9c1a2bf616fe29c">copy_surface_plane</a> (const amrex::MultiFab &amp;src2d, amrex::MultiFab &amp;dst)</td></tr>
 <tr class="memdesc:ae7901d6393288372b9c1a2bf616fe29c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a 2D field (k = 0 only) into the k = 0 plane of a surface-model field.  <a href="ERF__TwoStreamRadiation_8H.html#ae7901d6393288372b9c1a2bf616fe29c">More...</a><br /></td></tr>
 <tr class="separator:ae7901d6393288372b9c1a2bf616fe29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f0467b71baf040e5e59eca06cfa460e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTwoStreamSunDate.html">TwoStreamSunDate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TwoStreamRadiation_8H.html#a0f0467b71baf040e5e59eca06cfa460e">two_stream_sun_date</a> (const <a class="el" href="structRadChoice.html">RadChoice</a> &amp;rc, <a class="el" href="structTwoStreamRadiation_1_1OrbitalCache.html">TwoStreamRadiation::OrbitalCache</a> &amp;orbit, double epoch_time)</td></tr>
+<tr class="memdesc:a0f0467b71baf040e5e59eca06cfa460e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The calendar sun of the two-stream model at a UTC epoch time (start_time + t).  <a href="ERF__TwoStreamRadiation_8H.html#a0f0467b71baf040e5e59eca06cfa460e">More...</a><br /></td></tr>
+<tr class="separator:a0f0467b71baf040e5e59eca06cfa460e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a044e5d5fa2d55a1f66f70281505279f4"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TwoStreamRadiation_8H.html#a044e5d5fa2d55a1f66f70281505279f4">two_stream_tsi_reference</a> = 1360.9</td></tr>
+<tr class="memdesc:a044e5d5fa2d55a1f66f70281505279f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">RRTMGP's reference total solar irradiance [W/m^2], scaled by the date's Earth-Sun distance factor.  <a href="ERF__TwoStreamRadiation_8H.html#a044e5d5fa2d55a1f66f70281505279f4">More...</a><br /></td></tr>
+<tr class="separator:a044e5d5fa2d55a1f66f70281505279f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae7901d6393288372b9c1a2bf616fe29c"></a>
@@ -262,6 +275,148 @@ Functions</h2></td></tr>
 
 <p>Copy a 2D field (k = 0 only) into the k = 0 plane of a surface-model field. </p>
 <p>Surface-model fields keep their surface values in the k = 0 plane, which may lie in the field's z ghost region (<a class="el" href="classSLM.html">SLM</a> stores soil layers at k &lt; 0), and carry x/y ghost cells the source need not have. Only the i,j extent of each destination VALID box is written, so ghost columns and every other k are left alone. The two fields must share a horizontal layout: the destination's boxes flattened to k = 0 equal the source's, on the same DistributionMapping &ndash; which holds for <a class="el" href="classERF.html">ERF</a>'s ba2d and a land model's data built from the same level grids, and is asserted rather than assumed. </p>
+
+</div>
+</div>
+<a id="a0f0467b71baf040e5e59eca06cfa460e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f0467b71baf040e5e59eca06cfa460e">&#9670;&nbsp;</a></span>two_stream_sun_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTwoStreamSunDate.html">TwoStreamSunDate</a> two_stream_sun_date </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structRadChoice.html">RadChoice</a> &amp;&#160;</td>
+          <td class="paramname"><em>rc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structTwoStreamRadiation_1_1OrbitalCache.html">TwoStreamRadiation::OrbitalCache</a> &amp;&#160;</td>
+          <td class="paramname"><em>orbit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>epoch_time</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The calendar sun of the two-stream model at a UTC epoch time (start_time + t). </p>
+<p>The date as the RRTMGP interface forms it, the orbit of the year (or the erf.rad_orbital_* overrides) cached in <code>orbit</code>, and the declination and distance factor of ERF_OrbCosZenith.H. The two-stream sweep places its sun from this, with the column's position, and so does the immersed-boundary balance with erf.ibseb.sun_mode = two_stream.</p>
+<p>The calendar sun of the two-stream model at a UTC epoch time: the calendar day with the time of day as its fraction, the declination and the Earth-Sun distance factor, from the date as the RRTMGP interface forms it and the orbital code of ERF_OrbCosZenith.H (orbital_params once per year into <code>orbit</code>, with the erf.rad_orbital_* overrides passed to it, then orbital_decl per call). set_solar_state() takes the sun of every sweep from here, and the immersed-boundary balance its erf.ibseb.sun_mode = two_stream sun, so the two cannot drift apart. </p>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// Calendar date of this call (UTC), as the RRTMGP interface forms it.</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    time_t timestamp = time_t(epoch_time);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">struct </span>tm timeinfo{};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#if defined(_WIN32)</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    gmtime_s(&amp;timeinfo, &amp;timestamp);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    gmtime_r(&amp;timestamp, &amp;timeinfo);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> year = (<a class="code" href="namespaceSLMDefaultParams.html#a90d5d5db742c1b7d85318540f5218edd">rc</a>.rad_orbital_year &gt;= 0) ? <a class="code" href="namespaceSLMDefaultParams.html#a90d5d5db742c1b7d85318540f5218edd">rc</a>.rad_orbital_year : timeinfo.tm_year + 1900;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> mon = timeinfo.tm_mon + 1;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> day = timeinfo.tm_mday;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> sec = timeinfo.tm_hour*3600 + timeinfo.tm_min*60 + timeinfo.tm_sec;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// Orbital parameters of the year (Berger 1978) unless overridden: a few</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// hundred series terms and six vectors, so once per year, not per step.</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438">if</a> (orbit.<a class="code" href="structTwoStreamRadiation_1_1OrbitalCache.html#a50011a8164b4e43e4c63b99997d1e857">year</a> != year) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordtype">int</span>  iyear = year;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordtype">double</span> eccen = <a class="code" href="namespaceSLMDefaultParams.html#a90d5d5db742c1b7d85318540f5218edd">rc</a>.rad_orbital_eccentricity;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordtype">double</span> obliq = <a class="code" href="namespaceSLMDefaultParams.html#a90d5d5db742c1b7d85318540f5218edd">rc</a>.rad_orbital_obliquity;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordtype">double</span> mvelp = <a class="code" href="namespaceSLMDefaultParams.html#a90d5d5db742c1b7d85318540f5218edd">rc</a>.rad_orbital_mvelp;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordtype">double</span> obliqr = 0.0, lambm0 = 0.0, mvelpp = 0.0;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <a class="code" href="ERF__OrbCosZenith_8H.html#a9c8c0474bef8d3005bbf31f6404472c6">orbital_params</a>(iyear, eccen, obliq, mvelp, obliqr, lambm0, mvelpp);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        orbit.<a class="code" href="structTwoStreamRadiation_1_1OrbitalCache.html#a50011a8164b4e43e4c63b99997d1e857">year</a> = year;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        orbit.<a class="code" href="structTwoStreamRadiation_1_1OrbitalCache.html#ac8baf8a918099efa13a1e466f0387849">eccen</a> = eccen; orbit.<a class="code" href="structTwoStreamRadiation_1_1OrbitalCache.html#a3b6d4d4e5b4d81011b1211fcac776fd3">obliqr</a> = obliqr; orbit.<a class="code" href="structTwoStreamRadiation_1_1OrbitalCache.html#a8f5f1b91e54f9b42a0d6bec4d34c3ca4">lambm0</a> = lambm0; orbit.<a class="code" href="structTwoStreamRadiation_1_1OrbitalCache.html#ab3bc3c80a27bc7da1d1c351acb717d07">mvelpp</a> = mvelpp;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">// Declination and Earth-Sun distance factor of the day.</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">double</span> calday = <a class="code" href="ERF__OrbCosZenith_8H.html#a5b6412e79a7ee47be65433ec6a7760a2">orbital_calday</a>(year, mon, day, sec);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">double</span> eccen = orbit.<a class="code" href="structTwoStreamRadiation_1_1OrbitalCache.html#ac8baf8a918099efa13a1e466f0387849">eccen</a>, mvelpp = orbit.<a class="code" href="structTwoStreamRadiation_1_1OrbitalCache.html#ab3bc3c80a27bc7da1d1c351acb717d07">mvelpp</a>, lambm0 = orbit.<a class="code" href="structTwoStreamRadiation_1_1OrbitalCache.html#a8f5f1b91e54f9b42a0d6bec4d34c3ca4">lambm0</a>, obliqr = orbit.<a class="code" href="structTwoStreamRadiation_1_1OrbitalCache.html#a3b6d4d4e5b4d81011b1211fcac776fd3">obliqr</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">double</span> delta = 0.0, eccf = 1.0;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="ERF__OrbCosZenith_8H.html#a81525cd301fba12368ba6b6d90d33f7f">orbital_decl</a>(calday, eccen, mvelpp, lambm0, obliqr, delta, eccf);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="structTwoStreamSunDate.html">TwoStreamSunDate</a> out;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    out.<a class="code" href="structTwoStreamSunDate.html#afdff9e8ae1d0142cd0d4a7bed0da9d61">calday</a> = calday;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    out.<a class="code" href="structTwoStreamSunDate.html#ac1229c67dccc836576d27566d54a7a6c">declin</a> = delta;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    out.<a class="code" href="structTwoStreamSunDate.html#a5fd034c26cc64ad9b1c7005355ac82ba">eccf</a>   = eccf;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a861f3a0e37e4f9568407b620e5776438"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438">if</a></div><div class="ttdeci">if(KE_decay_height &gt; 0 &amp;&amp;state_pert.nComp() &gt; RhoKE_comp)</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:76</div></div>
+<div class="ttc" id="aERF__OrbCosZenith_8H_html_a5b6412e79a7ee47be65433ec6a7760a2"><div class="ttname"><a href="ERF__OrbCosZenith_8H.html#a5b6412e79a7ee47be65433ec6a7760a2">orbital_calday</a></div><div class="ttdeci">AMREX_GPU_HOST AMREX_FORCE_INLINE double orbital_calday(int year, int mon, int day, int sec)</div><div class="ttdef"><b>Definition:</b> ERF_OrbCosZenith.H:485</div></div>
+<div class="ttc" id="aERF__OrbCosZenith_8H_html_a81525cd301fba12368ba6b6d90d33f7f"><div class="ttname"><a href="ERF__OrbCosZenith_8H.html#a81525cd301fba12368ba6b6d90d33f7f">orbital_decl</a></div><div class="ttdeci">AMREX_GPU_HOST AMREX_FORCE_INLINE void orbital_decl(double &amp;calday, double &amp;eccen, double &amp;mvelpp, double &amp;lambm0, double &amp;obliqr, double &amp;delta, double &amp;eccf)</div><div class="ttdef"><b>Definition:</b> ERF_OrbCosZenith.H:18</div></div>
+<div class="ttc" id="aERF__OrbCosZenith_8H_html_a9c8c0474bef8d3005bbf31f6404472c6"><div class="ttname"><a href="ERF__OrbCosZenith_8H.html#a9c8c0474bef8d3005bbf31f6404472c6">orbital_params</a></div><div class="ttdeci">AMREX_GPU_HOST AMREX_FORCE_INLINE void orbital_params(int &amp;iyear_AD, double &amp;eccen, double &amp;obliq, double &amp;mvelp, double &amp;obliqr, double &amp;lambm0, double &amp;mvelpp)</div><div class="ttdef"><b>Definition:</b> ERF_OrbCosZenith.H:84</div></div>
+<div class="ttc" id="anamespaceSLMDefaultParams_html_a90d5d5db742c1b7d85318540f5218edd"><div class="ttname"><a href="namespaceSLMDefaultParams.html#a90d5d5db742c1b7d85318540f5218edd">SLMDefaultParams::rc</a></div><div class="ttdeci">constexpr std::array&lt; amrex::Real, num_veg_params &gt; rc</div><div class="ttdef"><b>Definition:</b> ERF_SLM_DefaultParams.H:22</div></div>
+<div class="ttc" id="astructTwoStreamRadiation_1_1OrbitalCache_html_a3b6d4d4e5b4d81011b1211fcac776fd3"><div class="ttname"><a href="structTwoStreamRadiation_1_1OrbitalCache.html#a3b6d4d4e5b4d81011b1211fcac776fd3">TwoStreamRadiation::OrbitalCache::obliqr</a></div><div class="ttdeci">double obliqr</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamRadiation.H:255</div></div>
+<div class="ttc" id="astructTwoStreamRadiation_1_1OrbitalCache_html_a50011a8164b4e43e4c63b99997d1e857"><div class="ttname"><a href="structTwoStreamRadiation_1_1OrbitalCache.html#a50011a8164b4e43e4c63b99997d1e857">TwoStreamRadiation::OrbitalCache::year</a></div><div class="ttdeci">int year</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamRadiation.H:253</div></div>
+<div class="ttc" id="astructTwoStreamRadiation_1_1OrbitalCache_html_a8f5f1b91e54f9b42a0d6bec4d34c3ca4"><div class="ttname"><a href="structTwoStreamRadiation_1_1OrbitalCache.html#a8f5f1b91e54f9b42a0d6bec4d34c3ca4">TwoStreamRadiation::OrbitalCache::lambm0</a></div><div class="ttdeci">double lambm0</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamRadiation.H:256</div></div>
+<div class="ttc" id="astructTwoStreamRadiation_1_1OrbitalCache_html_ab3bc3c80a27bc7da1d1c351acb717d07"><div class="ttname"><a href="structTwoStreamRadiation_1_1OrbitalCache.html#ab3bc3c80a27bc7da1d1c351acb717d07">TwoStreamRadiation::OrbitalCache::mvelpp</a></div><div class="ttdeci">double mvelpp</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamRadiation.H:257</div></div>
+<div class="ttc" id="astructTwoStreamRadiation_1_1OrbitalCache_html_ac8baf8a918099efa13a1e466f0387849"><div class="ttname"><a href="structTwoStreamRadiation_1_1OrbitalCache.html#ac8baf8a918099efa13a1e466f0387849">TwoStreamRadiation::OrbitalCache::eccen</a></div><div class="ttdeci">double eccen</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamRadiation.H:254</div></div>
+<div class="ttc" id="astructTwoStreamSunDate_html"><div class="ttname"><a href="structTwoStreamSunDate.html">TwoStreamSunDate</a></div><div class="ttdoc">The calendar sun of the two-stream model at one time (see two_stream_sun_date()).</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamRadiation.H:334</div></div>
+<div class="ttc" id="astructTwoStreamSunDate_html_a5fd034c26cc64ad9b1c7005355ac82ba"><div class="ttname"><a href="structTwoStreamSunDate.html#a5fd034c26cc64ad9b1c7005355ac82ba">TwoStreamSunDate::eccf</a></div><div class="ttdeci">double eccf</div><div class="ttdoc">Earth-Sun distance factor (d0/d)^2.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamRadiation.H:337</div></div>
+<div class="ttc" id="astructTwoStreamSunDate_html_ac1229c67dccc836576d27566d54a7a6c"><div class="ttname"><a href="structTwoStreamSunDate.html#ac1229c67dccc836576d27566d54a7a6c">TwoStreamSunDate::declin</a></div><div class="ttdeci">double declin</div><div class="ttdoc">Solar declination [rad].</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamRadiation.H:336</div></div>
+<div class="ttc" id="astructTwoStreamSunDate_html_afdff9e8ae1d0142cd0d4a7bed0da9d61"><div class="ttname"><a href="structTwoStreamSunDate.html#afdff9e8ae1d0142cd0d4a7bed0da9d61">TwoStreamSunDate::calday</a></div><div class="ttdeci">double calday</div><div class="ttdoc">Day of the year (1 = 1 January), UTC time of day as the fraction.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamRadiation.H:335</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#a386fe5fb8cb105818901f0234fbc2025">ERF::ibseb_set_two_stream_sun()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__TwoStreamRadiation_8H_a0f0467b71baf040e5e59eca06cfa460e_cgraph.png" border="0" usemap="#aERF__TwoStreamRadiation_8H_a0f0467b71baf040e5e59eca06cfa460e_cgraph" alt=""/></div>
+<map name="aERF__TwoStreamRadiation_8H_a0f0467b71baf040e5e59eca06cfa460e_cgraph" id="aERF__TwoStreamRadiation_8H_a0f0467b71baf040e5e59eca06cfa460e_cgraph">
+<area shape="rect" title="The calendar sun of the two&#45;stream model at a UTC epoch time (start_time + t)." alt="" coords="5,89,171,115"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438" title=" " alt="" coords="259,13,298,39"/>
+<area shape="rect" href="ERF__OrbCosZenith_8H.html#a5b6412e79a7ee47be65433ec6a7760a2" title=" " alt="" coords="221,63,336,90"/>
+<area shape="rect" href="ERF__OrbCosZenith_8H.html#a81525cd301fba12368ba6b6d90d33f7f" title=" " alt="" coords="229,114,328,141"/>
+<area shape="rect" href="ERF__OrbCosZenith_8H.html#a9c8c0474bef8d3005bbf31f6404472c6" title=" " alt="" coords="219,165,339,191"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="387,5,569,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__TwoStreamRadiation_8H_a0f0467b71baf040e5e59eca06cfa460e_icgraph.png" border="0" usemap="#aERF__TwoStreamRadiation_8H_a0f0467b71baf040e5e59eca06cfa460e_icgraph" alt=""/></div>
+<map name="aERF__TwoStreamRadiation_8H_a0f0467b71baf040e5e59eca06cfa460e_icgraph" id="aERF__TwoStreamRadiation_8H_a0f0467b71baf040e5e59eca06cfa460e_icgraph">
+<area shape="rect" title="The calendar sun of the two&#45;stream model at a UTC epoch time (start_time + t)." alt="" coords="200,13,365,39"/>
+<area shape="rect" href="classERF.html#a386fe5fb8cb105818901f0234fbc2025" title=" " alt="" coords="5,5,152,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a044e5d5fa2d55a1f66f70281505279f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a044e5d5fa2d55a1f66f70281505279f4">&#9670;&nbsp;</a></span>two_stream_tsi_reference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> two_stream_tsi_reference = 1360.9</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>RRTMGP's reference total solar irradiance [W/m^2], scaled by the date's Earth-Sun distance factor. </p>
+
+<p class="reference">Referenced by <a class="el" href="classERF.html#a386fe5fb8cb105818901f0234fbc2025">ERF::ibseb_set_two_stream_sun()</a>.</p>
 
 </div>
 </div>

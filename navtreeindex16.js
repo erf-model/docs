@@ -1,5 +1,6 @@
 var NAVTREEINDEX16 =
 {
+"ERF__TwoStreamColumn_8H.html#ab79cb02c966114cdf893b1d9806f4a67":[3,0,1,20,2,9,14],
 "ERF__TwoStreamColumn_8H.html#ac7a48722f2cf2a15fc06d02c1b4e5d22":[3,0,1,20,2,9,12],
 "ERF__TwoStreamColumn_8H.html#acbee78c38354b2ca83c9c90f7709eeda":[3,0,1,20,2,9,3],
 "ERF__TwoStreamColumn_8H.html#acd4308093febfc6a671b742f27245a66":[3,0,1,20,2,9,13],
@@ -16,9 +17,12 @@ var NAVTREEINDEX16 =
 "ERF__TwoStreamLW_8H.html#aeee203326dce5fe74ca3e265b674b156":[3,0,1,20,2,10,1],
 "ERF__TwoStreamLW_8H_source.html":[3,0,1,20,2,10],
 "ERF__TwoStreamRadiation_8H.html":[3,0,1,20,2,12],
-"ERF__TwoStreamRadiation_8H.html#ae7901d6393288372b9c1a2bf616fe29c":[3,0,1,20,2,12,3],
+"ERF__TwoStreamRadiation_8H.html#a044e5d5fa2d55a1f66f70281505279f4":[3,0,1,20,2,12,6],
+"ERF__TwoStreamRadiation_8H.html#a0f0467b71baf040e5e59eca06cfa460e":[3,0,1,20,2,12,5],
+"ERF__TwoStreamRadiation_8H.html#ae7901d6393288372b9c1a2bf616fe29c":[3,0,1,20,2,12,4],
 "ERF__TwoStreamRadiation_8H_source.html":[3,0,1,20,2,12],
 "ERF__TwoStreamRadiation_8cpp.html":[3,0,1,20,2,11],
+"ERF__TwoStreamRadiation_8cpp.html#a0f0467b71baf040e5e59eca06cfa460e":[3,0,1,20,2,11,1],
 "ERF__TwoStreamRadiation_8cpp.html#ae8dba7b81835d1635c0ceffa18e1f834":[3,0,1,20,2,11,0],
 "ERF__TwoStreamSW_8H.html":[3,0,1,20,2,13],
 "ERF__TwoStreamSW_8H.html#a90ce366285b9451eb168103d7f11a8ab":[3,0,1,20,2,13,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX16 =
 "ERF__Utils_8H.html#abc480bd281f755246fa9e6faf149b588":[3,0,1,26,54,23],
 "ERF__Utils_8H.html#ac2249529c08cee787c0b9b56259d3447":[3,0,1,26,54,22],
 "ERF__Utils_8H.html#acbc6116a3309adf87b7dc24242dc50ec":[3,0,1,26,54,1],
-"ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524":[3,0,1,26,54,30],
-"ERF__Utils_8H.html#accb87d367dfa749571761aa789fd3fea":[3,0,1,26,54,13],
-"ERF__Utils_8H.html#acebead6f3a33cb7737a1fea98341c3ae":[3,0,1,26,54,2],
-"ERF__Utils_8H.html#ad1666017aac31be969ffc2bfef813af0":[3,0,1,26,54,19],
-"ERF__Utils_8H.html#ae4ec302147b124c88534706646a1cd71":[3,0,1,26,54,6]
+"ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524":[3,0,1,26,54,30]
 };

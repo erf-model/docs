@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"ERF__ScalarDiffusion_8H.html#a17a7ea1ad5775314281eed395b32d759":[3,0,1,6,28,15],
 "ERF__ScalarDiffusion_8H.html#a189adb928ff0e9a2d88912fdd4d18859":[3,0,1,6,28,33],
 "ERF__ScalarDiffusion_8H.html#a2a9e97067cb2f386cafcdb6a67562488":[3,0,1,6,28,17],
 "ERF__ScalarDiffusion_8H.html#a37661c21a58f57110e22e67f8016bdfb":[3,0,1,6,28,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX14 =
 "ERF__SuperDropletPCMassChange_8H_source.html":[3,0,1,16,13],
 "ERF__SuperDropletPCMassChange_8cpp.html":[3,0,1,16,12],
 "ERF__SuperDropletPCProcess_8H.html":[3,0,1,16,14],
-"ERF__SuperDropletPCProcess_8H_source.html":[3,0,1,16,14],
-"ERF__SuperDropletPCRecycle_8cpp.html":[3,0,1,16,15]
+"ERF__SuperDropletPCProcess_8H_source.html":[3,0,1,16,14]
 };
