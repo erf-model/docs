@@ -1,6 +1,5 @@
 var NAVTREEINDEX44 =
 {
-"structMoistureComponentIndices_1_1VarAvailability.html#a349700a8ccdceaf4f63e2c0ad3bc0091":[2,0,80,1,0],
 "structMoistureComponentIndices_1_1VarAvailability.html#ad778dba336f2bb70948c4e0ab9e3805e":[2,0,80,1,1],
 "structNDArray.html":[2,0,89],
 "structNDArray.html#a0d3be2b45f3fb008d12ec17dfd6abf09":[2,0,89,9],
@@ -249,5 +248,6 @@ var NAVTREEINDEX44 =
 "structSAMPrecipComponentFaceState.html#ab6536520360df11a0c7fcceeac7e79e1":[2,0,125,3],
 "structSAMPrecipConfig.html":[2,0,126],
 "structSAMPrecipConfig.html#a1227b20556ebe0604c1577038d6498e3":[2,0,126,1],
-"structSAMPrecipConfig.html#a12451a50c1a9e8a7d856730867310641":[2,0,126,3]
+"structSAMPrecipConfig.html#a12451a50c1a9e8a7d856730867310641":[2,0,126,3],
+"structSAMPrecipConfig.html#a1ee84bedd0f7cdb3356eec931b60a195":[2,0,126,12]
 };

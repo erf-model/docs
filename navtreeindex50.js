@@ -1,6 +1,5 @@
 var NAVTREEINDEX50 =
 {
-"structerf__cloud__chamber__wall__flux_1_1ScalarWallSample.html#ad1a113a6420c9d62c7090207f7e4b16d":[2,0,2,3,4],
 "structerf__cloud__chamber__wall__flux_1_1ScalarWallSample.html#ad209d3eee6b8bf4a802681816b763875":[2,0,2,3,0],
 "structerf__cloud__chamber__wall__flux_1_1ScalarWallSample.html#afb40463722617e1bb93eaf9bcc198d7c":[2,0,2,3,10],
 "structerf__cloud__chamber__wall__flux_1_1WallFlux.html":[2,0,2,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX50 =
 "structerf__sbm_1_1ReconstructionDelta.html":[2,0,9,27],
 "structerf__sbm_1_1ReconstructionDelta.html#a0c9df03cdac2665a73fed81c3c629909":[2,0,9,27,6],
 "structerf__sbm_1_1ReconstructionDelta.html#a342487493e1f6cfe332361cad1c8a22d":[2,0,9,27,2],
-"structerf__sbm_1_1ReconstructionDelta.html#a6af5a391dd71cc40abb7ddc8c640f7c1":[2,0,9,27,0]
+"structerf__sbm_1_1ReconstructionDelta.html#a6af5a391dd71cc40abb7ddc8c640f7c1":[2,0,9,27,0],
+"structerf__sbm_1_1ReconstructionDelta.html#a7aaf7e56704fde47256e8f06d0f7b771":[2,0,9,27,4]
 };

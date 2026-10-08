@@ -1,6 +1,5 @@
 var NAVTREEINDEX46 =
 {
-"structScalarDiffusionSurfaceFaces.html#ad7c4a059aa45349094e1db82d0f77fc5":[2,0,141,4],
 "structShocColumnData.html":[2,0,147],
 "structShocColumnData.html#a0b47c32b1773caa04739ff5a47c2a773":[2,0,147,40],
 "structShocColumnData.html#a0ea4b5344cd667118ea2a08dd8476f76":[2,0,147,37],
@@ -249,5 +248,6 @@ var NAVTREEINDEX46 =
 "structSolverChoice.html#a9923042e3bf875d9565cfb8a4cd79dae":[2,0,165,28],
 "structSolverChoice.html#a99c764e20b01840d7236923070fa9e16":[2,0,165,125],
 "structSolverChoice.html#a9ac16def71f4784d83b89cd9dc3864d7":[2,0,165,181],
-"structSolverChoice.html#a9b48160b9c5da341a930236d92b4eb55":[2,0,165,163]
+"structSolverChoice.html#a9b48160b9c5da341a930236d92b4eb55":[2,0,165,163],
+"structSolverChoice.html#a9eec0cfd63098f1c814a364401805921":[2,0,165,77]
 };
