@@ -1,5 +1,6 @@
 var NAVTREEINDEX51 =
 {
+"structerf__sbm_1_1ReconstructionDelta.html#a7aaf7e56704fde47256e8f06d0f7b771":[2,0,9,27,4],
 "structerf__sbm_1_1ReconstructionDelta.html#a7f9da69bdbe2d75f2d2136cf02817266":[2,0,9,27,5],
 "structerf__sbm_1_1ReconstructionDelta.html#af03afb78a5e35374175a3001d1e250ab":[2,0,9,27,1],
 "structerf__sbm_1_1ReconstructionDelta.html#af7e80813926c5baa7df931a545a2cf77":[2,0,9,27,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX51 =
 "structplotfile2d_1_1SampledBracket.html":[2,0,17,1],
 "structplotfile2d_1_1SampledBracket.html#a6867f46cdb08b8b5b803e34c063aa0f9":[2,0,17,1,1],
 "structplotfile2d_1_1SampledBracket.html#a69528314a6e128f69bc28f12c34c8709":[2,0,17,1,0],
-"structplotfile2d_1_1SampledBracket.html#ab57e98fbefbabb9ccfe7d1021b7cd2de":[2,0,17,1,2],
-"structplotfile2d_1_1SampledFieldDescriptor.html":[2,0,17,4]
+"structplotfile2d_1_1SampledBracket.html#ab57e98fbefbabb9ccfe7d1021b7cd2de":[2,0,17,1,2]
 };

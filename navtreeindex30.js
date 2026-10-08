@@ -1,5 +1,6 @@
 var NAVTREEINDEX30 =
 {
+"classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e":[2,0,133,11],
 "classShocColumnWorkspace.html":[2,0,149],
 "classShocColumnWorkspace.html#a1452935721a39bd1d0f177f4b7043846":[2,0,149,4],
 "classShocColumnWorkspace.html#a3102a6cc49bf69eea69dcfd4fd634f2b":[2,0,149,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX30 =
 "classSurfaceLayer.html#a4f57753d5aa5893c395ffe3a9aa14a33":[2,0,186,13],
 "classSurfaceLayer.html#a5240b8723a523daee75ac2ab5d6a8a05":[2,0,186,156],
 "classSurfaceLayer.html#a541a2e4eefff3bd7c15fea9a7a4334e3":[2,0,186,151],
-"classSurfaceLayer.html#a58376f8ba27bc35c6cccd93403f01b52":[2,0,186,121],
-"classSurfaceLayer.html#a5bc864f0c26c9488d5f84fc7bd89947f":[2,0,186,12]
+"classSurfaceLayer.html#a58376f8ba27bc35c6cccd93403f01b52":[2,0,186,121]
 };

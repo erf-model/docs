@@ -146,6 +146,7 @@ var classERF =
     [ "make_lsm_at_level", "classERF.html#a170be909e26fe9e679bbf39172ef83d6", null ],
     [ "make_physbcs", "classERF.html#ac81ec7f74a1be1c4a1e6e15e08385ed5", null ],
     [ "make_subdomains", "classERF.html#a7567528ba42339cf237e11617453eb5f", null ],
+    [ "make_terrain_blanking", "classERF.html#a6890c6ea275f00caf568467d31f95c98", null ],
     [ "MakeDiagnosticAverage", "classERF.html#a93ed2dd2c2441da6853d6f48b6467324", null ],
     [ "MakeEBGeometry", "classERF.html#a0572de619e757aab7ad9a4e0c7967da4", null ],
     [ "MakeFilename_EyeTracker_latlon", "classERF.html#af668b1bb4cd05f121080295dbb1deeeb", null ],

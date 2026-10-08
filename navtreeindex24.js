@@ -1,5 +1,6 @@
 var NAVTREEINDEX24 =
 {
+"classKessler.html#a3925ff722ac968e306dbcc233718030a":[2,0,64,13],
 "classKessler.html#a39f7784e385d1986315818df593b55ff":[2,0,64,9],
 "classKessler.html#a466bae7632d1321347ce73c3e89e0856":[2,0,64,34],
 "classKessler.html#a46902fef513cf7298643ee5cc12594bb":[2,0,64,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX24 =
 "classMorrison.html#a2269eb1d7ce46e6eba5ffe3ad1489c57":[2,0,81,14],
 "classMorrison.html#a2fb8fc64e2207048b2fcb561bec878af":[2,0,81,17],
 "classMorrison.html#a31ff7d12dd53f6446c14491167b094e9":[2,0,81,33],
-"classMorrison.html#a3b223b2f67d6de76f1edd249b4a16d63":[2,0,81,19],
-"classMorrison.html#a4758477b981620315ed79d08e8acc5dd":[2,0,81,10]
+"classMorrison.html#a3b223b2f67d6de76f1edd249b4a16d63":[2,0,81,19]
 };
