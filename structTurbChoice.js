@@ -51,6 +51,7 @@ var structTurbChoice =
     [ "pbl_mrf_use_zero_ri_extent", "structTurbChoice.html#a1dae70814be91f03365ef6f384881ba0", null ],
     [ "pbl_mynn", "structTurbChoice.html#a9e9856abf3351c473563f18b4f9a2ec0", null ],
     [ "pbl_mynn_level2", "structTurbChoice.html#a133da3d14edbb56f544a2d8f39425365", null ],
+    [ "pbl_strat_type", "structTurbChoice.html#a2c568f9bd7f39d06a7f2ad7a01f8c352", null ],
     [ "pbl_type", "structTurbChoice.html#ae8b6f0251bcc3adc880a2ebd553a8905", null ],
     [ "pbl_ysu_coriolis_freq", "structTurbChoice.html#ad1fe1c1b62a292ee5c41291a4cff7dd2", null ],
     [ "pbl_ysu_force_over_water", "structTurbChoice.html#a0324cbc305680544e150f8988820e7a0", null ],

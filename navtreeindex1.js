@@ -136,7 +136,7 @@ var NAVTREEINDEX1 =
 "ERF__ComputeDiffusivityMRF_8cpp.html":[3,0,1,17,1],
 "ERF__ComputeDiffusivityMRF_8cpp.html#af8d0edbdbde4c281297eda80a1c44f26":[3,0,1,17,1,0],
 "ERF__ComputeDiffusivityMYJ_8cpp.html":[3,0,1,17,2],
-"ERF__ComputeDiffusivityMYJ_8cpp.html#a9de77cf133c72a4e120ea0fc35476072":[3,0,1,17,2,0],
+"ERF__ComputeDiffusivityMYJ_8cpp.html#a8c281fdb91beebc860c44b9e0ec156fe":[3,0,1,17,2,0],
 "ERF__ComputeDiffusivityMYNN25_8cpp.html":[3,0,1,17,3],
 "ERF__ComputeDiffusivityMYNN25_8cpp.html#a906231db6cd588c98d4c233904c54e74":[3,0,1,17,3,1],
 "ERF__ComputeDiffusivityMYNN25_8cpp.html#affcac1eae4418e1180b41a501492cdaf":[3,0,1,17,3,0],

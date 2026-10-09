@@ -1,5 +1,12 @@
 var NAVTREEINDEX52 =
 {
+"structobs__nudging_1_1ObsNudgingView.html#a1f407cd1a2282ce2c2cf75961b758535":[2,0,16,0,16],
+"structobs__nudging_1_1ObsNudgingView.html#a21618376356da28186461d11d3da6d8c":[2,0,16,0,15],
+"structobs__nudging_1_1ObsNudgingView.html#a21a75652b1f48ed03d0c423e013813af":[2,0,16,0,12],
+"structobs__nudging_1_1ObsNudgingView.html#a5d765690e162f68c4bb6fe0e599d341f":[2,0,16,0,6],
+"structobs__nudging_1_1ObsNudgingView.html#a6215c78a15c1f2588d4a739f822d43e4":[2,0,16,0,11],
+"structobs__nudging_1_1ObsNudgingView.html#a640fa97dd0051a757da5065e5e992f2a":[2,0,16,0,13],
+"structobs__nudging_1_1ObsNudgingView.html#a73e8313e811e5a84e1232d66c5d48062":[2,0,16,0,0],
 "structobs__nudging_1_1ObsNudgingView.html#a782ac4c7c98a09ed7f7da8bc41bb5de0":[2,0,16,0,7],
 "structobs__nudging_1_1ObsNudgingView.html#a7b0e81d43ed3824d1a0e42344e3cc7f1":[2,0,16,0,10],
 "structobs__nudging_1_1ObsNudgingView.html#a865772c1afcd50a3a4bfc8df47e54db7":[2,0,16,0,4],
@@ -242,12 +249,5 @@ var NAVTREEINDEX52 =
 "structsurface__temp__mod__charnock.html#ad46a3125a8d9e6c9cfd1c17d7d0a652f":[2,0,184,1],
 "structsurface__temp__mod__charnock.html#aec5ebd02c9cc040f289080a042ca315c":[2,0,184,2],
 "structsurface__temp__wave__coupled.html":[2,0,185],
-"structsurface__temp__wave__coupled.html#a0141e11a93c0d41c8827493177ff254a":[2,0,185,8],
-"structsurface__temp__wave__coupled.html#a2a663fad6d183ced2edb1dc99fe104bf":[2,0,185,3],
-"structsurface__temp__wave__coupled.html#a3715864e9c6bfdc6e4556925d0fc48fa":[2,0,185,7],
-"structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288":[2,0,185,4],
-"structsurface__temp__wave__coupled.html#a6313c22feef948baab880eba3a5d1a17":[2,0,185,2],
-"structsurface__temp__wave__coupled.html#a8cfd3441e355ad6088f6f4cc249ce34a":[2,0,185,0],
-"structsurface__temp__wave__coupled.html#a99639bba8ffa55f8d545748906ceb842":[2,0,185,1],
-"structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96":[2,0,185,5]
+"structsurface__temp__wave__coupled.html#a0141e11a93c0d41c8827493177ff254a":[2,0,185,8]
 };

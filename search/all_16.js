@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['w_7711',['w',['../structShocColumnData.html#a6d27eab218bf381706d50c62d365db50',1,'ShocColumnData::w()'],['../ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f',1,'w():&#160;ERF_Plotfile2DInterpolator.cpp']]],
-  ['w_7712',['W',['../namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da61e9c06ea9a85a5088a499df6458d276',1,'plotfile2d::W()'],['../namespaceobs__nudging.html#ae11e547a145f2106806cf961e1bcdcb3a80fe2d3c0e1c500f18541e5e62c9693f',1,'obs_nudging::W()']]],
+  ['w_7710',['w',['../structShocColumnData.html#a6d27eab218bf381706d50c62d365db50',1,'ShocColumnData']]],
+  ['w_7711',['W',['../namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da61e9c06ea9a85a5088a499df6458d276',1,'plotfile2d::W()'],['../namespaceobs__nudging.html#ae11e547a145f2106806cf961e1bcdcb3a80fe2d3c0e1c500f18541e5e62c9693f',1,'obs_nudging::W()']]],
+  ['w_7712',['w',['../ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f',1,'ERF_Plotfile2DInterpolator.cpp']]],
   ['w2tune_7713',['w2tune',['../structShocRuntimeOptions.html#a487c81ee3eb35946163ba760996311cc',1,'ShocRuntimeOptions']]],
   ['w3_7714',['w3',['../structShocColumnData.html#a3303135724099955d94c16124ae6e087',1,'ShocColumnData::w3()'],['../structSHOCInterface_1_1Buffer.html#a014a66993e6b505022e6f3dd0a738933',1,'SHOCInterface::Buffer::w3()'],['../classSHOCInterface.html#ab0392f2032e97f430ff891059ef38f9d',1,'SHOCInterface::w3()']]],
   ['w3_5fdiagnostics_7715',['w3_diagnostics',['../classShocDriver.html#a13f6f77536767d3f4eaeb9685d6a665c',1,'ShocDriver']]],

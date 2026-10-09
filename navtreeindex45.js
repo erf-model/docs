@@ -1,5 +1,11 @@
 var NAVTREEINDEX45 =
 {
+"structSAMCoefficientRow.html#a009965343155295da5d9a8ddac755a2b":[2,0,122,5],
+"structSAMCoefficientRow.html#a0be100c0d3f5c0079e9664ac7d9e1e1c":[2,0,122,11],
+"structSAMCoefficientRow.html#a105aa71aa5a07c2368f7f17ea1d1f047":[2,0,122,4],
+"structSAMCoefficientRow.html#a1a40037b9d7d76b7acb01e577523a752":[2,0,122,0],
+"structSAMCoefficientRow.html#a36cb0fd9f0eef621042dbfd97cedf173":[2,0,122,1],
+"structSAMCoefficientRow.html#a4946200de956e60c2abb75d9c30618e3":[2,0,122,3],
 "structSAMCoefficientRow.html#a58405de0ab15745fb30a5b18f0ba3092":[2,0,122,6],
 "structSAMCoefficientRow.html#a7c6d5745af9c246c5ad08c8656f2507d":[2,0,122,8],
 "structSAMCoefficientRow.html#a8f695221a20aa34ca074460234ab7ff1":[2,0,122,7],
@@ -243,11 +249,5 @@ var NAVTREEINDEX45 =
 "structScalarDiffusionCoefficients.html#a68d807422cceeca31984a89b987c5966":[2,0,137,1],
 "structScalarDiffusionCoefficients.html#a7336dfa9b52f3e1f4b9072910491036f":[2,0,137,0],
 "structScalarDiffusionCoefficients.html#af6ab185c488d6e9f41562df57498a81b":[2,0,137,2],
-"structScalarDiffusionFieldViews.html":[2,0,138],
-"structScalarDiffusionFieldViews.html#a0ec87b55520b731f64ce5db5cb0acdaa":[2,0,138,3],
-"structScalarDiffusionFieldViews.html#a4af8a6b333dbbec1c9a7a6d25f350cc6":[2,0,138,8],
-"structScalarDiffusionFieldViews.html#a76d5bbfc532d69d70d5ee0ef92efdddf":[2,0,138,4],
-"structScalarDiffusionFieldViews.html#a8933cfdcf5f55a2032c40b68a127402d":[2,0,138,5],
-"structScalarDiffusionFieldViews.html#a9c57454839f9d94b5fe4e49f31463c26":[2,0,138,6],
-"structScalarDiffusionFieldViews.html#aad6488bf69e0557e0b2906ac96bf0ee2":[2,0,138,9]
+"structScalarDiffusionFieldViews.html":[2,0,138]
 };

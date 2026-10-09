@@ -11,6 +11,7 @@ var structMYNNLevel25 =
     [ "C4", "structMYNNLevel25.html#a55fad52b96bc4c5d909e1cc4332c54ad", null ],
     [ "C5", "structMYNNLevel25.html#abccb8d9a56c593f5f75ce7f6a170a3be", null ],
     [ "config", "structMYNNLevel25.html#a6065f4b0ba5299d0be0f92a614188034", null ],
+    [ "Lt_taper_exp", "structMYNNLevel25.html#a989228f880652c394884a2bd9d52f69d", null ],
     [ "SHmax", "structMYNNLevel25.html#a1f85d50fe35885cc85198ca50d0e9bd6", null ],
     [ "SHmin", "structMYNNLevel25.html#a7e65668ebad061e4f91fee27dc041208", null ],
     [ "SMmax", "structMYNNLevel25.html#a183889654d8da15f165f6385f05bb5ba", null ],
