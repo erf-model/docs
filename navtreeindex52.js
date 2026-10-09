@@ -1,5 +1,9 @@
 var NAVTREEINDEX52 =
 {
+"structobs__nudging_1_1ObsNudgingView.html#a0444b8222316ea927e74f2213afa3aae":[2,0,16,0,9],
+"structobs__nudging_1_1ObsNudgingView.html#a0649307954a3ab4164a363cba2c27be5":[2,0,16,0,14],
+"structobs__nudging_1_1ObsNudgingView.html#a0a8074108d56d81e6d3be904850a8eb7":[2,0,16,0,2],
+"structobs__nudging_1_1ObsNudgingView.html#a1a07709727e6fcc5d4e3c2d5c44c3571":[2,0,16,0,1],
 "structobs__nudging_1_1ObsNudgingView.html#a1f407cd1a2282ce2c2cf75961b758535":[2,0,16,0,16],
 "structobs__nudging_1_1ObsNudgingView.html#a21618376356da28186461d11d3da6d8c":[2,0,16,0,15],
 "structobs__nudging_1_1ObsNudgingView.html#a21a75652b1f48ed03d0c423e013813af":[2,0,16,0,12],
@@ -245,9 +249,5 @@ var NAVTREEINDEX52 =
 "structsurface__temp__mod__charnock.html#a7cbc26f61383ef464e8b641318dc7b0a":[2,0,184,7],
 "structsurface__temp__mod__charnock.html#a85bd49a9221c24cd27422abc18190628":[2,0,184,8],
 "structsurface__temp__mod__charnock.html#a98f673e5030f4509a8874466337f50c4":[2,0,184,3],
-"structsurface__temp__mod__charnock.html#abdbaeb4415bea6e707230a7d9dcee56a":[2,0,184,5],
-"structsurface__temp__mod__charnock.html#ad46a3125a8d9e6c9cfd1c17d7d0a652f":[2,0,184,1],
-"structsurface__temp__mod__charnock.html#aec5ebd02c9cc040f289080a042ca315c":[2,0,184,2],
-"structsurface__temp__wave__coupled.html":[2,0,185],
-"structsurface__temp__wave__coupled.html#a0141e11a93c0d41c8827493177ff254a":[2,0,185,8]
+"structsurface__temp__mod__charnock.html#abdbaeb4415bea6e707230a7d9dcee56a":[2,0,184,5]
 };

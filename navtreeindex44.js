@@ -1,5 +1,9 @@
 var NAVTREEINDEX44 =
 {
+"structMaterialPropertiesCore.html#af8ef44bfde759566f97c19dac1ea640f":[2,0,75,4],
+"structMicrophysicsThermoState.html":[2,0,77],
+"structMicrophysicsThermoState.html#a008e266c33bf39b3b49c8e11bb147675":[2,0,77,0],
+"structMicrophysicsThermoState.html#adb7691ddb5d752061a94fa1f4d080aa5":[2,0,77,1],
 "structMoistureComponentIndices.html":[2,0,81],
 "structMoistureComponentIndices.html#a024fcc1d4ce8e2fcba14b31543ccf282":[2,0,81,19],
 "structMoistureComponentIndices.html#a090e505686008fc4d64ffeec9b2535bf":[2,0,81,29],
@@ -245,9 +249,5 @@ var NAVTREEINDEX44 =
 "structSAMCloudPhaseChange.html#a47387b82631d9fc1277673e10acf8c70":[2,0,121,9],
 "structSAMCloudPhaseChange.html#a55dee3ce5e4ea1acff6787f90ded3f75":[2,0,121,7],
 "structSAMCloudPhaseChange.html#a5717477792770181649a49bd0c7c02ea":[2,0,121,8],
-"structSAMCloudPhaseChange.html#a6a4354591ff59f8e0e4bf26bd428878e":[2,0,121,2],
-"structSAMCloudPhaseChange.html#a81a59063e29391f2c11607d630c0c0b9":[2,0,121,0],
-"structSAMCloudPhaseChange.html#a897a5ea4342b0a4908221e858b2ecb4b":[2,0,121,3],
-"structSAMCloudPhaseChange.html#ac9dd29ba6b8c24c925a0fe7f156868d2":[2,0,121,4],
-"structSAMCoefficientRow.html":[2,0,122]
+"structSAMCloudPhaseChange.html#a6a4354591ff59f8e0e4bf26bd428878e":[2,0,121,2]
 };
