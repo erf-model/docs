@@ -102,6 +102,7 @@ var structSolverChoice =
     [ "implicit_ke_diffusion", "structSolverChoice.html#a47d61ed6bea0d2547e619fd8c94c590e", null ],
     [ "implicit_moisture_diffusion", "structSolverChoice.html#a1d145e9c4e174998091e47c92177bd9d", null ],
     [ "implicit_momentum_diffusion", "structSolverChoice.html#aeb70a8f7e6b342ab1f09d506b3a926c6", null ],
+    [ "implicit_terrain_metric", "structSolverChoice.html#aa5f04dc62be1accc9e272e4b1b6b185d", null ],
     [ "implicit_thermal_diffusion", "structSolverChoice.html#a4fbee8f5dfaafda8f79166b32bbec945", null ],
     [ "init_type", "structSolverChoice.html#a0c585849961f95947c2cb00ef04d2025", null ],
     [ "interp_atmos_from_coarse", "structSolverChoice.html#a490ffeacd19a9db485f7d4193a4054aa", null ],

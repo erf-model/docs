@@ -32,6 +32,8 @@ var ERF__ScalarDiffusion_8H =
     [ "ScaleScalarDiffusionVerticalFlux", "ERF__ScalarDiffusion_8H.html#a595a7b5d07cc6fbb8768dd760d0c3ebe", null ],
     [ "StretchedDiffusionDirichletWeights", "ERF__ScalarDiffusion_8H.html#a14db4e5fe3d108576dcc27ab69fd4a4f", null ],
     [ "StretchedScalarGradient", "ERF__ScalarDiffusion_8H.html#ac51c3f849f3b9281c961d91224e7d952", null ],
+    [ "SubtractTerrainMetricImplicitPart_T", "ERF__ScalarDiffusion_8H.html#a911c760f89d72f988de90fd6f7b87603", null ],
+    [ "SubtractTerrainMetricImplicitPart_T_Impl", "ERF__ScalarDiffusion_8H.html#a70a98a5430cfd0944e868b1d7f818477", null ],
     [ "TerrainDiffusionDivergence_T", "ERF__ScalarDiffusion_8H.html#aa5b5e166d65331c31207d7bb541b99ce", null ],
     [ "TerrainDiffusionGz", "ERF__ScalarDiffusion_8H.html#a189adb928ff0e9a2d88912fdd4d18859", null ],
     [ "TerrainDiffusionMappedTx", "ERF__ScalarDiffusion_8H.html#af0d482c8c9b9fc47157c28724bfa4edd", null ],

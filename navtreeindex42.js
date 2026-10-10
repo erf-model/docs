@@ -1,5 +1,12 @@
 var NAVTREEINDEX42 =
 {
+"namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6dad028a5b003a44038241a8266df863293":[1,0,66,17,4],
+"namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6dad21c855a168b8f09d1ebb1bc596be927":[1,0,66,17,1],
+"namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6daebfc26a474835c1ad7c18f712064485f":[1,0,66,17,8],
+"namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6daf2d5be7948c3aa5ac0e46d0e6036cf20":[1,0,66,17,10],
+"namespaceplotfile2d.html#ae14d48ee048d2f29c1aaa3584d03f5ff":[1,0,66,95],
+"namespaceplotfile2d.html#ae72ee267a9b1c6935c08527ddc3ab279":[1,0,66,94],
+"namespaceplotfile2d.html#ae843a5e31ca7a89d4596351e3b8c2534":[1,0,66,68],
 "namespaceplotfile2d.html#ae88aae15ed5778b59e01c7823e8ef449":[1,0,66,46],
 "namespaceplotfile2d.html#aeb39831ce22b67e3631a8d20e60a3be9":[1,0,66,23],
 "namespaceplotfile2d.html#aee0c54e52d986ec450e95dc0e6daa1d8":[1,0,66,44],
@@ -230,8 +237,9 @@ var NAVTREEINDEX42 =
 "structDiffusiveRateSettings.html":[2,0,38],
 "structDiffusiveRateSettings.html#a016ff34d850282ff03167c2ca94745c4":[2,0,38,3],
 "structDiffusiveRateSettings.html#a096f2a4471149d8fb385da2e67eb684b":[2,0,38,7],
+"structDiffusiveRateSettings.html#a3bbff071b1f3a5d32711016c652ecb1e":[2,0,38,8],
 "structDiffusiveRateSettings.html#a7e4561bac3928c48d9656f0ac44c9b42":[2,0,38,0],
-"structDiffusiveRateSettings.html#aabe25f485742495dc89a31ca36d4fe8e":[2,0,38,8],
+"structDiffusiveRateSettings.html#aabe25f485742495dc89a31ca36d4fe8e":[2,0,38,9],
 "structDiffusiveRateSettings.html#abaa0f5dec23e1c544f10d80d301c6b72":[2,0,38,6],
 "structDiffusiveRateSettings.html#aceb468a4af0e7f2829ff9371d6f7144b":[2,0,38,4],
 "structDiffusiveRateSettings.html#ad30c89773b6b92de43c9ef8bd4ea8dce":[2,0,38,2],
@@ -241,13 +249,5 @@ var NAVTREEINDEX42 =
 "structDirectionSelector.html#a3950b636303028f398441fdc43d66dba":[2,0,39,0],
 "structDirectionSelector_3_010_01_4.html":[2,0,40],
 "structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e":[2,0,40,0],
-"structDirectionSelector_3_011_01_4.html":[2,0,41],
-"structDirectionSelector_3_011_01_4.html#ae5631c2b7917d2bc7cb479a266a61834":[2,0,41,0],
-"structDirectionSelector_3_012_01_4.html":[2,0,42],
-"structDirectionSelector_3_012_01_4.html#a5708ddb92c7d49cc9ba821f978251160":[2,0,42,0],
-"structEBChoice.html":[2,0,46],
-"structEBChoice.html#a1b3ca08dd73f1d648e23ea6c00e527fc":[2,0,46,1],
-"structEBChoice.html#a27a604a24adb3c767c187fed54865d58":[2,0,46,0],
-"structEBChoice.html#ad8630487546ba19d7c2e38fd228305e4":[2,0,46,2],
-"structERF_1_1Plot3DScratch.html":[2,0,47,0]
+"structDirectionSelector_3_011_01_4.html":[2,0,41]
 };

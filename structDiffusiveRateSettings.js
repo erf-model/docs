@@ -8,5 +8,6 @@ var structDiffusiveRateSettings =
     [ "has_ke", "structDiffusiveRateSettings.html#ae0e9f220cd0335038a1bf61491eac55b", null ],
     [ "has_q", "structDiffusiveRateSettings.html#abaa0f5dec23e1c544f10d80d301c6b72", null ],
     [ "has_scalar", "structDiffusiveRateSettings.html#a096f2a4471149d8fb385da2e67eb684b", null ],
+    [ "implicit_metric", "structDiffusiveRateSettings.html#a3bbff071b1f3a5d32711016c652ecb1e", null ],
     [ "variable_dz", "structDiffusiveRateSettings.html#aabe25f485742495dc89a31ca36d4fe8e", null ]
 ];
