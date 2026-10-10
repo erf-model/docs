@@ -17,5 +17,6 @@ var structerf__sbm_1_1SBMTransport_1_1LevelStorage =
     [ "physical_input_intensive", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#af3e02cd09aca478e2df8b1afac6bffcc", null ],
     [ "projected_ledger", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#ad28c156528a7f1ac22077c821d577a0c", null ],
     [ "projected_rate", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#affb1eb84198d9aa96d8d03e9311c0d0d", null ],
+    [ "spectral_ledger", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a99cf92d2de75a6dccc7d2f3fd56808f8", null ],
     [ "target", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#ad310306ab9dcda8dea175de897f43234", null ]
 ];

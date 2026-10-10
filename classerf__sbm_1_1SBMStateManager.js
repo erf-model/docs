@@ -1,15 +1,27 @@
 var classerf__sbm_1_1SBMStateManager =
 [
+    [ "LevelState", "structerf__sbm_1_1SBMStateManager_1_1LevelState.html", "structerf__sbm_1_1SBMStateManager_1_1LevelState" ],
     [ "SBMStateManager", "classerf__sbm_1_1SBMStateManager.html#a5879563105834b666ae02ed4edbe5836", null ],
-    [ "define", "classerf__sbm_1_1SBMStateManager.html#aedfd014e86591a0554d35da7dca1929e", null ],
+    [ "accept_stage_target", "classerf__sbm_1_1SBMStateManager.html#ab0517c22e844cfe42a5a6ec69c8f120b", null ],
+    [ "begin_step", "classerf__sbm_1_1SBMStateManager.html#a320334e5230ad60221e30a8e1ed88632", null ],
+    [ "define", "classerf__sbm_1_1SBMStateManager.html#abf5f9ca5796d952869b1fa57fac3f3e0", null ],
     [ "destroy", "classerf__sbm_1_1SBMStateManager.html#a55c2016173d1b52fe999d001b17164c8", null ],
     [ "is_defined", "classerf__sbm_1_1SBMStateManager.html#a096a8f55563cba4e74f34ca2af335886", null ],
     [ "layout", "classerf__sbm_1_1SBMStateManager.html#a6e3dea611bdb7d8fba941f4509e749f7", null ],
+    [ "level", "classerf__sbm_1_1SBMStateManager.html#a8103401dad9d6f9f281d1eb7a91b7086", null ],
+    [ "level", "classerf__sbm_1_1SBMStateManager.html#a1b8a9e41870e751e5526587f2480237e", null ],
+    [ "new_state", "classerf__sbm_1_1SBMStateManager.html#a7e4373c1f015e235392cae9d1967f002", null ],
+    [ "new_state_for_initialization", "classerf__sbm_1_1SBMStateManager.html#ad35a14f2264a5ae61df420edbafdedff", null ],
+    [ "new_target_storage", "classerf__sbm_1_1SBMStateManager.html#a7ff12c9117196537266e4ccb1eed6cc1", null ],
+    [ "new_time", "classerf__sbm_1_1SBMStateManager.html#a0a4278b2b2bd1760352bbc0f720b6549", null ],
+    [ "new_valid", "classerf__sbm_1_1SBMStateManager.html#a5bf0383572deac269b5dc0aed8723279", null ],
     [ "nlevels", "classerf__sbm_1_1SBMStateManager.html#a7b2f4a499133c12fd739e360cd47d24f", null ],
+    [ "old_state", "classerf__sbm_1_1SBMStateManager.html#ad8460974cd9f320bc2e2bb99d9931521", null ],
+    [ "old_time", "classerf__sbm_1_1SBMStateManager.html#af03941c2e3fc9d24423b9ca000cebca9", null ],
+    [ "old_valid", "classerf__sbm_1_1SBMStateManager.html#a01324083127c6b3abd11b19353bfe1ae", null ],
     [ "project_to_core", "classerf__sbm_1_1SBMStateManager.html#a485f1d7d6d0c1ffbbcf612d3d355f2c7", null ],
-    [ "state", "classerf__sbm_1_1SBMStateManager.html#a112f9954d4e515be5a1809bc9f76e06c", null ],
-    [ "state", "classerf__sbm_1_1SBMStateManager.html#a3bc2bd1337edc15f5bb8a9766a6d9d45", null ],
+    [ "step_active", "classerf__sbm_1_1SBMStateManager.html#a7cb0b7deaf715b6c9d43737330326f04", null ],
     [ "m_layout", "classerf__sbm_1_1SBMStateManager.html#a5c6ccec111e70bdbf765326f29c02d2b", null ],
-    [ "m_projection", "classerf__sbm_1_1SBMStateManager.html#a18b7376888d4b6a8ae9aaff69f370297", null ],
-    [ "m_state", "classerf__sbm_1_1SBMStateManager.html#a81d53e6f5f8f908943875e8bb5cbffe9", null ]
+    [ "m_levels", "classerf__sbm_1_1SBMStateManager.html#a189ee6ac81426363068deab86f70ee91", null ],
+    [ "m_projection", "classerf__sbm_1_1SBMStateManager.html#a18b7376888d4b6a8ae9aaff69f370297", null ]
 ];

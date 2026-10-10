@@ -1,6 +1,8 @@
 var dir_84dbca1a1a078b408d1af332a78d4cda =
 [
     [ "ERF_SBMAdvectionBoundary.H", "ERF__SBMAdvectionBoundary_8H.html", "ERF__SBMAdvectionBoundary_8H" ],
+    [ "ERF_SBMAMRTransfer.cpp", "ERF__SBMAMRTransfer_8cpp.html", "ERF__SBMAMRTransfer_8cpp" ],
+    [ "ERF_SBMAMRTransfer.H", "ERF__SBMAMRTransfer_8H.html", "ERF__SBMAMRTransfer_8H" ],
     [ "ERF_SBMBulkProjection.cpp", "ERF__SBMBulkProjection_8cpp.html", null ],
     [ "ERF_SBMBulkProjection.H", "ERF__SBMBulkProjection_8H.html", [
       [ "BulkProjection", "structerf__sbm_1_1BulkProjection.html", "structerf__sbm_1_1BulkProjection" ],
@@ -25,7 +27,8 @@ var dir_84dbca1a1a078b408d1af332a78d4cda =
     [ "ERF_SBMStageOwnership.H", "ERF__SBMStageOwnership_8H.html", "ERF__SBMStageOwnership_8H" ],
     [ "ERF_SBMStateManager.cpp", "ERF__SBMStateManager_8cpp.html", null ],
     [ "ERF_SBMStateManager.H", "ERF__SBMStateManager_8H.html", [
-      [ "SBMStateManager", "classerf__sbm_1_1SBMStateManager.html", "classerf__sbm_1_1SBMStateManager" ]
+      [ "SBMStateManager", "classerf__sbm_1_1SBMStateManager.html", "classerf__sbm_1_1SBMStateManager" ],
+      [ "LevelState", "structerf__sbm_1_1SBMStateManager_1_1LevelState.html", "structerf__sbm_1_1SBMStateManager_1_1LevelState" ]
     ] ],
     [ "ERF_SBMTransport.cpp", "ERF__SBMTransport_8cpp.html", "ERF__SBMTransport_8cpp" ],
     [ "ERF_SBMTransport.H", "ERF__SBMTransport_8H.html", [

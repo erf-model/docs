@@ -66,6 +66,7 @@ var annotated_dup =
       ] ],
       [ "AdvectionFacePolicyInput", "structerf__sbm_1_1AdvectionFacePolicyInput.html", "structerf__sbm_1_1AdvectionFacePolicyInput" ],
       [ "AdvectionFacePolicy", "structerf__sbm_1_1AdvectionFacePolicy.html", "structerf__sbm_1_1AdvectionFacePolicy" ],
+      [ "SBMAMRStateView", "structerf__sbm_1_1SBMAMRStateView.html", "structerf__sbm_1_1SBMAMRStateView" ],
       [ "BulkProjection", "structerf__sbm_1_1BulkProjection.html", "structerf__sbm_1_1BulkProjection" ],
       [ "SBMBulkProjection", "classerf__sbm_1_1SBMBulkProjection.html", "classerf__sbm_1_1SBMBulkProjection" ],
       [ "ConstraintTerm", "structerf__sbm_1_1ConstraintTerm.html", "structerf__sbm_1_1ConstraintTerm" ],

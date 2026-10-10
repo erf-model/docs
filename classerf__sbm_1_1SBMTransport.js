@@ -7,6 +7,7 @@ var classerf__sbm_1_1SBMTransport =
     [ "SBMTransport", "classerf__sbm_1_1SBMTransport.html#a54f20a1f491e52eed04e012b914575b5", null ],
     [ "advance_stage", "classerf__sbm_1_1SBMTransport.html#a8258ca8b22af13751efa929ad947c59c", null ],
     [ "advance_stage_from_host", "classerf__sbm_1_1SBMTransport.html#a49249b6e78f4b78fcaf3a4e5f3f047f1", null ],
+    [ "completed_spectral_ledger", "classerf__sbm_1_1SBMTransport.html#adadd9dbb7474bbee13724ddecd46fa26", null ],
     [ "define", "classerf__sbm_1_1SBMTransport.html#a38727fdecac66f2e79fd22ed09a3553f", null ],
     [ "destroy", "classerf__sbm_1_1SBMTransport.html#a71aa9a6e48f17c3de512e3dfeb6e90a1", null ],
     [ "is_defined", "classerf__sbm_1_1SBMTransport.html#a571eb41ef11c4a94b15050f2e71ff339", null ],
