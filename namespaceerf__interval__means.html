@@ -115,8 +115,8 @@ Functions</h2></td></tr>
 <tr class="separator:a251a854f83d6e1f54fdb17a522270ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f09d1ecb9002eb43e2cd12d260387ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__interval__means.html#a4f09d1ecb9002eb43e2cd12d260387ad">initialization_accumulates_state</a> (bool restarting) noexcept</td></tr>
 <tr class="separator:a4f09d1ecb9002eb43e2cd12d260387ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0644c854d9193d3d9188688d617bd56a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__interval__means.html#a0644c854d9193d3d9188688d617bd56a">initialization_plot_consumes_interval</a> (bool restarting, bool interval_diagnostic_selected) noexcept</td></tr>
-<tr class="separator:a0644c854d9193d3d9188688d617bd56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50a8064aba2ff56d31c10d9cb12e15db"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__interval__means.html#a50a8064aba2ff56d31c10d9cb12e15db">initialization_clears_interval</a> (bool restarting, bool compute_mean_vars, const std::string &amp;reset_mode) noexcept</td></tr>
+<tr class="separator:a50a8064aba2ff56d31c10d9cb12e15db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="af20159b05841202fe7d8ec71a7f82ccb"></a>
@@ -202,8 +202,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a0644c854d9193d3d9188688d617bd56a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0644c854d9193d3d9188688d617bd56a">&#9670;&nbsp;</a></span>initialization_plot_consumes_interval()</h2>
+<a id="a50a8064aba2ff56d31c10d9cb12e15db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50a8064aba2ff56d31c10d9cb12e15db">&#9670;&nbsp;</a></span>initialization_clears_interval()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,7 +212,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool erf_interval_means::initialization_plot_consumes_interval </td>
+          <td class="memname">bool erf_interval_means::initialization_clears_interval </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>restarting</em>, </td>
@@ -221,7 +221,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>interval_diagnostic_selected</em>&#160;</td>
+          <td class="paramname"><em>compute_mean_vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>reset_mode</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -235,17 +241,17 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;{</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">return</span> !restarting &amp;&amp; interval_diagnostic_selected;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;{</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">return</span> !restarting &amp;&amp; compute_mean_vars &amp;&amp; reset_mode == <span class="stringliteral">&quot;plotfile&quot;</span>;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa8b243c093bd872b6f7592603ff97792">ERF::InitData_post()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespaceerf__interval__means_a0644c854d9193d3d9188688d617bd56a_icgraph.png" border="0" usemap="#anamespaceerf__interval__means_a0644c854d9193d3d9188688d617bd56a_icgraph" alt=""/></div>
-<map name="anamespaceerf__interval__means_a0644c854d9193d3d9188688d617bd56a_icgraph" id="anamespaceerf__interval__means_a0644c854d9193d3d9188688d617bd56a_icgraph">
-<area shape="rect" title=" " alt="" coords="195,5,347,61"/>
+<div class="center"><img src="namespaceerf__interval__means_a50a8064aba2ff56d31c10d9cb12e15db_icgraph.png" border="0" usemap="#anamespaceerf__interval__means_a50a8064aba2ff56d31c10d9cb12e15db_icgraph" alt=""/></div>
+<map name="anamespaceerf__interval__means_a50a8064aba2ff56d31c10d9cb12e15db_icgraph" id="anamespaceerf__interval__means_a50a8064aba2ff56d31c10d9cb12e15db_icgraph">
+<area shape="rect" title=" " alt="" coords="195,5,352,61"/>
 <area shape="rect" href="classERF.html#aa8b243c093bd872b6f7592603ff97792" title=" " alt="" coords="5,20,147,47"/>
 </map>
 </div>
