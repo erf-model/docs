@@ -1,5 +1,6 @@
 var NAVTREEINDEX52 =
 {
+"structmost__data.html#acfac0135facabddbdd699609bac908e4":[2,0,83,5],
 "structmost__data.html#ad18b8055b6887e821efe0c37c4076d08":[2,0,83,14],
 "structmost__data.html#add81c9cef613709d079f42a22c7d15ac":[2,0,83,13],
 "structmost__data.html#af1d069399319831cf4ae17fba1dda19f":[2,0,83,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX52 =
 "structsurface__flux__mod__charnock.html#a7a8b3b3b8a3c6a96f3d20aa823f48d7c":[2,0,178,0],
 "structsurface__flux__mod__charnock.html#aae8cc1659e38005000cf238c3461d0af":[2,0,178,4],
 "structsurface__flux__mod__charnock.html#ac01a07a59f56ff6683dd9942b4d500ba":[2,0,178,5],
-"structsurface__flux__mod__charnock.html#adb4a96d510f1e437c9efc41ba5fd16f9":[2,0,178,3],
-"structsurface__flux__wave__coupled.html":[2,0,179]
+"structsurface__flux__mod__charnock.html#adb4a96d510f1e437c9efc41ba5fd16f9":[2,0,178,3]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX53 =
 {
+"structsurface__flux__wave__coupled.html":[2,0,179],
 "structsurface__flux__wave__coupled.html#a10d71fe6dd2f38c54562aa3ab207ef25":[2,0,179,7],
 "structsurface__flux__wave__coupled.html#a7c81c888df97ef0ff4dc54be9c4e163a":[2,0,179,3],
 "structsurface__flux__wave__coupled.html#a91a27aa83da28c6bed01137ad0619b45":[2,0,179,4],

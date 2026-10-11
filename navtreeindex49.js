@@ -1,5 +1,6 @@
 var NAVTREEINDEX49 =
 {
+"structTwoStreamRadiation_1_1OrbitalCache.html#ab3bc3c80a27bc7da1d1c351acb717d07":[2,0,199,1,2],
 "structTwoStreamRadiation_1_1OrbitalCache.html#ac8baf8a918099efa13a1e466f0387849":[2,0,199,1,0],
 "structTwoStreamSunDate.html":[2,0,200],
 "structTwoStreamSunDate.html#a5fd034c26cc64ad9b1c7005355ac82ba":[2,0,200,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX49 =
 "structerf__auxiliary_1_1MutableTimedFieldView.html":[2,0,0,8],
 "structerf__auxiliary_1_1MutableTimedFieldView.html#a3095d8d701339eacc49ab09e9c9b2056":[2,0,0,8,0],
 "structerf__auxiliary_1_1MutableTimedFieldView.html#a89df6aad3361753785f0e7958dae545a":[2,0,0,8,2],
-"structerf__auxiliary_1_1MutableTimedFieldView.html#ae9d3ddacc8f9bc83d044bd33acf98d52":[2,0,0,8,1],
-"structerf__auxiliary_1_1ProjectionRule.html":[2,0,0,4]
+"structerf__auxiliary_1_1MutableTimedFieldView.html#ae9d3ddacc8f9bc83d044bd33acf98d52":[2,0,0,8,1]
 };

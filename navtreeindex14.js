@@ -1,7 +1,5 @@
 var NAVTREEINDEX14 =
 {
-"ERF__ScalarDiffusion_8H.html":[3,0,1,6,28],
-"ERF__ScalarDiffusion_8H.html#a0a3e7a69af5fdc2cdb69db58d01fa179":[3,0,1,6,28,14],
 "ERF__ScalarDiffusion_8H.html#a10127d25f04f1733ab1f4a4c97541d87":[3,0,1,6,28,24],
 "ERF__ScalarDiffusion_8H.html#a12407e303d4109d5a988d3f6425381e3":[3,0,1,6,28,22],
 "ERF__ScalarDiffusion_8H.html#a14db4e5fe3d108576dcc27ab69fd4a4f":[3,0,1,6,28,30],
@@ -183,6 +181,9 @@ var NAVTREEINDEX14 =
 "ERF__SimplifiedSEB_8H_source.html":[3,0,1,20,2,8],
 "ERF__SlowRhsPost_8cpp.html":[3,0,1,23,14],
 "ERF__SlowRhsPost_8cpp.html#a8dadfdd08431c71618ba77d2aa40101d":[3,0,1,23,14,0],
+"ERF__SlowRhsPreUtils_8H.html":[3,0,1,23,16],
+"ERF__SlowRhsPreUtils_8H.html#aba48f5d8584746c6b9522a2d087d526a":[3,0,1,23,16,0],
+"ERF__SlowRhsPreUtils_8H_source.html":[3,0,1,23,16],
 "ERF__SlowRhsPre_8cpp.html":[3,0,1,23,15],
 "ERF__SlowRhsPre_8cpp.html#a928ced224a1d7b8cf8d8077237e4881d":[3,0,1,23,15,0],
 "ERF__SolveTridiag_8H.html":[3,0,1,26,39],
@@ -237,17 +238,16 @@ var NAVTREEINDEX14 =
 "ERF__StormDiagnostics_8H.html":[3,0,1,26,40],
 "ERF__StormDiagnostics_8H.html#a6e341f0ba1bec18d7b56a69f0d45e6fe":[3,0,1,26,40,0],
 "ERF__StormDiagnostics_8H_source.html":[3,0,1,26,40],
-"ERF__Substep__MT_8cpp.html":[3,0,1,23,16],
-"ERF__Substep__MT_8cpp.html#af54b8124774096370deb09aca7570927":[3,0,1,23,16,0],
-"ERF__Substep__NS_8cpp.html":[3,0,1,23,17],
-"ERF__Substep__NS_8cpp.html#ac326dbb6cf751835213dca68e9e97cc5":[3,0,1,23,17,0],
-"ERF__Substep__T_8cpp.html":[3,0,1,23,18],
-"ERF__Substep__T_8cpp.html#af6388b09d63fc5ada9b4b8eba6fe199f":[3,0,1,23,18,0],
+"ERF__Substep__MT_8cpp.html":[3,0,1,23,17],
+"ERF__Substep__MT_8cpp.html#af54b8124774096370deb09aca7570927":[3,0,1,23,17,0],
+"ERF__Substep__NS_8cpp.html":[3,0,1,23,18],
+"ERF__Substep__NS_8cpp.html#ac326dbb6cf751835213dca68e9e97cc5":[3,0,1,23,18,0],
+"ERF__Substep__T_8cpp.html":[3,0,1,23,19],
+"ERF__Substep__T_8cpp.html#af6388b09d63fc5ada9b4b8eba6fe199f":[3,0,1,23,19,0],
 "ERF__SuperDropletPCAddParticles_8cpp.html":[3,0,1,16,4],
 "ERF__SuperDropletPCAdvection_8cpp.html":[3,0,1,16,5],
 "ERF__SuperDropletPCBoundaries_8cpp.html":[3,0,1,16,6],
 "ERF__SuperDropletPCCoalescence_8H.html":[3,0,1,16,8],
 "ERF__SuperDropletPCCoalescence_8H_source.html":[3,0,1,16,8],
-"ERF__SuperDropletPCCoalescence_8cpp.html":[3,0,1,16,7],
-"ERF__SuperDropletPCDefinitions_8H.html":[3,0,1,16,9]
+"ERF__SuperDropletPCCoalescence_8cpp.html":[3,0,1,16,7]
 };

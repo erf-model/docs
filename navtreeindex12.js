@@ -1,7 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"ERF__PrognosticCloudFraction_8H.html":[3,0,1,20,2,3],
-"ERF__PrognosticCloudFraction_8H.html#a272a996fbfc9581ca3287937afefa5cc":[3,0,1,20,2,3,0],
 "ERF__PrognosticCloudFraction_8H.html#ace164cc14bd7a3091e633626b1a4e1f2":[3,0,1,20,2,3,1],
 "ERF__PrognosticCloudFraction_8H_source.html":[3,0,1,20,2,3],
 "ERF__Provenance_8H.html":[3,0,1,10,32],
@@ -249,5 +247,7 @@ var NAVTREEINDEX12 =
 "ERF__SBMAMRTransfer_8H.html#a959735c0da1c85f9c84a3a93c7ce4f60":[3,0,1,14,6,2,2],
 "ERF__SBMAMRTransfer_8H.html#acd64b2286ddde9e14f2545b394230fd1":[3,0,1,14,6,2,1],
 "ERF__SBMAMRTransfer_8H_source.html":[3,0,1,14,6,2],
-"ERF__SBMAMRTransfer_8cpp.html":[3,0,1,14,6,1]
+"ERF__SBMAMRTransfer_8cpp.html":[3,0,1,14,6,1],
+"ERF__SBMAMRTransfer_8cpp.html#a8e5ee5c2fc8dd393b9841f25f5d01890":[3,0,1,14,6,1,1],
+"ERF__SBMAMRTransfer_8cpp.html#add523990c4f0d6299afb5be4aa880c93":[3,0,1,14,6,1,0]
 };

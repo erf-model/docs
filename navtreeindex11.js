@@ -1,7 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441":[3,0,1,10,13,1],
-"ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a1cab91c232ad3a71f646243223fa6797":[3,0,1,10,13,1,9],
 "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a22f99bba08a23cb9b10286b119dee809":[3,0,1,10,13,1,7],
 "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a2a79c6fa9bd9885d911d26d2ed8134b0":[3,0,1,10,13,1,4],
 "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a3b30abed195c163bd2676a42be6e9383":[3,0,1,10,13,1,6],
@@ -249,5 +247,7 @@ var NAVTREEINDEX11 =
 "ERF__ProblemDispatch_8H.html#a96a71506ff56c48e90646db1761713f7a6adf97f83acf6453d4a6a4b1070f3754":[3,0,1,19,50,0,0],
 "ERF__ProblemDispatch_8H.html#a96a71506ff56c48e90646db1761713f7ac7d356d1dbd401f669bfebb5968cc898":[3,0,1,19,50,0,1],
 "ERF__ProblemDispatch_8H.html#a96a71506ff56c48e90646db1761713f7ac90d702da275c4b81b75a6a0163bc2bf":[3,0,1,19,50,0,2],
-"ERF__ProblemDispatch_8H_source.html":[3,0,1,19,50]
+"ERF__ProblemDispatch_8H_source.html":[3,0,1,19,50],
+"ERF__PrognosticCloudFraction_8H.html":[3,0,1,20,2,3],
+"ERF__PrognosticCloudFraction_8H.html#a272a996fbfc9581ca3287937afefa5cc":[3,0,1,20,2,3,0]
 };

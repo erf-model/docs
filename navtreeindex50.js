@@ -1,5 +1,6 @@
 var NAVTREEINDEX50 =
 {
+"structerf__auxiliary_1_1ProjectionRule.html":[2,0,0,4],
 "structerf__auxiliary_1_1ProjectionRule.html#a01be92b08ed6e253d6e61fadb46d76e2":[2,0,0,4,4],
 "structerf__auxiliary_1_1ProjectionRule.html#a4ab42bba92c4dedd1b63b9f6e2911e57":[2,0,0,4,2],
 "structerf__auxiliary_1_1ProjectionRule.html#a7c4844a092e4a2234787e24b4e686ad9":[2,0,0,4,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX50 =
 "structerf__sbm_1_1ConstraintDescriptor.html#ae3bfc891018e2fffe0d3d5678bad1ae0":[2,0,9,9,4],
 "structerf__sbm_1_1ConstraintDescriptor.html#aed88bd42f07c95db0899761d1c2b67f5":[2,0,9,9,1],
 "structerf__sbm_1_1ConstraintGroup.html":[2,0,9,8],
-"structerf__sbm_1_1ConstraintGroup.html#a10fcc9ab822e5339aedad49751cb5497":[2,0,9,8,10],
-"structerf__sbm_1_1ConstraintGroup.html#a1489d7065e05c196fa8cb6c91133cdff":[2,0,9,8,1]
+"structerf__sbm_1_1ConstraintGroup.html#a10fcc9ab822e5339aedad49751cb5497":[2,0,9,8,10]
 };

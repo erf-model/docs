@@ -18,6 +18,7 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
     [ "ERF_ScalarLimitPost.H", "ERF__ScalarLimitPost_8H.html", "ERF__ScalarLimitPost_8H" ],
     [ "ERF_SlowRhsPost.cpp", "ERF__SlowRhsPost_8cpp.html", "ERF__SlowRhsPost_8cpp" ],
     [ "ERF_SlowRhsPre.cpp", "ERF__SlowRhsPre_8cpp.html", "ERF__SlowRhsPre_8cpp" ],
+    [ "ERF_SlowRhsPreUtils.H", "ERF__SlowRhsPreUtils_8H.html", "ERF__SlowRhsPreUtils_8H" ],
     [ "ERF_Substep_MT.cpp", "ERF__Substep__MT_8cpp.html", "ERF__Substep__MT_8cpp" ],
     [ "ERF_Substep_NS.cpp", "ERF__Substep__NS_8cpp.html", "ERF__Substep__NS_8cpp" ],
     [ "ERF_Substep_T.cpp", "ERF__Substep__T_8cpp.html", "ERF__Substep__T_8cpp" ],
