@@ -1,5 +1,10 @@
 var NAVTREEINDEX13 =
 {
+"ERF__SBMAMRTransfer_8H.html#acd64b2286ddde9e14f2545b394230fd1":[3,0,1,14,6,2,1],
+"ERF__SBMAMRTransfer_8H_source.html":[3,0,1,14,6,2],
+"ERF__SBMAMRTransfer_8cpp.html":[3,0,1,14,6,1],
+"ERF__SBMAMRTransfer_8cpp.html#a8e5ee5c2fc8dd393b9841f25f5d01890":[3,0,1,14,6,1,1],
+"ERF__SBMAMRTransfer_8cpp.html#add523990c4f0d6299afb5be4aa880c93":[3,0,1,14,6,1,0],
 "ERF__SBMAdvectionBoundary_8H.html":[3,0,1,14,6,0],
 "ERF__SBMAdvectionBoundary_8H.html#a10c9dba6bad5934a5a30e82837833f0c":[3,0,1,14,6,0,2],
 "ERF__SBMAdvectionBoundary_8H.html#a10c9dba6bad5934a5a30e82837833f0ca337b351a16eec0266760deed722bab69":[3,0,1,14,6,0,2,0],
@@ -241,13 +246,8 @@ var NAVTREEINDEX13 =
 "ERF__SLM__DefaultParams_8H.html#af91f09fece183dcda7e5bcce66e4e3c1":[3,0,1,11,2,2,17],
 "ERF__SLM__DefaultParams_8H_source.html":[3,0,1,11,2,2],
 "ERF__SLM__IO_8cpp.html":[3,0,1,11,2,3],
-"ERF__SampleData_8H.html":[3,0,1,10,43],
-"ERF__SampleData_8H_source.html":[3,0,1,10,43],
+"ERF__SampleData_8H.html":[3,0,1,10,45],
+"ERF__SampleData_8H_source.html":[3,0,1,10,45],
 "ERF__SatAdj_8H.html":[3,0,1,14,5,2],
-"ERF__SatAdj_8H_source.html":[3,0,1,14,5,2],
-"ERF__SatAdj_8cpp.html":[3,0,1,14,5,1],
-"ERF__SatMethods_8H.html":[3,0,1,26,38],
-"ERF__SatMethods_8H_source.html":[3,0,1,26,38],
-"ERF__ScalarDiffusion_8H.html":[3,0,1,6,28],
-"ERF__ScalarDiffusion_8H.html#a0a3e7a69af5fdc2cdb69db58d01fa179":[3,0,1,6,28,14]
+"ERF__SatAdj_8H_source.html":[3,0,1,14,5,2]
 };

@@ -1,5 +1,10 @@
 var NAVTREEINDEX14 =
 {
+"ERF__SatAdj_8cpp.html":[3,0,1,14,5,1],
+"ERF__SatMethods_8H.html":[3,0,1,26,38],
+"ERF__SatMethods_8H_source.html":[3,0,1,26,38],
+"ERF__ScalarDiffusion_8H.html":[3,0,1,6,28],
+"ERF__ScalarDiffusion_8H.html#a0a3e7a69af5fdc2cdb69db58d01fa179":[3,0,1,6,28,14],
 "ERF__ScalarDiffusion_8H.html#a10127d25f04f1733ab1f4a4c97541d87":[3,0,1,6,28,24],
 "ERF__ScalarDiffusion_8H.html#a12407e303d4109d5a988d3f6425381e3":[3,0,1,6,28,22],
 "ERF__ScalarDiffusion_8H.html#a14db4e5fe3d108576dcc27ab69fd4a4f":[3,0,1,6,28,30],
@@ -231,10 +236,10 @@ var NAVTREEINDEX14 =
 "ERF__SrcHeaders_8H.html#acb54c33a007d2d0e105102983da18eac":[3,0,1,22,18,4],
 "ERF__SrcHeaders_8H.html#af3c752479136ad9502f0bae7f6caaaaf":[3,0,1,22,18,3],
 "ERF__SrcHeaders_8H_source.html":[3,0,1,22,18],
-"ERF__StationSampler_8H.html":[3,0,1,10,45],
-"ERF__StationSampler_8H_source.html":[3,0,1,10,45],
-"ERF__StationSampler_8cpp.html":[3,0,1,10,44],
-"ERF__StationSampler_8cpp.html#a2437fdd84075cb26d5e546b90158cebb":[3,0,1,10,44,0],
+"ERF__StationSampler_8H.html":[3,0,1,10,47],
+"ERF__StationSampler_8H_source.html":[3,0,1,10,47],
+"ERF__StationSampler_8cpp.html":[3,0,1,10,46],
+"ERF__StationSampler_8cpp.html#a2437fdd84075cb26d5e546b90158cebb":[3,0,1,10,46,0],
 "ERF__StormDiagnostics_8H.html":[3,0,1,26,40],
 "ERF__StormDiagnostics_8H.html#a6e341f0ba1bec18d7b56a69f0d45e6fe":[3,0,1,26,40,0],
 "ERF__StormDiagnostics_8H_source.html":[3,0,1,26,40],
@@ -244,10 +249,5 @@ var NAVTREEINDEX14 =
 "ERF__Substep__NS_8cpp.html#ac326dbb6cf751835213dca68e9e97cc5":[3,0,1,23,18,0],
 "ERF__Substep__T_8cpp.html":[3,0,1,23,19],
 "ERF__Substep__T_8cpp.html#af6388b09d63fc5ada9b4b8eba6fe199f":[3,0,1,23,19,0],
-"ERF__SuperDropletPCAddParticles_8cpp.html":[3,0,1,16,4],
-"ERF__SuperDropletPCAdvection_8cpp.html":[3,0,1,16,5],
-"ERF__SuperDropletPCBoundaries_8cpp.html":[3,0,1,16,6],
-"ERF__SuperDropletPCCoalescence_8H.html":[3,0,1,16,8],
-"ERF__SuperDropletPCCoalescence_8H_source.html":[3,0,1,16,8],
-"ERF__SuperDropletPCCoalescence_8cpp.html":[3,0,1,16,7]
+"ERF__SuperDropletPCAddParticles_8cpp.html":[3,0,1,16,4]
 };

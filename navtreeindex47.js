@@ -1,5 +1,10 @@
 var NAVTREEINDEX47 =
 {
+"structSolverChoice.html#a04879cebc0f4dc5dba99cc2da11fbb7d":[2,0,166,39],
+"structSolverChoice.html#a05fdf746da292e758d2fca0e021183c5":[2,0,166,70],
+"structSolverChoice.html#a0a63e6afb27a4e953c2e8935f845bc42":[2,0,166,88],
+"structSolverChoice.html#a0a8afa0563042bcdccd9f35e68505ad5":[2,0,166,57],
+"structSolverChoice.html#a0b3f8288fd52de1e19b60ed6f974b6ef":[2,0,166,63],
 "structSolverChoice.html#a0c585849961f95947c2cb00ef04d2025":[2,0,166,104],
 "structSolverChoice.html#a0e007addebe38de2b8444f31c60dae9a":[2,0,166,41],
 "structSolverChoice.html#a1018f270d5914a7ca67089161075954c":[2,0,166,106],
@@ -244,10 +249,5 @@ var NAVTREEINDEX47 =
 "structStationVar.html#a4891b0ad63f9981b325528e8f709b0da":[2,0,172,3],
 "structStationVar.html#a6d7d834bc5c930c4f44e2c88f7e4fc37":[2,0,172,0],
 "structStationVar.html#a7eb50d0164ad71aeeb8343bc40a42c75":[2,0,172,4],
-"structStationVar.html#aba9d81965b62ef79f7ea9dbe12ce611d":[2,0,172,2],
-"structStationVar.html#ad4e0ce68ef31c000a80e17990bcf8a2d":[2,0,172,1],
-"structStretchedDiffusionBoundaryWeights.html":[2,0,173],
-"structStretchedDiffusionBoundaryWeights.html#a5e5cf65b6c2423dcebef14f6622200e8":[2,0,173,1],
-"structStretchedDiffusionBoundaryWeights.html#aa2a858a67e3646ea656669b3036f36b9":[2,0,173,2],
-"structStretchedDiffusionBoundaryWeights.html#af3bddd707bfe4157ae42679b29ecf891":[2,0,173,0]
+"structStationVar.html#aba9d81965b62ef79f7ea9dbe12ce611d":[2,0,172,2]
 };

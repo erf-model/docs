@@ -1,5 +1,10 @@
 var NAVTREEINDEX15 =
 {
+"ERF__SuperDropletPCAdvection_8cpp.html":[3,0,1,16,5],
+"ERF__SuperDropletPCBoundaries_8cpp.html":[3,0,1,16,6],
+"ERF__SuperDropletPCCoalescence_8H.html":[3,0,1,16,8],
+"ERF__SuperDropletPCCoalescence_8H_source.html":[3,0,1,16,8],
+"ERF__SuperDropletPCCoalescence_8cpp.html":[3,0,1,16,7],
 "ERF__SuperDropletPCDefinitions_8H.html":[3,0,1,16,9],
 "ERF__SuperDropletPCDefinitions_8H_source.html":[3,0,1,16,9],
 "ERF__SuperDropletPCDiagnostics_8cpp.html":[3,0,1,16,10],
@@ -239,15 +244,10 @@ var NAVTREEINDEX15 =
 "ERF__TimestepUtils_8H.html#a7e772e4c7e40eb58862d898e0285fcfe":[3,0,1,26,52,1],
 "ERF__TimestepUtils_8H.html#a9ddc55b54e0ba3b948196903ff6441f8":[3,0,1,26,52,0],
 "ERF__TimestepUtils_8H_source.html":[3,0,1,26,52],
-"ERF__TrackerOutput_8cpp.html":[3,0,1,10,46],
+"ERF__TrackerOutput_8cpp.html":[3,0,1,10,48],
 "ERF__TurbKESources_8H.html":[3,0,1,6,34],
 "ERF__TurbKESources_8H.html#a69958dda4f0fb004c97af1b191d89b23":[3,0,1,6,34,0],
 "ERF__TurbKESources_8H_source.html":[3,0,1,6,34],
 "ERF__TurbPertStruct_8H.html":[3,0,1,4,12],
-"ERF__TurbPertStruct_8H.html#a1cd6e2210df20afb1fdec3183cbef7ba":[3,0,1,4,12,1],
-"ERF__TurbPertStruct_8H.html#ac5d6f12e32794be38d7e68b8786d65cf":[3,0,1,4,12,2],
-"ERF__TurbPertStruct_8H_source.html":[3,0,1,4,12],
-"ERF__TurbStruct_8H.html":[3,0,1,4,13],
-"ERF__TurbStruct_8H.html#a366eb3a7d508374fda1324a610da7ece":[3,0,1,4,13,3],
-"ERF__TurbStruct_8H.html#a454c17db1a1fb2e88057dc6399effcd8":[3,0,1,4,13,1]
+"ERF__TurbPertStruct_8H.html#a1cd6e2210df20afb1fdec3183cbef7ba":[3,0,1,4,12,1]
 };

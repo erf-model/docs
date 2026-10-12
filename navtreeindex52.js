@@ -1,5 +1,10 @@
 var NAVTREEINDEX52 =
 {
+"structerf__wall__thermodynamics_1_1MomentumTransfer.html#a917fd4d722df25068829b3daa6912000":[2,0,11,1,1],
+"structerf__wall__thermodynamics_1_1ScalarTransfer.html":[2,0,11,2],
+"structerf__wall__thermodynamics_1_1ScalarTransfer.html#a0381486bc9c4f3252850a4a5047aa3c4":[2,0,11,2,0],
+"structerf__wall__thermodynamics_1_1ScalarTransfer.html#a2c504fc8968a96921451aa9f6c00c01e":[2,0,11,2,2],
+"structerf__wall__thermodynamics_1_1ScalarTransfer.html#a362219a8815abe4f2bc08c418944c686":[2,0,11,2,3],
 "structerf__wall__thermodynamics_1_1ScalarTransfer.html#af325db7c5d5a9a8a83d55165a3a2fbb9":[2,0,11,2,1],
 "structerf__wall__thermodynamics_1_1ThermalBoundary.html":[2,0,11,0],
 "structerf__wall__thermodynamics_1_1ThermalBoundary.html#a84a5994552993900f42c606cc372da9e":[2,0,11,0,1],
@@ -244,10 +249,5 @@ var NAVTREEINDEX52 =
 "structsimilarity__funs.html#ae78007489e8da2bf08c6f999381b9512":[2,0,162,9],
 "structsimilarity__funs.html#af2d77e837d453feccf9d5de094e1653b":[2,0,162,5],
 "structsurface__flux.html":[2,0,174],
-"structsurface__flux.html#a01e8827b2f7e84c4d72496993822d806":[2,0,174,4],
-"structsurface__flux.html#a2b0de1c0098d3622e448a2d3e3049ebd":[2,0,174,7],
-"structsurface__flux.html#a615988d983ab1eabfc02db6a684a7531":[2,0,174,0],
-"structsurface__flux.html#a6327a8246ae840acf1e96863ae767713":[2,0,174,1],
-"structsurface__flux.html#a6f66a7f868790814d4c30aee5c2502e5":[2,0,174,8],
-"structsurface__flux.html#a960909fe387424192cf802afccdc7bed":[2,0,174,3]
+"structsurface__flux.html#a01e8827b2f7e84c4d72496993822d806":[2,0,174,4]
 };

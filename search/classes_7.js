@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hostcarrierfluxview_8392',['HostCarrierFluxView',['../structerf__auxiliary_1_1HostCarrierFluxView.html',1,'erf_auxiliary']]]
+  ['hostcarrierfluxview_8390',['HostCarrierFluxView',['../structerf__auxiliary_1_1HostCarrierFluxView.html',1,'erf_auxiliary']]]
 ];

@@ -1,5 +1,10 @@
 var NAVTREEINDEX48 =
 {
+"structStationVar.html#ad4e0ce68ef31c000a80e17990bcf8a2d":[2,0,172,1],
+"structStretchedDiffusionBoundaryWeights.html":[2,0,173],
+"structStretchedDiffusionBoundaryWeights.html#a5e5cf65b6c2423dcebef14f6622200e8":[2,0,173,1],
+"structStretchedDiffusionBoundaryWeights.html#aa2a858a67e3646ea656669b3036f36b9":[2,0,173,2],
+"structStretchedDiffusionBoundaryWeights.html#af3bddd707bfe4157ae42679b29ecf891":[2,0,173,0],
 "structSurfaceFluxView.html":[2,0,186],
 "structSurfaceFluxView.html#a613bd61442f6a33e3ecf845f6f37906a":[2,0,186,0],
 "structSurfaceFluxView.html#ab0023823cc85e020a82e55b155e44b34":[2,0,186,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX48 =
 "structTwoStreamParams.html#a6c286539a0930459fdc6ebae21655f8b":[2,0,200,43],
 "structTwoStreamParams.html#a6cfe92b03289f3d337ba2d380144bc34":[2,0,200,27],
 "structTwoStreamParams.html#a6f3498a0998b361cfa0c0a63ad6b41ce":[2,0,200,26],
-"structTwoStreamParams.html#a72476bc2881cab6658d976712aa75788":[2,0,200,18],
-"structTwoStreamParams.html#a783ebd0f3ec4d4a9800c9f92fa9b88eb":[2,0,200,37],
-"structTwoStreamParams.html#a7a41372a0be132ec11a109582f382602":[2,0,200,35],
-"structTwoStreamParams.html#a7ac2add09280f9f0e6d73f2bba2dd9a8":[2,0,200,38],
-"structTwoStreamParams.html#a8e8a7f52c01e41c2dca330e5fbd0b5ee":[2,0,200,47],
-"structTwoStreamParams.html#a9009507ee713d020bcad0ab182b38e8b":[2,0,200,10]
+"structTwoStreamParams.html#a72476bc2881cab6658d976712aa75788":[2,0,200,18]
 };
