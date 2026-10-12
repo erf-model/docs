@@ -321,6 +321,8 @@ var hierarchy =
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
     [ "TurbChoice", "structTurbChoice.html", null ],
     [ "TurbulentPerturbation", "structTurbulentPerturbation.html", null ],
+    [ "TwoStreamCanopyView", "structTwoStreamCanopyView.html", null ],
+    [ "TwoStreamFaceSky", "structTwoStreamFaceSky.html", null ],
     [ "TwoStreamLayerSW", "structTwoStreamLayerSW.html", null ],
     [ "TwoStreamParams", "structTwoStreamParams.html", null ],
     [ "TwoStreamRadiation", "classTwoStreamRadiation.html", null ],

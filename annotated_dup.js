@@ -337,6 +337,8 @@ var annotated_dup =
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ],
     [ "TurbChoice", "structTurbChoice.html", "structTurbChoice" ],
     [ "TurbulentPerturbation", "structTurbulentPerturbation.html", "structTurbulentPerturbation" ],
+    [ "TwoStreamCanopyView", "structTwoStreamCanopyView.html", "structTwoStreamCanopyView" ],
+    [ "TwoStreamFaceSky", "structTwoStreamFaceSky.html", "structTwoStreamFaceSky" ],
     [ "TwoStreamLayerSW", "structTwoStreamLayerSW.html", "structTwoStreamLayerSW" ],
     [ "TwoStreamParams", "structTwoStreamParams.html", "structTwoStreamParams" ],
     [ "TwoStreamRadiation", "classTwoStreamRadiation.html", "classTwoStreamRadiation" ],
