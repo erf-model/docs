@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('classWriteBndryPlanes.html',''); initR
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classWriteBndryPlanes-members.html">List of all members</a>  </div>
@@ -98,15 +99,16 @@ Collaboration diagram for WriteBndryPlanes:</div>
 <div class="dyncontent">
 <div class="center"><img src="classWriteBndryPlanes__coll__graph.png" border="0" usemap="#aWriteBndryPlanes_coll__map" alt="Collaboration graph"/></div>
 <map name="aWriteBndryPlanes_coll__map" id="aWriteBndryPlanes_coll__map">
-<area shape="rect" title=" " alt="" coords="573,196,712,223"/>
-<area shape="rect" title=" " alt="" coords="225,8,384,35"/>
-<area shape="rect" title=" " alt="" coords="236,59,373,85"/>
-<area shape="rect" title=" " alt="" coords="193,109,416,136"/>
-<area shape="rect" title=" " alt="" coords="285,196,324,223"/>
-<area shape="rect" title=" " alt="" coords="261,251,348,277"/>
-<area shape="rect" title=" " alt="" coords="5,243,144,285"/>
-<area shape="rect" title=" " alt="" coords="249,301,360,328"/>
-<area shape="rect" title=" " alt="" coords="281,352,328,379"/>
+<area shape="rect" title=" " alt="" coords="599,241,737,268"/>
+<area shape="rect" title=" " alt="" coords="225,31,384,57"/>
+<area shape="rect" title=" " alt="" coords="236,81,373,108"/>
+<area shape="rect" title=" " alt="" coords="193,132,416,159"/>
+<area shape="rect" title=" " alt="" coords="285,215,324,241"/>
+<area shape="rect" title=" " alt="" coords="279,265,330,292"/>
+<area shape="rect" title=" " alt="" coords="261,319,348,345"/>
+<area shape="rect" title=" " alt="" coords="5,311,144,353"/>
+<area shape="rect" title=" " alt="" coords="249,369,360,396"/>
+<area shape="rect" title=" " alt="" coords="281,420,328,447"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -116,6 +118,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a460f7f20cb59e7f2f8546ebf423585d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0953aa38d789a6ed2ebcc78dec35858f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWriteBndryPlanes.html#a0953aa38d789a6ed2ebcc78dec35858f">write_planes</a> (int t_step, double time, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;vars_new, bool is_moist)</td></tr>
 <tr class="separator:a0953aa38d789a6ed2ebcc78dec35858f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc9ea0c596ae30850145038bb597776e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWriteBndryPlanes.html#acc9ea0c596ae30850145038bb597776e">start_series</a> (int start_step, double start_time, bool restarting)</td></tr>
+<tr class="separator:acc9ea0c596ae30850145038bb597776e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a259d559301e8847cc1af25b9ec57b10a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWriteBndryPlanes.html#a259d559301e8847cc1af25b9ec57b10a">rows_to_keep</a> (const amrex::Vector&lt; int &gt; &amp;steps, const amrex::Vector&lt; double &gt; &amp;times, int start_step, double start_time, bool restarting)</td></tr>
+<tr class="separator:a259d559301e8847cc1af25b9ec57b10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -134,6 +143,12 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a85703bf41a6ba0382f13a90f64ba417b"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b">m_var_names</a></td></tr>
 <tr class="memdesc:a85703bf41a6ba0382f13a90f64ba417b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variables for IO.  <a href="classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b">More...</a><br /></td></tr>
 <tr class="separator:a85703bf41a6ba0382f13a90f64ba417b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9efff0877ec3ddbe418e9972a197977"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWriteBndryPlanes.html#af9efff0877ec3ddbe418e9972a197977">m_kept_rows</a></td></tr>
+<tr class="memdesc:af9efff0877ec3ddbe418e9972a197977"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rows of time.dat the run continues from, written back before its first plane (I/O rank)  <a href="classWriteBndryPlanes.html#af9efff0877ec3ddbe418e9972a197977">More...</a><br /></td></tr>
+<tr class="separator:af9efff0877ec3ddbe418e9972a197977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae79c5889964a36c485a3a01de212bc9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWriteBndryPlanes.html#ae79c5889964a36c485a3a01de212bc9a">m_rewrite_time_file</a> = false</td></tr>
+<tr class="memdesc:ae79c5889964a36c485a3a01de212bc9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether time.dat still has to be rewritten to m_kept_rows (I/O rank)  <a href="classWriteBndryPlanes.html#ae79c5889964a36c485a3a01de212bc9a">More...</a><br /></td></tr>
+<tr class="separator:ae79c5889964a36c485a3a01de212bc9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af536789faf401180cf2ab8640fad24d3"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWriteBndryPlanes.html#af536789faf401180cf2ab8640fad24d3">m_in_times</a></td></tr>
 <tr class="memdesc:af536789faf401180cf2ab8640fad24d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timestep and times to be stored in time.dat.  <a href="classWriteBndryPlanes.html#af536789faf401180cf2ab8640fad24d3">More...</a><br /></td></tr>
 <tr class="separator:af536789faf401180cf2ab8640fad24d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,85 +212,85 @@ Static Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                            : <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>(geom)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ParmParse <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Get the radius inside the domain</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;in_rad&quot;</span>,<a class="code" href="classWriteBndryPlanes.html#a0d287691056f64171d48911071ffea20">m_in_rad</a>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// User-specified region is given in physical coordinates, not index space</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::vector&lt;Real&gt; box_lo(3), box_hi(3);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.getarr(<span class="stringliteral">&quot;bndry_output_box_lo&quot;</span>,box_lo,0,2);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.getarr(<span class="stringliteral">&quot;bndry_output_box_hi&quot;</span>,box_hi,0,2);</div>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                                            : <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>(geom)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    ParmParse <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// If the target area is contained at a finer level, use the finest data possible.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// target_box is expressed in the index space of bndry_lev, so it must only be set</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// together with bndry_lev; each level&#39;s candidate box is kept in a local variable.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev = 0; ilev &lt; grids.size(); ilev++) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* xLo   = <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[ilev].ProbLo();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> dxi    = geom[ilev].InvCellSizeArray();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">const</span> Box&amp; domain = <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[ilev].Domain();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">// We create the smallest box that contains all of the cell centers</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// in the physical region specified</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">int</span> ilo = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_lo[0] - xLo[0]) * dxi[0] + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(.5)));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">int</span> jlo = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_lo[1] - xLo[1]) * dxi[1] + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(.5)));</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">int</span> ihi = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_hi[0] - xLo[0]) * dxi[0] + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(.5)))-1;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">int</span> jhi = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_hi[1] - xLo[1]) * dxi[1] + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(.5)))-1;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">// Map this to index space -- for now we do no interpolation</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        Box box_this_lev(IntVect(ilo,jlo,0),</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                         IntVect(ihi,jhi,domain.bigEnd(2)));</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// Test if the target box at this level fits in the grids at this level</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        Box gbx = box_this_lev; gbx.grow(IntVect(1,1,0));</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">// Ensure that the box is no larger than can fit in the (periodically grown) domain</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">// at level 0</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">if</span> (ilev == 0) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            Box per_grown_domain(domain);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordtype">int</span> growx = (geom[0].isPeriodic(0)) ? 1 : 0;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordtype">int</span> growy = (geom[0].isPeriodic(1)) ? 1 : 0;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            per_grown_domain.grow(IntVect(growx,growy,0));</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="comment">/*</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">            if (!per_grown_domain.contains(gbx))</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">                Error(&quot;WriteBndryPlanes: Requested box is too large to fill&quot;);</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">            */</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="comment">// Default to level 0</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <a class="code" href="classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379">target_box</a> = box_this_lev;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="comment">// Use this level&#39;s data only if its grids fully contain the requested region</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">if</span> (grids[ilev].contains(gbx)) {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>  = ilev;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <a class="code" href="classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379">target_box</a> = box_this_lev;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// The folder &quot;m_filename&quot; will contain the time series of data and the time.dat file</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.get(<span class="stringliteral">&quot;bndry_output_planes_file&quot;</span>, <a class="code" href="classWriteBndryPlanes.html#abbc94048dfd43b653b7754d785c11d2f">m_filename</a>);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1">m_time_file</a> = <a class="code" href="classWriteBndryPlanes.html#abbc94048dfd43b653b7754d785c11d2f">m_filename</a> + <span class="stringliteral">&quot;/time.dat&quot;</span>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.contains(<span class="stringliteral">&quot;bndry_output_var_names&quot;</span>))</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordtype">int</span> num_vars = <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;bndry_output_var_names&quot;</span>);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b">m_var_names</a>.resize(num_vars);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;bndry_output_var_names&quot;</span>,<a class="code" href="classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b">m_var_names</a>,0,num_vars);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Get the radius inside the domain</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;in_rad&quot;</span>,<a class="code" href="classWriteBndryPlanes.html#a0d287691056f64171d48911071ffea20">m_in_rad</a>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// User-specified region is given in physical coordinates, not index space</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    std::vector&lt;Real&gt; box_lo(3), box_hi(3);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.getarr(<span class="stringliteral">&quot;bndry_output_box_lo&quot;</span>,box_lo,0,2);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.getarr(<span class="stringliteral">&quot;bndry_output_box_hi&quot;</span>,box_hi,0,2);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// If the target area is contained at a finer level, use the finest data possible.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// target_box is expressed in the index space of bndry_lev, so it must only be set</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// together with bndry_lev; each level&#39;s candidate box is kept in a local variable.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev = 0; ilev &lt; grids.size(); ilev++) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* xLo   = <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[ilev].ProbLo();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> dxi    = geom[ilev].InvCellSizeArray();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">const</span> Box&amp; domain = <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[ilev].Domain();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">// We create the smallest box that contains all of the cell centers</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// in the physical region specified</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">int</span> ilo = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_lo[0] - xLo[0]) * dxi[0] + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(.5)));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">int</span> jlo = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_lo[1] - xLo[1]) * dxi[1] + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(.5)));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">int</span> ihi = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_hi[0] - xLo[0]) * dxi[0] + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(.5)))-1;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">int</span> jhi = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_hi[1] - xLo[1]) * dxi[1] + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(.5)))-1;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">// Map this to index space -- for now we do no interpolation</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        Box box_this_lev(IntVect(ilo,jlo,0),</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                         IntVect(ihi,jhi,domain.bigEnd(2)));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="comment">// Test if the target box at this level fits in the grids at this level</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        Box gbx = box_this_lev; gbx.grow(IntVect(1,1,0));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">// Ensure that the box is no larger than can fit in the (periodically grown) domain</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment">// at level 0</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> (ilev == 0) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            Box per_grown_domain(domain);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordtype">int</span> growx = (geom[0].isPeriodic(0)) ? 1 : 0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordtype">int</span> growy = (geom[0].isPeriodic(1)) ? 1 : 0;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            per_grown_domain.grow(IntVect(growx,growy,0));</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="comment">/*</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">            if (!per_grown_domain.contains(gbx))</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">                Error(&quot;WriteBndryPlanes: Requested box is too large to fill&quot;);</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">            */</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="comment">// Default to level 0</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <a class="code" href="classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379">target_box</a> = box_this_lev;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment">// Use this level&#39;s data only if its grids fully contain the requested region</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">if</span> (grids[ilev].contains(gbx)) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>  = ilev;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <a class="code" href="classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379">target_box</a> = box_this_lev;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// The folder &quot;m_filename&quot; will contain the time series of data and the time.dat file</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.get(<span class="stringliteral">&quot;bndry_output_planes_file&quot;</span>, <a class="code" href="classWriteBndryPlanes.html#abbc94048dfd43b653b7754d785c11d2f">m_filename</a>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1">m_time_file</a> = <a class="code" href="classWriteBndryPlanes.html#abbc94048dfd43b653b7754d785c11d2f">m_filename</a> + <span class="stringliteral">&quot;/time.dat&quot;</span>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.contains(<span class="stringliteral">&quot;bndry_output_var_names&quot;</span>))</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">int</span> num_vars = <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;bndry_output_var_names&quot;</span>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b">m_var_names</a>.resize(num_vars);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;bndry_output_var_names&quot;</span>,<a class="code" href="classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b">m_var_names</a>,0,num_vars);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aclassWriteBndryPlanes_html_a007dc2174ebcc2e2d79e8f31f41255cb"><div class="ttname"><a href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">WriteBndryPlanes::m_geom</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Geometry &gt; &amp; m_geom</div><div class="ttdoc">Geometry objects for all levels.</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:33</div></div>
-<div class="ttc" id="aclassWriteBndryPlanes_html_a0d287691056f64171d48911071ffea20"><div class="ttname"><a href="classWriteBndryPlanes.html#a0d287691056f64171d48911071ffea20">WriteBndryPlanes::m_in_rad</a></div><div class="ttdeci">int m_in_rad</div><div class="ttdoc">controls extents on native bndry output</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:53</div></div>
-<div class="ttc" id="aclassWriteBndryPlanes_html_a0f85ce22ec7a00d38091d2aa2b829fca"><div class="ttname"><a href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">WriteBndryPlanes::bndry_lev</a></div><div class="ttdeci">static int bndry_lev</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:50</div></div>
-<div class="ttc" id="aclassWriteBndryPlanes_html_a4d7d2b3b5b1c823b905ae3042bb62379"><div class="ttname"><a href="classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379">WriteBndryPlanes::target_box</a></div><div class="ttdeci">amrex::Box target_box</div><div class="ttdoc">IO output box region.</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:30</div></div>
-<div class="ttc" id="aclassWriteBndryPlanes_html_a85703bf41a6ba0382f13a90f64ba417b"><div class="ttname"><a href="classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b">WriteBndryPlanes::m_var_names</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_var_names</div><div class="ttdoc">Variables for IO.</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:42</div></div>
-<div class="ttc" id="aclassWriteBndryPlanes_html_a91c8abe5b1a15f5fe630db40230f08c1"><div class="ttname"><a href="classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1">WriteBndryPlanes::m_time_file</a></div><div class="ttdeci">std::string m_time_file</div><div class="ttdoc">File name for Native time file.</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:39</div></div>
-<div class="ttc" id="aclassWriteBndryPlanes_html_abbc94048dfd43b653b7754d785c11d2f"><div class="ttname"><a href="classWriteBndryPlanes.html#abbc94048dfd43b653b7754d785c11d2f">WriteBndryPlanes::m_filename</a></div><div class="ttdeci">std::string m_filename</div><div class="ttdoc">File name for IO.</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:36</div></div>
+<div class="ttc" id="aclassWriteBndryPlanes_html_a007dc2174ebcc2e2d79e8f31f41255cb"><div class="ttname"><a href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">WriteBndryPlanes::m_geom</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Geometry &gt; &amp; m_geom</div><div class="ttdoc">Geometry objects for all levels.</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:48</div></div>
+<div class="ttc" id="aclassWriteBndryPlanes_html_a0d287691056f64171d48911071ffea20"><div class="ttname"><a href="classWriteBndryPlanes.html#a0d287691056f64171d48911071ffea20">WriteBndryPlanes::m_in_rad</a></div><div class="ttdeci">int m_in_rad</div><div class="ttdoc">controls extents on native bndry output</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:74</div></div>
+<div class="ttc" id="aclassWriteBndryPlanes_html_a0f85ce22ec7a00d38091d2aa2b829fca"><div class="ttname"><a href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">WriteBndryPlanes::bndry_lev</a></div><div class="ttdeci">static int bndry_lev</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:71</div></div>
+<div class="ttc" id="aclassWriteBndryPlanes_html_a4d7d2b3b5b1c823b905ae3042bb62379"><div class="ttname"><a href="classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379">WriteBndryPlanes::target_box</a></div><div class="ttdeci">amrex::Box target_box</div><div class="ttdoc">IO output box region.</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:45</div></div>
+<div class="ttc" id="aclassWriteBndryPlanes_html_a85703bf41a6ba0382f13a90f64ba417b"><div class="ttname"><a href="classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b">WriteBndryPlanes::m_var_names</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_var_names</div><div class="ttdoc">Variables for IO.</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:57</div></div>
+<div class="ttc" id="aclassWriteBndryPlanes_html_a91c8abe5b1a15f5fe630db40230f08c1"><div class="ttname"><a href="classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1">WriteBndryPlanes::m_time_file</a></div><div class="ttdeci">std::string m_time_file</div><div class="ttdoc">File name for Native time file.</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:54</div></div>
+<div class="ttc" id="aclassWriteBndryPlanes_html_abbc94048dfd43b653b7754d785c11d2f"><div class="ttname"><a href="classWriteBndryPlanes.html#abbc94048dfd43b653b7754d785c11d2f">WriteBndryPlanes::m_filename</a></div><div class="ttdeci">std::string m_filename</div><div class="ttdoc">File name for IO.</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:51</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -289,6 +304,223 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a259d559301e8847cc1af25b9ec57b10a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a259d559301e8847cc1af25b9ec57b10a">&#9670;&nbsp;</a></span>rows_to_keep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WriteBndryPlanes::rows_to_keep </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::Vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>steps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>times</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start_step</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>start_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>restarting</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>How many leading rows of a time.dat with these steps and times a run starting at start_step and start_time keeps: on a restart the rows up to and including the restart that increase in step and time and are not later than the restart; on a fresh start none.</p>
+<p>Number of leading rows of time.dat that a run starting at step start_step keeps.</p>
+<p>A restart replays the steps after its checkpoint, so the rows for those steps &ndash; written by a run that went on past the checkpoint &ndash; are dropped and written again. Rows also stop being kept at the first one whose step or time does not increase, or that is later than the restart, or that is at the restart step but not at the restart time: those were not written by the run being continued. A fresh start begins a new series.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">steps</td><td>Step column of time.dat, in file order </td></tr>
+    <tr><td class="paramname">times</td><td>Time column of time.dat, in file order </td></tr>
+    <tr><td class="paramname">start_step</td><td>Step the run starts at </td></tr>
+    <tr><td class="paramname">start_time</td><td>Time the run starts at, as written in time.dat </td></tr>
+    <tr><td class="paramname">restarting</td><td>Whether the run starts from a checkpoint </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">if</span> (!restarting) { <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">// The times of the run being continued are the restart&#39;s own to the last bit (time.dat and</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">// the checkpoint both hold 17 digits); a few units in the last place only allow for a</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// time.dat written by hand, and stay far below any plane spacing also at a calendar clock</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> tol = 16.0 * <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;double&gt;::epsilon</a>() * std::max(1.0, std::abs(start_time));</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">int</span> nkeep = 0;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; steps.size(); ++i) {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">if</span> (steps[i] &gt; start_step || times[i] &gt; start_time + tol) { <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">if</span> (i &gt; 0 &amp;&amp; (steps[i] &lt;= steps[i-1] || times[i] &lt;= times[i-1])) { <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">if</span> (steps[i] == start_step &amp;&amp; std::abs(times[i] - start_time) &gt; tol) { <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        ++nkeep;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">return</span> nkeep;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
+<div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classWriteBndryPlanes.html#acc9ea0c596ae30850145038bb597776e">start_series()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classWriteBndryPlanes_a259d559301e8847cc1af25b9ec57b10a_icgraph.png" border="0" usemap="#aclassWriteBndryPlanes_a259d559301e8847cc1af25b9ec57b10a_icgraph" alt=""/></div>
+<map name="aclassWriteBndryPlanes_a259d559301e8847cc1af25b9ec57b10a_icgraph" id="aclassWriteBndryPlanes_a259d559301e8847cc1af25b9ec57b10a_icgraph">
+<area shape="rect" title=" " alt="" coords="229,5,407,47"/>
+<area shape="rect" href="classWriteBndryPlanes.html#acc9ea0c596ae30850145038bb597776e" title=" " alt="" coords="5,5,181,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acc9ea0c596ae30850145038bb597776e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc9ea0c596ae30850145038bb597776e">&#9670;&nbsp;</a></span>start_series()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool WriteBndryPlanes::start_series </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start_step</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>start_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>restarting</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Decide which rows of time.dat a run starting at step start_step (at time start_time, with start_time the absolute time written in time.dat) continues from: a restart keeps the rows the run before it wrote up to that step, a fresh start keeps none. The file is rewritten only when the run writes its first plane, so a run that stops before then leaves it as it was. Returns whether the kept rows end with a plane at start_step itself.</p>
+<p>Decide which rows of time.dat a run starting at step start_step continues from, and say whether the series already holds the plane at that step. Only the I/O rank reads the file; every rank gets the answer. The file itself is rewritten by write_planes, just before the run's first row, so a run that stops before its first plane leaves the series as it found it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start_step</td><td>Step the run starts at (the restart step, or 0) </td></tr>
+    <tr><td class="paramname">start_time</td><td>Time the run starts at, as written in time.dat </td></tr>
+    <tr><td class="paramname">restarting</td><td>Whether the run starts from a checkpoint </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;{</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">int</span> has_start_plane = 0;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        std::ifstream in(<a class="code" href="classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1">m_time_file</a>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">if</span> (in.good()) {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="comment">// Every line counts, so that a line that does not parse -- a partial last row left</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="comment">// by a run that stopped while writing it, say -- is dropped with the rows after it</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            Vector&lt;std::string&gt; rows;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            Vector&lt;int&gt; steps;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            Vector&lt;double&gt; times;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keywordtype">int</span> nlines = 0;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            std::string line;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordflow">while</span> (std::getline(in, line)) {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                ++nlines;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                std::istringstream row(line);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                <span class="keywordtype">int</span> step;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <span class="keywordtype">double</span> time;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(rows.size()) + 1 &lt; nlines || !(row &gt;&gt; step &gt;&gt; time)) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                rows.push_back(line);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                steps.push_back(step);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                times.push_back(time);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            in.close();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> nkeep = <a class="code" href="classWriteBndryPlanes.html#a259d559301e8847cc1af25b9ec57b10a">rows_to_keep</a>(steps, times, start_step, start_time, restarting);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            has_start_plane = (nkeep &gt; 0 &amp;&amp; steps[nkeep-1] == start_step) ? 1 : 0;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="comment">// A row whose step or time does not increase, anywhere in the file, or a row at or</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="comment">// before the restart that does not continue the kept rows, cannot come from one run</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="keywordtype">bool</span> broken = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; rows.size(); ++i) {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                <span class="keywordflow">if</span> (steps[i] &lt;= steps[i-1] || times[i] &lt;= times[i-1]) { broken = <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            <span class="keywordflow">if</span> (restarting &amp;&amp; nkeep &lt; rows.size() &amp;&amp; steps[nkeep] &lt;= start_step) { broken = <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            <span class="keywordflow">if</span> (restarting &amp;&amp; broken) {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                Warning(<span class="stringliteral">&quot;WriteBndryPlanes: &quot;</span> + <a class="code" href="classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1">m_time_file</a> + <span class="stringliteral">&quot; does not hold one run&#39;s series: a step &quot;</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                        <span class="stringliteral">&quot;or time does not increase, or a row at or before the restart step &quot;</span> +</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                        std::to_string(start_step) + <span class="stringliteral">&quot; is not at a time of this run. Only its first &quot;</span> +</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                        std::to_string(nkeep) + <span class="stringliteral">&quot; rows are kept. A series that an earlier ERF version &quot;</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                        <span class="stringliteral">&quot;wrote across a restart has such a row, and its step-0 plane holds the &quot;</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                        <span class="stringliteral">&quot;restart state; write that series again.&quot;</span>);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nkeep &lt; nlines) {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <span class="keywordflow">if</span> (restarting) {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                    Print() &lt;&lt; <span class="stringliteral">&quot;WriteBndryPlanes: keeping &quot;</span> &lt;&lt; nkeep &lt;&lt; <span class="stringliteral">&quot; of the &quot;</span> &lt;&lt; nlines</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                            &lt;&lt; <span class="stringliteral">&quot; rows of &quot;</span> &lt;&lt; <a class="code" href="classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1">m_time_file</a> &lt;&lt; <span class="stringliteral">&quot; up to the restart step &quot;</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                            &lt;&lt; start_step &lt;&lt; <span class="stringliteral">&quot;, from this run&#39;s first plane on&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    Print() &lt;&lt; <span class="stringliteral">&quot;WriteBndryPlanes: a fresh start begins a new series; the &quot;</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                            &lt;&lt; nlines &lt;&lt; <span class="stringliteral">&quot; rows of &quot;</span> &lt;&lt; <a class="code" href="classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1">m_time_file</a></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                            &lt;&lt; <span class="stringliteral">&quot; are dropped with this run&#39;s first plane&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            }</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="comment">// Rewrite even when every row is kept: a last row without its newline would</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="comment">// otherwise run into the next row written</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <a class="code" href="classWriteBndryPlanes.html#af9efff0877ec3ddbe418e9972a197977">m_kept_rows</a>.clear();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nkeep; ++i) {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                <a class="code" href="classWriteBndryPlanes.html#af9efff0877ec3ddbe418e9972a197977">m_kept_rows</a>.push_back(rows[i]);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <a class="code" href="classWriteBndryPlanes.html#ae79c5889964a36c485a3a01de212bc9a">m_rewrite_time_file</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        }</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    ParallelDescriptor::Bcast(&amp;has_start_plane, 1, ParallelDescriptor::IOProcessorNumber(),</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                              ParallelDescriptor::Communicator());</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">return</span> has_start_plane == 1;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
+<div class="ttc" id="aclassWriteBndryPlanes_html_a259d559301e8847cc1af25b9ec57b10a"><div class="ttname"><a href="classWriteBndryPlanes.html#a259d559301e8847cc1af25b9ec57b10a">WriteBndryPlanes::rows_to_keep</a></div><div class="ttdeci">static int rows_to_keep(const amrex::Vector&lt; int &gt; &amp;steps, const amrex::Vector&lt; double &gt; &amp;times, int start_step, double start_time, bool restarting)</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.cpp:152</div></div>
+<div class="ttc" id="aclassWriteBndryPlanes_html_ae79c5889964a36c485a3a01de212bc9a"><div class="ttname"><a href="classWriteBndryPlanes.html#ae79c5889964a36c485a3a01de212bc9a">WriteBndryPlanes::m_rewrite_time_file</a></div><div class="ttdeci">bool m_rewrite_time_file</div><div class="ttdoc">Whether time.dat still has to be rewritten to m_kept_rows (I/O rank)</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:63</div></div>
+<div class="ttc" id="aclassWriteBndryPlanes_html_af9efff0877ec3ddbe418e9972a197977"><div class="ttname"><a href="classWriteBndryPlanes.html#af9efff0877ec3ddbe418e9972a197977">WriteBndryPlanes::m_kept_rows</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_kept_rows</div><div class="ttdoc">Rows of time.dat the run continues from, written back before its first plane (I/O rank)</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:60</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classWriteBndryPlanes_acc9ea0c596ae30850145038bb597776e_cgraph.png" border="0" usemap="#aclassWriteBndryPlanes_acc9ea0c596ae30850145038bb597776e_cgraph" alt=""/></div>
+<map name="aclassWriteBndryPlanes_acc9ea0c596ae30850145038bb597776e_cgraph" id="aclassWriteBndryPlanes_acc9ea0c596ae30850145038bb597776e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,181,47"/>
+<area shape="rect" href="classWriteBndryPlanes.html#a259d559301e8847cc1af25b9ec57b10a" title=" " alt="" coords="229,5,407,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a0953aa38d789a6ed2ebcc78dec35858f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0953aa38d789a6ed2ebcc78dec35858f">&#9670;&nbsp;</a></span>write_planes()</h2>
 
@@ -336,150 +568,170 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;ERF::WriteBndryPlanes::write_planes&quot;</span>);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    MultiFab&amp; <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>    = vars_new[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>][<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>];</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    MultiFab&amp; <a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa2a10a6e726515894b07621908abd4c0c">xvel</a> = vars_new[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>][<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    MultiFab&amp; <a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa81793b83204cfa56d4683bc676fbbfb6">yvel</a> = vars_new[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>][<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    MultiFab&amp; <a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa48ee63b17bc216e9661511c33c68bd8b">zvel</a> = vars_new[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>][<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>];</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keyword">const</span> std::string chkname =</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <a class="code" href="classWriteBndryPlanes.html#abbc94048dfd43b653b7754d785c11d2f">m_filename</a> + Concatenate(<span class="stringliteral">&quot;/bndry_output&quot;</span>, t_step);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="comment">//Print() &lt;&lt; &quot;Writing boundary planes at time &quot; &lt;&lt; time_d &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keyword">const</span> std::string level_prefix = <span class="stringliteral">&quot;Level_&quot;</span>;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    PreBuildDirectorHierarchy(chkname, level_prefix, 1, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">// note: by using the entire domain box we end up using 1 processor</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">// to hold all boundaries</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    BoxArray ba(<a class="code" href="classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379">target_box</a>);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    DistributionMapping dm{ba};</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    IntVect new_hi = <a class="code" href="classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379">target_box</a>.bigEnd() - <a class="code" href="classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379">target_box</a>.smallEnd();</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    Box target_box_shifted(IntVect(0,0,0),new_hi);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    BoxArray ba_shifted(target_box_shifted);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b">m_var_names</a>.size(); i++)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        std::string var_name = <a class="code" href="classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b">m_var_names</a>[i];</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        std::string filename = MultiFabFileFullPrefix(<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>, chkname, level_prefix, var_name);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordtype">int</span> ncomp;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;velocity&quot;</span>) {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            ncomp = AMREX_SPACEDIM;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            ncomp = 1;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        BndryRegister bndry        (ba        , dm, <a class="code" href="classWriteBndryPlanes.html#a0d287691056f64171d48911071ffea20">m_in_rad</a>, <a class="code" href="classWriteBndryPlanes.html#a2ce490f5166966b52112f126c9dc4dd8">m_out_rad</a>, <a class="code" href="classWriteBndryPlanes.html#a41799219d138892871e1a6e8c3755da1">m_extent_rad</a>, ncomp);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        BndryRegister bndry_shifted(ba_shifted, dm, <a class="code" href="classWriteBndryPlanes.html#a0d287691056f64171d48911071ffea20">m_in_rad</a>, <a class="code" href="classWriteBndryPlanes.html#a2ce490f5166966b52112f126c9dc4dd8">m_out_rad</a>, <a class="code" href="classWriteBndryPlanes.html#a41799219d138892871e1a6e8c3755da1">m_extent_rad</a>, ncomp);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordtype">int</span> nghost = 0;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;density&quot;</span>)</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            bndry.copyFrom(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>, nghost, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;temperature&quot;</span>) {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            MultiFab <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.boxArray(),<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.DistributionMap(),ncomp,0);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(Temp, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> time = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(time_d);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="keywordflow">if</span> (is_moist) {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                    <span class="comment">// NOTE: we send in S[mfi] where we should send in (*z_phys_cc[lev])[mfi] because we know this routine doesn&#39;t use it</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    <a class="code" href="namespacederived.html#a591cb412598c637cf413d45840c34331">derived::erf_dermoisttemp</a>(bx, Temp[mfi], 0, 1, <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>], time, <span class="keyword">nullptr</span>, <a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    <span class="comment">// NOTE: we send in S[mfi] where we should send in (*z_phys_cc[lev])[mfi] because we know this routine doesn&#39;t use it</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    <a class="code" href="namespacederived.html#a5ac9bcbf5588a917a22af159e2d498f1">derived::erf_dertemp</a>(bx, Temp[mfi], 0, 1, <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>], time, <span class="keyword">nullptr</span>, <a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                }</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            bndry.copyFrom(Temp, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;theta&quot;</span>) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            MultiFab <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.boxArray(),<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.DistributionMap(),ncomp,0);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(Temp, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">derived::erf_derrhodivide</a>(bx, Temp[mfi], <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            bndry.copyFrom(Temp, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;scalar&quot;</span>) {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            MultiFab <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.boxArray(),<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.DistributionMap(),ncomp,0);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(Temp, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">derived::erf_derrhodivide</a>(bx, Temp[mfi], <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            bndry.copyFrom(Temp, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;ke&quot;</span>) {</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            MultiFab <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.boxArray(),<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.DistributionMap(),ncomp,0);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(Temp, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">derived::erf_derrhodivide</a>(bx, Temp[mfi], <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            }</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            bndry.copyFrom(Temp, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;qv&quot;</span>) {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            MultiFab <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.boxArray(),<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.DistributionMap(),ncomp,0);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>) {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                <span class="keywordflow">for</span> (MFIter mfi(Temp, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                {</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                    <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                    <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">derived::erf_derrhodivide</a>(bx, Temp[mfi], <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                }</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>.setVal(0.);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            }</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            bndry.copyFrom(Temp, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;qc&quot;</span>) {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            MultiFab <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.boxArray(),<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.DistributionMap(),ncomp,0);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>) {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                <span class="keywordflow">for</span> (MFIter mfi(Temp, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                    <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                    <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">derived::erf_derrhodivide</a>(bx, Temp[mfi], <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                }</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>.setVal(0.);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            bndry.copyFrom(Temp, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;velocity&quot;</span>) {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            MultiFab Vel(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.boxArray(), <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.DistributionMap(), 3, <a class="code" href="classWriteBndryPlanes.html#a2ce490f5166966b52112f126c9dc4dd8">m_out_rad</a>);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            average_face_to_cellcenter(Vel,0,Array&lt;const MultiFab*,3&gt;{&amp;<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa2a10a6e726515894b07621908abd4c0c">xvel</a>,&amp;<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa81793b83204cfa56d4683bc676fbbfb6">yvel</a>,&amp;<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa48ee63b17bc216e9661511c33c68bd8b">zvel</a>});</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            bndry.copyFrom(Vel, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="comment">//Print() &lt;&lt; &quot;Trying to write planar output for &quot; &lt;&lt; var_name &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            Error(<span class="stringliteral">&quot;Don&#39;t know how to output this variable&quot;</span>);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        }</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">for</span> (OrientationIter oit; oit != <span class="keyword">nullptr</span>; ++oit) {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keyword">auto</span> ori = oit();</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordflow">if</span> (ori.coordDir() &lt; 2) {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                std::string facename = Concatenate(filename + <span class="charliteral">&#39;_&#39;</span>, ori, 1);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                <a class="code" href="ERF__WriteBndryPlanes_8cpp.html#a84c19e5c5555fe13da12dc8ba44e7da8">br_shift</a>(oit, bndry, bndry_shifted);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                bndry_shifted[ori].write(facename);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    } <span class="comment">// loop over num_vars</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="comment">// Writing time.dat</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        std::ofstream oftime(<a class="code" href="classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1">m_time_file</a>, std::ios::out | std::ios::app);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        oftime &lt;&lt; std::setprecision(17) &lt;&lt; t_step &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; time_d &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        oftime.close();</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;{</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;ERF::WriteBndryPlanes::write_planes&quot;</span>);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    MultiFab&amp; <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>    = vars_new[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>][<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>];</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    MultiFab&amp; <a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa2a10a6e726515894b07621908abd4c0c">xvel</a> = vars_new[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>][<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    MultiFab&amp; <a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa81793b83204cfa56d4683bc676fbbfb6">yvel</a> = vars_new[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>][<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    MultiFab&amp; <a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa48ee63b17bc216e9661511c33c68bd8b">zvel</a> = vars_new[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>][<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>];</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keyword">const</span> std::string chkname =</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <a class="code" href="classWriteBndryPlanes.html#abbc94048dfd43b653b7754d785c11d2f">m_filename</a> + Concatenate(<span class="stringliteral">&quot;/bndry_output&quot;</span>, t_step);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="comment">//Print() &lt;&lt; &quot;Writing boundary planes at time &quot; &lt;&lt; time_d &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keyword">const</span> std::string level_prefix = <span class="stringliteral">&quot;Level_&quot;</span>;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    PreBuildDirectorHierarchy(chkname, level_prefix, 1, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="comment">// note: by using the entire domain box we end up using 1 processor</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="comment">// to hold all boundaries</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    BoxArray ba(<a class="code" href="classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379">target_box</a>);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    DistributionMapping dm{ba};</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    IntVect new_hi = <a class="code" href="classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379">target_box</a>.bigEnd() - <a class="code" href="classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379">target_box</a>.smallEnd();</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    Box target_box_shifted(IntVect(0,0,0),new_hi);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    BoxArray ba_shifted(target_box_shifted);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b">m_var_names</a>.size(); i++)</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        std::string var_name = <a class="code" href="classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b">m_var_names</a>[i];</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        std::string filename = MultiFabFileFullPrefix(<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>, chkname, level_prefix, var_name);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordtype">int</span> ncomp;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;velocity&quot;</span>) {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            ncomp = AMREX_SPACEDIM;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            ncomp = 1;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        BndryRegister bndry        (ba        , dm, <a class="code" href="classWriteBndryPlanes.html#a0d287691056f64171d48911071ffea20">m_in_rad</a>, <a class="code" href="classWriteBndryPlanes.html#a2ce490f5166966b52112f126c9dc4dd8">m_out_rad</a>, <a class="code" href="classWriteBndryPlanes.html#a41799219d138892871e1a6e8c3755da1">m_extent_rad</a>, ncomp);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        BndryRegister bndry_shifted(ba_shifted, dm, <a class="code" href="classWriteBndryPlanes.html#a0d287691056f64171d48911071ffea20">m_in_rad</a>, <a class="code" href="classWriteBndryPlanes.html#a2ce490f5166966b52112f126c9dc4dd8">m_out_rad</a>, <a class="code" href="classWriteBndryPlanes.html#a41799219d138892871e1a6e8c3755da1">m_extent_rad</a>, ncomp);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keywordtype">int</span> nghost = 0;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;density&quot;</span>)</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            bndry.copyFrom(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>, nghost, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;temperature&quot;</span>) {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            MultiFab <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.boxArray(),<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.DistributionMap(),ncomp,0);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(Temp, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> time = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(time_d);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                <span class="keywordflow">if</span> (is_moist) {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                    <span class="comment">// NOTE: we send in S[mfi] where we should send in (*z_phys_cc[lev])[mfi] because we know this routine doesn&#39;t use it</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                    <a class="code" href="namespacederived.html#a591cb412598c637cf413d45840c34331">derived::erf_dermoisttemp</a>(bx, Temp[mfi], 0, 1, <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>], time, <span class="keyword">nullptr</span>, <a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                    <span class="comment">// NOTE: we send in S[mfi] where we should send in (*z_phys_cc[lev])[mfi] because we know this routine doesn&#39;t use it</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                    <a class="code" href="namespacederived.html#a5ac9bcbf5588a917a22af159e2d498f1">derived::erf_dertemp</a>(bx, Temp[mfi], 0, 1, <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>], time, <span class="keyword">nullptr</span>, <a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                }</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            }</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            bndry.copyFrom(Temp, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;theta&quot;</span>) {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            MultiFab <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.boxArray(),<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.DistributionMap(),ncomp,0);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(Temp, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">derived::erf_derrhodivide</a>(bx, Temp[mfi], <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            }</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            bndry.copyFrom(Temp, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;scalar&quot;</span>) {</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            MultiFab <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.boxArray(),<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.DistributionMap(),ncomp,0);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(Temp, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">derived::erf_derrhodivide</a>(bx, Temp[mfi], <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            bndry.copyFrom(Temp, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;ke&quot;</span>) {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            MultiFab <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.boxArray(),<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.DistributionMap(),ncomp,0);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(Temp, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">derived::erf_derrhodivide</a>(bx, Temp[mfi], <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            }</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            bndry.copyFrom(Temp, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;qv&quot;</span>) {</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            MultiFab <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.boxArray(),<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.DistributionMap(),ncomp,0);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>) {</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                <span class="keywordflow">for</span> (MFIter mfi(Temp, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                    <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                    <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">derived::erf_derrhodivide</a>(bx, Temp[mfi], <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                }</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>.setVal(0.);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            }</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            bndry.copyFrom(Temp, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;qc&quot;</span>) {</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            MultiFab <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.boxArray(),<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.DistributionMap(),ncomp,0);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>) {</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                <span class="keywordflow">for</span> (MFIter mfi(Temp, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                {</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                    <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                    <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">derived::erf_derrhodivide</a>(bx, Temp[mfi], <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>[mfi], <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                }</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da9a438bd942f1f19e6a641028bcfb43ff">Temp</a>.setVal(0.);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            }</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            bndry.copyFrom(Temp, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;velocity&quot;</span>) {</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            MultiFab Vel(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.boxArray(), <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.DistributionMap(), 3, <a class="code" href="classWriteBndryPlanes.html#a2ce490f5166966b52112f126c9dc4dd8">m_out_rad</a>);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            average_face_to_cellcenter(Vel,0,Array&lt;const MultiFab*,3&gt;{&amp;<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa2a10a6e726515894b07621908abd4c0c">xvel</a>,&amp;<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa81793b83204cfa56d4683bc676fbbfb6">yvel</a>,&amp;<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa48ee63b17bc216e9661511c33c68bd8b">zvel</a>});</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            bndry.copyFrom(Vel, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="comment">//Print() &lt;&lt; &quot;Trying to write planar output for &quot; &lt;&lt; var_name &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            Error(<span class="stringliteral">&quot;Don&#39;t know how to output this variable&quot;</span>);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        }</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordflow">for</span> (OrientationIter oit; oit != <span class="keyword">nullptr</span>; ++oit) {</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            <span class="keyword">auto</span> ori = oit();</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            <span class="keywordflow">if</span> (ori.coordDir() &lt; 2) {</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                std::string facename = Concatenate(filename + <span class="charliteral">&#39;_&#39;</span>, ori, 1);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                <a class="code" href="ERF__WriteBndryPlanes_8cpp.html#a84c19e5c5555fe13da12dc8ba44e7da8">br_shift</a>(oit, bndry, bndry_shifted);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                bndry_shifted[ori].write(facename);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            }</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        }</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    } <span class="comment">// loop over num_vars</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="comment">// Writing time.dat</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="comment">// The rows this run continues from replace the file before its first row, through a</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="comment">// temporary file so that a crash leaves either the old file or the new one</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classWriteBndryPlanes.html#ae79c5889964a36c485a3a01de212bc9a">m_rewrite_time_file</a>) {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="keyword">const</span> std::string tmp_file = <a class="code" href="classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1">m_time_file</a> + <span class="stringliteral">&quot;.tmp&quot;</span>;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            std::ofstream out(tmp_file, std::ios::out | std::ios::trunc);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; row : <a class="code" href="classWriteBndryPlanes.html#af9efff0877ec3ddbe418e9972a197977">m_kept_rows</a>) {</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                out &lt;&lt; row &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            }</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            out.close();</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            <span class="keywordflow">if</span> (out.fail()) {</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                Abort(<span class="stringliteral">&quot;WriteBndryPlanes: cannot write &quot;</span> + tmp_file);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            }</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            std::error_code ec;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            std::filesystem::rename(tmp_file, <a class="code" href="classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1">m_time_file</a>, ec);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            <span class="keywordflow">if</span> (ec) {</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                Abort(<span class="stringliteral">&quot;WriteBndryPlanes: cannot replace &quot;</span> + <a class="code" href="classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1">m_time_file</a> + <span class="stringliteral">&quot; with &quot;</span> + tmp_file + <span class="stringliteral">&quot;: &quot;</span> + ec.message());</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            }</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            <a class="code" href="classWriteBndryPlanes.html#ae79c5889964a36c485a3a01de212bc9a">m_rewrite_time_file</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            <a class="code" href="classWriteBndryPlanes.html#af9efff0877ec3ddbe418e9972a197977">m_kept_rows</a>.clear();</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        }</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        std::ofstream oftime(<a class="code" href="classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1">m_time_file</a>, std::ios::out | std::ios::app);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        oftime &lt;&lt; std::setprecision(17) &lt;&lt; t_step &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; time_d &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        oftime.close();</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    }</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:46</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:43</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a3bf0a4783e82ba30db2b7c0a332c2f16"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a></div><div class="ttdeci">#define RhoQ2_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:49</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:48</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:44</div></div>
-<div class="ttc" id="aERF__WriteBndryPlanes_8cpp_html_a84c19e5c5555fe13da12dc8ba44e7da8"><div class="ttname"><a href="ERF__WriteBndryPlanes_8cpp.html#a84c19e5c5555fe13da12dc8ba44e7da8">br_shift</a></div><div class="ttdeci">void br_shift(OrientationIter oit, const BndryRegister &amp;b1, BndryRegister &amp;b2)</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.cpp:21</div></div>
-<div class="ttc" id="aclassWriteBndryPlanes_html_a2ce490f5166966b52112f126c9dc4dd8"><div class="ttname"><a href="classWriteBndryPlanes.html#a2ce490f5166966b52112f126c9dc4dd8">WriteBndryPlanes::m_out_rad</a></div><div class="ttdeci">const int m_out_rad</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:54</div></div>
-<div class="ttc" id="aclassWriteBndryPlanes_html_a41799219d138892871e1a6e8c3755da1"><div class="ttname"><a href="classWriteBndryPlanes.html#a41799219d138892871e1a6e8c3755da1">WriteBndryPlanes::m_extent_rad</a></div><div class="ttdeci">const int m_extent_rad</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:55</div></div>
+<div class="ttc" id="aERF__WriteBndryPlanes_8cpp_html_a84c19e5c5555fe13da12dc8ba44e7da8"><div class="ttname"><a href="ERF__WriteBndryPlanes_8cpp.html#a84c19e5c5555fe13da12dc8ba44e7da8">br_shift</a></div><div class="ttdeci">void br_shift(OrientationIter oit, const BndryRegister &amp;b1, BndryRegister &amp;b2)</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.cpp:29</div></div>
+<div class="ttc" id="aclassWriteBndryPlanes_html_a2ce490f5166966b52112f126c9dc4dd8"><div class="ttname"><a href="classWriteBndryPlanes.html#a2ce490f5166966b52112f126c9dc4dd8">WriteBndryPlanes::m_out_rad</a></div><div class="ttdeci">const int m_out_rad</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:75</div></div>
+<div class="ttc" id="aclassWriteBndryPlanes_html_a41799219d138892871e1a6e8c3755da1"><div class="ttname"><a href="classWriteBndryPlanes.html#a41799219d138892871e1a6e8c3755da1">WriteBndryPlanes::m_extent_rad</a></div><div class="ttdeci">const int m_extent_rad</div><div class="ttdef"><b>Definition:</b> ERF_WriteBndryPlanes.H:76</div></div>
 <div class="ttc" id="anamespaceTwoStreamScratch_html_aaff7967bc69075022d51be6bef8bac6b"><div class="ttname"><a href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">TwoStreamScratch::S</a></div><div class="ttdeci">constexpr int S</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamColumn.H:604</div></div>
 <div class="ttc" id="anamespaceVars_html_af35d14e5e4aa63b0c13efca756c9402aa2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:218</div></div>
 <div class="ttc" id="anamespaceVars_html_af35d14e5e4aa63b0c13efca756c9402aa47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:217</div></div>
@@ -681,6 +933,32 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="af9efff0877ec3ddbe418e9972a197977"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9efff0877ec3ddbe418e9972a197977">&#9670;&nbsp;</a></span>m_kept_rows</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;std::string&gt; WriteBndryPlanes::m_kept_rows</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rows of time.dat the run continues from, written back before its first plane (I/O rank) </p>
+
+<p class="reference">Referenced by <a class="el" href="classWriteBndryPlanes.html#acc9ea0c596ae30850145038bb597776e">start_series()</a>, and <a class="el" href="classWriteBndryPlanes.html#a0953aa38d789a6ed2ebcc78dec35858f">write_planes()</a>.</p>
+
+</div>
+</div>
 <a id="a2ce490f5166966b52112f126c9dc4dd8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2ce490f5166966b52112f126c9dc4dd8">&#9670;&nbsp;</a></span>m_out_rad</h2>
 
@@ -702,6 +980,32 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="classWriteBndryPlanes.html#a0953aa38d789a6ed2ebcc78dec35858f">write_planes()</a>.</p>
+
+</div>
+</div>
+<a id="ae79c5889964a36c485a3a01de212bc9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae79c5889964a36c485a3a01de212bc9a">&#9670;&nbsp;</a></span>m_rewrite_time_file</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool WriteBndryPlanes::m_rewrite_time_file = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether time.dat still has to be rewritten to m_kept_rows (I/O rank) </p>
+
+<p class="reference">Referenced by <a class="el" href="classWriteBndryPlanes.html#acc9ea0c596ae30850145038bb597776e">start_series()</a>, and <a class="el" href="classWriteBndryPlanes.html#a0953aa38d789a6ed2ebcc78dec35858f">write_planes()</a>.</p>
 
 </div>
 </div>
@@ -727,7 +1031,7 @@ Here is the call graph for this function:</div>
 
 <p>File name for Native time file. </p>
 
-<p class="reference">Referenced by <a class="el" href="classWriteBndryPlanes.html#a0953aa38d789a6ed2ebcc78dec35858f">write_planes()</a>, and <a class="el" href="classWriteBndryPlanes.html#a460f7f20cb59e7f2f8546ebf423585d5">WriteBndryPlanes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classWriteBndryPlanes.html#acc9ea0c596ae30850145038bb597776e">start_series()</a>, <a class="el" href="classWriteBndryPlanes.html#a0953aa38d789a6ed2ebcc78dec35858f">write_planes()</a>, and <a class="el" href="classWriteBndryPlanes.html#a460f7f20cb59e7f2f8546ebf423585d5">WriteBndryPlanes()</a>.</p>
 
 </div>
 </div>

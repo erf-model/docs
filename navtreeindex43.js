@@ -1,5 +1,9 @@
 var NAVTREEINDEX43 =
 {
+"structDiffChoice.html#a9b719dff490bd4c49e0410e3846c1b5c":[2,0,37,6],
+"structDiffChoice.html#aa508ec9bd928f67a8e3abd917d09e199":[2,0,37,2],
+"structDiffChoice.html#ad04dd0de55ca7217182bcdd475f0940c":[2,0,37,5],
+"structDiffChoice.html#ad2d06825dd39cb2326ef5231536f688a":[2,0,37,4],
 "structDiffChoice.html#adbfceae5178b5ad8131b755454fb616a":[2,0,37,1],
 "structDiffChoice.html#adc2925cf95fd6058bb83e1748fd1b765":[2,0,37,0],
 "structDiffChoice.html#ae4a13d78575df2a258cc2f1e7f098c5c":[2,0,37,9],
@@ -245,9 +249,5 @@ var NAVTREEINDEX43 =
 "structMYNNLevel2.html#afcbf928ab13e2f21e0491d99cb0d4daf":[2,0,86,10],
 "structMYNNLevel25.html":[2,0,87],
 "structMYNNLevel25.html#a183889654d8da15f165f6385f05bb5ba":[2,0,87,15],
-"structMYNNLevel25.html#a1f85d50fe35885cc85198ca50d0e9bd6":[2,0,87,13],
-"structMYNNLevel25.html#a25853ab674314e7ac51551d8049e6037":[2,0,87,11],
-"structMYNNLevel25.html#a448ce1797630512782e92212036b675e":[2,0,87,17],
-"structMYNNLevel25.html#a55fad52b96bc4c5d909e1cc4332c54ad":[2,0,87,8],
-"structMYNNLevel25.html#a56b79a6d80bf23bedd64223516746ae7":[2,0,87,5]
+"structMYNNLevel25.html#a1f85d50fe35885cc85198ca50d0e9bd6":[2,0,87,13]
 };
