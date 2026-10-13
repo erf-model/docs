@@ -1,5 +1,12 @@
 var NAVTREEINDEX53 =
 {
+"structrico__flux.html":[2,0,119],
+"structrico__flux.html#a164569a6f654aae3477872738fec82b2":[2,0,119,0],
+"structrico__flux.html#a38f75d6313c115980e3df2a42f0b29d2":[2,0,119,4],
+"structrico__flux.html#a475fc69ee0b62e0853d925ba5dee4b1c":[2,0,119,6],
+"structrico__flux.html#a67b034a4b25ffb3864431dd769a7908f":[2,0,119,1],
+"structrico__flux.html#a90f2fb2a88eefb24d1afaf3ef5393706":[2,0,119,2],
+"structrico__flux.html#ac5f264c9f90e326c3f128098b0cb2376":[2,0,119,5],
 "structrico__flux.html#afd8a591c2f6dbe9fb2114d737cce78b9":[2,0,119,3],
 "structrico__flux.html#aff003add7a1a7552b0443b4e09c97378":[2,0,119,7],
 "structrotate__flux.html":[2,0,120],

@@ -1,5 +1,12 @@
 var NAVTREEINDEX49 =
 {
+"structTwoStreamCanopyView.html#a9b76b0ddf4076b1427e59814231ee66f":[2,0,198,0],
+"structTwoStreamFaceSky.html":[2,0,199],
+"structTwoStreamFaceSky.html#a1f089958127916619854e969e553edfe":[2,0,199,4],
+"structTwoStreamFaceSky.html#a54040a4f15fbd84b7aa7973eeda8dc9d":[2,0,199,0],
+"structTwoStreamFaceSky.html#a9d7d899391b03f00d6fe0b8bf4ac7ce0":[2,0,199,3],
+"structTwoStreamFaceSky.html#aaabf54d196d0bb6bf836746bd6cbe2e6":[2,0,199,2],
+"structTwoStreamFaceSky.html#ad8deac3e96b24a06bb90971cf33010cd":[2,0,199,1],
 "structTwoStreamLayerSW.html":[2,0,200],
 "structTwoStreamLayerSW.html#a0c07a989138e41f09489f9f39424ffef":[2,0,200,3],
 "structTwoStreamLayerSW.html#a2cd97e878d755bdbafe8e12032010217":[2,0,200,2],
@@ -242,12 +249,5 @@ var NAVTREEINDEX49 =
 "structadiabatic__wave__coupled.html#ab5f4ad8ae9907cf15e3eba1129ea1375":[2,0,26,4],
 "structadiabatic__wave__coupled.html#ad4cdbc2ca98e6c762848e3e58c8774bf":[2,0,26,1],
 "structbulk__coeff__flux.html":[2,0,31],
-"structbulk__coeff__flux.html#a157187c650e01c56ccb40fce7af23017":[2,0,31,0],
-"structbulk__coeff__flux.html#a1a1b2fa87a2029266a3d487f13621da1":[2,0,31,4],
-"structbulk__coeff__flux.html#a724d9b2415d8fbddea690c42b1d713a9":[2,0,31,5],
-"structbulk__coeff__flux.html#a885802441f508f529fa9d1b260743c0e":[2,0,31,2],
-"structbulk__coeff__flux.html#abc135700ceeae974fcf8ad6b0e39a3f8":[2,0,31,3],
-"structbulk__coeff__flux.html#ae59a1b605b007d424345fae7800ebeb6":[2,0,31,1],
-"structcustom__flux.html":[2,0,36],
-"structcustom__flux.html#a1fc97af123888f724e8497c61210273f":[2,0,36,2]
+"structbulk__coeff__flux.html#a157187c650e01c56ccb40fce7af23017":[2,0,31,0]
 };

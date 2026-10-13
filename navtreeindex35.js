@@ -1,5 +1,12 @@
 var NAVTREEINDEX35 =
 {
+"classerf__sbm_1_1SBMTransport.html#ae3b6146416baf121208ce2f9491ac5b3":[2,0,9,32,14],
+"classerf__sbm_1_1SBMTransport.html#ae42a3c3475d37012206e43dcf08aa079":[2,0,9,32,18],
+"classerf__sbm_1_1SBMTransport.html#ae5a33a3610b1aa5c853b01c0072c1bf1":[2,0,9,32,20],
+"classerf__sbm_1_1SpectralGrid.html":[2,0,9,36],
+"classerf__sbm_1_1SpectralGrid.html#a0f1bc7772c65ec936184e57f58e7c176":[2,0,9,36,5],
+"classerf__sbm_1_1SpectralGrid.html#a1157a36c97b3be492191514fb8dff1cc":[2,0,9,36,6],
+"classerf__sbm_1_1SpectralGrid.html#a2868f9105a679eaab5e8bcc48b38d60c":[2,0,9,36,8],
 "classerf__sbm_1_1SpectralGrid.html#a32323f8af1038026a31b46c1bfb7f09b":[2,0,9,36,7],
 "classerf__sbm_1_1SpectralGrid.html#a3a6bf953cc53af6c0426697d50802f4e":[2,0,9,36,9],
 "classerf__sbm_1_1SpectralGrid.html#a3f4931e7137f29dbf4aa998190064e04":[2,0,9,36,0],
@@ -179,8 +186,8 @@ var NAVTREEINDEX35 =
 "functions_y.html":[2,3,0,24],
 "functions_z.html":[2,3,0,25],
 "functions_~.html":[2,3,0,26],
-"globals.html":[3,1,0],
 "globals.html":[3,1,0,0],
+"globals.html":[3,1,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -189,8 +196,8 @@ var NAVTREEINDEX35 =
 "globals_enum.html":[3,1,4],
 "globals_eval.html":[3,1,5],
 "globals_f.html":[3,1,0,5],
-"globals_func.html":[3,1,1],
 "globals_func.html":[3,1,1,0],
+"globals_func.html":[3,1,1],
 "globals_func_b.html":[3,1,1,1],
 "globals_func_c.html":[3,1,1,2],
 "globals_func_d.html":[3,1,1,3],
@@ -242,12 +249,5 @@ var NAVTREEINDEX35 =
 "globals_vars_i.html":[3,1,2,8],
 "globals_vars_j.html":[3,1,2,9],
 "globals_vars_k.html":[3,1,2,10],
-"globals_vars_l.html":[3,1,2,11],
-"globals_vars_m.html":[3,1,2,12],
-"globals_vars_n.html":[3,1,2,13],
-"globals_vars_o.html":[3,1,2,14],
-"globals_vars_p.html":[3,1,2,15],
-"globals_vars_q.html":[3,1,2,16],
-"globals_vars_r.html":[3,1,2,17],
-"globals_vars_s.html":[3,1,2,18]
+"globals_vars_l.html":[3,1,2,11]
 };

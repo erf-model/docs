@@ -1,5 +1,12 @@
 var NAVTREEINDEX52 =
 {
+"structerf__sbm_1_1SpectralGridSpec.html#ad0804b6874aa3c801df5c086dbdff521":[2,0,9,33,0],
+"structerf__sbm_1_1SpectralPopulationSpec.html":[2,0,9,14],
+"structerf__sbm_1_1SpectralPopulationSpec.html#a300d061d6b6aac2fcf9cd8d11ae57635":[2,0,9,14,1],
+"structerf__sbm_1_1SpectralPopulationSpec.html#a5b2ddaae548d9765ce836ddc185bec06":[2,0,9,14,2],
+"structerf__sbm_1_1SpectralPopulationSpec.html#a904f6ddb6e810c0606444073b73548f3":[2,0,9,14,4],
+"structerf__sbm_1_1SpectralPopulationSpec.html#a960c533427981ea9ad5c43691e6dab48":[2,0,9,14,3],
+"structerf__sbm_1_1SpectralPopulationSpec.html#acb6ee21f6e65045a0ab826cd6718f03d":[2,0,9,14,0],
 "structerf__sbm_1_1SpectralPopulationSpec.html#ad2580e6dedd217537e0b4e6b74d939c3":[2,0,9,14,5],
 "structerf__sbm_1_1SpectralPopulationSpec.html#ae6cf017657afffcf46945c051d001fdd":[2,0,9,14,6],
 "structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html":[2,0,9,0,0],
@@ -242,12 +249,5 @@ var NAVTREEINDEX52 =
 "structplotfile2d_1_1WaterPathDescriptor.html":[2,0,18,11],
 "structplotfile2d_1_1WaterPathDescriptor.html#a428e413376e7e580ebe2a1c5c49c41cc":[2,0,18,11,0],
 "structplotfile2d_1_1WaterPathDescriptor.html#a430cc11ee9c944948145ecba0ea90f15":[2,0,18,11,2],
-"structplotfile2d_1_1WaterPathDescriptor.html#a84095135b3bc8cf2a491d35a4140139d":[2,0,18,11,1],
-"structrico__flux.html":[2,0,119],
-"structrico__flux.html#a164569a6f654aae3477872738fec82b2":[2,0,119,0],
-"structrico__flux.html#a38f75d6313c115980e3df2a42f0b29d2":[2,0,119,4],
-"structrico__flux.html#a475fc69ee0b62e0853d925ba5dee4b1c":[2,0,119,6],
-"structrico__flux.html#a67b034a4b25ffb3864431dd769a7908f":[2,0,119,1],
-"structrico__flux.html#a90f2fb2a88eefb24d1afaf3ef5393706":[2,0,119,2],
-"structrico__flux.html#ac5f264c9f90e326c3f128098b0cb2376":[2,0,119,5]
+"structplotfile2d_1_1WaterPathDescriptor.html#a84095135b3bc8cf2a491d35a4140139d":[2,0,18,11,1]
 };
