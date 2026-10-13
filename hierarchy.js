@@ -42,6 +42,7 @@ var hierarchy =
     [ "erf_sbm::ConstraintGroup", "structerf__sbm_1_1ConstraintGroup.html", null ],
     [ "erf_sbm::ConstraintTerm", "structerf__sbm_1_1ConstraintTerm.html", null ],
     [ "erf_auxiliary::ConstTimedFieldView", "structerf__auxiliary_1_1ConstTimedFieldView.html", null ],
+    [ "erf_surface_temperature::ConversionFailure", "structerf__surface__temperature_1_1ConversionFailure.html", null ],
     [ "custom_flux", "structcustom__flux.html", null ],
     [ "DampingChoice", "structDampingChoice.html", null ],
     [ "erf_sbm::SBMTransport::DeviceMetadata", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html", null ],

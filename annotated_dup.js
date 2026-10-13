@@ -101,6 +101,9 @@ var annotated_dup =
       [ "EndpointTransform", "structerf__sbm_1_1EndpointTransform.html", "structerf__sbm_1_1EndpointTransform" ],
       [ "SpectralGrid", "classerf__sbm_1_1SpectralGrid.html", "classerf__sbm_1_1SpectralGrid" ]
     ] ],
+    [ "erf_surface_temperature", "namespaceerf__surface__temperature.html", [
+      [ "ConversionFailure", "structerf__surface__temperature_1_1ConversionFailure.html", "structerf__surface__temperature_1_1ConversionFailure" ]
+    ] ],
     [ "erf_wall_scalar_bc", "namespaceerf__wall__scalar__bc.html", [
       [ "ParsedWallScalarBC", "structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html", "structerf__wall__scalar__bc_1_1ParsedWallScalarBC" ],
       [ "ParsedWallFaceScalars", "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html", "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars" ],

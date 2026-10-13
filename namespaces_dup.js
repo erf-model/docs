@@ -156,14 +156,7 @@ var namespaces_dup =
       [ "vapour_deficit_factor", "namespaceerf__surface__moisture.html#ae18e92b1c5ae6ca8233cf8ccd2e8498c", null ],
       [ "no_flux_resistance", "namespaceerf__surface__moisture.html#aa07504dfbf19402354c996f1b486de45", null ]
     ] ],
-    [ "erf_surface_temperature", "namespaceerf__surface__temperature.html", [
-      [ "pressure_at_boundary_from_cell", "namespaceerf__surface__temperature.html#a80efa527a259b57d2d2826f1fc63d87d", null ],
-      [ "pressure_at_surface", "namespaceerf__surface__temperature.html#a0d44f9d42128457beaab296839569b5e", null ],
-      [ "temperature_to_theta", "namespaceerf__surface__temperature.html#a0e54a32154f7a2327fad71b277e2bd2e", null ],
-      [ "theta_to_temperature", "namespaceerf__surface__temperature.html#aa97f737767e883b152887e497e706c3b", null ],
-      [ "valid_pressure", "namespaceerf__surface__temperature.html#a84dca0169ccf8237a8902ddb28895b30", null ],
-      [ "valid_temperature", "namespaceerf__surface__temperature.html#ae9dc62e9cb2f12051d9b6562f7bdce25", null ]
-    ] ],
+    [ "erf_surface_temperature", "namespaceerf__surface__temperature.html", "namespaceerf__surface__temperature" ],
     [ "erf_wall_scalar_bc", "namespaceerf__wall__scalar__bc.html", "namespaceerf__wall__scalar__bc" ],
     [ "erf_wall_thermodynamics", "namespaceerf__wall__thermodynamics.html", "namespaceerf__wall__thermodynamics" ],
     [ "ERFBCType", "namespaceERFBCType.html", [

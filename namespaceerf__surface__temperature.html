@@ -83,12 +83,39 @@ $(document).ready(function(){initNavTree('namespaceerf__surface__temperature.htm
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">erf_surface_temperature Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__surface__temperature_1_1ConversionFailure.html">ConversionFailure</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a74505cb65b7826cc3a91154572c7b9f3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3">ConversionError</a> : int { <br />
+&#160;&#160;<a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a334c4a4c42fdb79d7ebc3e73b517e6f8">none</a> = 0
+, <a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a768609cc89a7d3da9304540b4618bc9f">bad_density</a>
+, <a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3afdc1963d5419651b9a72a7ce6a3ff929">no_moisture_comp</a>
+, <a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a7f06e7b3ff82e164f42b237fcdf602a8">bad_rho_qv</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a4bb688062d7b7fad3079471f478120a5">bad_qv</a>
+, <a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a44a2fe15f2ac6f71434667ecbe6ebf6a">bad_theta_to_temperature</a>
+, <a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a14102b672ca0cacdb793358af815a71c">bad_temperature_to_theta</a>
+, <a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3aa616dd2a8cf426cd2e34a940bdf8607a">bad_pressure</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a5d7701706720f51cc22e1b9fb65e121e">bad_skin_temperature</a>
+, <a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3aae07a7e16b48216d34f84073ce070e58">bad_q_air</a>
+, <a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3ab83250c6ea1bf8772e3fc1ef20834f5c">bad_q_surf</a>
+<br />
+ }</td></tr>
+<tr class="separator:a74505cb65b7826cc3a91154572c7b9f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a80efa527a259b57d2d2826f1fc63d87d"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__surface__temperature.html#a80efa527a259b57d2d2826f1fc63d87d">pressure_at_boundary_from_cell</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_theta, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> delta_z)</td></tr>
@@ -103,8 +130,269 @@ Functions</h2></td></tr>
 <tr class="separator:aa97f737767e883b152887e497e706c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e54a32154f7a2327fad71b277e2bd2e"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__surface__temperature.html#a0e54a32154f7a2327fad71b277e2bd2e">temperature_to_theta</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> temperature, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> pressure, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPert__SLM_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;theta)</td></tr>
 <tr class="separator:a0e54a32154f7a2327fad71b277e2bd2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fe51ca2d2ab7da9cd870e3f1fc0e717"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__surface__temperature.html#a0fe51ca2d2ab7da9cd870e3f1fc0e717">record_conversion_failure</a> (<a class="el" href="structerf__surface__temperature_1_1ConversionFailure.html">ConversionFailure</a> *fail, const bool fatal, const <a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3">ConversionError</a> code, const int i, const int j, const int k, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho=<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_theta=<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_qv=<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> t_surf=<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> pressure=<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> delta_z=<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q_air=<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0))</td></tr>
+<tr class="separator:a0fe51ca2d2ab7da9cd870e3f1fc0e717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b58c707f5e22343bfc6c0d2f23d25a"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__surface__temperature.html#a00b58c707f5e22343bfc6c0d2f23d25a">conversion_error_text</a> (const <a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3">ConversionError</a> code)</td></tr>
+<tr class="separator:a00b58c707f5e22343bfc6c0d2f23d25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77a90ff1067c30294632259fbbb53682"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__surface__temperature.html#a77a90ff1067c30294632259fbbb53682">abort_on_conversion_failure</a> (const char *who, const int lev, <a class="el" href="structerf__surface__temperature_1_1ConversionFailure.html">ConversionFailure</a> const &amp;fail)</td></tr>
+<tr class="separator:a77a90ff1067c30294632259fbbb53682"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a74505cb65b7826cc3a91154572c7b9f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74505cb65b7826cc3a91154572c7b9f3">&#9670;&nbsp;</a></span>ConversionError</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3">erf_surface_temperature::ConversionError</a> : int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Why a surface conversion could not be made, in the order the kernels test for it.</p>
+<p>Every kernel that converts between the atmospheric state and a surface temperature or humidity guards the same sequence of ways that state can be unusable. Which guard tripped is the difference between "the surface layer gave up" and knowing that the state handed to it was already bad &ndash; so the guards are named rather than merged into a single flag. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a74505cb65b7826cc3a91154572c7b9f3a334c4a4c42fdb79d7ebc3e73b517e6f8"></a>none&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74505cb65b7826cc3a91154572c7b9f3a768609cc89a7d3da9304540b4618bc9f"></a>bad_density&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74505cb65b7826cc3a91154572c7b9f3afdc1963d5419651b9a72a7ce6a3ff929"></a>no_moisture_comp&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74505cb65b7826cc3a91154572c7b9f3a7f06e7b3ff82e164f42b237fcdf602a8"></a>bad_rho_qv&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74505cb65b7826cc3a91154572c7b9f3a4bb688062d7b7fad3079471f478120a5"></a>bad_qv&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74505cb65b7826cc3a91154572c7b9f3a44a2fe15f2ac6f71434667ecbe6ebf6a"></a>bad_theta_to_temperature&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74505cb65b7826cc3a91154572c7b9f3a14102b672ca0cacdb793358af815a71c"></a>bad_temperature_to_theta&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74505cb65b7826cc3a91154572c7b9f3aa616dd2a8cf426cd2e34a940bdf8607a"></a>bad_pressure&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74505cb65b7826cc3a91154572c7b9f3a5d7701706720f51cc22e1b9fb65e121e"></a>bad_skin_temperature&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74505cb65b7826cc3a91154572c7b9f3aae07a7e16b48216d34f84073ce070e58"></a>bad_q_air&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74505cb65b7826cc3a91154572c7b9f3ab83250c6ea1bf8772e3fc1ef20834f5c"></a>bad_q_surf&#160;</td><td class="fielddoc"></td></tr>
+</table>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                            : <span class="keywordtype">int</span> {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca334c4a4c42fdb79d7ebc3e73b517e6f8">none</a> = 0,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a768609cc89a7d3da9304540b4618bc9f">bad_density</a>,</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3afdc1963d5419651b9a72a7ce6a3ff929">no_moisture_comp</a>,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a7f06e7b3ff82e164f42b237fcdf602a8">bad_rho_qv</a>,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a4bb688062d7b7fad3079471f478120a5">bad_qv</a>,</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a44a2fe15f2ac6f71434667ecbe6ebf6a">bad_theta_to_temperature</a>,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a14102b672ca0cacdb793358af815a71c">bad_temperature_to_theta</a>,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3aa616dd2a8cf426cd2e34a940bdf8607a">bad_pressure</a>,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a5d7701706720f51cc22e1b9fb65e121e">bad_skin_temperature</a>,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3aae07a7e16b48216d34f84073ce070e58">bad_q_air</a>,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3ab83250c6ea1bf8772e3fc1ef20834f5c">bad_q_surf</a></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;};</div>
+<div class="ttc" id="aERF__Advection_8H_html_a3cc8de22318f19d5e4c9c1a41c47b59ca334c4a4c42fdb79d7ebc3e73b517e6f8"><div class="ttname"><a href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca334c4a4c42fdb79d7ebc3e73b517e6f8">OpenSide::none</a></div><div class="ttdeci">@ none</div></div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_a74505cb65b7826cc3a91154572c7b9f3a14102b672ca0cacdb793358af815a71c"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a14102b672ca0cacdb793358af815a71c">erf_surface_temperature::ConversionError::bad_temperature_to_theta</a></div><div class="ttdeci">@ bad_temperature_to_theta</div></div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_a74505cb65b7826cc3a91154572c7b9f3a44a2fe15f2ac6f71434667ecbe6ebf6a"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a44a2fe15f2ac6f71434667ecbe6ebf6a">erf_surface_temperature::ConversionError::bad_theta_to_temperature</a></div><div class="ttdeci">@ bad_theta_to_temperature</div></div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_a74505cb65b7826cc3a91154572c7b9f3a4bb688062d7b7fad3079471f478120a5"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a4bb688062d7b7fad3079471f478120a5">erf_surface_temperature::ConversionError::bad_qv</a></div><div class="ttdeci">@ bad_qv</div></div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_a74505cb65b7826cc3a91154572c7b9f3a5d7701706720f51cc22e1b9fb65e121e"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a5d7701706720f51cc22e1b9fb65e121e">erf_surface_temperature::ConversionError::bad_skin_temperature</a></div><div class="ttdeci">@ bad_skin_temperature</div></div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_a74505cb65b7826cc3a91154572c7b9f3a768609cc89a7d3da9304540b4618bc9f"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a768609cc89a7d3da9304540b4618bc9f">erf_surface_temperature::ConversionError::bad_density</a></div><div class="ttdeci">@ bad_density</div></div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_a74505cb65b7826cc3a91154572c7b9f3a7f06e7b3ff82e164f42b237fcdf602a8"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a7f06e7b3ff82e164f42b237fcdf602a8">erf_surface_temperature::ConversionError::bad_rho_qv</a></div><div class="ttdeci">@ bad_rho_qv</div></div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_a74505cb65b7826cc3a91154572c7b9f3aa616dd2a8cf426cd2e34a940bdf8607a"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3aa616dd2a8cf426cd2e34a940bdf8607a">erf_surface_temperature::ConversionError::bad_pressure</a></div><div class="ttdeci">@ bad_pressure</div></div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_a74505cb65b7826cc3a91154572c7b9f3aae07a7e16b48216d34f84073ce070e58"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3aae07a7e16b48216d34f84073ce070e58">erf_surface_temperature::ConversionError::bad_q_air</a></div><div class="ttdeci">@ bad_q_air</div></div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_a74505cb65b7826cc3a91154572c7b9f3ab83250c6ea1bf8772e3fc1ef20834f5c"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3ab83250c6ea1bf8772e3fc1ef20834f5c">erf_surface_temperature::ConversionError::bad_q_surf</a></div><div class="ttdeci">@ bad_q_surf</div></div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_a74505cb65b7826cc3a91154572c7b9f3afdc1963d5419651b9a72a7ce6a3ff929"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3afdc1963d5419651b9a72a7ce6a3ff929">erf_surface_temperature::ConversionError::no_moisture_comp</a></div><div class="ttdeci">@ no_moisture_comp</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a77a90ff1067c30294632259fbbb53682"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77a90ff1067c30294632259fbbb53682">&#9670;&nbsp;</a></span>abort_on_conversion_failure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void erf_surface_temperature::abort_on_conversion_failure </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>who</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structerf__surface__temperature_1_1ConversionFailure.html">ConversionFailure</a> const &amp;&#160;</td>
+          <td class="paramname"><em>fail</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Describe what this rank recorded, then abort if any rank recorded anything.</p>
+<p>Collective: every rank must call this. Each rank that failed describes its own first failure before the abort, so a failure confined to one rank still names the cell and the numbers rather than only the check that tripped.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">who</td><td>Name of the fill, used to open the message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lev</td><td>Level being filled </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fail</td><td>This rank's record </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;{</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordtype">int</span> any_failed = (fail.code != <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ConversionError::none)) ? 1 : 0;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    amrex::ParallelDescriptor::ReduceIntMax(any_failed);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (any_failed == 0) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">if</span> (fail.code != <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ConversionError::none)) {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> code = <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3">ConversionError</a><span class="keyword">&gt;</span>(fail.code);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> is_conversion = (code == ConversionError::bad_theta_to_temperature ||</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                                    code == ConversionError::bad_temperature_to_theta);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> has_state = (code != ConversionError::no_moisture_comp);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> has_vapor = (is_conversion ||</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                                code == ConversionError::bad_rho_qv ||</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                                code == ConversionError::bad_qv     ||</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                code == ConversionError::bad_q_air  ||</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                                code == ConversionError::bad_q_surf);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> has_surface = (is_conversion ||</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                                  code == ConversionError::bad_pressure ||</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                                  code == ConversionError::bad_skin_temperature ||</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                                  code == ConversionError::bad_q_surf);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> has_q_air = (code == ConversionError::bad_q_air ||</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                                code == ConversionError::bad_q_surf);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="comment">// Assemble the whole report before writing it, so that ranks that failed do not</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="comment">// interleave their lines with one another</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        std::ostringstream msg;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        msg &lt;&lt; who &lt;&lt; <span class="stringliteral">&quot;: surface conversion failed at level &quot;</span> &lt;&lt; lev</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            &lt;&lt; <span class="stringliteral">&quot; [rank &quot;</span> &lt;&lt; amrex::ParallelDescriptor::MyProc() &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; fail.count &lt;&lt; <span class="stringliteral">&quot; of the cells this fill owns failed&quot;</span>;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">if</span> (fail.halo_count &gt; 0) {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            msg &lt;&lt; <span class="stringliteral">&quot; (and &quot;</span> &lt;&lt; fail.halo_count &lt;&lt; <span class="stringliteral">&quot; halo cells, which are not fatal)&quot;</span>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        }</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        msg &lt;&lt; <span class="stringliteral">&quot;\n  first failure at (&quot;</span> &lt;&lt; fail.i &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; fail.j &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; fail.k &lt;&lt; <span class="stringliteral">&quot;): &quot;</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            &lt;&lt; <a class="code" href="namespaceerf__surface__temperature.html#a00b58c707f5e22343bfc6c0d2f23d25a">conversion_error_text</a>(code) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordflow">if</span> (has_state) {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            msg &lt;&lt; std::setprecision(10) &lt;&lt; <span class="stringliteral">&quot;    rho = &quot;</span> &lt;&lt; fail.rho</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;   (rho theta) = &quot;</span> &lt;&lt; fail.rho_theta;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordflow">if</span> (has_vapor)   { msg &lt;&lt; <span class="stringliteral">&quot;   (rho qv) = &quot;</span> &lt;&lt; fail.rho_qv; }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="keywordflow">if</span> (has_q_air)   { msg &lt;&lt; <span class="stringliteral">&quot;   q_air = &quot;</span> &lt;&lt; fail.q_air; }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="keywordflow">if</span> (has_surface) {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                msg &lt;&lt; <span class="stringliteral">&quot;\n    surface temperature = &quot;</span> &lt;&lt; fail.t_surf</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;   pressure = &quot;</span> &lt;&lt; fail.pressure</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;   delta_z = &quot;</span> &lt;&lt; fail.delta_z;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            msg &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        amrex::AllPrint() &lt;&lt; msg.str() &lt;&lt; std::flush;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    }</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="comment">// Let every rank finish writing before one of them tears the job down</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    amrex::ParallelDescriptor::Barrier();</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    amrex::Abort(std::string(who) + <span class="stringliteral">&quot;: could not convert the surface state (see above)&quot;</span>);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;}</div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_a00b58c707f5e22343bfc6c0d2f23d25a"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a00b58c707f5e22343bfc6c0d2f23d25a">erf_surface_temperature::conversion_error_text</a></div><div class="ttdeci">AMREX_FORCE_INLINE const char * conversion_error_text(const ConversionError code)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceTemperature.H:196</div></div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_a74505cb65b7826cc3a91154572c7b9f3"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3">erf_surface_temperature::ConversionError</a></div><div class="ttdeci">ConversionError</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceTemperature.H:105</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a49a97b3f9132567b9437015b10771fef">SurfaceLayer::fill_qsurf_with_qsat()</a>, <a class="el" href="classSurfaceLayer.html#adae707f4cdbba8131d04a232172be36a">SurfaceLayer::fill_qsurf_with_skin_moisture()</a>, <a class="el" href="classSurfaceLayer.html#a4f31e6f3fddbc6f074c34c81eb131ff6">SurfaceLayer::fill_tsurf_with_coupled_sst()</a>, <a class="el" href="classSurfaceLayer.html#ae49bf2a48059ec96fe1b6f180ca82786">SurfaceLayer::fill_tsurf_with_sfc_sst()</a>, and <a class="el" href="classSurfaceLayer.html#aa0b1ea96b2db3477e2995a9f4294e833">SurfaceLayer::fill_tsurf_with_skin_temperature()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__surface__temperature_a77a90ff1067c30294632259fbbb53682_cgraph.png" border="0" usemap="#anamespaceerf__surface__temperature_a77a90ff1067c30294632259fbbb53682_cgraph" alt=""/></div>
+<map name="anamespaceerf__surface__temperature_a77a90ff1067c30294632259fbbb53682_cgraph" id="anamespaceerf__surface__temperature_a77a90ff1067c30294632259fbbb53682_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,188,61"/>
+<area shape="rect" href="namespaceerf__surface__temperature.html#a00b58c707f5e22343bfc6c0d2f23d25a" title=" " alt="" coords="236,13,419,54"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__surface__temperature_a77a90ff1067c30294632259fbbb53682_icgraph.png" border="0" usemap="#anamespaceerf__surface__temperature_a77a90ff1067c30294632259fbbb53682_icgraph" alt=""/></div>
+<map name="anamespaceerf__surface__temperature_a77a90ff1067c30294632259fbbb53682_icgraph" id="anamespaceerf__surface__temperature_a77a90ff1067c30294632259fbbb53682_icgraph">
+<area shape="rect" title=" " alt="" coords="269,129,452,185"/>
+<area shape="rect" href="classSurfaceLayer.html#a49a97b3f9132567b9437015b10771fef" title=" " alt="" coords="47,5,179,47"/>
+<area shape="rect" href="classSurfaceLayer.html#adae707f4cdbba8131d04a232172be36a" title=" " alt="" coords="15,71,211,112"/>
+<area shape="rect" href="classSurfaceLayer.html#a4f31e6f3fddbc6f074c34c81eb131ff6" title=" " alt="" coords="24,136,203,177"/>
+<area shape="rect" href="classSurfaceLayer.html#ae49bf2a48059ec96fe1b6f180ca82786" title=" " alt="" coords="40,201,187,243"/>
+<area shape="rect" href="classSurfaceLayer.html#aa0b1ea96b2db3477e2995a9f4294e833" title=" " alt="" coords="5,267,221,308"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a00b58c707f5e22343bfc6c0d2f23d25a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00b58c707f5e22343bfc6c0d2f23d25a">&#9670;&nbsp;</a></span>conversion_error_text()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_FORCE_INLINE const char* erf_surface_temperature::conversion_error_text </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3">ConversionError</a>&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;{</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">switch</span> (code) {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">case</span> ConversionError::bad_density:</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;the density or (rho theta) of the state cell is not usable&quot;</span>;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">case</span> ConversionError::no_moisture_comp:</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;the state carries no water vapor component to convert&quot;</span>;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">case</span> ConversionError::bad_rho_qv:</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;the (rho qv) of the state cell is not usable&quot;</span>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">case</span> ConversionError::bad_qv:</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;the water vapor mixing ratio derived from the state cell is not usable&quot;</span>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">case</span> ConversionError::bad_theta_to_temperature:</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;the surface potential temperature could not be converted to absolute temperature&quot;</span>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">case</span> ConversionError::bad_temperature_to_theta:</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;the surface temperature could not be converted to potential temperature&quot;</span>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">case</span> ConversionError::bad_pressure:</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;the surface pressure derived from the state cell is not usable&quot;</span>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">case</span> ConversionError::bad_skin_temperature:</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;the skin temperature is not usable&quot;</span>;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">case</span> ConversionError::bad_q_air:</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;the reference-height water vapor mixing ratio is not usable&quot;</span>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">case</span> ConversionError::bad_q_surf:</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;the surface mixing ratio came out non-finite&quot;</span>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;the conversion failed for a reason that was not recorded&quot;</span>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="namespaceerf__surface__temperature.html#a77a90ff1067c30294632259fbbb53682">abort_on_conversion_failure()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__surface__temperature_a00b58c707f5e22343bfc6c0d2f23d25a_icgraph.png" border="0" usemap="#anamespaceerf__surface__temperature_a00b58c707f5e22343bfc6c0d2f23d25a_icgraph" alt=""/></div>
+<map name="anamespaceerf__surface__temperature_a00b58c707f5e22343bfc6c0d2f23d25a_icgraph" id="anamespaceerf__surface__temperature_a00b58c707f5e22343bfc6c0d2f23d25a_icgraph">
+<area shape="rect" title=" " alt="" coords="500,136,683,177"/>
+<area shape="rect" href="namespaceerf__surface__temperature.html#a77a90ff1067c30294632259fbbb53682" title=" " alt="" coords="269,129,452,185"/>
+<area shape="rect" href="classSurfaceLayer.html#a49a97b3f9132567b9437015b10771fef" title=" " alt="" coords="47,5,179,47"/>
+<area shape="rect" href="classSurfaceLayer.html#adae707f4cdbba8131d04a232172be36a" title=" " alt="" coords="15,71,211,112"/>
+<area shape="rect" href="classSurfaceLayer.html#a4f31e6f3fddbc6f074c34c81eb131ff6" title=" " alt="" coords="24,136,203,177"/>
+<area shape="rect" href="classSurfaceLayer.html#ae49bf2a48059ec96fe1b6f180ca82786" title=" " alt="" coords="40,201,187,243"/>
+<area shape="rect" href="classSurfaceLayer.html#aa0b1ea96b2db3477e2995a9f4294e833" title=" " alt="" coords="5,267,221,308"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a80efa527a259b57d2d2826f1fc63d87d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a80efa527a259b57d2d2826f1fc63d87d">&#9670;&nbsp;</a></span>pressure_at_boundary_from_cell()</h2>
 
@@ -144,9 +432,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Pressure at a boundary face from the adjacent atmospheric cell state.</p>
 <p>The state pressure is diagnosed at the cell centre. Adding rho*g*delta_z gives the pressure at the boundary face, where delta_z is the signed distance from the face to the cell centre. </p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rho_theta, <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aaf099273d19f4b8cdca199c5177231e35">qv</a>) + <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a> * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> * delta_z;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rho_theta, <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aaf099273d19f4b8cdca199c5177231e35">qv</a>) + <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a> * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> * delta_z;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:68</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_ad01b9a993767756c8e6498b986650be9"><div class="ttname"><a href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:25</div></div>
@@ -219,10 +507,10 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceerf__surface__temperature.html#a80efa527a259b57d2d2826f1fc63d87d">pressure_at_boundary_from_cell</a>(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a>, rho_theta, <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aaf099273d19f4b8cdca199c5177231e35">qv</a>, delta_z);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="ttc" id="anamespaceerf__surface__temperature_html_a80efa527a259b57d2d2826f1fc63d87d"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a80efa527a259b57d2d2826f1fc63d87d">erf_surface_temperature::pressure_at_boundary_from_cell</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pressure_at_boundary_from_cell(const amrex::Real rho, const amrex::Real rho_theta, const amrex::Real qv, const amrex::Real delta_z)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceTemperature.H:20</div></div>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceerf__surface__temperature.html#a80efa527a259b57d2d2826f1fc63d87d">pressure_at_boundary_from_cell</a>(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a>, rho_theta, <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aaf099273d19f4b8cdca199c5177231e35">qv</a>, delta_z);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_a80efa527a259b57d2d2826f1fc63d87d"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a80efa527a259b57d2d2826f1fc63d87d">erf_surface_temperature::pressure_at_boundary_from_cell</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pressure_at_boundary_from_cell(const amrex::Real rho, const amrex::Real rho_theta, const amrex::Real qv, const amrex::Real delta_z)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceTemperature.H:26</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classRadiation.html#a0f4ddbf3696945fd595bf2c1c66862b3">Radiation::mf_to_kokkos_buffers()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc">vertical_two_stream_sweep()</a>.</p>
 <div class="dynheader">
@@ -244,6 +532,149 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classRadiation.html#a0f4ddbf3696945fd595bf2c1c66862b3" title=" " alt="" coords="209,5,392,47"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="223,71,378,112"/>
 <area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,71,161,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0fe51ca2d2ab7da9cd870e3f1fc0e717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fe51ca2d2ab7da9cd870e3f1fc0e717">&#9670;&nbsp;</a></span>record_conversion_failure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void erf_surface_temperature::record_conversion_failure </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structerf__surface__temperature_1_1ConversionFailure.html">ConversionFailure</a> *&#160;</td>
+          <td class="paramname"><em>fail</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>fatal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3">ConversionError</a>&#160;</td>
+          <td class="paramname"><em>code</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>rho</em> = <code><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>rho_theta</em> = <code><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>rho_qv</em> = <code><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>t_surf</em> = <code><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>pressure</em> = <code><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>delta_z</em> = <code><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>q_air</em> = <code><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Record one cell's failure.</p>
+<p>Every failing cell adds to a count; the first authoritative one to arrive also claims the description, so what gets reported is a failure that matters rather than whichever thread happened to finish last. Pass the values the caller has reached by this point: the report prints the ones that mean something for the code it is given.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">fail</td><td>This rank's record </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fatal</td><td>Whether this is a cell the fill is authoritative for </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">code</td><td>Which guard tripped </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">i,j,k</td><td>The cell whose state was read </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">if</span> (!fatal) {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        amrex::Gpu::Atomic::Add(&amp;fail-&gt;halo_count, 1);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    amrex::Gpu::Atomic::Add(&amp;fail-&gt;count, 1);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">// The first failure to arrive owns the description; the rest only add to the count.</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    constexpr <span class="keywordtype">int</span> unclaimed = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ConversionError::none);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">if</span> (amrex::Gpu::Atomic::CAS(&amp;fail-&gt;code, unclaimed, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(code)) != unclaimed) {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    fail-&gt;i = i; fail-&gt;j = j; fail-&gt;k = k;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    fail-&gt;rho       = <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    fail-&gt;rho_theta = rho_theta;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    fail-&gt;rho_qv    = rho_qv;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    fail-&gt;t_surf    = t_surf;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    fail-&gt;pressure  = pressure;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    fail-&gt;delta_z   = delta_z;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    fail-&gt;q_air     = q_air;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a49a97b3f9132567b9437015b10771fef">SurfaceLayer::fill_qsurf_with_qsat()</a>, <a class="el" href="classSurfaceLayer.html#adae707f4cdbba8131d04a232172be36a">SurfaceLayer::fill_qsurf_with_skin_moisture()</a>, <a class="el" href="classSurfaceLayer.html#a4f31e6f3fddbc6f074c34c81eb131ff6">SurfaceLayer::fill_tsurf_with_coupled_sst()</a>, <a class="el" href="classSurfaceLayer.html#ae49bf2a48059ec96fe1b6f180ca82786">SurfaceLayer::fill_tsurf_with_sfc_sst()</a>, and <a class="el" href="classSurfaceLayer.html#aa0b1ea96b2db3477e2995a9f4294e833">SurfaceLayer::fill_tsurf_with_skin_temperature()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__surface__temperature_a0fe51ca2d2ab7da9cd870e3f1fc0e717_icgraph.png" border="0" usemap="#anamespaceerf__surface__temperature_a0fe51ca2d2ab7da9cd870e3f1fc0e717_icgraph" alt=""/></div>
+<map name="anamespaceerf__surface__temperature_a0fe51ca2d2ab7da9cd870e3f1fc0e717_icgraph" id="anamespaceerf__surface__temperature_a0fe51ca2d2ab7da9cd870e3f1fc0e717_icgraph">
+<area shape="rect" title=" " alt="" coords="269,136,468,177"/>
+<area shape="rect" href="classSurfaceLayer.html#a49a97b3f9132567b9437015b10771fef" title=" " alt="" coords="47,5,179,47"/>
+<area shape="rect" href="classSurfaceLayer.html#adae707f4cdbba8131d04a232172be36a" title=" " alt="" coords="15,71,211,112"/>
+<area shape="rect" href="classSurfaceLayer.html#a4f31e6f3fddbc6f074c34c81eb131ff6" title=" " alt="" coords="24,136,203,177"/>
+<area shape="rect" href="classSurfaceLayer.html#ae49bf2a48059ec96fe1b6f180ca82786" title=" " alt="" coords="40,201,187,243"/>
+<area shape="rect" href="classSurfaceLayer.html#aa0b1ea96b2db3477e2995a9f4294e833" title=" " alt="" coords="5,267,221,308"/>
 </map>
 </div>
 
@@ -286,24 +717,24 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__surface__temperature.html#a84dca0169ccf8237a8902ddb28895b30">valid_pressure</a>(pressure) || !<a class="code" href="namespaceerf__surface__temperature.html#ae9dc62e9cb2f12051d9b6562f7bdce25">valid_temperature</a>(temperature) ||</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        !amrex::Math::isfinite(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>) || <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a> &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> result = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(temperature, pressure, <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__surface__temperature.html#ae9dc62e9cb2f12051d9b6562f7bdce25">valid_temperature</a>(result)) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = result;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__surface__temperature.html#a84dca0169ccf8237a8902ddb28895b30">valid_pressure</a>(pressure) || !<a class="code" href="namespaceerf__surface__temperature.html#ae9dc62e9cb2f12051d9b6562f7bdce25">valid_temperature</a>(temperature) ||</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        !amrex::Math::isfinite(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>) || <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a> &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> result = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(temperature, pressure, <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__surface__temperature.html#ae9dc62e9cb2f12051d9b6562f7bdce25">valid_temperature</a>(result)) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = result;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="ttc" id="aERF__EOS_8H_html_a8770405e52bfe8feb427eca945370fb2"><div class="ttname"><a href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getThgivenTandP(const amrex::Real T, const amrex::Real P, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:18</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a46e52004c860b2aef260fce99d025bce"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a></div><div class="ttdeci">const Real rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:72</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36"><div class="ttname"><a href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">MicVar_Kess::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:26</div></div>
-<div class="ttc" id="anamespaceerf__surface__temperature_html_a84dca0169ccf8237a8902ddb28895b30"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a84dca0169ccf8237a8902ddb28895b30">erf_surface_temperature::valid_pressure</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool valid_pressure(const amrex::Real pressure)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceTemperature.H:40</div></div>
-<div class="ttc" id="anamespaceerf__surface__temperature_html_ae9dc62e9cb2f12051d9b6562f7bdce25"><div class="ttname"><a href="namespaceerf__surface__temperature.html#ae9dc62e9cb2f12051d9b6562f7bdce25">erf_surface_temperature::valid_temperature</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool valid_temperature(const amrex::Real temperature)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceTemperature.H:47</div></div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_a84dca0169ccf8237a8902ddb28895b30"><div class="ttname"><a href="namespaceerf__surface__temperature.html#a84dca0169ccf8237a8902ddb28895b30">erf_surface_temperature::valid_pressure</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool valid_pressure(const amrex::Real pressure)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceTemperature.H:46</div></div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_ae9dc62e9cb2f12051d9b6562f7bdce25"><div class="ttname"><a href="namespaceerf__surface__temperature.html#ae9dc62e9cb2f12051d9b6562f7bdce25">erf_surface_temperature::valid_temperature</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool valid_temperature(const amrex::Real temperature)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceTemperature.H:53</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a4f31e6f3fddbc6f074c34c81eb131ff6">SurfaceLayer::fill_tsurf_with_coupled_sst()</a>, <a class="el" href="classSurfaceLayer.html#ae49bf2a48059ec96fe1b6f180ca82786">SurfaceLayer::fill_tsurf_with_sfc_sst()</a>, <a class="el" href="classSurfaceLayer.html#aa0b1ea96b2db3477e2995a9f4294e833">SurfaceLayer::fill_tsurf_with_skin_temperature()</a>, and <a class="el" href="ERF__MetgridUtils_8H.html#a705868e5abc89857b476d5f778fd4782">metgrid_surface_theta()</a>.</p>
 <div class="dynheader">
@@ -369,18 +800,18 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__surface__temperature.html#a84dca0169ccf8237a8902ddb28895b30">valid_pressure</a>(pressure) || !<a class="code" href="namespaceerf__surface__temperature.html#ae9dc62e9cb2f12051d9b6562f7bdce25">valid_temperature</a>(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>) ||</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        !amrex::Math::isfinite(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>) || <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a> &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> result = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(pressure, <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>, <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__surface__temperature.html#ae9dc62e9cb2f12051d9b6562f7bdce25">valid_temperature</a>(result)) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    temperature = result;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__surface__temperature.html#a84dca0169ccf8237a8902ddb28895b30">valid_pressure</a>(pressure) || !<a class="code" href="namespaceerf__surface__temperature.html#ae9dc62e9cb2f12051d9b6562f7bdce25">valid_temperature</a>(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>) ||</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        !amrex::Math::isfinite(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>) || <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a> &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> result = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(pressure, <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>, <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__surface__temperature.html#ae9dc62e9cb2f12051d9b6562f7bdce25">valid_temperature</a>(result)) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    temperature = result;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 <div class="ttc" id="aERF__EOS_8H_html_ae76d3ce3486d0e450849c56159f2dbd4"><div class="ttname"><a href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenPandTh(const amrex::Real P, const amrex::Real th, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:32</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a49a97b3f9132567b9437015b10771fef">SurfaceLayer::fill_qsurf_with_qsat()</a>, <a class="el" href="namespacerrtmgp.html#abe0424eff009566c0f357c0855d3fe3f">rrtmgp::resolve_surface_temperature()</a>, and <a class="el" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc">vertical_two_stream_sweep()</a>.</p>
@@ -426,9 +857,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> amrex::Math::isfinite(pressure) &amp;&amp; pressure &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> amrex::Math::isfinite(pressure) &amp;&amp; pressure &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#adae707f4cdbba8131d04a232172be36a">SurfaceLayer::fill_qsurf_with_skin_moisture()</a>, <a class="el" href="namespaceerf__surface__temperature.html#a0e54a32154f7a2327fad71b277e2bd2e">temperature_to_theta()</a>, and <a class="el" href="namespaceerf__surface__temperature.html#aa97f737767e883b152887e497e706c3b">theta_to_temperature()</a>.</p>
 <div class="dynheader">
@@ -469,9 +900,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> amrex::Math::isfinite(temperature) &amp;&amp; temperature &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> amrex::Math::isfinite(temperature) &amp;&amp; temperature &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#adae707f4cdbba8131d04a232172be36a">SurfaceLayer::fill_qsurf_with_skin_moisture()</a>, <a class="el" href="namespaceerf__surface__temperature.html#a0e54a32154f7a2327fad71b277e2bd2e">temperature_to_theta()</a>, and <a class="el" href="namespaceerf__surface__temperature.html#aa97f737767e883b152887e497e706c3b">theta_to_temperature()</a>.</p>
 <div class="dynheader">
