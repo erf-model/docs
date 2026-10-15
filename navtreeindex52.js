@@ -1,5 +1,9 @@
 var NAVTREEINDEX52 =
 {
+"structerf__sbm_1_1SpectralGridSpec.html":[2,0,9,33],
+"structerf__sbm_1_1SpectralGridSpec.html#a92ff789ceab304008f703930e5af09dc":[2,0,9,33,1],
+"structerf__sbm_1_1SpectralGridSpec.html#ab1c38eeb1e3ecf666400b1934978422d":[2,0,9,33,3],
+"structerf__sbm_1_1SpectralGridSpec.html#ac45794dd5289baa3e52da51fe29affac":[2,0,9,33,2],
 "structerf__sbm_1_1SpectralGridSpec.html#ad0804b6874aa3c801df5c086dbdff521":[2,0,9,33,0],
 "structerf__sbm_1_1SpectralPopulationSpec.html":[2,0,9,14],
 "structerf__sbm_1_1SpectralPopulationSpec.html#a300d061d6b6aac2fcf9cd8d11ae57635":[2,0,9,14,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX52 =
 "structplotfile2d_1_1SelectedWaterPathComponents.html":[2,0,18,12],
 "structplotfile2d_1_1SelectedWaterPathComponents.html#a2b0a9df46031b46f5d7d80f0c37d343a":[2,0,18,12,0],
 "structplotfile2d_1_1SelectedWaterPathComponents.html#a5ad7ae94132de9a36e7ecfbe7ef19c9b":[2,0,18,12,1],
-"structplotfile2d_1_1SelectedWaterPathComponents.html#a7d9967551f6fecfb49b42f9314927d56":[2,0,18,12,2],
-"structplotfile2d_1_1WaterPathDescriptor.html":[2,0,18,11],
-"structplotfile2d_1_1WaterPathDescriptor.html#a428e413376e7e580ebe2a1c5c49c41cc":[2,0,18,11,0],
-"structplotfile2d_1_1WaterPathDescriptor.html#a430cc11ee9c944948145ecba0ea90f15":[2,0,18,11,2],
-"structplotfile2d_1_1WaterPathDescriptor.html#a84095135b3bc8cf2a491d35a4140139d":[2,0,18,11,1]
+"structplotfile2d_1_1SelectedWaterPathComponents.html#a7d9967551f6fecfb49b42f9314927d56":[2,0,18,12,2]
 };

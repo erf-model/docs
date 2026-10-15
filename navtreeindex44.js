@@ -1,5 +1,9 @@
 var NAVTREEINDEX44 =
 {
+"structLatLonLocation.html#a2c7b22b45f96515bb26edd03df5a92ae":[2,0,72,6],
+"structLatLonLocation.html#a6e254ec2123c0917253a3658ddfb0fde":[2,0,72,3],
+"structLatLonLocation.html#ae7e68feb5d7a6c01a14fe5e4e208e426":[2,0,72,7],
+"structLatLonLocation.html#af53783792bbcadbb4efef487b0b1c621":[2,0,72,5],
 "structLatLonLocation.html#af7ad9de53ca85c1808f82aef197bced7":[2,0,72,4],
 "structLatLonLocation.html#afaf710f26589464a71101b48e194018b":[2,0,72,2],
 "structLineSampler.html":[2,0,74],
@@ -245,9 +249,5 @@ var NAVTREEINDEX44 =
 "structPlaneSampler.html#a47d485269a664d190e81d64babf0bbfb":[2,0,110,3],
 "structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477":[2,0,110,6],
 "structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc":[2,0,110,7],
-"structPlaneSampler.html#a817771a435a9c0f798dd4455aa83ef5c":[2,0,110,8],
-"structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24":[2,0,110,4],
-"structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca":[2,0,110,0],
-"structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7":[2,0,110,9],
-"structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76":[2,0,110,1]
+"structPlaneSampler.html#a817771a435a9c0f798dd4455aa83ef5c":[2,0,110,8]
 };
