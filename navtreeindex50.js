@@ -1,5 +1,6 @@
 var NAVTREEINDEX50 =
 {
+"structadiabatic__mod__charnock.html#adb448818932dcacccd5b7b81394a6d55":[2,0,25,1],
 "structadiabatic__wave__coupled.html":[2,0,26],
 "structadiabatic__wave__coupled.html#a3f907fc7025d3d3f7e44c222e12b4df1":[2,0,26,2],
 "structadiabatic__wave__coupled.html#a51bc09852a8614117aad6a5a36a32fa6":[2,0,26,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX50 =
 "structerf__noahmp_1_1PrecipSlots.html#a253399809c9bd6e238b4a848c1d24b5b":[2,0,6,0,3],
 "structerf__noahmp_1_1PrecipSlots.html#a3fe3211fc25b9a4c4ba4943b5d88f24e":[2,0,6,0,2],
 "structerf__noahmp_1_1PrecipSlots.html#a514f75d450b73efa24b6ed1b295f7199":[2,0,6,0,0],
-"structerf__noahmp_1_1PrecipSlots.html#a7e9c727f0e85ee557684aa27a2c8d0fc":[2,0,6,0,1],
-"structerf__plotfile_1_1Plot3DSelectionCapabilities.html":[2,0,7,0]
+"structerf__noahmp_1_1PrecipSlots.html#a7e9c727f0e85ee557684aa27a2c8d0fc":[2,0,6,0,1]
 };

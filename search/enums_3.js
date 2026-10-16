@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['ebboundarytype_15958',['EBBoundaryType',['../ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704',1,'ERF_EBStruct.H']]],
-  ['ebgridtype_15959',['EBGridType',['../ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edb',1,'ERF_EBStruct.H']]],
-  ['ebtautype_15960',['EBTauType',['../ERF__EBStruct_8H.html#a218dc338efca309f98d851c6ead2b3cb',1,'ERF_EBStruct.H']]],
-  ['erf_5fbc_15961',['ERF_BC',['../ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9',1,'ERF_IndexDefines.H']]]
+  ['ebboundarytype_15965',['EBBoundaryType',['../ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704',1,'ERF_EBStruct.H']]],
+  ['ebgridtype_15966',['EBGridType',['../ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edb',1,'ERF_EBStruct.H']]],
+  ['ebtautype_15967',['EBTauType',['../ERF__EBStruct_8H.html#a218dc338efca309f98d851c6ead2b3cb',1,'ERF_EBStruct.H']]],
+  ['erf_5fbc_15968',['ERF_BC',['../ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9',1,'ERF_IndexDefines.H']]]
 ];

@@ -1,5 +1,6 @@
 var NAVTREEINDEX27 =
 {
+"classProblemBase.html#ad83f058e9bc03a6233944a142e789aed":[2,0,112,2],
 "classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda":[2,0,112,20],
 "classProblemBase.html#afe66df34c57d9f670a957bbf10f23d87":[2,0,112,17],
 "classRadiation.html":[2,0,115],
@@ -248,6 +249,5 @@ var NAVTREEINDEX27 =
 "classReadBndryPlanes.html#aecc64f578d77217b811dafc64b053680":[2,0,118,32],
 "classReadBndryPlanes.html#af4c91eeb64f4e49767e97c1e72de06fc":[2,0,118,31],
 "classReadBndryPlanes.html#af830445d07a1fa180875f9992a4df077":[2,0,118,38],
-"classReadBndryPlanes.html#afe03a3b8a1953d94adde87f69ec15c32":[2,0,118,11],
-"classSAM.html":[2,0,121]
+"classReadBndryPlanes.html#afe03a3b8a1953d94adde87f69ec15c32":[2,0,118,11]
 };

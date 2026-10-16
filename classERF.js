@@ -138,6 +138,7 @@ var classERF =
     [ "initSponge", "classERF.html#ab26ec4f9c35a519063af2a938c1012e6", null ],
     [ "input_sponge", "classERF.html#abfdc95a7c3cf7e413c1352bac38c93e8", null ],
     [ "Interp2DArrays", "classERF.html#ac3b264bdcc7f9251ccbd9b2f8f4080ec", null ],
+    [ "Interp2DTimeSlice", "classERF.html#a13650397f58a03e12bd320e8717d0a51", null ],
     [ "interp_base_state_from_coarse", "classERF.html#adf5ed4a68724eb89eab81821badbfcd0", null ],
     [ "interp_land_masks_from_coarse", "classERF.html#ad23f7a5edcf86e345d2880b3355d71bc", null ],
     [ "interp_mapfac_from_coarse", "classERF.html#ae48380b576d20eaaa36acf53d246ef24", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX36 =
 {
+"globals_vars_b.html":[3,1,2,1],
 "globals_vars_c.html":[3,1,2,2],
 "globals_vars_d.html":[3,1,2,3],
 "globals_vars_e.html":[3,1,2,4],
@@ -37,15 +38,15 @@ var NAVTREEINDEX36 =
 "index.html#dev_model":[0,3],
 "index.html#getting_started":[0,2],
 "interfacemodule__libmassv_1_1vrec.html":[2,0,13,0],
-"interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,13,0,2],
 "interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,13,0,3],
-"interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,13,0,0],
+"interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,13,0,2],
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,13,0,1],
+"interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,13,0,0],
 "interfacemodule__libmassv_1_1vsqrt.html":[2,0,13,1],
-"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,13,1,0],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,13,1,1],
-"interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,13,1,3],
+"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,13,1,0],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,13,1,2],
+"interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,13,1,3],
 "main_8cpp.html":[3,0,1,41],
 "main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[3,0,1,41,3],
 "main_8cpp.html#a183e783116d02836167ccbed3b28c1d3":[3,0,1,41,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX36 =
 "namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85":[1,0,8,21],
 "namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85a3726b0350cccc330f38079b09dfb4f67":[1,0,8,21,0],
 "namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85a7ba201eb5e95abb7b2934e1538de5c88":[1,0,8,21,3],
-"namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85a8f5c726a79d28111b32b6a4e3bc56dc5":[1,0,8,21,1],
-"namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85ab2ee912b91d69b435159c7c3f6df7f5f":[1,0,8,21,2]
+"namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85a8f5c726a79d28111b32b6a4e3bc56dc5":[1,0,8,21,1]
 };
