@@ -161,6 +161,7 @@ var structSolverChoice =
     [ "spongeChoice", "structSolverChoice.html#a75dd711900dfe38ef2ddf80193f6f466", null ],
     [ "substepping_diag", "structSolverChoice.html#aa73ce44dfe91fdf2c88274351376feb1", null ],
     [ "substepping_type", "structSolverChoice.html#a6541a71cdd90632943e11b68fe26b095", null ],
+    [ "terrain_poisson_solver", "structSolverChoice.html#a9e29c23649ff1a83d1924e193d64b378", null ],
     [ "terrain_type", "structSolverChoice.html#aa75287c0686fee77546c1c21f9fbfae7", null ],
     [ "test_mapfactor", "structSolverChoice.html#a8bec7c1e26110f10f9fa78a950d10459", null ],
     [ "time_avg_vel", "structSolverChoice.html#a7727d8252f75e7b1588a8f3429cd9133", null ],

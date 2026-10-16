@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"ERF__SatAdj_8H_source.html":[3,0,1,14,5,2],
 "ERF__SatAdj_8cpp.html":[3,0,1,14,5,1],
 "ERF__SatMethods_8H.html":[3,0,1,26,38],
 "ERF__SatMethods_8H_source.html":[3,0,1,26,38],
@@ -203,6 +204,7 @@ var NAVTREEINDEX14 =
 "ERF__SolveWithGMRES_8cpp.html":[3,0,1,12,9],
 "ERF__SolveWithMLMG_8cpp.html":[3,0,1,12,10],
 "ERF__SolveWithMLMG_8cpp.html#a9285fc2860db342a9350ae1bf2e43eef":[3,0,1,12,10,0],
+"ERF__SolveWithTerrainMLMG_8cpp.html":[3,0,1,12,11],
 "ERF__SolverUtils_8H.html":[3,0,1,12,6],
 "ERF__SolverUtils_8H.html#a3611957f9ce37c1d538c9a596dc02acf":[3,0,1,12,6,1],
 "ERF__SolverUtils_8H.html#a9071f295efe69b41bdccada862d83682":[3,0,1,12,6,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "ERF__Substep__MT_8cpp.html#af54b8124774096370deb09aca7570927":[3,0,1,23,17,0],
 "ERF__Substep__NS_8cpp.html":[3,0,1,23,18],
 "ERF__Substep__NS_8cpp.html#ac326dbb6cf751835213dca68e9e97cc5":[3,0,1,23,18,0],
-"ERF__Substep__T_8cpp.html":[3,0,1,23,19],
-"ERF__Substep__T_8cpp.html#af6388b09d63fc5ada9b4b8eba6fe199f":[3,0,1,23,19,0],
-"ERF__SuperDropletPCAddParticles_8cpp.html":[3,0,1,16,4]
+"ERF__Substep__T_8cpp.html":[3,0,1,23,19]
 };

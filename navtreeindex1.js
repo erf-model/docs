@@ -224,7 +224,8 @@ var NAVTREEINDEX1 =
 "ERF__DampingStruct_8H_source.html":[3,0,1,4,2],
 "ERF__DataStruct_8H.html":[3,0,1,4,3],
 "ERF__DataStruct_8H.html#a01afbed431da562282cc06eef6fb9c88":[3,0,1,4,3,9],
-"ERF__DataStruct_8H.html#a01fdd737487d4a3aed4e6eb7a3913052":[3,0,1,4,3,27],
+"ERF__DataStruct_8H.html#a01fdd737487d4a3aed4e6eb7a3913052":[3,0,1,4,3,28],
+"ERF__DataStruct_8H.html#a045a068db0ef5d54a4379b1a5c96e1e4":[3,0,1,4,3,22],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248b":[3,0,1,4,3,8],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99":[3,0,1,4,3,8,3],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73":[3,0,1,4,3,8,5],
@@ -235,7 +236,7 @@ var NAVTREEINDEX1 =
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bacec8728fd270452c9985e46f971d6935":[3,0,1,4,3,8,7],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391":[3,0,1,4,3,8,6],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e":[3,0,1,4,3,8,4],
-"ERF__DataStruct_8H.html#a0c00b090194b0ea199bead5a10382b8b":[3,0,1,4,3,26],
+"ERF__DataStruct_8H.html#a0c00b090194b0ea199bead5a10382b8b":[3,0,1,4,3,27],
 "ERF__DataStruct_8H.html#a167e3ccc662c308c584d8722a013a25c":[3,0,1,4,3,15],
 "ERF__DataStruct_8H.html#a31ae75ca03a26e6ad638ba3bdf2246eb":[3,0,1,4,3,12],
 "ERF__DataStruct_8H.html#a34a4d2e60f7b54f450d8bc2f5bf9f32e":[3,0,1,4,3,13],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__DataStruct_8H.html#a4c8ef47ce271207e710836cd66f387b7":[3,0,1,4,3,17],
 "ERF__DataStruct_8H.html#a527d8c0024ac44ed7d9d58920ba18924":[3,0,1,4,3,16],
 "ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcb":[3,0,1,4,3,7],
-"ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcba7f0566bdfe36c67d532a7e2aca33d9a4":[3,0,1,4,3,7,2],
-"ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcbaad1bdec1c0213a18483e81bcb4926964":[3,0,1,4,3,7,1]
+"ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcba7f0566bdfe36c67d532a7e2aca33d9a4":[3,0,1,4,3,7,2]
 };
