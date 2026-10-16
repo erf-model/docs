@@ -66,6 +66,7 @@ var classERF =
     [ "fill_seb_from_coarse", "classERF.html#a9fd0775bd5700ef5e71ec3a64a99fc19", null ],
     [ "fill_terrain_surface", "classERF.html#afa6533eedd08b77b58e09cb7b14313ca", null ],
     [ "FillBdyCCVels", "classERF.html#a14e88231520ff2f263c86db1f8e47bdb", null ],
+    [ "FillCoarseFineGhostsForImplicit", "classERF.html#af340a27e34adf545187cad6b523dd76a", null ],
     [ "FillCoarsePatch", "classERF.html#a1274269dd2ea27159796a52d0531fc1e", null ],
     [ "FillForecastStateMultiFabs", "classERF.html#a489b764a2e6fdbb983c1beea2cc80e00", null ],
     [ "FillIntermediatePatch", "classERF.html#a7c212ac46f6c3e69093cdf68a6731679", null ],

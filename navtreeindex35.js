@@ -1,5 +1,6 @@
 var NAVTREEINDEX35 =
 {
+"classerf__sbm_1_1SBMTransport.html#a38727fdecac66f2e79fd22ed09a3553f":[2,0,9,32,8],
 "classerf__sbm_1_1SBMTransport.html#a49249b6e78f4b78fcaf3a4e5f3f047f1":[2,0,9,32,6],
 "classerf__sbm_1_1SBMTransport.html#a54f20a1f491e52eed04e012b914575b5":[2,0,9,32,4],
 "classerf__sbm_1_1SBMTransport.html#a571eb41ef11c4a94b15050f2e71ff339":[2,0,9,32,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX35 =
 "globals_r.html":[3,1,0,17],
 "globals_s.html":[3,1,0,18],
 "globals_t.html":[3,1,0,19],
-"globals_type.html":[3,1,3],
-"globals_u.html":[3,1,0,20]
+"globals_type.html":[3,1,3]
 };

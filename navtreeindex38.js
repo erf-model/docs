@@ -1,5 +1,6 @@
 var NAVTREEINDEX38 =
 {
+"namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284eaf31bbdd1b3e85bccd652680e16935819":[1,0,24,40,2],
 "namespaceerf__sbm.html#a181e3d55ad4eb4f53244a260bbd2d2a8":[1,0,24,57],
 "namespaceerf__sbm.html#a196324656da9600ee64b63799251386f":[1,0,24,68],
 "namespaceerf__sbm.html#a1995df4a24a58bba5b15ee769dbb21c8":[1,0,24,69],
@@ -247,7 +248,6 @@ var NAVTREEINDEX38 =
 "namespacemembers_eval_y.html":[1,1,5,23],
 "namespacemembers_eval_z.html":[1,1,5,24],
 "namespacemembers_f.html":[1,1,0,5],
-"namespacemembers_func.html":[1,1,1],
 "namespacemembers_func.html":[1,1,1,0],
-"namespacemembers_func_b.html":[1,1,1,1]
+"namespacemembers_func.html":[1,1,1]
 };
