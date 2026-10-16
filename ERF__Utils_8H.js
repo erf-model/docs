@@ -1,5 +1,10 @@
 var ERF__Utils_8H =
 [
+    [ "TimeLevelSel", "ERF__Utils_8H.html#af8cfce51746e33d860ce205a8390c0ed", [
+      [ "Old", "ERF__Utils_8H.html#af8cfce51746e33d860ce205a8390c0edac7268757fbabf48019f4984933539d8a", null ],
+      [ "New", "ERF__Utils_8H.html#af8cfce51746e33d860ce205a8390c0eda03c2e7e41ffc181a4e84080b4710e81e", null ],
+      [ "Interp", "ERF__Utils_8H.html#af8cfce51746e33d860ce205a8390c0edae14a2cc547fabbdef81a21776e171cd0", null ]
+    ] ],
     [ "Accumulate_Interval_Means", "ERF__Utils_8H.html#a668d034ff95e9d36a328cd77f7bf3ebc", null ],
     [ "ApplyInvertedMask", "ERF__Utils_8H.html#acbc6116a3309adf87b7dc24242dc50ec", null ],
     [ "ApplyMask", "ERF__Utils_8H.html#acebead6f3a33cb7737a1fea98341c3ae", null ],
@@ -25,6 +30,8 @@ var ERF__Utils_8H =
     [ "realbdy_compute_relaxation", "ERF__Utils_8H.html#ac2249529c08cee787c0b9b56259d3447", null ],
     [ "realbdy_interior_bxs_xy", "ERF__Utils_8H.html#abc480bd281f755246fa9e6faf149b588", null ],
     [ "rebalance_columns", "ERF__Utils_8H.html#a3742f619397543dafbbe2a182d5cdf33", null ],
+    [ "select_time_data", "ERF__Utils_8H.html#a4166c23e462d90d416fbc14486acace0", null ],
+    [ "select_time_level", "ERF__Utils_8H.html#af4a2cf5eb4601a9de9d12390158c74ea", null ],
     [ "thinbody_wall_dist", "ERF__Utils_8H.html#a99650b0d59ae9542586a873ea8ac142e", null ],
     [ "Time_Avg_Vel_atCC", "ERF__Utils_8H.html#abc0c2271844c330847fe737ed8ab9a68", null ],
     [ "VelocityToMomentum", "ERF__Utils_8H.html#a2e5e0e7af417da64f77e0778ed824bf9", null ],
