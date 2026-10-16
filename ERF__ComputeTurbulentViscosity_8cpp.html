@@ -579,11 +579,47 @@ Functions</h2></td></tr>
 <div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;                    }</div>
 <div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;                }</div>
 <div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;            });</div>
-<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;        } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160; </div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;        eddyViscosity.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;    }</div>
-<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;}</div>
+<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;            <span class="comment">// Edge and corner ghost cells at a C/F boundary are skipped above when every face</span></div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;            <span class="comment">// neighbour toward the valid box is itself a C/F ghost cell, e.g. (i_lo-1,j_lo-1).</span></div>
+<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;            <span class="comment">// Fill these from a cell that is valid at this level (in this grid or another),</span></div>
+<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;            <span class="comment">// stepping toward the valid box in two directions (xy, xz, yz) before all three.</span></div>
+<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;            <span class="comment">// The sources are never written in this block, and taking covered cells as well as</span></div>
+<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;            <span class="comment">// our own keeps the result independent of how the level is divided into grids.</span></div>
+<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(mfi.growntilebox(1), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;            {</div>
+<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;                <span class="keywordflow">if</span> (mask_arr(i,j,k) != is_notcovered) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160; </div>
+<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;                <span class="keywordtype">int</span> si = amrex::min(amrex::max(i, i_lo), i_hi);</div>
+<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;                <span class="keywordtype">int</span> sj = amrex::min(amrex::max(j, j_lo), j_hi);</div>
+<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;                <span class="keywordtype">int</span> sk = amrex::min(amrex::max(k, k_lo), k_hi);</div>
+<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;                <span class="keywordtype">bool</span> gx = (si != i);</div>
+<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;                <span class="keywordtype">bool</span> gy = (sj != j);</div>
+<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;                <span class="keywordtype">bool</span> gz = (sk != k);</div>
+<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160; </div>
+<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;                <span class="comment">// Already filled by one of the plane kernels above</span></div>
+<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;                <span class="keywordflow">if</span> (gx &amp;&amp; mask_arr(si,j,k) != is_notcovered) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;                <span class="keywordflow">if</span> (gy &amp;&amp; mask_arr(i,sj,k) != is_notcovered) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;                <span class="keywordflow">if</span> (gz &amp;&amp; mask_arr(i,j,sk) != is_notcovered) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160; </div>
+<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;                <span class="keywordtype">int</span> ii = si; <span class="keywordtype">int</span> jj = sj; <span class="keywordtype">int</span> kk = sk;</div>
+<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;                <span class="keywordflow">if</span>        (gx &amp;&amp; gy &amp;&amp; mask_arr(si,sj,k ) != is_notcovered) {</div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;                    kk = k;</div>
+<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (gx &amp;&amp; gz &amp;&amp; mask_arr(si,j ,sk) != is_notcovered) {</div>
+<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;                    jj = j;</div>
+<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (gy &amp;&amp; gz &amp;&amp; mask_arr(i ,sj,sk) != is_notcovered) {</div>
+<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;                    ii = i;</div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;                }</div>
+<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
+<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;                    mu_turb(i,j,k,n) = mu_turb(ii,jj,kk,n);</div>
+<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;                }</div>
+<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;            });</div>
+<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;        } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160; </div>
+<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;        eddyViscosity.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;    }</div>
+<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;}</div>
 <div class="ttc" id="aERF__ComputeDiffusivityMRF_8cpp_html_af8d0edbdbde4c281297eda80a1c44f26"><div class="ttname"><a href="ERF__ComputeDiffusivityMRF_8cpp.html#af8d0edbdbde4c281297eda80a1c44f26">ComputeDiffusivityMRF</a></div><div class="ttdeci">void ComputeDiffusivityMRF(const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, const Geometry &amp;geom, const TurbChoice &amp;turbChoice, std::unique_ptr&lt; SurfaceLayer &gt; &amp;SurfLayer, bool use_terrain_fitted_coords, bool use_moisture, int level, const BCRec *bc_ptr, bool, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_cc, const MoistureComponentIndices &amp;moisture_indices, const MultiFab *terrain_blank)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeDiffusivityMRF.cpp:34</div></div>
 <div class="ttc" id="aERF__ComputeDiffusivityMYJ_8cpp_html_a8c281fdb91beebc860c44b9e0ec156fe"><div class="ttname"><a href="ERF__ComputeDiffusivityMYJ_8cpp.html#a8c281fdb91beebc860c44b9e0ec156fe">ComputeDiffusivityMYJ</a></div><div class="ttdeci">void ComputeDiffusivityMYJ(double dt, const MultiFab &amp;xvel, const MultiFab &amp;yvel, MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, const Geometry &amp;geom, const TurbChoice &amp;turbChoice, std::unique_ptr&lt; SurfaceLayer &gt; &amp;SurfLayer, bool use_terrain_fitted_coords, bool use_moisture, int level, const BCRec *bc_ptr, bool, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_cc, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeDiffusivityMYJ.cpp:33</div></div>
 <div class="ttc" id="aERF__ComputeDiffusivityMYNN25_8cpp_html_a906231db6cd588c98d4c233904c54e74"><div class="ttname"><a href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a906231db6cd588c98d4c233904c54e74">ComputeDiffusivityMYNN25</a></div><div class="ttdeci">void ComputeDiffusivityMYNN25(const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, const Geometry &amp;geom, const TurbChoice &amp;turbChoice, std::unique_ptr&lt; SurfaceLayer &gt; &amp;SurfLayer, bool use_terrain_fitted_coords, bool use_moisture, int level, const BCRec *bc_ptr, bool, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_cc, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeDiffusivityMYNN25.cpp:31</div></div>
