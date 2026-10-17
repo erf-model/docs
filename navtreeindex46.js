@@ -1,5 +1,9 @@
 var NAVTREEINDEX46 =
 {
+"structSDDistributionParams.html#aea1861a60664fbac1893d7a2b607f884":[2,0,144,10],
+"structSDInputs.html":[2,0,148],
+"structSDInputs.html#a0e21d3f1206808c1250cf6316876b5c8":[2,0,148,6],
+"structSDInputs.html#a48fc035e4624a8a4156b56f6e612215f":[2,0,148,0],
 "structSDInputs.html#a499b1836ab51581ff11c2f2363ba303c":[2,0,148,2],
 "structSDInputs.html#a5c2e207f31b84b32b2050d238da4d6cc":[2,0,148,8],
 "structSDInputs.html#a989b771e3dd94ce6194634e5c142cb5b":[2,0,148,7],
@@ -245,9 +249,5 @@ var NAVTREEINDEX46 =
 "structShocColumnLayout.html#a4ec7cb525449672abda522014cee479a":[2,0,150,0],
 "structShocColumnLayout.html#a613bf2a5a474f7cccfb20c031368a056":[2,0,150,5],
 "structShocColumnLayout.html#a6868a23447ac2acd77d6aadc256c2bc1":[2,0,150,2],
-"structShocColumnLayout.html#abedafcc1baed3bce48f8d8d2d0538b23":[2,0,150,4],
-"structShocColumnLayout.html#ac1727089aac2c9b168e3d86afb82df03":[2,0,150,1],
-"structShocColumnLayout.html#ade05ea6925f60cee996b1137aa017a5b":[2,0,150,7],
-"structShocColumnLayout.html#adf8a6bbb99cf3c252438be528ecc39c9":[2,0,150,6],
-"structShocColumnLayout.html#af7c870fc78b7b00c8492f764d7c0f51a":[2,0,150,3]
+"structShocColumnLayout.html#abedafcc1baed3bce48f8d8d2d0538b23":[2,0,150,4]
 };

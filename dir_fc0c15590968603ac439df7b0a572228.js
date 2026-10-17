@@ -34,5 +34,6 @@ var dir_fc0c15590968603ac439df7b0a572228 =
     [ "ERF_SetupVertDiff.H", "ERF__SetupVertDiff_8H.html", null ],
     [ "ERF_TerrainDiffusionLimits.H", "ERF__TerrainDiffusionLimits_8H.html", "ERF__TerrainDiffusionLimits_8H" ],
     [ "ERF_TerrainImplicitMetric.H", "ERF__TerrainImplicitMetric_8H.html", "ERF__TerrainImplicitMetric_8H" ],
-    [ "ERF_TurbKESources.H", "ERF__TurbKESources_8H.html", "ERF__TurbKESources_8H" ]
+    [ "ERF_TurbKESources.H", "ERF__TurbKESources_8H.html", "ERF__TurbKESources_8H" ],
+    [ "ERF_WallGradientCoeffs.H", "ERF__WallGradientCoeffs_8H.html", "ERF__WallGradientCoeffs_8H" ]
 ];

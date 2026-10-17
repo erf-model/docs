@@ -1,5 +1,9 @@
 var NAVTREEINDEX36 =
 {
+"globals_p.html":[3,1,0,15],
+"globals_q.html":[3,1,0,16],
+"globals_r.html":[3,1,0,17],
+"globals_s.html":[3,1,0,18],
 "globals_t.html":[3,1,0,19],
 "globals_type.html":[3,1,3],
 "globals_u.html":[3,1,0,20],
@@ -46,11 +50,11 @@ var NAVTREEINDEX36 =
 "interfacemodule__libmassv_1_1vrec.html":[2,0,13,0],
 "interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,13,0,3],
 "interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,13,0,2],
-"interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,13,0,0],
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,13,0,1],
+"interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,13,0,0],
 "interfacemodule__libmassv_1_1vsqrt.html":[2,0,13,1],
-"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,13,1,1],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,13,1,0],
+"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,13,1,1],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,13,1,3],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,13,1,2],
 "main_8cpp.html":[3,0,1,41],
@@ -245,9 +249,5 @@ var NAVTREEINDEX36 =
 "namespaceerf__auxiliary.html#a411a1f70c9683e58c0249a9d612f30d0":[1,0,8,30],
 "namespaceerf__auxiliary.html#a4566c3cfec768d75c51f61bcf063fe93":[1,0,8,24],
 "namespaceerf__auxiliary.html#a48c64f2a0bc1e093bb8ec6d64d177889":[1,0,8,38],
-"namespaceerf__auxiliary.html#a4950dfd4785000a45560bba35907f787":[1,0,8,36],
-"namespaceerf__auxiliary.html#a4eafed90679495b6b748f1e9dff0264b":[1,0,8,41],
-"namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622a":[1,0,8,18],
-"namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa37c5e33bbeb79e5a25c31162da17ebc4":[1,0,8,18,2],
-"namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa3956c6b08b3dc65198c71b8950938e50":[1,0,8,18,0]
+"namespaceerf__auxiliary.html#a4950dfd4785000a45560bba35907f787":[1,0,8,36]
 };

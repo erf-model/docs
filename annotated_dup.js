@@ -351,6 +351,7 @@ var annotated_dup =
     [ "UPWIND5", "structUPWIND5.html", "structUPWIND5" ],
     [ "UPWINDALL", "structUPWINDALL.html", "structUPWINDALL" ],
     [ "Urban", "classUrban.html", "classUrban" ],
+    [ "WallGradCoeffs", "structWallGradCoeffs.html", "structWallGradCoeffs" ],
     [ "WDM6", "classWDM6.html", "classWDM6" ],
     [ "WENO3", "structWENO3.html", "structWENO3" ],
     [ "WENO5", "structWENO5.html", "structWENO5" ],

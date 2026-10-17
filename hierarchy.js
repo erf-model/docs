@@ -340,6 +340,7 @@ var hierarchy =
     [ "module_libmassv::vsqrt", "interfacemodule__libmassv_1_1vsqrt.html", null ],
     [ "erf_wall_scalar_bc::WallFaceParseResult", "structerf__wall__scalar__bc_1_1WallFaceParseResult.html", null ],
     [ "erf_cloud_chamber_wall_flux::WallFlux", "structerf__cloud__chamber__wall__flux_1_1WallFlux.html", null ],
+    [ "WallGradCoeffs", "structWallGradCoeffs.html", null ],
     [ "erf_cloud_chamber::WallSpec", "structerf__cloud__chamber_1_1WallSpec.html", null ],
     [ "erf_cloud_chamber::WallTransferContract", "structerf__cloud__chamber_1_1WallTransferContract.html", null ],
     [ "plotfile2d::WaterPathDescriptor", "structplotfile2d_1_1WaterPathDescriptor.html", null ],

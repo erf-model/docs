@@ -1,5 +1,9 @@
 var NAVTREEINDEX45 =
 {
+"structPBLSurfaceLayerGradient.html":[2,0,107],
+"structPBLSurfaceLayerGradient.html#a0bc85854a44b4706211c06855ebc18bf":[2,0,107,0],
+"structPBLSurfaceLayerGradient.html#a134a60c7048a6f47629ae08ca963a95a":[2,0,107,2],
+"structPBLSurfaceLayerGradient.html#ad51e0b17f17369fbac4c16a843c58d92":[2,0,107,1],
 "structPBLSurfaceLayerGradient.html#ae686d7a7cd1aa763d88f152e1dcbb264":[2,0,107,3],
 "structPlanarBoundary_1_1Buffer.html":[2,0,108,0],
 "structPlanarBoundary_1_1Buffer.html#a756bebbfe01ca18aece4fbcd0c91f5f5":[2,0,108,0,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX45 =
 "structSDDistributionParams.html#acdbd2bfafd59e622ec768f5bf9083548":[2,0,144,13],
 "structSDDistributionParams.html#ad52ed32d8833e32e744f407b90e9bd42":[2,0,144,16],
 "structSDDistributionParams.html#ae1e5ccc8b6db28c8216b5bb73d1064ce":[2,0,144,5],
-"structSDDistributionParams.html#ae597881a391759d943fc480af5826a06":[2,0,144,1],
-"structSDDistributionParams.html#aea1861a60664fbac1893d7a2b607f884":[2,0,144,10],
-"structSDInputs.html":[2,0,148],
-"structSDInputs.html#a0e21d3f1206808c1250cf6316876b5c8":[2,0,148,6],
-"structSDInputs.html#a48fc035e4624a8a4156b56f6e612215f":[2,0,148,0]
+"structSDDistributionParams.html#ae597881a391759d943fc480af5826a06":[2,0,144,1]
 };
