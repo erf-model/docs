@@ -1,5 +1,16 @@
 var NAVTREEINDEX52 =
 {
+"structerf__sbm_1_1SBMStateManager_1_1LevelState.html#a66d2aadbecb17504737d7184a1ecdd64":[2,0,9,31,0,1],
+"structerf__sbm_1_1SBMStateManager_1_1LevelState.html#a7058dc6fd524bede4e6c7d1546a566bb":[2,0,9,31,0,5],
+"structerf__sbm_1_1SBMStateManager_1_1LevelState.html#ad9fc5b79ad5dfdec9597aedfb63d82a3":[2,0,9,31,0,6],
+"structerf__sbm_1_1SBMStateManager_1_1LevelState.html#af6bc0259489cd0aa0ad98bf2c895d479":[2,0,9,31,0,4],
+"structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html":[2,0,9,32,0],
+"structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#a243bc4265bde9a596588c0a198a2bfcb":[2,0,9,32,0,3],
+"structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#a6bcb4048b64f494ca879a2679ccfb71a":[2,0,9,32,0,9],
+"structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#a98a7fffbd0bebfa5e9e75e2744369ef6":[2,0,9,32,0,0],
+"structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#abf8cc3c1fbf635b436c23eddf30d1766":[2,0,9,32,0,5],
+"structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#acfeffc8c3f62e624de6731846ecc4707":[2,0,9,32,0,4],
+"structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#ad99e3cb0543747206331232c970ae449":[2,0,9,32,0,2],
 "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#addb73bf08d3e5d11cf7c0dc7d7419d13":[2,0,9,32,0,7],
 "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#ae2f02815478871349f9cfd6cf64a5bb4":[2,0,9,32,0,6],
 "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#aec666513c1a55b00a97012ae4be6b906":[2,0,9,32,0,1],
@@ -238,16 +249,5 @@ var NAVTREEINDEX52 =
 "structplotfile2d_1_1SampledFieldDescriptor.html#ab396cdda121a68697e5880fa6fb34284":[2,0,18,4,2],
 "structplotfile2d_1_1SampledFieldDescriptor.html#ac37f9aca5edd7b1a2b9ff9f0ea770e78":[2,0,18,4,3],
 "structplotfile2d_1_1SampledFieldDescriptor.html#aec699a7cbc84bebad4bcd832261fd34b":[2,0,18,4,1],
-"structplotfile2d_1_1SampledFieldSelection.html":[2,0,18,5],
-"structplotfile2d_1_1SampledFieldSelection.html#a15a2c21311d6e40c709b42b6a77ecbf4":[2,0,18,5,1],
-"structplotfile2d_1_1SampledFieldSelection.html#ab879194600c55839e2eb311bd0b203cc":[2,0,18,5,0],
-"structplotfile2d_1_1SampledLevelDefinition.html":[2,0,18,9],
-"structplotfile2d_1_1SampledLevelDefinition.html#a451de3df9ee5b904c6f49cd91a42b0a3":[2,0,18,9,1],
-"structplotfile2d_1_1SampledLevelDefinition.html#a5d9376266f48199bc843dc649ca24ad5":[2,0,18,9,0],
-"structplotfile2d_1_1SampledLevelDefinition.html#a6946a7f1426a8ab002ad19c580a10a91":[2,0,18,9,2],
-"structplotfile2d_1_1SampledLevelDefinition.html#a6e6b7960b5be88c1a5ecaac24d101cb5":[2,0,18,9,4],
-"structplotfile2d_1_1SampledLevelDefinition.html#a809960c438fa5797e545502c50895eff":[2,0,18,9,3],
-"structplotfile2d_1_1SampledLevelDefinition.html#aac78786208c87fa88f7290ec3ce392a0":[2,0,18,9,6],
-"structplotfile2d_1_1SampledLevelDefinition.html#aad9e998a6f1cee7361e32317c2ecf80d":[2,0,18,9,5],
-"structplotfile2d_1_1SampledLevelMetadata.html":[2,0,18,7]
+"structplotfile2d_1_1SampledFieldSelection.html":[2,0,18,5]
 };

@@ -168,6 +168,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a96c8315e4d00aeb1b0579e1c7701fb3e"><td class="memTemplParams" colspan="2">template&lt;int stagdir&gt; </td></tr>
 <tr class="memitem:a96c8315e4d00aeb1b0579e1c7701fb3e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF__ImplicitDiff__T_8cpp.html#a96c8315e4d00aeb1b0579e1c7701fb3e">ImplicitDiffForMomLU_T</a> (const Box &amp;bx, const Box &amp;domain, const int level, const double dt_d, const Array4&lt; const int &gt; &amp;col_kext, const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;cell_data, const Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;face_data, const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;tau, const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;tau_corr, const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;z_nd, const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;detJ, const GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;mu_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const BCRec *bc_ptr, const bool use_SurfLayer, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> implicit_fac, const bool use_ysu_mom_countergradient, const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;mf_x, const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;mf_y, const bool implicit_metric)</td></tr>
 <tr class="separator:a96c8315e4d00aeb1b0579e1c7701fb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a232daee932b40c9a54cdba0435e7a845"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ImplicitDiff__T_8cpp.html#a232daee932b40c9a54cdba0435e7a845">ImplicitVerticalFluxForReflux_T</a> (const Box &amp;bx, const Box &amp;domain, const int level, const int n, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> implicit_fac, const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;cell_data, const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;z_nd, const GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;mu_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;mf_mx, const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;mf_my, const bool implicit_metric, const bool use_mrf_countergradient, const Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;zflux)</td></tr>
+<tr class="separator:a232daee932b40c9a54cdba0435e7a845"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a468825b496be0b211c35772b3f9b487d"></a>
@@ -749,8 +751,8 @@ template&lt;int stagdir&gt; </div>
 <div class="ttc" id="astructDiffChoice_html_a566863f96424952c0d690ddc2d2a7673"><div class="ttname"><a href="structDiffChoice.html#a566863f96424952c0d690ddc2d2a7673">DiffChoice::molec_diff_type</a></div><div class="ttdeci">MolecDiffType molec_diff_type</div><div class="ttdoc">Selected molecular transport model.</div><div class="ttdef"><b>Definition:</b> ERF_DiffStruct.H:96</div></div>
 <div class="ttc" id="astructDiffChoice_html_ad2d06825dd39cb2326ef5231536f688a"><div class="ttname"><a href="structDiffChoice.html#ad2d06825dd39cb2326ef5231536f688a">DiffChoice::dynamic_viscosity</a></div><div class="ttdeci">amrex::Real dynamic_viscosity</div><div class="ttdoc">Dynamic viscosity for momentum diffusion [kg/(m-s)].</div><div class="ttdef"><b>Definition:</b> ERF_DiffStruct.H:108</div></div>
 <div class="ttc" id="astructDiffChoice_html_ae4a13d78575df2a258cc2f1e7f098c5c"><div class="ttname"><a href="structDiffChoice.html#ae4a13d78575df2a258cc2f1e7f098c5c">DiffChoice::rho0_trans</a></div><div class="ttdeci">amrex::Real rho0_trans</div><div class="ttdoc">Reference density used to compute dynamic diffusion coefficients [kg/m3].</div><div class="ttdef"><b>Definition:</b> ERF_DiffStruct.H:103</div></div>
-<div class="ttc" id="astructSolverChoice_html_a1297a9e5ac82884e594d2d6443c06f50"><div class="ttname"><a href="structSolverChoice.html#a1297a9e5ac82884e594d2d6443c06f50">SolverChoice::turbChoice</a></div><div class="ttdeci">amrex::Vector&lt; TurbChoice &gt; turbChoice</div><div class="ttdoc">Turbulence options for each AMR level.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:2273</div></div>
-<div class="ttc" id="astructSolverChoice_html_aca2253bfc4884d8a9581daa5b576a6f0"><div class="ttname"><a href="structSolverChoice.html#aca2253bfc4884d8a9581daa5b576a6f0">SolverChoice::diffChoice</a></div><div class="ttdeci">DiffChoice diffChoice</div><div class="ttdoc">Diffusion-related options.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:2270</div></div>
+<div class="ttc" id="astructSolverChoice_html_a1297a9e5ac82884e594d2d6443c06f50"><div class="ttname"><a href="structSolverChoice.html#a1297a9e5ac82884e594d2d6443c06f50">SolverChoice::turbChoice</a></div><div class="ttdeci">amrex::Vector&lt; TurbChoice &gt; turbChoice</div><div class="ttdoc">Turbulence options for each AMR level.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:2281</div></div>
+<div class="ttc" id="astructSolverChoice_html_aca2253bfc4884d8a9581daa5b576a6f0"><div class="ttname"><a href="structSolverChoice.html#aca2253bfc4884d8a9581daa5b576a6f0">SolverChoice::diffChoice</a></div><div class="ttdeci">DiffChoice diffChoice</div><div class="ttdoc">Diffusion-related options.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:2278</div></div>
 <div class="ttc" id="astructTurbChoice_html"><div class="ttname"><a href="structTurbChoice.html">TurbChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:115</div></div>
 <div class="ttc" id="astructTurbChoice_html_ad6b344da2506d1868e19ca2c2cd4b623"><div class="ttname"><a href="structTurbChoice.html#ad6b344da2506d1868e19ca2c2cd4b623">TurbChoice::use_kturb</a></div><div class="ttdeci">bool use_kturb</div><div class="ttdoc">Whether any turbulence model is active.</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:921</div></div>
 <div class="ttc" id="astructWallGradCoeffs_html"><div class="ttname"><a href="structWallGradCoeffs.html">WallGradCoeffs</a></div><div class="ttdef"><b>Definition:</b> ERF_WallGradientCoeffs.H:25</div></div>
@@ -1216,6 +1218,181 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__GetRhoAlpha_8H.html#ada7887ec8368edfaf1f17ba9700faa2a" title=" " alt="" coords="288,122,393,149"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="295,173,386,199"/>
 <area shape="rect" href="ERF__NativeScalarDiffusion_8H.html#afcd0530ce2d8e4352736690d314d96cc" title=" " alt="" coords="233,224,448,265"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a232daee932b40c9a54cdba0435e7a845"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a232daee932b40c9a54cdba0435e7a845">&#9670;&nbsp;</a></span>ImplicitVerticalFluxForReflux_T()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImplicitVerticalFluxForReflux_T </td>
+          <td>(</td>
+          <td class="paramtype">const Box &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Box &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramname"><em>implicit_fac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cell_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>z_nd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cellSizeInv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mu_turb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
+          <td class="paramname"><em>solverChoice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mf_mx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mf_my</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>implicit_metric</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>use_mrf_countergradient</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>zflux</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The implicit part of the vertical diffusive flux of component n on the z faces of bx, as the matching ImplicitDiffForStateLU_T solve applied it, for refluxing: in the convention of the advective fluxes the flux registers hold (see AddScalarDiffusionRefluxFluxes_T), i.e. the vertical transfer divided by m_x m_y.</p>
+<p>cell_data must hold the solution of that solve, including the ghost values a column that ends at a coarse/fine boundary was closed with. Faces on the domain boundary are set to zero: they are never refluxed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bx</td><td>cell-centered box </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td>box of the whole domain </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>AMR level </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>conserved component index </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">implicit_fac</td><td>the vert_implicit_fac the solve used </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cell_data</td><td>conserved state after the solve </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">use_mrf_countergradient</td><td>whether the solve added the MRF countergradient flux </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">zflux</td><td>face flux of component n, in component 0 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;{</div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__SetupVertDiff_8H.html">ERF_SetupVertDiff.H</a>&quot;</span></div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> qty_index  = n;</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - 1;</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> prim_scal_index = (qty_index &gt;= <a class="code" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a> &amp;&amp; qty_index &lt; <a class="code" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>+<a class="code" href="ERF__IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9">NSCALARS</a>) ? <a class="code" href="ERF__IndexDefines_8H.html#aa9d1308b0d214f7bfbe9b8c11c4176b7">PrimScalar_comp</a> : prim_index;</div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> eddy_h_comp =</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;        <a class="code" href="ERF__NativeScalarDiffusion_8H.html#afcd0530ce2d8e4352736690d314d96cc">ResolveNativeScalarDiffusionPolicy</a>(qty_index, solverChoice.<a class="code" href="structSolverChoice.html#aca2253bfc4884d8a9581daa5b576a6f0">diffChoice</a>).<a class="code" href="structNativeScalarDiffusionPolicy.html#a715c960f50056fefcbe7cf9ae593c747">coefficients</a>.<a class="code" href="structScalarDiffusionCoefficients.html#a7336dfa9b52f3e1f4b9072910491036f">eddy_h_comp</a>;</div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dom_klo = domain.smallEnd(2);</div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dom_khi = domain.bigEnd(2);</div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = bx.bigEnd(2);</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz_inv = cellSizeInv[2];</div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160; </div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(surroundingNodes(bx,2), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;    {</div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;        <span class="keywordflow">if</span> (k == dom_lo.z || k == dom_hi.z+1) { zflux(i,j,k) = zero; return; }</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;        <span class="comment">// The coefficient on this face, from the cell above it (or below, at the top of bx)</span></div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhoAlpha_lo, rhoAlpha_hi;</div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> kc = (k &lt;= <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) ? k : k-1;</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;        <a class="code" href="ERF__GetRhoAlpha_8H.html#ada7887ec8368edfaf1f17ba9700faa2a">getRhoAlpha</a>(i, j, kc, rhoAlpha_lo, rhoAlpha_hi, cell_data, mu_turb, d_alpha_eff, d_eddy_diff_idz,</div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;                    prim_index, prim_scal_index, l_consA, l_turb);</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> metric_lo = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, metric_hi = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;        <span class="keywordflow">if</span> (implicit_metric) {</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> alpha_mol = (l_consA &amp;&amp; l_turb) ? d_alpha_eff[prim_scal_index]</div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;                                                       : d_alpha_eff[prim_index];</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;            TerrainMetricScalarCoeffs(i, j, kc, dom_klo, dom_khi, metric_lo, metric_hi,</div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;                                      cell_data, mu_turb, alpha_mol, eddy_h_comp,</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;                                      l_consA, l_turb, z_nd, cellSizeInv, mf_mx, mf_my);</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;        }</div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhoAlpha = (k &lt;= <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) ? rhoAlpha_lo : rhoAlpha_hi;</div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coef = rhoAlpha + ((k &lt;= <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) ? metric_lo : metric_hi);</div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#a9c5637d9d729688798e176620f1f1e65">Compute_h_zeta_AtKface</a>(i, j, k, cellSizeInv, z_nd);</div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> phi_hi = cell_data(i,j,k  ,n) / cell_data(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> phi_lo = cell_data(i,j,k-1,n) / cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> G = -implicit_fac * coef * dz_inv / h_zeta * (phi_hi - phi_lo);</div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;        <span class="comment">// The countergradient flux the solve adds through the face, fac rho*alpha gamma</span></div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;        <span class="keywordflow">if</span> (use_mrf_countergradient) {</div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> gam_comp = (n == <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) ? <a class="code" href="namespaceEddyDiff.html#a6853a35a18e4e76df6fd47dbba251697a703abe34f2dc6f5d5cff78107f31a666">EddyDiff::HGAMT_v</a> : <a class="code" href="namespaceEddyDiff.html#a6853a35a18e4e76df6fd47dbba251697a6ca09680a498938a0f22079ff0b61943">EddyDiff::HGAMQ_v</a>;</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;            G += implicit_fac * rhoAlpha * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (mu_turb(i,j,k,gam_comp) + mu_turb(i,j,k-1,gam_comp));</div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;        }</div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;        zflux(i,j,k) = G / (mf_mx(i,j,0) * mf_my(i,j,0));</div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;    });</div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__ImplicitDiff__T_8cpp_a232daee932b40c9a54cdba0435e7a845_cgraph.png" border="0" usemap="#aERF__ImplicitDiff__T_8cpp_a232daee932b40c9a54cdba0435e7a845_cgraph" alt=""/></div>
+<map name="aERF__ImplicitDiff__T_8cpp_a232daee932b40c9a54cdba0435e7a845_cgraph" id="aERF__ImplicitDiff__T_8cpp_a232daee932b40c9a54cdba0435e7a845_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,229,108"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a9c5637d9d729688798e176620f1f1e65" title=" " alt="" coords="290,5,479,32"/>
+<area shape="rect" href="ERF__GetRhoAlpha_8H.html#ada7887ec8368edfaf1f17ba9700faa2a" title=" " alt="" coords="332,56,437,83"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="339,107,430,133"/>
+<area shape="rect" href="ERF__NativeScalarDiffusion_8H.html#afcd0530ce2d8e4352736690d314d96cc" title=" " alt="" coords="277,158,492,199"/>
 </map>
 </div>
 

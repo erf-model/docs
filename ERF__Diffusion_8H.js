@@ -15,13 +15,16 @@ var ERF__Diffusion_8H =
     [ "DiffusionSrcForMom", "ERF__Diffusion_8H.html#a261f5ab5cec018d4266bc1d833150fd4", null ],
     [ "DiffusionSrcForMom_EB", "ERF__Diffusion_8H.html#ac499b1951c84b7f5d9bd01cb0463cad8", null ],
     [ "DiffusionSrcForState_EB", "ERF__Diffusion_8H.html#a4da037f38e4bc009278d40a7362a8260", null ],
-    [ "DiffusionSrcForState_N", "ERF__Diffusion_8H.html#a2a6be443885a739aa7cc391b7efbe30d", null ],
-    [ "DiffusionSrcForState_S", "ERF__Diffusion_8H.html#a06fd1ff1fea723b8c0edeb80a0ea3420", null ],
-    [ "DiffusionSrcForState_T", "ERF__Diffusion_8H.html#ae704012ec2b19724301e0a6f408077bd", null ],
+    [ "DiffusionSrcForState_N", "ERF__Diffusion_8H.html#ac2757935f6f90c40ea3c3c35da302964", null ],
+    [ "DiffusionSrcForState_S", "ERF__Diffusion_8H.html#a3139f0dca6b7b1eee021f77c3ae6caab", null ],
+    [ "DiffusionSrcForState_T", "ERF__Diffusion_8H.html#a66143d677efef17ec2e90f5fc5347691", null ],
     [ "ImplicitDiffForMomLU_N", "ERF__Diffusion_8H.html#a4109869a0de937530b920b9a40832da8", null ],
     [ "ImplicitDiffForMomLU_S", "ERF__Diffusion_8H.html#a9f66933a68c4ca05b5aae2ead3b76a2d", null ],
     [ "ImplicitDiffForMomLU_T", "ERF__Diffusion_8H.html#ab8a9603ffa3fe1771150a92a31b6c72b", null ],
     [ "ImplicitDiffForStateLU_N", "ERF__Diffusion_8H.html#a82afdecbf9c65aace0c55395ab6fdaeb", null ],
     [ "ImplicitDiffForStateLU_S", "ERF__Diffusion_8H.html#ae4a6f0818fd0a4e2d3ed575fe30c49b9", null ],
-    [ "ImplicitDiffForStateLU_T", "ERF__Diffusion_8H.html#ab81794876e7df1e22fac8018bef1c3c2", null ]
+    [ "ImplicitDiffForStateLU_T", "ERF__Diffusion_8H.html#ab81794876e7df1e22fac8018bef1c3c2", null ],
+    [ "ImplicitVerticalFluxForReflux_N", "ERF__Diffusion_8H.html#a38e899faea5f624351d810602122ccd9", null ],
+    [ "ImplicitVerticalFluxForReflux_S", "ERF__Diffusion_8H.html#abe482003515224cda2be89340e2f3534", null ],
+    [ "ImplicitVerticalFluxForReflux_T", "ERF__Diffusion_8H.html#a21d1aafa5b6aef854a6a5c5df8c1abb7", null ]
 ];

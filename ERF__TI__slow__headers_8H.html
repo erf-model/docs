@@ -231,6 +231,8 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a0515f525b9d1fec75f7ff5dcc72884e0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__slow__headers_8H.html#a0515f525b9d1fec75f7ff5dcc72884e0">IsRefluxStage</a> (const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, int level, int finest_level, int nrk)</td></tr>
+<tr class="separator:a0515f525b9d1fec75f7ff5dcc72884e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8a6bafded9f91564c3c3ed77483505e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__slow__headers_8H.html#ad8a6bafded9f91564c3c3ed77483505e">erf_make_tau_terms</a> (int level, int nrk, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, const amrex::MultiFab &amp;z_phys_nd, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Tau_lev, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Tau_corr_lev, amrex::MultiFab *SmnSmn, amrex::MultiFab *eddyDiffs, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Vector&lt; std::unique_ptr&lt; <a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> &gt;&gt; &amp;SurfLayer, amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_d, const amrex::MultiFab &amp;detJ, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;mapfac, const amrex::MultiFab &amp;ax, const amrex::MultiFab &amp;ay, const amrex::MultiFab &amp;az, const <a class="el" href="classeb__.html">eb_</a> &amp;ebfact)</td></tr>
 <tr class="separator:ad8a6bafded9f91564c3c3ed77483505e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62cf4ff04abac2ef6021bca0bfdd45cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__slow__headers_8H.html#a62cf4ff04abac2ef6021bca0bfdd45cc">copy_surface_tau_for_implicit</a> (amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Tau_lev, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Tau_corr_lev)</td></tr>
@@ -1162,6 +1164,83 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Function for computing the slow RHS for the evolution equations for the density, potential temperature and momentum. </p>
+
+</div>
+</div>
+<a id="a0515f525b9d1fec75f7ff5dcc72884e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0515f525b9d1fec75f7ff5dcc72884e0">&#9670;&nbsp;</a></span>IsRefluxStage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool IsRefluxStage </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
+          <td class="paramname"><em>solverChoice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>finest_level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nrk</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Whether the fluxes of RK stage nrk at this level go into the flux registers. With two-way coupling and more than one level only those of the final stage do: the second (nrk = 1) of the anelastic integrator and the third (nrk = 2) of the compressible one. Every stage that adds fluxes to the registers must use this, so that all of them reflux the same stage.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">solverChoice</td><td>the solver options </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>the level being advanced </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">finest_level</td><td>the finest level </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nrk</td><td>the RK stage </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> anelastic = (solverChoice.<a class="code" href="structSolverChoice.html#a786a91568360a4b661e796853d4944dd">anelastic</a>[level] == 1);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> (solverChoice.<a class="code" href="structSolverChoice.html#a2668d8393ffe6e00ade49e3e96d210a1">coupling_type</a> == CouplingType::TwoWay) &amp;&amp; (finest_level &gt; 0) &amp;&amp;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;           ( (anelastic &amp;&amp; nrk == 1) || (!anelastic &amp;&amp; nrk == 2) );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="ttc" id="astructSolverChoice_html_a2668d8393ffe6e00ade49e3e96d210a1"><div class="ttname"><a href="structSolverChoice.html#a2668d8393ffe6e00ade49e3e96d210a1">SolverChoice::coupling_type</a></div><div class="ttdeci">CouplingType coupling_type</div><div class="ttdoc">Multilevel coupling strategy.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:2553</div></div>
+<div class="ttc" id="astructSolverChoice_html_a786a91568360a4b661e796853d4944dd"><div class="ttname"><a href="structSolverChoice.html#a786a91568360a4b661e796853d4944dd">SolverChoice::anelastic</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; anelastic</div><div class="ttdoc">Per-level flag selecting anelastic dynamics.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:2288</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8dadfdd08431c71618ba77d2aa40101d">erf_slow_rhs_post()</a>, and <a class="el" href="ERF__SlowRhsPre_8cpp.html#ae8e9117f3c6b04a672ad69e9cb96bde9">erf_slow_rhs_pre()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__TI__slow__headers_8H_a0515f525b9d1fec75f7ff5dcc72884e0_icgraph.png" border="0" usemap="#aERF__TI__slow__headers_8H_a0515f525b9d1fec75f7ff5dcc72884e0_icgraph" alt=""/></div>
+<map name="aERF__TI__slow__headers_8H_a0515f525b9d1fec75f7ff5dcc72884e0_icgraph" id="aERF__TI__slow__headers_8H_a0515f525b9d1fec75f7ff5dcc72884e0_icgraph">
+<area shape="rect" title=" " alt="" coords="192,31,303,57"/>
+<area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a8dadfdd08431c71618ba77d2aa40101d" title=" " alt="" coords="5,5,144,32"/>
+<area shape="rect" href="ERF__SlowRhsPre_8cpp.html#ae8e9117f3c6b04a672ad69e9cb96bde9" title=" " alt="" coords="9,56,141,83"/>
+</map>
+</div>
 
 </div>
 </div>
