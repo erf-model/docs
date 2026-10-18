@@ -1,6 +1,5 @@
 var NAVTREEINDEX14 =
 {
-"ERF__SLM__DefaultParams_8H.html#ae6615b2fcb9ab9fbc10ad607990ceb08":[3,0,1,11,2,2,2],
 "ERF__SLM__DefaultParams_8H.html#af91f09fece183dcda7e5bcce66e4e3c1":[3,0,1,11,2,2,17],
 "ERF__SLM__DefaultParams_8H_source.html":[3,0,1,11,2,2],
 "ERF__SLM__IO_8cpp.html":[3,0,1,11,2,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX14 =
 "ERF__SrcHeaders_8H.html#acb54c33a007d2d0e105102983da18eac":[3,0,1,22,18,4],
 "ERF__SrcHeaders_8H.html#af3c752479136ad9502f0bae7f6caaaaf":[3,0,1,22,18,3],
 "ERF__SrcHeaders_8H_source.html":[3,0,1,22,18],
-"ERF__StationSampler_8H.html":[3,0,1,10,47]
+"ERF__StationSampler_8H.html":[3,0,1,10,47],
+"ERF__StationSampler_8H_source.html":[3,0,1,10,47]
 };

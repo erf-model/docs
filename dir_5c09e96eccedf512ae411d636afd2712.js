@@ -69,6 +69,8 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_SurfaceMoisture.H", "ERF__SurfaceMoisture_8H.html", "ERF__SurfaceMoisture_8H" ],
     [ "ERF_SurfaceTemperature.H", "ERF__SurfaceTemperature_8H.html", "ERF__SurfaceTemperature_8H" ],
     [ "ERF_TerrainConversion.H", "ERF__TerrainConversion_8H.html", "ERF__TerrainConversion_8H" ],
+    [ "ERF_TerrainFileChecks.cpp", "ERF__TerrainFileChecks_8cpp.html", "ERF__TerrainFileChecks_8cpp" ],
+    [ "ERF_TerrainFileChecks.H", "ERF__TerrainFileChecks_8H.html", "ERF__TerrainFileChecks_8H" ],
     [ "ERF_TerrainMetrics.cpp", "ERF__TerrainMetrics_8cpp.html", "ERF__TerrainMetrics_8cpp" ],
     [ "ERF_TerrainMetrics.H", "ERF__TerrainMetrics_8H.html", "ERF__TerrainMetrics_8H" ],
     [ "ERF_TerrainSurfaceSlab.cpp", "ERF__TerrainSurfaceSlab_8cpp.html", "ERF__TerrainSurfaceSlab_8cpp" ],

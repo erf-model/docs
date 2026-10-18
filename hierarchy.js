@@ -81,6 +81,7 @@ var hierarchy =
       [ "TerrainIF", "classTerrainIF.html", null ]
     ] ],
     [ "erf_sbm::GridValidation", "structerf__sbm_1_1GridValidation.html", null ],
+    [ "erf_terrain_file::HeightTable", "structerf__terrain__file_1_1HeightTable.html", null ],
     [ "erf_auxiliary::HostCarrierFluxView", "structerf__auxiliary_1_1HostCarrierFluxView.html", null ],
     [ "IBFaceSet", "classIBFaceSet.html", null ],
     [ "IBSEBMaterial", "structIBSEBMaterial.html", null ],

@@ -1,6 +1,5 @@
 var NAVTREEINDEX13 =
 {
-"ERF__SAMUtils_8H.html#af5da731c81a30e0e7c1112cb59828b89":[3,0,1,14,4,6,31],
 "ERF__SAMUtils_8H.html#afd37cd7a728d313033bda83f8f157a2b":[3,0,1,14,4,6,40],
 "ERF__SAMUtils_8H.html#aff35d1a586c8c9dacb139f0a561874fb":[3,0,1,14,4,6,30],
 "ERF__SAMUtils_8H_source.html":[3,0,1,14,4,6],
@@ -249,5 +248,6 @@ var NAVTREEINDEX13 =
 "ERF__SLM__DefaultParams_8H.html#aafb436814456df56d57e9a344903857e":[3,0,1,11,2,2,5],
 "ERF__SLM__DefaultParams_8H.html#ac31b40d90fcaf0f984a62674036c8849":[3,0,1,11,2,2,4],
 "ERF__SLM__DefaultParams_8H.html#acb603304e9d7d60e1dfb1219ba6bed79":[3,0,1,11,2,2,0],
-"ERF__SLM__DefaultParams_8H.html#ae224c9f39c900ee9b5e05f0ca9069e2a":[3,0,1,11,2,2,11]
+"ERF__SLM__DefaultParams_8H.html#ae224c9f39c900ee9b5e05f0ca9069e2a":[3,0,1,11,2,2,11],
+"ERF__SLM__DefaultParams_8H.html#ae6615b2fcb9ab9fbc10ad607990ceb08":[3,0,1,11,2,2,2]
 };

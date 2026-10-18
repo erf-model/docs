@@ -157,6 +157,7 @@ var namespaces_dup =
       [ "no_flux_resistance", "namespaceerf__surface__moisture.html#aa07504dfbf19402354c996f1b486de45", null ]
     ] ],
     [ "erf_surface_temperature", "namespaceerf__surface__temperature.html", "namespaceerf__surface__temperature" ],
+    [ "erf_terrain_file", "namespaceerf__terrain__file.html", "namespaceerf__terrain__file" ],
     [ "erf_wall_scalar_bc", "namespaceerf__wall__scalar__bc.html", "namespaceerf__wall__scalar__bc" ],
     [ "erf_wall_thermodynamics", "namespaceerf__wall__thermodynamics.html", "namespaceerf__wall__thermodynamics" ],
     [ "ERFBCType", "namespaceERFBCType.html", [
