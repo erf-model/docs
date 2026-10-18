@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcba7f0566bdfe36c67d532a7e2aca33d9a4":[3,0,1,4,3,7,2],
 "ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcbaad1bdec1c0213a18483e81bcb4926964":[3,0,1,4,3,7,1],
 "ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcbac159d9fae0d25be7ce907e1feb87cdaa":[3,0,1,4,3,7,0],
 "ERF__DataStruct_8H.html#a5d2c7f49777252f2c834e5906d1f106b":[3,0,1,4,3,26],
@@ -227,10 +228,10 @@ var NAVTREEINDEX2 =
 "ERF__FillPatcher_8H.html":[3,0,1,2,12],
 "ERF__FillPatcher_8H_source.html":[3,0,1,2,12],
 "ERF__FillPatcher_8cpp.html":[3,0,1,2,11],
-"ERF__FillZeroAreaFaceFluxes_8cpp.html":[3,0,1,12,1],
-"ERF__FillZeroAreaFaceFluxes_8cpp.html#a06d3570cc5ce4847ca0b73f84ed619b6":[3,0,1,12,1,0],
-"ERF__FillZeroAreaFaceFluxes_8cpp.html#a107da7bd2e6038750f7763c95925ec7d":[3,0,1,12,1,2],
-"ERF__FillZeroAreaFaceFluxes_8cpp.html#acf2334cd4108103837e372be3ef0188c":[3,0,1,12,1,1],
+"ERF__FillZeroAreaFaceFluxes_8cpp.html":[3,0,1,12,2],
+"ERF__FillZeroAreaFaceFluxes_8cpp.html#a06d3570cc5ce4847ca0b73f84ed619b6":[3,0,1,12,2,0],
+"ERF__FillZeroAreaFaceFluxes_8cpp.html#a107da7bd2e6038750f7763c95925ec7d":[3,0,1,12,2,2],
+"ERF__FillZeroAreaFaceFluxes_8cpp.html#acf2334cd4108103837e372be3ef0188c":[3,0,1,12,2,1],
 "ERF__Fitch_8H.html":[3,0,1,27,1,1],
 "ERF__Fitch_8H_source.html":[3,0,1,27,1,1],
 "ERF__FlushFortranUnits_8F90.html":[3,0,1,26,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__GetRhoAlphaForFaces_8H.html#a076c4a4df72a6fd403d65557fc0bbf89":[3,0,1,6,20,1],
 "ERF__GetRhoAlphaForFaces_8H.html#a61dee2de7ffc8060b12889c1da041343":[3,0,1,6,20,0],
 "ERF__GetRhoAlphaForFaces_8H_source.html":[3,0,1,6,20],
-"ERF__GetRhoAlpha_8H.html":[3,0,1,6,19],
-"ERF__GetRhoAlpha_8H.html#ada7887ec8368edfaf1f17ba9700faa2a":[3,0,1,6,19,0]
+"ERF__GetRhoAlpha_8H.html":[3,0,1,6,19]
 };

@@ -1,5 +1,6 @@
 var dir_9e99115d7ddbb12c0597e51707e61330 =
 [
+    [ "ERF_CoarseFineFaces.cpp", "ERF__CoarseFineFaces_8cpp.html", null ],
     [ "ERF_ComputeDivergence.cpp", "ERF__ComputeDivergence_8cpp.html", null ],
     [ "ERF_FillZeroAreaFaceFluxes.cpp", "ERF__FillZeroAreaFaceFluxes_8cpp.html", "ERF__FillZeroAreaFaceFluxes_8cpp" ],
     [ "ERF_ImposeBCsOnPhi.cpp", "ERF__ImposeBCsOnPhi_8cpp.html", null ],

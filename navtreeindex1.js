@@ -124,6 +124,7 @@ var NAVTREEINDEX1 =
 "ERF__CloudChamber_8H.html#afd26525f3c6aeca1d4527922bd6897e1":[3,0,1,19,0,10],
 "ERF__CloudChamber_8H_source.html":[3,0,1,19,0],
 "ERF__CloudSAM_8cpp.html":[3,0,1,14,4,0],
+"ERF__CoarseFineFaces_8cpp.html":[3,0,1,12,0],
 "ERF__ColumnBands_8H.html":[3,0,1,26,3],
 "ERF__ColumnBands_8H.html#ab59a993bb6270b90b71952db84887fdc":[3,0,1,26,3,0],
 "ERF__ColumnBands_8H.html#ac7ddd54057538ba76178629d3118df6d":[3,0,1,26,3,1],
@@ -144,7 +145,7 @@ var NAVTREEINDEX1 =
 "ERF__ComputeDiffusivityYSUNew_8cpp.html#a1b9903ea1dc198066fc88a4745b136ed":[3,0,1,17,6,0],
 "ERF__ComputeDiffusivityYSU_8cpp.html":[3,0,1,17,5],
 "ERF__ComputeDiffusivityYSU_8cpp.html#a6c5a6b01bd3e7448ce4f652788538c9d":[3,0,1,17,5,0],
-"ERF__ComputeDivergence_8cpp.html":[3,0,1,12,0],
+"ERF__ComputeDivergence_8cpp.html":[3,0,1,12,1],
 "ERF__ComputeStrain__EB_8cpp.html":[3,0,1,6,2],
 "ERF__ComputeStrain__EB_8cpp.html#a416c43cf1410a62066bbdd19ab9c9724":[3,0,1,6,2,0],
 "ERF__ComputeStrain__N_8cpp.html":[3,0,1,6,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239ae41e9f65f26ee3b04db07f2db7f28bdb":[3,0,1,4,3,6,3],
 "ERF__DataStruct_8H.html#a4c8ef47ce271207e710836cd66f387b7":[3,0,1,4,3,17],
 "ERF__DataStruct_8H.html#a527d8c0024ac44ed7d9d58920ba18924":[3,0,1,4,3,16],
-"ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcb":[3,0,1,4,3,7],
-"ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcba7f0566bdfe36c67d532a7e2aca33d9a4":[3,0,1,4,3,7,2]
+"ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcb":[3,0,1,4,3,7]
 };
