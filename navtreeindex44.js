@@ -1,5 +1,6 @@
 var NAVTREEINDEX44 =
 {
+"structIBSEBParams.html#afefffff7cbf005c0b83e8808de30c0f7":[2,0,63,24],
 "structInputSoundingData.html":[2,0,64],
 "structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8":[2,0,64,3],
 "structInputSoundingData.html#a0ed3963d7dcc3c6109544a02c954d7e7":[2,0,64,20],
@@ -248,6 +249,5 @@ var NAVTREEINDEX44 =
 "structMoistureComponentIndices_1_1VarAvailability.html#ad778dba336f2bb70948c4e0ab9e3805e":[2,0,83,1,1],
 "structNDArray.html":[2,0,92],
 "structNDArray.html#a0d3be2b45f3fb008d12ec17dfd6abf09":[2,0,92,9],
-"structNDArray.html#a197526556d3850037e560585740b9074":[2,0,92,8],
-"structNDArray.html#a1b3ece1ab109568fcb919d1af8f14eee":[2,0,92,6]
+"structNDArray.html#a197526556d3850037e560585740b9074":[2,0,92,8]
 };

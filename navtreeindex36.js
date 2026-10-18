@@ -1,5 +1,6 @@
 var NAVTREEINDEX36 =
 {
+"globals_d.html":[3,1,0,3],
 "globals_defs.html":[3,1,6],
 "globals_e.html":[3,1,0,4],
 "globals_enum.html":[3,1,4],
@@ -46,8 +47,8 @@ var NAVTREEINDEX36 =
 "globals_type.html":[3,1,3],
 "globals_u.html":[3,1,0,20],
 "globals_v.html":[3,1,0,21],
-"globals_vars.html":[3,1,2],
 "globals_vars.html":[3,1,2,0],
+"globals_vars.html":[3,1,2],
 "globals_vars_b.html":[3,1,2,1],
 "globals_vars_c.html":[3,1,2,2],
 "globals_vars_d.html":[3,1,2,3],
@@ -91,10 +92,10 @@ var NAVTREEINDEX36 =
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,14,0,0],
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,14,0,1],
 "interfacemodule__libmassv_1_1vsqrt.html":[2,0,14,1],
-"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,14,1,1],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,14,1,0],
-"interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,14,1,2],
+"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,14,1,1],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,14,1,3],
+"interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,14,1,2],
 "main_8cpp.html":[3,0,1,41],
 "main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[3,0,1,41,3],
 "main_8cpp.html#a183e783116d02836167ccbed3b28c1d3":[3,0,1,41,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX36 =
 "namespacederived.html#a3cc76e67c0f746748aef32a5a5e57609":[1,0,5,5],
 "namespacederived.html#a4a4e21b79a37a1ba1f6062db4b7b9086":[1,0,5,0],
 "namespacederived.html#a4ae8445c6757b1d0c873e2d4145c1da8":[1,0,5,4],
-"namespacederived.html#a58604ca48dddcfd5a3741abc9d03101e":[1,0,5,1],
-"namespacederived.html#a591cb412598c637cf413d45840c34331":[1,0,5,15]
+"namespacederived.html#a58604ca48dddcfd5a3741abc9d03101e":[1,0,5,1]
 };

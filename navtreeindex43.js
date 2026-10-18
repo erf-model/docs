@@ -1,5 +1,6 @@
 var NAVTREEINDEX43 =
 {
+"namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa31b342f23cb16952131736824b9ccdd1":[1,0,81,0,6],
 "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa4f52a5383c582560154ad0ce49e79b1e":[1,0,81,0,2],
 "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa725640df145c8aae61b4b454ad7f03f1":[1,0,81,0,1],
 "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa90589c47f06eb971d548591f23c285af":[1,0,81,0,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX43 =
 "structIBSEBParams.html#af3fcb72003aed2dbb722e197027d247f":[2,0,63,28],
 "structIBSEBParams.html#af51204f62161756304c3e32459d04814":[2,0,63,41],
 "structIBSEBParams.html#af62d7f294e02c746b604c6c4701b9676":[2,0,63,47],
-"structIBSEBParams.html#af8f349f81d8f118e66d29399f8554601":[2,0,63,12],
-"structIBSEBParams.html#afefffff7cbf005c0b83e8808de30c0f7":[2,0,63,24]
+"structIBSEBParams.html#af8f349f81d8f118e66d29399f8554601":[2,0,63,12]
 };

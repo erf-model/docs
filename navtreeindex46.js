@@ -1,5 +1,6 @@
 var NAVTREEINDEX46 =
 {
+"structSAMPrecipConfig.html#a76cf76808001559258cf5ff0538726ec":[2,0,129,5],
 "structSAMPrecipConfig.html#aa1a176f43406b298901be680d9e45bfb":[2,0,129,11],
 "structSAMPrecipConfig.html#aa2851e72745ad492fa394505f69db981":[2,0,129,10],
 "structSAMPrecipConfig.html#aab63347d7094c028bd087b3a5fc35b2f":[2,0,129,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX46 =
 "structScalarDiffusionSurfaceFaces.html#ad7c4a059aa45349094e1db82d0f77fc5":[2,0,144,4],
 "structShocColumnData.html":[2,0,150],
 "structShocColumnData.html#a0b47c32b1773caa04739ff5a47c2a773":[2,0,150,40],
-"structShocColumnData.html#a0ea4b5344cd667118ea2a08dd8476f76":[2,0,150,37],
-"structShocColumnData.html#a12c4e3727a28cc716e40671a75b93f55":[2,0,150,14]
+"structShocColumnData.html#a0ea4b5344cd667118ea2a08dd8476f76":[2,0,150,37]
 };

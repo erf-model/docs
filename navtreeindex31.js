@@ -1,5 +1,6 @@
 var NAVTREEINDEX31 =
 {
+"classShocEnergyFixer.html#a8bd2a26f06cd00134262b7d0e3dc27f4":[2,0,155,1],
 "classShocEnergyFixer.html#a9d8cdee59bf835a5cec3ab7a9b958d30":[2,0,155,0],
 "classShocEnergyFixer.html#ad2a2a58d9b8eeb3ca179176bea017503":[2,0,155,2],
 "classShocImplicit.html":[2,0,156],
@@ -248,6 +249,5 @@ var NAVTREEINDEX31 =
 "classSurfaceLayer.html#acbb6236c8f0741cafba01dbbf20cd713":[2,0,189,89],
 "classSurfaceLayer.html#ace92867e82baf1acb7b6a5d3deb30ac1":[2,0,189,136],
 "classSurfaceLayer.html#ad24660428c8d517756200d0f327aa37a":[2,0,189,133],
-"classSurfaceLayer.html#ad35eefe71ee96294dfab06727d316da9":[2,0,189,11],
-"classSurfaceLayer.html#ad5d1ac2bd5634d6b507b86cdad265900":[2,0,189,90]
+"classSurfaceLayer.html#ad35eefe71ee96294dfab06727d316da9":[2,0,189,11]
 };

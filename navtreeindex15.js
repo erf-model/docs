@@ -137,6 +137,7 @@ var NAVTREEINDEX15 =
 "ERF__TI__slow__headers_8H.html#a0515f525b9d1fec75f7ff5dcc72884e0":[3,0,1,23,22,4],
 "ERF__TI__slow__headers_8H.html#a199c0bc7ddfbca8c3484d8ef8692f1c1":[3,0,1,23,22,3],
 "ERF__TI__slow__headers_8H.html#a62cf4ff04abac2ef6021bca0bfdd45cc":[3,0,1,23,22,0],
+"ERF__TI__slow__headers_8H.html#a811ac0812b4b7b074a9ad2cebc781178":[3,0,1,23,22,5],
 "ERF__TI__slow__headers_8H.html#a846d5cf953a2fb03290400f3809a111b":[3,0,1,23,22,2],
 "ERF__TI__slow__headers_8H.html#ad8a6bafded9f91564c3c3ed77483505e":[3,0,1,23,22,1],
 "ERF__TI__slow__headers_8H_source.html":[3,0,1,23,22],
@@ -248,6 +249,5 @@ var NAVTREEINDEX15 =
 "ERF__TerrainMetrics_8cpp.html#a530aca2c1d7d14121bb738e70f326579":[3,0,1,26,47,3],
 "ERF__TerrainMetrics_8cpp.html#a5a9e39d96b7ebe9f9dbd5d32560e7d3a":[3,0,1,26,47,10],
 "ERF__TerrainMetrics_8cpp.html#a6f3b32ea207dacad3e0525d419d23b99":[3,0,1,26,47,0],
-"ERF__TerrainMetrics_8cpp.html#a852cf95101ae5ac044195e60bd9940b1":[3,0,1,26,47,9],
-"ERF__TerrainMetrics_8cpp.html#a88b88e36dd14a6ea79c844d524dee0c3":[3,0,1,26,47,2]
+"ERF__TerrainMetrics_8cpp.html#a852cf95101ae5ac044195e60bd9940b1":[3,0,1,26,47,9]
 };
