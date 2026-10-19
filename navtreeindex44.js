@@ -1,5 +1,10 @@
 var NAVTREEINDEX44 =
 {
+"structIBSEBParams.html#af0b3722115a912861ea8f973fb532674":[2,0,63,16],
+"structIBSEBParams.html#af3fcb72003aed2dbb722e197027d247f":[2,0,63,28],
+"structIBSEBParams.html#af51204f62161756304c3e32459d04814":[2,0,63,41],
+"structIBSEBParams.html#af62d7f294e02c746b604c6c4701b9676":[2,0,63,47],
+"structIBSEBParams.html#af8f349f81d8f118e66d29399f8554601":[2,0,63,12],
 "structIBSEBParams.html#afefffff7cbf005c0b83e8808de30c0f7":[2,0,63,24],
 "structInputSoundingData.html":[2,0,64],
 "structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8":[2,0,64,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX44 =
 "structMoistureComponentIndices_1_1CompList.html#a8be75082476f37839bff65bbe8a97586":[2,0,83,0,1],
 "structMoistureComponentIndices_1_1CompList.html#a9007e7fad6690e7eaa82a551d007cda5":[2,0,83,0,0],
 "structMoistureComponentIndices_1_1CompList.html#af8b83442ef69a957389ccdc6651c95a8":[2,0,83,0,3],
-"structMoistureComponentIndices_1_1VarAvailability.html":[2,0,83,1],
-"structMoistureComponentIndices_1_1VarAvailability.html#a349700a8ccdceaf4f63e2c0ad3bc0091":[2,0,83,1,0],
-"structMoistureComponentIndices_1_1VarAvailability.html#ad778dba336f2bb70948c4e0ab9e3805e":[2,0,83,1,1],
-"structNDArray.html":[2,0,92],
-"structNDArray.html#a0d3be2b45f3fb008d12ec17dfd6abf09":[2,0,92,9],
-"structNDArray.html#a197526556d3850037e560585740b9074":[2,0,92,8]
+"structMoistureComponentIndices_1_1VarAvailability.html":[2,0,83,1]
 };
