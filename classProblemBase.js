@@ -13,6 +13,7 @@ var classProblemBase =
     [ "init_custom_pert_vels", "classProblemBase.html#a6b46fde212c159d6227c66fee099c2ba", null ],
     [ "init_custom_terrain", "classProblemBase.html#a76741b171f25de7cfdff5ba60962a81b", null ],
     [ "init_terrain_surface", "classProblemBase.html#a0e52cd97bdd2fe10c2c731f534c34a5b", null ],
+    [ "make_terrain_surface_periodic", "classProblemBase.html#a0058103956f104eaaf488f932a876646", null ],
     [ "name", "classProblemBase.html#ad6cd20513f20d84578acc9732d3e0791", null ],
     [ "read_custom_terrain", "classProblemBase.html#a9a654c18cb5e4c393cf9aea268c3609a", null ],
     [ "terrain_is_specified", "classProblemBase.html#a73a89f95a3f2251b2aac762c7347bb62", null ],
