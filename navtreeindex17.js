@@ -201,6 +201,7 @@ var NAVTREEINDEX17 =
 "ERF__WriteScalarProfiles_8cpp.html":[3,0,1,10,56],
 "ERF__WriteSubvolume_8cpp.html":[3,0,1,10,57],
 "ERF__Wstar_8H.html":[3,0,1,26,60],
+"ERF__Wstar_8H.html#a91ff24c78ea54c092a068dbd02a33914":[3,0,1,26,60,2],
 "ERF__Wstar_8H.html#ad7f15bc4a50b75f60a55909ec006c547":[3,0,1,26,60,1],
 "ERF__Wstar_8H.html#ae4dec2546738e08263cd23690c9028fe":[3,0,1,26,60,0],
 "ERF__Wstar_8H_source.html":[3,0,1,26,60],
@@ -248,6 +249,5 @@ var NAVTREEINDEX17 =
 "ERF__module__mp__morr__two__moment_8F90.html#a5921cee170609ce1181cd5025f636653":[3,0,1,14,2,3,19],
 "ERF__module__mp__morr__two__moment_8F90.html#a598938704afc947ecebb468a48c8e59a":[3,0,1,14,2,3,24],
 "ERF__module__mp__morr__two__moment_8F90.html#a5a562a1d37467256e0173447d66e953b":[3,0,1,14,2,3,84],
-"ERF__module__mp__morr__two__moment_8F90.html#a5c5ddf37aac66246f43a23aef73de9f0":[3,0,1,14,2,3,79],
-"ERF__module__mp__morr__two__moment_8F90.html#a5c6ecd1baa46c8537d95fd1bbe773fae":[3,0,1,14,2,3,69]
+"ERF__module__mp__morr__two__moment_8F90.html#a5c5ddf37aac66246f43a23aef73de9f0":[3,0,1,14,2,3,79]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX36 =
 {
+"globals.html":[3,1,0,0],
+"globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
 "globals_defs.html":[3,1,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX36 =
 "namespacederived.html#a298d5945b4ca75e88c33facc599c2214":[1,0,5,9],
 "namespacederived.html#a3786c6a8399bc2508bc129337c446af1":[1,0,5,25],
 "namespacederived.html#a37db4a7b4f321c818611c83acb0b8b45":[1,0,5,41],
-"namespacederived.html#a3cc76e67c0f746748aef32a5a5e57609":[1,0,5,5],
-"namespacederived.html#a4a4e21b79a37a1ba1f6062db4b7b9086":[1,0,5,0],
-"namespacederived.html#a4ae8445c6757b1d0c873e2d4145c1da8":[1,0,5,4]
+"namespacederived.html#a3cc76e67c0f746748aef32a5a5e57609":[1,0,5,5]
 };

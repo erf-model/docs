@@ -76,6 +76,7 @@ var classSurfaceLayer =
     [ "impose_SurfaceLayer_bcs", "classSurfaceLayer.html#a38b86d79f42182c704a38eb46d152004", null ],
     [ "impose_SurfaceLayer_bcs_EB", "classSurfaceLayer.html#a9ceabedee0c26e0e8187d1418706908e", null ],
     [ "init_tke_from_ustar", "classSurfaceLayer.html#a642273c8348f41f7e63f10c1d9b11be2", null ],
+    [ "inject_pblh_from_coarser", "classSurfaceLayer.html#abf403b6c662d30ec09f32b605cbd0e02", null ],
     [ "interpolate_sfc_column", "classSurfaceLayer.html#a089822587093e12573bbae69a936572c", null ],
     [ "lmask_min_reduce", "classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424", null ],
     [ "mac_avg_is_initialized", "classSurfaceLayer.html#a3d8f5ef37620ff90e5b7d2d69b77d7b2", null ],
