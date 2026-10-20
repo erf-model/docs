@@ -1,14 +1,19 @@
 var NAVTREEINDEX15 =
 {
+"ERF__SrcHeaders_8H.html#a5b82614fa1590f73caf25dc65b1c937d":[3,0,1,22,19,0],
+"ERF__SrcHeaders_8H.html#a6338f4278c3585195dc868c848a9a90a":[3,0,1,22,19,9],
+"ERF__SrcHeaders_8H.html#a7b28afc46a4e7ef5307af00f235dd980":[3,0,1,22,19,6],
+"ERF__SrcHeaders_8H.html#a8a94012a0cdb4a01babe33bdada0f8a2":[3,0,1,22,19,11],
+"ERF__SrcHeaders_8H.html#aab8917d48c45b2c214c5a193b75deed3":[3,0,1,22,19,12],
 "ERF__SrcHeaders_8H.html#aad9964c24e355093b3930768e4e80b2f":[3,0,1,22,19,2],
 "ERF__SrcHeaders_8H.html#ab99ba4f6e8dc4a8e8850ad2d159cdb6e":[3,0,1,22,19,7],
 "ERF__SrcHeaders_8H.html#acb54c33a007d2d0e105102983da18eac":[3,0,1,22,19,4],
 "ERF__SrcHeaders_8H.html#af3c752479136ad9502f0bae7f6caaaaf":[3,0,1,22,19,3],
 "ERF__SrcHeaders_8H_source.html":[3,0,1,22,19],
-"ERF__StationSampler_8H.html":[3,0,1,10,47],
-"ERF__StationSampler_8H_source.html":[3,0,1,10,47],
-"ERF__StationSampler_8cpp.html":[3,0,1,10,46],
-"ERF__StationSampler_8cpp.html#a2437fdd84075cb26d5e546b90158cebb":[3,0,1,10,46,0],
+"ERF__StationSampler_8H.html":[3,0,1,10,48],
+"ERF__StationSampler_8H_source.html":[3,0,1,10,48],
+"ERF__StationSampler_8cpp.html":[3,0,1,10,47],
+"ERF__StationSampler_8cpp.html#a2437fdd84075cb26d5e546b90158cebb":[3,0,1,10,47,0],
 "ERF__StormDiagnostics_8H.html":[3,0,1,26,40],
 "ERF__StormDiagnostics_8H.html#a6e341f0ba1bec18d7b56a69f0d45e6fe":[3,0,1,26,40,0],
 "ERF__StormDiagnostics_8H_source.html":[3,0,1,26,40],
@@ -244,10 +249,5 @@ var NAVTREEINDEX15 =
 "ERF__TerrainMetrics_8H.html#ac1434a53d9966d992133433473bc629a":[3,0,1,26,48,4],
 "ERF__TerrainMetrics_8H.html#ac9525e0a2d2539f96c7fbebe4f9497a0":[3,0,1,26,48,15],
 "ERF__TerrainMetrics_8H.html#ad06b0ae003cb3d59227ce85a5fa8a669":[3,0,1,26,48,5],
-"ERF__TerrainMetrics_8H.html#ad56aa9e0cc7428ea33d4ac90d91c1f56":[3,0,1,26,48,9],
-"ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f":[3,0,1,26,48,20],
-"ERF__TerrainMetrics_8H.html#ae4903e73bbdfe155d450a88e02c7336a":[3,0,1,26,48,12],
-"ERF__TerrainMetrics_8H.html#ae69ea9f45ab883c6456e9d0ffcdfa2fe":[3,0,1,26,48,34],
-"ERF__TerrainMetrics_8H.html#aed973861215c4eb0697f7a83b37016a9":[3,0,1,26,48,2],
-"ERF__TerrainMetrics_8H.html#af19157241138a9657e0bcb4d6962eafb":[3,0,1,26,48,26]
+"ERF__TerrainMetrics_8H.html#ad56aa9e0cc7428ea33d4ac90d91c1f56":[3,0,1,26,48,9]
 };

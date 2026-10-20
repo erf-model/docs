@@ -1,5 +1,10 @@
 var NAVTREEINDEX14 =
 {
+"ERF__SLM__DefaultParams_8H.html#a753cbd14c0a2e78f25feccf44c6a48d9":[3,0,1,11,2,2,9],
+"ERF__SLM__DefaultParams_8H.html#a7bdfb4bf36fc8c4971a55bdbe20227ca":[3,0,1,11,2,2,3],
+"ERF__SLM__DefaultParams_8H.html#a86ce9524d36af5c77685da73721ceb5f":[3,0,1,11,2,2,6],
+"ERF__SLM__DefaultParams_8H.html#a8f09f0634c3b637a3c81cfd25ae9ea62":[3,0,1,11,2,2,12],
+"ERF__SLM__DefaultParams_8H.html#a90d5d5db742c1b7d85318540f5218edd":[3,0,1,11,2,2,10],
 "ERF__SLM__DefaultParams_8H.html#a90e30c69666005700a775d5df439c9a1":[3,0,1,11,2,2,8],
 "ERF__SLM__DefaultParams_8H.html#a9b941831e5443c945a79034a7a5da2a0":[3,0,1,11,2,2,7],
 "ERF__SLM__DefaultParams_8H.html#aafb436814456df56d57e9a344903857e":[3,0,1,11,2,2,5],
@@ -10,8 +15,8 @@ var NAVTREEINDEX14 =
 "ERF__SLM__DefaultParams_8H.html#af91f09fece183dcda7e5bcce66e4e3c1":[3,0,1,11,2,2,17],
 "ERF__SLM__DefaultParams_8H_source.html":[3,0,1,11,2,2],
 "ERF__SLM__IO_8cpp.html":[3,0,1,11,2,3],
-"ERF__SampleData_8H.html":[3,0,1,10,45],
-"ERF__SampleData_8H_source.html":[3,0,1,10,45],
+"ERF__SampleData_8H.html":[3,0,1,10,46],
+"ERF__SampleData_8H_source.html":[3,0,1,10,46],
 "ERF__SatAdj_8H.html":[3,0,1,14,5,2],
 "ERF__SatAdj_8H_source.html":[3,0,1,14,5,2],
 "ERF__SatAdj_8cpp.html":[3,0,1,14,5,1],
@@ -244,10 +249,5 @@ var NAVTREEINDEX14 =
 "ERF__SrcHeaders_8H.html#a11ba280e018e32cdbd796f7960228363":[3,0,1,22,19,10],
 "ERF__SrcHeaders_8H.html#a43c544fdc0bdd13ca5993185c835880e":[3,0,1,22,19,5],
 "ERF__SrcHeaders_8H.html#a565fc80a0d73d9eb55f950c1a1f5a4d5":[3,0,1,22,19,1],
-"ERF__SrcHeaders_8H.html#a59c38f0cb01f93b72b651193fde35876":[3,0,1,22,19,8],
-"ERF__SrcHeaders_8H.html#a5b82614fa1590f73caf25dc65b1c937d":[3,0,1,22,19,0],
-"ERF__SrcHeaders_8H.html#a6338f4278c3585195dc868c848a9a90a":[3,0,1,22,19,9],
-"ERF__SrcHeaders_8H.html#a7b28afc46a4e7ef5307af00f235dd980":[3,0,1,22,19,6],
-"ERF__SrcHeaders_8H.html#a8a94012a0cdb4a01babe33bdada0f8a2":[3,0,1,22,19,11],
-"ERF__SrcHeaders_8H.html#aab8917d48c45b2c214c5a193b75deed3":[3,0,1,22,19,12]
+"ERF__SrcHeaders_8H.html#a59c38f0cb01f93b72b651193fde35876":[3,0,1,22,19,8]
 };

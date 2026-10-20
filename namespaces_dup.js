@@ -71,6 +71,11 @@ var namespaces_dup =
     [ "EddyDiff", "namespaceEddyDiff.html", null ],
     [ "ERF", "namespaceERF.html", "namespaceERF" ],
     [ "erf_auxiliary", "namespaceerf__auxiliary.html", "namespaceerf__auxiliary" ],
+    [ "erf_checkpoint", "namespaceerf__checkpoint.html", [
+      [ "lateral_periodicity", "namespaceerf__checkpoint.html#a543f256009bdc56c433b9cb6a1da5177", null ],
+      [ "read_checkpoint_imultifab", "namespaceerf__checkpoint.html#a1f8405aab1181ae522fa1bd9b9e26daf", null ],
+      [ "read_checkpoint_multifab", "namespaceerf__checkpoint.html#aba22b9daf8305eee0648716ae0142fe1", null ]
+    ] ],
     [ "erf_checkpoint_surface_temperature", "namespaceerf__checkpoint__surface__temperature.html", [
       [ "ContractReadStatus", "namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4", [
         [ "Valid", "namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4a3ac705f2acd51a4613f9188c05c91d0d", null ],

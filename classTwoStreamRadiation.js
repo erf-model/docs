@@ -11,7 +11,7 @@ var classTwoStreamRadiation =
     [ "land_forcing_lw_dn", "classTwoStreamRadiation.html#a79797c759f1a73b7579153396c243808", null ],
     [ "land_forcing_sw_dn", "classTwoStreamRadiation.html#a989a42ba768f99a22a18c226779dbc0f", null ],
     [ "prognostic_surface_temperature_state", "classTwoStreamRadiation.html#aadb508a846583a0df2fd5c3cd9b93348", null ],
-    [ "read_checkpoint", "classTwoStreamRadiation.html#a2eb6aa62660001677ac4cbb72d9900dc", null ],
+    [ "read_checkpoint", "classTwoStreamRadiation.html#acadf3d28a9106dfbb77e19665aaecb2a", null ],
     [ "resize", "classTwoStreamRadiation.html#a8a4710347071825a40a0caaef176dedc", null ],
     [ "seb_hfx", "classTwoStreamRadiation.html#a18baeb9b9507a47ac68e009ddb40410f", null ],
     [ "seb_lh", "classTwoStreamRadiation.html#a782ac0eac2bd4dc3d21bac9b4f7b3ab4", null ],
