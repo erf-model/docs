@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vars_8859',['Vars',['../namespaceVars.html',1,'']]]
+  ['twostreamscratch_8866',['TwoStreamScratch',['../namespaceTwoStreamScratch.html',1,'']]]
 ];

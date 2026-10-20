@@ -27,6 +27,7 @@ var hierarchy =
     [ "BuildingsIF", "classBuildingsIF.html", null ],
     [ "bulk_coeff_flux", "structbulk__coeff__flux.html", null ],
     [ "erf_sbm::BulkProjection", "structerf__sbm_1_1BulkProjection.html", null ],
+    [ "CanopyTurbulence", "structCanopyTurbulence.html", null ],
     [ "noahmp_result_policy::CellPolicy", "structnoahmp__result__policy_1_1CellPolicy.html", null ],
     [ "CENTERED2", "structCENTERED2.html", null ],
     [ "CENTERED4", "structCENTERED4.html", null ],

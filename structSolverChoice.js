@@ -33,6 +33,7 @@ var structSolverChoice =
     [ "buildings_type", "structSolverChoice.html#ab9cbed75684285bac4390cb039b2e74a", null ],
     [ "buoyancy_type", "structSolverChoice.html#a238ef93b20dbaaf61dd00f9d0d149cc2", null ],
     [ "c_p", "structSolverChoice.html#ae97bb05183f60e5c3732c0db19dd6e1a", null ],
+    [ "canopyTurb", "structSolverChoice.html#aaa6b6e5a178a14a16da2d18e9ae767c2", null ],
     [ "coarse_bckgnd_data_file", "structSolverChoice.html#a90e8e49820a8c5979494cadb75d2ca19", null ],
     [ "compute_mean_vars", "structSolverChoice.html#a417c403dfe208caedf4fbc28cfa4265b", null ],
     [ "const_massflux_layer_hi", "structSolverChoice.html#a8723cbde8960c1b3be22e401485a9d52", null ],

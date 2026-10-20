@@ -20,6 +20,10 @@ var namespaces_dup =
     [ "BaseBCVars", "namespaceBaseBCVars.html", null ],
     [ "BaseState", "namespaceBaseState.html", null ],
     [ "BCVars", "namespaceBCVars.html", null ],
+    [ "canopy_turbulence", "namespacecanopy__turbulence.html", [
+      [ "limited_length", "namespacecanopy__turbulence.html#ae9ea584204bb901f9c64042b2f596d5e", null ],
+      [ "tke_source", "namespacecanopy__turbulence.html#aa45912125dc0a03d496cee941cf97ed5", null ]
+    ] ],
     [ "derived", "namespacederived.html", [
       [ "erf_derenstrophysq", "namespacederived.html#a4a4e21b79a37a1ba1f6062db4b7b9086", null ],
       [ "erf_derenstrophysq", "namespacederived.html#a58604ca48dddcfd5a3741abc9d03101e", null ],

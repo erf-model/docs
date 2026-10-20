@@ -177,6 +177,7 @@ var annotated_dup =
     [ "BelowGroundGhostSync", "structBelowGroundGhostSync.html", "structBelowGroundGhostSync" ],
     [ "BuildingsIF", "classBuildingsIF.html", "classBuildingsIF" ],
     [ "bulk_coeff_flux", "structbulk__coeff__flux.html", "structbulk__coeff__flux" ],
+    [ "CanopyTurbulence", "structCanopyTurbulence.html", "structCanopyTurbulence" ],
     [ "CENTERED2", "structCENTERED2.html", "structCENTERED2" ],
     [ "CENTERED4", "structCENTERED4.html", "structCENTERED4" ],
     [ "CENTERED6", "structCENTERED6.html", "structCENTERED6" ],
