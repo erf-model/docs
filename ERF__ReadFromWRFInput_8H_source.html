@@ -99,7 +99,27 @@ $(document).ready(function(){initNavTree('ERF__ReadFromWRFInput_8H_source.html',
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                    amrex::Geometry&amp; geom,</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                    <span class="keywordtype">int</span>&amp; use_theta_m,</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                    <span class="keywordtype">int</span>&amp; success);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;check_wrfinput_geometry (<span class="keywordtype">int</span> lev,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                         <span class="keyword">const</span> std::string&amp; fname,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                         <span class="keyword">const</span> amrex::Geometry&amp; geom,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                         <span class="keywordtype">int</span>&amp; use_theta_m);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">int</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;wrfinput_var_box (<span class="keyword">const</span> amrex::Box&amp; subdomain_to_read,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                  <span class="keyword">const</span> std::string&amp; fname,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                  <span class="keyword">const</span> std::string&amp; NC_name,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                  amrex::Box&amp; var_box);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;read_region_from_wrfinput (<span class="keyword">const</span> std::string&amp; fname,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                           <span class="keyword">const</span> std::string&amp; NC_name,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                           <span class="keyword">const</span> amrex::Box&amp; var_box,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                           <span class="keyword">const</span> amrex::Box&amp; region,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                           amrex::FArrayBox&amp; fab,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                           <span class="keywordtype">int</span> max_readers);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
