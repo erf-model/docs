@@ -181,6 +181,7 @@ var annotated_dup =
     [ "CENTERED2", "structCENTERED2.html", "structCENTERED2" ],
     [ "CENTERED4", "structCENTERED4.html", "structCENTERED4" ],
     [ "CENTERED6", "structCENTERED6.html", "structCENTERED6" ],
+    [ "CFFaceFluxes", "structCFFaceFluxes.html", "structCFFaceFluxes" ],
     [ "CloudChamberBudget", "classCloudChamberBudget.html", "classCloudChamberBudget" ],
     [ "custom_flux", "structcustom__flux.html", "structcustom__flux" ],
     [ "DampingChoice", "structDampingChoice.html", "structDampingChoice" ],

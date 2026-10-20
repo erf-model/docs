@@ -1,5 +1,6 @@
 var classERF =
 [
+    [ "CFFluxHistory", "structERF_1_1CFFluxHistory.html", "structERF_1_1CFFluxHistory" ],
     [ "CFZFaceLayout", "structERF_1_1CFZFaceLayout.html", "structERF_1_1CFZFaceLayout" ],
     [ "Plot3DScratch", "structERF_1_1Plot3DScratch.html", "structERF_1_1Plot3DScratch" ],
     [ "ERF", "classERF.html#a30129012dd367825e5e4fd1406694f58", null ],
@@ -22,6 +23,10 @@ var classERF =
     [ "build_fine_mask", "classERF.html#a544e918fa814be3996d52654b05e5a30", null ],
     [ "BuildPlot3DScratch", "classERF.html#a093ca0c9d6a4188ab7cd21560d8feec9", null ],
     [ "canonicalizePlot3DVariables", "classERF.html#a254731b18d5438af1e37b7cb128da4f0", null ],
+    [ "cf_flux_history", "classERF.html#a857bb2b18e8b6652cc445e82fc5663b5", null ],
+    [ "cf_flux_history_active", "classERF.html#a22f76478b2468b14a9afaf013fff68a6", null ],
+    [ "cf_flux_history_record", "classERF.html#a0e8e4f5141f607d2a7fa1807e6316ab7", null ],
+    [ "cf_flux_history_targets", "classERF.html#a851664fa05d970ca16c1a4f4761c6de2", null ],
     [ "cf_zface_coarse_data", "classERF.html#a23302dffa8a2a4ad51051f5b308eb19d", null ],
     [ "cf_zface_layout", "classERF.html#afbe27a7ec674e6c71311d3cf7495ee38", null ],
     [ "check_for_low_temp", "classERF.html#ab3017f06be0feef9e853d4b68158c6a7", null ],
@@ -442,6 +447,7 @@ var classERF =
     [ "m_bc_extdir_vals", "classERF.html#a27261ba76aa71f1ddbf87bca0ede579f", null ],
     [ "m_bc_neumann_vals", "classERF.html#af783df8719de2e72e347de5860f71528", null ],
     [ "m_bc_nonreflecting", "classERF.html#a71413d55cfe52d33ccb48da57a3d223d", null ],
+    [ "m_cf_flux_hist", "classERF.html#ac98e2ce8d44508e2fbad0c5d5770067c", null ],
     [ "m_cf_zface_cache", "classERF.html#ab272913839d05746099e0b93d004169c", null ],
     [ "m_check_int", "classERF.html#a69a3f925e95ec4244b0257f9de16d65a", null ],
     [ "m_check_per", "classERF.html#a2cf2d03359351dd746d2f9a363c02d83", null ],

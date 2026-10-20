@@ -9,7 +9,7 @@ var NAVTREEINDEX0 =
 "ERFPC_8H_source.html":[3,0,1,16,18],
 "ERFTracers_8cpp.html":[3,0,1,16,23],
 "ERF_8H.html":[3,0,1,29],
-"ERF_8H.html#a5ec6fb22ac274a44a8dbf881fecbe144":[3,0,1,29,3],
+"ERF_8H.html#a5ec6fb22ac274a44a8dbf881fecbe144":[3,0,1,29,4],
 "ERF_8H_source.html":[3,0,1,29],
 "ERF_8cpp.html":[3,0,1,28],
 "ERF__AddMoistNudgingTerms_8cpp.html":[3,0,1,22,0],
@@ -242,12 +242,12 @@ var NAVTREEINDEX0 =
 "ERF__BuoyancyUtils_8H.html#ae32d5d2b79af27da2337e6be0a6c932b":[3,0,1,22,5,0],
 "ERF__BuoyancyUtils_8H.html#af7221f6410c5653a81147553dcb7ad43":[3,0,1,22,5,3],
 "ERF__BuoyancyUtils_8H_source.html":[3,0,1,22,5],
+"ERF__CFFluxHistory_8cpp.html":[3,0,1,23,6],
 "ERF__CanopyBiophysics_8H.html":[3,0,1,22,6],
 "ERF__CanopyBiophysics_8H.html#a34537efeadf553ee28035c4ba7d484c1":[3,0,1,22,6,0],
 "ERF__CanopyBiophysics_8H_source.html":[3,0,1,22,6],
 "ERF__CanopyTurbStruct_8H.html":[3,0,1,4,2],
 "ERF__CanopyTurbStruct_8H_source.html":[3,0,1,4,2],
 "ERF__CanopyTurbulence_8H.html":[3,0,1,22,7],
-"ERF__CanopyTurbulence_8H.html#aa45912125dc0a03d496cee941cf97ed5":[3,0,1,22,7,2],
-"ERF__CanopyTurbulence_8H.html#ac286a13ad01594dd82f48e08aeaed41f":[3,0,1,22,7,0]
+"ERF__CanopyTurbulence_8H.html#aa45912125dc0a03d496cee941cf97ed5":[3,0,1,22,7,2]
 };

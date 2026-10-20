@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"ERF__PoissonSolve_8cpp.html#a45fcc96a9662a3c4b61ca1dde709c3cc":[3,0,1,12,4,1],
 "ERF__PoissonSolve_8cpp.html#a8a755493e84483e849e90995c428885c":[3,0,1,12,4,0],
 "ERF__PoissonSolve__tb_8cpp.html":[3,0,1,12,5],
 "ERF__PoissonSolve__tb_8cpp.html#a943a93ec0af2857a30eff9346a3b1ad1":[3,0,1,12,5,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "ERF__SAMUtils_8H.html#a8e3446b31eba495084de9d9982ebd669":[3,0,1,14,4,6,18],
 "ERF__SAMUtils_8H.html#a9394a3276c820a418b6dc0cc92074b22":[3,0,1,14,4,6,27],
 "ERF__SAMUtils_8H.html#aa13de173be476c1665e2a9ffefd5b045":[3,0,1,14,4,6,21],
-"ERF__SAMUtils_8H.html#aa838d63de27130b744073b3f794a59d4":[3,0,1,14,4,6,50],
-"ERF__SAMUtils_8H.html#aae2d5e226d3a2e1e8a29cd81232a9fca":[3,0,1,14,4,6,16]
+"ERF__SAMUtils_8H.html#aa838d63de27130b744073b3f794a59d4":[3,0,1,14,4,6,50]
 };

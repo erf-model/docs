@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"ERF__Kokkos_8H.html#ad9bc05397fd660f7037450087628cfb8":[3,0,1,18,1,10],
 "ERF__Kokkos_8H_source.html":[3,0,1,18,1],
 "ERF__LSM__Types_8H.html":[3,0,1,11,4],
 "ERF__LSM__Types_8H_source.html":[3,0,1,11,4],
@@ -39,15 +40,15 @@ var NAVTREEINDEX9 =
 "ERF__MOSTUtils_8H.html#ae50bca8acd1ac64e6d84a5235252ef4b":[3,0,1,2,16,6],
 "ERF__MOSTUtils_8H.html#aed7c2f1acc6eb30ffdd3e0c861a2613b":[3,0,1,2,16,3],
 "ERF__MOSTUtils_8H_source.html":[3,0,1,2,16],
-"ERF__MRI_8H.html":[3,0,1,23,12],
-"ERF__MRI_8H_source.html":[3,0,1,23,12],
+"ERF__MRI_8H.html":[3,0,1,23,13],
+"ERF__MRI_8H_source.html":[3,0,1,23,13],
 "ERF__MYNNStruct_8H.html":[3,0,1,17,7],
 "ERF__MYNNStruct_8H.html#aee75f2edcf2df6bea714f8565eff9400":[3,0,1,17,7,2],
 "ERF__MYNNStruct_8H_source.html":[3,0,1,17,7],
 "ERF__MakeBuoyancy_8cpp.html":[3,0,1,22,13],
 "ERF__MakeBuoyancy_8cpp.html#a423dc40a9974cb9a38f75bf033f2a7ba":[3,0,1,22,13,0],
-"ERF__MakeFastCoeffs_8cpp.html":[3,0,1,23,10],
-"ERF__MakeFastCoeffs_8cpp.html#a029574fdf28b9e449b078f9b85484d56":[3,0,1,23,10,0],
+"ERF__MakeFastCoeffs_8cpp.html":[3,0,1,23,11],
+"ERF__MakeFastCoeffs_8cpp.html#a029574fdf28b9e449b078f9b85484d56":[3,0,1,23,11,0],
 "ERF__MakeGradP_8cpp.html":[3,0,1,22,14],
 "ERF__MakeGradP_8cpp.html#a160f930429f773f474fa8f7f4553371c":[3,0,1,22,14,1],
 "ERF__MakeGradP_8cpp.html#a27ef9d804e42b02bbf43018eef6f1e55":[3,0,1,22,14,4],
@@ -61,9 +62,9 @@ var NAVTREEINDEX9 =
 "ERF__MakeSources_8cpp.html":[3,0,1,22,16],
 "ERF__MakeSources_8cpp.html#ac6e34235cfd7500caeb40b4697a5143e":[3,0,1,22,16,0],
 "ERF__MakeSubdomains_8cpp.html":[3,0,1,26,27],
-"ERF__MakeTauTerms_8cpp.html":[3,0,1,23,11],
-"ERF__MakeTauTerms_8cpp.html#a1c8f0f6a58bbb9836144fcfcd448b593":[3,0,1,23,11,0],
-"ERF__MakeTauTerms_8cpp.html#a72ecb770edd0fc4dfd2c7724c8b664fe":[3,0,1,23,11,1],
+"ERF__MakeTauTerms_8cpp.html":[3,0,1,23,12],
+"ERF__MakeTauTerms_8cpp.html#a1c8f0f6a58bbb9836144fcfcd448b593":[3,0,1,23,12,0],
+"ERF__MakeTauTerms_8cpp.html#a72ecb770edd0fc4dfd2c7724c8b664fe":[3,0,1,23,12,1],
 "ERF__MaterialProperties_8H.html":[3,0,1,13,1],
 "ERF__MaterialProperties_8H.html#a271e3c94d9778cd31a3f8bb02a5860ee":[3,0,1,13,1,2],
 "ERF__MaterialProperties_8H.html#a49fb8e196f8a40d9590fe9da77ce7e74":[3,0,1,13,1,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a2f43039d16fd9942908dc0b55b462b18":[3,0,1,10,9,2,6],
 "ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a539ca443eab3c322b2b37046e896dc62":[3,0,1,10,9,2,3],
 "ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a5f93bace93896872075eae75770cadc4":[3,0,1,10,9,2,2],
-"ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a7d998330c55b56c1e46c449b2e39e89f":[3,0,1,10,9,2,8],
-"ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06aa3968158227ea04595d4003503cca22b":[3,0,1,10,9,2,1]
+"ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a7d998330c55b56c1e46c449b2e39e89f":[3,0,1,10,9,2,8]
 };

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['instantiate_5fimplicit_5fdiff_5ffor_5fmom_5flu_17077',['INSTANTIATE_IMPLICIT_DIFF_FOR_MOM_LU',['../ERF__ImplicitDiff__N_8cpp.html#a468825b496be0b211c35772b3f9b487d',1,'INSTANTIATE_IMPLICIT_DIFF_FOR_MOM_LU():&#160;ERF_ImplicitDiff_N.cpp'],['../ERF__ImplicitDiff__S_8cpp.html#a468825b496be0b211c35772b3f9b487d',1,'INSTANTIATE_IMPLICIT_DIFF_FOR_MOM_LU():&#160;ERF_ImplicitDiff_S.cpp'],['../ERF__ImplicitDiff__T_8cpp.html#a468825b496be0b211c35772b3f9b487d',1,'INSTANTIATE_IMPLICIT_DIFF_FOR_MOM_LU():&#160;ERF_ImplicitDiff_T.cpp']]]
+  ['erf_5fhurricane_5fdiagnostics_5fh_5f_17110',['ERF_HURRICANE_DIAGNOSTICS_H_',['../ERF__HurricaneDiagnostics_8cpp.html#a89278aa72b9ffb1c23f34c0916c28a81',1,'ERF_HurricaneDiagnostics.cpp']]],
+  ['erf_5fweatherdatainterpolation_5fh_5f_17111',['ERF_WEATHERDATAINTERPOLATION_H_',['../ERF__SurfaceDataInterpolation_8cpp.html#a20f086438a161a34a8fa999186d71963',1,'ERF_WEATHERDATAINTERPOLATION_H_():&#160;ERF_SurfaceDataInterpolation.cpp'],['../ERF__WeatherDataInterpolation_8cpp.html#a20f086438a161a34a8fa999186d71963',1,'ERF_WEATHERDATAINTERPOLATION_H_():&#160;ERF_WeatherDataInterpolation.cpp']]],
+  ['extra_5fmynn25_5fchecks_17112',['EXTRA_MYNN25_CHECKS',['../ERF__ComputeDiffusivityMYNN25_8cpp.html#affcac1eae4418e1180b41a501492cdaf',1,'ERF_ComputeDiffusivityMYNN25.cpp']]]
 ];

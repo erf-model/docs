@@ -32,6 +32,8 @@ var hierarchy =
     [ "CENTERED2", "structCENTERED2.html", null ],
     [ "CENTERED4", "structCENTERED4.html", null ],
     [ "CENTERED6", "structCENTERED6.html", null ],
+    [ "CFFaceFluxes", "structCFFaceFluxes.html", null ],
+    [ "ERF::CFFluxHistory", "structERF_1_1CFFluxHistory.html", null ],
     [ "ERF::CFZFaceLayout", "structERF_1_1CFZFaceLayout.html", null ],
     [ "erf_noahmp::ClampedPrecipCell", "structerf__noahmp_1_1ClampedPrecipCell.html", null ],
     [ "CloudChamberBudget", "classCloudChamberBudget.html", null ],
