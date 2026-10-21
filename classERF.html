@@ -28243,7 +28243,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01713"></a><span class="lineno"> 1713</span>&#160;                <span class="comment">// ERF-populated WRFInput fields are transferred raw so SLM performs its</span></div>
 <div class="line"><a name="l01714"></a><span class="lineno"> 1714</span>&#160;                <span class="comment">// conversions once; idealized fields use the already-processed state.</span></div>
 <div class="line"><a name="l01715"></a><span class="lineno"> 1715</span>&#160;                <span class="keywordflow">if</span> ((<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>.empty() || source_lev &gt;= 0) &amp;&amp;</div>
-<div class="line"><a name="l01716"></a><span class="lineno"> 1716</span>&#160;                    <a class="code" href="classERF.html#a7ef14f6028b577eba70aef46b508be19">nc_init_file</a>[lev].empty() &amp;&amp;</div>
+<div class="line"><a name="l01716"></a><span class="lineno"> 1716</span>&#160;                    !<a class="code" href="classERF.html#ac2aad0a4f676551808eaada424dcce72">has_own_init_file</a>(lev) &amp;&amp;</div>
 <div class="line"><a name="l01717"></a><span class="lineno"> 1717</span>&#160;                    <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a0c585849961f95947c2cb00ef04d2025">init_type</a> != InitType::Metgrid) {</div>
 <div class="line"><a name="l01718"></a><span class="lineno"> 1718</span>&#160;                    IntVect source_ref_ratio(1);</div>
 <div class="line"><a name="l01719"></a><span class="lineno"> 1719</span>&#160;                    <span class="keywordflow">if</span> (source_lev &lt; 0) {</div>
