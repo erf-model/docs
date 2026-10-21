@@ -1,5 +1,7 @@
 var NAVTREEINDEX27 =
 {
+"classObsNudging.html#adb1fc742a3b27350a67588067e1fadce":[2,0,103,24],
+"classObsNudging.html#add0b5f3914f7f4d502f7359e6f8dc70a":[2,0,103,28],
 "classObsNudging.html#ae830539da81ce0c34c6c11337c3f26fd":[2,0,103,21],
 "classObsNudging.html#afd4dc3d076e51f6e106b8dd74ca8848f":[2,0,103,10],
 "classPlanarBoundary.html":[2,0,111],
@@ -247,7 +249,5 @@ var NAVTREEINDEX27 =
 "classRadiationDiagnostics.html#a74b5aa478d6e2648b475d2d5934e4390":[2,0,119,13],
 "classRadiationDiagnostics.html#a76638e7b4246a8f18b4cb3853cf3117a":[2,0,119,3],
 "classRadiationDiagnostics.html#a78007c9f4933177b5498968c17257818":[2,0,119,0],
-"classRadiationDiagnostics.html#aa335fb1b151abbb0c9655f9dad1aeada":[2,0,119,5],
-"classRadiationDiagnostics.html#aa7816209c4585ff072c0ee7a20fa55a5":[2,0,119,16],
-"classRadiationDiagnostics.html#ac38fd038b6247298d0ad20cb9b1f43e9":[2,0,119,2]
+"classRadiationDiagnostics.html#aa335fb1b151abbb0c9655f9dad1aeada":[2,0,119,5]
 };

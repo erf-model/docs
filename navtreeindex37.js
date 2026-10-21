@@ -1,5 +1,12 @@
 var NAVTREEINDEX37 =
 {
+"namespaceTwoStreamScratch.html#a2aafc499c48282a5ee5f76fb6bc1f1fe":[1,0,86,0],
+"namespaceTwoStreamScratch.html#a31df2c84277bf65d25a76e4ae3836d4e":[1,0,86,9],
+"namespaceTwoStreamScratch.html#a366db0ef785e2dedaa5a07732e50ecc4":[1,0,86,5],
+"namespaceTwoStreamScratch.html#a679fdb0a931c3a259925ab07a53cc405":[1,0,86,7],
+"namespaceTwoStreamScratch.html#a7d2679c05281b8149db4adf79574f690":[1,0,86,4],
+"namespaceTwoStreamScratch.html#a8941894e92ddfd442caaa9a369584d24":[1,0,86,3],
+"namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b":[1,0,86,6],
 "namespaceTwoStreamScratch.html#ad014e0a9a386f2c277500c9e084e59c4":[1,0,86,1],
 "namespaceTwoStreamScratch.html#af08cd6e627d1548023067bb27bbeb062":[1,0,86,8],
 "namespaceVars.html":[1,0,87],
@@ -242,12 +249,5 @@ var NAVTREEINDEX37 =
 "namespaceerf__hash__rng.html#a31caeafc4db5b971c471833037829e04":[1,0,18,1],
 "namespaceerf__hash__rng.html#a3c58b34f95b150cc36eabdca82d7b4a8":[1,0,18,3],
 "namespaceerf__hash__rng.html#ae89d02b60008a0c8afdd38b3f1728da1":[1,0,18,2],
-"namespaceerf__inputs__detail.html":[1,0,19],
-"namespaceerf__inputs__detail.html#a074ba375de2722b044717fe2d29a30d4":[1,0,19,3],
-"namespaceerf__inputs__detail.html#a13dd6b39ed7cdcc126549869796c553f":[1,0,19,2],
-"namespaceerf__inputs__detail.html#a4056cedb921fb38fe307329edc2c226f":[1,0,19,5],
-"namespaceerf__inputs__detail.html#a7ab2387433381161914b1d2d85878d33":[1,0,19,4],
-"namespaceerf__interval__means.html":[1,0,20],
-"namespaceerf__interval__means.html#a251a854f83d6e1f54fdb17a522270ab7":[1,0,20,6],
-"namespaceerf__interval__means.html#a4f09d1ecb9002eb43e2cd12d260387ad":[1,0,20,4]
+"namespaceerf__inputs__detail.html":[1,0,19]
 };
