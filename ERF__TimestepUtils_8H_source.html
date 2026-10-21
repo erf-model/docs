@@ -169,17 +169,17 @@ $(document).ready(function(){initNavTree('ERF__TimestepUtils_8H_source.html','')
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Vacoustic = <a class="code" href="ERF__NumericalConstants_8H.html#add6073d12dffaf7f237e9bc83a3419fb">third</a> * c * std::sqrt( dxinv[1] * (dxinv[1] + <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * idz * amrex::Math::abs(h_eta)) );</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> ((nxc &gt; 1) &amp;&amp; (nyc == 1)) {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="comment">// 2-D in x-z</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            inv_dt = amrex::max(abs_u*dxinv[0] + Uacoustic,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                abs_w*idz                 );</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            inv_dt = abs_u*dxinv[0] + Uacoustic</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                   + abs_w*idz;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((nyc &gt; 1) &amp;&amp; (nxc == 1)) {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="comment">// 2-D in y-z</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            inv_dt = amrex::max(abs_v*dxinv[1] + Vacoustic,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                abs_w*idz                 );</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            inv_dt = abs_v*dxinv[1] + Vacoustic</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                   + abs_w*idz;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="comment">// 3-D</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            inv_dt = amrex::max(abs_u*dxinv[0] + Uacoustic,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                abs_v*dxinv[1] + Vacoustic,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                abs_w*idz                 );</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            inv_dt = abs_u*dxinv[0] + Uacoustic</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                   + abs_v*dxinv[1] + Vacoustic</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                   + abs_w*idz;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// If we are not doing implicit acoustic substepping, then the z-direction is constrained</span></div>
@@ -191,17 +191,17 @@ $(document).ready(function(){initNavTree('ERF__TimestepUtils_8H_source.html','')
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Oacoustic = c * amrex::Math::abs(idz);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">if</span> (nxc &gt; 1 &amp;&amp; nyc &gt; 1) {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="comment">// 3-D</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            inv_dt = amrex::max(abs_u*dxinv[0] + Uacoustic,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                abs_v*dxinv[1] + Vacoustic,</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                abs_w*idz      + Oacoustic);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            inv_dt = abs_u*dxinv[0] + Uacoustic</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                   + abs_v*dxinv[1] + Vacoustic</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                   + abs_w*idz      + Oacoustic;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nxc &gt; 1) {</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="comment">// 2-D in x-z</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            inv_dt = amrex::max(abs_u*dxinv[0] + Uacoustic,</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                abs_w*idz      + Oacoustic);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            inv_dt = abs_u*dxinv[0] + Uacoustic</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                   + abs_w*idz      + Oacoustic;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nyc &gt; 1) {</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="comment">// 2-D in y-z</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            inv_dt = amrex::max(abs_v*dxinv[1] + Vacoustic,</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                abs_w*idz      + Oacoustic);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            inv_dt = abs_v*dxinv[1] + Vacoustic</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                   + abs_w*idz      + Oacoustic;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="comment">// 1-D in z</span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            inv_dt = abs_w*idz + Oacoustic;</div>
@@ -253,9 +253,9 @@ $(document).ready(function(){initNavTree('ERF__TimestepUtils_8H_source.html','')
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        idz /= <a class="code" href="ERF__TerrainMetrics_8H.html#ac9525e0a2d2539f96c7fbebe4f9497a0">Compute_h_zeta_AtCellCenter</a>(i,j,k,dxinv,z_nd);</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">return</span> amrex::max(amrex::Math::abs(u)*dxinv[0],</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                      amrex::Math::abs(v)*dxinv[1],</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                      amrex::Math::abs(<a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>)*idz     );</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">return</span> ( amrex::Math::abs(u)*dxinv[0]</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;           + amrex::Math::abs(v)*dxinv[1]</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;           + amrex::Math::abs(<a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>)*idz     );</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#endif</span></div>
