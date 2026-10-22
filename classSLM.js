@@ -14,6 +14,7 @@ var classSLM =
     [ "fh_calc", "classSLM.html#aa03137ca38968be3043467f1735f3b45", null ],
     [ "fluxes_canopy", "classSLM.html#a6781331fa4fd70baa10412bbbae0cc89", null ],
     [ "get_rad_output_map", "classSLM.html#ae0a940337deec3dc88c21e16e70213ac", null ],
+    [ "get_soil_dz", "classSLM.html#a42e3c79f7ecdc07d3831855ce038a1a5", null ],
     [ "Get_Update_Status", "classSLM.html#ad2129ba7d472088db4c01c20b644c040", null ],
     [ "GotoNextLine", "classSLM.html#a49424a664e55a7b3f88e8369dd1abf0b", null ],
     [ "groundalb_noahmp", "classSLM.html#aea25daf890fc3c066c2522980d89f157", null ],
