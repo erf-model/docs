@@ -1,5 +1,7 @@
 var NAVTREEINDEX48 =
 {
+"structSolverChoice.html#a2a32e3f104acf862aea0ca4a9adf9078":[2,0,170,139],
+"structSolverChoice.html#a2a8692be6bad4b699043f5b4f9d5343c":[2,0,170,24],
 "structSolverChoice.html#a312bb8b0aaef76bfe19a5e763465e7aa":[2,0,170,39],
 "structSolverChoice.html#a32fe36ae02384f161f4969f291d1e138":[2,0,170,126],
 "structSolverChoice.html#a341d61a88aa621a166e71850ea19a110":[2,0,170,123],
@@ -247,7 +249,5 @@ var NAVTREEINDEX48 =
 "structSurfaceModel_1_1Field.html#ab07e222e36ed94737d9c59e2e52174bf":[2,0,192,0,4],
 "structSurfaceModel_1_1Field.html#ab35f712767a55f4f62abe1719e3f52be":[2,0,192,0,0],
 "structSurfaceModel_1_1Field.html#ae6aa8a8000e1c4a9db91e20a955e4551":[2,0,192,0,2],
-"structSurfaceModel_1_1RadiationField.html":[2,0,192,1],
-"structSurfaceModel_1_1RadiationField.html#ac348ef2c176b6c0686fc6124580851ba":[2,0,192,1,0],
-"structSurfaceModel_1_1RadiationField.html#ad1786e279986863ca45a3ee9698ee9fe":[2,0,192,1,1]
+"structSurfaceModel_1_1RadiationField.html":[2,0,192,1]
 };
