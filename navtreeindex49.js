@@ -1,5 +1,7 @@
 var NAVTREEINDEX49 =
 {
+"structStretchedDiffusionBoundaryWeights.html#aa2a858a67e3646ea656669b3036f36b9":[2,0,177,2],
+"structStretchedDiffusionBoundaryWeights.html#af3bddd707bfe4157ae42679b29ecf891":[2,0,177,0],
 "structSurfaceFluxView.html":[2,0,190],
 "structSurfaceFluxView.html#a613bd61442f6a33e3ecf845f6f37906a":[2,0,190,0],
 "structSurfaceFluxView.html#ab0023823cc85e020a82e55b155e44b34":[2,0,190,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX49 =
 "structTwoStreamParams.html#a67341d5e227f0f82a9bfb460d78d5ab8":[2,0,204,29],
 "structTwoStreamParams.html#a6c286539a0930459fdc6ebae21655f8b":[2,0,204,43],
 "structTwoStreamParams.html#a6cfe92b03289f3d337ba2d380144bc34":[2,0,204,27],
-"structTwoStreamParams.html#a6f3498a0998b361cfa0c0a63ad6b41ce":[2,0,204,26],
-"structTwoStreamParams.html#a72476bc2881cab6658d976712aa75788":[2,0,204,18],
-"structTwoStreamParams.html#a783ebd0f3ec4d4a9800c9f92fa9b88eb":[2,0,204,37]
+"structTwoStreamParams.html#a6f3498a0998b361cfa0c0a63ad6b41ce":[2,0,204,26]
 };

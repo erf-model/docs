@@ -2751,204 +2751,218 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;    <span class="keywordflow">while</span> (urban_stream &gt;&gt; field_idx) chk_urban_fields.push_back(field_idx);</div>
 <div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;    <a class="code" href="classSurfaceModel.html#a44c47c973e53a5f3ff055a2426904dda">GotoNextLine</a>(is);</div>
 <div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160; </div>
-<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;    <span class="keywordflow">if</span> (chk_lsm_fields != <a class="code" href="classSurfaceModel.html#a4a01c7cb90d6a3f7959a4362b247e6f7">lsm_fields</a> || chk_urban_fields != <a class="code" href="classSurfaceModel.html#abc2cd2516c6e41f9405c368a461d34b9">urban_fields</a>) {</div>
-<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;        checkpoint_error(<span class="stringliteral">&quot;model field lists do not match the current SurfaceModel&quot;</span>);</div>
-<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;    }</div>
-<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160; </div>
-<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;    <span class="comment">// Read number of mapped fields</span></div>
-<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;    <span class="keywordtype">int</span> nfields = 0;</div>
-<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;    <span class="keywordflow">if</span> (!(is &gt;&gt; nfields) || nfields &lt; 0) {</div>
-<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;        checkpoint_error(<span class="stringliteral">&quot;invalid mapped-field count&quot;</span>);</div>
-<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;    }</div>
-<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;    <a class="code" href="classSurfaceModel.html#a44c47c973e53a5f3ff055a2426904dda">GotoNextLine</a>(is);</div>
-<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160; </div>
-<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;    <span class="comment">// Read any mapped fields</span></div>
-<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;    <span class="keywordflow">if</span> (nfields != <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#a4b92f5426ea2bac67dcab024655392ef">fieldmap</a>.size())) {</div>
-<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;        checkpoint_error(<span class="stringliteral">&quot;mapped-field count does not match the current SurfaceModel&quot;</span>);</div>
-<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;    }</div>
-<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160; </div>
-<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;    <span class="comment">// The field mapping should already be created before the restart, but verify consistency with the file</span></div>
-<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;    amrex::Vector&lt;std::string&gt; checkpoint_field_names;</div>
-<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nfields; i++) {</div>
-<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;        <span class="keywordflow">if</span> (!std::getline(is, line)) {</div>
-<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;missing mapped-field entry &quot;</span> + std::to_string(i));</div>
-<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;        }</div>
-<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;        std::istringstream lis(line);</div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160; </div>
-<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;        std::string field_name;</div>
-<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;        <span class="keywordtype">int</span> chk_mf_ind = -1;</div>
-<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;        <span class="keywordtype">int</span> lsm_ind = -1;</div>
-<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;        <span class="keywordtype">int</span> urb_ind = -1;</div>
-<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;        <span class="keywordtype">int</span> fill_bound_int = -1;</div>
-<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;        <span class="keywordflow">if</span> (!(lis &gt;&gt; field_name &gt;&gt; chk_mf_ind &gt;&gt; lsm_ind &gt;&gt; urb_ind &gt;&gt; fill_bound_int) ||</div>
-<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;            chk_mf_ind &lt; 0 || lsm_ind &lt; -1 || urb_ind &lt; -1 ||</div>
-<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;            (fill_bound_int != 0 &amp;&amp; fill_bound_int != 1)) {</div>
-<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;invalid mapped-field entry for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;        }</div>
-<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> fill_bound = (fill_bound_int != 0);</div>
-<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160; </div>
-<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;        <span class="keyword">auto</span> field_it = <a class="code" href="classSurfaceModel.html#a4b92f5426ea2bac67dcab024655392ef">fieldmap</a>.find(field_name);</div>
-<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;        <span class="keywordflow">if</span> (field_it == <a class="code" href="classSurfaceModel.html#a4b92f5426ea2bac67dcab024655392ef">fieldmap</a>.end()) {</div>
-<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;checkpoint mapping &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39; is not registered&quot;</span>);</div>
-<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;        }</div>
-<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; seen_name : checkpoint_field_names) {</div>
-<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;            <span class="keywordflow">if</span> (seen_name == field_name) {</div>
-<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;                checkpoint_error(<span class="stringliteral">&quot;duplicate mapped-field entry for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;            }</div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;    <span class="comment">// The entries are indices into the provider&#39;s data list, with the fluxes appended after</span></div>
+<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;    <span class="comment">// the data fields, so they move whenever a model adds a data field (Noah-MP grew from 27</span></div>
+<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;    <span class="comment">// to 29 when snow and snowh were added).  Nothing is restored from them -- the fields</span></div>
+<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;    <span class="comment">// themselves are read by name below -- so only require that the same slots are in use.</span></div>
+<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;    <span class="keyword">auto</span> same_slots = [] (<span class="keyword">const</span> amrex::Vector&lt;int&gt;&amp; a, <span class="keyword">const</span> amrex::Vector&lt;int&gt;&amp; b) {</div>
+<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;        <span class="keywordflow">if</span> (a.size() != b.size()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; static_cast&lt;int&gt;(a.size()); ++i) {</div>
+<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;            <span class="keywordflow">if</span> ((a[i] == -1) != (b[i] == -1)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;        }</div>
+<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;    };</div>
+<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;    <span class="keywordflow">if</span> (!same_slots(chk_lsm_fields, <a class="code" href="classSurfaceModel.html#a4a01c7cb90d6a3f7959a4362b247e6f7">lsm_fields</a>) || !same_slots(chk_urban_fields, <a class="code" href="classSurfaceModel.html#abc2cd2516c6e41f9405c368a461d34b9">urban_fields</a>)) {</div>
+<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;        checkpoint_error(<span class="stringliteral">&quot;model field lists do not match the current SurfaceModel&quot;</span>);</div>
+<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;    }</div>
+<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160; </div>
+<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;    <span class="comment">// Read number of mapped fields</span></div>
+<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;    <span class="keywordtype">int</span> nfields = 0;</div>
+<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;    <span class="keywordflow">if</span> (!(is &gt;&gt; nfields) || nfields &lt; 0) {</div>
+<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;        checkpoint_error(<span class="stringliteral">&quot;invalid mapped-field count&quot;</span>);</div>
+<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;    }</div>
+<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;    <a class="code" href="classSurfaceModel.html#a44c47c973e53a5f3ff055a2426904dda">GotoNextLine</a>(is);</div>
+<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160; </div>
+<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;    <span class="comment">// Read any mapped fields</span></div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;    <span class="keywordflow">if</span> (nfields != <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#a4b92f5426ea2bac67dcab024655392ef">fieldmap</a>.size())) {</div>
+<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;        checkpoint_error(<span class="stringliteral">&quot;mapped-field count does not match the current SurfaceModel&quot;</span>);</div>
+<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;    }</div>
+<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160; </div>
+<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;    <span class="comment">// The field mapping should already be created before the restart, but verify consistency with the file</span></div>
+<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;    amrex::Vector&lt;std::string&gt; checkpoint_field_names;</div>
+<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nfields; i++) {</div>
+<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;        <span class="keywordflow">if</span> (!std::getline(is, line)) {</div>
+<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;missing mapped-field entry &quot;</span> + std::to_string(i));</div>
+<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;        }</div>
+<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;        std::istringstream lis(line);</div>
+<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160; </div>
+<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;        std::string field_name;</div>
+<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;        <span class="keywordtype">int</span> chk_mf_ind = -1;</div>
+<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;        <span class="keywordtype">int</span> lsm_ind = -1;</div>
+<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;        <span class="keywordtype">int</span> urb_ind = -1;</div>
+<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;        <span class="keywordtype">int</span> fill_bound_int = -1;</div>
+<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;        <span class="keywordflow">if</span> (!(lis &gt;&gt; field_name &gt;&gt; chk_mf_ind &gt;&gt; lsm_ind &gt;&gt; urb_ind &gt;&gt; fill_bound_int) ||</div>
+<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;            chk_mf_ind &lt; 0 || lsm_ind &lt; -1 || urb_ind &lt; -1 ||</div>
+<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;            (fill_bound_int != 0 &amp;&amp; fill_bound_int != 1)) {</div>
+<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;invalid mapped-field entry for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
 <div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;        }</div>
-<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;        checkpoint_field_names.push_back(field_name);</div>
-<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;field = field_it-&gt;second;</div>
-<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;        <span class="keywordflow">if</span> (field.mf_ind &lt; 0 || field.mf_ind &gt;= <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#ac18d483cd980560dfae1471549cce2ad">fields</a>.size())) {</div>
-<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;current mapped-field storage is invalid for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;        }</div>
-<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#ac18d483cd980560dfae1471549cce2ad">fields</a>[field.mf_ind].size()) != <a class="code" href="classSurfaceModel.html#a0e817f890db60417fa4df70e334b2d70">m_nlevs</a>) {</div>
-<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;current mapped-field level storage is invalid for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;        }</div>
-<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;        <span class="keywordflow">if</span> (field.map.first != lsm_ind || field.map.second != urb_ind ||</div>
-<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;            field.fill_bound != fill_bound) {</div>
-<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;mapped-field metadata mismatch for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;        }</div>
-<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;        <span class="keywordflow">if</span> (lsm_ind == -1 &amp;&amp; urb_ind == -1) {</div>
-<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(field.lsm_ptr.size()) != <a class="code" href="classSurfaceModel.html#a0e817f890db60417fa4df70e334b2d70">m_nlevs</a> ||</div>
-<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;                <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(field.urb_ptr.size()) != <a class="code" href="classSurfaceModel.html#a0e817f890db60417fa4df70e334b2d70">m_nlevs</a>) {</div>
-<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;                checkpoint_error(<span class="stringliteral">&quot;pointer mapping has the wrong number of levels for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;            }</div>
-<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; <a class="code" href="classSurfaceModel.html#a0e817f890db60417fa4df70e334b2d70">m_nlevs</a>; ++lev) {</div>
-<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classSurfaceModel.html#ac18d483cd980560dfae1471549cce2ad">fields</a>[field.mf_ind][lev] == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;                    checkpoint_error(<span class="stringliteral">&quot;mapped-field storage is missing at level &quot;</span> +</div>
-<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;                                     std::to_string(lev) + <span class="stringliteral">&quot; for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;                }</div>
-<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;            }</div>
-<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; <a class="code" href="classSurfaceModel.html#a0e817f890db60417fa4df70e334b2d70">m_nlevs</a>; ++lev) {</div>
-<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">bool</span> invalid_land_index =</div>
-<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;                    !<a class="code" href="classSurfaceModel.html#ac26d25ce4a9bf1c855709ae2e52b8012">lsm_data_lev</a>[lev].empty() &amp;&amp;</div>
-<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;                    lsm_ind &gt;= <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#ac26d25ce4a9bf1c855709ae2e52b8012">lsm_data_lev</a>[lev].size());</div>
-<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">bool</span> invalid_urban_index =</div>
-<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;                    !<a class="code" href="classSurfaceModel.html#adbb3162ac480a8f9398949b736fa476b">urban_data_lev</a>[lev].empty() &amp;&amp;</div>
-<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;                    urb_ind &gt;= <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#adbb3162ac480a8f9398949b736fa476b">urban_data_lev</a>[lev].size());</div>
-<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;                <span class="keywordflow">if</span> (invalid_land_index || invalid_urban_index) {</div>
-<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;                    checkpoint_error(<span class="stringliteral">&quot;mapped-field index is out of range for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;                }</div>
-<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classSurfaceModel.html#ac18d483cd980560dfae1471549cce2ad">fields</a>[field.mf_ind][lev] == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;                    checkpoint_error(<span class="stringliteral">&quot;mapped-field storage is missing at level &quot;</span> +</div>
-<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;                                     std::to_string(lev) + <span class="stringliteral">&quot; for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;                }</div>
-<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;            }</div>
-<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;        }</div>
-<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;        amrex::ignore_unused(chk_mf_ind);</div>
-<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;    }</div>
-<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160; </div>
-<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;    <span class="keyword">const</span> std::string prefix = <span class="stringliteral">&quot;SurfaceModel_&quot;</span>;</div>
-<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160; </div>
-<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a> = IntVect(1,1,0);</div>
-<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;    <span class="keyword">auto</span> validate_multifab_header = [&amp;] (<span class="keyword">const</span> std::string&amp; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>, <span class="keywordtype">int</span> lev, <span class="keywordtype">int</span> ncomp) {</div>
-<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;        <span class="keyword">const</span> std::string header_name = <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> + <span class="stringliteral">&quot;_H&quot;</span>;</div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;        <span class="keywordflow">if</span> (!amrex::FileExists(header_name)) {</div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;missing MultiFab header &#39;&quot;</span> + header_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;        }</div>
-<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160; </div>
-<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;        Vector&lt;char&gt; header_data;</div>
-<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;        ParallelDescriptor::ReadAndBcastFile(header_name, header_data);</div>
-<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;        std::istringstream header_stream(</div>
-<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;            std::string(header_data.dataPtr(), header_data.size()), std::istringstream::in);</div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;        VisMF::Header header;</div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;        <span class="keywordflow">if</span> (!(header_stream &gt;&gt; header)) {</div>
-<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;invalid MultiFab header &#39;&quot;</span> + header_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;        }</div>
-<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;        <span class="keywordflow">if</span> (header.m_ncomp != ncomp || header.m_ngrow != <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a> ||</div>
-<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;            !(header.m_ba == chk_ba2d[lev])) {</div>
-<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;MultiFab layout mismatch for level &quot;</span> + std::to_string(lev) +</div>
-<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;                             <span class="stringliteral">&quot; in &#39;&quot;</span> + <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> fill_bound = (fill_bound_int != 0);</div>
+<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160; </div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;        <span class="keyword">auto</span> field_it = <a class="code" href="classSurfaceModel.html#a4b92f5426ea2bac67dcab024655392ef">fieldmap</a>.find(field_name);</div>
+<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;        <span class="keywordflow">if</span> (field_it == <a class="code" href="classSurfaceModel.html#a4b92f5426ea2bac67dcab024655392ef">fieldmap</a>.end()) {</div>
+<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;checkpoint mapping &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39; is not registered&quot;</span>);</div>
+<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;        }</div>
+<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; seen_name : checkpoint_field_names) {</div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;            <span class="keywordflow">if</span> (seen_name == field_name) {</div>
+<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;                checkpoint_error(<span class="stringliteral">&quot;duplicate mapped-field entry for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;            }</div>
+<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;        }</div>
+<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;        checkpoint_field_names.push_back(field_name);</div>
+<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;field = field_it-&gt;second;</div>
+<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;        <span class="keywordflow">if</span> (field.mf_ind &lt; 0 || field.mf_ind &gt;= <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#ac18d483cd980560dfae1471549cce2ad">fields</a>.size())) {</div>
+<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;current mapped-field storage is invalid for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;        }</div>
+<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#ac18d483cd980560dfae1471549cce2ad">fields</a>[field.mf_ind].size()) != <a class="code" href="classSurfaceModel.html#a0e817f890db60417fa4df70e334b2d70">m_nlevs</a>) {</div>
+<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;current mapped-field level storage is invalid for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;        }</div>
+<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;        <span class="comment">// As above, the provider indices may have shifted; only whether the field maps to the</span></div>
+<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;        <span class="comment">// land and/or urban provider has to match.</span></div>
+<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;        <span class="keywordflow">if</span> ((field.map.first == -1) != (lsm_ind == -1) ||</div>
+<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;            (field.map.second == -1) != (urb_ind == -1) ||</div>
+<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;            field.fill_bound != fill_bound) {</div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;mapped-field metadata mismatch for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;        }</div>
+<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;        <span class="keywordflow">if</span> (lsm_ind == -1 &amp;&amp; urb_ind == -1) {</div>
+<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(field.lsm_ptr.size()) != <a class="code" href="classSurfaceModel.html#a0e817f890db60417fa4df70e334b2d70">m_nlevs</a> ||</div>
+<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;                <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(field.urb_ptr.size()) != <a class="code" href="classSurfaceModel.html#a0e817f890db60417fa4df70e334b2d70">m_nlevs</a>) {</div>
+<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;                checkpoint_error(<span class="stringliteral">&quot;pointer mapping has the wrong number of levels for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;            }</div>
+<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; <a class="code" href="classSurfaceModel.html#a0e817f890db60417fa4df70e334b2d70">m_nlevs</a>; ++lev) {</div>
+<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classSurfaceModel.html#ac18d483cd980560dfae1471549cce2ad">fields</a>[field.mf_ind][lev] == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;                    checkpoint_error(<span class="stringliteral">&quot;mapped-field storage is missing at level &quot;</span> +</div>
+<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;                                     std::to_string(lev) + <span class="stringliteral">&quot; for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;                }</div>
+<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;            }</div>
+<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; <a class="code" href="classSurfaceModel.html#a0e817f890db60417fa4df70e334b2d70">m_nlevs</a>; ++lev) {</div>
+<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">bool</span> invalid_land_index =</div>
+<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;                    !<a class="code" href="classSurfaceModel.html#ac26d25ce4a9bf1c855709ae2e52b8012">lsm_data_lev</a>[lev].empty() &amp;&amp;</div>
+<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;                    field.map.first &gt;= <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#ac26d25ce4a9bf1c855709ae2e52b8012">lsm_data_lev</a>[lev].size());</div>
+<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">bool</span> invalid_urban_index =</div>
+<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;                    !<a class="code" href="classSurfaceModel.html#adbb3162ac480a8f9398949b736fa476b">urban_data_lev</a>[lev].empty() &amp;&amp;</div>
+<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;                    field.map.second &gt;= <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#adbb3162ac480a8f9398949b736fa476b">urban_data_lev</a>[lev].size());</div>
+<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;                <span class="keywordflow">if</span> (invalid_land_index || invalid_urban_index) {</div>
+<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;                    checkpoint_error(<span class="stringliteral">&quot;mapped-field index is out of range for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;                }</div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classSurfaceModel.html#ac18d483cd980560dfae1471549cce2ad">fields</a>[field.mf_ind][lev] == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;                    checkpoint_error(<span class="stringliteral">&quot;mapped-field storage is missing at level &quot;</span> +</div>
+<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;                                     std::to_string(lev) + <span class="stringliteral">&quot; for &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;                }</div>
+<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;            }</div>
+<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;        }</div>
+<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;        amrex::ignore_unused(chk_mf_ind);</div>
+<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;    }</div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160; </div>
+<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;    <span class="keyword">const</span> std::string prefix = <span class="stringliteral">&quot;SurfaceModel_&quot;</span>;</div>
+<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160; </div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a> = IntVect(1,1,0);</div>
+<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;    <span class="keyword">auto</span> validate_multifab_header = [&amp;] (<span class="keyword">const</span> std::string&amp; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>, <span class="keywordtype">int</span> lev, <span class="keywordtype">int</span> ncomp) {</div>
+<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;        <span class="keyword">const</span> std::string header_name = <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> + <span class="stringliteral">&quot;_H&quot;</span>;</div>
+<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;        <span class="keywordflow">if</span> (!amrex::FileExists(header_name)) {</div>
+<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;missing MultiFab header &#39;&quot;</span> + header_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
 <div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;        }</div>
-<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span>amrex::Long<span class="keyword">&gt;</span>(header.m_fod.size()) != chk_ba2d[lev].size()) {</div>
-<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;MultiFab FAB count mismatch for level &quot;</span> + std::to_string(lev) +</div>
-<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;                             <span class="stringliteral">&quot; in &#39;&quot;</span> + <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;        }</div>
-<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;        <span class="keyword">const</span> std::string data_dir = VisMF::DirName(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
-<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fab_file : header.m_fod) {</div>
-<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;            <span class="keywordflow">if</span> (!amrex::FileExists(data_dir + fab_file.m_name)) {</div>
-<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;                checkpoint_error(<span class="stringliteral">&quot;missing MultiFab data file &#39;&quot;</span> + data_dir + fab_file.m_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;            }</div>
-<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;        }</div>
-<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;    };</div>
-<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160; </div>
-<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;    <span class="comment">// Validate all required data headers before changing any runtime fields.</span></div>
-<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; <a class="code" href="classSurfaceModel.html#a0e817f890db60417fa4df70e334b2d70">m_nlevs</a>; ++lev) {</div>
-<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;        validate_multifab_header(MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;ustar&quot;</span>), lev, 2);</div>
-<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;        validate_multifab_header(MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;wavg&quot;</span>), lev, 2);</div>
-<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;        validate_multifab_header(MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;tstar&quot;</span>), lev, 1);</div>
-<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;        validate_multifab_header(MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;qstar&quot;</span>), lev, 1);</div>
-<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;        validate_multifab_header(MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;tsurf&quot;</span>), lev, 1);</div>
-<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;field : <a class="code" href="classSurfaceModel.html#a4b92f5426ea2bac67dcab024655392ef">fieldmap</a>) {</div>
-<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;            validate_multifab_header(</div>
-<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;                MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;_f_&quot;</span> + field.first), lev, 1);</div>
-<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;        }</div>
-<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;    }</div>
-<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160; </div>
-<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;    <span class="comment">// Move a field that was read on the checkpointed layout onto the live one.  When the two</span></div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;    <span class="comment">// layouts are identical this is the same local copy it always was, so an unchanged restart</span></div>
-<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;    <span class="comment">// stays bitwise identical; otherwise the data is redistributed.</span></div>
-<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;    <span class="comment">// The redistribution is done in two passes because the checkpoint carries ghost cells and</span></div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;    <span class="comment">// a single ParallelCopy over grown source boxes would leave the outcome up to the order in</span></div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;    <span class="comment">// which overlapping sources happen to be applied.  The first pass seeds everything,</span></div>
-<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;    <span class="comment">// including the ghost cells outside a non-periodic physical boundary, which no amount of</span></div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;    <span class="comment">// valid-region copying can reach.  The second pass then lays the valid data over the top,</span></div>
-<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;    <span class="comment">// so wherever a cell is covered by a valid source cell that value wins.</span></div>
-<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;    <span class="keyword">auto</span> redistribute = [&amp;] (MultiFab&amp; dst, <span class="keyword">const</span> MultiFab&amp; src, <span class="keywordtype">int</span> ncomp, <span class="keywordtype">int</span> lev)</div>
-<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;    {</div>
-<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;        <span class="keywordflow">if</span> (dst.boxArray() == src.boxArray() &amp;&amp; dst.DistributionMap() == src.DistributionMap()) {</div>
-<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;            MultiFab::Copy(dst, src, 0, 0, ncomp, <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;        }</div>
-<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;        dst.ParallelCopy(src, 0, 0, ncomp, <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>, <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;        dst.ParallelCopy(src, 0, 0, ncomp, IntVect(0), <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>, <a class="code" href="classSurfaceModel.html#aa8c478d5fccc3f84e5eea4181afc2b72">m_geom2d</a>[lev].periodicity());</div>
-<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;    };</div>
-<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160; </div>
-<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; <a class="code" href="classSurfaceModel.html#a0e817f890db60417fa4df70e334b2d70">m_nlevs</a>; lev++) {</div>
-<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;        {</div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;            MultiFab mf(chk_ba2d[lev],chk_dmap[lev],2,<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;            VisMF::Read(mf, MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;ustar&quot;</span>));</div>
-<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;            redistribute(*(<a class="code" href="classSurfaceModel.html#a6ea5609742fd726d647b40376ddfe242">u_star</a>[lev]),mf,2,lev);</div>
-<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160; </div>
-<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;            VisMF::Read(mf, MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;wavg&quot;</span>));</div>
-<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;            <a class="code" href="classSurfaceModel.html#ac012814a2a3e2cd3bc6ce05b545234a9">ensure_weight_factors</a>(lev);</div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;            redistribute(*<a class="code" href="classSurfaceModel.html#ad2526c1a4892afba5d122819686920c1">wavg</a>[lev],mf,2,lev);</div>
+<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160; </div>
+<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;        Vector&lt;char&gt; header_data;</div>
+<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;        ParallelDescriptor::ReadAndBcastFile(header_name, header_data);</div>
+<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;        std::istringstream header_stream(</div>
+<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;            std::string(header_data.dataPtr(), header_data.size()), std::istringstream::in);</div>
+<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;        VisMF::Header header;</div>
+<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;        <span class="keywordflow">if</span> (!(header_stream &gt;&gt; header)) {</div>
+<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;invalid MultiFab header &#39;&quot;</span> + header_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;        }</div>
+<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;        <span class="keywordflow">if</span> (header.m_ncomp != ncomp || header.m_ngrow != <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a> ||</div>
+<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;            !(header.m_ba == chk_ba2d[lev])) {</div>
+<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;MultiFab layout mismatch for level &quot;</span> + std::to_string(lev) +</div>
+<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;                             <span class="stringliteral">&quot; in &#39;&quot;</span> + <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;        }</div>
+<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span>amrex::Long<span class="keyword">&gt;</span>(header.m_fod.size()) != chk_ba2d[lev].size()) {</div>
+<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;            checkpoint_error(<span class="stringliteral">&quot;MultiFab FAB count mismatch for level &quot;</span> + std::to_string(lev) +</div>
+<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;                             <span class="stringliteral">&quot; in &#39;&quot;</span> + <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;        }</div>
+<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;        <span class="keyword">const</span> std::string data_dir = VisMF::DirName(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
+<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fab_file : header.m_fod) {</div>
+<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;            <span class="keywordflow">if</span> (!amrex::FileExists(data_dir + fab_file.m_name)) {</div>
+<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;                checkpoint_error(<span class="stringliteral">&quot;missing MultiFab data file &#39;&quot;</span> + data_dir + fab_file.m_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;            }</div>
+<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;        }</div>
+<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;    };</div>
+<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160; </div>
+<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;    <span class="comment">// Validate all required data headers before changing any runtime fields.</span></div>
+<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; <a class="code" href="classSurfaceModel.html#a0e817f890db60417fa4df70e334b2d70">m_nlevs</a>; ++lev) {</div>
+<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;        validate_multifab_header(MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;ustar&quot;</span>), lev, 2);</div>
+<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;        validate_multifab_header(MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;wavg&quot;</span>), lev, 2);</div>
+<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;        validate_multifab_header(MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;tstar&quot;</span>), lev, 1);</div>
+<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;        validate_multifab_header(MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;qstar&quot;</span>), lev, 1);</div>
+<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;        validate_multifab_header(MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;tsurf&quot;</span>), lev, 1);</div>
+<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;field : <a class="code" href="classSurfaceModel.html#a4b92f5426ea2bac67dcab024655392ef">fieldmap</a>) {</div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;            validate_multifab_header(</div>
+<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;                MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;_f_&quot;</span> + field.first), lev, 1);</div>
+<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;        }</div>
+<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;    }</div>
+<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160; </div>
+<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;    <span class="comment">// Move a field that was read on the checkpointed layout onto the live one.  When the two</span></div>
+<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;    <span class="comment">// layouts are identical this is the same local copy it always was, so an unchanged restart</span></div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;    <span class="comment">// stays bitwise identical; otherwise the data is redistributed.</span></div>
+<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;    <span class="comment">// The redistribution is done in two passes because the checkpoint carries ghost cells and</span></div>
+<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;    <span class="comment">// a single ParallelCopy over grown source boxes would leave the outcome up to the order in</span></div>
+<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;    <span class="comment">// which overlapping sources happen to be applied.  The first pass seeds everything,</span></div>
+<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;    <span class="comment">// including the ghost cells outside a non-periodic physical boundary, which no amount of</span></div>
+<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;    <span class="comment">// valid-region copying can reach.  The second pass then lays the valid data over the top,</span></div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;    <span class="comment">// so wherever a cell is covered by a valid source cell that value wins.</span></div>
+<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;    <span class="keyword">auto</span> redistribute = [&amp;] (MultiFab&amp; dst, <span class="keyword">const</span> MultiFab&amp; src, <span class="keywordtype">int</span> ncomp, <span class="keywordtype">int</span> lev)</div>
+<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;    {</div>
+<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;        <span class="keywordflow">if</span> (dst.boxArray() == src.boxArray() &amp;&amp; dst.DistributionMap() == src.DistributionMap()) {</div>
+<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;            MultiFab::Copy(dst, src, 0, 0, ncomp, <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;        }</div>
-<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160; </div>
-<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;        MultiFab mf(chk_ba2d[lev],chk_dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160; </div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;        VisMF::Read(mf, MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;tstar&quot;</span>));</div>
-<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;        redistribute(*<a class="code" href="classSurfaceModel.html#a8e5a01d10b1b56fc3942ef05d4b4cad4">t_star</a>[lev],mf,1,lev);</div>
-<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160; </div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;        VisMF::Read(mf, MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;qstar&quot;</span>));</div>
-<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;        redistribute(*<a class="code" href="classSurfaceModel.html#a45072ba91dce39ee3610c38c203b9dcd">q_star</a>[lev],mf,1,lev);</div>
-<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160; </div>
-<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;        VisMF::Read(mf, MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;tsurf&quot;</span>));</div>
-<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;        redistribute(*<a class="code" href="classSurfaceModel.html#a50133d3a7912e2fac2f05a6d3d868db2">t_surf</a>[lev],mf,1,lev);</div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160; </div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;field : <a class="code" href="classSurfaceModel.html#a4b92f5426ea2bac67dcab024655392ef">fieldmap</a>) {</div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;            VisMF::Read(mf, MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;_f_&quot;</span> + field.first));</div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;            redistribute(*(<a class="code" href="classSurfaceModel.html#ac18d483cd980560dfae1471549cce2ad">fields</a>[field.second.mf_ind][lev]), mf, 1, lev);</div>
-<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;        }</div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;    }</div>
-<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160; </div>
-<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;    <a class="code" href="classSurfaceModel.html#a120b5e927a8aca88a522581f6520e8c9">m_weights_updated</a> = chk_weights_updated;</div>
-<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;    <span class="comment">// Restore whether the surface models had already integrated a step when the checkpoint</span></div>
-<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;    <span class="comment">// was written.  Without this a restart would spend its first step treating the</span></div>
-<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;    <span class="comment">// checkpointed u*/t*/q* as unfilled and fall back to the MOST values instead.</span></div>
-<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;    <a class="code" href="classSurfaceModel.html#a48e1c76bb591fe0ed8f765443b41da0a">m_fields_are_valid</a> = chk_fields_are_valid;</div>
-<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160; </div>
-<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;    <a class="code" href="classSurfaceModel.html#af5c01dc5e3bf1da3447177e498ff546a">deactivate_transient_field_maps</a>();</div>
-<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;    <a class="code" href="classSurfaceModel.html#a4a7eac479f197f2d657be04797b2fcb3">release_transient_surface_outputs</a>();</div>
-<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160; </div>
-<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;    <span class="keyword">auto</span> check_end = amrex::second() - check_start;</div>
-<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;    ParallelDescriptor::ReduceRealMax(check_end,ParallelDescriptor::IOProcessorNumber());</div>
-<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    SurfaceModel Checkpoint load time = &quot;</span> &lt;&lt; check_end &lt;&lt; <span class="stringliteral">&quot; seconds.&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;}</div>
+<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;        dst.ParallelCopy(src, 0, 0, ncomp, <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>, <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;        dst.ParallelCopy(src, 0, 0, ncomp, IntVect(0), <a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>, <a class="code" href="classSurfaceModel.html#aa8c478d5fccc3f84e5eea4181afc2b72">m_geom2d</a>[lev].periodicity());</div>
+<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;    };</div>
+<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160; </div>
+<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; <a class="code" href="classSurfaceModel.html#a0e817f890db60417fa4df70e334b2d70">m_nlevs</a>; lev++) {</div>
+<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;        {</div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;            MultiFab mf(chk_ba2d[lev],chk_dmap[lev],2,<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;            VisMF::Read(mf, MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;ustar&quot;</span>));</div>
+<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;            redistribute(*(<a class="code" href="classSurfaceModel.html#a6ea5609742fd726d647b40376ddfe242">u_star</a>[lev]),mf,2,lev);</div>
+<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160; </div>
+<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;            VisMF::Read(mf, MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;wavg&quot;</span>));</div>
+<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;            <a class="code" href="classSurfaceModel.html#ac012814a2a3e2cd3bc6ce05b545234a9">ensure_weight_factors</a>(lev);</div>
+<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;            redistribute(*<a class="code" href="classSurfaceModel.html#ad2526c1a4892afba5d122819686920c1">wavg</a>[lev],mf,2,lev);</div>
+<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;        }</div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160; </div>
+<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;        MultiFab mf(chk_ba2d[lev],chk_dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#a2de8a06e1cbed2350a8de61b88d70fe4a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160; </div>
+<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;        VisMF::Read(mf, MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;tstar&quot;</span>));</div>
+<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;        redistribute(*<a class="code" href="classSurfaceModel.html#a8e5a01d10b1b56fc3942ef05d4b4cad4">t_star</a>[lev],mf,1,lev);</div>
+<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160; </div>
+<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;        VisMF::Read(mf, MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;qstar&quot;</span>));</div>
+<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;        redistribute(*<a class="code" href="classSurfaceModel.html#a45072ba91dce39ee3610c38c203b9dcd">q_star</a>[lev],mf,1,lev);</div>
+<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160; </div>
+<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;        VisMF::Read(mf, MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;tsurf&quot;</span>));</div>
+<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;        redistribute(*<a class="code" href="classSurfaceModel.html#a50133d3a7912e2fac2f05a6d3d868db2">t_surf</a>[lev],mf,1,lev);</div>
+<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160; </div>
+<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;field : <a class="code" href="classSurfaceModel.html#a4b92f5426ea2bac67dcab024655392ef">fieldmap</a>) {</div>
+<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;            VisMF::Read(mf, MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;_f_&quot;</span> + field.first));</div>
+<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;            redistribute(*(<a class="code" href="classSurfaceModel.html#ac18d483cd980560dfae1471549cce2ad">fields</a>[field.second.mf_ind][lev]), mf, 1, lev);</div>
+<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;        }</div>
+<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;    }</div>
+<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160; </div>
+<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;    <a class="code" href="classSurfaceModel.html#a120b5e927a8aca88a522581f6520e8c9">m_weights_updated</a> = chk_weights_updated;</div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;    <span class="comment">// Restore whether the surface models had already integrated a step when the checkpoint</span></div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;    <span class="comment">// was written.  Without this a restart would spend its first step treating the</span></div>
+<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;    <span class="comment">// checkpointed u*/t*/q* as unfilled and fall back to the MOST values instead.</span></div>
+<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;    <a class="code" href="classSurfaceModel.html#a48e1c76bb591fe0ed8f765443b41da0a">m_fields_are_valid</a> = chk_fields_are_valid;</div>
+<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160; </div>
+<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;    <a class="code" href="classSurfaceModel.html#af5c01dc5e3bf1da3447177e498ff546a">deactivate_transient_field_maps</a>();</div>
+<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;    <a class="code" href="classSurfaceModel.html#a4a7eac479f197f2d657be04797b2fcb3">release_transient_surface_outputs</a>();</div>
+<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160; </div>
+<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;    <span class="keyword">auto</span> check_end = amrex::second() - check_start;</div>
+<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;    ParallelDescriptor::ReduceRealMax(check_end,ParallelDescriptor::IOProcessorNumber());</div>
+<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    SurfaceModel Checkpoint load time = &quot;</span> &lt;&lt; check_end &lt;&lt; <span class="stringliteral">&quot; seconds.&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;}</div>
 <div class="ttc" id="aclassSurfaceModel_html_a44c47c973e53a5f3ff055a2426904dda"><div class="ttname"><a href="classSurfaceModel.html#a44c47c973e53a5f3ff055a2426904dda">SurfaceModel::GotoNextLine</a></div><div class="ttdeci">static void GotoNextLine(std::istream &amp;is)</div><div class="ttdoc">Advances an input stream to the next line.</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceModel.cpp:824</div></div>
 <div class="ttc" id="aclassSurfaceModel_html_a4a7eac479f197f2d657be04797b2fcb3"><div class="ttname"><a href="classSurfaceModel.html#a4a7eac479f197f2d657be04797b2fcb3">SurfaceModel::release_transient_surface_outputs</a></div><div class="ttdeci">void release_transient_surface_outputs()</div><div class="ttdoc">Releases surface outputs that have no persistent consumer.</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceModel.H:998</div></div>
 <div class="ttc" id="aclassSurfaceModel_html_a5a0d89d685e84252ba8775f6c02c3237"><div class="ttname"><a href="classSurfaceModel.html#a5a0d89d685e84252ba8775f6c02c3237">SurfaceModel::m_use_urban</a></div><div class="ttdeci">bool m_use_urban</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceModel.H:1016</div></div>
