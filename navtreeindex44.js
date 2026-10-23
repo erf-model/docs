@@ -1,6 +1,5 @@
 var NAVTREEINDEX44 =
 {
-"structERF_1_1CFFluxHistory.html#a4ae0431c431d201fb150b481d457389c":[2,0,51,0,7],
 "structERF_1_1CFFluxHistory.html#a65a01bd3a72ef337b017288d0a18ef33":[2,0,51,0,2],
 "structERF_1_1CFFluxHistory.html#a7278d4a67322851585ea3bbae389886f":[2,0,51,0,4],
 "structERF_1_1CFFluxHistory.html#a72b639ddeb8ff5792984773a8e86f57e":[2,0,51,0,5],
@@ -249,5 +248,6 @@ var NAVTREEINDEX44 =
 "structMYNNLevel25.html#a25853ab674314e7ac51551d8049e6037":[2,0,91,11],
 "structMYNNLevel25.html#a448ce1797630512782e92212036b675e":[2,0,91,17],
 "structMYNNLevel25.html#a55fad52b96bc4c5d909e1cc4332c54ad":[2,0,91,8],
-"structMYNNLevel25.html#a56b79a6d80bf23bedd64223516746ae7":[2,0,91,5]
+"structMYNNLevel25.html#a56b79a6d80bf23bedd64223516746ae7":[2,0,91,5],
+"structMYNNLevel25.html#a6065f4b0ba5299d0be0f92a614188034":[2,0,91,10]
 };

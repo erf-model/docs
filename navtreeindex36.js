@@ -1,6 +1,5 @@
 var NAVTREEINDEX36 =
 {
-"functions_func_r.html":[2,3,1,16],
 "functions_func_s.html":[2,3,1,17],
 "functions_func_t.html":[2,3,1,18],
 "functions_func_u.html":[2,3,1,19],
@@ -26,8 +25,8 @@ var NAVTREEINDEX36 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -109,8 +108,8 @@ var NAVTREEINDEX36 =
 "globals_type.html":[3,1,3],
 "globals_u.html":[3,1,0,20],
 "globals_v.html":[3,1,0,21],
-"globals_vars.html":[3,1,2,0],
 "globals_vars.html":[3,1,2],
+"globals_vars.html":[3,1,2,0],
 "globals_vars_b.html":[3,1,2,1],
 "globals_vars_c.html":[3,1,2,2],
 "globals_vars_d.html":[3,1,2,3],
@@ -149,13 +148,13 @@ var NAVTREEINDEX36 =
 "index.html#dev_model":[0,3],
 "index.html#getting_started":[0,2],
 "interfacemodule__libmassv_1_1vrec.html":[2,0,14,0],
-"interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,14,0,2],
 "interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,14,0,3],
+"interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,14,0,2],
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,14,0,0],
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,14,0,1],
 "interfacemodule__libmassv_1_1vsqrt.html":[2,0,14,1],
-"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,14,1,0],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,14,1,1],
+"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,14,1,0],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,14,1,2],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,14,1,3],
 "main_8cpp.html":[3,0,1,41],
@@ -249,5 +248,6 @@ var NAVTREEINDEX36 =
 "namespaceSLMDefaultParams.html#a4b86c4279b35d8ba6b709c896a6ce397":[1,0,82,1],
 "namespaceSLMDefaultParams.html#a5590fe52633b5c6417cb7134673b4f93":[1,0,82,14],
 "namespaceSLMDefaultParams.html#a5bd1f76eef9869f0f2bb704acbcfaf7f":[1,0,82,15],
-"namespaceSLMDefaultParams.html#a753cbd14c0a2e78f25feccf44c6a48d9":[1,0,82,9]
+"namespaceSLMDefaultParams.html#a753cbd14c0a2e78f25feccf44c6a48d9":[1,0,82,9],
+"namespaceSLMDefaultParams.html#a7bdfb4bf36fc8c4971a55bdbe20227ca":[1,0,82,3]
 };

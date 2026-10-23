@@ -81,8 +81,7 @@ var NAVTREEINDEX16 =
 "ERF__TurbKESources_8H.html#a69958dda4f0fb004c97af1b191d89b23":[3,0,1,6,34,0],
 "ERF__TurbKESources_8H_source.html":[3,0,1,6,34],
 "ERF__TurbPertStruct_8H.html":[3,0,1,4,13],
-"ERF__TurbPertStruct_8H.html#a1cd6e2210df20afb1fdec3183cbef7ba":[3,0,1,4,13,1],
-"ERF__TurbPertStruct_8H.html#ac5d6f12e32794be38d7e68b8786d65cf":[3,0,1,4,13,2],
+"ERF__TurbPertStruct_8H.html#ac5d6f12e32794be38d7e68b8786d65cf":[3,0,1,4,13,1],
 "ERF__TurbPertStruct_8H_source.html":[3,0,1,4,13],
 "ERF__TurbStruct_8H.html":[3,0,1,4,14],
 "ERF__TurbStruct_8H.html#a366eb3a7d508374fda1324a610da7ece":[3,0,1,4,14,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX16 =
 "ERF__UpdateRhoThetaSources__Constant_8H.html#add816ab77cf5a89f14065c4bd19f84af":[3,0,1,19,64,2],
 "ERF__UpdateRhoThetaSources__Constant_8H_source.html":[3,0,1,19,64],
 "ERF__UpdateRhoThetaSources__GATE_8H.html":[3,0,1,19,65],
-"ERF__UpdateRhoThetaSources__GATE_8H.html#a2e8d847baaefd366ba2d8ceceb05d579":[3,0,1,19,65,3]
+"ERF__UpdateRhoThetaSources__GATE_8H.html#a2e8d847baaefd366ba2d8ceceb05d579":[3,0,1,19,65,3],
+"ERF__UpdateRhoThetaSources__GATE_8H.html#a3863b7bf2bd0a71f1021a3991f3dede8":[3,0,1,19,65,2]
 };
