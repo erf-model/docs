@@ -1,5 +1,7 @@
 var NAVTREEINDEX52 =
 {
+"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#afa406d273d23841eb11583bd15d6dd5c":[2,0,9,11,5],
+"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#afa52f2d1319fea0c4bf5daf396f97366":[2,0,9,11,10],
 "structerf__sbm_1_1BulkProjection.html":[2,0,9,4],
 "structerf__sbm_1_1BulkProjection.html#a81cbe4bc4560be059ca9ca93e2d49ff1":[2,0,9,4,0],
 "structerf__sbm_1_1BulkProjection.html#a8ff2ad9f6fafef27ef761932793263c6":[2,0,9,4,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX52 =
 "structerf__wall__thermodynamics_1_1MomentumTransfer.html#a7ddc9d99a7360e73ec43c3e16ab717dc":[2,0,13,1,0],
 "structerf__wall__thermodynamics_1_1MomentumTransfer.html#a917fd4d722df25068829b3daa6912000":[2,0,13,1,1],
 "structerf__wall__thermodynamics_1_1ScalarTransfer.html":[2,0,13,2],
-"structerf__wall__thermodynamics_1_1ScalarTransfer.html#a0381486bc9c4f3252850a4a5047aa3c4":[2,0,13,2,0],
-"structerf__wall__thermodynamics_1_1ScalarTransfer.html#a2c504fc8968a96921451aa9f6c00c01e":[2,0,13,2,2],
-"structerf__wall__thermodynamics_1_1ScalarTransfer.html#a362219a8815abe4f2bc08c418944c686":[2,0,13,2,3]
+"structerf__wall__thermodynamics_1_1ScalarTransfer.html#a0381486bc9c4f3252850a4a5047aa3c4":[2,0,13,2,0]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX49 =
 {
+"structSurfaceModel_1_1Field.html#ae6aa8a8000e1c4a9db91e20a955e4551":[2,0,192,0,2],
+"structSurfaceModel_1_1RadiationField.html":[2,0,192,1],
 "structSurfaceModel_1_1RadiationField.html#ac348ef2c176b6c0686fc6124580851ba":[2,0,192,1,0],
 "structSurfaceModel_1_1RadiationField.html#ad1786e279986863ca45a3ee9698ee9fe":[2,0,192,1,1],
 "structSurfacePrecipAccumulationSource.html":[2,0,193],
@@ -247,7 +249,5 @@ var NAVTREEINDEX49 =
 "structTwoStreamParams.html#aeae48426171248bdd66aa2f1e41637fc":[2,0,204,5],
 "structTwoStreamParams.html#af20b152dd639b66f4c3d4255b27a8135":[2,0,204,42],
 "structTwoStreamParams.html#af54f5b12a3ad1791f5aa04556beec3fb":[2,0,204,22],
-"structTwoStreamParams.html#af89e9b4836f20533210a4d4d6fe7251c":[2,0,204,12],
-"structTwoStreamRadiation_1_1FluxDiag.html":[2,0,205,0],
-"structTwoStreamRadiation_1_1FluxDiag.html#a34dec6e5232a0d9b4642871fa097561a":[2,0,205,0,1]
+"structTwoStreamParams.html#af89e9b4836f20533210a4d4d6fe7251c":[2,0,204,12]
 };
