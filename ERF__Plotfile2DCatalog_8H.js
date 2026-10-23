@@ -75,6 +75,8 @@ var ERF__Plotfile2DCatalog_8H =
       [ "LandSurfaceAlbedo", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a4851ff19655b70f35e924e50e0475f47", null ],
       [ "LandSurfaceSfcrunoff", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a98621c687565c59f055c135277ee959c", null ],
       [ "LandSurfaceUdrunoff", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a36ad3992a4b05401f0b4768e0ac35ae8", null ],
+      [ "LandSurfaceSnow", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a6b84f4d6ecc749677f19fcaada5adbe8", null ],
+      [ "LandSurfaceSnowh", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ac08cf9e52ffab20160ab93cc6906c03d", null ],
       [ "NoahmpTemperature2mVegetated", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a4874d730df98e05fbcda1fd5d165560c", null ],
       [ "NoahmpTemperature2mBare", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a6864e43c29115df340791971ce703514", null ],
       [ "NoahmpWaterVaporMixingRatio2mVegetated", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ab7c949091bc6cc51dc36b42cdab8a789", null ],

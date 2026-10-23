@@ -1,5 +1,6 @@
 var structStationVar =
 [
+    [ "cells_may_be_missing", "structStationVar.html#a569800ad9e626cb4e50394d26ac15b40", null ],
     [ "comp", "structStationVar.html#a6d7d834bc5c930c4f44e2c88f7e4fc37", null ],
     [ "is_2d", "structStationVar.html#ad4e0ce68ef31c000a80e17990bcf8a2d", null ],
     [ "is_missing", "structStationVar.html#aba9d81965b62ef79f7ea9dbe12ce611d", null ],

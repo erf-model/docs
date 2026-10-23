@@ -76,6 +76,11 @@ var namespaces_dup =
       [ "read_checkpoint_imultifab", "namespaceerf__checkpoint.html#a1f8405aab1181ae522fa1bd9b9e26daf", null ],
       [ "read_checkpoint_multifab", "namespaceerf__checkpoint.html#aba22b9daf8305eee0648716ae0142fe1", null ]
     ] ],
+    [ "erf_checkpoint_lsm_data", "namespaceerf__checkpoint__lsm__data.html", [
+      [ "file_stem", "namespaceerf__checkpoint__lsm__data.html#a449a4205db400e415264af791c075357", null ],
+      [ "is_separately_named", "namespaceerf__checkpoint__lsm__data.html#a8b46ce5773862375e18d9b01d1d7c5b3", null ],
+      [ "may_be_absent", "namespaceerf__checkpoint__lsm__data.html#a1bd8a97653ccbd165b99a125be22c261", null ]
+    ] ],
     [ "erf_checkpoint_surface_temperature", "namespaceerf__checkpoint__surface__temperature.html", [
       [ "ContractReadStatus", "namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4", [
         [ "Valid", "namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4a3ac705f2acd51a4613f9188c05c91d0d", null ],
