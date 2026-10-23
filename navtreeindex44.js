@@ -1,7 +1,5 @@
 var NAVTREEINDEX44 =
 {
-"structERF_1_1CFFluxHistory.html#a3569cf7fe581e13812ea184ef9c6a23e":[2,0,51,0,3],
-"structERF_1_1CFFluxHistory.html#a3ce6189e1a2afc059bcfbfa314bd2036":[2,0,51,0,0],
 "structERF_1_1CFFluxHistory.html#a4ae0431c431d201fb150b481d457389c":[2,0,51,0,7],
 "structERF_1_1CFFluxHistory.html#a65a01bd3a72ef337b017288d0a18ef33":[2,0,51,0,2],
 "structERF_1_1CFFluxHistory.html#a7278d4a67322851585ea3bbae389886f":[2,0,51,0,4],
@@ -249,5 +247,7 @@ var NAVTREEINDEX44 =
 "structMYNNLevel25.html#a183889654d8da15f165f6385f05bb5ba":[2,0,91,15],
 "structMYNNLevel25.html#a1f85d50fe35885cc85198ca50d0e9bd6":[2,0,91,13],
 "structMYNNLevel25.html#a25853ab674314e7ac51551d8049e6037":[2,0,91,11],
-"structMYNNLevel25.html#a448ce1797630512782e92212036b675e":[2,0,91,17]
+"structMYNNLevel25.html#a448ce1797630512782e92212036b675e":[2,0,91,17],
+"structMYNNLevel25.html#a55fad52b96bc4c5d909e1cc4332c54ad":[2,0,91,8],
+"structMYNNLevel25.html#a56b79a6d80bf23bedd64223516746ae7":[2,0,91,5]
 };

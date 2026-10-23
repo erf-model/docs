@@ -90,6 +90,7 @@ var structSolverChoice =
     [ "if_init_surf_temp", "structSolverChoice.html#abf53a5a18e0e7a3d733b2a83b36c456c", null ],
     [ "if_Olen_in", "structSolverChoice.html#a2351afe28b7bb409bd859cf9fbe37e25", null ],
     [ "if_psi_cap_factor", "structSolverChoice.html#a0a63e6afb27a4e953c2e8935f845bc42", null ],
+    [ "if_small_volfrac", "structSolverChoice.html#a34946f486bcc6a44762291e4062d637f", null ],
     [ "if_snap_partial_cells", "structSolverChoice.html#a8ffa49a241bf3c536255c38ad50aafb0", null ],
     [ "if_stability_correction", "structSolverChoice.html#aef5ab1ae0ae705e3c7019f7e299bfcbb", null ],
     [ "if_stability_wind_floor", "structSolverChoice.html#af24cd901ab857a7b6bc2082ae745ee43", null ],

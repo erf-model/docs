@@ -356,89 +356,86 @@ $(document).ready(function(){initNavTree('ERF__TI__substep__fun_8H_source.html',
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            MultiFab scratch(S_data[<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>], make_alias, 0, 2);</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            MultiFab scratch_xmom(S_data[<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7af661293a5a71ca532c214929b98c0bad">IntVars::xmom</a>], make_alias, 0, 1);</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            MultiFab scratch_ymom(S_data[<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7a2e60798bc45154a8f905b1aa228a24e5">IntVars::ymom</a>], make_alias, 0, 1);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="preprocessor">#ifdef ERF_IMPLICIT_W</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            MultiFab scratch_zmom(S_data[<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7aaab25f707cae69bfadac2abcd17a2188">IntVars::zmom</a>], make_alias, 0, 1);</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__ImplicitPre_8H.html">ERF_ImplicitPre.H</a>&quot;</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        }</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="comment">// Apply vertical velocity damping at the end of the timestep</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordflow">if</span> ( (solverChoice.dampingChoice.w_damping) &amp;&amp;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;             (nrk == 2) &amp;&amp;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;             (fast_step == n_sub-1))</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        {</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> w_damping_const = solverChoice.dampingChoice.w_damping_const;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> w_damping_coeff = solverChoice.dampingChoice.w_damping_coeff;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> cflw_lim        = solverChoice.dampingChoice.w_damping_cfl;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(S_data[<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>]); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            {</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                Box tbz = mfi.nodaltilebox(2);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_nd_arr  = z_phys_nd[level]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__ImplicitPre_8H.html">ERF_ImplicitPre.H</a>&quot;</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="comment">// Apply vertical velocity damping at the end of the timestep</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordflow">if</span> ( (solverChoice.dampingChoice.w_damping) &amp;&amp;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;             (nrk == 2) &amp;&amp;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;             (fast_step == n_sub-1))</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> w_damping_const = solverChoice.dampingChoice.w_damping_const;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> w_damping_coeff = solverChoice.dampingChoice.w_damping_coeff;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> cflw_lim        = solverChoice.dampingChoice.w_damping_cfl;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(S_data[<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>]); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                Box tbz = mfi.nodaltilebox(2);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_nd_arr  = z_phys_nd[level]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cell_data = S_data[<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].const_array(mfi);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; rho_w     = S_data[<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7aaab25f707cae69bfadac2abcd17a2188">IntVars::zmom</a>].array(mfi);</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cell_data = S_data[<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].const_array(mfi);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; rho_w     = S_data[<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7aaab25f707cae69bfadac2abcd17a2188">IntVars::zmom</a>].array(mfi);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                {</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    <span class="keywordflow">if</span> (z_nd_arr) {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                        <span class="comment">// average z_nd to face then diff</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                        <span class="keywordflow">if</span> (k == domain.smallEnd(2)) {</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                            dzInv = amrex::Real(4.0) / (</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                z_nd_arr(i  ,j  ,k+1) - z_nd_arr(i  ,j  ,k)</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                              + z_nd_arr(i+1,j  ,k+1) - z_nd_arr(i+1,j  ,k)</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                              + z_nd_arr(i  ,j+1,k+1) - z_nd_arr(i  ,j+1,k)</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                              + z_nd_arr(i+1,j+1,k+1) - z_nd_arr(i+1,j+1,k) );</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                        } <span class="keywordflow">else</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438">if</a> (k == domain.bigEnd(2)+1) {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                            dzInv = amrex::Real(4.0) / (</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                                z_nd_arr(i  ,j  ,k) - z_nd_arr(i  ,j  ,k-1)</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                              + z_nd_arr(i+1,j  ,k) - z_nd_arr(i+1,j  ,k-1)</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                              + z_nd_arr(i  ,j+1,k) - z_nd_arr(i  ,j+1,k-1)</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                              + z_nd_arr(i+1,j+1,k) - z_nd_arr(i+1,j+1,k-1) );</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                            <span class="comment">// dz = myhalf * (dz[i,j,k] + dz[i,j,k+1])</span></div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                            <span class="comment">//    = myhalf * (z_nd_face[i,j,k+1] - z_nd_face[i,j,k-1])</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                            dzInv = amrex::Real(8.0) / (</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                                z_nd_arr(i  ,j  ,k+1) - z_nd_arr(i  ,j  ,k-1)</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                              + z_nd_arr(i+1,j  ,k+1) - z_nd_arr(i+1,j  ,k-1)</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                              + z_nd_arr(i  ,j+1,k+1) - z_nd_arr(i  ,j+1,k-1)</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                              + z_nd_arr(i+1,j+1,k+1) - z_nd_arr(i+1,j+1,k-1) );</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                        }</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                        dzInv = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>[2];</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                    }</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dt_adv = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(dt_advance);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                    <span class="keywordflow">if</span> (z_nd_arr) {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                        <span class="comment">// average z_nd to face then diff</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                        <span class="keywordflow">if</span> (k == domain.smallEnd(2)) {</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                            dzInv = amrex::Real(4.0) / (</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                z_nd_arr(i  ,j  ,k+1) - z_nd_arr(i  ,j  ,k)</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                              + z_nd_arr(i+1,j  ,k+1) - z_nd_arr(i+1,j  ,k)</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                              + z_nd_arr(i  ,j+1,k+1) - z_nd_arr(i  ,j+1,k)</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                              + z_nd_arr(i+1,j+1,k+1) - z_nd_arr(i+1,j+1,k) );</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                        } <span class="keywordflow">else</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438">if</a> (k == domain.bigEnd(2)+1) {</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                            dzInv = amrex::Real(4.0) / (</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                                z_nd_arr(i  ,j  ,k) - z_nd_arr(i  ,j  ,k-1)</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                              + z_nd_arr(i+1,j  ,k) - z_nd_arr(i+1,j  ,k-1)</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                              + z_nd_arr(i  ,j+1,k) - z_nd_arr(i  ,j+1,k-1)</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                              + z_nd_arr(i+1,j+1,k) - z_nd_arr(i+1,j+1,k-1) );</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                            <span class="comment">// dz = myhalf * (dz[i,j,k] + dz[i,j,k+1])</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                            <span class="comment">//    = myhalf * (z_nd_face[i,j,k+1] - z_nd_face[i,j,k-1])</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                            dzInv = amrex::Real(8.0) / (</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                                z_nd_arr(i  ,j  ,k+1) - z_nd_arr(i  ,j  ,k-1)</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                              + z_nd_arr(i+1,j  ,k+1) - z_nd_arr(i+1,j  ,k-1)</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                              + z_nd_arr(i  ,j+1,k+1) - z_nd_arr(i  ,j+1,k-1)</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                              + z_nd_arr(i+1,j+1,k+1) - z_nd_arr(i+1,j+1,k-1) );</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                        }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                        dzInv = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>[2];</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                    }</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dt_adv = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(dt_advance);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dampcoef = (w_damping_const &gt; 0) ? w_damping_const</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                                  : w_damping_coeff / (dzInv * dt_adv * dt_adv);</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dampcoef = (w_damping_const &gt; 0) ? w_damping_const</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                  : w_damping_coeff / (dzInv * dt_adv * dt_adv);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_on_w_face = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> wmag = std::abs(rho_w(i,j,k) / rho_on_w_face);</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_on_w_face = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> wmag = std::abs(rho_w(i,j,k) / rho_on_w_face);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                    <span class="comment">// This is the dynamics timestep, not the slow or fast dt</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> cflw = wmag * dt_adv * dzInv;</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                    <span class="comment">// This is the dynamics timestep, not the slow or fast dt</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> cflw = wmag * dt_adv * dzInv;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                    <span class="keywordflow">if</span> (cflw &gt; cflw_lim) {</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> sgn_w = (rho_w(i,j,k) &gt; 0) ? <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> : -<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                        rho_w(i, j, k) -= rho_on_w_face * sgn_w * dampcoef * (cflw - cflw_lim) * dt_adv;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                        <span class="comment">// Note: These prints are not immediately flushed to screen</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                        AMREX_DEVICE_PRINTF(<span class="stringliteral">&quot;t=%f w-damping applied at (%d,%d,%d) for w-CFL = %f &gt; %f : %f --&gt; %f\n&quot;</span>,</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                    <span class="keywordflow">if</span> (cflw &gt; cflw_lim) {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> sgn_w = (rho_w(i,j,k) &gt; 0) ? <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> : -<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                        rho_w(i, j, k) -= rho_on_w_face * sgn_w * dampcoef * (cflw - cflw_lim) * dt_adv;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                        <span class="comment">// Note: These prints are not immediately flushed to screen</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                        AMREX_DEVICE_PRINTF(<span class="stringliteral">&quot;t=%f w-damping applied at (%d,%d,%d) for w-CFL = %f &gt; %f : %f --&gt; %f\n&quot;</span>,</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                               old_time+dt_adv, i,j,k, cflw, cflw_lim, sgn_w*wmag, rho_w(i,j,k)/rho_on_w_face);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                        printf(<span class="stringliteral">&quot;t=%f w-damping applied at (%d,%d,%d) for w-CFL = %f &gt; %f : %f --&gt; %f\n&quot;</span>,</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                               old_time+dt_adv, i,j,k, cflw, cflw_lim, sgn_w*wmag, rho_w(i,j,k)/rho_on_w_face);</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                        printf(<span class="stringliteral">&quot;t=%f w-damping applied at (%d,%d,%d) for w-CFL = %f &gt; %f : %f --&gt; %f\n&quot;</span>,</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                               old_time+dt_adv, i,j,k, cflw, cflw_lim, sgn_w*wmag, rho_w(i,j,k)/rho_on_w_face);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                    }</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                });</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            }</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        }</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <a class="code" href="ERF__TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a>(S_data, new_substep_time, ng_cons, ng_vel, fast_only=<span class="keyword">true</span>, vel_and_mom_synced=<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;};</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                    }</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                });</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            }</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        }</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <a class="code" href="ERF__TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a>(S_data, new_substep_time, ng_cons, ng_vel, fast_only=<span class="keyword">true</span>, vel_and_mom_synced=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;};</div>
 <div class="ttc" id="aERF__DampingStruct_8H_html_ada1fed43d749500e09ded1d6800449a1af4e9679a52e3d536f79543ab20f3d8c6"><div class="ttname"><a href="ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1af4e9679a52e3d536f79543ab20f3d8c6">RayleighDampingType::FastImplicit</a></div><div class="ttdeci">@ FastImplicit</div></div>
 <div class="ttc" id="aERF__ImplicitPre_8H_html"><div class="ttname"><a href="ERF__ImplicitPre_8H.html">ERF_ImplicitPre.H</a></div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
@@ -475,7 +472,7 @@ $(document).ready(function(){initNavTree('ERF__TI__substep__fun_8H_source.html',
 <div class="ttc" id="astructCFFaceFluxes_html_adc76f0828153ac46c819303d6628d41f"><div class="ttname"><a href="structCFFaceFluxes.html#adc76f0828153ac46c819303d6628d41f">CFFaceFluxes::tgt_w</a></div><div class="ttdeci">const amrex::MultiFab * tgt_w</div><div class="ttdef"><b>Definition:</b> ERF_TI_fast_headers.H:33</div></div>
 <div class="ttc" id="astructCFFaceFluxes_html_ae50bb08977c7aae647399125eee48f68"><div class="ttname"><a href="structCFFaceFluxes.html#ae50bb08977c7aae647399125eee48f68">CFFaceFluxes::tgt</a></div><div class="ttdeci">std::array&lt; const amrex::MultiFab *, AMREX_SPACEDIM &gt; tgt</div><div class="ttdef"><b>Definition:</b> ERF_TI_fast_headers.H:32</div></div>
 <div class="ttc" id="astructCFFaceFluxes_html_af6be99c0d369abd8d7e12ef3aa579a32"><div class="ttname"><a href="structCFFaceFluxes.html#af6be99c0d369abd8d7e12ef3aa579a32">CFFaceFluxes::rec_w_old</a></div><div class="ttdeci">amrex::MultiFab * rec_w_old</div><div class="ttdef"><b>Definition:</b> ERF_TI_fast_headers.H:31</div></div>
-<div class="ttc" id="astructSolverChoice_html_a6c7ccf82f261f51e0b963f54979c36c8"><div class="ttname"><a href="structSolverChoice.html#a6c7ccf82f261f51e0b963f54979c36c8">SolverChoice::mesh_type</a></div><div class="ttdeci">static MeshType mesh_type</div><div class="ttdoc">Vertical mesh representation.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:2275</div></div>
+<div class="ttc" id="astructSolverChoice_html_a6c7ccf82f261f51e0b963f54979c36c8"><div class="ttname"><a href="structSolverChoice.html#a6c7ccf82f261f51e0b963f54979c36c8">SolverChoice::mesh_type</a></div><div class="ttdeci">static MeshType mesh_type</div><div class="ttdoc">Vertical mesh representation.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:2284</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,6 +1,5 @@
 var NAVTREEINDEX8 =
 {
-"ERF__InitCustomPert__SquallLine_8H.html#ae887beebb95409f6ce55deae1a6082b2":[3,0,1,19,23,15],
 "ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c":[3,0,1,19,23,28],
 "ERF__InitCustomPert__SquallLine_8H_source.html":[3,0,1,19,23],
 "ERF__InitCustomPert__StokesSecondProblem_8H.html":[3,0,1,19,24],
@@ -249,5 +248,6 @@ var NAVTREEINDEX8 =
 "ERF__Kokkos_8H.html#a3a97e4883d2079fb62a43ffbeb613a34":[3,0,1,18,1,0],
 "ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b":[3,0,1,18,1,12],
 "ERF__Kokkos_8H.html#a5540b69a7c94dc3ece92aef8344d216a":[3,0,1,18,1,9],
-"ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658":[3,0,1,18,1,8]
+"ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658":[3,0,1,18,1,8],
+"ERF__Kokkos_8H.html#a6dbe0e893e0d7f161c19c071193fe766":[3,0,1,18,1,11]
 };

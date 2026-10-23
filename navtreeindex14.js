@@ -1,6 +1,5 @@
 var NAVTREEINDEX14 =
 {
-"ERF__SEBTurbulentFlux_8H.html#a90a56c14e23c0b3d911980d3438d70d5a275dfccfece442bef6586d62ab24d475":[3,0,1,20,2,7,1,1],
 "ERF__SEBTurbulentFlux_8H.html#a90a56c14e23c0b3d911980d3438d70d5aa18041730f670599c005dca36be1cc0f":[3,0,1,20,2,7,1,0],
 "ERF__SEBTurbulentFlux_8H_source.html":[3,0,1,20,2,7],
 "ERF__SEBTurbulentFlux_8cpp.html":[3,0,1,20,2,6],
@@ -249,5 +248,6 @@ var NAVTREEINDEX14 =
 "ERF__SolverUtils_8H.html#a9071f295efe69b41bdccada862d83682":[3,0,1,12,7,0],
 "ERF__SolverUtils_8H_source.html":[3,0,1,12,7],
 "ERF__SpectralGrid_8H.html":[3,0,1,14,6,25],
-"ERF__SpectralGrid_8H.html#a0f73bf0ea502375b3dbba9c4e220134e":[3,0,1,14,6,25,6]
+"ERF__SpectralGrid_8H.html#a0f73bf0ea502375b3dbba9c4e220134e":[3,0,1,14,6,25,6],
+"ERF__SpectralGrid_8H.html#a516690bec7b0e344fa6427a5beb0d62c":[3,0,1,14,6,25,7]
 };

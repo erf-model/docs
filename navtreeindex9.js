@@ -1,6 +1,5 @@
 var NAVTREEINDEX9 =
 {
-"ERF__Kokkos_8H.html#a6dbe0e893e0d7f161c19c071193fe766":[3,0,1,18,1,11],
 "ERF__Kokkos_8H.html#a874064ebe1ddec9d5d6ead635f4cd702":[3,0,1,18,1,1],
 "ERF__Kokkos_8H.html#a878d2d11bb29ca141a1af1674712aa2b":[3,0,1,18,1,5],
 "ERF__Kokkos_8H.html#a9f6de9f44ad035816820dbb492be6cde":[3,0,1,18,1,6],
@@ -249,5 +248,6 @@ var NAVTREEINDEX9 =
 "ERF__NCInterface_8H_source.html":[3,0,1,10,7],
 "ERF__NCInterface_8cpp.html":[3,0,1,10,6],
 "ERF__NCInterface_8cpp.html#aa67f9bcab4a9da3e92f2e2f3b4ec5979":[3,0,1,10,6,0],
-"ERF__NCPlotFile_8H.html":[3,0,1,10,9]
+"ERF__NCPlotFile_8H.html":[3,0,1,10,9],
+"ERF__NCPlotFile_8H_source.html":[3,0,1,10,9]
 };

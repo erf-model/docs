@@ -1,6 +1,5 @@
 var NAVTREEINDEX15 =
 {
-"ERF__SpectralGrid_8H.html#a516690bec7b0e344fa6427a5beb0d62c":[3,0,1,14,6,25,7],
 "ERF__SpectralGrid_8H.html#a7f59152e618498d33e89c2fad84dfc26":[3,0,1,14,6,25,5],
 "ERF__SpectralGrid_8H.html#a7f59152e618498d33e89c2fad84dfc26a7b3c1f15e2215f5080ffc55047412241":[3,0,1,14,6,25,5,1],
 "ERF__SpectralGrid_8H.html#a7f59152e618498d33e89c2fad84dfc26ad99e89d4dc3240dd5f4ed719b75dcb62":[3,0,1,14,6,25,5,0],
@@ -209,7 +208,7 @@ var NAVTREEINDEX15 =
 "ERF__TerrainDiffusionLimits_8H.html#a9b0c2d959918432668c7b54284a12761":[3,0,1,6,32,9],
 "ERF__TerrainDiffusionLimits_8H.html#ac596ffc0e3246485b4614eb5f1140865":[3,0,1,6,32,6],
 "ERF__TerrainDiffusionLimits_8H.html#aca5d672c43d15fb4de6f1563d4834c9f":[3,0,1,6,32,10],
-"ERF__TerrainDiffusionLimits_8H.html#afc0e0fe42c023baa7213daac171bf4f2":[3,0,1,6,32,5],
+"ERF__TerrainDiffusionLimits_8H.html#addd7cf7ef68140ba9893a7cf881cf7cf":[3,0,1,6,32,5],
 "ERF__TerrainDiffusionLimits_8H_source.html":[3,0,1,6,32],
 "ERF__TerrainFileChecks_8H.html":[3,0,1,26,46],
 "ERF__TerrainFileChecks_8H.html#a048333e9343dd6a53b0fc2e0157043c5":[3,0,1,26,46,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX15 =
 "ERF__TerrainMetrics_8H.html#a49831c051eee94070a9176baddde85dfa2ff4148554480a37f85efd299df04850":[3,0,1,26,48,0,2],
 "ERF__TerrainMetrics_8H.html#a49831c051eee94070a9176baddde85dfa6adf97f83acf6453d4a6a4b1070f3754":[3,0,1,26,48,0,0],
 "ERF__TerrainMetrics_8H.html#a49831c051eee94070a9176baddde85dfad53238014015da17926bca398282211f":[3,0,1,26,48,0,1],
-"ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739":[3,0,1,26,48,22]
+"ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739":[3,0,1,26,48,22],
+"ERF__TerrainMetrics_8H.html#a5a9e39d96b7ebe9f9dbd5d32560e7d3a":[3,0,1,26,48,38]
 };

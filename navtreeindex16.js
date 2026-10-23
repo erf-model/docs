@@ -1,6 +1,5 @@
 var NAVTREEINDEX16 =
 {
-"ERF__TerrainMetrics_8H.html#a5a9e39d96b7ebe9f9dbd5d32560e7d3a":[3,0,1,26,48,38],
 "ERF__TerrainMetrics_8H.html#a5f352d8a029b11cfde243cd4a20ea1b4":[3,0,1,26,48,28],
 "ERF__TerrainMetrics_8H.html#a7356a119d0d3fda35dc8588103da6d7d":[3,0,1,26,48,30],
 "ERF__TerrainMetrics_8H.html#a75188f81dc8d569423d235d596361d0c":[3,0,1,26,48,27],
@@ -249,5 +248,6 @@ var NAVTREEINDEX16 =
 "ERF__UpdateRhoThetaSources__Constant_8H.html#aa1919e3b581c576a4b81226a9bd41eb7":[3,0,1,19,64,1],
 "ERF__UpdateRhoThetaSources__Constant_8H.html#add816ab77cf5a89f14065c4bd19f84af":[3,0,1,19,64,2],
 "ERF__UpdateRhoThetaSources__Constant_8H_source.html":[3,0,1,19,64],
-"ERF__UpdateRhoThetaSources__GATE_8H.html":[3,0,1,19,65]
+"ERF__UpdateRhoThetaSources__GATE_8H.html":[3,0,1,19,65],
+"ERF__UpdateRhoThetaSources__GATE_8H.html#a2e8d847baaefd366ba2d8ceceb05d579":[3,0,1,19,65,3]
 };
