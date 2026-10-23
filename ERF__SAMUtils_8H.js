@@ -23,7 +23,7 @@ var ERF__SAMUtils_8H =
     [ "sam_cons_to_primitive_with_base_state", "ERF__SAMUtils_8H.html#a7cc497d20e5199ca9c6cc99cc369ed2e", null ],
     [ "sam_cons_to_primitive_with_thermo", "ERF__SAMUtils_8H.html#aa13de173be476c1665e2a9ffefd5b045", null ],
     [ "sam_copy_state_to_micro_cell", "ERF__SAMUtils_8H.html#a188f0dfcd16f6a40b00b295807cda226", null ],
-    [ "sam_face_average_state", "ERF__SAMUtils_8H.html#a4c8f591f9ec215c3d00a07355e7e47f1", null ],
+    [ "sam_face_average_state", "ERF__SAMUtils_8H.html#ab080784acfa63bd2a564d2429496e189", null ],
     [ "sam_graupel_fraction", "ERF__SAMUtils_8H.html#a14664e5b91a247b5fa4b653e47ab2d77", null ],
     [ "sam_is_no_ice", "ERF__SAMUtils_8H.html#a7d4876bb5d730e9efae7a3f32f754d52", null ],
     [ "sam_is_no_precip", "ERF__SAMUtils_8H.html#a8047e72ed57a8e2bb884fc5e7fc85087", null ],

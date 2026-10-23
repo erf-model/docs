@@ -4,7 +4,7 @@ var ERF__KesslerUtils_8H =
     [ "KesslerSaturationAdjustment", "structKesslerSaturationAdjustment.html", "structKesslerSaturationAdjustment" ],
     [ "KesslerFaceState", "structKesslerFaceState.html", "structKesslerFaceState" ],
     [ "kessler_face_donor_k", "ERF__KesslerUtils_8H.html#af826e8d68a07c7a4418f90820149a2a1", null ],
-    [ "kessler_face_state", "ERF__KesslerUtils_8H.html#a79466ef8454f1ac41fcaa18982676754", null ],
+    [ "kessler_face_state", "ERF__KesslerUtils_8H.html#aefdd008b566edd084f6309139f4f45d4", null ],
     [ "kessler_is_small_sedimentation_value", "ERF__KesslerUtils_8H.html#af46476b8058c3fb86b0b2dac1f90bd43", null ],
     [ "kessler_num_sedimentation_substeps", "ERF__KesslerUtils_8H.html#a56d0a424c3719378f317ad69013d7cea", null ],
     [ "kessler_precip_flux", "ERF__KesslerUtils_8H.html#af30b7ba57a6f5fa056636e5fcf71d292", null ],

@@ -23,7 +23,7 @@ var searchData=
   ['sam_5fcons_5fto_5fprimitive_5fwith_5fbase_5fstate_6455',['sam_cons_to_primitive_with_base_state',['../ERF__SAMUtils_8H.html#a7cc497d20e5199ca9c6cc99cc369ed2e',1,'ERF_SAMUtils.H']]],
   ['sam_5fcons_5fto_5fprimitive_5fwith_5fthermo_6456',['sam_cons_to_primitive_with_thermo',['../ERF__SAMUtils_8H.html#aa13de173be476c1665e2a9ffefd5b045',1,'ERF_SAMUtils.H']]],
   ['sam_5fcopy_5fstate_5fto_5fmicro_5fcell_6457',['sam_copy_state_to_micro_cell',['../ERF__SAMUtils_8H.html#a188f0dfcd16f6a40b00b295807cda226',1,'ERF_SAMUtils.H']]],
-  ['sam_5fface_5faverage_5fstate_6458',['sam_face_average_state',['../ERF__SAMUtils_8H.html#a4c8f591f9ec215c3d00a07355e7e47f1',1,'ERF_SAMUtils.H']]],
+  ['sam_5fface_5faverage_5fstate_6458',['sam_face_average_state',['../ERF__SAMUtils_8H.html#ab080784acfa63bd2a564d2429496e189',1,'ERF_SAMUtils.H']]],
   ['sam_5fgraupel_5ffraction_6459',['sam_graupel_fraction',['../ERF__SAMUtils_8H.html#a14664e5b91a247b5fa4b653e47ab2d77',1,'ERF_SAMUtils.H']]],
   ['sam_5fis_5fno_5fice_6460',['sam_is_no_ice',['../ERF__SAMUtils_8H.html#a7d4876bb5d730e9efae7a3f32f754d52',1,'ERF_SAMUtils.H']]],
   ['sam_5fis_5fno_5fprecip_6461',['sam_is_no_precip',['../ERF__SAMUtils_8H.html#a8047e72ed57a8e2bb884fc5e7fc85087',1,'ERF_SAMUtils.H']]],
