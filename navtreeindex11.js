@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"ERF__PlanarBoundary_8cpp.html":[3,0,1,26,33],
 "ERF__PlaneAverage_8H.html":[3,0,1,26,35],
 "ERF__PlaneAverage_8H_source.html":[3,0,1,26,35],
 "ERF__Plotfile2DCatalog_8H.html":[3,0,1,10,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "ERF__Plotfile2DSampledLevel_8cpp.html#ad3fbf099636efbf0fcfcbf974d411751":[3,0,1,10,27,5],
 "ERF__Plotfile2DSampledLevel_8cpp.html#aee93e5a77a0e1179387f786a491abaa1":[3,0,1,10,27,12],
 "ERF__Plotfile2DSampledLevel_8cpp.html#af9195a5eb19b3a9581aa7dca46a2d3cd":[3,0,1,10,27,1],
-"ERF__Plotfile2DSampledLevel_8cpp.html#af9c43bbc9289bc52a16c0c83e76b2b9b":[3,0,1,10,27,4],
-"ERF__Plotfile2DSampledLevel_8cpp.html#afa858869cefcae6c300753f8e5e00abb":[3,0,1,10,27,13]
+"ERF__Plotfile2DSampledLevel_8cpp.html#af9c43bbc9289bc52a16c0c83e76b2b9b":[3,0,1,10,27,4]
 };

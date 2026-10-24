@@ -70,6 +70,7 @@ var structTurbChoice =
     [ "rans_consistent_diffusivities", "structTurbChoice.html#a08d1798646eaefe2c455be7f39d1bb2b", null ],
     [ "rans_lscale_from_pblh", "structTurbChoice.html#a905acfea1b32bf7cd63c8a4e484a4d43", null ],
     [ "rans_lscale_min", "structTurbChoice.html#a94fa31b781faf5c46240999bf1becb45", null ],
+    [ "rans_realizability", "structTurbChoice.html#a87b440824dda270c98ad703778471ce7", null ],
     [ "rans_type", "structTurbChoice.html#a2ae286befd8c38445f513d13cffc314e", null ],
     [ "Ri_crit", "structTurbChoice.html#aa05d3ca8f214bf797266004b60b19a0d", null ],
     [ "Rt_crit", "structTurbChoice.html#aa99a9ae49defaad06be154f984c557de", null ],

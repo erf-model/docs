@@ -302,6 +302,7 @@ var hierarchy =
     [ "StationSampler", "classStationSampler.html", null ],
     [ "obs_nudging::StationSeries", "structobs__nudging_1_1StationSeries.html", null ],
     [ "StationVar", "structStationVar.html", null ],
+    [ "StrainArrays", "structStrainArrays.html", null ],
     [ "StretchedDiffusionBoundaryWeights", "structStretchedDiffusionBoundaryWeights.html", null ],
     [ "IBFaceSet::SunState", "structIBFaceSet_1_1SunState.html", null ],
     [ "surface_flux", "structsurface__flux.html", null ],

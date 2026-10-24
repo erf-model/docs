@@ -1,5 +1,16 @@
 var NAVTREEINDEX52 =
 {
+"structerf__inputs__detail_1_1EntryInfo.html#a7640799e923f3f7ca382344c34cc1d02":[2,0,4,0,3],
+"structerf__inputs__detail_1_1EntryInfo.html#a9445d8ce34c261058b1e41d43750e7eb":[2,0,4,0,2],
+"structerf__inputs__detail_1_1ScanState.html":[2,0,4,1],
+"structerf__inputs__detail_1_1ScanState.html#a37898ebb54d5f456c889fb818ac1d7f2":[2,0,4,1,0],
+"structerf__inputs__detail_1_1ScanState.html#a69e9e77b47f1f6307e882e4e8ae04962":[2,0,4,1,2],
+"structerf__inputs__detail_1_1ScanState.html#a9f89414920232b88f90fff93eff7d050":[2,0,4,1,3],
+"structerf__inputs__detail_1_1ScanState.html#aaf2b740138dc1a7aa480e48d71ba5445":[2,0,4,1,4],
+"structerf__inputs__detail_1_1ScanState.html#aee8079a13f35632fd032ba1a4f58ba04":[2,0,4,1,1],
+"structerf__inputs__detail_1_1ScanState.html#af79f8522f4dd0b1fb765a5aa1d0b551c":[2,0,4,1,5],
+"structerf__interval__means_1_1LevelMetadata.html":[2,0,5,0],
+"structerf__interval__means_1_1LevelMetadata.html#a183886a10613615f7e38fc500eaa68b6":[2,0,5,0,1],
 "structerf__interval__means_1_1LevelMetadata.html#a717f7c5d6eecd38b52f6d7835404bd1f":[2,0,5,0,3],
 "structerf__interval__means_1_1LevelMetadata.html#aa31291ffe8d6c20302945fb66b4c7e98":[2,0,5,0,2],
 "structerf__interval__means_1_1LevelMetadata.html#aa368b30b949bd6ef49f21431ddce7a61":[2,0,5,0,4],
@@ -238,16 +249,5 @@ var NAVTREEINDEX52 =
 "structerf__sbm_1_1SBMAMRStateView.html#a9ac98cf26173892e3f70c06e5720e1f5":[2,0,9,3,5],
 "structerf__sbm_1_1SBMAMRStateView.html#aa67041bc058dead557a9c66258828aa5":[2,0,9,3,1],
 "structerf__sbm_1_1SBMAMRStateView.html#ab5101d70b03f27ea246d59e94fd599ea":[2,0,9,3,4],
-"structerf__sbm_1_1SBMAMRStateView.html#accda17d80ed1822cdf1dc1689da21777":[2,0,9,3,7],
-"structerf__sbm_1_1SBMAMRStateView.html#aeb8e504689f3fa389f3fb8b77d12dda6":[2,0,9,3,2],
-"structerf__sbm_1_1SBMLayoutSpec.html":[2,0,9,18],
-"structerf__sbm_1_1SBMLayoutSpec.html#a0295717ac34e8283a979ebab6d333094":[2,0,9,18,1],
-"structerf__sbm_1_1SBMLayoutSpec.html#a03b1d2db54c1c16158827797d0dbdd84":[2,0,9,18,2],
-"structerf__sbm_1_1SBMLayoutSpec.html#a9ca15a97f4a80567920d35be97045c61":[2,0,9,18,0],
-"structerf__sbm_1_1SBMStateManager_1_1LevelState.html":[2,0,9,31,0],
-"structerf__sbm_1_1SBMStateManager_1_1LevelState.html#a01f055bff306b36481ff2f239564eb8f":[2,0,9,31,0,0],
-"structerf__sbm_1_1SBMStateManager_1_1LevelState.html#a1b93d45fb0e44cf61cd22fb1e57c1bf4":[2,0,9,31,0,3],
-"structerf__sbm_1_1SBMStateManager_1_1LevelState.html#a4fcb50cb17a0079d8eddca6fd74faee4":[2,0,9,31,0,2],
-"structerf__sbm_1_1SBMStateManager_1_1LevelState.html#a66d2aadbecb17504737d7184a1ecdd64":[2,0,9,31,0,1],
-"structerf__sbm_1_1SBMStateManager_1_1LevelState.html#a7058dc6fd524bede4e6c7d1546a566bb":[2,0,9,31,0,5]
+"structerf__sbm_1_1SBMAMRStateView.html#accda17d80ed1822cdf1dc1689da21777":[2,0,9,3,7]
 };

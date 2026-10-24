@@ -5,6 +5,7 @@ var namespaces_dup =
       [ "cmu_prime", "namespaceAL01.html#a0cbef5791f55d5f5adf5879436876351", null ],
       [ "dissipation", "namespaceAL01.html#ac3c8e89ddf9d2d7350855648587b019d", null ],
       [ "geom_length", "namespaceAL01.html#aa00c76839efcaa15d577655fe056fc26", null ],
+      [ "realizable_nut", "namespaceAL01.html#a2dec4c8ad98cf89e726df19a3b3d9f19", null ],
       [ "richardson", "namespaceAL01.html#a28e1cae0ed88e6ede21e7f4e71295539", null ],
       [ "smooth_Rt", "namespaceAL01.html#a86e85473281c3ee589f98d8408e66318", null ],
       [ "turb_length", "namespaceAL01.html#a1d9ffd80c5a4c79f4649fc60a93475fb", null ],

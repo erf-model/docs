@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"ERF__Plotfile2DSampledLevel_8cpp.html#afa858869cefcae6c300753f8e5e00abb":[3,0,1,10,27,13],
 "ERF__Plotfile2DSampledLevel_8cpp.html#afd832a5dc34b5f5d00610d7e87bb57bd":[3,0,1,10,27,11],
 "ERF__Plotfile2DUtils_8H.html":[3,0,1,10,30],
 "ERF__Plotfile2DUtils_8H.html#a36271f5e8ea03252877e78843d8eba25":[3,0,1,10,30,3],
@@ -144,13 +145,14 @@ var NAVTREEINDEX12 =
 "ERF__Provenance_8cpp.html#aede7f10167f3b07f72dff6474e6c5a80":[3,0,1,10,34,7],
 "ERF__RANSClosure_8H.html":[3,0,1,6,25],
 "ERF__RANSClosure_8H.html#a0cbef5791f55d5f5adf5879436876351":[3,0,1,6,25,1],
-"ERF__RANSClosure_8H.html#a167cc7128937fc64dafa74a641622317":[3,0,1,6,25,8],
-"ERF__RANSClosure_8H.html#a1d9ffd80c5a4c79f4649fc60a93475fb":[3,0,1,6,25,6],
-"ERF__RANSClosure_8H.html#a28e1cae0ed88e6ede21e7f4e71295539":[3,0,1,6,25,4],
+"ERF__RANSClosure_8H.html#a167cc7128937fc64dafa74a641622317":[3,0,1,6,25,9],
+"ERF__RANSClosure_8H.html#a1d9ffd80c5a4c79f4649fc60a93475fb":[3,0,1,6,25,7],
+"ERF__RANSClosure_8H.html#a28e1cae0ed88e6ede21e7f4e71295539":[3,0,1,6,25,5],
+"ERF__RANSClosure_8H.html#a2dec4c8ad98cf89e726df19a3b3d9f19":[3,0,1,6,25,4],
 "ERF__RANSClosure_8H.html#a37c7b7f42dbf596b7987cd0c33d735a1":[3,0,1,6,25,0],
-"ERF__RANSClosure_8H.html#a86e85473281c3ee589f98d8408e66318":[3,0,1,6,25,5],
+"ERF__RANSClosure_8H.html#a86e85473281c3ee589f98d8408e66318":[3,0,1,6,25,6],
 "ERF__RANSClosure_8H.html#aa00c76839efcaa15d577655fe056fc26":[3,0,1,6,25,3],
-"ERF__RANSClosure_8H.html#ab81cc5336b0823c9b573e6762765f806":[3,0,1,6,25,7],
+"ERF__RANSClosure_8H.html#ab81cc5336b0823c9b573e6762765f806":[3,0,1,6,25,8],
 "ERF__RANSClosure_8H.html#ac3c8e89ddf9d2d7350855648587b019d":[3,0,1,6,25,2],
 "ERF__RANSClosure_8H_source.html":[3,0,1,6,25],
 "ERF__RRTMGP__Interface_8H.html":[3,0,1,20,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "ERF__ReadBndryPlanes_8cpp.html#a1b07425594681f2a694c33b9b3e050d3":[3,0,1,10,36,0],
 "ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817":[3,0,1,10,36,1],
 "ERF__ReadCheckpointMF_8H.html":[3,0,1,10,38],
-"ERF__ReadCheckpointMF_8H.html#a1f8405aab1181ae522fa1bd9b9e26daf":[3,0,1,10,38,1],
-"ERF__ReadCheckpointMF_8H.html#a543f256009bdc56c433b9cb6a1da5177":[3,0,1,10,38,0],
-"ERF__ReadCheckpointMF_8H.html#aba22b9daf8305eee0648716ae0142fe1":[3,0,1,10,38,2]
+"ERF__ReadCheckpointMF_8H.html#a1f8405aab1181ae522fa1bd9b9e26daf":[3,0,1,10,38,1]
 };

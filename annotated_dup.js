@@ -321,6 +321,7 @@ var annotated_dup =
     [ "StationLoc", "structStationLoc.html", "structStationLoc" ],
     [ "StationSampler", "classStationSampler.html", "classStationSampler" ],
     [ "StationVar", "structStationVar.html", "structStationVar" ],
+    [ "StrainArrays", "structStrainArrays.html", "structStrainArrays" ],
     [ "StretchedDiffusionBoundaryWeights", "structStretchedDiffusionBoundaryWeights.html", "structStretchedDiffusionBoundaryWeights" ],
     [ "surface_flux", "structsurface__flux.html", "structsurface__flux" ],
     [ "surface_flux_charnock", "structsurface__flux__charnock.html", "structsurface__flux__charnock" ],
