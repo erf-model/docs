@@ -1,6 +1,6 @@
 var ERF__InitCustomPertVels__ScalarAdvDiff_8H =
 [
-    [ "ParallelFor", "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#affdeac35e323d4de562ce3954a846287", null ],
+    [ "ParallelFor", "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a8e42f69163e1d3c8b9facff651e89afc", null ],
     [ "ParallelFor", "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a43ae77dd0457ed5fefa12e4ff2e72114", null ],
     [ "ParallelFor", "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a5db62fb521a31b18ce526b18e18e17b8", null ],
     [ "pp_for_pert_vels", "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a420d78bf983d6025fd797e5276faa2fb", null ],
@@ -14,6 +14,7 @@ var ERF__InitCustomPertVels__ScalarAdvDiff_8H =
     [ "prob_type", "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#acd4be70decb52e2f9460e71708b197a2", null ],
     [ "U_0", "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a7f74e9554c1ab66998e1319960f1e82c", null ],
     [ "uRef", "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#ab2013be7dd9603b22bececef1eb9f2cf", null ],
+    [ "use_z_phys", "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a05a6cf5425ee9d277307ab329feed8df", null ],
     [ "V_0", "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb", null ],
     [ "W_0", "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#acd69dd589ed4831828bc6de35ee45844", null ],
     [ "z0", "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe", null ],

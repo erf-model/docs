@@ -1,6 +1,6 @@
 var ERF__InitCustomPert__SLM_8H =
 [
-    [ "ParallelForRNG", "ERF__InitCustomPert__SLM_8H.html#a97ca7e00fd9831d8e61ec8388e19e00e", null ],
+    [ "ParallelForRNG", "ERF__InitCustomPert__SLM_8H.html#a1b7c153fb75306a9b1f32f72ae207199", null ],
     [ "pp", "ERF__InitCustomPert__SLM_8H.html#a560a8df64f1b30c30d0d100ee051a1fb", null ],
     [ "query", "ERF__InitCustomPert__SLM_8H.html#a5dfa7762d2fa171ebc488bb4925c0c12", null ],
     [ "query", "ERF__InitCustomPert__SLM_8H.html#a8adbd140160fc40295ddb015fccbd57a", null ],
@@ -13,6 +13,8 @@ var ERF__InitCustomPert__SLM_8H =
     [ "custom_TKE", "ERF__InitCustomPert__SLM_8H.html#af8a5b49f7336588637a63a8f019cffab", null ],
     [ "KE_0", "ERF__InitCustomPert__SLM_8H.html#a370a8c6d8cd16bcab796b27f432af610", null ],
     [ "pert_ref_height", "ERF__InitCustomPert__SLM_8H.html#a2f7da2f7752a427b5f8d432ff2ffe53b", null ],
+    [ "phys_z_hi", "ERF__InitCustomPert__SLM_8H.html#a4c96ad557a573365a281e37ba78b8197", null ],
+    [ "phys_z_lo", "ERF__InitCustomPert__SLM_8H.html#afd594beb5e87119f485c9e590e4f8183", null ],
     [ "qv_0_Pert_Mag", "ERF__InitCustomPert__SLM_8H.html#ae9a41d791e39e1d4bbea81f72d9262b8", null ],
     [ "rdOcp", "ERF__InitCustomPert__SLM_8H.html#a46e52004c860b2aef260fce99d025bce", null ],
     [ "T_0_Pert_Mag", "ERF__InitCustomPert__SLM_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769", null ],

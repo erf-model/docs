@@ -1,7 +1,7 @@
 var ERF__InitCustomPert__Bubble_8H =
 [
     [ "AMREX_ALWAYS_ASSERT", "ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768", null ],
-    [ "ParallelFor", "ERF__InitCustomPert__Bubble_8H.html#a9c86d0112d94100a21c517469a75ff5d", null ],
+    [ "ParallelFor", "ERF__InitCustomPert__Bubble_8H.html#a1e1765779eaaa0515cd2490396f5c2dd", null ],
     [ "pp_prob", "ERF__InitCustomPert__Bubble_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb", null ],
     [ "query", "ERF__InitCustomPert__Bubble_8H.html#a314c9e5a3de9b40239bd34ef1a337740", null ],
     [ "query", "ERF__InitCustomPert__Bubble_8H.html#af654c7c9b2f4ca83619eaaa82da06ee5", null ],
@@ -25,6 +25,7 @@ var ERF__InitCustomPert__Bubble_8H =
     [ "T_pert", "ERF__InitCustomPert__Bubble_8H.html#aa395cc3ca43aaf99f6ae148afe3d5ea4", null ],
     [ "T_pert_is_airtemp", "ERF__InitCustomPert__Bubble_8H.html#a3294571f600c2c6d408bf9b63b45edfb", null ],
     [ "theta_pert", "ERF__InitCustomPert__Bubble_8H.html#a6637e986c60489cced910665c5dd3f33", null ],
+    [ "use_z_phys", "ERF__InitCustomPert__Bubble_8H.html#a05a6cf5425ee9d277307ab329feed8df", null ],
     [ "x_c", "ERF__InitCustomPert__Bubble_8H.html#a47302f019039afd23af718058e185a14", null ],
     [ "x_r", "ERF__InitCustomPert__Bubble_8H.html#a3a1023fe73b5e558f7d6c9f0c159fdd1", null ],
     [ "y_c", "ERF__InitCustomPert__Bubble_8H.html#a89b4106c058161c1511f17507a069116", null ],

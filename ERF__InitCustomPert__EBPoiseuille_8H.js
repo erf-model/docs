@@ -1,7 +1,7 @@
 var ERF__InitCustomPert__EBPoiseuille_8H =
 [
     [ "AMREX_ALWAYS_ASSERT", "ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c", null ],
-    [ "ParallelFor", "ERF__InitCustomPert__EBPoiseuille_8H.html#ad540554f5f5532554a9ef766ccf57430", null ],
+    [ "ParallelFor", "ERF__InitCustomPert__EBPoiseuille_8H.html#abe54d65dabfe90a4ec3a7a043ce43341", null ],
     [ "pp", "ERF__InitCustomPert__EBPoiseuille_8H.html#a560a8df64f1b30c30d0d100ee051a1fb", null ],
     [ "query", "ERF__InitCustomPert__EBPoiseuille_8H.html#a5dfa7762d2fa171ebc488bb4925c0c12", null ],
     [ "query", "ERF__InitCustomPert__EBPoiseuille_8H.html#a9c609423b1c9a34e934a2e4200b484e7", null ],
@@ -15,9 +15,12 @@ var ERF__InitCustomPert__EBPoiseuille_8H =
     [ "query", "ERF__InitCustomPert__EBPoiseuille_8H.html#ad9eb4755f9ca56079d97722b60d11c1c", null ],
     [ "A_0", "ERF__InitCustomPert__EBPoiseuille_8H.html#ad260f9d29239eb005c068b984604d3ee", null ],
     [ "B_0", "ERF__InitCustomPert__EBPoiseuille_8H.html#a1b82d131b2060ea0cb6c35fcb1ff1bb8", null ],
+    [ "phys_z_hi", "ERF__InitCustomPert__EBPoiseuille_8H.html#a4c96ad557a573365a281e37ba78b8197", null ],
+    [ "phys_z_lo", "ERF__InitCustomPert__EBPoiseuille_8H.html#afd594beb5e87119f485c9e590e4f8183", null ],
     [ "prob_type", "ERF__InitCustomPert__EBPoiseuille_8H.html#acd4be70decb52e2f9460e71708b197a2", null ],
     [ "rad_0", "ERF__InitCustomPert__EBPoiseuille_8H.html#af686714c0058e88fe58d897c790297a9", null ],
     [ "rho_0", "ERF__InitCustomPert__EBPoiseuille_8H.html#a3e766fc466013ff394d51a37dc2c2549", null ],
+    [ "use_z_phys", "ERF__InitCustomPert__EBPoiseuille_8H.html#a05a6cf5425ee9d277307ab329feed8df", null ],
     [ "xc_frac", "ERF__InitCustomPert__EBPoiseuille_8H.html#a321323b8a0b0353c5aeed9cb11101059", null ],
     [ "xradius", "ERF__InitCustomPert__EBPoiseuille_8H.html#af0d7ef0920197566d13fc1147dbfb39b", null ],
     [ "yc_frac", "ERF__InitCustomPert__EBPoiseuille_8H.html#a9968a93d4b2cbbe775f7326b33a6f685", null ],

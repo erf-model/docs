@@ -52,6 +52,7 @@ var dir_451f984cbae2157dc09f494ce6fda815 =
     [ "ERF_InitCustomPertVels_WitchOfAgnesi.H", "ERF__InitCustomPertVels__WitchOfAgnesi_8H.html", "ERF__InitCustomPertVels__WitchOfAgnesi_8H" ],
     [ "ERF_InitDensityHSE.H", "ERF__InitDensityHSE_8H.html", "ERF__InitDensityHSE_8H" ],
     [ "ERF_InitRayleighDamping.H", "ERF__InitRayleighDamping_8H.html", "ERF__InitRayleighDamping_8H" ],
+    [ "ERF_ProbHeights.H", "ERF__ProbHeights_8H.html", "ERF__ProbHeights_8H" ],
     [ "ERF_ProblemDispatch.H", "ERF__ProblemDispatch_8H.html", "ERF__ProblemDispatch_8H" ],
     [ "ERF_UpdateGeostrophicProfile_Bomex.H", "ERF__UpdateGeostrophicProfile__Bomex_8H.html", "ERF__UpdateGeostrophicProfile__Bomex_8H" ],
     [ "ERF_UpdateGeostrophicProfile_DYCOMS2RF01.H", "ERF__UpdateGeostrophicProfile__DYCOMS2RF01_8H.html", "ERF__UpdateGeostrophicProfile__DYCOMS2RF01_8H" ],

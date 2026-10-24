@@ -1,6 +1,6 @@
 var ERF__InitCustomPert__TaylorGreenVortex_8H =
 [
-    [ "ParallelFor", "ERF__InitCustomPert__TaylorGreenVortex_8H.html#a885904c57749eea462797d89468b73c8", null ],
+    [ "ParallelFor", "ERF__InitCustomPert__TaylorGreenVortex_8H.html#a4304b90091db8cc1b831731d78e6d822", null ],
     [ "pp", "ERF__InitCustomPert__TaylorGreenVortex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb", null ],
     [ "query", "ERF__InitCustomPert__TaylorGreenVortex_8H.html#a3328866e05c4f8100901f1b4cb9e217f", null ],
     [ "query", "ERF__InitCustomPert__TaylorGreenVortex_8H.html#a42459d127d2d715bf433e47e2f58972a", null ],
@@ -9,5 +9,6 @@ var ERF__InitCustomPert__TaylorGreenVortex_8H =
     [ "M_0", "ERF__InitCustomPert__TaylorGreenVortex_8H.html#a3d4cb18bc0d88691688b72f09172b7d5", null ],
     [ "rho_0", "ERF__InitCustomPert__TaylorGreenVortex_8H.html#a3e766fc466013ff394d51a37dc2c2549", null ],
     [ "T_0", "ERF__InitCustomPert__TaylorGreenVortex_8H.html#a7665ea1952f5b48f7602b61a2888baf2", null ],
+    [ "use_z_phys", "ERF__InitCustomPert__TaylorGreenVortex_8H.html#a05a6cf5425ee9d277307ab329feed8df", null ],
     [ "V_0", "ERF__InitCustomPert__TaylorGreenVortex_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb", null ]
 ];

@@ -1,7 +1,7 @@
 var ERF__InitCustomPertVels__SDMCongestus3D_8H =
 [
-    [ "ParallelForRNG", "ERF__InitCustomPertVels__SDMCongestus3D_8H.html#aeb4804e73c79e4321d0785c79d61b0d2", null ],
-    [ "ParallelForRNG", "ERF__InitCustomPertVels__SDMCongestus3D_8H.html#a2c88d5f8ae565b9f07641172c04b8c47", null ],
+    [ "ParallelForRNG", "ERF__InitCustomPertVels__SDMCongestus3D_8H.html#a787114320b59214f000fdc1f2e12c0ef", null ],
+    [ "ParallelForRNG", "ERF__InitCustomPertVels__SDMCongestus3D_8H.html#af5f0e037036af6d5e876dc27169b9cd6", null ],
     [ "ParallelForRNG", "ERF__InitCustomPertVels__SDMCongestus3D_8H.html#a347bb0fbf672fb069486cd8cc8303be5", null ],
     [ "pp_prob", "ERF__InitCustomPertVels__SDMCongestus3D_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb", null ],
     [ "query", "ERF__InitCustomPertVels__SDMCongestus3D_8H.html#a83a3b47fca38683e460207a45ca65b46", null ],
@@ -29,6 +29,7 @@ var ERF__InitCustomPertVels__SDMCongestus3D_8H =
     [ "U_0", "ERF__InitCustomPertVels__SDMCongestus3D_8H.html#a7f74e9554c1ab66998e1319960f1e82c", null ],
     [ "U_0_Pert_Mag", "ERF__InitCustomPertVels__SDMCongestus3D_8H.html#a5bf801819283c236eabaa9d973db9f28", null ],
     [ "ufac", "ERF__InitCustomPertVels__SDMCongestus3D_8H.html#a9551f099ea0453a3f12e71c54e74a4d4", null ],
+    [ "use_z_phys", "ERF__InitCustomPertVels__SDMCongestus3D_8H.html#a05a6cf5425ee9d277307ab329feed8df", null ],
     [ "V_0", "ERF__InitCustomPertVels__SDMCongestus3D_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb", null ],
     [ "V_0_Pert_Mag", "ERF__InitCustomPertVels__SDMCongestus3D_8H.html#ad2836cac7bb2dd93a45a998b431b5b69", null ],
     [ "vfac", "ERF__InitCustomPertVels__SDMCongestus3D_8H.html#a733275701db9aebe51be2e6c0e5b1816", null ],

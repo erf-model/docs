@@ -9,6 +9,7 @@ var ERF__UpdateRhoQtSources__SDMCongestus3D_8H =
     [ "dx", "ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97", null ],
     [ "prob_hi", "ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830", null ],
     [ "prob_lo", "ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f", null ],
+    [ "use_z_phys", "ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html#a05a6cf5425ee9d277307ab329feed8df", null ],
     [ "xc", "ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html#a7654fe8418328fb776e0f540600ae197", null ],
     [ "yc", "ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html#a6a4164c9224c43bc3856c657b2a9ad8a", null ]
 ];

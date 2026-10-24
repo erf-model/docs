@@ -1,6 +1,6 @@
 var ERF__InitCustomPert__Bomex_8H =
 [
-    [ "ParallelForRNG", "ERF__InitCustomPert__Bomex_8H.html#ab6d7fdc23be42c7d49b8c1362cae2ea8", null ],
+    [ "ParallelForRNG", "ERF__InitCustomPert__Bomex_8H.html#a2b7dc607c4e3383186beaa577c3e74fd", null ],
     [ "pp", "ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb", null ],
     [ "query", "ERF__InitCustomPert__Bomex_8H.html#a5dfa7762d2fa171ebc488bb4925c0c12", null ],
     [ "query", "ERF__InitCustomPert__Bomex_8H.html#a8adbd140160fc40295ddb015fccbd57a", null ],
@@ -14,10 +14,13 @@ var ERF__InitCustomPert__Bomex_8H =
     [ "custom_TKE", "ERF__InitCustomPert__Bomex_8H.html#af8a5b49f7336588637a63a8f019cffab", null ],
     [ "KE_0", "ERF__InitCustomPert__Bomex_8H.html#a8d1de1ec12cbef6f669c7c3b631f5621", null ],
     [ "pert_ref_height", "ERF__InitCustomPert__Bomex_8H.html#a2f7da2f7752a427b5f8d432ff2ffe53b", null ],
+    [ "phys_z_hi", "ERF__InitCustomPert__Bomex_8H.html#a4c96ad557a573365a281e37ba78b8197", null ],
+    [ "phys_z_lo", "ERF__InitCustomPert__Bomex_8H.html#afd594beb5e87119f485c9e590e4f8183", null ],
     [ "qv_0_Pert_Mag", "ERF__InitCustomPert__Bomex_8H.html#ae9a41d791e39e1d4bbea81f72d9262b8", null ],
     [ "rdOcp", "ERF__InitCustomPert__Bomex_8H.html#a46e52004c860b2aef260fce99d025bce", null ],
     [ "rho_0", "ERF__InitCustomPert__Bomex_8H.html#a5d69d46415ca0544e501c3499f7bf371", null ],
     [ "T_0", "ERF__InitCustomPert__Bomex_8H.html#aef06188733e6cd0fb069567ec7c950a3", null ],
     [ "T_0_Pert_Mag", "ERF__InitCustomPert__Bomex_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769", null ],
-    [ "use_moisture", "ERF__InitCustomPert__Bomex_8H.html#a33262a65bbaa6911bb4b2d4a38f2168a", null ]
+    [ "use_moisture", "ERF__InitCustomPert__Bomex_8H.html#a33262a65bbaa6911bb4b2d4a38f2168a", null ],
+    [ "use_z_phys", "ERF__InitCustomPert__Bomex_8H.html#a05a6cf5425ee9d277307ab329feed8df", null ]
 ];

@@ -9,6 +9,7 @@ var ERF__UpdateRhoThetaSources__SDMCongestus3D_8H =
     [ "dx", "ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97", null ],
     [ "prob_hi", "ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830", null ],
     [ "prob_lo", "ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f", null ],
+    [ "use_z_phys", "ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a05a6cf5425ee9d277307ab329feed8df", null ],
     [ "xc", "ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722", null ],
     [ "yc", "ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346", null ]
 ];

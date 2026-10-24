@@ -6,5 +6,7 @@ var ERF__InitCustomPertVels__EkmanSpiral_8H =
     [ "query", "ERF__InitCustomPertVels__EkmanSpiral_8H.html#adc419a3f80891c95caf27f27f4197c06", null ],
     [ "query_enum_case_insensitive", "ERF__InitCustomPertVels__EkmanSpiral_8H.html#a4eb34887b6658629f4af2f94566d486b", null ],
     [ "init_type", "ERF__InitCustomPertVels__EkmanSpiral_8H.html#a25b93804556621317b9c537f906af664", null ],
-    [ "rho_0", "ERF__InitCustomPertVels__EkmanSpiral_8H.html#a3e766fc466013ff394d51a37dc2c2549", null ]
+    [ "phys_z_lo", "ERF__InitCustomPertVels__EkmanSpiral_8H.html#afd594beb5e87119f485c9e590e4f8183", null ],
+    [ "rho_0", "ERF__InitCustomPertVels__EkmanSpiral_8H.html#a3e766fc466013ff394d51a37dc2c2549", null ],
+    [ "use_z_phys", "ERF__InitCustomPertVels__EkmanSpiral_8H.html#a05a6cf5425ee9d277307ab329feed8df", null ]
 ];

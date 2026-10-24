@@ -2,7 +2,7 @@ var ERF__InitCustomPert__TurbulentInflow_8H =
 [
     [ "if", "ERF__InitCustomPert__TurbulentInflow_8H.html#a861f3a0e37e4f9568407b620e5776438", null ],
     [ "if", "ERF__InitCustomPert__TurbulentInflow_8H.html#afa36b585cf4468f615e2d4739bc65905", null ],
-    [ "ParallelForRNG", "ERF__InitCustomPert__TurbulentInflow_8H.html#a601ebf8188e84f97ae2473249071dfc3", null ],
+    [ "ParallelForRNG", "ERF__InitCustomPert__TurbulentInflow_8H.html#a9f02f82fc963c428ceabb82de78e546f", null ],
     [ "pp", "ERF__InitCustomPert__TurbulentInflow_8H.html#a560a8df64f1b30c30d0d100ee051a1fb", null ],
     [ "query", "ERF__InitCustomPert__TurbulentInflow_8H.html#a5dfa7762d2fa171ebc488bb4925c0c12", null ],
     [ "query", "ERF__InitCustomPert__TurbulentInflow_8H.html#a8aba4fa4aa728799e8bcd3ff115cd4c2", null ],
@@ -34,6 +34,8 @@ var ERF__InitCustomPert__TurbulentInflow_8H =
     [ "pert_periods_V", "ERF__InitCustomPert__TurbulentInflow_8H.html#a6fe689ec76b4a80d5762f0ff57ce7826", null ],
     [ "pert_ref_height", "ERF__InitCustomPert__TurbulentInflow_8H.html#a2f7da2f7752a427b5f8d432ff2ffe53b", null ],
     [ "pert_rhotheta", "ERF__InitCustomPert__TurbulentInflow_8H.html#ab67cd282f73feb6720b6bcecd3119638", null ],
+    [ "phys_z_hi", "ERF__InitCustomPert__TurbulentInflow_8H.html#a4c96ad557a573365a281e37ba78b8197", null ],
+    [ "phys_z_lo", "ERF__InitCustomPert__TurbulentInflow_8H.html#afd594beb5e87119f485c9e590e4f8183", null ],
     [ "prob_hi", "ERF__InitCustomPert__TurbulentInflow_8H.html#a9d5d4d1a7bfaaeaa65be638eed22fa79", null ],
     [ "prob_lo", "ERF__InitCustomPert__TurbulentInflow_8H.html#a3863b7bf2bd0a71f1021a3991f3dede8", null ],
     [ "rho_0", "ERF__InitCustomPert__TurbulentInflow_8H.html#a3e766fc466013ff394d51a37dc2c2549", null ],

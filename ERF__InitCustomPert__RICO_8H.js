@@ -1,6 +1,6 @@
 var ERF__InitCustomPert__RICO_8H =
 [
-    [ "ParallelForRNG", "ERF__InitCustomPert__RICO_8H.html#a28fa700e3bd6c7b2c7315cd8d467e425", null ],
+    [ "ParallelForRNG", "ERF__InitCustomPert__RICO_8H.html#ad4f30e30b82fa7c567b2e2c579ab99ba", null ],
     [ "pp_prob", "ERF__InitCustomPert__RICO_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb", null ],
     [ "query", "ERF__InitCustomPert__RICO_8H.html#a904c8bb11b89d16604c707aeeacc3337", null ],
     [ "query", "ERF__InitCustomPert__RICO_8H.html#a819a228f44e16ba421ba109292487ad5", null ],
@@ -23,6 +23,8 @@ var ERF__InitCustomPert__RICO_8H =
     [ "pert_periods_QV", "ERF__InitCustomPert__RICO_8H.html#a0b46521c9463293e7df2854c624aadbf", null ],
     [ "pert_periods_T", "ERF__InitCustomPert__RICO_8H.html#abf4a4c55a1ef41d3e0264139fe1cb631", null ],
     [ "pert_ref_height", "ERF__InitCustomPert__RICO_8H.html#a2f7da2f7752a427b5f8d432ff2ffe53b", null ],
+    [ "phys_z_hi", "ERF__InitCustomPert__RICO_8H.html#a4c96ad557a573365a281e37ba78b8197", null ],
+    [ "phys_z_lo", "ERF__InitCustomPert__RICO_8H.html#afd594beb5e87119f485c9e590e4f8183", null ],
     [ "prob_hi_x", "ERF__InitCustomPert__RICO_8H.html#a8ff13856e6ad7054a064225139db9598", null ],
     [ "prob_lo_x", "ERF__InitCustomPert__RICO_8H.html#a5fdebea6ddeebd0fe3162c2a61ea92fa", null ],
     [ "qv_0_Pert_Mag", "ERF__InitCustomPert__RICO_8H.html#ae9a41d791e39e1d4bbea81f72d9262b8", null ],
@@ -31,5 +33,6 @@ var ERF__InitCustomPert__RICO_8H =
     [ "T_0_Pert_Mag", "ERF__InitCustomPert__RICO_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769", null ],
     [ "tfac", "ERF__InitCustomPert__RICO_8H.html#a78df5176a50e6ead2e6fac30c5ee13e2", null ],
     [ "use_moisture", "ERF__InitCustomPert__RICO_8H.html#a33262a65bbaa6911bb4b2d4a38f2168a", null ],
+    [ "use_z_phys", "ERF__InitCustomPert__RICO_8H.html#a05a6cf5425ee9d277307ab329feed8df", null ],
     [ "wbar_sub_max", "ERF__InitCustomPert__RICO_8H.html#a996b8977681d7bb9a9286c4685612903", null ]
 ];

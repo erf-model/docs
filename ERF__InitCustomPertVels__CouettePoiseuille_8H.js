@@ -21,10 +21,13 @@ var ERF__InitCustomPertVels__CouettePoiseuille_8H =
     [ "pert_lo", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#abc2d5be86dd472d4d768d3822c17f06f", null ],
     [ "pert_periods_u", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a577c69825a59f05189dd6db6240d6aaf", null ],
     [ "pert_periods_v", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a6bb06fa68c77b8595a11642536ea4b9e", null ],
+    [ "phys_z_hi", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a4c96ad557a573365a281e37ba78b8197", null ],
+    [ "phys_z_lo", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#afd594beb5e87119f485c9e590e4f8183", null ],
     [ "prob_type", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#acd4be70decb52e2f9460e71708b197a2", null ],
     [ "probhi", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a491fbbbd41fea96dc542650d29464bae", null ],
     [ "problo", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#ada6bdc46e2435400f2c431495eaa6ffb", null ],
     [ "U_0", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a7f74e9554c1ab66998e1319960f1e82c", null ],
+    [ "use_z_phys", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a05a6cf5425ee9d277307ab329feed8df", null ],
     [ "V_0", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb", null ],
     [ "W_0", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#acd69dd589ed4831828bc6de35ee45844", null ]
 ];

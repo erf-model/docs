@@ -1,6 +1,6 @@
 var ERF__InitCustomPert__SDMCongestus3D_8H =
 [
-    [ "ParallelForRNG", "ERF__InitCustomPert__SDMCongestus3D_8H.html#a7526b295fd4712de2ea87c11f12991f1", null ],
+    [ "ParallelForRNG", "ERF__InitCustomPert__SDMCongestus3D_8H.html#aa7ae39eab2e05c995a96a22870b09352", null ],
     [ "pp_prob", "ERF__InitCustomPert__SDMCongestus3D_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb", null ],
     [ "query", "ERF__InitCustomPert__SDMCongestus3D_8H.html#a904c8bb11b89d16604c707aeeacc3337", null ],
     [ "query", "ERF__InitCustomPert__SDMCongestus3D_8H.html#aca957117fa84724aaa82bc9474a39e3a", null ],
@@ -22,6 +22,8 @@ var ERF__InitCustomPert__SDMCongestus3D_8H =
     [ "pert_periods_QV", "ERF__InitCustomPert__SDMCongestus3D_8H.html#a0b46521c9463293e7df2854c624aadbf", null ],
     [ "pert_periods_T", "ERF__InitCustomPert__SDMCongestus3D_8H.html#abf4a4c55a1ef41d3e0264139fe1cb631", null ],
     [ "pert_ref_height", "ERF__InitCustomPert__SDMCongestus3D_8H.html#a2f7da2f7752a427b5f8d432ff2ffe53b", null ],
+    [ "phys_z_hi", "ERF__InitCustomPert__SDMCongestus3D_8H.html#a4c96ad557a573365a281e37ba78b8197", null ],
+    [ "phys_z_lo", "ERF__InitCustomPert__SDMCongestus3D_8H.html#afd594beb5e87119f485c9e590e4f8183", null ],
     [ "prob_hi_x", "ERF__InitCustomPert__SDMCongestus3D_8H.html#a3ea17a6e9803df75ddc1f501db83f0d2", null ],
     [ "prob_lo_x", "ERF__InitCustomPert__SDMCongestus3D_8H.html#aa95d8bd981140c5b8005af946ab92d0a", null ],
     [ "Q_0_Pert_Mag", "ERF__InitCustomPert__SDMCongestus3D_8H.html#a535b6368e7035f06ba1ecd2b52729a36", null ],
@@ -31,5 +33,6 @@ var ERF__InitCustomPert__SDMCongestus3D_8H =
     [ "T_0", "ERF__InitCustomPert__SDMCongestus3D_8H.html#a7665ea1952f5b48f7602b61a2888baf2", null ],
     [ "T_0_Pert_Mag", "ERF__InitCustomPert__SDMCongestus3D_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769", null ],
     [ "tfac", "ERF__InitCustomPert__SDMCongestus3D_8H.html#a78df5176a50e6ead2e6fac30c5ee13e2", null ],
-    [ "use_moisture", "ERF__InitCustomPert__SDMCongestus3D_8H.html#a33262a65bbaa6911bb4b2d4a38f2168a", null ]
+    [ "use_moisture", "ERF__InitCustomPert__SDMCongestus3D_8H.html#a33262a65bbaa6911bb4b2d4a38f2168a", null ],
+    [ "use_z_phys", "ERF__InitCustomPert__SDMCongestus3D_8H.html#a05a6cf5425ee9d277307ab329feed8df", null ]
 ];
