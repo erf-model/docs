@@ -1,6 +1,5 @@
 var NAVTREEINDEX53 =
 {
-"structerf__surface__temperature_1_1ConversionFailure.html#afc48aa63a6a1b41c982587a52871bde8":[2,0,10,0,8],
 "structerf__terrain__file_1_1HeightTable.html":[2,0,11,0],
 "structerf__terrain__file_1_1HeightTable.html#a0980a79fbd405fbb8374a4a2b01f8fe9":[2,0,11,0,0],
 "structerf__terrain__file_1_1HeightTable.html#a9dc24e73c6d9cba774866038349e4f08":[2,0,11,0,4],
@@ -249,5 +248,6 @@ var NAVTREEINDEX53 =
 "structshoc_1_1ShocEnergyFixerView.html#a17f4f8e3dcca90745bc3d083a56b38b2":[2,0,20,0,4],
 "structshoc_1_1ShocEnergyFixerView.html#a1bea251d8b1f01dfeea5cc7fc2fc378f":[2,0,20,0,12],
 "structshoc_1_1ShocEnergyFixerView.html#a221340cd5611d5d3e938d9959e627897":[2,0,20,0,10],
-"structshoc_1_1ShocEnergyFixerView.html#a3acbbc2ea7cba157968603af683fd30b":[2,0,20,0,3]
+"structshoc_1_1ShocEnergyFixerView.html#a3acbbc2ea7cba157968603af683fd30b":[2,0,20,0,3],
+"structshoc_1_1ShocEnergyFixerView.html#a53244ba7d149fe61aea510b051bcc2ad":[2,0,20,0,16]
 };
