@@ -122,12 +122,12 @@ var NAVTREEINDEX =
 "structRadChoice.html#a6c076fe7b0b886a094b2b59f99e7816c",
 "structSHOCInterface_1_1SHOCPostprocess.html#a995fb775ea33060589137113fbea84ef",
 "structSolverChoice.html#a1018f270d5914a7ca67089161075954c",
-"structStretchedDiffusionBoundaryWeights.html#aa2a858a67e3646ea656669b3036f36b9",
-"structTwoStreamParams.html#a72476bc2881cab6658d976712aa75788",
-"structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage.html#aca813330d79d70b4c4e6f7bff84bb81b",
-"structerf__sbm_1_1AdvectionFacePolicyInput.html#a00e0f90e259c67f2b7f22a3690927388",
-"structerf__terrain__file_1_1HeightTable.html#a9ebf3ceeba35117da62da3494ed562f6",
-"structshoc_1_1ShocEnergyFixerView.html#a81ead744a4065307389af1986d7a9877"
+"structStationVar.html#aba9d81965b62ef79f7ea9dbe12ce611d",
+"structTwoStreamParams.html#a67341d5e227f0f82a9bfb460d78d5ab8",
+"structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage.html#a9de7c2b2e440211347f3148b18ab552a",
+"structerf__sbm_1_1AdvectionFacePolicy.html#a84f66cb3301f4e310c0c6e4b815d5acc",
+"structerf__surface__temperature_1_1ConversionFailure.html#afc48aa63a6a1b41c982587a52871bde8",
+"structshoc_1_1ShocEnergyFixerView.html#a53244ba7d149fe61aea510b051bcc2ad"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
