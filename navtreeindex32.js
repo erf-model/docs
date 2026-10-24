@@ -1,5 +1,7 @@
 var NAVTREEINDEX32 =
 {
+"classSurfaceLayer.html#a42f2ea8254d96d83b11928180e318576":[2,0,192,133],
+"classSurfaceLayer.html#a4700be8203f4f5899182104936bf3929":[2,0,192,116],
 "classSurfaceLayer.html#a49a97b3f9132567b9437015b10771fef":[2,0,192,22],
 "classSurfaceLayer.html#a4ab8601146a1f01ce6825147789f4f75":[2,0,192,35],
 "classSurfaceLayer.html#a4c6180431efcbe86bc99d6d4159bd834":[2,0,192,17],
@@ -247,7 +249,5 @@ var NAVTREEINDEX32 =
 "classTerrainIF.html#a61ba7f6df699e91cb09f22254ce15756":[2,0,198,13],
 "classTerrainIF.html#a737713ea9ad59cb13fd2e1763a36c7f6":[2,0,198,6],
 "classTerrainIF.html#a9ef300b60a513a54e515d7230c9fa6b6":[2,0,198,3],
-"classTerrainIF.html#aac642e338bc723b2634616e0bf394332":[2,0,198,14],
-"classTerrainIF.html#ab4cd1fad98e4360ccdc55688eafbb1e2":[2,0,198,8],
-"classTerrainIF.html#abaaf17ea73c5db0f4c592b6114fa8f0e":[2,0,198,2]
+"classTerrainIF.html#aac642e338bc723b2634616e0bf394332":[2,0,198,14]
 };

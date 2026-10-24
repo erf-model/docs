@@ -1,5 +1,7 @@
 var NAVTREEINDEX43 =
 {
+"namespaceplotfile2d.html#a868e50c432e8fd1f36bff8724b918a41":[1,0,72,78],
+"namespaceplotfile2d.html#a8a0ee681074cb41de6a5757e3d334f27":[1,0,72,81],
 "namespaceplotfile2d.html#a8d1641ac0b69e3d489193fc23c52f5b4":[1,0,72,25],
 "namespaceplotfile2d.html#a8ea2e07c8bab98b6d20818cba15cada0":[1,0,72,49],
 "namespaceplotfile2d.html#a8eb98af283a6e2bdb6e052ee46454727":[1,0,72,37],
@@ -247,7 +249,5 @@ var NAVTREEINDEX43 =
 "structCENTERED6.html#a76bc2f7a9d59e06516a6243cfe2a292b":[2,0,36,5],
 "structCENTERED6.html#aacd79f8ed62a166d5f4d44a20d09fc13":[2,0,36,1],
 "structCENTERED6.html#addc1b756f97d4883080045a187e4d433":[2,0,36,8],
-"structCFFaceFluxes.html":[2,0,37],
-"structCFFaceFluxes.html#a538ca49928afab6d7ccb3e65d5a52aeb":[2,0,37,0],
-"structCFFaceFluxes.html#aa622633b524d0877327d932379ee3340":[2,0,37,1]
+"structCFFaceFluxes.html":[2,0,37]
 };
