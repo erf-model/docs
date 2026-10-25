@@ -110,6 +110,9 @@ Collaboration diagram for SedimentationFlux:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6e5d8c8842a24cb49280015fb50c2979"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSedimentationFlux.html#a6e5d8c8842a24cb49280015fb50c2979">define</a> (const amrex::BoxArray &amp;cc_ba, const amrex::DistributionMapping &amp;dm, const amrex::Vector&lt; int &gt; &amp;a_cons_comp)</td></tr>
 <tr class="separator:a6e5d8c8842a24cb49280015fb50c2979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2661f365c1ddd1af417b3b5615a12683"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSedimentationFlux.html#a2661f365c1ddd1af417b3b5615a12683">inflow_flag_comp</a> () const</td></tr>
+<tr class="memdesc:a2661f365c1ddd1af417b3b5615a12683"><td class="mdescLeft">&#160;</td><td class="mdescRight">The component of a sedimentation inflow (see above) that flags the faces it applies at.  <a href="structSedimentationFlux.html#a2661f365c1ddd1af417b3b5615a12683">More...</a><br /></td></tr>
+<tr class="separator:a2661f365c1ddd1af417b3b5615a12683"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaad36702599b454971f956d271c7d5d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSedimentationFlux.html#aaad36702599b454971f956d271c7d5d3">reset</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a_dt)</td></tr>
 <tr class="memdesc:aaad36702599b454971f956d271c7d5d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zero the fluxes at the start of an Advance of length a_dt.  <a href="structSedimentationFlux.html#aaad36702599b454971f956d271c7d5d3">More...</a><br /></td></tr>
 <tr class="separator:aaad36702599b454971f956d271c7d5d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,7 +129,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The hydrometeors a microphysics scheme moved across each z-face by sedimentation during its most recent Advance on a level.</p>
 <p>down(i,j,k,n) is the amount of the conserved state component cons_comp[n] (rho*q, so kg m^-3 for a mixing ratio and m^-3 for a number concentration) that crossed z-face (i,j,k) downward during that Advance, per unit horizontal area: kg m^-2 or m^-2. Face k is the bottom face of cell k, so the face at the domain bottom holds what reached the ground. down is defined on the level's grids, z-nodal, and is zeroed at the start of every Advance.</p>
-<p>A scheme records the fluxes its cell updates actually used, so that (up to the clipping of negative values) the change of rho*q*dz in a cell is down on its top face minus down on its bottom face. Schemes whose sedimentation has no face fluxes of its own (the semi-Lagrangian WSM6/WDM6 solvers) reconstruct them with sedimentation_add_column_sums below. </p>
+<p>A scheme records the fluxes its cell updates actually used, so that (up to the clipping of negative values) the change of rho*q*dz in a cell is down on its top face minus down on its bottom face. Schemes whose sedimentation has no face fluxes of its own (the semi-Lagrangian WSM6/WDM6 solvers) reconstruct them with sedimentation_add_column_sums below. The inflow a fine patch receives through its top face, handed to a scheme for one Advance (<a class="el" href="classNullMoist.html#afcdaebc99907816fc5bbc879c5831057" title="The inflow through the top of a fine patch for the next Advance, or null (see ERF_SedimentationFlux....">NullMoist::Set_Sed_Inflow</a>). It is z-nodal on the level's grids, with the components of the level's <a class="el" href="structSedimentationFlux.html">SedimentationFlux</a> plus a flag, comp <a class="el" href="structSedimentationFlux.html#a2661f365c1ddd1af417b3b5615a12683" title="The component of a sedimentation inflow (see above) that flags the faces it applies at.">inflow_flag_comp()</a>: where the flag is 1, face (i,j,k) is the top of a fine column that stops short of the domain top, and component n holds the amount of cons_comp[n] entering through it during the Advance, per unit horizontal area (as <a class="el" href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">SedimentationFlux::down</a>). Elsewhere everything is zero. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6e5d8c8842a24cb49280015fb50c2979"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e5d8c8842a24cb49280015fb50c2979">&#9670;&nbsp;</a></span>define()</h2>
@@ -167,16 +170,44 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="structSedimentationFlux.html#a54c428e1ba31f369d25acca70942bacc">cons_comp</a> = a_cons_comp;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">down</a> = std::make_shared&lt;amrex::MultiFab&gt;(amrex::convert(cc_ba, amrex::IntVect(0,0,1)), dm,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                                 <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="structSedimentationFlux.html#a54c428e1ba31f369d25acca70942bacc">cons_comp</a>.size()), 0);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">down</a>-&gt;setVal(0.0);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="structSedimentationFlux.html#a102f2749b984888d6a4a0c701a04fbf4">dt</a> = 0.0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="ttc" id="astructSedimentationFlux_html_a102f2749b984888d6a4a0c701a04fbf4"><div class="ttname"><a href="structSedimentationFlux.html#a102f2749b984888d6a4a0c701a04fbf4">SedimentationFlux::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> ERF_SedimentationFlux.H:33</div></div>
-<div class="ttc" id="astructSedimentationFlux_html_a4fb8506ddd4c50202da07b4354ba3524"><div class="ttname"><a href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">SedimentationFlux::down</a></div><div class="ttdeci">std::shared_ptr&lt; amrex::MultiFab &gt; down</div><div class="ttdef"><b>Definition:</b> ERF_SedimentationFlux.H:31</div></div>
-<div class="ttc" id="astructSedimentationFlux_html_a54c428e1ba31f369d25acca70942bacc"><div class="ttname"><a href="structSedimentationFlux.html#a54c428e1ba31f369d25acca70942bacc">SedimentationFlux::cons_comp</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; cons_comp</div><div class="ttdef"><b>Definition:</b> ERF_SedimentationFlux.H:32</div></div>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="structSedimentationFlux.html#a54c428e1ba31f369d25acca70942bacc">cons_comp</a> = a_cons_comp;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">down</a> = std::make_shared&lt;amrex::MultiFab&gt;(amrex::convert(cc_ba, amrex::IntVect(0,0,1)), dm,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                                 <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="structSedimentationFlux.html#a54c428e1ba31f369d25acca70942bacc">cons_comp</a>.size()), 0);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">down</a>-&gt;setVal(0.0);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="structSedimentationFlux.html#a102f2749b984888d6a4a0c701a04fbf4">dt</a> = 0.0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="ttc" id="astructSedimentationFlux_html_a102f2749b984888d6a4a0c701a04fbf4"><div class="ttname"><a href="structSedimentationFlux.html#a102f2749b984888d6a4a0c701a04fbf4">SedimentationFlux::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> ERF_SedimentationFlux.H:41</div></div>
+<div class="ttc" id="astructSedimentationFlux_html_a4fb8506ddd4c50202da07b4354ba3524"><div class="ttname"><a href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">SedimentationFlux::down</a></div><div class="ttdeci">std::shared_ptr&lt; amrex::MultiFab &gt; down</div><div class="ttdef"><b>Definition:</b> ERF_SedimentationFlux.H:39</div></div>
+<div class="ttc" id="astructSedimentationFlux_html_a54c428e1ba31f369d25acca70942bacc"><div class="ttname"><a href="structSedimentationFlux.html#a54c428e1ba31f369d25acca70942bacc">SedimentationFlux::cons_comp</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; cons_comp</div><div class="ttdef"><b>Definition:</b> ERF_SedimentationFlux.H:40</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2661f365c1ddd1af417b3b5615a12683"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2661f365c1ddd1af417b3b5615a12683">&#9670;&nbsp;</a></span>inflow_flag_comp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SedimentationFlux::inflow_flag_comp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The component of a sedimentation inflow (see above) that flags the faces it applies at. </p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="structSedimentationFlux.html#a54c428e1ba31f369d25acca70942bacc">cons_comp</a>.size()); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -205,10 +236,10 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Zero the fluxes at the start of an Advance of length a_dt. </p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">down</a>) { <a class="code" href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">down</a>-&gt;setVal(0.0); }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="structSedimentationFlux.html#a102f2749b984888d6a4a0c701a04fbf4">dt</a> = a_dt;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">down</a>) { <a class="code" href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">down</a>-&gt;setVal(0.0); }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="structSedimentationFlux.html#a102f2749b984888d6a4a0c701a04fbf4">dt</a> = a_dt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSAM.html#a012056ae20ded7928adf1be8afa665b9">SAM::Advance()</a>, and <a class="el" href="classKessler.html#adbfb72df664abc2f02fede6b91b066b6">Kessler::Advance()</a>.</p>
 <div class="dynheader">
@@ -237,7 +268,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSedimentationFlux.html#a6e5d8c8842a24cb49280015fb50c2979">define()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSedimentationFlux.html#a6e5d8c8842a24cb49280015fb50c2979">define()</a>, and <a class="el" href="structSedimentationFlux.html#a2661f365c1ddd1af417b3b5615a12683">inflow_flag_comp()</a>.</p>
 
 </div>
 </div>
@@ -253,7 +284,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSedimentationFlux.html#a6e5d8c8842a24cb49280015fb50c2979">define()</a>, and <a class="el" href="structSedimentationFlux.html#aaad36702599b454971f956d271c7d5d3">reset()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#a8355d14a7672f4d863064300ee42d6f7">ERF::advance_microphysics()</a>, <a class="el" href="structSedimentationFlux.html#a6e5d8c8842a24cb49280015fb50c2979">define()</a>, and <a class="el" href="structSedimentationFlux.html#aaad36702599b454971f956d271c7d5d3">reset()</a>.</p>
 
 </div>
 </div>

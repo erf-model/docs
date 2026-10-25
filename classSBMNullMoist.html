@@ -105,10 +105,11 @@ Collaboration diagram for SBMNullMoist:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSBMNullMoist__coll__graph.png" border="0" usemap="#aSBMNullMoist_coll__map" alt="Collaboration graph"/></div>
 <map name="aSBMNullMoist_coll__map" id="aSBMNullMoist_coll__map">
-<area shape="rect" title=" " alt="" coords="69,244,183,271"/>
-<area shape="rect" href="classNullMoist.html" title=" " alt="" coords="84,168,168,195"/>
-<area shape="rect" title=" " alt="" coords="5,5,44,32"/>
-<area shape="rect" title=" " alt="" coords="202,5,253,32"/>
+<area shape="rect" title=" " alt="" coords="117,244,230,271"/>
+<area shape="rect" href="classNullMoist.html" title=" " alt="" coords="131,168,215,195"/>
+<area shape="rect" title=" " alt="" coords="5,5,93,32"/>
+<area shape="rect" title=" " alt="" coords="154,5,193,32"/>
+<area shape="rect" title=" " alt="" coords="351,5,401,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -169,6 +170,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9cf31139b9e3ef44b22a6a43f10d1801 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="structSedimentationFlux.html">SedimentationFlux</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a9cf31139b9e3ef44b22a6a43f10d1801">Sed_Flux</a> () const</td></tr>
 <tr class="memdesc:a9cf31139b9e3ef44b22a6a43f10d1801 inherit pub_methods_classNullMoist"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sedimentation face fluxes of the most recent Advance, or null for a scheme that does not sediment (see ERF_SedimentationFlux.H)  <a href="classNullMoist.html#a9cf31139b9e3ef44b22a6a43f10d1801">More...</a><br /></td></tr>
 <tr class="separator:a9cf31139b9e3ef44b22a6a43f10d1801 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcdaebc99907816fc5bbc879c5831057 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#afcdaebc99907816fc5bbc879c5831057">Set_Sed_Inflow</a> (const amrex::MultiFab *<a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9ad37e67db17cfd059f2852e2673b9e8ef">inflow</a>)</td></tr>
+<tr class="memdesc:afcdaebc99907816fc5bbc879c5831057 inherit pub_methods_classNullMoist"><td class="mdescLeft">&#160;</td><td class="mdescRight">The inflow through the top of a fine patch for the next Advance, or null (see ERF_SedimentationFlux.H); the caller keeps it alive for that Advance.  <a href="classNullMoist.html#afcdaebc99907816fc5bbc879c5831057">More...</a><br /></td></tr>
+<tr class="separator:afcdaebc99907816fc5bbc879c5831057 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88b448069b86e3f1e16b8e28dc38b3bb inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a88b448069b86e3f1e16b8e28dc38b3bb">Set_RealWidth</a> (const int)</td></tr>
 <tr class="separator:a88b448069b86e3f1e16b8e28dc38b3bb inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -180,6 +184,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aba34670a3647d365cd8de9adca54cae5 inherit pro_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#aba34670a3647d365cd8de9adca54cae5">assert_base_state_available</a> (const amrex::MultiFab *base_state) const</td></tr>
 <tr class="separator:aba34670a3647d365cd8de9adca54cae5 inherit pro_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classNullMoist"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classNullMoist')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classNullMoist.html">NullMoist</a></td></tr>
+<tr class="memitem:a3e27a3b465c07c0fd327d7e0a9430959 inherit pro_attribs_classNullMoist"><td class="memItemLeft" align="right" valign="top">const amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a3e27a3b465c07c0fd327d7e0a9430959">m_sed_inflow</a> = nullptr</td></tr>
+<tr class="separator:a3e27a3b465c07c0fd327d7e0a9430959 inherit pro_attribs_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a064640425bd3f3331efc420afd0dcca4 inherit pro_attribs_classNullMoist"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a064640425bd3f3331efc420afd0dcca4">m_level</a> {0}</td></tr>
 <tr class="separator:a064640425bd3f3331efc420afd0dcca4 inherit pro_attribs_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af618f6cf3c8c8cc44e5d5180f7422e82 inherit pro_attribs_classNullMoist"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#af618f6cf3c8c8cc44e5d5180f7422e82">m_use_anelastic_reference_pressure</a> {false}</td></tr>

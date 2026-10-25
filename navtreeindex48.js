@@ -1,5 +1,10 @@
 var NAVTREEINDEX48 =
 {
+"structShocColumnData.html#a3cd9317196f1fe648c1f00cb0d0a1274":[2,0,154,52],
+"structShocColumnData.html#a3ff60ca9bf142fb71c1e92e74a70e476":[2,0,154,28],
+"structShocColumnData.html#a401443c47a4b5417ca467483e46ef644":[2,0,154,29],
+"structShocColumnData.html#a40f8b829913c9cde4d591f5f8cb07730":[2,0,154,55],
+"structShocColumnData.html#a4da501b0b44e1cf8ec063965f6a58e1f":[2,0,154,64],
 "structShocColumnData.html#a5b6a4bffca3c0253270cd43cecbbcac6":[2,0,154,25],
 "structShocColumnData.html#a5c720221b16b60994c2d1d4481ff50ef":[2,0,154,24],
 "structShocColumnData.html#a5e55d2208da36ec29e348e2ecf176e48":[2,0,154,46],
@@ -244,10 +249,5 @@ var NAVTREEINDEX48 =
 "structSolverChoice.html#aa8bcb69cffb6caecf130a7f1a7fe500c":[2,0,172,121],
 "structSolverChoice.html#aa91681e78f8a81f75105c2f5305bb97d":[2,0,172,192],
 "structSolverChoice.html#aaa6b6e5a178a14a16da2d18e9ae767c2":[2,0,172,36],
-"structSolverChoice.html#aaa8cc5fbba74165646c04cc362e6e67e":[2,0,172,113],
-"structSolverChoice.html#aaaa4c868fb7ff20ffc8f426460b7332d":[2,0,172,78],
-"structSolverChoice.html#aaac781fc6c33eaef8f6afac1b4797a4e":[2,0,172,66],
-"structSolverChoice.html#aac71040d6bc74e6767dc58cbfdea5afb":[2,0,172,158],
-"structSolverChoice.html#aae635d94c25ea4ecab12438ddc19bea7":[2,0,172,84],
-"structSolverChoice.html#aaff28ab2edf1c0232875745e39c0019b":[2,0,172,9]
+"structSolverChoice.html#aaa8cc5fbba74165646c04cc362e6e67e":[2,0,172,113]
 };

@@ -25,6 +25,7 @@ var classNullMoist =
     [ "Set_dzmin", "classNullMoist.html#a47199894161e2c6ec167c8032d7181a0", null ],
     [ "Set_Lmask", "classNullMoist.html#a9a64424cb065761991b28385fb910738", null ],
     [ "Set_RealWidth", "classNullMoist.html#a88b448069b86e3f1e16b8e28dc38b3bb", null ],
+    [ "Set_Sed_Inflow", "classNullMoist.html#afcdaebc99907816fc5bbc879c5831057", null ],
     [ "SetCurrentLevel", "classNullMoist.html#a41b51579a0a8f60eeae988ba9d447525", null ],
     [ "Update_Micro_Vars", "classNullMoist.html#aece7a50f16bf40e3e9d536cc030458f7", null ],
     [ "Update_Micro_Vars", "classNullMoist.html#a249cee0a1587485f45658a2946bccd07", null ],
@@ -34,5 +35,6 @@ var classNullMoist =
     [ "m_qstate_moist_numconc_size", "classNullMoist.html#a97a7bd714adf24d5e8cf5adf059a1180", null ],
     [ "m_qstate_moist_size", "classNullMoist.html#a051a8523335aa2bce3462d612de30a0e", null ],
     [ "m_qstate_nonmoist_size", "classNullMoist.html#ab419120b42fba2664d4d937c02209b96", null ],
+    [ "m_sed_inflow", "classNullMoist.html#a3e27a3b465c07c0fd327d7e0a9430959", null ],
     [ "m_use_anelastic_reference_pressure", "classNullMoist.html#af618f6cf3c8c8cc44e5d5180f7422e82", null ]
 ];
