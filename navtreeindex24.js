@@ -1,5 +1,6 @@
 var NAVTREEINDEX24 =
 {
+"classFitch.html":[2,0,60],
 "classFitch.html#a2626dfdc3df0f209b2bcf6a265575228":[2,0,60,15],
 "classFitch.html#a3682b755760d9e2543182ffbc0f3a618":[2,0,60,0],
 "classFitch.html#a6ee3e00c1e1678e194aa6e6e27e8b7b5":[2,0,60,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX24 =
 "classKessler.html#a466bae7632d1321347ce73c3e89e0856":[2,0,69,34],
 "classKessler.html#a46902fef513cf7298643ee5cc12594bb":[2,0,69,2],
 "classKessler.html#a48f29ab8e5d1232ee83851fd904e9354":[2,0,69,26],
-"classKessler.html#a50fbd35f964f8dce148e2174bfcaa939":[2,0,69,1],
-"classKessler.html#a534c115146bedf2e3f600ac351162252":[2,0,69,22]
+"classKessler.html#a50fbd35f964f8dce148e2174bfcaa939":[2,0,69,1]
 };

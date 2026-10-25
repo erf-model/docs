@@ -6961,238 +6961,249 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="comment">// read in title line</span></div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    std::getline(is, line);</div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <span class="comment">// read in number of soil layers</span></div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#ac5eb0f0fb3b7c78777a95bad4b5370ee">m_nz_lsm</a>;</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="comment">// read in array of dz</span></div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    std::getline(is, line);</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    {</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        std::istringstream lis(line);</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="keywordtype">int</span> i = 0;</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <span class="keywordflow">while</span> (lis &gt;&gt; word) {</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;            <a class="code" href="classSLM.html#a4c7046c3c7d6f2d6c0cdc1efcc6c72e7">m_dz_lsm</a>[i++] = std::stod(word);</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        }</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    }</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    <a class="code" href="classSLM.html#a49424a664e55a7b3f88e8369dd1abf0b">GotoNextLine</a>(is);</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160; </div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <span class="comment">// Read in time</span></div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a48b1e4c0290b62bafb4f6acb9291aa68">m_dt</a>;</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a9809dc9e24c8f1c03fc34aa291aab8fc">time</a>;</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a09d415f354fb7c1bce8128e1e70e6b06">start_time</a>;</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a91eb05c26ae66d2de8e9254b96eb6583">m_calday</a>;</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#ac8d5d96e40e66665551318c5ff5d42fb">m_orbital_year</a>;</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a64d4cfa7858e6e48b5c40be8a2f6bdaf">m_orbital_mon</a>;</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#af44d2bf30ca621b51a9ca31ef03975af">m_orbital_day</a>;</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#ac6c718703fe5f32b57c18220948ad4e5">m_orbital_sec</a>;</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    <a class="code" href="classSLM.html#a49424a664e55a7b3f88e8369dd1abf0b">GotoNextLine</a>(is);</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <span class="comment">// read in number of soil layers and the array of dz. Init has already built the</span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <span class="comment">// soil geometry from slm.nsoil / slm.soil_dz, so these are checked against it</span></div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="comment">// rather than adopted.</span></div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="keywordtype">int</span> nz_chk = 0;</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    is &gt;&gt; nz_chk;</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <a class="code" href="classSLM.html#a49424a664e55a7b3f88e8369dd1abf0b">GotoNextLine</a>(is);</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160; </div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    Vector&lt;Real&gt; dz_chk;</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    std::getline(is, line);</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    {</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        std::istringstream lis(line);</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        <span class="keywordflow">while</span> (lis &gt;&gt; word) {</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            dz_chk.push_back(<span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(std::stod(word)));</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        }</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    }</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160; </div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        nz_chk == <a class="code" href="classSLM.html#ac5eb0f0fb3b7c78777a95bad4b5370ee">m_nz_lsm</a> &amp;&amp; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(dz_chk.size()) == <a class="code" href="classSLM.html#ac5eb0f0fb3b7c78777a95bad4b5370ee">m_nz_lsm</a>,</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;        <span class="stringliteral">&quot;SLM::ReadCheckpoint: the checkpoint&#39;s number of soil layers differs from slm.nsoil&quot;</span>);</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; <a class="code" href="classSLM.html#ac5eb0f0fb3b7c78777a95bad4b5370ee">m_nz_lsm</a>; ++k) {</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;            std::abs(dz_chk[k] - <a class="code" href="classSLM.html#a4c7046c3c7d6f2d6c0cdc1efcc6c72e7">m_dz_lsm</a>[k]) &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.e-6) * <a class="code" href="classSLM.html#a4c7046c3c7d6f2d6c0cdc1efcc6c72e7">m_dz_lsm</a>[k],</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;            <span class="stringliteral">&quot;SLM::ReadCheckpoint: the checkpoint&#39;s soil layer thicknesses differ from slm.soil_dz&quot;</span>);</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    }</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <span class="comment">// Read in constants</span></div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a225438d20cb9535b70cc38c9bd1de69f">tabs_s</a>;</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#af5b34c79ac00ad723855b0efca7da96d">t00</a>;</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#af74554572ba45cdc9ad0cf42afaef16c">LAI0</a>;</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a48de2e4d1ed4fe7a0daff9b66c90f7e8">tausoil</a>;</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#ac94d60e52e3449b6aa09067c8efdcace">zref</a>;</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#aea754721857c8c297f5e952aab261f81">z0_soil</a>;</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a3e160f131eabcef4a8ee89985afc0e6d">mws_mx0</a>;</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a8ef54d0302f8b9c2cae2d754c4371751">Rc_max</a>;</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a34fd031c9335a2f12a209c3e83bd01d7">T_opt</a>;</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    <a class="code" href="classSLM.html#a49424a664e55a7b3f88e8369dd1abf0b">GotoNextLine</a>(is);</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160; </div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <span class="comment">// Read in flags</span></div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <span class="keywordtype">int</span> reserved_slm_flag = 0;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a3940fbd9523e8513f3a727a15c7d9886">dosoiltnudging</a>;</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a97bbc43f3c36313f45ee31693c26b098">dosoilwnudging</a>;</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    is &gt;&gt; reserved_slm_flag;</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a256a0d981dab7da7cc85cdb2b26f427f">use_param_file</a>;</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a9852ed5acd6a9a924fa4b4c7028c2560">interpolate_lai</a>;</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a506e66e4b4afb131a44b5a9416f6b819">use_wrf_lai</a>;</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#ae62a98db27ee3005044bff99e3c0f09f">use_wrfinput</a>;</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    amrex::ignore_unused(reserved_slm_flag);</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    <a class="code" href="classSLM.html#a49424a664e55a7b3f88e8369dd1abf0b">GotoNextLine</a>(is);</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160; </div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <span class="comment">// read in level &#39;lev&#39; BoxArray from Header</span></div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    BoxArray ba;</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    ba.readFrom(is);</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <a class="code" href="classSLM.html#a49424a664e55a7b3f88e8369dd1abf0b">GotoNextLine</a>(is);</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160; </div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <span class="comment">// The grids the checkpoint was written on. They need not be this run&#39;s: a restart that</span></div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    <span class="comment">// re-makes the level-0 grids (issue 4225) builds the model on the new ones, and every</span></div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    <span class="comment">// field below is read on the grids in the file and redistributed onto those.</span></div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    amrex::ignore_unused(ba);</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160; </div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    <span class="comment">// Lifecycle flags, if this checkpoint carries them (see WriteCheckpoint).  The</span></div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    <span class="comment">// defaults are what the reader always did: treat the model as initialized.</span></div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;    <span class="comment">// NOTE: the BoxArray read above is already followed by its own GotoNextLine, so</span></div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    <span class="comment">//       the stream sits at the start of this line -- do not skip another.</span></div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;    <span class="keywordtype">int</span> chk_first_step = 0;</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    <span class="keywordtype">int</span> chk_wrfinput_initialized = (<a class="code" href="classSLM.html#ae62a98db27ee3005044bff99e3c0f09f">use_wrfinput</a>) ? 1 : 0;</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    {</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        <span class="keywordtype">int</span> a, b;</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        <span class="keywordflow">if</span> (is &gt;&gt; a &gt;&gt; b) { chk_first_step = a; chk_wrfinput_initialized = b; }</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    }</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160; </div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;    <span class="keyword">const</span> std::string prefix = <span class="stringliteral">&quot;SLM_&quot;</span>;</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160; </div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    <span class="comment">// Every field is planar or a column of soil layers: periodic laterally as the domain is,</span></div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    <span class="comment">// never in z</span></div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    <span class="keyword">const</span> Periodicity period = <a class="code" href="namespaceerf__checkpoint.html#a543f256009bdc56c433b9cb6a1da5177">erf_checkpoint::lateral_periodicity</a>(<a class="code" href="classSLM.html#a870bfd56a5fe10dc6b7b8f0347a9b218">m_geom</a>);</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    <span class="keyword">auto</span> read_field = [&amp;] (MultiFab&amp; dst, <span class="keyword">const</span> std::string&amp; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                           <span class="keyword">const</span> IntVect&amp; ng_read, <span class="keywordtype">bool</span> src_ghosts)</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    {</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        <a class="code" href="namespaceerf__checkpoint.html#aba22b9daf8305eee0648716ae0142fe1">erf_checkpoint::read_checkpoint_multifab</a>(</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            dst, MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>),</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;            0, 0, ncomp, ng_read, src_ghosts, period);</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    };</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <span class="comment">// Read in time</span></div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a48b1e4c0290b62bafb4f6acb9291aa68">m_dt</a>;</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a9809dc9e24c8f1c03fc34aa291aab8fc">time</a>;</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a09d415f354fb7c1bce8128e1e70e6b06">start_time</a>;</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a91eb05c26ae66d2de8e9254b96eb6583">m_calday</a>;</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#ac8d5d96e40e66665551318c5ff5d42fb">m_orbital_year</a>;</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a64d4cfa7858e6e48b5c40be8a2f6bdaf">m_orbital_mon</a>;</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#af44d2bf30ca621b51a9ca31ef03975af">m_orbital_day</a>;</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#ac6c718703fe5f32b57c18220948ad4e5">m_orbital_sec</a>;</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    <a class="code" href="classSLM.html#a49424a664e55a7b3f88e8369dd1abf0b">GotoNextLine</a>(is);</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160; </div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    <span class="comment">// Read in constants</span></div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a225438d20cb9535b70cc38c9bd1de69f">tabs_s</a>;</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#af5b34c79ac00ad723855b0efca7da96d">t00</a>;</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#af74554572ba45cdc9ad0cf42afaef16c">LAI0</a>;</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a48de2e4d1ed4fe7a0daff9b66c90f7e8">tausoil</a>;</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#ac94d60e52e3449b6aa09067c8efdcace">zref</a>;</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#aea754721857c8c297f5e952aab261f81">z0_soil</a>;</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a3e160f131eabcef4a8ee89985afc0e6d">mws_mx0</a>;</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a8ef54d0302f8b9c2cae2d754c4371751">Rc_max</a>;</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a34fd031c9335a2f12a209c3e83bd01d7">T_opt</a>;</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    <a class="code" href="classSLM.html#a49424a664e55a7b3f88e8369dd1abf0b">GotoNextLine</a>(is);</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160; </div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <span class="comment">// Read in flags</span></div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <span class="keywordtype">int</span> reserved_slm_flag = 0;</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a3940fbd9523e8513f3a727a15c7d9886">dosoiltnudging</a>;</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a97bbc43f3c36313f45ee31693c26b098">dosoilwnudging</a>;</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    is &gt;&gt; reserved_slm_flag;</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a256a0d981dab7da7cc85cdb2b26f427f">use_param_file</a>;</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a9852ed5acd6a9a924fa4b4c7028c2560">interpolate_lai</a>;</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#a506e66e4b4afb131a44b5a9416f6b819">use_wrf_lai</a>;</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    is &gt;&gt; <a class="code" href="classSLM.html#ae62a98db27ee3005044bff99e3c0f09f">use_wrfinput</a>;</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    amrex::ignore_unused(reserved_slm_flag);</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    <a class="code" href="classSLM.html#a49424a664e55a7b3f88e8369dd1abf0b">GotoNextLine</a>(is);</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160; </div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <span class="comment">// read in level &#39;lev&#39; BoxArray from Header</span></div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    BoxArray ba;</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    ba.readFrom(is);</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    <a class="code" href="classSLM.html#a49424a664e55a7b3f88e8369dd1abf0b">GotoNextLine</a>(is);</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160; </div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    <span class="comment">// The grids the checkpoint was written on. They need not be this run&#39;s: a restart that</span></div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    <span class="comment">// re-makes the level-0 grids (issue 4225) builds the model on the new ones, and every</span></div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;    <span class="comment">// field below is read on the grids in the file and redistributed onto those.</span></div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    amrex::ignore_unused(ba);</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160; </div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    <span class="comment">// Lifecycle flags, if this checkpoint carries them (see WriteCheckpoint).  The</span></div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    <span class="comment">// defaults are what the reader always did: treat the model as initialized.</span></div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    <span class="comment">// NOTE: the BoxArray read above is already followed by its own GotoNextLine, so</span></div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    <span class="comment">//       the stream sits at the start of this line -- do not skip another.</span></div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    <span class="keywordtype">int</span> chk_first_step = 0;</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    <span class="keywordtype">int</span> chk_wrfinput_initialized = (<a class="code" href="classSLM.html#ae62a98db27ee3005044bff99e3c0f09f">use_wrfinput</a>) ? 1 : 0;</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    {</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        <span class="keywordtype">int</span> a, b;</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        <span class="keywordflow">if</span> (is &gt;&gt; a &gt;&gt; b) { chk_first_step = a; chk_wrfinput_initialized = b; }</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    }</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    <span class="keyword">const</span> std::string prefix = <span class="stringliteral">&quot;SLM_&quot;</span>;</div>
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160; </div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    <span class="comment">// Use distribution map from data vars, since those are already created and loaded by ERF</span></div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="keyword">const</span> DistributionMapping&amp; dm = <a class="code" href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">lsm_fab_vars</a>[0]-&gt;DistributionMap();</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    <a class="code" href="namespaceerf__checkpoint.html#a1f8405aab1181ae522fa1bd9b9e26daf">erf_checkpoint::read_checkpoint_imultifab</a>(<a class="code" href="classSLM.html#a1b03f0d981cad29ccfe48f0e52872a1a">landmask</a>, <a class="code" href="classSLM.html#ab82e45c0b8091fc9d2f3584ae94eb415">ba_lsm_2d</a>, dm,</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;        MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;landmask&quot;</span>), period);</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;    <a class="code" href="namespaceerf__checkpoint.html#a1f8405aab1181ae522fa1bd9b9e26daf">erf_checkpoint::read_checkpoint_imultifab</a>(<a class="code" href="classSLM.html#a9c59752c74c1df814b5b08050498496a">landtype</a>, <a class="code" href="classSLM.html#ab82e45c0b8091fc9d2f3584ae94eb415">ba_lsm_2d</a>, dm,</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;landtype&quot;</span>), period);</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <a class="code" href="namespaceerf__checkpoint.html#a1f8405aab1181ae522fa1bd9b9e26daf">erf_checkpoint::read_checkpoint_imultifab</a>(<a class="code" href="classSLM.html#af93d4f25ef4669c3afb87fa5a7fdac6c">vegetype</a>, <a class="code" href="classSLM.html#ab82e45c0b8091fc9d2f3584ae94eb415">ba_lsm_2d</a>, dm,</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;vegetype&quot;</span>), period);</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160; </div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    <span class="comment">// DST</span></div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;    read_field(<a class="code" href="classSLM.html#af0b712ccc999f8a9d417647a6d46d70d">soilt_vars</a>, <span class="stringliteral">&quot;DST&quot;</span>, <a class="code" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7aa56ec5ab3cd4582d8b0f96ade3ff628b">SLM_DST::NumVars</a>, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160; </div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    <span class="comment">// DSW</span></div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    read_field(<a class="code" href="classSLM.html#af70e7db2d3448d2c84d2c09b42a97a03">soilw_vars</a>, <span class="stringliteral">&quot;DSW&quot;</span>, <a class="code" href="namespaceSLM__DSW.html#af5950fafc7413a99d7898ed0439843cea3fcbf56276374f6e3e1fb98d167959ad">SLM_DSW::NumVars</a>, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160; </div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    <span class="comment">// net_rad</span></div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    read_field(<a class="code" href="classSLM.html#a23ab6b9a9599958d75a2826139ea340d">net_rad</a>, <span class="stringliteral">&quot;net_rad&quot;</span>, <a class="code" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adba2d87d26e0fb156adac29e3814bcc43ab">SLM_NetRad::NumVars</a>, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160; </div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    <span class="comment">// slm_diag</span></div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    read_field(<a class="code" href="classSLM.html#a6e0f4e2957d1a26372ff0b1f41c0c03e">slm_diag</a>, <span class="stringliteral">&quot;slm_diag&quot;</span>, <a class="code" href="namespaceSLM__Diag.html#aa1b414cead6bc88d52a9bc90793ebffea838cb41a683b7390cbf4cdfb0d257ee2">SLM_Diag::NumVars</a>, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160; </div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    read_field(<a class="code" href="classSLM.html#a426ab469524df89828ad9ce1d0f1d310">LAI</a>, <span class="stringliteral">&quot;LAI&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    <span class="comment">// Every field is planar or a column of soil layers: periodic laterally as the domain is,</span></div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="comment">// never in z</span></div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    <span class="keyword">const</span> Periodicity period = <a class="code" href="namespaceerf__checkpoint.html#a543f256009bdc56c433b9cb6a1da5177">erf_checkpoint::lateral_periodicity</a>(<a class="code" href="classSLM.html#a870bfd56a5fe10dc6b7b8f0347a9b218">m_geom</a>);</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    <span class="keyword">auto</span> read_field = [&amp;] (MultiFab&amp; dst, <span class="keyword">const</span> std::string&amp; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                           <span class="keyword">const</span> IntVect&amp; ng_read, <span class="keywordtype">bool</span> src_ghosts)</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    {</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;        <a class="code" href="namespaceerf__checkpoint.html#aba22b9daf8305eee0648716ae0142fe1">erf_checkpoint::read_checkpoint_multifab</a>(</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;            dst, MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>),</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            0, 0, ncomp, ng_read, src_ghosts, period);</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    };</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160; </div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    <span class="comment">// Use distribution map from data vars, since those are already created and loaded by ERF</span></div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    <span class="keyword">const</span> DistributionMapping&amp; dm = <a class="code" href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">lsm_fab_vars</a>[0]-&gt;DistributionMap();</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    <a class="code" href="namespaceerf__checkpoint.html#a1f8405aab1181ae522fa1bd9b9e26daf">erf_checkpoint::read_checkpoint_imultifab</a>(<a class="code" href="classSLM.html#a1b03f0d981cad29ccfe48f0e52872a1a">landmask</a>, <a class="code" href="classSLM.html#ab82e45c0b8091fc9d2f3584ae94eb415">ba_lsm_2d</a>, dm,</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;        MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;landmask&quot;</span>), period);</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    <a class="code" href="namespaceerf__checkpoint.html#a1f8405aab1181ae522fa1bd9b9e26daf">erf_checkpoint::read_checkpoint_imultifab</a>(<a class="code" href="classSLM.html#a9c59752c74c1df814b5b08050498496a">landtype</a>, <a class="code" href="classSLM.html#ab82e45c0b8091fc9d2f3584ae94eb415">ba_lsm_2d</a>, dm,</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;landtype&quot;</span>), period);</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;    <a class="code" href="namespaceerf__checkpoint.html#a1f8405aab1181ae522fa1bd9b9e26daf">erf_checkpoint::read_checkpoint_imultifab</a>(<a class="code" href="classSLM.html#af93d4f25ef4669c3afb87fa5a7fdac6c">vegetype</a>, <a class="code" href="classSLM.html#ab82e45c0b8091fc9d2f3584ae94eb415">ba_lsm_2d</a>, dm,</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, prefix + <span class="stringliteral">&quot;vegetype&quot;</span>), period);</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160; </div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    <span class="comment">// DST</span></div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    read_field(<a class="code" href="classSLM.html#af0b712ccc999f8a9d417647a6d46d70d">soilt_vars</a>, <span class="stringliteral">&quot;DST&quot;</span>, <a class="code" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7aa56ec5ab3cd4582d8b0f96ade3ff628b">SLM_DST::NumVars</a>, IntVect(0), <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160; </div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;    read_field(<a class="code" href="classSLM.html#afd88bdef7c156010d54ad992b646ad0f">SAI</a>, <span class="stringliteral">&quot;SAI&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160; </div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;    read_field(<a class="code" href="classSLM.html#a9832535981418e7b60cbe63ede7ed0aa">sstxy</a>, <span class="stringliteral">&quot;sstxy&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160; </div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;    read_field(<a class="code" href="classSLM.html#a04491faa3aa2b2f6fc43a09a3cd1fe5d">t_canop</a>, <span class="stringliteral">&quot;t_canop&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;    <span class="comment">// DSW</span></div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    read_field(<a class="code" href="classSLM.html#af70e7db2d3448d2c84d2c09b42a97a03">soilw_vars</a>, <span class="stringliteral">&quot;DSW&quot;</span>, <a class="code" href="namespaceSLM__DSW.html#af5950fafc7413a99d7898ed0439843cea3fcbf56276374f6e3e1fb98d167959ad">SLM_DSW::NumVars</a>, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160; </div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;    <span class="comment">// net_rad</span></div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;    read_field(<a class="code" href="classSLM.html#a23ab6b9a9599958d75a2826139ea340d">net_rad</a>, <span class="stringliteral">&quot;net_rad&quot;</span>, <a class="code" href="namespaceSLM__NetRad.html#aa498011bf3489c199b2777fe15019adba2d87d26e0fb156adac29e3814bcc43ab">SLM_NetRad::NumVars</a>, IntVect(0), <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160; </div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;    read_field(<a class="code" href="classSLM.html#a03369e11dd6ec9f3e69d0c6f040547b9">mw</a>, <span class="stringliteral">&quot;mw&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160; </div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;    read_field(<a class="code" href="classSLM.html#a95fac4c76ae0989d3600791a824532c2">mws</a>, <span class="stringliteral">&quot;mws&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160; </div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    read_field(<a class="code" href="classSLM.html#a7af21d4c8e91475eb3a6adc00a19c51f">t_skin</a>, <span class="stringliteral">&quot;t_skin&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160; </div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    read_field(<a class="code" href="classSLM.html#abb87ff1f85c4d59a07b2950ea4d67f49">t_ground_skin</a>, <span class="stringliteral">&quot;t_ground_skin&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160; </div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    read_field(<a class="code" href="classSLM.html#a58c07573d61f92f3421bf94ed518a814">t_cas</a>, <span class="stringliteral">&quot;t_cas&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160; </div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;    read_field(<a class="code" href="classSLM.html#ad64ae298c1c1459e75cc68ae88055c9e">q_cas</a>, <span class="stringliteral">&quot;q_cas&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160; </div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;    read_field(<a class="code" href="classSLM.html#a647783a88fdf3f8fd8adcd65eb972261">vege_YES</a>, <span class="stringliteral">&quot;vege_YES&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160; </div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;    read_field(<a class="code" href="classSLM.html#ae0177558544f64b266d4fce7e83bc6e5">cp_vege</a>, <span class="stringliteral">&quot;cp_vege&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160; </div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;    read_field(<a class="code" href="classSLM.html#a01d4362bf2a4c9b96f887a51940fd07f">z0_sfc</a>, <span class="stringliteral">&quot;z0_sfc&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160; </div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    read_field(<a class="code" href="classSLM.html#a369b7f2f7eadcf0264165d569bafe1fc">Khai_L</a>, <span class="stringliteral">&quot;Khai_L&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160; </div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;    read_field(<a class="code" href="classSLM.html#ad606879333195fbc026b76fa38d46ca1">phi_1</a>, <span class="stringliteral">&quot;phi_1&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160; </div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;    read_field(<a class="code" href="classSLM.html#a3dd57c613f0afc21c1e8e47748890397">phi_2</a>, <span class="stringliteral">&quot;phi_2&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160; </div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;    read_field(<a class="code" href="classSLM.html#a9703e6aea05f7a0bcae664e08a329dcf">IR_emis_vege</a>, <span class="stringliteral">&quot;IR_emis_vege&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160; </div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;    read_field(<a class="code" href="classSLM.html#affe80e24904c1e805ed835d85a4e73ce">IR_emis_soil</a>, <span class="stringliteral">&quot;IR_emis_soil&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160; </div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;    read_field(<a class="code" href="classSLM.html#a5b528d2305f9e26b399c685ff336b0da">ztop</a>, <span class="stringliteral">&quot;ztop&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160; </div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;    read_field(<a class="code" href="classSLM.html#aeabfa7893b5fd81dfed8506c21f31935">disp_hgt</a>, <span class="stringliteral">&quot;disp_hgt&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160; </div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;    read_field(<a class="code" href="classSLM.html#a964981dad91231ec79c93b30d9e83a78">Rgl</a>, <span class="stringliteral">&quot;Rgl&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160; </div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;    read_field(<a class="code" href="classSLM.html#af7ae6c70c9db9e19fa75b7b8784d9579">Rc_min</a>, <span class="stringliteral">&quot;Rc_min&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160; </div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;    read_field(<a class="code" href="classSLM.html#af4e7c341452b46f7555c3e6337ea0d67">hs_rc</a>, <span class="stringliteral">&quot;hs_rc&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160; </div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;    read_field(<a class="code" href="classSLM.html#a733b49a2dee312235da37bc50994691d">precip_extinc</a>, <span class="stringliteral">&quot;precip_extinc&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160; </div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    read_field(<a class="code" href="classSLM.html#a1cd744142bfb448ea0d16987acc8ad65">mw_mx</a>, <span class="stringliteral">&quot;mw_mx&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160; </div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;    read_field(<a class="code" href="classSLM.html#ae9a801a25f2e4fe5e30315adabf666c4">mws_mx</a>, <span class="stringliteral">&quot;mws_mx&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160; </div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;    read_field(<a class="code" href="classSLM.html#ac8b14bb39a0f7a3a47678bee5321974e">BAI</a>, <span class="stringliteral">&quot;BAI&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160; </div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;    read_field(<a class="code" href="classSLM.html#a2d7cbf1d791cd047805bd01b59cf0240">mw_inc</a>, <span class="stringliteral">&quot;mw_inc&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160; </div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;    read_field(<a class="code" href="classSLM.html#ab9b5b2b02bfb9d039c83d0a180811544">evapo_dry</a>, <span class="stringliteral">&quot;evapo_dry&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160; </div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;    read_field(<a class="code" href="classSLM.html#a66572d44e3427c2cfc1cc72064cb5643">shf_canop</a>, <span class="stringliteral">&quot;shf_canop&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160; </div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;    read_field(<a class="code" href="classSLM.html#a28be4f6f37b2c473665208aac6ebcf6c">shf_soil</a>, <span class="stringliteral">&quot;shf_soil&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160; </div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    read_field(<a class="code" href="classSLM.html#a223969b6ef7bc69f043bd5d8b1b31e1d">shf_air</a>, <span class="stringliteral">&quot;shf_air&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160; </div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;    read_field(<a class="code" href="classSLM.html#ae3f5de359ae7f4b4a55b57c193213df7">lhf_canop</a>, <span class="stringliteral">&quot;lhf_canop&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160; </div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;    read_field(<a class="code" href="classSLM.html#aca39e765582b90ddac8e3cd611fd5bf6">lhf_soil</a>, <span class="stringliteral">&quot;lhf_soil&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160; </div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;    read_field(<a class="code" href="classSLM.html#ae23402fec8f7820a689330b9d5c60519">lhf_air</a>, <span class="stringliteral">&quot;lhf_air&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160; </div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;    read_field(<a class="code" href="classSLM.html#aeb4f8e7470c55a44981fdcbdff1951c7">albedovis_v</a>, <span class="stringliteral">&quot;albedovis_v&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160; </div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;    read_field(<a class="code" href="classSLM.html#adca44d88b1bc826359be774048e155fb">albedonir_v</a>, <span class="stringliteral">&quot;albedonir_v&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160; </div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;    read_field(<a class="code" href="classSLM.html#a5da0e2e4b788eb86b6a67c7b8d7c278d">albedovis_s</a>, <span class="stringliteral">&quot;albedovis_s&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160; </div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;    read_field(<a class="code" href="classSLM.html#a823c70168bd47a3cd3f601abf8e3cca8">albedonir_s</a>, <span class="stringliteral">&quot;albedonir_s&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160; </div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;    read_field(<a class="code" href="classSLM.html#aba1d2c99b6278d05e4dd8b809bd883e0">r_a</a>, <span class="stringliteral">&quot;r_a&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160; </div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;    read_field(<a class="code" href="classSLM.html#ac27a5605f6b36ed94179a5f4b5cf48c8">r_b</a>, <span class="stringliteral">&quot;r_b&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160; </div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;    read_field(<a class="code" href="classSLM.html#a9ca83945a3224dc8e0dd3d380096aaaa">r_c</a>, <span class="stringliteral">&quot;r_c&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160; </div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;    read_field(<a class="code" href="classSLM.html#a99da9a69713c6da470f90eba821c2ec6">r_d</a>, <span class="stringliteral">&quot;r_d&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160; </div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;    read_field(<a class="code" href="classSLM.html#aedb21148b5efa75d9034762fa26b0bf4">r_soil</a>, <span class="stringliteral">&quot;r_soil&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160; </div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;    read_field(<a class="code" href="classSLM.html#a45c24880e79549a610bddf7fa33ad1de">wet_canop</a>, <span class="stringliteral">&quot;wet_canop&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160; </div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;    read_field(<a class="code" href="classSLM.html#afb99df520006e35768ff7ef606619151">zrefxy</a>, <span class="stringliteral">&quot;zrefxy&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160; </div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;    read_field(<a class="code" href="classSLM.html#a8a1b6e5aab967f73fd6f67a4d63fb3a5">albold_noahmp</a>, <span class="stringliteral">&quot;albold_noahmp&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160; </div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;    read_field(<a class="code" href="classSLM.html#aedb1633ecb0170a56a5cabbbe918209b">tauss_noahmp</a>, <span class="stringliteral">&quot;tauss_noahmp&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160; </div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; static_cast&lt;int&gt;(<a class="code" href="classSLM.html#ade9c572e3ea96b4aeac7a3a20a3de414">unmapped_fields</a>.size()); i++) {</div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;        read_field(*(<a class="code" href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">lsm_fab_vars</a>[<a class="code" href="classSLM.html#ade9c572e3ea96b4aeac7a3a20a3de414">unmapped_fields</a>[i]]), <span class="stringliteral">&quot;Data&quot;</span> + std::to_string(<a class="code" href="classSLM.html#ade9c572e3ea96b4aeac7a3a20a3de414">unmapped_fields</a>[i]),</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;                   1, IntVect(1,1,1), <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    }</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;    <span class="comment">// slm_diag</span></div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    read_field(<a class="code" href="classSLM.html#a6e0f4e2957d1a26372ff0b1f41c0c03e">slm_diag</a>, <span class="stringliteral">&quot;slm_diag&quot;</span>, <a class="code" href="namespaceSLM__Diag.html#aa1b414cead6bc88d52a9bc90793ebffea838cb41a683b7390cbf4cdfb0d257ee2">SLM_Diag::NumVars</a>, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160; </div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    read_field(<a class="code" href="classSLM.html#a426ab469524df89828ad9ce1d0f1d310">LAI</a>, <span class="stringliteral">&quot;LAI&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160; </div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    read_field(<a class="code" href="classSLM.html#afd88bdef7c156010d54ad992b646ad0f">SAI</a>, <span class="stringliteral">&quot;SAI&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160; </div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    read_field(<a class="code" href="classSLM.html#a9832535981418e7b60cbe63ede7ed0aa">sstxy</a>, <span class="stringliteral">&quot;sstxy&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160; </div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    read_field(<a class="code" href="classSLM.html#a04491faa3aa2b2f6fc43a09a3cd1fe5d">t_canop</a>, <span class="stringliteral">&quot;t_canop&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160; </div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;    read_field(<a class="code" href="classSLM.html#a03369e11dd6ec9f3e69d0c6f040547b9">mw</a>, <span class="stringliteral">&quot;mw&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160; </div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;    read_field(<a class="code" href="classSLM.html#a95fac4c76ae0989d3600791a824532c2">mws</a>, <span class="stringliteral">&quot;mws&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160; </div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;    read_field(<a class="code" href="classSLM.html#a7af21d4c8e91475eb3a6adc00a19c51f">t_skin</a>, <span class="stringliteral">&quot;t_skin&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160; </div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;    read_field(<a class="code" href="classSLM.html#abb87ff1f85c4d59a07b2950ea4d67f49">t_ground_skin</a>, <span class="stringliteral">&quot;t_ground_skin&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160; </div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;    read_field(<a class="code" href="classSLM.html#a58c07573d61f92f3421bf94ed518a814">t_cas</a>, <span class="stringliteral">&quot;t_cas&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160; </div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;    read_field(<a class="code" href="classSLM.html#ad64ae298c1c1459e75cc68ae88055c9e">q_cas</a>, <span class="stringliteral">&quot;q_cas&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160; </div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;    read_field(<a class="code" href="classSLM.html#a647783a88fdf3f8fd8adcd65eb972261">vege_YES</a>, <span class="stringliteral">&quot;vege_YES&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160; </div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;    read_field(<a class="code" href="classSLM.html#ae0177558544f64b266d4fce7e83bc6e5">cp_vege</a>, <span class="stringliteral">&quot;cp_vege&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160; </div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;    read_field(<a class="code" href="classSLM.html#a01d4362bf2a4c9b96f887a51940fd07f">z0_sfc</a>, <span class="stringliteral">&quot;z0_sfc&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160; </div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    read_field(<a class="code" href="classSLM.html#a369b7f2f7eadcf0264165d569bafe1fc">Khai_L</a>, <span class="stringliteral">&quot;Khai_L&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160; </div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;    read_field(<a class="code" href="classSLM.html#ad606879333195fbc026b76fa38d46ca1">phi_1</a>, <span class="stringliteral">&quot;phi_1&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160; </div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;    read_field(<a class="code" href="classSLM.html#a3dd57c613f0afc21c1e8e47748890397">phi_2</a>, <span class="stringliteral">&quot;phi_2&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160; </div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;    read_field(<a class="code" href="classSLM.html#a9703e6aea05f7a0bcae664e08a329dcf">IR_emis_vege</a>, <span class="stringliteral">&quot;IR_emis_vege&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160; </div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;    read_field(<a class="code" href="classSLM.html#affe80e24904c1e805ed835d85a4e73ce">IR_emis_soil</a>, <span class="stringliteral">&quot;IR_emis_soil&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160; </div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    read_field(<a class="code" href="classSLM.html#a5b528d2305f9e26b399c685ff336b0da">ztop</a>, <span class="stringliteral">&quot;ztop&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160; </div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;    read_field(<a class="code" href="classSLM.html#aeabfa7893b5fd81dfed8506c21f31935">disp_hgt</a>, <span class="stringliteral">&quot;disp_hgt&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160; </div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;    read_field(<a class="code" href="classSLM.html#a964981dad91231ec79c93b30d9e83a78">Rgl</a>, <span class="stringliteral">&quot;Rgl&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160; </div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;    read_field(<a class="code" href="classSLM.html#af7ae6c70c9db9e19fa75b7b8784d9579">Rc_min</a>, <span class="stringliteral">&quot;Rc_min&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160; </div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;    read_field(<a class="code" href="classSLM.html#af4e7c341452b46f7555c3e6337ea0d67">hs_rc</a>, <span class="stringliteral">&quot;hs_rc&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160; </div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;    read_field(<a class="code" href="classSLM.html#a733b49a2dee312235da37bc50994691d">precip_extinc</a>, <span class="stringliteral">&quot;precip_extinc&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160; </div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;    read_field(<a class="code" href="classSLM.html#a1cd744142bfb448ea0d16987acc8ad65">mw_mx</a>, <span class="stringliteral">&quot;mw_mx&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160; </div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    read_field(<a class="code" href="classSLM.html#ae9a801a25f2e4fe5e30315adabf666c4">mws_mx</a>, <span class="stringliteral">&quot;mws_mx&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160; </div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;    read_field(<a class="code" href="classSLM.html#ac8b14bb39a0f7a3a47678bee5321974e">BAI</a>, <span class="stringliteral">&quot;BAI&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160; </div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;    read_field(<a class="code" href="classSLM.html#a2d7cbf1d791cd047805bd01b59cf0240">mw_inc</a>, <span class="stringliteral">&quot;mw_inc&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160; </div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;    read_field(<a class="code" href="classSLM.html#ab9b5b2b02bfb9d039c83d0a180811544">evapo_dry</a>, <span class="stringliteral">&quot;evapo_dry&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160; </div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;    read_field(<a class="code" href="classSLM.html#a66572d44e3427c2cfc1cc72064cb5643">shf_canop</a>, <span class="stringliteral">&quot;shf_canop&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160; </div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;    read_field(<a class="code" href="classSLM.html#a28be4f6f37b2c473665208aac6ebcf6c">shf_soil</a>, <span class="stringliteral">&quot;shf_soil&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160; </div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;    read_field(<a class="code" href="classSLM.html#a223969b6ef7bc69f043bd5d8b1b31e1d">shf_air</a>, <span class="stringliteral">&quot;shf_air&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160; </div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;    read_field(<a class="code" href="classSLM.html#ae3f5de359ae7f4b4a55b57c193213df7">lhf_canop</a>, <span class="stringliteral">&quot;lhf_canop&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160; </div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;    read_field(<a class="code" href="classSLM.html#aca39e765582b90ddac8e3cd611fd5bf6">lhf_soil</a>, <span class="stringliteral">&quot;lhf_soil&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160; </div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;    read_field(<a class="code" href="classSLM.html#ae23402fec8f7820a689330b9d5c60519">lhf_air</a>, <span class="stringliteral">&quot;lhf_air&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160; </div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;    read_field(<a class="code" href="classSLM.html#aeb4f8e7470c55a44981fdcbdff1951c7">albedovis_v</a>, <span class="stringliteral">&quot;albedovis_v&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160; </div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;    read_field(<a class="code" href="classSLM.html#adca44d88b1bc826359be774048e155fb">albedonir_v</a>, <span class="stringliteral">&quot;albedonir_v&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160; </div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;    read_field(<a class="code" href="classSLM.html#a5da0e2e4b788eb86b6a67c7b8d7c278d">albedovis_s</a>, <span class="stringliteral">&quot;albedovis_s&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160; </div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;    read_field(<a class="code" href="classSLM.html#a823c70168bd47a3cd3f601abf8e3cca8">albedonir_s</a>, <span class="stringliteral">&quot;albedonir_s&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160; </div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;    read_field(<a class="code" href="classSLM.html#aba1d2c99b6278d05e4dd8b809bd883e0">r_a</a>, <span class="stringliteral">&quot;r_a&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160; </div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;    read_field(<a class="code" href="classSLM.html#ac27a5605f6b36ed94179a5f4b5cf48c8">r_b</a>, <span class="stringliteral">&quot;r_b&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160; </div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;    read_field(<a class="code" href="classSLM.html#a9ca83945a3224dc8e0dd3d380096aaaa">r_c</a>, <span class="stringliteral">&quot;r_c&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160; </div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;    read_field(<a class="code" href="classSLM.html#a99da9a69713c6da470f90eba821c2ec6">r_d</a>, <span class="stringliteral">&quot;r_d&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160; </div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;    read_field(<a class="code" href="classSLM.html#aedb21148b5efa75d9034762fa26b0bf4">r_soil</a>, <span class="stringliteral">&quot;r_soil&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160; </div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    read_field(<a class="code" href="classSLM.html#a45c24880e79549a610bddf7fa33ad1de">wet_canop</a>, <span class="stringliteral">&quot;wet_canop&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160; </div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;    <span class="comment">// Restore where the model was, rather than asserting it was past its first step.</span></div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;    <span class="comment">// A checkpoint taken before any step has been advanced leaves first_step set, so</span></div>
-<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;    <span class="comment">// the first Advance after the restart does the deferred wrfinput read and rebuilds</span></div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;    <span class="comment">// zrefxy -- exactly what the run being continued did at that point.</span></div>
-<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;    <a class="code" href="classSLM.html#abc12f2d396b9cf186c9bd3e19ed1105a">first_step</a>           = (chk_first_step != 0);</div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;    <a class="code" href="classSLM.html#a5b3b7d99aa06cf40a9f2c32a23cdab9f">wrfinput_initialized</a> = (chk_wrfinput_initialized != 0);</div>
-<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160; </div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;    <span class="comment">// A checkpoint is written after Update_Lsm_Vars, so tref, qref and pref hold the state</span></div>
-<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;    <a class="code" href="classSLM.html#abc8833d4d53a39acb0b0aafeb6f7577a">has_atmos_state</a>         = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;    <a class="code" href="classSLM.html#a831c35d87664b271e71334e6b8ed42f4">init_from_atmos_pending</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160; </div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;    <span class="comment">// Initialize common parameters</span></div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;    <a class="code" href="classSLM.html#a9b7feed6bc0daaed04c827612b52de9e">init_layer_depths</a>();</div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;    <a class="code" href="classSLM.html#a24b65438459387ae80dd37ff1cd016bd">init_soil_vars</a>();</div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    <a class="code" href="classSLM.html#affc22e8de7da0777cdabf413b61e076e">rebuild_restart_fields</a>();</div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160; </div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;    <span class="keyword">auto</span> check_end = amrex::second() - check_start;</div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;    ParallelDescriptor::ReduceRealMax(check_end,ParallelDescriptor::IOProcessorNumber());</div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    SLM Checkpoint load time = &quot;</span> &lt;&lt; check_end &lt;&lt; <span class="stringliteral">&quot; seconds.&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;}</div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;    read_field(<a class="code" href="classSLM.html#afb99df520006e35768ff7ef606619151">zrefxy</a>, <span class="stringliteral">&quot;zrefxy&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160; </div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;    read_field(<a class="code" href="classSLM.html#a8a1b6e5aab967f73fd6f67a4d63fb3a5">albold_noahmp</a>, <span class="stringliteral">&quot;albold_noahmp&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160; </div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;    read_field(<a class="code" href="classSLM.html#aedb1633ecb0170a56a5cabbbe918209b">tauss_noahmp</a>, <span class="stringliteral">&quot;tauss_noahmp&quot;</span>, 1, IntVect(0), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160; </div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; static_cast&lt;int&gt;(<a class="code" href="classSLM.html#ade9c572e3ea96b4aeac7a3a20a3de414">unmapped_fields</a>.size()); i++) {</div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;        read_field(*(<a class="code" href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">lsm_fab_vars</a>[<a class="code" href="classSLM.html#ade9c572e3ea96b4aeac7a3a20a3de414">unmapped_fields</a>[i]]), <span class="stringliteral">&quot;Data&quot;</span> + std::to_string(<a class="code" href="classSLM.html#ade9c572e3ea96b4aeac7a3a20a3de414">unmapped_fields</a>[i]),</div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;                   1, IntVect(1,1,1), <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;    }</div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160; </div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;    <span class="comment">// Restore where the model was, rather than asserting it was past its first step.</span></div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;    <span class="comment">// A checkpoint taken before any step has been advanced leaves first_step set, so</span></div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;    <span class="comment">// the first Advance after the restart does the deferred wrfinput read and rebuilds</span></div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;    <span class="comment">// zrefxy -- exactly what the run being continued did at that point.</span></div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;    <a class="code" href="classSLM.html#abc12f2d396b9cf186c9bd3e19ed1105a">first_step</a>           = (chk_first_step != 0);</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;    <a class="code" href="classSLM.html#a5b3b7d99aa06cf40a9f2c32a23cdab9f">wrfinput_initialized</a> = (chk_wrfinput_initialized != 0);</div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160; </div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;    <span class="comment">// A checkpoint is written after Update_Lsm_Vars, so tref, qref and pref hold the state</span></div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;    <a class="code" href="classSLM.html#abc8833d4d53a39acb0b0aafeb6f7577a">has_atmos_state</a>         = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;    <a class="code" href="classSLM.html#a831c35d87664b271e71334e6b8ed42f4">init_from_atmos_pending</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160; </div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;    <span class="comment">// Initialize common parameters</span></div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;    <a class="code" href="classSLM.html#a9b7feed6bc0daaed04c827612b52de9e">init_layer_depths</a>();</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;    <a class="code" href="classSLM.html#a24b65438459387ae80dd37ff1cd016bd">init_soil_vars</a>();</div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;    <a class="code" href="classSLM.html#affc22e8de7da0777cdabf413b61e076e">rebuild_restart_fields</a>();</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160; </div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;    <span class="keyword">auto</span> check_end = amrex::second() - check_start;</div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;    ParallelDescriptor::ReduceRealMax(check_end,ParallelDescriptor::IOProcessorNumber());</div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    SLM Checkpoint load time = &quot;</span> &lt;&lt; check_end &lt;&lt; <span class="stringliteral">&quot; seconds.&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;}</div>
 <div class="ttc" id="aclassSLM_html_a49424a664e55a7b3f88e8369dd1abf0b"><div class="ttname"><a href="classSLM.html#a49424a664e55a7b3f88e8369dd1abf0b">SLM::GotoNextLine</a></div><div class="ttdeci">static void GotoNextLine(std::istream &amp;is)</div><div class="ttdef"><b>Definition:</b> ERF_SLM_IO.cpp:382</div></div>
 <div class="ttc" id="aclassSLM_html_a64d4cfa7858e6e48b5c40be8a2f6bdaf"><div class="ttname"><a href="classSLM.html#a64d4cfa7858e6e48b5c40be8a2f6bdaf">SLM::m_orbital_mon</a></div><div class="ttdeci">int m_orbital_mon</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:969</div></div>
 <div class="ttc" id="aclassSLM_html_a91eb05c26ae66d2de8e9254b96eb6583"><div class="ttname"><a href="classSLM.html#a91eb05c26ae66d2de8e9254b96eb6583">SLM::m_calday</a></div><div class="ttdeci">amrex::Real m_calday</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:967</div></div>
@@ -7208,10 +7219,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSLM_a9bc2b90497aadf876bc2d593056e9a9c_cgraph.png" border="0" usemap="#aclassSLM_a9bc2b90497aadf876bc2d593056e9a9c_cgraph" alt=""/></div>
 <map name="aclassSLM_a9bc2b90497aadf876bc2d593056e9a9c_cgraph" id="aclassSLM_a9bc2b90497aadf876bc2d593056e9a9c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,78,168,105"/>
-<area shape="rect" href="namespaceerf__checkpoint.html#a543f256009bdc56c433b9cb6a1da5177" title=" " alt="" coords="216,5,384,47"/>
-<area shape="rect" href="namespaceerf__checkpoint.html#a1f8405aab1181ae522fa1bd9b9e26daf" title=" " alt="" coords="217,71,383,112"/>
-<area shape="rect" href="namespaceerf__checkpoint.html#aba22b9daf8305eee0648716ae0142fe1" title=" " alt="" coords="432,100,595,141"/>
+<area shape="rect" title=" " alt="" coords="5,111,168,138"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="216,5,399,47"/>
+<area shape="rect" href="namespaceerf__checkpoint.html#a543f256009bdc56c433b9cb6a1da5177" title=" " alt="" coords="223,71,391,112"/>
+<area shape="rect" href="namespaceerf__checkpoint.html#a1f8405aab1181ae522fa1bd9b9e26daf" title=" " alt="" coords="224,136,391,177"/>
+<area shape="rect" href="namespaceerf__checkpoint.html#aba22b9daf8305eee0648716ae0142fe1" title=" " alt="" coords="447,165,609,207"/>
 </map>
 </div>
 

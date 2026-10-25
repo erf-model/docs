@@ -1,5 +1,6 @@
 var NAVTREEINDEX31 =
 {
+"classSatMethods.html#a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a":[2,0,138,0,3],
 "classSatMethods.html#a62096d95f324cd2a3504554437067ef7aacd427431253b9fe6b472b6db3685edb":[2,0,138,0,0],
 "classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d":[2,0,138,0,4],
 "classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455":[2,0,138,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX31 =
 "classSurfaceLayer.html#a3d8f5ef37620ff90e5b7d2d69b77d7b2":[2,0,192,54],
 "classSurfaceLayer.html#a3eddb856be964d20a174cfaffcb60c8a":[2,0,192,55],
 "classSurfaceLayer.html#a4009eb7e829d0943f1c06c4424b132f1":[2,0,192,146],
-"classSurfaceLayer.html#a4110ab7c1edcce288acc3f626466e6df":[2,0,192,103],
-"classSurfaceLayer.html#a424ae4a334d727eed924a8c652c952fb":[2,0,192,163]
+"classSurfaceLayer.html#a4110ab7c1edcce288acc3f626466e6df":[2,0,192,103]
 };

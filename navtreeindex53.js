@@ -1,5 +1,6 @@
 var NAVTREEINDEX53 =
 {
+"structerf__sbm_1_1SBMAMRStateView.html#aa67041bc058dead557a9c66258828aa5":[2,0,9,3,1],
 "structerf__sbm_1_1SBMAMRStateView.html#ab5101d70b03f27ea246d59e94fd599ea":[2,0,9,3,4],
 "structerf__sbm_1_1SBMAMRStateView.html#accda17d80ed1822cdf1dc1689da21777":[2,0,9,3,7],
 "structerf__sbm_1_1SBMAMRStateView.html#aeb8e504689f3fa389f3fb8b77d12dda6":[2,0,9,3,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX53 =
 "structplotfile2d_1_1PlotVariableSelection.html":[2,0,19,10],
 "structplotfile2d_1_1PlotVariableSelection.html#a0003f85a30ea1d4fb062ca95f8a7d8cb":[2,0,19,10,0],
 "structplotfile2d_1_1PlotVariableSelection.html#ad47995916c3ba192318be0a6500f237b":[2,0,19,10,1],
-"structplotfile2d_1_1Plotfile2DOutputDescriptor.html":[2,0,19,8],
-"structplotfile2d_1_1Plotfile2DOutputDescriptor.html#a973d62f08b66cbf45a7ef51034d77725":[2,0,19,8,7]
+"structplotfile2d_1_1Plotfile2DOutputDescriptor.html":[2,0,19,8]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX17 =
 {
+"ERF__UpdateRhoQtSources__RICO_8H_source.html":[3,0,1,19,60],
 "ERF__UpdateRhoQtSources__SDMCongestus3DCold_8H.html":[3,0,1,19,62],
 "ERF__UpdateRhoQtSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f":[3,0,1,19,62,7],
 "ERF__UpdateRhoQtSources__SDMCongestus3DCold_8H.html#a05a6cf5425ee9d277307ab329feed8df":[3,0,1,19,62,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX17 =
 "ERF__WallThermodynamics_8H.html#a25ccda56812eabb5eda8942c8179ec65a8fd21f2dfc7a3c126447713c95e2f3f8":[3,0,1,2,27,7,1],
 "ERF__WallThermodynamics_8H.html#a62a00c830244c4bbc74ffa0cba677e98":[3,0,1,2,27,5],
 "ERF__WallThermodynamics_8H.html#a62a00c830244c4bbc74ffa0cba677e98a4457d440870ad6d42bab9082d9bf9b61":[3,0,1,2,27,5,1],
-"ERF__WallThermodynamics_8H.html#a62a00c830244c4bbc74ffa0cba677e98a6adf97f83acf6453d4a6a4b1070f3754":[3,0,1,2,27,5,0],
-"ERF__WallThermodynamics_8H.html#a62a00c830244c4bbc74ffa0cba677e98a882dd232c0425bb9366544f84f0a7b6c":[3,0,1,2,27,5,2]
+"ERF__WallThermodynamics_8H.html#a62a00c830244c4bbc74ffa0cba677e98a6adf97f83acf6453d4a6a4b1070f3754":[3,0,1,2,27,5,0]
 };

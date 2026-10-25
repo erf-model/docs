@@ -16,5 +16,6 @@ var ERF__PBLModels_8H =
     [ "ComputeQKESourceTerms", "ERF__PBLModels_8H.html#a54038ccf8cd8216a8d4d37658b900cca", null ],
     [ "ComputeVerticalDerivativesPBL", "ERF__PBLModels_8H.html#a2976e4317f80e3f78a48964f46090527", null ],
     [ "ComputeVirtualTStarPBL", "ERF__PBLModels_8H.html#ad58f8dfb6cfc2d686a4121be71aae6ce", null ],
-    [ "GetPBLStratVar", "ERF__PBLModels_8H.html#a07bf89acea1dad790aea81aeee0f7fe5", null ]
+    [ "GetPBLStratVar", "ERF__PBLModels_8H.html#a07bf89acea1dad790aea81aeee0f7fe5", null ],
+    [ "WidenForPBLH", "ERF__PBLModels_8H.html#a9102f93f14db89c28d8a019914f87ba8", null ]
 ];
