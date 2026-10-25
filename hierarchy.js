@@ -127,6 +127,7 @@ var hierarchy =
     [ "Microphysics", "classMicrophysics.html", [
       [ "EulerianMicrophysics", "classEulerianMicrophysics.html", null ]
     ] ],
+    [ "MicrophysicsColumns", "classMicrophysicsColumns.html", null ],
     [ "MicrophysicsThermoState", "structMicrophysicsThermoState.html", null ],
     [ "moeng_flux", "structmoeng__flux.html", null ],
     [ "moeng_flux_eb", "structmoeng__flux__eb.html", null ],

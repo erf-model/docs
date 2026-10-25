@@ -17,6 +17,10 @@ var dir_988434024952cd186327a8c7555a3c66 =
     [ "ERF_Microphysics.H", "ERF__Microphysics_8H.html", [
       [ "Microphysics", "classMicrophysics.html", "classMicrophysics" ]
     ] ],
+    [ "ERF_MicrophysicsColumns.cpp", "ERF__MicrophysicsColumns_8cpp.html", null ],
+    [ "ERF_MicrophysicsColumns.H", "ERF__MicrophysicsColumns_8H.html", [
+      [ "MicrophysicsColumns", "classMicrophysicsColumns.html", "classMicrophysicsColumns" ]
+    ] ],
     [ "ERF_MicrophysicsConstants.H", "ERF__MicrophysicsConstants_8H.html", "ERF__MicrophysicsConstants_8H" ],
     [ "ERF_SurfacePrecipitation.H", "ERF__SurfacePrecipitation_8H.html", "ERF__SurfacePrecipitation_8H" ]
 ];
