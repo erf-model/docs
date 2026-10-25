@@ -2,7 +2,7 @@ var classIBFaceSet =
 [
     [ "SunState", "structIBFaceSet_1_1SunState.html", "structIBFaceSet_1_1SunState" ],
     [ "TwoStreamSun", "structIBFaceSet_1_1TwoStreamSun.html", "structIBFaceSet_1_1TwoStreamSun" ],
-    [ "IBFaceSet", "classIBFaceSet.html#a5353329c1ce71dd3b63d0d1935aeb1b7", null ],
+    [ "IBFaceSet", "classIBFaceSet.html#a0ad298ab989621e5397768859211354a", null ],
     [ "add_cost", "classIBFaceSet.html#aa25741575289197768282d23c3ba0e2f", null ],
     [ "add_heat_flux_to_source", "classIBFaceSet.html#a6b50730c3a8b33e330d4d58227c673c6", null ],
     [ "add_outside_occluders", "classIBFaceSet.html#aa8d77828499c4627eeed224165ff1776", null ],
@@ -123,6 +123,7 @@ var classIBFaceSet =
     [ "m_params", "classIBFaceSet.html#ade9f8d3448956c9fe3c8db2f3159b655", null ],
     [ "m_per_x", "classIBFaceSet.html#a539d28dce0334fa342824e2e802252e4", null ],
     [ "m_per_y", "classIBFaceSet.html#aba482c5aa8eb3ddfc628d206cb2a4da4", null ],
+    [ "m_qv_comp", "classIBFaceSet.html#a874e6ebf9bb648a6a4c00aeb20a90c5e", null ],
     [ "m_state_ba", "classIBFaceSet.html#aa7f351d5c5c57bc6f04c048415bd98c5", null ],
     [ "m_sun", "classIBFaceSet.html#a76c5ea4db225b1cc8170f50442fccb5d", null ],
     [ "m_to_lev0", "classIBFaceSet.html#a5da301b70f25d6b05c07872249c1acef", null ],

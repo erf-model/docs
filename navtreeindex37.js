@@ -1,5 +1,7 @@
 var NAVTREEINDEX37 =
 {
+"globals_z.html":[3,1,0,25],
+"hierarchy.html":[2,2],
 "index.html":[0],
 "index.html":[],
 "index.html#Acknowledgement":[0,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX37 =
 "namespaceerf__auxiliary.html#ac1472de9585593195cae2778264db85f":[1,0,9,37],
 "namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592":[1,0,9,39],
 "namespaceerf__auxiliary.html#ae34e7d10af171e40a2ba238505a44551":[1,0,9,33],
-"namespaceerf__auxiliary.html#ae3907395fc6f12fb9c233accef46ba8f":[1,0,9,26],
-"namespaceerf__auxiliary.html#af88d6cddb925fe25cb4fdd914f012777":[1,0,9,32],
-"namespaceerf__auxiliary.html#af8b38e575d2e3ef2765351ec709f60f4":[1,0,9,40]
+"namespaceerf__auxiliary.html#ae3907395fc6f12fb9c233accef46ba8f":[1,0,9,26]
 };

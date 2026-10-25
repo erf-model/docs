@@ -1,5 +1,7 @@
 var NAVTREEINDEX47 =
 {
+"structSAMPrecipFluxComponents.html#a40101502c2211cf0001012f0e03f76af":[2,0,134,2],
+"structSAMPrecipFluxComponents.html#ae8edc029b5764e27edb4cc2ec82fb4a1":[2,0,134,1],
 "structSAMPrecipFluxComponents.html#af1ea00ef16467afaf9c369d15b24663f":[2,0,134,0],
 "structSAMPrecipSources.html":[2,0,135],
 "structSAMPrecipSources.html#a0e4ce1ba9e2029ac42a565f6f9e4597f":[2,0,135,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX47 =
 "structShocColumnData.html#a2c43905c4fe3cc1138ad553102e6e16b":[2,0,154,2],
 "structShocColumnData.html#a2f07668d1ddf205bc42d1d9154ee2112":[2,0,154,60],
 "structShocColumnData.html#a306c5e03896f4c1c0e56d26b3518fc2a":[2,0,154,44],
-"structShocColumnData.html#a3303135724099955d94c16124ae6e087":[2,0,154,59],
-"structShocColumnData.html#a3a954609570ba3de080d4eab899ddf8a":[2,0,154,57],
-"structShocColumnData.html#a3c410d0cefc4b0028cd93d316845d12f":[2,0,154,32]
+"structShocColumnData.html#a3303135724099955d94c16124ae6e087":[2,0,154,59]
 };

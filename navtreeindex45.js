@@ -1,5 +1,7 @@
 var NAVTREEINDEX45 =
 {
+"structInputSoundingData.html#a909a9876dabbbe90d4c03efa05d416f2":[2,0,66,2],
+"structInputSoundingData.html#a97f5d176dc708d70a1404c4d6d850a14":[2,0,66,13],
 "structInputSoundingData.html#aa015e8e9cc3f6ccf45e7327ce13cdce7":[2,0,66,4],
 "structInputSoundingData.html#aac5ecede08aff15cf8493358020b4bae":[2,0,66,24],
 "structInputSoundingData.html#ab077477d0d09c717322fc53d42c50e2d":[2,0,66,26],
@@ -247,7 +249,5 @@ var NAVTREEINDEX45 =
 "structNativeScalarDiffusionPolicy.html#a715c960f50056fefcbe7cf9ae593c747":[2,0,94,1],
 "structNativeScalarDiffusionPolicy.html#a7abf0086a50d06145277d63e1d8da5f3":[2,0,94,4],
 "structNativeScalarDiffusionPolicy.html#a7cc063e394a25056bf144a9692f10b39":[2,0,94,3],
-"structNativeScalarDiffusionPolicy.html#a92075af527faf6c8c1f90d894aeab693":[2,0,94,6],
-"structNativeScalarDiffusionPolicy.html#aa44fd6d2b286b335c6c04b4b8dc3c2cb":[2,0,94,2],
-"structNativeScalarDiffusionPolicy.html#ae327d6da7023cd2b80e0d2a6f359f4ed":[2,0,94,5]
+"structNativeScalarDiffusionPolicy.html#a92075af527faf6c8c1f90d894aeab693":[2,0,94,6]
 };
