@@ -511,6 +511,7 @@ var namespaces_dup =
       [ "xxx", "namespacemodule__mp__morr__two__moment.html#a5df471b24aa4ccbff0fce2ba1164d60c", null ]
     ] ],
     [ "MORRInd", "namespaceMORRInd.html", null ],
+    [ "MorrSed", "namespaceMorrSed.html", null ],
     [ "mp_morr_two_moment_isohelper", "namespacemp__morr__two__moment__isohelper.html", [
       [ "morr_two_moment_init_c", "namespacemp__morr__two__moment__isohelper.html#ae19641d8681253b2c10ff7252446f702", null ],
       [ "mp_morr_two_moment_c", "namespacemp__morr__two__moment__isohelper.html#a7931a8516152c9f035b298c87b976b96", null ]
@@ -980,6 +981,7 @@ var namespaces_dup =
       [ "wdm6_rgmma", "namespacewdm6__isohelper.html#a7c1b4fa7f0809c3f0470541dec9887b8", null ],
       [ "kind_phys", "namespacewdm6__isohelper.html#afe71b8acf0e08e4fbb37f5e026401ac3", null ]
     ] ],
+    [ "WDM6Sed", "namespaceWDM6Sed.html", null ],
     [ "WDM6SedCellScratch", "namespaceWDM6SedCellScratch.html", null ],
     [ "WDM6SedNodeScratch", "namespaceWDM6SedNodeScratch.html", null ],
     [ "WRFBdyHydrometeorVars", "namespaceWRFBdyHydrometeorVars.html", null ],
@@ -987,6 +989,7 @@ var namespaces_dup =
       [ "LegacyNumTypes", "namespaceWRFBdyVars.html#a56661641c6eecad2759ac2eb8bc093dc", null ]
     ] ],
     [ "WSM6Ind", "namespaceWSM6Ind.html", null ],
+    [ "WSM6Sed", "namespaceWSM6Sed.html", null ],
     [ "WSM6SedCellScratch", "namespaceWSM6SedCellScratch.html", null ],
     [ "WSM6SedNodeScratch", "namespaceWSM6SedNodeScratch.html", null ]
 ];

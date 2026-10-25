@@ -167,6 +167,9 @@ var NAVTREEINDEX14 =
 "ERF__SeaLevelPressure_8H_source.html":[3,0,1,5,3],
 "ERF__SeaLevelPressure_8cpp.html":[3,0,1,5,2],
 "ERF__SeaLevelPressure_8cpp.html#a0dec851e0fcbd9ef9bbbe0b92c843a6a":[3,0,1,5,2,0],
+"ERF__SedimentationFlux_8H.html":[3,0,1,14,16],
+"ERF__SedimentationFlux_8H.html#a47aa75012ec159fee27f0806bff6c4c0":[3,0,1,14,16,1],
+"ERF__SedimentationFlux_8H_source.html":[3,0,1,14,16],
 "ERF__SetupDiff_8H.html":[3,0,1,6,29],
 "ERF__SetupDiff_8H_source.html":[3,0,1,6,29],
 "ERF__SetupScalarDiffusion_8H.html":[3,0,1,6,30],
@@ -246,8 +249,5 @@ var NAVTREEINDEX14 =
 "ERF__ShocThermoUtils_8H.html#ac404270665343fd3e2e91b7a26aadb61":[3,0,1,17,0,20,5],
 "ERF__ShocThermoUtils_8H.html#ad15cadfc5ee5c8f9fe59ebf7a1634300":[3,0,1,17,0,20,6],
 "ERF__ShocThermoUtils_8H.html#af984a1839991048a21e0b142fb57b2a0":[3,0,1,17,0,20,1],
-"ERF__ShocThermoUtils_8H_source.html":[3,0,1,17,0,20],
-"ERF__ShocTransportStruct_8H.html":[3,0,1,4,11],
-"ERF__ShocTransportStruct_8H.html#a0971039b04f579d1595b6ba5918453d8":[3,0,1,4,11,2],
-"ERF__ShocTransportStruct_8H.html#a20166796421685d169be0dd50e56acfc":[3,0,1,4,11,3]
+"ERF__ShocThermoUtils_8H_source.html":[3,0,1,17,0,20]
 };

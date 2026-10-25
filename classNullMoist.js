@@ -20,6 +20,7 @@ var classNullMoist =
     [ "Qstate_Moist_NumConc_Size", "classNullMoist.html#a7f95ad7c0c5562d130e6e054d88b69bd", null ],
     [ "Qstate_Moist_Size", "classNullMoist.html#af722f0334098a3e75001f799a7894ae1", null ],
     [ "Qstate_NonMoist_Size", "classNullMoist.html#aa2088fbb6bbb51945f5d5c80da2bfff3", null ],
+    [ "Sed_Flux", "classNullMoist.html#a9cf31139b9e3ef44b22a6a43f10d1801", null ],
     [ "set_anelastic_reference_pressure_mode", "classNullMoist.html#ae7ad43016c86eeb9081d5c43e305146e", null ],
     [ "Set_dzmin", "classNullMoist.html#a47199894161e2c6ec167c8032d7181a0", null ],
     [ "Set_Lmask", "classNullMoist.html#a9a64424cb065761991b28385fb910738", null ],

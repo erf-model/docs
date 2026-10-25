@@ -269,6 +269,7 @@ var hierarchy =
       [ "SDInjection", "classSDInjection.html", null ]
     ] ],
     [ "SDInputs", "structSDInputs.html", null ],
+    [ "SedimentationFlux", "structSedimentationFlux.html", null ],
     [ "plotfile2d::SelectedSurfacePrecipAccumulationComponents", "structplotfile2d_1_1SelectedSurfacePrecipAccumulationComponents.html", null ],
     [ "plotfile2d::SelectedWaterPathComponents", "structplotfile2d_1_1SelectedWaterPathComponents.html", null ],
     [ "ShocColumnData", "structShocColumnData.html", null ],
