@@ -1,5 +1,8 @@
 var NAVTREEINDEX37 =
 {
+"globals_w.html":[3,1,0,22],
+"globals_x.html":[3,1,0,23],
+"globals_y.html":[3,1,0,24],
 "globals_z.html":[3,1,0,25],
 "hierarchy.html":[2,2],
 "index.html":[0],
@@ -12,13 +15,13 @@ var NAVTREEINDEX37 =
 "interfacemodule__libmassv_1_1vrec.html":[2,0,14,0],
 "interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,14,0,2],
 "interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,14,0,3],
-"interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,14,0,1],
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,14,0,0],
+"interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,14,0,1],
 "interfacemodule__libmassv_1_1vsqrt.html":[2,0,14,1],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,14,1,0],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,14,1,1],
-"interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,14,1,2],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,14,1,3],
+"interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,14,1,2],
 "main_8cpp.html":[3,0,1,41],
 "main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[3,0,1,41,3],
 "main_8cpp.html#a183e783116d02836167ccbed3b28c1d3":[3,0,1,41,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX37 =
 "namespaceerf__auxiliary.html#abf9c1a9d3c44bf16781b83e143602473":[1,0,9,19],
 "namespaceerf__auxiliary.html#abf9c1a9d3c44bf16781b83e143602473a324118a6721dd6b8a9b9f4e327df2bf5":[1,0,9,19,1],
 "namespaceerf__auxiliary.html#abf9c1a9d3c44bf16781b83e143602473aa34285645af2703a9501db6fc881e5df":[1,0,9,19,0],
-"namespaceerf__auxiliary.html#ac1472de9585593195cae2778264db85f":[1,0,9,37],
-"namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592":[1,0,9,39],
-"namespaceerf__auxiliary.html#ae34e7d10af171e40a2ba238505a44551":[1,0,9,33],
-"namespaceerf__auxiliary.html#ae3907395fc6f12fb9c233accef46ba8f":[1,0,9,26]
+"namespaceerf__auxiliary.html#ac1472de9585593195cae2778264db85f":[1,0,9,37]
 };

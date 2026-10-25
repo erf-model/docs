@@ -223,6 +223,7 @@ var hierarchy =
     [ "erf_sbm::ReconstructionDeltaView", "structerf__sbm_1_1ReconstructionDeltaView.html", null ],
     [ "erf_sbm::remap_detail::RemapCellStateView", "structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html", null ],
     [ "erf_sbm::RepresentationIdentity", "structerf__sbm_1_1RepresentationIdentity.html", null ],
+    [ "RibCrossing", "structRibCrossing.html", null ],
     [ "rico_flux", "structrico__flux.html", null ],
     [ "rotate_flux", "structrotate__flux.html", null ],
     [ "erf_sbm::RouteDestination", "structerf__sbm_1_1RouteDestination.html", null ],

@@ -12,5 +12,6 @@ var dir_ae0b7467bb3c74d292c83ac9fdeb56bf =
       [ "MYNNPBLH", "structMYNNPBLH.html", "structMYNNPBLH" ]
     ] ],
     [ "ERF_PBLModels.H", "ERF__PBLModels_8H.html", "ERF__PBLModels_8H" ],
+    [ "ERF_PBLRibCrossing.H", "ERF__PBLRibCrossing_8H.html", "ERF__PBLRibCrossing_8H" ],
     [ "ERF_PBLScaleAwareBlending.H", "ERF__PBLScaleAwareBlending_8H.html", "ERF__PBLScaleAwareBlending_8H" ]
 ];

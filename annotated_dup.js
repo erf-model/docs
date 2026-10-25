@@ -267,6 +267,7 @@ var annotated_dup =
     [ "RadiationDiagnostics", "classRadiationDiagnostics.html", "classRadiationDiagnostics" ],
     [ "RadiationSimple", "classRadiationSimple.html", "classRadiationSimple" ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", "classReadBndryPlanes" ],
+    [ "RibCrossing", "structRibCrossing.html", "structRibCrossing" ],
     [ "rico_flux", "structrico__flux.html", "structrico__flux" ],
     [ "rotate_flux", "structrotate__flux.html", "structrotate__flux" ],
     [ "SAM", "classSAM.html", "classSAM" ],
