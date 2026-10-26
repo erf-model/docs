@@ -843,36 +843,39 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;                    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> radius = std::sqrt((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - xf) * (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - xf) +</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                                                  (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> - yf) * (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> - yf));</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> factor = one_d;</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                    <span class="keywordflow">if</span> ((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt;= hf) &amp;&amp; (radius &lt;= (myhalf_d * df))) {</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                        <span class="keywordflow">if</span> (tf == 2) {</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ratio = (hf - treeZm) / (hf - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                            <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt; treeZm) {</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                                factor = amrex::Math::powi&lt;6&gt;(ratio) *</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;                                         std::exp(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(6.0) * (one_d - ratio));</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt;= hf) {</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                                factor = std::sqrt(ratio) *</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                                         std::exp(myhalf_d * (one_d - ratio));</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;                            }</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                        }</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                        levelDrag(i, j, k)   = cdf * af * factor;</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                        <span class="keywordflow">if</span> (store_frontal_area) {</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                            frontalArea(i, j, k) = af * factor;</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                        }</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                    }</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                });</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;            } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        } <span class="comment">// ii (forest patch)</span></div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160; </div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    } <span class="comment">// end else (discrete patch mode)</span></div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160; </div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="comment">// Fillboundary for periodic ghost cell copy</span></div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <a class="code" href="classForestDrag.html#acb32d6e1088af2621a723601500db7b3">m_forest_drag</a>-&gt;FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classForestDrag.html#a8d3e7f57f635b9a0358062c3085c2be4">m_frontal_area</a> != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        <a class="code" href="classForestDrag.html#a8d3e7f57f635b9a0358062c3085c2be4">m_frontal_area</a>-&gt;FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    }</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160; </div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;} <span class="comment">// define_drag_field</span></div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                    <span class="comment">// Strictly below the tree top, as in the gridded mode: the</span></div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                    <span class="comment">// type-2 profile tends to zero at z = hf, where its ratio</span></div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                    <span class="comment">// would divide by zero. Overlapping patches add their drag.</span></div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> factor = one_d;</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                    <span class="keywordflow">if</span> ((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt; hf) &amp;&amp; (radius &lt;= (myhalf_d * df))) {</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                        <span class="keywordflow">if</span> (tf == 2) {</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;                            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ratio = (hf - treeZm) / (hf - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                            <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt; treeZm) {</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                                factor = amrex::Math::powi&lt;6&gt;(ratio) *</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                                         std::exp(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(6.0) * (one_d - ratio));</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;                            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                                factor = std::sqrt(ratio) *</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                                         std::exp(myhalf_d * (one_d - ratio));</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                            }</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                        }</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                        levelDrag(i, j, k) += cdf * af * factor;</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                        <span class="keywordflow">if</span> (store_frontal_area) {</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                            frontalArea(i, j, k) += af * factor;</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                        }</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                    }</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                });</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;            } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        } <span class="comment">// ii (forest patch)</span></div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160; </div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    } <span class="comment">// end else (discrete patch mode)</span></div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160; </div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="comment">// Fillboundary for periodic ghost cell copy</span></div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <a class="code" href="classForestDrag.html#acb32d6e1088af2621a723601500db7b3">m_forest_drag</a>-&gt;FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classForestDrag.html#a8d3e7f57f635b9a0358062c3085c2be4">m_frontal_area</a> != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        <a class="code" href="classForestDrag.html#a8d3e7f57f635b9a0358062c3085c2be4">m_frontal_area</a>-&gt;FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    }</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160; </div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;} <span class="comment">// define_drag_field</span></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
