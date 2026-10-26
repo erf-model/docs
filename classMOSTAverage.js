@@ -5,6 +5,7 @@ var classMOSTAverage =
     [ "MOSTAverage", "classMOSTAverage.html#acfc77dc21a0821d4b446f7be289c64d6", null ],
     [ "MOSTAverage", "classMOSTAverage.html#add74667e947201bbb2ddf2785f02ee0c", null ],
     [ "cell_center_height", "classMOSTAverage.html#ac6cd8186e859ca08c5ba0cc6ebdbcbb1", null ],
+    [ "column_height", "classMOSTAverage.html#a102fd0a7205cfe4d9673c3bdb22a87a7", null ],
     [ "compute_averages", "classMOSTAverage.html#a41ef10e076e2099d0fd845e318fd00a0", null ],
     [ "compute_eb_averages", "classMOSTAverage.html#af3ddc4c0c5fb5e95bc4fa8793508675e", null ],
     [ "compute_plane_averages", "classMOSTAverage.html#a094b17b7929c7b3dd680e400049d9e69", null ],

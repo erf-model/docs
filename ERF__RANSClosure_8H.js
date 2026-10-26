@@ -1,6 +1,7 @@
 var ERF__RANSClosure_8H =
 [
     [ "cmu", "ERF__RANSClosure_8H.html#a37c7b7f42dbf596b7987cd0c33d735a1", null ],
+    [ "cmu_numerator_root", "ERF__RANSClosure_8H.html#a311ab14abefece8a7cb3ab7b6e0638ef", null ],
     [ "cmu_prime", "ERF__RANSClosure_8H.html#a0cbef5791f55d5f5adf5879436876351", null ],
     [ "dissipation", "ERF__RANSClosure_8H.html#ac3c8e89ddf9d2d7350855648587b019d", null ],
     [ "geom_length", "ERF__RANSClosure_8H.html#aa00c76839efcaa15d577655fe056fc26", null ],

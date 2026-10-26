@@ -8,6 +8,7 @@ var ERF__IBSEBSolar_8H =
     [ "clear_sky_diffuse_h", "ERF__IBSEBSolar_8H.html#aefea37a58bd4fed1e073d17b371177db", null ],
     [ "clear_sky_dni", "ERF__IBSEBSolar_8H.html#a623c266ae3336f5ac9ff60e8de6dedc8", null ],
     [ "column_top", "ERF__IBSEBSolar_8H.html#a7369ad2554c607464437f99844a34dcb", null ],
+    [ "day_of_year_at", "ERF__IBSEBSolar_8H.html#adfc0cd9b7db1f60dc0d3562595744cdc", null ],
     [ "earth_sun_distance_factor", "ERF__IBSEBSolar_8H.html#a849b3e7a3e19b288368057fb7843510d", null ],
     [ "equation_of_time", "ERF__IBSEBSolar_8H.html#a79a87dfcb56f3bd0dda0763680a92c0c", null ],
     [ "hemisphere_direction", "ERF__IBSEBSolar_8H.html#a2bf43b74765b9d05ae01ba6c27c4cc35", null ],
@@ -18,5 +19,6 @@ var ERF__IBSEBSolar_8H =
     [ "solar_declination", "ERF__IBSEBSolar_8H.html#ae09e2073c1208d7de0c750f830a80bbf", null ],
     [ "solar_hour_angle", "ERF__IBSEBSolar_8H.html#aecc3cfb456d028d5a4eb376dfbffb7be", null ],
     [ "solar_zenith", "ERF__IBSEBSolar_8H.html#a315043398c60950316652e0a02812886", null ],
+    [ "spencer_day_angle", "ERF__IBSEBSolar_8H.html#ae3a1f3e3443d21d2751153121ee65e2f", null ],
     [ "sun_vector", "ERF__IBSEBSolar_8H.html#ac406cb6ad458a2f1a36ec1b5cbfe3b2e", null ]
 ];

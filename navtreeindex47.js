@@ -1,5 +1,13 @@
 var NAVTREEINDEX47 =
 {
+"structSAMPrecipConfig.html#aab63347d7094c028bd087b3a5fc35b2f":[2,0,133,4],
+"structSAMPrecipConfig.html#abc1f883fbeaa900697f36f4ca4d60754":[2,0,133,7],
+"structSAMPrecipConfig.html#ad479a23e4360ec350fd1cdbedc8925d2":[2,0,133,6],
+"structSAMPrecipConfig.html#ad884b983cda6f35c2a56d1d9f0858c07":[2,0,133,13],
+"structSAMPrecipConfig.html#af92e2954ec5ace833ca30c09ba2cb868":[2,0,133,8],
+"structSAMPrecipFaceState.html":[2,0,134],
+"structSAMPrecipFaceState.html#a10bdfb6f25e682a16d639267b3d8b582":[2,0,134,0],
+"structSAMPrecipFaceState.html#a1c6a7334783f89d08b71a92044556f14":[2,0,134,5],
 "structSAMPrecipFaceState.html#a51baeec56397d453b29383fd834dd3ac":[2,0,134,4],
 "structSAMPrecipFaceState.html#a63a22551cc05b900ed28733fcdd6619c":[2,0,134,3],
 "structSAMPrecipFaceState.html#a874ebd45d78701e1ace4ad875686a4fa":[2,0,134,6],
@@ -241,13 +249,5 @@ var NAVTREEINDEX47 =
 "structSedimentationFlux.html#a2661f365c1ddd1af417b3b5615a12683":[2,0,154,1],
 "structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524":[2,0,154,4],
 "structSedimentationFlux.html#a54c428e1ba31f369d25acca70942bacc":[2,0,154,3],
-"structSedimentationFlux.html#a6e5d8c8842a24cb49280015fb50c2979":[2,0,154,0],
-"structSedimentationFlux.html#aaad36702599b454971f956d271c7d5d3":[2,0,154,2],
-"structShocColumnData.html":[2,0,155],
-"structShocColumnData.html#a0b47c32b1773caa04739ff5a47c2a773":[2,0,155,40],
-"structShocColumnData.html#a0ea4b5344cd667118ea2a08dd8476f76":[2,0,155,37],
-"structShocColumnData.html#a12c4e3727a28cc716e40671a75b93f55":[2,0,155,14],
-"structShocColumnData.html#a139cad98eeec7990702474856f401af2":[2,0,155,38],
-"structShocColumnData.html#a1581356bc2390a7a5f6fecfa387ad675":[2,0,155,56],
-"structShocColumnData.html#a186c9cef9ed6537156cc57381a18f2e2":[2,0,155,27]
+"structSedimentationFlux.html#a6e5d8c8842a24cb49280015fb50c2979":[2,0,154,0]
 };

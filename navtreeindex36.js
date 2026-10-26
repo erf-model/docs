@@ -1,5 +1,10 @@
 var NAVTREEINDEX36 =
 {
+"classerf__sbm_1_1SpectralGrid.html#a3f4931e7137f29dbf4aa998190064e04":[2,0,9,36,0],
+"classerf__sbm_1_1SpectralGrid.html#a6c2ead9f3fd31174d1a9e7c4a3370217":[2,0,9,36,4],
+"classerf__sbm_1_1SpectralGrid.html#a74d63908d01cdc8d63e6159856e91906":[2,0,9,36,1],
+"classerf__sbm_1_1SpectralGrid.html#a8bcdf6beaf406565aa75fb218fd63ee9":[2,0,9,36,12],
+"classerf__sbm_1_1SpectralGrid.html#abaa5e6c89072acd88f03092458fb22e2":[2,0,9,36,10],
 "classerf__sbm_1_1SpectralGrid.html#ac821171de1ede9b309bd8c70fa7101cf":[2,0,9,36,11],
 "classerf__sbm_1_1SpectralGrid.html#ad34a466e6f37434423baff4fa40526be":[2,0,9,36,2],
 "classerf__sbm_1_1SpectralGrid.html#ad6c28f446e0cbf5acafb38c9c900c828":[2,0,9,36,3],
@@ -88,8 +93,8 @@ var NAVTREEINDEX36 =
 "dir_fbd11baa4baa1a8b78c4a3d08373cbc6.html":[3,0,1,16],
 "dir_fc0c15590968603ac439df7b0a572228.html":[3,0,1,6],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX36 =
 "globals_vars_r.html":[3,1,2,17],
 "globals_vars_s.html":[3,1,2,18],
 "globals_vars_t.html":[3,1,2,19],
-"globals_vars_u.html":[3,1,2,20],
-"globals_vars_v.html":[3,1,2,21],
-"globals_vars_w.html":[3,1,2,22],
-"globals_vars_x.html":[3,1,2,23],
-"globals_vars_y.html":[3,1,2,24],
-"globals_vars_z.html":[3,1,2,25]
+"globals_vars_u.html":[3,1,2,20]
 };
