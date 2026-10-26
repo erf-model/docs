@@ -476,7 +476,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__SAMUtils_8H.html#aea441120e2a4dc4c5c34f05042b0246c" title=" " alt="" coords="891,347,1083,373"/>
 <area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="920,208,1053,235"/>
 <area shape="rect" href="ERF__SAMUtils_8H.html#a19d633ab473fd82bd94659acc1b107b4" title=" " alt="" coords="919,259,1054,285"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="629,1490,811,1531"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="629,1490,811,1531"/>
 <area shape="rect" href="ERF__SAMUtils_8H.html#aae2d5e226d3a2e1e8a29cd81232a9fca" title=" " alt="" coords="630,1002,810,1043"/>
 <area shape="rect" href="ERF__SAMUtils_8H.html#ab080784acfa63bd2a564d2429496e189" title=" " alt="" coords="627,1068,813,1095"/>
 <area shape="rect" href="ERF__SAMUtils_8H.html#a9394a3276c820a418b6dc0cc92074b22" title=" " alt="" coords="597,1220,843,1247"/>
@@ -1378,7 +1378,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// needs one global substep count across ranks, matching PrecipFall.</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    ParallelDescriptor::ReduceRealMax(wt_max);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    wt_max += <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;Real&gt;::epsilon</a>();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classSAM.html#afa0b487888d626024321f3016c5b8eac">m_dzmin</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0),</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classSAM.html#afa0b487888d626024321f3016c5b8eac">m_dzmin</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0),</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="stringliteral">&quot;SAM::IceFall: the minimum cell height was never set (Set_dzmin), so the fall substeps cannot be sized&quot;</span>);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    n_substep = <a class="code" href="ERF__SAMUtils_8H.html#a2c45a447facf0cd3aaf3c7815c04d886">sam_substep_count_from_reduced_flux</a>(wt_max, dtn, <a class="code" href="classSAM.html#afa0b487888d626024321f3016c5b8eac">m_dzmin</a>);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(n_substep &gt;= 1);</div>
@@ -1474,7 +1474,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    } <span class="comment">// nsub</span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
 <div class="ttc" id="aERF__SAMUtils_8H_html_a2c45a447facf0cd3aaf3c7815c04d886"><div class="ttname"><a href="ERF__SAMUtils_8H.html#a2c45a447facf0cd3aaf3c7815c04d886">sam_substep_count_from_reduced_flux</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int sam_substep_count_from_reduced_flux(const amrex::Real &amp;reduced_flux, const amrex::Real &amp;dt, const amrex::Real &amp;dz) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SAMUtils.H:922</div></div>
 <div class="ttc" id="aERF__SAMUtils_8H_html_a9394a3276c820a418b6dc0cc92074b22"><div class="ttname"><a href="ERF__SAMUtils_8H.html#a9394a3276c820a418b6dc0cc92074b22">sam_limit_precip_component_flux</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real sam_limit_precip_component_flux(const amrex::Real &amp;raw_flux, const amrex::Real &amp;rho_donor, const amrex::Real &amp;q_donor, const amrex::Real &amp;detJ_donor, const amrex::Real &amp;coef) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SAMUtils.H:1098</div></div>
 <div class="ttc" id="aERF__SAMUtils_8H_html_aa838d63de27130b744073b3f794a59d4"><div class="ttname"><a href="ERF__SAMUtils_8H.html#aa838d63de27130b744073b3f794a59d4">sam_sedimentation_tendency</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real sam_sedimentation_tendency(const amrex::Real &amp;fz_hi, const amrex::Real &amp;fz_lo, const amrex::Real &amp;rho, const amrex::Real &amp;dJinv, const amrex::Real &amp;coef) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SAMUtils.H:1113</div></div>
@@ -1507,7 +1507,7 @@ Here is the call graph for this function:</div>
 <map name="aclassSAM_a363b3bb27b6e6cdad8693363b3262419_cgraph" id="aclassSAM_a363b3bb27b6e6cdad8693363b3262419_cgraph">
 <area shape="rect" title=" " alt="" coords="5,291,107,317"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="186,5,369,32"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="186,57,369,98"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="186,57,369,98"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="232,123,323,149"/>
 <area shape="rect" href="ERF__SAMUtils_8H.html#aae2d5e226d3a2e1e8a29cd81232a9fca" title=" " alt="" coords="187,174,367,215"/>
 <area shape="rect" href="ERF__SAMUtils_8H.html#ab080784acfa63bd2a564d2429496e189" title=" " alt="" coords="185,240,370,267"/>
@@ -1871,7 +1871,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="comment">//       niter &lt; max_iter here would spuriously fail a solve that</span></div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="comment">//       converged on exactly the last allowed iteration.</span></div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordtype">bool</span> valid_solution = (std::abs(F) &lt;= tol);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(valid_solution, <span class="stringliteral">&quot;SAM mixed phase saturation adjustment failed to converge.&quot;</span>);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(valid_solution, <span class="stringliteral">&quot;SAM mixed phase saturation adjustment failed to converge.&quot;</span>);</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="comment">// Partition the change in non-precipitating q</span></div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        qv_array(i,j,k) = qsatm;</div>
@@ -1896,7 +1896,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSAM_a6a026e55301974c43aaf48ebb424b9f4_cgraph.png" border="0" usemap="#aclassSAM_a6a026e55301974c43aaf48ebb424b9f4_cgraph" alt=""/></div>
 <map name="aclassSAM_a6a026e55301974c43aaf48ebb424b9f4_cgraph" id="aclassSAM_a6a026e55301974c43aaf48ebb424b9f4_cgraph">
 <area shape="rect" title=" " alt="" coords="5,274,159,301"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="211,5,394,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="211,5,394,47"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a7baba5d74922033bf93526933a0d77ec" title=" " alt="" coords="257,71,349,98"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699" title=" " alt="" coords="253,223,352,250"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3" title=" " alt="" coords="263,122,342,149"/>
@@ -2251,7 +2251,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// active tiles for this reduction, so keep the explicit MPI max reduction.</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    ParallelDescriptor::ReduceRealMax(max_reduced_flux);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    max_reduced_flux += <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;Real&gt;::epsilon</a>();</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classSAM.html#afa0b487888d626024321f3016c5b8eac">m_dzmin</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0),</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classSAM.html#afa0b487888d626024321f3016c5b8eac">m_dzmin</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0),</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="stringliteral">&quot;SAM::PrecipFall: the minimum cell height was never set (Set_dzmin), so the fall substeps cannot be sized&quot;</span>);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    n_substep = <a class="code" href="ERF__SAMUtils_8H.html#a2c45a447facf0cd3aaf3c7815c04d886">sam_substep_count_from_reduced_flux</a>(max_reduced_flux, dtn, <a class="code" href="classSAM.html#afa0b487888d626024321f3016c5b8eac">m_dzmin</a>);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(n_substep &gt;= 1);</div>
@@ -2421,7 +2421,7 @@ Here is the call graph for this function:</div>
 <map name="aclassSAM_ae870dc821f7cd01ffc3bfd7925b1d18b_cgraph" id="aclassSAM_ae870dc821f7cd01ffc3bfd7925b1d18b_cgraph">
 <area shape="rect" title=" " alt="" coords="5,366,128,392"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="469,63,652,90"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="207,56,390,97"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="207,56,390,97"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017" title=" " alt="" coords="243,122,354,148"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="253,172,344,199"/>
 <area shape="rect" href="ERF__SAMUtils_8H.html#a8047e72ed57a8e2bb884fc5e7fc85087" title=" " alt="" coords="229,223,368,250"/>

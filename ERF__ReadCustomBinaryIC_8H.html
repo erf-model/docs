@@ -90,62 +90,63 @@ $(document).ready(function(){initNavTree('ERF__ReadCustomBinaryIC_8H.html',''); 
 <div class="contents">
 <div class="textblock"><code>#include &lt;array&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
 <code>#include &quot;<a class="el" href="ERF__DataStruct_8H_source.html">ERF_DataStruct.H</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_ReadCustomBinaryIC.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__ReadCustomBinaryIC_8H__incl.png" border="0" usemap="#aSource_2Utils_2ERF__ReadCustomBinaryIC_8H" alt=""/></div>
 <map name="aSource_2Utils_2ERF__ReadCustomBinaryIC_8H" id="aSource_2Utils_2ERF__ReadCustomBinaryIC_8H">
-<area shape="rect" title=" " alt="" coords="641,5,860,47"/>
-<area shape="rect" title=" " alt="" coords="633,95,689,121"/>
-<area shape="rect" title=" " alt="" coords="714,95,787,121"/>
-<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="811,95,948,121"/>
-<area shape="rect" title=" " alt="" coords="706,319,765,345"/>
-<area shape="rect" title=" " alt="" coords="374,244,454,271"/>
-<area shape="rect" title=" " alt="" coords="2234,468,2296,495"/>
-<area shape="rect" title=" " alt="" coords="1094,244,1252,271"/>
-<area shape="rect" title=" " alt="" coords="478,244,598,271"/>
-<area shape="rect" title=" " alt="" coords="724,244,840,271"/>
-<area shape="rect" title=" " alt="" coords="44,244,198,271"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="1608,393,1741,420"/>
-<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="916,244,1070,271"/>
-<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="206,169,337,196"/>
-<area shape="rect" href="ERF__DampingStruct_8H.html" title=" " alt="" coords="737,169,902,196"/>
-<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="978,169,1107,196"/>
-<area shape="rect" href="ERF__EBStruct_8H.html" title=" " alt="" coords="361,169,484,196"/>
-<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="558,169,713,196"/>
-<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="2204,244,2337,271"/>
-<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="467,319,626,345"/>
-<area shape="rect" href="ERF__RadStruct_8H.html" title="Radiation model type and control parameters." alt="" coords="1653,169,1784,196"/>
-<area shape="rect" href="ERF__ShocTransportStruct_8H.html" title=" " alt="" coords="1233,169,1430,196"/>
-<area shape="rect" href="ERF__CanopyTurbStruct_8H.html" title=" " alt="" coords="2240,169,2423,196"/>
-<area shape="rect" title=" " alt="" coords="1850,543,1909,569"/>
-<area shape="rect" title=" " alt="" coords="1277,543,1400,569"/>
-<area shape="rect" title=" " alt="" coords="1440,468,1618,495"/>
-<area shape="rect" title=" " alt="" coords="1917,468,2040,495"/>
-<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="1642,468,1842,495"/>
-<area shape="rect" title=" " alt="" coords="981,319,1109,345"/>
-<area shape="rect" title=" " alt="" coords="1968,319,2172,345"/>
-<area shape="rect" href="ERF__MYNNStruct_8H.html" title=" " alt="" coords="2197,319,2344,345"/>
-<area shape="rect" href="ERF__RANSClosure_8H.html" title=" " alt="" coords="2539,393,2692,420"/>
-<area shape="rect" title=" " alt="" coords="2517,319,2592,345"/>
-<area shape="rect" title=" " alt="" coords="2418,319,2493,345"/>
-<area shape="rect" title=" " alt="" coords="2286,393,2412,420"/>
-<area shape="rect" title=" " alt="" coords="2538,468,2693,495"/>
-<area shape="rect" title=" " alt="" coords="738,393,906,420"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="390,393,508,420"/>
-<area shape="rect" href="ERF__HashRNG_8H.html" title=" " alt="" coords="584,393,714,420"/>
-<area shape="rect" title=" " alt="" coords="565,468,632,495"/>
-<area shape="rect" title=" " alt="" coords="408,468,490,495"/>
-<area shape="rect" href="ERF__NoahMPSoilTable_8H.html" title="Noah&#45;MP&#39;s soil parameters by soil category, for the two&#45;stream surface energy balance (erf...." alt="" coords="1184,468,1364,495"/>
-<area shape="rect" href="ERF__NoahMPVegetationTable_8H.html" title="Noah&#45;MP&#39;s canopy&#45;resistance parameters, roughness length and monthly leaf area index by land&#45;use cate..." alt="" coords="1680,244,1906,271"/>
-<area shape="rect" title=" " alt="" coords="1597,319,1658,345"/>
-<area shape="rect" href="ERF__SimplifiedSEB_8H.html" title="Simplified SEB – the two&#45;stream model&#39;s surface energy balance, as pure functions." alt="" coords="1734,319,1892,345"/>
-<area shape="rect" title=" " alt="" coords="1816,393,1978,420"/>
-<area shape="rect" title=" " alt="" coords="2003,393,2159,420"/>
-<area shape="rect" title=" " alt="" coords="1418,244,1504,271"/>
-<area shape="rect" title=" " alt="" coords="1328,244,1394,271"/>
-<area shape="rect" title=" " alt="" coords="2514,244,2642,271"/>
+<area shape="rect" title=" " alt="" coords="51,5,269,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,61,121"/>
+<area shape="rect" title=" " alt="" coords="86,95,159,121"/>
+<area shape="rect" title=" " alt="" coords="676,543,735,569"/>
+<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="1882,95,2019,121"/>
+<area shape="rect" title=" " alt="" coords="1923,319,1981,345"/>
+<area shape="rect" title=" " alt="" coords="1591,244,1671,271"/>
+<area shape="rect" title=" " alt="" coords="1953,468,2015,495"/>
+<area shape="rect" title=" " alt="" coords="2133,244,2291,271"/>
+<area shape="rect" title=" " alt="" coords="1745,244,1865,271"/>
+<area shape="rect" title=" " alt="" coords="1941,244,2057,271"/>
+<area shape="rect" title=" " alt="" coords="2597,244,2750,271"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="776,393,909,420"/>
+<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="2367,244,2521,271"/>
+<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="2313,169,2444,196"/>
+<area shape="rect" href="ERF__DampingStruct_8H.html" title=" " alt="" coords="1868,169,2033,196"/>
+<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="2109,169,2238,196"/>
+<area shape="rect" href="ERF__EBStruct_8H.html" title=" " alt="" coords="1492,169,1615,196"/>
+<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="1639,169,1793,196"/>
+<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="828,244,961,271"/>
+<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="407,319,566,345"/>
+<area shape="rect" href="ERF__RadStruct_8H.html" title="Radiation model type and control parameters." alt="" coords="1287,169,1417,196"/>
+<area shape="rect" href="ERF__ShocTransportStruct_8H.html" title=" " alt="" coords="3044,169,3241,196"/>
+<area shape="rect" href="ERF__CanopyTurbStruct_8H.html" title=" " alt="" coords="2826,169,3009,196"/>
+<area shape="rect" title=" " alt="" coords="1313,543,1436,569"/>
+<area shape="rect" title=" " alt="" coords="641,468,820,495"/>
+<area shape="rect" title=" " alt="" coords="1717,468,1840,495"/>
+<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="1073,468,1273,495"/>
+<area shape="rect" title=" " alt="" coords="2380,319,2508,345"/>
+<area shape="rect" title=" " alt="" coords="1061,319,1265,345"/>
+<area shape="rect" href="ERF__MYNNStruct_8H.html" title=" " alt="" coords="889,319,1036,345"/>
+<area shape="rect" href="ERF__RANSClosure_8H.html" title=" " alt="" coords="934,393,1087,420"/>
+<area shape="rect" title=" " alt="" coords="692,319,767,345"/>
+<area shape="rect" title=" " alt="" coords="791,319,865,345"/>
+<area shape="rect" title=" " alt="" coords="1111,393,1238,420"/>
+<area shape="rect" title=" " alt="" coords="895,468,1049,495"/>
+<area shape="rect" title=" " alt="" coords="429,393,597,420"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="235,393,354,420"/>
+<area shape="rect" href="ERF__HashRNG_8H.html" title=" " alt="" coords="621,393,752,420"/>
+<area shape="rect" title=" " alt="" coords="380,468,447,495"/>
+<area shape="rect" title=" " alt="" coords="253,468,336,495"/>
+<area shape="rect" href="ERF__NoahMPSoilTable_8H.html" title="Noah&#45;MP&#39;s soil parameters by soil category, for the two&#45;stream surface energy balance (erf...." alt="" coords="1349,468,1529,495"/>
+<area shape="rect" href="ERF__NoahMPVegetationTable_8H.html" title="Noah&#45;MP&#39;s canopy&#45;resistance parameters, roughness length and monthly leaf area index by land&#45;use cate..." alt="" coords="1137,244,1364,271"/>
+<area shape="rect" title=" " alt="" coords="1340,319,1401,345"/>
+<area shape="rect" href="ERF__SimplifiedSEB_8H.html" title="Simplified SEB – the two&#45;stream model&#39;s surface energy balance, as pure functions." alt="" coords="1610,319,1769,345"/>
+<area shape="rect" title=" " alt="" coords="1657,393,1820,420"/>
+<area shape="rect" title=" " alt="" coords="1477,393,1633,420"/>
+<area shape="rect" title=" " alt="" coords="3180,244,3265,271"/>
+<area shape="rect" title=" " alt="" coords="3290,244,3355,271"/>
+<area shape="rect" title=" " alt="" coords="2927,244,3055,271"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -272,68 +273,94 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> = 0, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> = 0, nz = 0, ndata = 0;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">float</span> value;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// Open the binary file in input mode</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::ifstream infile(filename, std::ios::binary);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (!infile) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: Could not open file &quot;</span> + filename);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">auto</span> read_or_abort = [&amp;](<span class="keyword">auto</span>&amp; dest, <span class="keyword">const</span> std::string&amp; field_name) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        infile.read(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(&amp;dest), <span class="keyword">sizeof</span>(dest));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span> (!infile) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error reading &quot;</span> + field_name + <span class="stringliteral">&quot; from &quot;</span> + filename);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    };</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">auto</span> read_float_vector = [&amp;](amrex::Vector&lt;amrex::Real&gt;&amp; dest,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                 <span class="keywordtype">int</span> count,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                 <span class="keyword">const</span> std::string&amp; field_name)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (count &lt; 0) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error: negative element count for &quot;</span> + field_name + <span class="stringliteral">&quot; in &quot;</span> + filename);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        dest.reserve(dest.size() + count);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> = 0; <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> &lt; count; ++<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            read_or_abort(value, field_name);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            dest.emplace_back(value);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    };</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Read the four integers</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    read_or_abort(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, <span class="stringliteral">&quot;nx&quot;</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    read_or_abort(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>, <span class="stringliteral">&quot;ny&quot;</span>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    read_or_abort(nz, <span class="stringliteral">&quot;nz&quot;</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    read_or_abort(ndata, <span class="stringliteral">&quot;ndata&quot;</span>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> &lt;= 0 || <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> &lt;= 0 || nz &lt;= 0) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: invalid custom binary dimensions in &quot;</span> + filename);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (ndata &lt; 0 || ndata &gt; 8) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: unsupported number of data fields in &quot;</span> + filename);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    read_float_vector(latvec_h, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>*<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>, <span class="stringliteral">&quot;latitude&quot;</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    read_float_vector(lonvec_h, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>*<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>, <span class="stringliteral">&quot;longitude&quot;</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    read_float_vector(xvec_h, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, <span class="stringliteral">&quot;x coordinates&quot;</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    read_float_vector(yvec_h, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>, <span class="stringliteral">&quot;y coordinates&quot;</span>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    read_float_vector(zvec_h, nz, <span class="stringliteral">&quot;z coordinates&quot;</span>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::array&lt;amrex::Vector&lt;amrex::Real&gt;*, 8&gt; data_fields = {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        &amp;<a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a362f0148b27e7245ef6d68159e7ba843">rho_h</a>, &amp;uvel_h, &amp;vvel_h, &amp;wvel_h, &amp;theta_h, &amp;qv_h, &amp;qc_h, &amp;qr_h</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    };</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Read the file</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> = 0; <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> &lt; ndata; ++<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        read_float_vector(*data_fields[<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>], <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> * <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> * nz,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                          <span class="stringliteral">&quot;data field &quot;</span> + std::to_string(<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>));</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> = 0, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> = 0, nz = 0, ndata = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">float</span> value;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Open the binary file in input mode</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::ifstream infile(filename, std::ios::binary);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (!infile) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: Could not open file &quot;</span> + filename);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">auto</span> read_or_abort = [&amp;](<span class="keyword">auto</span>&amp; dest, <span class="keyword">const</span> std::string&amp; field_name) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        infile.read(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(&amp;dest), <span class="keyword">sizeof</span>(dest));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (!infile) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error reading &quot;</span> + field_name + <span class="stringliteral">&quot; from &quot;</span> + filename);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">auto</span> read_float_vector = [&amp;](amrex::Vector&lt;amrex::Real&gt;&amp; dest,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                 amrex::Long count,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                 <span class="keyword">const</span> std::string&amp; field_name)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (count &lt; 0) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error: negative element count for &quot;</span> + field_name + <span class="stringliteral">&quot; in &quot;</span> + filename);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        dest.reserve(dest.size() + count);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">for</span> (amrex::Long <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> = 0; <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> &lt; count; ++<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            read_or_abort(value, field_name);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            dest.emplace_back(value);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    };</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Read the four integers</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    read_or_abort(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, <span class="stringliteral">&quot;nx&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    read_or_abort(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>, <span class="stringliteral">&quot;ny&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    read_or_abort(nz, <span class="stringliteral">&quot;nz&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    read_or_abort(ndata, <span class="stringliteral">&quot;ndata&quot;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> &lt;= 0 || <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> &lt;= 0 || nz &lt;= 0) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: invalid custom binary dimensions in &quot;</span> + filename);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (ndata &lt; 0 || ndata &gt; 8) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: unsupported number of data fields in &quot;</span> + filename);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// The dimensions come from the file: form the element counts in 64 bits, refusing any</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// whose byte count would overflow, and check the file holds that many values before</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// reserving room for them</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    constexpr amrex::Long max_count = std::numeric_limits&lt;amrex::Long&gt;::max()</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                    / <span class="keyword">static_cast&lt;</span>amrex::Long<span class="keyword">&gt;</span>(<span class="keyword">sizeof</span>(float));</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> amrex::Long nxy = <span class="keyword">static_cast&lt;</span>amrex::Long<span class="keyword">&gt;</span>(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>) * <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (nz &gt; max_count / nxy) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: custom binary dimensions too large in &quot;</span> + filename);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">const</span> amrex::Long nxyz = nxy * nz;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// 2 nxy + nx + ny + nz + ndata nxyz values, without overflowing</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    amrex::Long nvalues = 2*nxy + <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> + <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> + nz;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (nvalues &gt; max_count || (ndata &gt; 0 &amp;&amp; nxyz &gt; (max_count - nvalues) / ndata)) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: custom binary dimensions too large in &quot;</span> + filename);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    nvalues += ndata * nxyz;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> data_start = infile.tellg();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    infile.seekg(0, std::ios::end);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> bytes_left = <span class="keyword">static_cast&lt;</span>amrex::Long<span class="keyword">&gt;</span>(infile.tellg() - data_start);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    infile.seekg(data_start);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (!infile || bytes_left &lt; nvalues * <span class="keyword">static_cast&lt;</span>amrex::Long<span class="keyword">&gt;</span>(<span class="keyword">sizeof</span>(<span class="keywordtype">float</span>))) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: &quot;</span> + filename + <span class="stringliteral">&quot; is shorter than its dimensions say&quot;</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    read_float_vector(latvec_h, nxy, <span class="stringliteral">&quot;latitude&quot;</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    read_float_vector(lonvec_h, nxy, <span class="stringliteral">&quot;longitude&quot;</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    read_float_vector(xvec_h, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, <span class="stringliteral">&quot;x coordinates&quot;</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    read_float_vector(yvec_h, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>, <span class="stringliteral">&quot;y coordinates&quot;</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    read_float_vector(zvec_h, nz, <span class="stringliteral">&quot;z coordinates&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    std::array&lt;amrex::Vector&lt;amrex::Real&gt;*, 8&gt; data_fields = {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        &amp;<a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a362f0148b27e7245ef6d68159e7ba843">rho_h</a>, &amp;uvel_h, &amp;vvel_h, &amp;wvel_h, &amp;theta_h, &amp;qv_h, &amp;qc_h, &amp;qr_h</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    };</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// Read the file</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> = 0; <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> &lt; ndata; ++<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        read_float_vector(*data_fields[<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>], nxyz,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                          <span class="stringliteral">&quot;data field &quot;</span> + std::to_string(<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>));</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a4f88110916f09b2adef33396203ff015"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a></div><div class="ttdeci">const int nx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:14</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a811734e12750524808dba01c57e92c66"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a></div><div class="ttdeci">const int ny</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:15</div></div>
 <div class="ttc" id="aERF__InitForEnsemble_8cpp_html_a221b1f8dc1b747f1e88990c65e3681de"><div class="ttname"><a href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int idx(int i, int j, int k, int nx, int ny)</div><div class="ttdef"><b>Definition:</b> ERF_InitForEnsemble.cpp:396</div></div>

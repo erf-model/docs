@@ -91,97 +91,124 @@ $(document).ready(function(){initNavTree('ERF__ReadCustomBinaryIC_8H_source.html
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Routine to read in the custom written binary file into vectors</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * of variables</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="ERF__ReadCustomBinaryIC_8H.html#a60f8ae2428844a5b2fe598a7a225e6b4">   15</a></span>&#160;<a class="code" href="ERF__ReadCustomBinaryIC_8H.html#a60f8ae2428844a5b2fe598a7a225e6b4">ReadCustomBinaryIC</a> (<span class="keyword">const</span> std::string filename,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; latvec_h,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; lonvec_h,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; xvec_h,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; yvec_h,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; zvec_h,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a362f0148b27e7245ef6d68159e7ba843">rho_h</a>,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; uvel_h,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; vvel_h,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; wvel_h,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; theta_h,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; qv_h,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; qc_h,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; qr_h)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> = 0, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> = 0, nz = 0, ndata = 0;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">float</span> value;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// Open the binary file in input mode</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::ifstream infile(filename, std::ios::binary);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (!infile) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: Could not open file &quot;</span> + filename);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">auto</span> read_or_abort = [&amp;](<span class="keyword">auto</span>&amp; dest, <span class="keyword">const</span> std::string&amp; field_name) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        infile.read(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(&amp;dest), <span class="keyword">sizeof</span>(dest));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span> (!infile) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error reading &quot;</span> + field_name + <span class="stringliteral">&quot; from &quot;</span> + filename);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    };</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">auto</span> read_float_vector = [&amp;](amrex::Vector&lt;amrex::Real&gt;&amp; dest,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                 <span class="keywordtype">int</span> count,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                 <span class="keyword">const</span> std::string&amp; field_name)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (count &lt; 0) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error: negative element count for &quot;</span> + field_name + <span class="stringliteral">&quot; in &quot;</span> + filename);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        dest.reserve(dest.size() + count);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> = 0; <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> &lt; count; ++<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            read_or_abort(value, field_name);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            dest.emplace_back(value);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    };</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Read the four integers</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    read_or_abort(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, <span class="stringliteral">&quot;nx&quot;</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    read_or_abort(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>, <span class="stringliteral">&quot;ny&quot;</span>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    read_or_abort(nz, <span class="stringliteral">&quot;nz&quot;</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    read_or_abort(ndata, <span class="stringliteral">&quot;ndata&quot;</span>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> &lt;= 0 || <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> &lt;= 0 || nz &lt;= 0) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: invalid custom binary dimensions in &quot;</span> + filename);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (ndata &lt; 0 || ndata &gt; 8) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: unsupported number of data fields in &quot;</span> + filename);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    read_float_vector(latvec_h, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>*<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>, <span class="stringliteral">&quot;latitude&quot;</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    read_float_vector(lonvec_h, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>*<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>, <span class="stringliteral">&quot;longitude&quot;</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    read_float_vector(xvec_h, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, <span class="stringliteral">&quot;x coordinates&quot;</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    read_float_vector(yvec_h, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>, <span class="stringliteral">&quot;y coordinates&quot;</span>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    read_float_vector(zvec_h, nz, <span class="stringliteral">&quot;z coordinates&quot;</span>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::array&lt;amrex::Vector&lt;amrex::Real&gt;*, 8&gt; data_fields = {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        &amp;<a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a362f0148b27e7245ef6d68159e7ba843">rho_h</a>, &amp;uvel_h, &amp;vvel_h, &amp;wvel_h, &amp;theta_h, &amp;qv_h, &amp;qc_h, &amp;qr_h</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    };</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Read the file</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> = 0; <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> &lt; ndata; ++<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        read_float_vector(*data_fields[<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>], <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> * <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> * nz,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                          <span class="stringliteral">&quot;data field &quot;</span> + std::to_string(<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>));</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Routine to read in the custom written binary file into vectors</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * of variables</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="ERF__ReadCustomBinaryIC_8H.html#a60f8ae2428844a5b2fe598a7a225e6b4">   16</a></span>&#160;<a class="code" href="ERF__ReadCustomBinaryIC_8H.html#a60f8ae2428844a5b2fe598a7a225e6b4">ReadCustomBinaryIC</a> (<span class="keyword">const</span> std::string filename,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; latvec_h,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; lonvec_h,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; xvec_h,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; yvec_h,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; zvec_h,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a362f0148b27e7245ef6d68159e7ba843">rho_h</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; uvel_h,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; vvel_h,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; wvel_h,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; theta_h,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; qv_h,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; qc_h,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    amrex::Vector&lt;amrex::Real&gt;&amp; qr_h)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> = 0, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> = 0, nz = 0, ndata = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">float</span> value;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Open the binary file in input mode</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::ifstream infile(filename, std::ios::binary);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (!infile) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: Could not open file &quot;</span> + filename);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">auto</span> read_or_abort = [&amp;](<span class="keyword">auto</span>&amp; dest, <span class="keyword">const</span> std::string&amp; field_name) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        infile.read(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(&amp;dest), <span class="keyword">sizeof</span>(dest));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (!infile) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error reading &quot;</span> + field_name + <span class="stringliteral">&quot; from &quot;</span> + filename);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">auto</span> read_float_vector = [&amp;](amrex::Vector&lt;amrex::Real&gt;&amp; dest,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                 amrex::Long count,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                 <span class="keyword">const</span> std::string&amp; field_name)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (count &lt; 0) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error: negative element count for &quot;</span> + field_name + <span class="stringliteral">&quot; in &quot;</span> + filename);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        dest.reserve(dest.size() + count);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">for</span> (amrex::Long <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> = 0; <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> &lt; count; ++<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            read_or_abort(value, field_name);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            dest.emplace_back(value);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    };</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Read the four integers</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    read_or_abort(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, <span class="stringliteral">&quot;nx&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    read_or_abort(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>, <span class="stringliteral">&quot;ny&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    read_or_abort(nz, <span class="stringliteral">&quot;nz&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    read_or_abort(ndata, <span class="stringliteral">&quot;ndata&quot;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> &lt;= 0 || <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> &lt;= 0 || nz &lt;= 0) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: invalid custom binary dimensions in &quot;</span> + filename);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (ndata &lt; 0 || ndata &gt; 8) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: unsupported number of data fields in &quot;</span> + filename);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// The dimensions come from the file: form the element counts in 64 bits, refusing any</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// whose byte count would overflow, and check the file holds that many values before</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// reserving room for them</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    constexpr amrex::Long max_count = std::numeric_limits&lt;amrex::Long&gt;::max()</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                    / <span class="keyword">static_cast&lt;</span>amrex::Long<span class="keyword">&gt;</span>(<span class="keyword">sizeof</span>(float));</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> amrex::Long nxy = <span class="keyword">static_cast&lt;</span>amrex::Long<span class="keyword">&gt;</span>(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>) * <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (nz &gt; max_count / nxy) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: custom binary dimensions too large in &quot;</span> + filename);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">const</span> amrex::Long nxyz = nxy * nz;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// 2 nxy + nx + ny + nz + ndata nxyz values, without overflowing</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    amrex::Long nvalues = 2*nxy + <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> + <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> + nz;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (nvalues &gt; max_count || (ndata &gt; 0 &amp;&amp; nxyz &gt; (max_count - nvalues) / ndata)) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: custom binary dimensions too large in &quot;</span> + filename);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    nvalues += ndata * nxyz;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> data_start = infile.tellg();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    infile.seekg(0, std::ios::end);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> bytes_left = <span class="keyword">static_cast&lt;</span>amrex::Long<span class="keyword">&gt;</span>(infile.tellg() - data_start);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    infile.seekg(data_start);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (!infile || bytes_left &lt; nvalues * <span class="keyword">static_cast&lt;</span>amrex::Long<span class="keyword">&gt;</span>(<span class="keyword">sizeof</span>(<span class="keywordtype">float</span>))) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Error: &quot;</span> + filename + <span class="stringliteral">&quot; is shorter than its dimensions say&quot;</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    read_float_vector(latvec_h, nxy, <span class="stringliteral">&quot;latitude&quot;</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    read_float_vector(lonvec_h, nxy, <span class="stringliteral">&quot;longitude&quot;</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    read_float_vector(xvec_h, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, <span class="stringliteral">&quot;x coordinates&quot;</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    read_float_vector(yvec_h, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>, <span class="stringliteral">&quot;y coordinates&quot;</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    read_float_vector(zvec_h, nz, <span class="stringliteral">&quot;z coordinates&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    std::array&lt;amrex::Vector&lt;amrex::Real&gt;*, 8&gt; data_fields = {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        &amp;<a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a362f0148b27e7245ef6d68159e7ba843">rho_h</a>, &amp;uvel_h, &amp;vvel_h, &amp;wvel_h, &amp;theta_h, &amp;qv_h, &amp;qc_h, &amp;qr_h</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    };</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// Read the file</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> = 0; <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> &lt; ndata; ++<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        read_float_vector(*data_fields[<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>], nxyz,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                          <span class="stringliteral">&quot;data field &quot;</span> + std::to_string(<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>));</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a4f88110916f09b2adef33396203ff015"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a></div><div class="ttdeci">const int nx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:14</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a811734e12750524808dba01c57e92c66"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a></div><div class="ttdeci">const int ny</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:15</div></div>
 <div class="ttc" id="aERF__InitForEnsemble_8cpp_html_a221b1f8dc1b747f1e88990c65e3681de"><div class="ttname"><a href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int idx(int i, int j, int k, int nx, int ny)</div><div class="ttdef"><b>Definition:</b> ERF_InitForEnsemble.cpp:396</div></div>
-<div class="ttc" id="aERF__ReadCustomBinaryIC_8H_html_a60f8ae2428844a5b2fe598a7a225e6b4"><div class="ttname"><a href="ERF__ReadCustomBinaryIC_8H.html#a60f8ae2428844a5b2fe598a7a225e6b4">ReadCustomBinaryIC</a></div><div class="ttdeci">void ReadCustomBinaryIC(const std::string filename, amrex::Vector&lt; amrex::Real &gt; &amp;latvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;lonvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;xvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;yvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;zvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;rho_h, amrex::Vector&lt; amrex::Real &gt; &amp;uvel_h, amrex::Vector&lt; amrex::Real &gt; &amp;vvel_h, amrex::Vector&lt; amrex::Real &gt; &amp;wvel_h, amrex::Vector&lt; amrex::Real &gt; &amp;theta_h, amrex::Vector&lt; amrex::Real &gt; &amp;qv_h, amrex::Vector&lt; amrex::Real &gt; &amp;qc_h, amrex::Vector&lt; amrex::Real &gt; &amp;qr_h)</div><div class="ttdef"><b>Definition:</b> ERF_ReadCustomBinaryIC.H:15</div></div>
+<div class="ttc" id="aERF__ReadCustomBinaryIC_8H_html_a60f8ae2428844a5b2fe598a7a225e6b4"><div class="ttname"><a href="ERF__ReadCustomBinaryIC_8H.html#a60f8ae2428844a5b2fe598a7a225e6b4">ReadCustomBinaryIC</a></div><div class="ttdeci">void ReadCustomBinaryIC(const std::string filename, amrex::Vector&lt; amrex::Real &gt; &amp;latvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;lonvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;xvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;yvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;zvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;rho_h, amrex::Vector&lt; amrex::Real &gt; &amp;uvel_h, amrex::Vector&lt; amrex::Real &gt; &amp;vvel_h, amrex::Vector&lt; amrex::Real &gt; &amp;wvel_h, amrex::Vector&lt; amrex::Real &gt; &amp;theta_h, amrex::Vector&lt; amrex::Real &gt; &amp;qv_h, amrex::Vector&lt; amrex::Real &gt; &amp;qc_h, amrex::Vector&lt; amrex::Real &gt; &amp;qr_h)</div><div class="ttdef"><b>Definition:</b> ERF_ReadCustomBinaryIC.H:16</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_a362f0148b27e7245ef6d68159e7ba843"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a362f0148b27e7245ef6d68159e7ba843">rho_h</a></div><div class="ttdeci">Vector&lt; Real &gt; rho_h(khi+1, zero)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

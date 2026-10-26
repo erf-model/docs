@@ -304,7 +304,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(ba2d.size() == ba3d.size(),</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(ba2d.size() == ba3d.size(),</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="stringliteral">&quot;PlanarBoundary::define: the planar BoxArray must hold one box per 3D box&quot;</span>);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">m_nplanar</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ba2d.size());</div>
@@ -328,11 +328,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classPlanarBoundary.html#a1b8d1a9c43bced2da11305cf9ffb5cba">m_dm_sfc</a> = DistributionMapping(std::move(pmap));</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Exactly one computed copy per column: the surface boxes must not overlap</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classPlanarBoundary.html#aa1da3a6565979c3158e81b31a8ebbac9">m_ba_sfc</a>.isDisjoint(),</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classPlanarBoundary.html#aa1da3a6565979c3158e81b31a8ebbac9">m_ba_sfc</a>.isDisjoint(),</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="stringliteral">&quot;PlanarBoundary::define: the boxes touching the surface overlap in the plane, so a &quot;</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="stringliteral">&quot;planar field would have more than one computed copy per column&quot;</span>);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
 <div class="ttc" id="aclassPlanarBoundary_html_a1b8d1a9c43bced2da11305cf9ffb5cba"><div class="ttname"><a href="classPlanarBoundary.html#a1b8d1a9c43bced2da11305cf9ffb5cba">PlanarBoundary::m_dm_sfc</a></div><div class="ttdeci">amrex::DistributionMapping m_dm_sfc</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:121</div></div>
 <div class="ttc" id="aclassPlanarBoundary_html_aa1da3a6565979c3158e81b31a8ebbac9"><div class="ttname"><a href="classPlanarBoundary.html#aa1da3a6565979c3158e81b31a8ebbac9">PlanarBoundary::m_ba_sfc</a></div><div class="ttdeci">amrex::BoxArray m_ba_sfc</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:120</div></div>
 <div class="ttc" id="aclassPlanarBoundary_html_abda3423e91a4092352081e3f315093cb"><div class="ttname"><a href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">PlanarBoundary::m_nplanar</a></div><div class="ttdeci">int m_nplanar</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:119</div></div>
@@ -343,7 +343,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_cgraph.png" border="0" usemap="#aclassPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_cgraph" alt=""/></div>
 <map name="aclassPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_cgraph" id="aclassPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_cgraph">
 <area shape="rect" title=" " alt="" coords="5,13,177,39"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="225,5,408,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="225,5,408,47"/>
 </map>
 </div>
 
@@ -391,7 +391,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(mf.size()) == <a class="code" href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">m_nplanar</a>,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(mf.size()) == <a class="code" href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">m_nplanar</a>,</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="stringliteral">&quot;PlanarBoundary::fill: the MultiFab is not on the planar BoxArray given to define&quot;</span>);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nsfc = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>.size());</div>
@@ -429,7 +429,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classPlanarBoundary_a16323c083de3fd8114f537c1d8eb1218_cgraph.png" border="0" usemap="#aclassPlanarBoundary_a16323c083de3fd8114f537c1d8eb1218_cgraph" alt=""/></div>
 <map name="aclassPlanarBoundary_a16323c083de3fd8114f537c1d8eb1218_cgraph" id="aclassPlanarBoundary_a16323c083de3fd8114f537c1d8eb1218_cgraph">
 <area shape="rect" title=" " alt="" coords="5,13,153,39"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="201,5,384,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="201,5,384,47"/>
 </map>
 </div>
 
@@ -502,16 +502,16 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(mf.size()) == <a class="code" href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">m_nplanar</a>,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(mf.size()) == <a class="code" href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">m_nplanar</a>,</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="stringliteral">&quot;PlanarBoundary::gather_surface: the MultiFab is not on the planar BoxArray given to define&quot;</span>);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(dst.size() == <span class="keyword">static_cast&lt;</span>Long<span class="keyword">&gt;</span>(<a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>.size()),</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(dst.size() == <span class="keyword">static_cast&lt;</span>Long<span class="keyword">&gt;</span>(<a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>.size()),</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="stringliteral">&quot;PlanarBoundary::gather_surface: the destination is not on the surface boxes&quot;</span>);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(dst); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.validbox();</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> src = <a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>[mfi.index()];</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="comment">// The surface copy must be the planar box with the same footprint, on this rank</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(bx == mf.boxArray()[src] &amp;&amp;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(bx == mf.boxArray()[src] &amp;&amp;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                         mf.DistributionMap()[src] == ParallelDescriptor::MyProc(),</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="stringliteral">&quot;PlanarBoundary::gather_surface: surface box does not match its planar box&quot;</span>);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        dst[mfi].copy&lt;RunOn::Device&gt;(mf[src], bx, scomp, bx, dcomp, ncomp);</div>
@@ -525,7 +525,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classPlanarBoundary_aeb24ab9e612793d1de17501f6b25cef6_cgraph.png" border="0" usemap="#aclassPlanarBoundary_aeb24ab9e612793d1de17501f6b25cef6_cgraph" alt=""/></div>
 <map name="aclassPlanarBoundary_aeb24ab9e612793d1de17501f6b25cef6_cgraph" id="aclassPlanarBoundary_aeb24ab9e612793d1de17501f6b25cef6_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,180,47"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="228,5,411,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="228,5,411,47"/>
 </map>
 </div>
 <div class="dynheader">

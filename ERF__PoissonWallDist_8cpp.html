@@ -82,6 +82,8 @@ $(document).ready(function(){initNavTree('ERF__PoissonWallDist_8cpp.html',''); i
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_PoissonWallDist.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -150,7 +152,149 @@ Include dependency graph for ERF_PoissonWallDist.cpp:</div>
 <area shape="rect" href="ERF__ForestDrag_8H.html" title=" " alt="" coords="3491,169,3630,196"/>
 </map>
 </div>
-</div></div><!-- contents -->
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a573a734aad8a42fd5f3e4564b165337d"><td class="memItemLeft" align="right" valign="top">static MultiFab&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__PoissonWallDist_8cpp.html#a573a734aad8a42fd5f3e4564b165337d">surface_slab</a> (const MultiFab &amp;z_nd, int <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>)</td></tr>
+<tr class="separator:a573a734aad8a42fd5f3e4564b165337d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea33e8edd31d795a0f253abe953dbac8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__PoissonWallDist_8cpp.html#aea33e8edd31d795a0f253abe953dbac8">assert_surface_gathered</a> (const MultiFab &amp;znd_surf)</td></tr>
+<tr class="separator:aea33e8edd31d795a0f253abe953dbac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aea33e8edd31d795a0f253abe953dbac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea33e8edd31d795a0f253abe953dbac8">&#9670;&nbsp;</a></span>assert_surface_gathered()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void assert_surface_gathered </td>
+          <td>(</td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>znd_surf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Stop unless every surface node, valid and x/y ghost, was gathered. The slab has no z ghosts, so the reduction runs over its own ghost vector.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">znd_surf</td><td>Surface slab filled by fill_surface_nodes </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> znd_max = ReduceMax(znd_surf, znd_surf.nGrowVect(),</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        [=] AMREX_GPU_HOST_DEVICE (Box <span class="keyword">const</span>&amp; bx, Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; a) -&gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> m = std::numeric_limits&lt;Real&gt;::lowest();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            amrex::Loop(bx, [&amp;] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) { m = amrex::max(m, a(i,j,k)); });</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        });</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    ParallelAllReduce::Max(znd_max, ParallelContext::CommunicatorSub());</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Same threshold as fill_surface_nodes: a node interpolated from a stencil that still</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// held bogus values is a fraction of bogus_large_value, not equal to it</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(znd_max &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * <a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="stringliteral">&quot;poisson_wall_dist: the surface nodes were not gathered onto every box&quot;</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="ttc" id="aERF__Constants_8H_html_a319ff1c970342978d83ed3795c78afa7"><div class="ttname"><a href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a></div><div class="ttdeci">constexpr amrex::Real bogus_large_value</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:19</div></div>
+<div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#a984c145a81739ab4c7f8fd03a334d239">ERF::poisson_wall_dist()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__PoissonWallDist_8cpp_aea33e8edd31d795a0f253abe953dbac8_cgraph.png" border="0" usemap="#aERF__PoissonWallDist_8cpp_aea33e8edd31d795a0f253abe953dbac8_cgraph" alt=""/></div>
+<map name="aERF__PoissonWallDist_8cpp_aea33e8edd31d795a0f253abe953dbac8_cgraph" id="aERF__PoissonWallDist_8cpp_aea33e8edd31d795a0f253abe953dbac8_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,188,39"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="236,5,419,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__PoissonWallDist_8cpp_aea33e8edd31d795a0f253abe953dbac8_icgraph.png" border="0" usemap="#aERF__PoissonWallDist_8cpp_aea33e8edd31d795a0f253abe953dbac8_icgraph" alt=""/></div>
+<map name="aERF__PoissonWallDist_8cpp_aea33e8edd31d795a0f253abe953dbac8_icgraph" id="aERF__PoissonWallDist_8cpp_aea33e8edd31d795a0f253abe953dbac8_icgraph">
+<area shape="rect" title=" " alt="" coords="223,5,405,32"/>
+<area shape="rect" href="classERF.html#a984c145a81739ab4c7f8fd03a334d239" title=" " alt="" coords="5,5,175,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a573a734aad8a42fd5f3e4564b165337d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a573a734aad8a42fd5f3e4564b165337d">&#9670;&nbsp;</a></span>surface_slab()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static MultiFab surface_slab </td>
+          <td>(</td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>z_nd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>klo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Nodal slab at k = klo on the 2D footprint of every box of z_nd, so that boxes that do not touch the surface (a BoxArray split in z, a refined level that stops above the ground) still hold the surface nodes once fill_surface_nodes has run.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">z_nd</td><td>Nodal physical heights of the level </td></tr>
+    <tr><td class="paramname">klo</td><td>Lowest k index of the level's domain </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    BoxList bl_surf = z_nd.boxArray().boxList();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : bl_surf) { b.setRange(2,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>); }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    BoxArray ba_surf(std::move(bl_surf));</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    IntVect ng_surf = z_nd.nGrowVect(); ng_surf[2] = 0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> MultiFab(ba_surf, z_nd.DistributionMap(), 1, ng_surf);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:75</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#a984c145a81739ab4c7f8fd03a334d239">ERF::poisson_wall_dist()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__PoissonWallDist_8cpp_a573a734aad8a42fd5f3e4564b165337d_icgraph.png" border="0" usemap="#aERF__PoissonWallDist_8cpp_a573a734aad8a42fd5f3e4564b165337d_icgraph" alt=""/></div>
+<map name="aERF__PoissonWallDist_8cpp_a573a734aad8a42fd5f3e4564b165337d_icgraph" id="aERF__PoissonWallDist_8cpp_a573a734aad8a42fd5f3e4564b165337d_icgraph">
+<area shape="rect" title=" " alt="" coords="223,5,327,32"/>
+<area shape="rect" href="classERF.html#a984c145a81739ab4c7f8fd03a334d239" title=" " alt="" coords="5,5,175,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

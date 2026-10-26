@@ -1,5 +1,12 @@
 var NAVTREEINDEX15 =
 {
+"ERF__ShocStructure_8H_source.html":[3,0,1,17,0,19],
+"ERF__ShocStructure_8cpp.html":[3,0,1,17,0,18],
+"ERF__ShocTKE_8H.html":[3,0,1,17,0,22],
+"ERF__ShocTKE_8H_source.html":[3,0,1,17,0,22],
+"ERF__ShocTKE_8cpp.html":[3,0,1,17,0,21],
+"ERF__ShocThermoUtils_8H.html":[3,0,1,17,0,20],
+"ERF__ShocThermoUtils_8H.html#a3e4ca8275ed177700891da61cbbe405e":[3,0,1,17,0,20,0],
 "ERF__ShocThermoUtils_8H.html#a776af5a298fc673858c55f2b1311b2ad":[3,0,1,17,0,20,3],
 "ERF__ShocThermoUtils_8H.html#a8fe70a420266e7915d3bf161c4574f95":[3,0,1,17,0,20,2],
 "ERF__ShocThermoUtils_8H.html#aa0bc0d7d7c20d5cf7ab14a285ed53d33":[3,0,1,17,0,20,4],
@@ -242,12 +249,5 @@ var NAVTREEINDEX15 =
 "ERF__TI__slow__headers_8H_source.html":[3,0,1,23,23],
 "ERF__TI__slow__rhs__post_8H.html":[3,0,1,23,24],
 "ERF__TI__slow__rhs__post_8H.html#af460c930508105e92f60fd868d23ebcf":[3,0,1,23,24,0],
-"ERF__TI__slow__rhs__post_8H_source.html":[3,0,1,23,24],
-"ERF__TI__slow__rhs__pre_8H.html":[3,0,1,23,25],
-"ERF__TI__slow__rhs__pre_8H.html#a963142d364408ee1775dbef20383b244":[3,0,1,23,25,0],
-"ERF__TI__slow__rhs__pre_8H_source.html":[3,0,1,23,25],
-"ERF__TI__substep__fun_8H.html":[3,0,1,23,26],
-"ERF__TI__substep__fun_8H.html#ab82e019300686c8451e4e0bf928df484":[3,0,1,23,26,0],
-"ERF__TI__substep__fun_8H_source.html":[3,0,1,23,26],
-"ERF__TI__utils_8H.html":[3,0,1,23,27]
+"ERF__TI__slow__rhs__post_8H_source.html":[3,0,1,23,24]
 };

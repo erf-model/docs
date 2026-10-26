@@ -1,5 +1,12 @@
 var NAVTREEINDEX38 =
 {
+"namespaceerf__auxiliary.html#a771ec62d568054a7f3cf03a314f1a2a6abb7185eb8fbddce3055170e6e4cedddf":[1,0,9,20,1],
+"namespaceerf__auxiliary.html#a771ec62d568054a7f3cf03a314f1a2a6ac3258725f41c3168bd68aea44789d5ce":[1,0,9,20,0],
+"namespaceerf__auxiliary.html#a78ec59cd7624a9b502af94b7727a9712":[1,0,9,16],
+"namespaceerf__auxiliary.html#a79382f0a251cc4ecd8f868358abc9f8d":[1,0,9,28],
+"namespaceerf__auxiliary.html#a930629866bdc0239b7c2328a9246eb62":[1,0,9,34],
+"namespaceerf__auxiliary.html#a9a8f6f6e469c0049efbc4eec062ad367":[1,0,9,42],
+"namespaceerf__auxiliary.html#aa0930083629ba1368b23f314b9996f22":[1,0,9,15],
 "namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c":[1,0,9,29],
 "namespaceerf__auxiliary.html#abc9ab4c6f70613a12dd467ffd9bb2695":[1,0,9,35],
 "namespaceerf__auxiliary.html#abf9c1a9d3c44bf16781b83e143602473":[1,0,9,19],
@@ -242,12 +249,5 @@ var NAVTREEINDEX38 =
 "namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca9627ccd4a844bbec92f01bec3076d074":[1,0,28,37,2],
 "namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0cae475a03e12a2936a051160c7c9daa6b0":[1,0,28,37,6],
 "namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284e":[1,0,28,40],
-"namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284ea23c38a1f05a85a9c6707ec8cf9c83b80":[1,0,28,40,0],
-"namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284ea94e8a499539d1a472f3b5dbbb85508c0":[1,0,28,40,5],
-"namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284eabff5afef897fa400b1e441264555c0ef":[1,0,28,40,4],
-"namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284eac9fc4714730359980e89007f327c5b7d":[1,0,28,40,1],
-"namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284eae234de581c9c5ef91322f1469a585f9e":[1,0,28,40,6],
-"namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284eaeb633ae831f05ff0ad42ce6bfa01e499":[1,0,28,40,3],
-"namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284eaf31bbdd1b3e85bccd652680e16935819":[1,0,28,40,2],
-"namespaceerf__sbm.html#a181e3d55ad4eb4f53244a260bbd2d2a8":[1,0,28,57]
+"namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284ea23c38a1f05a85a9c6707ec8cf9c83b80":[1,0,28,40,0]
 };

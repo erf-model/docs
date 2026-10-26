@@ -828,11 +828,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;                <a class="code" href="classSurfaceModel.html#ad1188b770cd087a6e3053aa8e25bce85">rad_fields</a>[lev].push_back(<span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;            }</div>
 <div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;        }</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
 <div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;            <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#ad1188b770cd087a6e3053aa8e25bce85">rad_fields</a>[lev].size()) == <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#a5e645a726de8707ad586b0e23889006c">radnames</a>.size()),</div>
 <div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;            <span class="stringliteral">&quot;Did not find all radiation fields&quot;</span>);</div>
 <div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;    }</div>
-<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__SurfaceModel_8H_html_abe8d3c91e03e68dd691887e3b789d7f6"><div class="ttname"><a href="ERF__SurfaceModel_8H.html#abe8d3c91e03e68dd691887e3b789d7f6">SurfaceProviderMode</a></div><div class="ttdeci">SurfaceProviderMode</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceModel.H:17</div></div>
 <div class="ttc" id="aERF__SurfaceModel_8H_html_abe8d3c91e03e68dd691887e3b789d7f6a130c5b3473c57faa76e2a1c54e26f88e"><div class="ttname"><a href="ERF__SurfaceModel_8H.html#abe8d3c91e03e68dd691887e3b789d7f6a130c5b3473c57faa76e2a1c54e26f88e">SurfaceProviderMode::Both</a></div><div class="ttdeci">@ Both</div></div>
@@ -853,7 +853,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSurfaceModel_a907ae3de0a97c53f215010258d520969_cgraph.png" border="0" usemap="#aclassSurfaceModel_a907ae3de0a97c53f215010258d520969_cgraph" alt=""/></div>
 <map name="aclassSurfaceModel_a907ae3de0a97c53f215010258d520969_cgraph" id="aclassSurfaceModel_a907ae3de0a97c53f215010258d520969_cgraph">
 <area shape="rect" title="Builds the ordered radiation&#45;field list for one AMR level." alt="" coords="5,35,156,76"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="204,5,387,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="204,5,387,47"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="250,71,341,98"/>
 </map>
 </div>
@@ -910,7 +910,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <span class="comment">// complete surface.  A missing fraction is ambiguous when both models</span></div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <span class="comment">// are enabled, so fail explicitly rather than silently choosing a model.</span></div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <span class="keywordflow">if</span> (urban_frac == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            mode != <a class="code" href="ERF__SurfaceModel_8H.html#abe8d3c91e03e68dd691887e3b789d7f6a130c5b3473c57faa76e2a1c54e26f88e">SurfaceProviderMode::Both</a>,</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            <span class="stringliteral">&quot;Urban fraction is required when both land and urban models are enabled&quot;</span>);</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    }</div>
@@ -946,7 +946,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSurfaceModel_a691d895563332e050bd7cbf4355b9910_cgraph.png" border="0" usemap="#aclassSurfaceModel_a691d895563332e050bd7cbf4355b9910_cgraph" alt=""/></div>
 <map name="aclassSurfaceModel_a691d895563332e050bd7cbf4355b9910_cgraph" id="aclassSurfaceModel_a691d895563332e050bd7cbf4355b9910_cgraph">
 <area shape="rect" title="Computes simple land and urban weights from the urban fraction." alt="" coords="5,64,184,105"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="232,5,415,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="232,5,415,47"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="278,71,369,98"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="287,122,360,149"/>
 </map>
@@ -1393,7 +1393,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(*urban, <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            <span class="keyword">const</span> Box&amp; source_box = (*lsm)[mfi].box();</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;            <span class="keyword">const</span> Box&amp; target_box = (*urban)[mfi].box();</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;            <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;            <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                source_box.smallEnd(2) &lt;= 0 &amp;&amp; source_box.bigEnd(2) &gt;= 0 &amp;&amp;</div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                target_box.smallEnd(2) &lt;= 0 &amp;&amp; target_box.bigEnd(2) &gt;= 0,</div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                <span class="stringliteral">&quot;Radiation output destinations must contain the k=0 surface plane&quot;</span>);</div>
@@ -1422,7 +1422,7 @@ Here is the call graph for this function:</div>
 <map name="aclassSurfaceModel_a5bf3fda88283a79e4ba6820b10bf9bbd_cgraph" id="aclassSurfaceModel_a5bf3fda88283a79e4ba6820b10bf9bbd_cgraph">
 <area shape="rect" title="Distributes one updated canonical radiation output to other providers." alt="" coords="5,86,187,127"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="235,5,417,32"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="235,57,417,98"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="235,57,417,98"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="281,123,371,149"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="289,173,363,200"/>
 </map>
@@ -1762,7 +1762,7 @@ Here is the call graph for this function:</div>
 <map name="aclassSurfaceModel_a3353d2d6ca672c0080ae65755cdb6f8c_cgraph" id="aclassSurfaceModel_a3353d2d6ca672c0080ae65755cdb6f8c_cgraph">
 <area shape="rect" title="Returns fields registered under the RRTMGP radiation names." alt="" coords="5,35,211,76"/>
 <area shape="rect" href="classSurfaceModel.html#a907ae3de0a97c53f215010258d520969" title="Builds the ordered radiation&#45;field list for one AMR level." alt="" coords="259,35,409,76"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="457,5,640,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="457,5,640,47"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="503,71,594,98"/>
 </map>
 </div>
@@ -1806,7 +1806,7 @@ Here is the call graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>The registered destination, or nullptr when none is registered. </dd></dl>
 <div class="fragment"><div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;{</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> it = std::find(<a class="code" href="classSurfaceModel.html#a1fad0599c7f788d5658a7bf4fa6277af">rad_output_names</a>.begin(), <a class="code" href="classSurfaceModel.html#a1fad0599c7f788d5658a7bf4fa6277af">rad_output_names</a>.end(), <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(it != <a class="code" href="classSurfaceModel.html#a1fad0599c7f788d5658a7bf4fa6277af">rad_output_names</a>.end(),</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(it != <a class="code" href="classSurfaceModel.html#a1fad0599c7f788d5658a7bf4fa6277af">rad_output_names</a>.end(),</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                                     <span class="stringliteral">&quot;Unknown canonical radiation output: &quot;</span> + <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classSurfaceModel.html#a613e6a059acea5acc214092e262fab08">get_radiation_output_fields</a>(lev)[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(it - <a class="code" href="classSurfaceModel.html#a1fad0599c7f788d5658a7bf4fa6277af">rad_output_names</a>.begin())];</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;}</div>
@@ -1817,7 +1817,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSurfaceModel_a0ebc534f68b997b105883763d642f582_cgraph.png" border="0" usemap="#aclassSurfaceModel_a0ebc534f68b997b105883763d642f582_cgraph" alt=""/></div>
 <map name="aclassSurfaceModel_a0ebc534f68b997b105883763d642f582_cgraph" id="aclassSurfaceModel_a0ebc534f68b997b105883763d642f582_cgraph">
 <area shape="rect" title="Returns the destination of one canonical radiation output by name." alt="" coords="5,5,211,47"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="259,5,441,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="259,5,441,47"/>
 </map>
 </div>
 
@@ -2581,7 +2581,7 @@ Here is the call graph for this function:</div>
 <map name="aclassSurfaceModel_a16dd5e914cacfb01ac6bc0d491c96f7c_cgraph" id="aclassSurfaceModel_a16dd5e914cacfb01ac6bc0d491c96f7c_cgraph">
 <area shape="rect" title="Checks whether a model field participates in a registered mapping." alt="" coords="5,5,171,47"/>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438" title=" " alt="" coords="219,13,257,39"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="305,5,488,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="305,5,488,47"/>
 </map>
 </div>
 
@@ -3171,12 +3171,12 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;{</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(!(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.first == -1 &amp;&amp; <a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.second == -1),</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(!(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.first == -1 &amp;&amp; <a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.second == -1),</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                                     <span class="stringliteral">&quot;A radiation input must have a provider mapping&quot;</span>);</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        std::find(<a class="code" href="classSurfaceModel.html#a5e645a726de8707ad586b0e23889006c">radnames</a>.begin(), <a class="code" href="classSurfaceModel.html#a5e645a726de8707ad586b0e23889006c">radnames</a>.end(), <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>) != <a class="code" href="classSurfaceModel.html#a5e645a726de8707ad586b0e23889006c">radnames</a>.end(),</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="stringliteral">&quot;Unknown canonical radiation input: &quot;</span> + <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.first &gt;= -1 &amp;&amp; <a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.second &gt;= -1,</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.first &gt;= -1 &amp;&amp; <a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.second &gt;= -1,</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                                     <span class="stringliteral">&quot;Radiation input indices must be -1 or nonnegative&quot;</span>);</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.first &gt;= 0) {</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.first &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#a0e079bff31712b7a09a80ad4ab7002cb">m_lsm_names</a>.size()));</div>
@@ -3199,7 +3199,7 @@ Here is the call graph for this function:</div>
 <map name="aclassSurfaceModel_a83f9c59e6bba65498f733ec30c5bb12a_cgraph" id="aclassSurfaceModel_a83f9c59e6bba65498f733ec30c5bb12a_cgraph">
 <area shape="rect" title="Registers a canonical radiation input mapping." alt="" coords="5,27,175,69"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="223,5,405,32"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="223,57,405,98"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="223,57,405,98"/>
 </map>
 </div>
 
@@ -3272,12 +3272,12 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;{</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(!(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.first == -1 &amp;&amp; <a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.second == -1),</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(!(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.first == -1 &amp;&amp; <a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.second == -1),</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                                     <span class="stringliteral">&quot;A radiation output must have a provider mapping&quot;</span>);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        std::find(<a class="code" href="classSurfaceModel.html#a1fad0599c7f788d5658a7bf4fa6277af">rad_output_names</a>.begin(), <a class="code" href="classSurfaceModel.html#a1fad0599c7f788d5658a7bf4fa6277af">rad_output_names</a>.end(), <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>) != <a class="code" href="classSurfaceModel.html#a1fad0599c7f788d5658a7bf4fa6277af">rad_output_names</a>.end(),</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="stringliteral">&quot;Unknown canonical radiation output: &quot;</span> + <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.first &gt;= -1 &amp;&amp; <a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.second &gt;= -1,</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.first &gt;= -1 &amp;&amp; <a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.second &gt;= -1,</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                                     <span class="stringliteral">&quot;Radiation output indices must be -1 or nonnegative&quot;</span>);</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.first &gt;= 0) {</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c">map</a>.first &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#a0e079bff31712b7a09a80ad4ab7002cb">m_lsm_names</a>.size()));</div>
@@ -3305,7 +3305,7 @@ Here is the call graph for this function:</div>
 <map name="aclassSurfaceModel_a0ad3a78257533ec1cf5b86d7fa55a562_cgraph" id="aclassSurfaceModel_a0ad3a78257533ec1cf5b86d7fa55a562_cgraph">
 <area shape="rect" title="Registers a canonical radiation output mapping." alt="" coords="5,27,175,69"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="223,5,405,32"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="223,57,405,98"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="223,57,405,98"/>
 </map>
 </div>
 
@@ -3813,9 +3813,9 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    {</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> nfields = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(field_indices.size());</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordflow">if</span> (!use_fluxes) {</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(nfields &gt;= 4, <span class="stringliteral">&quot;Must have at least four fields to average (ustar, tstar, qstar, tsurf)&quot;</span>);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(nfields &gt;= 4, <span class="stringliteral">&quot;Must have at least four fields to average (ustar, tstar, qstar, tsurf)&quot;</span>);</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(nfields &gt;= 5, <span class="stringliteral">&quot;Must have at least five fields to average (u-stress, v-stress, hfx, qfx, tsurf)&quot;</span>);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(nfields &gt;= 5, <span class="stringliteral">&quot;Must have at least five fields to average (u-stress, v-stress, hfx, qfx, tsurf)&quot;</span>);</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        }</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="comment">// Latch the export mode off the first model that registers, then make sure every</span></div>
@@ -3826,14 +3826,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            <a class="code" href="classSurfaceModel.html#a1e90fc6ade373862b0a59895369d2f4f">m_export_fluxes</a> = use_fluxes;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <a class="code" href="classSurfaceModel.html#af00236c0f6a07e2fda47b11986586f26">m_export_fluxes_set</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        }</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(use_fluxes == <a class="code" href="classSurfaceModel.html#a1e90fc6ade373862b0a59895369d2f4f">m_export_fluxes</a>,</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(use_fluxes == <a class="code" href="classSurfaceModel.html#a1e90fc6ade373862b0a59895369d2f4f">m_export_fluxes</a>,</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            <span class="stringliteral">&quot;All registered surface models must export either fluxes or u*/t*/q*, not a mix&quot;</span>);</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> nregistered = (type == <a class="code" href="ERF__SurfaceModel_8H.html#aee4129a23327ef05502fcec2d6b71c2aa020389bbc8308bea419f7828d9b6d6eb">SurfaceModelType::LAND</a>)</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            ? <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#a0e079bff31712b7a09a80ad4ab7002cb">m_lsm_names</a>.size())</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            : <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceModel.html#a474558ec59050709b4f651ade72647f1">m_urban_names</a>.size());</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">int</span> field : field_indices) {</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                field == -1 || (field &gt;= 0 &amp;&amp; field &lt; nregistered),</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                <span class="stringliteral">&quot;Model field index must be -1 or within the registered provider data range&quot;</span>);</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        }</div>
@@ -3859,7 +3859,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSurfaceModel_a5a26f4fc4c286de0310f278b7ddab4fc_cgraph.png" border="0" usemap="#aclassSurfaceModel_a5a26f4fc4c286de0310f278b7ddab4fc_cgraph" alt=""/></div>
 <map name="aclassSurfaceModel_a5a26f4fc4c286de0310f278b7ddab4fc_cgraph" id="aclassSurfaceModel_a5a26f4fc4c286de0310f278b7ddab4fc_cgraph">
 <area shape="rect" title="Selects the model fields that participate in weighted averaging." alt="" coords="5,5,192,47"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="240,5,423,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="240,5,423,47"/>
 </map>
 </div>
 
@@ -4079,14 +4079,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="comment">// k = 0 which is a ghost cell for SLM.</span></div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> k_grow = mf-&gt;nGrowVect()[2];</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keywordflow">for</span> (Box&amp; box : horizontal_boxes) {</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            box.smallEnd(2) &lt;= 0 &amp;&amp; box.bigEnd(2) + k_grow &gt;= 0,</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            <span class="stringliteral">&quot;Radiation output destination must contain the k=0 surface plane &quot;</span></div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            <span class="stringliteral">&quot;in its valid or ghost region&quot;</span>);</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        box.setRange(2, 0);</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    }</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keyword">const</span> BoxArray horizontal_ba(std::move(horizontal_boxes));</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        horizontal_ba == <a class="code" href="classSurfaceModel.html#a0f1f69a3cd003790459bb3af4914f5ed">m_ba2d</a>[lev] &amp;&amp; mf-&gt;DistributionMap() == <a class="code" href="classSurfaceModel.html#afb8e3cf0ed6cbf5940593e1eea7d920d">m_dmap</a>[lev],</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        <span class="stringliteral">&quot;Radiation output destination must match the level horizontal layout&quot;</span>);</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;}</div>
@@ -4096,7 +4096,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSurfaceModel_a86dbae15255f5ab588d9cc333c3523a1_cgraph.png" border="0" usemap="#aclassSurfaceModel_a86dbae15255f5ab588d9cc333c3523a1_cgraph" alt=""/></div>
 <map name="aclassSurfaceModel_a86dbae15255f5ab588d9cc333c3523a1_cgraph" id="aclassSurfaceModel_a86dbae15255f5ab588d9cc333c3523a1_cgraph">
 <area shape="rect" title="Validates the layout contract for a canonical radiation output." alt="" coords="5,5,189,47"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="237,5,420,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="237,5,420,47"/>
 </map>
 </div>
 

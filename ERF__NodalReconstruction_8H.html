@@ -624,7 +624,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;    <span class="comment">// Fail here, with a message naming the data, rather than deep inside the</span></div>
 <div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;    <span class="comment">// solver: an empty box means the source heights were never read, and the</span></div>
 <div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;    <span class="comment">// degenerate loop bounds it produces would otherwise read out of bounds.</span></div>
-<div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(w_face_slice_box.ok() &amp;&amp; w_face_slice_box.length(2) == 1,</div>
+<div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(w_face_slice_box.ok() &amp;&amp; w_face_slice_box.length(2) == 1,</div>
 <div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;                                     <span class="stringliteral">&quot;reconstruct_nodal_height_slice: the input slice is empty &quot;</span></div>
 <div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;                                     <span class="stringliteral">&quot;or spans more than one z level -- check that the source &quot;</span></div>
 <div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;                                     <span class="stringliteral">&quot;heights were read successfully.&quot;</span>);</div>
@@ -748,7 +748,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160; </div>
 <div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;    <span class="keywordflow">return</span> z_nd_slice;</div>
 <div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
 <div class="ttc" id="aERF__NodalReconstruction_8H_html_ad1eba68b3929ed5eacf96c93f1e37122"><div class="ttname"><a href="ERF__NodalReconstruction_8H.html#ad1eba68b3929ed5eacf96c93f1e37122">deaverage_nodal_slice</a></div><div class="ttdeci">std::pair&lt; amrex::FArrayBox, SolveInfo &gt; deaverage_nodal_slice(amrex::Box const &amp;w_face_box, amrex::FArrayBox const &amp;z_w_face, amrex::FArrayBox const &amp;z_ref)</div><div class="ttdef"><b>Definition:</b> ERF_NodalReconstruction.H:933</div></div>
 <div class="ttc" id="aclassNodalReconstruction_html"><div class="ttname"><a href="classNodalReconstruction.html">NodalReconstruction</a></div><div class="ttdef"><b>Definition:</b> ERF_NodalReconstruction.H:130</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -757,7 +757,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__NodalReconstruction_8H_ad3ed53db3c016755522d141864b93d0d_cgraph.png" border="0" usemap="#aERF__NodalReconstruction_8H_ad3ed53db3c016755522d141864b93d0d_cgraph" alt=""/></div>
 <map name="aERF__NodalReconstruction_8H_ad3ed53db3c016755522d141864b93d0d_cgraph" id="aERF__NodalReconstruction_8H_ad3ed53db3c016755522d141864b93d0d_cgraph">
 <area shape="rect" title=" " alt="" coords="5,93,192,135"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="240,5,423,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="240,5,423,47"/>
 <area shape="rect" href="ERF__NodalReconstruction_8H.html#ad1eba68b3929ed5eacf96c93f1e37122" title=" " alt="" coords="246,71,417,98"/>
 <area shape="rect" href="classNodalReconstruction.html#a51cde14ce4219e2f70036e2ecd705930" title=" " alt="" coords="253,123,410,164"/>
 <area shape="rect" href="classNodalReconstruction.html#a7e35dad639fa0884b87a96ca8f5c42af" title=" " alt="" coords="253,217,410,259"/>

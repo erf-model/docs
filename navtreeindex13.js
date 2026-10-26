@@ -1,5 +1,12 @@
 var NAVTREEINDEX13 =
 {
+"ERF__RadiationDiagnostics_8H_source.html":[3,0,1,20,2,5],
+"ERF__RadiationDiagnostics_8cpp.html":[3,0,1,20,2,4],
+"ERF__RadiationInterface_8H.html":[3,0,1,20,4],
+"ERF__RadiationInterface_8H_source.html":[3,0,1,20,4],
+"ERF__RadiationModels_8H.html":[3,0,1,20,5],
+"ERF__RadiationModels_8H_source.html":[3,0,1,20,5],
+"ERF__RadiationSimple_8H.html":[3,0,1,20,1,1],
 "ERF__RadiationSimple_8H_source.html":[3,0,1,20,1,1],
 "ERF__RadiationSimple_8cpp.html":[3,0,1,20,1,0],
 "ERF__Radiation_8H.html":[3,0,1,20,0,1],
@@ -242,12 +249,5 @@ var NAVTREEINDEX13 =
 "ERF__SBMRemapping_8H.html#ae646aa2df10080be9c79e890f7375356":[3,0,1,14,6,15,28],
 "ERF__SBMRemapping_8H.html#ae9d64d54b66aa201300c4fdc867c496c":[3,0,1,14,6,15,16],
 "ERF__SBMRemapping_8H.html#af967f578f26e936c2752a8cb22458a07":[3,0,1,14,6,15,15],
-"ERF__SBMRemapping_8H.html#afc85b4c9bf730f1e15c41ea4ca7f940b":[3,0,1,14,6,15,20],
-"ERF__SBMRemapping_8H_source.html":[3,0,1,14,6,15],
-"ERF__SBMRemapping_8cpp.html":[3,0,1,14,6,14],
-"ERF__SBMRemapping_8cpp.html#a196324656da9600ee64b63799251386f":[3,0,1,14,6,14,3],
-"ERF__SBMRemapping_8cpp.html#a5643e20531a1b81ce6a989853ba4e1c6":[3,0,1,14,6,14,1],
-"ERF__SBMRemapping_8cpp.html#a9abe9f8fdd0303702c6247418d5919b0":[3,0,1,14,6,14,0],
-"ERF__SBMRemapping_8cpp.html#abe9bbf56d9d1d449d3672972d4068eb5":[3,0,1,14,6,14,4],
-"ERF__SBMRemapping_8cpp.html#ad1ce6e0015cab4a083bab48f02b800e1":[3,0,1,14,6,14,2]
+"ERF__SBMRemapping_8H.html#afc85b4c9bf730f1e15c41ea4ca7f940b":[3,0,1,14,6,15,20]
 };

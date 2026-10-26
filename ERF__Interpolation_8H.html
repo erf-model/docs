@@ -281,7 +281,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,39,208,80"/>
 <area shape="rect" href="ERF__Interpolation_8H.html#a54ee27dfac22fc3f49cdde05d2ec5871" title=" " alt="" coords="256,46,433,73"/>
 <area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="481,46,603,73"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="651,5,833,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="651,5,833,47"/>
 <area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="651,71,833,112"/>
 </map>
 </div>
@@ -365,7 +365,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Interpolated value </dd></dl>
 <div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5">isSupportedInterpolationAdvType</a>(adv_type),</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="stringliteral">&quot;interpolatedVal only supports Centered_2nd, Upwind_3rd, Centered_4th, Upwind_5th, and Centered_6th&quot;</span>);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
@@ -382,7 +382,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9">AdvType::Centered_6th</a>) {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        myInterpolatedVal = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(37.0)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(60.0))*avg1 -(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(15.0))*avg2 +(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(60.0))*avg3;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keyword">false</span>,</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="stringliteral">&quot;interpolatedVal only supports Centered_2nd, Upwind_3rd, Centered_4th, Upwind_5th, and Centered_6th&quot;</span>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
@@ -393,7 +393,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a></div><div class="ttdeci">@ Upwind_5th</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9">AdvType::Centered_6th</a></div><div class="ttdeci">@ Centered_6th</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a></div><div class="ttdeci">@ Centered_2nd</div></div>
-<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
 <div class="ttc" id="aERF__Interpolation_8H_html_a2ae498a03776b5a73ffa7a30169f46b5"><div class="ttname"><a href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5">isSupportedInterpolationAdvType</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool isSupportedInterpolationAdvType(const AdvType adv_type) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation.H:17</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:41</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
@@ -405,7 +405,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__Interpolation_8H_aa4b88a88257b89505c133a7ba9cba462_cgraph.png" border="0" usemap="#aERF__Interpolation_8H_aa4b88a88257b89505c133a7ba9cba462_cgraph" alt=""/></div>
 <map name="aERF__Interpolation_8H_aa4b88a88257b89505c133a7ba9cba462_cgraph" id="aERF__Interpolation_8H_aa4b88a88257b89505c133a7ba9cba462_cgraph">
 <area shape="rect" title=" " alt="" coords="5,46,127,73"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="175,5,357,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="175,5,357,47"/>
 <area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="175,71,357,112"/>
 </map>
 </div>
@@ -527,7 +527,7 @@ Here is the call graph for this function:</div>
 <map name="aERF__Interpolation_8H_ae8940bdc1f155614d26ce3c5502bd918_cgraph" id="aERF__Interpolation_8H_ae8940bdc1f155614d26ce3c5502bd918_cgraph">
 <area shape="rect" title=" " alt="" coords="5,46,120,73"/>
 <area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="168,46,289,73"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="337,5,520,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="337,5,520,47"/>
 <area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="337,71,520,112"/>
 </map>
 </div>
@@ -634,7 +634,7 @@ Here is the call graph for this function:</div>
 <map name="aERF__Interpolation_8H_ad9844abfa5c6530dc10d582e1adbb26c_cgraph" id="aERF__Interpolation_8H_ad9844abfa5c6530dc10d582e1adbb26c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,46,119,73"/>
 <area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="167,46,288,73"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="336,5,519,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="336,5,519,47"/>
 <area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="336,71,519,112"/>
 </map>
 </div>
@@ -740,7 +740,7 @@ Here is the call graph for this function:</div>
 <map name="aERF__Interpolation_8H_a0623363b49ea9794f302ec9e69c525ea_cgraph" id="aERF__Interpolation_8H_a0623363b49ea9794f302ec9e69c525ea_cgraph">
 <area shape="rect" title=" " alt="" coords="5,46,120,73"/>
 <area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="168,46,289,73"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="337,5,520,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="337,5,520,47"/>
 <area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="337,71,520,112"/>
 </map>
 </div>
@@ -913,7 +913,7 @@ Here is the call graph for this function:</div>
 <map name="aERF__Interpolation_8H_a54ee27dfac22fc3f49cdde05d2ec5871_cgraph" id="aERF__Interpolation_8H_a54ee27dfac22fc3f49cdde05d2ec5871_cgraph">
 <area shape="rect" title=" " alt="" coords="5,46,183,73"/>
 <area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="231,46,352,73"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="400,5,583,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="400,5,583,47"/>
 <area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="400,71,583,112"/>
 </map>
 </div>

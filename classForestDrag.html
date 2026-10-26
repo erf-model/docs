@@ -324,13 +324,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <a class="code" href="classForestDrag.html#a53fb3e33134ddff42c47a3b095a4b62c">m_tree_type</a> = tree_type;</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <a class="code" href="classForestDrag.html#a7cd1449d8db35d1fead42c30379c898f">m_laimax</a> = laimax;</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        tree_type == 1 || tree_type == 2,</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="stringliteral">&quot;forest_tree_type must be 1 or 2&quot;</span>);</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordflow">if</span> (tree_type == 2) {</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keyword">const</span> std::string error = <a class="code" href="namespaceerf__forest__utils.html#a8b363aacfb7644a85fe49067c6366476">erf_forest_utils::validate_laimax</a>(</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            laimax, <span class="stringliteral">&quot;erf.forest_laimax&quot;</span>);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(error.empty(), error.c_str());</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(error.empty(), error.c_str());</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <a class="code" href="classForestDrag.html#a155274d2e369a6efc5b89f6e107e054a">m_lad_normalization</a> = compute_lad_normalization(laimax);</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    }</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
@@ -385,7 +385,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    Abort(<span class="stringliteral">&quot;ERF must be compiled with NetCDF support to use gridded forest data&quot;</span>);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
 <div class="ttc" id="aclassForestDrag_html_a155274d2e369a6efc5b89f6e107e054a"><div class="ttname"><a href="classForestDrag.html#a155274d2e369a6efc5b89f6e107e054a">ForestDrag::m_lad_normalization</a></div><div class="ttdeci">amrex::Real m_lad_normalization</div><div class="ttdef"><b>Definition:</b> ERF_ForestDrag.H:119</div></div>
 <div class="ttc" id="aclassForestDrag_html_a223f4ab1fd8a379a6daa79505ac7ba2a"><div class="ttname"><a href="classForestDrag.html#a223f4ab1fd8a379a6daa79505ac7ba2a">ForestDrag::m_grid_xmin</a></div><div class="ttdeci">amrex::Real m_grid_xmin</div><div class="ttdef"><b>Definition:</b> ERF_ForestDrag.H:110</div></div>
 <div class="ttc" id="aclassForestDrag_html_a22b57f7597a9b7d8939a82c636413442"><div class="ttname"><a href="classForestDrag.html#a22b57f7597a9b7d8939a82c636413442">ForestDrag::m_grid_dy</a></div><div class="ttdeci">amrex::Real m_grid_dy</div><div class="ttdef"><b>Definition:</b> ERF_ForestDrag.H:109</div></div>
@@ -408,7 +408,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classForestDrag_ac2ad0dd4a6ece8506db91d4f8fcca18d_cgraph.png" border="0" usemap="#aclassForestDrag_ac2ad0dd4a6ece8506db91d4f8fcca18d_cgraph" alt=""/></div>
 <map name="aclassForestDrag_ac2ad0dd4a6ece8506db91d4f8fcca18d_cgraph" id="aclassForestDrag_ac2ad0dd4a6ece8506db91d4f8fcca18d_cgraph">
 <area shape="rect" title=" " alt="" coords="5,78,177,105"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="225,5,408,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="225,5,408,47"/>
 <area shape="rect" href="namespaceerf__forest__utils.html#a8b363aacfb7644a85fe49067c6366476" title=" " alt="" coords="226,71,407,112"/>
 <area shape="rect" href="namespaceerf__grid__utils.html#aff966df71b057d306bfcafcfbac29716" title=" " alt="" coords="233,136,401,177"/>
 <area shape="rect" href="namespaceerf__grid__utils.html#adcbb1713b385bb1a921aec32f47bae61" title=" " alt="" coords="456,136,612,177"/>
@@ -478,13 +478,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="classForestDrag.html#a53fb3e33134ddff42c47a3b095a4b62c">m_tree_type</a>        = tree_type;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="classForestDrag.html#a7cd1449d8db35d1fead42c30379c898f">m_laimax</a>           = laimax;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        tree_type == 1 || tree_type == 2,</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="stringliteral">&quot;forest_tree_type must be 1 or 2&quot;</span>);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span> (tree_type == 2) {</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keyword">const</span> std::string error = <a class="code" href="namespaceerf__forest__utils.html#a8b363aacfb7644a85fe49067c6366476">erf_forest_utils::validate_laimax</a>(</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            laimax, <span class="stringliteral">&quot;erf.forest_laimax&quot;</span>);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(error.empty(), error.c_str());</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(error.empty(), error.c_str());</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="classForestDrag.html#a155274d2e369a6efc5b89f6e107e054a">m_lad_normalization</a> = compute_lad_normalization(laimax);</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
@@ -529,7 +529,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classForestDrag_a3518c9faa5205fae3fde4f3dcee13745_cgraph.png" border="0" usemap="#aclassForestDrag_a3518c9faa5205fae3fde4f3dcee13745_cgraph" alt=""/></div>
 <map name="aclassForestDrag_a3518c9faa5205fae3fde4f3dcee13745_cgraph" id="aclassForestDrag_a3518c9faa5205fae3fde4f3dcee13745_cgraph">
 <area shape="rect" title=" " alt="" coords="5,78,177,105"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="225,5,408,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="225,5,408,47"/>
 <area shape="rect" href="namespaceerf__forest__utils.html#a8b363aacfb7644a85fe49067c6366476" title=" " alt="" coords="226,71,407,112"/>
 <area shape="rect" href="namespaceerf__grid__utils.html#aff966df71b057d306bfcafcfbac29716" title=" " alt="" coords="233,136,401,177"/>
 <area shape="rect" href="namespaceerf__grid__utils.html#adcbb1713b385bb1a921aec32f47bae61" title=" " alt="" coords="456,136,612,177"/>

@@ -597,7 +597,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="comment">// land step the run completes normally while the land surface advances half as</span></div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="comment">// fast. Checked here because this is the first place the real step is known --</span></div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="comment">// Init receives a dummy dt of zero.</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(dt &lt;= <a class="code" href="classNOAHMP.html#ab186430bca202f7e580657363ebbc664">m_dtbl</a>,</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(dt &lt;= <a class="code" href="classNOAHMP.html#ab186430bca202f7e580657363ebbc664">m_dtbl</a>,</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            <span class="stringliteral">&quot;Noah-MP: the ERF timestep exceeds the Noah-MP timestep (NOAH_TIMESTEP in &quot;</span></div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            <span class="stringliteral">&quot;namelist.erf). Noah-MP advances at most one NOAH_TIMESTEP per ERF step, so the &quot;</span></div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            <span class="stringliteral">&quot;land surface would fall behind the atmosphere; raise NOAH_TIMESTEP or reduce the &quot;</span></div>
@@ -745,7 +745,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__Constants_8H_html_aedc589a54f2b3ed39a16c75375014017"><div class="ttname"><a href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a></div><div class="ttdeci">constexpr amrex::Real lsm_undefined</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:28</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:48</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:75</div></div>
-<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
 <div class="ttc" id="aERF__InitForEnsemble_8cpp_html_a221b1f8dc1b747f1e88990c65e3681de"><div class="ttname"><a href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int idx(int i, int j, int k, int nx, int ny)</div><div class="ttdef"><b>Definition:</b> ERF_InitForEnsemble.cpp:396</div></div>
 <div class="ttc" id="aclassNOAHMP_html_a312d74035627fd45feba087875ed0ca1"><div class="ttname"><a href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">NOAHMP::lsm_fab_flux</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmFlux_NOAHMP::NumVars &gt; lsm_fab_flux</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:398</div></div>
 <div class="ttc" id="aclassNOAHMP_html_a324693abeb0fd2acfabaac1048481c81"><div class="ttname"><a href="classNOAHMP.html#a324693abeb0fd2acfabaac1048481c81">NOAHMP::m_updated</a></div><div class="ttdeci">bool m_updated</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:430</div></div>
@@ -779,7 +779,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classNOAHMP_ab8aa96815cb01a8aa37962c68bbdb84b_cgraph.png" border="0" usemap="#aclassNOAHMP_ab8aa96815cb01a8aa37962c68bbdb84b_cgraph" alt=""/></div>
 <map name="aclassNOAHMP_ab8aa96815cb01a8aa37962c68bbdb84b_cgraph" id="aclassNOAHMP_ab8aa96815cb01a8aa37962c68bbdb84b_cgraph">
 <area shape="rect" title=" " alt="" coords="5,35,188,76"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="236,5,419,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="236,5,419,47"/>
 <area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="306,71,349,98"/>
 </map>
 </div>
@@ -1214,7 +1214,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            Box bx = mfi.tilebox();</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(bx.smallEnd(2) == <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>,</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(bx.smallEnd(2) == <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>,</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                <span class="stringliteral">&quot;NoahMP Init: box does not start at klo; z-decomposed grids are unsupported.&quot;</span>);</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            bx.makeSlab(2,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
@@ -1236,7 +1236,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            <span class="comment">// Assert namelist NSOIL matches erf.lsm_nsoil (used to size the fabs) so a</span></div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            <span class="comment">// mismatch fails loudly rather than truncating the soil diagnostics.</span></div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(noahmpio-&gt;nsoil == <a class="code" href="classNOAHMP.html#a50b550a9bcf8ad13a8e55d2731c187f3">m_nsoil</a>,</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(noahmpio-&gt;nsoil == <a class="code" href="classNOAHMP.html#a50b550a9bcf8ad13a8e55d2731c187f3">m_nsoil</a>,</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                <span class="stringliteral">&quot;namelist.erf NSOIL does not match erf.lsm_nsoil (default 4); &quot;</span></div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                <span class="stringliteral">&quot;set erf.lsm_nsoil to the Noah-MP soil-layer count&quot;</span>);</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160; </div>
@@ -1290,7 +1290,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        <span class="comment">// -9999 in the driver, so this is what an absent NOAH_TIMESTEP looks like. (It is</span></div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        <span class="comment">// not about land: noahmpio_vect is sized by boxes, land or not, so every rank that</span></div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        <span class="comment">// owns a box contributes a DTBL to the max.)</span></div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classNOAHMP.html#ab186430bca202f7e580657363ebbc664">m_dtbl</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0),</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classNOAHMP.html#ab186430bca202f7e580657363ebbc664">m_dtbl</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0),</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;            <span class="stringliteral">&quot;Noah-MP: the Noah-MP timestep is not positive. Set NOAH_TIMESTEP (in seconds, &quot;</span></div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;            <span class="stringliteral">&quot;an integer) in namelist.erf.&quot;</span>);</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        <span class="comment">// The ERF-step-versus-NOAH_TIMESTEP constraint is enforced in Advance_With_State:</span></div>
@@ -1340,7 +1340,7 @@ Here is the call graph for this function:</div>
 <map name="aclassNOAHMP_a46e30153bacad3c8fcb61002a97e89ea_cgraph" id="aclassNOAHMP_a46e30153bacad3c8fcb61002a97e89ea_cgraph">
 <area shape="rect" title=" " alt="" coords="5,93,116,120"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="170,5,353,32"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="170,57,353,98"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="170,57,353,98"/>
 <area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="240,123,283,149"/>
 <area shape="rect" href="ERF__NOAHMP__LevelDriver_8H.html#ae162f6314b1054389e6a710e98bf62f2" title="Whether Noah&#45;MP at AMR level lev runs the land model on a setup file of its own." alt="" coords="164,173,359,200"/>
 </map>
@@ -1528,7 +1528,7 @@ Here is the call graph for this function:</div>
 <map name="aclassNOAHMP_a55eed6ab58df45bbbc5c47392608e8aa_cgraph" id="aclassNOAHMP_a55eed6ab58df45bbbc5c47392608e8aa_cgraph">
 <area shape="rect" title=" " alt="" coords="5,13,193,39"/>
 <area shape="rect" href="classNOAHMP.html#adc260f92abb3b47267912ac767b50189" title=" " alt="" coords="241,5,432,47"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="480,5,663,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="480,5,663,47"/>
 </map>
 </div>
 
@@ -1939,7 +1939,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classNOAHMP.html#a07cf59f23659d52a62ab6fa61d885308">m_nsoil_resolved</a>) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        amrex::ParmParse pp_nsoil(<span class="stringliteral">&quot;erf&quot;</span>);</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        pp_nsoil.queryAdd(<span class="stringliteral">&quot;lsm_nsoil&quot;</span>, <a class="code" href="classNOAHMP.html#a50b550a9bcf8ad13a8e55d2731c187f3">m_nsoil</a>);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classNOAHMP.html#a50b550a9bcf8ad13a8e55d2731c187f3">m_nsoil</a> &gt;= 1, <span class="stringliteral">&quot;erf.lsm_nsoil must be &gt;= 1&quot;</span>);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classNOAHMP.html#a50b550a9bcf8ad13a8e55d2731c187f3">m_nsoil</a> &gt;= 1, <span class="stringliteral">&quot;erf.lsm_nsoil must be &gt;= 1&quot;</span>);</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <a class="code" href="classNOAHMP.html#a68e1388386dc4c7fc16c0c05ea4cce1c">m_lsm_data_size</a> = <a class="code" href="namespaceLsmData__NOAHMP.html#a54bb86a12bcc2798e28eb8d4c52e9d91adcdca071138537342f18d4c1c968f492">LsmData_NOAHMP::NumVars</a> + <a class="code" href="classNOAHMP.html#ac526f1301c29c28abb4be0c491c38f69">m_num_soil_groups</a>*<a class="code" href="classNOAHMP.html#a50b550a9bcf8ad13a8e55d2731c187f3">m_nsoil</a>;</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <a class="code" href="classNOAHMP.html#a07cf59f23659d52a62ab6fa61d885308">m_nsoil_resolved</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    }</div>
@@ -1952,7 +1952,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classNOAHMP_adc260f92abb3b47267912ac767b50189_cgraph.png" border="0" usemap="#aclassNOAHMP_adc260f92abb3b47267912ac767b50189_cgraph" alt=""/></div>
 <map name="aclassNOAHMP_adc260f92abb3b47267912ac767b50189_cgraph" id="aclassNOAHMP_adc260f92abb3b47267912ac767b50189_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,196,47"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="244,5,427,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="244,5,427,47"/>
 </map>
 </div>
 <div class="dynheader">

@@ -393,7 +393,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;            }</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;            ++iter;</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>) &gt; <a class="code" href="structsurface__flux.html#abd16b92a75ae384f9fe490b59f046b6a">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(iter &lt; max_iters,</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(iter &lt; max_iters,</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                                         <span class="stringliteral">&quot;Maximum number of MOST iterations reached.&quot;</span>);</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160; </div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        <span class="comment">// Populate the stored MOST arrays</span></div>
@@ -425,7 +425,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a088792be9376259df72347c43ae1ab13"><div class="ttname"><a href="ERF__Constants_8H.html#a088792be9376259df72347c43ae1ab13">epsv</a></div><div class="ttdeci">constexpr amrex::Real epsv</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:53</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a319ff1c970342978d83ed3795c78afa7"><div class="ttname"><a href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a></div><div class="ttdeci">constexpr amrex::Real bogus_large_value</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:19</div></div>
-<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:37</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:36</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
@@ -448,7 +448,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structsurface__flux_a6327a8246ae840acf1e96863ae767713_cgraph.png" border="0" usemap="#astructsurface__flux_a6327a8246ae840acf1e96863ae767713_cgraph" alt=""/></div>
 <map name="astructsurface__flux_a6327a8246ae840acf1e96863ae767713_cgraph" id="astructsurface__flux_a6327a8246ae840acf1e96863ae767713_cgraph">
 <area shape="rect" title=" " alt="" coords="5,111,188,138"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="236,5,419,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="236,5,419,47"/>
 <area shape="rect" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2" title=" " alt="" coords="251,71,404,112"/>
 <area shape="rect" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2" title=" " alt="" coords="251,136,404,177"/>
 <area shape="rect" href="ERF__Wstar_8H.html#ab7cf7299bd7d09fceb07c657130a6094" title=" " alt="" coords="282,202,373,229"/>

@@ -180,7 +180,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>the stretch that was used, so the caller can report or check it </dd></dl>
 <div class="fragment"><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;{</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nz = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(zlevels.size()) - 1;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(nz &gt;= 1,</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(nz &gt;= 1,</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="stringliteral">&quot;build_geometric_zlevels needs a zlevels array of at least two entries&quot;</span>);</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keyword">const</span> GeometricStretch gs = <a class="code" href="namespaceerf__grid__utils.html#a25c52e8f56e1b5be7aaa18394250eb7a">geometric_stretch</a>(dz0, z_top, nz, tol);</div>
@@ -195,7 +195,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">return</span> gs;</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceWDM6SedCellScratch_html_a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:272</div></div>
 <div class="ttc" id="anamespaceerf__grid__utils_html_a25c52e8f56e1b5be7aaa18394250eb7a"><div class="ttname"><a href="namespaceerf__grid__utils.html#a25c52e8f56e1b5be7aaa18394250eb7a">erf_grid_utils::geometric_stretch</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE GeometricStretch geometric_stretch(amrex::Real dz0, amrex::Real z_top, int nz, amrex::Real tol) noexcept</div><div class="ttdoc">Solve for the geometric stretch factor that fills a domain of depth z_top with nz layers whose first ...</div><div class="ttdef"><b>Definition:</b> ERF_GridUtils.H:212</div></div>
@@ -207,7 +207,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="namespaceerf__grid__utils_a245894cf539808a648e116324ed737a9_cgraph.png" border="0" usemap="#anamespaceerf__grid__utils_a245894cf539808a648e116324ed737a9_cgraph" alt=""/></div>
 <map name="anamespaceerf__grid__utils_a245894cf539808a648e116324ed737a9_cgraph" id="anamespaceerf__grid__utils_a245894cf539808a648e116324ed737a9_cgraph">
 <area shape="rect" title="Fill a staggered z&#45;level array with a geometrically stretched grid." alt="" coords="5,39,153,80"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="201,5,384,47"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="201,5,384,47"/>
 <area shape="rect" href="namespaceerf__grid__utils.html#a25c52e8f56e1b5be7aaa18394250eb7a" title="Solve for the geometric stretch factor that fills a domain of depth z_top with nz layers whose first ..." alt="" coords="202,71,383,112"/>
 </map>
 </div>

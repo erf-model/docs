@@ -2,10 +2,10 @@ var ERF__InitCustomPertVels__CouettePoiseuille_8H =
 [
     [ "AMREX_ALWAYS_ASSERT", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#af12c4f0345d290e7aabdbc36f3768fcc", null ],
     [ "get", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af", null ],
-    [ "if", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a97a9e6046b40a66048f69630ef62c537", null ],
+    [ "if", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#aabcd05f5732c8c6f615766cc6830d86a", null ],
     [ "pp_for_pert_vels", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a420d78bf983d6025fd797e5276faa2fb", null ],
     [ "query", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#aef877e5d613faae57e0ea07b1154e905", null ],
-    [ "query", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#aa32b3d71d3801e8e327171d311d3bcb1", null ],
+    [ "query", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a69d4eca4a7b609854ff85b2f3f1d1d47", null ],
     [ "query", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a4299ef20db6d1e7e276624676b48e6b7", null ],
     [ "query", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#ab1fd6e26074a679aa66026a966cf07dd", null ],
     [ "query", "ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a459509be2340ba534f4e20cc94530e5c", null ],
