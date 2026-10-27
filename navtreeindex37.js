@@ -1,5 +1,6 @@
 var NAVTREEINDEX37 =
 {
+"globals_vars_n.html":[3,1,2,13],
 "globals_vars_o.html":[3,1,2,14],
 "globals_vars_p.html":[3,1,2,15],
 "globals_vars_q.html":[3,1,2,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX37 =
 "namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85a7ba201eb5e95abb7b2934e1538de5c88":[1,0,9,21,3],
 "namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85a8f5c726a79d28111b32b6a4e3bc56dc5":[1,0,9,21,1],
 "namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85ab2ee912b91d69b435159c7c3f6df7f5f":[1,0,9,21,2],
-"namespaceerf__auxiliary.html#a771ec62d568054a7f3cf03a314f1a2a6":[1,0,9,20],
-"namespaceerf__auxiliary.html#a771ec62d568054a7f3cf03a314f1a2a6a7ba201eb5e95abb7b2934e1538de5c88":[1,0,9,20,2]
+"namespaceerf__auxiliary.html#a771ec62d568054a7f3cf03a314f1a2a6":[1,0,9,20]
 };

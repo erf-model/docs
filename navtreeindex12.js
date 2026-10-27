@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"ERF__Plotfile2DSampledLevel_8H.html#afa858869cefcae6c300753f8e5e00abb":[3,0,1,10,28,19],
 "ERF__Plotfile2DSampledLevel_8H.html#afd832a5dc34b5f5d00610d7e87bb57bd":[3,0,1,10,28,17],
 "ERF__Plotfile2DSampledLevel_8H_source.html":[3,0,1,10,28],
 "ERF__Plotfile2DSampledLevel_8cpp.html":[3,0,1,10,27],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "ERF__RadStruct_8H.html#a5e8cab83c627850a8743a6b29beb2d21":[3,0,1,4,10,4],
 "ERF__RadStruct_8H.html#a7774bcb49f4896fcdcd7c23bc55a68cc":[3,0,1,4,10,2],
 "ERF__RadStruct_8H.html#a9a6d6e754b1df55cb2827921ecebd3c5":[3,0,1,4,10,1],
-"ERF__RadStruct_8H_source.html":[3,0,1,4,10],
-"ERF__RadiationDiagnostics_8H.html":[3,0,1,20,2,5]
+"ERF__RadStruct_8H_source.html":[3,0,1,4,10]
 };

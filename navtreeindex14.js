@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"ERF__SBMRemapping_8H.html#afc85b4c9bf730f1e15c41ea4ca7f940b":[3,0,1,14,6,15,20],
 "ERF__SBMRemapping_8H_source.html":[3,0,1,14,6,15],
 "ERF__SBMRemapping_8cpp.html":[3,0,1,14,6,14],
 "ERF__SBMRemapping_8cpp.html#a196324656da9600ee64b63799251386f":[3,0,1,14,6,14,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX14 =
 "ERF__ShocPDF_8cpp.html":[3,0,1,17,0,14],
 "ERF__ShocPreprocess_8H.html":[3,0,1,17,0,17],
 "ERF__ShocPreprocess_8H_source.html":[3,0,1,17,0,17],
-"ERF__ShocPreprocess_8cpp.html":[3,0,1,17,0,16],
-"ERF__ShocStructure_8H.html":[3,0,1,17,0,19]
+"ERF__ShocPreprocess_8cpp.html":[3,0,1,17,0,16]
 };

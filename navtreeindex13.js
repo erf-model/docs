@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"ERF__RadiationDiagnostics_8H.html":[3,0,1,20,2,5],
 "ERF__RadiationDiagnostics_8H_source.html":[3,0,1,20,2,5],
 "ERF__RadiationDiagnostics_8cpp.html":[3,0,1,20,2,4],
 "ERF__RadiationInterface_8H.html":[3,0,1,20,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "ERF__SBMRemapping_8H.html#ae0204ef3558b27d727051ec91ca63c2e":[3,0,1,14,6,15,42],
 "ERF__SBMRemapping_8H.html#ae646aa2df10080be9c79e890f7375356":[3,0,1,14,6,15,28],
 "ERF__SBMRemapping_8H.html#ae9d64d54b66aa201300c4fdc867c496c":[3,0,1,14,6,15,16],
-"ERF__SBMRemapping_8H.html#af967f578f26e936c2752a8cb22458a07":[3,0,1,14,6,15,15],
-"ERF__SBMRemapping_8H.html#afc85b4c9bf730f1e15c41ea4ca7f940b":[3,0,1,14,6,15,20]
+"ERF__SBMRemapping_8H.html#af967f578f26e936c2752a8cb22458a07":[3,0,1,14,6,15,15]
 };

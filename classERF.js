@@ -284,7 +284,7 @@ var classERF =
     [ "WriteMyEBSurface", "classERF.html#a31b92a0c6fa4e19ff90feef3611f5f06", null ],
     [ "writeNow", "classERF.html#a142045b2ea906fac2829da3f5112d094", null ],
     [ "WriteSubvolume", "classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f", null ],
-    [ "WriteVTKPolyline", "classERF.html#ad3613d455e3c246e5addf88054fa41db", null ],
+    [ "WriteVTKPolyline", "classERF.html#a73a0b4eda605c33fc254285fe10b60a5", null ],
     [ "advflux_reg", "classERF.html#a5e0e79cf4dd84c5d4175b5ffc7f20ca4", null ],
     [ "auxiliary_inert_tracer", "classERF.html#aca6735f0d3c94b0384a95c9de0554d3c", null ],
     [ "avg_xmom", "classERF.html#a0be7f38e1bb70dae91377a4fc7ecab40", null ],

@@ -679,7 +679,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            {</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                <span class="keywordtype">int</span> dest_comp = icomp+n;</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                <span class="keywordtype">int</span> l_bc_type = bc_ptr[n].lo(0);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                <span class="keywordtype">int</span> iflip = dom_lo.x - 1 - i;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                <span class="keywordtype">int</span> iflip = 2*dom_lo.x - 1 - i;</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(dom_lo.x,j,k,dest_comp);</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914">ERFBCType::open</a>) {</div>
@@ -728,7 +728,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            {</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="keywordtype">int</span> dest_comp = icomp+n;</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                <span class="keywordtype">int</span> l_bc_type = bc_ptr[n].lo(1);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                <span class="keywordtype">int</span> jflip = dom_lo.y - 1 - j;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                <span class="keywordtype">int</span> jflip = 2*dom_lo.y - 1 - j;</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(i,dom_lo.y,k,dest_comp);</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914">ERFBCType::open</a>) {</div>
@@ -1003,7 +1003,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                                 <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa029ef491930290dea3a984ebdb6d6ae4">BCVars::RhoScalar_bc_comp</a> : dest_comp;</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                <span class="keywordflow">if</span> (bc_comp &gt; <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa029ef491930290dea3a984ebdb6d6ae4">BCVars::RhoScalar_bc_comp</a>) bc_comp -= (<a class="code" href="ERF__IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9">NSCALARS</a>-1);</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                <span class="keywordtype">int</span> l_bc_type = bc_ptr[n].lo(2);</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                <span class="keywordtype">int</span> kflip = dom_lo.z - 1 - k;</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                <span class="keywordtype">int</span> kflip = 2*dom_lo.z - 1 - k;</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(i,j,dom_lo.z,dest_comp);</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914">ERFBCType::open</a>) {</div>

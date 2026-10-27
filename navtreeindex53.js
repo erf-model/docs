@@ -1,5 +1,6 @@
 var NAVTREEINDEX53 =
 {
+"structerf__sbm_1_1LiquidProjectionSpec.html#a2a329858f99c6535d0a930f2a50ec6cb":[2,0,9,15,1],
 "structerf__sbm_1_1LiquidProjectionSpec.html#a2f9c478e5b4aaf963383520a95316171":[2,0,9,15,0],
 "structerf__sbm_1_1PacketApplicationCoreResult.html":[2,0,9,24],
 "structerf__sbm_1_1PacketApplicationCoreResult.html#a103865a12368a171548395dfdb6fa7c3":[2,0,9,24,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX53 =
 "structnear__surface__diagnostics_1_1NativeAggregate.html":[2,0,16,1],
 "structnear__surface__diagnostics_1_1NativeAggregate.html#a5a22224cdb416679d3f94fde7006e1e7":[2,0,16,1,1],
 "structnear__surface__diagnostics_1_1NativeAggregate.html#ae064427e65cd008985547cf6722b6030":[2,0,16,1,0],
-"structnear__surface__diagnostics_1_1NativeBundle.html":[2,0,16,0],
-"structnear__surface__diagnostics_1_1NativeBundle.html#a38c686eec935d59435a0c9e8fb4c93cc":[2,0,16,0,1]
+"structnear__surface__diagnostics_1_1NativeBundle.html":[2,0,16,0]
 };
