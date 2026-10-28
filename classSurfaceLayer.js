@@ -93,6 +93,7 @@ var classSurfaceLayer =
     [ "set_mac_plane_avg", "classSurfaceLayer.html#a7a2882ececdd0f242cfc7d66dbdc00b9", null ],
     [ "set_pblh", "classSurfaceLayer.html#aa4be878f0fa9e708d4ccf93bba77a3ed", null ],
     [ "set_q_surf", "classSurfaceLayer.html#a09961f2fcf7cdc577fc29ae446c3d4de", null ],
+    [ "set_sfc_params_from_file_fluxes", "classSurfaceLayer.html#a110eb3483915fe2480c2599761b3ced4", null ],
     [ "set_skin_moisture", "classSurfaceLayer.html#ab47e1f11f210a913d192a3741d463ea9", null ],
     [ "set_skin_temperature", "classSurfaceLayer.html#ada95584fb0823b4faa41eb93da824c41", null ],
     [ "set_surface_layer_faces", "classSurfaceLayer.html#ab8b365231608193adf71619758611535", null ],
