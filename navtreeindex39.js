@@ -1,6 +1,5 @@
 var NAVTREEINDEX39 =
 {
-"namespaceerf__cloud__chamber.html#ad2673aed2ef0c6cd00fb25515d150b6f":[1,0,13,21],
 "namespaceerf__cloud__chamber.html#ad3f6951a379b4ce5e0bf2cc2d7325a5a":[1,0,13,12],
 "namespaceerf__cloud__chamber.html#ad6386a142314152cfe77637718c16780":[1,0,13,8],
 "namespaceerf__cloud__chamber.html#ada393f7c2dc2faf21670956a8869c710":[1,0,13,13],
@@ -124,9 +123,12 @@ var NAVTREEINDEX39 =
 "namespaceerf__plotfile.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99":[1,0,25,4],
 "namespaceerf__plotfile.html#adeec399e5474b8bce8830aac35becc11":[1,0,25,12],
 "namespaceerf__prob__heights.html":[1,0,26],
-"namespaceerf__prob__heights.html#a6c90af657a64f3870e9aed551f93640d":[1,0,26,2],
-"namespaceerf__prob__heights.html#ab1f668cb4ad5f70c3b9211acb41519aa":[1,0,26,1],
-"namespaceerf__prob__heights.html#acd092bdf1a33662ddd2409b4f5f2f033":[1,0,26,0],
+"namespaceerf__prob__heights.html#a1e43fc4b273e5a7e3d6da3224200b45a":[1,0,26,1],
+"namespaceerf__prob__heights.html#a3861354d853eb13c9d606b5a6b6299cc":[1,0,26,0],
+"namespaceerf__prob__heights.html#a6c90af657a64f3870e9aed551f93640d":[1,0,26,5],
+"namespaceerf__prob__heights.html#ab1f668cb4ad5f70c3b9211acb41519aa":[1,0,26,4],
+"namespaceerf__prob__heights.html#acd092bdf1a33662ddd2409b4f5f2f033":[1,0,26,3],
+"namespaceerf__prob__heights.html#afb3f86649e1934eb886d8c477df3d3be":[1,0,26,2],
 "namespaceerf__problem__dispatch.html":[1,0,27],
 "namespaceerf__problem__dispatch.html#a084bccc2b3a5b2dacd15f6ac65355034":[1,0,27,1],
 "namespaceerf__problem__dispatch.html#a96a71506ff56c48e90646db1761713f7":[1,0,27,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX39 =
 "namespaceerf__sbm.html#ab9eea6bfebcb3ad260b8ef6046e68467":[1,0,30,56],
 "namespaceerf__sbm.html#aba44d9b8f38cce33f1f176ef9934a8e0":[1,0,30,87],
 "namespaceerf__sbm.html#abaffdff25aa8fa6c3f7e855517d8c4a3":[1,0,30,84],
-"namespaceerf__sbm.html#abe9bbf56d9d1d449d3672972d4068eb5":[1,0,30,73],
-"namespaceerf__sbm.html#ac748334cf2d172c571ea20ef82111313":[1,0,30,39],
-"namespaceerf__sbm.html#ac748334cf2d172c571ea20ef82111313ad1106ccca74e98877ed6d7890c70bb2c":[1,0,30,39,1]
+"namespaceerf__sbm.html#abe9bbf56d9d1d449d3672972d4068eb5":[1,0,30,73]
 };

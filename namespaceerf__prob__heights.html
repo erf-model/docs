@@ -100,11 +100,195 @@ Functions</h2></td></tr>
 <tr class="memitem:a6c90af657a64f3870e9aed551f93640d"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__prob__heights.html#a6c90af657a64f3870e9aed551f93640d">z_zface</a> (int i, int j, int k, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; const &amp;z_nd) noexcept</td></tr>
 <tr class="memdesc:a6c90af657a64f3870e9aed551f93640d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the centre of z-face (i,j,k)  <a href="namespaceerf__prob__heights.html#a6c90af657a64f3870e9aed551f93640d">More...</a><br /></td></tr>
 <tr class="separator:a6c90af657a64f3870e9aed551f93640d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3861354d853eb13c9d606b5a6b6299cc"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__prob__heights.html#a3861354d853eb13c9d606b5a6b6299cc">z_ground_cc</a> (int i, int j, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; const &amp;z_sfc_nd) noexcept</td></tr>
+<tr class="separator:a3861354d853eb13c9d606b5a6b6299cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e43fc4b273e5a7e3d6da3224200b45a"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__prob__heights.html#a1e43fc4b273e5a7e3d6da3224200b45a">z_ground_xface</a> (int i, int j, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; const &amp;z_sfc_nd) noexcept</td></tr>
+<tr class="memdesc:a1e43fc4b273e5a7e3d6da3224200b45a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the ground under x-face (i,j)  <a href="namespaceerf__prob__heights.html#a1e43fc4b273e5a7e3d6da3224200b45a">More...</a><br /></td></tr>
+<tr class="separator:a1e43fc4b273e5a7e3d6da3224200b45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb3f86649e1934eb886d8c477df3d3be"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__prob__heights.html#afb3f86649e1934eb886d8c477df3d3be">z_ground_yface</a> (int i, int j, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; const &amp;z_sfc_nd) noexcept</td></tr>
+<tr class="memdesc:afb3f86649e1934eb886d8c477df3d3be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the ground under y-face (i,j)  <a href="namespaceerf__prob__heights.html#afb3f86649e1934eb886d8c477df3d3be">More...</a><br /></td></tr>
+<tr class="separator:afb3f86649e1934eb886d8c477df3d3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Physical heights at the face centres of a cell, from the nodal heights z_nd.</p>
 <p>On a mesh other than ConstantDz, geometry's prob_lo[2], prob_hi[2] and CellSize(2) only bound and step the computational coordinate, so problem setups take their heights from z_nd (and z_cc) there. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a3861354d853eb13c9d606b5a6b6299cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3861354d853eb13c9d606b5a6b6299cc">&#9670;&nbsp;</a></span>z_ground_cc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> erf_prob_heights::z_ground_cc </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>z_sfc_nd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Height of the ground under cell (i,j), from z_sfc_nd, the ground heights at the nodes of the bottom face of each column (see <a class="el" href="classERF.html#a604939a8058f7efa36a427adb889739c">ERF::init_custom</a>) </p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.25) * ( z_sfc_nd(i,j  ,0) + z_sfc_nd(i+1,j  ,0)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                               + z_sfc_nd(i,j+1,0) + z_sfc_nd(i+1,j+1,0) );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__ABL_8H.html#ad7f75242d16d0c45e32e1e87beeecbe7">ParallelForRNG()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__prob__heights_a3861354d853eb13c9d606b5a6b6299cc_icgraph.png" border="0" usemap="#anamespaceerf__prob__heights_a3861354d853eb13c9d606b5a6b6299cc_icgraph" alt=""/></div>
+<map name="anamespaceerf__prob__heights_a3861354d853eb13c9d606b5a6b6299cc_icgraph" id="anamespaceerf__prob__heights_a3861354d853eb13c9d606b5a6b6299cc_icgraph">
+<area shape="rect" title=" " alt="" coords="372,5,519,47"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#ad7f75242d16d0c45e32e1e87beeecbe7" title=" " alt="" coords="205,13,324,39"/>
+<area shape="rect" href="classERF.html#a841b9c35530690660acbb386ef9cbb24" title=" " alt="" coords="5,5,157,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1e43fc4b273e5a7e3d6da3224200b45a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e43fc4b273e5a7e3d6da3224200b45a">&#9670;&nbsp;</a></span>z_ground_xface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> erf_prob_heights::z_ground_xface </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>z_sfc_nd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Height of the ground under x-face (i,j) </p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.5) * ( z_sfc_nd(i,j,0) + z_sfc_nd(i,j+1,0) );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__ABL_8H.html#abc85371ca53e30d4a9ddcb4d26be84fe">ParallelForRNG()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__prob__heights_a1e43fc4b273e5a7e3d6da3224200b45a_icgraph.png" border="0" usemap="#anamespaceerf__prob__heights_a1e43fc4b273e5a7e3d6da3224200b45a_icgraph" alt=""/></div>
+<map name="anamespaceerf__prob__heights_a1e43fc4b273e5a7e3d6da3224200b45a_icgraph" id="anamespaceerf__prob__heights_a1e43fc4b273e5a7e3d6da3224200b45a_icgraph">
+<area shape="rect" title="Height of the ground under x&#45;face (i,j)" alt="" coords="172,5,319,47"/>
+<area shape="rect" href="ERF__InitCustomPertVels__ABL_8H.html#abc85371ca53e30d4a9ddcb4d26be84fe" title=" " alt="" coords="5,13,124,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afb3f86649e1934eb886d8c477df3d3be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb3f86649e1934eb886d8c477df3d3be">&#9670;&nbsp;</a></span>z_ground_yface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> erf_prob_heights::z_ground_yface </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>z_sfc_nd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Height of the ground under y-face (i,j) </p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.5) * ( z_sfc_nd(i,j,0) + z_sfc_nd(i+1,j,0) );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__ABL_8H.html#a9d334a67843f1c40a03020995b344469">ParallelForRNG()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__prob__heights_afb3f86649e1934eb886d8c477df3d3be_icgraph.png" border="0" usemap="#anamespaceerf__prob__heights_afb3f86649e1934eb886d8c477df3d3be_icgraph" alt=""/></div>
+<map name="anamespaceerf__prob__heights_afb3f86649e1934eb886d8c477df3d3be_icgraph" id="anamespaceerf__prob__heights_afb3f86649e1934eb886d8c477df3d3be_icgraph">
+<area shape="rect" title="Height of the ground under y&#45;face (i,j)" alt="" coords="172,5,319,47"/>
+<area shape="rect" href="ERF__InitCustomPertVels__ABL_8H.html#a9d334a67843f1c40a03020995b344469" title=" " alt="" coords="5,13,124,39"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="acd092bdf1a33662ddd2409b4f5f2f033"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acd092bdf1a33662ddd2409b4f5f2f033">&#9670;&nbsp;</a></span>z_xface()</h2>
 
@@ -156,9 +340,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.25) * ( z_nd(i,j  ,k) + z_nd(i,j  ,k+1)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                               + z_nd(i,j+1,k) + z_nd(i,j+1,k+1) );</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#aabcd05f5732c8c6f615766cc6830d86a">if()</a>, <a class="el" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a8e42f69163e1d3c8b9facff651e89afc">ParallelFor()</a>, and <a class="el" href="ERF__InitCustomPertVels__Bomex_8H.html#a6f6ab8d7213ed45f72d06d45a724c1b9">ParallelForRNG()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#aabcd05f5732c8c6f615766cc6830d86a">if()</a>, <a class="el" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a8e42f69163e1d3c8b9facff651e89afc">ParallelFor()</a>, and <a class="el" href="ERF__InitCustomPertVels__Bomex_8H.html#a9ceb77cdcf816757ab5091ea7057739a">ParallelForRNG()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -167,7 +350,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="Height of the centre of x&#45;face (i,j,k)" alt="" coords="172,49,319,90"/>
 <area shape="rect" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#aabcd05f5732c8c6f615766cc6830d86a" title=" " alt="" coords="45,5,84,32"/>
 <area shape="rect" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a8e42f69163e1d3c8b9facff651e89afc" title=" " alt="" coords="19,56,110,83"/>
-<area shape="rect" href="ERF__InitCustomPertVels__Bomex_8H.html#a6f6ab8d7213ed45f72d06d45a724c1b9" title=" " alt="" coords="5,107,124,133"/>
+<area shape="rect" href="ERF__InitCustomPertVels__Bomex_8H.html#a9ceb77cdcf816757ab5091ea7057739a" title=" " alt="" coords="5,107,124,133"/>
 </map>
 </div>
 
@@ -225,7 +408,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                               + z_nd(i+1,j,k) + z_nd(i+1,j,k+1) );</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#aabcd05f5732c8c6f615766cc6830d86a">if()</a>, <a class="el" href="ERF__InitCustomPertVels__TaylorGreenVortex_8H.html#a1842b6ed812e26cd5e9b617feb9c091c">ParallelFor()</a>, and <a class="el" href="ERF__InitCustomPertVels__Bomex_8H.html#aef769a55496ee7919bdf6512c89ce952">ParallelForRNG()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#aabcd05f5732c8c6f615766cc6830d86a">if()</a>, <a class="el" href="ERF__InitCustomPertVels__TaylorGreenVortex_8H.html#a1842b6ed812e26cd5e9b617feb9c091c">ParallelFor()</a>, and <a class="el" href="ERF__InitCustomPertVels__Bomex_8H.html#a43875ec54aca036887d3593ee868276f">ParallelForRNG()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -234,7 +417,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="Height of the centre of y&#45;face (i,j,k)" alt="" coords="172,49,319,90"/>
 <area shape="rect" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#aabcd05f5732c8c6f615766cc6830d86a" title=" " alt="" coords="45,5,84,32"/>
 <area shape="rect" href="ERF__InitCustomPertVels__TaylorGreenVortex_8H.html#a1842b6ed812e26cd5e9b617feb9c091c" title=" " alt="" coords="19,56,110,83"/>
-<area shape="rect" href="ERF__InitCustomPertVels__Bomex_8H.html#aef769a55496ee7919bdf6512c89ce952" title=" " alt="" coords="5,107,124,133"/>
+<area shape="rect" href="ERF__InitCustomPertVels__Bomex_8H.html#a43875ec54aca036887d3593ee868276f" title=" " alt="" coords="5,107,124,133"/>
 </map>
 </div>
 

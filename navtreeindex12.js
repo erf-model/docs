@@ -1,9 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f":[3,0,1,11,18,5],
-"ERF__Plotfile2DInterpolator_8cpp.html#a96259ed38494048722549fa2802202b0":[3,0,1,11,18,0],
-"ERF__Plotfile2DInterpolator_8cpp.html#aafb67b15d0c8c7fa7b1df54753e37e91":[3,0,1,11,18,1],
-"ERF__Plotfile2DMetadata_8H.html":[3,0,1,11,21],
 "ERF__Plotfile2DMetadata_8H.html#a0700c1c9e33d7a696db78ad1091dac30":[3,0,1,11,21,2],
 "ERF__Plotfile2DMetadata_8H.html#a2356a303d260fa136faf416c864a5d44":[3,0,1,11,21,0],
 "ERF__Plotfile2DMetadata_8H.html#a3c4cde148efe55684e56346cc2bf7d4e":[3,0,1,11,21,1],
@@ -190,9 +186,12 @@ var NAVTREEINDEX12 =
 "ERF__ProbCommon_8H.html#af9d998a7ea02a8866bcbbf8d3d1f8882":[3,0,1,41,2],
 "ERF__ProbCommon_8H_source.html":[3,0,1,41],
 "ERF__ProbHeights_8H.html":[3,0,1,20,51],
-"ERF__ProbHeights_8H.html#a6c90af657a64f3870e9aed551f93640d":[3,0,1,20,51,2],
-"ERF__ProbHeights_8H.html#ab1f668cb4ad5f70c3b9211acb41519aa":[3,0,1,20,51,1],
-"ERF__ProbHeights_8H.html#acd092bdf1a33662ddd2409b4f5f2f033":[3,0,1,20,51,0],
+"ERF__ProbHeights_8H.html#a1e43fc4b273e5a7e3d6da3224200b45a":[3,0,1,20,51,1],
+"ERF__ProbHeights_8H.html#a3861354d853eb13c9d606b5a6b6299cc":[3,0,1,20,51,0],
+"ERF__ProbHeights_8H.html#a6c90af657a64f3870e9aed551f93640d":[3,0,1,20,51,5],
+"ERF__ProbHeights_8H.html#ab1f668cb4ad5f70c3b9211acb41519aa":[3,0,1,20,51,4],
+"ERF__ProbHeights_8H.html#acd092bdf1a33662ddd2409b4f5f2f033":[3,0,1,20,51,3],
+"ERF__ProbHeights_8H.html#afb3f86649e1934eb886d8c477df3d3be":[3,0,1,20,51,2],
 "ERF__ProbHeights_8H_source.html":[3,0,1,20,51],
 "ERF__ProblemDispatch_8H.html":[3,0,1,20,52],
 "ERF__ProblemDispatch_8H.html#a084bccc2b3a5b2dacd15f6ac65355034":[3,0,1,20,52,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX12 =
 "ERF__Provenance_8cpp.html#a110ab24df1bb06800c42792914612c4f":[3,0,1,11,33,11],
 "ERF__Provenance_8cpp.html#a16d45cdb757e2cee2f066767991d0666":[3,0,1,11,33,1],
 "ERF__Provenance_8cpp.html#a2cb8c51a0d8ab35681be97c0b61697c7":[3,0,1,11,33,12],
-"ERF__Provenance_8cpp.html#a31bb3c9a531ae6b37a1488445929c2f5":[3,0,1,11,33,4]
+"ERF__Provenance_8cpp.html#a31bb3c9a531ae6b37a1488445929c2f5":[3,0,1,11,33,4],
+"ERF__Provenance_8cpp.html#a48c27f35055b284d9dc8df7acaacd789":[3,0,1,11,33,10]
 };

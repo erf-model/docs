@@ -155,7 +155,7 @@ Include dependency graph for ERF_PoissonWallDist.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a573a734aad8a42fd5f3e4564b165337d"><td class="memItemLeft" align="right" valign="top">static MultiFab&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__PoissonWallDist_8cpp.html#a573a734aad8a42fd5f3e4564b165337d">surface_slab</a> (const MultiFab &amp;z_nd, int <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>)</td></tr>
+<tr class="memitem:a573a734aad8a42fd5f3e4564b165337d"><td class="memItemLeft" align="right" valign="top">static MultiFab&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__PoissonWallDist_8cpp.html#a573a734aad8a42fd5f3e4564b165337d">surface_slab</a> (const MultiFab &amp;z_nd, int <a class="el" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>)</td></tr>
 <tr class="separator:a573a734aad8a42fd5f3e4564b165337d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea33e8edd31d795a0f253abe953dbac8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__PoissonWallDist_8cpp.html#aea33e8edd31d795a0f253abe953dbac8">assert_surface_gathered</a> (const MultiFab &amp;znd_surf)</td></tr>
 <tr class="separator:aea33e8edd31d795a0f253abe953dbac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -274,12 +274,12 @@ Here is the caller graph for this function:</div>
 </dl>
 <div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    BoxList bl_surf = z_nd.boxArray().boxList();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : bl_surf) { b.setRange(2,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>); }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : bl_surf) { b.setRange(2,<a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>); }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    BoxArray ba_surf(std::move(bl_surf));</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    IntVect ng_surf = z_nd.nGrowVect(); ng_surf[2] = 0;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> MultiFab(ba_surf, z_nd.DistributionMap(), 1, ng_surf);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:75</div></div>
+<div class="ttc" id="aERF__InitCustomPert__KE_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_KE.H:9</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a984c145a81739ab4c7f8fd03a334d239">ERF::poisson_wall_dist()</a>.</p>
 <div class="dynheader">

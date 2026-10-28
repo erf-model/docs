@@ -149,6 +149,9 @@ var namespaces_dup =
     [ "erf_noahmp", "namespaceerf__noahmp.html", "namespaceerf__noahmp" ],
     [ "erf_plotfile", "namespaceerf__plotfile.html", "namespaceerf__plotfile" ],
     [ "erf_prob_heights", "namespaceerf__prob__heights.html", [
+      [ "z_ground_cc", "namespaceerf__prob__heights.html#a3861354d853eb13c9d606b5a6b6299cc", null ],
+      [ "z_ground_xface", "namespaceerf__prob__heights.html#a1e43fc4b273e5a7e3d6da3224200b45a", null ],
+      [ "z_ground_yface", "namespaceerf__prob__heights.html#afb3f86649e1934eb886d8c477df3d3be", null ],
       [ "z_xface", "namespaceerf__prob__heights.html#acd092bdf1a33662ddd2409b4f5f2f033", null ],
       [ "z_yface", "namespaceerf__prob__heights.html#ab1f668cb4ad5f70c3b9211acb41519aa", null ],
       [ "z_zface", "namespaceerf__prob__heights.html#a6c90af657a64f3870e9aed551f93640d", null ]
@@ -219,11 +222,11 @@ var namespaces_dup =
       [ "compute_saturation_pressure", "namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead", null ],
       [ "compute_temperature", "namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0", null ],
       [ "compute_theta", "namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b", null ],
-      [ "init_isentropic_hse_constant_dz", "namespaceHSEutils.html#a2c3040a913cdfd72304e07ef7546e93a", null ],
+      [ "init_isentropic_hse_constant_dz", "namespaceHSEutils.html#a42945880529b25892b8bac3c26e00dcd", null ],
       [ "init_isentropic_hse_no_terrain", "namespaceHSEutils.html#a4b1ea7e19255c9f21bc227ed7cc0b474", null ],
       [ "init_isentropic_hse_no_terrain", "namespaceHSEutils.html#a7a5045d1b31e68655d6def7ac6a11e5b", null ],
       [ "init_isentropic_hse_no_terrain_column", "namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc", null ],
-      [ "init_isentropic_hse_stretched_dz", "namespaceHSEutils.html#a14e725ac72601dc0de8c48ad36fdf809", null ],
+      [ "init_isentropic_hse_stretched_dz", "namespaceHSEutils.html#a8130e78848531ae6668c651be0be010f", null ],
       [ "init_isentropic_hse_terrain", "namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07", null ],
       [ "Newton_Raphson_hse", "namespaceHSEutils.html#af006ebbfafe3deddc3bf90a75f129b00", null ],
       [ "vapor_mixing_ratio", "namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983", null ],

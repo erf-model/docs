@@ -1,5 +1,7 @@
 var NAVTREEINDEX46 =
 {
+"structInputSoundingData.html#a133d3c13161dbdbbf9a808c43575c7bd":[2,0,74,18],
+"structInputSoundingData.html#a14347a117d3eaf2869ba59683e9e27cd":[2,0,74,28],
 "structInputSoundingData.html#a2a838e4f47cffda3241d82a611542a05":[2,0,74,15],
 "structInputSoundingData.html#a2bdcd8294e7fe04d0c4795166a23ce39":[2,0,74,19],
 "structInputSoundingData.html#a2fb9569a3bbbf02aa1fd5b9346919096":[2,0,74,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX46 =
 "structNDArray.html#a197526556d3850037e560585740b9074":[2,0,103,8],
 "structNDArray.html#a1b3ece1ab109568fcb919d1af8f14eee":[2,0,103,6],
 "structNDArray.html#a1f33dbd861944bc1494f4790f4f8543d":[2,0,103,2],
-"structNDArray.html#a4d7550e3c00d13d8397f1cfbdfd2ab48":[2,0,103,4],
-"structNDArray.html#a6a0a485b6da8ce09dda81fc51607da73":[2,0,103,7],
-"structNDArray.html#a7bd19397e539424afc06e9fe12760434":[2,0,103,1]
+"structNDArray.html#a4d7550e3c00d13d8397f1cfbdfd2ab48":[2,0,103,4]
 };
