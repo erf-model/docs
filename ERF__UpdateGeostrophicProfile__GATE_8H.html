@@ -99,8 +99,6 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a3863b7bf2bd0a71f1021a3991f3dede8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateGeostrophicProfile__GATE_8H.html#a3863b7bf2bd0a71f1021a3991f3dede8">prob_lo</a> = geom.ProbLo()</td></tr>
-<tr class="separator:a3863b7bf2bd0a71f1021a3991f3dede8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aada30199a52709bfe69b46aa5a2b9731"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateGeostrophicProfile__GATE_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = geom.CellSize()</td></tr>
 <tr class="separator:aada30199a52709bfe69b46aa5a2b9731"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -120,21 +118,20 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                                   {</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_cc = (z_phys_cc) ? zlevels[k] : <a class="code" href="ERF__UpdateGeostrophicProfile__GATE_8H.html#a3863b7bf2bd0a71f1021a3991f3dede8">prob_lo</a>[2] + (k+0.5)*<a class="code" href="ERF__UpdateGeostrophicProfile__GATE_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[2];</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> f_a[12] = {-1.27239999e-41,  1.11717520e-36, -4.33415278e-32,  9.86488742e-28,</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                        -1.46662495e-23,  1.47887323e-19, -9.96258532e-16,  4.17832623e-12,</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                        -9.41191724e-09,  8.63378170e-06, -4.29197266e-03, -8.18730365e-01};</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> u_geo_wind = f_a[0];</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ind = 1; ind &lt; 12; ++ind) {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            u_geo_wind = u_geo_wind * z_cc + f_a[ind];</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        u_geos[k] = u_geo_wind;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        v_geos[k] = 0.0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                                   {</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_cc = (z_phys_cc) ? zlevels[k] : (k+0.5)*<a class="code" href="ERF__UpdateGeostrophicProfile__GATE_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[2];</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> f_a[12] = {-1.27239999e-41,  1.11717520e-36, -4.33415278e-32,  9.86488742e-28,</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                        -1.46662495e-23,  1.47887323e-19, -9.96258532e-16,  4.17832623e-12,</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                        -9.41191724e-09,  8.63378170e-06, -4.29197266e-03, -8.18730365e-01};</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> u_geo_wind = f_a[0];</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ind = 1; ind &lt; 12; ++ind) {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            u_geo_wind = u_geo_wind * z_cc + f_a[ind];</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        }</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        u_geos[k] = u_geo_wind;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        v_geos[k] = 0.0;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aERF__UpdateGeostrophicProfile__GATE_8H_html_a3863b7bf2bd0a71f1021a3991f3dede8"><div class="ttname"><a href="ERF__UpdateGeostrophicProfile__GATE_8H.html#a3863b7bf2bd0a71f1021a3991f3dede8">prob_lo</a></div><div class="ttdeci">const Real * prob_lo</div><div class="ttdef"><b>Definition:</b> ERF_UpdateGeostrophicProfile_GATE.H:1</div></div>
-<div class="ttc" id="aERF__UpdateGeostrophicProfile__GATE_8H_html_aada30199a52709bfe69b46aa5a2b9731"><div class="ttname"><a href="ERF__UpdateGeostrophicProfile__GATE_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a></div><div class="ttdeci">const auto dx</div><div class="ttdef"><b>Definition:</b> ERF_UpdateGeostrophicProfile_GATE.H:2</div></div>
+<div class="ttc" id="aERF__UpdateGeostrophicProfile__GATE_8H_html_aada30199a52709bfe69b46aa5a2b9731"><div class="ttname"><a href="ERF__UpdateGeostrophicProfile__GATE_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a></div><div class="ttdeci">const auto dx</div><div class="ttdef"><b>Definition:</b> ERF_UpdateGeostrophicProfile_GATE.H:1</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -147,22 +144,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">const auto dx = geom.CellSize()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="ERF__UpdateGeostrophicProfile__GATE_8H.html#aac2e5b107bfa4ac340f62bd3584c3c3b">for()</a>.</p>
-
-</div>
-</div>
-<a id="a3863b7bf2bd0a71f1021a3991f3dede8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3863b7bf2bd0a71f1021a3991f3dede8">&#9670;&nbsp;</a></span>prob_lo</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* prob_lo = geom.ProbLo()</td>
         </tr>
       </table>
 </div><div class="memdoc">

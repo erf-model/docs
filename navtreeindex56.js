@@ -1,8 +1,5 @@
 var NAVTREEINDEX56 =
 {
-"structsurface__flux__wave__coupled.html#af713fd6bc030236b345f39de9801a285":[2,0,196,1],
-"structsurface__layer__stress_1_1FaceStressResult.html":[2,0,21,0],
-"structsurface__layer__stress_1_1FaceStressResult.html#a3163fff2a8055f4996a1b765250c9dd9":[2,0,21,0,0],
 "structsurface__layer__stress_1_1FaceStressResult.html#aac8f97ea0a5a68e6a049cd1621a38857":[2,0,21,0,2],
 "structsurface__layer__stress_1_1FaceStressResult.html#ae6fe47b6d2a7e5bd14f3a17228449d00":[2,0,21,0,1],
 "structsurface__temp.html":[2,0,197],

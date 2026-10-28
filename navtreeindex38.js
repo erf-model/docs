@@ -1,8 +1,5 @@
 var NAVTREEINDEX38 =
 {
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca9f18284526a1054d4e7a4783852ead30":[1,0,37,0,2],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9":[1,0,37,0,11],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9":[1,0,37,0,3],
 "namespaceERF_1_1Interpolation.html":[1,0,8,0],
 "namespaceERF_1_1Interpolation.html#a117832d8de5c92e7ba2983d5168770ce":[1,0,8,0,1],
 "namespaceERF_1_1Interpolation.html#ab1b8576c9ac7ae9803bd445af83f2bfe":[1,0,8,0,0],
@@ -249,5 +246,8 @@ var NAVTREEINDEX38 =
 "namespaceerf__cloud__chamber.html#a96147d4ef218cefa261bd3118e09418c":[1,0,13,17],
 "namespaceerf__cloud__chamber.html#aaf23e1de34bb37a13bc54e17628bd447":[1,0,13,22],
 "namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7":[1,0,13,4],
-"namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7a771279d249d1fa5c25e791ef3971f8ee":[1,0,13,4,0]
+"namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7a771279d249d1fa5c25e791ef3971f8ee":[1,0,13,4,0],
+"namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7ae30f844e44d8afad7ee7383f32e676bf":[1,0,13,4,1],
+"namespaceerf__cloud__chamber.html#abefe8f46f35e63fd46be3e775f2a1a4c":[1,0,13,16],
+"namespaceerf__cloud__chamber.html#abfe0bbc331590aa6fd5263ab04d08e6a":[1,0,13,18]
 };
