@@ -5,6 +5,7 @@ var ERF__IndexDefines_8H =
     [ "NMOIST_max", "ERF__IndexDefines_8H.html#abe87e298e9d558e0659a67ad3b9be71f", null ],
     [ "NPRIMVAR_max", "ERF__IndexDefines_8H.html#a19169754519601f5fe52ede728af2138", null ],
     [ "NSCALARS", "ERF__IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9", null ],
+    [ "NSCALARS_SMOKE", "ERF__IndexDefines_8H.html#af1f4981daccb66168a5c96883e2cb964", null ],
     [ "NVAR_max", "ERF__IndexDefines_8H.html#a46e292b965f80d15acfbdc11ffe1e0f0", null ],
     [ "NVAR_MOIST_max", "ERF__IndexDefines_8H.html#aef23aa54c5c6c2458de93772f28534b5", null ],
     [ "PrimKE_comp", "ERF__IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2", null ],
@@ -81,5 +82,6 @@ var ERF__IndexDefines_8H =
       [ "open", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914", null ],
       [ "ext_dir_upwind", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d", null ]
     ] ],
+    [ "cons_bc_comp", "ERF__IndexDefines_8H.html#a2884cbba5893be6246a15c6f98bdb2c2", null ],
     [ "LegacyNumTypes", "ERF__IndexDefines_8H.html#a56661641c6eecad2759ac2eb8bc093dc", null ]
 ];

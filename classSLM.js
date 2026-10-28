@@ -161,6 +161,7 @@ var classSLM =
     [ "m_dz_lsm", "classSLM.html#a4c7046c3c7d6f2d6c0cdc1efcc6c72e7", null ],
     [ "m_geom", "classSLM.html#a870bfd56a5fe10dc6b7b8f0347a9b218", null ],
     [ "m_geom0", "classSLM.html#a0ec5cac9b4db3628b908905e6ad6e3bf", null ],
+    [ "m_init_type", "classSLM.html#a52849ce52c69b24bd042544f5c6be4a5", null ],
     [ "m_lsm_data_size", "classSLM.html#a9a0a6a9069db9ecaba24692a1749572b", null ],
     [ "m_lsm_flux_size", "classSLM.html#a289b6ad657b10325e58874288f7c4062", null ],
     [ "m_lsm_geom", "classSLM.html#ac41680d479e44b54678787b662c55fef", null ],

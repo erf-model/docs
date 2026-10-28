@@ -1,10 +1,10 @@
 var ERF__InitCustomPert__MovingTerrain_8H =
 [
     [ "AMREX_ALWAYS_ASSERT_WITH_MESSAGE", "ERF__InitCustomPert__MovingTerrain_8H.html#a88627dce7362dae6c7318a2963396cc8", null ],
-    [ "get", "ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4", null ],
     [ "ParallelFor", "ERF__InitCustomPert__MovingTerrain_8H.html#a31cbf2ee19ca55af59a52084b48fab1d", null ],
     [ "pp", "ERF__InitCustomPert__MovingTerrain_8H.html#a560a8df64f1b30c30d0d100ee051a1fb", null ],
     [ "query", "ERF__InitCustomPert__MovingTerrain_8H.html#aa52c20abefde93f9f09663755153f790", null ],
+    [ "queryAdd", "ERF__InitCustomPert__MovingTerrain_8H.html#a90ef02d1322b401e4331f45a04e3f2f8", null ],
     [ "Ampl", "ERF__InitCustomPert__MovingTerrain_8H.html#a39b81fc0906dc717588b6451db11ef41", null ],
     [ "g", "ERF__InitCustomPert__MovingTerrain_8H.html#a3de20e6c53dab6e405480f55ede7c937", null ],
     [ "H", "ERF__InitCustomPert__MovingTerrain_8H.html#ab280e753a0670de3dafe2c7c796db834", null ],

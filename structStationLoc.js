@@ -1,6 +1,7 @@
 var structStationLoc =
 [
     [ "col_begin", "structStationLoc.html#a9b98d796a31a8cc6f4e3ac5187516932", null ],
+    [ "cos_alpha", "structStationLoc.html#a355f9818523e7daf58d1f95d5ced2e22", null ],
     [ "first_cc_height", "structStationLoc.html#a954b14494be75e93a1068182b0162434", null ],
     [ "got_lat", "structStationLoc.html#a8a9af4d0a312d5feb0c852151b20b449", null ],
     [ "got_lon", "structStationLoc.html#acc12f7a192947dcf57bc8c9a7c8fa5a9", null ],
@@ -14,6 +15,7 @@ var structStationLoc =
     [ "lev", "structStationLoc.html#af1dd5336a2c10eb55ba2195b6ed4a7ed", null ],
     [ "req_lat", "structStationLoc.html#a08c60d2e4a03d14e33e6435bea2a11d9", null ],
     [ "req_lon", "structStationLoc.html#a66902f7fbcc0b02370350eb452ec265b", null ],
+    [ "sin_alpha", "structStationLoc.html#a8f7070cdb723185aafc34e4b9aec198d", null ],
     [ "use_latlon", "structStationLoc.html#abe1023e70802dc924b826b0e1ab85054", null ],
     [ "wx", "structStationLoc.html#a12d86548c6405b94c8a08d459a7e67f2", null ],
     [ "wy", "structStationLoc.html#a6605c15ae7124e12b5c80a1f94f0da1f", null ],

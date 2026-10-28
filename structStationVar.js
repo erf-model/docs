@@ -2,6 +2,8 @@ var structStationVar =
 [
     [ "cells_may_be_missing", "structStationVar.html#a569800ad9e626cb4e50394d26ac15b40", null ],
     [ "comp", "structStationVar.html#a6d7d834bc5c930c4f44e2c88f7e4fc37", null ],
+    [ "comp_v", "structStationVar.html#a9e2bc0eab645698b59ae4edfd49fe798", null ],
+    [ "earth_wind", "structStationVar.html#acccb454a13045b32b2af0405310a3dab", null ],
     [ "is_2d", "structStationVar.html#ad4e0ce68ef31c000a80e17990bcf8a2d", null ],
     [ "is_missing", "structStationVar.html#aba9d81965b62ef79f7ea9dbe12ce611d", null ],
     [ "missing_value", "structStationVar.html#a4891b0ad63f9981b325528e8f709b0da", null ],

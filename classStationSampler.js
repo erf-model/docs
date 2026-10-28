@@ -1,6 +1,7 @@
 var classStationSampler =
 [
     [ "StationSampler", "classStationSampler.html#a0248b56a65dad82117ebffbe45e9a9e7", null ],
+    [ "allowUnavailable", "classStationSampler.html#aab068058b31a6f365dd2d9a95aa49f41", null ],
     [ "appendRow", "classStationSampler.html#ad24b848451026f2c964889cd7a2723bb", null ],
     [ "bufferSteps", "classStationSampler.html#af7831db7182507474f7655c17270b158", null ],
     [ "buildColumns", "classStationSampler.html#a408bdd02186c12d1a681efbae4f841f2", null ],
@@ -21,6 +22,7 @@ var classStationSampler =
     [ "stations", "classStationSampler.html#a7d6244c7823da30bfe271ed437734d61", null ],
     [ "stencilsValidFor", "classStationSampler.html#acf76a9150a41eeb44faccf476a97594d", null ],
     [ "writeHeader", "classStationSampler.html#a601563a686edf2449daf6fd2deedf335", null ],
+    [ "m_allow_unavailable", "classStationSampler.html#adb0b6a327197c14aa37d3dab17c92e13", null ],
     [ "m_buffer_steps", "classStationSampler.html#a55d92259f4509015a6edd5acadf5007e", null ],
     [ "m_datetime_format", "classStationSampler.html#abfa6ee67fd2a292fc8ac1a82fd09e72c", null ],
     [ "m_dir", "classStationSampler.html#adcd392210e9b619fc5eb31781f1e1020", null ],

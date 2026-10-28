@@ -1,6 +1,7 @@
 var classWriteBndryPlanes =
 [
     [ "WriteBndryPlanes", "classWriteBndryPlanes.html#a460f7f20cb59e7f2f8546ebf423585d5", null ],
+    [ "get_bndry_lev", "classWriteBndryPlanes.html#a948d1fceb82fd9b633ed384ac25b737c", null ],
     [ "rows_to_keep", "classWriteBndryPlanes.html#a259d559301e8847cc1af25b9ec57b10a", null ],
     [ "start_series", "classWriteBndryPlanes.html#acc9ea0c596ae30850145038bb597776e", null ],
     [ "write_planes", "classWriteBndryPlanes.html#a0953aa38d789a6ed2ebcc78dec35858f", null ],

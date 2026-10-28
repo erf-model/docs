@@ -1,0 +1,25 @@
+var classFireEngine =
+[
+    [ "~FireEngine", "classFireEngine.html#a4e200c1aed695aea55ea61f26ac29f0f", null ],
+    [ "advance", "classFireEngine.html#a747308159ad5519507843a1dd8356086", null ],
+    [ "burned_area", "classFireEngine.html#a287e2a704b50544b823368a4cb3bf3ed", null ],
+    [ "fill_fluxes", "classFireEngine.html#af409b1fdad66e0933baf74f7409ae947", null ],
+    [ "heat_open_fraction_atm", "classFireEngine.html#af16682c9a252c0d6ac2e7e0043690aac", null ],
+    [ "heat_release", "classFireEngine.html#a8fdf35d4e0ab00710d9ab6cbd42896e0", null ],
+    [ "initialize", "classFireEngine.html#a3289e9175711d765c55278e3107dd104", null ],
+    [ "level_set", "classFireEngine.html#abc53873fb3c4de8f1cc5f104c631d286", null ],
+    [ "name", "classFireEngine.html#aa97c3de4bc5bd31efe249aa23b5c6704", null ],
+    [ "needs_surface_layer", "classFireEngine.html#add8fa0dfb0dcf89ce6b2ddf05f4609c5", null ],
+    [ "plot_var", "classFireEngine.html#a0e2f5ff5f44188e5fe2790fa43263c76", null ],
+    [ "plot_var_names", "classFireEngine.html#a0469be0f08ea2a1e10ac5533696e1a99", null ],
+    [ "read_checkpoint", "classFireEngine.html#a3e6225f0e17322a9926753a03046485a", null ],
+    [ "reference_wind", "classFireEngine.html#a5a3f1594bb990daaee24a656b8775411", null ],
+    [ "reference_wind_height", "classFireEngine.html#a26f82c1da66536e41636206d61e7c21b", null ],
+    [ "roof_height_atm", "classFireEngine.html#a93ee0b7a8a3a5631635710afc424f8e4", null ],
+    [ "smoke_heat_per_kg", "classFireEngine.html#a50870235c3b252b7048fa0d8fc9eff2d", null ],
+    [ "start_run", "classFireEngine.html#a5fb35adacc1e6bec28028428aef47f61", null ],
+    [ "verify_prerequisites", "classFireEngine.html#a3b0fd837015fa497d486217b5ce89bc6", null ],
+    [ "wants_surface_precip", "classFireEngine.html#a634271e08b8215bd22111a9c81cb81ce", null ],
+    [ "write_checkpoint", "classFireEngine.html#a34d765de9ce2b8abef51b9970f58a17c", null ],
+    [ "write_plotfile", "classFireEngine.html#a2a600ffb75d3c1a470a0b324144fbf6d", null ]
+];

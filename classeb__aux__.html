@@ -1013,8 +1013,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                                        + hi_areaHi_y * hi_centHi_y[2] ) / aux_afrac_y(i,j+1,k)</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                                      : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_idim == 1) {</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                aux_fcent_y(i,j+1,k,0) = lo_centHi_y[0];      <span class="comment">// x</span></div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                aux_fcent_y(i,j+1,k,1) = lo_centHi_y[2];      <span class="comment">// z</span></div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                aux_fcent_y(i,j+1,k,0) = hi_centHi_y[0];      <span class="comment">// x</span></div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                aux_fcent_y(i,j+1,k,1) = hi_centHi_y[2];      <span class="comment">// z</span></div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_idim == 2) {</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                aux_fcent_y(i,j+1,k,0) = (aux_afrac_y(i,j+1,k) &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// x</span></div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                                      ? ( lo_areaHi_y * lo_centHi_y[0]</div>
@@ -1050,8 +1050,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                                        + hi_areaHi_z * (hi_centHi_z[1] + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_afrac_z(i,j,k+1)</div>
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                                      : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_idim == 2) {</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                aux_fcent_z(i,j,k+1,0) = lo_centHi_z[0];      <span class="comment">// x</span></div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                aux_fcent_z(i,j,k+1,1) = lo_centHi_z[1];      <span class="comment">// y</span></div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                aux_fcent_z(i,j,k+1,0) = hi_centHi_z[0];      <span class="comment">// x</span></div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                aux_fcent_z(i,j,k+1,1) = hi_centHi_z[1];      <span class="comment">// y</span></div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;              }</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            }</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160; </div>
@@ -1484,16 +1484,16 @@ Here is the caller graph for this function:</div>
 <p>Return reconstructed area fractions for all coordinate directions. </p>
 <div class="fragment"><div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;{</div>
 <div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[0] != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;    <span class="keywordflow">return</span> {AMREX_D_DECL(<a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[0].<a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a>(), <a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[1].<a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a>(), <a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[2].<a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a>())};</div>
+<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;    <span class="keywordflow">return</span> {AMREX_D_DECL(<a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[0].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>(), <a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[1].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>(), <a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[2].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>())};</div>
 <div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__MovingTerrain_8H_html_aa4e0dee689ddc7dd5e6396443f03e9f4"><div class="ttname"><a href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a></div><div class="ttdeci">pp get(&quot;wavelength&quot;, wavelength)</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__CouettePoiseuille_8H_html_a15979e857437874d84fd52db041001af"><div class="ttname"><a href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a></div><div class="ttdeci">pp_for_pert_vels get(&quot;prob_type&quot;, prob_type)</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classeb__aux___a06b985415165114100c0cf6aaa521f9b_cgraph.png" border="0" usemap="#aclasseb__aux___a06b985415165114100c0cf6aaa521f9b_cgraph" alt=""/></div>
 <map name="aclasseb__aux___a06b985415165114100c0cf6aaa521f9b_cgraph" id="aclasseb__aux___a06b985415165114100c0cf6aaa521f9b_cgraph">
 <area shape="rect" title="Return reconstructed area fractions for all coordinate directions." alt="" coords="5,5,168,32"/>
-<area shape="rect" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4" title=" " alt="" coords="216,5,259,32"/>
+<area shape="rect" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af" title=" " alt="" coords="216,5,259,32"/>
 </map>
 </div>
 
@@ -1609,7 +1609,7 @@ Here is the call graph for this function:</div>
 <p>Return reconstructed face centroids for all coordinate directions. </p>
 <div class="fragment"><div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;{</div>
 <div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[0] != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;    <span class="keywordflow">return</span> {AMREX_D_DECL(<a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[0].<a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a>(), <a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[1].<a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a>(), <a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[2].<a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a>())};</div>
+<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;    <span class="keywordflow">return</span> {AMREX_D_DECL(<a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[0].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>(), <a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[1].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>(), <a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[2].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>())};</div>
 <div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1617,7 +1617,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classeb__aux___a15ab8224a2115fcd91bec34e111d0ac6_cgraph.png" border="0" usemap="#aclasseb__aux___a15ab8224a2115fcd91bec34e111d0ac6_cgraph" alt=""/></div>
 <map name="aclasseb__aux___a15ab8224a2115fcd91bec34e111d0ac6_cgraph" id="aclasseb__aux___a15ab8224a2115fcd91bec34e111d0ac6_cgraph">
 <area shape="rect" title="Return reconstructed face centroids for all coordinate directions." alt="" coords="5,5,169,32"/>
-<area shape="rect" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4" title=" " alt="" coords="217,5,260,32"/>
+<area shape="rect" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af" title=" " alt="" coords="217,5,260,32"/>
 </map>
 </div>
 

@@ -1,0 +1,26 @@
+var structFireCouplingParams =
+[
+    [ "heat_in_bottom_cell", "structFireCouplingParams.html#a16c374faa98b5228fee2161749b90e01", null ],
+    [ "injects_flux", "structFireCouplingParams.html#a853679402d4f457b42f3e2569e36dce5", null ],
+    [ "is_lagged", "structFireCouplingParams.html#a78cf1a4d054ac57822425c26613cadc5", null ],
+    [ "is_passive", "structFireCouplingParams.html#ac22bd19367816622cf59a004de9a1b30", null ],
+    [ "is_synchronous", "structFireCouplingParams.html#a98cbec720677c501c76016c882da1505", null ],
+    [ "read", "structFireCouplingParams.html#a5d351d4570ef2aacd3693764a36cc023", null ],
+    [ "anchor_level", "structFireCouplingParams.html#a6eac7ecdb83505f92223aa4628d0e133", null ],
+    [ "coupling_type", "structFireCouplingParams.html#a89df58ed3f9bdc3d3ffd5c05d16fc92e", null ],
+    [ "enable", "structFireCouplingParams.html#a945afe91f9ff056f927558c317f64ef4", null ],
+    [ "engine", "structFireCouplingParams.html#a6aff5ab905fa67059697c5ec1f74a08d", null ],
+    [ "fire_atm_feedback", "structFireCouplingParams.html#abe6bdb86d679edae88e3ec504a995d62", null ],
+    [ "fire_debug", "structFireCouplingParams.html#a23125f6174d35d9bbd5f255b36c36428", null ],
+    [ "grid_ratio", "structFireCouplingParams.html#a22eda0f38ce638d5eca768de387ff5f4", null ],
+    [ "heat_flux_alfg", "structFireCouplingParams.html#aaecf079d08f1f970b43166f8a5f49641", null ],
+    [ "heat_open_fraction", "structFireCouplingParams.html#a778aaa1212fa241757b21fd5a522f945", null ],
+    [ "heat_profile", "structFireCouplingParams.html#a5f20b585608c844f3cee2fe4e1117c19", null ],
+    [ "heat_tendency_density", "structFireCouplingParams.html#a713700bb786f879b6b2a4944615733ec", null ],
+    [ "heat_tendency_exner", "structFireCouplingParams.html#a44eed06760e1e23995958e54aeb9778f", null ],
+    [ "inject_latent", "structFireCouplingParams.html#a4bb26abfd957406e40f4770a4db21dc4", null ],
+    [ "smoke_emission_factor", "structFireCouplingParams.html#a816af9dabcfbdd5cdce5c8db99f4519e", null ],
+    [ "smoke_enable", "structFireCouplingParams.html#a7f88e6c259668cc2c2089f413fdb3fa2", null ],
+    [ "source_mode", "structFireCouplingParams.html#a85efdc248e3d9fa6cb7e240b910f6953", null ],
+    [ "source_mode_given", "structFireCouplingParams.html#a7b14d9562be977115f5237c243b3f494", null ]
+];

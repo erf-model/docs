@@ -5,11 +5,15 @@ var namespacenear__surface__diagnostics =
     [ "MostState", "structnear__surface__diagnostics_1_1MostState.html", "structnear__surface__diagnostics_1_1MostState" ],
     [ "MostProfile", "structnear__surface__diagnostics_1_1MostProfile.html", "structnear__surface__diagnostics_1_1MostProfile" ],
     [ "Sources", "structnear__surface__diagnostics_1_1Sources.html", "structnear__surface__diagnostics_1_1Sources" ],
+    [ "WindSources", "structnear__surface__diagnostics_1_1WindSources.html", "structnear__surface__diagnostics_1_1WindSources" ],
     [ "aggregate_native_bundle", "namespacenear__surface__diagnostics.html#a56452f933116539b5fbc5b1d5239514c", null ],
     [ "evaluate_most_factor", "namespacenear__surface__diagnostics.html#aefd15279e38c367ea696b8efd8849b9f", null ],
+    [ "evaluate_most_momentum_factor", "namespacenear__surface__diagnostics.html#a7f4c0e8fd2a950c2d5ca71752f56187a", null ],
     [ "evaluate_most_profile", "namespacenear__surface__diagnostics.html#acca11e09393fc810fff724362acc5ff1", null ],
     [ "fill", "namespacenear__surface__diagnostics.html#a2f4be658d9cf5b201eb9e294ce1483a2", null ],
     [ "fill", "namespacenear__surface__diagnostics.html#a7cee41b11fa30d00d43bb88458aad002", null ],
+    [ "fill_wind_10m", "namespacenear__surface__diagnostics.html#ac1fda4153e33ae9591ab11f5d83e5cc4", null ],
+    [ "fill_wind_10m", "namespacenear__surface__diagnostics.html#a886bb51a376650e92dac19a26a3bfbd8", null ],
     [ "most_profile_zeta_max", "namespacenear__surface__diagnostics.html#a9b66be69f50dbe7e046a01f0ab5155fa", null ],
     [ "native_bare_tile_is_used", "namespacenear__surface__diagnostics.html#a72eca65532dd8dac7f7d66c6d84baaf0", null ],
     [ "native_bundle_is_valid", "namespacenear__surface__diagnostics.html#a5c05058a09e325682ff277f7e3829551", null ],
@@ -18,5 +22,6 @@ var namespacenear__surface__diagnostics =
     [ "native_bundle_vegetation_fraction_is_valid", "namespacenear__surface__diagnostics.html#a4c1ec787428244113797fb8511d673c9", null ],
     [ "native_vegetated_tile_is_used", "namespacenear__surface__diagnostics.html#a42d8844714860694889ba2cff4caec2a", null ],
     [ "valid_noahmp_component", "namespacenear__surface__diagnostics.html#ac22e985a9ccbc51fd5ea9f3362998b9a", null ],
-    [ "valid_real", "namespacenear__surface__diagnostics.html#ad93e2f41ebf1c56556ad2ce7161e4a82", null ]
+    [ "valid_real", "namespacenear__surface__diagnostics.html#ad93e2f41ebf1c56556ad2ce7161e4a82", null ],
+    [ "wind_height", "namespacenear__surface__diagnostics.html#a71784827ba775a73b2e1910a05bd3f9b", null ]
 ];

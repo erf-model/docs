@@ -1,9 +1,9 @@
 var structTurbulentPerturbation =
 [
     [ "~TurbulentPerturbation", "structTurbulentPerturbation.html#ad1464c6ce0bc3a576f9df395f39839ce", null ],
-    [ "apply_tpi", "structTurbulentPerturbation.html#adcb414231654ad9f5232a1a3377c30f2", null ],
+    [ "apply_tpi", "structTurbulentPerturbation.html#a985db53371d5f4741f1d516761b1ac20", null ],
     [ "box_sum", "structTurbulentPerturbation.html#ac151ff95e837ba6f217b00de177a7525", null ],
-    [ "calc_tpi_amp", "structTurbulentPerturbation.html#a2a4590d9bce72dd7d3496e358c5dba4a", null ],
+    [ "calc_tpi_amp", "structTurbulentPerturbation.html#a0e4cbd4b47f35cd3b93f139148c04a1c", null ],
     [ "calc_tpi_meanMag", "structTurbulentPerturbation.html#a8b39d8822f2d5019fc7ebddfa5cc4ab4", null ],
     [ "calc_tpi_update", "structTurbulentPerturbation.html#a0d2fd2ba00dbdab6b9d789c456c9d586", null ],
     [ "debug", "structTurbulentPerturbation.html#aa096dd2f931597a8ea9b1829cf82a5d6", null ],

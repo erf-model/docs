@@ -64,6 +64,7 @@ var hierarchy =
     [ "erf_sbm::EndpointTransform", "structerf__sbm_1_1EndpointTransform.html", null ],
     [ "erf_inputs_detail::EntryInfo", "structerf__inputs__detail_1_1EntryInfo.html", null ],
     [ "ERFFillPatcher", "classERFFillPatcher.html", null ],
+    [ "ERFHostFabView", "structERFHostFabView.html", null ],
     [ "ERFPhysBCFunct_base", "classERFPhysBCFunct__base.html", null ],
     [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html", null ],
     [ "ERFPhysBCFunct_u", "classERFPhysBCFunct__u.html", null ],
@@ -74,6 +75,14 @@ var hierarchy =
     [ "surface_layer_stress::FaceStressResult", "structsurface__layer__stress_1_1FaceStressResult.html", null ],
     [ "erf_wall_thermodynamics::FaceWall", "structerf__wall__thermodynamics_1_1FaceWall.html", null ],
     [ "SurfaceModel::Field", "structSurfaceModel_1_1Field.html", null ],
+    [ "FireCoupler", "classFireCoupler.html", null ],
+    [ "FireCouplingParams", "structFireCouplingParams.html", null ],
+    [ "FireEngine", "classFireEngine.html", [
+      [ "FireEngineTemplate", "classFireEngineTemplate.html", null ]
+    ] ],
+    [ "FireFluxes", "structFireFluxes.html", null ],
+    [ "FireForcing", "structFireForcing.html", null ],
+    [ "FireGrid", "structFireGrid.html", null ],
     [ "erf_sbm::FixtureInitialStateCanonicality", "structerf__sbm_1_1FixtureInitialStateCanonicality.html", null ],
     [ "erf_sbm::FlattenedConstraintSet", "structerf__sbm_1_1FlattenedConstraintSet.html", null ],
     [ "TwoStreamRadiation::FluxDiag", "structTwoStreamRadiation_1_1FluxDiag.html", null ],
@@ -219,6 +228,7 @@ var hierarchy =
     [ "RadiationDiagnostics", "classRadiationDiagnostics.html", null ],
     [ "SurfaceModel::RadiationField", "structSurfaceModel_1_1RadiationField.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
+    [ "RealBdyConsMaps", "structRealBdyConsMaps.html", null ],
     [ "erf_sbm::ReconstructionDelta", "structerf__sbm_1_1ReconstructionDelta.html", null ],
     [ "erf_sbm::ReconstructionDeltaView", "structerf__sbm_1_1ReconstructionDeltaView.html", null ],
     [ "erf_sbm::remap_detail::RemapCellStateView", "structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html", null ],
@@ -360,5 +370,6 @@ var hierarchy =
     [ "WENO_Z3", "structWENO__Z3.html", null ],
     [ "WENO_Z5", "structWENO__Z5.html", null ],
     [ "WENO_Z7", "structWENO__Z7.html", null ],
+    [ "near_surface_diagnostics::WindSources", "structnear__surface__diagnostics_1_1WindSources.html", null ],
     [ "WriteBndryPlanes", "classWriteBndryPlanes.html", null ]
 ];

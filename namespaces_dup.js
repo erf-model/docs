@@ -124,6 +124,12 @@ var namespaces_dup =
       [ "wall_stress_requires_most_state", "namespaceerf__cloud__chamber__wall__stress.html#a80e76b3db8feed4c81d517f4bc4eae6c", null ],
       [ "wall_traction_at_cell", "namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f", null ]
     ] ],
+    [ "erf_earth_wind", "namespaceerf__earth__wind.html", [
+      [ "grid_rotation_at", "namespaceerf__earth__wind.html#ad89ede7cea1c4e249d62325c8ebcacaa", null ],
+      [ "grid_to_earth", "namespaceerf__earth__wind.html#a59637fce3b9d13cb48e6c210652a3590", null ],
+      [ "horizontal_speed", "namespaceerf__earth__wind.html#a810b5f59736e2f478921e1062c7daf00", null ],
+      [ "meteorological_direction", "namespaceerf__earth__wind.html#ac5b5839f58f4fdeed22dc9fa26768f24", null ]
+    ] ],
     [ "erf_forest_utils", "namespaceerf__forest__utils.html", [
       [ "validate_cartesian_coordinates", "namespaceerf__forest__utils.html#a9137465ab2d1feaa04a833f85b8da79a", null ],
       [ "validate_laimax", "namespaceerf__forest__utils.html#a8b363aacfb7644a85fe49067c6366476", null ]
@@ -137,6 +143,9 @@ var namespaces_dup =
     ] ],
     [ "erf_inputs_detail", "namespaceerf__inputs__detail.html", "namespaceerf__inputs__detail" ],
     [ "erf_interval_means", "namespaceerf__interval__means.html", "namespaceerf__interval__means" ],
+    [ "erf_moist_perturbation", "namespaceerf__moist__perturbation.html", [
+      [ "perturb_temperature_and_vapour", "namespaceerf__moist__perturbation.html#a6cbcd6b4f9f8da24575a33044849934f", null ]
+    ] ],
     [ "erf_noahmp", "namespaceerf__noahmp.html", "namespaceerf__noahmp" ],
     [ "erf_plotfile", "namespaceerf__plotfile.html", "namespaceerf__plotfile" ],
     [ "erf_prob_heights", "namespaceerf__prob__heights.html", [
@@ -267,7 +276,9 @@ var namespaces_dup =
     [ "LsmVar_SLM", "namespaceLsmVar__SLM.html", null ],
     [ "metgrid_land", "namespacemetgrid__land.html", [
       [ "interp_in_depth", "namespacemetgrid__land.html#aabd17cbc4e126a45aeaa498a4a4054b8", null ],
-      [ "monthly_interp_weights", "namespacemetgrid__land.html#a1b29c19c7ecfaf96103b9595454b2250", null ]
+      [ "monthly_interp_weights", "namespacemetgrid__land.html#a1b29c19c7ecfaf96103b9595454b2250", null ],
+      [ "dzs_noah", "namespacemetgrid__land.html#af5be98d1757639fcf6ccb818e79e0165", null ],
+      [ "nsoil_noah", "namespacemetgrid__land.html#a0df7a8a63e630243973eebebba8bb4c2", null ]
     ] ],
     [ "MetGridBdyVars", "namespaceMetGridBdyVars.html", null ],
     [ "MetGridTmpDstVars", "namespaceMetGridTmpDstVars.html", null ],
@@ -390,8 +401,8 @@ var namespaces_dup =
     [ "module_mp_morr_two_moment", "namespacemodule__mp__morr__two__moment.html", [
       [ "gamma", "namespacemodule__mp__morr__two__moment.html#a42d4f49e16f20ecf5712c4dd918ac495", null ],
       [ "morr_two_moment_init", "namespacemodule__mp__morr__two__moment.html#a2a889b6266f208e6ac8cc9826cb8dd38", null ],
-      [ "morr_two_moment_micro", "namespacemodule__mp__morr__two__moment.html#a3c90f4ba18fb796464e7559d54031116", null ],
-      [ "mp_morr_two_moment", "namespacemodule__mp__morr__two__moment.html#a26921370b648e55793fefab00dac7e84", null ],
+      [ "morr_two_moment_micro", "namespacemodule__mp__morr__two__moment.html#a6ecff2c6fe26928e12c3e2d842fea562", null ],
+      [ "mp_morr_two_moment", "namespacemodule__mp__morr__two__moment.html#a50783795f527525c2b35e103cf2cbf62", null ],
       [ "polysvp", "namespacemodule__mp__morr__two__moment.html#af11f1d093484c24bcfe7ca392ab7f34f", null ],
       [ "set_morrison_ndcnst", "namespacemodule__mp__morr__two__moment.html#ac1f602991a2bc1a593b4237bc7fa528e", null ],
       [ "ac", "namespacemodule__mp__morr__two__moment.html#af1e477a09e751e2630ec7f333fdae227", null ],
@@ -517,7 +528,7 @@ var namespaces_dup =
     [ "MorrSed", "namespaceMorrSed.html", null ],
     [ "mp_morr_two_moment_isohelper", "namespacemp__morr__two__moment__isohelper.html", [
       [ "morr_two_moment_init_c", "namespacemp__morr__two__moment__isohelper.html#ae19641d8681253b2c10ff7252446f702", null ],
-      [ "mp_morr_two_moment_c", "namespacemp__morr__two__moment__isohelper.html#a7931a8516152c9f035b298c87b976b96", null ]
+      [ "mp_morr_two_moment_c", "namespacemp__morr__two__moment__isohelper.html#a3a1ee12b8cdb8de4c3c45f1fcef79c6b", null ]
     ] ],
     [ "mp_radar", "namespacemp__radar.html", [
       [ "gammln", "namespacemp__radar.html#afff6ca948e3ddced91819d5c25e2d2d3", null ],
@@ -592,7 +603,7 @@ var namespaces_dup =
       [ "effectrad_wdm6", "namespacemp__wdm6.html#a32621afe9f4a42380477c0dee37bacad", null ],
       [ "fpvs", "namespacemp__wdm6.html#a17be23a192b326fafd2bdce5ce593afb", null ],
       [ "mp_wdm6_init", "namespacemp__wdm6.html#a76fdbaf722426d330b1a167574ad7bbd", null ],
-      [ "mp_wdm6_run", "namespacemp__wdm6.html#a6f74b298e806afb95c86b4f06a0e29f4", null ],
+      [ "mp_wdm6_run", "namespacemp__wdm6.html#a36216fd9d07c95d502ff01ec5424e738", null ],
       [ "nislfv_rain_plm6", "namespacemp__wdm6.html#af8626e04a17e4eefbce128f1006a7b63", null ],
       [ "nislfv_rain_plmr", "namespacemp__wdm6.html#a0f1af5c4d03b6200f01a47f8d28d328d", null ],
       [ "refl10cm_wdm6", "namespacemp__wdm6.html#ac86b4c6764f45d101957cce92312314f", null ],
@@ -602,7 +613,7 @@ var namespaces_dup =
       [ "slope_snow", "namespacemp__wdm6.html#a6e94cb9a32e958211e82426dac8d2ff5", null ],
       [ "slope_wdm6", "namespacemp__wdm6.html#a947560f579209c5e15a1c3c70348970e", null ],
       [ "wdm6", "namespacemp__wdm6.html#aeb80dd66f1ebd91520c5bccdc27b51d6", null ],
-      [ "wdm62d", "namespacemp__wdm6.html#a9c54ff97f5cb5e8b3000033ef2a00daa", null ],
+      [ "wdm62d", "namespacemp__wdm6.html#a97353474263d161b0d70260d05a40665", null ],
       [ "wdm6init", "namespacemp__wdm6.html#ac52aa0ab56f1b4b1cdc1d0e5ff62b942", null ],
       [ "actk", "namespacemp__wdm6.html#a99f9f39ea0a4b9c6859345c74e572bb5", null ],
       [ "actr", "namespacemp__wdm6.html#ad9c8be9560147490c8ca194a8dd86c7b", null ],
@@ -731,7 +742,7 @@ var namespaces_dup =
       [ "fpvs", "namespacemp__wsm6.html#a8be6067ccc4a9cc8a6956cc3d0c0c69f", null ],
       [ "mp_wsm6_finalize", "namespacemp__wsm6.html#a3f4e6afc550f6e892448fa2ad77c32c7", null ],
       [ "mp_wsm6_init", "namespacemp__wsm6.html#a0e347c7dc6d01148c75fe5f3ca2bdd87", null ],
-      [ "mp_wsm6_run", "namespacemp__wsm6.html#ade0c75b573789c0795c6065cf2c9b75e", null ],
+      [ "mp_wsm6_run", "namespacemp__wsm6.html#ae5873ec615e44a7964ebfd7c19cae5dc", null ],
       [ "nislfv_rain_plm", "namespacemp__wsm6.html#af293ac232db92914ffddd4b86f51f79d", null ],
       [ "nislfv_rain_plm6", "namespacemp__wsm6.html#a0b59cc83e0102f7f44f71dc7d6508fd5", null ],
       [ "refl10cm_wsm6", "namespacemp__wsm6.html#ad97f9ed35720f792268bd29221cfd2a2", null ],
@@ -833,7 +844,7 @@ var namespaces_dup =
     ] ],
     [ "mp_wsm6_isohelper", "namespacemp__wsm6__isohelper.html", [
       [ "mp_wsm6_init_c", "namespacemp__wsm6__isohelper.html#a80cafb82200d0de65e15989aa84efbce", null ],
-      [ "mp_wsm6_run_c", "namespacemp__wsm6__isohelper.html#a27d8288dc26c2e1040d3176d5bfa7e9d", null ],
+      [ "mp_wsm6_run_c", "namespacemp__wsm6__isohelper.html#a4d596b443bc9700078abb09b2dbcbb72", null ],
       [ "wsm6_diag_value_string", "namespacemp__wsm6__isohelper.html#a1ee38f9bc718158816809f79506d1da6", null ],
       [ "wsm6_diag_schema_v1", "namespacemp__wsm6__isohelper.html#a98a97f510ea5e8e5d75762f6ce08b607", null ]
     ] ],
@@ -980,7 +991,7 @@ var namespaces_dup =
     [ "Vars", "namespaceVars.html", null ],
     [ "wdm6_isohelper", "namespacewdm6__isohelper.html", [
       [ "mp_wdm6_init_c", "namespacewdm6__isohelper.html#accff4a99b8ef762289dc6cc2e8207aac", null ],
-      [ "mp_wdm6_run_c", "namespacewdm6__isohelper.html#ab067f0a955a94e55f1692b784aa7d15d", null ],
+      [ "mp_wdm6_run_c", "namespacewdm6__isohelper.html#a7aaba4a33a422ebc4e58996cd82782fc", null ],
       [ "wdm6_rgmma", "namespacewdm6__isohelper.html#a7c1b4fa7f0809c3f0470541dec9887b8", null ],
       [ "kind_phys", "namespacewdm6__isohelper.html#afe71b8acf0e08e4fbb37f5e026401ac3", null ]
     ] ],

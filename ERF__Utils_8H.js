@@ -1,5 +1,6 @@
 var ERF__Utils_8H =
 [
+    [ "RealBdyConsMaps", "structRealBdyConsMaps.html", "structRealBdyConsMaps" ],
     [ "TimeLevelSel", "ERF__Utils_8H.html#af8cfce51746e33d860ce205a8390c0ed", [
       [ "Old", "ERF__Utils_8H.html#af8cfce51746e33d860ce205a8390c0edac7268757fbabf48019f4984933539d8a", null ],
       [ "New", "ERF__Utils_8H.html#af8cfce51746e33d860ce205a8390c0eda03c2e7e41ffc181a4e84080b4710e81e", null ],
@@ -23,6 +24,7 @@ var ERF__Utils_8H =
     [ "make_zcc", "ERF__Utils_8H.html#ab405f3b5732dda49ad076fab09bfbfc8", null ],
     [ "MomentumToVelocity", "ERF__Utils_8H.html#a0b812d5c2bdd531d6df797b1b227b335", null ],
     [ "quad_interp_1d", "ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604", null ],
+    [ "real_bdy_cons_maps", "ERF__Utils_8H.html#a03ffacde1cdc45e8241f236b95e18fc8", null ],
     [ "realbdy_bc_bxs_xy", "ERF__Utils_8H.html#ab8d345634b200fdd14e878954e222f4a", null ],
     [ "realbdy_compute_interior_ghost_rhs", "ERF__Utils_8H.html#ad1666017aac31be969ffc2bfef813af0", null ],
     [ "realbdy_compute_moisture_relaxation", "ERF__Utils_8H.html#a4a91dd2e8bbc3707a7a5ec4df0600b82", null ],

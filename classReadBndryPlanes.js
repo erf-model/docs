@@ -11,6 +11,7 @@ var classReadBndryPlanes =
     [ "ingested_theta", "classReadBndryPlanes.html#ac306993497b4e668110e13c4eb7644ff", null ],
     [ "ingested_velocity", "classReadBndryPlanes.html#a906352fe8d793c4360889429d8a5980d", null ],
     [ "interp_in_time", "classReadBndryPlanes.html#a4843f3a04cc2e3480506a90ae54b2f2b", null ],
+    [ "plane_slot", "classReadBndryPlanes.html#a68b5a87282017b33f82d81c10dfc4f02", null ],
     [ "read_file", "classReadBndryPlanes.html#afe03a3b8a1953d94adde87f69ec15c32", null ],
     [ "read_input_files", "classReadBndryPlanes.html#a50d992e1ce5ba0c903e329142f46da1a", null ],
     [ "read_time_file", "classReadBndryPlanes.html#ac6633331e3b4ae3d7c93534930b7f856", null ],

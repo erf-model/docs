@@ -5,10 +5,13 @@ var ERF__NearSurfaceDiagnostics_8H =
     [ "MostState", "structnear__surface__diagnostics_1_1MostState.html", "structnear__surface__diagnostics_1_1MostState" ],
     [ "MostProfile", "structnear__surface__diagnostics_1_1MostProfile.html", "structnear__surface__diagnostics_1_1MostProfile" ],
     [ "Sources", "structnear__surface__diagnostics_1_1Sources.html", "structnear__surface__diagnostics_1_1Sources" ],
+    [ "WindSources", "structnear__surface__diagnostics_1_1WindSources.html", "structnear__surface__diagnostics_1_1WindSources" ],
     [ "aggregate_native_bundle", "ERF__NearSurfaceDiagnostics_8H.html#a56452f933116539b5fbc5b1d5239514c", null ],
     [ "evaluate_most_factor", "ERF__NearSurfaceDiagnostics_8H.html#aefd15279e38c367ea696b8efd8849b9f", null ],
+    [ "evaluate_most_momentum_factor", "ERF__NearSurfaceDiagnostics_8H.html#a7f4c0e8fd2a950c2d5ca71752f56187a", null ],
     [ "evaluate_most_profile", "ERF__NearSurfaceDiagnostics_8H.html#acca11e09393fc810fff724362acc5ff1", null ],
     [ "fill", "ERF__NearSurfaceDiagnostics_8H.html#a2f4be658d9cf5b201eb9e294ce1483a2", null ],
+    [ "fill_wind_10m", "ERF__NearSurfaceDiagnostics_8H.html#ac1fda4153e33ae9591ab11f5d83e5cc4", null ],
     [ "most_profile_zeta_max", "ERF__NearSurfaceDiagnostics_8H.html#a9b66be69f50dbe7e046a01f0ab5155fa", null ],
     [ "native_bare_tile_is_used", "ERF__NearSurfaceDiagnostics_8H.html#a72eca65532dd8dac7f7d66c6d84baaf0", null ],
     [ "native_bundle_is_valid", "ERF__NearSurfaceDiagnostics_8H.html#a5c05058a09e325682ff277f7e3829551", null ],
@@ -17,5 +20,6 @@ var ERF__NearSurfaceDiagnostics_8H =
     [ "native_bundle_vegetation_fraction_is_valid", "ERF__NearSurfaceDiagnostics_8H.html#a4c1ec787428244113797fb8511d673c9", null ],
     [ "native_vegetated_tile_is_used", "ERF__NearSurfaceDiagnostics_8H.html#a42d8844714860694889ba2cff4caec2a", null ],
     [ "valid_noahmp_component", "ERF__NearSurfaceDiagnostics_8H.html#ac22e985a9ccbc51fd5ea9f3362998b9a", null ],
-    [ "valid_real", "ERF__NearSurfaceDiagnostics_8H.html#ad93e2f41ebf1c56556ad2ce7161e4a82", null ]
+    [ "valid_real", "ERF__NearSurfaceDiagnostics_8H.html#ad93e2f41ebf1c56556ad2ce7161e4a82", null ],
+    [ "wind_height", "ERF__NearSurfaceDiagnostics_8H.html#a71784827ba775a73b2e1910a05bd3f9b", null ]
 ];
