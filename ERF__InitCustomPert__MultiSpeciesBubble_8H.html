@@ -124,8 +124,8 @@ Functions</h2></td></tr>
 <tr class="separator:a53098cbb1228bad29c9e1d3a2013df59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4b3965a630cf8fb41f8b8bf024be59d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__UpdateWSubsidence__RICO_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb">pp_prob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#ac4b3965a630cf8fb41f8b8bf024be59d">query</a> (&quot;qt_init&quot;, qt_init)</td></tr>
 <tr class="separator:ac4b3965a630cf8fb41f8b8bf024be59d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad42b0d29780004b40270d503fbc0acbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__UpdateWSubsidence__RICO_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb">pp_prob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#ad42b0d29780004b40270d503fbc0acbc">query</a> (&quot;use_empircal_psat&quot;, use_empirical)</td></tr>
-<tr class="separator:ad42b0d29780004b40270d503fbc0acbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10b7f01b223428d9a4f2cc06801750b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__UpdateWSubsidence__RICO_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb">pp_prob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a10b7f01b223428d9a4f2cc06801750b8">query</a> (&quot;use_empirical_psat&quot;, use_empirical)</td></tr>
+<tr class="separator:a10b7f01b223428d9a4f2cc06801750b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5854e72f1ca46482ea3faf302710622"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#af6bc3495a87c8f20d80ca9f2bb85a835">m_species</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#ad5854e72f1ca46482ea3faf302710622">clear</a> ()</td></tr>
 <tr class="separator:ad5854e72f1ca46482ea3faf302710622"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a854e54e6e4dcb526a5133d7136c8ef5c"><td class="memItemLeft" align="right" valign="top">ParmParse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a854e54e6e4dcb526a5133d7136c8ef5c">pp_sdm</a> (&quot;super_droplets_moisture&quot;)</td></tr>
@@ -408,7 +408,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="comment">// mean states</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            state_pert(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) = <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a>*q_v_hot;</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        });</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="comment">// The kernel above reads d_r, d_p, d_t and d_q_v; wait for it before they are freed</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        Gpu::streamSynchronize();</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="ttc" id="aERF__Constants_8H_html_aae71ea8828e8a55eec132d24564842d7"><div class="ttname"><a href="ERF__Constants_8H.html#aae71ea8828e8a55eec132d24564842d7">RvoRd</a></div><div class="ttdeci">constexpr amrex::Real RvoRd</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:56</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:46</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_af138df04a1c81f39657c2a5a3337f4bb"><div class="ttname"><a href="ERF__Constants_8H.html#af138df04a1c81f39657c2a5a3337f4bb">RdoCp</a></div><div class="ttdeci">constexpr amrex::Real RdoCp</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:54</div></div>
@@ -888,8 +891,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ad42b0d29780004b40270d503fbc0acbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad42b0d29780004b40270d503fbc0acbc">&#9670;&nbsp;</a></span>query() <span class="overload">[9/15]</span></h2>
+<a id="a10b7f01b223428d9a4f2cc06801750b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10b7f01b223428d9a4f2cc06801750b8">&#9670;&nbsp;</a></span>query() <span class="overload">[9/15]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -897,7 +900,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="ERF__UpdateWSubsidence__RICO_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb">pp_prob</a> query </td>
           <td>(</td>
-          <td class="paramtype">&quot;use_empircal_psat&quot;&#160;</td>
+          <td class="paramtype">&quot;use_empirical_psat&quot;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -1325,7 +1328,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992">if()</a>, and <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a1e1765779eaaa0515cd2490396f5c2dd">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992">if()</a>, and <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#afa0b6301f6fffeb6bf8c5a9ef14fe08f">ParallelFor()</a>.</p>
 
 </div>
 </div>
@@ -1447,7 +1450,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656">HSEutils::compute_F()</a>, <a class="el" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7">HSEutils::compute_F_for_temp_in_zone()</a>, <a class="el" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc">HSEutils::compute_p_k_in_zone()</a>, <a class="el" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58">HSEutils::compute_relative_humidity()</a>, <a class="el" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4">HSEutils::compute_rho()</a>, <a class="el" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead">HSEutils::compute_saturation_pressure()</a>, <a class="el" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0">HSEutils::compute_temperature()</a>, <a class="el" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5">erf_esatw()</a>, <a class="el" href="ERF__InitDensityHSE_8H.html#a1dfb45c3986d99fa2877dd4769a4e276">erf_init_dens_hse_moist()</a>, <a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992">if()</a>, <a class="el" href="namespaceHSEutils.html#a4b1ea7e19255c9f21bc227ed7cc0b474">HSEutils::init_isentropic_hse_no_terrain()</a>, <a class="el" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc">HSEutils::init_isentropic_hse_no_terrain_column()</a>, <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a1e1765779eaaa0515cd2490396f5c2dd">ParallelFor()</a>, and <a class="el" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983">HSEutils::vapor_mixing_ratio()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656">HSEutils::compute_F()</a>, <a class="el" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7">HSEutils::compute_F_for_temp_in_zone()</a>, <a class="el" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc">HSEutils::compute_p_k_in_zone()</a>, <a class="el" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58">HSEutils::compute_relative_humidity()</a>, <a class="el" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4">HSEutils::compute_rho()</a>, <a class="el" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead">HSEutils::compute_saturation_pressure()</a>, <a class="el" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0">HSEutils::compute_temperature()</a>, <a class="el" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5">erf_esatw()</a>, <a class="el" href="ERF__InitDensityHSE_8H.html#a1dfb45c3986d99fa2877dd4769a4e276">erf_init_dens_hse_moist()</a>, <a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992">if()</a>, <a class="el" href="namespaceHSEutils.html#a4b1ea7e19255c9f21bc227ed7cc0b474">HSEutils::init_isentropic_hse_no_terrain()</a>, <a class="el" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc">HSEutils::init_isentropic_hse_no_terrain_column()</a>, <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#afa0b6301f6fffeb6bf8c5a9ef14fe08f">ParallelFor()</a>, and <a class="el" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983">HSEutils::vapor_mixing_ratio()</a>.</p>
 
 </div>
 </div>

@@ -78,7 +78,6 @@ var NAVTREEINDEX12 =
 "ERF__PlotfileToNetCDF_8cpp.html#a4290650f260962f4a94f126651df64e1":[3,0,1,24,0,2],
 "ERF__PlotfileToNetCDF_8cpp.html#a48f25d96ba44c01a1ffc27d5268c44c1":[3,0,1,24,0,1],
 "ERF__Plotfile_8cpp.html":[3,0,1,10,13],
-"ERF__Plotfile_8cpp.html#aeb56b4bca6dfa0e3b81d3f983926e8a2":[3,0,1,10,13,0],
 "ERF__PoissonSolve_8cpp.html":[3,0,1,12,4],
 "ERF__PoissonSolve_8cpp.html#a45fcc96a9662a3c4b61ca1dde709c3cc":[3,0,1,12,4,1],
 "ERF__PoissonSolve_8cpp.html#a8a755493e84483e849e90995c428885c":[3,0,1,12,4,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX12 =
 "ERF__RadStruct_8H.html#a5e8cab83c627850a8743a6b29beb2d21":[3,0,1,4,10,4],
 "ERF__RadStruct_8H.html#a7774bcb49f4896fcdcd7c23bc55a68cc":[3,0,1,4,10,2],
 "ERF__RadStruct_8H.html#a9a6d6e754b1df55cb2827921ecebd3c5":[3,0,1,4,10,1],
-"ERF__RadStruct_8H_source.html":[3,0,1,4,10]
+"ERF__RadStruct_8H_source.html":[3,0,1,4,10],
+"ERF__RadiationDiagnostics_8H.html":[3,0,1,20,2,5]
 };

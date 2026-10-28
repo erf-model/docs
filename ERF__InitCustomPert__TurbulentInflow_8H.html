@@ -185,10 +185,10 @@ Variables</h2></td></tr>
 <tr class="separator:a6fe689ec76b4a80d5762f0ff57ce7826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f7da2f7752a427b5f8d432ff2ffe53b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a2f7da2f7752a427b5f8d432ff2ffe53b">pert_ref_height</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.0)</td></tr>
 <tr class="separator:a2f7da2f7752a427b5f8d432ff2ffe53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3863b7bf2bd0a71f1021a3991f3dede8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a3863b7bf2bd0a71f1021a3991f3dede8">prob_lo</a> = geomdata.ProbLo()</td></tr>
-<tr class="separator:a3863b7bf2bd0a71f1021a3991f3dede8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d5d4d1a7bfaaeaa65be638eed22fa79"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9d5d4d1a7bfaaeaa65be638eed22fa79">prob_hi</a> = geomdata.ProbHi()</td></tr>
-<tr class="separator:a9d5d4d1a7bfaaeaa65be638eed22fa79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf88ee4a0b9bb98c3a6ae5be9f8bd88"><td class="memItemLeft" align="right" valign="top">const GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0cf88ee4a0b9bb98c3a6ae5be9f8bd88">prob_lo</a> {AMREX_D_DECL(geomdata.ProbLo(0), geomdata.ProbLo(1), geomdata.ProbLo(2))}</td></tr>
+<tr class="separator:a0cf88ee4a0b9bb98c3a6ae5be9f8bd88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadba214654e914731e7a36dccbc060dc"><td class="memItemLeft" align="right" valign="top">const GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#aadba214654e914731e7a36dccbc060dc">prob_hi</a> {AMREX_D_DECL(geomdata.ProbHi(0), geomdata.ProbHi(1), geomdata.ProbHi(2))}</td></tr>
+<tr class="separator:aadba214654e914731e7a36dccbc060dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed00ad22578e3e1116178a2d586f95b6"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#aed00ad22578e3e1116178a2d586f95b6">use_eb</a> = (sc.terrain_type == TerrainType::EB)</td></tr>
 <tr class="separator:aed00ad22578e3e1116178a2d586f95b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bf09411f9d81d1b592910222600fb45"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = geomdata.Domain().smallEnd(2)</td></tr>
@@ -226,15 +226,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                         {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Initial KE profile (order &quot;</span> &lt;&lt; <a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9606931f6c3974abd83909feac7cdad8">KE_decay_order</a></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                       &lt;&lt; <span class="stringliteral">&quot;) will extend up to &quot;</span> &lt;&lt; <a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#aa7afdcd044716fc11dc4368cf956f419">KE_decay_height</a></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                       &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> == bx.smallEnd(2),</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="stringliteral">&quot;Vertical decomposition with KE initialization is not allowed.&quot;</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                         {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Initial KE profile (order &quot;</span> &lt;&lt; <a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9606931f6c3974abd83909feac7cdad8">KE_decay_order</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                       &lt;&lt; <span class="stringliteral">&quot;) will extend up to &quot;</span> &lt;&lt; <a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#aa7afdcd044716fc11dc4368cf956f419">KE_decay_height</a></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                       &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> == bx.smallEnd(2),</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="stringliteral">&quot;Vertical decomposition with KE initialization is not allowed.&quot;</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 <div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
-<div class="ttc" id="aERF__InitCustomPert__TurbulentInflow_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_TurbulentInflow.H:40</div></div>
+<div class="ttc" id="aERF__InitCustomPert__TurbulentInflow_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_TurbulentInflow.H:42</div></div>
 <div class="ttc" id="aERF__InitCustomPert__TurbulentInflow_8H_html_a9606931f6c3974abd83909feac7cdad8"><div class="ttname"><a href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9606931f6c3974abd83909feac7cdad8">KE_decay_order</a></div><div class="ttdeci">Real KE_decay_order</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_TurbulentInflow.H:16</div></div>
 <div class="ttc" id="aERF__InitCustomPert__TurbulentInflow_8H_html_aa7afdcd044716fc11dc4368cf956f419"><div class="ttname"><a href="ERF__InitCustomPert__TurbulentInflow_8H.html#aa7afdcd044716fc11dc4368cf956f419">KE_decay_height</a></div><div class="ttdeci">Real KE_decay_height</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_TurbulentInflow.H:15</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -274,26 +274,26 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                             {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9d009471e1150853fe277cbb7bec9ede">pert_deltaU</a> != <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) || (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7779eabadf76ed62e14a341c9d4df0a7">pert_deltaV</a> != <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Adding divergence-free perturbations &quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                           &lt;&lt; <a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9d009471e1150853fe277cbb7bec9ede">pert_deltaU</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7779eabadf76ed62e14a341c9d4df0a7">pert_deltaV</a></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                           &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a5bf801819283c236eabaa9d973db9f28">U_0_Pert_Mag</a> != <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Adding random x-velocity perturbations&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#ad2836cac7bb2dd93a45a998b431b5b69">V_0_Pert_Mag</a> != <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Adding random y-velocity perturbations&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a> != <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#ab67cd282f73feb6720b6bcecd3119638">pert_rhotheta</a>) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Adding random rho*theta perturbations&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Adding random theta perturbations&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                             {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9d009471e1150853fe277cbb7bec9ede">pert_deltaU</a> != <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) || (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7779eabadf76ed62e14a341c9d4df0a7">pert_deltaV</a> != <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Adding divergence-free perturbations &quot;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                           &lt;&lt; <a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9d009471e1150853fe277cbb7bec9ede">pert_deltaU</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7779eabadf76ed62e14a341c9d4df0a7">pert_deltaV</a></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                           &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a5bf801819283c236eabaa9d973db9f28">U_0_Pert_Mag</a> != <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Adding random x-velocity perturbations&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#ad2836cac7bb2dd93a45a998b431b5b69">V_0_Pert_Mag</a> != <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Adding random y-velocity perturbations&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a> != <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#ab67cd282f73feb6720b6bcecd3119638">pert_rhotheta</a>) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Adding random rho*theta perturbations&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Adding random theta perturbations&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="ttc" id="aERF__InitCustomPert__TurbulentInflow_8H_html_a2c274a3d7f03bd29ae1bc03cc3a7a769"><div class="ttname"><a href="ERF__InitCustomPert__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a></div><div class="ttdeci">Real T_0_Pert_Mag</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_TurbulentInflow.H:26</div></div>
 <div class="ttc" id="aERF__InitCustomPert__TurbulentInflow_8H_html_a5bf801819283c236eabaa9d973db9f28"><div class="ttname"><a href="ERF__InitCustomPert__TurbulentInflow_8H.html#a5bf801819283c236eabaa9d973db9f28">U_0_Pert_Mag</a></div><div class="ttdeci">Real U_0_Pert_Mag</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_TurbulentInflow.H:23</div></div>
 <div class="ttc" id="aERF__InitCustomPert__TurbulentInflow_8H_html_a7779eabadf76ed62e14a341c9d4df0a7"><div class="ttname"><a href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7779eabadf76ed62e14a341c9d4df0a7">pert_deltaV</a></div><div class="ttdeci">Real pert_deltaV</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_TurbulentInflow.H:31</div></div>
@@ -1087,14 +1087,14 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a9d5d4d1a7bfaaeaa65be638eed22fa79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d5d4d1a7bfaaeaa65be638eed22fa79">&#9670;&nbsp;</a></span>prob_hi</h2>
+<a id="aadba214654e914731e7a36dccbc060dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadba214654e914731e7a36dccbc060dc">&#9670;&nbsp;</a></span>prob_hi</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* prob_hi = geomdata.ProbHi()</td>
+          <td class="memname">const GpuArray&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>,AMREX_SPACEDIM&gt; prob_hi {AMREX_D_DECL(geomdata.ProbHi(0), geomdata.ProbHi(1), geomdata.ProbHi(2))}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1103,14 +1103,14 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a3863b7bf2bd0a71f1021a3991f3dede8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3863b7bf2bd0a71f1021a3991f3dede8">&#9670;&nbsp;</a></span>prob_lo</h2>
+<a id="a0cf88ee4a0b9bb98c3a6ae5be9f8bd88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cf88ee4a0b9bb98c3a6ae5be9f8bd88">&#9670;&nbsp;</a></span>prob_lo</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* prob_lo = geomdata.ProbLo()</td>
+          <td class="memname">const GpuArray&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>,AMREX_SPACEDIM&gt; prob_lo {AMREX_D_DECL(geomdata.ProbLo(0), geomdata.ProbLo(1), geomdata.ProbLo(2))}</td>
         </tr>
       </table>
 </div><div class="memdoc">

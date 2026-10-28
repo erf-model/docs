@@ -1,6 +1,7 @@
 var structStationLoc =
 [
     [ "col_begin", "structStationLoc.html#a9b98d796a31a8cc6f4e3ac5187516932", null ],
+    [ "first_cc_height", "structStationLoc.html#a954b14494be75e93a1068182b0162434", null ],
     [ "got_lat", "structStationLoc.html#a8a9af4d0a312d5feb0c852151b20b449", null ],
     [ "got_lon", "structStationLoc.html#acc12f7a192947dcf57bc8c9a7c8fa5a9", null ],
     [ "i0", "structStationLoc.html#a7833dfbee34117d02eda778cce7fd33f", null ],

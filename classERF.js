@@ -460,7 +460,6 @@ var classERF =
     [ "m_driver_atm2ocn_uses_state_contract", "classERF.html#af82e90fba867f0110fb8d79b369547c1", null ],
     [ "m_driver_has_atm2ocn_coupling", "classERF.html#ab9ff1959cb6114ed469666186c650cb8", null ],
     [ "m_driver_uses_two_way_coupling", "classERF.html#ac02c9c39a5ac4d557b0021f5a49c7f8f", null ],
-    [ "m_expand_plotvars_to_unif_rr", "classERF.html#adb272adf862040a2f1a6226c57c35627", null ],
     [ "m_forest_drag", "classERF.html#a8b181e6ed0bb62d79e4a62555210abc9", null ],
     [ "m_ibseb", "classERF.html#ae8ec7a0c139b93daf3d3beaf1a005435", null ],
     [ "m_plot2d_int_1", "classERF.html#ad0eb47ab62dc9c83d16d691490d3c8b9", null ],

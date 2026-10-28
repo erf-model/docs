@@ -1,7 +1,5 @@
 var NAVTREEINDEX36 =
 {
-"classerf__sbm_1_1SBMTransport.html#ae42a3c3475d37012206e43dcf08aa079":[2,0,9,32,18],
-"classerf__sbm_1_1SBMTransport.html#ae5a33a3610b1aa5c853b01c0072c1bf1":[2,0,9,32,20],
 "classerf__sbm_1_1SpectralGrid.html":[2,0,9,36],
 "classerf__sbm_1_1SpectralGrid.html#a0f1bc7772c65ec936184e57f58e7c176":[2,0,9,36,5],
 "classerf__sbm_1_1SpectralGrid.html#a1157a36c97b3be492191514fb8dff1cc":[2,0,9,36,6],
@@ -249,5 +247,7 @@ var NAVTREEINDEX36 =
 "globals_vars_j.html":[3,1,2,9],
 "globals_vars_k.html":[3,1,2,10],
 "globals_vars_l.html":[3,1,2,11],
-"globals_vars_m.html":[3,1,2,12]
+"globals_vars_m.html":[3,1,2,12],
+"globals_vars_n.html":[3,1,2,13],
+"globals_vars_o.html":[3,1,2,14]
 };
