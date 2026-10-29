@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[3,0,1,36,39,10],
 "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462":[3,0,1,36,39,9],
 "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914":[3,0,1,36,39,12],
 "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705":[3,0,1,36,39,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "ERF__InitCustomPertVels__EkmanSpiral_8H.html#a7f5ec7f52c070d5317a24a9996ab0dff":[3,0,1,20,35,0],
 "ERF__InitCustomPertVels__EkmanSpiral_8H.html#a9fe9be9cdb1b2c38fc4b98d336584439":[3,0,1,20,35,1],
 "ERF__InitCustomPertVels__EkmanSpiral_8H.html#abd408b9367d48eae9afec6c630e149cf":[3,0,1,20,35,2],
-"ERF__InitCustomPertVels__EkmanSpiral_8H.html#adc419a3f80891c95caf27f27f4197c06":[3,0,1,20,35,3],
-"ERF__InitCustomPertVels__EkmanSpiral_8H.html#afd594beb5e87119f485c9e590e4f8183":[3,0,1,20,35,6]
+"ERF__InitCustomPertVels__EkmanSpiral_8H.html#adc419a3f80891c95caf27f27f4197c06":[3,0,1,20,35,3]
 };

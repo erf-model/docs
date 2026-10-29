@@ -38,6 +38,7 @@ var structIBSEBParams =
     [ "solar_constant", "structIBSEBParams.html#aa3b761c271c3a60f313f894c8d7fc1fe", null ],
     [ "stability_correction", "structIBSEBParams.html#addedc810c01c0bfacd85a03c6f8890fa", null ],
     [ "sun_azimuth_deg", "structIBSEBParams.html#adcddd325af3afe8c125b9960403ffa30", null ],
+    [ "sun_min_elev_deg", "structIBSEBParams.html#a64b5546adcfca78c83d1937fef379511", null ],
     [ "sun_mode", "structIBSEBParams.html#a2440b722e8d4ab799daf7bf01c9091dc", null ],
     [ "sun_zenith_deg", "structIBSEBParams.html#ace13ad6660f447c586788e80c5d64156", null ],
     [ "sw_diffuse", "structIBSEBParams.html#adb75c680a0ce666a7ef10b1f3e0e302e", null ],

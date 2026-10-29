@@ -229,6 +229,7 @@ var hierarchy =
     [ "RadChoice", "structRadChoice.html", null ],
     [ "RadiationDiagnostics", "classRadiationDiagnostics.html", null ],
     [ "SurfaceModel::RadiationField", "structSurfaceModel_1_1RadiationField.html", null ],
+    [ "ibseb::RayMap", "structibseb_1_1RayMap.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
     [ "RealBdyConsMaps", "structRealBdyConsMaps.html", null ],
     [ "erf_sbm::ReconstructionDelta", "structerf__sbm_1_1ReconstructionDelta.html", null ],

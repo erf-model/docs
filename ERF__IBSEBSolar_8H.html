@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('ERF__IBSEBSolar_8H.html',''); initResi
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
@@ -96,6 +97,8 @@ $(document).ready(function(){initNavTree('ERF__IBSEBSolar_8H.html',''); initResi
 <div class="textblock"><code>#include &lt;AMReX_REAL.H&gt;</code><br />
 <code>#include &lt;AMReX_GpuQualifiers.H&gt;</code><br />
 <code>#include &lt;AMReX_Algorithm.H&gt;</code><br />
+<code>#include &lt;AMReX_Array4.H&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;<a class="el" href="ERF__NumericalConstants_8H_source.html">ERF_NumericalConstants.H</a>&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -103,13 +106,14 @@ Include dependency graph for ERF_IBSEBSolar.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__IBSEBSolar_8H__incl.png" border="0" usemap="#aSource_2ImmersedBoundarySEB_2ERF__IBSEBSolar_8H" alt=""/></div>
 <map name="aSource_2ImmersedBoundarySEB_2ERF__IBSEBSolar_8H" id="aSource_2ImmersedBoundarySEB_2ERF__IBSEBSolar_8H">
-<area shape="rect" title="Sun position, clear&#45;sky shortwave, and the ray cast that decides whether a building face is in shadow..." alt="" coords="195,5,417,47"/>
-<area shape="rect" title=" " alt="" coords="129,169,251,196"/>
-<area shape="rect" title=" " alt="" coords="26,95,205,121"/>
-<area shape="rect" title=" " alt="" coords="229,95,383,121"/>
-<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="407,95,607,121"/>
-<area shape="rect" title=" " alt="" coords="631,95,693,121"/>
-<area shape="rect" title=" " alt="" coords="478,169,537,196"/>
+<area shape="rect" title="Sun position, clear&#45;sky shortwave, and the ray cast that decides whether a building face is in shadow..." alt="" coords="360,5,582,47"/>
+<area shape="rect" title=" " alt="" coords="274,169,396,196"/>
+<area shape="rect" title=" " alt="" coords="23,95,202,121"/>
+<area shape="rect" title=" " alt="" coords="226,95,380,121"/>
+<area shape="rect" title=" " alt="" coords="404,95,538,121"/>
+<area shape="rect" title=" " alt="" coords="700,169,759,196"/>
+<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="562,95,762,121"/>
+<area shape="rect" title=" " alt="" coords="837,95,900,121"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -117,14 +121,66 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__IBSEBSolar_8H__dep__incl.png" border="0" usemap="#aSource_2ImmersedBoundarySEB_2ERF__IBSEBSolar_8Hdep" alt=""/></div>
 <map name="aSource_2ImmersedBoundarySEB_2ERF__IBSEBSolar_8Hdep" id="aSource_2ImmersedBoundarySEB_2ERF__IBSEBSolar_8Hdep">
-<area shape="rect" title="Sun position, clear&#45;sky shortwave, and the ray cast that decides whether a building face is in shadow..." alt="" coords="128,5,351,47"/>
-<area shape="rect" href="ERF__IBFaceSet_8cpp.html" title="Detection, storage, output and reporting of the wall faces of resolved buildings for the immersed&#45;bou..." alt="" coords="5,95,228,136"/>
-<area shape="rect" href="ERF__IBSEB_8cpp.html" title="ERF&#45;side hooks of the immersed&#45;boundary surface energy balance." alt="" coords="252,95,475,136"/>
+<area shape="rect" title="Sun position, clear&#45;sky shortwave, and the ray cast that decides whether a building face is in shadow..." alt="" coords="5119,5,5341,47"/>
+<area shape="rect" href="ERF__IBFaceSet_8cpp.html" title="Detection, storage, output and reporting of the wall faces of resolved buildings for the immersed&#45;bou..." alt="" coords="4940,184,5163,225"/>
+<area shape="rect" href="ERF__IBFaceSet_8H.html" title="Compact list of the wall faces of resolved buildings on one AMR level." alt="" coords="5119,95,5341,136"/>
+<area shape="rect" href="ERF__IBSEB_8cpp.html" title="ERF&#45;side hooks of the immersed&#45;boundary surface energy balance." alt="" coords="10009,273,10232,315"/>
+<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="5187,191,5294,218"/>
+<area shape="rect" href="ERF__BoundaryConditionsBndryReg_8cpp.html" title=" " alt="" coords="5,273,284,315"/>
+<area shape="rect" href="ERF__BoundaryConditionsRealbdy_8cpp.html" title=" " alt="" coords="309,273,575,315"/>
+<area shape="rect" href="ERF__FillBdyCCVels_8cpp.html" title=" " alt="" coords="600,273,801,315"/>
+<area shape="rect" href="ERF__FillCoarsePatch_8cpp.html" title=" " alt="" coords="825,273,1027,315"/>
+<area shape="rect" href="ERF__FillIntermediatePatch_8cpp.html" title=" " alt="" coords="1051,273,1273,315"/>
+<area shape="rect" href="ERF__FillPatch_8cpp.html" title=" " alt="" coords="1297,273,1499,315"/>
+<area shape="rect" href="ERF__to__REMORA_8cpp.html" title=" " alt="" coords="1523,273,1679,315"/>
+<area shape="rect" href="ERF__EB_8cpp.html" title="Implements EB factory construction and EB cell&#45;flag connectivity fixes." alt="" coords="1703,281,1869,307"/>
+<area shape="rect" href="ERF__EBInit_8cpp.html" title=" " alt="" coords="1893,281,2081,307"/>
+<area shape="rect" href="ERF__EBRedistribute_8cpp.html" title="Implements EB redistribution for native and auxiliary EB factories." alt="" coords="2105,281,2352,307"/>
+<area shape="rect" href="ERF_8cpp.html" title=" " alt="" coords="2377,281,2497,307"/>
+<area shape="rect" href="ERF__Constructors_8cpp.html" title=" " alt="" coords="2521,281,2731,307"/>
+<area shape="rect" href="ERF__Diagnostics_8cpp.html" title=" " alt="" coords="2755,281,2961,307"/>
+<area shape="rect" href="ERF__MakeNewArrays_8cpp.html" title=" " alt="" coords="2985,281,3219,307"/>
+<area shape="rect" href="ERF__MakeNewLevel_8cpp.html" title=" " alt="" coords="3244,281,3472,307"/>
+<area shape="rect" href="ERF__FireCoupler_8cpp.html" title=" " alt="" coords="3496,273,3655,315"/>
+<area shape="rect" href="ERF__FirePrerequisites_8cpp.html" title=" " alt="" coords="3679,273,3874,315"/>
+<area shape="rect" href="ERF__Init1D_8cpp.html" title=" " alt="" coords="3899,273,4049,315"/>
+<area shape="rect" href="ERF__InitBCs_8cpp.html" title=" " alt="" coords="4073,273,4224,315"/>
+<area shape="rect" href="ERF__InitCustomPertState_8cpp.html" title=" " alt="" coords="4249,273,4465,315"/>
+<area shape="rect" href="ERF__InitForEnsemble_8cpp.html" title=" " alt="" coords="4489,273,4680,315"/>
+<area shape="rect" href="ERF__InitFromHSE_8cpp.html" title=" " alt="" coords="4705,273,4870,315"/>
+<area shape="rect" href="ERF__InitFromInputSounding_8cpp.html" title=" " alt="" coords="4894,273,5126,315"/>
+<area shape="rect" href="ERF__InitFromNCFile_8cpp.html" title=" " alt="" coords="5150,273,5331,315"/>
+<area shape="rect" href="ERF__InitFromWRFInput_8cpp.html" title=" " alt="" coords="6613,363,6815,404"/>
+<area shape="rect" href="ERF__InitGeowind_8cpp.html" title=" " alt="" coords="5406,273,5569,315"/>
+<area shape="rect" href="ERF__InitImmersedForcing_8cpp.html" title=" " alt="" coords="5593,273,5811,315"/>
+<area shape="rect" href="ERF__InitLandFromMetgrid_8cpp.html" title=" " alt="" coords="5836,273,6056,315"/>
+<area shape="rect" href="ERF__InitRayleigh_8cpp.html" title=" " alt="" coords="6081,273,6243,315"/>
+<area shape="rect" href="ERF__InitSponge_8cpp.html" title=" " alt="" coords="6267,273,6422,315"/>
+<area shape="rect" href="ERF__InitTurbPert_8cpp.html" title=" " alt="" coords="6447,273,6605,315"/>
+<area shape="rect" href="ERF__InitWindFarm_8cpp.html" title=" " alt="" coords="6630,273,6801,315"/>
+<area shape="rect" href="ERF__MetgridUtils_8H.html" title=" " alt="" coords="6825,273,6977,315"/>
+<area shape="rect" href="ERF__Checkpoint_8cpp.html" title=" " alt="" coords="7001,281,7221,307"/>
+<area shape="rect" href="ERF__ConsoleIO_8cpp.html" title=" " alt="" coords="7246,281,7459,307"/>
+<area shape="rect" href="ERF__Plotfile_8cpp.html" title=" " alt="" coords="7483,281,7675,307"/>
+<area shape="rect" href="ERF__Plotfile2D_8cpp.html" title=" " alt="" coords="7699,281,7910,307"/>
+<area shape="rect" href="ERF__ReadFromWRFBdy_8H.html" title=" " alt="" coords="7934,281,8187,307"/>
+<area shape="rect" href="ERF__StationSampler_8cpp.html" title=" " alt="" coords="8212,281,8459,307"/>
+<area shape="rect" href="ERF__TrackerOutput_8cpp.html" title=" " alt="" coords="8482,281,8719,307"/>
+<area shape="rect" href="ERF__Write1DProfiles_8cpp.html" title=" " alt="" coords="8743,281,8991,307"/>
+<area shape="rect" href="ERF__Write1DProfiles__stag_8cpp.html" title=" " alt="" coords="9015,273,9237,315"/>
+<area shape="rect" href="ERF__WriteJobInfo_8cpp.html" title=" " alt="" coords="9261,281,9487,307"/>
+<area shape="rect" href="ERF__WriteScalarProfiles_8cpp.html" title=" " alt="" coords="9511,273,9706,315"/>
+<area shape="rect" href="ERF__WriteSubvolume_8cpp.html" title=" " alt="" coords="9731,281,9985,307"/>
 </map>
 </div>
 </div>
 <p><a href="ERF__IBSEBSolar_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structibseb_1_1RayMap.html">ibseb::RayMap</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceibseb"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceibseb.html">ibseb</a></td></tr>
@@ -165,12 +221,14 @@ Functions</h2></td></tr>
 <tr class="separator:a623c266ae3336f5ac9ff60e8de6dedc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefea37a58bd4fed1e073d17b371177db"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceibseb.html#aefea37a58bd4fed1e073d17b371177db">ibseb::clear_sky_diffuse_h</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> cos_zenith, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> S0, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tau, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> distance_factor, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> k_d)</td></tr>
 <tr class="separator:aefea37a58bd4fed1e073d17b371177db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7369ad2554c607464437f99844a34dcb"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceibseb.html#a7369ad2554c607464437f99844a34dcb">ibseb::column_top</a> (const int *col_top, int ci, int cj, int i0, int j0, int bw, int bh, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_ground, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a8df85b10e897a77f1f0516906934529b">dz</a>)</td></tr>
-<tr class="separator:a7369ad2554c607464437f99844a34dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4ae6f986a380bb7afbb5be45a1d67e6"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceibseb.html#ad4ae6f986a380bb7afbb5be45a1d67e6">ibseb::ray_blocked</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> x0, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y0, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sx, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sy, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sz, const int *col_top, int <a class="el" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, int <a class="el" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>, int i0, int j0, int bw, int bh, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> x_lo, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y_lo, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a8df85b10e897a77f1f0516906934529b">dz</a>, bool per_x, bool per_y, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_ground, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_max, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> max_path)</td></tr>
-<tr class="separator:ad4ae6f986a380bb7afbb5be45a1d67e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55851f15f94fb25c3ba24150b1be7f20"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceibseb.html#a55851f15f94fb25c3ba24150b1be7f20">ibseb::ray_hit</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> x0, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y0, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sx, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sy, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sz, const int *col_top, int <a class="el" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, int <a class="el" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>, int i0, int j0, int bw, int bh, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> x_lo, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y_lo, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a8df85b10e897a77f1f0516906934529b">dz</a>, bool per_x, bool per_y, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_ground, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_max, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> max_path)</td></tr>
-<tr class="separator:a55851f15f94fb25c3ba24150b1be7f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7375cdaac9450b0f0731011267b4d08"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceibseb.html#ad7375cdaac9450b0f0731011267b4d08">ibseb::ray_halo_cells</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a8fb3bd5ad3c5764ad93ca714ea8b3b31">height</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sz_min)</td></tr>
+<tr class="separator:ad7375cdaac9450b0f0731011267b4d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71f3d5118721dd712b05f248d3bdf901"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceibseb.html#a71f3d5118721dd712b05f248d3bdf901">ibseb::hemisphere_min_sz</a> (int n_az, int n_el)</td></tr>
+<tr class="separator:a71f3d5118721dd712b05f248d3bdf901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad57393ea9cb57e0e9ef59027908c6e3b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceibseb.html#ad57393ea9cb57e0e9ef59027908c6e3b">ibseb::ray_blocked</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> x0, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y0, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sx, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sy, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sz, const RayMap &amp;m)</td></tr>
+<tr class="separator:ad57393ea9cb57e0e9ef59027908c6e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bfc47e100bb3c19199868c0e5abd6d8"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceibseb.html#a0bfc47e100bb3c19199868c0e5abd6d8">ibseb::ray_hit</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> x0, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y0, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sx, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sy, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sz, const RayMap &amp;m)</td></tr>
+<tr class="separator:a0bfc47e100bb3c19199868c0e5abd6d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bf43b74765b9d05ae01ba6c27c4cc35"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceibseb.html#a2bf43b74765b9d05ae01ba6c27c4cc35">ibseb::hemisphere_direction</a> (int dir, int nsign, int ia, int ie, int n_az, int n_el, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;sx, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;sy, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;sz)</td></tr>
 <tr class="separator:a2bf43b74765b9d05ae01ba6c27c4cc35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

@@ -1,5 +1,6 @@
 var NAVTREEINDEX15 =
 {
+"ERF__ScalarDiffusion_8H.html#af0d482c8c9b9fc47157c28724bfa4edd":[3,0,1,6,28,40],
 "ERF__ScalarDiffusion_8H.html#afc640acb65c2df3bd94d6bad037a3fdf":[3,0,1,6,28,20],
 "ERF__ScalarDiffusion_8H_source.html":[3,0,1,6,28],
 "ERF__ScalarLimitPost_8H.html":[3,0,1,24,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX15 =
 "ERF__SuperDropletsMoistAdvance_8cpp.html":[3,0,1,15,7,1],
 "ERF__SuperDropletsMoistInit_8cpp.html":[3,0,1,15,7,2],
 "ERF__SuperDropletsMoistPhaseChange_8cpp.html":[3,0,1,15,7,3],
-"ERF__SuperDropletsMoistUtils_8cpp.html":[3,0,1,15,7,4],
-"ERF__SuperDropletsMoist_8H.html":[3,0,1,15,7,0]
+"ERF__SuperDropletsMoistUtils_8cpp.html":[3,0,1,15,7,4]
 };
