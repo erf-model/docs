@@ -232,8 +232,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa8ccd843f27b8b5594ed403332c2c04f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad35eefe71ee96294dfab06727d316da9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSurfaceLayer.html#ad35eefe71ee96294dfab06727d316da9">compute_sfc_params_from_lsm_fluxes</a> (const int &amp;lev, amrex::MultiFab &amp;cons_in)</td></tr>
 <tr class="separator:ad35eefe71ee96294dfab06727d316da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a110eb3483915fe2480c2599761b3ced4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSurfaceLayer.html#a110eb3483915fe2480c2599761b3ced4">set_sfc_params_from_file_fluxes</a> (const int &amp;lev, const amrex::MultiFab &amp;cons_in, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="classSurfaceLayer.html#a0ad84c481b38f2ae6e50957022125c77">sfc_tflux</a>, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="classSurfaceLayer.html#a295989b7f0f979c5f74856e7f0cd82ee">sfc_qflux</a>, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;sfc_tau)</td></tr>
-<tr class="separator:a110eb3483915fe2480c2599761b3ced4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32cbdffdc53407124190b2064cb1f26e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSurfaceLayer.html#a32cbdffdc53407124190b2064cb1f26e">set_sfc_params_from_file_fluxes</a> (const int &amp;lev, const amrex::MultiFab &amp;cons_in, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;tflux_in, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;qflux_in, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;sfc_tau)</td></tr>
+<tr class="separator:a32cbdffdc53407124190b2064cb1f26e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd8b4d0eae4e11884229501c74fd4921"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSurfaceLayer.html#abd8b4d0eae4e11884229501c74fd4921">fill_tsurf_with_sst_and_tsk</a> (const int &amp;lev, const double &amp;time)</td></tr>
 <tr class="separator:abd8b4d0eae4e11884229501c74fd4921"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae49bf2a48059ec96fe1b6f180ca82786"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSurfaceLayer.html#ae49bf2a48059ec96fe1b6f180ca82786">fill_tsurf_with_sfc_sst</a> (const int &amp;lev, const double &amp;time, const amrex::MultiFab &amp;cons_in, const std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd)</td></tr>
@@ -8212,8 +8212,8 @@ Here is the call graph for this function:</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a110eb3483915fe2480c2599761b3ced4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a110eb3483915fe2480c2599761b3ced4">&#9670;&nbsp;</a></span>set_sfc_params_from_file_fluxes()</h2>
+<a id="a32cbdffdc53407124190b2064cb1f26e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32cbdffdc53407124190b2064cb1f26e">&#9670;&nbsp;</a></span>set_sfc_params_from_file_fluxes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8234,13 +8234,13 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
-          <td class="paramname"><em>sfc_tflux</em>, </td>
+          <td class="paramname"><em>tflux_in</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
-          <td class="paramname"><em>sfc_qflux</em>, </td>
+          <td class="paramname"><em>qflux_in</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -8260,8 +8260,8 @@ Here is the call graph for this function:</div>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">lev</td><td>level index </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cons_in</td><td>conserved state supplying the first-cell density </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sfc_tflux</td><td>sensible heat flux H [W/m2] </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sfc_qflux</td><td>latent heat flux LE [W/m2] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tflux_in</td><td>sensible heat flux H [W/m2] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">qflux_in</td><td>latent heat flux LE [W/m2] </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">sfc_tau</td><td>kinematic surface stress TAU [m2/s2]</td></tr>
   </table>
   </dd>
@@ -8272,8 +8272,8 @@ Here is the call graph for this function:</div>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">lev</td><td>Current level </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cons_in</td><td>Conserved state supplying the first-cell density </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sfc_tflux</td><td>Sensible heat flux H [W/m2] </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sfc_qflux</td><td>Latent heat flux LE [W/m2] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tflux_in</td><td>Sensible heat flux H [W/m2] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">qflux_in</td><td>Latent heat flux LE [W/m2] </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">sfc_tau</td><td>Kinematic surface stress TAU [m2/s2] </td></tr>
   </table>
   </dd>
@@ -8282,8 +8282,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01744"></a><span class="lineno"> 1744</span>&#160;    <a class="code" href="classSurfaceLayer.html#a7c2f77b55037499d5dd7f597c017e272">u_star</a>[lev]-&gt;setVal(std::sqrt(sfc_tau));</div>
 <div class="line"><a name="l01745"></a><span class="lineno"> 1745</span>&#160; </div>
 <div class="line"><a name="l01746"></a><span class="lineno"> 1746</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(2);</div>
-<div class="line"><a name="l01747"></a><span class="lineno"> 1747</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_tflux = <a class="code" href="classSurfaceLayer.html#a0ad84c481b38f2ae6e50957022125c77">sfc_tflux</a> / <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>;</div>
-<div class="line"><a name="l01748"></a><span class="lineno"> 1748</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_qflux = <a class="code" href="classSurfaceLayer.html#a295989b7f0f979c5f74856e7f0cd82ee">sfc_qflux</a> / <a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>;</div>
+<div class="line"><a name="l01747"></a><span class="lineno"> 1747</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_tflux = tflux_in / <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>;</div>
+<div class="line"><a name="l01748"></a><span class="lineno"> 1748</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_qflux = qflux_in / <a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>;</div>
 <div class="line"><a name="l01749"></a><span class="lineno"> 1749</span>&#160; </div>
 <div class="line"><a name="l01750"></a><span class="lineno"> 1750</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<a class="code" href="classSurfaceLayer.html#aaf823aaf71baf1d39ecf290b266922ba">t_star</a>[lev]); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l01751"></a><span class="lineno"> 1751</span>&#160;    {</div>
@@ -8312,13 +8312,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01774"></a><span class="lineno"> 1774</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:48</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aee80ef06f62b6528b776d02de062cdd5"><div class="ttname"><a href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a></div><div class="ttdeci">constexpr amrex::Real L_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:64</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a0ad84c481b38f2ae6e50957022125c77"><div class="ttname"><a href="classSurfaceLayer.html#a0ad84c481b38f2ae6e50957022125c77">SurfaceLayer::sfc_tflux</a></div><div class="ttdeci">amrex::Real sfc_tflux</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1836</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a295989b7f0f979c5f74856e7f0cd82ee"><div class="ttname"><a href="classSurfaceLayer.html#a295989b7f0f979c5f74856e7f0cd82ee">SurfaceLayer::sfc_qflux</a></div><div class="ttdeci">amrex::Real sfc_qflux</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1835</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classSurfaceLayer_a110eb3483915fe2480c2599761b3ced4_cgraph.png" border="0" usemap="#aclassSurfaceLayer_a110eb3483915fe2480c2599761b3ced4_cgraph" alt=""/></div>
-<map name="aclassSurfaceLayer_a110eb3483915fe2480c2599761b3ced4_cgraph" id="aclassSurfaceLayer_a110eb3483915fe2480c2599761b3ced4_cgraph">
+<div class="center"><img src="classSurfaceLayer_a32cbdffdc53407124190b2064cb1f26e_cgraph.png" border="0" usemap="#aclassSurfaceLayer_a32cbdffdc53407124190b2064cb1f26e_cgraph" alt=""/></div>
+<map name="aclassSurfaceLayer_a32cbdffdc53407124190b2064cb1f26e_cgraph" id="aclassSurfaceLayer_a32cbdffdc53407124190b2064cb1f26e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,193,47"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="241,13,332,39"/>
 </map>
@@ -9084,7 +9082,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot; (W/m^2) TAU = &quot;</span> &lt;&lt; <a class="code" href="classSurfaceLayer.html#aacfe42602d29ae90ae4725254d9c0b3b">sfc_ustar</a></div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot; (m^2/s^2)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <a class="code" href="classSurfaceLayer.html#a110eb3483915fe2480c2599761b3ced4">set_sfc_params_from_file_fluxes</a>(lev, cons_in, <a class="code" href="classSurfaceLayer.html#a0ad84c481b38f2ae6e50957022125c77">sfc_tflux</a>, <a class="code" href="classSurfaceLayer.html#a295989b7f0f979c5f74856e7f0cd82ee">sfc_qflux</a>, <a class="code" href="classSurfaceLayer.html#aacfe42602d29ae90ae4725254d9c0b3b">sfc_ustar</a>);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <a class="code" href="classSurfaceLayer.html#a32cbdffdc53407124190b2064cb1f26e">set_sfc_params_from_file_fluxes</a>(lev, cons_in, <a class="code" href="classSurfaceLayer.html#a0ad84c481b38f2ae6e50957022125c77">sfc_tflux</a>, <a class="code" href="classSurfaceLayer.html#a295989b7f0f979c5f74856e7f0cd82ee">sfc_qflux</a>, <a class="code" href="classSurfaceLayer.html#aacfe42602d29ae90ae4725254d9c0b3b">sfc_ustar</a>);</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classSurfaceLayer.html#a7f7445d3fa3b3015b3db61ec78ce9c31">custom_rhosurf</a> &gt; 0) {</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <a class="code" href="classSurfaceLayer.html#a0988970eee96a31040dc991bdd7fd9e4">specified_rho_surf</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <a class="code" href="classSurfaceLayer.html#a7c2f77b55037499d5dd7f597c017e272">u_star</a>[lev]-&gt;setVal(std::sqrt(<a class="code" href="classSurfaceLayer.html#a7f7445d3fa3b3015b3db61ec78ce9c31">custom_rhosurf</a>) * <a class="code" href="classSurfaceLayer.html#addfd74a8e57a125a502f57675cbd1484">custom_ustar</a>);</div>
@@ -9223,7 +9221,9 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a0aec04a101a1a92c2f32ff394b510bfd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a></div><div class="ttdeci">constexpr amrex::Real three</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:39</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:38</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a41ef10e076e2099d0fd845e318fd00a0"><div class="ttname"><a href="classMOSTAverage.html#a41ef10e076e2099d0fd845e318fd00a0">MOSTAverage::compute_averages</a></div><div class="ttdeci">void compute_averages(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:1459</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a110eb3483915fe2480c2599761b3ced4"><div class="ttname"><a href="classSurfaceLayer.html#a110eb3483915fe2480c2599761b3ced4">SurfaceLayer::set_sfc_params_from_file_fluxes</a></div><div class="ttdeci">void set_sfc_params_from_file_fluxes(const int &amp;lev, const amrex::MultiFab &amp;cons_in, const amrex::Real &amp;sfc_tflux, const amrex::Real &amp;sfc_qflux, const amrex::Real &amp;sfc_tau)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:1738</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a0ad84c481b38f2ae6e50957022125c77"><div class="ttname"><a href="classSurfaceLayer.html#a0ad84c481b38f2ae6e50957022125c77">SurfaceLayer::sfc_tflux</a></div><div class="ttdeci">amrex::Real sfc_tflux</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1836</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a295989b7f0f979c5f74856e7f0cd82ee"><div class="ttname"><a href="classSurfaceLayer.html#a295989b7f0f979c5f74856e7f0cd82ee">SurfaceLayer::sfc_qflux</a></div><div class="ttdeci">amrex::Real sfc_qflux</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1835</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a32cbdffdc53407124190b2064cb1f26e"><div class="ttname"><a href="classSurfaceLayer.html#a32cbdffdc53407124190b2064cb1f26e">SurfaceLayer::set_sfc_params_from_file_fluxes</a></div><div class="ttdeci">void set_sfc_params_from_file_fluxes(const int &amp;lev, const amrex::MultiFab &amp;cons_in, const amrex::Real &amp;tflux_in, const amrex::Real &amp;qflux_in, const amrex::Real &amp;sfc_tau)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:1738</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a49a97b3f9132567b9437015b10771fef"><div class="ttname"><a href="classSurfaceLayer.html#a49a97b3f9132567b9437015b10771fef">SurfaceLayer::fill_qsurf_with_qsat</a></div><div class="ttdeci">void fill_qsurf_with_qsat(const int &amp;lev, const amrex::MultiFab &amp;cons_in, const std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:2120</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a4f31e6f3fddbc6f074c34c81eb131ff6"><div class="ttname"><a href="classSurfaceLayer.html#a4f31e6f3fddbc6f074c34c81eb131ff6">SurfaceLayer::fill_tsurf_with_coupled_sst</a></div><div class="ttdeci">void fill_tsurf_with_coupled_sst(const int &amp;lev, const amrex::MultiFab &amp;cons_in, const std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:2472</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a572c043babbaddaae9ede3d9f0e11f80"><div class="ttname"><a href="classSurfaceLayer.html#a572c043babbaddaae9ede3d9f0e11f80">SurfaceLayer::get_lsm_tsurf</a></div><div class="ttdeci">void get_lsm_tsurf(const int &amp;lev, const amrex::MultiFab &amp;cons_in, const std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:2294</div></div>
