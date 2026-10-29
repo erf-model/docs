@@ -265,6 +265,8 @@ var classERF =
     [ "turbPert_amplitude", "classERF.html#afb76c0633e2ba944c543e7a03a5e9424", null ],
     [ "turbPert_amplitude_w", "classERF.html#a09adbff87788192786d7615305ee2958", null ],
     [ "turbPert_update", "classERF.html#a371df253c49625b088342ff7d87fa8cc", null ],
+    [ "turbPert_update_automatic", "classERF.html#a2766bbcec6eec219b905441699b06861", null ],
+    [ "turbPert_update_uniform_wind", "classERF.html#ab1c8651d60770a00841f973d419fd10c", null ],
     [ "update_box_for_refinement", "classERF.html#a349b9c3fb955c7091b4821307fc347e8", null ],
     [ "update_diffusive_arrays", "classERF.html#a419510fced05e9afc05c466beeeb66f7", null ],
     [ "update_terrain_arrays", "classERF.html#a7dba7f9e6bd3f6898fac9ac2efcec692", null ],

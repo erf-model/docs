@@ -223,7 +223,7 @@ var namespaces_dup =
       [ "compute_temperature", "namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0", null ],
       [ "compute_theta", "namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b", null ],
       [ "init_isentropic_hse_constant_dz", "namespaceHSEutils.html#a42945880529b25892b8bac3c26e00dcd", null ],
-      [ "init_isentropic_hse_no_terrain", "namespaceHSEutils.html#a4b1ea7e19255c9f21bc227ed7cc0b474", null ],
+      [ "init_isentropic_hse_no_terrain", "namespaceHSEutils.html#afdbe0b1edca9e8a2b8e3121884c85c0a", null ],
       [ "init_isentropic_hse_no_terrain", "namespaceHSEutils.html#a7a5045d1b31e68655d6def7ac6a11e5b", null ],
       [ "init_isentropic_hse_no_terrain_column", "namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc", null ],
       [ "init_isentropic_hse_stretched_dz", "namespaceHSEutils.html#a8130e78848531ae6668c651be0be010f", null ],
