@@ -1,5 +1,7 @@
 var NAVTREEINDEX56 =
 {
+"structshoc_1_1ShocEnergyFixerView.html#aec5f2e0bb8516a9a9dd73ccc35871b84":[2,0,21,0,7],
+"structsimilarity__funs.html":[2,0,181],
 "structsimilarity__funs.html#a162d7d1aa4113335a7d5ad9d0c184c75":[2,0,181,0],
 "structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2":[2,0,181,4],
 "structsimilarity__funs.html#a3658f855e05c54c9cbc27c8dfb3b0355":[2,0,181,7],

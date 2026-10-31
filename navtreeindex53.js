@@ -1,5 +1,7 @@
 var NAVTREEINDEX53 =
 {
+"structerf__auxiliary_1_1HostCarrierFluxView.html#a8f8d471f837058048e93ab2fd9f711dd":[2,0,0,9,2],
+"structerf__auxiliary_1_1IntegratedMappedFaceFluxTag.html":[2,0,0,2],
 "structerf__auxiliary_1_1MappedFaceFluxRateTag.html":[2,0,0,1],
 "structerf__auxiliary_1_1MutableTimedFieldView.html":[2,0,0,8],
 "structerf__auxiliary_1_1MutableTimedFieldView.html#a3095d8d701339eacc49ab09e9c9b2056":[2,0,0,8,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX53 =
 "structerf__sbm_1_1ConstraintClosureChunk.html#a492031b71ccb6d6af52006b6d7b4f6a5":[2,0,9,12,1],
 "structerf__sbm_1_1ConstraintClosureChunk.html#a90f734f8f8c31f7423174fa4ee6c15d0":[2,0,9,12,0],
 "structerf__sbm_1_1ConstraintDescriptor.html":[2,0,9,9],
-"structerf__sbm_1_1ConstraintDescriptor.html#a29cc1f6ca9ac1a7b163d17a98e7c7596":[2,0,9,9,5],
-"structerf__sbm_1_1ConstraintDescriptor.html#a67c239d6f1999f8cf3a42c0173877a8a":[2,0,9,9,0],
-"structerf__sbm_1_1ConstraintDescriptor.html#a70d70fa8df653d21a54bfa2eea755ac9":[2,0,9,9,3]
+"structerf__sbm_1_1ConstraintDescriptor.html#a29cc1f6ca9ac1a7b163d17a98e7c7596":[2,0,9,9,5]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX52 =
 {
+"structTwoStreamRadiation_1_1OrbitalCache.html#a50011a8164b4e43e4c63b99997d1e857":[2,0,221,1,5],
+"structTwoStreamRadiation_1_1OrbitalCache.html#a8f5f1b91e54f9b42a0d6bec4d34c3ca4":[2,0,221,1,1],
 "structTwoStreamRadiation_1_1OrbitalCache.html#ab3bc3c80a27bc7da1d1c351acb717d07":[2,0,221,1,2],
 "structTwoStreamRadiation_1_1OrbitalCache.html#ac8baf8a918099efa13a1e466f0387849":[2,0,221,1,0],
 "structTwoStreamSunDate.html":[2,0,222],
@@ -247,7 +249,5 @@ var NAVTREEINDEX52 =
 "structerf__auxiliary_1_1ConstTimedFieldView.html#aed4f8414579a963e3f4f859d4caa2d0f":[2,0,0,7,0],
 "structerf__auxiliary_1_1HostCarrierFluxView.html":[2,0,0,9],
 "structerf__auxiliary_1_1HostCarrierFluxView.html#a1ca46bf4081b42a6e0d79cb3fc996624":[2,0,0,9,1],
-"structerf__auxiliary_1_1HostCarrierFluxView.html#a31e9322194b8f96026dd3324e496d88a":[2,0,0,9,0],
-"structerf__auxiliary_1_1HostCarrierFluxView.html#a8f8d471f837058048e93ab2fd9f711dd":[2,0,0,9,2],
-"structerf__auxiliary_1_1IntegratedMappedFaceFluxTag.html":[2,0,0,2]
+"structerf__auxiliary_1_1HostCarrierFluxView.html#a31e9322194b8f96026dd3324e496d88a":[2,0,0,9,0]
 };

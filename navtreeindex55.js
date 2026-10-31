@@ -1,5 +1,7 @@
 var NAVTREEINDEX55 =
 {
+"structibseb_1_1RayMap.html#a57047fb185e6a68911010add2b5340a4":[2,0,14,0,0],
+"structibseb_1_1RayMap.html#a596cbe679d09404e233ac62d424deeac":[2,0,14,0,14],
 "structibseb_1_1RayMap.html#a5a8ba01cd1f0acb70f52a03202e4a4a4":[2,0,14,0,16],
 "structibseb_1_1RayMap.html#a6599969e993f06e150bcbd87097a399e":[2,0,14,0,11],
 "structibseb_1_1RayMap.html#a6b704a421c6aeecef4cbeb7444577a47":[2,0,14,0,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX55 =
 "structshoc_1_1ShocEnergyFixerView.html#abc96284cdc111163d61d7d415ff1b5b5":[2,0,21,0,9],
 "structshoc_1_1ShocEnergyFixerView.html#ac92453ab6f2ba8e446e9de0540e7d859":[2,0,21,0,5],
 "structshoc_1_1ShocEnergyFixerView.html#ae3b0fea969f794f816a91c80c33eec96":[2,0,21,0,13],
-"structshoc_1_1ShocEnergyFixerView.html#ae8dc43f5360d8e1c37303cfb9250e59b":[2,0,21,0,0],
-"structshoc_1_1ShocEnergyFixerView.html#aec5f2e0bb8516a9a9dd73ccc35871b84":[2,0,21,0,7],
-"structsimilarity__funs.html":[2,0,181]
+"structshoc_1_1ShocEnergyFixerView.html#ae8dc43f5360d8e1c37303cfb9250e59b":[2,0,21,0,0]
 };
