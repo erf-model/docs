@@ -581,47 +581,47 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            <span class="comment">// Evaluate F_slow(S_stage) only for the slow variables</span></div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            <span class="comment">// Note that we are using the current stage versions (in S_new) of the slow variables</span></div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            <span class="comment">//      (because we didn&#39;t update the slow variables in the substepping)</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            <span class="comment">//       but we are using the &quot;new&quot; versions (in S_sum) of the velocities</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            <span class="comment">//      (because we did    update the fast variables in the substepping)</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            <span class="comment">// ****************************************************</span></div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            <a class="code" href="classMRISplitIntegrator.html#aaeba1fd1f53d0dbf3475d696c18e0538">slow_rhs_post</a>(*<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, S_old, S_new, *<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, time, old_time_stage, time_stage, nrk);</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;          } <span class="comment">// nrk</span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            <span class="comment">// Two-stage integrator for the anelastic equations.</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="comment">// SSP-RK2 (Heun): both stages advance a full timestep from S^n, and the</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            <span class="comment">//     second stage averages the slow source with the one from the first,</span></div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <span class="comment">//     which erf_slow_rhs_{pre,post} do when (anelastic_type == RK2 &amp;&amp; nrk == 1).</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="comment">// MidPoint: the first stage advances only a half timestep,</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="comment">//     S^*   = S^n + (dt/2) F(S^n)</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="comment">//     S^n+1 = S^n +  dt    F(S^*)</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            <span class="comment">//     and the second stage takes no average. The vertical diffusion</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <span class="comment">//     is second order in time with a tridiagonal solve in the first</span></div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            <span class="comment">//     stage only and none in the second.</span></div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">bool</span> l_midpoint = (<a class="code" href="classMRISplitIntegrator.html#a6e14dd6ce9cdd7852e8379bf11cddcfb">anelastic_type</a> == AnelasticType::MidPoint);</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nrk = 0; nrk &lt; 2; nrk++)</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            {</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                <span class="comment">// Capture the time we got to in the previous RK step</span></div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                old_time_stage = time_stage;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                <span class="comment">// Set the timestep for this stage -- both stages advance from the old time</span></div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                nsubsteps  = 1;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                dtau       = (l_midpoint &amp;&amp; (nrk == 0)) ? <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * <a class="code" href="classMRISplitIntegrator.html#a6e4bf4ac23c215a227ae93b4b8519d88">timestep</a> : <a class="code" href="classMRISplitIntegrator.html#a6e4bf4ac23c215a227ae93b4b8519d88">timestep</a>;</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                time_stage = time + nsubsteps * dtau;</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                <a class="code" href="classMRISplitIntegrator.html#a76ec664653a1451f5e6d6181cf060e7e">slow_rhs_pre</a>(*<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, S_old, S_new, time, old_time_stage, time_stage, nrk);</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                <a class="code" href="classMRISplitIntegrator.html#ab678f5e6907abd2720e4823b18f3bb0a">no_substep</a>(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, S_old, *<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, time + nsubsteps*dtau, nsubsteps*dtau, nrk);</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                <span class="comment">// ****************************************************</span></div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                <span class="comment">// Evaluate F_slow(S_stage) only for the slow variables</span></div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                <span class="comment">// Note that we are using the current stage versions (in S_new) of the slow variables</span></div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                <span class="comment">//      (because we didn&#39;t update the slow variables in the substepping)</span></div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                <span class="comment">//       but we are using the &quot;new&quot; versions (in S_sum) of the velocities</span></div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                <span class="comment">//      (because we did    update the fast variables in the substepping)</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            <span class="comment">//      and the momenta slow_rhs_pre set from the same stage, plus the average of</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            <span class="comment">//      the acoustic substep updates when substepping, to advect them</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            <span class="comment">//      (the mass fluxes that advance rho over the stage)</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            <span class="comment">// ****************************************************</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            <a class="code" href="classMRISplitIntegrator.html#aaeba1fd1f53d0dbf3475d696c18e0538">slow_rhs_post</a>(*<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, S_old, S_new, *<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, time, old_time_stage, time_stage, nrk);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;          } <span class="comment">// nrk</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="comment">// Two-stage integrator for the anelastic equations.</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            <span class="comment">// SSP-RK2 (Heun): both stages advance a full timestep from S^n, and the</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <span class="comment">//     second stage averages the slow source with the one from the first,</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="comment">//     which erf_slow_rhs_{pre,post} do when (anelastic_type == RK2 &amp;&amp; nrk == 1).</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="comment">// MidPoint: the first stage advances only a half timestep,</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="comment">//     S^*   = S^n + (dt/2) F(S^n)</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            <span class="comment">//     S^n+1 = S^n +  dt    F(S^*)</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <span class="comment">//     and the second stage takes no average. The vertical diffusion</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            <span class="comment">//     is second order in time with a tridiagonal solve in the first</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="comment">//     stage only and none in the second.</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">bool</span> l_midpoint = (<a class="code" href="classMRISplitIntegrator.html#a6e14dd6ce9cdd7852e8379bf11cddcfb">anelastic_type</a> == AnelasticType::MidPoint);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nrk = 0; nrk &lt; 2; nrk++)</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                <span class="comment">// Capture the time we got to in the previous RK step</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                old_time_stage = time_stage;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                <span class="comment">// Set the timestep for this stage -- both stages advance from the old time</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                nsubsteps  = 1;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                dtau       = (l_midpoint &amp;&amp; (nrk == 0)) ? <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * <a class="code" href="classMRISplitIntegrator.html#a6e4bf4ac23c215a227ae93b4b8519d88">timestep</a> : <a class="code" href="classMRISplitIntegrator.html#a6e4bf4ac23c215a227ae93b4b8519d88">timestep</a>;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                time_stage = time + nsubsteps * dtau;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                <a class="code" href="classMRISplitIntegrator.html#a76ec664653a1451f5e6d6181cf060e7e">slow_rhs_pre</a>(*<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, S_old, S_new, time, old_time_stage, time_stage, nrk);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                <a class="code" href="classMRISplitIntegrator.html#ab678f5e6907abd2720e4823b18f3bb0a">no_substep</a>(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, S_old, *<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, time + nsubsteps*dtau, nsubsteps*dtau, nrk);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                <span class="comment">// ****************************************************</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                <span class="comment">// Evaluate F_slow(S_stage) only for the slow variables</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                <span class="comment">// Note that we are using the current stage versions (in S_new) of the slow variables</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                <span class="comment">//      and the momenta slow_rhs_pre took from the same stage to advect them;</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                <span class="comment">//      S_sum holds the projected state at the end of the stage</span></div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                <span class="comment">// ****************************************************</span></div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                <a class="code" href="classMRISplitIntegrator.html#aaeba1fd1f53d0dbf3475d696c18e0538">slow_rhs_post</a>(*<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, S_old, S_new, *<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, time, old_time_stage, time_stage, nrk);</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            } <span class="comment">// nrk</span></div>
