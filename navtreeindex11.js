@@ -110,8 +110,12 @@ var NAVTREEINDEX11 =
 "ERF__PhysBCFunct_8H_source.html":[3,0,1,2,18],
 "ERF__PhysBCFunct_8cpp.html":[3,0,1,2,17],
 "ERF__PlanarBoundary_8H.html":[3,0,1,27,36],
+"ERF__PlanarBoundary_8H.html#a3b0057c83df539e16a091dce63486b43":[3,0,1,27,36,3],
+"ERF__PlanarBoundary_8H.html#ae5736f7db233e98814bc5b7cc2753495":[3,0,1,27,36,2],
 "ERF__PlanarBoundary_8H_source.html":[3,0,1,27,36],
 "ERF__PlanarBoundary_8cpp.html":[3,0,1,27,35],
+"ERF__PlanarBoundary_8cpp.html#a351e258ea6c114388518eeb58564c851":[3,0,1,27,35,1],
+"ERF__PlanarBoundary_8cpp.html#aff13d690958fec54c3a86a59ab521eb4":[3,0,1,27,35,0],
 "ERF__PlaneAverage_8H.html":[3,0,1,27,37],
 "ERF__PlaneAverage_8H_source.html":[3,0,1,27,37],
 "ERF__Plotfile2DCatalog_8H.html":[3,0,1,11,15],
@@ -245,9 +249,5 @@ var NAVTREEINDEX11 =
 "ERF__Plotfile2DInterpolator_8H.html":[3,0,1,11,19],
 "ERF__Plotfile2DInterpolator_8H.html#a49403be97cd25e11ea760597023274c7":[3,0,1,11,19,2],
 "ERF__Plotfile2DInterpolator_8H.html#aa7c8afd44c727285c8fc62581bdf265d":[3,0,1,11,19,3],
-"ERF__Plotfile2DInterpolator_8H.html#adecd0384772a0ed3e1b876fdaea7e395":[3,0,1,11,19,4],
-"ERF__Plotfile2DInterpolator_8H_source.html":[3,0,1,11,19],
-"ERF__Plotfile2DInterpolator_8cpp.html":[3,0,1,11,18],
-"ERF__Plotfile2DInterpolator_8cpp.html#a10356618abd6ef4f319606a36a9039a8":[3,0,1,11,18,2],
-"ERF__Plotfile2DInterpolator_8cpp.html#a4be3ce99997277f6d24ddfacb0421160":[3,0,1,11,18,3]
+"ERF__Plotfile2DInterpolator_8H.html#adecd0384772a0ed3e1b876fdaea7e395":[3,0,1,11,19,4]
 };

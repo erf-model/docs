@@ -1,5 +1,9 @@
 var NAVTREEINDEX24 =
 {
+"classERFFillPatcher.html#abad97ea0363653435fd9f922e10a53b2":[2,0,54,28],
+"classERFFillPatcher.html#ace667632120f87025e805461dd796599":[2,0,54,1],
+"classERFFillPatcher.html#acf6a9c991985f990efe6ef0b06104cfd":[2,0,54,5],
+"classERFFillPatcher.html#ad50e8c2b4c9cbfc3159e792f1f1cd389":[2,0,54,19],
 "classERFFillPatcher.html#ad6ac8a363c79d1a98703988478420586":[2,0,54,15],
 "classERFFillPatcher.html#ae36410e2a848977e145b29c755ac8b5d":[2,0,54,7],
 "classERFFillPatcher.html#afdb02cfc6d41b23967ff0a6f0e22b849":[2,0,54,25],
@@ -245,9 +249,5 @@ var NAVTREEINDEX24 =
 "classForestDrag.html#abbfaec28be888963879442d65e61839c":[2,0,71,5],
 "classForestDrag.html#ac1ad7adc817cd5f0284b013ac1ad73aa":[2,0,71,8],
 "classForestDrag.html#ac2ad0dd4a6ece8506db91d4f8fcca18d":[2,0,71,1],
-"classForestDrag.html#ac555895ff4bdf851e122c4ee3d818e84":[2,0,71,31],
-"classForestDrag.html#acb32d6e1088af2621a723601500db7b3":[2,0,71,11],
-"classForestDrag.html#acf2562ce29faa67b57b82a5998df3a95":[2,0,71,3],
-"classForestDrag.html#ad8061afe4ea0b11059a6094ae07243cf":[2,0,71,29],
-"classForestDrag.html#adbc0ef4fcdb2fd8d16a7b4e7ccefbbf1":[2,0,71,16]
+"classForestDrag.html#ac555895ff4bdf851e122c4ee3d818e84":[2,0,71,31]
 };

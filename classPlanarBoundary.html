@@ -189,42 +189,42 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;{</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">const</span> IndexType ixtype = mf.ixType();</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = mf.nComp();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">// define() clears m_buffers whenever the underlying layout changes, so a</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// source pointer is a stable per-field cache key for the lifetime of this</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">// PlanarBoundary definition.</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : <a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>) {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">if</span> (b.ixtype == ixtype &amp;&amp; b.ncomp == ncomp &amp;&amp;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            std::find(b.sources.begin(), b.sources.end(), &amp;mf) != b.sources.end()) {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordflow">return</span> *b.mf;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="comment">// Only an unfamiliar source field needs the more expensive derived-layout</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="comment">// construction below.  Fields with the same layout continue to share one</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="comment">// gather buffer.</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    BoxList bl_sfc(ixtype);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    Vector&lt;int&gt; pmap;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> src : <a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>) {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        bl_sfc.push_back(mf.boxArray()[src]);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        pmap.push_back(mf.DistributionMap()[src]);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    BoxArray ba(std::move(bl_sfc));</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    DistributionMapping dm(std::move(pmap));</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : <a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>) {</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">if</span> (b.ixtype == ixtype &amp;&amp; b.ncomp == ncomp &amp;&amp; b.ba == ba &amp;&amp; b.dm == dm) {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            b.sources.push_back(&amp;mf);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">return</span> *b.mf;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>.push_back(Buffer{ixtype, ncomp, ba, dm, {&amp;mf},</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                               std::make_unique&lt;MultiFab&gt;(ba, dm, ncomp, 0)});</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>.back().mf;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;{</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keyword">const</span> IndexType ixtype = mf.ixType();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = mf.nComp();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">// define() clears m_buffers whenever the underlying layout changes, so a</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">// source pointer is a stable per-field cache key for the lifetime of this</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// PlanarBoundary definition.</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : <a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>) {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">if</span> (b.ixtype == ixtype &amp;&amp; b.ncomp == ncomp &amp;&amp;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            std::find(b.sources.begin(), b.sources.end(), &amp;mf) != b.sources.end()) {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordflow">return</span> *b.mf;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">// Only an unfamiliar source field needs the more expensive derived-layout</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="comment">// construction below.  Fields with the same layout continue to share one</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="comment">// gather buffer.</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    BoxList bl_sfc(ixtype);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    Vector&lt;int&gt; pmap;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> src : <a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>) {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        bl_sfc.push_back(mf.boxArray()[src]);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        pmap.push_back(mf.DistributionMap()[src]);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    BoxArray ba(std::move(bl_sfc));</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    DistributionMapping dm(std::move(pmap));</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : <a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>) {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">if</span> (b.ixtype == ixtype &amp;&amp; b.ncomp == ncomp &amp;&amp; b.ba == ba &amp;&amp; b.dm == dm) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            b.sources.push_back(&amp;mf);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keywordflow">return</span> *b.mf;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>.push_back(Buffer{ixtype, ncomp, ba, dm, {&amp;mf},</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                               std::make_unique&lt;MultiFab&gt;(ba, dm, ncomp, 0)});</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>.back().mf;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
 <div class="ttc" id="aclassPlanarBoundary_html_a8e2564b3f2c170f8cdbb212b5e655f36"><div class="ttname"><a href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">PlanarBoundary::m_src_index</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_src_index</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:122</div></div>
 <div class="ttc" id="aclassPlanarBoundary_html_adab4e0e3d6d7d0b8c14ae3cb849dfcf4"><div class="ttname"><a href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">PlanarBoundary::m_buffers</a></div><div class="ttdeci">amrex::Vector&lt; Buffer &gt; m_buffers</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:123</div></div>
 </div><!-- fragment -->
@@ -337,13 +337,24 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassPlanarBoundary_html_aa1da3a6565979c3158e81b31a8ebbac9"><div class="ttname"><a href="classPlanarBoundary.html#aa1da3a6565979c3158e81b31a8ebbac9">PlanarBoundary::m_ba_sfc</a></div><div class="ttdeci">amrex::BoxArray m_ba_sfc</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:120</div></div>
 <div class="ttc" id="aclassPlanarBoundary_html_abda3423e91a4092352081e3f315093cb"><div class="ttname"><a href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">PlanarBoundary::m_nplanar</a></div><div class="ttdeci">int m_nplanar</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:119</div></div>
 <div class="ttc" id="aclassPlanarBoundary_html_afb26c0ffac627d1b497b53ec99670fcc"><div class="ttname"><a href="classPlanarBoundary.html#afb26c0ffac627d1b497b53ec99670fcc">PlanarBoundary::surface_index</a></div><div class="ttdeci">const amrex::Vector&lt; int &gt; &amp; surface_index() const</div><div class="ttdoc">Index of each surface copy in the planar BoxArray.</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:97</div></div>
-</div><!-- fragment --><div class="dynheader">
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#a68174258bfc0f89b45b68ffd0c46a35f">ERF::FillPlot2DVars()</a>.</p>
+<div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_cgraph.png" border="0" usemap="#aclassPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_cgraph" alt=""/></div>
 <map name="aclassPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_cgraph" id="aclassPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_cgraph">
 <area shape="rect" title=" " alt="" coords="5,13,177,39"/>
 <area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="225,5,408,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_icgraph.png" border="0" usemap="#aclassPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_icgraph" alt=""/></div>
+<map name="aclassPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_icgraph" id="aclassPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_icgraph">
+<area shape="rect" title=" " alt="" coords="197,5,369,32"/>
+<area shape="rect" href="classERF.html#a68174258bfc0f89b45b68ffd0c46a35f" title=" " alt="" coords="5,5,149,32"/>
 </map>
 </div>
 
@@ -421,15 +432,26 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// Fill every copy, valid region and ghost cells, from the computed surface copies</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    mf.ParallelCopy(buf, 0, 0, ncomp, IntVect(0), mf.nGrowVect(), period);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="ttc" id="aclassPlanarBoundary_html_a82a3c8d2b99c297ceb94d3e8a4e2fa5f"><div class="ttname"><a href="classPlanarBoundary.html#a82a3c8d2b99c297ceb94d3e8a4e2fa5f">PlanarBoundary::buffer</a></div><div class="ttdeci">amrex::MultiFab &amp; buffer(const amrex::MultiFab &amp;mf)</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.cpp:135</div></div>
+<div class="ttc" id="aclassPlanarBoundary_html_a82a3c8d2b99c297ceb94d3e8a4e2fa5f"><div class="ttname"><a href="classPlanarBoundary.html#a82a3c8d2b99c297ceb94d3e8a4e2fa5f">PlanarBoundary::buffer</a></div><div class="ttdeci">amrex::MultiFab &amp; buffer(const amrex::MultiFab &amp;mf)</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.cpp:194</div></div>
 <div class="ttc" id="aclassPlanarBoundary_html_aeb24ab9e612793d1de17501f6b25cef6"><div class="ttname"><a href="classPlanarBoundary.html#aeb24ab9e612793d1de17501f6b25cef6">PlanarBoundary::gather_surface</a></div><div class="ttdeci">void gather_surface(const amrex::MultiFab &amp;mf, amrex::MultiFab &amp;dst, int scomp, int dcomp, int ncomp) const</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.cpp:109</div></div>
-</div><!-- fragment --><div class="dynheader">
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#a68174258bfc0f89b45b68ffd0c46a35f">ERF::FillPlot2DVars()</a>.</p>
+<div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlanarBoundary_a16323c083de3fd8114f537c1d8eb1218_cgraph.png" border="0" usemap="#aclassPlanarBoundary_a16323c083de3fd8114f537c1d8eb1218_cgraph" alt=""/></div>
 <map name="aclassPlanarBoundary_a16323c083de3fd8114f537c1d8eb1218_cgraph" id="aclassPlanarBoundary_a16323c083de3fd8114f537c1d8eb1218_cgraph">
 <area shape="rect" title=" " alt="" coords="5,13,153,39"/>
 <area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="201,5,384,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPlanarBoundary_a16323c083de3fd8114f537c1d8eb1218_icgraph.png" border="0" usemap="#aclassPlanarBoundary_a16323c083de3fd8114f537c1d8eb1218_icgraph" alt=""/></div>
+<map name="aclassPlanarBoundary_a16323c083de3fd8114f537c1d8eb1218_icgraph" id="aclassPlanarBoundary_a16323c083de3fd8114f537c1d8eb1218_icgraph">
+<area shape="rect" title=" " alt="" coords="197,5,345,32"/>
+<area shape="rect" href="classERF.html#a68174258bfc0f89b45b68ffd0c46a35f" title=" " alt="" coords="5,5,149,32"/>
 </map>
 </div>
 
@@ -569,6 +591,17 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> std::binary_search(<a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>.begin(), <a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>.end(), planar_index);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 </div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#a68174258bfc0f89b45b68ffd0c46a35f">ERF::FillPlot2DVars()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPlanarBoundary_abf8132b8538886535122f59255dee48e_icgraph.png" border="0" usemap="#aclassPlanarBoundary_abf8132b8538886535122f59255dee48e_icgraph" alt=""/></div>
+<map name="aclassPlanarBoundary_abf8132b8538886535122f59255dee48e_icgraph" id="aclassPlanarBoundary_abf8132b8538886535122f59255dee48e_icgraph">
+<area shape="rect" title="Whether a planar&#45;box index is the computed copy that touches the surface." alt="" coords="197,5,340,47"/>
+<area shape="rect" href="classERF.html#a68174258bfc0f89b45b68ffd0c46a35f" title=" " alt="" coords="5,13,149,39"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="af9014d99883b62ba97925b327af17e69"></a>
