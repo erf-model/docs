@@ -1,7 +1,5 @@
 var NAVTREEINDEX17 =
 {
-"ERF__TerrainSurfaceSlab_8cpp.html#acaffb6f0becfe05819911af3cfa2c374":[3,0,1,27,51,1],
-"ERF__ThinBodyWallDist_8cpp.html":[3,0,1,27,53],
 "ERF__ThinBodyWallDist_8cpp.html#ac7d883d31653c6ddcbb78bebbdf9339c":[3,0,1,27,53,0],
 "ERF__TileNoZ_8H.html":[3,0,1,27,54],
 "ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00":[3,0,1,27,54,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX17 =
 "ERF__UpdateWSubsidence__Bomex_8H.html":[3,0,1,20,73],
 "ERF__UpdateWSubsidence__Bomex_8H.html#a10051474073f195f0f1a21738ad67576":[3,0,1,20,73,8],
 "ERF__UpdateWSubsidence__Bomex_8H.html#a343022aa079c8dd5767df8de5b49984f":[3,0,1,20,73,3],
-"ERF__UpdateWSubsidence__Bomex_8H.html#a48b3817c0329c4f7ce8af2ba02365476":[3,0,1,20,73,9]
+"ERF__UpdateWSubsidence__Bomex_8H.html#a48b3817c0329c4f7ce8af2ba02365476":[3,0,1,20,73,9],
+"ERF__UpdateWSubsidence__Bomex_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb":[3,0,1,20,73,2],
+"ERF__UpdateWSubsidence__Bomex_8H.html#a60c3baa07467d4018359d146b0484211":[3,0,1,20,73,5]
 };

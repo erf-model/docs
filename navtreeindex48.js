@@ -1,7 +1,5 @@
 var NAVTREEINDEX48 =
 {
-"structSAMPhaseFractions.html#a6369f0c62d9b61c96720a53547ceac72":[2,0,142,2],
-"structSAMPhaseFractions.html#a73f8e00f9b519a6e38b288bb05ddc93f":[2,0,142,1],
 "structSAMPrecipCellDiagnostics.html":[2,0,143],
 "structSAMPrecipCellDiagnostics.html#a00aec052e0cb147b679acee08c7ef2bc":[2,0,143,3],
 "structSAMPrecipCellDiagnostics.html#a2885e87ee78d16caa7fac54d20e57786":[2,0,143,4],
@@ -249,5 +247,7 @@ var NAVTREEINDEX48 =
 "structScalarDiffusionFluxPolicy.html#ac9250124c0b53f86cc23bb0d874f6986":[2,0,157,4],
 "structScalarDiffusionFluxPolicy.html#af305b4dcec253dbb8c7029b2ef8b31df":[2,0,157,1],
 "structScalarDiffusionPrescribedFluxes.html":[2,0,158],
-"structScalarDiffusionPrescribedFluxes.html#a03e66097197d5fe8ba8dbe7cdbca5135":[2,0,158,4]
+"structScalarDiffusionPrescribedFluxes.html#a03e66097197d5fe8ba8dbe7cdbca5135":[2,0,158,4],
+"structScalarDiffusionPrescribedFluxes.html#a2196e2d28547651ac4160d0b7bd6dcdd":[2,0,158,10],
+"structScalarDiffusionPrescribedFluxes.html#a324b152f5df6ffd6312c140204e9b85d":[2,0,158,2]
 };
