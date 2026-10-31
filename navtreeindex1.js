@@ -138,6 +138,7 @@ var NAVTREEINDEX1 =
 "ERF__CloudChamber_8H_source.html":[3,0,1,20,0],
 "ERF__CloudSAM_8cpp.html":[3,0,1,15,4,0],
 "ERF__CoarseFineFaces_8cpp.html":[3,0,1,13,0],
+"ERF__CoarseFineFaces_8cpp.html#a58016c8fdb4edffdfc59aafcfc001dd6":[3,0,1,13,0,0],
 "ERF__ColumnBands_8H.html":[3,0,1,27,3],
 "ERF__ColumnBands_8H.html#ab59a993bb6270b90b71952db84887fdc":[3,0,1,27,3,0],
 "ERF__ColumnBands_8H.html#ac7ddd54057538ba76178629d3118df6d":[3,0,1,27,3,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286":[3,0,1,4,4,8,1],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc":[3,0,1,4,4,8,0],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248babcbe024a60f6921af0060fd096ac8307":[3,0,1,4,4,8,8],
-"ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bacec8728fd270452c9985e46f971d6935":[3,0,1,4,4,8,7],
-"ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391":[3,0,1,4,4,8,6]
+"ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bacec8728fd270452c9985e46f971d6935":[3,0,1,4,4,8,7]
 };
