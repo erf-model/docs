@@ -5,5 +5,6 @@ var ERF__TI__slow__headers_8H =
     [ "erf_slow_rhs_post", "ERF__TI__slow__headers_8H.html#a846d5cf953a2fb03290400f3809a111b", null ],
     [ "erf_slow_rhs_pre", "ERF__TI__slow__headers_8H.html#a199c0bc7ddfbca8c3484d8ef8692f1c1", null ],
     [ "IsRefluxStage", "ERF__TI__slow__headers_8H.html#a0515f525b9d1fec75f7ff5dcc72884e0", null ],
-    [ "RefluxStageWeight", "ERF__TI__slow__headers_8H.html#a811ac0812b4b7b074a9ad2cebc781178", null ]
+    [ "RefluxStageWeight", "ERF__TI__slow__headers_8H.html#a811ac0812b4b7b074a9ad2cebc781178", null ],
+    [ "StageFluxWeight", "ERF__TI__slow__headers_8H.html#a2391f0c7294814167af4b28fb92f9a42", null ]
 ];

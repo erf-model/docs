@@ -2,6 +2,7 @@ var classERFFillPatcher =
 [
     [ "ERFFillPatcher", "classERFFillPatcher.html#a4236a9ab8003847e327495ff170a9a7a", null ],
     [ "BuildMask", "classERFFillPatcher.html#ace667632120f87025e805461dd796599", null ],
+    [ "crse_times", "classERFFillPatcher.html#a52b2a25c968caeca276b0cd9f99da829", null ],
     [ "Define", "classERFFillPatcher.html#a3dcdf3322c58c07eec765f6e3413ba68", null ],
     [ "Fill", "classERFFillPatcher.html#a1293b67fb21389c95c423465d04eb686", null ],
     [ "FillRelax", "classERFFillPatcher.html#a85a543672f1e6220a305e20c73e987c1", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bacec8728fd270452c9985e46f971d6935":[3,0,1,4,4,8,7],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391":[3,0,1,4,4,8,6],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e":[3,0,1,4,4,8,4],
 "ERF__DataStruct_8H.html#a0c00b090194b0ea199bead5a10382b8b":[3,0,1,4,4,27],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__FillIntermediatePatch_8cpp.html":[3,0,1,2,9],
 "ERF__FillPatch_8cpp.html":[3,0,1,2,10],
 "ERF__FillPatcher_8H.html":[3,0,1,2,12],
-"ERF__FillPatcher_8H_source.html":[3,0,1,2,12],
-"ERF__FillPatcher_8cpp.html":[3,0,1,2,11]
+"ERF__FillPatcher_8H_source.html":[3,0,1,2,12]
 };
