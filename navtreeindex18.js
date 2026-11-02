@@ -1,5 +1,7 @@
 var NAVTREEINDEX18 =
 {
+"ERF__UpdateSAM_8cpp.html":[3,0,1,15,4,7],
+"ERF__UpdateSatAdj_8cpp.html":[3,0,1,15,5,3],
 "ERF__UpdateSources_8H.html":[3,0,1,20,72],
 "ERF__UpdateSources_8H.html#a2ee552be71aa45c0d5006d63b4b2ec00":[3,0,1,20,72,1],
 "ERF__UpdateSources_8H.html#a54bb0eeb01775cdd9ad38cbd41fbbc5a":[3,0,1,20,72,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX18 =
 "ERF__module__mp__morr__two__moment_8F90.html#a6c92b5839436f4d72dd0f7c2871db0ad":[3,0,1,15,2,3,18],
 "ERF__module__mp__morr__two__moment_8F90.html#a6ecff2c6fe26928e12c3e2d842fea562":[3,0,1,15,2,3,2],
 "ERF__module__mp__morr__two__moment_8F90.html#a728bfa081eb8d78296029ba2cc18ead7":[3,0,1,15,2,3,92],
-"ERF__module__mp__morr__two__moment_8F90.html#a75a4b33dde8f3058e9eef555f321b10a":[3,0,1,15,2,3,94],
-"ERF__module__mp__morr__two__moment_8F90.html#a769e12f2be7e40122eed9f4d6ef16709":[3,0,1,15,2,3,56],
-"ERF__module__mp__morr__two__moment_8F90.html#a79ca736bbd6243474f5b3d3ffe1ec1d3":[3,0,1,15,2,3,49]
+"ERF__module__mp__morr__two__moment_8F90.html#a75a4b33dde8f3058e9eef555f321b10a":[3,0,1,15,2,3,94]
 };

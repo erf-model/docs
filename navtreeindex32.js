@@ -1,5 +1,7 @@
 var NAVTREEINDEX32 =
 {
+"classSatMethods.html":[2,0,152],
+"classSatMethods.html#a04e5fc642c88eda0767e507a9183682b":[2,0,152,9],
 "classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6":[2,0,152,1],
 "classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd":[2,0,152,6],
 "classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766":[2,0,152,14],
@@ -247,7 +249,5 @@ var NAVTREEINDEX32 =
 "classSurfaceLayer.html#a2c5da51e5a124e511df1a182b1cdef20":[2,0,207,165],
 "classSurfaceLayer.html#a2d5f39701610bed292158c9ccff486b5":[2,0,207,84],
 "classSurfaceLayer.html#a2d9040ed167429e929a7c590e6390e58":[2,0,207,95],
-"classSurfaceLayer.html#a32494099aa0b1b6885e875d1051687b7":[2,0,207,162],
-"classSurfaceLayer.html#a325a1c27c6de3c673aa25ddf256eab7b":[2,0,207,77],
-"classSurfaceLayer.html#a327a5dcdc650ca219dd85bc664c5f0dd":[2,0,207,116]
+"classSurfaceLayer.html#a32494099aa0b1b6885e875d1051687b7":[2,0,207,162]
 };

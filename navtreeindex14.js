@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"ERF__SBMCanonicalIdentity_8H.html":[3,0,1,15,6,5],
+"ERF__SBMCanonicalIdentity_8H.html#a374c79fbf0661234b40046f4262b660c":[3,0,1,15,6,5,0],
 "ERF__SBMCanonicalIdentity_8H_source.html":[3,0,1,15,6,5],
 "ERF__SBMConstraintGroups_8H.html":[3,0,1,15,6,7],
 "ERF__SBMConstraintGroups_8H.html#a076860e7882aee6127d51b661e87b742":[3,0,1,15,6,7,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "ERF__ScalarDiffusion_8H.html#a609484b863d5d6aa8826cdbd67d06ebc":[3,0,1,6,28,22],
 "ERF__ScalarDiffusion_8H.html#a667bbc85d2d12d46686e4c139131222c":[3,0,1,6,28,9],
 "ERF__ScalarDiffusion_8H.html#a66a33436ba2e16acef28ad82c4ad176e":[3,0,1,6,28,8],
-"ERF__ScalarDiffusion_8H.html#a66f6ab94a0232d7475bc21f3e6bd1fba":[3,0,1,6,28,43],
-"ERF__ScalarDiffusion_8H.html#a6b562496d25c18c2f1cfd0e6746933d8":[3,0,1,6,28,13],
-"ERF__ScalarDiffusion_8H.html#a70a98a5430cfd0944e868b1d7f818477":[3,0,1,6,28,37]
+"ERF__ScalarDiffusion_8H.html#a66f6ab94a0232d7475bc21f3e6bd1fba":[3,0,1,6,28,43]
 };

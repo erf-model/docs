@@ -1,13 +1,14 @@
 var ERF__InitCustomPert__ScalarAdvDiff_8H =
 [
     [ "if", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#afe9cad7edda3a1047098003dd8ad9d2f", null ],
-    [ "ParallelFor", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#ad28371e4c71cc1d77e900a900501eb4f", null ],
+    [ "ParallelFor", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#a102d61884a590973fdc46923f86d0a6b", null ],
     [ "pp", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#a560a8df64f1b30c30d0d100ee051a1fb", null ],
     [ "query", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#a5dfa7762d2fa171ebc488bb4925c0c12", null ],
     [ "query", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#a9c609423b1c9a34e934a2e4200b484e7", null ],
     [ "query", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#a4d1efda4964209c32639de53f6eda08a", null ],
     [ "query", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#ad43921f167a7c50e44323710ad38b4cb", null ],
     [ "query", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#a42459d127d2d715bf433e47e2f58972a", null ],
+    [ "query", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#a9ff709a420de5ed28786ee2fb200318b", null ],
     [ "query", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#af588d6ded72010445c1e55ef92c7b516", null ],
     [ "query", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#aabfdc4bff63853f7665857475f27b031", null ],
     [ "query", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#a0e397d18692b178d5ebbf12a1df0c6d6", null ],
@@ -18,6 +19,7 @@ var ERF__InitCustomPert__ScalarAdvDiff_8H =
     [ "prob_type", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#acd4be70decb52e2f9460e71708b197a2", null ],
     [ "rad_0", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#af686714c0058e88fe58d897c790297a9", null ],
     [ "rho_0", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#a3e766fc466013ff394d51a37dc2c2549", null ],
+    [ "theta_pert_amp", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#af9c6ab33833e039cbd4e9534753ac7d6", null ],
     [ "use_z_phys", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#a05a6cf5425ee9d277307ab329feed8df", null ],
     [ "xc_frac", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#a321323b8a0b0353c5aeed9cb11101059", null ],
     [ "yc_frac", "ERF__InitCustomPert__ScalarAdvDiff_8H.html#a9968a93d4b2cbbe775f7326b33a6f685", null ],
