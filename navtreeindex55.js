@@ -1,5 +1,6 @@
 var NAVTREEINDEX55 =
 {
+"structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html":[2,0,12,1],
 "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html#a98020d2325a3b8f106c4e89fa3fa8a03":[2,0,12,1,1],
 "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html#ab32d696e6e44aa35defe6837a93c3786":[2,0,12,1,2],
 "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html#ac7cb07f2e247d83d780de6ccf75e542a":[2,0,12,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX55 =
 "structplotfile2d_1_1WaterPathDescriptor.html#a430cc11ee9c944948145ecba0ea90f15":[2,0,20,11,2],
 "structplotfile2d_1_1WaterPathDescriptor.html#a84095135b3bc8cf2a491d35a4140139d":[2,0,20,11,1],
 "structrico__flux.html":[2,0,136],
-"structrico__flux.html#a164569a6f654aae3477872738fec82b2":[2,0,136,0],
-"structrico__flux.html#a38f75d6313c115980e3df2a42f0b29d2":[2,0,136,4]
+"structrico__flux.html#a164569a6f654aae3477872738fec82b2":[2,0,136,0]
 };
