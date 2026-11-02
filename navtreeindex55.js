@@ -1,5 +1,7 @@
 var NAVTREEINDEX55 =
 {
+"structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html#ac7cb07f2e247d83d780de6ccf75e542a":[2,0,12,1,0],
+"structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html":[2,0,12,0],
 "structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html#a0e4d7c00ae16d635cef72255dc65047c":[2,0,12,0,0],
 "structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html#a21f539c4ced0b92f8bc221350b17d8f7":[2,0,12,0,1],
 "structerf__wall__scalar__bc_1_1WallFaceParseResult.html":[2,0,12,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX55 =
 "structrico__flux.html#a164569a6f654aae3477872738fec82b2":[2,0,136,0],
 "structrico__flux.html#a38f75d6313c115980e3df2a42f0b29d2":[2,0,136,4],
 "structrico__flux.html#a475fc69ee0b62e0853d925ba5dee4b1c":[2,0,136,6],
-"structrico__flux.html#a67b034a4b25ffb3864431dd769a7908f":[2,0,136,1],
-"structrico__flux.html#a90f2fb2a88eefb24d1afaf3ef5393706":[2,0,136,2],
-"structrico__flux.html#ac5f264c9f90e326c3f128098b0cb2376":[2,0,136,5]
+"structrico__flux.html#a67b034a4b25ffb3864431dd769a7908f":[2,0,136,1]
 };

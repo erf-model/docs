@@ -1,5 +1,7 @@
 var NAVTREEINDEX52 =
 {
+"structTwoStreamParams.html#a96f5f6f3a8ee7224d99e7122c53709f6":[2,0,220,20],
+"structTwoStreamParams.html#a97de66694399a0ccb5b6472c67910cc2":[2,0,220,2],
 "structTwoStreamParams.html#aa68ecc097648a603076f3f6c3819fc94":[2,0,220,39],
 "structTwoStreamParams.html#ab5988ad2b6b34ee37c1573dabd4c6522":[2,0,220,30],
 "structTwoStreamParams.html#abc59c4f003c88248ac7a7b132cd94aab":[2,0,220,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX52 =
 "structerf__auxiliary_1_1AuxiliaryStageContext.html":[2,0,0,11],
 "structerf__auxiliary_1_1AuxiliaryStageContext.html#a05a1055a0659a83b27cc59e60ab66e04":[2,0,0,11,2],
 "structerf__auxiliary_1_1AuxiliaryStageContext.html#a08616e446d66a38b09df3c551e4093fc":[2,0,0,11,8],
-"structerf__auxiliary_1_1AuxiliaryStageContext.html#a0ae0d00417f8d70f1ff8dc8dffcd3a00":[2,0,0,11,7],
-"structerf__auxiliary_1_1AuxiliaryStageContext.html#a1f958cb0e83dbbfa7c85d99b983332c3":[2,0,0,11,9],
-"structerf__auxiliary_1_1AuxiliaryStageContext.html#a3a10aaefae4806cafd963130862f2c55":[2,0,0,11,11]
+"structerf__auxiliary_1_1AuxiliaryStageContext.html#a0ae0d00417f8d70f1ff8dc8dffcd3a00":[2,0,0,11,7]
 };
