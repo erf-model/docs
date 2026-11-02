@@ -87,6 +87,7 @@ var structSolverChoice =
     [ "hindcast_zhi_sponge_strength", "structSolverChoice.html#ae372813c4204d92814dc7062ac4dd2c3", null ],
     [ "hurricane_eye_latitude", "structSolverChoice.html#aae635d94c25ea4ecab12438ddc19bea7", null ],
     [ "hurricane_eye_longitude", "structSolverChoice.html#aa125ccb07e7203dec3a670345795cdd1", null ],
+    [ "if_average_down", "structSolverChoice.html#aab21b5293c876683ff7c7d3e3bc648ad", null ],
     [ "if_Cd_momentum", "structSolverChoice.html#a22d441e53b28ba1c505f04017fa62cdf", null ],
     [ "if_Cd_scalar", "structSolverChoice.html#ab1ffc3b644c6678c43a1c0fc7998bb1e", null ],
     [ "if_damp_alpha", "structSolverChoice.html#a7fc1c5a57eb8aae17a438328e75d034f", null ],

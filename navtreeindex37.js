@@ -1,5 +1,7 @@
 var NAVTREEINDEX37 =
 {
+"classpolygon__.html#ab7787d0004cda4ac8cd3bf06daebb188":[2,0,126,17],
+"classpolygon__.html#abc74b533800e809c1ccc98c95e27fd34":[2,0,126,19],
 "classpolygon__.html#abe76c7126ae5539676381c6c179f80f9":[2,0,126,12],
 "classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8":[2,0,126,6],
 "classpolygon__.html#ac7c00c6cb5eb0da60e9f88a46a58e6dc":[2,0,126,20],
@@ -230,8 +232,8 @@ var NAVTREEINDEX37 =
 "globals_y.html":[3,1,0,24],
 "globals_z.html":[3,1,0,25],
 "hierarchy.html":[2,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -245,9 +247,7 @@ var NAVTREEINDEX37 =
 "interfacemodule__libmassv_1_1vsqrt.html":[2,0,15,1],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,15,1,1],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,15,1,0],
-"interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,15,1,2],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,15,1,3],
-"main_8cpp.html":[3,0,1,42],
-"main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[3,0,1,42,3],
-"main_8cpp.html#a183e783116d02836167ccbed3b28c1d3":[3,0,1,42,0]
+"interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,15,1,2],
+"main_8cpp.html":[3,0,1,42]
 };
