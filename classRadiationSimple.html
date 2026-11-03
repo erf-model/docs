@@ -130,8 +130,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac9ebe99c61308640466ee694848fe778"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7236402f81fdbed48467a3c67b25f3e6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadiationSimple.html#a7236402f81fdbed48467a3c67b25f3e6">Init</a> (const amrex::Geometry &amp;geom, const amrex::BoxArray &amp;ba, amrex::MultiFab *cons_in) override</td></tr>
 <tr class="separator:a7236402f81fdbed48467a3c67b25f3e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a081881d73e7a80265f2afbf12f5103bb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadiationSimple.html#a081881d73e7a80265f2afbf12f5103bb">Run</a> (int &amp;level, int &amp;step, double &amp;time, const double &amp;dt, const amrex::BoxArray &amp;ba, amrex::Geometry &amp;geom, amrex::MultiFab *cons_in, amrex::iMultiFab *lmask, amrex::MultiFab *t_surf, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;lsm_input_ptrs, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;lsm_output_ptrs, amrex::MultiFab *qheating_rates, amrex::MultiFab *rad_fluxes, amrex::MultiFab *z_phys, amrex::MultiFab *lat, amrex::MultiFab *lon, const bool updated_lsm, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;declin, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;calday) override</td></tr>
-<tr class="separator:a081881d73e7a80265f2afbf12f5103bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0b3038c5e23f265a4108c404c2283ef"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadiationSimple.html#ad0b3038c5e23f265a4108c404c2283ef">Run</a> (int &amp;level, int &amp;step, double &amp;time, const double &amp;dt, const amrex::BoxArray &amp;ba, amrex::Geometry &amp;geom, amrex::MultiFab *cons_in, amrex::iMultiFab *lmask, amrex::MultiFab *t_surf, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;lsm_input_ptrs, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;lsm_output_ptrs, amrex::MultiFab *qheating_rates, amrex::MultiFab *rad_fluxes, amrex::MultiFab *z_phys, amrex::MultiFab *lat, amrex::MultiFab *lon, const bool force_update, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;declin, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;calday) override</td></tr>
+<tr class="separator:ad0b3038c5e23f265a4108c404c2283ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad17d203f960fa01eb0a8b458a442c686"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadiationSimple.html#ad17d203f960fa01eb0a8b458a442c686">WriteDataLog</a> (const double &amp;time) override</td></tr>
 <tr class="separator:ad17d203f960fa01eb0a8b458a442c686"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65c6394323de777d240073dd6dc1fd08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadiationSimple.html#a65c6394323de777d240073dd6dc1fd08">is_nested_patch</a> () const override</td></tr>
@@ -252,7 +252,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="astructMoistureComponentIndices_html_a5182498a079eeba7a43c0f96ed742991"><div class="ttname"><a href="structMoistureComponentIndices.html#a5182498a079eeba7a43c0f96ed742991">MoistureComponentIndices::qi</a></div><div class="ttdeci">int qi</div><div class="ttdoc">cloud ice</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:264</div></div>
 <div class="ttc" id="astructMoistureComponentIndices_html_a6e5a18c589f998753e87ccb458a5374b"><div class="ttname"><a href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">MoistureComponentIndices::qv</a></div><div class="ttdeci">int qv</div><div class="ttdoc">water vapor</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:262</div></div>
 <div class="ttc" id="astructMoistureComponentIndices_html_ab99846e54aa46d95389fd611836723e3"><div class="ttname"><a href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">MoistureComponentIndices::qc</a></div><div class="ttdeci">int qc</div><div class="ttdoc">cloud liquid water</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:263</div></div>
-<div class="ttc" id="astructSolverChoice_html_ad82941f981c865d555d426246add956d"><div class="ttname"><a href="structSolverChoice.html#ad82941f981c865d555d426246add956d">SolverChoice::moisture_indices</a></div><div class="ttdeci">MoistureComponentIndices moisture_indices</div><div class="ttdoc">Index map of the moisture data carried by the active scheme: conserved-state components for the speci...</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:2864</div></div>
+<div class="ttc" id="astructSolverChoice_html_ad82941f981c865d555d426246add956d"><div class="ttname"><a href="structSolverChoice.html#ad82941f981c865d555d426246add956d">SolverChoice::moisture_indices</a></div><div class="ttdeci">MoistureComponentIndices moisture_indices</div><div class="ttdoc">Index map of the moisture data carried by the active scheme: conserved-state components for the speci...</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:2989</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -439,8 +439,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a081881d73e7a80265f2afbf12f5103bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a081881d73e7a80265f2afbf12f5103bb">&#9670;&nbsp;</a></span>Run()</h2>
+<a id="ad0b3038c5e23f265a4108c404c2283ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0b3038c5e23f265a4108c404c2283ef">&#9670;&nbsp;</a></span>Run()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -548,7 +548,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>updated_lsm</em>, </td>
+          <td class="paramname"><em>force_update</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -575,7 +575,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classIRadiation.html#a43d8e0c8215a781190cf9c6d6e610049">IRadiation</a>.</p>
+<p>Implements <a class="el" href="classIRadiation.html#a0af58c7bb942d8e8e1eea45e754816f3">IRadiation</a>.</p>
 <div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classRadiationSimple.html#afc598b43152af1ffdfbcf3623a190eee">m_partial_columns</a>) {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// Level 0 has no parent to interpolate from: grids split in z are unsupported here.</span></div>
@@ -735,8 +735,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classRadiationSimple_a081881d73e7a80265f2afbf12f5103bb_cgraph.png" border="0" usemap="#aclassRadiationSimple_a081881d73e7a80265f2afbf12f5103bb_cgraph" alt=""/></div>
-<map name="aclassRadiationSimple_a081881d73e7a80265f2afbf12f5103bb_cgraph" id="aclassRadiationSimple_a081881d73e7a80265f2afbf12f5103bb_cgraph">
+<div class="center"><img src="classRadiationSimple_ad0b3038c5e23f265a4108c404c2283ef_cgraph.png" border="0" usemap="#aclassRadiationSimple_ad0b3038c5e23f265a4108c404c2283ef_cgraph" alt=""/></div>
+<map name="aclassRadiationSimple_ad0b3038c5e23f265a4108c404c2283ef_cgraph" id="aclassRadiationSimple_ad0b3038c5e23f265a4108c404c2283ef_cgraph">
 <area shape="rect" title=" " alt="" coords="5,122,168,149"/>
 <area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="216,5,399,47"/>
 <area shape="rect" href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b" title=" " alt="" coords="245,71,369,98"/>

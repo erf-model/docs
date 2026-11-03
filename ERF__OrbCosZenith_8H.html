@@ -195,19 +195,19 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    }</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160; </div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <span class="comment">// adjust declination so that its tangent will be defined</span></div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <span class="keywordtype">double</span> phi;</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a>;</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    <span class="keywordflow">if</span> (declin == <a class="code" href="ERF__NumericalConstants_8H.html#ad51e17db99d11b190b2b57a23a518f7e">PIoTwo</a>) {</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        phi = declin - double(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-05));</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        <a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a> = declin - double(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-05));</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (declin == -<a class="code" href="ERF__NumericalConstants_8H.html#ad51e17db99d11b190b2b57a23a518f7e">PIoTwo</a>) {</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        phi = declin + double(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-05));</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        <a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a> = declin + double(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-05));</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        phi = declin;</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        <a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a> = declin;</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    }</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160; </div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <span class="comment">// define the cosine of the myhalf-day length</span></div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <span class="comment">// adjust for cases of all daylight or all night</span></div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    <span class="keywordtype">double</span> h;</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    <span class="keywordtype">double</span> cos_h = - std::tan(del) * std::tan(phi);</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    <span class="keywordtype">double</span> cos_h = - std::tan(del) * std::tan(<a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a>);</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <span class="keywordflow">if</span> (cos_h &lt;= -<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>) {</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;        h = <a class="code" href="ERF__NumericalConstants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>;</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cos_h &gt;= <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>) {</div>
@@ -282,8 +282,18 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:46</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_ad51e17db99d11b190b2b57a23a518f7e"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#ad51e17db99d11b190b2b57a23a518f7e">PIoTwo</a></div><div class="ttdeci">constexpr amrex::Real PIoTwo</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:47</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+<div class="ttc" id="anamespaceib__wall_html_a7dc8e106dfd34123ba8cd4de917cc291"><div class="ttname"><a href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">ib_wall::phi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real phi(amrex::Real d, amrex::Real z0, amrex::Real psi) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_ImmersedWallCell.H:142</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__OrbCosZenith_8H.html#a7380ad95833ee442df50d86582d1e6de">orbital_cos_zenith()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__OrbCosZenith_8H_a4b831e23dba85573fa017c7bcbbd615e_cgraph.png" border="0" usemap="#aERF__OrbCosZenith_8H_a4b831e23dba85573fa017c7bcbbd615e_cgraph" alt=""/></div>
+<map name="aERF__OrbCosZenith_8H_a4b831e23dba85573fa017c7bcbbd615e_cgraph" id="aERF__OrbCosZenith_8H_a4b831e23dba85573fa017c7bcbbd615e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,176,32"/>
+<area shape="rect" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291" title=" " alt="" coords="224,5,320,32"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -293,7 +303,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__OrbCosZenith_8H.html#a7380ad95833ee442df50d86582d1e6de" title=" " alt="" coords="593,5,733,32"/>
 <area shape="rect" href="classRadiation.html#a3eab5714d47ed767884a66a8dc1058df" title=" " alt="" coords="396,5,545,32"/>
 <area shape="rect" href="classRadiation.html#a1ddb33bff9f775945f0c0eaf066561ab" title=" " alt="" coords="171,5,348,32"/>
-<area shape="rect" href="classRadiation.html#a59940ab8e49f18ff5de6fe0c2710ab14" title=" " alt="" coords="5,5,123,32"/>
+<area shape="rect" href="classRadiation.html#a61d5d38713a0510eb86d93f7cbbd043d" title=" " alt="" coords="5,5,123,32"/>
 </map>
 </div>
 
@@ -358,7 +368,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classRadiation.html#a3eab5714d47ed767884a66a8dc1058df" title=" " alt="" coords="404,8,553,35"/>
 <area shape="rect" href="ERF__TwoStreamRadiation_8cpp.html#a0f0467b71baf040e5e59eca06cfa460e" title="The calendar sun of the two&#45;stream model at a UTC epoch time (start_time + t)." alt="" coords="396,60,561,87"/>
 <area shape="rect" href="classRadiation.html#a1ddb33bff9f775945f0c0eaf066561ab" title=" " alt="" coords="171,5,348,32"/>
-<area shape="rect" href="classRadiation.html#a59940ab8e49f18ff5de6fe0c2710ab14" title=" " alt="" coords="5,5,123,32"/>
+<area shape="rect" href="classRadiation.html#a61d5d38713a0510eb86d93f7cbbd043d" title=" " alt="" coords="5,5,123,32"/>
 <area shape="rect" href="classERF.html#a386fe5fb8cb105818901f0234fbc2025" title=" " alt="" coords="186,57,333,98"/>
 </map>
 </div>
@@ -455,6 +465,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,35,145,61"/>
 <area shape="rect" href="ERF__OrbCosZenith_8H.html#a4b831e23dba85573fa017c7bcbbd615e" title=" " alt="" coords="193,5,364,32"/>
 <area shape="rect" href="ERF__OrbCosZenith_8H.html#a65427699d3513c2211a93628944b85d9" title=" " alt="" coords="209,57,349,98"/>
+<area shape="rect" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291" title=" " alt="" coords="412,5,508,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -465,7 +476,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="593,5,733,32"/>
 <area shape="rect" href="classRadiation.html#a3eab5714d47ed767884a66a8dc1058df" title=" " alt="" coords="396,5,545,32"/>
 <area shape="rect" href="classRadiation.html#a1ddb33bff9f775945f0c0eaf066561ab" title=" " alt="" coords="171,5,348,32"/>
-<area shape="rect" href="classRadiation.html#a59940ab8e49f18ff5de6fe0c2710ab14" title=" " alt="" coords="5,5,123,32"/>
+<area shape="rect" href="classRadiation.html#a61d5d38713a0510eb86d93f7cbbd043d" title=" " alt="" coords="5,5,123,32"/>
 </map>
 </div>
 
@@ -525,7 +536,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#a0f8b0d1bad6ad2b78e18acf1ff5a851d" title="Cosine of the solar zenith angle over column (i,j) for one call." alt="" coords="599,60,773,87"/>
 <area shape="rect" href="classRadiation.html#a3eab5714d47ed767884a66a8dc1058df" title=" " alt="" coords="399,5,548,32"/>
 <area shape="rect" href="classRadiation.html#a1ddb33bff9f775945f0c0eaf066561ab" title=" " alt="" coords="171,5,348,32"/>
-<area shape="rect" href="classRadiation.html#a59940ab8e49f18ff5de6fe0c2710ab14" title=" " alt="" coords="5,5,123,32"/>
+<area shape="rect" href="classRadiation.html#a61d5d38713a0510eb86d93f7cbbd043d" title=" " alt="" coords="5,5,123,32"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="396,57,551,98"/>
 <area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="181,57,337,98"/>
 </map>
@@ -655,7 +666,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classRadiation.html#a3eab5714d47ed767884a66a8dc1058df" title=" " alt="" coords="404,8,553,35"/>
 <area shape="rect" href="ERF__TwoStreamRadiation_8cpp.html#a0f0467b71baf040e5e59eca06cfa460e" title="The calendar sun of the two&#45;stream model at a UTC epoch time (start_time + t)." alt="" coords="396,60,561,87"/>
 <area shape="rect" href="classRadiation.html#a1ddb33bff9f775945f0c0eaf066561ab" title=" " alt="" coords="171,5,348,32"/>
-<area shape="rect" href="classRadiation.html#a59940ab8e49f18ff5de6fe0c2710ab14" title=" " alt="" coords="5,5,123,32"/>
+<area shape="rect" href="classRadiation.html#a61d5d38713a0510eb86d93f7cbbd043d" title=" " alt="" coords="5,5,123,32"/>
 <area shape="rect" href="classERF.html#a386fe5fb8cb105818901f0234fbc2025" title=" " alt="" coords="186,57,333,98"/>
 </map>
 </div>
@@ -1116,7 +1127,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classRadiation.html#a3eab5714d47ed767884a66a8dc1058df" title=" " alt="" coords="404,8,553,35"/>
 <area shape="rect" href="ERF__TwoStreamRadiation_8cpp.html#a0f0467b71baf040e5e59eca06cfa460e" title="The calendar sun of the two&#45;stream model at a UTC epoch time (start_time + t)." alt="" coords="396,60,561,87"/>
 <area shape="rect" href="classRadiation.html#a1ddb33bff9f775945f0c0eaf066561ab" title=" " alt="" coords="171,5,348,32"/>
-<area shape="rect" href="classRadiation.html#a59940ab8e49f18ff5de6fe0c2710ab14" title=" " alt="" coords="5,5,123,32"/>
+<area shape="rect" href="classRadiation.html#a61d5d38713a0510eb86d93f7cbbd043d" title=" " alt="" coords="5,5,123,32"/>
 <area shape="rect" href="classERF.html#a386fe5fb8cb105818901f0234fbc2025" title=" " alt="" coords="186,57,333,98"/>
 </map>
 </div>

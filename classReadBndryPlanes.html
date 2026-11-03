@@ -420,11 +420,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a> = domain.hiVect();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            IntVect plo(<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            IntVect phi(<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            IntVect <a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a>(<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> normal = ori.coordDir();</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            plo[normal] = ori.isHigh() ? <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>[normal] - (<a class="code" href="classReadBndryPlanes.html#aecc64f578d77217b811dafc64b053680">m_in_rad</a> - 1) : <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>[normal] - <a class="code" href="classReadBndryPlanes.html#acb820b3ebc4c07d210831e6081c47aa9">m_out_rad</a>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            phi[normal] = ori.isHigh() ? <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>[normal] + (<a class="code" href="classReadBndryPlanes.html#acb820b3ebc4c07d210831e6081c47aa9">m_out_rad</a>   ) : <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>[normal] + (<a class="code" href="classReadBndryPlanes.html#aecc64f578d77217b811dafc64b053680">m_in_rad</a> - 1);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">const</span> Box pbx(plo, phi);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a>[normal] = ori.isHigh() ? <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>[normal] + (<a class="code" href="classReadBndryPlanes.html#acb820b3ebc4c07d210831e6081c47aa9">m_out_rad</a>   ) : <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>[normal] + (<a class="code" href="classReadBndryPlanes.html#aecc64f578d77217b811dafc64b053680">m_in_rad</a> - 1);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">const</span> Box pbx(plo, <a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a>);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="classReadBndryPlanes.html#acc6e94621293c94d1322a8cafbf61ad4">m_data_n</a>[ori]-&gt;push_back(FArrayBox(pbx, ncomp));</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="classReadBndryPlanes.html#ae34737833f599f3cb5ef945ac3f57f4b">m_data_np1</a>[ori]-&gt;push_back(FArrayBox(pbx, ncomp));</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="classReadBndryPlanes.html#a5338493101cfbb8eb27301f83aeca290">m_data_np2</a>[ori]-&gt;push_back(FArrayBox(pbx, ncomp));</div>
@@ -437,8 +437,18 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__Advection_8H_html_a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe"><div class="ttname"><a href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">OpenSide::lo</a></div><div class="ttdeci">@ lo</div></div>
 <div class="ttc" id="aclassReadBndryPlanes_html_acb820b3ebc4c07d210831e6081c47aa9"><div class="ttname"><a href="classReadBndryPlanes.html#acb820b3ebc4c07d210831e6081c47aa9">ReadBndryPlanes::m_out_rad</a></div><div class="ttdeci">const int m_out_rad</div><div class="ttdef"><b>Definition:</b> ERF_ReadBndryPlanes.H:116</div></div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aa0b88b0a3a03a3e787a7b27717ec64de7"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa0b88b0a3a03a3e787a7b27717ec64de7">BCVars::NumTypes</a></div><div class="ttdeci">@ NumTypes</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:129</div></div>
+<div class="ttc" id="anamespaceib__wall_html_a7dc8e106dfd34123ba8cd4de917cc291"><div class="ttname"><a href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">ib_wall::phi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real phi(amrex::Real d, amrex::Real z0, amrex::Real psi) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_ImmersedWallCell.H:142</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classReadBndryPlanes.html#ac6633331e3b4ae3d7c93534930b7f856">read_time_file()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classReadBndryPlanes_a16ed881bb428b7abb89e4284b356c8d6_cgraph.png" border="0" usemap="#aclassReadBndryPlanes_a16ed881bb428b7abb89e4284b356c8d6_cgraph" alt=""/></div>
+<map name="aclassReadBndryPlanes_a16ed881bb428b7abb89e4284b356c8d6_cgraph" id="aclassReadBndryPlanes_a16ed881bb428b7abb89e4284b356c8d6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,189,47"/>
+<area shape="rect" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291" title=" " alt="" coords="237,13,333,39"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1494,6 +1504,7 @@ Here is the call graph for this function:</div>
 <map name="aclassReadBndryPlanes_ac6633331e3b4ae3d7c93534930b7f856_cgraph" id="aclassReadBndryPlanes_ac6633331e3b4ae3d7c93534930b7f856_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,179,47"/>
 <area shape="rect" href="classReadBndryPlanes.html#a16ed881bb428b7abb89e4284b356c8d6" title=" " alt="" coords="227,5,411,47"/>
+<area shape="rect" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291" title=" " alt="" coords="459,13,555,39"/>
 </map>
 </div>
 

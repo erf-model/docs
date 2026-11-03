@@ -639,8 +639,8 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;{</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u     = (ie + 0.5) / n_el;</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = std::asin(std::sqrt(u));</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> phi   = 2.0 * <a class="code" href="ERF__NumericalConstants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> * (ia + 0.5) / n_az;</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> cn = std::cos(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>), ct = std::sin(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>) * std::cos(phi), st = std::sin(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>) * std::sin(phi);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a>   = 2.0 * <a class="code" href="ERF__NumericalConstants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> * (ia + 0.5) / n_az;</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> cn = std::cos(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>), ct = std::sin(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>) * std::cos(<a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a>), st = std::sin(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>) * std::sin(<a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a>);</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="comment">// Normal and two tangents for each axis.</span></div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> n[3] = {0.0, 0.0, 0.0}, t1[3] = {0.0, 0.0, 0.0}, t2[3] = {0.0, 0.0, 0.0};</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    n[dir] = nsign;</div>
@@ -653,8 +653,18 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;}</div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:46</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36"><div class="ttname"><a href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">MicVar_Kess::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:26</div></div>
+<div class="ttc" id="anamespaceib__wall_html_a7dc8e106dfd34123ba8cd4de917cc291"><div class="ttname"><a href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">ib_wall::phi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real phi(amrex::Real d, amrex::Real z0, amrex::Real psi) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_ImmersedWallCell.H:142</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classIBFaceSet.html#a47e4c255de46242953937aba7cb880df">IBFaceSet::compute_view_fractions()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceibseb_a2bf43b74765b9d05ae01ba6c27c4cc35_cgraph.png" border="0" usemap="#anamespaceibseb_a2bf43b74765b9d05ae01ba6c27c4cc35_cgraph" alt=""/></div>
+<map name="anamespaceibseb_a2bf43b74765b9d05ae01ba6c27c4cc35_cgraph" id="anamespaceibseb_a2bf43b74765b9d05ae01ba6c27c4cc35_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,212,32"/>
+<area shape="rect" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291" title=" " alt="" coords="260,5,356,32"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

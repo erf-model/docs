@@ -7,7 +7,7 @@ var classIRadiation =
     [ "Init", "classIRadiation.html#a93a49facdea9a509245196a463491013", null ],
     [ "is_nested_patch", "classIRadiation.html#a9752cd3320c4015e18b82891da1b3b20", null ],
     [ "radiation_updated", "classIRadiation.html#af084b8bdeaf1237c4638ab61e5e180dd", null ],
-    [ "Run", "classIRadiation.html#a43d8e0c8215a781190cf9c6d6e610049", null ],
+    [ "Run", "classIRadiation.html#a0af58c7bb942d8e8e1eea45e754816f3", null ],
     [ "setDataLogFrequency", "classIRadiation.html#a869627344662a3d31c962dc8bc615868", null ],
     [ "setRecordDataInfo", "classIRadiation.html#ae113ac6df98c25c0a48ab4452461dd2e", null ],
     [ "setupDataLog", "classIRadiation.html#a75a399c98c8696ffca01b1af72297451", null ],

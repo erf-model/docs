@@ -107,6 +107,9 @@ var annotated_dup =
     [ "erf_terrain_file", "namespaceerf__terrain__file.html", [
       [ "HeightTable", "structerf__terrain__file_1_1HeightTable.html", "structerf__terrain__file_1_1HeightTable" ]
     ] ],
+    [ "erf_topography", "namespaceerf__topography.html", [
+      [ "Sun", "structerf__topography_1_1Sun.html", "structerf__topography_1_1Sun" ]
+    ] ],
     [ "erf_wall_scalar_bc", "namespaceerf__wall__scalar__bc.html", [
       [ "ParsedWallScalarBC", "structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html", "structerf__wall__scalar__bc_1_1ParsedWallScalarBC" ],
       [ "ParsedWallFaceScalars", "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html", "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars" ],
@@ -117,6 +120,10 @@ var annotated_dup =
       [ "MomentumTransfer", "structerf__wall__thermodynamics_1_1MomentumTransfer.html", "structerf__wall__thermodynamics_1_1MomentumTransfer" ],
       [ "ScalarTransfer", "structerf__wall__thermodynamics_1_1ScalarTransfer.html", "structerf__wall__thermodynamics_1_1ScalarTransfer" ],
       [ "FaceWall", "structerf__wall__thermodynamics_1_1FaceWall.html", "structerf__wall__thermodynamics_1_1FaceWall" ]
+    ] ],
+    [ "ib_wall", "namespaceib__wall.html", [
+      [ "WallCond", "structib__wall_1_1WallCond.html", "structib__wall_1_1WallCond" ],
+      [ "WallState", "structib__wall_1_1WallState.html", "structib__wall_1_1WallState" ]
     ] ],
     [ "ibseb", "namespaceibseb.html", [
       [ "RayMap", "structibseb_1_1RayMap.html", "structibseb_1_1RayMap" ]
@@ -285,6 +292,7 @@ var annotated_dup =
     [ "RibCrossing", "structRibCrossing.html", "structRibCrossing" ],
     [ "rico_flux", "structrico__flux.html", "structrico__flux" ],
     [ "rotate_flux", "structrotate__flux.html", "structrotate__flux" ],
+    [ "RRTMGPSolarChoice", "structRRTMGPSolarChoice.html", "structRRTMGPSolarChoice" ],
     [ "SAM", "classSAM.html", "classSAM" ],
     [ "SAMCloudPhaseChange", "structSAMCloudPhaseChange.html", "structSAMCloudPhaseChange" ],
     [ "SAMCoefficientRow", "structSAMCoefficientRow.html", "structSAMCoefficientRow" ],
@@ -362,6 +370,8 @@ var annotated_dup =
     [ "TerrainCellDrops", "structTerrainCellDrops.html", "structTerrainCellDrops" ],
     [ "TerrainIF", "classTerrainIF.html", "classTerrainIF" ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ],
+    [ "TopographicShading", "classTopographicShading.html", "classTopographicShading" ],
+    [ "TopographicShadingChoice", "structTopographicShadingChoice.html", "structTopographicShadingChoice" ],
     [ "TurbChoice", "structTurbChoice.html", "structTurbChoice" ],
     [ "TurbulentPerturbation", "structTurbulentPerturbation.html", "structTurbulentPerturbation" ],
     [ "TwoStreamCanopyView", "structTwoStreamCanopyView.html", "structTwoStreamCanopyView" ],

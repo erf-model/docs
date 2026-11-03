@@ -4,5 +4,7 @@ var ERF__Utils_8cpp =
     [ "fill_wall_dist_ghost_cells", "ERF__Utils_8cpp.html#a461af2794b7a1c392dde63073d5fb9ae", null ],
     [ "if_average_down", "ERF__Utils_8cpp.html#a81e410915ecae464b0108ade86e6ed95", null ],
     [ "if_cf_surface_mismatch", "ERF__Utils_8cpp.html#a91bab1e9e931065947d7c2a565afc0e2", null ],
+    [ "immersed_wall_dist", "ERF__Utils_8cpp.html#a5040c75ab2788512110082e417ff02a8", null ],
+    [ "make_ib_wall_face_masks", "ERF__Utils_8cpp.html#aabb9d66304d3cc9557d414a8f4d4bf21", null ],
     [ "make_qt", "ERF__Utils_8cpp.html#a2d250a926aa7492952d578142423a181", null ]
 ];

@@ -293,11 +293,11 @@ $(document).ready(function(){initNavTree('ERF__EBIFBuildings_8H_source.html','')
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> phi_0 = phi_00 * (1.0 - wy) + phi_10 * wy;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> phi_1 = phi_01 * (1.0 - wy) + phi_11 * wy;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> phi = phi_0 * (1.0 - wz) + phi_1 * wz;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a> = phi_0 * (1.0 - wz) + phi_1 * wz;</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="comment">// fillSignedDistance has the opposite sign to STLtools::fillFab,</span></div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment">// including with reversed normals. Match EB: positive solid, negative fluid.</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">return</span> -phi;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">return</span> -<a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a>;</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">    /**</span></div>
@@ -350,6 +350,7 @@ $(document).ready(function(){initNavTree('ERF__EBIFBuildings_8H_source.html','')
 <div class="ttc" id="aclassBuildingsIF_html_aeea01bbb6b26b1befd74f9dd3025e545"><div class="ttname"><a href="classBuildingsIF.html#aeea01bbb6b26b1befd74f9dd3025e545">BuildingsIF::m_levelset_mf</a></div><div class="ttdeci">std::shared_ptr&lt; amrex::MultiFab &gt; m_levelset_mf</div><div class="ttdoc">Pre-sampled signed distance field (distributed MultiFab for parallel computation)</div><div class="ttdef"><b>Definition:</b> ERF_EBIFBuildings.H:235</div></div>
 <div class="ttc" id="anamespaceWSM6Ind_html_aa080c2fd4acd9ccb8c87d956a055c00dad6cb403596ec7a348234a3a3bf0221bc"><div class="ttname"><a href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dad6cb403596ec7a348234a3a3bf0221bc">WSM6Ind::p</a></div><div class="ttdeci">@ p</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:301</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:17</div></div>
+<div class="ttc" id="anamespaceib__wall_html_a7dc8e106dfd34123ba8cd4de917cc291"><div class="ttname"><a href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">ib_wall::phi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real phi(amrex::Real d, amrex::Real z0, amrex::Real psi) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_ImmersedWallCell.H:142</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

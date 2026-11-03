@@ -1,5 +1,7 @@
 var ERF__RadStruct_8H =
 [
+    [ "RRTMGPSolarChoice", "structRRTMGPSolarChoice.html", "structRRTMGPSolarChoice" ],
+    [ "TopographicShadingChoice", "structTopographicShadingChoice.html", "structTopographicShadingChoice" ],
     [ "RadChoice", "structRadChoice.html", "structRadChoice" ],
     [ "AMREX_ENUM", "ERF__RadStruct_8H.html#a9a6d6e754b1df55cb2827921ecebd3c5", null ],
     [ "AMREX_ENUM", "ERF__RadStruct_8H.html#a7774bcb49f4896fcdcd7c23bc55a68cc", null ],

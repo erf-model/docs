@@ -8,5 +8,11 @@ var dir_6ac3198e61556f99812dcb8dcfabb874 =
       [ "IRadiation", "classIRadiation.html", "classIRadiation" ]
     ] ],
     [ "ERF_RadiationModels.H", "ERF__RadiationModels_8H.html", null ],
-    [ "ERF_RRTMGP_SurfaceTemperature.H", "ERF__RRTMGP__SurfaceTemperature_8H.html", "ERF__RRTMGP__SurfaceTemperature_8H" ]
+    [ "ERF_RRTMGP_SurfaceTemperature.H", "ERF__RRTMGP__SurfaceTemperature_8H.html", "ERF__RRTMGP__SurfaceTemperature_8H" ],
+    [ "ERF_TopographicShading.cpp", "ERF__TopographicShading_8cpp.html", null ],
+    [ "ERF_TopographicShading.H", "ERF__TopographicShading_8H.html", [
+      [ "TopographicShading", "classTopographicShading.html", "classTopographicShading" ],
+      [ "Level", "structTopographicShading_1_1Level.html", "structTopographicShading_1_1Level" ]
+    ] ],
+    [ "ERF_TopographicShadingKernels.H", "ERF__TopographicShadingKernels_8H.html", "ERF__TopographicShadingKernels_8H" ]
 ];

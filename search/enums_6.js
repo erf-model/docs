@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['initializationmode_16951',['InitializationMode',['../namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7',1,'erf_cloud_chamber']]],
-  ['initrunon_16952',['InitRunOn',['../namespaceshoc.html#a0fd3544e2e21f10cd9d621c81fd419db',1,'shoc']]]
+  ['hostintegrator_17136',['HostIntegrator',['../namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622a',1,'erf_auxiliary']]],
+  ['hostwritepath_17137',['HostWritePath',['../namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284e',1,'erf_sbm']]]
 ];

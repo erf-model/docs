@@ -124,8 +124,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab95cafeff7c2b9960532aa5025daedfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93a49facdea9a509245196a463491013"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#a93a49facdea9a509245196a463491013">Init</a> (const amrex::Geometry &amp;geom, const amrex::BoxArray &amp;ba, amrex::MultiFab *cons_in)=0</td></tr>
 <tr class="separator:a93a49facdea9a509245196a463491013"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43d8e0c8215a781190cf9c6d6e610049"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#a43d8e0c8215a781190cf9c6d6e610049">Run</a> (int &amp;level, int &amp;step, double &amp;time, const double &amp;dt, const amrex::BoxArray &amp;ba, amrex::Geometry &amp;geom, amrex::MultiFab *cons_in, amrex::iMultiFab *lmask, amrex::MultiFab *t_surf, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;lsm_input_ptrs, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;lsm_output_ptrs, amrex::MultiFab *qheating_rates, amrex::MultiFab *rad_fluxes, amrex::MultiFab *z_phys, amrex::MultiFab *lat, amrex::MultiFab *lon, const bool updated_lsm, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;declin, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;calday)=0</td></tr>
-<tr class="separator:a43d8e0c8215a781190cf9c6d6e610049"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0af58c7bb942d8e8e1eea45e754816f3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#a0af58c7bb942d8e8e1eea45e754816f3">Run</a> (int &amp;level, int &amp;step, double &amp;time, const double &amp;dt, const amrex::BoxArray &amp;ba, amrex::Geometry &amp;geom, amrex::MultiFab *cons_in, amrex::iMultiFab *lmask, amrex::MultiFab *t_surf, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;lsm_input_ptrs, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;lsm_output_ptrs, amrex::MultiFab *qheating_rates, amrex::MultiFab *rad_fluxes, amrex::MultiFab *z_phys, amrex::MultiFab *lat, amrex::MultiFab *lon, const bool force_update, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;declin, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;calday)=0</td></tr>
+<tr class="separator:a0af58c7bb942d8e8e1eea45e754816f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af084b8bdeaf1237c4638ab61e5e180dd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#af084b8bdeaf1237c4638ab61e5e180dd">radiation_updated</a> () const</td></tr>
 <tr class="memdesc:af084b8bdeaf1237c4638ab61e5e180dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether the last radiation call updated its outputs.  <a href="classIRadiation.html#af084b8bdeaf1237c4638ab61e5e180dd">More...</a><br /></td></tr>
 <tr class="separator:af084b8bdeaf1237c4638ab61e5e180dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -379,8 +379,8 @@ Private Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a43d8e0c8215a781190cf9c6d6e610049"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43d8e0c8215a781190cf9c6d6e610049">&#9670;&nbsp;</a></span>Run()</h2>
+<a id="a0af58c7bb942d8e8e1eea45e754816f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0af58c7bb942d8e8e1eea45e754816f3">&#9670;&nbsp;</a></span>Run()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -488,7 +488,7 @@ Private Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>updated_lsm</em>, </td>
+          <td class="paramname"><em>force_update</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -515,7 +515,7 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classRadiation.html#a59940ab8e49f18ff5de6fe0c2710ab14">Radiation</a>, and <a class="el" href="classRadiationSimple.html#a081881d73e7a80265f2afbf12f5103bb">RadiationSimple</a>.</p>
+<p>Implemented in <a class="el" href="classRadiation.html#a61d5d38713a0510eb86d93f7cbbd043d">Radiation</a>, and <a class="el" href="classRadiationSimple.html#ad0b3038c5e23f265a4108c404c2283ef">RadiationSimple</a>.</p>
 
 </div>
 </div>

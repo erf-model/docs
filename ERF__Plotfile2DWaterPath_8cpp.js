@@ -10,6 +10,7 @@ var ERF__Plotfile2DWaterPath_8cpp =
     [ "is_condensed_water_path_name", "ERF__Plotfile2DWaterPath_8cpp.html#a7d4bc84f8f5eb9f6e43320751de0c7f4", null ],
     [ "is_land_surface_provider_field", "ERF__Plotfile2DWaterPath_8cpp.html#afac656a74c1bcb4305ca24e39ee2e6aa", null ],
     [ "is_noahmp_active", "ERF__Plotfile2DWaterPath_8cpp.html#ad0d2488d0d7c6486f8ba9c370e15a1e4", null ],
+    [ "is_topographic_radiation_field", "ERF__Plotfile2DWaterPath_8cpp.html#a823b938763e5c51afcf7b7b95f0e138b", null ],
     [ "selected_condensed_water_path_components", "ERF__Plotfile2DWaterPath_8cpp.html#aa82b17461180193f9227396c88f656c6", null ],
     [ "id", "ERF__Plotfile2DWaterPath_8cpp.html#aeda6e076414bdf745c60d7b16b6fa0e7", null ],
     [ "name", "ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb", null ]

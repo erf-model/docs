@@ -20,6 +20,7 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     ] ],
     [ "ERF_HSEUtils.H", "ERF__HSEUtils_8H.html", "ERF__HSEUtils_8H" ],
     [ "ERF_HurricaneDiagnostics.cpp", "ERF__HurricaneDiagnostics_8cpp.html", "ERF__HurricaneDiagnostics_8cpp" ],
+    [ "ERF_ImmersedWallCell.H", "ERF__ImmersedWallCell_8H.html", "ERF__ImmersedWallCell_8H" ],
     [ "ERF_InitZLevels.cpp", "ERF__InitZLevels_8cpp.html", "ERF__InitZLevels_8cpp" ],
     [ "ERF_InteriorGhostCells.cpp", "ERF__InteriorGhostCells_8cpp.html", "ERF__InteriorGhostCells_8cpp" ],
     [ "ERF_Interpolation.H", "ERF__Interpolation_8H.html", "ERF__Interpolation_8H" ],

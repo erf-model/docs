@@ -194,6 +194,7 @@ var namespaces_dup =
     ] ],
     [ "erf_surface_temperature", "namespaceerf__surface__temperature.html", "namespaceerf__surface__temperature" ],
     [ "erf_terrain_file", "namespaceerf__terrain__file.html", "namespaceerf__terrain__file" ],
+    [ "erf_topography", "namespaceerf__topography.html", "namespaceerf__topography" ],
     [ "erf_wall_scalar_bc", "namespaceerf__wall__scalar__bc.html", "namespaceerf__wall__scalar__bc" ],
     [ "erf_wall_thermodynamics", "namespaceerf__wall__thermodynamics.html", "namespaceerf__wall__thermodynamics" ],
     [ "ERFBCType", "namespaceERFBCType.html", [
@@ -246,6 +247,7 @@ var namespaces_dup =
       [ "psi_m_for_ustar", "namespaceib__stability.html#ae43ffe1c3472b8968e6aef758b19e770", null ],
       [ "zeta_max", "namespaceib__stability.html#af7b5594e36344033f4e2a55b7487cb08", null ]
     ] ],
+    [ "ib_wall", "namespaceib__wall.html", "namespaceib__wall" ],
     [ "ibseb", "namespaceibseb.html", "namespaceibseb" ],
     [ "IntVars", "namespaceIntVars.html", null ],
     [ "LSM_Type", "namespaceLSM__Type.html", null ],
