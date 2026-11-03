@@ -19,6 +19,7 @@ var ERF__Utils_8H =
     [ "fill_wall_dist_ghost_cells", "ERF__Utils_8H.html#a60e8e097c41bbb67aef2c27f5a15a836", null ],
     [ "fine_compute_interior_ghost_rhs", "ERF__Utils_8H.html#a980857d0da78387b8b54ce93246f19fe", null ],
     [ "if_average_down", "ERF__Utils_8H.html#ade14a6aa24a07311a381556306d3e62e", null ],
+    [ "if_cf_surface_mismatch", "ERF__Utils_8H.html#a13083ce0fbade87a61458294f91d1643", null ],
     [ "make_areas", "ERF__Utils_8H.html#afd5f5cf174d096726815e6d7dc325c41", null ],
     [ "make_J", "ERF__Utils_8H.html#accb87d367dfa749571761aa789fd3fea", null ],
     [ "make_qt", "ERF__Utils_8H.html#afe3f26a0804dbe21b32ba33a0a219d6e", null ],
