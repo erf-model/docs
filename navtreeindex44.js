@@ -1,6 +1,5 @@
 var NAVTREEINDEX44 =
 {
-"namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2ac08cf9e52ffab20160ab93cc6906c03d":[1,0,75,14,66],
 "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2ac4310fc628fc5f0408a2ef1cefa1d8f9":[1,0,75,14,23],
 "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2ac7793ccd528c8b0591e5d9182006a94e":[1,0,75,14,15],
 "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2ac9e502e22b5a2fe58547eaaf3e9c7aab":[1,0,75,14,36],
@@ -249,5 +248,6 @@ var NAVTREEINDEX44 =
 "structAdvChoice.html#a064ffc0bac9fc0fdd1aa41a45f4e5ed4":[2,0,29,2],
 "structAdvChoice.html#a0913a61ad5530639cdbf84579c34041a":[2,0,29,3],
 "structAdvChoice.html#a09add6c3603c00bfb5611a799017079b":[2,0,29,13],
-"structAdvChoice.html#a13ccf0a64999d9da9c29474e7ddff27b":[2,0,29,4]
+"structAdvChoice.html#a13ccf0a64999d9da9c29474e7ddff27b":[2,0,29,4],
+"structAdvChoice.html#a191cb08c4e809d1982ea90e4b4f9a528":[2,0,29,1]
 };

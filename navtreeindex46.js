@@ -1,6 +1,5 @@
 var NAVTREEINDEX46 =
 {
-"structIBSEBMaterial.html#ae85d4d2b2d7977e2dbfab2e284d5f58a":[2,0,74,5],
 "structIBSEBMaterial.html#af9bed5b681b31acb844f43572fb65c09":[2,0,74,1],
 "structIBSEBParams.html":[2,0,75],
 "structIBSEBParams.html#a0095753a746890ddd46d750e30176b98":[2,0,75,25],
@@ -249,5 +248,6 @@ var NAVTREEINDEX46 =
 "structMaterialPropertiesCore.html#a62f4fe116d4c0126d3bb402fa6047150":[2,0,89,15],
 "structMaterialPropertiesCore.html#a6e3af712aeb6badeedf867422b241413":[2,0,89,3],
 "structMaterialPropertiesCore.html#a70d69c8c88e93f929632cb2f7ab87431":[2,0,89,18],
-"structMaterialPropertiesCore.html#a76e6e85c61cd9bfa01175d3adc7b3e9e":[2,0,89,14]
+"structMaterialPropertiesCore.html#a76e6e85c61cd9bfa01175d3adc7b3e9e":[2,0,89,14],
+"structMaterialPropertiesCore.html#a7a633689fe9eef033518399491e5163d":[2,0,89,10]
 };

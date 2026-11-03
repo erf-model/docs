@@ -1,7 +1,5 @@
 var NAVTREEINDEX54 =
 {
-"structerf__provenance_1_1ExecutionProvenance.html#ab14cd93c7f8e0a8a2ea389dbb173e1c4":[2,0,8,0,5],
-"structerf__provenance_1_1ExecutionProvenance.html#aba87851a546c8d7a99647fa2db59fac1":[2,0,8,0,1],
 "structerf__provenance_1_1ExecutionProvenance.html#ac938b1cc61c3367a0ff7c19c870d8b66":[2,0,8,0,9],
 "structerf__provenance_1_1ExecutionProvenance.html#ad11237fecb0b8139ecf513886626e947":[2,0,8,0,6],
 "structerf__provenance_1_1ExecutionProvenance.html#ae03d910003f7d4e1489f2b8b082c4c3c":[2,0,8,0,8],
@@ -249,5 +247,7 @@ var NAVTREEINDEX54 =
 "structerf__sbm_1_1SpectralPopulationSpec.html#ae6cf017657afffcf46945c051d001fdd":[2,0,9,14,6],
 "structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html":[2,0,9,0,0],
 "structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html#a028f8a8a15f1d69803975515a614b539":[2,0,9,0,0,4],
-"structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html#a22e728bce9b9eeaaed9df9bd4f2e1361":[2,0,9,0,0,3]
+"structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html#a22e728bce9b9eeaaed9df9bd4f2e1361":[2,0,9,0,0,3],
+"structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html#a28980c2ce35ab1eb7d9e6720116788e9":[2,0,9,0,0,2],
+"structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html#ae2a728d96c1cbdf2756d3a014bb73629":[2,0,9,0,0,0]
 };

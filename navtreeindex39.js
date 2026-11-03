@@ -1,6 +1,5 @@
 var NAVTREEINDEX39 =
 {
-"namespaceerf__checkpoint.html#a1f8405aab1181ae522fa1bd9b9e26daf":[1,0,10,1],
 "namespaceerf__checkpoint.html#a543f256009bdc56c433b9cb6a1da5177":[1,0,10,0],
 "namespaceerf__checkpoint.html#aba22b9daf8305eee0648716ae0142fe1":[1,0,10,2],
 "namespaceerf__checkpoint__lsm__data.html":[1,0,11],
@@ -249,5 +248,6 @@ var NAVTREEINDEX39 =
 "namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284eaeb633ae831f05ff0ad42ce6bfa01e499":[1,0,30,40,3],
 "namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284eaf31bbdd1b3e85bccd652680e16935819":[1,0,30,40,2],
 "namespaceerf__sbm.html#a181e3d55ad4eb4f53244a260bbd2d2a8":[1,0,30,57],
-"namespaceerf__sbm.html#a196324656da9600ee64b63799251386f":[1,0,30,68]
+"namespaceerf__sbm.html#a196324656da9600ee64b63799251386f":[1,0,30,68],
+"namespaceerf__sbm.html#a1995df4a24a58bba5b15ee769dbb21c8":[1,0,30,69]
 };

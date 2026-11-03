@@ -1,7 +1,5 @@
 var NAVTREEINDEX56 =
 {
-"structplotfile2d_1_1SampledVerticalCoordinateMetadata.html#a761a8f017b44cd886e98694ac573ffa6":[2,0,20,6,0],
-"structplotfile2d_1_1SampledVerticalCoordinateMetadata.html#a819b9d9997530b5bc5b20bc517c81097":[2,0,20,6,3],
 "structplotfile2d_1_1SampledVerticalCoordinateMetadata.html#a8408fb7f89385711ba59fcf4318518cc":[2,0,20,6,5],
 "structplotfile2d_1_1SampledWindSources.html":[2,0,20,2],
 "structplotfile2d_1_1SampledWindSources.html#a065a70f5c3d4059e7c70ec372cd85a66":[2,0,20,2,1],
