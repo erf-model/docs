@@ -1,6 +1,5 @@
 var NAVTREEINDEX16 =
 {
-"ERF__SpectralGrid_8cpp.html":[3,0,1,15,6,24],
 "ERF__SpongeStruct_8H.html":[3,0,1,4,12],
 "ERF__SpongeStruct_8H.html#a48f9d020b55b25ea2d8e4802334b8c95":[3,0,1,4,12,1],
 "ERF__SpongeStruct_8H_source.html":[3,0,1,4,12],
@@ -249,5 +248,6 @@ var NAVTREEINDEX16 =
 "ERF__TerrainMetrics_8H.html#a49831c051eee94070a9176baddde85dfa2ff4148554480a37f85efd299df04850":[3,0,1,27,51,0,2],
 "ERF__TerrainMetrics_8H.html#a49831c051eee94070a9176baddde85dfa6adf97f83acf6453d4a6a4b1070f3754":[3,0,1,27,51,0,0],
 "ERF__TerrainMetrics_8H.html#a49831c051eee94070a9176baddde85dfad53238014015da17926bca398282211f":[3,0,1,27,51,0,1],
-"ERF__TerrainMetrics_8H.html#a4f282970572c767e8c10401119c7c239":[3,0,1,27,51,37]
+"ERF__TerrainMetrics_8H.html#a4f282970572c767e8c10401119c7c239":[3,0,1,27,51,37],
+"ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739":[3,0,1,27,51,22]
 };

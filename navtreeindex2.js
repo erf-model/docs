@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7":[3,0,1,4,4,8,2],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286":[3,0,1,4,4,8,1],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc":[3,0,1,4,4,8,0],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248babcbe024a60f6921af0060fd096ac8307":[3,0,1,4,4,8,8],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "ERF__EpochTime_8H_source.html":[3,0,1,27,10],
 "ERF__EulerianMicrophysics_8H.html":[3,0,1,15,10],
 "ERF__EulerianMicrophysics_8H_source.html":[3,0,1,15,10],
-"ERF__FillBdyCCVels_8cpp.html":[3,0,1,2,7]
+"ERF__FillBdyCCVels_8cpp.html":[3,0,1,2,7],
+"ERF__FillCoarsePatch_8cpp.html":[3,0,1,2,8]
 };

@@ -30,7 +30,12 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "Utils", "dir_5c09e96eccedf512ae411d636afd2712.html", "dir_5c09e96eccedf512ae411d636afd2712" ],
     [ "WindFarmParametrization", "dir_4c2ecf32dc8d7cf95ecc0db34c31b5da.html", "dir_4c2ecf32dc8d7cf95ecc0db34c31b5da" ],
     [ "ERF.cpp", "ERF_8cpp.html", null ],
-    [ "ERF.H", "ERF_8H.html", "ERF_8H" ],
+    [ "ERF.H", "ERF_8H.html", [
+      [ "ERF", "classERF.html", "classERF" ],
+      [ "Plot3DScratch", "structERF_1_1Plot3DScratch.html", "structERF_1_1Plot3DScratch" ],
+      [ "CFZFaceLayout", "structERF_1_1CFZFaceLayout.html", "structERF_1_1CFZFaceLayout" ],
+      [ "CFFluxHistory", "structERF_1_1CFFluxHistory.html", "structERF_1_1CFFluxHistory" ]
+    ] ],
     [ "ERF_Constants.H", "ERF__Constants_8H.html", "ERF__Constants_8H" ],
     [ "ERF_Constructors.cpp", "ERF__Constructors_8cpp.html", null ],
     [ "ERF_Derive.cpp", "ERF__Derive_8cpp.html", "ERF__Derive_8cpp" ],

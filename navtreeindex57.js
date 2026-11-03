@@ -1,7 +1,5 @@
 var NAVTREEINDEX57 =
 {
-"structshoc_1_1ShocEnergyFixerView.html#a94e283d2b0a291e1048c973abbead293":[2,0,23,0,17],
-"structshoc_1_1ShocEnergyFixerView.html#a998e1d989ab5ac05ef644610689c478a":[2,0,23,0,1],
 "structshoc_1_1ShocEnergyFixerView.html#aa29012d8fa15529c9913755936c87764":[2,0,23,0,11],
 "structshoc_1_1ShocEnergyFixerView.html#aa4c9a66e5a2d9389d832735cfd008f6d":[2,0,23,0,6],
 "structshoc_1_1ShocEnergyFixerView.html#aa719954a9a7906abc216924e397a938f":[2,0,23,0,19],

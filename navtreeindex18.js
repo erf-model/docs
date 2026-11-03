@@ -1,6 +1,5 @@
 var NAVTREEINDEX18 =
 {
-"ERF__UpdateRhoThetaSources__Bomex_8H.html#aa1919e3b581c576a4b81226a9bd41eb7":[3,0,1,20,65,2],
 "ERF__UpdateRhoThetaSources__Bomex_8H.html#ad53eb451be33aeb4ef17280d99c15da7":[3,0,1,20,65,0],
 "ERF__UpdateRhoThetaSources__Bomex_8H.html#ae434c019b8352762564daa3f947bd9de":[3,0,1,20,65,3],
 "ERF__UpdateRhoThetaSources__Bomex_8H_source.html":[3,0,1,20,65],
@@ -249,5 +248,6 @@ var NAVTREEINDEX18 =
 "ERF__WriteERFBdy_8cpp.html":[3,0,1,11,55],
 "ERF__WriteERFBdy_8cpp.html#acfa5f40e12f677468e3be4eb5fa82021":[3,0,1,11,55,0],
 "ERF__WriteERFBdy_8cpp.html#adfb3afe2843b15ec78776cd84495424f":[3,0,1,11,55,1],
-"ERF__WriteJobInfo_8cpp.html":[3,0,1,11,57]
+"ERF__WriteJobInfo_8cpp.html":[3,0,1,11,57],
+"ERF__WriteScalarProfiles_8cpp.html":[3,0,1,11,58]
 };
