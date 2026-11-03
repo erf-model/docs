@@ -2,6 +2,7 @@ var ERF__ScalarLimitPost_8H =
 [
     [ "if", "ERF__ScalarLimitPost_8H.html#a66af016a2c575aa1d5e5974ad8ebe4be", null ],
     [ "if", "ERF__ScalarLimitPost_8H.html#a814bab67bd01d99628b3a703890e8b32", null ],
+    [ "l_diff_choice", "ERF__ScalarLimitPost_8H.html#a63347dd393b2818807c27efbb787160d", null ],
     [ "l_dirichlet_k", "ERF__ScalarLimitPost_8H.html#a64ece2087a5df53a9844e23668a4f8b9", null ],
     [ "l_eps", "ERF__ScalarLimitPost_8H.html#a4937c34ece5cfb895ecf2722a6657906", null ],
     [ "l_klo", "ERF__ScalarLimitPost_8H.html#a4927084a724646b66100a5ca90e70535", null ],

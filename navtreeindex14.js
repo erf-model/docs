@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"ERF__SBMAdvectionBoundary_8H.html#a41bad3d43e0108b30fe429902d42ffc5":[3,0,1,15,6,0,4],
 "ERF__SBMAdvectionBoundary_8H.html#ac7ab1e3124a0b2b4d43c1b97e848b894":[3,0,1,15,6,0,3],
 "ERF__SBMAdvectionBoundary_8H.html#ac7ab1e3124a0b2b4d43c1b97e848b894a16b96d4b4c0d2f9e8dae5948b8703fca":[3,0,1,15,6,0,3,2],
 "ERF__SBMAdvectionBoundary_8H.html#ac7ab1e3124a0b2b4d43c1b97e848b894acdcc32a064503184053bd2018d1c0e7e":[3,0,1,15,6,0,3,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX14 =
 "ERF__ScalarDiffusion_8H.html#a189adb928ff0e9a2d88912fdd4d18859":[3,0,1,6,28,39],
 "ERF__ScalarDiffusion_8H.html#a2a9e97067cb2f386cafcdb6a67562488":[3,0,1,6,28,21],
 "ERF__ScalarDiffusion_8H.html#a37661c21a58f57110e22e67f8016bdfb":[3,0,1,6,28,12],
-"ERF__ScalarDiffusion_8H.html#a37c463d68fc60f09935f0a180dea7b02":[3,0,1,6,28,25],
-"ERF__ScalarDiffusion_8H.html#a486b2a881c0116cfd891ea21de3af57c":[3,0,1,6,28,31]
+"ERF__ScalarDiffusion_8H.html#a37c463d68fc60f09935f0a180dea7b02":[3,0,1,6,28,25]
 };

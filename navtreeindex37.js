@@ -1,5 +1,9 @@
 var NAVTREEINDEX37 =
 {
+"classerf__sbm_1_1SpectralGrid.html#a74d63908d01cdc8d63e6159856e91906":[2,0,9,36,1],
+"classerf__sbm_1_1SpectralGrid.html#a8bcdf6beaf406565aa75fb218fd63ee9":[2,0,9,36,12],
+"classerf__sbm_1_1SpectralGrid.html#abaa5e6c89072acd88f03092458fb22e2":[2,0,9,36,10],
+"classerf__sbm_1_1SpectralGrid.html#ac821171de1ede9b309bd8c70fa7101cf":[2,0,9,36,11],
 "classerf__sbm_1_1SpectralGrid.html#ad34a466e6f37434423baff4fa40526be":[2,0,9,36,2],
 "classerf__sbm_1_1SpectralGrid.html#ad6c28f446e0cbf5acafb38c9c900c828":[2,0,9,36,3],
 "classes.html":[2,1],
@@ -140,8 +144,8 @@ var NAVTREEINDEX37 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX37 =
 "globals_vars_s.html":[3,1,2,18],
 "globals_vars_t.html":[3,1,2,19],
 "globals_vars_u.html":[3,1,2,20],
-"globals_vars_v.html":[3,1,2,21],
-"globals_vars_w.html":[3,1,2,22],
-"globals_vars_x.html":[3,1,2,23],
-"globals_vars_y.html":[3,1,2,24],
-"globals_vars_z.html":[3,1,2,25]
+"globals_vars_v.html":[3,1,2,21]
 };

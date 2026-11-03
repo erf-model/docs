@@ -1,5 +1,13 @@
 var NAVTREEINDEX47 =
 {
+"structMaterialProperties.html#a8fe310f02a1bd3c9795bb06beee4b883":[2,0,88,9],
+"structMaterialProperties.html#ac2420acd6e85c5850262d8188d41c15f":[2,0,88,7],
+"structMaterialProperties.html#acb770dd37785f1959f65ae719beba36e":[2,0,88,6],
+"structMaterialProperties.html#af3060220bc6975f221cd9e956e649f8c":[2,0,88,14],
+"structMaterialProperties.html#af532315f278f04b68461bcd2db4e100f":[2,0,88,16],
+"structMaterialPropertiesCore.html":[2,0,89],
+"structMaterialPropertiesCore.html#a085a93e9a7944e7258e2602200c48fa3":[2,0,89,13],
+"structMaterialPropertiesCore.html#a0e30e71a234edf35489cccab2ac244fa":[2,0,89,9],
 "structMaterialPropertiesCore.html#a10e00c3fd61a1a344e109b6bf895128b":[2,0,89,7],
 "structMaterialPropertiesCore.html#a1643525881933f909682eb0090aec98d":[2,0,89,22],
 "structMaterialPropertiesCore.html#a1914cca3852fbffe1c857de78b40daa7":[2,0,89,12],
@@ -241,13 +249,5 @@ var NAVTREEINDEX47 =
 "structRadChoice.html#ac065ea6054e6fc158361b94930ceba29":[2,0,129,76],
 "structRadChoice.html#ac335dcc5ac84f12fba7813063f68cf2d":[2,0,129,12],
 "structRadChoice.html#ac559d878296dddc2b0568e16152bd76c":[2,0,129,35],
-"structRadChoice.html#ac93956045c1a016d4fcc4cfb9a1570e6":[2,0,129,90],
-"structRadChoice.html#acdfeb97aaea08e82f62d8700927d57b4":[2,0,129,52],
-"structRadChoice.html#acf7865c49b4b555b196f9f16896123eb":[2,0,129,72],
-"structRadChoice.html#acf9a83a7ee414771454e38956141a41c":[2,0,129,70],
-"structRadChoice.html#ad0397d2363f1406d1cfe5351d106476f":[2,0,129,86],
-"structRadChoice.html#ad08e4e36d77a192996f11c93b03a2626":[2,0,129,47],
-"structRadChoice.html#ad4474d90a8e01e156e5534f5fb901106":[2,0,129,16],
-"structRadChoice.html#ad47e086452e363dd9d315720e39ae815":[2,0,129,78],
-"structRadChoice.html#ad6fa14c41568eea1f5ef8375cb69ce34":[2,0,129,38]
+"structRadChoice.html#ac93956045c1a016d4fcc4cfb9a1570e6":[2,0,129,90]
 };

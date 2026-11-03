@@ -97,11 +97,12 @@ Collaboration diagram for DiffChoice:</div>
 <div class="dyncontent">
 <div class="center"><img src="structDiffChoice__coll__graph.png" border="0" usemap="#aDiffChoice_coll__map" alt="Collaboration graph"/></div>
 <map name="aDiffChoice_coll__map" id="aDiffChoice_coll__map">
-<area shape="rect" title=" " alt="" coords="196,168,285,195"/>
-<area shape="rect" title=" " alt="" coords="5,5,44,32"/>
-<area shape="rect" title=" " alt="" coords="135,5,186,32"/>
-<area shape="rect" title=" " alt="" coords="265,5,379,32"/>
-<area shape="rect" title=" " alt="" coords="437,5,487,32"/>
+<area shape="rect" title=" " alt="" coords="371,183,460,209"/>
+<area shape="rect" title=" " alt="" coords="5,5,177,47"/>
+<area shape="rect" title=" " alt="" coords="240,13,279,39"/>
+<area shape="rect" title=" " alt="" coords="390,13,441,39"/>
+<area shape="rect" title=" " alt="" coords="519,13,634,39"/>
+<area shape="rect" title=" " alt="" coords="691,13,742,39"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -113,6 +114,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adc2925cf95fd6058bb83e1748fd1b765"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDiffChoice.html#adc2925cf95fd6058bb83e1748fd1b765">display</a> ()</td></tr>
 <tr class="memdesc:adc2925cf95fd6058bb83e1748fd1b765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the configured diffusion options.  <a href="structDiffChoice.html#adc2925cf95fd6058bb83e1748fd1b765">More...</a><br /></td></tr>
 <tr class="separator:adc2925cf95fd6058bb83e1748fd1b765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa699ab30d722a581a3a4f7f28000d56e"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDiffChoice.html#aa699ab30d722a581a3a4f7f28000d56e">host_transports</a> (int n) const noexcept</td></tr>
+<tr class="separator:aa699ab30d722a581a3a4f7f28000d56e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d340195ba85d1a115c2b24050858b0"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDiffChoice.html#af3d340195ba85d1a115c2b24050858b0">implicit_q</a> (int n) const noexcept</td></tr>
+<tr class="separator:af3d340195ba85d1a115c2b24050858b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -147,8 +152,12 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a1f664c5d58a6ef7779297fb6b526ecdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to constrain EB diffusion in the z direction.  <a href="structDiffChoice.html#a1f664c5d58a6ef7779297fb6b526ecdf">More...</a><br /></td></tr>
 <tr class="separator:a1f664c5d58a6ef7779297fb6b526ecdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25ff26296aa7303f64cac15a28bf2df6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDiffChoice.html#a25ff26296aa7303f64cac15a28bf2df6">n_qstate_moist</a> = <a class="el" href="ERF__IndexDefines_8H.html#abe87e298e9d558e0659a67ad3b9be71f">NMOIST_max</a></td></tr>
-<tr class="memdesc:a25ff26296aa7303f64cac15a28bf2df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of moist conserved components starting at RhoQ1_comp; these are the species whose vertical diffusion is split between the explicit and implicit parts.  <a href="structDiffChoice.html#a25ff26296aa7303f64cac15a28bf2df6">More...</a><br /></td></tr>
+<tr class="memdesc:a25ff26296aa7303f64cac15a28bf2df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of water-related conserved components starting at RhoQ1_comp, retaining their water-species molecular-diffusion coefficients.  <a href="structDiffChoice.html#a25ff26296aa7303f64cac15a28bf2df6">More...</a><br /></td></tr>
 <tr class="separator:a25ff26296aa7303f64cac15a28bf2df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9938cd003bc4c12e6ba62088c5381778"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDiffChoice.html#a9938cd003bc4c12e6ba62088c5381778">n_qstate_nonmoist</a> = 0</td></tr>
+<tr class="separator:a9938cd003bc4c12e6ba62088c5381778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3910c7768a56841fd8fbe4056cddd9c3"><td class="memItemLeft" align="right" valign="top">amrex::GpuArray&lt; bool, <a class="el" href="ERF__IndexDefines_8H.html#a46e292b965f80d15acfbdc11ffe1e0f0">NVAR_max</a> - <a class="el" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDiffChoice.html#a3910c7768a56841fd8fbe4056cddd9c3">qstate_is_diagnostic</a> {}</td></tr>
+<tr class="separator:a3910c7768a56841fd8fbe4056cddd9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Container holding diffusion-related choices </p>
@@ -207,6 +216,123 @@ Here is the caller graph for this function:</div>
 <map name="astructDiffChoice_adc2925cf95fd6058bb83e1748fd1b765_icgraph" id="astructDiffChoice_adc2925cf95fd6058bb83e1748fd1b765_icgraph">
 <area shape="rect" title="Print the configured diffusion options." alt="" coords="216,5,360,32"/>
 <area shape="rect" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671" title="Print the configured solver, physics, and transport options." alt="" coords="5,5,168,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa699ab30d722a581a3a4f7f28000d56e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa699ab30d722a581a3a4f7f28000d56e">&#9670;&nbsp;</a></span>host_transports()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool DiffChoice::host_transports </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        AMREX_ASSERT(n &gt;= 0 &amp;&amp; n &lt; <a class="code" href="ERF__IndexDefines_8H.html#a46e292b965f80d15acfbdc11ffe1e0f0">NVAR_max</a>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">return</span> n &lt; <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a> || !<a class="code" href="structDiffChoice.html#a3910c7768a56841fd8fbe4056cddd9c3">qstate_is_diagnostic</a>[n - <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>];</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a46e292b965f80d15acfbdc11ffe1e0f0"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a46e292b965f80d15acfbdc11ffe1e0f0">NVAR_max</a></div><div class="ttdeci">#define NVAR_max</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:66</div></div>
+<div class="ttc" id="astructDiffChoice_html_a3910c7768a56841fd8fbe4056cddd9c3"><div class="ttname"><a href="structDiffChoice.html#a3910c7768a56841fd8fbe4056cddd9c3">DiffChoice::qstate_is_diagnostic</a></div><div class="ttdeci">amrex::GpuArray&lt; bool, NVAR_max - RhoQ1_comp &gt; qstate_is_diagnostic</div><div class="ttdef"><b>Definition:</b> ERF_DiffStruct.H:118</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8dadfdd08431c71618ba77d2aa40101d">erf_slow_rhs_post()</a>, <a class="el" href="ERF__ScalarLimitPost_8H.html#a66af016a2c575aa1d5e5974ad8ebe4be">if()</a>, and <a class="el" href="structDiffChoice.html#af3d340195ba85d1a115c2b24050858b0">implicit_q()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structDiffChoice_aa699ab30d722a581a3a4f7f28000d56e_icgraph.png" border="0" usemap="#astructDiffChoice_aa699ab30d722a581a3a4f7f28000d56e_icgraph" alt=""/></div>
+<map name="astructDiffChoice_aa699ab30d722a581a3a4f7f28000d56e_icgraph" id="astructDiffChoice_aa699ab30d722a581a3a4f7f28000d56e_icgraph">
+<area shape="rect" title=" " alt="" coords="749,132,948,159"/>
+<area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a8dadfdd08431c71618ba77d2aa40101d" title=" " alt="" coords="551,81,690,108"/>
+<area shape="rect" href="ERF__ScalarLimitPost_8H.html#a66af016a2c575aa1d5e5974ad8ebe4be" title=" " alt="" coords="601,132,640,159"/>
+<area shape="rect" href="structDiffChoice.html#af3d340195ba85d1a115c2b24050858b0" title=" " alt="" coords="540,183,701,209"/>
+<area shape="rect" href="ERF__NativeScalarDiffusion_8H.html#afcd0530ce2d8e4352736690d314d96cc" title=" " alt="" coords="277,175,492,217"/>
+<area shape="rect" href="ERF__DiffusionSrcForState__N_8cpp.html#af148e604ab0a74c8a533889843269f94" title=" " alt="" coords="32,5,203,32"/>
+<area shape="rect" href="ERF__DiffusionSrcForState__S_8cpp.html#a2f997a316c6732151b373b5969edb448" title=" " alt="" coords="33,56,202,83"/>
+<area shape="rect" href="ERF__DiffusionSrcForState__T_8cpp.html#abd9152a3dbd99ce03654e4bbbf25b2eb" title=" " alt="" coords="33,107,202,133"/>
+<area shape="rect" href="ERF__ImplicitPost_8H.html#acf3fb84d95857390f34255bb2ae57eea" title=" " alt="" coords="98,157,137,184"/>
+<area shape="rect" href="ERF__ImplicitDiff__N_8cpp.html#af8136e3a32733e32c96590f045697f6f" title=" " alt="" coords="26,208,209,235"/>
+<area shape="rect" href="ERF__ImplicitDiff__S_8cpp.html#aa41db35bcfb1b2c9e67d971fec82c2d1" title=" " alt="" coords="27,259,207,285"/>
+<area shape="rect" href="ERF__ImplicitDiff__T_8cpp.html#a950904f5744a2f87d00229ae4da03da2" title=" " alt="" coords="27,309,207,336"/>
+<area shape="rect" href="ERF__ImplicitDiff__T_8cpp.html#a232daee932b40c9a54cdba0435e7a845" title=" " alt="" coords="5,360,229,387"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af3d340195ba85d1a115c2b24050858b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3d340195ba85d1a115c2b24050858b0">&#9670;&nbsp;</a></span>implicit_q()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool DiffChoice::implicit_q </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">return</span> n &gt;= <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a> &amp;&amp;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;               n &lt; <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a> + <a class="code" href="structDiffChoice.html#a25ff26296aa7303f64cac15a28bf2df6">n_qstate_moist</a> + <a class="code" href="structDiffChoice.html#a9938cd003bc4c12e6ba62088c5381778">n_qstate_nonmoist</a> &amp;&amp;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;               <a class="code" href="structDiffChoice.html#aa699ab30d722a581a3a4f7f28000d56e">host_transports</a>(n);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
+<div class="ttc" id="astructDiffChoice_html_a25ff26296aa7303f64cac15a28bf2df6"><div class="ttname"><a href="structDiffChoice.html#a25ff26296aa7303f64cac15a28bf2df6">DiffChoice::n_qstate_moist</a></div><div class="ttdeci">int n_qstate_moist</div><div class="ttdoc">Number of water-related conserved components starting at RhoQ1_comp, retaining their water-species mo...</div><div class="ttdef"><b>Definition:</b> ERF_DiffStruct.H:116</div></div>
+<div class="ttc" id="astructDiffChoice_html_a9938cd003bc4c12e6ba62088c5381778"><div class="ttname"><a href="structDiffChoice.html#a9938cd003bc4c12e6ba62088c5381778">DiffChoice::n_qstate_nonmoist</a></div><div class="ttdeci">int n_qstate_nonmoist</div><div class="ttdef"><b>Definition:</b> ERF_DiffStruct.H:117</div></div>
+<div class="ttc" id="astructDiffChoice_html_aa699ab30d722a581a3a4f7f28000d56e"><div class="ttname"><a href="structDiffChoice.html#aa699ab30d722a581a3a4f7f28000d56e">DiffChoice::host_transports</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool host_transports(int n) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_DiffStruct.H:121</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__NativeScalarDiffusion_8H.html#afcd0530ce2d8e4352736690d314d96cc">ResolveNativeScalarDiffusionPolicy()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structDiffChoice_af3d340195ba85d1a115c2b24050858b0_cgraph.png" border="0" usemap="#astructDiffChoice_af3d340195ba85d1a115c2b24050858b0_cgraph" alt=""/></div>
+<map name="astructDiffChoice_af3d340195ba85d1a115c2b24050858b0_cgraph" id="astructDiffChoice_af3d340195ba85d1a115c2b24050858b0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,167,32"/>
+<area shape="rect" href="structDiffChoice.html#aa699ab30d722a581a3a4f7f28000d56e" title=" " alt="" coords="215,5,413,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structDiffChoice_af3d340195ba85d1a115c2b24050858b0_icgraph.png" border="0" usemap="#astructDiffChoice_af3d340195ba85d1a115c2b24050858b0_icgraph" alt=""/></div>
+<map name="astructDiffChoice_af3d340195ba85d1a115c2b24050858b0_icgraph" id="astructDiffChoice_af3d340195ba85d1a115c2b24050858b0_icgraph">
+<area shape="rect" title=" " alt="" coords="540,183,701,209"/>
+<area shape="rect" href="ERF__NativeScalarDiffusion_8H.html#afcd0530ce2d8e4352736690d314d96cc" title=" " alt="" coords="277,175,492,217"/>
+<area shape="rect" href="ERF__DiffusionSrcForState__N_8cpp.html#af148e604ab0a74c8a533889843269f94" title=" " alt="" coords="32,5,203,32"/>
+<area shape="rect" href="ERF__DiffusionSrcForState__S_8cpp.html#a2f997a316c6732151b373b5969edb448" title=" " alt="" coords="33,56,202,83"/>
+<area shape="rect" href="ERF__DiffusionSrcForState__T_8cpp.html#abd9152a3dbd99ce03654e4bbbf25b2eb" title=" " alt="" coords="33,107,202,133"/>
+<area shape="rect" href="ERF__ImplicitPost_8H.html#acf3fb84d95857390f34255bb2ae57eea" title=" " alt="" coords="98,157,137,184"/>
+<area shape="rect" href="ERF__ImplicitDiff__N_8cpp.html#af8136e3a32733e32c96590f045697f6f" title=" " alt="" coords="26,208,209,235"/>
+<area shape="rect" href="ERF__ImplicitDiff__S_8cpp.html#aa41db35bcfb1b2c9e67d971fec82c2d1" title=" " alt="" coords="27,259,207,285"/>
+<area shape="rect" href="ERF__ImplicitDiff__T_8cpp.html#a950904f5744a2f87d00229ae4da03da2" title=" " alt="" coords="27,309,207,336"/>
+<area shape="rect" href="ERF__ImplicitDiff__T_8cpp.html#a232daee932b40c9a54cdba0435e7a845" title=" " alt="" coords="5,360,229,387"/>
 </map>
 </div>
 
@@ -456,9 +582,41 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Number of moist conserved components starting at RhoQ1_comp; these are the species whose vertical diffusion is split between the explicit and implicit parts. </p>
+<p>Number of water-related conserved components starting at RhoQ1_comp, retaining their water-species molecular-diffusion coefficients. </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__NativeScalarDiffusion_8H.html#afcd0530ce2d8e4352736690d314d96cc">ResolveNativeScalarDiffusionPolicy()</a>, and <a class="el" href="ERF__NativeScalarDiffusion_8H.html#a61d9629dc50ce4006aea4b98602639af">VerticalMolecularAlphaByPrim()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structDiffChoice.html#af3d340195ba85d1a115c2b24050858b0">implicit_q()</a>, <a class="el" href="ERF__NativeScalarDiffusion_8H.html#afcd0530ce2d8e4352736690d314d96cc">ResolveNativeScalarDiffusionPolicy()</a>, and <a class="el" href="ERF__NativeScalarDiffusion_8H.html#a61d9629dc50ce4006aea4b98602639af">VerticalMolecularAlphaByPrim()</a>.</p>
+
+</div>
+</div>
+<a id="a9938cd003bc4c12e6ba62088c5381778"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9938cd003bc4c12e6ba62088c5381778">&#9670;&nbsp;</a></span>n_qstate_nonmoist</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DiffChoice::n_qstate_nonmoist = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="structDiffChoice.html#af3d340195ba85d1a115c2b24050858b0">implicit_q()</a>.</p>
+
+</div>
+</div>
+<a id="a3910c7768a56841fd8fbe4056cddd9c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3910c7768a56841fd8fbe4056cddd9c3">&#9670;&nbsp;</a></span>qstate_is_diagnostic</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::GpuArray&lt;bool, <a class="el" href="ERF__IndexDefines_8H.html#a46e292b965f80d15acfbdc11ffe1e0f0">NVAR_max</a> - <a class="el" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>&gt; DiffChoice::qstate_is_diagnostic {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="structDiffChoice.html#aa699ab30d722a581a3a4f7f28000d56e">host_transports()</a>.</p>
 
 </div>
 </div>

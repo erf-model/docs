@@ -1,5 +1,13 @@
 var NAVTREEINDEX52 =
 {
+"structTwoStreamCanopyView.html#a8be33fb7380e8c1cbcd1bb4ce13d5700":[2,0,217,2],
+"structTwoStreamCanopyView.html#a9b76b0ddf4076b1427e59814231ee66f":[2,0,217,0],
+"structTwoStreamFaceSky.html":[2,0,218],
+"structTwoStreamFaceSky.html#a1f089958127916619854e969e553edfe":[2,0,218,4],
+"structTwoStreamFaceSky.html#a54040a4f15fbd84b7aa7973eeda8dc9d":[2,0,218,0],
+"structTwoStreamFaceSky.html#a9d7d899391b03f00d6fe0b8bf4ac7ce0":[2,0,218,3],
+"structTwoStreamFaceSky.html#aaabf54d196d0bb6bf836746bd6cbe2e6":[2,0,218,2],
+"structTwoStreamFaceSky.html#ad8deac3e96b24a06bb90971cf33010cd":[2,0,218,1],
 "structTwoStreamLayerSW.html":[2,0,219],
 "structTwoStreamLayerSW.html#a0c07a989138e41f09489f9f39424ffef":[2,0,219,3],
 "structTwoStreamLayerSW.html#a2cd97e878d755bdbafe8e12032010217":[2,0,219,2],
@@ -241,13 +249,5 @@ var NAVTREEINDEX52 =
 "structadiabatic__wave__coupled.html":[2,0,28],
 "structadiabatic__wave__coupled.html#a3f907fc7025d3d3f7e44c222e12b4df1":[2,0,28,2],
 "structadiabatic__wave__coupled.html#a51bc09852a8614117aad6a5a36a32fa6":[2,0,28,0],
-"structadiabatic__wave__coupled.html#a65e83816b9e25954eeca654167627fd8":[2,0,28,5],
-"structadiabatic__wave__coupled.html#a812ea5ea7d6223e5512c372b3260d1bc":[2,0,28,3],
-"structadiabatic__wave__coupled.html#aa4eb74455480668121e37e678f596d07":[2,0,28,6],
-"structadiabatic__wave__coupled.html#ab5f4ad8ae9907cf15e3eba1129ea1375":[2,0,28,4],
-"structadiabatic__wave__coupled.html#ad4cdbc2ca98e6c762848e3e58c8774bf":[2,0,28,1],
-"structbulk__coeff__flux.html":[2,0,34],
-"structbulk__coeff__flux.html#a157187c650e01c56ccb40fce7af23017":[2,0,34,0],
-"structbulk__coeff__flux.html#a1a1b2fa87a2029266a3d487f13621da1":[2,0,34,4],
-"structbulk__coeff__flux.html#a724d9b2415d8fbddea690c42b1d713a9":[2,0,34,5]
+"structadiabatic__wave__coupled.html#a65e83816b9e25954eeca654167627fd8":[2,0,28,5]
 };

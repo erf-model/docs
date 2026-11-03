@@ -19,9 +19,11 @@ var classMicrophysics =
     [ "GetPlotVarNames", "classMicrophysics.html#a8ee9010738bdec29e2b5a86e176f66c7", null ],
     [ "Init", "classMicrophysics.html#a4e781e2a953a088477cfc5a1e3691f2e", null ],
     [ "modelType", "classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366", null ],
+    [ "Qstate_Is_Diagnostic", "classMicrophysics.html#ae10f8a4b141655134fb997c75a070abf", null ],
     [ "Set_dzmin", "classMicrophysics.html#abe0044f23ab9fb60ca3d3948ad056c12", null ],
     [ "Set_Lmask", "classMicrophysics.html#aaba0a179bf629a02282d115aad857549", null ],
     [ "Set_Sed_Inflow", "classMicrophysics.html#a68df5179b0c38b637b80494cd7d57cff", null ],
+    [ "Update_Diagnostic_State_Lev", "classMicrophysics.html#aad22c0509193144140e26cfc2ce27607", null ],
     [ "Update_Micro_Vars_Lev", "classMicrophysics.html#a8374e68d4a12ffbcad7a2d029eee5400", null ],
     [ "Update_State_Vars_Lev", "classMicrophysics.html#a8bd2a2c836d10f3d3f8444319dcefa82", null ]
 ];

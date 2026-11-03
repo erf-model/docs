@@ -1,5 +1,13 @@
 var NAVTREEINDEX55 =
 {
+"structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#af3e02cd09aca478e2df8b1afac6bffcc":[2,0,9,32,1,14],
+"structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#affb1eb84198d9aa96d8d03e9311c0d0d":[2,0,9,32,1,16],
+"structerf__sbm_1_1SpectralGridSpec.html":[2,0,9,33],
+"structerf__sbm_1_1SpectralGridSpec.html#a92ff789ceab304008f703930e5af09dc":[2,0,9,33,1],
+"structerf__sbm_1_1SpectralGridSpec.html#ab1c38eeb1e3ecf666400b1934978422d":[2,0,9,33,3],
+"structerf__sbm_1_1SpectralGridSpec.html#ac45794dd5289baa3e52da51fe29affac":[2,0,9,33,2],
+"structerf__sbm_1_1SpectralGridSpec.html#ad0804b6874aa3c801df5c086dbdff521":[2,0,9,33,0],
+"structerf__sbm_1_1SpectralPopulationSpec.html":[2,0,9,14],
 "structerf__sbm_1_1SpectralPopulationSpec.html#a300d061d6b6aac2fcf9cd8d11ae57635":[2,0,9,14,1],
 "structerf__sbm_1_1SpectralPopulationSpec.html#a5b2ddaae548d9765ce836ddc185bec06":[2,0,9,14,2],
 "structerf__sbm_1_1SpectralPopulationSpec.html#a904f6ddb6e810c0606444073b73548f3":[2,0,9,14,4],
@@ -241,13 +249,5 @@ var NAVTREEINDEX55 =
 "structplotfile2d_1_1SampledFieldDescriptor.html#ab396cdda121a68697e5880fa6fb34284":[2,0,20,4,2],
 "structplotfile2d_1_1SampledFieldDescriptor.html#ac37f9aca5edd7b1a2b9ff9f0ea770e78":[2,0,20,4,3],
 "structplotfile2d_1_1SampledFieldDescriptor.html#aec699a7cbc84bebad4bcd832261fd34b":[2,0,20,4,1],
-"structplotfile2d_1_1SampledFieldSelection.html":[2,0,20,5],
-"structplotfile2d_1_1SampledFieldSelection.html#a15a2c21311d6e40c709b42b6a77ecbf4":[2,0,20,5,1],
-"structplotfile2d_1_1SampledFieldSelection.html#ab879194600c55839e2eb311bd0b203cc":[2,0,20,5,0],
-"structplotfile2d_1_1SampledLevelDefinition.html":[2,0,20,9],
-"structplotfile2d_1_1SampledLevelDefinition.html#a451de3df9ee5b904c6f49cd91a42b0a3":[2,0,20,9,1],
-"structplotfile2d_1_1SampledLevelDefinition.html#a5d9376266f48199bc843dc649ca24ad5":[2,0,20,9,0],
-"structplotfile2d_1_1SampledLevelDefinition.html#a6946a7f1426a8ab002ad19c580a10a91":[2,0,20,9,2],
-"structplotfile2d_1_1SampledLevelDefinition.html#a6e6b7960b5be88c1a5ecaac24d101cb5":[2,0,20,9,4],
-"structplotfile2d_1_1SampledLevelDefinition.html#a809960c438fa5797e545502c50895eff":[2,0,20,9,3]
+"structplotfile2d_1_1SampledFieldSelection.html":[2,0,20,5]
 };
