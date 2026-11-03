@@ -2,6 +2,8 @@ var ERF__MOSTUtils_8H =
 [
     [ "most_data", "structmost__data.html", "structmost__data" ],
     [ "similarity_funs", "structsimilarity__funs.html", "structsimilarity__funs" ],
+    [ "most_flux_scale", "structmost__flux__scale.html", "structmost__flux__scale" ],
+    [ "most_aitken", "structmost__aitken.html", "structmost__aitken" ],
     [ "air_viscosity", "ERF__MOSTUtils_8H.html#a83577688af6d1136ab7a0be1b16f4674", null ],
     [ "bound_inverted_roughness", "ERF__MOSTUtils_8H.html#a56bfc91c8ae13d3c3bc638a061e71e3a", null ],
     [ "Charnock_roughness", "ERF__MOSTUtils_8H.html#aed7c2f1acc6eb30ffdd3e0c861a2613b", null ],
@@ -9,6 +11,16 @@ var ERF__MOSTUtils_8H =
     [ "Compute_roughness", "ERF__MOSTUtils_8H.html#a607a0f83f082fa826a3dc5031798d5d7", null ],
     [ "Donelan_roughness", "ERF__MOSTUtils_8H.html#ae50bca8acd1ac64e6d84a5235252ef4b", null ],
     [ "Mod_Charnock_roughness", "ERF__MOSTUtils_8H.html#a65d6796ef5bb1f327f2915b5e8d682fa", null ],
+    [ "most_bracket", "ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c", null ],
+    [ "most_bracket_floor", "ERF__MOSTUtils_8H.html#a346ecf6c2f47fea59f7620ded98e3668", null ],
+    [ "most_clamp_zeta", "ERF__MOSTUtils_8H.html#a95bed2bf652676eda56ed1d709cf5b41", null ],
+    [ "most_flux_outputs", "ERF__MOSTUtils_8H.html#a7abca698fd094b0b7d38ce151b6b219f", null ],
+    [ "most_fold_flux_scale", "ERF__MOSTUtils_8H.html#a3f761a9100e330b23cfdeaa9ed760bd5", null ],
+    [ "most_rib_resid", "ERF__MOSTUtils_8H.html#a6a459d91cb1838b829e09a3157c7e4cc", null ],
+    [ "most_rib_zeta_bracketed", "ERF__MOSTUtils_8H.html#a2cca6324eaa3b4c1549e0cc5f02fa3ad", null ],
+    [ "most_rib_zeta_is_root", "ERF__MOSTUtils_8H.html#a8cc28924f8de08db9fc3dd5f4089cf5a", null ],
     [ "WaveCoupled_roughness", "ERF__MOSTUtils_8H.html#a14e77f8504faa0fd3976b6b4fd12376e", null ],
-    [ "inverted_roughness_lo", "ERF__MOSTUtils_8H.html#a3e75edbb1ca5fc37216da0216fd803c4", null ]
+    [ "inverted_roughness_lo", "ERF__MOSTUtils_8H.html#a3e75edbb1ca5fc37216da0216fd803c4", null ],
+    [ "most_min_ustar", "ERF__MOSTUtils_8H.html#a0ce60c50cb38da027ce6fdcc3621b27c", null ],
+    [ "most_zeta_lim", "ERF__MOSTUtils_8H.html#a665236c605c2b99bc3dead0c83abb422", null ]
 ];

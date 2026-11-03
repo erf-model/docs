@@ -170,8 +170,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="structadiabatic.html#afdc69c66b9c49f67d4f2409bc1f3ce29">mdata</a>.<a class="code" href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">surf_moist_flux</a> = Qvflux;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
 <div class="ttc" id="astructadiabatic_html_afdc69c66b9c49f67d4f2409bc1f3ce29"><div class="ttname"><a href="structadiabatic.html#afdc69c66b9c49f67d4f2409bc1f3ce29">adiabatic::mdata</a></div><div class="ttdeci">most_data mdata</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:76</div></div>
-<div class="ttc" id="astructmost__data_html_a0171f1cdf5ab8c1685475e5212246888"><div class="ttname"><a href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">most_data::surf_moist_flux</a></div><div class="ttdeci">amrex::Real surf_moist_flux</div><div class="ttdoc">Moisture flux.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:17</div></div>
-<div class="ttc" id="astructmost__data_html_af1d069399319831cf4ae17fba1dda19f"><div class="ttname"><a href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">most_data::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdoc">Heat flux TODO: decide whether this is &lt;θ'w'&gt; or &lt;θv'w'&gt; under moist conditions.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:16</div></div>
+<div class="ttc" id="astructmost__data_html_a0171f1cdf5ab8c1685475e5212246888"><div class="ttname"><a href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">most_data::surf_moist_flux</a></div><div class="ttdeci">amrex::Real surf_moist_flux</div><div class="ttdoc">Moisture flux.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:18</div></div>
+<div class="ttc" id="astructmost__data_html_af1d069399319831cf4ae17fba1dda19f"><div class="ttname"><a href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">most_data::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdoc">Heat flux TODO: decide whether this is &lt;θ'w'&gt; or &lt;θv'w'&gt; under moist conditions.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:17</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -328,16 +328,27 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        olen_arr(i,j,k)   = <a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> umm   = std::max(umm_arr(i,j,k), <a class="code" href="structadiabatic.html#a9ac801e4bb0aaa9992aade3cebc4b054">WSMIN</a>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        u_star_arr(i,j,k) = <a class="code" href="structadiabatic.html#afdc69c66b9c49f67d4f2409bc1f3ce29">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / std::log(zref_arr(i,j,k) / z0_arr(i,j,k));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        u_star_arr(i,j,k) = <a class="code" href="structadiabatic.html#afdc69c66b9c49f67d4f2409bc1f3ce29">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / <a class="code" href="ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c">most_bracket</a>(std::log(zref_arr(i,j,k) / z0_arr(i,j,k)), <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        t_star_arr(i,j,k) = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        q_star_arr(i,j,k) = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a319ff1c970342978d83ed3795c78afa7"><div class="ttname"><a href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a></div><div class="ttdeci">constexpr amrex::Real bogus_large_value</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:19</div></div>
+<div class="ttc" id="aERF__MOSTUtils_8H_html_a4130b132abf1e31530d71d74a8fafa6c"><div class="ttname"><a href="ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c">most_bracket</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real most_bracket(amrex::Real C, amrex::Real psi)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:254</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:36</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="astructadiabatic_html_a9ac801e4bb0aaa9992aade3cebc4b054"><div class="ttname"><a href="structadiabatic.html#a9ac801e4bb0aaa9992aade3cebc4b054">adiabatic::WSMIN</a></div><div class="ttdeci">const amrex::Real WSMIN</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:78</div></div>
-<div class="ttc" id="astructmost__data_html_a73da7dc37cb1555348e956a4e2c932fe"><div class="ttname"><a href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">most_data::kappa</a></div><div class="ttdeci">amrex::Real kappa</div><div class="ttdoc">von Karman constant</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:14</div></div>
-</div><!-- fragment -->
+<div class="ttc" id="astructmost__data_html_a73da7dc37cb1555348e956a4e2c932fe"><div class="ttname"><a href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">most_data::kappa</a></div><div class="ttdeci">amrex::Real kappa</div><div class="ttdoc">von Karman constant</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:15</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structadiabatic_ad310e2d926e399d89dffcb5ec060988d_cgraph.png" border="0" usemap="#astructadiabatic_ad310e2d926e399d89dffcb5ec060988d_cgraph" alt=""/></div>
+<map name="astructadiabatic_ad310e2d926e399d89dffcb5ec060988d_cgraph" id="astructadiabatic_ad310e2d926e399d89dffcb5ec060988d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,169,32"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c" title=" " alt="" coords="217,5,328,32"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a346ecf6c2f47fea59f7620ded98e3668" title=" " alt="" coords="376,5,523,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>

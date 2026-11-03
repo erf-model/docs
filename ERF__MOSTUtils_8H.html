@@ -91,21 +91,23 @@ $(document).ready(function(){initNavTree('ERF__MOSTUtils_8H.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;AMReX_Algorithm.H&gt;</code><br />
+<code>#include &lt;AMReX_BLassert.H&gt;</code><br />
 <code>#include &quot;<a class="el" href="ERF__Constants_8H_source.html">ERF_Constants.H</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_MOSTUtils.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__MOSTUtils_8H__incl.png" border="0" usemap="#aSource_2BoundaryConditions_2ERF__MOSTUtils_8H" alt=""/></div>
 <map name="aSource_2BoundaryConditions_2ERF__MOSTUtils_8H" id="aSource_2BoundaryConditions_2ERF__MOSTUtils_8H">
-<area shape="rect" title=" " alt="" coords="165,5,367,47"/>
-<area shape="rect" title=" " alt="" coords="105,95,259,121"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="283,95,417,121"/>
-<area shape="rect" title=" " alt="" coords="5,169,68,196"/>
-<area shape="rect" title=" " alt="" coords="151,244,210,271"/>
-<area shape="rect" title=" " alt="" coords="245,244,367,271"/>
-<area shape="rect" title=" " alt="" coords="367,169,546,196"/>
-<area shape="rect" title=" " alt="" coords="570,169,693,196"/>
-<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="143,169,343,196"/>
+<area shape="rect" title=" " alt="" coords="157,5,358,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,160,121"/>
+<area shape="rect" title=" " alt="" coords="184,95,331,121"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="355,95,488,121"/>
+<area shape="rect" title=" " alt="" coords="77,169,139,196"/>
+<area shape="rect" title=" " alt="" coords="223,244,281,271"/>
+<area shape="rect" title=" " alt="" coords="316,244,439,271"/>
+<area shape="rect" title=" " alt="" coords="439,169,617,196"/>
+<area shape="rect" title=" " alt="" coords="641,169,764,196"/>
+<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="215,169,415,196"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -174,9 +176,29 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimilarity__funs.html">similarity_funs</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmost__flux__scale.html">most_flux_scale</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmost__aitken.html">most_aitken</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a346ecf6c2f47fea59f7620ded98e3668"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTUtils_8H.html#a346ecf6c2f47fea59f7620ded98e3668">most_bracket_floor</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> C)</td></tr>
+<tr class="separator:a346ecf6c2f47fea59f7620ded98e3668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4130b132abf1e31530d71d74a8fafa6c"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c">most_bracket</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> C, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> psi)</td></tr>
+<tr class="separator:a4130b132abf1e31530d71d74a8fafa6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a459d91cb1838b829e09a3157c7e4cc"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTUtils_8H.html#a6a459d91cb1838b829e09a3157c7e4cc">most_rib_resid</a> (const <a class="el" href="structsimilarity__funs.html">similarity_funs</a> &amp;sfuns, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> C, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Rib, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zeta)</td></tr>
+<tr class="separator:a6a459d91cb1838b829e09a3157c7e4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cc28924f8de08db9fc3dd5f4089cf5a"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTUtils_8H.html#a8cc28924f8de08db9fc3dd5f4089cf5a">most_rib_zeta_is_root</a> (const <a class="el" href="structsimilarity__funs.html">similarity_funs</a> &amp;sfuns, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> C, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Rib, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zeta, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> delta)</td></tr>
+<tr class="separator:a8cc28924f8de08db9fc3dd5f4089cf5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cca6324eaa3b4c1549e0cc5f02fa3ad"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTUtils_8H.html#a2cca6324eaa3b4c1549e0cc5f02fa3ad">most_rib_zeta_bracketed</a> (const <a class="el" href="structsimilarity__funs.html">similarity_funs</a> &amp;sfuns, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> C, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Rib, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zeta0, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tol)</td></tr>
+<tr class="separator:a2cca6324eaa3b4c1549e0cc5f02fa3ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95bed2bf652676eda56ed1d709cf5b41"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTUtils_8H.html#a95bed2bf652676eda56ed1d709cf5b41">most_clamp_zeta</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zeta, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zeta_fold, bool &amp;at_fold)</td></tr>
+<tr class="separator:a95bed2bf652676eda56ed1d709cf5b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f761a9100e330b23cfdeaa9ed760bd5"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="structmost__flux__scale.html">most_flux_scale</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTUtils_8H.html#a3f761a9100e330b23cfdeaa9ed760bd5">most_fold_flux_scale</a> (bool at_fold, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zeta_fold, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> thv, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tflux_s, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tflux_q, bool spec_qflux, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> kappa, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> gravity, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zref)</td></tr>
+<tr class="separator:a3f761a9100e330b23cfdeaa9ed760bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7abca698fd094b0b7d38ce151b6b219f"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTUtils_8H.html#a7abca698fd094b0b7d38ce151b6b219f">most_flux_outputs</a> (const <a class="el" href="structmost__data.html">most_data</a> &amp;mdata, bool spec_qflux, bool at_fold, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zeta_fold, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> C, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> psi_h, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zref, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tm, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tvm, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qvm, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qflux, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;olen, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;t_surf, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;t_star, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;q_surf, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;q_star)</td></tr>
+<tr class="separator:a7abca698fd094b0b7d38ce151b6b219f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83577688af6d1136ab7a0be1b16f4674"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTUtils_8H.html#a83577688af6d1136ab7a0be1b16f4674">air_viscosity</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T_degK)</td></tr>
 <tr class="separator:a83577688af6d1136ab7a0be1b16f4674"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed7c2f1acc6eb30ffdd3e0c861a2613b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTUtils_8H.html#aed7c2f1acc6eb30ffdd3e0c861a2613b">Charnock_roughness</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Cnk_a, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> nu, bool visc)</td></tr>
@@ -196,6 +218,10 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a665236c605c2b99bc3dead0c83abb422"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTUtils_8H.html#a665236c605c2b99bc3dead0c83abb422">most_zeta_lim</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.0)</td></tr>
+<tr class="separator:a665236c605c2b99bc3dead0c83abb422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ce60c50cb38da027ce6fdcc3621b27c"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTUtils_8H.html#a0ce60c50cb38da027ce6fdcc3621b27c">most_min_ustar</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001)</td></tr>
+<tr class="separator:a0ce60c50cb38da027ce6fdcc3621b27c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e75edbb1ca5fc37216da0216fd803c4"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTUtils_8H.html#a3e75edbb1ca5fc37216da0216fd803c4">inverted_roughness_lo</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-7)</td></tr>
 <tr class="separator:a3e75edbb1ca5fc37216da0216fd803c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -222,10 +248,10 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;{</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> TC = T_degK - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(273.15);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.326e-5)*(<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(6.542e-3)*TC + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(8.301e-6)*TC*TC - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(4.84e-9)*TC*TC*TC);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;{</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> TC = T_degK - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(273.15);</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.326e-5)*(<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(6.542e-3)*TC + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(8.301e-6)*TC*TC - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(4.84e-9)*TC*TC*TC);</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;}</div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:37</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
@@ -284,13 +310,13 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Bounds on the roughness recovered by Compute_roughness. The inversion is unbounded above: in weak wind under strong stability (u* from an LSM or bulk flux large relative to kappa*U, psi_m &lt;&lt; 0) it returns z0 &gt;&gt; zref. The upper bound is above every tabulated land-cover roughness in NoahmpTable.TBL (Z0MVT &lt;= 1.10 m) and below the 2 m diagnostic height; z0 is also kept below half of zref so that ln(zref/z0) stays positive. </p>
-<div class="fragment"><div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;{</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z0_lo = <a class="code" href="ERF__MOSTUtils_8H.html#a3e75edbb1ca5fc37216da0216fd803c4">inverted_roughness_lo</a>;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z0_hi = amrex::min(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.5), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.5) * zref);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keywordflow">return</span> amrex::min(amrex::max(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, z0_lo), z0_hi);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;{</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z0_lo = <a class="code" href="ERF__MOSTUtils_8H.html#a3e75edbb1ca5fc37216da0216fd803c4">inverted_roughness_lo</a>;</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z0_hi = amrex::min(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.5), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.5) * zref);</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    <span class="keywordflow">return</span> amrex::min(amrex::max(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, z0_lo), z0_hi);</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPertVels__ScalarAdvDiff_8H_html_a3686b9abefe6dda622283bf7109e68fe"><div class="ttname"><a href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a></div><div class="ttdeci">Real z0</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ScalarAdvDiff.H:12</div></div>
-<div class="ttc" id="aERF__MOSTUtils_8H_html_a3e75edbb1ca5fc37216da0216fd803c4"><div class="ttname"><a href="ERF__MOSTUtils_8H.html#a3e75edbb1ca5fc37216da0216fd803c4">inverted_roughness_lo</a></div><div class="ttdeci">constexpr amrex::Real inverted_roughness_lo</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:344</div></div>
+<div class="ttc" id="aERF__MOSTUtils_8H_html_a3e75edbb1ca5fc37216da0216fd803c4"><div class="ttname"><a href="ERF__MOSTUtils_8H.html#a3e75edbb1ca5fc37216da0216fd803c4">inverted_roughness_lo</a></div><div class="ttdeci">constexpr amrex::Real inverted_roughness_lo</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:716</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__MOSTUtils_8H.html#a607a0f83f082fa826a3dc5031798d5d7">Compute_roughness()</a>.</p>
 <div class="dynheader">
@@ -355,14 +381,14 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;{</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> = (Cnk_a / <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>) * <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> * <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordflow">if</span> (visc) {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> += <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.11) * nu / std::max(<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.01));</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="comment">// From Davis et al 2008 MWR</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">return</span> std::min(std::max(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.27e-7)), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2.85e-3));</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;{</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> = (Cnk_a / <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>) * <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> * <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>;</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <span class="keywordflow">if</span> (visc) {</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> += <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.11) * nu / std::max(<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.01));</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    }</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="comment">// From Davis et al 2008 MWR</span></div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="keywordflow">return</span> std::min(std::max(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.27e-7)), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2.85e-3));</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:72</div></div>
 <div class="ttc" id="anamespaceLsmVar__SLM_html_adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e"><div class="ttname"><a href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">LsmVar_SLM::ustar</a></div><div class="ttdeci">@ ustar</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:28</div></div>
 </div><!-- fragment -->
@@ -436,16 +462,16 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;{</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ws10m = umm*std::log(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1e-4)) / std::log(zref/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1e-4));</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Czc = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.011) + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.007)*std::min(std::max((ws10m-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.))/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(8.), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0));</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> = (Czc / <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>) * <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> * <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">if</span> (visc) {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> += <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.11) * nu / std::max(<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.01));</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">// From Davis et al 2008 MWR</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">return</span> std::min(std::max(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.27e-7)), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2.85e-3));</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;{</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ws10m = umm*std::log(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1e-4)) / std::log(zref/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1e-4));</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Czc = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.011) + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.007)*std::min(std::max((ws10m-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.))/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(8.), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0));</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> = (Czc / <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>) * <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> * <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>;</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    <span class="keywordflow">if</span> (visc) {</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;        <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> += <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.11) * nu / std::max(<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.01));</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    }</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    <span class="comment">// From Davis et al 2008 MWR</span></div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <span class="keywordflow">return</span> std::min(std::max(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.27e-7)), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2.85e-3));</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structadiabatic__charnock.html#a934885ca943ddef47931168f22f5ce0b">adiabatic_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__charnock.html#a8e6ddb9e2eac678c1e7bbf95aee6e710">surface_flux_charnock::iterate_flux()</a>, and <a class="el" href="structsurface__temp__charnock.html#a3501022e71af02c18494621bde2fb8be">surface_temp_charnock::iterate_flux()</a>.</p>
 <div class="dynheader">
@@ -509,27 +535,27 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;{</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <a class="code" href="structsimilarity__funs.html">similarity_funs</a> sfuns;</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zeta  = zref / <a class="code" href="namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2ad6e699523a4bae904aafb6116e60c833">Olen</a>;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> psi_m = sfuns.<a class="code" href="structsimilarity__funs.html#af2d77e837d453feccf9d5de094e1653b">calc_psi_m2</a>(zeta);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="comment">// z0 = zref / exp(arg) is below the lower bound once arg &gt; log(zref / z0_lo),</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="comment">// so the bound is returned without evaluating exp(arg), which overflows when</span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="comment">// u* sits at its floor of machine epsilon (zero stress: bulk_coeff with</span></div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="comment">// Cd = 0, or an LSM that returns none). At or below the threshold exp(arg)</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="comment">// is finite and the inversion runs as before, so no other input changes.</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> arg = <a class="code" href="ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093">KAPPA</a>*umm/<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> + psi_m;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keywordflow">if</span> (arg &gt; std::log(zref / <a class="code" href="ERF__MOSTUtils_8H.html#a3e75edbb1ca5fc37216da0216fd803c4">inverted_roughness_lo</a>)) {</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__MOSTUtils_8H.html#a56bfc91c8ae13d3c3bc638a061e71e3a">bound_inverted_roughness</a>(<a class="code" href="ERF__MOSTUtils_8H.html#a3e75edbb1ca5fc37216da0216fd803c4">inverted_roughness_lo</a>, zref);</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    }</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>    = zref / std::exp(arg);</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__MOSTUtils_8H.html#a56bfc91c8ae13d3c3bc638a061e71e3a">bound_inverted_roughness</a>(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, zref);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;{</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <a class="code" href="structsimilarity__funs.html">similarity_funs</a> sfuns;</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zeta  = zref / <a class="code" href="namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2ad6e699523a4bae904aafb6116e60c833">Olen</a>;</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> psi_m = sfuns.<a class="code" href="structsimilarity__funs.html#af2d77e837d453feccf9d5de094e1653b">calc_psi_m2</a>(zeta);</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    <span class="comment">// z0 = zref / exp(arg) is below the lower bound once arg &gt; log(zref / z0_lo),</span></div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    <span class="comment">// so the bound is returned without evaluating exp(arg), which overflows when</span></div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    <span class="comment">// u* sits at its floor of machine epsilon (zero stress: bulk_coeff with</span></div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    <span class="comment">// Cd = 0, or an LSM that returns none). At or below the threshold exp(arg)</span></div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <span class="comment">// is finite and the inversion runs as before, so no other input changes.</span></div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> arg = <a class="code" href="ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093">KAPPA</a>*umm/<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> + psi_m;</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <span class="keywordflow">if</span> (arg &gt; std::log(zref / <a class="code" href="ERF__MOSTUtils_8H.html#a3e75edbb1ca5fc37216da0216fd803c4">inverted_roughness_lo</a>)) {</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__MOSTUtils_8H.html#a56bfc91c8ae13d3c3bc638a061e71e3a">bound_inverted_roughness</a>(<a class="code" href="ERF__MOSTUtils_8H.html#a3e75edbb1ca5fc37216da0216fd803c4">inverted_roughness_lo</a>, zref);</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    }</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>    = zref / std::exp(arg);</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__MOSTUtils_8H.html#a56bfc91c8ae13d3c3bc638a061e71e3a">bound_inverted_roughness</a>(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, zref);</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0f51e1ef58cb9a3add46666cc98e6093"><div class="ttname"><a href="ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093">KAPPA</a></div><div class="ttdeci">constexpr amrex::Real KAPPA</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:71</div></div>
-<div class="ttc" id="aERF__MOSTUtils_8H_html_a56bfc91c8ae13d3c3bc638a061e71e3a"><div class="ttname"><a href="ERF__MOSTUtils_8H.html#a56bfc91c8ae13d3c3bc638a061e71e3a">bound_inverted_roughness</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real bound_inverted_roughness(amrex::Real z0, amrex::Real zref) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:357</div></div>
+<div class="ttc" id="aERF__MOSTUtils_8H_html_a56bfc91c8ae13d3c3bc638a061e71e3a"><div class="ttname"><a href="ERF__MOSTUtils_8H.html#a56bfc91c8ae13d3c3bc638a061e71e3a">bound_inverted_roughness</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real bound_inverted_roughness(amrex::Real z0, amrex::Real zref) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:729</div></div>
 <div class="ttc" id="anamespaceplotfile2d_html_a2dd8a06cb41059636688602f49bafad2ad6e699523a4bae904aafb6116e60c833"><div class="ttname"><a href="namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2ad6e699523a4bae904aafb6116e60c833">plotfile2d::DiagnosticID::Olen</a></div><div class="ttdeci">@ Olen</div></div>
-<div class="ttc" id="astructsimilarity__funs_html"><div class="ttname"><a href="structsimilarity__funs.html">similarity_funs</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:38</div></div>
-<div class="ttc" id="astructsimilarity__funs_html_af2d77e837d453feccf9d5de094e1653b"><div class="ttname"><a href="structsimilarity__funs.html#af2d77e837d453feccf9d5de094e1653b">similarity_funs::calc_psi_m2</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_m2(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:50</div></div>
+<div class="ttc" id="astructsimilarity__funs_html"><div class="ttname"><a href="structsimilarity__funs.html">similarity_funs</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:66</div></div>
+<div class="ttc" id="astructsimilarity__funs_html_af2d77e837d453feccf9d5de094e1653b"><div class="ttname"><a href="structsimilarity__funs.html#af2d77e837d453feccf9d5de094e1653b">similarity_funs::calc_psi_m2</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_m2(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:78</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#ad35eefe71ee96294dfab06727d316da9">SurfaceLayer::compute_sfc_params_from_lsm_fluxes()</a>, and <a class="el" href="classSurfaceLayer.html#a96d8f94b856d55bc4c1d708b82376727">SurfaceLayer::compute_SurfaceLayer_bcs()</a>.</p>
 <div class="dynheader">
@@ -597,18 +623,18 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;{</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ozo{<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.59e-5)};</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zw  = std::min(std::pow(<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.06), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.3)),<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0));</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zn1 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.011)*<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>*<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>/<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> + ozo;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zn2 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.)*std::exp(-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(9.5)*std::pow(<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>, -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(.3333)));</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">if</span> (visc) {</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        zn2 += <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.11) * nu / std::max(<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.01));</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0)-zw) * zn1 + zw * zn2;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">// From Davis et al 2008 MWR</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">return</span> std::min(std::max(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.27e-7)), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2.85e-3));</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;{</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ozo{<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.59e-5)};</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zw  = std::min(std::pow(<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.06), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.3)),<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0));</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zn1 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.011)*<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>*<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>/<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> + ozo;</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zn2 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.)*std::exp(-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(9.5)*std::pow(<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>, -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(.3333)));</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <span class="keywordflow">if</span> (visc) {</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        zn2 += <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.11) * nu / std::max(<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.01));</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    }</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0)-zw) * zn1 + zw * zn2;</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="comment">// From Davis et al 2008 MWR</span></div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="keywordflow">return</span> std::min(std::max(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.27e-7)), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2.85e-3));</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structadiabatic__donelan.html#aa0805adec86ded98e27f17877e2a7904">adiabatic_donelan::iterate_flux()</a>, <a class="el" href="structsurface__flux__donelan.html#aed90f8d0aee3cdc3ac8b177aaf8b70c7">surface_flux_donelan::iterate_flux()</a>, and <a class="el" href="structsurface__temp__donelan.html#a3a47fedc36a9b7d3554c05fc0b836757">surface_temp_donelan::iterate_flux()</a>.</p>
 <div class="dynheader">
@@ -659,10 +685,10 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;{</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> = std::exp( (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2.7)*<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.8)/Cnk_b) / (<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.17)/Cnk_b) );</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">return</span> std::min(std::max(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.27e-7)), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-2));</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;{</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> = std::exp( (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2.7)*<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.8)/Cnk_b) / (<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.17)/Cnk_b) );</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <span class="keywordflow">return</span> std::min(std::max(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.27e-7)), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-2));</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structadiabatic__mod__charnock.html#adb448818932dcacccd5b7b81394a6d55">adiabatic_mod_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__mod__charnock.html#a23f28b507477e760ce15dae3420e75c9">surface_flux_mod_charnock::iterate_flux()</a>, and <a class="el" href="structsurface__temp__mod__charnock.html#ad46a3125a8d9e6c9cfd1c17d7d0a652f">surface_temp_mod_charnock::iterate_flux()</a>.</p>
 <div class="dynheader">
@@ -674,6 +700,845 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="structadiabatic__mod__charnock.html#adb448818932dcacccd5b7b81394a6d55" title=" " alt="" coords="20,5,204,47"/>
 <area shape="rect" href="structsurface__flux__mod__charnock.html#a23f28b507477e760ce15dae3420e75c9" title=" " alt="" coords="11,71,213,112"/>
 <area shape="rect" href="structsurface__temp__mod__charnock.html#ad46a3125a8d9e6c9cfd1c17d7d0a652f" title=" " alt="" coords="5,136,219,177"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4130b132abf1e31530d71d74a8fafa6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4130b132abf1e31530d71d74a8fafa6c">&#9670;&nbsp;</a></span>most_bracket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> most_bracket </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>psi</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Log-law bracket ln(zref/z0) - psi of the MOST flux kernels, held at or above most_bracket_floor(C).</p>
+<p>In strongly unstable air psi exceeds C = ln(zref/z0) and the bracket changes sign, which turns u* negative and puts the diagnosed surface temperature on the wrong side of the air for a prescribed flux. With the floor the bracket is at least 1/2, so u* stays positive and finite for every C.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>ln(zref/z0) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">psi</td><td>stability correction (momentum or heat) </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;{</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">return</span> amrex::max(C - psi, <a class="code" href="ERF__MOSTUtils_8H.html#a346ecf6c2f47fea59f7620ded98e3668">most_bracket_floor</a>(C));</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
+<div class="ttc" id="aERF__MOSTUtils_8H_html_a346ecf6c2f47fea59f7620ded98e3668"><div class="ttname"><a href="ERF__MOSTUtils_8H.html#a346ecf6c2f47fea59f7620ded98e3668">most_bracket_floor</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real most_bracket_floor(amrex::Real C)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:56</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structadiabatic.html#ad310e2d926e399d89dffcb5ec060988d">adiabatic::iterate_flux()</a>, <a class="el" href="structadiabatic__eb.html#a1c4d4c360bfc98c83596b21ed6e8b751">adiabatic_eb::iterate_flux()</a>, <a class="el" href="structadiabatic__mod__charnock.html#adb448818932dcacccd5b7b81394a6d55">adiabatic_mod_charnock::iterate_flux()</a>, <a class="el" href="structadiabatic__charnock.html#a934885ca943ddef47931168f22f5ce0b">adiabatic_charnock::iterate_flux()</a>, <a class="el" href="structadiabatic__donelan.html#aa0805adec86ded98e27f17877e2a7904">adiabatic_donelan::iterate_flux()</a>, <a class="el" href="structadiabatic__wave__coupled.html#ad4cdbc2ca98e6c762848e3e58c8774bf">adiabatic_wave_coupled::iterate_flux()</a>, <a class="el" href="structsurface__flux__charnock.html#a8e6ddb9e2eac678c1e7bbf95aee6e710">surface_flux_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__mod__charnock.html#a23f28b507477e760ce15dae3420e75c9">surface_flux_mod_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__donelan.html#aed90f8d0aee3cdc3ac8b177aaf8b70c7">surface_flux_donelan::iterate_flux()</a>, <a class="el" href="structsurface__temp__charnock.html#a3501022e71af02c18494621bde2fb8be">surface_temp_charnock::iterate_flux()</a>, <a class="el" href="structsurface__temp__mod__charnock.html#ad46a3125a8d9e6c9cfd1c17d7d0a652f">surface_temp_mod_charnock::iterate_flux()</a>, <a class="el" href="structsurface__temp__donelan.html#a3a47fedc36a9b7d3554c05fc0b836757">surface_temp_donelan::iterate_flux()</a>, <a class="el" href="structsurface__flux__wave__coupled.html#af713fd6bc030236b345f39de9801a285">surface_flux_wave_coupled::iterate_flux()</a>, <a class="el" href="structsurface__temp__wave__coupled.html#a99639bba8ffa55f8d545748906ceb842">surface_temp_wave_coupled::iterate_flux()</a>, <a class="el" href="structsurface__flux.html#a6327a8246ae840acf1e96863ae767713">surface_flux::iterate_flux()</a>, <a class="el" href="structsurface__temp.html#a6fd833a5fef6c1525bd328766209e3f8">surface_temp::iterate_flux()</a>, <a class="el" href="structsurface__temp__eb.html#a11f2d0a3cac42e5d728ad9eb3abf2ab4">surface_temp_eb::iterate_flux()</a>, <a class="el" href="structsurface__flux__eb.html#ab48baaade873c7dd4b539d33f7fa9085">surface_flux_eb::iterate_flux()</a>, <a class="el" href="ERF__MOSTUtils_8H.html#a7abca698fd094b0b7d38ce151b6b219f">most_flux_outputs()</a>, and <a class="el" href="ERF__MOSTUtils_8H.html#a6a459d91cb1838b829e09a3157c7e4cc">most_rib_resid()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MOSTUtils_8H_a4130b132abf1e31530d71d74a8fafa6c_cgraph.png" border="0" usemap="#aERF__MOSTUtils_8H_a4130b132abf1e31530d71d74a8fafa6c_cgraph" alt=""/></div>
+<map name="aERF__MOSTUtils_8H_a4130b132abf1e31530d71d74a8fafa6c_cgraph" id="aERF__MOSTUtils_8H_a4130b132abf1e31530d71d74a8fafa6c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,116,32"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a346ecf6c2f47fea59f7620ded98e3668" title=" " alt="" coords="164,5,311,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MOSTUtils_8H_a4130b132abf1e31530d71d74a8fafa6c_icgraph.png" border="0" usemap="#aERF__MOSTUtils_8H_a4130b132abf1e31530d71d74a8fafa6c_icgraph" alt=""/></div>
+<map name="aERF__MOSTUtils_8H_a4130b132abf1e31530d71d74a8fafa6c_icgraph" id="aERF__MOSTUtils_8H_a4130b132abf1e31530d71d74a8fafa6c_icgraph">
+<area shape="rect" title=" " alt="" coords="785,547,896,573"/>
+<area shape="rect" href="structadiabatic.html#ad310e2d926e399d89dffcb5ec060988d" title=" " alt="" coords="549,5,713,32"/>
+<area shape="rect" href="structadiabatic__eb.html#a1c4d4c360bfc98c83596b21ed6e8b751" title="Populate neutral MOST flux scales for an adiabatic EB surface." alt="" coords="537,56,724,83"/>
+<area shape="rect" href="structadiabatic__mod__charnock.html#adb448818932dcacccd5b7b81394a6d55" title=" " alt="" coords="539,107,723,149"/>
+<area shape="rect" href="structadiabatic__charnock.html#a934885ca943ddef47931168f22f5ce0b" title=" " alt="" coords="557,173,705,214"/>
+<area shape="rect" href="structadiabatic__donelan.html#aa0805adec86ded98e27f17877e2a7904" title=" " alt="" coords="556,238,705,279"/>
+<area shape="rect" href="structadiabatic__wave__coupled.html#ad4cdbc2ca98e6c762848e3e58c8774bf" title=" " alt="" coords="539,303,722,345"/>
+<area shape="rect" href="structsurface__flux__charnock.html#a8e6ddb9e2eac678c1e7bbf95aee6e710" title=" " alt="" coords="289,361,456,402"/>
+<area shape="rect" href="structsurface__flux__mod__charnock.html#a23f28b507477e760ce15dae3420e75c9" title=" " alt="" coords="271,426,474,467"/>
+<area shape="rect" href="structsurface__flux__donelan.html#aed90f8d0aee3cdc3ac8b177aaf8b70c7" title=" " alt="" coords="293,491,453,533"/>
+<area shape="rect" href="structsurface__temp__charnock.html#a3501022e71af02c18494621bde2fb8be" title=" " alt="" coords="542,725,719,766"/>
+<area shape="rect" href="structsurface__temp__mod__charnock.html#ad46a3125a8d9e6c9cfd1c17d7d0a652f" title=" " alt="" coords="524,790,737,831"/>
+<area shape="rect" href="structsurface__temp__donelan.html#a3a47fedc36a9b7d3554c05fc0b836757" title=" " alt="" coords="545,855,716,897"/>
+<area shape="rect" href="structsurface__flux__wave__coupled.html#af713fd6bc030236b345f39de9801a285" title=" " alt="" coords="272,557,473,598"/>
+<area shape="rect" href="structsurface__temp__wave__coupled.html#a99639bba8ffa55f8d545748906ceb842" title=" " alt="" coords="525,921,736,962"/>
+<area shape="rect" href="structsurface__flux.html#a6327a8246ae840acf1e96863ae767713" title=" " alt="" coords="281,623,464,649"/>
+<area shape="rect" href="structsurface__temp.html#a6fd833a5fef6c1525bd328766209e3f8" title=" " alt="" coords="17,1037,210,1064"/>
+<area shape="rect" href="structsurface__temp__eb.html#a11f2d0a3cac42e5d728ad9eb3abf2ab4" title="Iterate MOST stability functions and update surface flux scales." alt="" coords="5,1088,221,1115"/>
+<area shape="rect" href="structsurface__flux__eb.html#ab48baaade873c7dd4b539d33f7fa9085" title="Iterate MOST stability functions and update implied surface values." alt="" coords="269,673,476,700"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a7abca698fd094b0b7d38ce151b6b219f" title=" " alt="" coords="559,521,702,548"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a6a459d91cb1838b829e09a3157c7e4cc" title=" " alt="" coords="571,1037,690,1064"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a2cca6324eaa3b4c1549e0cc5f02fa3ad" title=" " alt="" coords="280,1037,465,1064"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a8cc28924f8de08db9fc3dd5f4089cf5a" title=" " alt="" coords="290,1088,455,1115"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a346ecf6c2f47fea59f7620ded98e3668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a346ecf6c2f47fea59f7620ded98e3668">&#9670;&nbsp;</a></span>most_bracket_floor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> most_bracket_floor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Lower bound of the log-law bracket ln(zref/z0) - psi of the MOST flux kernels: C/2 held between 1/2 and 1.</p>
+<p>The bound is 1 for zref &gt;= e^2 z0 and C/2 down to zref = e z0, so it does not exceed the neutral bracket C wherever zref &gt;= e^(1/2) z0. The lower limit of 1/2 keeps the bracket, and so u*, positive and finite when z0 approaches or exceeds zref (C &lt;= 0).</p>
+<p>The bound is set by the under-relaxed u* iteration, not by the physics. At an unstable fixed point the relaxed map has slope (1 - alpha) - alpha s / bracket, with s = -3 (z/L) dpsi_m/d(z/L) between 1.3 (z/L = -0.5) and 2.4 (z/L = -50) for Businger-Dyer. With alpha = 0.5 the iteration converges only for bracket &gt; s/3 (0.4 to 0.8), so a bound of 1 keeps the switch between the bounded and free branches inside the convergent range, while 0.1 C (0.3 at C = 3) does not and the iteration oscillates between two values. If alpha changes, the bound needs revisiting; see PR #4866.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>ln(zref/z0) </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> amrex::max(amrex::min(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.5) * C, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0)), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.5));</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structsimilarity__funs.html#a61ce8bed71f6ba44607c2c313217c893">similarity_funs::calc_zeta_fold()</a>, and <a class="el" href="ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c">most_bracket()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MOSTUtils_8H_a346ecf6c2f47fea59f7620ded98e3668_icgraph.png" border="0" usemap="#aERF__MOSTUtils_8H_a346ecf6c2f47fea59f7620ded98e3668_icgraph" alt=""/></div>
+<map name="aERF__MOSTUtils_8H_a346ecf6c2f47fea59f7620ded98e3668_icgraph" id="aERF__MOSTUtils_8H_a346ecf6c2f47fea59f7620ded98e3668_icgraph">
+<area shape="rect" title=" " alt="" coords="944,501,1091,528"/>
+<area shape="rect" href="structsimilarity__funs.html#a61ce8bed71f6ba44607c2c313217c893" title=" " alt="" coords="554,98,707,139"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c" title=" " alt="" coords="785,526,896,553"/>
+<area shape="rect" href="structsurface__flux__charnock.html#a8e6ddb9e2eac678c1e7bbf95aee6e710" title=" " alt="" coords="289,19,456,60"/>
+<area shape="rect" href="structsurface__flux__mod__charnock.html#a23f28b507477e760ce15dae3420e75c9" title=" " alt="" coords="271,84,474,126"/>
+<area shape="rect" href="structsurface__flux__donelan.html#aed90f8d0aee3cdc3ac8b177aaf8b70c7" title=" " alt="" coords="293,150,453,191"/>
+<area shape="rect" href="structsurface__flux__wave__coupled.html#af713fd6bc030236b345f39de9801a285" title=" " alt="" coords="272,215,473,256"/>
+<area shape="rect" href="structsurface__flux.html#a6327a8246ae840acf1e96863ae767713" title=" " alt="" coords="281,281,464,308"/>
+<area shape="rect" href="structsurface__flux__eb.html#ab48baaade873c7dd4b539d33f7fa9085" title="Iterate MOST stability functions and update implied surface values." alt="" coords="269,332,476,358"/>
+<area shape="rect" href="structadiabatic.html#ad310e2d926e399d89dffcb5ec060988d" title=" " alt="" coords="549,417,713,444"/>
+<area shape="rect" href="structadiabatic__eb.html#a1c4d4c360bfc98c83596b21ed6e8b751" title="Populate neutral MOST flux scales for an adiabatic EB surface." alt="" coords="537,468,724,494"/>
+<area shape="rect" href="structadiabatic__mod__charnock.html#adb448818932dcacccd5b7b81394a6d55" title=" " alt="" coords="539,519,723,560"/>
+<area shape="rect" href="structadiabatic__charnock.html#a934885ca943ddef47931168f22f5ce0b" title=" " alt="" coords="557,584,705,626"/>
+<area shape="rect" href="structadiabatic__donelan.html#aa0805adec86ded98e27f17877e2a7904" title=" " alt="" coords="556,650,705,691"/>
+<area shape="rect" href="structadiabatic__wave__coupled.html#ad4cdbc2ca98e6c762848e3e58c8774bf" title=" " alt="" coords="539,715,722,756"/>
+<area shape="rect" href="structsurface__temp__charnock.html#a3501022e71af02c18494621bde2fb8be" title=" " alt="" coords="542,780,719,822"/>
+<area shape="rect" href="structsurface__temp__mod__charnock.html#ad46a3125a8d9e6c9cfd1c17d7d0a652f" title=" " alt="" coords="524,846,737,887"/>
+<area shape="rect" href="structsurface__temp__donelan.html#a3a47fedc36a9b7d3554c05fc0b836757" title=" " alt="" coords="545,911,716,952"/>
+<area shape="rect" href="structsurface__temp__wave__coupled.html#a99639bba8ffa55f8d545748906ceb842" title=" " alt="" coords="525,976,736,1018"/>
+<area shape="rect" href="structsurface__temp.html#a6fd833a5fef6c1525bd328766209e3f8" title=" " alt="" coords="17,1093,210,1120"/>
+<area shape="rect" href="structsurface__temp__eb.html#a11f2d0a3cac42e5d728ad9eb3abf2ab4" title="Iterate MOST stability functions and update surface flux scales." alt="" coords="5,1144,221,1170"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a7abca698fd094b0b7d38ce151b6b219f" title=" " alt="" coords="559,214,702,241"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a6a459d91cb1838b829e09a3157c7e4cc" title=" " alt="" coords="571,1093,690,1120"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a2cca6324eaa3b4c1549e0cc5f02fa3ad" title=" " alt="" coords="280,1093,465,1120"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a8cc28924f8de08db9fc3dd5f4089cf5a" title=" " alt="" coords="290,1144,455,1170"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a95bed2bf652676eda56ed1d709cf5b41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95bed2bf652676eda56ed1d709cf5b41">&#9670;&nbsp;</a></span>most_clamp_zeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> most_clamp_zeta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>zeta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>zeta_fold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>at_fold</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>z/L of the prescribed-flux kernels, bounded below by -most_zeta_lim and above by the fold (see <a class="el" href="structsimilarity__funs.html#a61ce8bed71f6ba44607c2c313217c893">similarity_funs::calc_zeta_fold</a>), where the prescribed stable flux stops having a solution.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">zeta</td><td>z/L from the current u* and flux </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zeta_fold</td><td>z/L at the fold </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">at_fold</td><td>whether the fold bound was applied </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;{</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    at_fold = (zeta &gt;= zeta_fold);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keywordflow">return</span> amrex::max(amrex::min(zeta, zeta_fold), -<a class="code" href="ERF__MOSTUtils_8H.html#a665236c605c2b99bc3dead0c83abb422">most_zeta_lim</a>);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
+<div class="ttc" id="aERF__MOSTUtils_8H_html_a665236c605c2b99bc3dead0c83abb422"><div class="ttname"><a href="ERF__MOSTUtils_8H.html#a665236c605c2b99bc3dead0c83abb422">most_zeta_lim</a></div><div class="ttdeci">constexpr amrex::Real most_zeta_lim</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:262</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structsurface__flux__charnock.html#a8e6ddb9e2eac678c1e7bbf95aee6e710">surface_flux_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__mod__charnock.html#a23f28b507477e760ce15dae3420e75c9">surface_flux_mod_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__donelan.html#aed90f8d0aee3cdc3ac8b177aaf8b70c7">surface_flux_donelan::iterate_flux()</a>, <a class="el" href="structsurface__flux__wave__coupled.html#af713fd6bc030236b345f39de9801a285">surface_flux_wave_coupled::iterate_flux()</a>, <a class="el" href="structsurface__flux.html#a6327a8246ae840acf1e96863ae767713">surface_flux::iterate_flux()</a>, and <a class="el" href="structsurface__flux__eb.html#ab48baaade873c7dd4b539d33f7fa9085">surface_flux_eb::iterate_flux()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MOSTUtils_8H_a95bed2bf652676eda56ed1d709cf5b41_icgraph.png" border="0" usemap="#aERF__MOSTUtils_8H_a95bed2bf652676eda56ed1d709cf5b41_icgraph" alt=""/></div>
+<map name="aERF__MOSTUtils_8H_a95bed2bf652676eda56ed1d709cf5b41_icgraph" id="aERF__MOSTUtils_8H_a95bed2bf652676eda56ed1d709cf5b41_icgraph">
+<area shape="rect" title=" " alt="" coords="260,177,397,203"/>
+<area shape="rect" href="structsurface__flux__charnock.html#a8e6ddb9e2eac678c1e7bbf95aee6e710" title=" " alt="" coords="25,5,192,47"/>
+<area shape="rect" href="structsurface__flux__mod__charnock.html#a23f28b507477e760ce15dae3420e75c9" title=" " alt="" coords="7,71,210,112"/>
+<area shape="rect" href="structsurface__flux__donelan.html#aed90f8d0aee3cdc3ac8b177aaf8b70c7" title=" " alt="" coords="29,136,189,177"/>
+<area shape="rect" href="structsurface__flux__wave__coupled.html#af713fd6bc030236b345f39de9801a285" title=" " alt="" coords="8,201,209,243"/>
+<area shape="rect" href="structsurface__flux.html#a6327a8246ae840acf1e96863ae767713" title=" " alt="" coords="17,267,200,294"/>
+<area shape="rect" href="structsurface__flux__eb.html#ab48baaade873c7dd4b539d33f7fa9085" title="Iterate MOST stability functions and update implied surface values." alt="" coords="5,318,212,345"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7abca698fd094b0b7d38ce151b6b219f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7abca698fd094b0b7d38ce151b6b219f">&#9670;&nbsp;</a></span>most_flux_outputs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void most_flux_outputs </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmost__data.html">most_data</a> &amp;&#160;</td>
+          <td class="paramname"><em>mdata</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>spec_qflux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>at_fold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>zeta_fold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>psi_h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>ustar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>zref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>tm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>tvm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>qvm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>qflux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramname"><em>olen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramname"><em>t_surf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramname"><em>t_star</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramname"><em>q_surf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramname"><em>q_star</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Surface state of a prescribed-flux kernel once its u* iteration has converged.</p>
+<p>Sets t_surf, t_star and q_star (and q_surf when the moisture flux is prescribed). At the fold the prescribed fluxes are reduced by most_fold_flux_scale and the Obukhov length is set to the fold value. u* is floored at most_min_ustar here, so every kernel applies the same floor.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mdata</td><td>MOST data (prescribed fluxes, kappa, gravity) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">spec_qflux</td><td>whether the moisture flux is prescribed </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">at_fold</td><td>whether z/L was held at the fold on the last pass </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zeta_fold</td><td>z/L at the fold </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>ln(zref/z0) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">psi_h</td><td>heat stability correction of the last pass </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ustar</td><td>friction velocity (floored at most_min_ustar) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zref</td><td>reference height </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tm</td><td>potential temperature at zref </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tvm</td><td>virtual potential temperature at zref </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">qvm</td><td>water vapor at zref </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">qflux</td><td>moisture flux of the last pass </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">olen</td><td>Obukhov length </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">t_surf</td><td>surface potential temperature </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">t_star</td><td>temperature scale </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">q_surf</td><td>surface water vapor (read when the moisture flux is diagnosed) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">q_star</td><td>moisture scale </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;{</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> = amrex::max(<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>, <a class="code" href="ERF__MOSTUtils_8H.html#a0ce60c50cb38da027ce6fdcc3621b27c">most_min_ustar</a>);</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    <span class="keyword">const</span> <a class="code" href="structmost__flux__scale.html">most_flux_scale</a> scale = <a class="code" href="ERF__MOSTUtils_8H.html#a3f761a9100e330b23cfdeaa9ed760bd5">most_fold_flux_scale</a>(at_fold, zeta_fold, <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>, tvm,</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                                                       mdata.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a> * (<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + <a class="code" href="ERF__Constants_8H.html#a088792be9376259df72347c43ae1ab13">epsv</a> * qvm),</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                                                       qflux * <a class="code" href="ERF__Constants_8H.html#a088792be9376259df72347c43ae1ab13">epsv</a> * tm, spec_qflux,</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                                                       mdata.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a>, mdata.<a class="code" href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">gravity</a>, zref);</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <span class="keywordflow">if</span> (at_fold) { <a class="code" href="namespaceLsmFlux__SLM.html#a19f10cdebf09fc26d2dff3a0761c2a34a8e5922e369c4f0f17a3ab601871b293e">olen</a> = zref / zeta_fold; }</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> CmPsih = <a class="code" href="ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c">most_bracket</a>(C, psi_h);</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> hflux  = scale.<a class="code" href="structmost__flux__scale.html#a6f3d8a59e040db4a342d1544a4ef303b">temp</a> * mdata.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a>;</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    t_surf = hflux * CmPsih / (<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> * mdata.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a>) + tm;</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    t_star = -hflux / <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>;</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordflow">if</span> (spec_qflux) {</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mflux = scale.<a class="code" href="structmost__flux__scale.html#aa23cb04e6a295e8562a4b0a33eccc6ee">moist</a> * mdata.<a class="code" href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">surf_moist_flux</a>;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        q_surf = mflux * CmPsih / (<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> * mdata.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a>) + qvm;</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        q_star = -mflux / <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>;</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;        q_star = mdata.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * (qvm - q_surf) / CmPsih;</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    }</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;}</div>
+<div class="ttc" id="aERF__Constants_8H_html_a088792be9376259df72347c43ae1ab13"><div class="ttname"><a href="ERF__Constants_8H.html#a088792be9376259df72347c43ae1ab13">epsv</a></div><div class="ttdeci">constexpr amrex::Real epsv</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:56</div></div>
+<div class="ttc" id="aERF__MOSTUtils_8H_html_a0ce60c50cb38da027ce6fdcc3621b27c"><div class="ttname"><a href="ERF__MOSTUtils_8H.html#a0ce60c50cb38da027ce6fdcc3621b27c">most_min_ustar</a></div><div class="ttdeci">constexpr amrex::Real most_min_ustar</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:452</div></div>
+<div class="ttc" id="aERF__MOSTUtils_8H_html_a3f761a9100e330b23cfdeaa9ed760bd5"><div class="ttname"><a href="ERF__MOSTUtils_8H.html#a3f761a9100e330b23cfdeaa9ed760bd5">most_fold_flux_scale</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE most_flux_scale most_fold_flux_scale(bool at_fold, amrex::Real zeta_fold, amrex::Real ustar, amrex::Real thv, amrex::Real tflux_s, amrex::Real tflux_q, bool spec_qflux, amrex::Real kappa, amrex::Real gravity, amrex::Real zref)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:429</div></div>
+<div class="ttc" id="aERF__MOSTUtils_8H_html_a4130b132abf1e31530d71d74a8fafa6c"><div class="ttname"><a href="ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c">most_bracket</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real most_bracket(amrex::Real C, amrex::Real psi)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:254</div></div>
+<div class="ttc" id="anamespaceLsmFlux__SLM_html_a19f10cdebf09fc26d2dff3a0761c2a34a8e5922e369c4f0f17a3ab601871b293e"><div class="ttname"><a href="namespaceLsmFlux__SLM.html#a19f10cdebf09fc26d2dff3a0761c2a34a8e5922e369c4f0f17a3ab601871b293e">LsmFlux_SLM::olen</a></div><div class="ttdeci">@ olen</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:104</div></div>
+<div class="ttc" id="astructmost__data_html_a0171f1cdf5ab8c1685475e5212246888"><div class="ttname"><a href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">most_data::surf_moist_flux</a></div><div class="ttdeci">amrex::Real surf_moist_flux</div><div class="ttdoc">Moisture flux.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:18</div></div>
+<div class="ttc" id="astructmost__data_html_a73da7dc37cb1555348e956a4e2c932fe"><div class="ttname"><a href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">most_data::kappa</a></div><div class="ttdeci">amrex::Real kappa</div><div class="ttdoc">von Karman constant</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:15</div></div>
+<div class="ttc" id="astructmost__data_html_a7e3410c5a9916b84524bda4f324eec3b"><div class="ttname"><a href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">most_data::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdoc">Acceleration due to gravity (m/s^2)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:16</div></div>
+<div class="ttc" id="astructmost__data_html_af1d069399319831cf4ae17fba1dda19f"><div class="ttname"><a href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">most_data::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdoc">Heat flux TODO: decide whether this is &lt;θ'w'&gt; or &lt;θv'w'&gt; under moist conditions.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:17</div></div>
+<div class="ttc" id="astructmost__flux__scale_html"><div class="ttname"><a href="structmost__flux__scale.html">most_flux_scale</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:396</div></div>
+<div class="ttc" id="astructmost__flux__scale_html_a6f3d8a59e040db4a342d1544a4ef303b"><div class="ttname"><a href="structmost__flux__scale.html#a6f3d8a59e040db4a342d1544a4ef303b">most_flux_scale::temp</a></div><div class="ttdeci">amrex::Real temp</div><div class="ttdoc">factor on surf_temp_flux</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:397</div></div>
+<div class="ttc" id="astructmost__flux__scale_html_aa23cb04e6a295e8562a4b0a33eccc6ee"><div class="ttname"><a href="structmost__flux__scale.html#aa23cb04e6a295e8562a4b0a33eccc6ee">most_flux_scale::moist</a></div><div class="ttdeci">amrex::Real moist</div><div class="ttdoc">factor on surf_moist_flux</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:398</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structsurface__flux__charnock.html#a8e6ddb9e2eac678c1e7bbf95aee6e710">surface_flux_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__mod__charnock.html#a23f28b507477e760ce15dae3420e75c9">surface_flux_mod_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__donelan.html#aed90f8d0aee3cdc3ac8b177aaf8b70c7">surface_flux_donelan::iterate_flux()</a>, <a class="el" href="structsurface__flux__wave__coupled.html#af713fd6bc030236b345f39de9801a285">surface_flux_wave_coupled::iterate_flux()</a>, <a class="el" href="structsurface__flux.html#a6327a8246ae840acf1e96863ae767713">surface_flux::iterate_flux()</a>, and <a class="el" href="structsurface__flux__eb.html#ab48baaade873c7dd4b539d33f7fa9085">surface_flux_eb::iterate_flux()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MOSTUtils_8H_a7abca698fd094b0b7d38ce151b6b219f_cgraph.png" border="0" usemap="#aERF__MOSTUtils_8H_a7abca698fd094b0b7d38ce151b6b219f_cgraph" alt=""/></div>
+<map name="aERF__MOSTUtils_8H_a7abca698fd094b0b7d38ce151b6b219f_cgraph" id="aERF__MOSTUtils_8H_a7abca698fd094b0b7d38ce151b6b219f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,148,57"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c" title=" " alt="" coords="220,5,331,32"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a3f761a9100e330b23cfdeaa9ed760bd5" title=" " alt="" coords="196,56,355,83"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a346ecf6c2f47fea59f7620ded98e3668" title=" " alt="" coords="403,5,549,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MOSTUtils_8H_a7abca698fd094b0b7d38ce151b6b219f_icgraph.png" border="0" usemap="#aERF__MOSTUtils_8H_a7abca698fd094b0b7d38ce151b6b219f_icgraph" alt=""/></div>
+<map name="aERF__MOSTUtils_8H_a7abca698fd094b0b7d38ce151b6b219f_icgraph" id="aERF__MOSTUtils_8H_a7abca698fd094b0b7d38ce151b6b219f_icgraph">
+<area shape="rect" title=" " alt="" coords="260,177,403,203"/>
+<area shape="rect" href="structsurface__flux__charnock.html#a8e6ddb9e2eac678c1e7bbf95aee6e710" title=" " alt="" coords="25,5,192,47"/>
+<area shape="rect" href="structsurface__flux__mod__charnock.html#a23f28b507477e760ce15dae3420e75c9" title=" " alt="" coords="7,71,210,112"/>
+<area shape="rect" href="structsurface__flux__donelan.html#aed90f8d0aee3cdc3ac8b177aaf8b70c7" title=" " alt="" coords="29,136,189,177"/>
+<area shape="rect" href="structsurface__flux__wave__coupled.html#af713fd6bc030236b345f39de9801a285" title=" " alt="" coords="8,201,209,243"/>
+<area shape="rect" href="structsurface__flux.html#a6327a8246ae840acf1e96863ae767713" title=" " alt="" coords="17,267,200,294"/>
+<area shape="rect" href="structsurface__flux__eb.html#ab48baaade873c7dd4b539d33f7fa9085" title="Iterate MOST stability functions and update implied surface values." alt="" coords="5,318,212,345"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3f761a9100e330b23cfdeaa9ed760bd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f761a9100e330b23cfdeaa9ed760bd5">&#9670;&nbsp;</a></span>most_fold_flux_scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="structmost__flux__scale.html">most_flux_scale</a> most_fold_flux_scale </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>at_fold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>zeta_fold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>ustar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>thv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>tflux_s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>tflux_q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>spec_qflux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>kappa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>gravity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>zref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Part of a prescribed stable flux the wind can carry at the fold.</p>
+<p>The virtual heat flux is tflux_s + tflux_q, with tflux_s = surf_temp_flux (1 + epsv qv) and tflux_q = qflux epsv theta. When z/L is held at the fold (see <a class="el" href="structsimilarity__funs.html#a61ce8bed71f6ba44607c2c313217c893">similarity_funs::calc_zeta_fold</a>), the wind is below the minimum the prescribed flux needs and carries only -u*^3 thv zeta_fold / (kappa g zref). Only the prescribed components that are downward drive the fold, so only they are reduced, by a common factor, until the net virtual flux equals that value. An upward component, or a moisture flux diagnosed from q_surf, is left unchanged; if no prescribed component is downward, nothing is reduced. The factor is not taken below 0, so when a diagnosed condensation flux alone is stronger than the fold value, the downward prescribed components are removed and the net flux remains stronger than the fold value. Returns 1 for both factors away from the fold.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">at_fold</td><td>whether z/L was held at the fold </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zeta_fold</td><td>z/L at the fold </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ustar</td><td>friction velocity </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">thv</td><td>virtual potential temperature at zref </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tflux_s</td><td>sensible part of the virtual heat flux </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tflux_q</td><td>moisture part of the virtual heat flux </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">spec_qflux</td><td>whether the moisture flux is prescribed </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">kappa</td><td>von Karman constant </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gravity</td><td>gravitational acceleration </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zref</td><td>reference height </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;{</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <a class="code" href="structmost__flux__scale.html">most_flux_scale</a> scale;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tflux = tflux_s + tflux_q;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keywordflow">if</span> (!at_fold || tflux &gt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) { <span class="keywordflow">return</span> scale; }</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tflux_fold = -<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> * <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> * <a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a> * thv * zeta_fold / (kappa * gravity * zref);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="keywordflow">if</span> (tflux_fold &lt;= tflux) { <span class="keywordflow">return</span> scale; }</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> down_s = (tflux_s &lt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> down_q = (spec_qflux &amp;&amp; tflux_q &lt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> down = (down_s ? tflux_s : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) + (down_q ? tflux_q : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keywordflow">if</span> (down &gt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) { <span class="keywordflow">return</span> scale; }</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> r = amrex::max((down + tflux_fold - tflux) / down, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="keywordflow">if</span> (down_s) { scale.<a class="code" href="structmost__flux__scale.html#a6f3d8a59e040db4a342d1544a4ef303b">temp</a>  = r; }</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keywordflow">if</span> (down_q) { scale.<a class="code" href="structmost__flux__scale.html#aa23cb04e6a295e8562a4b0a33eccc6ee">moist</a> = r; }</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <span class="keywordflow">return</span> scale;</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;}</div>
+<div class="ttc" id="aERF__NumericalConstants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:36</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__MOSTUtils_8H.html#a7abca698fd094b0b7d38ce151b6b219f">most_flux_outputs()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MOSTUtils_8H_a3f761a9100e330b23cfdeaa9ed760bd5_icgraph.png" border="0" usemap="#aERF__MOSTUtils_8H_a3f761a9100e330b23cfdeaa9ed760bd5_icgraph" alt=""/></div>
+<map name="aERF__MOSTUtils_8H_a3f761a9100e330b23cfdeaa9ed760bd5_icgraph" id="aERF__MOSTUtils_8H_a3f761a9100e330b23cfdeaa9ed760bd5_icgraph">
+<area shape="rect" title=" " alt="" coords="451,177,609,203"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a7abca698fd094b0b7d38ce151b6b219f" title=" " alt="" coords="260,177,403,203"/>
+<area shape="rect" href="structsurface__flux__charnock.html#a8e6ddb9e2eac678c1e7bbf95aee6e710" title=" " alt="" coords="25,5,192,47"/>
+<area shape="rect" href="structsurface__flux__mod__charnock.html#a23f28b507477e760ce15dae3420e75c9" title=" " alt="" coords="7,71,210,112"/>
+<area shape="rect" href="structsurface__flux__donelan.html#aed90f8d0aee3cdc3ac8b177aaf8b70c7" title=" " alt="" coords="29,136,189,177"/>
+<area shape="rect" href="structsurface__flux__wave__coupled.html#af713fd6bc030236b345f39de9801a285" title=" " alt="" coords="8,201,209,243"/>
+<area shape="rect" href="structsurface__flux.html#a6327a8246ae840acf1e96863ae767713" title=" " alt="" coords="17,267,200,294"/>
+<area shape="rect" href="structsurface__flux__eb.html#ab48baaade873c7dd4b539d33f7fa9085" title="Iterate MOST stability functions and update implied surface values." alt="" coords="5,318,212,345"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6a459d91cb1838b829e09a3157c7e4cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a459d91cb1838b829e09a3157c7e4cc">&#9670;&nbsp;</a></span>most_rib_resid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> most_rib_resid </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structsimilarity__funs.html">similarity_funs</a> &amp;&#160;</td>
+          <td class="paramname"><em>sfuns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>Rib</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>zeta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Residual zeta - Rib (C - psi_m)^2 / (C - psi_h) of the prescribed-temperature kernels' z/L equation, with the Jimenez functions and the brackets of most_bracket.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sfuns</td><td>similarity functions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>ln(zref/z0) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Rib</td><td>bulk Richardson number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zeta</td><td>z/L </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;{</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> CmPsim = <a class="code" href="ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c">most_bracket</a>(C, sfuns.<a class="code" href="structsimilarity__funs.html#af2d77e837d453feccf9d5de094e1653b">calc_psi_m2</a>(zeta));</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> CmPsih = <a class="code" href="ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c">most_bracket</a>(C, sfuns.<a class="code" href="structsimilarity__funs.html#a38b867a4d10be55d2329ff85040889d3">calc_psi_h2</a>(zeta));</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">return</span> zeta - Rib * CmPsim * CmPsim / CmPsih;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
+<div class="ttc" id="astructsimilarity__funs_html_a38b867a4d10be55d2329ff85040889d3"><div class="ttname"><a href="structsimilarity__funs.html#a38b867a4d10be55d2329ff85040889d3">similarity_funs::calc_psi_h2</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_h2(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:103</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__MOSTUtils_8H.html#a2cca6324eaa3b4c1549e0cc5f02fa3ad">most_rib_zeta_bracketed()</a>, and <a class="el" href="ERF__MOSTUtils_8H.html#a8cc28924f8de08db9fc3dd5f4089cf5a">most_rib_zeta_is_root()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MOSTUtils_8H_a6a459d91cb1838b829e09a3157c7e4cc_cgraph.png" border="0" usemap="#aERF__MOSTUtils_8H_a6a459d91cb1838b829e09a3157c7e4cc_cgraph" alt=""/></div>
+<map name="aERF__MOSTUtils_8H_a6a459d91cb1838b829e09a3157c7e4cc_cgraph" id="aERF__MOSTUtils_8H_a6a459d91cb1838b829e09a3157c7e4cc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,78,124,105"/>
+<area shape="rect" href="structsimilarity__funs.html#a38b867a4d10be55d2329ff85040889d3" title=" " alt="" coords="172,5,325,47"/>
+<area shape="rect" href="structsimilarity__funs.html#af2d77e837d453feccf9d5de094e1653b" title=" " alt="" coords="172,71,325,112"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c" title=" " alt="" coords="193,137,304,163"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a346ecf6c2f47fea59f7620ded98e3668" title=" " alt="" coords="373,137,520,163"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MOSTUtils_8H_a6a459d91cb1838b829e09a3157c7e4cc_icgraph.png" border="0" usemap="#aERF__MOSTUtils_8H_a6a459d91cb1838b829e09a3157c7e4cc_icgraph" alt=""/></div>
+<map name="aERF__MOSTUtils_8H_a6a459d91cb1838b829e09a3157c7e4cc_icgraph" id="aERF__MOSTUtils_8H_a6a459d91cb1838b829e09a3157c7e4cc_icgraph">
+<area shape="rect" title=" " alt="" coords="503,31,621,57"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a2cca6324eaa3b4c1549e0cc5f02fa3ad" title=" " alt="" coords="269,5,455,32"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a8cc28924f8de08db9fc3dd5f4089cf5a" title=" " alt="" coords="279,56,445,83"/>
+<area shape="rect" href="structsurface__temp.html#a6fd833a5fef6c1525bd328766209e3f8" title=" " alt="" coords="17,5,210,32"/>
+<area shape="rect" href="structsurface__temp__eb.html#a11f2d0a3cac42e5d728ad9eb3abf2ab4" title="Iterate MOST stability functions and update surface flux scales." alt="" coords="5,56,221,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2cca6324eaa3b4c1549e0cc5f02fa3ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cca6324eaa3b4c1549e0cc5f02fa3ad">&#9670;&nbsp;</a></span>most_rib_zeta_bracketed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> most_rib_zeta_bracketed </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structsimilarity__funs.html">similarity_funs</a> &amp;&#160;</td>
+          <td class="paramname"><em>sfuns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>Rib</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>zeta0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>tol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Solve zeta = Rib (C - psi_m)^2 / (C - psi_h) of the prescribed-temperature kernels by bracketing and bisection, with the Jimenez functions and the brackets of most_bracket.</p>
+<p>The relaxed fixed-point iteration stalls where zeta - Rib F(zeta) nearly touches zero without crossing it, which the Jimenez stable functions produce when z0 is comparable to or above zref (C below about 1): each pass then moves zeta by about the tolerance. From zeta0 this steps, with doubling steps, in the direction the iteration moves until the residual changes sign, and bisects that interval, so it returns the root the iteration was heading to, or the next one past a near-touch. The first step is limited so that two nearby roots are not stepped over together. The search stays within +-most_zeta_lim, and returns that bound when no root lies inside it, as the prescribed-flux kernels bound zeta.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sfuns</td><td>similarity functions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>ln(zref/z0) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Rib</td><td>bulk Richardson number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zeta0</td><td>z/L to start from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tol</td><td>width of the final interval </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;{</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keyword">auto</span> resid = [&amp;] (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zeta) { <span class="keywordflow">return</span> <a class="code" href="ERF__MOSTUtils_8H.html#a6a459d91cb1838b829e09a3157c7e4cc">most_rib_resid</a>(sfuns, C, Rib, zeta); };</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a  = zeta0;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ra = resid(a);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">if</span> (ra == <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) { <span class="keywordflow">return</span> a; }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">// Step against the residual, within +-most_zeta_lim, until it changes sign</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dir  = (ra &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-1.0) : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zlim = dir * <a class="code" href="ERF__MOSTUtils_8H.html#a665236c605c2b99bc3dead0c83abb422">most_zeta_lim</a>;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keyword">auto</span> step = [&amp;] (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWDM6SedCellScratch.html#a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7">dz</a>) {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keywordflow">return</span> (dir &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) ? amrex::min(z + <a class="code" href="namespaceWDM6SedCellScratch.html#a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7">dz</a>, zlim) : <a class="code" href="namespaceamrex.html">amrex</a>::max(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - <a class="code" href="namespaceWDM6SedCellScratch.html#a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7">dz</a>, zlim);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    };</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h  = amrex::max(amrex::min(std::abs(ra),</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                                           <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.1) * amrex::max(<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>, std::abs(a))),</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                                tol);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> b  = step(a, h);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rb = resid(b);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keywordflow">while</span> ((rb &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) == (ra &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) &amp;&amp; b != zlim) {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        a  = b;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        ra = rb;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        h *= <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        b  = step(a, h);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        rb = resid(b);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    }</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="comment">// No root within the bound: hold zeta there</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">if</span> ((rb &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) == (ra &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) { <span class="keywordflow">return</span> zlim; }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="comment">// Bisect [a, b]</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keywordtype">int</span> n = 0;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keywordflow">while</span> (std::abs(b - a) &gt; tol &amp;&amp; n &lt; 60) {</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> m  = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (a + b);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rm = resid(m);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordflow">if</span> ((rm &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) == (ra &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) {</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            a  = m;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            ra = rm;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            b = m;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        ++n;</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    }</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (a + b);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;}</div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
+<div class="ttc" id="aERF__MOSTUtils_8H_html_a6a459d91cb1838b829e09a3157c7e4cc"><div class="ttname"><a href="ERF__MOSTUtils_8H.html#a6a459d91cb1838b829e09a3157c7e4cc">most_rib_resid</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real most_rib_resid(const similarity_funs &amp;sfuns, amrex::Real C, amrex::Real Rib, amrex::Real zeta)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTUtils.H:276</div></div>
+<div class="ttc" id="aERF__NumericalConstants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:38</div></div>
+<div class="ttc" id="aERF__NumericalConstants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:41</div></div>
+<div class="ttc" id="anamespaceWDM6SedCellScratch_html_a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:273</div></div>
+<div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:17</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structsurface__temp.html#a6fd833a5fef6c1525bd328766209e3f8">surface_temp::iterate_flux()</a>, and <a class="el" href="structsurface__temp__eb.html#a11f2d0a3cac42e5d728ad9eb3abf2ab4">surface_temp_eb::iterate_flux()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MOSTUtils_8H_a2cca6324eaa3b4c1549e0cc5f02fa3ad_cgraph.png" border="0" usemap="#aERF__MOSTUtils_8H_a2cca6324eaa3b4c1549e0cc5f02fa3ad_cgraph" alt=""/></div>
+<map name="aERF__MOSTUtils_8H_a2cca6324eaa3b4c1549e0cc5f02fa3ad_cgraph" id="aERF__MOSTUtils_8H_a2cca6324eaa3b4c1549e0cc5f02fa3ad_cgraph">
+<area shape="rect" title=" " alt="" coords="5,78,191,105"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a6a459d91cb1838b829e09a3157c7e4cc" title=" " alt="" coords="239,78,357,105"/>
+<area shape="rect" href="structsimilarity__funs.html#a38b867a4d10be55d2329ff85040889d3" title=" " alt="" coords="405,5,559,47"/>
+<area shape="rect" href="structsimilarity__funs.html#af2d77e837d453feccf9d5de094e1653b" title=" " alt="" coords="405,71,559,112"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c" title=" " alt="" coords="427,137,537,163"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a346ecf6c2f47fea59f7620ded98e3668" title=" " alt="" coords="607,137,753,163"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MOSTUtils_8H_a2cca6324eaa3b4c1549e0cc5f02fa3ad_icgraph.png" border="0" usemap="#aERF__MOSTUtils_8H_a2cca6324eaa3b4c1549e0cc5f02fa3ad_icgraph" alt=""/></div>
+<map name="aERF__MOSTUtils_8H_a2cca6324eaa3b4c1549e0cc5f02fa3ad_icgraph" id="aERF__MOSTUtils_8H_a2cca6324eaa3b4c1549e0cc5f02fa3ad_icgraph">
+<area shape="rect" title=" " alt="" coords="269,31,455,57"/>
+<area shape="rect" href="structsurface__temp.html#a6fd833a5fef6c1525bd328766209e3f8" title=" " alt="" coords="17,5,210,32"/>
+<area shape="rect" href="structsurface__temp__eb.html#a11f2d0a3cac42e5d728ad9eb3abf2ab4" title="Iterate MOST stability functions and update surface flux scales." alt="" coords="5,56,221,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8cc28924f8de08db9fc3dd5f4089cf5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cc28924f8de08db9fc3dd5f4089cf5a">&#9670;&nbsp;</a></span>most_rib_zeta_is_root()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool most_rib_zeta_is_root </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structsimilarity__funs.html">similarity_funs</a> &amp;&#160;</td>
+          <td class="paramname"><em>sfuns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>Rib</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>zeta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>delta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Whether a root of most_rib_resid lies within delta of zeta.</p>
+<p>The relaxed fixed-point iteration stops on a small step, which a near-touch of the residual also gives where no root is near; the residual must change sign across [zeta - delta, zeta + delta] for zeta to be taken as a solution.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sfuns</td><td>similarity functions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>ln(zref/z0) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Rib</td><td>bulk Richardson number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zeta</td><td>z/L the relaxed iteration stopped at </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delta</td><td>half-width of the interval checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;{</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rlo = <a class="code" href="ERF__MOSTUtils_8H.html#a6a459d91cb1838b829e09a3157c7e4cc">most_rib_resid</a>(sfuns, C, Rib, zeta - delta);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd642011fa45a5a419fe9a6afb6119c2">rhi</a> = <a class="code" href="ERF__MOSTUtils_8H.html#a6a459d91cb1838b829e09a3157c7e4cc">most_rib_resid</a>(sfuns, C, Rib, zeta + delta);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">return</span> (rlo &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) != (<a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd642011fa45a5a419fe9a6afb6119c2">rhi</a> &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) || rlo == <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> || <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd642011fa45a5a419fe9a6afb6119c2">rhi</a> == <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
+<div class="ttc" id="anamespaceWSM6Ind_html_aa080c2fd4acd9ccb8c87d956a055c00dacd642011fa45a5a419fe9a6afb6119c2"><div class="ttname"><a href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd642011fa45a5a419fe9a6afb6119c2">WSM6Ind::rhi</a></div><div class="ttdeci">@ rhi</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:360</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structsurface__temp.html#a6fd833a5fef6c1525bd328766209e3f8">surface_temp::iterate_flux()</a>, and <a class="el" href="structsurface__temp__eb.html#a11f2d0a3cac42e5d728ad9eb3abf2ab4">surface_temp_eb::iterate_flux()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MOSTUtils_8H_a8cc28924f8de08db9fc3dd5f4089cf5a_cgraph.png" border="0" usemap="#aERF__MOSTUtils_8H_a8cc28924f8de08db9fc3dd5f4089cf5a_cgraph" alt=""/></div>
+<map name="aERF__MOSTUtils_8H_a8cc28924f8de08db9fc3dd5f4089cf5a_cgraph" id="aERF__MOSTUtils_8H_a8cc28924f8de08db9fc3dd5f4089cf5a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,78,171,105"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a6a459d91cb1838b829e09a3157c7e4cc" title=" " alt="" coords="219,78,337,105"/>
+<area shape="rect" href="structsimilarity__funs.html#a38b867a4d10be55d2329ff85040889d3" title=" " alt="" coords="385,5,539,47"/>
+<area shape="rect" href="structsimilarity__funs.html#af2d77e837d453feccf9d5de094e1653b" title=" " alt="" coords="385,71,539,112"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a4130b132abf1e31530d71d74a8fafa6c" title=" " alt="" coords="407,137,517,163"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html#a346ecf6c2f47fea59f7620ded98e3668" title=" " alt="" coords="587,137,733,163"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MOSTUtils_8H_a8cc28924f8de08db9fc3dd5f4089cf5a_icgraph.png" border="0" usemap="#aERF__MOSTUtils_8H_a8cc28924f8de08db9fc3dd5f4089cf5a_icgraph" alt=""/></div>
+<map name="aERF__MOSTUtils_8H_a8cc28924f8de08db9fc3dd5f4089cf5a_icgraph" id="aERF__MOSTUtils_8H_a8cc28924f8de08db9fc3dd5f4089cf5a_icgraph">
+<area shape="rect" title=" " alt="" coords="269,31,435,57"/>
+<area shape="rect" href="structsurface__temp.html#a6fd833a5fef6c1525bd328766209e3f8" title=" " alt="" coords="17,5,210,32"/>
+<area shape="rect" href="structsurface__temp__eb.html#a11f2d0a3cac42e5d728ad9eb3abf2ab4" title="Iterate MOST stability functions and update surface flux scales." alt="" coords="5,56,221,83"/>
 </map>
 </div>
 
@@ -741,14 +1606,14 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;{</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1200.0) * Hwave * std::pow( Hwave/(Lwave+eps), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(4.5) );</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">if</span> (visc) {</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> += <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.11) * nu / std::max(<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.01));</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    }</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">return</span> std::min(std::max(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.27e-7)), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-2));</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;{</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160; </div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1200.0) * Hwave * std::pow( Hwave/(Lwave+eps), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(4.5) );</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <span class="keywordflow">if</span> (visc) {</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> += <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.11) * nu / std::max(<a class="code" href="namespaceLsmVar__SLM.html#adf96bce35168a066b3bad1e88600990ba1a45ac653f8c67fcd92f798c680f514e">ustar</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.01));</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    }</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="keywordflow">return</span> std::min(std::max(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.27e-7)), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-2));</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structadiabatic__wave__coupled.html#ad4cdbc2ca98e6c762848e3e58c8774bf">adiabatic_wave_coupled::iterate_flux()</a>, <a class="el" href="structsurface__flux__wave__coupled.html#af713fd6bc030236b345f39de9801a285">surface_flux_wave_coupled::iterate_flux()</a>, and <a class="el" href="structsurface__temp__wave__coupled.html#a99639bba8ffa55f8d545748906ceb842">surface_temp_wave_coupled::iterate_flux()</a>.</p>
 <div class="dynheader">
@@ -788,6 +1653,56 @@ Here is the caller graph for this function:</div>
 <p>Lower bound of the roughness recovered by Compute_roughness; shared with the guard in Compute_roughness so the two cannot drift apart. </p>
 
 <p class="reference">Referenced by <a class="el" href="ERF__MOSTUtils_8H.html#a56bfc91c8ae13d3c3bc638a061e71e3a">bound_inverted_roughness()</a>, and <a class="el" href="ERF__MOSTUtils_8H.html#a607a0f83f082fa826a3dc5031798d5d7">Compute_roughness()</a>.</p>
+
+</div>
+</div>
+<a id="a0ce60c50cb38da027ce6fdcc3621b27c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ce60c50cb38da027ce6fdcc3621b27c">&#9670;&nbsp;</a></span>most_min_ustar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> most_min_ustar = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Minimum friction velocity [m/s] of the prescribed-flux kernels' outputs (see most_flux_outputs). </p>
+
+<p class="reference">Referenced by <a class="el" href="ERF__MOSTUtils_8H.html#a7abca698fd094b0b7d38ce151b6b219f">most_flux_outputs()</a>.</p>
+
+</div>
+</div>
+<a id="a665236c605c2b99bc3dead0c83abb422"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a665236c605c2b99bc3dead0c83abb422">&#9670;&nbsp;</a></span>most_zeta_lim</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> most_zeta_lim = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.0)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Bound on |z/L| of the MOST kernels (see most_rib_zeta_bracketed and most_clamp_zeta). </p>
+
+<p class="reference">Referenced by <a class="el" href="ERF__MOSTUtils_8H.html#a95bed2bf652676eda56ed1d709cf5b41">most_clamp_zeta()</a>, and <a class="el" href="ERF__MOSTUtils_8H.html#a2cca6324eaa3b4c1549e0cc5f02fa3ad">most_rib_zeta_bracketed()</a>.</p>
 
 </div>
 </div>
