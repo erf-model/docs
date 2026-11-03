@@ -78,6 +78,9 @@ var namespaces_dup =
       [ "read_checkpoint_imultifab", "namespaceerf__checkpoint.html#a1f8405aab1181ae522fa1bd9b9e26daf", null ],
       [ "read_checkpoint_multifab", "namespaceerf__checkpoint.html#aba22b9daf8305eee0648716ae0142fe1", null ]
     ] ],
+    [ "erf_checkpoint_landmask", "namespaceerf__checkpoint__landmask.html", [
+      [ "restore_coarse_building_landmask", "namespaceerf__checkpoint__landmask.html#a0b7bcae671859234d9e96b3dc158a87e", null ]
+    ] ],
     [ "erf_checkpoint_lsm_data", "namespaceerf__checkpoint__lsm__data.html", [
       [ "file_stem", "namespaceerf__checkpoint__lsm__data.html#a449a4205db400e415264af791c075357", null ],
       [ "is_separately_named", "namespaceerf__checkpoint__lsm__data.html#a8b46ce5773862375e18d9b01d1d7c5b3", null ],

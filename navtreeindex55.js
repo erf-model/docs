@@ -1,5 +1,17 @@
 var NAVTREEINDEX55 =
 {
+"structerf__sbm_1_1SpectralPopulationSpec.html#a300d061d6b6aac2fcf9cd8d11ae57635":[2,0,9,14,1],
+"structerf__sbm_1_1SpectralPopulationSpec.html#a5b2ddaae548d9765ce836ddc185bec06":[2,0,9,14,2],
+"structerf__sbm_1_1SpectralPopulationSpec.html#a904f6ddb6e810c0606444073b73548f3":[2,0,9,14,4],
+"structerf__sbm_1_1SpectralPopulationSpec.html#a960c533427981ea9ad5c43691e6dab48":[2,0,9,14,3],
+"structerf__sbm_1_1SpectralPopulationSpec.html#acb6ee21f6e65045a0ab826cd6718f03d":[2,0,9,14,0],
+"structerf__sbm_1_1SpectralPopulationSpec.html#ad2580e6dedd217537e0b4e6b74d939c3":[2,0,9,14,5],
+"structerf__sbm_1_1SpectralPopulationSpec.html#ae6cf017657afffcf46945c051d001fdd":[2,0,9,14,6],
+"structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html":[2,0,9,0,0],
+"structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html#a028f8a8a15f1d69803975515a614b539":[2,0,9,0,0,4],
+"structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html#a22e728bce9b9eeaaed9df9bd4f2e1361":[2,0,9,0,0,3],
+"structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html#a28980c2ce35ab1eb7d9e6720116788e9":[2,0,9,0,0,2],
+"structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html#ae2a728d96c1cbdf2756d3a014bb73629":[2,0,9,0,0,0],
 "structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html#afe16e8e842528d7464aa2248d0e42c45":[2,0,9,0,0,1],
 "structerf__surface__temperature_1_1ConversionFailure.html":[2,0,10,0],
 "structerf__surface__temperature_1_1ConversionFailure.html#a0da31bcc1d5d355010dbd7867b7c1e85":[2,0,10,0,1],
@@ -237,17 +249,5 @@ var NAVTREEINDEX55 =
 "structplotfile2d_1_1SampledLevelDefinition.html#a5d9376266f48199bc843dc649ca24ad5":[2,0,20,9,0],
 "structplotfile2d_1_1SampledLevelDefinition.html#a6946a7f1426a8ab002ad19c580a10a91":[2,0,20,9,2],
 "structplotfile2d_1_1SampledLevelDefinition.html#a6e6b7960b5be88c1a5ecaac24d101cb5":[2,0,20,9,4],
-"structplotfile2d_1_1SampledLevelDefinition.html#a809960c438fa5797e545502c50895eff":[2,0,20,9,3],
-"structplotfile2d_1_1SampledLevelDefinition.html#aac78786208c87fa88f7290ec3ce392a0":[2,0,20,9,6],
-"structplotfile2d_1_1SampledLevelDefinition.html#aad9e998a6f1cee7361e32317c2ecf80d":[2,0,20,9,5],
-"structplotfile2d_1_1SampledLevelMetadata.html":[2,0,20,7],
-"structplotfile2d_1_1SampledLevelMetadata.html#a3aef72ad512a0fcbdacf6da1d0f3740d":[2,0,20,7,1],
-"structplotfile2d_1_1SampledLevelMetadata.html#a8a3d109d198d211008b84149f7b9ea2c":[2,0,20,7,0],
-"structplotfile2d_1_1SampledLevelMetadata.html#ac022cad3942d222c9bd1d4810b0c38cd":[2,0,20,7,2],
-"structplotfile2d_1_1SampledVerticalCoordinateMetadata.html":[2,0,20,6],
-"structplotfile2d_1_1SampledVerticalCoordinateMetadata.html#a273f0d93018c380907d465427455a5ba":[2,0,20,6,1],
-"structplotfile2d_1_1SampledVerticalCoordinateMetadata.html#a70ff9fc8b899cb56757eb126d0cbd9c3":[2,0,20,6,4],
-"structplotfile2d_1_1SampledVerticalCoordinateMetadata.html#a738465155a161f34ecd73fb0033b60f7":[2,0,20,6,2],
-"structplotfile2d_1_1SampledVerticalCoordinateMetadata.html#a761a8f017b44cd886e98694ac573ffa6":[2,0,20,6,0],
-"structplotfile2d_1_1SampledVerticalCoordinateMetadata.html#a819b9d9997530b5bc5b20bc517c81097":[2,0,20,6,3]
+"structplotfile2d_1_1SampledLevelDefinition.html#a809960c438fa5797e545502c50895eff":[2,0,20,9,3]
 };

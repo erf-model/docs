@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"ERF__FillIntermediatePatch_8cpp.html":[3,0,1,2,9],
+"ERF__FillPatch_8cpp.html":[3,0,1,2,10],
+"ERF__FillPatcher_8H.html":[3,0,1,2,12],
+"ERF__FillPatcher_8H_source.html":[3,0,1,2,12],
 "ERF__FillPatcher_8cpp.html":[3,0,1,2,11],
 "ERF__FillZeroAreaFaceFluxes_8cpp.html":[3,0,1,13,2],
 "ERF__FillZeroAreaFaceFluxes_8cpp.html#a06d3570cc5ce4847ca0b73f84ed619b6":[3,0,1,13,2,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__ImposeBCsOnPhi_8cpp.html":[3,0,1,13,6],
 "ERF__IndexDefines_8H.html":[3,0,1,36],
 "ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f":[3,0,1,36,35],
-"ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29":[3,0,1,36,11],
-"ERF__IndexDefines_8H.html#a19169754519601f5fe52ede728af2138":[3,0,1,36,3],
-"ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3":[3,0,1,36,12],
-"ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49":[3,0,1,36,22],
-"ERF__IndexDefines_8H.html#a2884cbba5893be6246a15c6f98bdb2c2":[3,0,1,36,40]
+"ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29":[3,0,1,36,11]
 };

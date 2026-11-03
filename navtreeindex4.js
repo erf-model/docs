@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"ERF__IndexDefines_8H.html#a19169754519601f5fe52ede728af2138":[3,0,1,36,3],
+"ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3":[3,0,1,36,12],
+"ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49":[3,0,1,36,22],
+"ERF__IndexDefines_8H.html#a2884cbba5893be6246a15c6f98bdb2c2":[3,0,1,36,40],
 "ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da":[3,0,1,36,29],
 "ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877":[3,0,1,36,36],
 "ERF__IndexDefines_8H.html#a2e038955a3c380beab1941e422ef83ea":[3,0,1,36,14],
@@ -245,9 +249,5 @@ var NAVTREEINDEX4 =
 "ERF__InitCustomPertVels__DataAssimilation__ISV_8H.html#ad0665f7cbddf3a7f15d78b72a92c5e80":[3,0,1,20,34,3],
 "ERF__InitCustomPertVels__DataAssimilation__ISV_8H.html#ae40e267a3c278551001f3792a076b9ca":[3,0,1,20,34,4],
 "ERF__InitCustomPertVels__DataAssimilation__ISV_8H.html#ae478668870b1a908d8b34d2ce5e25129":[3,0,1,20,34,22],
-"ERF__InitCustomPertVels__DataAssimilation__ISV_8H.html#afc76506e900c68bcbf23487e6ac15b82":[3,0,1,20,34,7],
-"ERF__InitCustomPertVels__DataAssimilation__ISV_8H_source.html":[3,0,1,20,34],
-"ERF__InitCustomPertVels__EkmanSpiral_8H.html":[3,0,1,20,35],
-"ERF__InitCustomPertVels__EkmanSpiral_8H.html#a05a6cf5425ee9d277307ab329feed8df":[3,0,1,20,35,8],
-"ERF__InitCustomPertVels__EkmanSpiral_8H.html#a25b93804556621317b9c537f906af664":[3,0,1,20,35,5]
+"ERF__InitCustomPertVels__DataAssimilation__ISV_8H.html#afc76506e900c68bcbf23487e6ac15b82":[3,0,1,20,34,7]
 };

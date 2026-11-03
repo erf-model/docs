@@ -5,8 +5,8 @@ var ERF__TerrainFileChecks_8H =
     [ "erf_get_single_value", "ERF__TerrainFileChecks_8H.html#a76d6f6458730ab175af1aad0d8072564", null ],
     [ "FaceBandSlopes", "ERF__TerrainFileChecks_8H.html#ab810ed44943b387e9d4902532af688d4", null ],
     [ "OpenFaceSlopeWarning", "ERF__TerrainFileChecks_8H.html#a29eba04820f32d054d47322f9f1f0ea3", null ],
-    [ "ReadHeightTable", "ERF__TerrainFileChecks_8H.html#abca940b3026e677d6a5036343ab6b47e", null ],
-    [ "TableProblem", "ERF__TerrainFileChecks_8H.html#a76c6d10e8c4f44cb64b6b753fcf808f4", null ],
+    [ "ReadHeightTable", "ERF__TerrainFileChecks_8H.html#a6e94a30d135ec399e5528189b86db88b", null ],
+    [ "TableProblem", "ERF__TerrainFileChecks_8H.html#a2f8157c8b551b97b19137d3abbfad11b", null ],
     [ "TableSummary", "ERF__TerrainFileChecks_8H.html#a0d28afb208c184cb9d73117a4e6633f2", null ],
     [ "open_face_slope_warn", "ERF__TerrainFileChecks_8H.html#ae296b931d9d8a441749b839d75723a49", null ]
 ];
