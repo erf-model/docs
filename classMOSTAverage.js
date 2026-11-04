@@ -13,6 +13,7 @@ var classMOSTAverage =
     [ "do_time_averaging", "classMOSTAverage.html#a671ce91cbab94f2cd0605f3af9c9280a", null ],
     [ "extrap_ghost_cells", "classMOSTAverage.html#ac140e262fd58291f9535e62a1d2255de", null ],
     [ "fill_planar_boundary", "classMOSTAverage.html#a958132e508b0415f27ab9de0af39bdca", null ],
+    [ "fill_zref_planar", "classMOSTAverage.html#a0801f2e878c0473d27a5cad9da2d9bea", null ],
     [ "get_average", "classMOSTAverage.html#a24f628d2e60c7220ec17d3fe8e7eaf9a", null ],
     [ "get_average", "classMOSTAverage.html#ac08baeafe98b80401526bfe20562aa5d", null ],
     [ "get_k_indices", "classMOSTAverage.html#aa764748ca573c4b1b915638f6b9d9724", null ],
@@ -84,6 +85,5 @@ var classMOSTAverage =
     [ "m_z_pos", "classMOSTAverage.html#a81ff1b7e8d026f0cd74147cbcc016d15", null ],
     [ "m_zlevels_stag", "classMOSTAverage.html#ace73efcfb2d478d8a1f108667005f355", null ],
     [ "m_zref", "classMOSTAverage.html#ab9f916aea0c336c883ed954ff0ef258f", null ],
-    [ "zref_default", "classMOSTAverage.html#addde3db57d53d5d309ba5e0ef4d827a4", null ],
     [ "zref_sentinel", "classMOSTAverage.html#a219026ba697d1e93f4b4c67e07d2e5e2", null ]
 ];

@@ -1,5 +1,7 @@
 var NAVTREEINDEX50 =
 {
+"structSedimentationFlux.html#a2661f365c1ddd1af417b3b5615a12683":[2,0,173,1],
+"structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524":[2,0,173,4],
 "structSedimentationFlux.html#a54c428e1ba31f369d25acca70942bacc":[2,0,173,3],
 "structSedimentationFlux.html#a6e5d8c8842a24cb49280015fb50c2979":[2,0,173,0],
 "structSedimentationFlux.html#aaad36702599b454971f956d271c7d5d3":[2,0,173,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX50 =
 "structSolverChoice.html#a88814171da1b7d6ae8f08e065c7fb866":[2,0,192,209],
 "structSolverChoice.html#a8976921b98c9202cc9f14a2bd4f87d4b":[2,0,192,27],
 "structSolverChoice.html#a89c48eccd842f51d1fd9ceb11830c63e":[2,0,192,41],
-"structSolverChoice.html#a8a4bce393da3ec717505a7e96c80cb70":[2,0,192,215],
-"structSolverChoice.html#a8a53b356661db7882c0153ae17fa7db7":[2,0,192,113],
-"structSolverChoice.html#a8a7262c60b43f1cf6b0463a7ffdca1fd":[2,0,192,129]
+"structSolverChoice.html#a8a4bce393da3ec717505a7e96c80cb70":[2,0,192,215]
 };

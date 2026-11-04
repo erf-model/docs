@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"ERF__FillCoarsePatch_8cpp.html":[3,0,1,2,8],
 "ERF__FillIntermediatePatch_8cpp.html":[3,0,1,2,9],
 "ERF__FillPatch_8cpp.html":[3,0,1,2,10],
 "ERF__FillPatcher_8H.html":[3,0,1,2,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__ImmersedWallStability_8H.html":[3,0,1,23,13],
 "ERF__ImmersedWallStability_8H.html#a65c1646f34deee13a5c00d856f5fb26a":[3,0,1,23,13,5],
 "ERF__ImmersedWallStability_8H.html#aa4a8c7eac48f79506300f4d559067571":[3,0,1,23,13,1],
-"ERF__ImmersedWallStability_8H.html#ab53edcce871c55c73a569dd159d6d0c5":[3,0,1,23,13,4],
-"ERF__ImmersedWallStability_8H.html#acb924e2cb557cbebdee270c98daefab6":[3,0,1,23,13,2]
+"ERF__ImmersedWallStability_8H.html#ab53edcce871c55c73a569dd159d6d0c5":[3,0,1,23,13,4]
 };

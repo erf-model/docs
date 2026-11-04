@@ -1,5 +1,7 @@
 var NAVTREEINDEX54 =
 {
+"structerf__auxiliary_1_1AuxiliaryStageRecipe.html#a67c20b037334f7500ef18ade25b94474":[2,0,0,10,0],
+"structerf__auxiliary_1_1AuxiliaryStageRecipe.html#a6a366ab0c2a12141bad86894e300ae69":[2,0,0,10,5],
 "structerf__auxiliary_1_1AuxiliaryStageRecipe.html#a8df6105af142039701593c30455393a8":[2,0,0,10,3],
 "structerf__auxiliary_1_1AuxiliaryStageRecipe.html#a962af14d54f323267cd1716fe6fca012":[2,0,0,10,1],
 "structerf__auxiliary_1_1AuxiliaryStageRecipe.html#acdd7fe4795515e146fd9a2d3b85dbad9":[2,0,0,10,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX54 =
 "structerf__sbm_1_1AttachedPropertySupportDescriptor.html#a0226261c584d1bcb47c3ca6a8424adc6":[2,0,9,11,9],
 "structerf__sbm_1_1AttachedPropertySupportDescriptor.html#a0909f575a38d25dc033d9cb6c37fa826":[2,0,9,11,8],
 "structerf__sbm_1_1AttachedPropertySupportDescriptor.html#a330dd0ec09a1c8cd38602eaa92ffb056":[2,0,9,11,4],
-"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#a33f6b6addb1db43bade168fe2586aa60":[2,0,9,11,0],
-"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#a697b28d9509000b27fa741bf6bd05f8e":[2,0,9,11,7],
-"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#a7ec72657036391ca6d0f477720a82847":[2,0,9,11,3]
+"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#a33f6b6addb1db43bade168fe2586aa60":[2,0,9,11,0]
 };

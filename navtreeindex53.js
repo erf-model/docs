@@ -1,5 +1,7 @@
 var NAVTREEINDEX53 =
 {
+"structTwoStreamParams.html#aea46df9895ca9b2fc59c1407e9188972":[2,0,229,48],
+"structTwoStreamParams.html#aeae48426171248bdd66aa2f1e41637fc":[2,0,229,5],
 "structTwoStreamParams.html#af20b152dd639b66f4c3d4255b27a8135":[2,0,229,42],
 "structTwoStreamParams.html#af54f5b12a3ad1791f5aa04556beec3fb":[2,0,229,22],
 "structTwoStreamParams.html#af89e9b4836f20533210a4d4d6fe7251c":[2,0,229,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX53 =
 "structerf__auxiliary_1_1AuxiliaryStageContext.html#aac8f38fa8ef3d9ea5d6d379fd94cfcd5":[2,0,0,11,14],
 "structerf__auxiliary_1_1AuxiliaryStageContext.html#ad0a65a5cc73524df4bbe6a41ab367fe5":[2,0,0,11,12],
 "structerf__auxiliary_1_1AuxiliaryStageRecipe.html":[2,0,0,10],
-"structerf__auxiliary_1_1AuxiliaryStageRecipe.html#a091f2bb3f77b7a2965c2e1d0e9f48b86":[2,0,0,10,2],
-"structerf__auxiliary_1_1AuxiliaryStageRecipe.html#a67c20b037334f7500ef18ade25b94474":[2,0,0,10,0],
-"structerf__auxiliary_1_1AuxiliaryStageRecipe.html#a6a366ab0c2a12141bad86894e300ae69":[2,0,0,10,5]
+"structerf__auxiliary_1_1AuxiliaryStageRecipe.html#a091f2bb3f77b7a2965c2e1d0e9f48b86":[2,0,0,10,2]
 };

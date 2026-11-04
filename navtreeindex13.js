@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"ERF__PlotfileSelection_8H.html#adeec399e5474b8bce8830aac35becc11":[3,0,1,11,33,12],
 "ERF__PlotfileSelection_8H_source.html":[3,0,1,11,33],
 "ERF__PlotfileToNetCDF_8cpp.html":[3,0,1,25,0],
 "ERF__PlotfileToNetCDF_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[3,0,1,25,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "ERF__SAMUtils_8H.html#a15fb36547fd83176339ca2a034a358f7":[3,0,1,15,4,6,44],
 "ERF__SAMUtils_8H.html#a188f0dfcd16f6a40b00b295807cda226":[3,0,1,15,4,6,22],
 "ERF__SAMUtils_8H.html#a19d633ab473fd82bd94659acc1b107b4":[3,0,1,15,4,6,28],
-"ERF__SAMUtils_8H.html#a2c45a447facf0cd3aaf3c7815c04d886":[3,0,1,15,4,6,51],
-"ERF__SAMUtils_8H.html#a2e4b72c52b0f032d69bda6c80498d05d":[3,0,1,15,4,6,39]
+"ERF__SAMUtils_8H.html#a2c45a447facf0cd3aaf3c7815c04d886":[3,0,1,15,4,6,51]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX57 =
 {
+"structplotfile2d_1_1SampledFieldDescriptor.html#ab396cdda121a68697e5880fa6fb34284":[2,0,23,4,2],
+"structplotfile2d_1_1SampledFieldDescriptor.html#ac37f9aca5edd7b1a2b9ff9f0ea770e78":[2,0,23,4,3],
 "structplotfile2d_1_1SampledFieldDescriptor.html#aec699a7cbc84bebad4bcd832261fd34b":[2,0,23,4,1],
 "structplotfile2d_1_1SampledFieldSelection.html":[2,0,23,5],
 "structplotfile2d_1_1SampledFieldSelection.html#a15a2c21311d6e40c709b42b6a77ecbf4":[2,0,23,5,1],
