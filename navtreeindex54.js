@@ -1,5 +1,12 @@
 var NAVTREEINDEX54 =
 {
+"structerf__auxiliary_1_1AuxiliaryStageRecipe.html#a8df6105af142039701593c30455393a8":[2,0,0,10,3],
+"structerf__auxiliary_1_1AuxiliaryStageRecipe.html#a962af14d54f323267cd1716fe6fca012":[2,0,0,10,1],
+"structerf__auxiliary_1_1AuxiliaryStageRecipe.html#acdd7fe4795515e146fd9a2d3b85dbad9":[2,0,0,10,4],
+"structerf__auxiliary_1_1ComponentDescriptor.html":[2,0,0,13],
+"structerf__auxiliary_1_1ComponentDescriptor.html#a2e9637e372476566bde143ef58457a3d":[2,0,0,13,1],
+"structerf__auxiliary_1_1ComponentDescriptor.html#a467bb598f505998799e94a5243c52a33":[2,0,0,13,0],
+"structerf__auxiliary_1_1ComponentDescriptor.html#a4c923785314e9c90faf64327510e0352":[2,0,0,13,2],
 "structerf__auxiliary_1_1ConstTimedFieldView.html":[2,0,0,7],
 "structerf__auxiliary_1_1ConstTimedFieldView.html#a115e09707e98ed53802226d4430e1ae6":[2,0,0,7,2],
 "structerf__auxiliary_1_1ConstTimedFieldView.html#a98f6f6ba713f4e2dd74985800f167be7":[2,0,0,7,1],
@@ -242,12 +249,5 @@ var NAVTREEINDEX54 =
 "structerf__sbm_1_1AttachedPropertySupportDescriptor.html#a330dd0ec09a1c8cd38602eaa92ffb056":[2,0,9,11,4],
 "structerf__sbm_1_1AttachedPropertySupportDescriptor.html#a33f6b6addb1db43bade168fe2586aa60":[2,0,9,11,0],
 "structerf__sbm_1_1AttachedPropertySupportDescriptor.html#a697b28d9509000b27fa741bf6bd05f8e":[2,0,9,11,7],
-"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#a7ec72657036391ca6d0f477720a82847":[2,0,9,11,3],
-"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#a7f767fdf0a58bc2f4d1544361705abaf":[2,0,9,11,2],
-"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#a94990988895b122590cd5315b67db9f2":[2,0,9,11,11],
-"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#ab5a8121e8c024319d85a1b2bddf4826b":[2,0,9,11,1],
-"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#ac5e3efbf413e316a1e800e6f3df7842b":[2,0,9,11,6],
-"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#afa406d273d23841eb11583bd15d6dd5c":[2,0,9,11,5],
-"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#afa52f2d1319fea0c4bf5daf396f97366":[2,0,9,11,10],
-"structerf__sbm_1_1BulkProjection.html":[2,0,9,4]
+"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#a7ec72657036391ca6d0f477720a82847":[2,0,9,11,3]
 };

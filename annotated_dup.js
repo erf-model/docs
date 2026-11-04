@@ -244,6 +244,7 @@ var annotated_dup =
     [ "KesslerSaturationAdjustment", "structKesslerSaturationAdjustment.html", "structKesslerSaturationAdjustment" ],
     [ "KesslerSourceTerms", "structKesslerSourceTerms.html", "structKesslerSourceTerms" ],
     [ "LandSurface", "classLandSurface.html", "classLandSurface" ],
+    [ "LandWaterConsLinear", "classLandWaterConsLinear.html", "classLandWaterConsLinear" ],
     [ "LargeScaleForcingData", "structLargeScaleForcingData.html", "structLargeScaleForcingData" ],
     [ "LatLonLocation", "structLatLonLocation.html", "structLatLonLocation" ],
     [ "LatLonMap", "classLatLonMap.html", "classLatLonMap" ],
