@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"ERF__FillCoarsePatch_8cpp.html":[3,0,1,2,8],
 "ERF__FillIntermediatePatch_8cpp.html":[3,0,1,2,9],
 "ERF__FillPatch_8cpp.html":[3,0,1,2,10],
 "ERF__FillPatcher_8H.html":[3,0,1,2,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__ImplicitDiff__N_8cpp.html#a468825b496be0b211c35772b3f9b487d":[3,0,1,6,21,0],
 "ERF__ImplicitDiff__N_8cpp.html#ac4217f2e92f7530eb12debd27f60b36c":[3,0,1,6,21,3],
 "ERF__ImplicitDiff__N_8cpp.html#ae81816b04086cac13209aa775b1131ec":[3,0,1,6,21,2],
-"ERF__ImplicitDiff__S_8cpp.html":[3,0,1,6,22],
-"ERF__ImplicitDiff__S_8cpp.html#a468825b496be0b211c35772b3f9b487d":[3,0,1,6,22,0]
+"ERF__ImplicitDiff__S_8cpp.html":[3,0,1,6,22]
 };

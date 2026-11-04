@@ -4,7 +4,7 @@ var structerf__cloud__chamber_1_1Config =
     [ "has_wall_rate_channel", "structerf__cloud__chamber_1_1Config.html#a5a53ed9ec5c4a2b1dc59535aa98b1b41", null ],
     [ "wall_boundary", "structerf__cloud__chamber_1_1Config.html#a16aef4ec3cdf8a3d2cae8b93903ad613", null ],
     [ "active", "structerf__cloud__chamber_1_1Config.html#a23475ebf69ebc39f7594e05538f84e34", null ],
-    [ "cloudy", "structerf__cloud__chamber_1_1Config.html#a53347cab9f582eed821809a604c273d4", null ],
+    [ "has_moisture", "structerf__cloud__chamber_1_1Config.html#a2607f008afefc72ddbac20849837e80a", null ],
     [ "initial_relative_humidity", "structerf__cloud__chamber_1_1Config.html#acf257f1af0dd161c2572b4d5a8718eb9", null ],
     [ "initial_temperature_bottom", "structerf__cloud__chamber_1_1Config.html#a8ea04e5800b0499e37f5349e8506ad19", null ],
     [ "initial_temperature_top", "structerf__cloud__chamber_1_1Config.html#a2620a9ae09589d4743268f9d14769195", null ],

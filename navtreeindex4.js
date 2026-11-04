@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"ERF__ImplicitDiff__S_8cpp.html#a468825b496be0b211c35772b3f9b487d":[3,0,1,6,22,0],
 "ERF__ImplicitDiff__S_8cpp.html#a64ee36aebb9bdc6541292ca94064f747":[3,0,1,6,22,1],
 "ERF__ImplicitDiff__S_8cpp.html#aa41db35bcfb1b2c9e67d971fec82c2d1":[3,0,1,6,22,2],
 "ERF__ImplicitDiff__S_8cpp.html#ad3c08ca667b99fbc4ae74df68740540f":[3,0,1,6,22,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "ERF__InitCustomPertVels__DataAssimilation__ISV_8H.html":[3,0,1,20,34],
 "ERF__InitCustomPertVels__DataAssimilation__ISV_8H.html#a0b6c95d9cbe21c8a94590c64b1459844":[3,0,1,20,34,15],
 "ERF__InitCustomPertVels__DataAssimilation__ISV_8H.html#a101645d1044b0597de1e5bf6a45b26f9":[3,0,1,20,34,10],
-"ERF__InitCustomPertVels__DataAssimilation__ISV_8H.html#a1a21221b2a962ff8657e21b54b71c245":[3,0,1,20,34,18],
-"ERF__InitCustomPertVels__DataAssimilation__ISV_8H.html#a20679a8ed68bb3fb5651b71ef28b29a4":[3,0,1,20,34,8]
+"ERF__InitCustomPertVels__DataAssimilation__ISV_8H.html#a1a21221b2a962ff8657e21b54b71c245":[3,0,1,20,34,18]
 };

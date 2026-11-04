@@ -100,15 +100,15 @@ Functions</h2></td></tr>
 <tr class="separator:a675355b93f7f005d72c4aee00834bc17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03db4a5c40d40eefd7e5a088d30a2b9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a03db4a5c40d40eefd7e5a088d30a2b9e">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a> (sc.terrain_type==<a class="el" href="ERF__SurfaceModel_8H.html#abe8d3c91e03e68dd691887e3b789d7f6a6adf97f83acf6453d4a6a4b1070f3754">TerrainType::None</a> &amp;&amp;sc.buildings_type==<a class="el" href="ERF__SurfaceModel_8H.html#abe8d3c91e03e68dd691887e3b789d7f6a6adf97f83acf6453d4a6a4b1070f3754">BuildingsType::None</a> &amp;&amp;sc.mesh_type==MeshType::ConstantDz, &quot;Cloud Chamber: terrain, buildings, and non-Cartesian mesh modes are unsupported&quot;)</td></tr>
 <tr class="separator:a03db4a5c40d40eefd7e5a088d30a2b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60211fbe860fcb23e7164284926b512b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a60211fbe860fcb23e7164284926b512b">if</a> (m_cloud_chamber_config.cloudy)</td></tr>
-<tr class="separator:a60211fbe860fcb23e7164284926b512b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a772f38fa0b92f8f2bd3621e88f49fe2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a772f38fa0b92f8f2bd3621e88f49fe2e">ParallelFor</a> (bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+(<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(i)+<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[1]+(<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(j)+<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[2]+(<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(k)+<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>[2];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho=state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> temperature=<a class="el" href="namespaceerf__cloud__chamber.html#ada393f7c2dc2faf21670956a8869c710">erf_cloud_chamber::linear_profile</a>(config.initial_temperature_bottom, config.initial_temperature_top, z, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[2], <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[2] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[2])+<a class="el" href="namespaceerf__cloud__chamber.html#a1f7c4bf60b72bae7dc737fe831037857">erf_cloud_chamber::deterministic_perturbation</a>(x, y, z, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>, GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;{ <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[0] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[0], <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[1] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[1], <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[2] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[2]}, config.temperature_perturbation_amplitude);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> target_theta=config.physical_initialization ? temperature *std::pow(<a class="el" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>/p_hse(i, j, k), <a class="el" href="ERF__InitCustomPert__SLM_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>) :<a class="el" href="namespaceerf__cloud__chamber.html#ad2673aed2ef0c6cd00fb25515d150b6f">erf_cloud_chamber::theta_at</a>(<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, x, y, z);state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)=rho *target_theta - state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);<a class="el" href="ERF__ScalarLimitPost_8H.html#a66af016a2c575aa1d5e5974ad8ebe4be">if</a>(config.cloudy) { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> target_qv=config.physical_initialization ? <a class="el" href="namespaceerf__cloud__chamber.html#a6a92042cd9a46f3cbc0aff4a8d1c3378">erf_cloud_chamber::vapor_mixing_ratio_from_relative_humidity</a>(temperature, p_hse(i, j, k), config.initial_relative_humidity) :<a class="el" href="namespaceerf__cloud__chamber.html#a46a65552d8289e77b63c9e427d07b364">erf_cloud_chamber::qv_at</a>(<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, z);state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)=rho *target_qv - state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>);state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>)=-state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>);} })</td></tr>
-<tr class="separator:a772f38fa0b92f8f2bd3621e88f49fe2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a715953e0c9d3d2820e6074b4c6a1795f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a715953e0c9d3d2820e6074b4c6a1795f">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a> (<a class="el" href="namespaceerf__cloud__chamber.html#a59b82461884fda26246c32843afea37a">erf_cloud_chamber::supports_moisture_model</a>(sc.moisture_type), &quot;Cloud Chamber: unsupported moisture model in custom initializer&quot;)</td></tr>
+<tr class="separator:a715953e0c9d3d2820e6074b4c6a1795f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85f8aa54bbd728064b7f1cd014e6b77f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a85f8aa54bbd728064b7f1cd014e6b77f">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a> (m_cloud_chamber_config.has_moisture==(sc.moisture_type !=<a class="el" href="ERF__SurfaceModel_8H.html#abe8d3c91e03e68dd691887e3b789d7f6a6adf97f83acf6453d4a6a4b1070f3754">MoistureType::None</a>), &quot;Cloud Chamber: moisture-model selection and chamber configuration disagree&quot;)</td></tr>
+<tr class="separator:a85f8aa54bbd728064b7f1cd014e6b77f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a438d4c30cb680429338c8d0055a60f85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a438d4c30cb680429338c8d0055a60f85">ParallelFor</a> (bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+(<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(i)+<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[1]+(<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(j)+<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[2]+(<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(k)+<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>[2];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho=state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> temperature=<a class="el" href="namespaceerf__cloud__chamber.html#ada393f7c2dc2faf21670956a8869c710">erf_cloud_chamber::linear_profile</a>(config.initial_temperature_bottom, config.initial_temperature_top, z, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[2], <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[2] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[2])+<a class="el" href="namespaceerf__cloud__chamber.html#a1f7c4bf60b72bae7dc737fe831037857">erf_cloud_chamber::deterministic_perturbation</a>(x, y, z, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>, GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;{ <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[0] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[0], <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[1] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[1], <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[2] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[2]}, config.temperature_perturbation_amplitude);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> target_theta=config.physical_initialization ? temperature *std::pow(<a class="el" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>/p_hse(i, j, k), <a class="el" href="ERF__InitCustomPert__SLM_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>) :<a class="el" href="namespaceerf__cloud__chamber.html#ad2673aed2ef0c6cd00fb25515d150b6f">erf_cloud_chamber::theta_at</a>(<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, x, y, z);state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)=rho *target_theta - state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);<a class="el" href="ERF__ScalarLimitPost_8H.html#a66af016a2c575aa1d5e5974ad8ebe4be">if</a>(config.has_moisture) { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> target_qv=config.physical_initialization ? <a class="el" href="namespaceerf__cloud__chamber.html#a6a92042cd9a46f3cbc0aff4a8d1c3378">erf_cloud_chamber::vapor_mixing_ratio_from_relative_humidity</a>(temperature, p_hse(i, j, k), config.initial_relative_humidity) :<a class="el" href="namespaceerf__cloud__chamber.html#a46a65552d8289e77b63c9e427d07b364">erf_cloud_chamber::qv_at</a>(<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, z);state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)=rho *target_qv - state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>);state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>)=-state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>);} })</td></tr>
+<tr class="separator:a438d4c30cb680429338c8d0055a60f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a0544c3fe466e421738dae463968b70ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a0544c3fe466e421738dae463968b70ba">else</a></td></tr>
-<tr class="separator:a0544c3fe466e421738dae463968b70ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9fd06f7fe187d6c39d38c7473e19c7c"><td class="memItemLeft" align="right" valign="top">const GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a></td></tr>
 <tr class="separator:aa9fd06f7fe187d6c39d38c7473e19c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00f3b481e7aa974743b56c5f4b2835cc"><td class="memItemLeft" align="right" valign="top">const GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a00f3b481e7aa974743b56c5f4b2835cc">dx</a></td></tr>
@@ -119,8 +119,36 @@ Variables</h2></td></tr>
 <tr class="separator:a46e52004c860b2aef260fce99d025bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a715953e0c9d3d2820e6074b4c6a1795f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a715953e0c9d3d2820e6074b4c6a1795f">&#9670;&nbsp;</a></span>AMREX_ALWAYS_ASSERT_WITH_MESSAGE() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_ALWAYS_ASSERT_WITH_MESSAGE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceerf__cloud__chamber.html#a59b82461884fda26246c32843afea37a">erf_cloud_chamber::supports_moisture_model</a>(sc.moisture_type)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;Cloud Chamber: unsupported moisture model in custom initializer&quot;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a46455971d86f4ffad58b5cc742ab3be3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46455971d86f4ffad58b5cc742ab3be3">&#9670;&nbsp;</a></span>AMREX_ALWAYS_ASSERT_WITH_MESSAGE() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a46455971d86f4ffad58b5cc742ab3be3">&#9670;&nbsp;</a></span>AMREX_ALWAYS_ASSERT_WITH_MESSAGE() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,21 +173,38 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a60211fbe860fcb23e7164284926b512b">if()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="ERF__InitCustomPert__CloudChamber_8H_a46455971d86f4ffad58b5cc742ab3be3_icgraph.png" border="0" usemap="#aERF__InitCustomPert__CloudChamber_8H_a46455971d86f4ffad58b5cc742ab3be3_icgraph" alt=""/></div>
-<map name="aERF__InitCustomPert__CloudChamber_8H_a46455971d86f4ffad58b5cc742ab3be3_icgraph" id="aERF__InitCustomPert__CloudChamber_8H_a46455971d86f4ffad58b5cc742ab3be3_icgraph">
-<area shape="rect" title=" " alt="" coords="92,5,275,47"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a60211fbe860fcb23e7164284926b512b" title=" " alt="" coords="5,13,44,39"/>
-</map>
 </div>
+</div>
+<a id="a85f8aa54bbd728064b7f1cd014e6b77f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85f8aa54bbd728064b7f1cd014e6b77f">&#9670;&nbsp;</a></span>AMREX_ALWAYS_ASSERT_WITH_MESSAGE() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_ALWAYS_ASSERT_WITH_MESSAGE </td>
+          <td>(</td>
+          <td class="paramtype">m_cloud_chamber_config.&#160;</td>
+          <td class="paramname"><em>has_moisture</em> = <code>=(sc.moisture_type&#160;!=<a class="el" href="ERF__SurfaceModel_8H.html#abe8d3c91e03e68dd691887e3b789d7f6a6adf97f83acf6453d4a6a4b1070f3754">MoistureType::None</a>)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;Cloud Chamber: moisture-model selection and chamber configuration disagree&quot;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <a id="a675355b93f7f005d72c4aee00834bc17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a675355b93f7f005d72c4aee00834bc17">&#9670;&nbsp;</a></span>AMREX_ALWAYS_ASSERT_WITH_MESSAGE() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a675355b93f7f005d72c4aee00834bc17">&#9670;&nbsp;</a></span>AMREX_ALWAYS_ASSERT_WITH_MESSAGE() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -187,7 +232,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <a id="a03db4a5c40d40eefd7e5a088d30a2b9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03db4a5c40d40eefd7e5a088d30a2b9e">&#9670;&nbsp;</a></span>AMREX_ALWAYS_ASSERT_WITH_MESSAGE() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a03db4a5c40d40eefd7e5a088d30a2b9e">&#9670;&nbsp;</a></span>AMREX_ALWAYS_ASSERT_WITH_MESSAGE() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,41 +271,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a60211fbe860fcb23e7164284926b512b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60211fbe860fcb23e7164284926b512b">&#9670;&nbsp;</a></span>if()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">if </td>
-          <td>(</td>
-          <td class="paramtype">m_cloud_chamber_config.&#160;</td>
-          <td class="paramname"><em>cloudy</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                   {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        sc.moisture_type == MoistureType::SatAdj,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="stringliteral">&quot;Cloud Chamber: cloudy mode requires erf.moisture_model = SatAdj&quot;</span>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;} <span class="keywordflow">else</span> {</div>
-<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="ERF__InitCustomPert__CloudChamber_8H_a60211fbe860fcb23e7164284926b512b_cgraph.png" border="0" usemap="#aERF__InitCustomPert__CloudChamber_8H_a60211fbe860fcb23e7164284926b512b_cgraph" alt=""/></div>
-<map name="aERF__InitCustomPert__CloudChamber_8H_a60211fbe860fcb23e7164284926b512b_cgraph" id="aERF__InitCustomPert__CloudChamber_8H_a60211fbe860fcb23e7164284926b512b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,13,44,39"/>
-<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="92,5,275,47"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a772f38fa0b92f8f2bd3621e88f49fe2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a772f38fa0b92f8f2bd3621e88f49fe2e">&#9670;&nbsp;</a></span>ParallelFor()</h2>
+<a id="a438d4c30cb680429338c8d0055a60f85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a438d4c30cb680429338c8d0055a60f85">&#9670;&nbsp;</a></span>ParallelFor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,7 +286,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">[=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+(<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(i)+<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[1]+(<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(j)+<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[2]+(<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(k)+<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>[2];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho=state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> temperature=<a class="el" href="namespaceerf__cloud__chamber.html#ada393f7c2dc2faf21670956a8869c710">erf_cloud_chamber::linear_profile</a>(config.initial_temperature_bottom, config.initial_temperature_top, z, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[2], <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[2] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[2])+<a class="el" href="namespaceerf__cloud__chamber.html#a1f7c4bf60b72bae7dc737fe831037857">erf_cloud_chamber::deterministic_perturbation</a>(x, y, z, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>, GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;{ <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[0] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[0], <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[1] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[1], <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[2] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[2]}, config.temperature_perturbation_amplitude);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> target_theta=config.physical_initialization ? temperature *std::pow(<a class="el" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>/p_hse(i, j, k), <a class="el" href="ERF__InitCustomPert__SLM_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>) :<a class="el" href="namespaceerf__cloud__chamber.html#ad2673aed2ef0c6cd00fb25515d150b6f">erf_cloud_chamber::theta_at</a>(<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, x, y, z);state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)=rho *target_theta - state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);<a class="el" href="ERF__ScalarLimitPost_8H.html#a66af016a2c575aa1d5e5974ad8ebe4be">if</a>(config.cloudy) { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> target_qv=config.physical_initialization ? <a class="el" href="namespaceerf__cloud__chamber.html#a6a92042cd9a46f3cbc0aff4a8d1c3378">erf_cloud_chamber::vapor_mixing_ratio_from_relative_humidity</a>(temperature, p_hse(i, j, k), config.initial_relative_humidity) :<a class="el" href="namespaceerf__cloud__chamber.html#a46a65552d8289e77b63c9e427d07b364">erf_cloud_chamber::qv_at</a>(<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, z);state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)=rho *target_qv - state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>);state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>)=-state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>);} }&#160;</td>
+          <td class="paramtype">[=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+(<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(i)+<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[1]+(<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(j)+<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[2]+(<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(k)+<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>[2];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho=state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> temperature=<a class="el" href="namespaceerf__cloud__chamber.html#ada393f7c2dc2faf21670956a8869c710">erf_cloud_chamber::linear_profile</a>(config.initial_temperature_bottom, config.initial_temperature_top, z, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[2], <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[2] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[2])+<a class="el" href="namespaceerf__cloud__chamber.html#a1f7c4bf60b72bae7dc737fe831037857">erf_cloud_chamber::deterministic_perturbation</a>(x, y, z, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>, GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;{ <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[0] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[0], <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[1] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[1], <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830">config.prob_hi</a>[2] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">config.prob_lo</a>[2]}, config.temperature_perturbation_amplitude);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> target_theta=config.physical_initialization ? temperature *std::pow(<a class="el" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>/p_hse(i, j, k), <a class="el" href="ERF__InitCustomPert__SLM_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>) :<a class="el" href="namespaceerf__cloud__chamber.html#ad2673aed2ef0c6cd00fb25515d150b6f">erf_cloud_chamber::theta_at</a>(<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, x, y, z);state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)=rho *target_theta - state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);<a class="el" href="ERF__ScalarLimitPost_8H.html#a66af016a2c575aa1d5e5974ad8ebe4be">if</a>(config.has_moisture) { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> target_qv=config.physical_initialization ? <a class="el" href="namespaceerf__cloud__chamber.html#a6a92042cd9a46f3cbc0aff4a8d1c3378">erf_cloud_chamber::vapor_mixing_ratio_from_relative_humidity</a>(temperature, p_hse(i, j, k), config.initial_relative_humidity) :<a class="el" href="namespaceerf__cloud__chamber.html#a46a65552d8289e77b63c9e427d07b364">erf_cloud_chamber::qv_at</a>(<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, z);state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)=rho *target_qv - state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>);state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>)=-state(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>);} }&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -287,8 +299,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__InitCustomPert__CloudChamber_8H_a772f38fa0b92f8f2bd3621e88f49fe2e_cgraph.png" border="0" usemap="#aERF__InitCustomPert__CloudChamber_8H_a772f38fa0b92f8f2bd3621e88f49fe2e_cgraph" alt=""/></div>
-<map name="aERF__InitCustomPert__CloudChamber_8H_a772f38fa0b92f8f2bd3621e88f49fe2e_cgraph" id="aERF__InitCustomPert__CloudChamber_8H_a772f38fa0b92f8f2bd3621e88f49fe2e_cgraph">
+<div class="center"><img src="ERF__InitCustomPert__CloudChamber_8H_a438d4c30cb680429338c8d0055a60f85_cgraph.png" border="0" usemap="#aERF__InitCustomPert__CloudChamber_8H_a438d4c30cb680429338c8d0055a60f85_cgraph" alt=""/></div>
+<map name="aERF__InitCustomPert__CloudChamber_8H_a438d4c30cb680429338c8d0055a60f85_cgraph" id="aERF__InitCustomPert__CloudChamber_8H_a438d4c30cb680429338c8d0055a60f85_cgraph">
 <area shape="rect" title=" " alt="" coords="5,109,96,136"/>
 <area shape="rect" href="namespaceerf__cloud__chamber.html#a1f7c4bf60b72bae7dc737fe831037857" title="Compute a deterministic 3D sine perturbation." alt="" coords="379,11,573,52"/>
 <area shape="rect" href="namespaceerf__cloud__chamber.html#ada393f7c2dc2faf21670956a8869c710" title="Compute a linear profile between two values." alt="" coords="399,102,553,143"/>
@@ -317,7 +329,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a772f38fa0b92f8f2bd3621e88f49fe2e">ParallelFor()</a>, <a class="el" href="namespaceerf__cloud__chamber.html#a94686331be24678ca6a5bd1487d7c195">erf_cloud_chamber::parse_config()</a>, <a class="el" href="namespaceerf__cloud__chamber.html#a46a65552d8289e77b63c9e427d07b364">erf_cloud_chamber::qv_at()</a>, <a class="el" href="ERF__SAMUtils_8H.html#a63db6f672fcb05e84879e4b22c9196ad">sam_precip_cell_update()</a>, and <a class="el" href="namespaceerf__cloud__chamber.html#ad2673aed2ef0c6cd00fb25515d150b6f">erf_cloud_chamber::theta_at()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a438d4c30cb680429338c8d0055a60f85">ParallelFor()</a>, <a class="el" href="namespaceerf__cloud__chamber.html#a49b72d9ed421c97c56bf6336a99c504f">erf_cloud_chamber::parse_config()</a>, <a class="el" href="namespaceerf__cloud__chamber.html#a46a65552d8289e77b63c9e427d07b364">erf_cloud_chamber::qv_at()</a>, <a class="el" href="ERF__SAMUtils_8H.html#a63db6f672fcb05e84879e4b22c9196ad">sam_precip_cell_update()</a>, and <a class="el" href="namespaceerf__cloud__chamber.html#ad2673aed2ef0c6cd00fb25515d150b6f">erf_cloud_chamber::theta_at()</a>.</p>
 
 </div>
 </div>
@@ -335,27 +347,8 @@ Here is the call graph for this function:</div>
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    geomdata.CellSize(0), geomdata.CellSize(1), geomdata.CellSize(2)}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a772f38fa0b92f8f2bd3621e88f49fe2e">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a438d4c30cb680429338c8d0055a60f85">ParallelFor()</a>.</p>
 
-</div>
-</div>
-<a id="a0544c3fe466e421738dae463968b70ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0544c3fe466e421738dae463968b70ba">&#9670;&nbsp;</a></span>else</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">else</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
-<div class="line">        sc.moisture_type == <a class="code" href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75">MoistureType::None</a>,</div>
-<div class="line">        <span class="stringliteral">&quot;Cloud Chamber: dry mode requires no active moisture model&quot;</span>)</div>
-<div class="ttc" id="anamespaceLSM__Type_html_a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75"><div class="ttname"><a href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75">LSM_Type::None</a></div><div class="ttdeci">@ None</div><div class="ttdef"><b>Definition:</b> ERF_LSM_Types.H:6</div></div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="aa9fd06f7fe187d6c39d38c7473e19c7c"></a>
@@ -388,7 +381,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a772f38fa0b92f8f2bd3621e88f49fe2e">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a438d4c30cb680429338c8d0055a60f85">ParallelFor()</a>.</p>
 
 </div>
 </div>

@@ -1,5 +1,6 @@
 var NAVTREEINDEX17 =
 {
+"ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739":[3,0,1,27,51,22],
 "ERF__TerrainMetrics_8H.html#a5a9e39d96b7ebe9f9dbd5d32560e7d3a":[3,0,1,27,51,39],
 "ERF__TerrainMetrics_8H.html#a5f352d8a029b11cfde243cd4a20ea1b4":[3,0,1,27,51,28],
 "ERF__TerrainMetrics_8H.html#a7356a119d0d3fda35dc8588103da6d7d":[3,0,1,27,51,30],
@@ -248,6 +249,5 @@ var NAVTREEINDEX17 =
 "ERF__UpdateRhoThetaSources__Bomex_8H.html#a45f695eec02e78435d0b4bc9226cb9ca":[3,0,1,20,65,5],
 "ERF__UpdateRhoThetaSources__Bomex_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb":[3,0,1,20,65,1],
 "ERF__UpdateRhoThetaSources__Bomex_8H.html#a558c29f4eee2cbf555fae643674b3aad":[3,0,1,20,65,4],
-"ERF__UpdateRhoThetaSources__Bomex_8H.html#aa0c54f97cf5d0886417d0bf1aff97960":[3,0,1,20,65,6],
-"ERF__UpdateRhoThetaSources__Bomex_8H.html#aa1919e3b581c576a4b81226a9bd41eb7":[3,0,1,20,65,2]
+"ERF__UpdateRhoThetaSources__Bomex_8H.html#aa0c54f97cf5d0886417d0bf1aff97960":[3,0,1,20,65,6]
 };

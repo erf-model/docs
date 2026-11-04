@@ -14,6 +14,7 @@ var ERF__WallScalarBC_8H =
       [ "Neumann", "ERF__WallScalarBC_8H.html#a1f1163d39a8a7203c4f60b38f2984eb4ab8537a769dbc90cb1762215441212152", null ]
     ] ],
     [ "anelastic_wall_density_error", "ERF__WallScalarBC_8H.html#aa0744a8f3f7fadf791a835ed91712eaa", null ],
+    [ "logical_boundary_type", "ERF__WallScalarBC_8H.html#a9ef099c41cd0199abd13a1e3cf74dd7b", null ],
     [ "no_slip_density_gradient_error", "ERF__WallScalarBC_8H.html#ad3ad52befba38014c5b9202419d31acb", null ],
     [ "parse_wall_face_scalars", "ERF__WallScalarBC_8H.html#ae000c68e899b110f83e30e35001db37e", null ],
     [ "resolve_wall_scalar_gradient", "ERF__WallScalarBC_8H.html#ad56808d461a504b3dca71c0716839b6d", null ],
