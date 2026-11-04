@@ -1,5 +1,6 @@
 var structSurfaceFluxView =
 [
+    [ "valid", "structSurfaceFluxView.html#ad639de28ac0d094c0581cd667ac3953f", null ],
     [ "q_flux", "structSurfaceFluxView.html#a613bd61442f6a33e3ecf845f6f37906a", null ],
     [ "t_flux", "structSurfaceFluxView.html#af63b27587335280d743ce8d7858fb35e", null ],
     [ "tau13", "structSurfaceFluxView.html#ac78f49ff10ba5b64c32e2c5c420fbb2b", null ],

@@ -6,6 +6,6 @@ var dir_9a689d3cc574517c40c68b6e60e836b7 =
     [ "ERF_LandSurface.H", "ERF__LandSurface_8H.html", [
       [ "LandSurface", "classLandSurface.html", "classLandSurface" ]
     ] ],
-    [ "ERF_LandWaterInterp.H", "ERF__LandWaterInterp_8H.html", "ERF__LandWaterInterp_8H" ],
-    [ "ERF_LSM_Types.H", "ERF__LSM__Types_8H.html", null ]
+    [ "ERF_LSM_Types.H", "ERF__LSM__Types_8H.html", null ],
+    [ "ERF_TypedInterp.H", "ERF__TypedInterp_8H.html", "ERF__TypedInterp_8H" ]
 ];

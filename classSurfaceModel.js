@@ -1,6 +1,7 @@
 var classSurfaceModel =
 [
     [ "Field", "structSurfaceModel_1_1Field.html", "structSurfaceModel_1_1Field" ],
+    [ "InterpTransfer", "structSurfaceModel_1_1InterpTransfer.html", "structSurfaceModel_1_1InterpTransfer" ],
     [ "RadiationField", "structSurfaceModel_1_1RadiationField.html", "structSurfaceModel_1_1RadiationField" ],
     [ "SurfaceModel", "classSurfaceModel.html#a577594babd7e0c297f8fbad697cba976", null ],
     [ "activate_all_field_maps", "classSurfaceModel.html#ac633575248f4fec68e0c08f189016be6", null ],
@@ -30,6 +31,7 @@ var classSurfaceModel =
     [ "get_weighted_model_data", "classSurfaceModel.html#a821fed6a7e0f4638b86d47921c6dcb91", null ],
     [ "GotoNextLine", "classSurfaceModel.html#a44c47c973e53a5f3ff055a2426904dda", null ],
     [ "initialize_for_level", "classSurfaceModel.html#af4e2d3ed6325bc36f26d37d78570f039", null ],
+    [ "interp_surface_fields_from_coarse", "classSurfaceModel.html#a0713e96a97cea4b544b261b0f304a265", null ],
     [ "is_field_mapped", "classSurfaceModel.html#a16dd5e914cacfb01ac6bc0d491c96f7c", null ],
     [ "mark_fields_valid", "classSurfaceModel.html#ab0119d8d8f8c107f7aca01b8fbb7f956", null ],
     [ "ReadCheckpoint", "classSurfaceModel.html#a51cdb223702ed9aea1e93fc10a8c9ecf", null ],

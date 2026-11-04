@@ -56,6 +56,8 @@ var classNOAHMP =
     [ "m_geom0", "classNOAHMP.html#a8c0b1ec2f6b984df8f728180a20329cc", null ],
     [ "m_has_nc_file", "classNOAHMP.html#a97c8731a92c969175b90552f82bd3abc", null ],
     [ "m_idealized_init", "classNOAHMP.html#a2cc940c74a8739e5464c90d0e8778c88", null ],
+    [ "m_interp_nstep", "classNOAHMP.html#a725e8c6eee5815525f03258b36e8147b", null ],
+    [ "m_interp_pending", "classNOAHMP.html#a391619c1dde12a89678c33018a990f7f", null ],
     [ "m_itimestep", "classNOAHMP.html#a859bc0849345b3752b2bc94a7f858333", null ],
     [ "m_lev", "classNOAHMP.html#a7eccdeecea6bf90b262a609558c03044", null ],
     [ "m_lsm_data_size", "classNOAHMP.html#a68e1388386dc4c7fc16c0c05ea4cce1c", null ],

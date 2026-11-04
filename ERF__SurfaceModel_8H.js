@@ -2,6 +2,7 @@ var ERF__SurfaceModel_8H =
 [
     [ "SurfaceFluxView", "structSurfaceFluxView.html", "structSurfaceFluxView" ],
     [ "SurfaceModel", "classSurfaceModel.html", "classSurfaceModel" ],
+    [ "InterpTransfer", "structSurfaceModel_1_1InterpTransfer.html", "structSurfaceModel_1_1InterpTransfer" ],
     [ "Field", "structSurfaceModel_1_1Field.html", "structSurfaceModel_1_1Field" ],
     [ "RadiationField", "structSurfaceModel_1_1RadiationField.html", "structSurfaceModel_1_1RadiationField" ],
     [ "SurfaceModelType", "ERF__SurfaceModel_8H.html#aee4129a23327ef05502fcec2d6b71c2a", [

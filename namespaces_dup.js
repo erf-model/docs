@@ -832,6 +832,7 @@ var namespaces_dup =
     ] ],
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
     [ "near_surface_diagnostics", "namespacenear__surface__diagnostics.html", "namespacenear__surface__diagnostics" ],
+    [ "NoahInterpType", "namespaceNoahInterpType.html", null ],
     [ "noahmp_result_policy", "namespacenoahmp__result__policy.html", "namespacenoahmp__result__policy" ],
     [ "NoahmpInputComp", "namespaceNoahmpInputComp.html", null ],
     [ "NoahmpOutputComp", "namespaceNoahmpOutputComp.html", null ],
@@ -931,6 +932,7 @@ var namespaces_dup =
       [ "taus_nir", "namespaceSLMDefaultParams.html#af91f09fece183dcda7e5bcce66e4e3c1", null ],
       [ "taus_vis", "namespaceSLMDefaultParams.html#a42e7c1f8d86f7983b8adc6e97199a313", null ]
     ] ],
+    [ "SlmInterpType", "namespaceSlmInterpType.html", null ],
     [ "Species", "namespaceSpecies.html", [
       [ "AMREX_ENUM", "namespaceSpecies.html#a271e3c94d9778cd31a3f8bb02a5860ee", null ]
     ] ],

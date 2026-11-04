@@ -108,9 +108,10 @@ var hierarchy =
     [ "erf_sbm::IntegratedMoments", "structerf__sbm_1_1IntegratedMoments.html", null ],
     [ "erf_sbm::IntegratedMomentsCoreResult", "structerf__sbm_1_1IntegratedMomentsCoreResult.html", null ],
     [ "amrex::Interpolater", null, [
-      [ "LandWaterConsLinear", "classLandWaterConsLinear.html", null ]
+      [ "TypedConsLinear", "classTypedConsLinear.html", null ]
     ] ],
     [ "erf_grid_utils::InterpolationStencil", "structerf__grid__utils_1_1InterpolationStencil.html", null ],
+    [ "SurfaceModel::InterpTransfer", "structSurfaceModel_1_1InterpTransfer.html", null ],
     [ "erf_noahmp::InvariantPrecipCell", "structerf__noahmp_1_1InvariantPrecipCell.html", null ],
     [ "IRadiation", "classIRadiation.html", [
       [ "Radiation", "classRadiation.html", null ],
