@@ -12,6 +12,7 @@ var dir_7c1c0d2e2a0285e12a54f57a60f809aa =
     [ "ERF_ForestDrag.H", "ERF__ForestDrag_8H.html", [
       [ "ForestDrag", "classForestDrag.html", "classForestDrag" ]
     ] ],
+    [ "ERF_ImmersedBuildingMasks.H", "ERF__ImmersedBuildingMasks_8H.html", "ERF__ImmersedBuildingMasks_8H" ],
     [ "ERF_ImmersedForcing.cpp", "ERF__ImmersedForcing_8cpp.html", "ERF__ImmersedForcing_8cpp" ],
     [ "ERF_ImmersedForcing.H", "ERF__ImmersedForcing_8H.html", "ERF__ImmersedForcing_8H" ],
     [ "ERF_ImmersedWallStability.H", "ERF__ImmersedWallStability_8H.html", "ERF__ImmersedWallStability_8H" ],

@@ -128,6 +128,12 @@ var annotated_dup =
     [ "ibseb", "namespaceibseb.html", [
       [ "RayMap", "structibseb_1_1RayMap.html", "structibseb_1_1RayMap" ]
     ] ],
+    [ "if_bld", "namespaceif__bld.html", [
+      [ "HorizFace", "structif__bld_1_1HorizFace.html", "structif__bld_1_1HorizFace" ],
+      [ "VertFace", "structif__bld_1_1VertFace.html", "structif__bld_1_1VertFace" ],
+      [ "HorizMasks", "structif__bld_1_1HorizMasks.html", "structif__bld_1_1HorizMasks" ],
+      [ "VertMasks", "structif__bld_1_1VertMasks.html", "structif__bld_1_1VertMasks" ]
+    ] ],
     [ "module_libmassv", "namespacemodule__libmassv.html", [
       [ "vrec", "interfacemodule__libmassv_1_1vrec.html", "interfacemodule__libmassv_1_1vrec" ],
       [ "vsqrt", "interfacemodule__libmassv_1_1vsqrt.html", "interfacemodule__libmassv_1_1vsqrt" ]
