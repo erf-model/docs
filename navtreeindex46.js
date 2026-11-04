@@ -1,6 +1,5 @@
 var NAVTREEINDEX46 =
 {
-"structCanopyTurbulence.html#a06e1c3456e7a1c4eaa8d0eb69a9e35a0":[2,0,38,5],
 "structCanopyTurbulence.html#a140273eb457d9fae16ea83d098aeb773":[2,0,38,2],
 "structCanopyTurbulence.html#a5b1da2c94ef287e4f3c7e555af7a79f6":[2,0,38,1],
 "structCanopyTurbulence.html#a79f524571f8dbbb0a458beac6f71d392":[2,0,38,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX46 =
 "structInputSoundingData.html#a88b37b701b1b26c9c7e29f01cf46999b":[2,0,79,29],
 "structInputSoundingData.html#a89d2902b7ae8d6fcd81fa256bb87add8":[2,0,79,31],
 "structInputSoundingData.html#a909a9876dabbbe90d4c03efa05d416f2":[2,0,79,2],
-"structInputSoundingData.html#a97f5d176dc708d70a1404c4d6d850a14":[2,0,79,13]
+"structInputSoundingData.html#a97f5d176dc708d70a1404c4d6d850a14":[2,0,79,13],
+"structInputSoundingData.html#aa015e8e9cc3f6ccf45e7327ce13cdce7":[2,0,79,4]
 };
