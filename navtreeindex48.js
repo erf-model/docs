@@ -1,5 +1,6 @@
 var NAVTREEINDEX48 =
 {
+"structNativeScalarDiffusionPolicy.html#ae327d6da7023cd2b80e0d2a6f359f4ed":[2,0,110,5],
 "structNoahMPSoilParams.html":[2,0,113],
 "structNoahMPSoilParams.html#a009874c969447f4cf8424293a07778a2":[2,0,113,6],
 "structNoahMPSoilParams.html#a283da61b570e6e9b9e55b8a50765ac98":[2,0,113,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX48 =
 "structSAMPrecipConfig.html#a37a1eae221e298a6785c72e3ebe96620":[2,0,152,0],
 "structSAMPrecipConfig.html#a3cb7a44679da1cb46dcb2158d1832785":[2,0,152,2],
 "structSAMPrecipConfig.html#a54bd91c6ec85e77bb886d87b1ff7a1a2":[2,0,152,9],
-"structSAMPrecipConfig.html#a76cf76808001559258cf5ff0538726ec":[2,0,152,5],
-"structSAMPrecipConfig.html#aa1a176f43406b298901be680d9e45bfb":[2,0,152,11]
+"structSAMPrecipConfig.html#a76cf76808001559258cf5ff0538726ec":[2,0,152,5]
 };
