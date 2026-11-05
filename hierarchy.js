@@ -22,6 +22,7 @@ var hierarchy =
     [ "erf_auxiliary::AuxiliaryStageRecipe", "structerf__auxiliary_1_1AuxiliaryStageRecipe.html", null ],
     [ "erf_auxiliary::AuxiliaryStateLayout", "classerf__auxiliary_1_1AuxiliaryStateLayout.html", null ],
     [ "BaseStateParams", "structBaseStateParams.html", null ],
+    [ "BdyTimeWeights", "structBdyTimeWeights.html", null ],
     [ "BelowGroundGhostSync", "structBelowGroundGhostSync.html", null ],
     [ "PlanarBoundary::Buffer", "structPlanarBoundary_1_1Buffer.html", null ],
     [ "SHOCInterface::Buffer", "structSHOCInterface_1_1Buffer.html", null ],

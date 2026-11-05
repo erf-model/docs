@@ -192,6 +192,7 @@ var annotated_dup =
     [ "AdvChoice", "structAdvChoice.html", "structAdvChoice" ],
     [ "AutomaticPerturbationFace", "structAutomaticPerturbationFace.html", "structAutomaticPerturbationFace" ],
     [ "BaseStateParams", "structBaseStateParams.html", "structBaseStateParams" ],
+    [ "BdyTimeWeights", "structBdyTimeWeights.html", "structBdyTimeWeights" ],
     [ "BelowGroundGhostSync", "structBelowGroundGhostSync.html", "structBelowGroundGhostSync" ],
     [ "BuildingsIF", "classBuildingsIF.html", "classBuildingsIF" ],
     [ "bulk_coeff_flux", "structbulk__coeff__flux.html", "structbulk__coeff__flux" ],
