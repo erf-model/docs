@@ -139,6 +139,7 @@ var structSolverChoice =
     [ "moisture_indices", "structSolverChoice.html#ad82941f981c865d555d426246add956d", null ],
     [ "moisture_tight_coupling", "structSolverChoice.html#a3d2db6e39390b8fb8565b3860dd89542", null ],
     [ "moisture_type", "structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad", null ],
+    [ "most_sfuns", "structSolverChoice.html#a547c442d413e3a812276cabeb6afa660", null ],
     [ "n_ensemble", "structSolverChoice.html#a01eb02821e0d2b4af93f01e3e4508674", null ],
     [ "ncorr", "structSolverChoice.html#a341d61a88aa621a166e71850ea19a110", null ],
     [ "nudging_from_input_sounding", "structSolverChoice.html#afb205bf9571eb7854484dbc11cbdc5b4", null ],

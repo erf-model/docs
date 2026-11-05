@@ -2,6 +2,7 @@ var structsurface__flux__charnock =
 [
     [ "surface_flux_charnock", "structsurface__flux__charnock.html#a9e3f756a1723067429f6e97dd8cc9777", null ],
     [ "iterate_flux", "structsurface__flux__charnock.html#a8e6ddb9e2eac678c1e7bbf95aee6e710", null ],
+    [ "set_similarity_funs", "structsurface__flux__charnock.html#abe9d3b315de3045352a09dc46f9716ab", null ],
     [ "alpha", "structsurface__flux__charnock.html#afbb61f08669202b63d04f4228aa0805f", null ],
     [ "mdata", "structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c", null ],
     [ "sfuns", "structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1", null ],

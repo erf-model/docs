@@ -1,5 +1,6 @@
 var NAVTREEINDEX17 =
 {
+"ERF__TerrainMetrics_8H.html#a1582797e6ac6cf0c1e0b94a619bc13b8":[3,0,1,27,51,10],
 "ERF__TerrainMetrics_8H.html#a1bd1550a0467cfa83e96893d943b1047":[3,0,1,27,51,6],
 "ERF__TerrainMetrics_8H.html#a21aac76e0b284b33e302526e1f292c76":[3,0,1,27,51,17],
 "ERF__TerrainMetrics_8H.html#a26ff28d8e0387cc0cb634ecff18aeb7b":[3,0,1,27,51,33],
@@ -248,6 +249,5 @@ var NAVTREEINDEX17 =
 "ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830":[3,0,1,20,62,7],
 "ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html#adb81c086391f4d7a7b68a470d79437ad":[3,0,1,20,62,2],
 "ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html#aeff7cf95420bfb4d45cc277ae936fbea":[3,0,1,20,62,3],
-"ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97":[3,0,1,20,62,6],
-"ERF__UpdateRhoQtSources__SDMCongestus3D_8H_source.html":[3,0,1,20,62]
+"ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97":[3,0,1,20,62,6]
 };

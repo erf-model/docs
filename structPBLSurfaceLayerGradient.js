@@ -1,5 +1,6 @@
 var structPBLSurfaceLayerGradient =
 [
+    [ "sfuns", "structPBLSurfaceLayerGradient.html#a23de8cbdf95e1c5a6ca89b7384bd4dba", null ],
     [ "tstar_v", "structPBLSurfaceLayerGradient.html#a0bc85854a44b4706211c06855ebc18bf", null ],
     [ "u_star", "structPBLSurfaceLayerGradient.html#ad51e0b17f17369fbac4c16a843c58d92", null ],
     [ "zeta", "structPBLSurfaceLayerGradient.html#a134a60c7048a6f47629ae08ca963a95a", null ],

@@ -15,6 +15,7 @@ var structnear__surface__diagnostics_1_1Sources =
     [ "native_vegetation_fraction", "structnear__surface__diagnostics_1_1Sources.html#aff7bb7013cb0f00bd073e4d3b4491a20", null ],
     [ "obukhov_length", "structnear__surface__diagnostics_1_1Sources.html#a6c59bb9e083b309ee41ec6373d7b521f", null ],
     [ "roughness_height", "structnear__surface__diagnostics_1_1Sources.html#a75f2f6f2a19dee7890edae9e250ef634", null ],
+    [ "sfuns", "structnear__surface__diagnostics_1_1Sources.html#a9bbbe515ef40012b94a452b90c626369", null ],
     [ "source_mask", "structnear__surface__diagnostics_1_1Sources.html#ae154e64e0eeb5b62e505a102d2891371", null ],
     [ "theta_star", "structnear__surface__diagnostics_1_1Sources.html#a9a1ead6cef23789575ba9ee3220e3b46", null ],
     [ "theta_surface", "structnear__surface__diagnostics_1_1Sources.html#a3b26ca8e6592b24daf7569be3de29299", null ],

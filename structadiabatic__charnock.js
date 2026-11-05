@@ -2,6 +2,7 @@ var structadiabatic__charnock =
 [
     [ "adiabatic_charnock", "structadiabatic__charnock.html#a6084d37c809512df4159a0425a3c5a51", null ],
     [ "iterate_flux", "structadiabatic__charnock.html#a934885ca943ddef47931168f22f5ce0b", null ],
+    [ "set_similarity_funs", "structadiabatic__charnock.html#a03819e12a1ad30169c3016bba7139c17", null ],
     [ "mdata", "structadiabatic__charnock.html#a5c11064c35d6eefd22558180155d6ede", null ],
     [ "sfuns", "structadiabatic__charnock.html#ad4c4fe599c1b8692fa8ef8346866c349", null ],
     [ "tol_z", "structadiabatic__charnock.html#ac03e171bb5c7384788aa4f3065a7c593", null ],

@@ -2,6 +2,7 @@ var structsurface__temp__donelan =
 [
     [ "surface_temp_donelan", "structsurface__temp__donelan.html#a74f9c407896ea32d26adefc912d69ac0", null ],
     [ "iterate_flux", "structsurface__temp__donelan.html#a3a47fedc36a9b7d3554c05fc0b836757", null ],
+    [ "set_similarity_funs", "structsurface__temp__donelan.html#a954ce69491d34746f20dd837b743b526", null ],
     [ "alpha", "structsurface__temp__donelan.html#aebee1bb0b26c2a7cf321e8d4aa707c71", null ],
     [ "mdata", "structsurface__temp__donelan.html#a78d9b2c9e7acc59519c2e5d911e2a83d", null ],
     [ "sfuns", "structsurface__temp__donelan.html#a236c8eeebacbe63a2d87e101a90c70dc", null ],

@@ -33,6 +33,7 @@ var classSurfaceLayer =
       [ "SURFACE_TEMPERATURE", "classSurfaceLayer.html#af5f36f58474c1c542f4138a36d468f04a317cef85d14b4909f1d76becb00dc0f1", null ]
     ] ],
     [ "SurfaceLayer", "classSurfaceLayer.html#abedbc84c644efd0076ac7ad74dd609ef", null ],
+    [ "check_similarity_funs_use", "classSurfaceLayer.html#a468f685b794755996005524979bd2856", null ],
     [ "compute_fluxes", "classSurfaceLayer.html#a7a15b491e262a66f6b96d2a432530f9a", null ],
     [ "compute_fluxes", "classSurfaceLayer.html#a20ab0e9dd57675d53809a5e39a716494", null ],
     [ "compute_pblh", "classSurfaceLayer.html#a33bed820551a152ab22cf2ebd34c7fb6", null ],
@@ -100,6 +101,7 @@ var classSurfaceLayer =
     [ "set_skin_temperature", "classSurfaceLayer.html#ada95584fb0823b4faa41eb93da824c41", null ],
     [ "set_surface_layer_faces", "classSurfaceLayer.html#ab8b365231608193adf71619758611535", null ],
     [ "set_t_surf", "classSurfaceLayer.html#a7af3a1d0b2ccd50e255cd5a8673bc810", null ],
+    [ "similarity_functions", "classSurfaceLayer.html#a3a7d5642a86e564bddf865393e990af4", null ],
     [ "skin_moisture_conflict", "classSurfaceLayer.html#a6d1d8dd1294ddf7cae65124490eaf45c", null ],
     [ "skin_temperature_conflict", "classSurfaceLayer.html#a61581a4f9a8bfdbaccb61c12b1696f9b", null ],
     [ "surface_sum", "classSurfaceLayer.html#a6479440b70dec0f7f98705d4995f0b9a", null ],
@@ -154,6 +156,7 @@ var classSurfaceLayer =
     [ "m_pp_prefix", "classSurfaceLayer.html#a646ab554ea584f5ab5600edbcbfd8ce0", null ],
     [ "m_rdOcp", "classSurfaceLayer.html#a8589b81288d66c99d1fcdeac08883673", null ],
     [ "m_rotate", "classSurfaceLayer.html#a0ad36597cc8f0ed60fa37e185f1e4c40", null ],
+    [ "m_sfuns", "classSurfaceLayer.html#a66efcc5aa4d8bd27d7ad916aa4e5f0de", null ],
     [ "m_skin_moisture_hs_lev", "classSurfaceLayer.html#a9dc11a071040da9491105170716fa889", null ],
     [ "m_skin_moisture_lev", "classSurfaceLayer.html#a58376f8ba27bc35c6cccd93403f01b52", null ],
     [ "m_skin_moisture_resistances_lev", "classSurfaceLayer.html#a362fa10952cd65b8f8a385953d816686", null ],

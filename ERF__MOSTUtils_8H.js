@@ -19,6 +19,7 @@ var ERF__MOSTUtils_8H =
     [ "most_rib_resid", "ERF__MOSTUtils_8H.html#a6a459d91cb1838b829e09a3157c7e4cc", null ],
     [ "most_rib_zeta_bracketed", "ERF__MOSTUtils_8H.html#a2cca6324eaa3b4c1549e0cc5f02fa3ad", null ],
     [ "most_rib_zeta_is_root", "ERF__MOSTUtils_8H.html#a8cc28924f8de08db9fc3dd5f4089cf5a", null ],
+    [ "read_most_similarity_funs", "ERF__MOSTUtils_8H.html#ae78219294672d2d197289a2a9cf6d3f6", null ],
     [ "WaveCoupled_roughness", "ERF__MOSTUtils_8H.html#a14e77f8504faa0fd3976b6b4fd12376e", null ],
     [ "inverted_roughness_lo", "ERF__MOSTUtils_8H.html#a3e75edbb1ca5fc37216da0216fd803c4", null ],
     [ "most_min_ustar", "ERF__MOSTUtils_8H.html#a0ce60c50cb38da027ce6fdcc3621b27c", null ],

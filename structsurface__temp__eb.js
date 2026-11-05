@@ -2,6 +2,7 @@ var structsurface__temp__eb =
 [
     [ "surface_temp_eb", "structsurface__temp__eb.html#a8a4dd57594ad8eae3add3fb645bce7fd", null ],
     [ "iterate_flux", "structsurface__temp__eb.html#a11f2d0a3cac42e5d728ad9eb3abf2ab4", null ],
+    [ "set_similarity_funs", "structsurface__temp__eb.html#a59927fc7d2525cfcb998725316990324", null ],
     [ "alpha", "structsurface__temp__eb.html#a58985e498b6ac4c5e9f0a8c8676e0d3b", null ],
     [ "mdata", "structsurface__temp__eb.html#ad502701904fb8200a73cdec940986edb", null ],
     [ "sfuns", "structsurface__temp__eb.html#a778e3eb11953f241e039021eaedf67f2", null ],

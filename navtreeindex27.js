@@ -1,5 +1,6 @@
 var NAVTREEINDEX27 =
 {
+"classMRISplitIntegrator.html":[2,0,105],
 "classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7":[2,0,105,26],
 "classMRISplitIntegrator.html#a0c49cf3ecc2130a2064d7b0d3d8e7cbf":[2,0,105,6],
 "classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80":[2,0,105,36],
@@ -248,6 +249,5 @@ var NAVTREEINDEX27 =
 "classNodalReconstruction.html#ad206e053b98c95c677010e6377cf0f1e":[2,0,114,8],
 "classNodalReconstruction.html#ad5556f510f1f1bca500b05865cc2ca6c":[2,0,114,0],
 "classNodalReconstruction.html#ada821f2eb4c4fd01083a57c393bd7843":[2,0,114,25],
-"classNodalReconstruction.html#ae398df606b645903cc2ccbc39918a86b":[2,0,114,33],
-"classNodalReconstruction.html#ae39ff02f4cd5c71cbb5f37eb11915b22":[2,0,114,6]
+"classNodalReconstruction.html#ae398df606b645903cc2ccbc39918a86b":[2,0,114,33]
 };
