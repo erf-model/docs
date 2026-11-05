@@ -1,6 +1,5 @@
 var NAVTREEINDEX56 =
 {
-"structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html#ab32d696e6e44aa35defe6837a93c3786":[2,0,13,1,2],
 "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html#ac7cb07f2e247d83d780de6ccf75e542a":[2,0,13,1,0],
 "structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html":[2,0,13,0],
 "structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html#a0e4d7c00ae16d635cef72255dc65047c":[2,0,13,0,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX56 =
 "structplotfile2d_1_1PlotVariableSelection.html#a0003f85a30ea1d4fb062ca95f8a7d8cb":[2,0,23,10,0],
 "structplotfile2d_1_1PlotVariableSelection.html#ad47995916c3ba192318be0a6500f237b":[2,0,23,10,1],
 "structplotfile2d_1_1Plotfile2DOutputDescriptor.html":[2,0,23,8],
-"structplotfile2d_1_1Plotfile2DOutputDescriptor.html#a973d62f08b66cbf45a7ef51034d77725":[2,0,23,8,7]
+"structplotfile2d_1_1Plotfile2DOutputDescriptor.html#a973d62f08b66cbf45a7ef51034d77725":[2,0,23,8,7],
+"structplotfile2d_1_1Plotfile2DOutputDescriptor.html#ab0ddc54a82e6d8a82e71991b80dc0270":[2,0,23,8,0]
 };

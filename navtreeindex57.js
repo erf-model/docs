@@ -1,6 +1,5 @@
 var NAVTREEINDEX57 =
 {
-"structplotfile2d_1_1Plotfile2DOutputDescriptor.html#ab0ddc54a82e6d8a82e71991b80dc0270":[2,0,23,8,0],
 "structplotfile2d_1_1Plotfile2DOutputDescriptor.html#abb440d02f8400f1e589310c523518e71":[2,0,23,8,5],
 "structplotfile2d_1_1Plotfile2DOutputDescriptor.html#ac07532c20b7a533f9f27839ecf7caf14":[2,0,23,8,3],
 "structplotfile2d_1_1Plotfile2DOutputDescriptor.html#ace3b08b203795955f5b5181ac70b0992":[2,0,23,8,2],
