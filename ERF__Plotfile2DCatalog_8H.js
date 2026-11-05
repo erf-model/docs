@@ -58,6 +58,8 @@ var ERF__Plotfile2DCatalog_8H =
       [ "IntegratedQr", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ac9e502e22b5a2fe58547eaaf3e9c7aab", null ],
       [ "IntegratedQs", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a68367e35681d914867e9c421356d4b61", null ],
       [ "IntegratedQg", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a4f9b9cdf9901ea564b079ea86e7c7bb7", null ],
+      [ "CloudOpticalDepthSW", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ada2566a18c3c445571e4b36f7192f2a6", null ],
+      [ "CloudAlbedoEst", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a6e4bbce76f37ff07cd9a4e687d3e57e6", null ],
       [ "SurfaceDiagnosticSource", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a5c402aeabf404d94ed23d9722f206f72", null ],
       [ "SensibleHeatFlux", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2addabc76b9cbf7bd18cdfae2fb337f31d", null ],
       [ "LatentHeatFlux", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a32247914b04aaa17d0b4a43207861eca", null ],

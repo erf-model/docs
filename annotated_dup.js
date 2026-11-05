@@ -164,6 +164,7 @@ var annotated_dup =
     ] ],
     [ "plotfile2d", "namespaceplotfile2d.html", [
       [ "DiagnosticDescriptor", "structplotfile2d_1_1DiagnosticDescriptor.html", "structplotfile2d_1_1DiagnosticDescriptor" ],
+      [ "CloudOpticsParameters", "structplotfile2d_1_1CloudOpticsParameters.html", "structplotfile2d_1_1CloudOpticsParameters" ],
       [ "SampledBracket", "structplotfile2d_1_1SampledBracket.html", "structplotfile2d_1_1SampledBracket" ],
       [ "SampledWindSources", "structplotfile2d_1_1SampledWindSources.html", "structplotfile2d_1_1SampledWindSources" ],
       [ "SelectedSurfacePrecipAccumulationComponents", "structplotfile2d_1_1SelectedSurfacePrecipAccumulationComponents.html", "structplotfile2d_1_1SelectedSurfacePrecipAccumulationComponents" ],

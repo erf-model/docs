@@ -39,6 +39,7 @@ var hierarchy =
     [ "ERF::CFZFaceLayout", "structERF_1_1CFZFaceLayout.html", null ],
     [ "erf_noahmp::ClampedPrecipCell", "structerf__noahmp_1_1ClampedPrecipCell.html", null ],
     [ "CloudChamberBudget", "classCloudChamberBudget.html", null ],
+    [ "plotfile2d::CloudOpticsParameters", "structplotfile2d_1_1CloudOpticsParameters.html", null ],
     [ "erf_auxiliary::CompletedStepFluxLedger", "classerf__auxiliary_1_1CompletedStepFluxLedger.html", null ],
     [ "MoistureComponentIndices::CompList", "structMoistureComponentIndices_1_1CompList.html", null ],
     [ "erf_auxiliary::ComponentDescriptor", "structerf__auxiliary_1_1ComponentDescriptor.html", null ],

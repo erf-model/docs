@@ -341,6 +341,8 @@ var classERF =
     [ "check_for_nans", "classERF.html#a742f76b239dae314f0f46a59ee91e288", null ],
     [ "cloud_chamber_budget", "classERF.html#adb8125ef7de018eb2b951c843d0ea5a5", null ],
     [ "cloud_chamber_config", "classERF.html#a63bb83cbc186b0c3cc8852f6914dc4c4", null ],
+    [ "cloud_optics_parameters", "classERF.html#ae7d08d9b15c954505e860a40aac451ca", null ],
+    [ "cloud_optics_parameters_printed", "classERF.html#ad3946e8ec9c1c58fdf1cd8cbd36d9f32", null ],
     [ "column_kextent", "classERF.html#a0a37911066e33d1257797ca2b45452bd", null ],
     [ "column_kextent_hi_sentinel", "classERF.html#a1423d70f543af8eaa1c99ffefc31d613", null ],
     [ "column_kextent_lo_sentinel", "classERF.html#a335561f9fb913020839c499e92c25334", null ],
