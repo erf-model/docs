@@ -140,6 +140,7 @@ var classSurfaceLayer =
     [ "m_Hwave_lev", "classSurfaceLayer.html#a8f6d99542dedec217b52dfa6368b4cad", null ],
     [ "m_ignore_sst", "classSurfaceLayer.html#a68d96eb41fb99f71e74c5d1b368d03d8", null ],
     [ "m_include_wstar", "classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234", null ],
+    [ "m_k_moist_buoyancy", "classSurfaceLayer.html#af3d1806d906d6c09d7b477fb364ffa17", null ],
     [ "m_lmask_lev", "classSurfaceLayer.html#a0f71ec0b683a3a9fa7530b070fa37aa2", null ],
     [ "m_low_time_interval", "classSurfaceLayer.html#a6e12726ec0c20286ea0002b2426db30d", null ],
     [ "m_lsm_data_lev", "classSurfaceLayer.html#a7ae5f72c36d81939bde3acd6e4498a6d", null ],

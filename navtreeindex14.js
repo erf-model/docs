@@ -1,5 +1,13 @@
 var NAVTREEINDEX14 =
 {
+"ERF__RefineHurricane_8cpp.html#a661478614baa822c243e10e73731de2a":[3,0,1,22,1,0],
+"ERF__ResolvedWallFlux_8H.html":[3,0,1,6,26],
+"ERF__ResolvedWallFlux_8H.html#af4bb1fd6bad609edefd5f661c60672ef":[3,0,1,6,26,0],
+"ERF__ResolvedWallFlux_8H_source.html":[3,0,1,6,26],
+"ERF__RichardsonNumber_8H.html":[3,0,1,6,27],
+"ERF__RichardsonNumber_8H.html#a21090879f1976d676d69d9856e656451":[3,0,1,6,27,5],
+"ERF__RichardsonNumber_8H.html#a43a0f3eeb5b1f7ffba7be69d61a26dc2":[3,0,1,6,27,6],
+"ERF__RichardsonNumber_8H.html#a5f60d8390517c92d4ce5434bb44e9ebd":[3,0,1,6,27,3],
 "ERF__RichardsonNumber_8H.html#ac3769bab582cda07302232c46c7c4b5a":[3,0,1,6,27,2],
 "ERF__RichardsonNumber_8H.html#ac3c81017043d7d3027d85ff48698e9b3":[3,0,1,6,27,0],
 "ERF__RichardsonNumber_8H.html#acca27ff2b620424a346a1222d84ff664":[3,0,1,6,27,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX14 =
 "ERF__SBMTransport_8cpp.html#a8ca21b83f2ff43265d150bf819c1512d":[3,0,1,15,6,22,5],
 "ERF__SBMTransport_8cpp.html#a96d3ba52303949d6e9c6fa756b9c3a48":[3,0,1,15,6,22,18],
 "ERF__SBMTransport_8cpp.html#ab0d760ba8ea9791054ea1d3d5d43b6e5":[3,0,1,15,6,22,20],
-"ERF__SBMTransport_8cpp.html#aba8b8d1cea8ec87e6789a5308a8b5837":[3,0,1,15,6,22,7],
-"ERF__SBMTransport_8cpp.html#ac844d02914da2ff73addb57dad00c5e9":[3,0,1,15,6,22,12],
-"ERF__SBMTransport_8cpp.html#ad48dae744e30a67d7e73b12c17a296ae":[3,0,1,15,6,22,2],
-"ERF__SBMTransport_8cpp.html#ae4b39509979c5a2297c784d920fea93a":[3,0,1,15,6,22,21],
-"ERF__SBMTransport_8cpp.html#af263749ccf19b1be39281f2aba011dec":[3,0,1,15,6,22,11],
-"ERF__SBMTransport_8cpp.html#af882e19557faeb830e3e426f590a27f7":[3,0,1,15,6,22,6],
-"ERF__SDInitialization_8H.html":[3,0,1,17,2],
-"ERF__SDInitialization_8H.html#a281fc9f3c461b471e1d64f979f724c49":[3,0,1,17,2,10],
-"ERF__SDInitialization_8H.html#a3ab451af22b42b871bfabb36d1ebdfbe":[3,0,1,17,2,5]
+"ERF__SBMTransport_8cpp.html#aba8b8d1cea8ec87e6789a5308a8b5837":[3,0,1,15,6,22,7]
 };

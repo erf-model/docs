@@ -405,7 +405,7 @@ $(document).ready(function(){initNavTree('ERF__TI__no__substep__fun_8H_source.ht
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <a class="code" href="ERF__TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a>(S_sum, time_for_fp, S_sum[<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].nGrow(), S_sum[<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7af661293a5a71ca532c214929b98c0bad">IntVars::xmom</a>].nGrow(),</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                  fast_only=<span class="keyword">true</span>, vel_and_mom_synced=<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">if</span> (solverChoice.anelastic[level]) {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">if</span> (solverChoice.compressibility_type[level] != CompressibilityType::FullyCompressible) {</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            <span class="keywordtype">bool</span> have_tb = (thin_xforce[level] || thin_yforce[level] || thin_zforce[level]);</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="keywordflow">if</span> (have_tb) {</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                project_velocity_tb(level, slow_dt, S_sum);</div>

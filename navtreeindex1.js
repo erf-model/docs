@@ -246,8 +246,8 @@ var NAVTREEINDEX1 =
 "ERF__DampingStruct_8H_source.html":[3,0,1,4,3],
 "ERF__DataStruct_8H.html":[3,0,1,4,4],
 "ERF__DataStruct_8H.html#a01afbed431da562282cc06eef6fb9c88":[3,0,1,4,4,9],
-"ERF__DataStruct_8H.html#a01fdd737487d4a3aed4e6eb7a3913052":[3,0,1,4,4,27],
-"ERF__DataStruct_8H.html#a045a068db0ef5d54a4379b1a5c96e1e4":[3,0,1,4,4,22],
+"ERF__DataStruct_8H.html#a01fdd737487d4a3aed4e6eb7a3913052":[3,0,1,4,4,29],
+"ERF__DataStruct_8H.html#a045a068db0ef5d54a4379b1a5c96e1e4":[3,0,1,4,4,23],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248b":[3,0,1,4,4,8],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99":[3,0,1,4,4,8,3]
 };

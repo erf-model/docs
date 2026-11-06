@@ -96,8 +96,8 @@ $(document).ready(function(){initNavTree('ERF__InitCustomPert__CloudChamber_8H.h
 Functions</h2></td></tr>
 <tr class="memitem:a46455971d86f4ffad58b5cc742ab3be3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a> (m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</td></tr>
 <tr class="separator:a46455971d86f4ffad58b5cc742ab3be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a675355b93f7f005d72c4aee00834bc17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a675355b93f7f005d72c4aee00834bc17">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a> (sc.anelastic[lev]==1 &amp;&amp;sc.fixed_density[lev]==1, &quot;Cloud Chamber: the selected level must use fixed-density anelastic dynamics&quot;)</td></tr>
-<tr class="separator:a675355b93f7f005d72c4aee00834bc17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a497430f4ba5e78a215aa143ac913575b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a497430f4ba5e78a215aa143ac913575b">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a> (sc.compressibility_type[lev] !=CompressibilityType::FullyCompressible &amp;&amp;sc.fixed_density[lev]==1, &quot;Cloud Chamber: the selected level must use fixed-density anelastic dynamics&quot;)</td></tr>
+<tr class="separator:a497430f4ba5e78a215aa143ac913575b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03db4a5c40d40eefd7e5a088d30a2b9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a03db4a5c40d40eefd7e5a088d30a2b9e">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a> (sc.terrain_type==<a class="el" href="ERF__SurfaceModel_8H.html#abe8d3c91e03e68dd691887e3b789d7f6a6adf97f83acf6453d4a6a4b1070f3754">TerrainType::None</a> &amp;&amp;sc.buildings_type==<a class="el" href="ERF__SurfaceModel_8H.html#abe8d3c91e03e68dd691887e3b789d7f6a6adf97f83acf6453d4a6a4b1070f3754">BuildingsType::None</a> &amp;&amp;sc.mesh_type==MeshType::ConstantDz, &quot;Cloud Chamber: terrain, buildings, and non-Cartesian mesh modes are unsupported&quot;)</td></tr>
 <tr class="separator:a03db4a5c40d40eefd7e5a088d30a2b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a715953e0c9d3d2820e6074b4c6a1795f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a715953e0c9d3d2820e6074b4c6a1795f">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a> (<a class="el" href="namespaceerf__cloud__chamber.html#a59b82461884fda26246c32843afea37a">erf_cloud_chamber::supports_moisture_model</a>(sc.moisture_type), &quot;Cloud Chamber: unsupported moisture model in custom initializer&quot;)</td></tr>
@@ -203,8 +203,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a675355b93f7f005d72c4aee00834bc17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a675355b93f7f005d72c4aee00834bc17">&#9670;&nbsp;</a></span>AMREX_ALWAYS_ASSERT_WITH_MESSAGE() <span class="overload">[4/5]</span></h2>
+<a id="a497430f4ba5e78a215aa143ac913575b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a497430f4ba5e78a215aa143ac913575b">&#9670;&nbsp;</a></span>AMREX_ALWAYS_ASSERT_WITH_MESSAGE() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,8 +212,8 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">AMREX_ALWAYS_ASSERT_WITH_MESSAGE </td>
           <td>(</td>
-          <td class="paramtype">sc.&#160;</td>
-          <td class="paramname"><em>anelastic</em>[lev] = <code>=1&#160;&amp;&amp;sc.fixed_density[lev]==1</code>, </td>
+          <td class="paramtype">sc.compressibility_type !&#160;</td>
+          <td class="paramname">[lev] = <code>CompressibilityType::FullyCompressible&#160;&amp;&amp;sc.fixed_density[lev]==1</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

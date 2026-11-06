@@ -1,5 +1,13 @@
 var NAVTREEINDEX8 =
 {
+"ERF__InitCustomPert__RICO_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb":[3,0,1,20,18,1],
+"ERF__InitCustomPert__RICO_8H.html#a5fdebea6ddeebd0fe3162c2a61ea92fa":[3,0,1,20,18,26],
+"ERF__InitCustomPert__RICO_8H.html#a60c3baa07467d4018359d146b0484211":[3,0,1,20,18,12],
+"ERF__InitCustomPert__RICO_8H.html#a78df5176a50e6ead2e6fac30c5ee13e2":[3,0,1,20,18,31],
+"ERF__InitCustomPert__RICO_8H.html#a819a228f44e16ba421ba109292487ad5":[3,0,1,20,18,3],
+"ERF__InitCustomPert__RICO_8H.html#a828e28a3beeb9e4ee1144073cd614f17":[3,0,1,20,18,9],
+"ERF__InitCustomPert__RICO_8H.html#a8c01b5c5b1bad493eb838d2ea74c62d1":[3,0,1,20,18,7],
+"ERF__InitCustomPert__RICO_8H.html#a8ff13856e6ad7054a064225139db9598":[3,0,1,20,18,25],
 "ERF__InitCustomPert__RICO_8H.html#a904c8bb11b89d16604c707aeeacc3337":[3,0,1,20,18,2],
 "ERF__InitCustomPert__RICO_8H.html#a996b8977681d7bb9a9286c4685612903":[3,0,1,20,18,34],
 "ERF__InitCustomPert__RICO_8H.html#ab0bbb9a61857299d479233b2f672b28b":[3,0,1,20,18,8],
@@ -241,13 +249,5 @@ var NAVTREEINDEX8 =
 "ERF__InitCustomPert__SuperCell_8H.html#ad956b5a777d0faec007dc7d126bf2cd3":[3,0,1,20,25,46],
 "ERF__InitCustomPert__SuperCell_8H.html#ae17544d1b564380ad3ec8f614d1fc5c2":[3,0,1,20,25,49],
 "ERF__InitCustomPert__SuperCell_8H.html#ae887beebb95409f6ce55deae1a6082b2":[3,0,1,20,25,16],
-"ERF__InitCustomPert__SuperCell_8H.html#aead9ae0e64f7085e86e81b7f2e26f5d1":[3,0,1,20,25,1],
-"ERF__InitCustomPert__SuperCell_8H.html#af83c1918e681461dc4cc7ed4c0828b2c":[3,0,1,20,25,32],
-"ERF__InitCustomPert__SuperCell_8H_source.html":[3,0,1,20,25],
-"ERF__InitCustomPert__TaylorGreenVortex_8H.html":[3,0,1,20,26],
-"ERF__InitCustomPert__TaylorGreenVortex_8H.html#a05a6cf5425ee9d277307ab329feed8df":[3,0,1,20,26,9],
-"ERF__InitCustomPert__TaylorGreenVortex_8H.html#a3328866e05c4f8100901f1b4cb9e217f":[3,0,1,20,26,2],
-"ERF__InitCustomPert__TaylorGreenVortex_8H.html#a3d4cb18bc0d88691688b72f09172b7d5":[3,0,1,20,26,6],
-"ERF__InitCustomPert__TaylorGreenVortex_8H.html#a3e766fc466013ff394d51a37dc2c2549":[3,0,1,20,26,7],
-"ERF__InitCustomPert__TaylorGreenVortex_8H.html#a42459d127d2d715bf433e47e2f58972a":[3,0,1,20,26,3]
+"ERF__InitCustomPert__SuperCell_8H.html#aead9ae0e64f7085e86e81b7f2e26f5d1":[3,0,1,20,25,1]
 };

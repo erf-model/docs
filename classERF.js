@@ -434,6 +434,7 @@ var classERF =
     [ "ib_wall_height", "classERF.html#ab9cc265b09c9df0c5c04103c3af08b4b", null ],
     [ "ib_wall_hfx", "classERF.html#ae16f4cf1f9258f452039407a9bd6eefd", null ],
     [ "ib_wall_ktarget", "classERF.html#ac4a8edfe711390fd7486246407fb8958", null ],
+    [ "ib_wall_qfx", "classERF.html#ae45a2aa24189cfe0afa51bde585b8995", null ],
     [ "ibseb_orbit", "classERF.html#a80d9babb7b80bf64ffab01440d07de57", null ],
     [ "ibseb_params", "classERF.html#a2230a8cd365a047b763eb9765b41199b", null ],
     [ "ibseb_z_i_level0", "classERF.html#af418cac82e2e908ea70b9e5fcc79d5d2", null ],
