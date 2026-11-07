@@ -124,14 +124,14 @@ var NAVTREEINDEX =
 "structMoistureComponentIndices.html#a024fcc1d4ce8e2fcba14b31543ccf282",
 "structRealBdyConsMaps.html",
 "structSHOCInterface_1_1SHOCPreprocess.html#ac24e90dd6ec5f0396f3eb82db9ac0bd1",
-"structSolverChoice.html#a40e0765572a73e445f54834232279fa1",
-"structSurfaceFluxView.html#ac78f49ff10ba5b64c32e2c5c420fbb2b",
-"structTurbulentPerturbation.html#afadeeb041b6475ec460645ef16603f6a",
-"structadiabatic__eb.html#a5c4ffa19839e4be4e3d41b23e5a68665",
-"structerf__noahmp_1_1InvariantPrecipCell.html#a4d32e87d2a9bf3f8e641dbce51c418e5",
-"structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a08bcfe0f946827d4f98071367fe77b31",
-"structnear__surface__diagnostics_1_1Sources.html#a8090c7ab2667e6766528fb1a82621809",
-"structsurface__flux__wave__coupled.html#ab13214a680f07a51caf7b1821f05147e"
+"structSolverChoice.html#a3b225d85091cb99dcd756858850363a5",
+"structStretchedDiffusionBoundaryWeights.html#aa2a858a67e3646ea656669b3036f36b9",
+"structTurbulentPerturbation.html#ad748145bd346f29f17d92dc0c7308cd4",
+"structadiabatic__donelan.html#a6b220db789638a784c51dfedcda1ffb9",
+"structerf__noahmp_1_1ClampedPrecipCell.html#a9559ec35c4d1ea9abd014b33fc34de63",
+"structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#addb73bf08d3e5d11cf7c0dc7d7419d13",
+"structnear__surface__diagnostics_1_1Sources.html#a69580fae920330dcea8cf8fb15edf9c0",
+"structsurface__flux__wave__coupled.html#a10d71fe6dd2f38c54562aa3ab207ef25"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
