@@ -20,7 +20,7 @@ var ERF__TwoStreamColumn_8H =
     [ "two_stream_land_forcing", "ERF__TwoStreamColumn_8H.html#a4c372005b47961078cec14825e92e984", null ],
     [ "two_stream_scratch_box", "ERF__TwoStreamColumn_8H.html#a55c38dd9b82c5131ce6401de8f800c26", null ],
     [ "valid_surface_temperature", "ERF__TwoStreamColumn_8H.html#aa49b1716d474d6e3f4fb7d67aa5740f9", null ],
-    [ "vertical_two_stream_sweep", "ERF__TwoStreamColumn_8H.html#aebc34e4b8fb1adb89b89a8e4116edbbc", null ],
+    [ "vertical_two_stream_sweep", "ERF__TwoStreamColumn_8H.html#a8024e4e736010bc26c46f52b63715b07", null ],
     [ "A", "ERF__TwoStreamColumn_8H.html#a2aafc499c48282a5ee5f76fb6bc1f1fe", null ],
     [ "DZ", "ERF__TwoStreamColumn_8H.html#ad014e0a9a386f2c277500c9e084e59c4", null ],
     [ "F_DIR", "ERF__TwoStreamColumn_8H.html#a00436be5483399b6dc80967c04cf49ff", null ],

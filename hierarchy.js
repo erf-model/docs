@@ -253,6 +253,7 @@ var hierarchy =
     [ "rotate_flux", "structrotate__flux.html", null ],
     [ "erf_sbm::RouteDestination", "structerf__sbm_1_1RouteDestination.html", null ],
     [ "RRTMGPSolarChoice", "structRRTMGPSolarChoice.html", null ],
+    [ "erf_actuator::RunningStats", "classerf__actuator_1_1RunningStats.html", null ],
     [ "SAMCloudPhaseChange", "structSAMCloudPhaseChange.html", null ],
     [ "SAMCoefficientRow", "structSAMCoefficientRow.html", null ],
     [ "SAMFaceState", "structSAMFaceState.html", null ],
@@ -379,6 +380,7 @@ var hierarchy =
     [ "if_bld::VertMasks", "structif__bld_1_1VertMasks.html", null ],
     [ "module_libmassv::vrec", "interfacemodule__libmassv_1_1vrec.html", null ],
     [ "module_libmassv::vsqrt", "interfacemodule__libmassv_1_1vsqrt.html", null ],
+    [ "erf_actuator::WakeLines", "classerf__actuator_1_1WakeLines.html", null ],
     [ "ib_wall::WallCond", "structib__wall_1_1WallCond.html", null ],
     [ "erf_wall_scalar_bc::WallFaceParseResult", "structerf__wall__scalar__bc_1_1WallFaceParseResult.html", null ],
     [ "erf_cloud_chamber_wall_flux::WallFlux", "structerf__cloud__chamber__wall__flux_1_1WallFlux.html", null ],
@@ -395,5 +397,6 @@ var hierarchy =
     [ "WENO_Z5", "structWENO__Z5.html", null ],
     [ "WENO_Z7", "structWENO__Z7.html", null ],
     [ "near_surface_diagnostics::WindSources", "structnear__surface__diagnostics_1_1WindSources.html", null ],
-    [ "WriteBndryPlanes", "classWriteBndryPlanes.html", null ]
+    [ "WriteBndryPlanes", "classWriteBndryPlanes.html", null ],
+    [ "erf_actuator::ZBounds", "structerf__actuator_1_1ZBounds.html", null ]
 ];

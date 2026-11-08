@@ -1,5 +1,10 @@
 var annotated_dup =
 [
+    [ "erf_actuator", "namespaceerf__actuator.html", [
+      [ "ZBounds", "structerf__actuator_1_1ZBounds.html", "structerf__actuator_1_1ZBounds" ],
+      [ "RunningStats", "classerf__actuator_1_1RunningStats.html", "classerf__actuator_1_1RunningStats" ],
+      [ "WakeLines", "classerf__actuator_1_1WakeLines.html", "classerf__actuator_1_1WakeLines" ]
+    ] ],
     [ "erf_auxiliary", "namespaceerf__auxiliary.html", [
       [ "AuxiliaryInertTracer", "classerf__auxiliary_1_1AuxiliaryInertTracer.html", "classerf__auxiliary_1_1AuxiliaryInertTracer" ],
       [ "MappedFaceFluxRateTag", "structerf__auxiliary_1_1MappedFaceFluxRateTag.html", null ],

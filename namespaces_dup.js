@@ -72,6 +72,7 @@ var namespaces_dup =
     ] ],
     [ "EddyDiff", "namespaceEddyDiff.html", null ],
     [ "ERF", "namespaceERF.html", "namespaceERF" ],
+    [ "erf_actuator", "namespaceerf__actuator.html", "namespaceerf__actuator" ],
     [ "erf_auxiliary", "namespaceerf__auxiliary.html", "namespaceerf__auxiliary" ],
     [ "erf_checkpoint", "namespaceerf__checkpoint.html", [
       [ "lateral_periodicity", "namespaceerf__checkpoint.html#a543f256009bdc56c433b9cb6a1da5177", null ],

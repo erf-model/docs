@@ -52,6 +52,8 @@ var structIBSEBParams =
     [ "T_skin_min", "structIBSEBParams.html#ac3777dd7ebe5d949ab7b270b553fd97c", null ],
     [ "thickness", "structIBSEBParams.html#a5397a16842ff2aef5cf6375411a6836c", null ],
     [ "time_zero_utc_s", "structIBSEBParams.html#acc2e249dd1d118dcbe5a510bd3cd9ac2", null ],
+    [ "two_stream_buildings", "structIBSEBParams.html#a3d1f5f46cefdbf0bcbc12726dce48ac2", null ],
+    [ "two_stream_buildings_given", "structIBSEBParams.html#aebbabaa381878bb5b2339f0b785865f4", null ],
     [ "view_n_az", "structIBSEBParams.html#a5b9457e0edb9947687397c0c35e2d85e", null ],
     [ "view_n_el", "structIBSEBParams.html#a73461c5d7f10d03ad53af3cf84000dea", null ],
     [ "z0_wall", "structIBSEBParams.html#a4b8d6abd6738c70b020fd4cf6608e4eb", null ],

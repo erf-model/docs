@@ -12,6 +12,7 @@ var classIBFaceSet =
     [ "building_level0", "classIBFaceSet.html#a40e0bf109d137963dfcf4e149b687130", null ],
     [ "check_canopy_layout", "classIBFaceSet.html#a89b30f8a5dc186d4268f755aaa86413b", null ],
     [ "compute_ground", "classIBFaceSet.html#a719cf6da6c7b63e80e20ae7ab0b5e070", null ],
+    [ "compute_ground_shadow", "classIBFaceSet.html#a698c3b36cc3c9a4d16958389b405ad66", null ],
     [ "compute_longwave", "classIBFaceSet.html#aa237ac2ae1eb4efb9bb56916bfd54ac6", null ],
     [ "compute_longwave_two_stream", "classIBFaceSet.html#a462d5a8c420bf21b62e41e7d5b0b552d", null ],
     [ "compute_sensible", "classIBFaceSet.html#a538f8e56b4c01844454213b32bbd6525", null ],
