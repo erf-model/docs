@@ -1,5 +1,7 @@
 var NAVTREEINDEX48 =
 {
+"structInputSoundingData.html#a69082f3cc1ebb21e4c56a4f159ee3230":[2,0,81,21],
+"structInputSoundingData.html#a80066b762e6d881f62c428da415c162f":[2,0,81,6],
 "structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31":[2,0,81,1],
 "structInputSoundingData.html#a88b37b701b1b26c9c7e29f01cf46999b":[2,0,81,29],
 "structInputSoundingData.html#a89d2902b7ae8d6fcd81fa256bb87add8":[2,0,81,31],
@@ -247,7 +249,5 @@ var NAVTREEINDEX48 =
 "structNDArray.html#aa1c5762c2de2f4286d4f341b618df1e5":[2,0,112,3],
 "structNDArray.html#ad839c3c65bd755311afb6f0dad08f336":[2,0,112,5],
 "structNativeScalarDiffusionPolicy.html":[2,0,111],
-"structNativeScalarDiffusionPolicy.html#a0150640ebedccfd32104f3c89278a3ba":[2,0,111,0],
-"structNativeScalarDiffusionPolicy.html#a04c65080bda9315aab6ad0f77eaf9e20":[2,0,111,9],
-"structNativeScalarDiffusionPolicy.html#a0866819ff2bc256ac88024c8d07d19ea":[2,0,111,7]
+"structNativeScalarDiffusionPolicy.html#a0150640ebedccfd32104f3c89278a3ba":[2,0,111,0]
 };

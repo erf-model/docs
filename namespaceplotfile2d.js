@@ -24,6 +24,7 @@ var namespaceplotfile2d =
       [ "Precipitation", "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441a3b30abed195c163bd2676a42be6e9383", null ],
       [ "ColumnIntegral", "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441a22f99bba08a23cb9b10286b119dee809", null ],
       [ "LandSurface", "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441ab8789e5e42a8520aaeef9eeca507f38a", null ],
+      [ "NearSurface", "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441a1ee158ef895b9b993b017caf2a6b0cde", null ],
       [ "SampledLevel", "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441a1cab91c232ad3a71f646243223fa6797", null ]
     ] ],
     [ "DiagnosticID", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2", [

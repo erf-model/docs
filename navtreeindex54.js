@@ -1,5 +1,7 @@
 var NAVTREEINDEX54 =
 {
+"structTwoStreamLayerSW.html#a2cd97e878d755bdbafe8e12032010217":[2,0,233,2],
+"structTwoStreamLayerSW.html#a8d8553d383621a3c927384595dee91cf":[2,0,233,0],
 "structTwoStreamLayerSW.html#aa1fee719ef3fa94a95d3a46ac1154409":[2,0,233,1],
 "structTwoStreamLayerSW.html#aff5e99d626dbbf65fcb1049a00cac786":[2,0,233,4],
 "structTwoStreamParams.html":[2,0,234],
@@ -247,7 +249,5 @@ var NAVTREEINDEX54 =
 "structadiabatic__wave__coupled.html#a812ea5ea7d6223e5512c372b3260d1bc":[2,0,32,4],
 "structadiabatic__wave__coupled.html#aa4eb74455480668121e37e678f596d07":[2,0,32,7],
 "structadiabatic__wave__coupled.html#ab5f4ad8ae9907cf15e3eba1129ea1375":[2,0,32,5],
-"structadiabatic__wave__coupled.html#ad4cdbc2ca98e6c762848e3e58c8774bf":[2,0,32,1],
-"structbulk__coeff__flux.html":[2,0,39],
-"structbulk__coeff__flux.html#a157187c650e01c56ccb40fce7af23017":[2,0,39,0]
+"structadiabatic__wave__coupled.html#ad4cdbc2ca98e6c762848e3e58c8774bf":[2,0,32,1]
 };

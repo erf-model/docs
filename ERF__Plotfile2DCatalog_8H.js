@@ -11,6 +11,7 @@ var ERF__Plotfile2DCatalog_8H =
       [ "Precipitation", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a3b30abed195c163bd2676a42be6e9383", null ],
       [ "ColumnIntegral", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a22f99bba08a23cb9b10286b119dee809", null ],
       [ "LandSurface", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441ab8789e5e42a8520aaeef9eeca507f38a", null ],
+      [ "NearSurface", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a1ee158ef895b9b993b017caf2a6b0cde", null ],
       [ "SampledLevel", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a1cab91c232ad3a71f646243223fa6797", null ]
     ] ],
     [ "DiagnosticID", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2", [

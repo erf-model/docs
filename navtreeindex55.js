@@ -1,5 +1,7 @@
 var NAVTREEINDEX55 =
 {
+"structbulk__coeff__flux.html":[2,0,39],
+"structbulk__coeff__flux.html#a157187c650e01c56ccb40fce7af23017":[2,0,39,0],
 "structbulk__coeff__flux.html#a1a1b2fa87a2029266a3d487f13621da1":[2,0,39,4],
 "structbulk__coeff__flux.html#a724d9b2415d8fbddea690c42b1d713a9":[2,0,39,5],
 "structbulk__coeff__flux.html#a885802441f508f529fa9d1b260743c0e":[2,0,39,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX55 =
 "structerf__plotfile_1_1Plot3DSelectionCapabilities.html":[2,0,8,0],
 "structerf__plotfile_1_1Plot3DSelectionCapabilities.html#a1ded273cdc40a37ce41790dca4a835af":[2,0,8,0,2],
 "structerf__plotfile_1_1Plot3DSelectionCapabilities.html#a6694a4986cad986f1e8f4ae6cadaeda3":[2,0,8,0,5],
-"structerf__plotfile_1_1Plot3DSelectionCapabilities.html#a6d4952cf142a23f191aab604f25615d1":[2,0,8,0,4],
-"structerf__plotfile_1_1Plot3DSelectionCapabilities.html#a83795c4d17c0c22eb72b897c7de0d051":[2,0,8,0,1],
-"structerf__plotfile_1_1Plot3DSelectionCapabilities.html#ab2e7faa4a43ce538f811b6789b43a00f":[2,0,8,0,6]
+"structerf__plotfile_1_1Plot3DSelectionCapabilities.html#a6d4952cf142a23f191aab604f25615d1":[2,0,8,0,4]
 };

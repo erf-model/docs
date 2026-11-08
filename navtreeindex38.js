@@ -1,5 +1,6 @@
 var NAVTREEINDEX38 =
 {
+"classerf__sbm_1_1SBMLayout.html#a9a16e0ffd77634a1971b45218274d72f":[2,0,10,20,12],
 "classerf__sbm_1_1SBMLayout.html#aac6966b878342e342c13bbfaccc2f456":[2,0,10,20,13],
 "classerf__sbm_1_1SBMLayout.html#ab6b5655f89ec99a3cd0178eab885cc8a":[2,0,10,20,18],
 "classerf__sbm_1_1SBMLayout.html#abbcc8a4df1dbed21c1b126734671ccda":[2,0,10,20,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX38 =
 "globals.html":[3,1,0,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
-"globals_d.html":[3,1,0,3],
-"globals_defs.html":[3,1,6]
+"globals_d.html":[3,1,0,3]
 };

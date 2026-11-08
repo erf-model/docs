@@ -1,5 +1,7 @@
 var NAVTREEINDEX47 =
 {
+"structCFFaceFluxes.html#aa622633b524d0877327d932379ee3340":[2,0,44,1],
+"structCFFaceFluxes.html#adc76f0828153ac46c819303d6628d41f":[2,0,44,4],
 "structCFFaceFluxes.html#ae50bb08977c7aae647399125eee48f68":[2,0,44,3],
 "structCFFaceFluxes.html#af6be99c0d369abd8d7e12ef3aa579a32":[2,0,44,2],
 "structCanopyTurbulence.html":[2,0,40],
@@ -247,7 +249,5 @@ var NAVTREEINDEX47 =
 "structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef":[2,0,81,5],
 "structInputSoundingData.html#a49c3a7ae840a9decf0880a3f0281a1e5":[2,0,81,8],
 "structInputSoundingData.html#a4c3bdf194deea9715de9147d49a809d5":[2,0,81,12],
-"structInputSoundingData.html#a620e9fa369aabdf74d3dcaf158deee09":[2,0,81,23],
-"structInputSoundingData.html#a69082f3cc1ebb21e4c56a4f159ee3230":[2,0,81,21],
-"structInputSoundingData.html#a80066b762e6d881f62c428da415c162f":[2,0,81,6]
+"structInputSoundingData.html#a620e9fa369aabdf74d3dcaf158deee09":[2,0,81,23]
 };

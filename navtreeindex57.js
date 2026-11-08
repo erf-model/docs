@@ -1,5 +1,7 @@
 var NAVTREEINDEX57 =
 {
+"structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#af09750ece129e5d42c8692ad85bcb642":[2,0,10,32,1,2],
+"structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#af3e02cd09aca478e2df8b1afac6bffcc":[2,0,10,32,1,14],
 "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#affb1eb84198d9aa96d8d03e9311c0d0d":[2,0,10,32,1,16],
 "structerf__sbm_1_1SpectralGridSpec.html":[2,0,10,33],
 "structerf__sbm_1_1SpectralGridSpec.html#a92ff789ceab304008f703930e5af09dc":[2,0,10,33,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX57 =
 "structnear__surface__diagnostics_1_1WindSources.html#a9981f28728da1f4ef06c1429eef004ac":[2,0,21,5,6],
 "structnear__surface__diagnostics_1_1WindSources.html#ab3a9e626d13c8ae200282dec5d7b5511":[2,0,21,5,8],
 "structnear__surface__diagnostics_1_1WindSources.html#ac96b5b7b2238d2d51bdbd6bb87aa8500":[2,0,21,5,0],
-"structnear__surface__diagnostics_1_1WindSources.html#ad5b38bd2674ba369ff655b9a1cb63173":[2,0,21,5,3],
-"structnear__surface__diagnostics_1_1WindSources.html#ad946e67a9cdd9b435b49e632802f10f9":[2,0,21,5,7],
-"structnear__surface__diagnostics_1_1WindSources.html#adfd59ba86bea0238740009b2d3d7ee4d":[2,0,21,5,4]
+"structnear__surface__diagnostics_1_1WindSources.html#ad5b38bd2674ba369ff655b9a1cb63173":[2,0,21,5,3]
 };

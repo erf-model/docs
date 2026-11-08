@@ -78,7 +78,8 @@ var NAVTREEINDEX12 =
 "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2afb7ff5a9273c2c909b63dd6a8457bf8e":[3,0,1,11,16,2,10],
 "ERF__Plotfile2DCatalog_8H.html#a3c4b8b29c57c9932f64698789cb1f797":[3,0,1,11,16,6],
 "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441":[3,0,1,11,16,1],
-"ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a1cab91c232ad3a71f646243223fa6797":[3,0,1,11,16,1,9],
+"ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a1cab91c232ad3a71f646243223fa6797":[3,0,1,11,16,1,10],
+"ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a1ee158ef895b9b993b017caf2a6b0cde":[3,0,1,11,16,1,9],
 "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a22f99bba08a23cb9b10286b119dee809":[3,0,1,11,16,1,7],
 "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a2a79c6fa9bd9885d911d26d2ed8134b0":[3,0,1,11,16,1,4],
 "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a3b30abed195c163bd2676a42be6e9383":[3,0,1,11,16,1,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "ERF__Plotfile2DSampledLevel_8H_source.html":[3,0,1,11,30],
 "ERF__Plotfile2DSampledLevel_8cpp.html":[3,0,1,11,29],
 "ERF__Plotfile2DSampledLevel_8cpp.html#a0870c996ba6fe9f5a6316dfe0ae8902c":[3,0,1,11,29,14],
-"ERF__Plotfile2DSampledLevel_8cpp.html#a195b056fbbcdd9053c00fbaadec88568":[3,0,1,11,29,6],
-"ERF__Plotfile2DSampledLevel_8cpp.html#a315b9398730442d504fc848a492cc792":[3,0,1,11,29,3]
+"ERF__Plotfile2DSampledLevel_8cpp.html#a195b056fbbcdd9053c00fbaadec88568":[3,0,1,11,29,6]
 };
