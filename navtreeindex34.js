@@ -1,13 +1,5 @@
 var NAVTREEINDEX34 =
 {
-"classSurfaceLayer.html#a5e773212bdccaa4e72ad48aa23c47e3d":[2,0,219,79],
-"classSurfaceLayer.html#a61581a4f9a8bfdbaccb61c12b1696f9b":[2,0,219,77],
-"classSurfaceLayer.html#a642273c8348f41f7e63f10c1d9b11be2":[2,0,219,52],
-"classSurfaceLayer.html#a646ab554ea584f5ab5600edbcbfd8ce0":[2,0,219,128],
-"classSurfaceLayer.html#a6479440b70dec0f7f98705d4995f0b9a":[2,0,219,78],
-"classSurfaceLayer.html#a66d011088a1a5f798a84b3d8da262e39":[2,0,219,168],
-"classSurfaceLayer.html#a66efcc5aa4d8bd27d7ad916aa4e5f0de":[2,0,219,131],
-"classSurfaceLayer.html#a682e8f6431b496598cc714b5be4810e3":[2,0,219,181],
 "classSurfaceLayer.html#a68d96eb41fb99f71e74c5d1b368d03d8":[2,0,219,112],
 "classSurfaceLayer.html#a6a7451c8c231a856e1494574f3101902":[2,0,219,36],
 "classSurfaceLayer.html#a6bd4a96182dc82da135c77ce75204624":[2,0,219,62],
@@ -249,5 +241,13 @@ var NAVTREEINDEX34 =
 "classTerrainIF.html#ac0d5a1af6e129489c058ac5308936f8f":[2,0,225,7],
 "classTerrainIF.html#ac74d67f8ed14ea0779e6c29c4bd28477":[2,0,225,4],
 "classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110":[2,0,225,1],
-"classTerrainIF.html#aecd6581c288aa552c200147254af5f80":[2,0,225,5]
+"classTerrainIF.html#aecd6581c288aa552c200147254af5f80":[2,0,225,5],
+"classTerrainIF.html#af34c8abff7e400498701029213ad57e2":[2,0,225,11],
+"classTopographicShading.html":[2,0,227],
+"classTopographicShading.html#a1467585ab1d0025fd5268ad8f63d37c1":[2,0,227,14],
+"classTopographicShading.html#a1ef2b751a8a8ad6ff6772cc9e6a15ca8":[2,0,227,11],
+"classTopographicShading.html#a386c361eb884fec98249ccddeb3dc231":[2,0,227,8],
+"classTopographicShading.html#a549e53336855e6526c368a694a0d597b":[2,0,227,4],
+"classTopographicShading.html#a6f8b9a6fd2feec61fba53ebd1d633dcc":[2,0,227,12],
+"classTopographicShading.html#a793d05cb80104a0e64327a89d5ad0712":[2,0,227,10]
 };
