@@ -238,7 +238,7 @@ $(document).ready(function(){initNavTree('ERF__TI__substep__fun_8H_source.html',
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                             phys_bc_type);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        }</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordtype">bool</span> l_rayleigh_implicit = (solverChoice.dampingChoice.rayleigh_damping_type == <a class="code" href="ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1af4e9679a52e3d536f79543ab20f3d8c6">RayleighDampingType::FastImplicit</a>);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordtype">bool</span> l_rayleigh_implicit = solverChoice.rayleigh_implicit_w(level);</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> l_damp_coef         = solverChoice.dampingChoice.rayleigh_dampcoef;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="comment">// The coarse/fine face fluxes of the last RK stage (ERF_CFFluxHistory.cpp): a coarse</span></div>
@@ -444,7 +444,6 @@ $(document).ready(function(){initNavTree('ERF__TI__substep__fun_8H_source.html',
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <a class="code" href="ERF__TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a>(S_data, new_substep_time, ng_cons, ng_vel, fast_only=<span class="keyword">true</span>, vel_and_mom_synced=<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;};</div>
-<div class="ttc" id="aERF__DampingStruct_8H_html_ada1fed43d749500e09ded1d6800449a1af4e9679a52e3d536f79543ab20f3d8c6"><div class="ttname"><a href="ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1af4e9679a52e3d536f79543ab20f3d8c6">RayleighDampingType::FastImplicit</a></div><div class="ttdeci">@ FastImplicit</div></div>
 <div class="ttc" id="aERF__ImplicitPre_8H_html"><div class="ttname"><a href="ERF__ImplicitPre_8H.html">ERF_ImplicitPre.H</a></div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:53</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__CouettePoiseuille_8H_html_a15979e857437874d84fd52db041001af"><div class="ttname"><a href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a></div><div class="ttdeci">pp_for_pert_vels get(&quot;prob_type&quot;, prob_type)</div></div>

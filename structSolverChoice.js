@@ -16,6 +16,7 @@ var structSolverChoice =
     [ "rad_uses_interface", "structSolverChoice.html#aaff28ab2edf1c0232875745e39c0019b", null ],
     [ "rayleigh_fast_uvT", "structSolverChoice.html#a1bec976e66479ab166adadccf2c6a6b0", null ],
     [ "rayleigh_fast_w", "structSolverChoice.html#abb985a916e0c6323a53d4d0924019f5b", null ],
+    [ "rayleigh_implicit_w", "structSolverChoice.html#a450dbf6eeac6ffcb72bfc1728c5a6b7e", null ],
     [ "read_int_string", "structSolverChoice.html#ac9d25f2a27052f7a359f7948ec7c52cc", null ],
     [ "set_mesh_type", "structSolverChoice.html#afb997b932bbc5dfb58145ea90580d518", null ],
     [ "use_building_immersed_forcing", "structSolverChoice.html#a3b225d85091cb99dcd756858850363a5", null ],
