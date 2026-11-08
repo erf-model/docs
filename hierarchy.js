@@ -221,6 +221,7 @@ var hierarchy =
     [ "PerturbationWindSample", "structPerturbationWindSample.html", null ],
     [ "PlanarBoundary", "classPlanarBoundary.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
+    [ "PlaneIndex", "structPlaneIndex.html", null ],
     [ "PlaneSampler", "structPlaneSampler.html", null ],
     [ "ERF::Plot3DScratch", "structERF_1_1Plot3DScratch.html", null ],
     [ "erf_plotfile::Plot3DSelectionCapabilities", "structerf__plotfile_1_1Plot3DSelectionCapabilities.html", null ],

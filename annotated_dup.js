@@ -289,6 +289,7 @@ var annotated_dup =
     [ "PerturbationWindSample", "structPerturbationWindSample.html", "structPerturbationWindSample" ],
     [ "PlanarBoundary", "classPlanarBoundary.html", "classPlanarBoundary" ],
     [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ],
+    [ "PlaneIndex", "structPlaneIndex.html", "structPlaneIndex" ],
     [ "PlaneSampler", "structPlaneSampler.html", "structPlaneSampler" ],
     [ "polygon_", "classpolygon__.html", "classpolygon__" ],
     [ "ProblemBase", "classProblemBase.html", "classProblemBase" ],
