@@ -1,5 +1,9 @@
 var NAVTREEINDEX38 =
 {
+"classerf__sbm_1_1SBMLayout.html#abd38b9d60f8af6e23846407b0eea47e0":[2,0,10,20,16],
+"classerf__sbm_1_1SBMLayout.html#acda73b1a57087ea640785f173ce1b871":[2,0,10,20,14],
+"classerf__sbm_1_1SBMLayout.html#ad59f39c7c7b467700dd0d5ae5c38ddea":[2,0,10,20,15],
+"classerf__sbm_1_1SBMLayout.html#ada70a0701f363229ddd7d4d046805685":[2,0,10,20,5],
 "classerf__sbm_1_1SBMLayout.html#adb1a22842f1ea1ff789401031d9ef91a":[2,0,10,20,7],
 "classerf__sbm_1_1SBMLayout.html#aff027bcdcf73beca4497cbe6a3a0f6df":[2,0,10,20,11],
 "classerf__sbm_1_1SBMStateManager.html":[2,0,10,31],
@@ -205,8 +209,8 @@ var NAVTREEINDEX38 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -237,17 +241,13 @@ var NAVTREEINDEX38 =
 "functions_y.html":[2,3,0,24],
 "functions_z.html":[2,3,0,25],
 "functions_~.html":[2,3,0,26],
-"globals.html":[3,1,0],
 "globals.html":[3,1,0,0],
+"globals.html":[3,1,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
 "globals_defs.html":[3,1,6],
 "globals_e.html":[3,1,0,4],
 "globals_enum.html":[3,1,4],
-"globals_eval.html":[3,1,5],
-"globals_f.html":[3,1,0,5],
-"globals_func.html":[3,1,1],
-"globals_func.html":[3,1,1,0],
-"globals_func_b.html":[3,1,1,1]
+"globals_eval.html":[3,1,5]
 };

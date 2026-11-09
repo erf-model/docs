@@ -1,6 +1,6 @@
 var classTerrainIF =
 [
-    [ "TerrainIF", "classTerrainIF.html#a4b36fd4f778dca2323280a99442d543f", null ],
+    [ "TerrainIF", "classTerrainIF.html#a15829e0ff64d15364bc65a2f1f975734", null ],
     [ "operator()", "classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110", null ],
     [ "operator()", "classTerrainIF.html#abaaf17ea73c5db0f4c592b6114fa8f0e", null ],
     [ "dx", "classTerrainIF.html#a9ef300b60a513a54e515d7230c9fa6b6", null ],
@@ -10,6 +10,8 @@ var classTerrainIF =
     [ "i_hi", "classTerrainIF.html#ac0d5a1af6e129489c058ac5308936f8f", null ],
     [ "j_hi", "classTerrainIF.html#ab4cd1fad98e4360ccdc55688eafbb1e2", null ],
     [ "k_hi", "classTerrainIF.html#a5a2b6c58e209754e0c53b237af85b6a2", null ],
+    [ "per_x", "classTerrainIF.html#a10fb6cc0a7db054bc8feb2635920c89b", null ],
+    [ "per_y", "classTerrainIF.html#acac9653a58b71fbcaecfb37bb8347bb6", null ],
     [ "prob_hi_x", "classTerrainIF.html#a58aac826f646fa38e8b2087ac871813e", null ],
     [ "prob_hi_y", "classTerrainIF.html#af34c8abff7e400498701029213ad57e2", null ],
     [ "prob_lo_x", "classTerrainIF.html#a173b6335da7186e54da1a21d2c710053", null ],

@@ -28989,109 +28989,110 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                FArrayBox terrain_fab(makeSlab(terrain_bx,2,0),1);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keywordtype">double</span> dummy_time = 0.0;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <a class="code" href="classERF.html#a60e8cb933f237903e3fbcd6376c26db0">prob</a>-&gt;init_terrain_surface(geom[max_level], terrain_fab, dummy_time);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <a class="code" href="classTerrainIF.html">TerrainIF</a> terrain_if(terrain_fab, geom[max_level], <a class="code" href="classERF.html#a6600f30f1043a4c5e62b5cdd05f0a99f">stretched_dz_d</a>[max_level]);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <span class="keywordflow">if</span> (has_buildings_stl) {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                    <span class="comment">// Terrain + Buildings</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                    <a class="code" href="classBuildingsIF.html">BuildingsIF</a> buildings_if(buildings_stl_file, stl_scale, stl_center,</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                            stl_reverse_normal, geom[max_level]);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                    <span class="keyword">auto</span> combined_if = EB2::makeUnion(terrain_if, buildings_if);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                    <span class="keyword">auto</span> gshop = EB2::makeShop(combined_if);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                    build_eb(gshop);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    <span class="comment">// Terrain-only</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                    <span class="keyword">auto</span> gshop = EB2::makeShop(terrain_if);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                    build_eb(gshop);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                }</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;EB geometry built successfully: &quot;</span> &lt;&lt; mode_description &lt;&lt; <span class="stringliteral">&quot;.\n&quot;</span>;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (geometry == <span class="stringliteral">&quot;plane&quot;</span>) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            RealArray plane_point{<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            RealArray plane_normal{<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, -<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>}; <span class="comment">// pointing into the solid region</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            pp_eb2.queryAdd(<span class="stringliteral">&quot;plane_point&quot;</span>, plane_point);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            pp_eb2.queryAdd(<span class="stringliteral">&quot;plane_normal&quot;</span>, plane_normal);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            EB2::PlaneIF implicit_fun(plane_point, plane_normal, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keyword">auto</span> gshop = EB2::makeShop(implicit_fun);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keywordflow">if</span> (build_eb_for_multigrid) {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                EB2::Build(gshop, geom[max_level], max_level, max_coarsening_level,</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                            ngrow_for_eb, build_coarse_level_by_coarsening);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                EB2::Build(gshop, this-&gt;Geom(), ngrow_for_eb);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            }</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">#if USE_FC_FACTORY</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#acea2cd02c4e00f08de4e6ed300cdc653">use_native_fc_factories</a>()) { EB2::BuildFC(); }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (geometry == <span class="stringliteral">&quot;box&quot;</span>) {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            RealArray box_lo{<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            RealArray box_hi{<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            pp_eb2.queryAdd(<span class="stringliteral">&quot;box_lo&quot;</span>, box_lo);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            pp_eb2.queryAdd(<span class="stringliteral">&quot;box_hi&quot;</span>, box_hi);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            EB2::BoxIF implicit_fun(box_lo, box_hi, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keyword">auto</span> gshop = EB2::makeShop(implicit_fun);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="keywordflow">if</span> (build_eb_for_multigrid) {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                EB2::Build(gshop, geom[max_level], max_level, max_coarsening_level,</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                            ngrow_for_eb, build_coarse_level_by_coarsening);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                EB2::Build(gshop, this-&gt;Geom(), ngrow_for_eb);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#if USE_FC_FACTORY</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#acea2cd02c4e00f08de4e6ed300cdc653">use_native_fc_factories</a>()) { EB2::BuildFC(); }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (geometry == <span class="stringliteral">&quot;sphere&quot;</span>) {</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="keyword">auto</span> ProbLoArr = geom[max_level].ProbLoArray();</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="keyword">auto</span> ProbHiArr = geom[max_level].ProbHiArray();</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> xcen = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (ProbLoArr[0] + ProbHiArr[0]);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ycen = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (ProbLoArr[1] + ProbHiArr[1]);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            RealArray sphere_center = {xcen, ycen, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            EB2::SphereIF implicit_fun(<a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>, sphere_center, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keyword">auto</span> gshop = EB2::makeShop(implicit_fun);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="keywordflow">if</span> (build_eb_for_multigrid) {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                EB2::Build(gshop, geom[max_level], max_level, max_coarsening_level,</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                            ngrow_for_eb, build_coarse_level_by_coarsening);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                EB2::Build(gshop, this-&gt;Geom(), ngrow_for_eb);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            }</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#if USE_FC_FACTORY</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#acea2cd02c4e00f08de4e6ed300cdc653">use_native_fc_factories</a>()) { EB2::BuildFC(); }</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        }</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ab9cbed75684285bac4390cb039b2e74a">buildings_type</a> == BuildingsType::ImmersedForcing) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        constexpr <span class="keywordtype">int</span> ngrow_for_eb = 4;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;Building EB factories: &quot;</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                &lt;&lt; (<a class="code" href="classERF.html#acea2cd02c4e00f08de4e6ed300cdc653">use_native_fc_factories</a>() ? <span class="stringliteral">&quot;native face-centered&quot;</span> : <span class="stringliteral">&quot;cell-centered&quot;</span>)</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">if</span> (geometry == <span class="stringliteral">&quot;terrain&quot;</span>) {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            Box buildings_bx(surroundingNodes(geom[max_level].Domain())); buildings_bx.grow(3);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            FArrayBox buildings_fab(makeSlab(buildings_bx,2,0),1);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordtype">double</span> dummy_time = 0.0;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <a class="code" href="classERF.html#a60e8cb933f237903e3fbcd6376c26db0">prob</a>-&gt;init_buildings_surface(geom[max_level], buildings_fab, dummy_time);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <a class="code" href="classTerrainIF.html">TerrainIF</a> implicit_fun(buildings_fab, geom[max_level], <a class="code" href="classERF.html#a6600f30f1043a4c5e62b5cdd05f0a99f">stretched_dz_d</a>[max_level]);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="keyword">auto</span> gshop = EB2::makeShop(implicit_fun);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            EB2::Build(gshop, this-&gt;Geom(), ngrow_for_eb);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="preprocessor">#if USE_FC_FACTORY</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#acea2cd02c4e00f08de4e6ed300cdc653">use_native_fc_factories</a>()) { EB2::BuildFC(); }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (geometry == <span class="stringliteral">&quot;plane&quot;</span>) {</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;plane geometry is not supported with ImmersedForcing for buildings&quot;</span>);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (geometry == <span class="stringliteral">&quot;box&quot;</span>) {</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            RealArray box_lo{<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            RealArray box_hi{<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            pp_eb2.queryAdd(<span class="stringliteral">&quot;box_lo&quot;</span>, box_lo);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            pp_eb2.queryAdd(<span class="stringliteral">&quot;box_hi&quot;</span>, box_hi);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            EB2::BoxIF implicit_fun(box_lo, box_hi, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keyword">auto</span> gshop = EB2::makeShop(implicit_fun);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            EB2::Build(gshop, this-&gt;Geom(), ngrow_for_eb);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#if USE_FC_FACTORY</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#acea2cd02c4e00f08de4e6ed300cdc653">use_native_fc_factories</a>()) { EB2::BuildFC(); }</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (geometry == <span class="stringliteral">&quot;sphere&quot;</span>) {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;sphere geometry is not supported with ImmersedForcing for buildings&quot;</span>);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        }</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    }</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <a class="code" href="classTerrainIF.html">TerrainIF</a> terrain_if(terrain_fab, geom[max_level], <a class="code" href="classERF.html#a6600f30f1043a4c5e62b5cdd05f0a99f">stretched_dz_d</a>[max_level],</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                     <span class="comment">/*a_periodic_wrap=*/</span><span class="keyword">true</span>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <span class="keywordflow">if</span> (has_buildings_stl) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                    <span class="comment">// Terrain + Buildings</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                    <a class="code" href="classBuildingsIF.html">BuildingsIF</a> buildings_if(buildings_stl_file, stl_scale, stl_center,</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                            stl_reverse_normal, geom[max_level]);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                    <span class="keyword">auto</span> combined_if = EB2::makeUnion(terrain_if, buildings_if);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                    <span class="keyword">auto</span> gshop = EB2::makeShop(combined_if);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                    build_eb(gshop);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                    <span class="comment">// Terrain-only</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                    <span class="keyword">auto</span> gshop = EB2::makeShop(terrain_if);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                    build_eb(gshop);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;EB geometry built successfully: &quot;</span> &lt;&lt; mode_description &lt;&lt; <span class="stringliteral">&quot;.\n&quot;</span>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (geometry == <span class="stringliteral">&quot;plane&quot;</span>) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            RealArray plane_point{<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            RealArray plane_normal{<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, -<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>}; <span class="comment">// pointing into the solid region</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            pp_eb2.queryAdd(<span class="stringliteral">&quot;plane_point&quot;</span>, plane_point);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            pp_eb2.queryAdd(<span class="stringliteral">&quot;plane_normal&quot;</span>, plane_normal);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            EB2::PlaneIF implicit_fun(plane_point, plane_normal, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keyword">auto</span> gshop = EB2::makeShop(implicit_fun);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keywordflow">if</span> (build_eb_for_multigrid) {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                EB2::Build(gshop, geom[max_level], max_level, max_coarsening_level,</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                            ngrow_for_eb, build_coarse_level_by_coarsening);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                EB2::Build(gshop, this-&gt;Geom(), ngrow_for_eb);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#if USE_FC_FACTORY</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#acea2cd02c4e00f08de4e6ed300cdc653">use_native_fc_factories</a>()) { EB2::BuildFC(); }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (geometry == <span class="stringliteral">&quot;box&quot;</span>) {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            RealArray box_lo{<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            RealArray box_hi{<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            pp_eb2.queryAdd(<span class="stringliteral">&quot;box_lo&quot;</span>, box_lo);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            pp_eb2.queryAdd(<span class="stringliteral">&quot;box_hi&quot;</span>, box_hi);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            EB2::BoxIF implicit_fun(box_lo, box_hi, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="keyword">auto</span> gshop = EB2::makeShop(implicit_fun);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">if</span> (build_eb_for_multigrid) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                EB2::Build(gshop, geom[max_level], max_level, max_coarsening_level,</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                            ngrow_for_eb, build_coarse_level_by_coarsening);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                EB2::Build(gshop, this-&gt;Geom(), ngrow_for_eb);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#if USE_FC_FACTORY</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#acea2cd02c4e00f08de4e6ed300cdc653">use_native_fc_factories</a>()) { EB2::BuildFC(); }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (geometry == <span class="stringliteral">&quot;sphere&quot;</span>) {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="keyword">auto</span> ProbLoArr = geom[max_level].ProbLoArray();</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keyword">auto</span> ProbHiArr = geom[max_level].ProbHiArray();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> xcen = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (ProbLoArr[0] + ProbHiArr[0]);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ycen = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (ProbLoArr[1] + ProbHiArr[1]);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            RealArray sphere_center = {xcen, ycen, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            EB2::SphereIF implicit_fun(<a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>, sphere_center, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="keyword">auto</span> gshop = EB2::makeShop(implicit_fun);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordflow">if</span> (build_eb_for_multigrid) {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                EB2::Build(gshop, geom[max_level], max_level, max_coarsening_level,</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                            ngrow_for_eb, build_coarse_level_by_coarsening);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                EB2::Build(gshop, this-&gt;Geom(), ngrow_for_eb);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#if USE_FC_FACTORY</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#acea2cd02c4e00f08de4e6ed300cdc653">use_native_fc_factories</a>()) { EB2::BuildFC(); }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ab9cbed75684285bac4390cb039b2e74a">buildings_type</a> == BuildingsType::ImmersedForcing) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        constexpr <span class="keywordtype">int</span> ngrow_for_eb = 4;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;Building EB factories: &quot;</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                &lt;&lt; (<a class="code" href="classERF.html#acea2cd02c4e00f08de4e6ed300cdc653">use_native_fc_factories</a>() ? <span class="stringliteral">&quot;native face-centered&quot;</span> : <span class="stringliteral">&quot;cell-centered&quot;</span>)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">if</span> (geometry == <span class="stringliteral">&quot;terrain&quot;</span>) {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            Box buildings_bx(surroundingNodes(geom[max_level].Domain())); buildings_bx.grow(3);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            FArrayBox buildings_fab(makeSlab(buildings_bx,2,0),1);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordtype">double</span> dummy_time = 0.0;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <a class="code" href="classERF.html#a60e8cb933f237903e3fbcd6376c26db0">prob</a>-&gt;init_buildings_surface(geom[max_level], buildings_fab, dummy_time);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <a class="code" href="classTerrainIF.html">TerrainIF</a> implicit_fun(buildings_fab, geom[max_level], <a class="code" href="classERF.html#a6600f30f1043a4c5e62b5cdd05f0a99f">stretched_dz_d</a>[max_level]);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="keyword">auto</span> gshop = EB2::makeShop(implicit_fun);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            EB2::Build(gshop, this-&gt;Geom(), ngrow_for_eb);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#if USE_FC_FACTORY</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#acea2cd02c4e00f08de4e6ed300cdc653">use_native_fc_factories</a>()) { EB2::BuildFC(); }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (geometry == <span class="stringliteral">&quot;plane&quot;</span>) {</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;plane geometry is not supported with ImmersedForcing for buildings&quot;</span>);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (geometry == <span class="stringliteral">&quot;box&quot;</span>) {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            RealArray box_lo{<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            RealArray box_hi{<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            pp_eb2.queryAdd(<span class="stringliteral">&quot;box_lo&quot;</span>, box_lo);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            pp_eb2.queryAdd(<span class="stringliteral">&quot;box_hi&quot;</span>, box_hi);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            EB2::BoxIF implicit_fun(box_lo, box_hi, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keyword">auto</span> gshop = EB2::makeShop(implicit_fun);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            EB2::Build(gshop, this-&gt;Geom(), ngrow_for_eb);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">#if USE_FC_FACTORY</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#acea2cd02c4e00f08de4e6ed300cdc653">use_native_fc_factories</a>()) { EB2::BuildFC(); }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (geometry == <span class="stringliteral">&quot;sphere&quot;</span>) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;sphere geometry is not supported with ImmersedForcing for buildings&quot;</span>);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        }</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    }</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;}</div>
 <div class="ttc" id="aclassBuildingsIF_html"><div class="ttname"><a href="classBuildingsIF.html">BuildingsIF</a></div><div class="ttdoc">Buildings implicit function backed by STL triangle mesh.</div><div class="ttdef"><b>Definition:</b> ERF_EBIFBuildings.H:42</div></div>
 <div class="ttc" id="aclassTerrainIF_html"><div class="ttname"><a href="classTerrainIF.html">TerrainIF</a></div><div class="ttdoc">AMReX EB implicit-function sign convention: &gt;0 is body, 0 is boundary, &lt;0 is fluid.</div><div class="ttdef"><b>Definition:</b> ERF_EBIFTerrain.H:24</div></div>
 <div class="ttc" id="astructSolverChoice_html_a360c131464cd14a0985c9187f1cb717c"><div class="ttname"><a href="structSolverChoice.html#a360c131464cd14a0985c9187f1cb717c">SolverChoice::buildings_fc_factories</a></div><div class="ttdeci">static bool buildings_fc_factories</div><div class="ttdoc">Use native face-centered EB factories for immersed buildings on a static fitted mesh.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:2776</div></div>
@@ -44187,7 +44188,8 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classProblemBase.html#a12330f00769595559140a6594d100ad3" title=" " alt="" coords="671,187,871,229"/>
 <area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="929,70,1112,111"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="975,136,1066,163"/>
-<area shape="rect" href="namespaceerf__terrain__file.html#a9f7e3bb042dddf44669ee9826964cdb9" title=" " alt="" coords="920,187,1121,229"/>
+<area shape="rect" href="namespaceerf__terrain__file.html#ac96e2e518166e7a0c894e77021204e56" title=" " alt="" coords="920,187,1121,229"/>
+<area shape="rect" href="namespaceerf__topography.html#a9dc7ecdebfde00419fd6bbcff1e04e37" title=" " alt="" coords="941,253,1101,280"/>
 </map>
 </div>
 
@@ -46739,9 +46741,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_adf340bf1893bad34b2bf452d987d86c9"><div class="ttname"><a href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a></div><div class="ttdeci">ERF_BC</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:316</div></div>
 <div class="ttc" id="aclassERF_html_af7123092cd6595bec7e6c6e3bfa17c1e"><div class="ttname"><a href="classERF.html#af7123092cd6595bec7e6c6e3bfa17c1e">ERF::openface_warned</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Array&lt; bool, 4 &gt; &gt; openface_warned</div><div class="ttdef"><b>Definition:</b> ERF.H:1880</div></div>
-<div class="ttc" id="anamespaceerf__terrain__file_html_a76e696cab83bd48494acbe0924b8b695"><div class="ttname"><a href="namespaceerf__terrain__file.html#a76e696cab83bd48494acbe0924b8b695">erf_terrain_file::FaceBandSlopes</a></div><div class="ttdeci">Array&lt; Real, 4 &gt; FaceBandSlopes(const MultiFab &amp;z_phys_nd, const MultiFab &amp;mf_mx, const MultiFab &amp;mf_my, const Geometry &amp;geom, int band)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainFileChecks.cpp:350</div></div>
-<div class="ttc" id="anamespaceerf__terrain__file_html_ae296b931d9d8a441749b839d75723a49"><div class="ttname"><a href="namespaceerf__terrain__file.html#ae296b931d9d8a441749b839d75723a49">erf_terrain_file::open_face_slope_warn</a></div><div class="ttdeci">constexpr amrex::Real open_face_slope_warn</div><div class="ttdef"><b>Definition:</b> ERF_TerrainFileChecks.H:151</div></div>
-<div class="ttc" id="anamespaceerf__terrain__file_html_ae512a6e6d9a455b3916951783635870e"><div class="ttname"><a href="namespaceerf__terrain__file.html#ae512a6e6d9a455b3916951783635870e">erf_terrain_file::OpenFaceSlopeWarning</a></div><div class="ttdeci">std::string OpenFaceSlopeWarning(int lev, int band, const Array&lt; Real, 4 &gt; &amp;slopes, const Array&lt; bool, 4 &gt; &amp;open, const Array&lt; std::string, 4 &gt; &amp;bc_names)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainFileChecks.cpp:400</div></div>
+<div class="ttc" id="anamespaceerf__terrain__file_html_a76e696cab83bd48494acbe0924b8b695"><div class="ttname"><a href="namespaceerf__terrain__file.html#a76e696cab83bd48494acbe0924b8b695">erf_terrain_file::FaceBandSlopes</a></div><div class="ttdeci">Array&lt; Real, 4 &gt; FaceBandSlopes(const MultiFab &amp;z_phys_nd, const MultiFab &amp;mf_mx, const MultiFab &amp;mf_my, const Geometry &amp;geom, int band)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainFileChecks.cpp:460</div></div>
+<div class="ttc" id="anamespaceerf__terrain__file_html_ae296b931d9d8a441749b839d75723a49"><div class="ttname"><a href="namespaceerf__terrain__file.html#ae296b931d9d8a441749b839d75723a49">erf_terrain_file::open_face_slope_warn</a></div><div class="ttdeci">constexpr amrex::Real open_face_slope_warn</div><div class="ttdef"><b>Definition:</b> ERF_TerrainFileChecks.H:179</div></div>
+<div class="ttc" id="anamespaceerf__terrain__file_html_ae512a6e6d9a455b3916951783635870e"><div class="ttname"><a href="namespaceerf__terrain__file.html#ae512a6e6d9a455b3916951783635870e">erf_terrain_file::OpenFaceSlopeWarning</a></div><div class="ttdeci">std::string OpenFaceSlopeWarning(int lev, int band, const Array&lt; Real, 4 &gt; &amp;slopes, const Array&lt; bool, 4 &gt; &amp;open, const Array&lt; std::string, 4 &gt; &amp;bc_names)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainFileChecks.cpp:510</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

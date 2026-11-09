@@ -1,5 +1,11 @@
 var NAVTREEINDEX50 =
 {
+"structSAMFaceState.html":[2,0,150],
+"structSAMFaceState.html#a3e997dd570cb321b330fb445c3838e7d":[2,0,150,1],
+"structSAMFaceState.html#a5fce43d045ea97733c971188ebd1d866":[2,0,150,0],
+"structSAMFaceState.html#a8ec6b3bcb00afc9d8e864761f846f2a3":[2,0,150,3],
+"structSAMFaceState.html#ad1eecd24465385e3f0681a0ec7493b80":[2,0,150,2],
+"structSAMPhaseFractions.html":[2,0,151],
 "structSAMPhaseFractions.html#a20c9d09227a84d37d871914970c7e65c":[2,0,151,0],
 "structSAMPhaseFractions.html#a6369f0c62d9b61c96720a53547ceac72":[2,0,151,2],
 "structSAMPhaseFractions.html#a73f8e00f9b519a6e38b288bb05ddc93f":[2,0,151,1],
@@ -243,11 +249,5 @@ var NAVTREEINDEX50 =
 "structScalarDiffusionFieldViews.html#ad1ef291518d87396465914ce03ae097a":[2,0,165,7],
 "structScalarDiffusionFieldViews.html#addc37c995ee5ec380d591667413437bd":[2,0,165,10],
 "structScalarDiffusionFieldViews.html#afef24d71114779f62df1c6d454965176":[2,0,165,2],
-"structScalarDiffusionFluxPolicy.html":[2,0,166],
-"structScalarDiffusionFluxPolicy.html#a07116a20dd0a510711de8936c44b6dab":[2,0,166,2],
-"structScalarDiffusionFluxPolicy.html#aa54afe4678e3cf864789f68a51c7a709":[2,0,166,3],
-"structScalarDiffusionFluxPolicy.html#aa77bdb5e377f21bf69c0dbcd59eaf33b":[2,0,166,0],
-"structScalarDiffusionFluxPolicy.html#ac9250124c0b53f86cc23bb0d874f6986":[2,0,166,4],
-"structScalarDiffusionFluxPolicy.html#af305b4dcec253dbb8c7029b2ef8b31df":[2,0,166,1],
-"structScalarDiffusionPrescribedFluxes.html":[2,0,167]
+"structScalarDiffusionFluxPolicy.html":[2,0,166]
 };
