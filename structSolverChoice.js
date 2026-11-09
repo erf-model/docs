@@ -72,6 +72,7 @@ var structSolverChoice =
     [ "ebChoice", "structSolverChoice.html#a40e0765572a73e445f54834232279fa1", null ],
     [ "ens_pert_amplitude", "structSolverChoice.html#a9780529be528bcfac42d6af94f28a2ef", null ],
     [ "ens_pert_correlated_radius", "structSolverChoice.html#a0a8afa0563042bcdccd9f35e68505ad5", null ],
+    [ "face_sync_int", "structSolverChoice.html#ac1e6795916ea2e0bd6db8eb88737e7f6", null ],
     [ "fixed_density", "structSolverChoice.html#a11bf8176b4b39c9873c529a5597a0bd6", null ],
     [ "flat_terrain", "structSolverChoice.html#a106420052f84f52eb3a6a1357431637b", null ],
     [ "force_stage1_single_substep", "structSolverChoice.html#ae7cba23808a234935924ec74a8cb2f60", null ],
