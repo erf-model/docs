@@ -6,7 +6,7 @@ var structLineSampler =
     [ "column_face_heights", "structLineSampler.html#a7cab8011055d36120dec2192b25b18ff", null ],
     [ "column_ground", "structLineSampler.html#a6281fc6edfeea9f90e7eea5deb0259cd", null ],
     [ "expand_conserved", "structLineSampler.html#a0163f14bf92e399ff2d8511ab01893ed", null ],
-    [ "get_sample_data", "structLineSampler.html#abafd20387e8f2163a62d94f0ced185ce", null ],
+    [ "get_sample_data", "structLineSampler.html#a97482b77418cfe4cea179fe445fc2b18", null ],
     [ "getIndexBox", "structLineSampler.html#adcef4c97b534be5ef445ab62b1b12170", null ],
     [ "line_ground", "structLineSampler.html#a389625d49dc5c065f8472e5f56c16427", null ],
     [ "line_sampling_var_order", "structLineSampler.html#acc9521455cd730540c0ac984da36622a", null ],
@@ -25,6 +25,7 @@ var structLineSampler =
     [ "m_box_cache", "structLineSampler.html#ae9493badb099e6d93eeb164ce02782f2", null ],
     [ "m_box_cache_ba", "structLineSampler.html#aac5ea3145ee9a28d45b44003b23da6a1", null ],
     [ "m_box_cache_found", "structLineSampler.html#a38fe677ba78e9f8c31b83cbce5df5d95", null ],
+    [ "m_covered_value", "structLineSampler.html#acd9bec39a6caf2c83e56479ddade9a6f", null ],
     [ "m_datastream", "structLineSampler.html#a56da044954a236b411c1c52e42338883", null ],
     [ "m_dir", "structLineSampler.html#a8fc089e1d316a8d694fd521baae9f076", null ],
     [ "m_ground", "structLineSampler.html#a1944f64f756ab8715ea23b60cd23cb89", null ],
@@ -38,5 +39,6 @@ var structLineSampler =
     [ "m_varnames", "structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d", null ],
     [ "m_write_ascii", "structLineSampler.html#ae9a6d776b596cd26b9b11c0a1298f7da", null ],
     [ "m_write_log", "structLineSampler.html#acc01f7e8a8aa26be407e0acc5693bd91", null ],
-    [ "m_z_agl", "structLineSampler.html#a98573b35ada08f3e5e4d358c722b0622", null ]
+    [ "m_z_agl", "structLineSampler.html#a98573b35ada08f3e5e4d358c722b0622", null ],
+    [ "m_zcc_ba", "structLineSampler.html#a89fd35e76463012f8420a4c093abbf95", null ]
 ];

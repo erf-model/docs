@@ -83,7 +83,8 @@ $(document).ready(function(){initNavTree('ERF__SampleData_8H.html',''); initResi
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_SampleData.H File Reference</div>  </div>
 </div><!--header-->
@@ -224,7 +225,95 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html">PlaneSampler</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a0b10e5c6476ae6ae0af86ea98adb256e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SampleData_8H.html#a0b10e5c6476ae6ae0af86ea98adb256e">sampling_covered_value</a> ()</td></tr>
+<tr class="separator:a0b10e5c6476ae6ae0af86ea98adb256e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa41452e75c3b9c8417c506d98e74ae1e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SampleData_8H.html#aa41452e75c3b9c8417c506d98e74ae1e">sampling_num_levels</a> (const amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;vars_new)</td></tr>
+<tr class="separator:aa41452e75c3b9c8417c506d98e74ae1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a0b10e5c6476ae6ae0af86ea98adb256e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b10e5c6476ae6ae0af86ea98adb256e">&#9670;&nbsp;</a></span>sampling_covered_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sampling_covered_value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The value line and plane sampling write at cells covered by immersed terrain (erf.sampling_covered_value) </p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> value = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-9999.0);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    amrex::ParmParse <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;sampling_covered_value&quot;</span>, value);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__SampleData_8H_a0b10e5c6476ae6ae0af86ea98adb256e_cgraph.png" border="0" usemap="#aERF__SampleData_8H_a0b10e5c6476ae6ae0af86ea98adb256e_cgraph" alt=""/></div>
+<map name="aERF__SampleData_8H_a0b10e5c6476ae6ae0af86ea98adb256e_cgraph" id="aERF__SampleData_8H_a0b10e5c6476ae6ae0af86ea98adb256e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,189,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="237,5,276,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa41452e75c3b9c8417c506d98e74ae1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa41452e75c3b9c8417c506d98e74ae1e">&#9670;&nbsp;</a></span>sampling_num_levels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sampling_num_levels </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>vars_new</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The number of levels that exist, counted from level 0: vars_new holds a slot for every level up to amr.max_level, but the state of a level that has not been made is undefined </p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> nlev = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">while</span> (nlev &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(vars_new.size()) &amp;&amp;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;           <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(vars_new[nlev].size()) &gt; <a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa47abe072e12c61d29cde15a509a0664b">Vars::cons</a> &amp;&amp;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;           vars_new[nlev][<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].ok()) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        ++nlev;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> nlev;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="ttc" id="anamespaceVars_html_af35d14e5e4aa63b0c13efca756c9402aa47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:254</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

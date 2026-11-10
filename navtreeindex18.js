@@ -1,5 +1,8 @@
 var NAVTREEINDEX18 =
 {
+"ERF__TurbStruct_8H.html#abf8846591b6ec65580e80d118f08a4b1":[3,0,1,4,14,4],
+"ERF__TurbStruct_8H_source.html":[3,0,1,4,14],
+"ERF__TwoStreamCanopyForcing_8H.html":[3,0,1,22,2,9],
 "ERF__TwoStreamCanopyForcing_8H.html#a504a99911eae4889bb386b858942f9ed":[3,0,1,22,2,9,2],
 "ERF__TwoStreamCanopyForcing_8H.html#ab57e3e5a54906367e26226812c57a943":[3,0,1,22,2,9,4],
 "ERF__TwoStreamCanopyForcing_8H.html#af1c86ea97203b3f39880ebd894b2c9c1":[3,0,1,22,2,9,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX18 =
 "ERF__UpdateWSubsidence__RICO_8H.html#a343022aa079c8dd5767df8de5b49984f":[3,0,1,21,76,2],
 "ERF__UpdateWSubsidence__RICO_8H.html#a48b3817c0329c4f7ce8af2ba02365476":[3,0,1,21,76,4],
 "ERF__UpdateWSubsidence__RICO_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb":[3,0,1,21,76,1],
-"ERF__UpdateWSubsidence__RICO_8H.html#af29fe9389d296d430e7678db018af487":[3,0,1,21,76,0],
-"ERF__UpdateWSubsidence__RICO_8H_source.html":[3,0,1,21,76],
-"ERF__UpdateWSubsidence__SineMassFlux_8H.html":[3,0,1,21,77],
-"ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23":[3,0,1,21,77,6]
+"ERF__UpdateWSubsidence__RICO_8H.html#af29fe9389d296d430e7678db018af487":[3,0,1,21,76,0]
 };

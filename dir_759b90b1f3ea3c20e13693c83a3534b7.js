@@ -13,6 +13,7 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
     [ "ERF_ImplicitPre.H", "ERF__ImplicitPre_8H.html", "ERF__ImplicitPre_8H" ],
     [ "ERF_MakeFastCoeffs.cpp", "ERF__MakeFastCoeffs_8cpp.html", "ERF__MakeFastCoeffs_8cpp" ],
     [ "ERF_MakeTauTerms.cpp", "ERF__MakeTauTerms_8cpp.html", "ERF__MakeTauTerms_8cpp" ],
+    [ "ERF_MomentumReflux.cpp", "ERF__MomentumReflux_8cpp.html", null ],
     [ "ERF_MRI.H", "ERF__MRI_8H.html", [
       [ "MRISplitIntegrator", "classMRISplitIntegrator.html", "classMRISplitIntegrator" ]
     ] ],

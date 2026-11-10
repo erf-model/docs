@@ -56,10 +56,7 @@ var dir_4c48f420b74c1f1cc31b316243ca788c =
     [ "ERF_ReadFromWRFInput.cpp", "ERF__ReadFromWRFInput_8cpp.html", null ],
     [ "ERF_ReadFromWRFInput.H", "ERF__ReadFromWRFInput_8H.html", null ],
     [ "ERF_ReadFromWRFLow.cpp", "ERF__ReadFromWRFLow_8cpp.html", null ],
-    [ "ERF_SampleData.H", "ERF__SampleData_8H.html", [
-      [ "LineSampler", "structLineSampler.html", "structLineSampler" ],
-      [ "PlaneSampler", "structPlaneSampler.html", "structPlaneSampler" ]
-    ] ],
+    [ "ERF_SampleData.H", "ERF__SampleData_8H.html", "ERF__SampleData_8H" ],
     [ "ERF_StationSampler.cpp", "ERF__StationSampler_8cpp.html", "ERF__StationSampler_8cpp" ],
     [ "ERF_StationSampler.H", "ERF__StationSampler_8H.html", "ERF__StationSampler_8H" ],
     [ "ERF_TrackerOutput.cpp", "ERF__TrackerOutput_8cpp.html", null ],
