@@ -91,14 +91,22 @@ $(document).ready(function(){initNavTree('ERF__SBMAMRTransfer_8cpp.html',''); in
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="ERF__SBMAMRTransfer_8H_source.html">ERF_SBMAMRTransfer.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__AuxiliaryMappedTransport_8H_source.html">AuxiliaryState/ERF_AuxiliaryMappedTransport.H</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ERF__SBMAMRTime_8H_source.html">ERF_SBMAMRTime.H</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ERF__SBMConstraintGroups_8H_source.html">ERF_SBMConstraintGroups.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__SBMRemapping_8H_source.html">ERF_SBMRemapping.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__SBMRestart_8H_source.html">ERF_SBMRestart.H</a>&quot;</code><br />
+<code>#include &lt;AMReX_Arena.H&gt;</code><br />
 <code>#include &lt;AMReX_FillPatchUtil.H&gt;</code><br />
+<code>#include &lt;AMReX_GpuContainers.H&gt;</code><br />
 <code>#include &lt;AMReX_MFIter.H&gt;</code><br />
 <code>#include &lt;AMReX_MultiFabUtil.H&gt;</code><br />
 <code>#include &lt;AMReX_ParallelDescriptor.H&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -106,36 +114,44 @@ Include dependency graph for ERF_SBMAMRTransfer.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SBMAMRTransfer_8cpp__incl.png" border="0" usemap="#aSource_2Microphysics_2SBM_2ERF__SBMAMRTransfer_8cpp" alt=""/></div>
 <map name="aSource_2Microphysics_2SBM_2ERF__SBMAMRTransfer_8cpp" id="aSource_2Microphysics_2SBM_2ERF__SBMAMRTransfer_8cpp">
-<area shape="rect" title=" " alt="" coords="1385,5,1611,47"/>
-<area shape="rect" href="ERF__SBMAMRTransfer_8H.html" title=" " alt="" coords="71,177,248,203"/>
-<area shape="rect" title=" " alt="" coords="1840,408,1903,435"/>
-<area shape="rect" title=" " alt="" coords="755,408,815,435"/>
-<area shape="rect" title=" " alt="" coords="913,408,976,435"/>
-<area shape="rect" href="ERF__AuxiliaryMappedTransport_8H.html" title=" " alt="" coords="1051,169,1265,211"/>
-<area shape="rect" href="ERF__SBMRemapping_8H.html" title=" " alt="" coords="1469,177,1639,203"/>
-<area shape="rect" href="ERF__SBMRestart_8H.html" title=" " alt="" coords="493,95,637,121"/>
-<area shape="rect" title=" " alt="" coords="1561,95,1728,121"/>
-<area shape="rect" title=" " alt="" coords="1753,95,1883,121"/>
-<area shape="rect" title=" " alt="" coords="1907,95,2075,121"/>
-<area shape="rect" title=" " alt="" coords="2100,95,2304,121"/>
-<area shape="rect" title=" " alt="" coords="2329,95,2395,121"/>
-<area shape="rect" href="ERF__SBMLayout_8H.html" title=" " alt="" coords="639,259,781,285"/>
-<area shape="rect" title=" " alt="" coords="319,408,378,435"/>
-<area shape="rect" title=" " alt="" coords="5,259,159,285"/>
-<area shape="rect" title=" " alt="" coords="285,259,431,285"/>
-<area shape="rect" href="ERF__SpectralGrid_8H.html" title=" " alt="" coords="1343,333,1491,360"/>
-<area shape="rect" title=" " alt="" coords="1261,408,1319,435"/>
-<area shape="rect" href="ERF__AuxiliaryStateLayout_8H.html" title=" " alt="" coords="387,333,591,360"/>
-<area shape="rect" href="ERF__AuxiliaryProjection_8H.html" title=" " alt="" coords="615,333,805,360"/>
-<area shape="rect" title=" " alt="" coords="1693,408,1815,435"/>
-<area shape="rect" title=" " alt="" coords="1490,408,1669,435"/>
-<area shape="rect" title=" " alt="" coords="1343,408,1466,435"/>
-<area shape="rect" title=" " alt="" coords="1257,259,1390,285"/>
-<area shape="rect" title=" " alt="" coords="1070,259,1153,285"/>
-<area shape="rect" title=" " alt="" coords="1177,259,1233,285"/>
-<area shape="rect" title=" " alt="" coords="969,259,1046,285"/>
-<area shape="rect" title=" " alt="" coords="1769,259,1923,285"/>
-<area shape="rect" href="ERF__SBMBulkProjection_8H.html" title=" " alt="" coords="564,177,755,203"/>
+<area shape="rect" title=" " alt="" coords="2223,5,2449,47"/>
+<area shape="rect" href="ERF__SBMAMRTransfer_8H.html" title=" " alt="" coords="273,177,450,203"/>
+<area shape="rect" title=" " alt="" coords="2329,408,2391,435"/>
+<area shape="rect" title=" " alt="" coords="2101,408,2160,435"/>
+<area shape="rect" title=" " alt="" coords="1453,408,1513,435"/>
+<area shape="rect" title=" " alt="" coords="989,408,1051,435"/>
+<area shape="rect" title=" " alt="" coords="5,259,72,285"/>
+<area shape="rect" href="ERF__AuxiliaryMappedTransport_8H.html" title=" " alt="" coords="847,169,1060,211"/>
+<area shape="rect" href="ERF__SBMAMRTime_8H.html" title=" " alt="" coords="2315,95,2474,121"/>
+<area shape="rect" title=" " alt="" coords="2283,177,2368,203"/>
+<area shape="rect" href="ERF__SBMConstraintGroups_8H.html" title=" " alt="" coords="1445,177,1656,203"/>
+<area shape="rect" href="ERF__SBMRemapping_8H.html" title=" " alt="" coords="1893,177,2064,203"/>
+<area shape="rect" href="ERF__SBMRestart_8H.html" title=" " alt="" coords="536,95,680,121"/>
+<area shape="rect" title=" " alt="" coords="2549,95,2677,121"/>
+<area shape="rect" title=" " alt="" coords="2702,95,2869,121"/>
+<area shape="rect" title=" " alt="" coords="2893,95,3080,121"/>
+<area shape="rect" title=" " alt="" coords="3104,95,3235,121"/>
+<area shape="rect" title=" " alt="" coords="3259,95,3427,121"/>
+<area shape="rect" title=" " alt="" coords="3451,95,3655,121"/>
+<area shape="rect" title=" " alt="" coords="3680,95,3755,121"/>
+<area shape="rect" title=" " alt="" coords="3779,95,3853,121"/>
+<area shape="rect" href="ERF__SBMLayout_8H.html" title=" " alt="" coords="1187,259,1328,285"/>
+<area shape="rect" title=" " alt="" coords="655,408,713,435"/>
+<area shape="rect" title=" " alt="" coords="97,259,250,285"/>
+<area shape="rect" title=" " alt="" coords="526,259,671,285"/>
+<area shape="rect" title=" " alt="" coords="275,259,349,285"/>
+<area shape="rect" href="ERF__SpectralGrid_8H.html" title=" " alt="" coords="1691,333,1839,360"/>
+<area shape="rect" href="ERF__AuxiliaryStateLayout_8H.html" title=" " alt="" coords="1139,333,1343,360"/>
+<area shape="rect" href="ERF__AuxiliaryProjection_8H.html" title=" " alt="" coords="925,333,1115,360"/>
+<area shape="rect" title=" " alt="" coords="1917,408,2040,435"/>
+<area shape="rect" title=" " alt="" coords="1565,408,1744,435"/>
+<area shape="rect" title=" " alt="" coords="1769,408,1892,435"/>
+<area shape="rect" title=" " alt="" coords="1504,259,1637,285"/>
+<area shape="rect" title=" " alt="" coords="979,259,1061,285"/>
+<area shape="rect" title=" " alt="" coords="899,259,955,285"/>
+<area shape="rect" title=" " alt="" coords="747,259,824,285"/>
+<area shape="rect" title=" " alt="" coords="2117,259,2272,285"/>
+<area shape="rect" href="ERF__SBMBulkProjection_8H.html" title=" " alt="" coords="579,177,770,203"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -146,10 +162,22 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8e5ee5c2fc8dd393b9841f25f5d01890"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a8e5ee5c2fc8dd393b9841f25f5d01890">erf_sbm::RestrictMappedSpectrum</a> (const SBMLayout &amp;layout, const SBMAMRStateView &amp;fine, const SBMAMRStateView &amp;coarse, const amrex::IntVect &amp;ratio, const int coarse_level, MultiFab &amp;coarse_candidate, std::string &amp;diagnostic)</td></tr>
-<tr class="separator:a8e5ee5c2fc8dd393b9841f25f5d01890"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add523990c4f0d6299afb5be4aa880c93"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#add523990c4f0d6299afb5be4aa880c93">erf_sbm::ProlongCarrierRelativeSpectrum</a> (const SBMLayout &amp;layout, const SBMAMRStateView &amp;coarse, const SBMAMRStateView &amp;fine_target, const amrex::Geometry &amp;coarse_geometry, const amrex::Geometry &amp;fine_geometry, const amrex::IntVect &amp;ratio, const int fine_level, MultiFab &amp;fine_candidate, std::string &amp;diagnostic)</td></tr>
-<tr class="separator:add523990c4f0d6299afb5be4aa880c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af294a71e91c3421c1003db0adfbf01cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#af294a71e91c3421c1003db0adfbf01cd">erf_sbm::ApplyMappedRefluxCorrectionChunk</a> (MultiFab &amp;private_candidate, const MultiFab &amp;mapped_correction, const MultiFab &amp;mapped_measure, const MultiFab &amp;covered_parent_mask, const std::vector&lt; int &gt; &amp;global_components, MultiFab &amp;invalid_mask, std::string &amp;diagnostic)</td></tr>
+<tr class="separator:af294a71e91c3421c1003db0adfbf01cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ee8b441699727c38978fcb261141d94"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a8ee8b441699727c38978fcb261141d94">erf_sbm::MappedRefluxCorrectionMaskIsValid</a> (const MultiFab &amp;invalid_mask, std::string &amp;diagnostic)</td></tr>
+<tr class="separator:a8ee8b441699727c38978fcb261141d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8422dbc94a0d04ac89af28431bdaf57c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a8422dbc94a0d04ac89af28431bdaf57c">erf_sbm::restrict_mapped_spectrum_impl</a> (const SBMLayout &amp;layout, const SBMAMRStateView &amp;fine, const SBMAMRStateView &amp;coarse, const amrex::IntVect &amp;ratio, const int coarse_level, MultiFab &amp;coarse_candidate, const bool candidate_is_private, const int max_groups_per_chunk, const bool reverse_chunk_order, const SBMStateAdmission *admission, SBMTransferAllocationCensus *allocation_census, const std::optional&lt; double &gt; cross_level_dt_min, const MultiFab *covered_parent_mask, std::string &amp;diagnostic)</td></tr>
+<tr class="separator:a8422dbc94a0d04ac89af28431bdaf57c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacd9597e7a66a035141e54d6fbbc6a78"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#aacd9597e7a66a035141e54d6fbbc6a78">erf_sbm::RestrictMappedSpectrum</a> (const SBMLayout &amp;layout, const SBMAMRStateView &amp;fine, const SBMAMRStateView &amp;coarse, const amrex::IntVect &amp;ratio, const int coarse_level, MultiFab &amp;coarse_candidate, std::string &amp;diagnostic, const int max_groups_per_chunk, const bool reverse_chunk_order, const SBMStateAdmission *admission, SBMTransferAllocationCensus *allocation_census, const std::optional&lt; double &gt; cross_level_dt_min)</td></tr>
+<tr class="separator:aacd9597e7a66a035141e54d6fbbc6a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a412defb51ed8c4dfcc0f516f6a6c7df1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a412defb51ed8c4dfcc0f516f6a6c7df1">erf_sbm::RestrictMappedSpectrumPrivate</a> (const SBMLayout &amp;layout, const SBMAMRStateView &amp;fine, const SBMAMRStateView &amp;coarse, const amrex::IntVect &amp;ratio, const int coarse_level, MultiFab &amp;private_candidate, std::string &amp;diagnostic, const int max_groups_per_chunk, const bool reverse_chunk_order, const SBMStateAdmission *admission, SBMTransferAllocationCensus *allocation_census, const std::optional&lt; double &gt; cross_level_dt_min, const MultiFab *covered_parent_mask)</td></tr>
+<tr class="separator:a412defb51ed8c4dfcc0f516f6a6c7df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96e5ddede2fa840d9576ffced619800b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a96e5ddede2fa840d9576ffced619800b">erf_sbm::prolong_carrier_relative_spectrum_impl</a> (const SBMLayout &amp;layout, const SBMAMRStateView &amp;coarse, const SBMAMRStateView &amp;fine_target, const amrex::Geometry &amp;coarse_geometry, const amrex::Geometry &amp;fine_geometry, const amrex::IntVect &amp;ratio, const int fine_level, MultiFab &amp;fine_candidate, const bool candidate_is_private, const int max_groups_per_chunk, const bool reverse_chunk_order, const SBMStateAdmission *admission, SBMTransferAllocationCensus *allocation_census, std::string &amp;diagnostic)</td></tr>
+<tr class="separator:a96e5ddede2fa840d9576ffced619800b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae830f8f54b54a1cd8c0f372443362244"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#ae830f8f54b54a1cd8c0f372443362244">erf_sbm::ProlongCarrierRelativeSpectrum</a> (const SBMLayout &amp;layout, const SBMAMRStateView &amp;coarse, const SBMAMRStateView &amp;fine_target, const amrex::Geometry &amp;coarse_geometry, const amrex::Geometry &amp;fine_geometry, const amrex::IntVect &amp;ratio, const int fine_level, MultiFab &amp;fine_candidate, std::string &amp;diagnostic, const int max_groups_per_chunk, const bool reverse_chunk_order, const SBMStateAdmission *admission, SBMTransferAllocationCensus *allocation_census)</td></tr>
+<tr class="separator:ae830f8f54b54a1cd8c0f372443362244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aac822d5f124305bf4084433eb79a0c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a5aac822d5f124305bf4084433eb79a0c">erf_sbm::ProlongCarrierRelativeSpectrumPrivate</a> (const SBMLayout &amp;layout, const SBMAMRStateView &amp;coarse, const SBMAMRStateView &amp;fine_target, const amrex::Geometry &amp;coarse_geometry, const amrex::Geometry &amp;fine_geometry, const amrex::IntVect &amp;ratio, const int fine_level, MultiFab &amp;private_candidate, std::string &amp;diagnostic, const int max_groups_per_chunk, const bool reverse_chunk_order, const SBMStateAdmission *admission, SBMTransferAllocationCensus *allocation_census)</td></tr>
+<tr class="separator:a5aac822d5f124305bf4084433eb79a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

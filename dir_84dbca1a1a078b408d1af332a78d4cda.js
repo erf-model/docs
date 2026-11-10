@@ -1,6 +1,15 @@
 var dir_84dbca1a1a078b408d1af332a78d4cda =
 [
     [ "ERF_SBMAdvectionBoundary.H", "ERF__SBMAdvectionBoundary_8H.html", "ERF__SBMAdvectionBoundary_8H" ],
+    [ "ERF_SBMAMRCoupling.cpp", "ERF__SBMAMRCoupling_8cpp.html", null ],
+    [ "ERF_SBMAMRFluxRegister.cpp", "ERF__SBMAMRFluxRegister_8cpp.html", null ],
+    [ "ERF_SBMAMRFluxRegister.H", "ERF__SBMAMRFluxRegister_8H.html", [
+      [ "SBMAMRFluxRegister", "classerf__sbm_1_1SBMAMRFluxRegister.html", "classerf__sbm_1_1SBMAMRFluxRegister" ],
+      [ "SideState", "structerf__sbm_1_1SBMAMRFluxRegister_1_1SideState.html", "structerf__sbm_1_1SBMAMRFluxRegister_1_1SideState" ]
+    ] ],
+    [ "ERF_SBMAMRQualification.cpp", "ERF__SBMAMRQualification_8cpp.html", "ERF__SBMAMRQualification_8cpp" ],
+    [ "ERF_SBMAMRQualification.H", "ERF__SBMAMRQualification_8H.html", "ERF__SBMAMRQualification_8H" ],
+    [ "ERF_SBMAMRTime.H", "ERF__SBMAMRTime_8H.html", "ERF__SBMAMRTime_8H" ],
     [ "ERF_SBMAMRTransfer.cpp", "ERF__SBMAMRTransfer_8cpp.html", "ERF__SBMAMRTransfer_8cpp" ],
     [ "ERF_SBMAMRTransfer.H", "ERF__SBMAMRTransfer_8H.html", "ERF__SBMAMRTransfer_8H" ],
     [ "ERF_SBMBulkProjection.cpp", "ERF__SBMBulkProjection_8cpp.html", null ],
@@ -32,6 +41,8 @@ var dir_84dbca1a1a078b408d1af332a78d4cda =
     ] ],
     [ "ERF_SBMTransport.cpp", "ERF__SBMTransport_8cpp.html", "ERF__SBMTransport_8cpp" ],
     [ "ERF_SBMTransport.H", "ERF__SBMTransport_8H.html", [
+      [ "SBMAMRStageGhostProbe", "structerf__sbm_1_1SBMAMRStageGhostProbe.html", "structerf__sbm_1_1SBMAMRStageGhostProbe" ],
+      [ "SBMAMRStageParent", "structerf__sbm_1_1SBMAMRStageParent.html", "structerf__sbm_1_1SBMAMRStageParent" ],
       [ "SBMTransport", "classerf__sbm_1_1SBMTransport.html", "classerf__sbm_1_1SBMTransport" ]
     ] ],
     [ "ERF_SpectralGrid.cpp", "ERF__SpectralGrid_8cpp.html", null ],

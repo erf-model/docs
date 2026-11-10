@@ -156,7 +156,7 @@ Classes</h2></td></tr>
 <li>initialize() once, after the initial data (or the checkpoint) exist and before the step-0 plotfile; on a restart the model restores its own state there, from <a class="el" href="structStructureInit.html#ad22c4bcf918bbb728a023c183681a33a" title="The checkpoint ERF restarts from; empty on a fresh start.">StructureInit::restart_chkfile</a>. It is not called again after a regrid: what the model needs of the mesh it reads from <a class="el" href="structStructureStep.html" title="The flow a structure model reads at the start of each step of its level.">StructureStep</a> each step;</li>
 <li>advance() once per step of level(), with the state at the start of the step, before that step's Runge-Kutta stages;</li>
 <li>support() right after each advance(): when a finer level than level() exists, <a class="el" href="classERF.html">ERF</a> stops the run if that level's boxes overlap the support (the force would be lost there, see level());</li>
-<li>add_momentum_sources() at every Runge-Kutta stage of level();</li>
+<li>add_momentum_sources() at every Runge-Kutta stage of level(), and, with erf.coupling_type = TwoWay, once at the start of each step of every coarser level, into zeroed MultiFabs on the grids of level(), which <a class="el" href="classERF.html">ERF</a> restricts onto that level (see add_momentum_sources());</li>
 <li>write_checkpoint() each time <a class="el" href="classERF.html">ERF</a> writes a checkpoint;</li>
 <li>plot_var_names() each time <a class="el" href="classERF.html">ERF</a> builds its plotfile variable list, and fill_plot_var() for each listed name on every level of each plotfile.</li>
 </ul>

@@ -1,8 +1,6 @@
 var structerf__sbm_1_1SBMTransport_1_1DeviceMetadata =
 [
     [ "edges", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#a98a7fffbd0bebfa5e9e75e2744369ef6", null ],
-    [ "global_constraints", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#aec666513c1a55b00a97012ae4be6b906", null ],
-    [ "global_terms", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#ad99e3cb0543747206331232c970ae449", null ],
     [ "host_groups", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#a243bc4265bde9a596588c0a198a2bfcb", null ],
     [ "local_constraints", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#acfeffc8c3f62e624de6731846ecc4707", null ],
     [ "local_supports", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#abf8cc3c1fbf635b436c23eddf30d1766", null ],
