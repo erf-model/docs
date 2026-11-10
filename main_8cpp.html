@@ -524,100 +524,115 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">if</span> (argc &gt;= 2) {</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 1; i &lt; argc; i++) {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keywordflow">if</span> (std::string(argv[i]) == <span class="stringliteral">&quot;--describe&quot;</span>) {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                <a class="code" href="classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa">ERF::writeBuildInfo</a>(std::cout);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                <span class="keywordflow">return</span> finalize_mpi_and_return(0);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            }</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    }</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">if</span> (!strchr(argv[1], <span class="charliteral">&#39;=&#39;</span>) &amp;&amp; !amrex::FileSystem::Exists(std::string(argv[1])))</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    {</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="comment">// Print usage and exit with error code if we cannot find the input file</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <a class="code" href="classERF.html#aeaeb11001478b0635ef0fe3baa396df1">ERF::print_usage</a>(MPI_COMM_WORLD, std::cout);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <a class="code" href="classERF.html#addc510dbf758a33cc095d64a9b17076c">ERF::print_error</a>(</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            MPI_COMM_WORLD, <span class="stringliteral">&quot;Input file does not exist = &quot;</span> +</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                                std::string(argv[1]) + <span class="stringliteral">&quot;. Exiting!!&quot;</span>);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordflow">return</span> finalize_mpi_and_return(1);</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    }</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor">#ifdef ERF_USE_WW3_COUPLING</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    MPI_Comm comm = amrex::MPMD::Initialize(argc, argv);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    amrex::Initialize(argc,argv,<span class="keyword">true</span>,comm,<a class="code" href="main_8cpp.html#a183e783116d02836167ccbed3b28c1d3">add_par</a>);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    amrex::Initialize(argc,argv,<span class="keyword">true</span>,MPI_COMM_WORLD,<a class="code" href="main_8cpp.html#a183e783116d02836167ccbed3b28c1d3">add_par</a>);</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <a class="code" href="main_8cpp.html#aee5a0a7a6feb3480f8974df2cc13a65a">install_exit_trap</a>();</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="comment">// Only when argv[1] is actually an inputs file (same test the surrounding code uses).</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">if</span> (argc &gt; 1 &amp;&amp; std::string(argv[1]).find(<span class="charliteral">&#39;=&#39;</span>) == std::string::npos) {</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <a class="code" href="ERF__InputsName_8H.html#aa4d3de3855a1e01db2c10e072132d258">CheckForDuplicateInputs</a>(argv[1]);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    }</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor">#ifdef ERF_USE_KOKKOS</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="comment">// Initialize kokkos</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordflow">if</span> (!Kokkos::is_initialized()) {</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        Kokkos::initialize(Kokkos::InitializationSettings()</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                           .set_device_id(amrex::Gpu::Device::deviceId()));</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keyword">const</span> std::string option(argv[i]);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordflow">if</span> (option == <span class="stringliteral">&quot;--describe&quot;</span> || option == <span class="stringliteral">&quot;--describe-json&quot;</span> || option == <span class="stringliteral">&quot;--describe-yaml&quot;</span>) {</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                <span class="keywordtype">int</span> rank = 0;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_MPI</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                <span class="keywordflow">if</span> (rank == 0) {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                    <span class="keywordflow">if</span> (option == <span class="stringliteral">&quot;--describe-json&quot;</span>) {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                        <a class="code" href="classERF.html#a1ecb21a53102bf8049e832ecb0555f46">ERF::writeBuildInfoJSON</a>(std::cout);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (option == <span class="stringliteral">&quot;--describe-yaml&quot;</span>) {</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                        <a class="code" href="classERF.html#a2f138eb6a90e3330a03c1d5c3d3135aa">ERF::writeBuildInfoYAML</a>(std::cout);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                        <a class="code" href="classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa">ERF::writeBuildInfo</a>(std::cout);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                    }</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                <span class="keywordflow">return</span> finalize_mpi_and_return(0);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        }</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">if</span> (!strchr(argv[1], <span class="charliteral">&#39;=&#39;</span>) &amp;&amp; !amrex::FileSystem::Exists(std::string(argv[1])))</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    {</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="comment">// Print usage and exit with error code if we cannot find the input file</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <a class="code" href="classERF.html#aeaeb11001478b0635ef0fe3baa396df1">ERF::print_usage</a>(MPI_COMM_WORLD, std::cout);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <a class="code" href="classERF.html#addc510dbf758a33cc095d64a9b17076c">ERF::print_error</a>(</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            MPI_COMM_WORLD, <span class="stringliteral">&quot;Input file does not exist = &quot;</span> +</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                std::string(argv[1]) + <span class="stringliteral">&quot;. Exiting!!&quot;</span>);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">return</span> finalize_mpi_and_return(1);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor">#ifdef ERF_USE_WW3_COUPLING</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    MPI_Comm comm = amrex::MPMD::Initialize(argc, argv);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    amrex::Initialize(argc,argv,<span class="keyword">true</span>,comm,<a class="code" href="main_8cpp.html#a183e783116d02836167ccbed3b28c1d3">add_par</a>);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    amrex::Initialize(argc,argv,<span class="keyword">true</span>,MPI_COMM_WORLD,<a class="code" href="main_8cpp.html#a183e783116d02836167ccbed3b28c1d3">add_par</a>);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <a class="code" href="main_8cpp.html#aee5a0a7a6feb3480f8974df2cc13a65a">install_exit_trap</a>();</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="comment">// Save the inputs file name for later.</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">if</span> (!strchr(argv[1], <span class="charliteral">&#39;=&#39;</span>)) {</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;      <a class="code" href="main_8cpp.html#aabaa127a3a319c1b86090d6c88568965">inputs_name</a> = argv[1];</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="comment">// Only when argv[1] is actually an inputs file (same test the surrounding code uses).</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">if</span> (argc &gt; 1 &amp;&amp; std::string(argv[1]).find(<span class="charliteral">&#39;=&#39;</span>) == std::string::npos) {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <a class="code" href="ERF__InputsName_8H.html#aa4d3de3855a1e01db2c10e072132d258">CheckForDuplicateInputs</a>(argv[1]);</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="comment">// timer for profiling</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;main()&quot;</span>, pmain);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="comment">// wallclock time</span></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> strt_total = amrex::second();</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="comment">// constructor - reads in parameters from inputs file</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="comment">//             - sizes multilevel arrays and data structures</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <a class="code" href="namespaceERF.html">ERF</a> erf;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="comment">// initialize AMR data</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        erf.<a class="code" href="classERF.html#ad5d585e110291969767013a515719224">InitData</a>();</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="comment">// advance solution to final time</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        erf.<a class="code" href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96">Evolve</a>();</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="comment">// wallclock time</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordtype">double</span> end_total = amrex::second() - strt_total;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="comment">// print wallclock time</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        ParallelDescriptor::ReduceRealMax(end_total ,ParallelDescriptor::IOProcessorNumber());</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keywordflow">if</span> (erf.Verbose()) {</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;\nTotal Time: &quot;</span> &lt;&lt; end_total &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        }</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    }</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="preprocessor">#ifdef ERF_USE_KOKKOS</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="comment">// Initialize kokkos</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">if</span> (!Kokkos::is_initialized()) {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        Kokkos::initialize(Kokkos::InitializationSettings()</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                           .set_device_id(amrex::Gpu::Device::deviceId()));</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    }</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="comment">// Save the inputs file name for later.</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordflow">if</span> (!strchr(argv[1], <span class="charliteral">&#39;=&#39;</span>)) {</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;      <a class="code" href="main_8cpp.html#aabaa127a3a319c1b86090d6c88568965">inputs_name</a> = argv[1];</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    }</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="comment">// timer for profiling</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;main()&quot;</span>, pmain);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="comment">// wallclock time</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> strt_total = amrex::second();</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    {</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="comment">// constructor - reads in parameters from inputs file</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="comment">//             - sizes multilevel arrays and data structures</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <a class="code" href="namespaceERF.html">ERF</a> erf;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="comment">// initialize AMR data</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        erf.<a class="code" href="classERF.html#ad5d585e110291969767013a515719224">InitData</a>();</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="comment">// destroy timer for profiling</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    BL_PROFILE_VAR_STOP(pmain);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">#ifdef ERF_USE_WW3_COUPLING</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    MPI_Barrier(MPI_COMM_WORLD);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="comment">// advance solution to final time</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        erf.<a class="code" href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96">Evolve</a>();</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="comment">// wallclock time</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordtype">double</span> end_total = amrex::second() - strt_total;</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="preprocessor">#ifdef ERF_USE_KOKKOS</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    Kokkos::finalize();</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    amrex::Finalize();</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_MPI</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="preprocessor">#ifdef ERF_USE_WW3_COUPLING</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="comment">// MPI was initialized above, before amrex::MPMD::Initialize, so MPMD::Finalize</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="comment">// frees its communicator but leaves MPI_Finalize to us.</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    amrex::MPMD::Finalize();</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    MPI_Finalize();</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;}</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="comment">// print wallclock time</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        ParallelDescriptor::ReduceRealMax(end_total ,ParallelDescriptor::IOProcessorNumber());</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">if</span> (erf.Verbose()) {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;\nTotal Time: &quot;</span> &lt;&lt; end_total &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    }</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="comment">// destroy timer for profiling</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    BL_PROFILE_VAR_STOP(pmain);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="preprocessor">#ifdef ERF_USE_WW3_COUPLING</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    MPI_Barrier(MPI_COMM_WORLD);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="preprocessor">#ifdef ERF_USE_KOKKOS</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    Kokkos::finalize();</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    amrex::Finalize();</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_MPI</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="preprocessor">#ifdef ERF_USE_WW3_COUPLING</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="comment">// MPI was initialized above, before amrex::MPMD::Initialize, so MPMD::Finalize</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="comment">// frees its communicator but leaves MPI_Finalize to us.</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    amrex::MPMD::Finalize();</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    MPI_Finalize();</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;}</div>
 <div class="ttc" id="aERF__InputsName_8H_html_aa4d3de3855a1e01db2c10e072132d258"><div class="ttname"><a href="ERF__InputsName_8H.html#aa4d3de3855a1e01db2c10e072132d258">CheckForDuplicateInputs</a></div><div class="ttdeci">void CheckForDuplicateInputs(const std::string &amp;inputs_file)</div><div class="ttdef"><b>Definition:</b> ERF_InputsName.H:272</div></div>
 <div class="ttc" id="aclassERF_html_a0be12798b46f52fa4b5a995f147c3f96"><div class="ttname"><a href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96">ERF::Evolve</a></div><div class="ttdeci">void Evolve()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:152</div></div>
 <div class="ttc" id="aclassERF_html_a1a8eb6bc00080cdbd8df28f6a321ac72"><div class="ttname"><a href="classERF.html#a1a8eb6bc00080cdbd8df28f6a321ac72">ERF::print_banner</a></div><div class="ttdeci">static void print_banner(MPI_Comm, std::ostream &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:65</div></div>
+<div class="ttc" id="aclassERF_html_a1ecb21a53102bf8049e832ecb0555f46"><div class="ttname"><a href="classERF.html#a1ecb21a53102bf8049e832ecb0555f46">ERF::writeBuildInfoJSON</a></div><div class="ttdeci">static void writeBuildInfoJSON(std::ostream &amp;os)</div><div class="ttdef"><b>Definition:</b> ERF_BuildDescription.cpp:232</div></div>
+<div class="ttc" id="aclassERF_html_a2f138eb6a90e3330a03c1d5c3d3135aa"><div class="ttname"><a href="classERF.html#a2f138eb6a90e3330a03c1d5c3d3135aa">ERF::writeBuildInfoYAML</a></div><div class="ttdeci">static void writeBuildInfoYAML(std::ostream &amp;os)</div><div class="ttdef"><b>Definition:</b> ERF_BuildDescription.cpp:237</div></div>
 <div class="ttc" id="aclassERF_html_ad5d585e110291969767013a515719224"><div class="ttname"><a href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData</a></div><div class="ttdeci">void InitData()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:914</div></div>
 <div class="ttc" id="aclassERF_html_addc510dbf758a33cc095d64a9b17076c"><div class="ttname"><a href="classERF.html#addc510dbf758a33cc095d64a9b17076c">ERF::print_error</a></div><div class="ttdeci">static void print_error(MPI_Comm, const std::string &amp;msg)</div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:48</div></div>
 <div class="ttc" id="aclassERF_html_ae6afed5b3a72ca80ccf0d791b08516aa"><div class="ttname"><a href="classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa">ERF::writeBuildInfo</a></div><div class="ttdeci">static void writeBuildInfo(std::ostream &amp;os)</div><div class="ttdef"><b>Definition:</b> ERF_WriteJobInfo.cpp:183</div></div>
@@ -631,7 +646,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#amain_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" alt=""/></div>
 <map name="amain_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" id="amain_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph">
-<area shape="rect" title=" " alt="" coords="5,290,60,317"/>
+<area shape="rect" title=" " alt="" coords="5,341,60,367"/>
 <area shape="rect" href="main_8cpp.html#a183e783116d02836167ccbed3b28c1d3" title=" " alt="" coords="163,71,237,98"/>
 <area shape="rect" href="ERF__InputsName_8H.html#aa4d3de3855a1e01db2c10e072132d258" title=" " alt="" coords="108,134,292,161"/>
 <area shape="rect" href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96" title=" " alt="" coords="151,189,249,215"/>
@@ -641,6 +656,8 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classERF.html#addc510dbf758a33cc095d64a9b17076c" title=" " alt="" coords="139,391,261,418"/>
 <area shape="rect" href="classERF.html#aeaeb11001478b0635ef0fe3baa396df1" title=" " alt="" coords="135,442,265,469"/>
 <area shape="rect" href="classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa" title=" " alt="" coords="127,493,273,519"/>
+<area shape="rect" href="classERF.html#a1ecb21a53102bf8049e832ecb0555f46" title=" " alt="" coords="111,543,289,570"/>
+<area shape="rect" href="classERF.html#a2f138eb6a90e3330a03c1d5c3d3135aa" title=" " alt="" coords="110,594,290,621"/>
 <area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="368,5,551,47"/>
 <area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="440,71,479,98"/>
 <area shape="rect" href="namespaceerf__inputs__detail.html#a7ab2387433381161914b1d2d85878d33" title=" " alt="" coords="390,123,529,164"/>

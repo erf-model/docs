@@ -4,6 +4,7 @@ var structStructureStep =
     [ "detJ_cc", "structStructureStep.html#a8d60132c8acb87aad1cd72f8b9f66154", null ],
     [ "dt", "structStructureStep.html#afc88263bcb08f6130138280c62fe190b", null ],
     [ "finest_level", "structStructureStep.html#ac23ac766671ab074dafbabb1523774dc", null ],
+    [ "fire", "structStructureStep.html#acba35734d840dec37a021e35f23b8898", null ],
     [ "geom", "structStructureStep.html#a39c6d81d11177013168ce6d9abb6a20f", null ],
     [ "lev", "structStructureStep.html#ae5ec0aa0b6c8dbe3069ef6b7300fc303", null ],
     [ "time", "structStructureStep.html#a7855a586f889e919a46752cf19872a79", null ],

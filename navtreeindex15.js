@@ -1,5 +1,13 @@
 var NAVTREEINDEX15 =
 {
+"ERF__SBMRemapping_8H.html#ad5918a6238dc30e2d841730f93e82a23a4bbb8f967da6d1a610596d7257179c2b":[3,0,1,15,6,15,12,2],
+"ERF__SBMRemapping_8H.html#ad5918a6238dc30e2d841730f93e82a23ace2c8aed9c2fa0cfbed56cbda4d8bf07":[3,0,1,15,6,15,12,1],
+"ERF__SBMRemapping_8H.html#ad5918a6238dc30e2d841730f93e82a23aec206880a6a54bfc12aafa4f1a9a2993":[3,0,1,15,6,15,12,0],
+"ERF__SBMRemapping_8H.html#adcfe49ba187e14e7fa0a938ed9f7e9f8":[3,0,1,15,6,15,23],
+"ERF__SBMRemapping_8H.html#ae0204ef3558b27d727051ec91ca63c2e":[3,0,1,15,6,15,42],
+"ERF__SBMRemapping_8H.html#ae646aa2df10080be9c79e890f7375356":[3,0,1,15,6,15,28],
+"ERF__SBMRemapping_8H.html#ae9d64d54b66aa201300c4fdc867c496c":[3,0,1,15,6,15,16],
+"ERF__SBMRemapping_8H.html#af967f578f26e936c2752a8cb22458a07":[3,0,1,15,6,15,15],
 "ERF__SBMRemapping_8H.html#afc85b4c9bf730f1e15c41ea4ca7f940b":[3,0,1,15,6,15,20],
 "ERF__SBMRemapping_8H_source.html":[3,0,1,15,6,15],
 "ERF__SBMRemapping_8cpp.html":[3,0,1,15,6,14],
@@ -105,8 +113,8 @@ var NAVTREEINDEX15 =
 "ERF__SLM__DefaultParams_8H.html#af91f09fece183dcda7e5bcce66e4e3c1":[3,0,1,12,2,2,17],
 "ERF__SLM__DefaultParams_8H_source.html":[3,0,1,12,2,2],
 "ERF__SLM__IO_8cpp.html":[3,0,1,12,2,3],
-"ERF__SampleData_8H.html":[3,0,1,11,49],
-"ERF__SampleData_8H_source.html":[3,0,1,11,49],
+"ERF__SampleData_8H.html":[3,0,1,11,51],
+"ERF__SampleData_8H_source.html":[3,0,1,11,51],
 "ERF__SatAdj_8H.html":[3,0,1,15,5,2],
 "ERF__SatAdj_8H_source.html":[3,0,1,15,5,2],
 "ERF__SatAdj_8cpp.html":[3,0,1,15,5,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX15 =
 "ERF__ShocInterface_8H.html#a008e7f6ae8f621fbb1d876061812b9b2":[3,0,1,20,0,1,4],
 "ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57":[3,0,1,20,0,1,5],
 "ERF__ShocInterface_8H_source.html":[3,0,1,20,0,1],
-"ERF__ShocInterface_8cpp.html":[3,0,1,20,0,0],
-"ERF__ShocMoments_8H.html":[3,0,1,19,0,13],
-"ERF__ShocMoments_8H_source.html":[3,0,1,19,0,13],
-"ERF__ShocMoments_8cpp.html":[3,0,1,19,0,12],
-"ERF__ShocPDF_8H.html":[3,0,1,19,0,15],
-"ERF__ShocPDF_8H_source.html":[3,0,1,19,0,15],
-"ERF__ShocPDF_8cpp.html":[3,0,1,19,0,14],
-"ERF__ShocPreprocess_8H.html":[3,0,1,19,0,17],
-"ERF__ShocPreprocess_8H_source.html":[3,0,1,19,0,17]
+"ERF__ShocInterface_8cpp.html":[3,0,1,20,0,0]
 };

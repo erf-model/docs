@@ -297,6 +297,8 @@ var classERF =
     [ "WriteAtFinalTime", "classERF.html#af47aaeb719fb501ac52b23fa8ddfc766", null ],
     [ "WriteAtIntermediateTime", "classERF.html#a12b52fa224b029029566d7a4808348ff", null ],
     [ "writeBuildInfo", "classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa", null ],
+    [ "writeBuildInfoJSON", "classERF.html#a1ecb21a53102bf8049e832ecb0555f46", null ],
+    [ "writeBuildInfoYAML", "classERF.html#a2f138eb6a90e3330a03c1d5c3d3135aa", null ],
     [ "WriteCheckpointFile", "classERF.html#ad101fd46096db2d6b21544bfede6551f", null ],
     [ "WriteGenericPlotfileHeaderWithTerrain", "classERF.html#a348849a5ec30756b97f7a50e10cdaad2", null ],
     [ "writeJobInfo", "classERF.html#ab8fdc162ee0e0287b64e68bdcf04ebd7", null ],

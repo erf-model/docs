@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000":[3,0,1,32,15],
+"ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56":[3,0,1,32,24],
+"ERF__Constants_8H.html#aad2af24f052a56f100de3d2196e5bcf8":[3,0,1,32,19],
 "ERF__Constants_8H.html#aae71ea8828e8a55eec132d24564842d7":[3,0,1,32,29],
 "ERF__Constants_8H.html#ab24194b3b11ee04368e1087acda6bde7":[3,0,1,32,13],
 "ERF__Constants_8H.html#ab72d099dc3b642a653bed3a3e277c232":[3,0,1,32,9],
@@ -132,6 +135,11 @@ var NAVTREEINDEX2 =
 "ERF__Derive_8cpp.html#ae1b7ade68c620b638d06dc2e59153fa7":[3,0,1,34,18],
 "ERF__Derive_8cpp.html#aee8374cee1420bcd1da6e0e85ea8cae1":[3,0,1,34,8],
 "ERF__Derive_8cpp.html#af1d55daa7759e72f93563e6ce899d375":[3,0,1,34,6],
+"ERF__DescriptionWriter_8H.html":[3,0,1,11,6],
+"ERF__DescriptionWriter_8H.html#a547535de6f63d9d4bcbe255d731b2dc0":[3,0,1,11,6,1],
+"ERF__DescriptionWriter_8H.html#a547535de6f63d9d4bcbe255d731b2dc0a0ecd11c1d7a287401d148a23bbd7a2f8":[3,0,1,11,6,1,0],
+"ERF__DescriptionWriter_8H.html#a547535de6f63d9d4bcbe255d731b2dc0a9463f87bbed1fcdacfb8d40e185ca2bc":[3,0,1,11,6,1,1],
+"ERF__DescriptionWriter_8H_source.html":[3,0,1,11,6],
 "ERF__DiagnosticsLog_8H.html":[3,0,1,16,0,5],
 "ERF__DiagnosticsLog_8H.html#a06b44de01e958d41ce098e3fa9cac35c":[3,0,1,16,0,5,0],
 "ERF__DiagnosticsLog_8H.html#aba2e79df4ffd89277505dc23a9d73ba9":[3,0,1,16,0,5,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704":[3,0,1,4,6,1],
 "ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704a4285ac9a293488cf48525a72a50f08c3":[3,0,1,4,6,1,0],
 "ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704a70081f42537ac6a9f00a5ab7cf0c1698":[3,0,1,4,6,1,1],
-"ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704a7cb98542596c7e6f323260a3a29df48f":[3,0,1,4,6,1,2],
-"ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edb":[3,0,1,4,6,2],
-"ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edba8a9f1a69736ee2062715f8180197acf0":[3,0,1,4,6,2,1],
-"ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edbaa91c926df52ecd895a6e1ab31dcac4f5":[3,0,1,4,6,2,2],
-"ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edbad821770e98577d81a3ef4467758245b7":[3,0,1,4,6,2,0],
-"ERF__EBStruct_8H_source.html":[3,0,1,4,6],
-"ERF__EB_8H.html":[3,0,1,7,1],
-"ERF__EB_8H.html#a2d1fd084f430f3c736152f2aed8dc050":[3,0,1,7,1,1],
-"ERF__EB_8H_source.html":[3,0,1,7,1]
+"ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704a7cb98542596c7e6f323260a3a29df48f":[3,0,1,4,6,1,2]
 };

@@ -1,5 +1,13 @@
 var NAVTREEINDEX3 =
 {
+"ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edb":[3,0,1,4,6,2],
+"ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edba8a9f1a69736ee2062715f8180197acf0":[3,0,1,4,6,2,1],
+"ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edbaa91c926df52ecd895a6e1ab31dcac4f5":[3,0,1,4,6,2,2],
+"ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edbad821770e98577d81a3ef4467758245b7":[3,0,1,4,6,2,0],
+"ERF__EBStruct_8H_source.html":[3,0,1,4,6],
+"ERF__EB_8H.html":[3,0,1,7,1],
+"ERF__EB_8H.html#a2d1fd084f430f3c736152f2aed8dc050":[3,0,1,7,1,1],
+"ERF__EB_8H_source.html":[3,0,1,7,1],
 "ERF__EB_8cpp.html":[3,0,1,7,0],
 "ERF__EOS_8H.html":[3,0,1,28,9],
 "ERF__EOS_8H.html#a35ba6a562b53e99968fdd3e42b49d966":[3,0,1,28,9,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__ImmersedBuildingMasks_8H.html#a8876165c8aa04f80a266751ac1dd7933":[3,0,1,24,10,13],
 "ERF__ImmersedBuildingMasks_8H.html#a921ccc994f4ad339021ee40893060f8e":[3,0,1,24,10,12],
 "ERF__ImmersedBuildingMasks_8H.html#a9c690342cc9448a1434b88d89981311c":[3,0,1,24,10,9],
-"ERF__ImmersedBuildingMasks_8H.html#ad05cb559657b21f0fa2a2a7e0416fa04":[3,0,1,24,10,5],
-"ERF__ImmersedBuildingMasks_8H.html#ad2a9a6b662b75685fc724a3b23de258e":[3,0,1,24,10,11],
-"ERF__ImmersedBuildingMasks_8H.html#af29f6ea4be87ae1c7dbb6667fff5ad07":[3,0,1,24,10,8],
-"ERF__ImmersedBuildingMasks_8H_source.html":[3,0,1,24,10],
-"ERF__ImmersedForcing_8H.html":[3,0,1,24,12],
-"ERF__ImmersedForcing_8H.html#a0b897e7f908d8820eb9873408bcd11ce":[3,0,1,24,12,8],
-"ERF__ImmersedForcing_8H.html#a410bd82a3801bed2d698942838525a4a":[3,0,1,24,12,6],
-"ERF__ImmersedForcing_8H.html#a459c450a238bb9d2cf116c14f8e48432":[3,0,1,24,12,1],
-"ERF__ImmersedForcing_8H.html#a48a6dd3d87339415d807e7e1beeb5e77":[3,0,1,24,12,0]
+"ERF__ImmersedBuildingMasks_8H.html#ad05cb559657b21f0fa2a2a7e0416fa04":[3,0,1,24,10,5]
 };

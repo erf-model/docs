@@ -334,6 +334,7 @@ var hierarchy =
     [ "StationVar", "structStationVar.html", null ],
     [ "StrainArrays", "structStrainArrays.html", null ],
     [ "StretchedDiffusionBoundaryWeights", "structStretchedDiffusionBoundaryWeights.html", null ],
+    [ "StructureFire", "structStructureFire.html", null ],
     [ "StructureInit", "structStructureInit.html", null ],
     [ "StructureModel", "classStructureModel.html", null ],
     [ "StructureStep", "structStructureStep.html", null ],
@@ -401,5 +402,6 @@ var hierarchy =
     [ "WENO_Z7", "structWENO__Z7.html", null ],
     [ "near_surface_diagnostics::WindSources", "structnear__surface__diagnostics_1_1WindSources.html", null ],
     [ "WriteBndryPlanes", "classWriteBndryPlanes.html", null ],
+    [ "erf_description::Writer", "classerf__description_1_1Writer.html", null ],
     [ "erf_actuator::ZBounds", "structerf__actuator_1_1ZBounds.html", null ]
 ];

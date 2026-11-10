@@ -128,6 +128,7 @@ var namespaces_dup =
       [ "wall_stress_requires_most_state", "namespaceerf__cloud__chamber__wall__stress.html#a80e76b3db8feed4c81d517f4bc4eae6c", null ],
       [ "wall_traction_at_cell", "namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f", null ]
     ] ],
+    [ "erf_description", "namespaceerf__description.html", "namespaceerf__description" ],
     [ "erf_earth_wind", "namespaceerf__earth__wind.html", [
       [ "grid_rotation_at", "namespaceerf__earth__wind.html#ad89ede7cea1c4e249d62325c8ebcacaa", null ],
       [ "grid_to_earth", "namespaceerf__earth__wind.html#a59637fce3b9d13cb48e6c210652a3590", null ],

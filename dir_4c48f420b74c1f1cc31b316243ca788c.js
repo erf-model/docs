@@ -1,10 +1,12 @@
 var dir_4c48f420b74c1f1cc31b316243ca788c =
 [
+    [ "ERF_BuildDescription.cpp", "ERF__BuildDescription_8cpp.html", "ERF__BuildDescription_8cpp" ],
     [ "ERF_Checkpoint.cpp", "ERF__Checkpoint_8cpp.html", null ],
     [ "ERF_CheckpointLandmask.H", "ERF__CheckpointLandmask_8H.html", "ERF__CheckpointLandmask_8H" ],
     [ "ERF_CheckpointLsmData.H", "ERF__CheckpointLsmData_8H.html", "ERF__CheckpointLsmData_8H" ],
     [ "ERF_CheckpointSurfaceTemperature.H", "ERF__CheckpointSurfaceTemperature_8H.html", "ERF__CheckpointSurfaceTemperature_8H" ],
     [ "ERF_ConsoleIO.cpp", "ERF__ConsoleIO_8cpp.html", "ERF__ConsoleIO_8cpp" ],
+    [ "ERF_DescriptionWriter.H", "ERF__DescriptionWriter_8H.html", "ERF__DescriptionWriter_8H" ],
     [ "ERF_IntervalMeansCheckpoint.H", "ERF__IntervalMeansCheckpoint_8H.html", "ERF__IntervalMeansCheckpoint_8H" ],
     [ "ERF_NCInterface.cpp", "ERF__NCInterface_8cpp.html", "ERF__NCInterface_8cpp" ],
     [ "ERF_NCInterface.H", "ERF__NCInterface_8H.html", [

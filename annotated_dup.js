@@ -37,6 +37,9 @@ var annotated_dup =
       [ "MomentumWallSample", "structerf__cloud__chamber__wall__flux_1_1MomentumWallSample.html", "structerf__cloud__chamber__wall__flux_1_1MomentumWallSample" ],
       [ "ScalarFluxReplacement", "structerf__cloud__chamber__wall__flux_1_1ScalarFluxReplacement.html", "structerf__cloud__chamber__wall__flux_1_1ScalarFluxReplacement" ]
     ] ],
+    [ "erf_description", "namespaceerf__description.html", [
+      [ "Writer", "classerf__description_1_1Writer.html", "classerf__description_1_1Writer" ]
+    ] ],
     [ "erf_grid_utils", "namespaceerf__grid__utils.html", [
       [ "UniformGridMetadata", "structerf__grid__utils_1_1UniformGridMetadata.html", "structerf__grid__utils_1_1UniformGridMetadata" ],
       [ "GeometricStretch", "structerf__grid__utils_1_1GeometricStretch.html", "structerf__grid__utils_1_1GeometricStretch" ],
@@ -365,6 +368,7 @@ var annotated_dup =
     [ "StationVar", "structStationVar.html", "structStationVar" ],
     [ "StrainArrays", "structStrainArrays.html", "structStrainArrays" ],
     [ "StretchedDiffusionBoundaryWeights", "structStretchedDiffusionBoundaryWeights.html", "structStretchedDiffusionBoundaryWeights" ],
+    [ "StructureFire", "structStructureFire.html", "structStructureFire" ],
     [ "StructureInit", "structStructureInit.html", "structStructureInit" ],
     [ "StructureModel", "classStructureModel.html", "classStructureModel" ],
     [ "StructureStep", "structStructureStep.html", "structStructureStep" ],
