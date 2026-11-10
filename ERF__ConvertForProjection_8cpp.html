@@ -159,6 +159,8 @@ Functions</h2></td></tr>
 <tr class="separator:ac2bb283091a175f7483442845755cfa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f9d801916edccb2ca678e56ca487ce3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ConvertForProjection_8cpp.html#a7f9d801916edccb2ca678e56ca487ce3">enforceInOutSolvability</a> (int, Array&lt; MultiFab *, AMREX_SPACEDIM &gt; &amp;vels_vec, Array&lt; MultiFab *, AMREX_SPACEDIM &gt; &amp;area_vec, const Geometry &amp;geom)</td></tr>
 <tr class="separator:a7f9d801916edccb2ca678e56ca487ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a559589b09158d7b8cb15bc36308202c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ConvertForProjection_8cpp.html#a559589b09158d7b8cb15bc36308202c9">MakeProjectionWeights</a> (const MultiFab &amp;den_div, const MultiFab &amp;den_mlt, const MultiFab &amp;xmom, const MultiFab &amp;ymom, const MultiFab &amp;zmom, Array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>, const Box &amp;domain, const Vector&lt; BCRec &gt; &amp;domain_bcs_type_h)</td></tr>
+<tr class="separator:a559589b09158d7b8cb15bc36308202c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae7b6af432609f901295686681f7b934b"></a>
@@ -754,6 +756,181 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__ConvertForProjection_8cpp_a7f9d801916edccb2ca678e56ca487ce3_icgraph.png" border="0" usemap="#aERF__ConvertForProjection_8cpp_a7f9d801916edccb2ca678e56ca487ce3_icgraph" alt=""/></div>
 <map name="aERF__ConvertForProjection_8cpp_a7f9d801916edccb2ca678e56ca487ce3_icgraph" id="aERF__ConvertForProjection_8cpp_a7f9d801916edccb2ca678e56ca487ce3_icgraph">
+<area shape="rect" title=" " alt="" coords="223,5,397,32"/>
+<area shape="rect" href="classERF.html#a88b4909bd2739d543cca91d4688e5863" title=" " alt="" coords="5,5,175,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a559589b09158d7b8cb15bc36308202c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a559589b09158d7b8cb15bc36308202c9">&#9670;&nbsp;</a></span>MakeProjectionWeights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MakeProjectionWeights </td>
+          <td>(</td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>den_div</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>den_mlt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>xmom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>ymom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>zmom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>beta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Box &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector&lt; BCRec &gt; &amp;&#160;</td>
+          <td class="paramname"><em>domain_bcs_type_h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Face weights beta = den_mlt / den_div with which ConvertForProjection converts (den_div u) to (den_mlt u), on the valid faces of xmom, ymom and zmom: the same face averages and the same one-sided values on the ext_dir and ext_dir_upwind faces of the lateral domain boundaries (the upwind side chosen from the sign of the momentum passed in). Multiplying the momenta by beta is then what ConvertForProjection does, and dividing by the same beta undoes it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">den_div</td><td>density divided out, at cell centers (component Rho_comp) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">den_mlt</td><td>density multiplied in, at cell centers (component Rho_comp) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xmom</td><td>x-face momentum (its sign picks the upwind side) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ymom</td><td>y-face momentum (its sign picks the upwind side) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zmom</td><td>z-face momentum (its layout only) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">beta</td><td>face weights on the valid faces of xmom, ymom and zmom (defined here) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td>Domain at this level </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain_bcs_type_h</td><td>host vector for domain boundary conditions</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>A face with no density on either side (covered by an embedded boundary) gets beta = 1. </p>
+<div class="fragment"><div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;{</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;MakeProjectionWeights()&quot;</span>);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <a class="code" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7">beta</a>[0].define(<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7af661293a5a71ca532c214929b98c0bad">xmom</a>.boxArray(), <a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7af661293a5a71ca532c214929b98c0bad">xmom</a>.DistributionMap(), 1, 0, MFInfo(), <a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7af661293a5a71ca532c214929b98c0bad">xmom</a>.Factory());</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <a class="code" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7">beta</a>[1].define(<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7a2e60798bc45154a8f905b1aa228a24e5">ymom</a>.boxArray(), <a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7a2e60798bc45154a8f905b1aa228a24e5">ymom</a>.DistributionMap(), 1, 0, MFInfo(), <a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7a2e60798bc45154a8f905b1aa228a24e5">ymom</a>.Factory());</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <a class="code" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7">beta</a>[2].define(<a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7aaab25f707cae69bfadac2abcd17a2188">zmom</a>.boxArray(), <a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7aaab25f707cae69bfadac2abcd17a2188">zmom</a>.DistributionMap(), 1, 0, MFInfo(), <a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7aaab25f707cae69bfadac2abcd17a2188">zmom</a>.Factory());</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keyword">const</span> BCRec* bc_ptr_h = domain_bcs_type_h.data();</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> xlo = bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>].lo(0);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> xhi = bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>].hi(0);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ylo = bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>].lo(1);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> yhi = bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>].hi(1);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dlo_x = domain.smallEnd(0);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dhi_x = domain.bigEnd(0) + 1;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dlo_y = domain.smallEnd(1);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dhi_y = domain.bigEnd(1) + 1;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(den_div,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    {</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        Box tbx = mfi.nodaltilebox(0);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        Box tby = mfi.nodaltilebox(1);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        Box tbz = mfi.nodaltilebox(2);</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; dd = den_div.const_array(mfi);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; dm = den_mlt.const_array(mfi);</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; momx = <a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7af661293a5a71ca532c214929b98c0bad">xmom</a>.const_array(mfi);</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; momy = <a class="code" href="namespaceIntVars.html#a1766c9a0f46876ae4d5fa3d9714331e7a2e60798bc45154a8f905b1aa228a24e5">ymom</a>.const_array(mfi);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; bx = <a class="code" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7">beta</a>[0].array(mfi);</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; by = <a class="code" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7">beta</a>[1].array(mfi);</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; bz = <a class="code" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7">beta</a>[2].array(mfi);</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; </div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbx, tby, tbz,</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> b = proj_weight(dm(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + dm(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                                 dd(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + dd(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            <span class="keywordflow">if</span> (i == dlo_x) {</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                <span class="keywordflow">if</span> (xlo == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a> ||</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                   (xlo == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a> &amp;&amp; momx(i,j,k) &gt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) {</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                    b = proj_weight(dm(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>), dd(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                }</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i == dhi_x) {</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                <span class="keywordflow">if</span> (xhi == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a> ||</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                   (xhi == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a> &amp;&amp; momx(i,j,k) &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) {</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                    b = proj_weight(dm(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>), dd(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                }</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            }</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            bx(i,j,k) = b;</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        },</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> b = proj_weight(dm(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + dm(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                                 dd(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + dd(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            <span class="keywordflow">if</span> (j == dlo_y) {</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                <span class="keywordflow">if</span> (ylo == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a> ||</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                   (ylo == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a> &amp;&amp; momy(i,j,k) &gt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) {</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                    b = proj_weight(dm(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>), dd(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                }</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == dhi_y) {</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                <span class="keywordflow">if</span> (yhi == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a> ||</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                   (yhi == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a> &amp;&amp; momy(i,j,k) &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) {</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                    b = proj_weight(dm(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>), dd(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                }</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;            }</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            by(i,j,k) = b;</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        },</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            bz(i,j,k) = proj_weight(dm(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + dm(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                                    dd(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + dd(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        });</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    } <span class="comment">// end MFIter</span></div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;}</div>
+<div class="ttc" id="anamespaceSLM__DST_html_ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7"><div class="ttname"><a href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7">SLM_DST::beta</a></div><div class="ttdeci">@ beta</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:152</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#a88b4909bd2739d543cca91d4688e5863">ERF::project_momenta()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__ConvertForProjection_8cpp_a559589b09158d7b8cb15bc36308202c9_cgraph.png" border="0" usemap="#aERF__ConvertForProjection_8cpp_a559589b09158d7b8cb15bc36308202c9_cgraph" alt=""/></div>
+<map name="aERF__ConvertForProjection_8cpp_a559589b09158d7b8cb15bc36308202c9_cgraph" id="aERF__ConvertForProjection_8cpp_a559589b09158d7b8cb15bc36308202c9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,180,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="228,5,319,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__ConvertForProjection_8cpp_a559589b09158d7b8cb15bc36308202c9_icgraph.png" border="0" usemap="#aERF__ConvertForProjection_8cpp_a559589b09158d7b8cb15bc36308202c9_icgraph" alt=""/></div>
+<map name="aERF__ConvertForProjection_8cpp_a559589b09158d7b8cb15bc36308202c9_icgraph" id="aERF__ConvertForProjection_8cpp_a559589b09158d7b8cb15bc36308202c9_icgraph">
 <area shape="rect" title=" " alt="" coords="223,5,397,32"/>
 <area shape="rect" href="classERF.html#a88b4909bd2739d543cca91d4688e5863" title=" " alt="" coords="5,5,175,32"/>
 </map>

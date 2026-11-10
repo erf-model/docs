@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a909f374b2bb8aa28889a14e5fcbc2671":[3,0,1,21,40,8],
 "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a94db710dbeb0b48597c521f246b39ad3":[3,0,1,21,40,9],
 "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a98c1b4f51bd51b14be65c34adc38c747":[3,0,1,21,40,18],
 "ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb":[3,0,1,21,40,26],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "ERF__InitCustomPert__Bubble_8H.html#a05a6cf5425ee9d277307ab329feed8df":[3,0,1,21,6,25],
 "ERF__InitCustomPert__Bubble_8H.html#a0740159941fc099d345ff867ac062f42":[3,0,1,21,6,5],
 "ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff":[3,0,1,21,6,18],
-"ERF__InitCustomPert__Bubble_8H.html#a260ac6cbdf6885bf3d3baee82de6b4b3":[3,0,1,21,6,30],
-"ERF__InitCustomPert__Bubble_8H.html#a314c9e5a3de9b40239bd34ef1a337740":[3,0,1,21,6,3]
+"ERF__InitCustomPert__Bubble_8H.html#a260ac6cbdf6885bf3d3baee82de6b4b3":[3,0,1,21,6,30]
 };

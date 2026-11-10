@@ -1,5 +1,8 @@
 var NAVTREEINDEX50 =
 {
+"structObsNudgingStation.html#a02d8a235409fea45f4863aa8b93f8339":[2,0,123,4],
+"structObsNudgingStation.html#a06bb0e7c05b41bc46609b9b734a7a219":[2,0,123,7],
+"structObsNudgingStation.html#a2870936c8e42f2c1043a6a9e57802173":[2,0,123,1],
 "structObsNudgingStation.html#a6c830a3f7ace5b3cfaef03fdf63110c5":[2,0,123,11],
 "structObsNudgingStation.html#a77a8b904386b1445ffaf72c8b3c4421e":[2,0,123,12],
 "structObsNudgingStation.html#a840aca4cffb2fc64e88f7f88994a1ef9":[2,0,123,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX50 =
 "structSAMPrecipFaceState.html#a1c6a7334783f89d08b71a92044556f14":[2,0,156,5],
 "structSAMPrecipFaceState.html#a51baeec56397d453b29383fd834dd3ac":[2,0,156,4],
 "structSAMPrecipFaceState.html#a63a22551cc05b900ed28733fcdd6619c":[2,0,156,3],
-"structSAMPrecipFaceState.html#a874ebd45d78701e1ace4ad875686a4fa":[2,0,156,6],
-"structSAMPrecipFaceState.html#a899bcc7b8b4eb1c96a80cc06241d52bc":[2,0,156,2],
-"structSAMPrecipFaceState.html#a98961b345d25e32e69a6709f3dde99fc":[2,0,156,7],
-"structSAMPrecipFaceState.html#ad2bfe279784b592c7b85ee6c40a8fc51":[2,0,156,1]
+"structSAMPrecipFaceState.html#a874ebd45d78701e1ace4ad875686a4fa":[2,0,156,6]
 };

@@ -145,6 +145,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a939eef3f5cd9a4befe45d389b49c3405"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeb__.html#a939eef3f5cd9a4befe45d389b49c3405">make_cc_factory</a> (int level, amrex::Geometry const &amp;a_geom, amrex::BoxArray const &amp;ba, amrex::DistributionMapping const &amp;dm, amrex::EB2::Level const &amp;a_eb_level)</td></tr>
 <tr class="memdesc:a939eef3f5cd9a4befe45d389b49c3405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build only the cell-centered EB factory for the level.  <a href="classeb__.html#a939eef3f5cd9a4befe45d389b49c3405">More...</a><br /></td></tr>
 <tr class="separator:a939eef3f5cd9a4befe45d389b49c3405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa83ebd2cc987fabc9eb20ba6758da281"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281">clear_factories</a> ()</td></tr>
+<tr class="memdesc:aa83ebd2cc987fabc9eb20ba6758da281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release the factories and cut-face lists built for the level's grids, as for a level that no longer exists. The object itself is kept: other objects hold pointers to it, and the factories are built again when the level is made again.  <a href="classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281">More...</a><br /></td></tr>
+<tr class="separator:aa83ebd2cc987fabc9eb20ba6758da281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adeeabbed9dbdf2241f513b5b2ef8c9d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">nghost_basic</a> () const</td></tr>
 <tr class="memdesc:adeeabbed9dbdf2241f513b5b2ef8c9d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of ghost cells needed for basic EB flags.  <a href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">More...</a><br /></td></tr>
 <tr class="separator:adeeabbed9dbdf2241f513b5b2ef8c9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -357,9 +360,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <a class="code" href="classeb__.html#a84f505f18fa5fd8e792fcdc6b7ccca35">m_support_level</a>(EBSupport::full),</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <a class="code" href="classeb__.html#ae9d076d7698e29d18364f20d4100f615">m_write_eb_surface</a>(0)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{ }</div>
-<div class="ttc" id="aclasseb___html_a84f505f18fa5fd8e792fcdc6b7ccca35"><div class="ttname"><a href="classeb__.html#a84f505f18fa5fd8e792fcdc6b7ccca35">eb_::m_support_level</a></div><div class="ttdeci">amrex::EBSupport m_support_level</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:166</div></div>
-<div class="ttc" id="aclasseb___html_ad75676c73387956ec2319062fc2a7a08"><div class="ttname"><a href="classeb__.html#ad75676c73387956ec2319062fc2a7a08">eb_::m_has_eb</a></div><div class="ttdeci">int m_has_eb</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:159</div></div>
-<div class="ttc" id="aclasseb___html_ae9d076d7698e29d18364f20d4100f615"><div class="ttname"><a href="classeb__.html#ae9d076d7698e29d18364f20d4100f615">eb_::m_write_eb_surface</a></div><div class="ttdeci">int m_write_eb_surface</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:168</div></div>
+<div class="ttc" id="aclasseb___html_a84f505f18fa5fd8e792fcdc6b7ccca35"><div class="ttname"><a href="classeb__.html#a84f505f18fa5fd8e792fcdc6b7ccca35">eb_::m_support_level</a></div><div class="ttdeci">amrex::EBSupport m_support_level</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:173</div></div>
+<div class="ttc" id="aclasseb___html_ad75676c73387956ec2319062fc2a7a08"><div class="ttname"><a href="classeb__.html#ad75676c73387956ec2319062fc2a7a08">eb_::m_has_eb</a></div><div class="ttdeci">int m_has_eb</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:166</div></div>
+<div class="ttc" id="aclasseb___html_ae9d076d7698e29d18364f20d4100f615"><div class="ttname"><a href="classeb__.html#ae9d076d7698e29d18364f20d4100f615">eb_::m_write_eb_surface</a></div><div class="ttdeci">int m_write_eb_surface</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:175</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -397,34 +400,34 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;eb_::build_cut_cell_lists()&quot;</span>);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    cut_cells.clear();</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    cut_cells.resize(flags.boxArray().size());</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(flags, <span class="keyword">false</span>); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        Box <span class="keyword">const</span>&amp; bx = mfi.validbox();</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">if</span> (flags[mfi].getType(bx) != FabType::singlevalued) {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        }</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        Array4&lt;EBCellFlag const&gt; <span class="keyword">const</span>&amp; flag = flags.const_array(mfi);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        Long <span class="keyword">const</span> num_candidates = bx.numPts();</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <a class="code" href="classeb__.html#a94e99078a118d992c123a8dcd4e5373c">CutCellList</a> grid_cut_cells(num_candidates);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        Dim3* <span class="keyword">const</span> grid_cut_cells_ptr = grid_cut_cells.data();</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordtype">int</span> <span class="keyword">const</span> num_cut_cells = fill_cut_cell_list(bx, flag, grid_cut_cells_ptr);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        grid_cut_cells.resize(num_cut_cells);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        grid_cut_cells.shrink_to_fit();</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        cut_cells[mfi.index()] = std::move(grid_cut_cells);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    amrex::ignore_unused(flags);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;{</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;eb_::build_cut_cell_lists()&quot;</span>);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    cut_cells.clear();</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    cut_cells.resize(flags.boxArray().size());</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(flags, <span class="keyword">false</span>); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        Box <span class="keyword">const</span>&amp; bx = mfi.validbox();</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">if</span> (flags[mfi].getType(bx) != FabType::singlevalued) {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        Array4&lt;EBCellFlag const&gt; <span class="keyword">const</span>&amp; flag = flags.const_array(mfi);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        Long <span class="keyword">const</span> num_candidates = bx.numPts();</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <a class="code" href="classeb__.html#a94e99078a118d992c123a8dcd4e5373c">CutCellList</a> grid_cut_cells(num_candidates);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        Dim3* <span class="keyword">const</span> grid_cut_cells_ptr = grid_cut_cells.data();</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keywordtype">int</span> <span class="keyword">const</span> num_cut_cells = fill_cut_cell_list(bx, flag, grid_cut_cells_ptr);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        grid_cut_cells.resize(num_cut_cells);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        grid_cut_cells.shrink_to_fit();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        cut_cells[mfi.index()] = std::move(grid_cut_cells);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    amrex::ignore_unused(flags);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
 <div class="ttc" id="aclasseb___html_a94e99078a118d992c123a8dcd4e5373c"><div class="ttname"><a href="classeb__.html#a94e99078a118d992c123a8dcd4e5373c">eb_::CutCellList</a></div><div class="ttdeci">amrex::Gpu::DeviceVector&lt; amrex::Dim3 &gt; CutCellList</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:30</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
@@ -490,16 +493,70 @@ template&lt;class F &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      <span class="keywordtype">int</span> <span class="keyword">const</span> req_lev(0);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      <span class="keywordtype">int</span> <span class="keyword">const</span> max_lev(2);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      amrex::EB2::Build(a_gshop, a_geom, req_lev, max_lev);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      <span class="keyword">const</span> amrex::EB2::IndexSpace&amp; ebis = amrex::EB2::IndexSpace::top();</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      <a class="code" href="classeb__.html#a69d11eeaf4f696d04884679db6c80d2f">m_eb_level</a> = &amp;(ebis.getLevel(a_geom));</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
-<div class="ttc" id="aclasseb___html_a69d11eeaf4f696d04884679db6c80d2f"><div class="ttname"><a href="classeb__.html#a69d11eeaf4f696d04884679db6c80d2f">eb_::m_eb_level</a></div><div class="ttdeci">amrex::EB2::Level const  * m_eb_level</div><div class="ttdoc">EB level constructed from building GeometryShop.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:173</div></div>
+<div class="fragment"><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;      <span class="keywordtype">int</span> <span class="keyword">const</span> req_lev(0);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      <span class="keywordtype">int</span> <span class="keyword">const</span> max_lev(2);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;      amrex::EB2::Build(a_gshop, a_geom, req_lev, max_lev);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;      <span class="keyword">const</span> amrex::EB2::IndexSpace&amp; ebis = amrex::EB2::IndexSpace::top();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;      <a class="code" href="classeb__.html#a69d11eeaf4f696d04884679db6c80d2f">m_eb_level</a> = &amp;(ebis.getLevel(a_geom));</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    }</div>
+<div class="ttc" id="aclasseb___html_a69d11eeaf4f696d04884679db6c80d2f"><div class="ttname"><a href="classeb__.html#a69d11eeaf4f696d04884679db6c80d2f">eb_::m_eb_level</a></div><div class="ttdeci">amrex::EB2::Level const  * m_eb_level</div><div class="ttdoc">EB level constructed from building GeometryShop.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:180</div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="aa83ebd2cc987fabc9eb20ba6758da281"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa83ebd2cc987fabc9eb20ba6758da281">&#9670;&nbsp;</a></span>clear_factories()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void eb_::clear_factories </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Release the factories and cut-face lists built for the level's grids, as for a level that no longer exists. The object itself is kept: other objects hold pointers to it, and the factories are built again when the level is made again. </p>
+<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>.reset();</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">#if USE_FC_FACTORY</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="classeb__.html#aebac4d225e4dcb5a8396d218d3b7899a">m_u_factory_fc</a>.reset();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <a class="code" href="classeb__.html#ad6c7ca398f2f01d891cca8d9ddf8cb3b">m_v_factory_fc</a>.reset();</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="classeb__.html#aba5ba7ddaa87f5aea2ed2bed98e34e45">m_w_factory_fc</a>.reset();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="classeb__.html#aa2d82b2e424b832a9c0befaa160db5a9">m_u_factory</a>.<a class="code" href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e">clear</a>();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="classeb__.html#aca3aa793c432fe655b38759a26af6b96">m_v_factory</a>.<a class="code" href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e">clear</a>();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="classeb__.html#a7fbcd88205291b74fdb6dc595c8f9762">m_w_factory</a>.<a class="code" href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e">clear</a>();</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="classeb__.html#a6dd278bdcea8c6a5da4ceec1bb47e95e">m_u_cut_cells</a>.clear();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="classeb__.html#a61100c6816219f8dfed5c34c2e5d4ced">m_v_cut_cells</a>.clear();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="classeb__.html#a2c64ed6f4a79bab39a24d08d171c8e98">m_w_cut_cells</a>.clear();</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
+<div class="ttc" id="aclasseb___html_a2c64ed6f4a79bab39a24d08d171c8e98"><div class="ttname"><a href="classeb__.html#a2c64ed6f4a79bab39a24d08d171c8e98">eb_::m_w_cut_cells</a></div><div class="ttdeci">amrex::Vector&lt; CutCellList &gt; m_w_cut_cells</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:197</div></div>
+<div class="ttc" id="aclasseb___html_a61100c6816219f8dfed5c34c2e5d4ced"><div class="ttname"><a href="classeb__.html#a61100c6816219f8dfed5c34c2e5d4ced">eb_::m_v_cut_cells</a></div><div class="ttdeci">amrex::Vector&lt; CutCellList &gt; m_v_cut_cells</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:196</div></div>
+<div class="ttc" id="aclasseb___html_a6dd278bdcea8c6a5da4ceec1bb47e95e"><div class="ttname"><a href="classeb__.html#a6dd278bdcea8c6a5da4ceec1bb47e95e">eb_::m_u_cut_cells</a></div><div class="ttdeci">amrex::Vector&lt; CutCellList &gt; m_u_cut_cells</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:195</div></div>
+<div class="ttc" id="aclasseb___html_a7fbcd88205291b74fdb6dc595c8f9762"><div class="ttname"><a href="classeb__.html#a7fbcd88205291b74fdb6dc595c8f9762">eb_::m_w_factory</a></div><div class="ttdeci">eb_aux_ m_w_factory</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:187</div></div>
+<div class="ttc" id="aclasseb___html_a832e47bbc65d2e895fe295ad43df8556"><div class="ttname"><a href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">eb_::m_factory</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::EBFArrayBoxFactory &gt; m_factory</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:182</div></div>
+<div class="ttc" id="aclasseb___html_aa2d82b2e424b832a9c0befaa160db5a9"><div class="ttname"><a href="classeb__.html#aa2d82b2e424b832a9c0befaa160db5a9">eb_::m_u_factory</a></div><div class="ttdeci">eb_aux_ m_u_factory</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:185</div></div>
+<div class="ttc" id="aclasseb___html_aba5ba7ddaa87f5aea2ed2bed98e34e45"><div class="ttname"><a href="classeb__.html#aba5ba7ddaa87f5aea2ed2bed98e34e45">eb_::m_w_factory_fc</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::EBFArrayBoxFactory &gt; m_w_factory_fc</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:192</div></div>
+<div class="ttc" id="aclasseb___html_aca3aa793c432fe655b38759a26af6b96"><div class="ttname"><a href="classeb__.html#aca3aa793c432fe655b38759a26af6b96">eb_::m_v_factory</a></div><div class="ttdeci">eb_aux_ m_v_factory</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:186</div></div>
+<div class="ttc" id="aclasseb___html_ad6c7ca398f2f01d891cca8d9ddf8cb3b"><div class="ttname"><a href="classeb__.html#ad6c7ca398f2f01d891cca8d9ddf8cb3b">eb_::m_v_factory_fc</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::EBFArrayBoxFactory &gt; m_v_factory_fc</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:191</div></div>
+<div class="ttc" id="aclasseb___html_aebac4d225e4dcb5a8396d218d3b7899a"><div class="ttname"><a href="classeb__.html#aebac4d225e4dcb5a8396d218d3b7899a">eb_::m_u_factory_fc</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::EBFArrayBoxFactory &gt; m_u_factory_fc</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:190</div></div>
+<div class="ttc" id="aclasseb__aux___html_afb0430408b31e13c4d88cf7b442dca6e"><div class="ttname"><a href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e">eb_aux_::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Release the geometry of the last define(), as for a level that no longer exists.</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.cpp:1146</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classeb___aa83ebd2cc987fabc9eb20ba6758da281_cgraph.png" border="0" usemap="#aclasseb___aa83ebd2cc987fabc9eb20ba6758da281_cgraph" alt=""/></div>
+<map name="aclasseb___aa83ebd2cc987fabc9eb20ba6758da281_cgraph" id="aclasseb___aa83ebd2cc987fabc9eb20ba6758da281_cgraph">
+<area shape="rect" title="Release the factories and cut&#45;face lists built for the level&#39;s grids, as for a level that no longer e..." alt="" coords="5,5,155,32"/>
+<area shape="rect" href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e" title="Release the geometry of the last define(), as for a level that no longer exists." alt="" coords="203,5,319,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a2888567cad2fc0e89060094a589ce214"></a>
@@ -577,8 +634,7 @@ template&lt;class F &gt; </div>
 </div><div class="memdoc">
 
 <p>Return the cell-centered EB factory. </p>
-<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>; }</div>
-<div class="ttc" id="aclasseb___html_a832e47bbc65d2e895fe295ad43df8556"><div class="ttname"><a href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">eb_::m_factory</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::EBFArrayBoxFactory &gt; m_factory</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:175</div></div>
+<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>; }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__MakeGradP_8cpp.html#ac79f2ed4bb2424ddf081b0b2f205b1ca">compute_gradp_xy()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#a608c11337867fc132f0ac05c03dd99bc">compute_gradp_z()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#a9a52dccaade06239c2fb04bd8da909ee">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a5d37a28ff36454173affcb80fb4a6b5c">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2f6088a376ac1e4d9daeb27d2dc21344">erf_slow_rhs_pre()</a>, <a class="el" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4">ERF::estTimeStep()</a>, and <a class="el" href="ERF__MakeBuoyancy_8cpp.html#a423dc40a9974cb9a38f75bf033f2a7ba">make_buoyancy()</a>.</p>
 <div class="dynheader">
@@ -631,8 +687,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return the native AMReX x-face EB factory. </p>
-<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classeb__.html#aebac4d225e4dcb5a8396d218d3b7899a">m_u_factory_fc</a>.get(); }</div>
-<div class="ttc" id="aclasseb___html_aebac4d225e4dcb5a8396d218d3b7899a"><div class="ttname"><a href="classeb__.html#aebac4d225e4dcb5a8396d218d3b7899a">eb_::m_u_factory_fc</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::EBFArrayBoxFactory &gt; m_u_factory_fc</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:183</div></div>
+<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classeb__.html#aebac4d225e4dcb5a8396d218d3b7899a">m_u_factory_fc</a>.get(); }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom__EB_8cpp.html#a11d2db019c9a71328fe4e1a3e785f3d0">AdvectionSrcForMom_EB()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#ac79f2ed4bb2424ddf081b0b2f205b1ca">compute_gradp_xy()</a>, <a class="el" href="ERF__ComputeStrain__EB_8cpp.html#a416c43cf1410a62066bbdd19ab9c9724">ComputeStrain_EB()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB()</a>, <a class="el" href="ERF__DiffusionSrcForMom__EB_8cpp.html#a217f28098691e31e956a8d7d8d0bc555">DiffusionSrcForMom_EB()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a9160fdb669aa1370e3579991c5723b67">make_mom_sources()</a>.</p>
 <div class="dynheader">
@@ -686,10 +741,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return cut x-faces owned by a grid, cached when the EB factories are built. </p>
-<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classeb__.html#a6dd278bdcea8c6a5da4ceec1bb47e95e">m_u_cut_cells</a>[grid_index];</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
-<div class="ttc" id="aclasseb___html_a6dd278bdcea8c6a5da4ceec1bb47e95e"><div class="ttname"><a href="classeb__.html#a6dd278bdcea8c6a5da4ceec1bb47e95e">eb_::m_u_cut_cells</a></div><div class="ttdeci">amrex::Vector&lt; CutCellList &gt; m_u_cut_cells</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:188</div></div>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classeb__.html#a6dd278bdcea8c6a5da4ceec1bb47e95e">m_u_cut_cells</a>[grid_index];</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__DiffusionSrcForMom__EB_8cpp.html#a217f28098691e31e956a8d7d8d0bc555">DiffusionSrcForMom_EB()</a>.</p>
 <div class="dynheader">
@@ -728,8 +782,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return the native AMReX y-face EB factory. </p>
-<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classeb__.html#ad6c7ca398f2f01d891cca8d9ddf8cb3b">m_v_factory_fc</a>.get(); }</div>
-<div class="ttc" id="aclasseb___html_ad6c7ca398f2f01d891cca8d9ddf8cb3b"><div class="ttname"><a href="classeb__.html#ad6c7ca398f2f01d891cca8d9ddf8cb3b">eb_::m_v_factory_fc</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::EBFArrayBoxFactory &gt; m_v_factory_fc</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:184</div></div>
+<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classeb__.html#ad6c7ca398f2f01d891cca8d9ddf8cb3b">m_v_factory_fc</a>.get(); }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom__EB_8cpp.html#a11d2db019c9a71328fe4e1a3e785f3d0">AdvectionSrcForMom_EB()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#ac79f2ed4bb2424ddf081b0b2f205b1ca">compute_gradp_xy()</a>, <a class="el" href="ERF__ComputeStrain__EB_8cpp.html#a416c43cf1410a62066bbdd19ab9c9724">ComputeStrain_EB()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB()</a>, <a class="el" href="ERF__DiffusionSrcForMom__EB_8cpp.html#a217f28098691e31e956a8d7d8d0bc555">DiffusionSrcForMom_EB()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a9160fdb669aa1370e3579991c5723b67">make_mom_sources()</a>.</p>
 <div class="dynheader">
@@ -783,10 +836,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return cut y-faces owned by a grid, cached when the EB factories are built. </p>
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classeb__.html#a61100c6816219f8dfed5c34c2e5d4ced">m_v_cut_cells</a>[grid_index];</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
-<div class="ttc" id="aclasseb___html_a61100c6816219f8dfed5c34c2e5d4ced"><div class="ttname"><a href="classeb__.html#a61100c6816219f8dfed5c34c2e5d4ced">eb_::m_v_cut_cells</a></div><div class="ttdeci">amrex::Vector&lt; CutCellList &gt; m_v_cut_cells</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:189</div></div>
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classeb__.html#a61100c6816219f8dfed5c34c2e5d4ced">m_v_cut_cells</a>[grid_index];</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__DiffusionSrcForMom__EB_8cpp.html#a217f28098691e31e956a8d7d8d0bc555">DiffusionSrcForMom_EB()</a>.</p>
 <div class="dynheader">
@@ -825,8 +877,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return the native AMReX z-face EB factory. </p>
-<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classeb__.html#aba5ba7ddaa87f5aea2ed2bed98e34e45">m_w_factory_fc</a>.get(); }</div>
-<div class="ttc" id="aclasseb___html_aba5ba7ddaa87f5aea2ed2bed98e34e45"><div class="ttname"><a href="classeb__.html#aba5ba7ddaa87f5aea2ed2bed98e34e45">eb_::m_w_factory_fc</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::EBFArrayBoxFactory &gt; m_w_factory_fc</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:185</div></div>
+<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classeb__.html#aba5ba7ddaa87f5aea2ed2bed98e34e45">m_w_factory_fc</a>.get(); }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom__EB_8cpp.html#a11d2db019c9a71328fe4e1a3e785f3d0">AdvectionSrcForMom_EB()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#a608c11337867fc132f0ac05c03dd99bc">compute_gradp_z()</a>, <a class="el" href="ERF__ComputeStrain__EB_8cpp.html#a416c43cf1410a62066bbdd19ab9c9724">ComputeStrain_EB()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB()</a>, <a class="el" href="ERF__DiffusionSrcForMom__EB_8cpp.html#a217f28098691e31e956a8d7d8d0bc555">DiffusionSrcForMom_EB()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a9160fdb669aa1370e3579991c5723b67">make_mom_sources()</a>.</p>
 <div class="dynheader">
@@ -880,10 +931,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return cut z-faces owned by a grid, cached when the EB factories are built. </p>
-<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classeb__.html#a2c64ed6f4a79bab39a24d08d171c8e98">m_w_cut_cells</a>[grid_index];</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
-<div class="ttc" id="aclasseb___html_a2c64ed6f4a79bab39a24d08d171c8e98"><div class="ttname"><a href="classeb__.html#a2c64ed6f4a79bab39a24d08d171c8e98">eb_::m_w_cut_cells</a></div><div class="ttdeci">amrex::Vector&lt; CutCellList &gt; m_w_cut_cells</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:190</div></div>
+<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classeb__.html#a2c64ed6f4a79bab39a24d08d171c8e98">m_w_cut_cells</a>[grid_index];</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__DiffusionSrcForMom__EB_8cpp.html#a217f28098691e31e956a8d7d8d0bc555">DiffusionSrcForMom_EB()</a>.</p>
 <div class="dynheader">
@@ -923,14 +973,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return mutable area-fraction arrays from an AMReX factory. </p>
-<div class="fragment"><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      <span class="keyword">auto</span> afrac_const = ebfact.getAreaFrac();</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      amrex::Array&lt;amrex::MultiCutFab*, AMREX_SPACEDIM&gt; afrac;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;          afrac[dir] = <span class="keyword">const_cast&lt;</span>amrex::MultiCutFab*<span class="keyword">&gt;</span>(afrac_const[dir]);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      }</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      <span class="keywordflow">return</span> afrac;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      <span class="keyword">auto</span> afrac_const = ebfact.getAreaFrac();</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;      amrex::Array&lt;amrex::MultiCutFab*, AMREX_SPACEDIM&gt; afrac;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;          afrac[dir] = <span class="keyword">const_cast&lt;</span>amrex::MultiCutFab*<span class="keyword">&gt;</span>(afrac_const[dir]);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      }</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      <span class="keywordflow">return</span> afrac;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -959,10 +1009,10 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return mutable cell centroids from an AMReX factory. </p>
-<div class="fragment"><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    {</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;      <span class="keyword">const</span> amrex::MultiCutFab&amp; vcent_const = ebfact.getCentroid();</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>amrex::MultiCutFab&amp;<span class="keyword">&gt;</span>(vcent_const);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      <span class="keyword">const</span> amrex::MultiCutFab&amp; vcent_const = ebfact.getCentroid();</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>amrex::MultiCutFab&amp;<span class="keyword">&gt;</span>(vcent_const);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -991,10 +1041,10 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return mutable EB cell flags from an AMReX factory. </p>
-<div class="fragment"><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;      <span class="keyword">const</span> amrex::FabArray&lt;amrex::EBCellFlagFab&gt;&amp; flags_const = ebfact.getMultiEBCellFlagFab();</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>amrex::FabArray&lt;amrex::EBCellFlagFab&gt;&amp;<span class="keyword">&gt;</span>(flags_const);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;      <span class="keyword">const</span> amrex::FabArray&lt;amrex::EBCellFlagFab&gt;&amp; flags_const = ebfact.getMultiEBCellFlagFab();</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>amrex::FabArray&lt;amrex::EBCellFlagFab&gt;&amp;<span class="keyword">&gt;</span>(flags_const);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__.html#a6742441548c82724b3dd30c323f4080e">mask_fc_from_cc()</a>, and <a class="el" href="classeb__.html#af941b42e82fc7f48aeb9e9c7c559eeb7">set_connection_flags()</a>.</p>
 <div class="dynheader">
@@ -1037,14 +1087,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return mutable face-centroid arrays from an AMReX factory. </p>
-<div class="fragment"><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      <span class="keyword">auto</span> fcent_const = ebfact.getFaceCent();</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      amrex::Array&lt;amrex::MultiCutFab*, AMREX_SPACEDIM&gt; fcent;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;          fcent[dir] = <span class="keyword">const_cast&lt;</span>amrex::MultiCutFab*<span class="keyword">&gt;</span>(fcent_const[dir]);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      <span class="keywordflow">return</span> fcent;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    {</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;      <span class="keyword">auto</span> fcent_const = ebfact.getFaceCent();</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      amrex::Array&lt;amrex::MultiCutFab*, AMREX_SPACEDIM&gt; fcent;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;          fcent[dir] = <span class="keyword">const_cast&lt;</span>amrex::MultiCutFab*<span class="keyword">&gt;</span>(fcent_const[dir]);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      <span class="keywordflow">return</span> fcent;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1073,10 +1123,10 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return mutable volume fractions from an AMReX factory. </p>
-<div class="fragment"><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    {</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;      <span class="keyword">const</span> amrex::MultiFab&amp; vfrac_const = ebfact.getVolFrac();</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>amrex::MultiFab&amp;<span class="keyword">&gt;</span>(vfrac_const);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      <span class="keyword">const</span> amrex::MultiFab&amp; vfrac_const = ebfact.getVolFrac();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>amrex::MultiFab&amp;<span class="keyword">&gt;</span>(vfrac_const);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__.html#a6742441548c82724b3dd30c323f4080e">mask_fc_from_cc()</a>.</p>
 <div class="dynheader">
@@ -1231,17 +1281,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    Print() &lt;&lt; <span class="stringliteral">&quot;\nDone making EB factory at level = &quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot;.\n\n&quot;</span>;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
-<div class="ttc" id="aclasseb___html_a600c3e3ff922488a6c4e95102661a976"><div class="ttname"><a href="classeb__.html#a600c3e3ff922488a6c4e95102661a976">eb_::build_cut_cell_lists</a></div><div class="ttdeci">void build_cut_cell_lists(amrex::FabArray&lt; amrex::EBCellFlagFab &gt; const &amp;flags, amrex::Vector&lt; CutCellList &gt; &amp;cut_cells)</div><div class="ttdef"><b>Definition:</b> ERF_EB.cpp:179</div></div>
-<div class="ttc" id="aclasseb___html_a6742441548c82724b3dd30c323f4080e"><div class="ttname"><a href="classeb__.html#a6742441548c82724b3dd30c323f4080e">eb_::mask_fc_from_cc</a></div><div class="ttdeci">void mask_fc_from_cc(amrex::EBFArrayBoxFactory *fc_factory, const amrex::EBFArrayBoxFactory *cc_factory, int idim)</div><div class="ttdoc">Enforce FC-CC consistency by marking FC faces as covered when both CC neighbors are covered.</div><div class="ttdef"><b>Definition:</b> ERF_EB.cpp:260</div></div>
-<div class="ttc" id="aclasseb___html_a7fbcd88205291b74fdb6dc595c8f9762"><div class="ttname"><a href="classeb__.html#a7fbcd88205291b74fdb6dc595c8f9762">eb_::m_w_factory</a></div><div class="ttdeci">eb_aux_ m_w_factory</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:180</div></div>
-<div class="ttc" id="aclasseb___html_a8e61525cf6488d04f457068fc40f47df"><div class="ttname"><a href="classeb__.html#a8e61525cf6488d04f457068fc40f47df">eb_::nghost_volume</a></div><div class="ttdeci">int nghost_volume() const</div><div class="ttdoc">Number of ghost cells needed for EB volume data.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:92</div></div>
-<div class="ttc" id="aclasseb___html_aa2d82b2e424b832a9c0befaa160db5a9"><div class="ttname"><a href="classeb__.html#aa2d82b2e424b832a9c0befaa160db5a9">eb_::m_u_factory</a></div><div class="ttdeci">eb_aux_ m_u_factory</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:178</div></div>
-<div class="ttc" id="aclasseb___html_aca3aa793c432fe655b38759a26af6b96"><div class="ttname"><a href="classeb__.html#aca3aa793c432fe655b38759a26af6b96">eb_::m_v_factory</a></div><div class="ttdeci">eb_aux_ m_v_factory</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:179</div></div>
-<div class="ttc" id="aclasseb___html_ad927cf323e89587952b632234487f9f9"><div class="ttname"><a href="classeb__.html#ad927cf323e89587952b632234487f9f9">eb_::nghost_full</a></div><div class="ttdeci">int nghost_full() const</div><div class="ttdoc">Number of ghost cells needed for full EB geometric data.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:94</div></div>
-<div class="ttc" id="aclasseb___html_adeeabbed9dbdf2241f513b5b2ef8c9d8"><div class="ttname"><a href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">eb_::nghost_basic</a></div><div class="ttdeci">int nghost_basic() const</div><div class="ttdoc">Number of ghost cells needed for basic EB flags.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:90</div></div>
-<div class="ttc" id="aclasseb___html_af941b42e82fc7f48aeb9e9c7c559eeb7"><div class="ttname"><a href="classeb__.html#af941b42e82fc7f48aeb9e9c7c559eeb7">eb_::set_connection_flags</a></div><div class="ttdeci">void set_connection_flags(amrex::EBFArrayBoxFactory *factory)</div><div class="ttdoc">Disconnect covered neighbors in an EB factory's cell flags.</div><div class="ttdef"><b>Definition:</b> ERF_EB.cpp:216</div></div>
+<div class="ttc" id="aclasseb___html_a600c3e3ff922488a6c4e95102661a976"><div class="ttname"><a href="classeb__.html#a600c3e3ff922488a6c4e95102661a976">eb_::build_cut_cell_lists</a></div><div class="ttdeci">void build_cut_cell_lists(amrex::FabArray&lt; amrex::EBCellFlagFab &gt; const &amp;flags, amrex::Vector&lt; CutCellList &gt; &amp;cut_cells)</div><div class="ttdef"><b>Definition:</b> ERF_EB.cpp:197</div></div>
+<div class="ttc" id="aclasseb___html_a6742441548c82724b3dd30c323f4080e"><div class="ttname"><a href="classeb__.html#a6742441548c82724b3dd30c323f4080e">eb_::mask_fc_from_cc</a></div><div class="ttdeci">void mask_fc_from_cc(amrex::EBFArrayBoxFactory *fc_factory, const amrex::EBFArrayBoxFactory *cc_factory, int idim)</div><div class="ttdoc">Enforce FC-CC consistency by marking FC faces as covered when both CC neighbors are covered.</div><div class="ttdef"><b>Definition:</b> ERF_EB.cpp:278</div></div>
+<div class="ttc" id="aclasseb___html_a8e61525cf6488d04f457068fc40f47df"><div class="ttname"><a href="classeb__.html#a8e61525cf6488d04f457068fc40f47df">eb_::nghost_volume</a></div><div class="ttdeci">int nghost_volume() const</div><div class="ttdoc">Number of ghost cells needed for EB volume data.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:99</div></div>
+<div class="ttc" id="aclasseb___html_ad927cf323e89587952b632234487f9f9"><div class="ttname"><a href="classeb__.html#ad927cf323e89587952b632234487f9f9">eb_::nghost_full</a></div><div class="ttdeci">int nghost_full() const</div><div class="ttdoc">Number of ghost cells needed for full EB geometric data.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:101</div></div>
+<div class="ttc" id="aclasseb___html_adeeabbed9dbdf2241f513b5b2ef8c9d8"><div class="ttname"><a href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">eb_::nghost_basic</a></div><div class="ttdeci">int nghost_basic() const</div><div class="ttdoc">Number of ghost cells needed for basic EB flags.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:97</div></div>
+<div class="ttc" id="aclasseb___html_af941b42e82fc7f48aeb9e9c7c559eeb7"><div class="ttname"><a href="classeb__.html#af941b42e82fc7f48aeb9e9c7c559eeb7">eb_::set_connection_flags</a></div><div class="ttdeci">void set_connection_flags(amrex::EBFArrayBoxFactory *factory)</div><div class="ttdoc">Disconnect covered neighbors in an EB factory's cell flags.</div><div class="ttdef"><b>Definition:</b> ERF_EB.cpp:234</div></div>
 <div class="ttc" id="aclasseb__aux___html_a35e03212515a83631de9954bde139ed5"><div class="ttname"><a href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">eb_aux_::define</a></div><div class="ttdeci">void define(int const &amp;a_level, int const &amp;a_idim, amrex::Geometry const &amp;a_geom, amrex::BoxArray const &amp;a_grids, amrex::DistributionMapping const &amp;a_dmap, amrex::Vector&lt; int &gt; const &amp;a_ngrow, amrex::EBFArrayBoxFactory const *a_factory)</div><div class="ttdoc">Define face-centered EB geometry for one staggered direction.</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.cpp:24</div></div>
-<div class="ttc" id="aclasseb__aux___html_aa782343e2bd11203f360485eb4395a29"><div class="ttname"><a href="classeb__aux__.html#aa782343e2bd11203f360485eb4395a29">eb_aux_::getMultiEBCellFlagFab</a></div><div class="ttdeci">const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; &amp; getMultiEBCellFlagFab() const</div><div class="ttdoc">Return the reconstructed EB cell flags.</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.cpp:1146</div></div>
+<div class="ttc" id="aclasseb__aux___html_aa782343e2bd11203f360485eb4395a29"><div class="ttname"><a href="classeb__aux__.html#aa782343e2bd11203f360485eb4395a29">eb_aux_::getMultiEBCellFlagFab</a></div><div class="ttdeci">const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; &amp; getMultiEBCellFlagFab() const</div><div class="ttdoc">Return the reconstructed EB cell flags.</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.cpp:1161</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1336,20 +1383,20 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    Print() &lt;&lt; <span class="stringliteral">&quot;making EB factory\n&quot;</span>;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a> = std::make_unique&lt;EBFArrayBoxFactory&gt;(a_eb_level, a_geom, ba, dm,</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        Vector&lt;int&gt;{<a class="code" href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">nghost_basic</a>(), <a class="code" href="classeb__.html#a8e61525cf6488d04f457068fc40f47df">nghost_volume</a>(), <a class="code" href="classeb__.html#ad927cf323e89587952b632234487f9f9">nghost_full</a>()}, <a class="code" href="classeb__.html#a84f505f18fa5fd8e792fcdc6b7ccca35">m_support_level</a>);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">// Correct cell connectivity</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="classeb__.html#af941b42e82fc7f48aeb9e9c7c559eeb7">eb_::set_connection_flags</a>(<a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>.get());</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="classeb__.html#a6dd278bdcea8c6a5da4ceec1bb47e95e">m_u_cut_cells</a>.clear();</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="classeb__.html#a61100c6816219f8dfed5c34c2e5d4ced">m_v_cut_cells</a>.clear();</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <a class="code" href="classeb__.html#a2c64ed6f4a79bab39a24d08d171c8e98">m_w_cut_cells</a>.clear();</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    Print() &lt;&lt; <span class="stringliteral">&quot;\nDone making EB factory at level &quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot;.\n\n&quot;</span>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    Print() &lt;&lt; <span class="stringliteral">&quot;making EB factory\n&quot;</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a> = std::make_unique&lt;EBFArrayBoxFactory&gt;(a_eb_level, a_geom, ba, dm,</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        Vector&lt;int&gt;{<a class="code" href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">nghost_basic</a>(), <a class="code" href="classeb__.html#a8e61525cf6488d04f457068fc40f47df">nghost_volume</a>(), <a class="code" href="classeb__.html#ad927cf323e89587952b632234487f9f9">nghost_full</a>()}, <a class="code" href="classeb__.html#a84f505f18fa5fd8e792fcdc6b7ccca35">m_support_level</a>);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="comment">// Correct cell connectivity</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="classeb__.html#af941b42e82fc7f48aeb9e9c7c559eeb7">eb_::set_connection_flags</a>(<a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>.get());</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="classeb__.html#a6dd278bdcea8c6a5da4ceec1bb47e95e">m_u_cut_cells</a>.clear();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="classeb__.html#a61100c6816219f8dfed5c34c2e5d4ced">m_v_cut_cells</a>.clear();</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="classeb__.html#a2c64ed6f4a79bab39a24d08d171c8e98">m_w_cut_cells</a>.clear();</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    Print() &lt;&lt; <span class="stringliteral">&quot;\nDone making EB factory at level &quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot;.\n\n&quot;</span>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1444,48 +1491,48 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <p>For each face in the FC factory, if BOTH neighboring cell-centered cells are marked as covered, this function sets the FC face's volume fraction to zero and marks it as covered. This maintains consistency between CC and FC EB representations. </p>
-<div class="fragment"><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;{</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    FabArray&lt;EBCellFlagFab&gt;&amp; fc_cellflag = <a class="code" href="classeb__.html#a113a041eb564cdc3f50b7957b8c030c5">getNonConstEBCellFlags</a>(*fc_factory);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    MultiFab&amp; fc_volfrac = <a class="code" href="classeb__.html#a7d2bf2fbda20ea8bc2514c200093fa65">getNonConstVolFrac</a>(*fc_factory);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keyword">const</span> FabArray&lt;EBCellFlagFab&gt;&amp; cc_cellflag = cc_factory-&gt;getMultiEBCellFlagFab();</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(fc_cellflag, <span class="keyword">false</span>); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keyword">const</span> Box face_box = mfi.nodaltilebox(idim);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keyword">const</span> Box gbx = amrex::grow(face_box, fc_cellflag.nGrow()-1);</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        Array4&lt;EBCellFlag&gt; <span class="keyword">const</span>&amp; fc_flag = fc_cellflag.array(mfi);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        Array4&lt;Real&gt; <span class="keyword">const</span>&amp; fc_vfrac = fc_volfrac.array(mfi);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        Array4&lt;EBCellFlag const&gt; <span class="keyword">const</span>&amp; cc_flag = cc_cellflag.const_array(mfi);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="keywordflow">if</span> (idim == 0) {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                <span class="keywordflow">if</span> (cc_flag(i-1,j,k).isCovered() &amp;&amp; cc_flag(i,j,k).isCovered()) {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                    fc_vfrac(i,j,k) = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                    fc_flag(i,j,k).setCovered();</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                }</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            });</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (idim == 1) {</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                <span class="keywordflow">if</span> (cc_flag(i,j-1,k).isCovered() &amp;&amp; cc_flag(i,j,k).isCovered()) {</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                    fc_vfrac(i,j,k) = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                    fc_flag(i,j,k).setCovered();</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                }</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            });</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (idim == 2) {</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                <span class="keywordflow">if</span> (cc_flag(i,j,k-1).isCovered() &amp;&amp; cc_flag(i,j,k).isCovered()) {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                    fc_vfrac(i,j,k) = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                    fc_flag(i,j,k).setCovered();</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                }</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            });</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        }</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;{</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    FabArray&lt;EBCellFlagFab&gt;&amp; fc_cellflag = <a class="code" href="classeb__.html#a113a041eb564cdc3f50b7957b8c030c5">getNonConstEBCellFlags</a>(*fc_factory);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    MultiFab&amp; fc_volfrac = <a class="code" href="classeb__.html#a7d2bf2fbda20ea8bc2514c200093fa65">getNonConstVolFrac</a>(*fc_factory);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keyword">const</span> FabArray&lt;EBCellFlagFab&gt;&amp; cc_cellflag = cc_factory-&gt;getMultiEBCellFlagFab();</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(fc_cellflag, <span class="keyword">false</span>); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keyword">const</span> Box face_box = mfi.nodaltilebox(idim);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keyword">const</span> Box gbx = amrex::grow(face_box, fc_cellflag.nGrow()-1);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        Array4&lt;EBCellFlag&gt; <span class="keyword">const</span>&amp; fc_flag = fc_cellflag.array(mfi);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        Array4&lt;Real&gt; <span class="keyword">const</span>&amp; fc_vfrac = fc_volfrac.array(mfi);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        Array4&lt;EBCellFlag const&gt; <span class="keyword">const</span>&amp; cc_flag = cc_cellflag.const_array(mfi);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">if</span> (idim == 0) {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                <span class="keywordflow">if</span> (cc_flag(i-1,j,k).isCovered() &amp;&amp; cc_flag(i,j,k).isCovered()) {</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    fc_vfrac(i,j,k) = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                    fc_flag(i,j,k).setCovered();</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                }</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            });</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (idim == 1) {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                <span class="keywordflow">if</span> (cc_flag(i,j-1,k).isCovered() &amp;&amp; cc_flag(i,j,k).isCovered()) {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                    fc_vfrac(i,j,k) = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                    fc_flag(i,j,k).setCovered();</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                }</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            });</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (idim == 2) {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                <span class="keywordflow">if</span> (cc_flag(i,j,k-1).isCovered() &amp;&amp; cc_flag(i,j,k).isCovered()) {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                    fc_vfrac(i,j,k) = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                    fc_flag(i,j,k).setCovered();</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                }</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            });</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aclasseb___html_a113a041eb564cdc3f50b7957b8c030c5"><div class="ttname"><a href="classeb__.html#a113a041eb564cdc3f50b7957b8c030c5">eb_::getNonConstEBCellFlags</a></div><div class="ttdeci">amrex::FabArray&lt; amrex::EBCellFlagFab &gt; &amp; getNonConstEBCellFlags(const amrex::EBFArrayBoxFactory &amp;ebfact)</div><div class="ttdoc">Return mutable EB cell flags from an AMReX factory.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:222</div></div>
-<div class="ttc" id="aclasseb___html_a7d2bf2fbda20ea8bc2514c200093fa65"><div class="ttname"><a href="classeb__.html#a7d2bf2fbda20ea8bc2514c200093fa65">eb_::getNonConstVolFrac</a></div><div class="ttdeci">amrex::MultiFab &amp; getNonConstVolFrac(const amrex::EBFArrayBoxFactory &amp;ebfact)</div><div class="ttdoc">Return mutable volume fractions from an AMReX factory.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:230</div></div>
+<div class="ttc" id="aclasseb___html_a113a041eb564cdc3f50b7957b8c030c5"><div class="ttname"><a href="classeb__.html#a113a041eb564cdc3f50b7957b8c030c5">eb_::getNonConstEBCellFlags</a></div><div class="ttdeci">amrex::FabArray&lt; amrex::EBCellFlagFab &gt; &amp; getNonConstEBCellFlags(const amrex::EBFArrayBoxFactory &amp;ebfact)</div><div class="ttdoc">Return mutable EB cell flags from an AMReX factory.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:229</div></div>
+<div class="ttc" id="aclasseb___html_a7d2bf2fbda20ea8bc2514c200093fa65"><div class="ttname"><a href="classeb__.html#a7d2bf2fbda20ea8bc2514c200093fa65">eb_::getNonConstVolFrac</a></div><div class="ttdeci">amrex::MultiFab &amp; getNonConstVolFrac(const amrex::EBFArrayBoxFactory &amp;ebfact)</div><div class="ttdoc">Return mutable volume fractions from an AMReX factory.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:237</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
 <div class="dynheader">
@@ -1535,7 +1582,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Number of ghost cells needed for basic EB flags. </p>
-<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{ <span class="keywordflow">return</span> 5; } <span class="comment">// nghost_eb_basic ()</span></div>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{ <span class="keywordflow">return</span> 5; } <span class="comment">// nghost_eb_basic ()</span></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>, and <a class="el" href="classeb__.html#a939eef3f5cd9a4befe45d389b49c3405">make_cc_factory()</a>.</p>
 <div class="dynheader">
@@ -1575,7 +1622,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Number of ghost cells needed for full EB geometric data. </p>
-<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{ <span class="keywordflow">return</span> 4; } <span class="comment">// nghost_eb_full ()</span></div>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{ <span class="keywordflow">return</span> 4; } <span class="comment">// nghost_eb_full ()</span></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>, and <a class="el" href="classeb__.html#a939eef3f5cd9a4befe45d389b49c3405">make_cc_factory()</a>.</p>
 <div class="dynheader">
@@ -1615,7 +1662,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Number of ghost cells needed for EB volume data. </p>
-<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{ <span class="keywordflow">return</span> 5; } <span class="comment">// nghost_eb_volume ()</span></div>
+<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{ <span class="keywordflow">return</span> 5; } <span class="comment">// nghost_eb_volume ()</span></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>, and <a class="el" href="classeb__.html#a939eef3f5cd9a4befe45d389b49c3405">make_cc_factory()</a>.</p>
 <div class="dynheader">
@@ -1656,40 +1703,40 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <p>The factory EBCellFlagFab data are updated through a non-const reference. </p>
-<div class="fragment"><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;{</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="comment">// Get non-const reference to EBCellFlagFab FabArray</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    FabArray&lt;EBCellFlagFab&gt;&amp; cellflag = <a class="code" href="classeb__.html#a113a041eb564cdc3f50b7957b8c030c5">getNonConstEBCellFlags</a>(*factory);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keyword">const</span> MultiFab&amp; volfrac = factory-&gt;getVolFrac();</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(cellflag, <span class="keyword">false</span>); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.validbox();</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keyword">const</span> Box gbx = amrex::grow(bx, cellflag.nGrow()-1); <span class="comment">// Leave one cell layer</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        Array4&lt;EBCellFlag&gt; <span class="keyword">const</span>&amp; flag = cellflag.array(mfi);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; vfrac = volfrac.const_array(mfi);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        {</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> kk(-1); kk&lt;=1; kk++) {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj(-1); jj&lt;=1; jj++) {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii(-1); ii&lt;=1; ii++)</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            {</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <span class="keywordflow">if</span> (vfrac(i+ii,j+jj,k+kk) == <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                    flag(i,j,k).setDisconnected(ii,jj,kk);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                }</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            }}}</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        });</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keywordflow">if</span> (vfrac(i,j,k)==<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                flag(i,j,k).setCovered();</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        });</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;{</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="comment">// Get non-const reference to EBCellFlagFab FabArray</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    FabArray&lt;EBCellFlagFab&gt;&amp; cellflag = <a class="code" href="classeb__.html#a113a041eb564cdc3f50b7957b8c030c5">getNonConstEBCellFlags</a>(*factory);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keyword">const</span> MultiFab&amp; volfrac = factory-&gt;getVolFrac();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(cellflag, <span class="keyword">false</span>); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.validbox();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keyword">const</span> Box gbx = amrex::grow(bx, cellflag.nGrow()-1); <span class="comment">// Leave one cell layer</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        Array4&lt;EBCellFlag&gt; <span class="keyword">const</span>&amp; flag = cellflag.array(mfi);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; vfrac = volfrac.const_array(mfi);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> kk(-1); kk&lt;=1; kk++) {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj(-1); jj&lt;=1; jj++) {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii(-1); ii&lt;=1; ii++)</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                <span class="keywordflow">if</span> (vfrac(i+ii,j+jj,k+kk) == <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    flag(i,j,k).setDisconnected(ii,jj,kk);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            }}}</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        });</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <span class="keywordflow">if</span> (vfrac(i,j,k)==<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                flag(i,j,k).setCovered();</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        });</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}</div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:36</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>, and <a class="el" href="classeb__.html#a939eef3f5cd9a4befe45d389b49c3405">make_cc_factory()</a>.</p>
@@ -1785,7 +1832,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__.html#a74b48b1a80f3292f6002592f1d1d2bcd">get_const_factory()</a>, <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>, and <a class="el" href="classeb__.html#a939eef3f5cd9a4befe45d389b49c3405">make_cc_factory()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281">clear_factories()</a>, <a class="el" href="classeb__.html#a74b48b1a80f3292f6002592f1d1d2bcd">get_const_factory()</a>, <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>, and <a class="el" href="classeb__.html#a939eef3f5cd9a4befe45d389b49c3405">make_cc_factory()</a>.</p>
 
 </div>
 </div>
@@ -1877,7 +1924,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__.html#a16f383060fc3465376dfbf0ac1d237e0">get_u_cut_cells()</a>, <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>, and <a class="el" href="classeb__.html#a939eef3f5cd9a4befe45d389b49c3405">make_cc_factory()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281">clear_factories()</a>, <a class="el" href="classeb__.html#a16f383060fc3465376dfbf0ac1d237e0">get_u_cut_cells()</a>, <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>, and <a class="el" href="classeb__.html#a939eef3f5cd9a4befe45d389b49c3405">make_cc_factory()</a>.</p>
 
 </div>
 </div>
@@ -1901,7 +1948,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281">clear_factories()</a>, and <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
 
 </div>
 </div>
@@ -1925,7 +1972,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__.html#a8cfa03ce6fe7f6c89a2f0f2109ecd3df">get_u_const_factory()</a>, and <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281">clear_factories()</a>, <a class="el" href="classeb__.html#a8cfa03ce6fe7f6c89a2f0f2109ecd3df">get_u_const_factory()</a>, and <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
 
 </div>
 </div>
@@ -1949,7 +1996,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__.html#a3088f0a6998dcdbfd81a8afe3c880ca8">get_v_cut_cells()</a>, <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>, and <a class="el" href="classeb__.html#a939eef3f5cd9a4befe45d389b49c3405">make_cc_factory()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281">clear_factories()</a>, <a class="el" href="classeb__.html#a3088f0a6998dcdbfd81a8afe3c880ca8">get_v_cut_cells()</a>, <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>, and <a class="el" href="classeb__.html#a939eef3f5cd9a4befe45d389b49c3405">make_cc_factory()</a>.</p>
 
 </div>
 </div>
@@ -1973,7 +2020,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281">clear_factories()</a>, and <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
 
 </div>
 </div>
@@ -1997,7 +2044,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__.html#a968bddefb6fbbfa16a5a1e225cad77ee">get_v_const_factory()</a>, and <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281">clear_factories()</a>, <a class="el" href="classeb__.html#a968bddefb6fbbfa16a5a1e225cad77ee">get_v_const_factory()</a>, and <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
 
 </div>
 </div>
@@ -2021,7 +2068,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__.html#a5f6f896cf6ea5bcfc3586079c85ba13b">get_w_cut_cells()</a>, <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>, and <a class="el" href="classeb__.html#a939eef3f5cd9a4befe45d389b49c3405">make_cc_factory()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281">clear_factories()</a>, <a class="el" href="classeb__.html#a5f6f896cf6ea5bcfc3586079c85ba13b">get_w_cut_cells()</a>, <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>, and <a class="el" href="classeb__.html#a939eef3f5cd9a4befe45d389b49c3405">make_cc_factory()</a>.</p>
 
 </div>
 </div>
@@ -2045,7 +2092,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281">clear_factories()</a>, and <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
 
 </div>
 </div>
@@ -2069,7 +2116,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__.html#a87941562c0846f31a6f756a31baef627">get_w_const_factory()</a>, and <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281">clear_factories()</a>, <a class="el" href="classeb__.html#a87941562c0846f31a6f756a31baef627">get_w_const_factory()</a>, and <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
 
 </div>
 </div>

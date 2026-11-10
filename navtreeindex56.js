@@ -1,5 +1,8 @@
 var NAVTREEINDEX56 =
 {
+"structcustom__flux.html#a532cc1805ab7736664b7682243a4dc8a":[2,0,47,4],
+"structcustom__flux.html#a536802b8ad933875bd4dc17a1a4ca5e7":[2,0,47,6],
+"structcustom__flux.html#ae0e2af01151c51f4c335f053a8bb8f17":[2,0,47,5],
 "structcustom__flux.html#af56992ef6985e518d20cf32aa6125373":[2,0,47,3],
 "structeb__cut__cell___1_1path__data.html":[2,0,57,0],
 "structeb__cut__cell___1_1path__data.html#a14295c690faa302c0e8c9e1f5fad9f50":[2,0,57,0,7],
@@ -246,8 +249,5 @@ var NAVTREEINDEX56 =
 "structerf__provenance_1_1ArtifactProvenance.html#a146bdfe1d7d3e049d8c1bd53d12b8e71":[2,0,10,1,1],
 "structerf__provenance_1_1ArtifactProvenance.html#a3b62401d18f17894674425e842ae6979":[2,0,10,1,4],
 "structerf__provenance_1_1ArtifactProvenance.html#a7278807c660f79e1bfb998f88d583286":[2,0,10,1,2],
-"structerf__provenance_1_1ArtifactProvenance.html#a9d7daf90555226e760c986b0e84b3d43":[2,0,10,1,0],
-"structerf__provenance_1_1ArtifactProvenance.html#abd3567daea078cee1b836502a906d6f5":[2,0,10,1,3],
-"structerf__provenance_1_1ExecutionProvenance.html":[2,0,10,0],
-"structerf__provenance_1_1ExecutionProvenance.html#a1849e152fb7e8d8624f3c2cd9ceecc85":[2,0,10,0,7]
+"structerf__provenance_1_1ArtifactProvenance.html#a9d7daf90555226e760c986b0e84b3d43":[2,0,10,1,0]
 };

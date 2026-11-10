@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"ERF__InitCustomPert__StokesSecondProblem_8H.html":[3,0,1,21,24],
 "ERF__InitCustomPert__StokesSecondProblem_8H.html#a903fc8373b5b91ee7aee68ad3e2bd3d4":[3,0,1,21,24,0],
 "ERF__InitCustomPert__StokesSecondProblem_8H_source.html":[3,0,1,21,24],
 "ERF__InitCustomPert__SuperCell_8H.html":[3,0,1,21,25],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "ERF__Kokkos_8H.html":[3,0,1,20,1],
 "ERF__Kokkos_8H.html#a1a1468fd1bcfcd7b8b2a701dc290783b":[3,0,1,20,1,3],
 "ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846":[3,0,1,20,1,7],
-"ERF__Kokkos_8H.html#a3a97e4883d2079fb62a43ffbeb613a34":[3,0,1,20,1,0],
-"ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b":[3,0,1,20,1,12]
+"ERF__Kokkos_8H.html#a3a97e4883d2079fb62a43ffbeb613a34":[3,0,1,20,1,0]
 };

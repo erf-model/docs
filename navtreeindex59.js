@@ -1,5 +1,8 @@
 var NAVTREEINDEX59 =
 {
+"structmost__aitken.html":[2,0,104],
+"structmost__aitken.html#a1fd176ed350fb64ebc889093ec523217":[2,0,104,6],
+"structmost__aitken.html#a2f35837b6031ef7fcc9100c10f55edf3":[2,0,104,3],
 "structmost__aitken.html#a47539be04f349df79e95b0c3cc4e7c2e":[2,0,104,1],
 "structmost__aitken.html#a8e4f3d9ff9a18041c88845a4b4c71ddc":[2,0,104,2],
 "structmost__aitken.html#aa94d2878edead3978bff6afe2a8f6de5":[2,0,104,4],
@@ -246,8 +249,5 @@ var NAVTREEINDEX59 =
 "structsimilarity__funs.html#a738bbb6546906489be12ad0eed6e7548":[2,0,191,17],
 "structsimilarity__funs.html#a77be592d4474babc872a5de04cbf92ab":[2,0,191,9],
 "structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2":[2,0,191,2],
-"structsimilarity__funs.html#aac794cc508a1f13ae22b0a1320890f35":[2,0,191,1],
-"structsimilarity__funs.html#ae1a0d9ec56c9f90e0aba3bcadc8a3d63":[2,0,191,10],
-"structsimilarity__funs.html#ae78007489e8da2bf08c6f999381b9512":[2,0,191,14],
-"structsimilarity__funs.html#af06ec68e3830caf8d168096f49f7fe58":[2,0,191,16]
+"structsimilarity__funs.html#aac794cc508a1f13ae22b0a1320890f35":[2,0,191,1]
 };

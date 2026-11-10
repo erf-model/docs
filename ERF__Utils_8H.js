@@ -28,6 +28,7 @@ var ERF__Utils_8H =
     [ "make_J", "ERF__Utils_8H.html#accb87d367dfa749571761aa789fd3fea", null ],
     [ "make_qt", "ERF__Utils_8H.html#afe3f26a0804dbe21b32ba33a0a219d6e", null ],
     [ "make_zcc", "ERF__Utils_8H.html#ab405f3b5732dda49ad076fab09bfbfc8", null ],
+    [ "MakeProjectionWeights", "ERF__Utils_8H.html#aeb7450538d7139212cfc15e6fcd383fc", null ],
     [ "MomentumToVelocity", "ERF__Utils_8H.html#a0b812d5c2bdd531d6df797b1b227b335", null ],
     [ "quad_interp_1d", "ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604", null ],
     [ "real_bdy_cons_maps", "ERF__Utils_8H.html#a03ffacde1cdc45e8241f236b95e18fc8", null ],

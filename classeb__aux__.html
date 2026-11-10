@@ -118,6 +118,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1cbe707adafa21744620fd78fdb993d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeb__aux__.html#a1cbe707adafa21744620fd78fdb993d1">~eb_aux_</a> ()=default</td></tr>
 <tr class="memdesc:a1cbe707adafa21744620fd78fdb993d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the auxiliary EB factory; the owned geometry is released by its unique_ptrs.  <a href="classeb__aux__.html#a1cbe707adafa21744620fd78fdb993d1">More...</a><br /></td></tr>
 <tr class="separator:a1cbe707adafa21744620fd78fdb993d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb0430408b31e13c4d88cf7b442dca6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e">clear</a> ()</td></tr>
+<tr class="memdesc:afb0430408b31e13c4d88cf7b442dca6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release the geometry of the last <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5" title="Define face-centered EB geometry for one staggered direction.">define()</a>, as for a level that no longer exists.  <a href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e">More...</a><br /></td></tr>
+<tr class="separator:afb0430408b31e13c4d88cf7b442dca6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35e03212515a83631de9954bde139ed5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define</a> (int const &amp;a_level, int const &amp;a_idim, amrex::Geometry const &amp;a_geom, amrex::BoxArray const &amp;a_grids, amrex::DistributionMapping const &amp;a_dmap, amrex::Vector&lt; int &gt; const &amp;a_ngrow, amrex::EBFArrayBoxFactory const *a_factory)</td></tr>
 <tr class="memdesc:a35e03212515a83631de9954bde139ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define face-centered EB geometry for one staggered direction.  <a href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">More...</a><br /></td></tr>
 <tr class="separator:a35e03212515a83631de9954bde139ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,7 +196,7 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  : <a class="code" href="classeb__aux__.html#a8ae8f5c65d8f24092095ba0058293864">m_verbose</a>(0)</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// ,m_defined(0)</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{}</div>
-<div class="ttc" id="aclasseb__aux___html_a8ae8f5c65d8f24092095ba0058293864"><div class="ttname"><a href="classeb__aux__.html#a8ae8f5c65d8f24092095ba0058293864">eb_aux_::m_verbose</a></div><div class="ttdeci">int m_verbose</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:78</div></div>
+<div class="ttc" id="aclasseb__aux___html_a8ae8f5c65d8f24092095ba0058293864"><div class="ttname"><a href="classeb__aux__.html#a8ae8f5c65d8f24092095ba0058293864">eb_aux_::m_verbose</a></div><div class="ttdeci">int m_verbose</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:81</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -225,6 +228,56 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="afb0430408b31e13c4d88cf7b442dca6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb0430408b31e13c4d88cf7b442dca6e">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void eb_aux_::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Release the geometry of the last <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5" title="Define face-centered EB geometry for one staggered direction.">define()</a>, as for a level that no longer exists. </p>
+<div class="fragment"><div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;{</div>
+<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;    <a class="code" href="classeb__aux__.html#a887ee920671992be5f09b467533f7b1d">m_cellflags</a>.reset();</div>
+<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;    <a class="code" href="classeb__aux__.html#ae7021f2a128e2cb10022f8fb9a783046">m_volfrac</a>.reset();</div>
+<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;    <a class="code" href="classeb__aux__.html#ab7155e4edd8653141e204da597b2e767">m_volcent</a>.reset();</div>
+<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;    <a class="code" href="classeb__aux__.html#a94f7eeb77e41945144532d3a377decd9">m_bndryarea</a>.reset();</div>
+<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;    <a class="code" href="classeb__aux__.html#a7e3dcb1d7d0ce1763dd1f898a8ce7648">m_bndrycent</a>.reset();</div>
+<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;    <a class="code" href="classeb__aux__.html#a1eee932c828f857073546e3ed70546a6">m_bndrynorm</a>.reset();</div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
+<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;        <a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[idim].reset();</div>
+<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;        <a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[idim].reset();</div>
+<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    }</div>
+<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;}</div>
+<div class="ttc" id="aclasseb__aux___html_a1230927bf029bf374cbdee6bd36e8481"><div class="ttname"><a href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">eb_aux_::m_areafrac</a></div><div class="ttdeci">amrex::Array&lt; std::unique_ptr&lt; amrex::MultiFab &gt;, AMREX_SPACEDIM &gt; m_areafrac</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:95</div></div>
+<div class="ttc" id="aclasseb__aux___html_a1eee932c828f857073546e3ed70546a6"><div class="ttname"><a href="classeb__aux__.html#a1eee932c828f857073546e3ed70546a6">eb_aux_::m_bndrynorm</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; m_bndrynorm</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:93</div></div>
+<div class="ttc" id="aclasseb__aux___html_a7e3dcb1d7d0ce1763dd1f898a8ce7648"><div class="ttname"><a href="classeb__aux__.html#a7e3dcb1d7d0ce1763dd1f898a8ce7648">eb_aux_::m_bndrycent</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; m_bndrycent</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:92</div></div>
+<div class="ttc" id="aclasseb__aux___html_a887ee920671992be5f09b467533f7b1d"><div class="ttname"><a href="classeb__aux__.html#a887ee920671992be5f09b467533f7b1d">eb_aux_::m_cellflags</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::FabArray&lt; amrex::EBCellFlagFab &gt; &gt; m_cellflags</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:88</div></div>
+<div class="ttc" id="aclasseb__aux___html_a94f7eeb77e41945144532d3a377decd9"><div class="ttname"><a href="classeb__aux__.html#a94f7eeb77e41945144532d3a377decd9">eb_aux_::m_bndryarea</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; m_bndryarea</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:91</div></div>
+<div class="ttc" id="aclasseb__aux___html_a99d45f0a14692341fc352c785f6a13ba"><div class="ttname"><a href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">eb_aux_::m_facecent</a></div><div class="ttdeci">amrex::Array&lt; std::unique_ptr&lt; amrex::MultiFab &gt;, AMREX_SPACEDIM &gt; m_facecent</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:96</div></div>
+<div class="ttc" id="aclasseb__aux___html_ab7155e4edd8653141e204da597b2e767"><div class="ttname"><a href="classeb__aux__.html#ab7155e4edd8653141e204da597b2e767">eb_aux_::m_volcent</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; m_volcent</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:90</div></div>
+<div class="ttc" id="aclasseb__aux___html_ae7021f2a128e2cb10022f8fb9a783046"><div class="ttname"><a href="classeb__aux__.html#ae7021f2a128e2cb10022f8fb9a783046">eb_aux_::m_volfrac</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; m_volfrac</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:89</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281">eb_::clear_factories()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classeb__aux___afb0430408b31e13c4d88cf7b442dca6e_icgraph.png" border="0" usemap="#aclasseb__aux___afb0430408b31e13c4d88cf7b442dca6e_icgraph" alt=""/></div>
+<map name="aclasseb__aux___afb0430408b31e13c4d88cf7b442dca6e_icgraph" id="aclasseb__aux___afb0430408b31e13c4d88cf7b442dca6e_icgraph">
+<area shape="rect" title="Release the geometry of the last define(), as for a level that no longer exists." alt="" coords="203,5,319,32"/>
+<area shape="rect" href="classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281" title="Release the factories and cut&#45;face lists built for the level&#39;s grids, as for a level that no longer e..." alt="" coords="5,5,155,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a35e03212515a83631de9954bde139ed5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35e03212515a83631de9954bde139ed5">&#9670;&nbsp;</a></span>define()</h2>
 
@@ -1416,14 +1469,6 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:36</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:41</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aclasseb__aux___html_a1230927bf029bf374cbdee6bd36e8481"><div class="ttname"><a href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">eb_aux_::m_areafrac</a></div><div class="ttdeci">amrex::Array&lt; std::unique_ptr&lt; amrex::MultiFab &gt;, AMREX_SPACEDIM &gt; m_areafrac</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:92</div></div>
-<div class="ttc" id="aclasseb__aux___html_a1eee932c828f857073546e3ed70546a6"><div class="ttname"><a href="classeb__aux__.html#a1eee932c828f857073546e3ed70546a6">eb_aux_::m_bndrynorm</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; m_bndrynorm</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:90</div></div>
-<div class="ttc" id="aclasseb__aux___html_a7e3dcb1d7d0ce1763dd1f898a8ce7648"><div class="ttname"><a href="classeb__aux__.html#a7e3dcb1d7d0ce1763dd1f898a8ce7648">eb_aux_::m_bndrycent</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; m_bndrycent</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:89</div></div>
-<div class="ttc" id="aclasseb__aux___html_a887ee920671992be5f09b467533f7b1d"><div class="ttname"><a href="classeb__aux__.html#a887ee920671992be5f09b467533f7b1d">eb_aux_::m_cellflags</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::FabArray&lt; amrex::EBCellFlagFab &gt; &gt; m_cellflags</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:85</div></div>
-<div class="ttc" id="aclasseb__aux___html_a94f7eeb77e41945144532d3a377decd9"><div class="ttname"><a href="classeb__aux__.html#a94f7eeb77e41945144532d3a377decd9">eb_aux_::m_bndryarea</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; m_bndryarea</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:88</div></div>
-<div class="ttc" id="aclasseb__aux___html_a99d45f0a14692341fc352c785f6a13ba"><div class="ttname"><a href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">eb_aux_::m_facecent</a></div><div class="ttdeci">amrex::Array&lt; std::unique_ptr&lt; amrex::MultiFab &gt;, AMREX_SPACEDIM &gt; m_facecent</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:93</div></div>
-<div class="ttc" id="aclasseb__aux___html_ab7155e4edd8653141e204da597b2e767"><div class="ttname"><a href="classeb__aux__.html#ab7155e4edd8653141e204da597b2e767">eb_aux_::m_volcent</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; m_volcent</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:87</div></div>
-<div class="ttc" id="aclasseb__aux___html_ae7021f2a128e2cb10022f8fb9a783046"><div class="ttname"><a href="classeb__aux__.html#ae7021f2a128e2cb10022f8fb9a783046">eb_aux_::m_volfrac</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; m_volfrac</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:86</div></div>
 <div class="ttc" id="aclasseb__cut__cell___html"><div class="ttname"><a href="classeb__cut__cell__.html">eb_cut_cell_</a></div><div class="ttdoc">Reconstructs geometric moments for one EB cut cell.</div><div class="ttdef"><b>Definition:</b> ERF_EBCutCell.H:69</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
 </div><!-- fragment -->
@@ -1482,10 +1527,10 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return reconstructed area fractions for all coordinate directions. </p>
-<div class="fragment"><div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;{</div>
-<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[0] != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;    <span class="keywordflow">return</span> {AMREX_D_DECL(<a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[0].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>(), <a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[1].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>(), <a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[2].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>())};</div>
-<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;{</div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[0] != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;    <span class="keywordflow">return</span> {AMREX_D_DECL(<a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[0].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>(), <a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[1].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>(), <a class="code" href="classeb__aux__.html#a1230927bf029bf374cbdee6bd36e8481">m_areafrac</a>[2].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>())};</div>
+<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPertVels__CouettePoiseuille_8H_html_a15979e857437874d84fd52db041001af"><div class="ttname"><a href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a></div><div class="ttdeci">pp_for_pert_vels get(&quot;prob_type&quot;, prob_type)</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1515,10 +1560,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return the reconstructed EB boundary areas. </p>
-<div class="fragment"><div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;{</div>
-<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#a94f7eeb77e41945144532d3a377decd9">m_bndryarea</a> != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classeb__aux__.html#a94f7eeb77e41945144532d3a377decd9">m_bndryarea</a>;</div>
-<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;{</div>
+<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#a94f7eeb77e41945144532d3a377decd9">m_bndryarea</a> != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classeb__aux__.html#a94f7eeb77e41945144532d3a377decd9">m_bndryarea</a>;</div>
+<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1538,10 +1583,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return the reconstructed EB boundary centroids. </p>
-<div class="fragment"><div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;{</div>
-<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#a7e3dcb1d7d0ce1763dd1f898a8ce7648">m_bndrycent</a> != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classeb__aux__.html#a7e3dcb1d7d0ce1763dd1f898a8ce7648">m_bndrycent</a>;</div>
-<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;{</div>
+<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#a7e3dcb1d7d0ce1763dd1f898a8ce7648">m_bndrycent</a> != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classeb__aux__.html#a7e3dcb1d7d0ce1763dd1f898a8ce7648">m_bndrycent</a>;</div>
+<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1561,10 +1606,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return the reconstructed EB boundary normals. </p>
-<div class="fragment"><div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;{</div>
-<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#a1eee932c828f857073546e3ed70546a6">m_bndrynorm</a> != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classeb__aux__.html#a1eee932c828f857073546e3ed70546a6">m_bndrynorm</a>;</div>
-<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;{</div>
+<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#a1eee932c828f857073546e3ed70546a6">m_bndrynorm</a> != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classeb__aux__.html#a1eee932c828f857073546e3ed70546a6">m_bndrynorm</a>;</div>
+<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1584,10 +1629,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return the reconstructed volume centroids. </p>
-<div class="fragment"><div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;{</div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#ab7155e4edd8653141e204da597b2e767">m_volcent</a> != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classeb__aux__.html#ab7155e4edd8653141e204da597b2e767">m_volcent</a>;</div>
-<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;{</div>
+<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#ab7155e4edd8653141e204da597b2e767">m_volcent</a> != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classeb__aux__.html#ab7155e4edd8653141e204da597b2e767">m_volcent</a>;</div>
+<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1607,10 +1652,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return reconstructed face centroids for all coordinate directions. </p>
-<div class="fragment"><div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;{</div>
-<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[0] != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;    <span class="keywordflow">return</span> {AMREX_D_DECL(<a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[0].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>(), <a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[1].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>(), <a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[2].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>())};</div>
-<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;{</div>
+<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[0] != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;    <span class="keywordflow">return</span> {AMREX_D_DECL(<a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[0].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>(), <a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[1].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>(), <a class="code" href="classeb__aux__.html#a99d45f0a14692341fc352c785f6a13ba">m_facecent</a>[2].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>())};</div>
+<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1639,10 +1684,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return the reconstructed EB cell flags. </p>
-<div class="fragment"><div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;{</div>
-<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#a887ee920671992be5f09b467533f7b1d">m_cellflags</a> != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classeb__aux__.html#a887ee920671992be5f09b467533f7b1d">m_cellflags</a>;</div>
-<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;{</div>
+<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#a887ee920671992be5f09b467533f7b1d">m_cellflags</a> != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classeb__aux__.html#a887ee920671992be5f09b467533f7b1d">m_cellflags</a>;</div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">eb_::make_all_factories()</a>.</p>
 <div class="dynheader">
@@ -1673,10 +1718,10 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return the reconstructed volume fractions. </p>
-<div class="fragment"><div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;{</div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#ae7021f2a128e2cb10022f8fb9a783046">m_volfrac</a> != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classeb__aux__.html#ae7021f2a128e2cb10022f8fb9a783046">m_volfrac</a>;</div>
-<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;{</div>
+<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;    AMREX_ASSERT(<a class="code" href="classeb__aux__.html#ae7021f2a128e2cb10022f8fb9a783046">m_volfrac</a> != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classeb__aux__.html#ae7021f2a128e2cb10022f8fb9a783046">m_volfrac</a>;</div>
+<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1704,7 +1749,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Enable verbose diagnostic output during factory construction. </p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{ <a class="code" href="classeb__aux__.html#a8ae8f5c65d8f24092095ba0058293864">m_verbose</a> = 1; }</div>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{ <a class="code" href="classeb__aux__.html#a8ae8f5c65d8f24092095ba0058293864">m_verbose</a> = 1; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1729,7 +1774,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#a06b985415165114100c0cf6aaa521f9b">getAreaFrac()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e">clear()</a>, <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#a06b985415165114100c0cf6aaa521f9b">getAreaFrac()</a>.</p>
 
 </div>
 </div>
@@ -1753,7 +1798,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#a9f20069bf00cf1d9816aff114ecd1eef">getBndryArea()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e">clear()</a>, <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#a9f20069bf00cf1d9816aff114ecd1eef">getBndryArea()</a>.</p>
 
 </div>
 </div>
@@ -1777,7 +1822,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#a04982df6fc833f7c7373f67825f95239">getBndryCent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e">clear()</a>, <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#a04982df6fc833f7c7373f67825f95239">getBndryCent()</a>.</p>
 
 </div>
 </div>
@@ -1801,7 +1846,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#a2012a592d224040a53e5be782a791ab8">getBndryNormal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e">clear()</a>, <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#a2012a592d224040a53e5be782a791ab8">getBndryNormal()</a>.</p>
 
 </div>
 </div>
@@ -1825,7 +1870,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#aa782343e2bd11203f360485eb4395a29">getMultiEBCellFlagFab()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e">clear()</a>, <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#aa782343e2bd11203f360485eb4395a29">getMultiEBCellFlagFab()</a>.</p>
 
 </div>
 </div>
@@ -1849,7 +1894,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#a15ab8224a2115fcd91bec34e111d0ac6">getFaceCent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e">clear()</a>, <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#a15ab8224a2115fcd91bec34e111d0ac6">getFaceCent()</a>.</p>
 
 </div>
 </div>
@@ -1897,7 +1942,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#ae5daef3b6879433575a5aa0c24cd4e01">getCentroid()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e">clear()</a>, <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#ae5daef3b6879433575a5aa0c24cd4e01">getCentroid()</a>.</p>
 
 </div>
 </div>
@@ -1921,7 +1966,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#a8fa82793a77e8a7c97a94f58ad617b34">getVolFrac()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__aux__.html#afb0430408b31e13c4d88cf7b442dca6e">clear()</a>, <a class="el" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define()</a>, and <a class="el" href="classeb__aux__.html#a8fa82793a77e8a7c97a94f58ad617b34">getVolFrac()</a>.</p>
 
 </div>
 </div>
