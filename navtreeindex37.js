@@ -1,5 +1,7 @@
 var NAVTREEINDEX37 =
 {
+"classWindFarm.html#a8d5e6333f2f9f8e36dfd4766ad171b84":[2,0,254,41],
+"classWindFarm.html#a92bd0b9d5124a84555b8ea2633502191":[2,0,254,13],
 "classWindFarm.html#a9637b0a0c9d7cb1679f579325107459b":[2,0,254,12],
 "classWindFarm.html#a9e263152650471997aa43658904bc563":[2,0,254,36],
 "classWindFarm.html#aa029a9a7efa768d39849b4fb27ab5eeb":[2,0,254,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX37 =
 "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a4b0e6b9da6eef63621d8d7ed03462af8":[2,0,1,12,21],
 "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a5121f200413652a501912f8d8c8308cd":[2,0,1,12,16],
 "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a5b571c58d0851691b37ef9061d6d4229":[2,0,1,12,20],
-"classerf__auxiliary_1_1CompletedStepFluxLedger.html#a5bbaaa331fe443ec2a6110ab2f2f7348":[2,0,1,12,1],
-"classerf__auxiliary_1_1CompletedStepFluxLedger.html#a600e2276cc3e2bfa392a9ba6f180d540":[2,0,1,12,4],
-"classerf__auxiliary_1_1CompletedStepFluxLedger.html#a671f88237cb3bf53cf66f0a374296a94":[2,0,1,12,15]
+"classerf__auxiliary_1_1CompletedStepFluxLedger.html#a5bbaaa331fe443ec2a6110ab2f2f7348":[2,0,1,12,1]
 };

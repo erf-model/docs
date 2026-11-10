@@ -53,6 +53,7 @@ var namespaceerf__auxiliary =
     [ "CopyNativeMappedDryAirCarrierFluxRate", "namespaceerf__auxiliary.html#a72565fcb8b90b8bb5b86e18a214a1154", null ],
     [ "FixedDtExceedsMappedDonorLimit", "namespaceerf__auxiliary.html#af88d6cddb925fe25cb4fdd914f012777", null ],
     [ "HostIntegratorName", "namespaceerf__auxiliary.html#ae34e7d10af171e40a2ba238505a44551", null ],
+    [ "HostIntegratorStageCount", "namespaceerf__auxiliary.html#a820173a227d7dc2388b90116f378401c", null ],
     [ "MakeAuxiliaryStageRecipe", "namespaceerf__auxiliary.html#a930629866bdc0239b7c2328a9246eb62", null ],
     [ "MappedFaceLayoutMatchesCellLayout", "namespaceerf__auxiliary.html#abc9ab4c6f70613a12dd467ffd9bb2695", null ],
     [ "MappedFaceLayoutMatchesCellLayout", "namespaceerf__auxiliary.html#a4950dfd4785000a45560bba35907f787", null ],

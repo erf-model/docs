@@ -1,5 +1,7 @@
 var NAVTREEINDEX26 =
 {
+"classFitch.html#af01d3f69b4f952f91970964d2f498e61":[2,0,76,7],
+"classFitch.html#af36e4b33de3b34a2dbf8fd5452ca49d5":[2,0,76,5],
 "classFitch.html#af9bc97ca62d0611ab2a300992ca8304d":[2,0,76,1],
 "classFitch.html#afeb1ae13c307eeb71af9dfa8d97a3f7e":[2,0,76,8],
 "classForestDrag.html":[2,0,77],
@@ -247,7 +249,5 @@ var NAVTREEINDEX26 =
 "classKessler.html#aaead0b1bbb0693e5ef480fd15bcbe559":[2,0,85,32],
 "classKessler.html#ab1eaffdd038f2eda89f44f150036a405":[2,0,85,10],
 "classKessler.html#ab65a6b7181e08edaa8de14ea26bb8d62":[2,0,85,21],
-"classKessler.html#ab67e26d4eb01a6e25707b73ca47714ef":[2,0,85,4],
-"classKessler.html#acdb5e3c3c0ec2dd2e50f150851551007":[2,0,85,16],
-"classKessler.html#ad9b9b2f6662807890f9f2b016d6d0d1c":[2,0,85,0]
+"classKessler.html#ab67e26d4eb01a6e25707b73ca47714ef":[2,0,85,4]
 };

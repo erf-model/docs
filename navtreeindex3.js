@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704a70081f42537ac6a9f00a5ab7cf0c1698":[3,0,1,4,6,1,1],
+"ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704a7cb98542596c7e6f323260a3a29df48f":[3,0,1,4,6,1,2],
 "ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edb":[3,0,1,4,6,2],
 "ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edba8a9f1a69736ee2062715f8180197acf0":[3,0,1,4,6,2,1],
 "ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edbaa91c926df52ecd895a6e1ab31dcac4f5":[3,0,1,4,6,2,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__ImmersedBuildingMasks_8H.html#a805958d083b5baf81f4ebffbad173c58":[3,0,1,24,10,4],
 "ERF__ImmersedBuildingMasks_8H.html#a864933ae2ad269f1efd3b8f40590b02a":[3,0,1,24,10,7],
 "ERF__ImmersedBuildingMasks_8H.html#a8876165c8aa04f80a266751ac1dd7933":[3,0,1,24,10,13],
-"ERF__ImmersedBuildingMasks_8H.html#a921ccc994f4ad339021ee40893060f8e":[3,0,1,24,10,12],
-"ERF__ImmersedBuildingMasks_8H.html#a9c690342cc9448a1434b88d89981311c":[3,0,1,24,10,9],
-"ERF__ImmersedBuildingMasks_8H.html#ad05cb559657b21f0fa2a2a7e0416fa04":[3,0,1,24,10,5]
+"ERF__ImmersedBuildingMasks_8H.html#a921ccc994f4ad339021ee40893060f8e":[3,0,1,24,10,12]
 };

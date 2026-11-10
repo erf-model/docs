@@ -240,7 +240,8 @@ var NAVTREEINDEX0 =
 "ERF__AuxiliaryStage_8H.html#a6bb3d48f526c8560395d6fede7c3622aa37c5e33bbeb79e5a25c31162da17ebc4":[3,0,1,1,7,7,2],
 "ERF__AuxiliaryStage_8H.html#a6bb3d48f526c8560395d6fede7c3622aa3956c6b08b3dc65198c71b8950938e50":[3,0,1,1,7,7,0],
 "ERF__AuxiliaryStage_8H.html#a6bb3d48f526c8560395d6fede7c3622aa79e3b4cefbed88dc49a6781ab0320824":[3,0,1,1,7,7,1],
-"ERF__AuxiliaryStage_8H.html#a930629866bdc0239b7c2328a9246eb62":[3,0,1,1,7,13],
+"ERF__AuxiliaryStage_8H.html#a820173a227d7dc2388b90116f378401c":[3,0,1,1,7,13],
+"ERF__AuxiliaryStage_8H.html#a930629866bdc0239b7c2328a9246eb62":[3,0,1,1,7,14],
 "ERF__AuxiliaryStage_8H.html#abf9c1a9d3c44bf16781b83e143602473":[3,0,1,1,7,8],
 "ERF__AuxiliaryStage_8H.html#abf9c1a9d3c44bf16781b83e143602473a324118a6721dd6b8a9b9f4e327df2bf5":[3,0,1,1,7,8,1],
 "ERF__AuxiliaryStage_8H.html#abf9c1a9d3c44bf16781b83e143602473aa34285645af2703a9501db6fc881e5df":[3,0,1,1,7,8,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__AuxiliaryStage_8H.html#ae3907395fc6f12fb9c233accef46ba8f":[3,0,1,1,7,11],
 "ERF__AuxiliaryStage_8H_source.html":[3,0,1,1,7],
 "ERF__AuxiliaryStage_8cpp.html":[3,0,1,1,6],
-"ERF__AuxiliaryStage_8cpp.html#a25368e9217271e6d57bdb152f71e5138":[3,0,1,1,6,1],
-"ERF__AuxiliaryStage_8cpp.html#a25f090ba55ee2afbd3c76c92e4101bfb":[3,0,1,1,6,0]
+"ERF__AuxiliaryStage_8cpp.html#a25368e9217271e6d57bdb152f71e5138":[3,0,1,1,6,1]
 };

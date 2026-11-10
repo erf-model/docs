@@ -35,6 +35,7 @@ var classerf__sbm_1_1SBMTransport =
     [ "m_device_metadata", "classerf__sbm_1_1SBMTransport.html#a19bb5aeb1029641a5653532a967baf17", null ],
     [ "m_flat_constraints", "classerf__sbm_1_1SBMTransport.html#ae42a3c3475d37012206e43dcf08aa079", null ],
     [ "m_groups", "classerf__sbm_1_1SBMTransport.html#a7b15dc4c3a88b52679df99265ed9cd3a", null ],
+    [ "m_host_integrator_reported", "classerf__sbm_1_1SBMTransport.html#ada6b7770af7f2227adcc35accffbcb41", null ],
     [ "m_interval_accepted_rate_linf", "classerf__sbm_1_1SBMTransport.html#aa417c1369dee77365115d4a97224b85c", null ],
     [ "m_interval_carrier_linf", "classerf__sbm_1_1SBMTransport.html#a3324927d41a417593804c7c547643415", null ],
     [ "m_interval_limiter_active_groups", "classerf__sbm_1_1SBMTransport.html#acaa8fb56b80cd91ba0700ff5683fcbe9", null ],

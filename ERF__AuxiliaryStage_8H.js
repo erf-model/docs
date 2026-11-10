@@ -23,5 +23,6 @@ var ERF__AuxiliaryStage_8H =
     [ "AuxiliaryStageTargetIsDisjoint", "ERF__AuxiliaryStage_8H.html#a25368e9217271e6d57bdb152f71e5138", null ],
     [ "BuildAuxiliaryIntensiveState", "ERF__AuxiliaryStage_8H.html#ae3907395fc6f12fb9c233accef46ba8f", null ],
     [ "HostIntegratorName", "ERF__AuxiliaryStage_8H.html#ae34e7d10af171e40a2ba238505a44551", null ],
+    [ "HostIntegratorStageCount", "ERF__AuxiliaryStage_8H.html#a820173a227d7dc2388b90116f378401c", null ],
     [ "MakeAuxiliaryStageRecipe", "ERF__AuxiliaryStage_8H.html#a930629866bdc0239b7c2328a9246eb62", null ]
 ];

@@ -1,5 +1,7 @@
 var NAVTREEINDEX9 =
 {
+"ERF__InitCustomPert__StokesSecondProblem_8H.html#a903fc8373b5b91ee7aee68ad3e2bd3d4":[3,0,1,21,24,0],
+"ERF__InitCustomPert__StokesSecondProblem_8H_source.html":[3,0,1,21,24],
 "ERF__InitCustomPert__SuperCell_8H.html":[3,0,1,21,25],
 "ERF__InitCustomPert__SuperCell_8H.html#a0544c3fe466e421738dae463968b70ba":[3,0,1,21,25,28],
 "ERF__InitCustomPert__SuperCell_8H.html#a05a6cf5425ee9d277307ab329feed8df":[3,0,1,21,25,42],
@@ -247,7 +249,5 @@ var NAVTREEINDEX9 =
 "ERF__Kokkos_8H.html#a1a1468fd1bcfcd7b8b2a701dc290783b":[3,0,1,20,1,3],
 "ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846":[3,0,1,20,1,7],
 "ERF__Kokkos_8H.html#a3a97e4883d2079fb62a43ffbeb613a34":[3,0,1,20,1,0],
-"ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b":[3,0,1,20,1,12],
-"ERF__Kokkos_8H.html#a5540b69a7c94dc3ece92aef8344d216a":[3,0,1,20,1,9],
-"ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658":[3,0,1,20,1,8]
+"ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b":[3,0,1,20,1,12]
 };
