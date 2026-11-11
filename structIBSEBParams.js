@@ -15,6 +15,7 @@ var structIBSEBParams =
     [ "emissivity", "structIBSEBParams.html#af8f349f81d8f118e66d29399f8554601", null ],
     [ "emissivity_ground", "structIBSEBParams.html#a90e938b0d9d84a028505cfa687f3fa80", null ],
     [ "enable", "structIBSEBParams.html#a4d11c028b061ef8128ae420143943701", null ],
+    [ "ground_view_shadow", "structIBSEBParams.html#a9e232fae8358e0c057aa809a8b975f80", null ],
     [ "k_therm", "structIBSEBParams.html#a4c77f5c5bb56b7e2016746135bd84c5d", null ],
     [ "latitude_deg", "structIBSEBParams.html#af0b3722115a912861ea8f973fb532674", null ],
     [ "longitude_deg", "structIBSEBParams.html#a725489912ee4e6c71039eab3a1927057", null ],

@@ -153,6 +153,9 @@ var namespaces_dup =
     ] ],
     [ "erf_noahmp", "namespaceerf__noahmp.html", "namespaceerf__noahmp" ],
     [ "erf_plotfile", "namespaceerf__plotfile.html", "namespaceerf__plotfile" ],
+    [ "erf_preflight", "namespaceerf__preflight.html", [
+      [ "run", "namespaceerf__preflight.html#ab940d11a42ab960fa3b20446fab2efcf", null ]
+    ] ],
     [ "erf_prob_heights", "namespaceerf__prob__heights.html", [
       [ "z_ground_cc", "namespaceerf__prob__heights.html#a3861354d853eb13c9d606b5a6b6299cc", null ],
       [ "z_ground_xface", "namespaceerf__prob__heights.html#a1e43fc4b273e5a7e3d6da3224200b45a", null ],

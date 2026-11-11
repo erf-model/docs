@@ -105,7 +105,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aaf1932402d007895b1d2a45d34473800"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__interval__means.html#aaf1932402d007895b1d2a45d34473800">parse_metadata</a> (std::istream &amp;input, <a class="el" href="structerf__interval__means_1_1Metadata.html">Metadata</a> &amp;result, std::string &amp;error)</td></tr>
+<tr class="memitem:aaf1932402d007895b1d2a45d34473800"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__interval__means.html#aaf1932402d007895b1d2a45d34473800">parse_metadata</a> (std::istream &amp;<a class="el" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>, <a class="el" href="structerf__interval__means_1_1Metadata.html">Metadata</a> &amp;result, std::string &amp;error)</td></tr>
 <tr class="separator:aaf1932402d007895b1d2a45d34473800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5328b25e0f175c2b7395c6db05d881a9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__interval__means.html#a5328b25e0f175c2b7395c6db05d881a9">validate_metadata</a> (const <a class="el" href="structerf__interval__means_1_1Metadata.html">Metadata</a> &amp;metadata, int expected_levels, int expected_components, const amrex::Vector&lt; amrex::BoxArray &gt; &amp;expected_boxes)</td></tr>
 <tr class="separator:a5328b25e0f175c2b7395c6db05d881a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -355,11 +355,11 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::string title;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (!std::getline(input, title) || title != <span class="stringliteral">&quot;ERF interval means checkpoint v1&quot;</span>) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (!std::getline(<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>, title) || title != <span class="stringliteral">&quot;ERF interval means checkpoint v1&quot;</span>) {</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        error = <span class="stringliteral">&quot;expected ERF interval means checkpoint v1 title&quot;</span>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (!(input &gt;&gt; result.levels &gt;&gt; result.components) || result.levels &lt; 0 ||</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (!(<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a> &gt;&gt; result.levels &gt;&gt; result.components) || result.levels &lt; 0 ||</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        result.components &lt; 0) {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        error = <span class="stringliteral">&quot;missing or invalid interval-mean level/component counts&quot;</span>;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -369,7 +369,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    result.level.resize(result.levels);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; result.levels; ++lev) {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">auto</span>&amp; record = result.level[lev];</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> (!(input &gt;&gt; record.level &gt;&gt; record.accumulation_count &gt;&gt; record.reset_done) ||</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> (!(<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a> &gt;&gt; record.level &gt;&gt; record.accumulation_count &gt;&gt; record.reset_done) ||</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            record.level != lev || !std::isfinite(record.accumulation_count) ||</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            record.accumulation_count &lt; 0.0 ||</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            (record.reset_done != 0 &amp;&amp; record.reset_done != 1)) {</div>
@@ -377,20 +377,20 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__interval__means_1_1detail.html#a59397451b46719fe62ac10668d4b5f19">detail::read_box_array</a>(input, record.boxes)) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__interval__means_1_1detail.html#a59397451b46719fe62ac10668d4b5f19">detail::read_box_array</a>(<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>, record.boxes)) {</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            error = <span class="stringliteral">&quot;truncated interval-mean BoxArray record for level &quot;</span> +</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    std::to_string(lev);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        std::string box_remainder;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span> (!std::getline(input, box_remainder)) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span> (!std::getline(<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>, box_remainder)) {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            error = <span class="stringliteral">&quot;truncated interval-mean BoxArray line for level &quot;</span> +</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    std::to_string(lev);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">long</span> map_size = -1;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">if</span> (!(input &gt;&gt; map_size) || map_size &lt; 0 ||</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">if</span> (!(<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a> &gt;&gt; map_size) || map_size &lt; 0 ||</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            map_size != <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span>(record.boxes.size())) {</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            error = <span class="stringliteral">&quot;invalid interval-mean processor-map size for level &quot;</span> +</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    std::to_string(lev);</div>
@@ -401,7 +401,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        record.processor_map.resize(<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(map_size));</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">long</span> <span class="keywordtype">long</span> ibox = 0; ibox &lt; map_size; ++ibox) {</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordtype">int</span>&amp; rank = record.processor_map[<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(ibox)];</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">if</span> (!(input &gt;&gt; rank)) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">if</span> (!(<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a> &gt;&gt; rank)) {</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                error = <span class="stringliteral">&quot;truncated interval-mean processor map for level &quot;</span> +</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                        std::to_string(lev);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -415,6 +415,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<div class="ttc" id="aERF__InputPreflight_8cpp_html_a84703f07f323f416cd4b531c1bbd59af"><div class="ttname"><a href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a></div><div class="ttdeci">std::string input</div><div class="ttdef"><b>Definition:</b> ERF_InputPreflight.cpp:29</div></div>
 <div class="ttc" id="anamespaceerf__interval__means_1_1detail_html_a59397451b46719fe62ac10668d4b5f19"><div class="ttname"><a href="namespaceerf__interval__means_1_1detail.html#a59397451b46719fe62ac10668d4b5f19">erf_interval_means::detail::read_box_array</a></div><div class="ttdeci">bool read_box_array(std::istream &amp;input, amrex::BoxArray &amp;result)</div><div class="ttdef"><b>Definition:</b> ERF_IntervalMeansCheckpoint.H:35</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#af285247b24b173cd851fe49799d17f42">ERF::ReadCheckpointFile()</a>.</p>

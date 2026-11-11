@@ -263,7 +263,7 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a41bad3d43e0108b30fe429902d42ffc5"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structerf__sbm_1_1AdvectionFacePolicy.html">AdvectionFacePolicy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a41bad3d43e0108b30fe429902d42ffc5">make_advection_face_policy</a> (const <a class="el" href="structerf__sbm_1_1AdvectionFacePolicyInput.html">AdvectionFacePolicyInput</a> &amp;input) noexcept</td></tr>
+<tr class="memitem:a41bad3d43e0108b30fe429902d42ffc5"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structerf__sbm_1_1AdvectionFacePolicy.html">AdvectionFacePolicy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a41bad3d43e0108b30fe429902d42ffc5">make_advection_face_policy</a> (const <a class="el" href="structerf__sbm_1_1AdvectionFacePolicyInput.html">AdvectionFacePolicyInput</a> &amp;<a class="el" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>) noexcept</td></tr>
 <tr class="separator:a41bad3d43e0108b30fe429902d42ffc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62c8c5609787cc651bf075d7ccb4d69a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a62c8c5609787cc651bf075d7ccb4d69a">semantic_time_matches</a> (const double lhs, const double rhs, const double dt_min) noexcept</td></tr>
 <tr class="separator:a62c8c5609787cc651bf075d7ccb4d69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1470,8 +1470,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Validate every valid-cell value against the layout's runtime constraints. </p>
 <div class="fragment"><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;{</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keyword">auto</span> reject = [diagnostic](std::string message) {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keywordflow">if</span> (diagnostic) *diagnostic = std::move(message);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keyword">auto</span> reject = [diagnostic](std::string <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>) {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keywordflow">if</span> (diagnostic) *diagnostic = std::move(<a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>);</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    };</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">if</span> (diagnostic) diagnostic-&gt;clear();</div>
@@ -1510,14 +1510,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> component = 0; component &lt; layout.ncomp(); ++component) {</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> value = values(cell, component);</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                <span class="keywordflow">if</span> (!std::isfinite(value)) {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                    std::ostringstream message;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                    message &lt;&lt; <span class="stringliteral">&quot;SBM authoritative restart state is inadmissible&quot;</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                    std::ostringstream <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                    <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="stringliteral">&quot;SBM authoritative restart state is inadmissible&quot;</span></div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                            &lt;&lt; <span class="stringliteral">&quot;: level=&quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot;, cell=(&quot;</span>;</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> direction = 0; direction &lt; AMREX_SPACEDIM; ++direction) {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                        <span class="keywordflow">if</span> (direction != 0) message &lt;&lt; <span class="charliteral">&#39;,&#39;</span>;</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                        message &lt;&lt; cell[direction];</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                        <span class="keywordflow">if</span> (direction != 0) <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="charliteral">&#39;,&#39;</span>;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; cell[direction];</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                    }</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                    message &lt;&lt; <span class="stringliteral">&quot;), component=&quot;</span> &lt;&lt; component</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                    <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="stringliteral">&quot;), component=&quot;</span> &lt;&lt; component</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                            &lt;&lt; <span class="stringliteral">&quot;, constraint=finite, value=&quot;</span></div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                            &lt;&lt; std::setprecision(precision) &lt;&lt; value;</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span> group = std::find_if(groups.begin(), groups.end(),</div>
@@ -1525,11 +1525,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                            return candidate.contains(component);</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                        });</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    <span class="keywordflow">if</span> (group != groups.end()) {</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                        message &lt;&lt; <span class="stringliteral">&quot;, population=&quot;</span> &lt;&lt; group-&gt;population_id</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="stringliteral">&quot;, population=&quot;</span> &lt;&lt; group-&gt;population_id</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; group-&gt;semantic_id &lt;&lt; <span class="stringliteral">&quot;)&quot;</span></div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                                &lt;&lt; <span class="stringliteral">&quot;, bin=&quot;</span> &lt;&lt; group-&gt;bin;</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                    }</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    <span class="keywordflow">return</span> reject(message.str());</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    <span class="keywordflow">return</span> reject(<a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>.str());</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                }</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                state[<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(component)] = value;</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            }</div>
@@ -1541,17 +1541,17 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> bin = 0; bin &lt; view.nbins; ++bin) {</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="namespaceerf__sbm_1_1remap__detail.html#a22189aa9d7b2f80c15d6d5f9088c2aed">remap_detail::canonical_two_moment_bin_state</a>(</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                            view, bin, state.data(), <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(state.size()))) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                    std::ostringstream message;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                    message &lt;&lt; <span class="stringliteral">&quot;SBM authoritative restart state is inadmissible&quot;</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                    std::ostringstream <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                    <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="stringliteral">&quot;SBM authoritative restart state is inadmissible&quot;</span></div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                            &lt;&lt; <span class="stringliteral">&quot;: level=&quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot;, cell=(&quot;</span>;</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> direction = 0; direction &lt; AMREX_SPACEDIM; ++direction) {</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                        <span class="keywordflow">if</span> (direction != 0) message &lt;&lt; <span class="charliteral">&#39;,&#39;</span>;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                        message &lt;&lt; cell[direction];</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                        <span class="keywordflow">if</span> (direction != 0) <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="charliteral">&#39;,&#39;</span>;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; cell[direction];</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                    }</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                    message &lt;&lt; <span class="stringliteral">&quot;), population=&quot;</span> &lt;&lt; view.population_id</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                    <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="stringliteral">&quot;), population=&quot;</span> &lt;&lt; view.population_id</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                            &lt;&lt; <span class="stringliteral">&quot;, bin=&quot;</span> &lt;&lt; bin</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                            &lt;&lt; <span class="stringliteral">&quot;, constraint=canonical-two-moment-bin-state&quot;</span>;</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                    <span class="keywordflow">return</span> reject(message.str());</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                    <span class="keywordflow">return</span> reject(<a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>.str());</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                }</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            }</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
@@ -1560,28 +1560,28 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                std::string failed_constraint;</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                <span class="keywordflow">if</span> (group.admissible(state, &amp;margin, &amp;failed_constraint)) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                std::ostringstream message;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                message &lt;&lt; <span class="stringliteral">&quot;SBM authoritative restart state is inadmissible&quot;</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                std::ostringstream <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="stringliteral">&quot;SBM authoritative restart state is inadmissible&quot;</span></div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;: level=&quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot;, cell=(&quot;</span>;</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> direction = 0; direction &lt; AMREX_SPACEDIM; ++direction) {</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                    <span class="keywordflow">if</span> (direction != 0) message &lt;&lt; <span class="charliteral">&#39;,&#39;</span>;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                    message &lt;&lt; cell[direction];</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                    <span class="keywordflow">if</span> (direction != 0) <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="charliteral">&#39;,&#39;</span>;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                    <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; cell[direction];</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                }</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                message &lt;&lt; <span class="stringliteral">&quot;), population=&quot;</span> &lt;&lt; group.population_id</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="stringliteral">&quot;), population=&quot;</span> &lt;&lt; group.population_id</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; group.semantic_id &lt;&lt; <span class="stringliteral">&quot;)&quot;</span></div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;, bin=&quot;</span> &lt;&lt; group.bin</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;, constraint=&quot;</span> &lt;&lt; failed_constraint</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;, margin=&quot;</span> &lt;&lt; std::setprecision(precision) &lt;&lt; margin</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;, components={&quot;</span>;</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                <span class="keywordflow">for</span> (std::size_t member = 0; member &lt; group.members.size(); ++member) {</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                    <span class="keywordflow">if</span> (member != 0) message &lt;&lt; <span class="charliteral">&#39;,&#39;</span>;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                    <span class="keywordflow">if</span> (member != 0) <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="charliteral">&#39;,&#39;</span>;</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> component = group.members[member];</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                    message &lt;&lt; component &lt;&lt; <span class="charliteral">&#39;:&#39;</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                    <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; component &lt;&lt; <span class="charliteral">&#39;:&#39;</span></div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                            &lt;&lt; std::setprecision(precision)</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                            &lt;&lt; state[<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(component)];</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                }</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                message &lt;&lt; <span class="charliteral">&#39;}&#39;</span>;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                <span class="keywordflow">return</span> reject(message.str());</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="charliteral">&#39;}&#39;</span>;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                <span class="keywordflow">return</span> reject(<a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>.str());</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            }</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            <span class="keywordflow">for</span> (std::size_t population_index = 0;</div>
@@ -1591,23 +1591,24 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> bin = 0; bin &lt; view.nbins; ++bin) {</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="namespaceerf__sbm_1_1remap__detail.html#aac78cd61cfa78470bb02e16db3d1252e">remap_detail::canonical_persisted_bin_state</a>(</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                            view, bin, state.data(), <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(state.size()))) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                    std::ostringstream message;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                    message &lt;&lt; <span class="stringliteral">&quot;SBM authoritative restart state is inadmissible&quot;</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                    std::ostringstream <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                    <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="stringliteral">&quot;SBM authoritative restart state is inadmissible&quot;</span></div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                            &lt;&lt; <span class="stringliteral">&quot;: level=&quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot;, cell=(&quot;</span>;</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> direction = 0; direction &lt; AMREX_SPACEDIM; ++direction) {</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                        <span class="keywordflow">if</span> (direction != 0) message &lt;&lt; <span class="charliteral">&#39;,&#39;</span>;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                        message &lt;&lt; cell[direction];</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                        <span class="keywordflow">if</span> (direction != 0) <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="charliteral">&#39;,&#39;</span>;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; cell[direction];</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                    }</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                    message &lt;&lt; <span class="stringliteral">&quot;), population=&quot;</span> &lt;&lt; view.population_id</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                    <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="stringliteral">&quot;), population=&quot;</span> &lt;&lt; view.population_id</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                            &lt;&lt; <span class="stringliteral">&quot;, bin=&quot;</span> &lt;&lt; bin</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                            &lt;&lt; <span class="stringliteral">&quot;, constraint=canonical-one-moment-bin-state&quot;</span>;</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                    <span class="keywordflow">return</span> reject(message.str());</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                    <span class="keywordflow">return</span> reject(<a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>.str());</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                }</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            }</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        }</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    }</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;}</div>
+<div class="ttc" id="aERF__InputPreflight_8cpp_html_a36bd74109f547f7f8198faf5a12d2879"><div class="ttname"><a href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a></div><div class="ttdeci">std::string message</div><div class="ttdef"><b>Definition:</b> ERF_InputPreflight.cpp:25</div></div>
 <div class="ttc" id="anamespaceerf__sbm_1_1remap__detail_html_a22189aa9d7b2f80c15d6d5f9088c2aed"><div class="ttname"><a href="namespaceerf__sbm_1_1remap__detail.html#a22189aa9d7b2f80c15d6d5f9088c2aed">erf_sbm::remap_detail::canonical_two_moment_bin_state</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool canonical_two_moment_bin_state(const PopulationRemapView &amp;population, const int bin, const amrex::Real *state, const int state_count) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SBMRemapping.H:407</div></div>
 <div class="ttc" id="anamespaceerf__sbm_1_1remap__detail_html_aac78cd61cfa78470bb02e16db3d1252e"><div class="ttname"><a href="namespaceerf__sbm_1_1remap__detail.html#aac78cd61cfa78470bb02e16db3d1252e">erf_sbm::remap_detail::canonical_persisted_bin_state</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool canonical_persisted_bin_state(const PopulationRemapView &amp;population, const int bin, const amrex::Real *state, const int state_count) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SBMRemapping.H:475</div></div>
 <div class="ttc" id="anamespaceerf__sbm_html_a33847b341c9c23519f0027bfd51d465d"><div class="ttname"><a href="namespaceerf__sbm.html#a33847b341c9c23519f0027bfd51d465d">erf_sbm::make_constraint_groups</a></div><div class="ttdeci">std::vector&lt; ConstraintGroup &gt; make_constraint_groups(const SBMLayout &amp;layout)</div><div class="ttdef"><b>Definition:</b> ERF_SBMConstraintGroups.cpp:77</div></div>
@@ -2416,39 +2417,40 @@ Here is the caller graph for this function:</div>
 <p>Decide the face-level spectral advection semantics without performing <a class="el" href="classERF.html">ERF</a>'s deferred physical-boundary ghost-fill lifecycle. At a physical face whose high-order stencil is not qualified, the admissible donor proposal remains available and high-order transport falls back to it. </p>
 <div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">using</span> Action = <a class="code" href="namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0c">AdvectionFaceAction</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (input.kind == AdvectionFaceKind::Periodic) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>.kind == AdvectionFaceKind::Periodic) {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> {Action::PeriodicSharedFace, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">true</span>};</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (input.kind == AdvectionFaceKind::ImpermeableWall ||</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        input.outward_carrier == <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>.kind == AdvectionFaceKind::ImpermeableWall ||</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>.outward_carrier == <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> {Action::ZeroNormalFlux, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>};</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (input.outward_carrier &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>.outward_carrier &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="comment">// Outward flow uses the interior spectrum. The donor path is always</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment">// defined; high order is used only with a qualified physical stencil.</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> {Action::InteriorDonor, <span class="keyword">true</span>, <span class="keyword">false</span>,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                input.high_order_stencil_available};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>.high_order_stencil_available};</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Reverse flow contradicts a face declared as advective outflow. External</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// spectral data must not silently change that declared boundary policy.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (input.kind == AdvectionFaceKind::AdvectiveOutflow) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>.kind == AdvectionFaceKind::AdvectiveOutflow) {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> {Action::RejectInwardOutflow, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>};</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// The remaining negative-carrier boundary category is prescribed inflow.</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// A complete explicit atomic-group spectrum is required; qc/qr cannot</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// supply missing bin or attached-property composition.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (!input.explicit_spectral_state_present) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>.explicit_spectral_state_present) {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> {Action::RejectMissingInflowState, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>};</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (!input.explicit_spectral_group_complete) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>.explicit_spectral_group_complete) {</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> {Action::RejectIncompleteInflowState, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>};</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> {Action::ExplicitSpectralInflow, <span class="keyword">false</span>, <span class="keyword">true</span>,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            input.high_order_stencil_available};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>.high_order_stencil_available};</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="ttc" id="aERF__InputPreflight_8cpp_html_a84703f07f323f416cd4b531c1bbd59af"><div class="ttname"><a href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a></div><div class="ttdeci">std::string input</div><div class="ttdef"><b>Definition:</b> ERF_InputPreflight.cpp:29</div></div>
 <div class="ttc" id="anamespaceerf__sbm_html_a10c9dba6bad5934a5a30e82837833f0c"><div class="ttname"><a href="namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0c">erf_sbm::AdvectionFaceAction</a></div><div class="ttdeci">AdvectionFaceAction</div><div class="ttdef"><b>Definition:</b> ERF_SBMAdvectionBoundary.H:17</div></div>
 </div><!-- fragment -->
 </div>

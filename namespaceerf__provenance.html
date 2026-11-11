@@ -858,9 +858,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keyword">enum class</span> BlockState { BeforeBlock, InsideBlock, AfterBlock };</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    BlockState state = BlockState::BeforeBlock;</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    std::vector&lt;std::string&gt; block_lines;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    std::istringstream input{std::string(text)};</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    std::istringstream <a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>{std::string(text)};</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    std::string line;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">while</span> (std::getline(input, line)) {</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">while</span> (std::getline(<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>, line)) {</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        line = strip_cr(std::move(line));</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> is_begin = line == <a class="code" href="namespaceerf__provenance.html#aee8584ad2cdc9f74f6d7ca22ef8af7fd">provenance_begin</a>;</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> is_end = line == <a class="code" href="namespaceerf__provenance.html#a7d8452d20b8aa356748c2e3bf66c4b1a">provenance_end</a>;</div>
@@ -960,6 +960,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    result.status = ProvenanceReadStatus::Valid;</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;}</div>
+<div class="ttc" id="aERF__InputPreflight_8cpp_html_a84703f07f323f416cd4b531c1bbd59af"><div class="ttname"><a href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a></div><div class="ttdeci">std::string input</div><div class="ttdef"><b>Definition:</b> ERF_InputPreflight.cpp:29</div></div>
 <div class="ttc" id="anamespaceerf__provenance_html_a2aec184e869e9060be8f29491439a2d4"><div class="ttname"><a href="namespaceerf__provenance.html#a2aec184e869e9060be8f29491439a2d4">erf_provenance::schema_version</a></div><div class="ttdeci">constexpr int schema_version</div><div class="ttdef"><b>Definition:</b> ERF_Provenance.H:17</div></div>
 <div class="ttc" id="anamespaceerf__provenance_html_a7d8452d20b8aa356748c2e3bf66c4b1a"><div class="ttname"><a href="namespaceerf__provenance.html#a7d8452d20b8aa356748c2e3bf66c4b1a">erf_provenance::provenance_end</a></div><div class="ttdeci">constexpr const char * provenance_end</div><div class="ttdef"><b>Definition:</b> ERF_Provenance.H:19</div></div>
 <div class="ttc" id="anamespaceerf__provenance_html_aee8584ad2cdc9f74f6d7ca22ef8af7fd"><div class="ttname"><a href="namespaceerf__provenance.html#aee8584ad2cdc9f74f6d7ca22ef8af7fd">erf_provenance::provenance_begin</a></div><div class="ttdeci">constexpr const char * provenance_begin</div><div class="ttdef"><b>Definition:</b> ERF_Provenance.H:18</div></div>
@@ -998,12 +999,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <span class="keywordtype">int</span> read_status = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ProvenanceReadStatus::Valid);</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    std::string contents;</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        std::ifstream input(path, std::ios::in | std::ios::binary);</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        <span class="keywordflow">if</span> (!input.good()) {</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        std::ifstream <a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>(path, std::ios::in | std::ios::binary);</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>.good()) {</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            read_status = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ProvenanceReadStatus::MissingJobInfo);</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;            contents.assign(std::istreambuf_iterator&lt;char&gt;(input), std::istreambuf_iterator&lt;char&gt;());</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            <span class="keywordflow">if</span> (!input.good() &amp;&amp; !input.eof()) {</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;            contents.assign(std::istreambuf_iterator&lt;char&gt;(<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>), std::istreambuf_iterator&lt;char&gt;());</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>.good() &amp;&amp; !<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>.eof()) {</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                read_status = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ProvenanceReadStatus::MalformedProvenance);</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;            }</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        }</div>

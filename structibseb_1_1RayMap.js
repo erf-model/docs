@@ -1,5 +1,7 @@
 var structibseb_1_1RayMap =
 [
+    [ "centre_x", "structibseb_1_1RayMap.html#a721ff8d47f63b6a9af3805ccf91614b5", null ],
+    [ "centre_y", "structibseb_1_1RayMap.html#a5f68790a5960b564a33e4e22fbd0397b", null ],
     [ "column_top", "structibseb_1_1RayMap.html#a57047fb185e6a68911010add2b5340a4", null ],
     [ "locate", "structibseb_1_1RayMap.html#a9c1d8aaf000af54f3d23b8d27c641126", null ],
     [ "dx", "structibseb_1_1RayMap.html#a72d6536f37cb7ec4037a32e9089f87b1", null ],
@@ -10,6 +12,8 @@ var structibseb_1_1RayMap =
     [ "max_steps", "structibseb_1_1RayMap.html#a9c19497a5e92e64cee5b6bf3a9d9db13", null ],
     [ "nx", "structibseb_1_1RayMap.html#ae6ad433361d8d9660dd98ec8793695fb", null ],
     [ "ny", "structibseb_1_1RayMap.html#a6b704a421c6aeecef4cbeb7444577a47", null ],
+    [ "reach_x", "structibseb_1_1RayMap.html#a32007121fceba2bbb6de24f05b362066", null ],
+    [ "reach_y", "structibseb_1_1RayMap.html#ad09638331f2132150b0dac559c060f4d", null ],
     [ "top", "structibseb_1_1RayMap.html#a1d30cb1bd2e553cf03aa9d9ead2f7fa0", null ],
     [ "wrap_x", "structibseb_1_1RayMap.html#a6599969e993f06e150bcbd87097a399e", null ],
     [ "wrap_y", "structibseb_1_1RayMap.html#a8c6eaea30dc4f96dc0cbb04132465576", null ],

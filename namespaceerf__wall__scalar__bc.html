@@ -257,17 +257,18 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">return</span> {};</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    std::string message = face + <span class="stringliteral">&quot;: density and density_grad must be omitted &quot;</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    std::string <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> = face + <span class="stringliteral">&quot;: density and density_grad must be omitted &quot;</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="stringliteral">&quot;on solid walls in anelastic mode (density is fixed by the base state)&quot;</span>;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">if</span> (density_specified &amp;&amp; density_gradient_specified) {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        message += <span class="stringliteral">&quot;; both keywords were supplied&quot;</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> += <span class="stringliteral">&quot;; both keywords were supplied&quot;</span>;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (density_specified) {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        message += <span class="stringliteral">&quot;; &quot;</span> + face + <span class="stringliteral">&quot;.density was supplied&quot;</span>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> += <span class="stringliteral">&quot;; &quot;</span> + face + <span class="stringliteral">&quot;.density was supplied&quot;</span>;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        message += <span class="stringliteral">&quot;; &quot;</span> + face + <span class="stringliteral">&quot;.density_grad was supplied&quot;</span>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> += <span class="stringliteral">&quot;; &quot;</span> + face + <span class="stringliteral">&quot;.density_grad was supplied&quot;</span>;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> message;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
+<div class="ttc" id="aERF__InputPreflight_8cpp_html_a36bd74109f547f7f8198faf5a12d2879"><div class="ttname"><a href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a></div><div class="ttdeci">std::string message</div><div class="ttdef"><b>Definition:</b> ERF_InputPreflight.cpp:25</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__wall__scalar__bc.html#ae000c68e899b110f83e30e35001db37e">parse_wall_face_scalars()</a>.</p>
 <div class="dynheader">

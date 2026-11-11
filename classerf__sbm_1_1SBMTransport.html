@@ -908,13 +908,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;                                     : state_manager.new_time(level);</div>
 <div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> expected_spectrum_time = stage == 0 ? step_old_time : input_time;</div>
 <div class="line"><a name="l01523"></a><span class="lineno"> 1523</span>&#160;    <span class="keywordflow">if</span> (spectrum_time != expected_spectrum_time || input_time != spectrum_time) {</div>
-<div class="line"><a name="l01524"></a><span class="lineno"> 1524</span>&#160;        std::ostringstream message;</div>
-<div class="line"><a name="l01525"></a><span class="lineno"> 1525</span>&#160;        message.precision(17);</div>
-<div class="line"><a name="l01526"></a><span class="lineno"> 1526</span>&#160;        message &lt;&lt; <span class="stringliteral">&quot;SBM M3 spectral input time mismatch at level &quot;</span> &lt;&lt; level</div>
+<div class="line"><a name="l01524"></a><span class="lineno"> 1524</span>&#160;        std::ostringstream <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>;</div>
+<div class="line"><a name="l01525"></a><span class="lineno"> 1525</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>.precision(17);</div>
+<div class="line"><a name="l01526"></a><span class="lineno"> 1526</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="stringliteral">&quot;SBM M3 spectral input time mismatch at level &quot;</span> &lt;&lt; level</div>
 <div class="line"><a name="l01527"></a><span class="lineno"> 1527</span>&#160;                &lt;&lt; <span class="stringliteral">&quot; stage &quot;</span> &lt;&lt; stage &lt;&lt; <span class="stringliteral">&quot;: expected &quot;</span> &lt;&lt; expected_spectrum_time</div>
 <div class="line"><a name="l01528"></a><span class="lineno"> 1528</span>&#160;                &lt;&lt; <span class="stringliteral">&quot; and requested input time &quot;</span> &lt;&lt; input_time</div>
 <div class="line"><a name="l01529"></a><span class="lineno"> 1529</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;, got &quot;</span> &lt;&lt; spectrum_time;</div>
-<div class="line"><a name="l01530"></a><span class="lineno"> 1530</span>&#160;        amrex::Abort(message.str());</div>
+<div class="line"><a name="l01530"></a><span class="lineno"> 1530</span>&#160;        amrex::Abort(<a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>.str());</div>
 <div class="line"><a name="l01531"></a><span class="lineno"> 1531</span>&#160;    }</div>
 <div class="line"><a name="l01532"></a><span class="lineno"> 1532</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(spectrum.nComp() == <a class="code" href="classerf__sbm_1_1SBMTransport.html#ae5a33a3610b1aa5c853b01c0072c1bf1">m_layout</a>.<a class="code" href="classerf__sbm_1_1SBMLayout.html#adb1a22842f1ea1ff789401031d9ef91a">ncomp</a>());</div>
 <div class="line"><a name="l01533"></a><span class="lineno"> 1533</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">erf_auxiliary::SameCellLayout</a>(spectrum, data.target));</div>
@@ -964,14 +964,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01577"></a><span class="lineno"> 1577</span>&#160;            : conserved_input;</div>
 <div class="line"><a name="l01578"></a><span class="lineno"> 1578</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__auxiliary.html#a9a8f6f6e469c0049efbc4eec062ad367">erf_auxiliary::ValidatePositiveFiniteComponent</a>(conserved_target,</div>
 <div class="line"><a name="l01579"></a><span class="lineno"> 1579</span>&#160;                                                        <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>, diagnostic)) {</div>
-<div class="line"><a name="l01580"></a><span class="lineno"> 1580</span>&#160;        std::ostringstream message;</div>
-<div class="line"><a name="l01581"></a><span class="lineno"> 1581</span>&#160;        message.precision(17);</div>
-<div class="line"><a name="l01582"></a><span class="lineno"> 1582</span>&#160;        message &lt;&lt; <span class="stringliteral">&quot;SBM M3 target density at level &quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot; stage &quot;</span></div>
+<div class="line"><a name="l01580"></a><span class="lineno"> 1580</span>&#160;        std::ostringstream <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>;</div>
+<div class="line"><a name="l01581"></a><span class="lineno"> 1581</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>.precision(17);</div>
+<div class="line"><a name="l01582"></a><span class="lineno"> 1582</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="stringliteral">&quot;SBM M3 target density at level &quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot; stage &quot;</span></div>
 <div class="line"><a name="l01583"></a><span class="lineno"> 1583</span>&#160;                &lt;&lt; stage &lt;&lt; <span class="stringliteral">&quot; (input=&quot;</span> &lt;&lt; input_time &lt;&lt; <span class="stringliteral">&quot;, target=&quot;</span></div>
 <div class="line"><a name="l01584"></a><span class="lineno"> 1584</span>&#160;                &lt;&lt; target_time &lt;&lt; <span class="stringliteral">&quot;) is invalid: &quot;</span> &lt;&lt; diagnostic</div>
 <div class="line"><a name="l01585"></a><span class="lineno"> 1585</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;; valid-cell min=&quot;</span> &lt;&lt; conserved_target.min(<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
 <div class="line"><a name="l01586"></a><span class="lineno"> 1586</span>&#160;                &lt;&lt; <span class="stringliteral">&quot; max=&quot;</span> &lt;&lt; conserved_target.max(<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01587"></a><span class="lineno"> 1587</span>&#160;        amrex::Abort(message.str());</div>
+<div class="line"><a name="l01587"></a><span class="lineno"> 1587</span>&#160;        amrex::Abort(<a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>.str());</div>
 <div class="line"><a name="l01588"></a><span class="lineno"> 1588</span>&#160;    }</div>
 <div class="line"><a name="l01589"></a><span class="lineno"> 1589</span>&#160; </div>
 <div class="line"><a name="l01590"></a><span class="lineno"> 1590</span>&#160;<span class="preprocessor">#ifdef ERF_SBM_AMR_QUALIFICATION</span></div>
@@ -1057,7 +1057,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01670"></a><span class="lineno"> 1670</span>&#160;                           transform_ghosts ? <span class="keyword">false</span> : amrex::TilingIfNotGPU());</div>
 <div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160;         mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l01672"></a><span class="lineno"> 1672</span>&#160;        <span class="keyword">const</span> amrex::Box bx = transform_ghosts ? mfi.fabbox() : mfi.tilebox();</div>
-<div class="line"><a name="l01673"></a><span class="lineno"> 1673</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> input = data.input_intensive.array(mfi);</div>
+<div class="line"><a name="l01673"></a><span class="lineno"> 1673</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a> = data.input_intensive.array(mfi);</div>
 <div class="line"><a name="l01674"></a><span class="lineno"> 1674</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> invalid = transform_invalid.array(mfi);</div>
 <div class="line"><a name="l01675"></a><span class="lineno"> 1675</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> endpoint_populations = populations;</div>
 <div class="line"><a name="l01676"></a><span class="lineno"> 1676</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(</div>
@@ -1073,8 +1073,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01686"></a><span class="lineno"> 1686</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">int</span> number_comp = pop.number_offset + bin;</div>
 <div class="line"><a name="l01687"></a><span class="lineno"> 1687</span>&#160;                        <a class="code" href="structerf__sbm_1_1EndpointTransform.html">erf_sbm::EndpointTransform</a> endpoint;</div>
 <div class="line"><a name="l01688"></a><span class="lineno"> 1688</span>&#160;                        <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__sbm.html#a516690bec7b0e344fa6427a5beb0d62c">erf_sbm::try_two_moment_to_endpoints</a>(</div>
-<div class="line"><a name="l01689"></a><span class="lineno"> 1689</span>&#160;                                input(i, j, k, number_comp),</div>
-<div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;                                input(i, j, k, mass_comp), pop.edges[bin],</div>
+<div class="line"><a name="l01689"></a><span class="lineno"> 1689</span>&#160;                                <a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>(i, j, k, number_comp),</div>
+<div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;                                <a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>(i, j, k, mass_comp), pop.edges[bin],</div>
 <div class="line"><a name="l01691"></a><span class="lineno"> 1691</span>&#160;                                pop.edges[bin + 1], endpoint)) {</div>
 <div class="line"><a name="l01692"></a><span class="lineno"> 1692</span>&#160;                            cell_invalid = 1;</div>
 <div class="line"><a name="l01693"></a><span class="lineno"> 1693</span>&#160;                        } <span class="keywordflow">else</span> {</div>
@@ -1131,11 +1131,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01744"></a><span class="lineno"> 1744</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(64.0) * <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;Real&gt;::epsilon</a>();</div>
 <div class="line"><a name="l01745"></a><span class="lineno"> 1745</span>&#160;    <span class="keywordflow">if</span> (!std::isfinite(max_outgoing) ||</div>
 <div class="line"><a name="l01746"></a><span class="lineno"> 1746</span>&#160;        max_outgoing &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0) + cfl_tolerance) {</div>
-<div class="line"><a name="l01747"></a><span class="lineno"> 1747</span>&#160;        std::ostringstream message;</div>
-<div class="line"><a name="l01748"></a><span class="lineno"> 1748</span>&#160;        message &lt;&lt; <span class="stringliteral">&quot;SBM M3 donor outgoing-demand condition failed: max=&quot;</span></div>
+<div class="line"><a name="l01747"></a><span class="lineno"> 1747</span>&#160;        std::ostringstream <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>;</div>
+<div class="line"><a name="l01748"></a><span class="lineno"> 1748</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="stringliteral">&quot;SBM M3 donor outgoing-demand condition failed: max=&quot;</span></div>
 <div class="line"><a name="l01749"></a><span class="lineno"> 1749</span>&#160;                &lt;&lt; max_outgoing &lt;&lt; <span class="stringliteral">&quot; tau=&quot;</span> &lt;&lt; tau</div>
 <div class="line"><a name="l01750"></a><span class="lineno"> 1750</span>&#160;                &lt;&lt; <span class="stringliteral">&quot; (no SBM subcycling is performed)&quot;</span>;</div>
-<div class="line"><a name="l01751"></a><span class="lineno"> 1751</span>&#160;        amrex::Abort(message.str());</div>
+<div class="line"><a name="l01751"></a><span class="lineno"> 1751</span>&#160;        amrex::Abort(<a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>.str());</div>
 <div class="line"><a name="l01752"></a><span class="lineno"> 1752</span>&#160;    }</div>
 <div class="line"><a name="l01753"></a><span class="lineno"> 1753</span>&#160; </div>
 <div class="line"><a name="l01754"></a><span class="lineno"> 1754</span>&#160;    data.projected_rate.setVal(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0));</div>
@@ -1327,7 +1327,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01940"></a><span class="lineno"> 1940</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> base = data.base_intensive.const_array(mfi);</div>
 <div class="line"><a name="l01941"></a><span class="lineno"> 1941</span>&#160;                <span class="comment">// Keep donor-envelope ratios in physical (M,N) coordinates.</span></div>
 <div class="line"><a name="l01942"></a><span class="lineno"> 1942</span>&#160;                <span class="comment">// The high-order input scratch is endpoint-transformed below.</span></div>
-<div class="line"><a name="l01943"></a><span class="lineno"> 1943</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> input =</div>
+<div class="line"><a name="l01943"></a><span class="lineno"> 1943</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a> =</div>
 <div class="line"><a name="l01944"></a><span class="lineno"> 1944</span>&#160;                    data.physical_input_intensive.const_array(mfi);</div>
 <div class="line"><a name="l01945"></a><span class="lineno"> 1945</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> anchor = data.anchor_intensive.const_array(mfi);</div>
 <div class="line"><a name="l01946"></a><span class="lineno"> 1946</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> ratios = data.cell_ratios.array(mfi);</div>
@@ -1395,7 +1395,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l02008"></a><span class="lineno"> 2008</span>&#160;                        <span class="keywordtype">int</span> found = 0;</div>
 <div class="line"><a name="l02009"></a><span class="lineno"> 2009</span>&#160;                        include_neighbourhood(base, i, j, k, support, donor_min,</div>
 <div class="line"><a name="l02010"></a><span class="lineno"> 2010</span>&#160;                                              donor_max, found);</div>
-<div class="line"><a name="l02011"></a><span class="lineno"> 2011</span>&#160;                        include_neighbourhood(input, i, j, k, support,</div>
+<div class="line"><a name="l02011"></a><span class="lineno"> 2011</span>&#160;                        include_neighbourhood(<a class="code" href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a>, i, j, k, support,</div>
 <div class="line"><a name="l02012"></a><span class="lineno"> 2012</span>&#160;                                              donor_min, donor_max, found);</div>
 <div class="line"><a name="l02013"></a><span class="lineno"> 2013</span>&#160;                        include_neighbourhood(anchor, i, j, k, support,</div>
 <div class="line"><a name="l02014"></a><span class="lineno"> 2014</span>&#160;                                              donor_min, donor_max, found);</div>
@@ -1510,16 +1510,16 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l02123"></a><span class="lineno"> 2123</span>&#160;        <span class="comment">// Exchange the chunk&#39;s ratio halo once before any group reads it.</span></div>
 <div class="line"><a name="l02124"></a><span class="lineno"> 2124</span>&#160;        data.cell_ratios.FillBoundary(geometry.periodicity());</div>
 <div class="line"><a name="l02125"></a><span class="lineno"> 2125</span>&#160;        <span class="keywordflow">if</span> (data.invalid.max(0) != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0)) {</div>
-<div class="line"><a name="l02126"></a><span class="lineno"> 2126</span>&#160;            std::ostringstream message;</div>
-<div class="line"><a name="l02127"></a><span class="lineno"> 2127</span>&#160;            message.precision(17);</div>
-<div class="line"><a name="l02128"></a><span class="lineno"> 2128</span>&#160;            message &lt;&lt; <span class="stringliteral">&quot;SBM M3 donor low-order trial violates a linear or &quot;</span></div>
+<div class="line"><a name="l02126"></a><span class="lineno"> 2126</span>&#160;            std::ostringstream <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>;</div>
+<div class="line"><a name="l02127"></a><span class="lineno"> 2127</span>&#160;            <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>.precision(17);</div>
+<div class="line"><a name="l02128"></a><span class="lineno"> 2128</span>&#160;            <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> &lt;&lt; <span class="stringliteral">&quot;SBM M3 donor low-order trial violates a linear or &quot;</span></div>
 <div class="line"><a name="l02129"></a><span class="lineno"> 2129</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;attached-property/canonical-reserve constraint &quot;</span></div>
 <div class="line"><a name="l02130"></a><span class="lineno"> 2130</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;(level=&quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot;, stage=&quot;</span> &lt;&lt; stage</div>
 <div class="line"><a name="l02131"></a><span class="lineno"> 2131</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;, input_time=&quot;</span> &lt;&lt; input_time</div>
 <div class="line"><a name="l02132"></a><span class="lineno"> 2132</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;, target_time=&quot;</span> &lt;&lt; target_time</div>
 <div class="line"><a name="l02133"></a><span class="lineno"> 2133</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;, chunk=&quot;</span> &lt;&lt; <a class="code" href="ERF__SBMTransport_8cpp.html#a325b230ab83adf37c0e76400a24c1d29">chunk_index</a> &lt;&lt; <span class="stringliteral">&quot;, rank=&quot;</span></div>
 <div class="line"><a name="l02134"></a><span class="lineno"> 2134</span>&#160;                    &lt;&lt; amrex::ParallelDescriptor::MyProc() &lt;&lt; <span class="charliteral">&#39;)&#39;</span>;</div>
-<div class="line"><a name="l02135"></a><span class="lineno"> 2135</span>&#160;            amrex::Abort(message.str());</div>
+<div class="line"><a name="l02135"></a><span class="lineno"> 2135</span>&#160;            amrex::Abort(<a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>.str());</div>
 <div class="line"><a name="l02136"></a><span class="lineno"> 2136</span>&#160;        }</div>
 <div class="line"><a name="l02137"></a><span class="lineno"> 2137</span>&#160; </div>
 <div class="line"><a name="l02138"></a><span class="lineno"> 2138</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">int</span> group_index : chunk.group_indices) {</div>
@@ -1848,6 +1848,8 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:44</div></div>
 <div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__MultiSpeciesBubble_8H_html_a8dfd5695a0c389f3b92c5b0fe3d8b02a"><div class="ttname"><a href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a8dfd5695a0c389f3b92c5b0fe3d8b02a">for</a></div><div class="ttdeci">for(int i=0;i&lt; m_num_species;i++)</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_MultiSpeciesBubble.H:52</div></div>
+<div class="ttc" id="aERF__InputPreflight_8cpp_html_a36bd74109f547f7f8198faf5a12d2879"><div class="ttname"><a href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a></div><div class="ttdeci">std::string message</div><div class="ttdef"><b>Definition:</b> ERF_InputPreflight.cpp:25</div></div>
+<div class="ttc" id="aERF__InputPreflight_8cpp_html_a84703f07f323f416cd4b531c1bbd59af"><div class="ttname"><a href="ERF__InputPreflight_8cpp.html#a84703f07f323f416cd4b531c1bbd59af">input</a></div><div class="ttdeci">std::string input</div><div class="ttdef"><b>Definition:</b> ERF_InputPreflight.cpp:29</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__SBMTransport_8cpp_html_a09f1a8b9f110a8ec7d4858aa13a0aadb"><div class="ttname"><a href="ERF__SBMTransport_8cpp.html#a09f1a8b9f110a8ec7d4858aa13a0aadb">constraints_begin</a></div><div class="ttdeci">int constraints_begin</div><div class="ttdef"><b>Definition:</b> ERF_SBMTransport.cpp:44</div></div>
 <div class="ttc" id="aERF__SBMTransport_8cpp_html_a2620782aca217380c705461b14e70af8"><div class="ttname"><a href="ERF__SBMTransport_8cpp.html#a2620782aca217380c705461b14e70af8">ratio_count</a></div><div class="ttdeci">int ratio_count</div><div class="ttdef"><b>Definition:</b> ERF_SBMTransport.cpp:50</div></div>

@@ -100,7 +100,7 @@ Collaboration diagram for TwoStreamCanopyView:</div>
 <div class="dyncontent">
 <div class="center"><img src="structTwoStreamCanopyView__coll__graph.png" border="0" usemap="#aTwoStreamCanopyView_coll__map" alt="Collaboration graph"/></div>
 <map name="aTwoStreamCanopyView_coll__map" id="aTwoStreamCanopyView_coll__map">
-<area shape="rect" title="The fields a level&#39;s faces read for one step: the beam and the cosine of the zenith the sweep of that..." alt="" coords="5,124,180,151"/>
+<area shape="rect" title="The fields a level&#39;s faces read for one step: the beam and the cosine of the zenith the sweep of that..." alt="" coords="5,139,180,165"/>
 <area shape="rect" title=" " alt="" coords="49,5,137,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -119,8 +119,9 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a8be33fb7380e8c1cbcd1bb4ce13d5700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cosine of the zenith of the sweep, floored at zero (2D) [1].  <a href="structTwoStreamCanopyView.html#a8be33fb7380e8c1cbcd1bb4ce13d5700">More...</a><br /></td></tr>
 <tr class="separator:a8be33fb7380e8c1cbcd1bb4ce13d5700"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a287ba7236927d1adc1787b3274d1e890"><td class="memItemLeft" align="right" valign="top">const amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwoStreamCanopyView.html#a287ba7236927d1adc1787b3274d1e890">fluxes</a> = nullptr</td></tr>
-<tr class="memdesc:a287ba7236927d1adc1787b3274d1e890"><td class="mdescLeft">&#160;</td><td class="mdescRight">The level's rad_fluxes (SW up, SW down, LW up, LW down) [W/m^2].  <a href="structTwoStreamCanopyView.html#a287ba7236927d1adc1787b3274d1e890">More...</a><br /></td></tr>
 <tr class="separator:a287ba7236927d1adc1787b3274d1e890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc00258e6561ba08584a3f4740fd5593"><td class="memItemLeft" align="right" valign="top">const amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwoStreamCanopyView.html#afc00258e6561ba08584a3f4740fd5593">ground_albedo_dir</a> = nullptr</td></tr>
+<tr class="separator:afc00258e6561ba08584a3f4740fd5593"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The fields a level's faces read for one step: the beam and the cosine of the zenith the sweep of that step wrote, and that sweep's interface fluxes. All null when the level has not swept this step (the initial report). </p>
@@ -147,8 +148,8 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="structTwoStreamCanopyView.html#a6914adc7bb4d476f2bf906994eae414d">beam</a> != <span class="keyword">nullptr</span> &amp;&amp; <a class="code" href="structTwoStreamCanopyView.html#a8be33fb7380e8c1cbcd1bb4ce13d5700">cos_zenith</a> != <span class="keyword">nullptr</span> &amp;&amp; <a class="code" href="structTwoStreamCanopyView.html#a287ba7236927d1adc1787b3274d1e890">fluxes</a> != <span class="keyword">nullptr</span>; }</div>
-<div class="ttc" id="astructTwoStreamCanopyView_html_a287ba7236927d1adc1787b3274d1e890"><div class="ttname"><a href="structTwoStreamCanopyView.html#a287ba7236927d1adc1787b3274d1e890">TwoStreamCanopyView::fluxes</a></div><div class="ttdeci">const amrex::MultiFab * fluxes</div><div class="ttdoc">The level's rad_fluxes (SW up, SW down, LW up, LW down) [W/m^2].</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:48</div></div>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="structTwoStreamCanopyView.html#a6914adc7bb4d476f2bf906994eae414d">beam</a> != <span class="keyword">nullptr</span> &amp;&amp; <a class="code" href="structTwoStreamCanopyView.html#a8be33fb7380e8c1cbcd1bb4ce13d5700">cos_zenith</a> != <span class="keyword">nullptr</span> &amp;&amp; <a class="code" href="structTwoStreamCanopyView.html#a287ba7236927d1adc1787b3274d1e890">fluxes</a> != <span class="keyword">nullptr</span>; }</div>
+<div class="ttc" id="astructTwoStreamCanopyView_html_a287ba7236927d1adc1787b3274d1e890"><div class="ttname"><a href="structTwoStreamCanopyView.html#a287ba7236927d1adc1787b3274d1e890">TwoStreamCanopyView::fluxes</a></div><div class="ttdeci">const amrex::MultiFab * fluxes</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:48</div></div>
 <div class="ttc" id="astructTwoStreamCanopyView_html_a6914adc7bb4d476f2bf906994eae414d"><div class="ttname"><a href="structTwoStreamCanopyView.html#a6914adc7bb4d476f2bf906994eae414d">TwoStreamCanopyView::beam</a></div><div class="ttdeci">const amrex::MultiFab * beam</div><div class="ttdoc">Direct beam on a horizontal surface, interfaces 0 .. m_top [W/m^2].</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:46</div></div>
 <div class="ttc" id="astructTwoStreamCanopyView_html_a8be33fb7380e8c1cbcd1bb4ce13d5700"><div class="ttname"><a href="structTwoStreamCanopyView.html#a8be33fb7380e8c1cbcd1bb4ce13d5700">TwoStreamCanopyView::cos_zenith</a></div><div class="ttdeci">const amrex::MultiFab * cos_zenith</div><div class="ttdoc">Cosine of the zenith of the sweep, floored at zero (2D) [1].</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:47</div></div>
 </div><!-- fragment -->
@@ -217,10 +218,26 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>The level's rad_fluxes (SW up, SW down, LW up, LW down) [W/m^2]. </p>
+<p>The level's rad_fluxes (SW up, SW down, LW up, LW down) [W/m^2] </p>
 
 <p class="reference">Referenced by <a class="el" href="classIBFaceSet.html#a89b30f8a5dc186d4268f755aaa86413b">IBFaceSet::check_canopy_layout()</a>, <a class="el" href="classIBFaceSet.html#a462d5a8c420bf21b62e41e7d5b0b552d">IBFaceSet::compute_longwave_two_stream()</a>, <a class="el" href="classIBFaceSet.html#a61dc0dd37b559642370dc5328412c091">IBFaceSet::compute_shortwave_two_stream()</a>, <a class="el" href="classERF.html#a6118b86ad495168e51de0f5ce883bd68">ERF::ibseb_advance()</a>, and <a class="el" href="structTwoStreamCanopyView.html#a9b76b0ddf4076b1427e59814231ee66f">valid()</a>.</p>
+
+</div>
+</div>
+<a id="afc00258e6561ba08584a3f4740fd5593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc00258e6561ba08584a3f4740fd5593">&#9670;&nbsp;</a></span>ground_albedo_dir</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const amrex::MultiFab* TwoStreamCanopyView::ground_albedo_dir = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The ground's direct-beam albedo the sweep used in each column (2D) [1]. Read only with erf.ibseb.ground_view_shadow, which checks for it; <a class="el" href="structTwoStreamCanopyView.html#a9b76b0ddf4076b1427e59814231ee66f">valid()</a> does not ask for it. </p>
+
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#a9e70deec3e363edd2661b61a79eccd1f">TwoStreamRadiation::canopy_forcing()</a>, <a class="el" href="classIBFaceSet.html#a89b30f8a5dc186d4268f755aaa86413b">IBFaceSet::check_canopy_layout()</a>, and <a class="el" href="classIBFaceSet.html#a61dc0dd37b559642370dc5328412c091">IBFaceSet::compute_shortwave_two_stream()</a>.</p>
 
 </div>
 </div>
