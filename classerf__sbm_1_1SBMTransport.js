@@ -48,6 +48,6 @@ var classerf__sbm_1_1SBMTransport =
     [ "m_max_groups_per_chunk", "classerf__sbm_1_1SBMTransport.html#accd8c23173067f413d2c51a0187f8186", null ],
     [ "m_projection", "classerf__sbm_1_1SBMTransport.html#a5df4c7b2b4e0dda46fd2b7f03ff56c55", null ],
     [ "m_property_support", "classerf__sbm_1_1SBMTransport.html#a8fc73b39d2a83ed5426999f405c3043c", null ],
-    [ "m_split_ghost_values_checked", "classerf__sbm_1_1SBMTransport.html#a83f8acad7c6df1819730cdf2902fab2c", null ],
+    [ "m_split_ghost_values_checked", "classerf__sbm_1_1SBMTransport.html#a914e9f8d6fb93633e9aeea3867008413", null ],
     [ "m_zero_flow_diagnostics_enabled", "classerf__sbm_1_1SBMTransport.html#a3daf6979400831fa1cf1b9659cb24704", null ]
 ];

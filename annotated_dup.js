@@ -77,6 +77,7 @@ var annotated_dup =
       [ "SBMAMRFluxRegister", "classerf__sbm_1_1SBMAMRFluxRegister.html", "classerf__sbm_1_1SBMAMRFluxRegister" ],
       [ "SBMTransferAllocationCensus", "structerf__sbm_1_1SBMTransferAllocationCensus.html", "structerf__sbm_1_1SBMTransferAllocationCensus" ],
       [ "SBMAMRStateView", "structerf__sbm_1_1SBMAMRStateView.html", "structerf__sbm_1_1SBMAMRStateView" ],
+      [ "SBMRegridCellCounts", "structerf__sbm_1_1SBMRegridCellCounts.html", "structerf__sbm_1_1SBMRegridCellCounts" ],
       [ "BulkProjection", "structerf__sbm_1_1BulkProjection.html", "structerf__sbm_1_1BulkProjection" ],
       [ "SBMBulkProjection", "classerf__sbm_1_1SBMBulkProjection.html", "classerf__sbm_1_1SBMBulkProjection" ],
       [ "ConstraintTerm", "structerf__sbm_1_1ConstraintTerm.html", "structerf__sbm_1_1ConstraintTerm" ],

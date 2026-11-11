@@ -283,6 +283,7 @@ var hierarchy =
     [ "erf_sbm::SBMBulkProjection", "classerf__sbm_1_1SBMBulkProjection.html", null ],
     [ "erf_sbm::SBMLayout", "classerf__sbm_1_1SBMLayout.html", null ],
     [ "erf_sbm::SBMLayoutSpec", "structerf__sbm_1_1SBMLayoutSpec.html", null ],
+    [ "erf_sbm::SBMRegridCellCounts", "structerf__sbm_1_1SBMRegridCellCounts.html", null ],
     [ "erf_sbm::SBMStateAdmission", "classerf__sbm_1_1SBMStateAdmission.html", null ],
     [ "erf_sbm::SBMStateManager", "classerf__sbm_1_1SBMStateManager.html", null ],
     [ "erf_sbm::SBMTransferAllocationCensus", "structerf__sbm_1_1SBMTransferAllocationCensus.html", null ],
