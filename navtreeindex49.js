@@ -1,5 +1,9 @@
 var NAVTREEINDEX49 =
 {
+"structIBSEBParams.html#a51efea067d676c085a071055be72f39c":[2,0,82,61],
+"structIBSEBParams.html#a5397a16842ff2aef5cf6375411a6836c":[2,0,82,52],
+"structIBSEBParams.html#a56bf65e9faa547b373fcd2abd5b009db":[2,0,82,24],
+"structIBSEBParams.html#a5b9457e0edb9947687397c0c35e2d85e":[2,0,82,56],
 "structIBSEBParams.html#a5f9cea745cdc1efe02cf19c7fdde8408":[2,0,82,36],
 "structIBSEBParams.html#a64b5546adcfca78c83d1937fef379511":[2,0,82,40],
 "structIBSEBParams.html#a66b2d3e67cee8ec8820392c416627c27":[2,0,82,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX49 =
 "structMaterialProperties.html#a89ef062ca1ae53473a5df19ef7f41ab2":[2,0,95,5],
 "structMaterialProperties.html#a8fe310f02a1bd3c9795bb06beee4b883":[2,0,95,9],
 "structMaterialProperties.html#ac2420acd6e85c5850262d8188d41c15f":[2,0,95,7],
-"structMaterialProperties.html#acb770dd37785f1959f65ae719beba36e":[2,0,95,6],
-"structMaterialProperties.html#af3060220bc6975f221cd9e956e649f8c":[2,0,95,14],
-"structMaterialProperties.html#af532315f278f04b68461bcd2db4e100f":[2,0,95,16],
-"structMaterialPropertiesCore.html":[2,0,96],
-"structMaterialPropertiesCore.html#a085a93e9a7944e7258e2602200c48fa3":[2,0,96,13]
+"structMaterialProperties.html#acb770dd37785f1959f65ae719beba36e":[2,0,95,6]
 };

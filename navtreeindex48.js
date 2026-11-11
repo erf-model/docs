@@ -1,5 +1,9 @@
 var NAVTREEINDEX48 =
 {
+"structBaseStateParams.html#ab783c682fa268dbe49951155dc9a662f":[2,0,36,8],
+"structBaseStateParams.html#abda8512fd4c3428b747bcbab521ef398":[2,0,36,5],
+"structBaseStateParams.html#acc80ac9d6bf1bf8a1d45a836f7b5dbb3":[2,0,36,10],
+"structBaseStateParams.html#ad3570dc09c60713af31447d27fd835d6":[2,0,36,9],
 "structBaseStateParams.html#ad9268f8bbd58eb2faefa436586202624":[2,0,36,0],
 "structBaseStateParams.html#af135deb366e51728d26eb786158a780a":[2,0,36,7],
 "structBdyTimeWeights.html":[2,0,37],
@@ -245,9 +249,5 @@ var NAVTREEINDEX48 =
 "structIBSEBParams.html#a4cf8bc9dc90f7b5ed33ea1e995bae637":[2,0,82,46],
 "structIBSEBParams.html#a4d11c028b061ef8128ae420143943701":[2,0,82,14],
 "structIBSEBParams.html#a4d48920fa52573eb83854270e3f4832a":[2,0,82,25],
-"structIBSEBParams.html#a4e9c0126c4da23ca61e3ea072edb2f2c":[2,0,82,34],
-"structIBSEBParams.html#a51efea067d676c085a071055be72f39c":[2,0,82,61],
-"structIBSEBParams.html#a5397a16842ff2aef5cf6375411a6836c":[2,0,82,52],
-"structIBSEBParams.html#a56bf65e9faa547b373fcd2abd5b009db":[2,0,82,24],
-"structIBSEBParams.html#a5b9457e0edb9947687397c0c35e2d85e":[2,0,82,56]
+"structIBSEBParams.html#a4e9c0126c4da23ca61e3ea072edb2f2c":[2,0,82,34]
 };
