@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['ebboundarytype_18264',['EBBoundaryType',['../ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704',1,'ERF_EBStruct.H']]],
-  ['ebgridtype_18265',['EBGridType',['../ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edb',1,'ERF_EBStruct.H']]],
-  ['ebtautype_18266',['EBTauType',['../ERF__EBStruct_8H.html#a218dc338efca309f98d851c6ead2b3cb',1,'ERF_EBStruct.H']]],
-  ['erf_5fbc_18267',['ERF_BC',['../ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9',1,'ERF_IndexDefines.H']]]
+  ['diagnostic_18310',['Diagnostic',['../classTopographicShading.html#a97c8b5438e5ae279a5a01eac13967118',1,'TopographicShading']]],
+  ['diagnosticcategory_18311',['DiagnosticCategory',['../namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441',1,'plotfile2d']]],
+  ['diagnosticid_18312',['DiagnosticID',['../namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2',1,'plotfile2d']]]
 ];

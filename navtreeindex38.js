@@ -1,5 +1,12 @@
 var NAVTREEINDEX38 =
 {
+"classerf__actuator_1_1RunningStats.html#a78ecb464af01d5be009b3a7fc308c79c":[2,0,0,1,17],
+"classerf__actuator_1_1RunningStats.html#a801583288c4c0aafe1bbcc4519c61e3f":[2,0,0,1,19],
+"classerf__actuator_1_1RunningStats.html#a95593450a0081fad2777c71819f6aeca":[2,0,0,1,16],
+"classerf__actuator_1_1RunningStats.html#a9624386db54008c5b57dc944332d1481":[2,0,0,1,14],
+"classerf__actuator_1_1RunningStats.html#a9e97f2cafc4a4b5fd70159d575518460":[2,0,0,1,21],
+"classerf__actuator_1_1RunningStats.html#aa9a9b780cca2713334eff7dd5501de29":[2,0,0,1,12],
+"classerf__actuator_1_1RunningStats.html#aabce5bfb301c1d7327e0a1a649bcec5f":[2,0,0,1,4],
 "classerf__actuator_1_1RunningStats.html#ab624564102f69ed45347a7285321ad43":[2,0,0,1,3],
 "classerf__actuator_1_1RunningStats.html#ac84c11112ce238651a6645d8058be1b6":[2,0,0,1,13],
 "classerf__actuator_1_1RunningStats.html#acb31c0ee978abb15c6439d53b83c8016":[2,0,0,1,8],
@@ -242,12 +249,5 @@ var NAVTREEINDEX38 =
 "classerf__sbm_1_1SBMStateManager.html#a7ff12c9117196537266e4ccb1eed6cc1":[2,0,11,35,15],
 "classerf__sbm_1_1SBMStateManager.html#a8103401dad9d6f9f281d1eb7a91b7086":[2,0,11,35,11],
 "classerf__sbm_1_1SBMStateManager.html#aa35086f49c3fae9f3f84ed781894755e":[2,0,11,35,4],
-"classerf__sbm_1_1SBMStateManager.html#aa84093b41d53ce28b504ee1a94577e83":[2,0,11,35,24],
-"classerf__sbm_1_1SBMStateManager.html#ab0517c22e844cfe42a5a6ec69c8f120b":[2,0,11,35,2],
-"classerf__sbm_1_1SBMStateManager.html#abf5f9ca5796d952869b1fa57fac3f3e0":[2,0,11,35,7],
-"classerf__sbm_1_1SBMStateManager.html#ad04bd76a5acedb78f56e3b2b81e95336":[2,0,11,35,6],
-"classerf__sbm_1_1SBMStateManager.html#ad35a14f2264a5ae61df420edbafdedff":[2,0,11,35,14],
-"classerf__sbm_1_1SBMStateManager.html#ad8460974cd9f320bc2e2bb99d9931521":[2,0,11,35,19],
-"classerf__sbm_1_1SBMStateManager.html#ad8b5e66c74c5f7a7fed89e4e8cb704fa":[2,0,11,35,5],
-"classerf__sbm_1_1SBMStateManager.html#af03941c2e3fc9d24423b9ca000cebca9":[2,0,11,35,20]
+"classerf__sbm_1_1SBMStateManager.html#aa84093b41d53ce28b504ee1a94577e83":[2,0,11,35,24]
 };

@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['latlonstatus_18277',['LatLonStatus',['../ERF__LatLonMap_8H.html#a275b926b13227ee2ac884995fe7648ac',1,'ERF_LatLonMap.H']]],
-  ['legacyinittype_18278',['LegacyInitType',['../namespaceerf__checkpoint__surface__temperature.html#a5c99be1058301fec83ca1f2e9842aa7e',1,'erf_checkpoint_surface_temperature']]],
-  ['legacysurfacetemperaturecompatibility_18279',['LegacySurfaceTemperatureCompatibility',['../namespaceerf__checkpoint__surface__temperature.html#a8d05f2030bed11f067f65f171d13f514',1,'erf_checkpoint_surface_temperature']]],
-  ['limitertrialbase_18280',['LimiterTrialBase',['../namespaceerf__auxiliary.html#abf9c1a9d3c44bf16781b83e143602473',1,'erf_auxiliary']]],
-  ['lineagestatus_18281',['LineageStatus',['../namespaceerf__provenance.html#a50ddd644451a1661544a6dd65055d006',1,'erf_provenance']]],
-  ['lsmtransfermode_18282',['LSMTransferMode',['../ERF__NullSurf_8H.html#a292f40de9be64e60eba567298b2c74c9',1,'ERF_NullSurf.H']]]
+  ['initializationmode_18324',['InitializationMode',['../namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7',1,'erf_cloud_chamber']]],
+  ['initrunon_18325',['InitRunOn',['../namespaceshoc.html#a0fd3544e2e21f10cd9d621c81fd419db',1,'shoc']]]
 ];

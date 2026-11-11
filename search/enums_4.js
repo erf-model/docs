@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['fineterrain_18268',['FineTerrain',['../ERF__TerrainMetrics_8H.html#a49831c051eee94070a9176baddde85df',1,'ERF_TerrainMetrics.H']]],
-  ['fluxcalctype_18269',['FluxCalcType',['../classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7',1,'SurfaceLayer']]],
-  ['format_18270',['Format',['../namespaceerf__description.html#a547535de6f63d9d4bcbe255d731b2dc0',1,'erf_description']]]
+  ['ebboundarytype_18313',['EBBoundaryType',['../ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704',1,'ERF_EBStruct.H']]],
+  ['ebgridtype_18314',['EBGridType',['../ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edb',1,'ERF_EBStruct.H']]],
+  ['ebtautype_18315',['EBTauType',['../ERF__EBStruct_8H.html#a218dc338efca309f98d851c6ead2b3cb',1,'ERF_EBStruct.H']]],
+  ['erf_5fbc_18316',['ERF_BC',['../ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9',1,'ERF_IndexDefines.H']]]
 ];

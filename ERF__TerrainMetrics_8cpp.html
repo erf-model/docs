@@ -183,6 +183,8 @@ Functions</h2></td></tr>
 <tr class="separator:a920c175414adfaaa26687bfb8e7585bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc28d890df44cf0082a848c057042178"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TerrainMetrics_8cpp.html#acc28d890df44cf0082a848c057042178">make_zcc</a> (const Geometry &amp;geom, MultiFab &amp;z_phys_nd, MultiFab &amp;z_phys_cc)</td></tr>
 <tr class="separator:acc28d890df44cf0082a848c057042178"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae233281d7dc4e0526f4385cd2d33945e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TerrainMetrics_8cpp.html#ae233281d7dc4e0526f4385cd2d33945e">make_zsfc_nd</a> (const Geometry &amp;geom, const MultiFab &amp;z_phys_nd, MultiFab &amp;z_sfc_nd, const MultiFab *z_sfc_crse, const IntVect &amp;ref_ratio)</td></tr>
+<tr class="separator:ae233281d7dc4e0526f4385cd2d33945e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f3b32ea207dacad3e0525d419d23b99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TerrainMetrics_8cpp.html#a6f3b32ea207dacad3e0525d419d23b99">get_dzmin_terrain</a> (MultiFab &amp;z_phys_nd)</td></tr>
 <tr class="separator:a6f3b32ea207dacad3e0525d419d23b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -203,22 +205,22 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Computation min dz at cell-center </p>
-<div class="fragment"><div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;{</div>
-<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma_z_nd_arr = z_phys_nd.const_arrays();</div>
-<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;    GpuTuple&lt;Real&gt; min = ParReduce(TypeList&lt;ReduceOpMin&gt;{},</div>
-<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;                                   TypeList&lt;Real&gt;{},</div>
-<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;                                   z_phys_nd, IntVect(0),</div>
-<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;                                   [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> box_no, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;                                   -&gt; GpuTuple&lt;Real&gt;</div>
-<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;                                   {</div>
-<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;                                       <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWDM6SedCellScratch.html#a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7">dz</a> = <a class="code" href="ERF__TerrainMetrics_8H.html#aabdc11508a2b9970dfad77991c48feae">Compute_Z_AtWFace</a>(i,j,k+1,ma_z_nd_arr[box_no]) -</div>
-<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;                                                        <a class="code" href="ERF__TerrainMetrics_8H.html#aabdc11508a2b9970dfad77991c48feae">Compute_Z_AtWFace</a>(i,j,k  ,ma_z_nd_arr[box_no]);</div>
-<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;                                       <span class="keywordflow">return</span> { <a class="code" href="namespaceWDM6SedCellScratch.html#a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7">dz</a> };</div>
-<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;                                   });</div>
-<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> r = (get&lt;0&gt;(min) + <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;amrex::Real&gt;::epsilon</a>());</div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;    ParallelDescriptor::ReduceRealMin(r);</div>
-<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;    <span class="keywordflow">return</span> r;</div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;{</div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma_z_nd_arr = z_phys_nd.const_arrays();</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    GpuTuple&lt;Real&gt; min = ParReduce(TypeList&lt;ReduceOpMin&gt;{},</div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;                                   TypeList&lt;Real&gt;{},</div>
+<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;                                   z_phys_nd, IntVect(0),</div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;                                   [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> box_no, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;                                   -&gt; GpuTuple&lt;Real&gt;</div>
+<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;                                   {</div>
+<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;                                       <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWDM6SedCellScratch.html#a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7">dz</a> = <a class="code" href="ERF__TerrainMetrics_8H.html#aabdc11508a2b9970dfad77991c48feae">Compute_Z_AtWFace</a>(i,j,k+1,ma_z_nd_arr[box_no]) -</div>
+<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;                                                        <a class="code" href="ERF__TerrainMetrics_8H.html#aabdc11508a2b9970dfad77991c48feae">Compute_Z_AtWFace</a>(i,j,k  ,ma_z_nd_arr[box_no]);</div>
+<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;                                       <span class="keywordflow">return</span> { <a class="code" href="namespaceWDM6SedCellScratch.html#a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7">dz</a> };</div>
+<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;                                   });</div>
+<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> r = (get&lt;0&gt;(min) + <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;amrex::Real&gt;::epsilon</a>());</div>
+<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;    ParallelDescriptor::ReduceRealMin(r);</div>
+<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;    <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;}</div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_aabdc11508a2b9970dfad77991c48feae"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#aabdc11508a2b9970dfad77991c48feae">Compute_Z_AtWFace</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_Z_AtWFace(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:740</div></div>
 <div class="ttc" id="anamespaceWDM6SedCellScratch_html_a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:273</div></div>
@@ -1767,6 +1769,190 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classERF.html#a204b0231cdffb83c772ac8f0d140e664" title=" " alt="" coords="208,5,355,32"/>
 <area shape="rect" href="classERF.html#a7dba7f9e6bd3f6898fac9ac2efcec692" title=" " alt="" coords="207,57,356,98"/>
 <area shape="rect" href="classERF.html#aa60927ead63d9f297d1420759b7addbe" title=" " alt="" coords="5,5,159,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae233281d7dc4e0526f4385cd2d33945e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae233281d7dc4e0526f4385cd2d33945e">&#9670;&nbsp;</a></span>make_zsfc_nd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void make_zsfc_nd </td>
+          <td>(</td>
+          <td class="paramtype">const Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>z_phys_nd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>z_sfc_nd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab *&#160;</td>
+          <td class="paramname"><em>z_sfc_crse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IntVect &amp;&#160;</td>
+          <td class="paramname"><em>ref_ratio</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Computation of the height of the bottom of the domain at each node, z_sfc_nd</p>
+<p>A node of a box that reaches the bottom of the domain takes the height of its own z_phys_nd there. The nodes of any other box, which can occur only on a refined level, are interpolated bilinearly from z_sfc_crse, the coarser level's, which is what the fine z_phys_nd interpolated from the coarse level has at the bottom of the domain.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>geometry of this level </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z_phys_nd</td><td>nodal heights of this level </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">z_sfc_nd</td><td>defined on the 2D projection of z_phys_nd's grids (nodal in x and y, z index 0), with the same DistributionMapping </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z_sfc_crse</td><td>z_sfc_nd of the next coarser level; may be null only if every column of this level has a box reaching the bottom of the domain </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ref_ratio</td><td>refinement ratio between the coarser level and this one </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;{</div>
+<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(z_sfc_nd.size() == z_phys_nd.size() &amp;&amp;</div>
+<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;                        z_sfc_nd.DistributionMap() == z_phys_nd.DistributionMap());</div>
+<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160; </div>
+<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = geom.Domain().smallEnd(2);</div>
+<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;    <span class="keyword">const</span> BoxArray&amp; ba_nd = z_phys_nd.boxArray();</div>
+<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160; </div>
+<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;    <span class="comment">// The boxes that reach the bottom of the domain, gathered on their own so that their</span></div>
+<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;    <span class="comment">//    values also reach any box stacked above them in the same columns</span></div>
+<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;    BoxList bl_bot(z_sfc_nd.ixType());</div>
+<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;    Vector&lt;int&gt; pmap_bot, idx_bot;</div>
+<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ba_nd.size(); ++i) {</div>
+<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;        <span class="keywordflow">if</span> (ba_nd[i].smallEnd(2) == <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) {</div>
+<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;            bl_bot.push_back(z_sfc_nd.boxArray()[i]);</div>
+<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;            pmap_bot.push_back(z_phys_nd.DistributionMap()[i]);</div>
+<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;            idx_bot.push_back(i);</div>
+<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;        }</div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;    }</div>
+<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160; </div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;    <span class="comment">// In the usual case every box reaches the bottom, so each box of z_sfc_nd lies under its</span></div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;    <span class="comment">//    own box of z_phys_nd and needs neither the coarser level nor any communication</span></div>
+<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(idx_bot.size()) == ba_nd.size()) {</div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(z_sfc_nd, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;        {</div>
+<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;            <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; zs_arr = z_sfc_nd.array(mfi);</div>
+<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_nd   = z_phys_nd.const_array(mfi);</div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
+<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;            {</div>
+<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;                zs_arr(i,j,0) = z_nd(i,j,<a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;            });</div>
+<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;        }</div>
+<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;    }</div>
+<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160; </div>
+<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;    z_sfc_nd.setVal(<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
+<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160; </div>
+<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;    <span class="keywordflow">if</span> (z_sfc_crse != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;        <span class="comment">// The coarse nodes surrounding the coarse cells under this level&#39;s columns</span></div>
+<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;        <span class="keyword">const</span> IntVect <a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>(ref_ratio[0], ref_ratio[1], 1);</div>
+<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;        BoxArray ba_crse(z_sfc_nd.boxArray());</div>
+<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;        ba_crse.enclosedCells(0); ba_crse.enclosedCells(1);</div>
+<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;        ba_crse.coarsen(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>);</div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;        ba_crse.surroundingNodes(0); ba_crse.surroundingNodes(1);</div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;        MultiFab <a class="code" href="namespaceWSM6SedCellScratch.html#a46d8adb72381b0f021181f38a7baf421a381cd8133166e8909183cb00eaec8da1">tmp</a>(ba_crse, z_sfc_nd.DistributionMap(), 1, 0);</div>
+<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;        <a class="code" href="namespaceWSM6SedCellScratch.html#a46d8adb72381b0f021181f38a7baf421a381cd8133166e8909183cb00eaec8da1">tmp</a>.ParallelCopy(*z_sfc_crse);</div>
+<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160; </div>
+<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rx_inv = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>[0]);</div>
+<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ry_inv = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>[1]);</div>
+<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160; </div>
+<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(z_sfc_nd, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;        {</div>
+<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;            <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; zs_arr  = z_sfc_nd.array(mfi);</div>
+<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; zsc_arr = <a class="code" href="namespaceWSM6SedCellScratch.html#a46d8adb72381b0f021181f38a7baf421a381cd8133166e8909183cb00eaec8da1">tmp</a>.const_array(mfi);</div>
+<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
+<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;            {</div>
+<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> ic = amrex::coarsen(i,<a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>[0]);</div>
+<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> jc = amrex::coarsen(j,<a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>[1]);</div>
+<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fx = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(i - ic*<a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>[0]) * rx_inv;</div>
+<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fy = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(j - jc*<a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>[1]) * ry_inv;</div>
+<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;                <span class="comment">// Coarse nodes not needed (weight zero) may lie outside tmp, so skip them</span></div>
+<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-fx)*(<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-fy) * zsc_arr(ic,jc,0);</div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;                <span class="keywordflow">if</span> (fx &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)              { <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> += fx       *(<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-fy) * zsc_arr(ic+1,jc  ,0); }</div>
+<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;                <span class="keywordflow">if</span> (fy &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)              { <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> += (<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-fx) *fy       * zsc_arr(ic  ,jc+1,0); }</div>
+<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;                <span class="keywordflow">if</span> (fx &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> &amp;&amp; fy &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) { <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> += fx       *fy       * zsc_arr(ic+1,jc+1,0); }</div>
+<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;                zs_arr(i,j,0) = <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>;</div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;            });</div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;        }</div>
+<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;        <span class="comment">// Without a coarser level every column must be covered by a box reaching the bottom</span></div>
+<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;        BoxArray ba_bot(bl_bot);</div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; z_sfc_nd.boxArray().size(); ++i) {</div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;            <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(ba_bot.contains(z_sfc_nd.boxArray()[i]),</div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;                <span class="stringliteral">&quot;make_zsfc_nd: a column whose box does not reach the bottom needs the coarser level&#39;s z_sfc_nd&quot;</span>);</div>
+<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;        }</div>
+<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;    }</div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160; </div>
+<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;    <span class="keywordflow">if</span> (bl_bot.isEmpty()) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160; </div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;    MultiFab z_sfc_bot(BoxArray(std::move(bl_bot)), DistributionMapping(std::move(pmap_bot)), 1, 0);</div>
+<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(z_sfc_bot); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;    {</div>
+<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.validbox();</div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; zs_arr = z_sfc_bot.array(mfi);</div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_nd   = z_phys_nd.const_array(idx_bot[mfi.index()]);</div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;        {</div>
+<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;            zs_arr(i,j,0) = z_nd(i,j,<a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;        });</div>
+<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;    }</div>
+<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;    z_sfc_nd.ParallelCopy(z_sfc_bot);</div>
+<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__KE_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_KE.H:9</div></div>
+<div class="ttc" id="aERF__NumericalConstants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:36</div></div>
+<div class="ttc" id="anamespaceWSM6SedCellScratch_html_a46d8adb72381b0f021181f38a7baf421a381cd8133166e8909183cb00eaec8da1"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a46d8adb72381b0f021181f38a7baf421a381cd8133166e8909183cb00eaec8da1">WSM6SedCellScratch::tmp</a></div><div class="ttdeci">@ tmp</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:116</div></div>
+<div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_a649e184a5c5c6d2eef72a390c18eb4e4"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">module_mp_morr_two_moment::rr</a></div><div class="ttdeci">real(c_double), private rr</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:224</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#a1603887aac4f8153aa6ad590d330f95b">ERF::update_zsfc_nd()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__TerrainMetrics_8cpp_ae233281d7dc4e0526f4385cd2d33945e_cgraph.png" border="0" usemap="#aERF__TerrainMetrics_8cpp_ae233281d7dc4e0526f4385cd2d33945e_cgraph" alt=""/></div>
+<map name="aERF__TerrainMetrics_8cpp_ae233281d7dc4e0526f4385cd2d33945e_cgraph" id="aERF__TerrainMetrics_8cpp_ae233281d7dc4e0526f4385cd2d33945e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,64,120,91"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="168,5,351,32"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="168,57,351,98"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="214,123,305,149"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__TerrainMetrics_8cpp_ae233281d7dc4e0526f4385cd2d33945e_icgraph.png" border="0" usemap="#aERF__TerrainMetrics_8cpp_ae233281d7dc4e0526f4385cd2d33945e_icgraph" alt=""/></div>
+<map name="aERF__TerrainMetrics_8cpp_ae233281d7dc4e0526f4385cd2d33945e_icgraph" id="aERF__TerrainMetrics_8cpp_ae233281d7dc4e0526f4385cd2d33945e_icgraph">
+<area shape="rect" title=" " alt="" coords="208,5,323,32"/>
+<area shape="rect" href="classERF.html#a1603887aac4f8153aa6ad590d330f95b" title=" " alt="" coords="5,5,160,32"/>
 </map>
 </div>
 

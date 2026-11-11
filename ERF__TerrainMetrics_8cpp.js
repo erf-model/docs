@@ -9,6 +9,7 @@ var ERF__TerrainMetrics_8cpp =
     [ "make_J", "ERF__TerrainMetrics_8cpp.html#a9c1ecbedddfe464d9db02960e5422564", null ],
     [ "make_terrain_fitted_coords", "ERF__TerrainMetrics_8cpp.html#ad6fbf4deab43789270e79554528ae376", null ],
     [ "make_zcc", "ERF__TerrainMetrics_8cpp.html#acc28d890df44cf0082a848c057042178", null ],
+    [ "make_zsfc_nd", "ERF__TerrainMetrics_8cpp.html#ae233281d7dc4e0526f4385cd2d33945e", null ],
     [ "validate_flat_terrain", "ERF__TerrainMetrics_8cpp.html#a852cf95101ae5ac044195e60bd9940b1", null ],
     [ "validate_flat_top", "ERF__TerrainMetrics_8cpp.html#a46522880a15b32918f16ab0863f843a4", null ],
     [ "which_fine_terrain", "ERF__TerrainMetrics_8cpp.html#a5a9e39d96b7ebe9f9dbd5d32560e7d3a", null ]
