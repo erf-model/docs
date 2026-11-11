@@ -2,6 +2,12 @@ var classIBFaceSet =
 [
     [ "SunState", "structIBFaceSet_1_1SunState.html", "structIBFaceSet_1_1SunState" ],
     [ "TwoStreamSun", "structIBFaceSet_1_1TwoStreamSun.html", "structIBFaceSet_1_1TwoStreamSun" ],
+    [ "GroundWalls", "classIBFaceSet.html#a9ccce0d700cef64a19127bf04d3e7ca2", [
+      [ "GW_VIEW", "classIBFaceSet.html#a9ccce0d700cef64a19127bf04d3e7ca2abc149dafe5dc7fd4451e2312b53627ba", null ],
+      [ "GW_SW", "classIBFaceSet.html#a9ccce0d700cef64a19127bf04d3e7ca2aa564dad9609b10c070df2936b9d6c3e5", null ],
+      [ "GW_LW", "classIBFaceSet.html#a9ccce0d700cef64a19127bf04d3e7ca2a768ad2a60b1f236267f017e17a065aee", null ],
+      [ "GW_NCOMP", "classIBFaceSet.html#a9ccce0d700cef64a19127bf04d3e7ca2afe6e1e6eccd2c3cd4940594cb14493ca", null ]
+    ] ],
     [ "IBFaceSet", "classIBFaceSet.html#a0ad298ab989621e5397768859211354a", null ],
     [ "add_cost", "classIBFaceSet.html#aa25741575289197768282d23c3ba0e2f", null ],
     [ "add_heat_flux_to_source", "classIBFaceSet.html#a6b50730c3a8b33e330d4d58227c673c6", null ],
@@ -14,6 +20,7 @@ var classIBFaceSet =
     [ "check_canopy_layout", "classIBFaceSet.html#a89b30f8a5dc186d4268f755aaa86413b", null ],
     [ "compute_ground", "classIBFaceSet.html#a719cf6da6c7b63e80e20ae7ab0b5e070", null ],
     [ "compute_ground_shadow", "classIBFaceSet.html#a698c3b36cc3c9a4d16958389b405ad66", null ],
+    [ "compute_ground_walls", "classIBFaceSet.html#ab68767910306b4a7765ec506dc7e9810", null ],
     [ "compute_longwave", "classIBFaceSet.html#aa237ac2ae1eb4efb9bb56916bfd54ac6", null ],
     [ "compute_longwave_two_stream", "classIBFaceSet.html#a462d5a8c420bf21b62e41e7d5b0b552d", null ],
     [ "compute_sensible", "classIBFaceSet.html#a538f8e56b4c01844454213b32bbd6525", null ],
@@ -108,6 +115,8 @@ var classIBFaceSet =
     [ "m_dx", "classIBFaceSet.html#ad42a41b067cb85332a25b763a26116a3", null ],
     [ "m_fab_start", "classIBFaceSet.html#acd1cae76e8885636cc0b63d32d5561fa", null ],
     [ "m_geom", "classIBFaceSet.html#ae28a8c3187b59b518d66488b2db9fe7f", null ],
+    [ "m_gnd_patch", "classIBFaceSet.html#ad21baf67ffee1df9ebf81b8dcc9edf9e", null ],
+    [ "m_gnd_patch_built", "classIBFaceSet.html#ab33406131267e28e01d38c95a2a5ed73", null ],
     [ "m_halo", "classIBFaceSet.html#a5ff636923e317153625f066057355b53", null ],
     [ "m_init_cost_s", "classIBFaceSet.html#a8a40585e7a6c51894c0acdfbc283e5e2", null ],
     [ "m_lab", "classIBFaceSet.html#a23574a9984c015c806228d51c57b3fd9", null ],

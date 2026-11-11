@@ -132,6 +132,7 @@ var classERF =
     [ "ibseb_check_sun_matches_two_stream", "classERF.html#a70b2ef725fc735c73def4b76f07cdf6f", null ],
     [ "ibseb_check_two_stream_buildings", "classERF.html#ac4f8b8d079fd5b1e1a6bea26935eaf32", null ],
     [ "ibseb_check_two_stream_provider", "classERF.html#a8ff36dd27cb5b4a3e1578670173d36e8", null ],
+    [ "ibseb_give_ground_walls", "classERF.html#a07be2c129a8f7d16bd631f6d7f9af7ff", null ],
     [ "ibseb_report", "classERF.html#a53338b39861a9fb0a96d45d3aa05ea7f", null ],
     [ "ibseb_set_two_stream_sun", "classERF.html#a386fe5fb8cb105818901f0234fbc2025", null ],
     [ "ibseb_two_stream_buildings", "classERF.html#a3a4ed122e6a4eba24daf1f0768b11912", null ],

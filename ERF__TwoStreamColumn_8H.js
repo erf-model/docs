@@ -12,6 +12,7 @@ var ERF__TwoStreamColumn_8H =
     [ "is_cloud_level", "ERF__TwoStreamColumn_8H.html#a937d803574166fc8580cd33905bec314", null ],
     [ "make_two_stream_params", "ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c", null ],
     [ "resolve_surface_albedo_sw", "ERF__TwoStreamColumn_8H.html#a3a848476441bae36e68525ab97df1252", null ],
+    [ "resolve_surface_albedo_sw_diffuse", "ERF__TwoStreamColumn_8H.html#a4a6dfc8464a8d532543a98e5c8b2f2f3", null ],
     [ "resolve_surface_emissivity_lw", "ERF__TwoStreamColumn_8H.html#ac7a48722f2cf2a15fc06d02c1b4e5d22", null ],
     [ "resolve_surface_temp_k", "ERF__TwoStreamColumn_8H.html#acd4308093febfc6a671b742f27245a66", null ],
     [ "select_scattering_props", "ERF__TwoStreamColumn_8H.html#ab79cb02c966114cdf893b1d9806f4a67", null ],

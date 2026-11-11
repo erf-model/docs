@@ -180,6 +180,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwoStreamFaceSky.html">TwoStreamFaceSky</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">What one face takes from its column (all W/m^2).  <a href="structTwoStreamFaceSky.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGroundWallTerms.html">GroundWallTerms</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">What <a class="el" href="ERF__TwoStreamCanopyForcing_8H.html#aa2409ec80ba12b4fc1f0d309508fa9e0" title="The change of the open ground&#39;s net radiation beside walls (erf.ibseb.ground_sky_view)....">two_stream_ground_wall_terms()</a> adds to the ground balance's net shortwave and longwave [W/m^2].  <a href="structGroundWallTerms.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -195,6 +198,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a6e530550ac29ad5f5d252eaceb4dcc42"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TwoStreamCanopyForcing_8H.html#a6e530550ac29ad5f5d252eaceb4dcc42">two_stream_ground_beam_share</a> (int i, int j, int k0, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;beam, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;fluxes, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;alb_dir)</td></tr>
 <tr class="memdesc:a6e530550ac29ad5f5d252eaceb4dcc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">The share of column (i,j)'s shortwave up that is its ground's reflection of the direct beam: (direct-beam albedo x beam at the surface) over the shortwave up at the surface, which is that reflection plus the ground's reflection of the diffuse light; in [0, 1], and 0 when nothing comes up. The building faces take this share of the shortwave up at their own height as the reflected beam (erf.ibseb.ground_view_shadow): exact where the air between the ground and the face only absorbs, as both parts are then dimmed alike on the way up; with scattering the light the air sends up from the beam and from the sky's diffuse light is split in the surface's proportion too.  <a href="ERF__TwoStreamCanopyForcing_8H.html#a6e530550ac29ad5f5d252eaceb4dcc42">More...</a><br /></td></tr>
 <tr class="separator:a6e530550ac29ad5f5d252eaceb4dcc42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2409ec80ba12b4fc1f0d309508fa9e0"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="structGroundWallTerms.html">GroundWallTerms</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TwoStreamCanopyForcing_8H.html#aa2409ec80ba12b4fc1f0d309508fa9e0">two_stream_ground_wall_terms</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sw_net, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sw_beam, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wall_view, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sw_walls, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lw_walls, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lw_down, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> absorb_dif, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> emis) noexcept</td></tr>
+<tr class="memdesc:aa2409ec80ba12b4fc1f0d309508fa9e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The change of the open ground's net radiation beside walls (erf.ibseb.ground_sky_view). The walls take the share <code>wall_view</code> of the ground's view of the sky. Through it the ground loses the sky's diffuse light and longwave and gains the walls': d_sw = c [(1 - alb_dif) sw_walls - wall_view (sw_net - sw_beam)], d_lw = c emis (lw_walls - wall_view lw_down). The share comes from a count of rays and can exceed 1 in a column closed in by walls; a ground cannot see more than its whole view, so there c = 1 / wall_view scales the loss and the gain alike (the ground then sees no sky and the walls' mean); c = 1 otherwise. The direct beam is not touched (the shadow takes it).  <a href="ERF__TwoStreamCanopyForcing_8H.html#aa2409ec80ba12b4fc1f0d309508fa9e0">More...</a><br /></td></tr>
+<tr class="separator:aa2409ec80ba12b4fc1f0d309508fa9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>What the two-stream sweep hands the building faces of the immersed-boundary surface energy balance (erf.ibseb.radiation = two_stream), and how a face reads it. </p>
@@ -605,6 +611,116 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="The share of column (i,j)&#39;s shortwave up that is its ground&#39;s reflection of the direct beam: (direct&#45;..." alt="" coords="433,5,628,47"/>
 <area shape="rect" href="classIBFaceSet.html#a61dc0dd37b559642370dc5328412c091" title=" " alt="" coords="204,5,385,47"/>
 <area shape="rect" href="classIBFaceSet.html#ae9ee23c94d32ee5afd75f3cde4905a1c" title=" " alt="" coords="5,5,156,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa2409ec80ba12b4fc1f0d309508fa9e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2409ec80ba12b4fc1f0d309508fa9e0">&#9670;&nbsp;</a></span>two_stream_ground_wall_terms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="structGroundWallTerms.html">GroundWallTerms</a> two_stream_ground_wall_terms </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>sw_net</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>sw_beam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>wall_view</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>sw_walls</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>lw_walls</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>lw_down</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>absorb_dif</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>emis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The change of the open ground's net radiation beside walls (erf.ibseb.ground_sky_view). The walls take the share <code>wall_view</code> of the ground's view of the sky. Through it the ground loses the sky's diffuse light and longwave and gains the walls': d_sw = c [(1 - alb_dif) sw_walls - wall_view (sw_net - sw_beam)], d_lw = c emis (lw_walls - wall_view lw_down). The share comes from a count of rays and can exceed 1 in a column closed in by walls; a ground cannot see more than its whole view, so there c = 1 / wall_view scales the loss and the gain alike (the ground then sees no sky and the walls' mean); c = 1 otherwise. The direct beam is not touched (the shadow takes it). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sw_net</td><td>the sweep's absorbed shortwave at the ground, beam and diffuse [W/m^2] </td></tr>
+    <tr><td class="paramname">sw_beam</td><td>its absorbed direct beam [W/m^2] </td></tr>
+    <tr><td class="paramname">wall_view</td><td>the walls' share of the ground's view [1] </td></tr>
+    <tr><td class="paramname">sw_walls</td><td>the walls' reflected shortwave arriving on the ground [W/m^2] </td></tr>
+    <tr><td class="paramname">lw_walls</td><td>the walls' longwave arriving on the ground [W/m^2] </td></tr>
+    <tr><td class="paramname">lw_down</td><td>the sky's longwave down at the ground [W/m^2] </td></tr>
+    <tr><td class="paramname">absorb_dif</td><td>the ground's diffuse absorptance, 1 - alb_dif [1] </td></tr>
+    <tr><td class="paramname">emis</td><td>the ground's longwave emissivity [1] </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;{</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">// The divisor is at least 1 whatever the share: an optimiser that forms both sides of</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="comment">// a choice would otherwise divide by a share of zero, which traps where traps are on.</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> whole = (wall_view &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0)) ? wall_view : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> c = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0) / whole;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <a class="code" href="structGroundWallTerms.html">GroundWallTerms</a> <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419">t</a>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419">t</a>.d_sw = c * (absorb_dif * sw_walls - wall_view * (sw_net - sw_beam));</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419">t</a>.d_lw = c * emis * (lw_walls - wall_view * lw_down);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419">t</a>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;}</div>
+<div class="ttc" id="anamespaceWSM6Ind_html_aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419"><div class="ttname"><a href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419">WSM6Ind::t</a></div><div class="ttdeci">@ t</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:293</div></div>
+<div class="ttc" id="astructGroundWallTerms_html"><div class="ttname"><a href="structGroundWallTerms.html">GroundWallTerms</a></div><div class="ttdoc">What two_stream_ground_wall_terms() adds to the ground balance's net shortwave and longwave [W/m^2].</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:190</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071">TwoStreamRadiation::advance()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__TwoStreamCanopyForcing_8H_aa2409ec80ba12b4fc1f0d309508fa9e0_icgraph.png" border="0" usemap="#aERF__TwoStreamCanopyForcing_8H_aa2409ec80ba12b4fc1f0d309508fa9e0_icgraph" alt=""/></div>
+<map name="aERF__TwoStreamCanopyForcing_8H_aa2409ec80ba12b4fc1f0d309508fa9e0_icgraph" id="aERF__TwoStreamCanopyForcing_8H_aa2409ec80ba12b4fc1f0d309508fa9e0_icgraph">
+<area shape="rect" title="The change of the open ground&#39;s net radiation beside walls (erf.ibseb.ground_sky_view)...." alt="" coords="209,5,395,47"/>
+<area shape="rect" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071" title="One radiation call at one level." alt="" coords="5,5,161,47"/>
 </map>
 </div>
 

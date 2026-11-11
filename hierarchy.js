@@ -97,6 +97,7 @@ var hierarchy =
       [ "TerrainIF", "classTerrainIF.html", null ]
     ] ],
     [ "erf_sbm::GridValidation", "structerf__sbm_1_1GridValidation.html", null ],
+    [ "GroundWallTerms", "structGroundWallTerms.html", null ],
     [ "erf_terrain_file::HeightTable", "structerf__terrain__file_1_1HeightTable.html", null ],
     [ "if_bld::HorizFace", "structif__bld_1_1HorizFace.html", null ],
     [ "if_bld::HorizMasks", "structif__bld_1_1HorizMasks.html", null ],

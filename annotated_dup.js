@@ -249,6 +249,7 @@ var annotated_dup =
     [ "Fitch", "classFitch.html", "classFitch" ],
     [ "ForestDrag", "classForestDrag.html", "classForestDrag" ],
     [ "GeneralAD", "classGeneralAD.html", "classGeneralAD" ],
+    [ "GroundWallTerms", "structGroundWallTerms.html", "structGroundWallTerms" ],
     [ "IBFaceSet", "classIBFaceSet.html", "classIBFaceSet" ],
     [ "IBSEBMaterial", "structIBSEBMaterial.html", "structIBSEBMaterial" ],
     [ "IBSEBParams", "structIBSEBParams.html", "structIBSEBParams" ],
