@@ -17,5 +17,5 @@ var ERF__SBMAdvectionBoundary_8H =
       [ "AdvectiveOutflow", "ERF__SBMAdvectionBoundary_8H.html#ac7ab1e3124a0b2b4d43c1b97e848b894a16b96d4b4c0d2f9e8dae5948b8703fca", null ],
       [ "PrescribedInflow", "ERF__SBMAdvectionBoundary_8H.html#ac7ab1e3124a0b2b4d43c1b97e848b894aece1d809a7e53aa4dd8ab7c28b3c786f", null ]
     ] ],
-    [ "make_advection_face_policy", "ERF__SBMAdvectionBoundary_8H.html#a41bad3d43e0108b30fe429902d42ffc5", null ]
+    [ "make_advection_face_policy", "ERF__SBMAdvectionBoundary_8H.html#a74c8d8ef029ad78438c64ca585e38e57", null ]
 ];

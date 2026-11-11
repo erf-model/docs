@@ -1,6 +1,6 @@
 var structerf__sbm_1_1AdvectionFacePolicy =
 [
-    [ "accepted", "structerf__sbm_1_1AdvectionFacePolicy.html#adc8fe072c9bd91563934de071b80de6d", null ],
+    [ "accepted", "structerf__sbm_1_1AdvectionFacePolicy.html#a4742354bdd5869a8e39a2a4c6f941939", null ],
     [ "action", "structerf__sbm_1_1AdvectionFacePolicy.html#ad734ef0c0f1c13d7f1e80feb1e3517af", null ],
     [ "use_explicit_spectral_state", "structerf__sbm_1_1AdvectionFacePolicy.html#a5158d1d717dff20ebc0dea62d5ab4583", null ],
     [ "use_high_order_candidate", "structerf__sbm_1_1AdvectionFacePolicy.html#a01f6b6b54deee1975f3b0b0efa07f44f", null ],

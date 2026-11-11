@@ -1,5 +1,7 @@
 var structerf__sbm_1_1SBMTransport_1_1DeviceMetadata =
 [
+    [ "chunk_components", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#a96c83533a7e45306175d298d6f8345d1", null ],
+    [ "chunk_offsets", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#aff118248242a49c2a0980565d1449da1", null ],
     [ "edges", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#a98a7fffbd0bebfa5e9e75e2744369ef6", null ],
     [ "host_groups", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#a243bc4265bde9a596588c0a198a2bfcb", null ],
     [ "local_constraints", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#acfeffc8c3f62e624de6731846ecc4707", null ],

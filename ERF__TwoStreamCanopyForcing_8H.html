@@ -186,6 +186,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a4d985fe5957c61107c57e16054f74396"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TwoStreamCanopyForcing_8H.html#a4d985fe5957c61107c57e16054f74396">two_stream_column_base</a> (int i, int j, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;alb_dir) noexcept</td></tr>
+<tr class="memdesc:a4d985fe5957c61107c57e16054f74396"><td class="mdescLeft">&#160;</td><td class="mdescRight">The interface a column starts on, counted from the ground: 0, or the roof's with erf.ibseb.two_stream_roofs. It is the second component of the field of <a class="el" href="structTwoStreamCanopyView.html#afc00258e6561ba08584a3f4740fd5593">TwoStreamCanopyView::ground_albedo_dir</a>, which the sweep writes with the albedo of the column's lower boundary.  <a href="ERF__TwoStreamCanopyForcing_8H.html#a4d985fe5957c61107c57e16054f74396">More...</a><br /></td></tr>
+<tr class="separator:a4d985fe5957c61107c57e16054f74396"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a504a99911eae4889bb386b858942f9ed"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TwoStreamCanopyForcing_8H.html#a504a99911eae4889bb386b858942f9ed">two_stream_canopy_beam</a> (int i, int j, int kmin, int m_top, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;scratch, int f_dir_comp, bool sw_on, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> cos_zenith, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> cloud_fraction, bool blend, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;beam)</td></tr>
 <tr class="memdesc:a504a99911eae4889bb386b858942f9ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the direct beam on a horizontal surface at the interfaces 0 .. m_top of column (i,j), from the scratch of the evaluation that has just run there, into <code>beam:</code> the clear-sky evaluation's beam as it is, and the cloudy evaluation's blended in with the cloud fraction, by the same expression as the fluxes ((1 - f) clear + f cloudy), so the two round alike in single precision and the shortwave down less the beam is the diffuse light.  <a href="ERF__TwoStreamCanopyForcing_8H.html#a504a99911eae4889bb386b858942f9ed">More...</a><br /></td></tr>
 <tr class="separator:a504a99911eae4889bb386b858942f9ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -290,10 +293,10 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Write the direct beam on a horizontal surface at the interfaces 0 .. m_top of column (i,j), from the scratch of the evaluation that has just run there, into <code>beam:</code> the clear-sky evaluation's beam as it is, and the cloudy evaluation's blended in with the cloud fraction, by the same expression as the fluxes ((1 - f) clear + f cloudy), so the two round alike in single precision and the shortwave down less the beam is the diffuse light. </p>
-<p><a class="el" href="ERF__TwoStreamColumn_8H.html#a8024e4e736010bc26c46f52b63715b07" title="GPU-safe per-column vertical integration kernel for two-stream radiation, computing either the clear-...">vertical_two_stream_sweep()</a> keeps the Beer-Lambert beam of every interface in its scratch (<a class="el" href="namespaceTwoStreamScratch.html#a00436be5483399b6dc80967c04cf49ff">TwoStreamScratch::F_DIR</a>), but writes it only when the shortwave is on and the sun is up; otherwise the scratch holds the other evaluation's beam or nothing at all, and the beam is zero. Call it right after each evaluation, before the next one overwrites the scratch.</p>
+<p><a class="el" href="ERF__TwoStreamColumn_8H.html#ad9fb3e8d724ff2848a3667533c96a882" title="GPU-safe per-column vertical integration kernel for two-stream radiation, computing either the clear-...">vertical_two_stream_sweep()</a> keeps the Beer-Lambert beam of every interface in its scratch (<a class="el" href="namespaceTwoStreamScratch.html#a00436be5483399b6dc80967c04cf49ff">TwoStreamScratch::F_DIR</a>), but writes it only when the shortwave is on and the sun is up; otherwise the scratch holds the other evaluation's beam or nothing at all, and the beam is zero. Call it right after each evaluation, before the next one overwrites the scratch.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">scratch</td><td>the sweep's scratch, as <a class="el" href="ERF__TwoStreamColumn_8H.html#a8024e4e736010bc26c46f52b63715b07" title="GPU-safe per-column vertical integration kernel for two-stream radiation, computing either the clear-...">vertical_two_stream_sweep()</a> takes it </td></tr>
+    <tr><td class="paramname">scratch</td><td>the sweep's scratch, as <a class="el" href="ERF__TwoStreamColumn_8H.html#ad9fb3e8d724ff2848a3667533c96a882" title="GPU-safe per-column vertical integration kernel for two-stream radiation, computing either the clear-...">vertical_two_stream_sweep()</a> takes it </td></tr>
     <tr><td class="paramname">f_dir_comp</td><td>the scratch component of the beam (<a class="el" href="namespaceTwoStreamScratch.html#a00436be5483399b6dc80967c04cf49ff">TwoStreamScratch::F_DIR</a>) </td></tr>
     <tr><td class="paramname">kmin</td><td>lowest cell of the column (its surface interface) </td></tr>
     <tr><td class="paramname">m_top</td><td>highest interface of the beam field, at most the column's top </td></tr>
@@ -305,13 +308,13 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> lit = sw_on &amp;&amp; (cos_zenith &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> m = 0; m &lt;= m_top; ++m) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> b = lit ? scratch(i, j, kmin + m, f_dir_comp) : <a class="code" href="namespaceamrex.html">amrex</a>::<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        beam(i, j, m) = blend ? (1.0 - cloud_fraction) * beam(i, j, m) + cloud_fraction * b : b;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> lit = sw_on &amp;&amp; (cos_zenith &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> m = 0; m &lt;= m_top; ++m) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> b = lit ? scratch(i, j, kmin + m, f_dir_comp) : <a class="code" href="namespaceamrex.html">amrex</a>::<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        beam(i, j, m) = blend ? (1.0 - cloud_fraction) * beam(i, j, m) + cloud_fraction * b : b;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:17</div></div>
 </div><!-- fragment -->
@@ -384,10 +387,10 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the lower sample interface m </dd></dl>
-<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    w_up = (dir == 2) ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.5);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> k - k0 + ((dir == 2 &amp;&amp; side &gt; 0) ? 1 : 0);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    w_up = (dir == 2) ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.5);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">return</span> k - k0 + ((dir == 2 &amp;&amp; side &gt; 0) ? 1 : 0);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__TwoStreamCanopyForcing_8H.html#ab57e3e5a54906367e26226812c57a943">two_stream_face_sky()</a>.</p>
 <div class="dynheader">
@@ -400,6 +403,66 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classIBFaceSet.html#a462d5a8c420bf21b62e41e7d5b0b552d" title=" " alt="" coords="207,5,383,47"/>
 <area shape="rect" href="classIBFaceSet.html#a61dc0dd37b559642370dc5328412c091" title=" " alt="" coords="204,71,385,112"/>
 <area shape="rect" href="classIBFaceSet.html#ae9ee23c94d32ee5afd75f3cde4905a1c" title=" " alt="" coords="5,71,156,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4d985fe5957c61107c57e16054f74396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d985fe5957c61107c57e16054f74396">&#9670;&nbsp;</a></span>two_stream_column_base()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int two_stream_column_base </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>alb_dir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The interface a column starts on, counted from the ground: 0, or the roof's with erf.ibseb.two_stream_roofs. It is the second component of the field of <a class="el" href="structTwoStreamCanopyView.html#afc00258e6561ba08584a3f4740fd5593">TwoStreamCanopyView::ground_albedo_dir</a>, which the sweep writes with the albedo of the column's lower boundary. </p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(alb_dir(i, j, 0, 1) + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.5));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classIBFaceSet.html#a61dc0dd37b559642370dc5328412c091">IBFaceSet::compute_shortwave_two_stream()</a>, and <a class="el" href="ERF__TwoStreamCanopyForcing_8H.html#a6e530550ac29ad5f5d252eaceb4dcc42">two_stream_ground_beam_share()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__TwoStreamCanopyForcing_8H_a4d985fe5957c61107c57e16054f74396_icgraph.png" border="0" usemap="#aERF__TwoStreamCanopyForcing_8H_a4d985fe5957c61107c57e16054f74396_icgraph" alt=""/></div>
+<map name="aERF__TwoStreamCanopyForcing_8H_a4d985fe5957c61107c57e16054f74396_icgraph" id="aERF__TwoStreamCanopyForcing_8H_a4d985fe5957c61107c57e16054f74396_icgraph">
+<area shape="rect" title="The interface a column starts on, counted from the ground: 0, or the roof&#39;s with erf...." alt="" coords="676,13,868,39"/>
+<area shape="rect" href="classIBFaceSet.html#a61dc0dd37b559642370dc5328412c091" title=" " alt="" coords="204,5,385,47"/>
+<area shape="rect" href="ERF__TwoStreamCanopyForcing_8H.html#a6e530550ac29ad5f5d252eaceb4dcc42" title="The share of column (i,j)&#39;s shortwave up that is its ground&#39;s reflection of the direct beam: (direct&#45;..." alt="" coords="433,35,628,76"/>
+<area shape="rect" href="classIBFaceSet.html#ae9ee23c94d32ee5afd75f3cde4905a1c" title=" " alt="" coords="5,5,156,47"/>
 </map>
 </div>
 
@@ -482,32 +545,32 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> w_up = 0.0;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ms = <a class="code" href="ERF__TwoStreamCanopyForcing_8H.html#af1c86ea97203b3f39880ebd894b2c9c1">two_stream_canopy_sample</a>(k, k0, dir, side, w_up);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespaceMORRInd.html#a06e152880fa02766d7d184944554218dae158f4ca57d44065b6af0bcc671f3807">mu</a> = ms + ((w_up &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) ? 1 : 0);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> w_lo = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0) - w_up;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> beam_h = w_lo * beam(i, j, ms) + w_up * beam(i, j, <a class="code" href="namespaceMORRInd.html#a06e152880fa02766d7d184944554218dae158f4ca57d44065b6af0bcc671f3807">mu</a>);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sw_dn  = w_lo * fluxes(i, j, k0 + ms, 1) + w_up * fluxes(i, j, k0 + <a class="code" href="namespaceMORRInd.html#a06e152880fa02766d7d184944554218dae158f4ca57d44065b6af0bcc671f3807">mu</a>, 1);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="structTwoStreamFaceSky.html">TwoStreamFaceSky</a> s;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> cz = cosz(i, j, 0);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">// Both operands valid in both arms: an optimiser may evaluate the division</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="comment">// before the selection, and 0 / 0 at night would raise the invalid flag.</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    s.<a class="code" href="structTwoStreamFaceSky.html#ad8deac3e96b24a06bb90971cf33010cd">dni</a>     = (cz &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) ? beam_h / (cz + std::numeric_limits&lt;amrex::Real&gt;::min()) : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    s.<a class="code" href="structTwoStreamFaceSky.html#a54040a4f15fbd84b7aa7973eeda8dc9d">diffuse</a> = (sw_dn - beam_h &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) ? sw_dn - beam_h : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    s.<a class="code" href="structTwoStreamFaceSky.html#aaabf54d196d0bb6bf836746bd6cbe2e6">lw_down</a> = w_lo * fluxes(i, j, k0 + ms, 3) + w_up * fluxes(i, j, k0 + <a class="code" href="namespaceMORRInd.html#a06e152880fa02766d7d184944554218dae158f4ca57d44065b6af0bcc671f3807">mu</a>, 3);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    s.<a class="code" href="structTwoStreamFaceSky.html#a1f089958127916619854e969e553edfe">sw_up</a> = w_lo * fluxes(i, j, k0 + ms, 0) + w_up * fluxes(i, j, k0 + <a class="code" href="namespaceMORRInd.html#a06e152880fa02766d7d184944554218dae158f4ca57d44065b6af0bcc671f3807">mu</a>, 0);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    s.<a class="code" href="structTwoStreamFaceSky.html#a9d7d899391b03f00d6fe0b8bf4ac7ce0">lw_up</a> = w_lo * fluxes(i, j, k0 + ms, 2) + w_up * fluxes(i, j, k0 + <a class="code" href="namespaceMORRInd.html#a06e152880fa02766d7d184944554218dae158f4ca57d44065b6af0bcc671f3807">mu</a>, 2);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">return</span> s;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
-<div class="ttc" id="aERF__TwoStreamCanopyForcing_8H_html_af1c86ea97203b3f39880ebd894b2c9c1"><div class="ttname"><a href="ERF__TwoStreamCanopyForcing_8H.html#af1c86ea97203b3f39880ebd894b2c9c1">two_stream_canopy_sample</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int two_stream_canopy_sample(int k, int k0, int dir, int side, amrex::Real &amp;w_up)</div><div class="ttdoc">Sample interface of a face and the weight of the one above. A z face takes the interface it lies on: ...</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:107</div></div>
+<div class="fragment"><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> w_up = 0.0;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ms = <a class="code" href="ERF__TwoStreamCanopyForcing_8H.html#af1c86ea97203b3f39880ebd894b2c9c1">two_stream_canopy_sample</a>(k, k0, dir, side, w_up);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespaceMORRInd.html#a06e152880fa02766d7d184944554218dae158f4ca57d44065b6af0bcc671f3807">mu</a> = ms + ((w_up &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) ? 1 : 0);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> w_lo = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0) - w_up;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> beam_h = w_lo * beam(i, j, ms) + w_up * beam(i, j, <a class="code" href="namespaceMORRInd.html#a06e152880fa02766d7d184944554218dae158f4ca57d44065b6af0bcc671f3807">mu</a>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sw_dn  = w_lo * fluxes(i, j, k0 + ms, 1) + w_up * fluxes(i, j, k0 + <a class="code" href="namespaceMORRInd.html#a06e152880fa02766d7d184944554218dae158f4ca57d44065b6af0bcc671f3807">mu</a>, 1);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="structTwoStreamFaceSky.html">TwoStreamFaceSky</a> s;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> cz = cosz(i, j, 0);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">// Both operands valid in both arms: an optimiser may evaluate the division</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="comment">// before the selection, and 0 / 0 at night would raise the invalid flag.</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    s.<a class="code" href="structTwoStreamFaceSky.html#ad8deac3e96b24a06bb90971cf33010cd">dni</a>     = (cz &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) ? beam_h / (cz + std::numeric_limits&lt;amrex::Real&gt;::min()) : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    s.<a class="code" href="structTwoStreamFaceSky.html#a54040a4f15fbd84b7aa7973eeda8dc9d">diffuse</a> = (sw_dn - beam_h &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) ? sw_dn - beam_h : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    s.<a class="code" href="structTwoStreamFaceSky.html#aaabf54d196d0bb6bf836746bd6cbe2e6">lw_down</a> = w_lo * fluxes(i, j, k0 + ms, 3) + w_up * fluxes(i, j, k0 + <a class="code" href="namespaceMORRInd.html#a06e152880fa02766d7d184944554218dae158f4ca57d44065b6af0bcc671f3807">mu</a>, 3);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    s.<a class="code" href="structTwoStreamFaceSky.html#a1f089958127916619854e969e553edfe">sw_up</a> = w_lo * fluxes(i, j, k0 + ms, 0) + w_up * fluxes(i, j, k0 + <a class="code" href="namespaceMORRInd.html#a06e152880fa02766d7d184944554218dae158f4ca57d44065b6af0bcc671f3807">mu</a>, 0);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    s.<a class="code" href="structTwoStreamFaceSky.html#a9d7d899391b03f00d6fe0b8bf4ac7ce0">lw_up</a> = w_lo * fluxes(i, j, k0 + ms, 2) + w_up * fluxes(i, j, k0 + <a class="code" href="namespaceMORRInd.html#a06e152880fa02766d7d184944554218dae158f4ca57d44065b6af0bcc671f3807">mu</a>, 2);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
+<div class="ttc" id="aERF__TwoStreamCanopyForcing_8H_html_af1c86ea97203b3f39880ebd894b2c9c1"><div class="ttname"><a href="ERF__TwoStreamCanopyForcing_8H.html#af1c86ea97203b3f39880ebd894b2c9c1">two_stream_canopy_sample</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int two_stream_canopy_sample(int k, int k0, int dir, int side, amrex::Real &amp;w_up)</div><div class="ttdoc">Sample interface of a face and the weight of the one above. A z face takes the interface it lies on: ...</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:121</div></div>
 <div class="ttc" id="anamespaceMORRInd_html_a06e152880fa02766d7d184944554218dae158f4ca57d44065b6af0bcc671f3807"><div class="ttname"><a href="namespaceMORRInd.html#a06e152880fa02766d7d184944554218dae158f4ca57d44065b6af0bcc671f3807">MORRInd::mu</a></div><div class="ttdeci">@ mu</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:94</div></div>
-<div class="ttc" id="astructTwoStreamFaceSky_html"><div class="ttname"><a href="structTwoStreamFaceSky.html">TwoStreamFaceSky</a></div><div class="ttdoc">What one face takes from its column (all W/m^2).</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:115</div></div>
-<div class="ttc" id="astructTwoStreamFaceSky_html_a1f089958127916619854e969e553edfe"><div class="ttname"><a href="structTwoStreamFaceSky.html#a1f089958127916619854e969e553edfe">TwoStreamFaceSky::sw_up</a></div><div class="ttdeci">amrex::Real sw_up</div><div class="ttdoc">Shortwave up at the face's height (the ground's reflection, seen from there)</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:119</div></div>
-<div class="ttc" id="astructTwoStreamFaceSky_html_a54040a4f15fbd84b7aa7973eeda8dc9d"><div class="ttname"><a href="structTwoStreamFaceSky.html#a54040a4f15fbd84b7aa7973eeda8dc9d">TwoStreamFaceSky::diffuse</a></div><div class="ttdeci">amrex::Real diffuse</div><div class="ttdoc">Diffuse shortwave down at the face's height.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:117</div></div>
-<div class="ttc" id="astructTwoStreamFaceSky_html_a9d7d899391b03f00d6fe0b8bf4ac7ce0"><div class="ttname"><a href="structTwoStreamFaceSky.html#a9d7d899391b03f00d6fe0b8bf4ac7ce0">TwoStreamFaceSky::lw_up</a></div><div class="ttdeci">amrex::Real lw_up</div><div class="ttdoc">Longwave up at the face's height (the ground's emission and the air's below)</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:120</div></div>
-<div class="ttc" id="astructTwoStreamFaceSky_html_aaabf54d196d0bb6bf836746bd6cbe2e6"><div class="ttname"><a href="structTwoStreamFaceSky.html#aaabf54d196d0bb6bf836746bd6cbe2e6">TwoStreamFaceSky::lw_down</a></div><div class="ttdeci">amrex::Real lw_down</div><div class="ttdoc">Longwave down at the face's height.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:118</div></div>
-<div class="ttc" id="astructTwoStreamFaceSky_html_ad8deac3e96b24a06bb90971cf33010cd"><div class="ttname"><a href="structTwoStreamFaceSky.html#ad8deac3e96b24a06bb90971cf33010cd">TwoStreamFaceSky::dni</a></div><div class="ttdeci">amrex::Real dni</div><div class="ttdoc">Direct-normal irradiance at the face's height.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:116</div></div>
+<div class="ttc" id="astructTwoStreamFaceSky_html"><div class="ttname"><a href="structTwoStreamFaceSky.html">TwoStreamFaceSky</a></div><div class="ttdoc">What one face takes from its column (all W/m^2).</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:129</div></div>
+<div class="ttc" id="astructTwoStreamFaceSky_html_a1f089958127916619854e969e553edfe"><div class="ttname"><a href="structTwoStreamFaceSky.html#a1f089958127916619854e969e553edfe">TwoStreamFaceSky::sw_up</a></div><div class="ttdeci">amrex::Real sw_up</div><div class="ttdoc">Shortwave up at the face's height (the ground's reflection, seen from there)</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:133</div></div>
+<div class="ttc" id="astructTwoStreamFaceSky_html_a54040a4f15fbd84b7aa7973eeda8dc9d"><div class="ttname"><a href="structTwoStreamFaceSky.html#a54040a4f15fbd84b7aa7973eeda8dc9d">TwoStreamFaceSky::diffuse</a></div><div class="ttdeci">amrex::Real diffuse</div><div class="ttdoc">Diffuse shortwave down at the face's height.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:131</div></div>
+<div class="ttc" id="astructTwoStreamFaceSky_html_a9d7d899391b03f00d6fe0b8bf4ac7ce0"><div class="ttname"><a href="structTwoStreamFaceSky.html#a9d7d899391b03f00d6fe0b8bf4ac7ce0">TwoStreamFaceSky::lw_up</a></div><div class="ttdeci">amrex::Real lw_up</div><div class="ttdoc">Longwave up at the face's height (the ground's emission and the air's below)</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:134</div></div>
+<div class="ttc" id="astructTwoStreamFaceSky_html_aaabf54d196d0bb6bf836746bd6cbe2e6"><div class="ttname"><a href="structTwoStreamFaceSky.html#aaabf54d196d0bb6bf836746bd6cbe2e6">TwoStreamFaceSky::lw_down</a></div><div class="ttdeci">amrex::Real lw_down</div><div class="ttdoc">Longwave down at the face's height.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:132</div></div>
+<div class="ttc" id="astructTwoStreamFaceSky_html_ad8deac3e96b24a06bb90971cf33010cd"><div class="ttname"><a href="structTwoStreamFaceSky.html#ad8deac3e96b24a06bb90971cf33010cd">TwoStreamFaceSky::dni</a></div><div class="ttdeci">amrex::Real dni</div><div class="ttdoc">Direct-normal irradiance at the face's height.</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:130</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classIBFaceSet.html#a462d5a8c420bf21b62e41e7d5b0b552d">IBFaceSet::compute_longwave_two_stream()</a>, and <a class="el" href="classIBFaceSet.html#a61dc0dd37b559642370dc5328412c091">IBFaceSet::compute_shortwave_two_stream()</a>.</p>
 <div class="dynheader">
@@ -593,16 +656,28 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;{</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> up0  = fluxes(i, j, k0, 0);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> refl = alb_dir(i, j, 0) * beam(i, j, 0);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="comment">// Both operands valid in both arms (see two_stream_face_sky()).</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> share = (up0 &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp; refl &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0))</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                            ? refl / (up0 + std::numeric_limits&lt;amrex::Real&gt;::min()) : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">return</span> (share &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0)) ? share : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;{</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">// The column&#39;s lower boundary: the ground, or the roof it starts on.</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> m_base = <a class="code" href="ERF__TwoStreamCanopyForcing_8H.html#a4d985fe5957c61107c57e16054f74396">two_stream_column_base</a>(i, j, alb_dir);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> up0  = fluxes(i, j, k0 + m_base, 0);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> refl = alb_dir(i, j, 0) * beam(i, j, m_base);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">// Both operands valid in both arms (see two_stream_face_sky()).</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> share = (up0 &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp; refl &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0))</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                            ? refl / (up0 + std::numeric_limits&lt;amrex::Real&gt;::min()) : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">return</span> (share &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0)) ? share : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="ttc" id="aERF__TwoStreamCanopyForcing_8H_html_a4d985fe5957c61107c57e16054f74396"><div class="ttname"><a href="ERF__TwoStreamCanopyForcing_8H.html#a4d985fe5957c61107c57e16054f74396">two_stream_column_base</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int two_stream_column_base(int i, int j, const amrex::Array4&lt; const amrex::Real &gt; &amp;alb_dir) noexcept</div><div class="ttdoc">The interface a column starts on, counted from the ground: 0, or the roof's with erf....</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:64</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classIBFaceSet.html#a61dc0dd37b559642370dc5328412c091">IBFaceSet::compute_shortwave_two_stream()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__TwoStreamCanopyForcing_8H_a6e530550ac29ad5f5d252eaceb4dcc42_cgraph.png" border="0" usemap="#aERF__TwoStreamCanopyForcing_8H_a6e530550ac29ad5f5d252eaceb4dcc42_cgraph" alt=""/></div>
+<map name="aERF__TwoStreamCanopyForcing_8H_a6e530550ac29ad5f5d252eaceb4dcc42_cgraph" id="aERF__TwoStreamCanopyForcing_8H_a6e530550ac29ad5f5d252eaceb4dcc42_cgraph">
+<area shape="rect" title="The share of column (i,j)&#39;s shortwave up that is its ground&#39;s reflection of the direct beam: (direct&#45;..." alt="" coords="5,5,200,47"/>
+<area shape="rect" href="ERF__TwoStreamCanopyForcing_8H.html#a4d985fe5957c61107c57e16054f74396" title="The interface a column starts on, counted from the ground: 0, or the roof&#39;s with erf...." alt="" coords="248,13,440,39"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -700,18 +775,18 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;{</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">// The divisor is at least 1 whatever the share: an optimiser that forms both sides of</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="comment">// a choice would otherwise divide by a share of zero, which traps where traps are on.</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> whole = (wall_view &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0)) ? wall_view : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> c = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0) / whole;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <a class="code" href="structGroundWallTerms.html">GroundWallTerms</a> <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419">t</a>;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419">t</a>.d_sw = c * (absorb_dif * sw_walls - wall_view * (sw_net - sw_beam));</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419">t</a>.d_lw = c * emis * (lw_walls - wall_view * lw_down);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419">t</a>;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;{</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment">// The divisor is at least 1 whatever the share: an optimiser that forms both sides of</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// a choice would otherwise divide by a share of zero, which traps where traps are on.</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> whole = (wall_view &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0)) ? wall_view : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> c = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0) / whole;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <a class="code" href="structGroundWallTerms.html">GroundWallTerms</a> <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419">t</a>;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419">t</a>.d_sw = c * (absorb_dif * sw_walls - wall_view * (sw_net - sw_beam));</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419">t</a>.d_lw = c * emis * (lw_walls - wall_view * lw_down);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419">t</a>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
 <div class="ttc" id="anamespaceWSM6Ind_html_aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419"><div class="ttname"><a href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd9c9ab9115542c95cb81d1fccb59419">WSM6Ind::t</a></div><div class="ttdeci">@ t</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:293</div></div>
-<div class="ttc" id="astructGroundWallTerms_html"><div class="ttname"><a href="structGroundWallTerms.html">GroundWallTerms</a></div><div class="ttdoc">What two_stream_ground_wall_terms() adds to the ground balance's net shortwave and longwave [W/m^2].</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:190</div></div>
+<div class="ttc" id="astructGroundWallTerms_html"><div class="ttname"><a href="structGroundWallTerms.html">GroundWallTerms</a></div><div class="ttdoc">What two_stream_ground_wall_terms() adds to the ground balance's net shortwave and longwave [W/m^2].</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamCanopyForcing.H:206</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071">TwoStreamRadiation::advance()</a>.</p>
 <div class="dynheader">

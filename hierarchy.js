@@ -116,8 +116,10 @@ var hierarchy =
       [ "TypedConsLinear", "classTypedConsLinear.html", null ]
     ] ],
     [ "erf_grid_utils::InterpolationStencil", "structerf__grid__utils_1_1InterpolationStencil.html", null ],
+    [ "LineSampler::InterpPlan", "structLineSampler_1_1InterpPlan.html", null ],
     [ "SurfaceModel::InterpTransfer", "structSurfaceModel_1_1InterpTransfer.html", null ],
     [ "erf_noahmp::InvariantPrecipCell", "structerf__noahmp_1_1InvariantPrecipCell.html", null ],
+    [ "erf_sbm::InventoryRoundoff", "structerf__sbm_1_1InventoryRoundoff.html", null ],
     [ "IRadiation", "classIRadiation.html", [
       [ "Radiation", "classRadiation.html", null ],
       [ "RadiationSimple", "classRadiationSimple.html", null ]
@@ -282,9 +284,11 @@ var hierarchy =
     [ "erf_sbm::SBMAMRStageGhostProbe", "structerf__sbm_1_1SBMAMRStageGhostProbe.html", null ],
     [ "erf_sbm::SBMAMRStageParent", "structerf__sbm_1_1SBMAMRStageParent.html", null ],
     [ "erf_sbm::SBMAMRStateView", "structerf__sbm_1_1SBMAMRStateView.html", null ],
+    [ "erf_sbm::SBMBoundaryLedger", "structerf__sbm_1_1SBMBoundaryLedger.html", null ],
     [ "erf_sbm::SBMBulkProjection", "classerf__sbm_1_1SBMBulkProjection.html", null ],
     [ "erf_sbm::SBMLayout", "classerf__sbm_1_1SBMLayout.html", null ],
     [ "erf_sbm::SBMLayoutSpec", "structerf__sbm_1_1SBMLayoutSpec.html", null ],
+    [ "erf_sbm::SBMPhysicalBoundaryConfig", "structerf__sbm_1_1SBMPhysicalBoundaryConfig.html", null ],
     [ "erf_sbm::SBMRegridCellCounts", "structerf__sbm_1_1SBMRegridCellCounts.html", null ],
     [ "erf_sbm::SBMStateAdmission", "classerf__sbm_1_1SBMStateAdmission.html", null ],
     [ "erf_sbm::SBMStateManager", "classerf__sbm_1_1SBMStateManager.html", null ],
@@ -382,6 +386,7 @@ var hierarchy =
     [ "TwoStreamLayerSW", "structTwoStreamLayerSW.html", null ],
     [ "TwoStreamParams", "structTwoStreamParams.html", null ],
     [ "TwoStreamRadiation", "classTwoStreamRadiation.html", null ],
+    [ "TwoStreamRoof", "structTwoStreamRoof.html", null ],
     [ "IBFaceSet::TwoStreamSun", "structIBFaceSet_1_1TwoStreamSun.html", null ],
     [ "TwoStreamSunDate", "structTwoStreamSunDate.html", null ],
     [ "TurbulentPerturbation::UniformClock", "structTurbulentPerturbation_1_1UniformClock.html", null ],

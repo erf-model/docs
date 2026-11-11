@@ -1,6 +1,7 @@
 var ERF__TwoStreamColumn_8H =
 [
     [ "TwoStreamParams", "structTwoStreamParams.html", "structTwoStreamParams" ],
+    [ "TwoStreamRoof", "structTwoStreamRoof.html", "structTwoStreamRoof" ],
     [ "diagnose_cloud_fraction_prognostic", "ERF__TwoStreamColumn_8H.html#a4eddb061cf71b1bf8a90f01ab2dee90c", null ],
     [ "diagnose_layer_optics", "ERF__TwoStreamColumn_8H.html#a65d4e59ff2170aae9b23976f892e5270", null ],
     [ "diagnose_layer_tau", "ERF__TwoStreamColumn_8H.html#acbee78c38354b2ca83c9c90f7709eeda", null ],
@@ -9,6 +10,7 @@ var ERF__TwoStreamColumn_8H =
     [ "get_qc_from_state", "ERF__TwoStreamColumn_8H.html#a7d108b0e1c3ac4162060d8c227c09a5b", null ],
     [ "get_qv_from_state", "ERF__TwoStreamColumn_8H.html#a638005e72f06007c30963ada2c569163", null ],
     [ "get_temperature_from_rhotheta", "ERF__TwoStreamColumn_8H.html#ab3ec33c08b734aefe87ca450fa1ead0d", null ],
+    [ "grey_surface_lw_up", "ERF__TwoStreamColumn_8H.html#a8e54fd0d27e7c6e3c26f13c5b67f73ce", null ],
     [ "is_cloud_level", "ERF__TwoStreamColumn_8H.html#a937d803574166fc8580cd33905bec314", null ],
     [ "make_two_stream_params", "ERF__TwoStreamColumn_8H.html#a1008289521b9417c2e96145a7954912c", null ],
     [ "resolve_surface_albedo_sw", "ERF__TwoStreamColumn_8H.html#a3a848476441bae36e68525ab97df1252", null ],
@@ -20,8 +22,9 @@ var ERF__TwoStreamColumn_8H =
     [ "two_stream_cos_zenith", "ERF__TwoStreamColumn_8H.html#a0f8b0d1bad6ad2b78e18acf1ff5a851d", null ],
     [ "two_stream_land_forcing", "ERF__TwoStreamColumn_8H.html#a4c372005b47961078cec14825e92e984", null ],
     [ "two_stream_scratch_box", "ERF__TwoStreamColumn_8H.html#a55c38dd9b82c5131ce6401de8f800c26", null ],
+    [ "two_stream_starts_on_roof", "ERF__TwoStreamColumn_8H.html#a9a534efed958be7d03e766311e3d89b5", null ],
     [ "valid_surface_temperature", "ERF__TwoStreamColumn_8H.html#aa49b1716d474d6e3f4fb7d67aa5740f9", null ],
-    [ "vertical_two_stream_sweep", "ERF__TwoStreamColumn_8H.html#a8024e4e736010bc26c46f52b63715b07", null ],
+    [ "vertical_two_stream_sweep", "ERF__TwoStreamColumn_8H.html#ad9fb3e8d724ff2848a3667533c96a882", null ],
     [ "A", "ERF__TwoStreamColumn_8H.html#a2aafc499c48282a5ee5f76fb6bc1f1fe", null ],
     [ "DZ", "ERF__TwoStreamColumn_8H.html#ad014e0a9a386f2c277500c9e084e59c4", null ],
     [ "F_DIR", "ERF__TwoStreamColumn_8H.html#a00436be5483399b6dc80967c04cf49ff", null ],

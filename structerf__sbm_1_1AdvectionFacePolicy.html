@@ -105,8 +105,8 @@ Collaboration diagram for erf_sbm::AdvectionFacePolicy:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adc8fe072c9bd91563934de071b80de6d"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1AdvectionFacePolicy.html#adc8fe072c9bd91563934de071b80de6d">accepted</a> () const noexcept</td></tr>
-<tr class="separator:adc8fe072c9bd91563934de071b80de6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4742354bdd5869a8e39a2a4c6f941939"><td class="memItemLeft" align="right" valign="top">constexpr AMREX_GPU_HOST_DEVICE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1AdvectionFacePolicy.html#a4742354bdd5869a8e39a2a4c6f941939">accepted</a> () const noexcept</td></tr>
+<tr class="separator:a4742354bdd5869a8e39a2a4c6f941939"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -120,8 +120,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a01f6b6b54deee1975f3b0b0efa07f44f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="adc8fe072c9bd91563934de071b80de6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc8fe072c9bd91563934de071b80de6d">&#9670;&nbsp;</a></span>accepted()</h2>
+<a id="a4742354bdd5869a8e39a2a4c6f941939"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4742354bdd5869a8e39a2a4c6f941939">&#9670;&nbsp;</a></span>accepted()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -130,7 +130,7 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr bool erf_sbm::AdvectionFacePolicy::accepted </td>
+          <td class="memname">constexpr AMREX_GPU_HOST_DEVICE bool erf_sbm::AdvectionFacePolicy::accepted </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -142,15 +142,15 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structerf__sbm_1_1AdvectionFacePolicy.html#ad734ef0c0f1c13d7f1e80feb1e3517af">action</a> != <a class="code" href="namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca8b01c4ced3a5e115cd39425026d627be">AdvectionFaceAction::RejectInwardOutflow</a> &amp;&amp;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;               <a class="code" href="structerf__sbm_1_1AdvectionFacePolicy.html#ad734ef0c0f1c13d7f1e80feb1e3517af">action</a> != <a class="code" href="namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca3e26c9dd94428ed4f56d31010ab55df1">AdvectionFaceAction::RejectMissingInflowState</a> &amp;&amp;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;               <a class="code" href="structerf__sbm_1_1AdvectionFacePolicy.html#ad734ef0c0f1c13d7f1e80feb1e3517af">action</a> != <a class="code" href="namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0cae475a03e12a2936a051160c7c9daa6b0">AdvectionFaceAction::RejectIncompleteInflowState</a>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structerf__sbm_1_1AdvectionFacePolicy.html#ad734ef0c0f1c13d7f1e80feb1e3517af">action</a> != <a class="code" href="namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca8b01c4ced3a5e115cd39425026d627be">AdvectionFaceAction::RejectInwardOutflow</a> &amp;&amp;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;               <a class="code" href="structerf__sbm_1_1AdvectionFacePolicy.html#ad734ef0c0f1c13d7f1e80feb1e3517af">action</a> != <a class="code" href="namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca3e26c9dd94428ed4f56d31010ab55df1">AdvectionFaceAction::RejectMissingInflowState</a> &amp;&amp;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;               <a class="code" href="structerf__sbm_1_1AdvectionFacePolicy.html#ad734ef0c0f1c13d7f1e80feb1e3517af">action</a> != <a class="code" href="namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0cae475a03e12a2936a051160c7c9daa6b0">AdvectionFaceAction::RejectIncompleteInflowState</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 <div class="ttc" id="anamespaceerf__sbm_html_a10c9dba6bad5934a5a30e82837833f0ca3e26c9dd94428ed4f56d31010ab55df1"><div class="ttname"><a href="namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca3e26c9dd94428ed4f56d31010ab55df1">erf_sbm::AdvectionFaceAction::RejectMissingInflowState</a></div><div class="ttdeci">@ RejectMissingInflowState</div></div>
 <div class="ttc" id="anamespaceerf__sbm_html_a10c9dba6bad5934a5a30e82837833f0ca8b01c4ced3a5e115cd39425026d627be"><div class="ttname"><a href="namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca8b01c4ced3a5e115cd39425026d627be">erf_sbm::AdvectionFaceAction::RejectInwardOutflow</a></div><div class="ttdeci">@ RejectInwardOutflow</div></div>
 <div class="ttc" id="anamespaceerf__sbm_html_a10c9dba6bad5934a5a30e82837833f0cae475a03e12a2936a051160c7c9daa6b0"><div class="ttname"><a href="namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0cae475a03e12a2936a051160c7c9daa6b0">erf_sbm::AdvectionFaceAction::RejectIncompleteInflowState</a></div><div class="ttdeci">@ RejectIncompleteInflowState</div></div>
-<div class="ttc" id="astructerf__sbm_1_1AdvectionFacePolicy_html_ad734ef0c0f1c13d7f1e80feb1e3517af"><div class="ttname"><a href="structerf__sbm_1_1AdvectionFacePolicy.html#ad734ef0c0f1c13d7f1e80feb1e3517af">erf_sbm::AdvectionFacePolicy::action</a></div><div class="ttdeci">AdvectionFaceAction action</div><div class="ttdef"><b>Definition:</b> ERF_SBMAdvectionBoundary.H:39</div></div>
+<div class="ttc" id="astructerf__sbm_1_1AdvectionFacePolicy_html_ad734ef0c0f1c13d7f1e80feb1e3517af"><div class="ttname"><a href="structerf__sbm_1_1AdvectionFacePolicy.html#ad734ef0c0f1c13d7f1e80feb1e3517af">erf_sbm::AdvectionFacePolicy::action</a></div><div class="ttdeci">AdvectionFaceAction action</div><div class="ttdef"><b>Definition:</b> ERF_SBMAdvectionBoundary.H:40</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -167,7 +167,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structerf__sbm_1_1AdvectionFacePolicy.html#adc8fe072c9bd91563934de071b80de6d">accepted()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structerf__sbm_1_1AdvectionFacePolicy.html#a4742354bdd5869a8e39a2a4c6f941939">accepted()</a>.</p>
 
 </div>
 </div>

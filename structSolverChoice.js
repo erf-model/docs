@@ -184,6 +184,7 @@ var structSolverChoice =
     [ "sbm_amr_qualification_test", "structSolverChoice.html#a8795f16c4b28caea034fb81700efad14", null ],
     [ "sbm_amr_qualification_uniform_ratio", "structSolverChoice.html#ab0d8bce52405d3b3146d6b4bdee372b5", null ],
     [ "sbm_amr_qualification_unique_profile", "structSolverChoice.html#a974c20d0c55d11f2d630ca86fbfdeb9e", null ],
+    [ "sbm_budget_check", "structSolverChoice.html#afff5f9f34dbab1c87a978048013a053b", null ],
     [ "sbm_cloud_rain_split", "structSolverChoice.html#a583d1352f6c78c133d06319d77e12f66", null ],
     [ "sbm_edges", "structSolverChoice.html#a85b61654b88775909f93aa2998486651", null ],
     [ "sbm_fixture_initial_state", "structSolverChoice.html#af16adf374e4cbc938c276296f2bb0cc6", null ],

@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"ERF__EBStruct_8H.html#a218dc338efca309f98d851c6ead2b3cb":[3,0,1,4,6,3],
+"ERF__EBStruct_8H.html#a218dc338efca309f98d851c6ead2b3cba096a70918b679cde6c351830067f8e2c":[3,0,1,4,6,3,1],
+"ERF__EBStruct_8H.html#a218dc338efca309f98d851c6ead2b3cba2b273df24d0608283c0e5ee084fc0540":[3,0,1,4,6,3,0],
+"ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704":[3,0,1,4,6,1],
 "ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704a4285ac9a293488cf48525a72a50f08c3":[3,0,1,4,6,1,0],
 "ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704a70081f42537ac6a9f00a5ab7cf0c1698":[3,0,1,4,6,1,1],
 "ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704a7cb98542596c7e6f323260a3a29df48f":[3,0,1,4,6,1,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__IBSEBSolar_8H.html#ac406cb6ad458a2f1a36ec1b5cbfe3b2e":[3,0,1,9,8,27],
 "ERF__IBSEBSolar_8H.html#ad57393ea9cb57e0e9ef59027908c6e3b":[3,0,1,9,8,15],
 "ERF__IBSEBSolar_8H.html#ad5cd2dad18e4e2d6824495e169b7ee9c":[3,0,1,9,8,22],
-"ERF__IBSEBSolar_8H.html#ad7375cdaac9450b0f0731011267b4d08":[3,0,1,9,8,18],
-"ERF__IBSEBSolar_8H.html#adfc0cd9b7db1f60dc0d3562595744cdc":[3,0,1,9,8,4],
-"ERF__IBSEBSolar_8H.html#ae09e2073c1208d7de0c750f830a80bbf":[3,0,1,9,8,23],
-"ERF__IBSEBSolar_8H.html#ae3a1f3e3443d21d2751153121ee65e2f":[3,0,1,9,8,26],
-"ERF__IBSEBSolar_8H.html#ae621d880d59ae6994ad74d05d628dc29":[3,0,1,9,8,29]
+"ERF__IBSEBSolar_8H.html#ad7375cdaac9450b0f0731011267b4d08":[3,0,1,9,8,18]
 };
