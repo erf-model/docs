@@ -186,6 +186,7 @@ var classERF =
     [ "make_if_projection_sigma", "classERF.html#a924dea8621e95e5137217c8b344e9c22", null ],
     [ "make_lsm_at_level", "classERF.html#a170be909e26fe9e679bbf39172ef83d6", null ],
     [ "make_physbcs", "classERF.html#ac81ec7f74a1be1c4a1e6e15e08385ed5", null ],
+    [ "make_pseudo_incompressible_initial_state", "classERF.html#a10da69da89e02fe7b3d874a2d6d92ccb", null ],
     [ "make_sbm_flux_register", "classERF.html#a7bbaa4a1b5835e02b975f808315fe6c4", null ],
     [ "make_sub_dz", "classERF.html#abdd4dae5326bcddf78bf3b2a748d8fcf", null ],
     [ "make_subdomains", "classERF.html#a7567528ba42339cf237e11617453eb5f", null ],

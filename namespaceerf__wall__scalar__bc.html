@@ -258,16 +258,17 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    std::string <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> = face + <span class="stringliteral">&quot;: density and density_grad must be omitted &quot;</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="stringliteral">&quot;on solid walls in anelastic mode (density is fixed by the base state)&quot;</span>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">if</span> (density_specified &amp;&amp; density_gradient_specified) {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> += <span class="stringliteral">&quot;; both keywords were supplied&quot;</span>;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (density_specified) {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> += <span class="stringliteral">&quot;; &quot;</span> + face + <span class="stringliteral">&quot;.density was supplied&quot;</span>;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> += <span class="stringliteral">&quot;; &quot;</span> + face + <span class="stringliteral">&quot;.density_grad was supplied&quot;</span>;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="stringliteral">&quot;on solid walls in anelastic mode (density is fixed by the base state) and in &quot;</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="stringliteral">&quot;pseudo-incompressible mode (not yet supported there)&quot;</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">if</span> (density_specified &amp;&amp; density_gradient_specified) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> += <span class="stringliteral">&quot;; both keywords were supplied&quot;</span>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (density_specified) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> += <span class="stringliteral">&quot;; &quot;</span> + face + <span class="stringliteral">&quot;.density was supplied&quot;</span>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a> += <span class="stringliteral">&quot;; &quot;</span> + face + <span class="stringliteral">&quot;.density_grad was supplied&quot;</span>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a>;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
 <div class="ttc" id="aERF__InputPreflight_8cpp_html_a36bd74109f547f7f8198faf5a12d2879"><div class="ttname"><a href="ERF__InputPreflight_8cpp.html#a36bd74109f547f7f8198faf5a12d2879">message</a></div><div class="ttdeci">std::string message</div><div class="ttdef"><b>Definition:</b> ERF_InputPreflight.cpp:25</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__wall__scalar__bc.html#ae000c68e899b110f83e30e35001db37e">parse_wall_face_scalars()</a>.</p>
@@ -369,11 +370,11 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> face + <span class="stringliteral">&quot;.density_grad is not supported for NoSlipWall; use &quot;</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        + face + <span class="stringliteral">&quot;.density for a fixed compressible wall density or omit &quot;</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="stringliteral">&quot;wall density in anelastic mode&quot;</span>;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">return</span> face + <span class="stringliteral">&quot;.density_grad is not supported for NoSlipWall; use &quot;</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        + face + <span class="stringliteral">&quot;.density for a fixed compressible wall density or omit &quot;</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="stringliteral">&quot;wall density in anelastic mode&quot;</span>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__wall__scalar__bc.html#ae000c68e899b110f83e30e35001db37e">parse_wall_face_scalars()</a>.</p>
 <div class="dynheader">
@@ -444,86 +445,86 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">// The value-carrying keys are probed with negative sentinels and their presence is</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="comment">// read off the resulting value, not off the queryAdd return value.  queryAdd inserts</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// the default into the (process-global) ParmParse table on a miss, so its return</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// value means &quot;did this key exist before this call&quot; -- true for every call after the</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">// first.  ERF::init_bcs() runs twice on restart, and ERF_InitBCs.cpp parses the same</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">// density/qv keys under the same face prefix, so a return-value test reports</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">// &quot;user specified&quot; with a value of zero on the second pass.  That is what produced</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="comment">// the spurious NoSlipWall density_grad abort in #3922.</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="comment">// density_grad and theta_grad deliberately keep plain query(): every real value is a</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">// legal gradient, including zero and negatives, so no sentinel can encode &quot;unset&quot;.</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> density = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-1.0);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;density&quot;</span>, density);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> density_specified = (density &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">if</span> (!density_specified) { density = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0); }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> density_grad = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> density_gradient_specified = <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;density_grad&quot;</span>, density_grad);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-1.0);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;theta&quot;</span>, <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> theta_specified = (<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">if</span> (!theta_specified) { <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0); }</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_grad = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> theta_gradient_specified = <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;theta_grad&quot;</span>, theta_grad);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aaf099273d19f4b8cdca199c5177231e35">qv</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-1.0);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">if</span> (wall_kind == SolidWallKind::NoSlip) { <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;qv&quot;</span>, <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aaf099273d19f4b8cdca199c5177231e35">qv</a>); }</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> qv_specified = (wall_kind == SolidWallKind::NoSlip) &amp;&amp;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                              (<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aaf099273d19f4b8cdca199c5177231e35">qv</a> &gt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">if</span> (!qv_specified) { <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aaf099273d19f4b8cdca199c5177231e35">qv</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0); }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    WallFaceParseResult result;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">if</span> (anelastic &amp;&amp; (density_specified || density_gradient_specified)) {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        result.error = <a class="code" href="namespaceerf__wall__scalar__bc.html#aa0744a8f3f7fadf791a835ed91712eaa">anelastic_wall_density_error</a>(</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            face, density_specified, density_gradient_specified);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">if</span> (wall_kind == SolidWallKind::NoSlip &amp;&amp; density_gradient_specified) {</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        result.error = <a class="code" href="namespaceerf__wall__scalar__bc.html#ad3ad52befba38014c5b9202419d31acb">no_slip_density_gradient_error</a>(face);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">if</span> (wall_kind == SolidWallKind::Slip &amp;&amp;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <a class="code" href="namespaceerf__wall__scalar__bc.html#a81f310568f2fbfdd501e5e0bfbecf8d7">wall_scalar_value_gradient_conflict</a>(density_specified,</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                                            density_gradient_specified)) {</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        result.error = <a class="code" href="namespaceerf__wall__scalar__bc.html#a28d7acf1e52f7825d775911974033d8d">wall_scalar_value_gradient_error</a>(face, <span class="stringliteral">&quot;density&quot;</span>);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    }</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceerf__wall__scalar__bc.html#a81f310568f2fbfdd501e5e0bfbecf8d7">wall_scalar_value_gradient_conflict</a>(theta_specified,</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                                            theta_gradient_specified)) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        result.error = <a class="code" href="namespaceerf__wall__scalar__bc.html#a28d7acf1e52f7825d775911974033d8d">wall_scalar_value_gradient_error</a>(face, <span class="stringliteral">&quot;theta&quot;</span>);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    }</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">if</span> (density_specified) {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        result.scalars.density = {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            WallScalarBCIntent::DirichletConserved, density};</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    result.scalars.theta = <a class="code" href="namespaceerf__wall__scalar__bc.html#aa822e2b64a2bfb554b3c8f6d2d23481a">resolve_wall_scalar_value</a>(</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        theta_specified, <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>, density_specified, density);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">if</span> (theta_gradient_specified) {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        result.scalars.theta = <a class="code" href="namespaceerf__wall__scalar__bc.html#ad56808d461a504b3dca71c0716839b6d">resolve_wall_scalar_gradient</a>(<span class="keyword">true</span>, theta_grad);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">if</span> (wall_kind == SolidWallKind::Slip &amp;&amp; density_gradient_specified) {</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        result.scalars.density = <a class="code" href="namespaceerf__wall__scalar__bc.html#ad56808d461a504b3dca71c0716839b6d">resolve_wall_scalar_gradient</a>(<span class="keyword">true</span>, density_grad);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">if</span> (qv_specified) {</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        result.scalars.qv = <a class="code" href="namespaceerf__wall__scalar__bc.html#aa822e2b64a2bfb554b3c8f6d2d23481a">resolve_wall_scalar_value</a>(</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <span class="keyword">true</span>, <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aaf099273d19f4b8cdca199c5177231e35">qv</a>, density_specified, density);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;{</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="comment">// The value-carrying keys are probed with negative sentinels and their presence is</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// read off the resulting value, not off the queryAdd return value.  queryAdd inserts</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// the default into the (process-global) ParmParse table on a miss, so its return</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">// value means &quot;did this key exist before this call&quot; -- true for every call after the</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">// first.  ERF::init_bcs() runs twice on restart, and ERF_InitBCs.cpp parses the same</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">// density/qv keys under the same face prefix, so a return-value test reports</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="comment">// &quot;user specified&quot; with a value of zero on the second pass.  That is what produced</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="comment">// the spurious NoSlipWall density_grad abort in #3922.</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">// density_grad and theta_grad deliberately keep plain query(): every real value is a</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">// legal gradient, including zero and negatives, so no sentinel can encode &quot;unset&quot;.</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> density = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-1.0);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;density&quot;</span>, density);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> density_specified = (density &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">if</span> (!density_specified) { density = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0); }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> density_grad = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> density_gradient_specified = <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;density_grad&quot;</span>, density_grad);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-1.0);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;theta&quot;</span>, <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> theta_specified = (<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">if</span> (!theta_specified) { <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0); }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_grad = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> theta_gradient_specified = <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;theta_grad&quot;</span>, theta_grad);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aaf099273d19f4b8cdca199c5177231e35">qv</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-1.0);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">if</span> (wall_kind == SolidWallKind::NoSlip) { <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;qv&quot;</span>, <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aaf099273d19f4b8cdca199c5177231e35">qv</a>); }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> qv_specified = (wall_kind == SolidWallKind::NoSlip) &amp;&amp;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                              (<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aaf099273d19f4b8cdca199c5177231e35">qv</a> &gt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">if</span> (!qv_specified) { <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aaf099273d19f4b8cdca199c5177231e35">qv</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0); }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    WallFaceParseResult result;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">if</span> (anelastic &amp;&amp; (density_specified || density_gradient_specified)) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        result.error = <a class="code" href="namespaceerf__wall__scalar__bc.html#aa0744a8f3f7fadf791a835ed91712eaa">anelastic_wall_density_error</a>(</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            face, density_specified, density_gradient_specified);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">if</span> (wall_kind == SolidWallKind::NoSlip &amp;&amp; density_gradient_specified) {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        result.error = <a class="code" href="namespaceerf__wall__scalar__bc.html#ad3ad52befba38014c5b9202419d31acb">no_slip_density_gradient_error</a>(face);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    }</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">if</span> (wall_kind == SolidWallKind::Slip &amp;&amp;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <a class="code" href="namespaceerf__wall__scalar__bc.html#a81f310568f2fbfdd501e5e0bfbecf8d7">wall_scalar_value_gradient_conflict</a>(density_specified,</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                                            density_gradient_specified)) {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        result.error = <a class="code" href="namespaceerf__wall__scalar__bc.html#a28d7acf1e52f7825d775911974033d8d">wall_scalar_value_gradient_error</a>(face, <span class="stringliteral">&quot;density&quot;</span>);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceerf__wall__scalar__bc.html#a81f310568f2fbfdd501e5e0bfbecf8d7">wall_scalar_value_gradient_conflict</a>(theta_specified,</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                            theta_gradient_specified)) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        result.error = <a class="code" href="namespaceerf__wall__scalar__bc.html#a28d7acf1e52f7825d775911974033d8d">wall_scalar_value_gradient_error</a>(face, <span class="stringliteral">&quot;theta&quot;</span>);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">if</span> (density_specified) {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        result.scalars.density = {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            WallScalarBCIntent::DirichletConserved, density};</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    result.scalars.theta = <a class="code" href="namespaceerf__wall__scalar__bc.html#aa822e2b64a2bfb554b3c8f6d2d23481a">resolve_wall_scalar_value</a>(</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        theta_specified, <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>, density_specified, density);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">if</span> (theta_gradient_specified) {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        result.scalars.theta = <a class="code" href="namespaceerf__wall__scalar__bc.html#ad56808d461a504b3dca71c0716839b6d">resolve_wall_scalar_gradient</a>(<span class="keyword">true</span>, theta_grad);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">if</span> (wall_kind == SolidWallKind::Slip &amp;&amp; density_gradient_specified) {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        result.scalars.density = <a class="code" href="namespaceerf__wall__scalar__bc.html#ad56808d461a504b3dca71c0716839b6d">resolve_wall_scalar_gradient</a>(<span class="keyword">true</span>, density_grad);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    }</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">if</span> (qv_specified) {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        result.scalars.qv = <a class="code" href="namespaceerf__wall__scalar__bc.html#aa822e2b64a2bfb554b3c8f6d2d23481a">resolve_wall_scalar_value</a>(</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keyword">true</span>, <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aaf099273d19f4b8cdca199c5177231e35">qv</a>, density_specified, density);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36"><div class="ttname"><a href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">MicVar_Kess::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:26</div></div>
@@ -532,7 +533,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceerf__wall__scalar__bc_html_a81f310568f2fbfdd501e5e0bfbecf8d7"><div class="ttname"><a href="namespaceerf__wall__scalar__bc.html#a81f310568f2fbfdd501e5e0bfbecf8d7">erf_wall_scalar_bc::wall_scalar_value_gradient_conflict</a></div><div class="ttdeci">bool wall_scalar_value_gradient_conflict(bool value_specified, bool gradient_specified)</div><div class="ttdef"><b>Definition:</b> ERF_WallScalarBC.H:113</div></div>
 <div class="ttc" id="anamespaceerf__wall__scalar__bc_html_aa0744a8f3f7fadf791a835ed91712eaa"><div class="ttname"><a href="namespaceerf__wall__scalar__bc.html#aa0744a8f3f7fadf791a835ed91712eaa">erf_wall_scalar_bc::anelastic_wall_density_error</a></div><div class="ttdeci">std::string anelastic_wall_density_error(const std::string &amp;face, bool density_specified, bool density_gradient_specified)</div><div class="ttdef"><b>Definition:</b> ERF_WallScalarBC.H:141</div></div>
 <div class="ttc" id="anamespaceerf__wall__scalar__bc_html_aa822e2b64a2bfb554b3c8f6d2d23481a"><div class="ttname"><a href="namespaceerf__wall__scalar__bc.html#aa822e2b64a2bfb554b3c8f6d2d23481a">erf_wall_scalar_bc::resolve_wall_scalar_value</a></div><div class="ttdeci">ParsedWallScalarBC resolve_wall_scalar_value(bool value_specified, amrex::Real primitive_value, bool density_specified_on_same_face, amrex::Real density_value)</div><div class="ttdef"><b>Definition:</b> ERF_WallScalarBC.H:73</div></div>
-<div class="ttc" id="anamespaceerf__wall__scalar__bc_html_ad3ad52befba38014c5b9202419d31acb"><div class="ttname"><a href="namespaceerf__wall__scalar__bc.html#ad3ad52befba38014c5b9202419d31acb">erf_wall_scalar_bc::no_slip_density_gradient_error</a></div><div class="ttdeci">std::string no_slip_density_gradient_error(const std::string &amp;face)</div><div class="ttdef"><b>Definition:</b> ERF_WallScalarBC.H:167</div></div>
+<div class="ttc" id="anamespaceerf__wall__scalar__bc_html_ad3ad52befba38014c5b9202419d31acb"><div class="ttname"><a href="namespaceerf__wall__scalar__bc.html#ad3ad52befba38014c5b9202419d31acb">erf_wall_scalar_bc::no_slip_density_gradient_error</a></div><div class="ttdeci">std::string no_slip_density_gradient_error(const std::string &amp;face)</div><div class="ttdef"><b>Definition:</b> ERF_WallScalarBC.H:168</div></div>
 <div class="ttc" id="anamespaceerf__wall__scalar__bc_html_ad56808d461a504b3dca71c0716839b6d"><div class="ttname"><a href="namespaceerf__wall__scalar__bc.html#ad56808d461a504b3dca71c0716839b6d">erf_wall_scalar_bc::resolve_wall_scalar_gradient</a></div><div class="ttdeci">ParsedWallScalarBC resolve_wall_scalar_gradient(bool gradient_specified, amrex::Real gradient)</div><div class="ttdef"><b>Definition:</b> ERF_WallScalarBC.H:97</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a5b986828dae61e951f2125ed5409bf53">ERF::init_phys_bcs()</a>.</p>

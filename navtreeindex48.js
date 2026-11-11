@@ -1,5 +1,6 @@
 var NAVTREEINDEX48 =
 {
+"structBelowGroundGhostSync.html#a4c9d356b81fca560ef2e4ef8fd9d74d5":[2,0,38,2],
 "structBelowGroundGhostSync.html#a594628cbf86325c9dc62c9325004f58f":[2,0,38,1],
 "structBelowGroundGhostSync.html#a87c552b6583712e54b515b297a069062":[2,0,38,0],
 "structBelowGroundGhostSync.html#a966b90036864c25516406acbe46d3713":[2,0,38,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX48 =
 "structIBSEBParams.html#a67dda7c7b0552b163997d3c029343d62":[2,0,82,35],
 "structIBSEBParams.html#a725489912ee4e6c71039eab3a1927057":[2,0,82,19],
 "structIBSEBParams.html#a73461c5d7f10d03ad53af3cf84000dea":[2,0,82,57],
-"structIBSEBParams.html#a74d9dc40f8dd465cc7a24da3a31910c4":[2,0,82,22],
-"structIBSEBParams.html#a76df8890d3abd0dadc131b630befea3b":[2,0,82,21]
+"structIBSEBParams.html#a74d9dc40f8dd465cc7a24da3a31910c4":[2,0,82,22]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"structplotfile2d_1_1PlotVariableSelection.html":[2,0,25,11],
 "structplotfile2d_1_1PlotVariableSelection.html#a0003f85a30ea1d4fb062ca95f8a7d8cb":[2,0,25,11,0],
 "structplotfile2d_1_1PlotVariableSelection.html#ad47995916c3ba192318be0a6500f237b":[2,0,25,11,1],
 "structplotfile2d_1_1Plotfile2DOutputDescriptor.html":[2,0,25,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "structsurface__temp__wave__coupled.html#a6313c22feef948baab880eba3a5d1a17":[2,0,220,3],
 "structsurface__temp__wave__coupled.html#a8cdc7262a175d33edb60fe9098d35c6f":[2,0,220,2],
 "structsurface__temp__wave__coupled.html#a8cfd3441e355ad6088f6f4cc249ce34a":[2,0,220,0],
-"structsurface__temp__wave__coupled.html#a99639bba8ffa55f8d545748906ceb842":[2,0,220,1],
-"structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96":[2,0,220,6]
+"structsurface__temp__wave__coupled.html#a99639bba8ffa55f8d545748906ceb842":[2,0,220,1]
 };

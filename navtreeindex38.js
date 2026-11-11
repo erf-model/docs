@@ -1,5 +1,6 @@
 var NAVTREEINDEX38 =
 {
+"classerf__actuator_1_1RunningStats.html#ab624564102f69ed45347a7285321ad43":[2,0,0,1,3],
 "classerf__actuator_1_1RunningStats.html#ac84c11112ce238651a6645d8058be1b6":[2,0,0,1,13],
 "classerf__actuator_1_1RunningStats.html#acb31c0ee978abb15c6439d53b83c8016":[2,0,0,1,8],
 "classerf__actuator_1_1RunningStats.html#ad9b763258fc62a508ce272d2c51642ce":[2,0,0,1,24],
@@ -248,6 +249,5 @@ var NAVTREEINDEX38 =
 "classerf__sbm_1_1SBMStateManager.html#ad35a14f2264a5ae61df420edbafdedff":[2,0,11,35,14],
 "classerf__sbm_1_1SBMStateManager.html#ad8460974cd9f320bc2e2bb99d9931521":[2,0,11,35,19],
 "classerf__sbm_1_1SBMStateManager.html#ad8b5e66c74c5f7a7fed89e4e8cb704fa":[2,0,11,35,5],
-"classerf__sbm_1_1SBMStateManager.html#af03941c2e3fc9d24423b9ca000cebca9":[2,0,11,35,20],
-"classerf__sbm_1_1SBMTransport.html":[2,0,11,38]
+"classerf__sbm_1_1SBMStateManager.html#af03941c2e3fc9d24423b9ca000cebca9":[2,0,11,35,20]
 };

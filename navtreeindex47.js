@@ -1,5 +1,6 @@
 var NAVTREEINDEX47 =
 {
+"namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441a2a79c6fa9bd9885d911d26d2ed8134b0":[1,0,83,14,4],
 "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441a3b30abed195c163bd2676a42be6e9383":[1,0,83,14,6],
 "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441a7cb98542596c7e6f323260a3a29df48f":[1,0,83,14,1],
 "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441a887090f85c9e1757c6d16c6c2611ce4d":[1,0,83,14,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX47 =
 "structBdyTimeWeights.html#a61fdfca29ef6694b429000558c0fd568":[2,0,37,1],
 "structBdyTimeWeights.html#adeb2414dd6a9a97e903fdae255396b44":[2,0,37,0],
 "structBdyTimeWeights.html#af449ae2e84ba7fa6c55a38501b14e5bd":[2,0,37,2],
-"structBelowGroundGhostSync.html":[2,0,38],
-"structBelowGroundGhostSync.html#a4c9d356b81fca560ef2e4ef8fd9d74d5":[2,0,38,2]
+"structBelowGroundGhostSync.html":[2,0,38]
 };

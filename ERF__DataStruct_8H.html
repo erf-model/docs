@@ -634,7 +634,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compressibility of the equations solved at a level. </p>
-<p>FullyCompressible solves the compressible equations with acoustic substepping. Anelastic holds the density at its base-state value and projects the velocity. PseudoIncompressible projects the velocity to satisfy div(rho0 theta0 u) = 0 with a variable-coefficient solve; otherwise it still takes the anelastic path (the density is not yet evolved). </p>
+<p>FullyCompressible solves the compressible equations with acoustic substepping. Anelastic holds the density at its base-state value and projects the velocity. PseudoIncompressible evolves the density and (rho theta) as FullyCompressible does, with the buoyancy -(rho - rho0) g, and projects the velocity to satisfy div(rho0 theta0 u) = 0 with a variable-coefficient solve; like Anelastic it never substeps acoustically. </p>
 
 </div>
 </div>

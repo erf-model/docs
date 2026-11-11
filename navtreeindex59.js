@@ -1,5 +1,6 @@
 var NAVTREEINDEX59 =
 {
+"structerf__wall__thermodynamics_1_1FaceWall.html#a7a95a1f556295753236fc34101fc5596":[2,0,16,3,1],
 "structerf__wall__thermodynamics_1_1FaceWall.html#a8717113845ddad6747fe2ed51bed5f1c":[2,0,16,3,2],
 "structerf__wall__thermodynamics_1_1FaceWall.html#ac16eed6c88058836f7e229c7800baa3e":[2,0,16,3,3],
 "structerf__wall__thermodynamics_1_1MomentumTransfer.html":[2,0,16,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX59 =
 "structplotfile2d_1_1DiagnosticDescriptor.html#a5e882a5e7d17c46f91cb42434b6a1e2f":[2,0,25,0,4],
 "structplotfile2d_1_1DiagnosticDescriptor.html#a69376d332df5b24da74792ea3c51ddd6":[2,0,25,0,5],
 "structplotfile2d_1_1DiagnosticDescriptor.html#a721843e2d0fd5176d40123236e89f481":[2,0,25,0,0],
-"structplotfile2d_1_1DiagnosticDescriptor.html#ac674ab50d4fab578561259756ddf96c7":[2,0,25,0,2],
-"structplotfile2d_1_1PlotVariableSelection.html":[2,0,25,11]
+"structplotfile2d_1_1DiagnosticDescriptor.html#ac674ab50d4fab578561259756ddf96c7":[2,0,25,0,2]
 };
