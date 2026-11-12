@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"ERF__AuxiliaryMappedTransport_8H.html#abc9ab4c6f70613a12dd467ffd9bb2695":[3,0,1,1,3,13],
+"ERF__AuxiliaryMappedTransport_8H.html#ac1472de9585593195cae2778264db85f":[3,0,1,1,3,15],
+"ERF__AuxiliaryMappedTransport_8H.html#adfccc5d117c2f176b357d3712b4cc592":[3,0,1,1,3,17],
+"ERF__AuxiliaryMappedTransport_8H.html#af88d6cddb925fe25cb4fdd914f012777":[3,0,1,1,3,12],
 "ERF__AuxiliaryMappedTransport_8H.html#af8b38e575d2e3ef2765351ec709f60f4":[3,0,1,1,3,18],
 "ERF__AuxiliaryMappedTransport_8H_source.html":[3,0,1,1,3],
 "ERF__AuxiliaryMappedTransport_8cpp.html":[3,0,1,1,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__ComputeDiffusivityMYJ_8cpp.html#a8c281fdb91beebc860c44b9e0ec156fe":[3,0,1,19,2,0],
 "ERF__ComputeDiffusivityMYNN25_8cpp.html":[3,0,1,19,3],
 "ERF__ComputeDiffusivityMYNN25_8cpp.html#a906231db6cd588c98d4c233904c54e74":[3,0,1,19,3,1],
-"ERF__ComputeDiffusivityMYNN25_8cpp.html#affcac1eae4418e1180b41a501492cdaf":[3,0,1,19,3,0],
-"ERF__ComputeDiffusivityMYNNEDMF_8cpp.html":[3,0,1,19,4],
-"ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a94d360dcba34c57abb9134621c07689f":[3,0,1,19,4,0],
-"ERF__ComputeDiffusivityYSUNew_8cpp.html":[3,0,1,19,6],
-"ERF__ComputeDiffusivityYSUNew_8cpp.html#a1b9903ea1dc198066fc88a4745b136ed":[3,0,1,19,6,0]
+"ERF__ComputeDiffusivityMYNN25_8cpp.html#affcac1eae4418e1180b41a501492cdaf":[3,0,1,19,3,0]
 };

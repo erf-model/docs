@@ -136,6 +136,7 @@ var hierarchy =
     [ "LatLonMap", "classLatLonMap.html", null ],
     [ "erf_sbm::LayoutValidation", "structerf__sbm_1_1LayoutValidation.html", null ],
     [ "TopographicShading::Level", "structTopographicShading_1_1Level.html", null ],
+    [ "erf_actuator::LevelHeights", "classerf__actuator_1_1LevelHeights.html", null ],
     [ "erf_interval_means::LevelMetadata", "structerf__interval__means_1_1LevelMetadata.html", null ],
     [ "erf_sbm::SBMStateManager::LevelState", "structerf__sbm_1_1SBMStateManager_1_1LevelState.html", null ],
     [ "erf_auxiliary::AuxiliaryInertTracer::LevelStorage", "structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage.html", null ],

@@ -1,5 +1,9 @@
 var NAVTREEINDEX12 =
 {
+"ERF__ObsNudgingKernel_8H.html":[3,0,1,17,2],
+"ERF__ObsNudgingKernel_8H.html#ad56e71b5e0aa7f3d79d91de506a9cc8f":[3,0,1,17,2,2],
+"ERF__ObsNudgingKernel_8H.html#ae084b4f0e672d256f5d6d82ecc7b626b":[3,0,1,17,2,1],
+"ERF__ObsNudgingKernel_8H_source.html":[3,0,1,17,2],
 "ERF__ObsNudgingSeries_8H.html":[3,0,1,17,4],
 "ERF__ObsNudgingSeries_8H.html#a07bd759549c15526226b514d0d072d12":[3,0,1,17,4,5],
 "ERF__ObsNudgingSeries_8H.html#a921cb9f3a74d99aa1abdfc9e2ca90927":[3,0,1,17,4,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX12 =
 "ERF__Plotfile2DMetadata_8H.html":[3,0,1,11,28],
 "ERF__Plotfile2DMetadata_8H.html#a0700c1c9e33d7a696db78ad1091dac30":[3,0,1,11,28,2],
 "ERF__Plotfile2DMetadata_8H.html#a2356a303d260fa136faf416c864a5d44":[3,0,1,11,28,0],
-"ERF__Plotfile2DMetadata_8H.html#a3c4cde148efe55684e56346cc2bf7d4e":[3,0,1,11,28,1],
-"ERF__Plotfile2DMetadata_8H.html#a3cb713ad6ffd9acc8994764bed842098":[3,0,1,11,28,8],
-"ERF__Plotfile2DMetadata_8H.html#a74c6cc91587d3554a06a91d0ab4f5684":[3,0,1,11,28,5],
-"ERF__Plotfile2DMetadata_8H.html#a9f8ef38d188a0bd37d607c7b92510a36":[3,0,1,11,28,6],
-"ERF__Plotfile2DMetadata_8H.html#aaeccc2844594229682d7d671c93d3121":[3,0,1,11,28,3]
+"ERF__Plotfile2DMetadata_8H.html#a3c4cde148efe55684e56346cc2bf7d4e":[3,0,1,11,28,1]
 };

@@ -1,6 +1,7 @@
 var ERF__ActuatorSampling_8H =
 [
     [ "ZBounds", "structerf__actuator_1_1ZBounds.html", "structerf__actuator_1_1ZBounds" ],
+    [ "LevelHeights", "classerf__actuator_1_1LevelHeights.html", "classerf__actuator_1_1LevelHeights" ],
     [ "ColumnCells", "structerf__actuator_1_1ColumnCells.html", "structerf__actuator_1_1ColumnCells" ],
     [ "CoverageGrids", "structerf__actuator_1_1CoverageGrids.html", "structerf__actuator_1_1CoverageGrids" ],
     [ "CoverZ", "ERF__ActuatorSampling_8H.html#ab1cb5ed071617f00e37749189385628b", [
@@ -11,8 +12,10 @@ var ERF__ActuatorSampling_8H =
     [ "check_same_points_everywhere", "ERF__ActuatorSampling_8H.html#aeefb6d778f38fe1ccd90ae32e66778f8", null ],
     [ "column_cell_ranges", "ERF__ActuatorSampling_8H.html#aca4c03ae9b09cd57a8842e7c8130e0f0", null ],
     [ "mesh_z_bounds", "ERF__ActuatorSampling_8H.html#a3b5340848c427ad988485bfb2b655f69", null ],
+    [ "mesh_z_levels", "ERF__ActuatorSampling_8H.html#aee80c48b1341336783cac607937735bf", null ],
     [ "points_covered_by", "ERF__ActuatorSampling_8H.html#a6de303788cf036ce4e23def04f06dc1f", null ],
     [ "points_covered_by", "ERF__ActuatorSampling_8H.html#a8f13730d13f1979592ded05cd0f23bf5", null ],
+    [ "region_touches_grids", "ERF__ActuatorSampling_8H.html#afa39bf0e6b3b08d6225c791d9cbc99d1", null ],
     [ "sample_cell_scalar", "ERF__ActuatorSampling_8H.html#a32a7cb38468fd65319c6891d6da98827", null ],
     [ "sample_velocity", "ERF__ActuatorSampling_8H.html#a255451f35eb863025a88ece75bf98d60", null ],
     [ "sample_velocity_local", "ERF__ActuatorSampling_8H.html#a01c6a310f96ba146741c09a9bd439b79", null ],

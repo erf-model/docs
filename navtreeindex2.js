@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"ERF__ComputeDiffusivityMYNNEDMF_8cpp.html":[3,0,1,19,4],
+"ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a94d360dcba34c57abb9134621c07689f":[3,0,1,19,4,0],
+"ERF__ComputeDiffusivityYSUNew_8cpp.html":[3,0,1,19,6],
+"ERF__ComputeDiffusivityYSUNew_8cpp.html#a1b9903ea1dc198066fc88a4745b136ed":[3,0,1,19,6,0],
 "ERF__ComputeDiffusivityYSU_8cpp.html":[3,0,1,19,5],
 "ERF__ComputeDiffusivityYSU_8cpp.html#a6c5a6b01bd3e7448ce4f652788538c9d":[3,0,1,19,5,0],
 "ERF__ComputeDivergence_8cpp.html":[3,0,1,13,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__DirectionSelector_8H.html":[3,0,1,28,6],
 "ERF__DirectionSelector_8H.html#a68edfbe7326d0d1476e796beb668072f":[3,0,1,28,6,4],
 "ERF__DirectionSelector_8H.html#a92990a19f43dc3cbbbd630362d1ece71":[3,0,1,28,6,5],
-"ERF__DirectionSelector_8H.html#aa828f1c2424107e1a454fee49cd04ad5":[3,0,1,28,6,7],
-"ERF__DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1":[3,0,1,28,6,6],
-"ERF__DirectionSelector_8H.html#aef11f5662c1574638970c58b8421afa9":[3,0,1,28,6,8],
-"ERF__DirectionSelector_8H_source.html":[3,0,1,28,6],
-"ERF__EBAdvectionSrcForMom_8H.html":[3,0,1,7,3]
+"ERF__DirectionSelector_8H.html#aa828f1c2424107e1a454fee49cd04ad5":[3,0,1,28,6,7]
 };
