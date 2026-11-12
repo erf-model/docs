@@ -587,6 +587,8 @@ var classERF =
     [ "physbcs_u", "classERF.html#a64e55e5ae9df06433146db657eb9e72e", null ],
     [ "physbcs_v", "classERF.html#a79231b5cfd4576a742e46ae0082b5121", null ],
     [ "physbcs_w", "classERF.html#a45c8ecd777f47732993777a0afb8e140", null ],
+    [ "pi_adv_rt", "classERF.html#a58e1816b285cc3844fff33feeeafaae4", null ],
+    [ "pi_src", "classERF.html#a079326de528be877d10cd6e4f992585f", null ],
     [ "pi_upw_dir", "classERF.html#accc540dc6a1fdee6cdb72dda2b50126b", null ],
     [ "pi_upw_dir_stage", "classERF.html#a06c24200de3e81ae124cfaacfd94052f", null ],
     [ "plane_sampler", "classERF.html#ab2ad4bf0f76fb1e4ac12800cd9298bed", null ],

@@ -166,6 +166,7 @@ var structSolverChoice =
     [ "perturbation_auto", "structSolverChoice.html#a63f4309a5c3c3f8cd089c880c93e3925", null ],
     [ "perturbation_auto_pbl_fraction", "structSolverChoice.html#a793ee01239c9688bcb1aee65ca402f38", null ],
     [ "perturbation_auto_period", "structSolverChoice.html#a1c20c3b6512c9e10d77842e44122f6ee", null ],
+    [ "pi_drift_factor", "structSolverChoice.html#a43af4b60934600989482424dcc8b400c", null ],
     [ "poisson_abstol", "structSolverChoice.html#a1f6ff544d4fc070718f8f8272c829862", null ],
     [ "poisson_reltol", "structSolverChoice.html#a6c38026e0885b9d0a391d2355962720a", null ],
     [ "project_initial_velocity", "structSolverChoice.html#a2a32e3f104acf862aea0ca4a9adf9078", null ],
