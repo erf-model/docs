@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "erf_actuator::ActuatorDeviceBuffers", "structerf__actuator_1_1ActuatorDeviceBuffers.html", null ],
     [ "adiabatic", "structadiabatic.html", null ],
     [ "adiabatic_charnock", "structadiabatic__charnock.html", null ],
     [ "adiabatic_donelan", "structadiabatic__donelan.html", null ],
@@ -40,6 +41,7 @@ var hierarchy =
     [ "erf_noahmp::ClampedPrecipCell", "structerf__noahmp_1_1ClampedPrecipCell.html", null ],
     [ "CloudChamberBudget", "classCloudChamberBudget.html", null ],
     [ "plotfile2d::CloudOpticsParameters", "structplotfile2d_1_1CloudOpticsParameters.html", null ],
+    [ "erf_actuator::ColumnCells", "structerf__actuator_1_1ColumnCells.html", null ],
     [ "erf_auxiliary::CompletedStepFluxLedger", "classerf__auxiliary_1_1CompletedStepFluxLedger.html", null ],
     [ "MoistureComponentIndices::CompList", "structMoistureComponentIndices_1_1CompList.html", null ],
     [ "erf_auxiliary::ComponentDescriptor", "structerf__auxiliary_1_1ComponentDescriptor.html", null ],
@@ -51,6 +53,7 @@ var hierarchy =
     [ "erf_auxiliary::ConstTimedFieldView", "structerf__auxiliary_1_1ConstTimedFieldView.html", null ],
     [ "erf_surface_temperature::ConversionFailure", "structerf__surface__temperature_1_1ConversionFailure.html", null ],
     [ "erf_sbm::SBMStateAdmission::Counters", "structerf__sbm_1_1SBMStateAdmission_1_1Counters.html", null ],
+    [ "erf_actuator::CoverageGrids", "structerf__actuator_1_1CoverageGrids.html", null ],
     [ "custom_flux", "structcustom__flux.html", null ],
     [ "DampingChoice", "structDampingChoice.html", null ],
     [ "erf_sbm::SBMTransport::DeviceMetadata", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html", null ],
@@ -340,6 +343,9 @@ var hierarchy =
     [ "erf_sbm::SpectralGridSpec", "structerf__sbm_1_1SpectralGridSpec.html", null ],
     [ "erf_sbm::SpectralPopulationSpec", "structerf__sbm_1_1SpectralPopulationSpec.html", null ],
     [ "SpongeChoice", "structSpongeChoice.html", null ],
+    [ "erf_actuator::StagedBuffer< T >", "structerf__actuator_1_1StagedBuffer.html", null ],
+    [ "erf_actuator::StagedBuffer< amrex::Real >", "structerf__actuator_1_1StagedBuffer.html", null ],
+    [ "erf_actuator::StagedBuffer< int >", "structerf__actuator_1_1StagedBuffer.html", null ],
     [ "Station", "structStation.html", null ],
     [ "StationColumn", "structStationColumn.html", null ],
     [ "StationLoc", "structStationLoc.html", null ],

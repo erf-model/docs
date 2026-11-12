@@ -295,8 +295,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Define a default z_phys so we have it even if a completely regular grid This will be over-written if we use z_levels, or grid stretching, or terrain-fitted grids </p>
 <div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geom.CellSize();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceWDM6SedCellScratch.html#a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7">dz</a> = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[2];</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a> = geom.CellSize();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceWDM6SedCellScratch.html#a5d422c5f3f908d239cbb198fa81ff355aeaf93dae2185f9a45d471709664f2de7">dz</a> = <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[2];</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_bot = geom.ProbLo(2) - z_offset;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(z_phys_nd,<span class="keyword">true</span>); mfi.isValid(); ++mfi)</div>
@@ -319,7 +319,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        });</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    }</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:44</div></div>
+<div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_acc64e1753972a11f986bfc7ac9bd9103"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a></div><div class="ttdeci">GpuArray&lt; Real, AMREX_SPACEDIM &gt; dx</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:131</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:41</div></div>
 </div><!-- fragment -->
@@ -757,7 +757,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;        MultiFab mf2d;</div>
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;        {</div>
 <div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;            BoxList bl2d = h_mf.boxArray().boxList();</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : bl2d) { b.setRange(2,b.smallEnd(2)); }</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> : bl2d) { <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.setRange(2,<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.smallEnd(2)); }</div>
 <div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;            BoxArray ba2d(std::move(bl2d));</div>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;            mf2d = MultiFab(ba2d, h_mf.DistributionMap(), 1, ngrow, MFInfo().SetAlloc(<span class="keyword">false</span>));</div>
 <div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;        }</div>
@@ -1036,6 +1036,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;        } <span class="comment">// case 3</span></div>
 <div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;    } <span class="comment">//switch</span></div>
 <div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;}</div>
+<div class="ttc" id="aERF__ActuatorSampling_8cpp_html_a148e3876077787926724625411d6e7a9"><div class="ttname"><a href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a></div><div class="ttdeci">int b</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSampling.cpp:571</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a319ff1c970342978d83ed3795c78afa7"><div class="ttname"><a href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a></div><div class="ttdeci">constexpr amrex::Real bogus_large_value</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:19</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
@@ -1134,11 +1135,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="comment">// Cut the stack at every lateral edge of its boxes</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        std::array&lt;std::vector&lt;int&gt;,2&gt; cuts;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        IntVect max_size(1);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; b : boxes) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> : boxes) {</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; 2; ++idim) {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                cuts[idim].push_back(b.smallEnd(idim));</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                cuts[idim].push_back(b.bigEnd(idim)+1);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                max_size[idim] = std::max(max_size[idim], b.length(idim));</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                cuts[idim].push_back(<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.smallEnd(idim));</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                cuts[idim].push_back(<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.bigEnd(idim)+1);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                max_size[idim] = std::max(max_size[idim], <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.length(idim));</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            }</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        }</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; c : cuts) {</div>
@@ -1152,10 +1153,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="comment">// The z extents of the boxes over each piece, keyed by the piece&#39;s cut indices</span></div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        std::map&lt;std::pair&lt;int,int&gt;, std::vector&lt;std::pair&lt;int,int&gt;&gt;&gt; zruns_of_piece;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; b : boxes) {</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ix = cut_index(0, b.smallEnd(0)); ix &lt; cut_index(0, b.bigEnd(0)+1); ++ix) {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iy = cut_index(1, b.smallEnd(1)); iy &lt; cut_index(1, b.bigEnd(1)+1); ++iy) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    zruns_of_piece[std::make_pair(ix,iy)].emplace_back(b.smallEnd(2), b.bigEnd(2));</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> : boxes) {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ix = cut_index(0, <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.smallEnd(0)); ix &lt; cut_index(0, <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.bigEnd(0)+1); ++ix) {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iy = cut_index(1, <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.smallEnd(1)); iy &lt; cut_index(1, <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.bigEnd(1)+1); ++iy) {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    zruns_of_piece[std::make_pair(ix,iy)].emplace_back(<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.smallEnd(2), <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.bigEnd(2));</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                }</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            }</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        }</div>
@@ -1254,8 +1255,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Computation of area fractions on faces </p>
 <div class="fragment"><div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;{</div>
-<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>* <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geom.CellSize();</div>
-<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[2];</div>
+<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>* <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a> = geom.CellSize();</div>
+<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[2];</div>
 <div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160; </div>
 <div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;    <span class="comment">// Domain valid box (z_nd is nodal)</span></div>
 <div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;    <span class="keyword">const</span> Box&amp; domain = geom.Domain();</div>
@@ -1366,8 +1367,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Computation of detJ at cell-center </p>
 <div class="fragment"><div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;{</div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> *<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geom.CellSize();</div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[2];</div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> *<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a> = geom.CellSize();</div>
+<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[2];</div>
 <div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160; </div>
 <div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    <span class="comment">// Domain valid box (z_nd is nodal)</span></div>
 <div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;    <span class="keyword">const</span> Box&amp; domain = geom.Domain();</div>

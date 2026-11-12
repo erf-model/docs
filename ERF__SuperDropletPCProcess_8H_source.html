@@ -156,10 +156,10 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCProcess_8H_source.h
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/*! \brief Context data that doesn&#39;t change per-tile */</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">struct </span>ProcessContext {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Geometry</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    GpuArray&lt;Real, AMREX_SPACEDIM&gt; plo;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    GpuArray&lt;Real, AMREX_SPACEDIM&gt; <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a8c60d2d529b44fc6e0856ad21f4737db">plo</a>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    GpuArray&lt;Real, AMREX_SPACEDIM&gt; <a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    GpuArray&lt;Real, AMREX_SPACEDIM&gt; dxi;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    GpuArray&lt;Real, AMREX_SPACEDIM&gt; <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    GpuArray&lt;Real, AMREX_SPACEDIM&gt; <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    GpuArray&lt;int, AMREX_SPACEDIM&gt; is_periodic;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    Box domain;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> cell_volume{0.0};</div>
@@ -179,7 +179,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCProcess_8H_source.h
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_USE_PARTICLES</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_SUPERDROPLET_PC_PROCESS_H_</span></div>
-<div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:44</div></div>
+<div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_a8c60d2d529b44fc6e0856ad21f4737db"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#a8c60d2d529b44fc6e0856ad21f4737db">plo</a></div><div class="ttdeci">GpuArray&lt; Real, AMREX_SPACEDIM &gt; plo</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:131</div></div>
+<div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_acc64e1753972a11f986bfc7ac9bd9103"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a></div><div class="ttdeci">GpuArray&lt; Real, AMREX_SPACEDIM &gt; dx</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:131</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__SuperDropletPCDefinitions_8H_html"><div class="ttname"><a href="ERF__SuperDropletPCDefinitions_8H.html">ERF_SuperDropletPCDefinitions.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:17</div></div>

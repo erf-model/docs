@@ -1,5 +1,6 @@
 var dir_7183b7ad72ce977fb08d4de094d36c18 =
 [
+    [ "ERF_ActuatorDeviceBuffers.H", "ERF__ActuatorDeviceBuffers_8H.html", "ERF__ActuatorDeviceBuffers_8H" ],
     [ "ERF_ActuatorGeometry.H", "ERF__ActuatorGeometry_8H.html", "ERF__ActuatorGeometry_8H" ],
     [ "ERF_ActuatorSampling.cpp", "ERF__ActuatorSampling_8cpp.html", "ERF__ActuatorSampling_8cpp" ],
     [ "ERF_ActuatorSampling.H", "ERF__ActuatorSampling_8H.html", "ERF__ActuatorSampling_8H" ],

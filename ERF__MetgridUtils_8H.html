@@ -928,13 +928,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="keywordflow">if</span> (k_above_sfc &gt; 1) {</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        <span class="comment">// The levels are not monotonically increasing in height, so</span></div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        <span class="comment">// we sort and then make &quot;artistic&quot; quality control choices.</span></div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a> = 0;</div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;        <span class="comment">// Insert levels that are below the surface.</span></div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=1; k &lt; k_above_sfc; k++) {</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;            ordered_z_p[count] = orig_z_p[k];</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;            ordered_data_p[count] = orig_data(i,j,k,src_comp);</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;            count++;</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;            ordered_z_p[<a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>] = orig_z_p[k];</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;            ordered_data_p[<a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>] = orig_data(i,j,k,src_comp);</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;            <a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>++;</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;        }</div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160; </div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;        <span class="comment">// Check if the level that is nearest to and below the surface</span></div>
@@ -946,15 +946,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        <span class="comment">// baroclinic atmosphere.</span></div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Pu, Pl;</div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a>(orig_z_p[0], Pu);</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        <a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a>(ordered_z_p[count-1], Pl);</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        <a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a>(ordered_z_p[<a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>-1], Pl);</div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        <span class="keywordflow">if</span> (Pl-Pu &lt; metgrid_proximity) {</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;            count--;</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;            <a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>--;</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        }</div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        <span class="comment">// Insert the surface level.</span></div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        ordered_z_p[count] = orig_z_p[0];</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        ordered_data_p[count] = orig_data(i,j,0,src_comp);</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        count++;</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        ordered_z_p[<a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>] = orig_z_p[0];</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        ordered_data_p[<a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>] = orig_data(i,j,0,src_comp);</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        <a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>++;</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160; </div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        <span class="comment">// Quoting WRF&#39;s comments, the next level to use is at,</span></div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        <span class="comment">// &quot;... ta da, the first level above the surface. I know, wow.&quot;</span></div>
@@ -976,19 +976,19 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        <span class="comment">// Check if the level that is nearest to and above the surface</span></div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        <span class="comment">// is &quot;too close&quot;. If so, we&#39;ll ignore that level.</span></div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        <a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a>(orig_z_p[knext], Pu);</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        <a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a>(ordered_z_p[count-1], Pl);</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        <a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a>(ordered_z_p[<a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>-1], Pl);</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        <span class="keywordflow">if</span> (Pl-Pu &lt; metgrid_proximity) {</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;            knext++;</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        }</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160; </div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        <span class="comment">// Insert levels that are above the surface.</span></div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=knext; k &lt; kmax_orig; k++) {</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;            ordered_z_p[count] = orig_z_p[k];</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;            ordered_data_p[count] = orig_data(i,j,k,src_comp);</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;            count++;</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;            ordered_z_p[<a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>] = orig_z_p[k];</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;            ordered_data_p[<a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>] = orig_data(i,j,k,src_comp);</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;            <a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>++;</div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        }</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160; </div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        kend_order = count;</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        kend_order = <a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>;</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        <span class="comment">// The surface is the lowest level in the origin data.</span></div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160; </div>
@@ -998,8 +998,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160; </div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;        <span class="comment">// Similar to above, conditionally more strongly use the</span></div>
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;        <span class="comment">// surface data.</span></div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;        <span class="keywordtype">int</span> count = 1;</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;        <span class="keywordtype">int</span> knext = count;</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a> = 1;</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;        <span class="keywordtype">int</span> knext = <a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>;</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        <span class="comment">// The same ERF level as in the branch above: the surface is used through</span></div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        <span class="comment">// metgrid_force_sfc_k ERF levels, k = 0 .. metgrid_force_sfc_k-1</span></div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        <span class="keywordflow">if</span> (metgrid_force_sfc_k &gt; 0) {</div>
@@ -1016,15 +1016,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=knext; k &lt; kmax_orig; k++) {</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Pu, Pl;</div>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;            <a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a>(orig_z_p[k], Pu);</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;            <a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a>(ordered_z_p[count-1], Pl);</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;            <a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a>(ordered_z_p[<a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>-1], Pl);</div>
 <div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;            <span class="keywordflow">if</span> (Pl-Pu &lt; metgrid_proximity) {</div>
 <div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;            }</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;            ordered_z_p[count] = orig_z_p[k];</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;            ordered_data_p[count] = orig_data(i,j,k,src_comp);</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            count++;</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;            ordered_z_p[<a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>] = orig_z_p[k];</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;            ordered_data_p[<a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>] = orig_data(i,j,k,src_comp);</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            <a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>++;</div>
 <div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        }</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;        kend_order = count;</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;        kend_order = <a class="code" href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>;</div>
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    }</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160; </div>
 <div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    <span class="keywordtype">int</span> ksta(0), kend(0);</div>
@@ -1129,6 +1129,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;    }</div>
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160; </div>
 <div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;}</div>
+<div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_ad43c3812e6d13e0518d9f8b8f463ffcf"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a></div><div class="ttdeci">int count</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:271</div></div>
 <div class="ttc" id="aERF__MetgridUtils_8H_html_a7d9c2d62b5ca74d130ee8042c20cb217"><div class="ttname"><a href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE void calc_p_isothermal(const amrex::Real &amp;z, amrex::Real &amp;p)</div><div class="ttdef"><b>Definition:</b> ERF_MetgridUtils.H:575</div></div>
 <div class="ttc" id="aERF__MetgridUtils_8H_html_aa3a35c7cf0e168734baa6d9622f91bc5"><div class="ttname"><a href="ERF__MetgridUtils_8H.html#aa3a35c7cf0e168734baa6d9622f91bc5">lagrange_setup</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE void lagrange_setup(char var_type, const bool &amp;exp_interp, const int &amp;orig_npts, const int &amp;new_npts, const int &amp;order, const int &amp;i, const int &amp;j, amrex::Real *orig_x_z, amrex::Real *orig_x_p, amrex::Real *orig_y, amrex::Real *new_x_z, amrex::Real *new_x_p, amrex::Real *new_y)</div><div class="ttdef"><b>Definition:</b> ERF_MetgridUtils.H:268</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a51fd20c46a81551dee3956734c5f7bcc"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a></div><div class="ttdeci">constexpr amrex::Real fourth</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:42</div></div>
@@ -1571,8 +1572,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordtype">int</span> kl, kr;</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ko=0; ko &lt; orig_npts-1; ko++) {</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a = new_x_z[new_k]-orig_x_z[ko];</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> b = new_x_z[new_k]-orig_x_z[ko+1];</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            <span class="keywordflow">if</span> (a*b &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> = new_x_z[new_k]-orig_x_z[ko+1];</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            <span class="keywordflow">if</span> (a*<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                kl = ko;</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                kr = ko+1;</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                extrapolating = <span class="keyword">false</span>;</div>
@@ -1837,6 +1838,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    }</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;}</div>
+<div class="ttc" id="aERF__ActuatorSampling_8cpp_html_a148e3876077787926724625411d6e7a9"><div class="ttname"><a href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a></div><div class="ttdeci">int b</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSampling.cpp:571</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_af138df04a1c81f39657c2a5a3337f4bb"><div class="ttname"><a href="ERF__Constants_8H.html#af138df04a1c81f39657c2a5a3337f4bb">RdoCp</a></div><div class="ttdeci">constexpr amrex::Real RdoCp</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:57</div></div>
 <div class="ttc" id="aERF__MetgridUtils_8H_html_a4978953bdc5bd682e32d3941a44fb6ce"><div class="ttname"><a href="ERF__MetgridUtils_8H.html#a4978953bdc5bd682e32d3941a44fb6ce">lagrange_interp</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE void lagrange_interp(const int &amp;order, amrex::Real *x, amrex::Real *y, amrex::Real &amp;new_x, amrex::Real &amp;new_y)</div><div class="ttdef"><b>Definition:</b> ERF_MetgridUtils.H:231</div></div>
 </div><!-- fragment -->

@@ -349,7 +349,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01875"></a><span class="lineno"> 1875</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iplane(0); iplane&lt;nplane; ++iplane) {</div>
 <div class="line"><a name="l01876"></a><span class="lineno"> 1876</span>&#160;            <span class="keywordtype">int</span> dir = <a class="code" href="structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6">m_dir</a>[iplane];</div>
 <div class="line"><a name="l01877"></a><span class="lineno"> 1877</span>&#160;            amrex::RealBox bnd_rbx  = <a class="code" href="structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24">m_bnd_rbx</a>[iplane];</div>
-<div class="line"><a name="l01878"></a><span class="lineno"> 1878</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> point = bnd_rbx.lo(dir);</div>
+<div class="line"><a name="l01878"></a><span class="lineno"> 1878</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a> = bnd_rbx.lo(dir);</div>
 <div class="line"><a name="l01879"></a><span class="lineno"> 1879</span>&#160; </div>
 <div class="line"><a name="l01880"></a><span class="lineno"> 1880</span>&#160;            <span class="comment">// Collect every level 0..lev_cap whose grids intersect the plane.</span></div>
 <div class="line"><a name="l01881"></a><span class="lineno"> 1881</span>&#160;            <span class="keywordtype">int</span> lev_cap = (<a class="code" href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">m_max_level</a> &gt;= 0 &amp;&amp; <a class="code" href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">m_max_level</a> &lt; nlev-1) ? <a class="code" href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">m_max_level</a> : nlev-1;</div>
@@ -360,7 +360,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01886"></a><span class="lineno"> 1886</span>&#160;                <span class="comment">// Stop ascending once a level&#39;s grids no longer touch the flattened plane</span></div>
 <div class="line"><a name="l01887"></a><span class="lineno"> 1887</span>&#160;                {</div>
 <div class="line"><a name="l01888"></a><span class="lineno"> 1888</span>&#160;                    amrex::Box plane_bx = <a class="code" href="structPlaneSampler.html#a1f71b67544dbc9c4cba7d11bc5e5b45d">getIndexBox</a>(bnd_rbx, geom[ilev]);</div>
-<div class="line"><a name="l01889"></a><span class="lineno"> 1889</span>&#160;                    <span class="keywordtype">int</span> k_l = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::floor((point - geom[ilev].ProbLo(dir))</div>
+<div class="line"><a name="l01889"></a><span class="lineno"> 1889</span>&#160;                    <span class="keywordtype">int</span> k_l = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::floor((<a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a> - geom[ilev].ProbLo(dir))</div>
 <div class="line"><a name="l01890"></a><span class="lineno"> 1890</span>&#160;                                                          / geom[ilev].CellSize(dir)));</div>
 <div class="line"><a name="l01891"></a><span class="lineno"> 1891</span>&#160;                    plane_bx.setSmall(dir, k_l); plane_bx.setBig(dir, k_l);</div>
 <div class="line"><a name="l01892"></a><span class="lineno"> 1892</span>&#160;                    <span class="keywordflow">if</span> (!vars_new[ilev][<a class="code" href="namespaceVars.html#af35d14e5e4aa63b0c13efca756c9402aa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].boxArray().intersects(plane_bx)) { <span class="keywordflow">break</span>; }</div>
@@ -569,7 +569,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l02095"></a><span class="lineno"> 2095</span>&#160;                    mf_cc_data.FillBoundary(geom[ilev].periodicity());</div>
 <div class="line"><a name="l02096"></a><span class="lineno"> 2096</span>&#160;                }</div>
 <div class="line"><a name="l02097"></a><span class="lineno"> 2097</span>&#160; </div>
-<div class="line"><a name="l02098"></a><span class="lineno"> 2098</span>&#160;                <span class="keyword">auto</span> slice = get_slice_data(dir, point, mf_cc_data, geom[ilev],</div>
+<div class="line"><a name="l02098"></a><span class="lineno"> 2098</span>&#160;                <span class="keyword">auto</span> slice = get_slice_data(dir, <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a>, mf_cc_data, geom[ilev],</div>
 <div class="line"><a name="l02099"></a><span class="lineno"> 2099</span>&#160;                                            0, ncomp+1, interpolate, bnd_rbx);</div>
 <div class="line"><a name="l02100"></a><span class="lineno"> 2100</span>&#160; </div>
 <div class="line"><a name="l02101"></a><span class="lineno"> 2101</span>&#160;                <span class="comment">// Defensive: an empty return means nothing was actually sampled.</span></div>
@@ -587,10 +587,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l02113"></a><span class="lineno"> 2113</span>&#160;                amrex::BoxList bl;</div>
 <div class="line"><a name="l02114"></a><span class="lineno"> 2114</span>&#160;                <span class="keyword">const</span> amrex::BoxArray&amp; slice_ba = slice-&gt;boxArray();</div>
 <div class="line"><a name="l02115"></a><span class="lineno"> 2115</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ib(0); ib&lt;static_cast&lt;int&gt;(slice_ba.size()); ++ib) {</div>
-<div class="line"><a name="l02116"></a><span class="lineno"> 2116</span>&#160;                    amrex::Box b = slice_ba[ib];</div>
-<div class="line"><a name="l02117"></a><span class="lineno"> 2117</span>&#160;                    b.setSmall(dir, 0);</div>
-<div class="line"><a name="l02118"></a><span class="lineno"> 2118</span>&#160;                    b.setBig(dir, rr_l - 1);</div>
-<div class="line"><a name="l02119"></a><span class="lineno"> 2119</span>&#160;                    bl.push_back(b);</div>
+<div class="line"><a name="l02116"></a><span class="lineno"> 2116</span>&#160;                    amrex::Box <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> = slice_ba[ib];</div>
+<div class="line"><a name="l02117"></a><span class="lineno"> 2117</span>&#160;                    <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.setSmall(dir, 0);</div>
+<div class="line"><a name="l02118"></a><span class="lineno"> 2118</span>&#160;                    <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.setBig(dir, rr_l - 1);</div>
+<div class="line"><a name="l02119"></a><span class="lineno"> 2119</span>&#160;                    bl.push_back(<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>);</div>
 <div class="line"><a name="l02120"></a><span class="lineno"> 2120</span>&#160;                }</div>
 <div class="line"><a name="l02121"></a><span class="lineno"> 2121</span>&#160;                amrex::BoxArray out_ba(std::move(bl));</div>
 <div class="line"><a name="l02122"></a><span class="lineno"> 2122</span>&#160;                <span class="keyword">auto</span> out_mf = std::make_unique&lt;amrex::MultiFab&gt;(out_ba, slice-&gt;DistributionMap(),</div>
@@ -618,6 +618,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l02144"></a><span class="lineno"> 2144</span>&#160;            } <span class="comment">// ilev</span></div>
 <div class="line"><a name="l02145"></a><span class="lineno"> 2145</span>&#160;        }<span class="comment">// iplane</span></div>
 <div class="line"><a name="l02146"></a><span class="lineno"> 2146</span>&#160;    }</div>
+<div class="ttc" id="aERF__ActuatorSampling_8cpp_html_a148e3876077787926724625411d6e7a9"><div class="ttname"><a href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a></div><div class="ttdeci">int b</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSampling.cpp:571</div></div>
+<div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_a0e2e2385be4849ee0ca19c89a12ea615"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a></div><div class="ttdeci">std::vector&lt; int &gt; point</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:228</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_ad01b9a993767756c8e6498b986650be9"><div class="ttname"><a href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:53</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:54</div></div>
@@ -750,15 +752,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l02159"></a><span class="lineno"> 2159</span>&#160; </div>
 <div class="line"><a name="l02160"></a><span class="lineno"> 2160</span>&#160;            <span class="keywordtype">int</span> dir = <a class="code" href="structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6">m_dir</a>[iplane];</div>
 <div class="line"><a name="l02161"></a><span class="lineno"> 2161</span>&#160;            amrex::RealBox bnd_rbx = <a class="code" href="structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24">m_bnd_rbx</a>[iplane];</div>
-<div class="line"><a name="l02162"></a><span class="lineno"> 2162</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> point = bnd_rbx.lo(dir);</div>
+<div class="line"><a name="l02162"></a><span class="lineno"> 2162</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a> = bnd_rbx.lo(dir);</div>
 <div class="line"><a name="l02163"></a><span class="lineno"> 2163</span>&#160; </div>
 <div class="line"><a name="l02164"></a><span class="lineno"> 2164</span>&#160;            <span class="comment">// One shared physical RealBox for every level: full in-plane extent of the</span></div>
 <div class="line"><a name="l02165"></a><span class="lineno"> 2165</span>&#160;            <span class="comment">// requested plane, and a dir-slab of level-0 thickness centered on the plane.</span></div>
 <div class="line"><a name="l02166"></a><span class="lineno"> 2166</span>&#160;            <span class="comment">// Level 0 supplies prob_lo/hi to the writer, so this object must be shared.</span></div>
 <div class="line"><a name="l02167"></a><span class="lineno"> 2167</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dx0 = geom[0].CellSize(dir);</div>
 <div class="line"><a name="l02168"></a><span class="lineno"> 2168</span>&#160;            amrex::RealBox shared_rbx = bnd_rbx;</div>
-<div class="line"><a name="l02169"></a><span class="lineno"> 2169</span>&#160;            shared_rbx.setLo(dir, point - <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dx0);</div>
-<div class="line"><a name="l02170"></a><span class="lineno"> 2170</span>&#160;            shared_rbx.setHi(dir, point + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dx0);</div>
+<div class="line"><a name="l02169"></a><span class="lineno"> 2169</span>&#160;            shared_rbx.setLo(dir, <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a> - <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dx0);</div>
+<div class="line"><a name="l02170"></a><span class="lineno"> 2170</span>&#160;            shared_rbx.setHi(dir, <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a> + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dx0);</div>
 <div class="line"><a name="l02171"></a><span class="lineno"> 2171</span>&#160; </div>
 <div class="line"><a name="l02172"></a><span class="lineno"> 2172</span>&#160;            amrex::Vector&lt;int&gt; is_per(AMREX_SPACEDIM,0);</div>
 <div class="line"><a name="l02173"></a><span class="lineno"> 2173</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d(0); d&lt;AMREX_SPACEDIM; ++d) { is_per[d] = geom[0].isPeriodic(d); }</div>

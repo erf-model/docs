@@ -235,7 +235,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= max_level; lev++)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geom[lev].CellSizeArray();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">auto</span> <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a> = geom[lev].CellSizeArray();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">const</span> Box&amp; domain = geom[lev].Domain();</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">int</span> nz = domain.length(2);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
@@ -248,11 +248,11 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zsurf = geom[lev].ProbLo(2);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nz+1; k++)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                zlevels_stag[lev][k] = zsurf + k * <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[2];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                zlevels_stag[lev][k] = zsurf + k * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[2];</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nz; k++)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                stretched_dz_h[lev][k] = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[2];</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                stretched_dz_h[lev][k] = <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[2];</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (lev == 0 &amp;&amp; grid_stretching_ratio == 0) {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">// Solve for the geometric stretch factor that fills the domain above prob_lo with</span></div>
@@ -360,7 +360,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        Gpu::copy(Gpu::hostToDevice, stretched_dz_h[lev].begin(), stretched_dz_h[lev].end(), stretched_dz_d[lev].begin());</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:44</div></div>
+<div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_acc64e1753972a11f986bfc7ac9bd9103"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a></div><div class="ttdeci">GpuArray&lt; Real, AMREX_SPACEDIM &gt; dx</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:131</div></div>
 <div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aERF__Interpolation__1D_8H_html_af71b362e58803c8c29aa5127adcf645f"><div class="ttname"><a href="ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f">expand_and_interpolate_1d</a></div><div class="ttdeci">AMREX_FORCE_INLINE void expand_and_interpolate_1d(amrex::Vector&lt; amrex::Real &gt; &amp;znew, const amrex::Vector&lt; amrex::Real &gt; &amp;zorig, int refine_fac, bool destag=false)</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_1D.H:95</div></div>

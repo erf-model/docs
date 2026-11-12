@@ -1,7 +1,11 @@
 var annotated_dup =
 [
     [ "erf_actuator", "namespaceerf__actuator.html", [
+      [ "StagedBuffer", "structerf__actuator_1_1StagedBuffer.html", "structerf__actuator_1_1StagedBuffer" ],
+      [ "ActuatorDeviceBuffers", "structerf__actuator_1_1ActuatorDeviceBuffers.html", "structerf__actuator_1_1ActuatorDeviceBuffers" ],
       [ "ZBounds", "structerf__actuator_1_1ZBounds.html", "structerf__actuator_1_1ZBounds" ],
+      [ "ColumnCells", "structerf__actuator_1_1ColumnCells.html", "structerf__actuator_1_1ColumnCells" ],
+      [ "CoverageGrids", "structerf__actuator_1_1CoverageGrids.html", "structerf__actuator_1_1CoverageGrids" ],
       [ "RunningStats", "classerf__actuator_1_1RunningStats.html", "classerf__actuator_1_1RunningStats" ],
       [ "WakeLines", "classerf__actuator_1_1WakeLines.html", "classerf__actuator_1_1WakeLines" ]
     ] ],

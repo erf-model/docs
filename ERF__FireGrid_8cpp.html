@@ -161,10 +161,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// that fire box n refines atmospheric box n.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Vector&lt;Box&gt; box_list_2d;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ba_atm.size(); ++i) {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        Box b = ba_atm[i];</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        b.setSmall(2, 0);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        b.setBig(2, 0);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        box_list_2d.push_back(b);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        Box <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> = ba_atm[i];</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.setSmall(2, 0);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.setBig(2, 0);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        box_list_2d.push_back(<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    BoxList bl_2d(std::move(box_list_2d));   <span class="comment">// rvalue — matches Vector&lt;Box&gt;&amp;&amp;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    BoxArray ba_2d(bl_2d);</div>
@@ -229,6 +229,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceMORRInd.html#a06e152880fa02766d7d184944554218daf93b8f7de8e707e3ec38715ac1c499ef">fg</a>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="ttc" id="aERF__ActuatorSampling_8cpp_html_a148e3876077787926724625411d6e7a9"><div class="ttname"><a href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a></div><div class="ttdeci">int b</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSampling.cpp:571</div></div>
 <div class="ttc" id="aERF__Advection_8H_html_a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b"><div class="ttname"><a href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">OpenSide::hi</a></div><div class="ttdeci">@ hi</div></div>
 <div class="ttc" id="aERF__Advection_8H_html_a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe"><div class="ttname"><a href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">OpenSide::lo</a></div><div class="ttdeci">@ lo</div></div>
 <div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>

@@ -1,6 +1,27 @@
 var ERF__ActuatorSpreading_8cpp =
 [
+    [ "add_scaled_kernels", "ERF__ActuatorSpreading_8cpp.html#a1bbaa762f6a9af2bc9618b5137f3ba13", null ],
+    [ "add_spread_forces", "ERF__ActuatorSpreading_8cpp.html#a7672f719379c69578ef7ab3bc552cd72", null ],
+    [ "check_spread_layout", "ERF__ActuatorSpreading_8cpp.html#a12830997f2634d658b2dff5423cc4e07", null ],
+    [ "check_spread_points", "ERF__ActuatorSpreading_8cpp.html#aaf43c6a54e18f87057db0912c93429c5", null ],
     [ "integrate_source", "ERF__ActuatorSpreading_8cpp.html#a3d05ab598fd8dd2a3bb40618a2838248", null ],
     [ "spread_forces", "ERF__ActuatorSpreading_8cpp.html#aa81a8ff36ffbdab9781386e672af9ae1", null ],
-    [ "spread_forces", "ERF__ActuatorSpreading_8cpp.html#a5dbfe7987ed58be8550367142d55279b", null ]
+    [ "spread_forces", "ERF__ActuatorSpreading_8cpp.html#a5dbfe7987ed58be8550367142d55279b", null ],
+    [ "spread_partial_norms", "ERF__ActuatorSpreading_8cpp.html#a346f549b5c08d67498fbb4efa0ae4427", null ],
+    [ "spread_points_problem", "ERF__ActuatorSpreading_8cpp.html#aa71a9ed0460a1b6ba38a9136956c5106", null ],
+    [ "count", "ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf", null ],
+    [ "dhi", "ERF__ActuatorSpreading_8cpp.html#a4d615ed5bea4451ee31584e47d99429c", null ],
+    [ "dlo", "ERF__ActuatorSpreading_8cpp.html#a74e685c09f4db0503f3140696dee41b0", null ],
+    [ "dx", "ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103", null ],
+    [ "dxdydz", "ERF__ActuatorSpreading_8cpp.html#a026cdd8f5451f3873b7751fcb680e804", null ],
+    [ "has_detj", "ERF__ActuatorSpreading_8cpp.html#aa6a9e529e657af421cde222d23c3b555", null ],
+    [ "has_znd", "ERF__ActuatorSpreading_8cpp.html#a22b91563f90751352470bc0597f174d8", null ],
+    [ "per", "ERF__ActuatorSpreading_8cpp.html#a4a1fa07b055d6b35908ef96eace748c6", null ],
+    [ "period", "ERF__ActuatorSpreading_8cpp.html#a40f41e8dc5aa2c6b46cde59a015f4185", null ],
+    [ "plo", "ERF__ActuatorSpreading_8cpp.html#a8c60d2d529b44fc6e0856ad21f4737db", null ],
+    [ "point", "ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615", null ],
+    [ "pos", "ERF__ActuatorSpreading_8cpp.html#acefa00c53d662ed779c57d6324a16ce9", null ],
+    [ "reach", "ERF__ActuatorSpreading_8cpp.html#a44975922a6a79ea27b590afedf691d40", null ],
+    [ "start", "ERF__ActuatorSpreading_8cpp.html#a37722a150250e2a5a98e5e0d11e53449", null ],
+    [ "zb", "ERF__ActuatorSpreading_8cpp.html#a3f088f912ee198d59c024abdc8748255", null ]
 ];

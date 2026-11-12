@@ -355,15 +355,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    <span class="comment">// The bands of cells next to each lateral face, at the surface only</span></div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    Array&lt;Box,4&gt; bands;</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> f = 0; f &lt; 4; ++f) {</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;        Box b(dom);</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        b.setRange(2, <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;        Box <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>(dom);</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.setRange(2, <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> dir = f / 2;</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <span class="keywordflow">if</span> (f % 2 == 0) {</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            b.setBig(dir, amrex::min(dom.smallEnd(dir) + band - 1, dom.bigEnd(dir)));</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.setBig(dir, amrex::min(dom.smallEnd(dir) + band - 1, dom.bigEnd(dir)));</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;            b.setSmall(dir, amrex::max(dom.bigEnd(dir) - band + 1, dom.smallEnd(dir)));</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;            <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.setSmall(dir, amrex::max(dom.bigEnd(dir) - band + 1, dom.smallEnd(dir)));</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        }</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;        bands[f] = b;</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;        bands[f] = <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>;</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    }</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160; </div>
 <div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    Array&lt;Real,4&gt; smax{<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(-1.), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(-1.), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(-1.), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(-1.)};</div>
@@ -391,6 +391,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    ParallelDescriptor::ReduceRealMax(smax.data(), 4);</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="keywordflow">return</span> smax;</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;}</div>
+<div class="ttc" id="aERF__ActuatorSampling_8cpp_html_a148e3876077787926724625411d6e7a9"><div class="ttname"><a href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a></div><div class="ttdeci">int b</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSampling.cpp:571</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__KE_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_KE.H:9</div></div>
 <div class="ttc" id="anamespaceerf__terrain__file_html_a048333e9343dd6a53b0fc2e0157043c5"><div class="ttname"><a href="namespaceerf__terrain__file.html#a048333e9343dd6a53b0fc2e0157043c5">erf_terrain_file::CellTerrainSlope</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real CellTerrainSlope(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, amrex::Real mfx, amrex::Real mfy, amrex::Real dxinv, amrex::Real dyinv) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_TerrainFileChecks.H:194</div></div>
