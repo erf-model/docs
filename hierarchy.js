@@ -144,10 +144,13 @@ var hierarchy =
     [ "erf_sbm::LinearConstraint", "structerf__sbm_1_1LinearConstraint.html", null ],
     [ "LineSampler", "structLineSampler.html", null ],
     [ "erf_sbm::LiquidProjectionSpec", "structerf__sbm_1_1LiquidProjectionSpec.html", null ],
+    [ "erf_auxiliary::MappedDiffusionCoefficients", "structerf__auxiliary_1_1MappedDiffusionCoefficients.html", null ],
+    [ "erf_auxiliary::MappedDiffusionMetrics", "structerf__auxiliary_1_1MappedDiffusionMetrics.html", null ],
     [ "erf_auxiliary::MappedFaceField< Tag >", "classerf__auxiliary_1_1MappedFaceField.html", null ],
     [ "erf_auxiliary::MappedFaceField< IntegratedMappedFaceFluxTag >", "classerf__auxiliary_1_1MappedFaceField.html", null ],
     [ "erf_auxiliary::MappedFaceField< MappedFaceFluxRateTag >", "classerf__auxiliary_1_1MappedFaceField.html", null ],
     [ "erf_auxiliary::MappedFaceFluxRateTag", "structerf__auxiliary_1_1MappedFaceFluxRateTag.html", null ],
+    [ "erf_auxiliary::MappedFaceTransmissibilityTag", "structerf__auxiliary_1_1MappedFaceTransmissibilityTag.html", null ],
     [ "MaterialPropertiesCore", "structMaterialPropertiesCore.html", [
       [ "MaterialProperties", "structMaterialProperties.html", null ]
     ] ],
@@ -220,6 +223,7 @@ var hierarchy =
     [ "erf_sbm::PacketRoutingPlan", "structerf__sbm_1_1PacketRoutingPlan.html", null ],
     [ "erf_wall_scalar_bc::ParsedWallFaceScalars", "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html", null ],
     [ "erf_wall_scalar_bc::ParsedWallScalarBC", "structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html", null ],
+    [ "erf_sbm::ParticleMixingConfig", "structerf__sbm_1_1ParticleMixingConfig.html", null ],
     [ "eb_cut_cell_::path_data", "structeb__cut__cell___1_1path__data.html", null ],
     [ "PBLDerivativeDzInv", "structPBLDerivativeDzInv.html", null ],
     [ "PBLDerivativeDzInv_N", "structPBLDerivativeDzInv__N.html", null ],

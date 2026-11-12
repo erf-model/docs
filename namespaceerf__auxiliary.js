@@ -1,5 +1,8 @@
 var namespaceerf__auxiliary =
 [
+    [ "MappedFaceTransmissibilityTag", "structerf__auxiliary_1_1MappedFaceTransmissibilityTag.html", null ],
+    [ "MappedDiffusionMetrics", "structerf__auxiliary_1_1MappedDiffusionMetrics.html", "structerf__auxiliary_1_1MappedDiffusionMetrics" ],
+    [ "MappedDiffusionCoefficients", "structerf__auxiliary_1_1MappedDiffusionCoefficients.html", "structerf__auxiliary_1_1MappedDiffusionCoefficients" ],
     [ "AuxiliaryInertTracer", "classerf__auxiliary_1_1AuxiliaryInertTracer.html", "classerf__auxiliary_1_1AuxiliaryInertTracer" ],
     [ "MappedFaceFluxRateTag", "structerf__auxiliary_1_1MappedFaceFluxRateTag.html", null ],
     [ "IntegratedMappedFaceFluxTag", "structerf__auxiliary_1_1IntegratedMappedFaceFluxTag.html", null ],
@@ -17,9 +20,14 @@ var namespaceerf__auxiliary =
     [ "AuxiliaryStateLayout", "classerf__auxiliary_1_1AuxiliaryStateLayout.html", "classerf__auxiliary_1_1AuxiliaryStateLayout" ],
     [ "IntegratedMappedFaceFlux", "namespaceerf__auxiliary.html#aa0930083629ba1368b23f314b9996f22", null ],
     [ "MappedFaceFluxRate", "namespaceerf__auxiliary.html#a78ec59cd7624a9b502af94b7727a9712", null ],
+    [ "MappedFaceTransmissibility", "namespaceerf__auxiliary.html#ad4e97695c6399e7c7fbbac345818f329", null ],
     [ "AuxiliaryFieldValidationPolicy", "namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08", [
       [ "Global", "namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08a4cc6684df7b4a92b1dec6fce3264fac8", null ],
       [ "AssumeValid", "namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08ae0b4b5d13bf9e622d51f68e6646fe656", null ]
+    ] ],
+    [ "DiffusionMesh", "namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575ec", [
+      [ "ConstantDz", "namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575eca395e59960cb2f91fa3ac93b5095c8c9c", null ],
+      [ "StretchedDz", "namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575eca21cdea5fa8b087a59d028dcac881742e", null ]
     ] ],
     [ "HostIntegrator", "namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622a", [
       [ "CompressibleRK3", "namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa3956c6b08b3dc65198c71b8950938e50", null ],
@@ -46,20 +54,28 @@ var namespaceerf__auxiliary =
     [ "ApplyMappedFluxTendency", "namespaceerf__auxiliary.html#a4566c3cfec768d75c51f61bcf063fe93", null ],
     [ "AuxiliaryStageTargetIsDisjoint", "namespaceerf__auxiliary.html#a25368e9217271e6d57bdb152f71e5138", null ],
     [ "BuildAuxiliaryIntensiveState", "namespaceerf__auxiliary.html#ae3907395fc6f12fb9c233accef46ba8f", null ],
+    [ "BuildLowOrderDiffusionRate", "namespaceerf__auxiliary.html#a76076e5f9a33fb047052c40da7fb9e7a", null ],
+    [ "BuildLowOrderDiffusionRate", "namespaceerf__auxiliary.html#a53a1c947c5857ce1cabf19be35f39fd0", null ],
     [ "BuildMappedCellMeasure", "namespaceerf__auxiliary.html#a0c9f140deff66b4c8fdf8fd9483b6ca6", null ],
+    [ "BuildMappedDiffusionTransmissibility", "namespaceerf__auxiliary.html#af28d0ab356c63f806da09e7b3b09267e", null ],
+    [ "BuildMappedDiffusionTransmissibility", "namespaceerf__auxiliary.html#a954ffa9748da0260a8739bb9264bb80f", null ],
     [ "BuildMappedDryAirCarrierFluxRate", "namespaceerf__auxiliary.html#a79382f0a251cc4ecd8f868358abc9f8d", null ],
     [ "ComputationalMappedDivergence", "namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c", null ],
+    [ "ComputeMaxMappedCombinedOutgoingRate", "namespaceerf__auxiliary.html#a37dbe0d87dabd843ae42c98690a81d04", null ],
+    [ "ComputeMaxMappedCombinedOutgoingRate", "namespaceerf__auxiliary.html#a925047fb0c73e084afb9f0660faaf1ad", null ],
     [ "ComputeMaxMappedOutgoingRate", "namespaceerf__auxiliary.html#a411a1f70c9683e58c0249a9d612f30d0", null ],
     [ "CopyNativeMappedDryAirCarrierFluxRate", "namespaceerf__auxiliary.html#a72565fcb8b90b8bb5b86e18a214a1154", null ],
     [ "FixedDtExceedsMappedDonorLimit", "namespaceerf__auxiliary.html#af88d6cddb925fe25cb4fdd914f012777", null ],
     [ "HostIntegratorName", "namespaceerf__auxiliary.html#ae34e7d10af171e40a2ba238505a44551", null ],
     [ "HostIntegratorStageCount", "namespaceerf__auxiliary.html#a820173a227d7dc2388b90116f378401c", null ],
     [ "MakeAuxiliaryStageRecipe", "namespaceerf__auxiliary.html#a930629866bdc0239b7c2328a9246eb62", null ],
+    [ "MappedCombinedOutgoingDemandRate", "namespaceerf__auxiliary.html#a374dd3e61464eefcce9e31314cf5f1b5", null ],
     [ "MappedFaceLayoutMatchesCellLayout", "namespaceerf__auxiliary.html#abc9ab4c6f70613a12dd467ffd9bb2695", null ],
     [ "MappedFaceLayoutMatchesCellLayout", "namespaceerf__auxiliary.html#a4950dfd4785000a45560bba35907f787", null ],
     [ "MappedOutgoingDemandRate", "namespaceerf__auxiliary.html#ac1472de9585593195cae2778264db85f", null ],
     [ "MaxFaceFieldDifference", "namespaceerf__auxiliary.html#a48c64f2a0bc1e093bb8ec6d64d177889", null ],
     [ "SameCellLayout", "namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592", null ],
+    [ "SameHorizontalLayout", "namespaceerf__auxiliary.html#ad5b8d46047b80f6a1cede52183d7482a", null ],
     [ "SameMappedFaceLayout", "namespaceerf__auxiliary.html#af8b38e575d2e3ef2765351ec709f60f4", null ],
     [ "ValidateFiniteComponent", "namespaceerf__auxiliary.html#a4eafed90679495b6b748f1e9dff0264b", null ],
     [ "ValidatePositiveFiniteComponent", "namespaceerf__auxiliary.html#a9a8f6f6e469c0049efbc4eec062ad367", null ]

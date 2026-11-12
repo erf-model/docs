@@ -8,6 +8,7 @@ var ERF__AuxiliaryMappedTransport_8cpp =
     [ "FixedDtExceedsMappedDonorLimit", "ERF__AuxiliaryMappedTransport_8cpp.html#af88d6cddb925fe25cb4fdd914f012777", null ],
     [ "MaxFaceFieldDifference", "ERF__AuxiliaryMappedTransport_8cpp.html#a48c64f2a0bc1e093bb8ec6d64d177889", null ],
     [ "SameCellLayout", "ERF__AuxiliaryMappedTransport_8cpp.html#adfccc5d117c2f176b357d3712b4cc592", null ],
+    [ "SameHorizontalLayout", "ERF__AuxiliaryMappedTransport_8cpp.html#ad5b8d46047b80f6a1cede52183d7482a", null ],
     [ "ValidateFiniteComponent", "ERF__AuxiliaryMappedTransport_8cpp.html#a4eafed90679495b6b748f1e9dff0264b", null ],
     [ "ValidatePositiveFiniteComponent", "ERF__AuxiliaryMappedTransport_8cpp.html#a9a8f6f6e469c0049efbc4eec062ad367", null ]
 ];

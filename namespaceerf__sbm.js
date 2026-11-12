@@ -33,6 +33,7 @@ var namespaceerf__sbm =
     [ "SBMLayoutSpec", "structerf__sbm_1_1SBMLayoutSpec.html", "structerf__sbm_1_1SBMLayoutSpec" ],
     [ "LayoutValidation", "structerf__sbm_1_1LayoutValidation.html", "structerf__sbm_1_1LayoutValidation" ],
     [ "SBMLayout", "classerf__sbm_1_1SBMLayout.html", "classerf__sbm_1_1SBMLayout" ],
+    [ "ParticleMixingConfig", "structerf__sbm_1_1ParticleMixingConfig.html", "structerf__sbm_1_1ParticleMixingConfig" ],
     [ "SBMPhysicalBoundaryConfig", "structerf__sbm_1_1SBMPhysicalBoundaryConfig.html", "structerf__sbm_1_1SBMPhysicalBoundaryConfig" ],
     [ "SBMBoundaryLedger", "structerf__sbm_1_1SBMBoundaryLedger.html", "structerf__sbm_1_1SBMBoundaryLedger" ],
     [ "PopulationRemapView", "structerf__sbm_1_1PopulationRemapView.html", "structerf__sbm_1_1PopulationRemapView" ],
@@ -86,6 +87,11 @@ var namespaceerf__sbm =
       [ "OneMoment", "namespaceerf__sbm.html#a7f59152e618498d33e89c2fad84dfc26ad99e89d4dc3240dd5f4ed719b75dcb62", null ],
       [ "TwoMoment", "namespaceerf__sbm.html#a7f59152e618498d33e89c2fad84dfc26a7b3c1f15e2215f5080ffc55047412241", null ]
     ] ],
+    [ "ParticleMixingPolicy", "namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaa", [
+      [ "None", "namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaaa6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "ConstantReference", "namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaaafee4940127a94a4840158938e38c18c4", null ],
+      [ "HostPassiveScalar", "namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaaa77284624daf90059f8d61a8ff9dfd118", null ]
+    ] ],
     [ "PopulationPhase", "namespaceerf__sbm.html#a8db9ce4b5f9d8048888819792fd324c3", [
       [ "Liquid", "namespaceerf__sbm.html#a8db9ce4b5f9d8048888819792fd324c3a5635bf596d97c1c2e7afe481ed060774", null ],
       [ "Ice", "namespaceerf__sbm.html#a8db9ce4b5f9d8048888819792fd324c3a583d6a9fe10d672474e2cdca476113b7", null ],
@@ -124,6 +130,7 @@ var namespaceerf__sbm =
     [ "ApplyMappedRefluxCorrectionChunk", "namespaceerf__sbm.html#aff357092090cedbf5ccadf1ad8cb434c", null ],
     [ "ApplyMappedRefluxCorrectionChunk", "namespaceerf__sbm.html#af294a71e91c3421c1003db0adfbf01cd", null ],
     [ "authoritative_state_admissible", "namespaceerf__sbm.html#af81849687213b3467610b65f5168ba8e", null ],
+    [ "build_particle_mixing_transmissibility", "namespaceerf__sbm.html#a3af6f41861b910b00dc1ad8e60351792", null ],
     [ "canonical_decimal", "namespaceerf__sbm.html#aeddcc5278eba11c9ce52b025952fffa8", null ],
     [ "canonical_real", "namespaceerf__sbm.html#a374c79fbf0661234b40046f4262b660c", null ],
     [ "composite_inventory_roundoff", "namespaceerf__sbm.html#a90c130e70565dc2992c2522872e29e02", null ],
@@ -148,6 +155,10 @@ var namespaceerf__sbm =
     [ "map_erf_boundary", "namespaceerf__sbm.html#a5f2c30585aabcb707cd5ae9d96c784f0", null ],
     [ "MappedRefluxCorrectionMaskIsValid", "namespaceerf__sbm.html#a8f5937effd8420d0d12f27dc31f3839f", null ],
     [ "MappedRefluxCorrectionMaskIsValid", "namespaceerf__sbm.html#a8ee8b441699727c38978fcb261141d94", null ],
+    [ "parse_particle_mixing_policy", "namespaceerf__sbm.html#a9558a135241477b20f10c5441e3d9988", null ],
+    [ "particle_mixing_coefficients", "namespaceerf__sbm.html#ac71d1d4ca7caacbb3b5a7c8184af22ab", null ],
+    [ "particle_mixing_mesh", "namespaceerf__sbm.html#aeb77d7c1a9268caabf5fa8577752794f", null ],
+    [ "particle_mixing_name", "namespaceerf__sbm.html#a025431cb6d97d87cac4329af20e31a9a", null ],
     [ "plan_packet_routing", "namespaceerf__sbm.html#a7a2d0bbc1fe5a3abaa25911b46fab503", null ],
     [ "population_remap_view", "namespaceerf__sbm.html#ad1ce6e0015cab4a083bab48f02b800e1", null ],
     [ "project_reconstruction_bin", "namespaceerf__sbm.html#a196324656da9600ee64b63799251386f", null ],
@@ -184,5 +195,6 @@ var namespaceerf__sbm =
     [ "valid_population_remap_view", "namespaceerf__sbm.html#ae0204ef3558b27d727051ec91ca63c2e", null ],
     [ "validate_fixture_initial_state_canonicality", "namespaceerf__sbm.html#a9fa44c5386d5d5314f80aaee8ee095bd", null ],
     [ "validate_inflow_state", "namespaceerf__sbm.html#ab840377a585b2accc04a4e65ff09d21a", null ],
+    [ "validate_particle_mixing_config", "namespaceerf__sbm.html#a250efeebff95e91b2c5855dbb44471a0", null ],
     [ "physical_face_count", "namespaceerf__sbm.html#ae01357e410bc0841956fc4a41e9202b5", null ]
 ];

@@ -11,6 +11,9 @@ var annotated_dup =
       [ "WakeLines", "classerf__actuator_1_1WakeLines.html", "classerf__actuator_1_1WakeLines" ]
     ] ],
     [ "erf_auxiliary", "namespaceerf__auxiliary.html", [
+      [ "MappedFaceTransmissibilityTag", "structerf__auxiliary_1_1MappedFaceTransmissibilityTag.html", null ],
+      [ "MappedDiffusionMetrics", "structerf__auxiliary_1_1MappedDiffusionMetrics.html", "structerf__auxiliary_1_1MappedDiffusionMetrics" ],
+      [ "MappedDiffusionCoefficients", "structerf__auxiliary_1_1MappedDiffusionCoefficients.html", "structerf__auxiliary_1_1MappedDiffusionCoefficients" ],
       [ "AuxiliaryInertTracer", "classerf__auxiliary_1_1AuxiliaryInertTracer.html", "classerf__auxiliary_1_1AuxiliaryInertTracer" ],
       [ "MappedFaceFluxRateTag", "structerf__auxiliary_1_1MappedFaceFluxRateTag.html", null ],
       [ "IntegratedMappedFaceFluxTag", "structerf__auxiliary_1_1IntegratedMappedFaceFluxTag.html", null ],
@@ -101,6 +104,7 @@ var annotated_dup =
       [ "SBMLayoutSpec", "structerf__sbm_1_1SBMLayoutSpec.html", "structerf__sbm_1_1SBMLayoutSpec" ],
       [ "LayoutValidation", "structerf__sbm_1_1LayoutValidation.html", "structerf__sbm_1_1LayoutValidation" ],
       [ "SBMLayout", "classerf__sbm_1_1SBMLayout.html", "classerf__sbm_1_1SBMLayout" ],
+      [ "ParticleMixingConfig", "structerf__sbm_1_1ParticleMixingConfig.html", "structerf__sbm_1_1ParticleMixingConfig" ],
       [ "SBMPhysicalBoundaryConfig", "structerf__sbm_1_1SBMPhysicalBoundaryConfig.html", "structerf__sbm_1_1SBMPhysicalBoundaryConfig" ],
       [ "SBMBoundaryLedger", "structerf__sbm_1_1SBMBoundaryLedger.html", "structerf__sbm_1_1SBMBoundaryLedger" ],
       [ "PopulationRemapView", "structerf__sbm_1_1PopulationRemapView.html", "structerf__sbm_1_1PopulationRemapView" ],

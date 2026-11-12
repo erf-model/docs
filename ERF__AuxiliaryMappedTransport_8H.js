@@ -18,6 +18,7 @@ var ERF__AuxiliaryMappedTransport_8H =
     [ "MappedOutgoingDemandRate", "ERF__AuxiliaryMappedTransport_8H.html#ac1472de9585593195cae2778264db85f", null ],
     [ "MaxFaceFieldDifference", "ERF__AuxiliaryMappedTransport_8H.html#a48c64f2a0bc1e093bb8ec6d64d177889", null ],
     [ "SameCellLayout", "ERF__AuxiliaryMappedTransport_8H.html#adfccc5d117c2f176b357d3712b4cc592", null ],
+    [ "SameHorizontalLayout", "ERF__AuxiliaryMappedTransport_8H.html#ad5b8d46047b80f6a1cede52183d7482a", null ],
     [ "SameMappedFaceLayout", "ERF__AuxiliaryMappedTransport_8H.html#af8b38e575d2e3ef2765351ec709f60f4", null ],
     [ "ValidateFiniteComponent", "ERF__AuxiliaryMappedTransport_8H.html#a4eafed90679495b6b748f1e9dff0264b", null ],
     [ "ValidatePositiveFiniteComponent", "ERF__AuxiliaryMappedTransport_8H.html#a9a8f6f6e469c0049efbc4eec062ad367", null ]

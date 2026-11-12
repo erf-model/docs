@@ -1,5 +1,7 @@
 var dir_8dd67685c059edca071acd1d85352651 =
 [
+    [ "ERF_AuxiliaryDiffusion.cpp", "ERF__AuxiliaryDiffusion_8cpp.html", "ERF__AuxiliaryDiffusion_8cpp" ],
+    [ "ERF_AuxiliaryDiffusion.H", "ERF__AuxiliaryDiffusion_8H.html", "ERF__AuxiliaryDiffusion_8H" ],
     [ "ERF_AuxiliaryInertTracer.cpp", "ERF__AuxiliaryInertTracer_8cpp.html", [
       [ "LevelStorage", "structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage.html", "structerf__auxiliary_1_1AuxiliaryInertTracer_1_1LevelStorage" ]
     ] ],

@@ -29,6 +29,8 @@ var dir_84dbca1a1a078b408d1af332a78d4cda =
     ] ],
     [ "ERF_SBMOwnership.cpp", "ERF__SBMOwnership_8cpp.html", "ERF__SBMOwnership_8cpp" ],
     [ "ERF_SBMOwnership.H", "ERF__SBMOwnership_8H.html", "ERF__SBMOwnership_8H" ],
+    [ "ERF_SBMParticleMixing.cpp", "ERF__SBMParticleMixing_8cpp.html", "ERF__SBMParticleMixing_8cpp" ],
+    [ "ERF_SBMParticleMixing.H", "ERF__SBMParticleMixing_8H.html", "ERF__SBMParticleMixing_8H" ],
     [ "ERF_SBMPhysicalBoundary.cpp", "ERF__SBMPhysicalBoundary_8cpp.html", "ERF__SBMPhysicalBoundary_8cpp" ],
     [ "ERF_SBMPhysicalBoundary.H", "ERF__SBMPhysicalBoundary_8H.html", "ERF__SBMPhysicalBoundary_8H" ],
     [ "ERF_SBMRemapping.cpp", "ERF__SBMRemapping_8cpp.html", "ERF__SBMRemapping_8cpp" ],

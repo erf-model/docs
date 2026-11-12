@@ -150,6 +150,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classerf__sbm_1_1SBMLayout.html">SBMLayout</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ParticleMixingConfig.html">ParticleMixingConfig</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1SBMPhysicalBoundaryConfig.html">SBMPhysicalBoundaryConfig</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1SBMBoundaryLedger.html">SBMBoundaryLedger</a></td></tr>
@@ -245,6 +247,11 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:a10d359268234c0d8706f5a89a54b284e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afce4ca97b2d8b87e05df4de2c5527eaa"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaa">ParticleMixingPolicy</a> { <a class="el" href="namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaaa6adf97f83acf6453d4a6a4b1070f3754">None</a>
+, <a class="el" href="namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaaafee4940127a94a4840158938e38c18c4">ConstantReference</a>
+, <a class="el" href="namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaaa77284624daf90059f8d61a8ff9dfd118">HostPassiveScalar</a>
+ }</td></tr>
+<tr class="separator:afce4ca97b2d8b87e05df4de2c5527eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75c2d7b043b74b8ca25c2739cde7d9b1"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a75c2d7b043b74b8ca25c2739cde7d9b1">RemapStatus</a> { <br />
 &#160;&#160;<a class="el" href="namespaceerf__sbm.html#a75c2d7b043b74b8ca25c2739cde7d9b1aa60852f204ed8028c1c58808b746d115">Ok</a>
 , <a class="el" href="namespaceerf__sbm.html#a75c2d7b043b74b8ca25c2739cde7d9b1ad340578aa8dae2d687bf56317fa2c485">ZeroWaterResidual</a>
@@ -353,6 +360,18 @@ Functions</h2></td></tr>
 <tr class="separator:a51023f46558c85c4f92d54b91da1c08c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6318b323a37f32bbd622517e16702284"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a6318b323a37f32bbd622517e16702284">require_host_write_range_allowed</a> (const bool sbm_active, const int start_component, const int num_components, const <a class="el" href="namespaceerf__sbm.html#a10d359268234c0d8706f5a89a54b284e">HostWritePath</a> path)</td></tr>
 <tr class="separator:a6318b323a37f32bbd622517e16702284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a025431cb6d97d87cac4329af20e31a9a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a025431cb6d97d87cac4329af20e31a9a">particle_mixing_name</a> (const <a class="el" href="namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaa">ParticleMixingPolicy</a> policy) noexcept</td></tr>
+<tr class="separator:a025431cb6d97d87cac4329af20e31a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9558a135241477b20f10c5441e3d9988"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a9558a135241477b20f10c5441e3d9988">parse_particle_mixing_policy</a> (const std::string &amp;<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, <a class="el" href="namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaa">ParticleMixingPolicy</a> &amp;policy)</td></tr>
+<tr class="separator:a9558a135241477b20f10c5441e3d9988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a250efeebff95e91b2c5855dbb44471a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a250efeebff95e91b2c5855dbb44471a0">validate_particle_mixing_config</a> (const <a class="el" href="structerf__sbm_1_1ParticleMixingConfig.html">ParticleMixingConfig</a> &amp;<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, std::string &amp;reason)</td></tr>
+<tr class="separator:a250efeebff95e91b2c5855dbb44471a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac71d1d4ca7caacbb3b5a7c8184af22ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#ac71d1d4ca7caacbb3b5a7c8184af22ab">particle_mixing_coefficients</a> (const <a class="el" href="structerf__sbm_1_1ParticleMixingConfig.html">ParticleMixingConfig</a> &amp;<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, <a class="el" href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html">erf_auxiliary::MappedDiffusionCoefficients</a> &amp;coefficients, std::string &amp;reason)</td></tr>
+<tr class="separator:ac71d1d4ca7caacbb3b5a7c8184af22ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb77d7c1a9268caabf5fa8577752794f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#aeb77d7c1a9268caabf5fa8577752794f">particle_mixing_mesh</a> (const MeshType mesh_type, <a class="el" href="namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575ec">erf_auxiliary::DiffusionMesh</a> &amp;mesh, std::string &amp;reason)</td></tr>
+<tr class="separator:aeb77d7c1a9268caabf5fa8577752794f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3af6f41861b910b00dc1ad8e60351792"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a3af6f41861b910b00dc1ad8e60351792">build_particle_mixing_transmissibility</a> (const <a class="el" href="structerf__sbm_1_1ParticleMixingConfig.html">ParticleMixingConfig</a> &amp;<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, const amrex::Geometry &amp;geom, const <a class="el" href="structerf__auxiliary_1_1MappedDiffusionMetrics.html">erf_auxiliary::MappedDiffusionMetrics</a> &amp;metrics, const amrex::MultiFab &amp;density, const int density_component, const amrex::MultiFab *eddy_diffusivity, <a class="el" href="namespaceerf__auxiliary.html#ad4e97695c6399e7c7fbbac345818f329">erf_auxiliary::MappedFaceTransmissibility</a> &amp;transmissibility, std::string &amp;diagnostic)</td></tr>
+<tr class="separator:a3af6f41861b910b00dc1ad8e60351792"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fbc7329e4c88533551abc73561e2378"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a7fbc7329e4c88533551abc73561e2378">face_name</a> (const int face) noexcept</td></tr>
 <tr class="separator:a7fbc7329e4c88533551abc73561e2378"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6822e4614de18cfab29e917912dca0a7"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a6822e4614de18cfab29e917912dca0a7">face_kind_name</a> (const <a class="el" href="namespaceerf__sbm.html#ac7ab1e3124a0b2b4d43c1b97e848b894">AdvectionFaceKind</a> kind) noexcept</td></tr>
@@ -602,6 +621,39 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="afce4ca97b2d8b87e05df4de2c5527eaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afce4ca97b2d8b87e05df4de2c5527eaa">&#9670;&nbsp;</a></span>ParticleMixingPolicy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaa">erf_sbm::ParticleMixingPolicy</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Turbulent gradient mixing of spectral particles. One coefficient acts on every member of every bin group, and particle molecular (Brownian) diffusion is zero under every policy.</p>
+<p>HostPassiveScalar consumes <a class="el" href="classERF.html">ERF</a>'s Scalar_h/Scalar_v eddy channels, which are already density weighted and Schmidt scaled. Under <a class="el" href="classERF.html">ERF</a>'s LES closures they equal the Q channels that diffuse moisture, but the PBL schemes other than SHOC fill Q_v and not Scalar_v, so this policy is for LES closures only and enabling it must reject a PBL scheme. ConstantReference multiplies kinematic reference diffusivities by the face-averaged dry-air density. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afce4ca97b2d8b87e05df4de2c5527eaaa6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afce4ca97b2d8b87e05df4de2c5527eaaafee4940127a94a4840158938e38c18c4"></a>ConstantReference&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afce4ca97b2d8b87e05df4de2c5527eaaa77284624daf90059f8d61a8ff9dfd118"></a>HostPassiveScalar&#160;</td><td class="fielddoc"></td></tr>
+</table>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{ <a class="code" href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75">None</a>, <a class="code" href="namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaaafee4940127a94a4840158938e38c18c4">ConstantReference</a>, <a class="code" href="namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaaa77284624daf90059f8d61a8ff9dfd118">HostPassiveScalar</a> };</div>
+<div class="ttc" id="anamespaceLSM__Type_html_a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75"><div class="ttname"><a href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75">LSM_Type::None</a></div><div class="ttdeci">@ None</div><div class="ttdef"><b>Definition:</b> ERF_LSM_Types.H:6</div></div>
+<div class="ttc" id="anamespaceerf__sbm_html_afce4ca97b2d8b87e05df4de2c5527eaaa77284624daf90059f8d61a8ff9dfd118"><div class="ttname"><a href="namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaaa77284624daf90059f8d61a8ff9dfd118">erf_sbm::ParticleMixingPolicy::HostPassiveScalar</a></div><div class="ttdeci">@ HostPassiveScalar</div></div>
+<div class="ttc" id="anamespaceerf__sbm_html_afce4ca97b2d8b87e05df4de2c5527eaaafee4940127a94a4840158938e38c18c4"><div class="ttname"><a href="namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaaafee4940127a94a4840158938e38c18c4">erf_sbm::ParticleMixingPolicy::ConstantReference</a></div><div class="ttdeci">@ ConstantReference</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a8db9ce4b5f9d8048888819792fd324c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8db9ce4b5f9d8048888819792fd324c3">&#9670;&nbsp;</a></span>PopulationPhase</h2>
 
@@ -792,7 +844,6 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a759e7fa184b977db22f4cccb31cb24ffaff2d47d018adc6ab8f6d4561d5bb927f"></a>PositiveNumber&#160;</td><td class="fielddoc"></td></tr>
 </table>
 <div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{ <a class="code" href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75">None</a>, <a class="code" href="namespaceerf__sbm.html#a759e7fa184b977db22f4cccb31cb24ffab9ac06c9b3f768d35c7be5da0a71c69c">PositiveMass</a>, <a class="code" href="namespaceerf__sbm.html#a759e7fa184b977db22f4cccb31cb24ffaff2d47d018adc6ab8f6d4561d5bb927f">PositiveNumber</a> };</div>
-<div class="ttc" id="anamespaceLSM__Type_html_a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75"><div class="ttname"><a href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75">LSM_Type::None</a></div><div class="ttdeci">@ None</div><div class="ttdef"><b>Definition:</b> ERF_LSM_Types.H:6</div></div>
 <div class="ttc" id="anamespaceerf__sbm_html_a759e7fa184b977db22f4cccb31cb24ffab9ac06c9b3f768d35c7be5da0a71c69c"><div class="ttname"><a href="namespaceerf__sbm.html#a759e7fa184b977db22f4cccb31cb24ffab9ac06c9b3f768d35c7be5da0a71c69c">erf_sbm::SupportRequirement::PositiveMass</a></div><div class="ttdeci">@ PositiveMass</div></div>
 <div class="ttc" id="anamespaceerf__sbm_html_a759e7fa184b977db22f4cccb31cb24ffaff2d47d018adc6ab8f6d4561d5bb927f"><div class="ttname"><a href="namespaceerf__sbm.html#a759e7fa184b977db22f4cccb31cb24ffaff2d47d018adc6ab8f6d4561d5bb927f">erf_sbm::SupportRequirement::PositiveNumber</a></div><div class="ttdeci">@ PositiveNumber</div></div>
 </div><!-- fragment -->
@@ -1698,6 +1749,121 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a3af6f41861b910b00dc1ad8e60351792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3af6f41861b910b00dc1ad8e60351792">&#9670;&nbsp;</a></span>build_particle_mixing_transmissibility()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool erf_sbm::build_particle_mixing_transmissibility </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structerf__sbm_1_1ParticleMixingConfig.html">ParticleMixingConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structerf__auxiliary_1_1MappedDiffusionMetrics.html">erf_auxiliary::MappedDiffusionMetrics</a> &amp;&#160;</td>
+          <td class="paramname"><em>metrics</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>density</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>density_component</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab *&#160;</td>
+          <td class="paramname"><em>eddy_diffusivity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceerf__auxiliary.html#ad4e97695c6399e7c7fbbac345818f329">erf_auxiliary::MappedFaceTransmissibility</a> &amp;&#160;</td>
+          <td class="paramname"><em>transmissibility</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>diagnostic</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The face transmissibility of a policy; None gives zero on every face. <code>density</code> must be the dry-air density (<a class="el" href="classERF.html">ERF</a>'s Rho_comp), which ConstantReference multiplies by. </p>
+<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__sbm.html#a250efeebff95e91b2c5855dbb44471a0">validate_particle_mixing_config</a>(<a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, diagnostic)) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>.policy == <a class="code" href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75">ParticleMixingPolicy::None</a>) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">if</span> (!transmissibility.<a class="code" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e">is_defined</a>() || transmissibility.<a class="code" href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43">nComp</a>() != 1) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            diagnostic = <span class="stringliteral">&quot;particle mixing transmissibility requires one face component&quot;</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        transmissibility.<a class="code" href="classerf__auxiliary_1_1MappedFaceField.html#acf0bed05429e61a7ef008ac5f158eeb7">setVal</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html">erf_auxiliary::MappedDiffusionCoefficients</a> coefficients;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__sbm.html#ac71d1d4ca7caacbb3b5a7c8184af22ab">particle_mixing_coefficients</a>(<a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, coefficients, diagnostic)) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__auxiliary.html#a954ffa9748da0260a8739bb9264bb80f">erf_auxiliary::BuildMappedDiffusionTransmissibility</a>(</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            transmissibility, geom, metrics, coefficients, density, density_component,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            eddy_diffusivity, diagnostic)) {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        diagnostic = std::string(<span class="stringliteral">&quot;SBM particle mixing &quot;</span>) +</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                     <a class="code" href="namespaceerf__sbm.html#a025431cb6d97d87cac4329af20e31a9a">particle_mixing_name</a>(<a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>.policy) + <span class="stringliteral">&quot;: &quot;</span> + diagnostic;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a9817d9cd1bbbc2d0f1b08e0d6fb73e64"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a></div><div class="ttdeci">const auto config</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_CloudChamber.H:37</div></div>
+<div class="ttc" id="aclasserf__auxiliary_1_1MappedFaceField_html_a832e6d8aaf089d12d1f52c540c717f43"><div class="ttname"><a href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43">erf_auxiliary::MappedFaceField::nComp</a></div><div class="ttdeci">int nComp() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.H:44</div></div>
+<div class="ttc" id="aclasserf__auxiliary_1_1MappedFaceField_html_aa271784d8d9f32237ddad638d048fc6e"><div class="ttname"><a href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e">erf_auxiliary::MappedFaceField::is_defined</a></div><div class="ttdeci">bool is_defined() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.H:43</div></div>
+<div class="ttc" id="aclasserf__auxiliary_1_1MappedFaceField_html_acf0bed05429e61a7ef008ac5f158eeb7"><div class="ttname"><a href="classerf__auxiliary_1_1MappedFaceField.html#acf0bed05429e61a7ef008ac5f158eeb7">erf_auxiliary::MappedFaceField::setVal</a></div><div class="ttdeci">void setVal(const amrex::Real value)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.H:60</div></div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_a954ffa9748da0260a8739bb9264bb80f"><div class="ttname"><a href="namespaceerf__auxiliary.html#a954ffa9748da0260a8739bb9264bb80f">erf_auxiliary::BuildMappedDiffusionTransmissibility</a></div><div class="ttdeci">bool BuildMappedDiffusionTransmissibility(MappedFaceTransmissibility &amp;transmissibility, const amrex::Geometry &amp;geom, const MappedDiffusionMetrics &amp;metrics, const MappedDiffusionCoefficients &amp;coefficients, const MultiFab &amp;density, const int density_component, const MultiFab *eddy_diffusivity, std::string &amp;diagnostic)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryDiffusion.cpp:175</div></div>
+<div class="ttc" id="anamespaceerf__sbm_html_a025431cb6d97d87cac4329af20e31a9a"><div class="ttname"><a href="namespaceerf__sbm.html#a025431cb6d97d87cac4329af20e31a9a">erf_sbm::particle_mixing_name</a></div><div class="ttdeci">const char * particle_mixing_name(const ParticleMixingPolicy policy) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SBMParticleMixing.cpp:10</div></div>
+<div class="ttc" id="anamespaceerf__sbm_html_a250efeebff95e91b2c5855dbb44471a0"><div class="ttname"><a href="namespaceerf__sbm.html#a250efeebff95e91b2c5855dbb44471a0">erf_sbm::validate_particle_mixing_config</a></div><div class="ttdeci">bool validate_particle_mixing_config(const ParticleMixingConfig &amp;config, std::string &amp;reason)</div><div class="ttdef"><b>Definition:</b> ERF_SBMParticleMixing.cpp:50</div></div>
+<div class="ttc" id="anamespaceerf__sbm_html_ac71d1d4ca7caacbb3b5a7c8184af22ab"><div class="ttname"><a href="namespaceerf__sbm.html#ac71d1d4ca7caacbb3b5a7c8184af22ab">erf_sbm::particle_mixing_coefficients</a></div><div class="ttdeci">bool particle_mixing_coefficients(const ParticleMixingConfig &amp;config, erf_auxiliary::MappedDiffusionCoefficients &amp;coefficients, std::string &amp;reason)</div><div class="ttdef"><b>Definition:</b> ERF_SBMParticleMixing.cpp:71</div></div>
+<div class="ttc" id="astructerf__auxiliary_1_1MappedDiffusionCoefficients_html"><div class="ttname"><a href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html">erf_auxiliary::MappedDiffusionCoefficients</a></div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryDiffusion.H:53</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__sbm_a3af6f41861b910b00dc1ad8e60351792_cgraph.png" border="0" usemap="#anamespaceerf__sbm_a3af6f41861b910b00dc1ad8e60351792_cgraph" alt=""/></div>
+<map name="anamespaceerf__sbm_a3af6f41861b910b00dc1ad8e60351792_cgraph" id="anamespaceerf__sbm_a3af6f41861b910b00dc1ad8e60351792_cgraph">
+<area shape="rect" title=" " alt="" coords="5,382,188,424"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#a954ffa9748da0260a8739bb9264bb80f" title=" " alt="" coords="236,149,432,190"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#aa271784d8d9f32237ddad638d048fc6e" title=" " alt="" coords="763,218,955,260"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a832e6d8aaf089d12d1f52c540c717f43" title=" " alt="" coords="493,273,685,314"/>
+<area shape="rect" href="namespaceerf__sbm.html#ac71d1d4ca7caacbb3b5a7c8184af22ab" title=" " alt="" coords="242,441,426,482"/>
+<area shape="rect" href="namespaceerf__sbm.html#a250efeebff95e91b2c5855dbb44471a0" title=" " alt="" coords="493,492,685,533"/>
+<area shape="rect" href="namespaceerf__sbm.html#a025431cb6d97d87cac4329af20e31a9a" title=" " alt="" coords="745,528,973,555"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#acf0bed05429e61a7ef008ac5f158eeb7" title=" " alt="" coords="493,390,685,432"/>
+<area shape="rect" href="classerf__auxiliary_1_1MappedFaceField.html#a8a208bb7a27b8c089b8ced578cdaee61" title=" " alt="" coords="763,40,955,81"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#abc9ab4c6f70613a12dd467ffd9bb2695" title=" " alt="" coords="493,40,685,81"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592" title=" " alt="" coords="480,156,697,183"/>
+<area shape="rect" href="namespaceerf__auxiliary.html#ad5b8d46047b80f6a1cede52183d7482a" title=" " alt="" coords="481,208,696,249"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="1021,167,1204,194"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="aeddcc5278eba11c9ce52b025952fffa8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeddcc5278eba11c9ce52b025952fffa8">&#9670;&nbsp;</a></span>canonical_decimal()</h2>
 
@@ -1729,12 +1895,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__sbm_aeddcc5278eba11c9ce52b025952fffa8_icgraph.png" border="0" usemap="#anamespaceerf__sbm_aeddcc5278eba11c9ce52b025952fffa8_icgraph" alt=""/></div>
 <map name="anamespaceerf__sbm_aeddcc5278eba11c9ce52b025952fffa8_icgraph" id="anamespaceerf__sbm_aeddcc5278eba11c9ce52b025952fffa8_icgraph">
-<area shape="rect" title=" " alt="" coords="548,100,693,141"/>
-<area shape="rect" href="namespaceerf__sbm.html#a374c79fbf0661234b40046f4262b660c" title=" " alt="" coords="302,78,479,105"/>
-<area shape="rect" href="structerf__sbm_1_1SBMBoundaryLedger.html#aa6fe731e21695bb9c5122b4a381df629" title=" " alt="" coords="281,129,500,171"/>
-<area shape="rect" href="structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#a7bde245e85e1094aa575fa309e34fc66" title=" " alt="" coords="5,5,233,47"/>
-<area shape="rect" href="classerf__sbm_1_1SpectralGrid.html#a0f1bc7772c65ec936184e57f58e7c176" title=" " alt="" coords="38,71,201,112"/>
-<area shape="rect" href="classerf__sbm_1_1SBMLayout.html#a311f78cf8fb246a0284803e22fc7b788" title=" " alt="" coords="41,136,197,177"/>
+<area shape="rect" title=" " alt="" coords="548,133,693,175"/>
+<area shape="rect" href="namespaceerf__sbm.html#a374c79fbf0661234b40046f4262b660c" title=" " alt="" coords="302,111,479,138"/>
+<area shape="rect" href="structerf__sbm_1_1SBMBoundaryLedger.html#aa6fe731e21695bb9c5122b4a381df629" title=" " alt="" coords="281,163,500,204"/>
+<area shape="rect" href="structerf__sbm_1_1ParticleMixingConfig.html#ad65e9c46723a4f09c112c0cbbbb223bd" title=" " alt="" coords="11,5,227,47"/>
+<area shape="rect" href="structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#a7bde245e85e1094aa575fa309e34fc66" title=" " alt="" coords="5,71,233,112"/>
+<area shape="rect" href="classerf__sbm_1_1SpectralGrid.html#a0f1bc7772c65ec936184e57f58e7c176" title=" " alt="" coords="38,136,201,177"/>
+<area shape="rect" href="classerf__sbm_1_1SBMLayout.html#a311f78cf8fb246a0284803e22fc7b788" title=" " alt="" coords="41,201,197,243"/>
 </map>
 </div>
 
@@ -1779,7 +1946,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="ttc" id="anamespaceerf__sbm_html_aeddcc5278eba11c9ce52b025952fffa8"><div class="ttname"><a href="namespaceerf__sbm.html#aeddcc5278eba11c9ce52b025952fffa8">erf_sbm::canonical_decimal</a></div><div class="ttdeci">std::string canonical_decimal(const T value)</div><div class="ttdef"><b>Definition:</b> ERF_SBMCanonicalIdentity.H:19</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#a7bde245e85e1094aa575fa309e34fc66">erf_sbm::SBMPhysicalBoundaryConfig::identity()</a>, <a class="el" href="classerf__sbm_1_1SpectralGrid.html#a0f1bc7772c65ec936184e57f58e7c176">erf_sbm::SpectralGrid::identity()</a>, and <a class="el" href="classerf__sbm_1_1SBMLayout.html#a311f78cf8fb246a0284803e22fc7b788">erf_sbm::SBMLayout::SBMLayout()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structerf__sbm_1_1ParticleMixingConfig.html#ad65e9c46723a4f09c112c0cbbbb223bd">erf_sbm::ParticleMixingConfig::identity()</a>, <a class="el" href="structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#a7bde245e85e1094aa575fa309e34fc66">erf_sbm::SBMPhysicalBoundaryConfig::identity()</a>, <a class="el" href="classerf__sbm_1_1SpectralGrid.html#a0f1bc7772c65ec936184e57f58e7c176">erf_sbm::SpectralGrid::identity()</a>, and <a class="el" href="classerf__sbm_1_1SBMLayout.html#a311f78cf8fb246a0284803e22fc7b788">erf_sbm::SBMLayout::SBMLayout()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1794,10 +1961,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__sbm_a374c79fbf0661234b40046f4262b660c_icgraph.png" border="0" usemap="#anamespaceerf__sbm_a374c79fbf0661234b40046f4262b660c_icgraph" alt=""/></div>
 <map name="anamespaceerf__sbm_a374c79fbf0661234b40046f4262b660c_icgraph" id="anamespaceerf__sbm_a374c79fbf0661234b40046f4262b660c_icgraph">
-<area shape="rect" title=" " alt="" coords="281,78,459,105"/>
-<area shape="rect" href="structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#a7bde245e85e1094aa575fa309e34fc66" title=" " alt="" coords="5,5,233,47"/>
-<area shape="rect" href="classerf__sbm_1_1SpectralGrid.html#a0f1bc7772c65ec936184e57f58e7c176" title=" " alt="" coords="38,71,201,112"/>
-<area shape="rect" href="classerf__sbm_1_1SBMLayout.html#a311f78cf8fb246a0284803e22fc7b788" title=" " alt="" coords="41,136,197,177"/>
+<area shape="rect" title=" " alt="" coords="281,111,459,138"/>
+<area shape="rect" href="structerf__sbm_1_1ParticleMixingConfig.html#ad65e9c46723a4f09c112c0cbbbb223bd" title=" " alt="" coords="11,5,227,47"/>
+<area shape="rect" href="structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#a7bde245e85e1094aa575fa309e34fc66" title=" " alt="" coords="5,71,233,112"/>
+<area shape="rect" href="classerf__sbm_1_1SpectralGrid.html#a0f1bc7772c65ec936184e57f58e7c176" title=" " alt="" coords="38,136,201,177"/>
+<area shape="rect" href="classerf__sbm_1_1SBMLayout.html#a311f78cf8fb246a0284803e22fc7b788" title=" " alt="" coords="41,201,197,243"/>
 </map>
 </div>
 
@@ -3388,6 +3556,245 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a9558a135241477b20f10c5441e3d9988"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9558a135241477b20f10c5441e3d9988">&#9670;&nbsp;</a></span>parse_particle_mixing_policy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool erf_sbm::parse_particle_mixing_policy </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaa">ParticleMixingPolicy</a> &amp;&#160;</td>
+          <td class="paramname"><em>policy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> candidate : {<a class="code" href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75">ParticleMixingPolicy::None</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                 ParticleMixingPolicy::ConstantReference,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                 ParticleMixingPolicy::HostPassiveScalar}) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <a class="code" href="namespaceerf__sbm.html#a025431cb6d97d87cac4329af20e31a9a">particle_mixing_name</a>(candidate)) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            policy = candidate;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="ttc" id="aERF__Plotfile2DCatalog_8cpp_html_a9b45b3e13bd9167aab02e17e08916231"><div class="ttname"><a href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DCatalog.cpp:128</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__sbm_a9558a135241477b20f10c5441e3d9988_cgraph.png" border="0" usemap="#anamespaceerf__sbm_a9558a135241477b20f10c5441e3d9988_cgraph" alt=""/></div>
+<map name="anamespaceerf__sbm_a9558a135241477b20f10c5441e3d9988_cgraph" id="anamespaceerf__sbm_a9558a135241477b20f10c5441e3d9988_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,180,47"/>
+<area shape="rect" href="namespaceerf__sbm.html#a025431cb6d97d87cac4329af20e31a9a" title=" " alt="" coords="228,13,456,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac71d1d4ca7caacbb3b5a7c8184af22ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac71d1d4ca7caacbb3b5a7c8184af22ab">&#9670;&nbsp;</a></span>particle_mixing_coefficients()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool erf_sbm::particle_mixing_coefficients </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structerf__sbm_1_1ParticleMixingConfig.html">ParticleMixingConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html">erf_auxiliary::MappedDiffusionCoefficients</a> &amp;&#160;</td>
+          <td class="paramname"><em>coefficients</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>reason</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The host coefficient semantics of a mixing policy other than None. </p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__sbm.html#a250efeebff95e91b2c5855dbb44471a0">validate_particle_mixing_config</a>(<a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, reason)) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    coefficients = {};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">switch</span> (<a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>.policy) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75">ParticleMixingPolicy::None</a>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        reason = <span class="stringliteral">&quot;particle mixing policy None has no diffusion coefficients&quot;</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">case</span> ParticleMixingPolicy::ConstantReference:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        coefficients.<a class="code" href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html#a9615d75d4db43ae03cb9a2a5e920a250">horizontal</a>.<a class="code" href="structScalarDiffusionCoefficients.html#af6ab185c488d6e9f41562df57498a81b">molecular_coeff</a> = <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>.reference_kh;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        coefficients.<a class="code" href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html#a4ea9450b0a03cb6e30e50d2e882d6247">vertical</a>.<a class="code" href="structScalarDiffusionCoefficients.html#af6ab185c488d6e9f41562df57498a81b">molecular_coeff</a> = <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>.reference_kv;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        coefficients.<a class="code" href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html#a7b1f1d786b8d5c80126cd6999d96f594">mode</a>.<a class="code" href="structScalarDiffusionCoefficientMode.html#a7f58e9514fa3e45100f7a0004f7f8f98">molecular_is_kinematic</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        coefficients.<a class="code" href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html#a7b1f1d786b8d5c80126cd6999d96f594">mode</a>.<a class="code" href="structScalarDiffusionCoefficientMode.html#a93932587ad0d28ee9eee88545a8a5321">add_turbulence</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">case</span> ParticleMixingPolicy::HostPassiveScalar:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>* channel : {&amp;coefficients.<a class="code" href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html#a9615d75d4db43ae03cb9a2a5e920a250">horizontal</a>, &amp;coefficients.<a class="code" href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html#a4ea9450b0a03cb6e30e50d2e882d6247">vertical</a>}) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            channel-&gt;molecular_coeff = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            channel-&gt;eddy_h_comp = <a class="code" href="namespaceEddyDiff.html#a6853a35a18e4e76df6fd47dbba251697a85d322ae06bc4f66f791d4eda0a13ae6">EddyDiff::Scalar_h</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            channel-&gt;eddy_v_comp = <a class="code" href="namespaceEddyDiff.html#a6853a35a18e4e76df6fd47dbba251697a2b82a72be137b3159e7d4945735fcbf5">EddyDiff::Scalar_v</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        coefficients.<a class="code" href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html#a7b1f1d786b8d5c80126cd6999d96f594">mode</a>.<a class="code" href="structScalarDiffusionCoefficientMode.html#a7f58e9514fa3e45100f7a0004f7f8f98">molecular_is_kinematic</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        coefficients.<a class="code" href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html#a7b1f1d786b8d5c80126cd6999d96f594">mode</a>.<a class="code" href="structScalarDiffusionCoefficientMode.html#a93932587ad0d28ee9eee88545a8a5321">add_turbulence</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    reason = <span class="stringliteral">&quot;unknown particle mixing policy&quot;</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="ttc" id="anamespaceEddyDiff_html_a6853a35a18e4e76df6fd47dbba251697a2b82a72be137b3159e7d4945735fcbf5"><div class="ttname"><a href="namespaceEddyDiff.html#a6853a35a18e4e76df6fd47dbba251697a2b82a72be137b3159e7d4945735fcbf5">EddyDiff::Scalar_v</a></div><div class="ttdeci">@ Scalar_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:292</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a6853a35a18e4e76df6fd47dbba251697a85d322ae06bc4f66f791d4eda0a13ae6"><div class="ttname"><a href="namespaceEddyDiff.html#a6853a35a18e4e76df6fd47dbba251697a85d322ae06bc4f66f791d4eda0a13ae6">EddyDiff::Scalar_h</a></div><div class="ttdeci">@ Scalar_h</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:287</div></div>
+<div class="ttc" id="astructScalarDiffusionCoefficientMode_html_a7f58e9514fa3e45100f7a0004f7f8f98"><div class="ttname"><a href="structScalarDiffusionCoefficientMode.html#a7f58e9514fa3e45100f7a0004f7f8f98">ScalarDiffusionCoefficientMode::molecular_is_kinematic</a></div><div class="ttdeci">bool molecular_is_kinematic</div><div class="ttdef"><b>Definition:</b> ERF_ScalarDiffusion.H:51</div></div>
+<div class="ttc" id="astructScalarDiffusionCoefficientMode_html_a93932587ad0d28ee9eee88545a8a5321"><div class="ttname"><a href="structScalarDiffusionCoefficientMode.html#a93932587ad0d28ee9eee88545a8a5321">ScalarDiffusionCoefficientMode::add_turbulence</a></div><div class="ttdeci">bool add_turbulence</div><div class="ttdef"><b>Definition:</b> ERF_ScalarDiffusion.H:52</div></div>
+<div class="ttc" id="astructScalarDiffusionCoefficients_html_af6ab185c488d6e9f41562df57498a81b"><div class="ttname"><a href="structScalarDiffusionCoefficients.html#af6ab185c488d6e9f41562df57498a81b">ScalarDiffusionCoefficients::molecular_coeff</a></div><div class="ttdeci">amrex::Real molecular_coeff</div><div class="ttdef"><b>Definition:</b> ERF_ScalarDiffusion.H:25</div></div>
+<div class="ttc" id="astructerf__auxiliary_1_1MappedDiffusionCoefficients_html_a4ea9450b0a03cb6e30e50d2e882d6247"><div class="ttname"><a href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html#a4ea9450b0a03cb6e30e50d2e882d6247">erf_auxiliary::MappedDiffusionCoefficients::vertical</a></div><div class="ttdeci">ScalarDiffusionCoefficients vertical</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryDiffusion.H:55</div></div>
+<div class="ttc" id="astructerf__auxiliary_1_1MappedDiffusionCoefficients_html_a7b1f1d786b8d5c80126cd6999d96f594"><div class="ttname"><a href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html#a7b1f1d786b8d5c80126cd6999d96f594">erf_auxiliary::MappedDiffusionCoefficients::mode</a></div><div class="ttdeci">ScalarDiffusionCoefficientMode mode</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryDiffusion.H:56</div></div>
+<div class="ttc" id="astructerf__auxiliary_1_1MappedDiffusionCoefficients_html_a9615d75d4db43ae03cb9a2a5e920a250"><div class="ttname"><a href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html#a9615d75d4db43ae03cb9a2a5e920a250">erf_auxiliary::MappedDiffusionCoefficients::horizontal</a></div><div class="ttdeci">ScalarDiffusionCoefficients horizontal</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryDiffusion.H:54</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="namespaceerf__sbm.html#a3af6f41861b910b00dc1ad8e60351792">build_particle_mixing_transmissibility()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__sbm_ac71d1d4ca7caacbb3b5a7c8184af22ab_cgraph.png" border="0" usemap="#anamespaceerf__sbm_ac71d1d4ca7caacbb3b5a7c8184af22ab_cgraph" alt=""/></div>
+<map name="anamespaceerf__sbm_ac71d1d4ca7caacbb3b5a7c8184af22ab_cgraph" id="anamespaceerf__sbm_ac71d1d4ca7caacbb3b5a7c8184af22ab_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,189,47"/>
+<area shape="rect" href="namespaceerf__sbm.html#a250efeebff95e91b2c5855dbb44471a0" title=" " alt="" coords="237,5,429,47"/>
+<area shape="rect" href="namespaceerf__sbm.html#a025431cb6d97d87cac4329af20e31a9a" title=" " alt="" coords="477,13,705,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__sbm_ac71d1d4ca7caacbb3b5a7c8184af22ab_icgraph.png" border="0" usemap="#anamespaceerf__sbm_ac71d1d4ca7caacbb3b5a7c8184af22ab_icgraph" alt=""/></div>
+<map name="anamespaceerf__sbm_ac71d1d4ca7caacbb3b5a7c8184af22ab_icgraph" id="anamespaceerf__sbm_ac71d1d4ca7caacbb3b5a7c8184af22ab_icgraph">
+<area shape="rect" title=" " alt="" coords="236,5,420,47"/>
+<area shape="rect" href="namespaceerf__sbm.html#a3af6f41861b910b00dc1ad8e60351792" title=" " alt="" coords="5,5,188,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aeb77d7c1a9268caabf5fa8577752794f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb77d7c1a9268caabf5fa8577752794f">&#9670;&nbsp;</a></span>particle_mixing_mesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool erf_sbm::particle_mixing_mesh </td>
+          <td>(</td>
+          <td class="paramtype">MeshType&#160;</td>
+          <td class="paramname"><em>mesh_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575ec">erf_auxiliary::DiffusionMesh</a> &amp;&#160;</td>
+          <td class="paramname"><em>mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>reason</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The low-order operator mesh; terrain-fitted (VariableDz) meshes are rejected. </p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    reason.clear();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (mesh_type == MeshType::ConstantDz) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        mesh = <a class="code" href="namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575eca395e59960cb2f91fa3ac93b5095c8c9c">erf_auxiliary::DiffusionMesh::ConstantDz</a>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span> (mesh_type == MeshType::StretchedDz) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        mesh = <a class="code" href="namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575eca21cdea5fa8b087a59d028dcac881742e">erf_auxiliary::DiffusionMesh::StretchedDz</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    reason = <span class="stringliteral">&quot;SBM particle mixing has no qualified monotone low-order operator on a &quot;</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;             <span class="stringliteral">&quot;terrain-fitted (VariableDz) mesh: its centred cross-diffusion stencil &quot;</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;             <span class="stringliteral">&quot;is not positive, and the terrain design gate is open&quot;</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_ab660070085b85c6e51ec41b439c575eca21cdea5fa8b087a59d028dcac881742e"><div class="ttname"><a href="namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575eca21cdea5fa8b087a59d028dcac881742e">erf_auxiliary::DiffusionMesh::StretchedDz</a></div><div class="ttdeci">@ StretchedDz</div></div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_ab660070085b85c6e51ec41b439c575eca395e59960cb2f91fa3ac93b5095c8c9c"><div class="ttname"><a href="namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575eca395e59960cb2f91fa3ac93b5095c8c9c">erf_auxiliary::DiffusionMesh::ConstantDz</a></div><div class="ttdeci">@ ConstantDz</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a025431cb6d97d87cac4329af20e31a9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a025431cb6d97d87cac4329af20e31a9a">&#9670;&nbsp;</a></span>particle_mixing_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * erf_sbm::particle_mixing_name </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaa">ParticleMixingPolicy</a>&#160;</td>
+          <td class="paramname"><em>policy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">switch</span> (policy) {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75">ParticleMixingPolicy::None</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;None&quot;</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">case</span> ParticleMixingPolicy::ConstantReference: <span class="keywordflow">return</span> <span class="stringliteral">&quot;ConstantReference&quot;</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">case</span> ParticleMixingPolicy::HostPassiveScalar: <span class="keywordflow">return</span> <span class="stringliteral">&quot;HostPassiveScalar&quot;</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown&quot;</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="namespaceerf__sbm.html#a3af6f41861b910b00dc1ad8e60351792">build_particle_mixing_transmissibility()</a>, <a class="el" href="namespaceerf__sbm.html#a9558a135241477b20f10c5441e3d9988">parse_particle_mixing_policy()</a>, and <a class="el" href="namespaceerf__sbm.html#a250efeebff95e91b2c5855dbb44471a0">validate_particle_mixing_config()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__sbm_a025431cb6d97d87cac4329af20e31a9a_icgraph.png" border="0" usemap="#anamespaceerf__sbm_a025431cb6d97d87cac4329af20e31a9a_icgraph" alt=""/></div>
+<map name="anamespaceerf__sbm_a025431cb6d97d87cac4329af20e31a9a_icgraph" id="anamespaceerf__sbm_a025431cb6d97d87cac4329af20e31a9a_icgraph">
+<area shape="rect" title=" " alt="" coords="708,30,936,56"/>
+<area shape="rect" href="namespaceerf__sbm.html#a3af6f41861b910b00dc1ad8e60351792" title=" " alt="" coords="5,29,188,70"/>
+<area shape="rect" href="namespaceerf__sbm.html#a9558a135241477b20f10c5441e3d9988" title=" " alt="" coords="477,22,651,64"/>
+<area shape="rect" href="namespaceerf__sbm.html#a250efeebff95e91b2c5855dbb44471a0" title=" " alt="" coords="468,88,660,129"/>
+<area shape="rect" href="namespaceerf__sbm.html#ac71d1d4ca7caacbb3b5a7c8184af22ab" title=" " alt="" coords="236,88,420,129"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a7a2d0bbc1fe5a3abaa25911b46fab503"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a2d0bbc1fe5a3abaa25911b46fab503">&#9670;&nbsp;</a></span>plan_packet_routing()</h2>
 
@@ -4337,7 +4744,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;    }</div>
 <div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;}</div>
-<div class="ttc" id="anamespaceerf__auxiliary_html_adfccc5d117c2f176b357d3712b4cc592"><div class="ttname"><a href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">erf_auxiliary::SameCellLayout</a></div><div class="ttdeci">bool SameCellLayout(const amrex::MultiFab &amp;lhs, const amrex::MultiFab &amp;rhs)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.cpp:36</div></div>
+<div class="ttc" id="anamespaceerf__auxiliary_html_adfccc5d117c2f176b357d3712b4cc592"><div class="ttname"><a href="namespaceerf__auxiliary.html#adfccc5d117c2f176b357d3712b4cc592">erf_auxiliary::SameCellLayout</a></div><div class="ttdeci">bool SameCellLayout(const amrex::MultiFab &amp;lhs, const amrex::MultiFab &amp;rhs)</div><div class="ttdef"><b>Definition:</b> ERF_AuxiliaryMappedTransport.cpp:33</div></div>
 <div class="ttc" id="anamespaceerf__sbm_html_a0a07a42f7aaff4c1f51dedbef513832e"><div class="ttname"><a href="namespaceerf__sbm.html#a0a07a42f7aaff4c1f51dedbef513832e">erf_sbm::prolong_carrier_relative_chunks</a></div><div class="ttdeci">static bool prolong_carrier_relative_chunks(const SBMLayout &amp;layout, const SBMAMRStateView &amp;coarse, const SBMAMRStateView &amp;fine_target, const amrex::Geometry &amp;coarse_geometry, const amrex::Geometry &amp;fine_geometry, const amrex::IntVect &amp;ratio, MultiFab &amp;work, const int max_groups_per_chunk, const bool reverse_chunk_order, SBMTransferAllocationCensus *allocation_census, std::string &amp;diagnostic, const MultiFab *prolonged_mask=nullptr)</div><div class="ttdef"><b>Definition:</b> ERF_SBMAMRTransfer.cpp:897</div></div>
 <div class="ttc" id="anamespaceerf__sbm_html_af81849687213b3467610b65f5168ba8e"><div class="ttname"><a href="namespaceerf__sbm.html#af81849687213b3467610b65f5168ba8e">erf_sbm::authoritative_state_admissible</a></div><div class="ttdeci">bool authoritative_state_admissible(const amrex::MultiFab &amp;spectrum, const SBMLayout &amp;layout, const int level, std::string *diagnostic)</div><div class="ttdef"><b>Definition:</b> ERF_SBMRestart.cpp:272</div></div>
 </div><!-- fragment -->
@@ -7226,7 +7633,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    M = mass;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_ad43c3812e6d13e0518d9f8b8f463ffcf"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a></div><div class="ttdeci">int count</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:271</div></div>
+<div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_ad43c3812e6d13e0518d9f8b8f463ffcf"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a></div><div class="ttdeci">int count</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:264</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classerf__sbm_1_1SpectralGrid.html#a6c2ead9f3fd31174d1a9e7c4a3370217">erf_sbm::SpectralGrid::endpoints_to_two_moment()</a>.</p>
 <div class="dynheader">
@@ -7716,6 +8123,73 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="244,39,427,80"/>
 <area shape="rect" href="classERF.html#a9fde938a0f67f4f1802efb04209da360" title=" " alt="" coords="19,5,182,47"/>
 <area shape="rect" href="classerf__sbm_1_1SBMTransport.html#adfb11e87690ad8f9e876b6e9f7ed78c4" title=" " alt="" coords="5,71,196,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a250efeebff95e91b2c5855dbb44471a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a250efeebff95e91b2c5855dbb44471a0">&#9670;&nbsp;</a></span>validate_particle_mixing_config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool erf_sbm::validate_particle_mixing_config </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structerf__sbm_1_1ParticleMixingConfig.html">ParticleMixingConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>reason</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    reason.clear();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>.policy == ParticleMixingPolicy::ConstantReference) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> value : {<a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>.reference_kh, <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>.reference_kv}) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (!(std::isfinite(value) &amp;&amp; value &gt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0))) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                reason = <span class="stringliteral">&quot;ConstantReference diffusivities must be finite and nonnegative&quot;</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>.reference_kh != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) || <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>.reference_kv != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        reason = std::string(<span class="stringliteral">&quot;reference diffusivities apply only to ConstantReference, not &quot;</span>) +</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                 <a class="code" href="namespaceerf__sbm.html#a025431cb6d97d87cac4329af20e31a9a">particle_mixing_name</a>(<a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>.policy);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="namespaceerf__sbm.html#a3af6f41861b910b00dc1ad8e60351792">build_particle_mixing_transmissibility()</a>, and <a class="el" href="namespaceerf__sbm.html#ac71d1d4ca7caacbb3b5a7c8184af22ab">particle_mixing_coefficients()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__sbm_a250efeebff95e91b2c5855dbb44471a0_cgraph.png" border="0" usemap="#anamespaceerf__sbm_a250efeebff95e91b2c5855dbb44471a0_cgraph" alt=""/></div>
+<map name="anamespaceerf__sbm_a250efeebff95e91b2c5855dbb44471a0_cgraph" id="anamespaceerf__sbm_a250efeebff95e91b2c5855dbb44471a0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,197,47"/>
+<area shape="rect" href="namespaceerf__sbm.html#a025431cb6d97d87cac4329af20e31a9a" title=" " alt="" coords="245,13,473,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__sbm_a250efeebff95e91b2c5855dbb44471a0_icgraph.png" border="0" usemap="#anamespaceerf__sbm_a250efeebff95e91b2c5855dbb44471a0_icgraph" alt=""/></div>
+<map name="anamespaceerf__sbm_a250efeebff95e91b2c5855dbb44471a0_icgraph" id="anamespaceerf__sbm_a250efeebff95e91b2c5855dbb44471a0_icgraph">
+<area shape="rect" title=" " alt="" coords="468,5,660,47"/>
+<area shape="rect" href="namespaceerf__sbm.html#a3af6f41861b910b00dc1ad8e60351792" title=" " alt="" coords="5,5,188,47"/>
+<area shape="rect" href="namespaceerf__sbm.html#ac71d1d4ca7caacbb3b5a7c8184af22ab" title=" " alt="" coords="236,35,420,76"/>
 </map>
 </div>
 
