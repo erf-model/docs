@@ -19,5 +19,6 @@ var structnear__surface__diagnostics_1_1Sources =
     [ "source_mask", "structnear__surface__diagnostics_1_1Sources.html#ae154e64e0eeb5b62e505a102d2891371", null ],
     [ "theta_star", "structnear__surface__diagnostics_1_1Sources.html#a9a1ead6cef23789575ba9ee3220e3b46", null ],
     [ "theta_surface", "structnear__surface__diagnostics_1_1Sources.html#a3b26ca8e6592b24daf7569be3de29299", null ],
-    [ "z_phys_nd", "structnear__surface__diagnostics_1_1Sources.html#a41d059bda761e72d138a07e8d3f7c9a8", null ]
+    [ "z_phys_nd", "structnear__surface__diagnostics_1_1Sources.html#a41d059bda761e72d138a07e8d3f7c9a8", null ],
+    [ "z_sfc_nd", "structnear__surface__diagnostics_1_1Sources.html#a28ac4956759de87a1c7bf9ec673cf86d", null ]
 ];

@@ -159,9 +159,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad4c606e93225c44abd0e854081602c2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWindFarm.html#ad4c606e93225c44abd0e854081602c2a">fill_SMark_multifab</a> (const amrex::Geometry &amp;geom, amrex::MultiFab &amp;mf_SMark, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;sampling_distance_by_D, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;turb_disk_angle, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc)</td></tr>
 <tr class="memdesc:ad4c606e93225c44abd0e854081602c2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the SMark MultiFab.  <a href="classWindFarm.html#ad4c606e93225c44abd0e854081602c2a">More...</a><br /></td></tr>
 <tr class="separator:ad4c606e93225c44abd0e854081602c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74983b05c969cace5b73aeae42830d2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWindFarm.html#a74983b05c969cace5b73aeae42830d2c">fill_SMark_multifab_mesoscale_models</a> (const amrex::Geometry &amp;geom, amrex::MultiFab &amp;mf_SMark, const amrex::MultiFab &amp;mf_Nturb, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc)</td></tr>
-<tr class="memdesc:a74983b05c969cace5b73aeae42830d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the SMark MultiFab for mesoscale models.  <a href="classWindFarm.html#a74983b05c969cace5b73aeae42830d2c">More...</a><br /></td></tr>
-<tr class="separator:a74983b05c969cace5b73aeae42830d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0ab509a74acada8a43be2bcc3665984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWindFarm.html#ad0ab509a74acada8a43be2bcc3665984">fill_SMark_multifab_mesoscale_models</a> (const amrex::Geometry &amp;geom, amrex::MultiFab &amp;mf_SMark, const amrex::MultiFab &amp;mf_Nturb, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc, const std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_sfc_nd)</td></tr>
+<tr class="memdesc:ad0ab509a74acada8a43be2bcc3665984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the SMark MultiFab for mesoscale models.  <a href="classWindFarm.html#ad0ab509a74acada8a43be2bcc3665984">More...</a><br /></td></tr>
+<tr class="separator:ad0ab509a74acada8a43be2bcc3665984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad777d1138832963ea3158ec66c86e0c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWindFarm.html#ad777d1138832963ea3158ec66c86e0c7">write_turbine_locations_vtk</a> ()</td></tr>
 <tr class="memdesc:ad777d1138832963ea3158ec66c86e0c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write turbine locations to a VTK file.  <a href="classWindFarm.html#ad777d1138832963ea3158ec66c86e0c7">More...</a><br /></td></tr>
 <tr class="separator:ad777d1138832963ea3158ec66c86e0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -426,7 +426,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;WindFarm: Dont know this windfarm_type!&quot;</span>) ;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="ttc" id="aclassWindFarm_html_af3953694e6a246585c20f50436a65123"><div class="ttname"><a href="classWindFarm.html#af3953694e6a246585c20f50436a65123">WindFarm::m_windfarm_model</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; NullWindFarm &gt; &gt; m_windfarm_model</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:299</div></div>
+<div class="ttc" id="aclassWindFarm_html_af3953694e6a246585c20f50436a65123"><div class="ttname"><a href="classWindFarm.html#af3953694e6a246585c20f50436a65123">WindFarm::m_windfarm_model</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; NullWindFarm &gt; &gt; m_windfarm_model</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:301</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -531,10 +531,10 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="classNullWindFarm.html#a747f0d122312ccfde581f020a061d442">NullWindFarm</a>.</p>
-<div class="fragment"><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[0]-&gt;advance(a_geom, dt_advance, cons_in, mf_vars_windfarm,</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                                     U_old, V_old, W_old, mf_Nturb, mf_SMark, time);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[0]-&gt;advance(a_geom, dt_advance, cons_in, mf_vars_windfarm,</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                                     U_old, V_old, W_old, mf_Nturb, mf_SMark, time);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -705,9 +705,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:36</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aclassWindFarm_html_a18280646bd55077f0a59ea45506a630b"><div class="ttname"><a href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">WindFarm::yloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; yloc</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:280</div></div>
-<div class="ttc" id="aclassWindFarm_html_a70d65d49e7ee4191c7f009416ab6ba27"><div class="ttname"><a href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">WindFarm::zloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; zloc</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:280</div></div>
-<div class="ttc" id="aclassWindFarm_html_ac1bd117bca25527ede4ea107ad22b07c"><div class="ttname"><a href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">WindFarm::xloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; xloc</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:280</div></div>
+<div class="ttc" id="aclassWindFarm_html_a18280646bd55077f0a59ea45506a630b"><div class="ttname"><a href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">WindFarm::yloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; yloc</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:282</div></div>
+<div class="ttc" id="aclassWindFarm_html_a70d65d49e7ee4191c7f009416ab6ba27"><div class="ttname"><a href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">WindFarm::zloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; zloc</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:282</div></div>
+<div class="ttc" id="aclassWindFarm_html_ac1bd117bca25527ede4ea107ad22b07c"><div class="ttname"><a href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">WindFarm::xloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; xloc</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:282</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -786,196 +786,196 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;{</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    <span class="comment">// Copy turbine locations to device</span></div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_xloc(<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size());</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_yloc(<a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>.size());</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_zloc(<a class="code" href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">zloc</a>.size());</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160; </div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.begin(), <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.end(), d_xloc.begin());</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; </div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>.begin(), <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>.end(), d_yloc.begin());</div>
+<div class="fragment"><div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;{</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <span class="comment">// Copy turbine locations to device</span></div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_xloc(<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size());</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_yloc(<a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>.size());</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_zloc(<a class="code" href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">zloc</a>.size());</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; </div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">zloc</a>.begin(), <a class="code" href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">zloc</a>.end(), d_zloc.begin());</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.begin(), <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.end(), d_xloc.begin());</div>
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160; </div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_rotor_rad = <a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>;</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_hub_height = <a class="code" href="classWindFarm.html#a6dfd6451498f50c17cb67c386d13ddfb">hub_height</a>;</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_sampling_distance = sampling_distance_by_D * <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * <a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>;</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>.begin(), <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>.end(), d_yloc.begin());</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160; </div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">zloc</a>.begin(), <a class="code" href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">zloc</a>.end(), d_zloc.begin());</div>
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160; </div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* d_xloc_ptr = d_xloc.data();</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* d_yloc_ptr = d_yloc.data();</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* d_zloc_ptr = d_zloc.data();</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_rotor_rad = <a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>;</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_hub_height = <a class="code" href="classWindFarm.html#a6dfd6451498f50c17cb67c386d13ddfb">hub_height</a>;</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_sampling_distance = sampling_distance_by_D * <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * <a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>;</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; </div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    mf_SMark.setVal(-1.0);</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160; </div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> i_lo = geom.Domain().smallEnd(0);</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> i_hi = geom.Domain().bigEnd(0);</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> j_lo = geom.Domain().smallEnd(1);</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> j_hi = geom.Domain().bigEnd(1);</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> k_lo = geom.Domain().smallEnd(2);</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> k_hi = geom.Domain().bigEnd(2);</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160; </div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a> = geom.CellSizeArray();</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keyword">auto</span> ProbLoArr = geom.ProbLoArray();</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160; </div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> num_turb = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size());</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160; </div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = turb_disk_angle * <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> / <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(180.0) - <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>;</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* d_xloc_ptr = d_xloc.data();</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* d_yloc_ptr = d_yloc.data();</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* d_zloc_ptr = d_zloc.data();</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160; </div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    mf_SMark.setVal(-1.0);</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160; </div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> i_lo = geom.Domain().smallEnd(0);</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> i_hi = geom.Domain().bigEnd(0);</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> j_lo = geom.Domain().smallEnd(1);</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> j_hi = geom.Domain().bigEnd(1);</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> k_lo = geom.Domain().smallEnd(2);</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> k_hi = geom.Domain().bigEnd(2);</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160; </div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a> = geom.CellSizeArray();</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <span class="keyword">auto</span> ProbLoArr = geom.ProbLoArray();</div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160; </div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <a class="code" href="classWindFarm.html#aed4eeef484f5e77b3c3038a1606f1875">set_turb_disk_angle</a>(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>);</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <a class="code" href="classWindFarm.html#a0d274380a6e7a61593459bb0b0f642d2">my_turb_disk_angle</a> = <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>;</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160; </div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> = -std::cos(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>);</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> = -std::sin(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>);</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="comment">// Device-side overlap information</span></div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="comment">// overlap_info[0] = overlap flag</span></div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="comment">// overlap_info[1] = first turbine index</span></div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="comment">// overlap_info[2] = second turbine index</span></div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160; </div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <span class="keywordtype">int</span> h_overlap_info[3] = {0, -1, -1};</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160; </div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    Gpu::DeviceVector&lt;int&gt; d_overlap_info(3);</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> num_turb = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size());</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160; </div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = turb_disk_angle * <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> / <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(180.0) - <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>;</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160; </div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <a class="code" href="classWindFarm.html#aed4eeef484f5e77b3c3038a1606f1875">set_turb_disk_angle</a>(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>);</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <a class="code" href="classWindFarm.html#a0d274380a6e7a61593459bb0b0f642d2">my_turb_disk_angle</a> = <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>;</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160; </div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> = -std::cos(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>);</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> = -std::sin(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>);</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160; </div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="comment">// Device-side overlap information</span></div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="comment">// overlap_info[0] = overlap flag</span></div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <span class="comment">// overlap_info[1] = first turbine index</span></div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="comment">// overlap_info[2] = second turbine index</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160; </div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    Gpu::copy(Gpu::hostToDevice, h_overlap_info, h_overlap_info + 3, d_overlap_info.begin());</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <span class="keywordtype">int</span> h_overlap_info[3] = {0, -1, -1};</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160; </div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <span class="keywordtype">int</span>* d_overlap_info_ptr = d_overlap_info.data();</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    Gpu::DeviceVector&lt;int&gt; d_overlap_info(3);</div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160; </div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <span class="comment">// Initialize wind farm</span></div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    Gpu::copy(Gpu::hostToDevice, h_overlap_info, h_overlap_info + 3, d_overlap_info.begin());</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160; </div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="keywordtype">int</span>* d_overlap_info_ptr = d_overlap_info.data();</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160; </div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(mf_SMark, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    {</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        <span class="keyword">const</span> Box&amp; gbx = mfi.growntilebox(1);</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <span class="comment">// Initialize wind farm</span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        <span class="keyword">auto</span> SMark_array = mf_SMark.array(mfi);</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160; </div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_cc_arr = z_phys_cc-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(mf_SMark, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    {</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        <span class="keyword">const</span> Box&amp; gbx = mfi.growntilebox(1);</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160; </div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;            gbx,</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;            {</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i, i_lo), i_hi);</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j, j_lo), j_hi);</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                <span class="keywordtype">int</span> kk = amrex::min(amrex::max(k, k_lo), k_hi);</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160; </div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                <span class="comment">// ------------------------------------------------</span></div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                <span class="comment">// Mesh-cell x/y extents</span></div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                <span class="comment">// ------------------------------------------------</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="keyword">auto</span> SMark_array = mf_SMark.array(mfi);</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160; </div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_cc_arr = z_phys_cc-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160; </div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            gbx,</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            {</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i, i_lo), i_hi);</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j, j_lo), j_hi);</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                <span class="keywordtype">int</span> kk = amrex::min(amrex::max(k, k_lo), k_hi);</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160; </div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x1 = ProbLoArr[0] + ii * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x2 = ProbLoArr[0] + (ii + 1) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y1 = ProbLoArr[1] + jj * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y2 = ProbLoArr[1] + (jj + 1) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                <span class="comment">// ------------------------------------------------</span></div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                <span class="comment">// Cell-centered physical z</span></div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                <span class="comment">// ------------------------------------------------</span></div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                <span class="comment">// ------------------------------------------------</span></div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                <span class="comment">// Mesh-cell x/y extents</span></div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                <span class="comment">// ------------------------------------------------</span></div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160; </div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x1 = ProbLoArr[0] + ii * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x2 = ProbLoArr[0] + (ii + 1) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160; </div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y1 = ProbLoArr[1] + jj * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y2 = ProbLoArr[1] + (jj + 1) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160; </div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = z_cc_arr(ii, jj, kk);</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160; </div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                <span class="keywordtype">int</span> check_int = 0;</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                <span class="keywordtype">int</span> first_turb = -1;</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160; </div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> it = 0; it &lt; num_turb; ++it)</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                {</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> = d_zloc_ptr[it];</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                <span class="comment">// ------------------------------------------------</span></div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                <span class="comment">// Cell-centered physical z</span></div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                <span class="comment">// ------------------------------------------------</span></div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160; </div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = z_cc_arr(ii, jj, kk);</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160; </div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                <span class="keywordtype">int</span> check_int = 0;</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                <span class="keywordtype">int</span> first_turb = -1;</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160; </div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                    <span class="comment">// ------------------------------------------------</span></div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                    <span class="comment">// Sampling point upstream/downstream of turbine</span></div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                    <span class="comment">// ------------------------------------------------</span></div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> it = 0; it &lt; num_turb; ++it)</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                {</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a> = d_zloc_ptr[it];</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160; </div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x0 = d_xloc_ptr[it] + d_sampling_distance * <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>;</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160; </div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y0 = d_yloc_ptr[it] + d_sampling_distance * <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>;</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                    <span class="comment">// ------------------------------------------------</span></div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                    <span class="comment">// Sampling point upstream/downstream of turbine</span></div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                    <span class="comment">// ------------------------------------------------</span></div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160; </div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                    <span class="keywordtype">bool</span> is_cell_marked =</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                        <a class="code" href="classNullWindFarm.html#a4d117768ddbdf31c864c4bc7eac57c46">find_if_marked</a>(</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                            x1, x2, y1, y2,</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                            x0, y0,</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                            <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>,</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                            d_hub_height + <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>,</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                            d_rotor_rad,</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                            <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160; </div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                    <span class="keywordflow">if</span> (is_cell_marked)</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                    {</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                        SMark_array(i, j, k, 0) = it;</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                    }</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160; </div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                    <span class="comment">// ------------------------------------------------</span></div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                    <span class="comment">// Actual turbine disk</span></div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                    <span class="comment">// ------------------------------------------------</span></div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x0 = d_xloc_ptr[it] + d_sampling_distance * <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>;</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160; </div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y0 = d_yloc_ptr[it] + d_sampling_distance * <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>;</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160; </div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                    <span class="keywordtype">bool</span> is_cell_marked =</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                        <a class="code" href="classNullWindFarm.html#a4d117768ddbdf31c864c4bc7eac57c46">find_if_marked</a>(</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                            x1, x2, y1, y2,</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                            x0, y0,</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                            <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>,</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                            d_hub_height + <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>,</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                            d_rotor_rad,</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                            <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160; </div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                    <span class="keywordflow">if</span> (is_cell_marked)</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                    {</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                        SMark_array(i, j, k, 0) = it;</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                    }</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160; </div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                    x0 = d_xloc_ptr[it];</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                    y0 = d_yloc_ptr[it];</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160; </div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                    is_cell_marked =</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                        <a class="code" href="classNullWindFarm.html#a4d117768ddbdf31c864c4bc7eac57c46">find_if_marked</a>(</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                            x1, x2, y1, y2,</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                            x0, y0,</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                            <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>,</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                            d_hub_height + <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>,</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                            d_rotor_rad,</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                            <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160; </div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                    <span class="keywordflow">if</span> (is_cell_marked)</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                    {</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                        SMark_array(i, j, k, 1) = it;</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                    <span class="comment">// ------------------------------------------------</span></div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                    <span class="comment">// Actual turbine disk</span></div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                    <span class="comment">// ------------------------------------------------</span></div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160; </div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                    x0 = d_xloc_ptr[it];</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                    y0 = d_yloc_ptr[it];</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160; </div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                    is_cell_marked =</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                        <a class="code" href="classNullWindFarm.html#a4d117768ddbdf31c864c4bc7eac57c46">find_if_marked</a>(</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                            x1, x2, y1, y2,</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                            x0, y0,</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                            <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>, <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>,</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                            d_hub_height + <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>,</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                            d_rotor_rad,</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                            <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160; </div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                        <span class="keywordflow">if</span> (check_int == 0)</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                        {</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                            first_turb = it;</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                        }</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160; </div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                        ++check_int;</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160; </div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                        <span class="comment">// ------------------------------------------------</span></div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                        <span class="comment">// More than one turbine disk marks this cell</span></div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                        <span class="comment">// ------------------------------------------------</span></div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                    <span class="keywordflow">if</span> (is_cell_marked)</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                    {</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                        SMark_array(i, j, k, 1) = it;</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160; </div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                        <span class="keywordflow">if</span> (check_int == 0)</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                        {</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                            first_turb = it;</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                        }</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160; </div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                        ++check_int;</div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160; </div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                        <span class="keywordflow">if</span> (check_int &gt; 1)</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                        {</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                            <span class="comment">// Set overlap flag.</span></div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                            amrex::Gpu::Atomic::Exch(&amp;d_overlap_info_ptr[0], 1);</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160; </div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                            <span class="comment">// Save the turbine indices. Multiple threads</span></div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                            <span class="comment">// may write these, so use atomics.</span></div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                            amrex::Gpu::Atomic::Exch(&amp;d_overlap_info_ptr[1], first_turb);</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                        <span class="comment">// ------------------------------------------------</span></div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                        <span class="comment">// More than one turbine disk marks this cell</span></div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                        <span class="comment">// ------------------------------------------------</span></div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160; </div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                        <span class="keywordflow">if</span> (check_int &gt; 1)</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                        {</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                            <span class="comment">// Set overlap flag.</span></div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                            amrex::Gpu::Atomic::Exch(&amp;d_overlap_info_ptr[0], 1);</div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160; </div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                            amrex::Gpu::Atomic::Exch(&amp;d_overlap_info_ptr[2], it);</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                        }</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                    }</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                }</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;            });</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;    }</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160; </div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    <span class="comment">// Copy overlap information back to host.</span></div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    <span class="comment">// This also synchronizes the GPU work.</span></div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160; </div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    Gpu::copy(Gpu::deviceToHost, d_overlap_info.begin(), d_overlap_info.end(), h_overlap_info);</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160; </div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                            <span class="comment">// Save the turbine indices. Multiple threads</span></div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                            <span class="comment">// may write these, so use atomics.</span></div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                            amrex::Gpu::Atomic::Exch(&amp;d_overlap_info_ptr[1], first_turb);</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160; </div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                            amrex::Gpu::Atomic::Exch(&amp;d_overlap_info_ptr[2], it);</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                        }</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                    }</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                }</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            });</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    }</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160; </div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    <span class="comment">// Copy overlap information back to host.</span></div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;    <span class="comment">// This also synchronizes the GPU work.</span></div>
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;    <span class="comment">// Handle overlap on the HOST, not inside the GPU kernel.</span></div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160; </div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;    Gpu::copy(Gpu::deviceToHost, d_overlap_info.begin(), d_overlap_info.end(), h_overlap_info);</div>
 <div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160; </div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    <span class="keywordflow">if</span> (h_overlap_info[0] != 0)</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;    {</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;        amrex::Error(</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;            <span class="stringliteral">&quot;Actuator disks with indices &quot;</span> + std::to_string(h_overlap_info[1]) +</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;            <span class="stringliteral">&quot; and &quot;</span> + std::to_string(h_overlap_info[2]) + <span class="stringliteral">&quot; are overlapping. &quot;</span></div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;            <span class="stringliteral">&quot;Visualize actuator_disks.vtk and check the &quot;</span></div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;            <span class="stringliteral">&quot;windturbine locations input file. Exiting..&quot;</span>);</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    }</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;}</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;    <span class="comment">// Handle overlap on the HOST, not inside the GPU kernel.</span></div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    <span class="comment">// ------------------------------------------------------------</span></div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160; </div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    <span class="keywordflow">if</span> (h_overlap_info[0] != 0)</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    {</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;        amrex::Error(</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;            <span class="stringliteral">&quot;Actuator disks with indices &quot;</span> + std::to_string(h_overlap_info[1]) +</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;            <span class="stringliteral">&quot; and &quot;</span> + std::to_string(h_overlap_info[2]) + <span class="stringliteral">&quot; are overlapping. &quot;</span></div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;            <span class="stringliteral">&quot;Visualize actuator_disks.vtk and check the &quot;</span></div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;            <span class="stringliteral">&quot;windturbine locations input file. Exiting..&quot;</span>);</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;    }</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="aERF__HurricaneDiagnostics_8cpp_html_ae71449b1cc6e6250b91f539153a7a0d3"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8cpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a></div><div class="ttdeci">#define M_PI</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.cpp:27</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a4f88110916f09b2adef33396203ff015"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a></div><div class="ttdeci">const int nx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:14</div></div>
@@ -984,10 +984,10 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:38</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:41</div></div>
 <div class="ttc" id="aclassNullWindFarm_html_a4d117768ddbdf31c864c4bc7eac57c46"><div class="ttname"><a href="classNullWindFarm.html#a4d117768ddbdf31c864c4bc7eac57c46">NullWindFarm::find_if_marked</a></div><div class="ttdeci">static AMREX_GPU_DEVICE bool find_if_marked(amrex::Real x1, amrex::Real x2, amrex::Real y1, amrex::Real y2, amrex::Real x0, amrex::Real y0, amrex::Real nx, amrex::Real ny, amrex::Real d_hub_height, amrex::Real d_rotor_rad, amrex::Real z)</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:140</div></div>
-<div class="ttc" id="aclassWindFarm_html_a0d274380a6e7a61593459bb0b0f642d2"><div class="ttname"><a href="classWindFarm.html#a0d274380a6e7a61593459bb0b0f642d2">WindFarm::my_turb_disk_angle</a></div><div class="ttdeci">amrex::Real my_turb_disk_angle</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:281</div></div>
-<div class="ttc" id="aclassWindFarm_html_a6dfd6451498f50c17cb67c386d13ddfb"><div class="ttname"><a href="classWindFarm.html#a6dfd6451498f50c17cb67c386d13ddfb">WindFarm::hub_height</a></div><div class="ttdeci">amrex::Real hub_height</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:282</div></div>
-<div class="ttc" id="aclassWindFarm_html_ad0925f54be32d71ae431a2078afee91b"><div class="ttname"><a href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">WindFarm::rotor_rad</a></div><div class="ttdeci">amrex::Real rotor_rad</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:282</div></div>
-<div class="ttc" id="aclassWindFarm_html_aed4eeef484f5e77b3c3038a1606f1875"><div class="ttname"><a href="classWindFarm.html#aed4eeef484f5e77b3c3038a1606f1875">WindFarm::set_turb_disk_angle</a></div><div class="ttdeci">void set_turb_disk_angle(const amrex::Real &amp;a_turb_disk_angle) override</div><div class="ttdoc">Set the turbine disk angle.</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:230</div></div>
+<div class="ttc" id="aclassWindFarm_html_a0d274380a6e7a61593459bb0b0f642d2"><div class="ttname"><a href="classWindFarm.html#a0d274380a6e7a61593459bb0b0f642d2">WindFarm::my_turb_disk_angle</a></div><div class="ttdeci">amrex::Real my_turb_disk_angle</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:283</div></div>
+<div class="ttc" id="aclassWindFarm_html_a6dfd6451498f50c17cb67c386d13ddfb"><div class="ttname"><a href="classWindFarm.html#a6dfd6451498f50c17cb67c386d13ddfb">WindFarm::hub_height</a></div><div class="ttdeci">amrex::Real hub_height</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:284</div></div>
+<div class="ttc" id="aclassWindFarm_html_ad0925f54be32d71ae431a2078afee91b"><div class="ttname"><a href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">WindFarm::rotor_rad</a></div><div class="ttdeci">amrex::Real rotor_rad</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:284</div></div>
+<div class="ttc" id="aclassWindFarm_html_aed4eeef484f5e77b3c3038a1606f1875"><div class="ttname"><a href="classWindFarm.html#aed4eeef484f5e77b3c3038a1606f1875">WindFarm::set_turb_disk_angle</a></div><div class="ttdeci">void set_turb_disk_angle(const amrex::Real &amp;a_turb_disk_angle) override</div><div class="ttdoc">Set the turbine disk angle.</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:232</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36"><div class="ttname"><a href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">MicVar_Kess::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:26</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1001,8 +1001,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a74983b05c969cace5b73aeae42830d2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74983b05c969cace5b73aeae42830d2c">&#9670;&nbsp;</a></span>fill_SMark_multifab_mesoscale_models()</h2>
+<a id="ad0ab509a74acada8a43be2bcc3665984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ab509a74acada8a43be2bcc3665984">&#9670;&nbsp;</a></span>fill_SMark_multifab_mesoscale_models()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1029,7 +1029,13 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td>
-          <td class="paramname"><em>z_phys_cc</em>&#160;</td>
+          <td class="paramname"><em>z_phys_cc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td>
+          <td class="paramname"><em>z_sfc_nd</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1045,7 +1051,8 @@ Here is the call graph for this function:</div>
     <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>Geometry </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">mf_SMark</td><td>MultiFab to fill with SMark values. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_Nturb</td><td>MultiFab containing turbine counts. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">z_phys_cc</td><td>Physical height MultiFab.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">z_phys_cc</td><td>Physical height MultiFab. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z_sfc_nd</td><td>Heights of the ground at the nodes.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1056,62 +1063,65 @@ Here is the call graph for this function:</div>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">mf_SMark</td><td>MultiFab to be filled with turbine markers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_Nturb</td><td>MultiFab containing turbine counts per cell. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">z_phys_nd</td><td>Node-centered physical height FAB. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z_sfc_nd</td><td>Heights of the ground at the nodes. </td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;{</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    mf_SMark.setVal(-1.0);</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_hub_height = <a class="code" href="classWindFarm.html#a6dfd6451498f50c17cb67c386d13ddfb">hub_height</a>;</div>
+<div class="fragment"><div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;{</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    mf_SMark.setVal(-1.0);</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160; </div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    amrex::Gpu::DeviceVector&lt;Real&gt; d_xloc(<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size());</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    amrex::Gpu::DeviceVector&lt;Real&gt; d_yloc(<a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>.size());</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    amrex::Gpu::DeviceVector&lt;Real&gt; d_zloc(<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size());</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    amrex::Gpu::copyAsync(amrex::Gpu::hostToDevice, <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.begin(), <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.end(), d_xloc.begin());</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    amrex::Gpu::copyAsync(amrex::Gpu::hostToDevice, <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>.begin(), <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>.end(), d_yloc.begin());</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    amrex::Gpu::copyAsync(amrex::Gpu::hostToDevice, <a class="code" href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">zloc</a>.begin(), <a class="code" href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">zloc</a>.end(), d_zloc.begin());</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160; </div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <span class="keywordtype">int</span> i_lo = geom.Domain().smallEnd(0); <span class="keywordtype">int</span> i_hi = geom.Domain().bigEnd(0);</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <span class="keywordtype">int</span> j_lo = geom.Domain().smallEnd(1); <span class="keywordtype">int</span> j_hi = geom.Domain().bigEnd(1);</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="keywordtype">int</span> k_lo = geom.Domain().smallEnd(2); <span class="keywordtype">int</span> k_hi = geom.Domain().bigEnd(2);</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="comment">// Node heights come from z_phys_nd, or from the flat mesh if there is none</span></div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> is_terrain = (z_phys_nd != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a> = geom.CellSizeArray();</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="keyword">auto</span> ProbLoArr = geom.ProbLoArray();</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160; </div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;     <span class="comment">// Initialize wind farm</span></div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(mf_SMark,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160; </div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;        <span class="keyword">const</span> Box&amp; gbx    = mfi.growntilebox(1);</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        <span class="keyword">auto</span>  SMark_array = mf_SMark.array(mfi);</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        <span class="keyword">auto</span>  Nturb_array = mf_Nturb.array(mfi);</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt; z_nd_arr = (is_terrain) ? z_phys_nd-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        <span class="keywordtype">int</span> k0 = std::max(gbx.smallEnd(2), geom.Domain().smallEnd(2));</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160; </div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;            <span class="keywordflow">if</span>(Nturb_array(i,j,k,0) &gt; 0) {</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                <span class="keywordtype">int</span> li = amrex::min(amrex::max(i, i_lo), i_hi);</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, j_lo), j_hi);</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, k_lo), k_hi);</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160; </div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z1 = (is_terrain) ? z_nd_arr(li,lj,lk  ) : ProbLoArr[2] +  lk   *<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[2];</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z2 = (is_terrain) ? z_nd_arr(li,lj,lk+1) : ProbLoArr[2] + (lk+1)*<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[2];</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160; </div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zturb = ((is_terrain) ? z_nd_arr(li,lj,k0) : ProbLoArr[2] + k0*<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[2]) + d_hub_height;</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                <span class="keywordflow">if</span> (zturb+1e-3 &gt; z1 and zturb+1e-3 &lt; z2) {</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                    SMark_array(i,j,k,0) = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                }</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            }</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        });</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    }</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;}</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_hub_height = <a class="code" href="classWindFarm.html#a6dfd6451498f50c17cb67c386d13ddfb">hub_height</a>;</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160; </div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    amrex::Gpu::DeviceVector&lt;Real&gt; d_xloc(<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size());</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    amrex::Gpu::DeviceVector&lt;Real&gt; d_yloc(<a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>.size());</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    amrex::Gpu::DeviceVector&lt;Real&gt; d_zloc(<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size());</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    amrex::Gpu::copyAsync(amrex::Gpu::hostToDevice, <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.begin(), <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.end(), d_xloc.begin());</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    amrex::Gpu::copyAsync(amrex::Gpu::hostToDevice, <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>.begin(), <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>.end(), d_yloc.begin());</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    amrex::Gpu::copyAsync(amrex::Gpu::hostToDevice, <a class="code" href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">zloc</a>.begin(), <a class="code" href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">zloc</a>.end(), d_zloc.begin());</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160; </div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="keywordtype">int</span> i_lo = geom.Domain().smallEnd(0); <span class="keywordtype">int</span> i_hi = geom.Domain().bigEnd(0);</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="keywordtype">int</span> j_lo = geom.Domain().smallEnd(1); <span class="keywordtype">int</span> j_hi = geom.Domain().bigEnd(1);</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="keywordtype">int</span> k_lo = geom.Domain().smallEnd(2); <span class="keywordtype">int</span> k_hi = geom.Domain().bigEnd(2);</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="comment">// Node heights come from z_phys_nd, or from the flat mesh if there is none</span></div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> is_terrain = (z_phys_nd != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a> = geom.CellSizeArray();</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    <span class="keyword">auto</span> ProbLoArr = geom.ProbLoArray();</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;     <span class="comment">// Initialize wind farm</span></div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(mf_SMark,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; </div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        <span class="keyword">const</span> Box&amp; gbx    = mfi.growntilebox(1);</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        <span class="keyword">auto</span>  SMark_array = mf_SMark.array(mfi);</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        <span class="keyword">auto</span>  Nturb_array = mf_Nturb.array(mfi);</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt; z_nd_arr = (is_terrain) ? z_phys_nd-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        <span class="comment">// The hub height is above the ground, not above the bottom of this box -- these</span></div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;        <span class="comment">//    differ for every box that doesn&#39;t touch the ground</span></div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt; z_sfc_arr = (is_terrain) ? z_sfc_nd-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160; </div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;            <span class="keywordflow">if</span>(Nturb_array(i,j,k,0) &gt; 0) {</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                <span class="keywordtype">int</span> li = amrex::min(amrex::max(i, i_lo), i_hi);</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, j_lo), j_hi);</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, k_lo), k_hi);</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160; </div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z1 = (is_terrain) ? z_nd_arr(li,lj,lk  ) : ProbLoArr[2] +  lk   *<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[2];</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z2 = (is_terrain) ? z_nd_arr(li,lj,lk+1) : ProbLoArr[2] + (lk+1)*<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[2];</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160; </div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zturb = ((is_terrain) ? z_sfc_arr(li,lj,0) : ProbLoArr[2] + k_lo*<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[2]) + d_hub_height;</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;                <span class="keywordflow">if</span> (zturb+1e-3 &gt; z1 and zturb+1e-3 &lt; z2) {</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                    SMark_array(i,j,k,0) = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;                }</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;            }</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        });</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    }</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;}</div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:37</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classWindFarm_a74983b05c969cace5b73aeae42830d2c_cgraph.png" border="0" usemap="#aclassWindFarm_a74983b05c969cace5b73aeae42830d2c_cgraph" alt=""/></div>
-<map name="aclassWindFarm_a74983b05c969cace5b73aeae42830d2c_cgraph" id="aclassWindFarm_a74983b05c969cace5b73aeae42830d2c_cgraph">
+<div class="center"><img src="classWindFarm_ad0ab509a74acada8a43be2bcc3665984_cgraph.png" border="0" usemap="#aclassWindFarm_ad0ab509a74acada8a43be2bcc3665984_cgraph" alt=""/></div>
+<map name="aclassWindFarm_ad0ab509a74acada8a43be2bcc3665984_cgraph" id="aclassWindFarm_ad0ab509a74acada8a43be2bcc3665984_cgraph">
 <area shape="rect" title="Fill the SMark MultiFab for mesoscale models." alt="" coords="5,5,221,47"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="269,13,360,39"/>
 </map>
@@ -1549,11 +1559,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <a class="code" href="classWindFarm.html#aa96d62f2d3d93c79e318ed0e321973fa">set_blade_airfoil_spec</a>(<a class="code" href="classWindFarm.html#a5746b9a61d306dc1b8a8ca121e2906bb">bld_airfoil_aoa</a>, <a class="code" href="classWindFarm.html#a2a7411926b7f581556ab806dc2d9f3db">bld_airfoil_Cl</a>, <a class="code" href="classWindFarm.html#a80014fbca537f74f24f5c54d69467866">bld_airfoil_Cd</a>);</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;}</div>
 <div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_ad43c3812e6d13e0518d9f8b8f463ffcf"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a></div><div class="ttdeci">int count</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:264</div></div>
-<div class="ttc" id="aclassWindFarm_html_a2a7411926b7f581556ab806dc2d9f3db"><div class="ttname"><a href="classWindFarm.html#a2a7411926b7f581556ab806dc2d9f3db">WindFarm::bld_airfoil_Cl</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; bld_airfoil_Cl</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:285</div></div>
-<div class="ttc" id="aclassWindFarm_html_a5746b9a61d306dc1b8a8ca121e2906bb"><div class="ttname"><a href="classWindFarm.html#a5746b9a61d306dc1b8a8ca121e2906bb">WindFarm::bld_airfoil_aoa</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; bld_airfoil_aoa</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:285</div></div>
-<div class="ttc" id="aclassWindFarm_html_a80014fbca537f74f24f5c54d69467866"><div class="ttname"><a href="classWindFarm.html#a80014fbca537f74f24f5c54d69467866">WindFarm::bld_airfoil_Cd</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; bld_airfoil_Cd</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:285</div></div>
-<div class="ttc" id="aclassWindFarm_html_a9e263152650471997aa43658904bc563"><div class="ttname"><a href="classWindFarm.html#a9e263152650471997aa43658904bc563">WindFarm::n_bld_sections</a></div><div class="ttdeci">int n_bld_sections</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:286</div></div>
-<div class="ttc" id="aclassWindFarm_html_aa96d62f2d3d93c79e318ed0e321973fa"><div class="ttname"><a href="classWindFarm.html#aa96d62f2d3d93c79e318ed0e321973fa">WindFarm::set_blade_airfoil_spec</a></div><div class="ttdeci">void set_blade_airfoil_spec(const amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;a_bld_airfoil_aoa, const amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;a_bld_airfoil_Cl, const amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;a_bld_airfoil_Cd) override</div><div class="ttdoc">Set blade airfoil specifications.</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:254</div></div>
+<div class="ttc" id="aclassWindFarm_html_a2a7411926b7f581556ab806dc2d9f3db"><div class="ttname"><a href="classWindFarm.html#a2a7411926b7f581556ab806dc2d9f3db">WindFarm::bld_airfoil_Cl</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; bld_airfoil_Cl</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:287</div></div>
+<div class="ttc" id="aclassWindFarm_html_a5746b9a61d306dc1b8a8ca121e2906bb"><div class="ttname"><a href="classWindFarm.html#a5746b9a61d306dc1b8a8ca121e2906bb">WindFarm::bld_airfoil_aoa</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; bld_airfoil_aoa</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:287</div></div>
+<div class="ttc" id="aclassWindFarm_html_a80014fbca537f74f24f5c54d69467866"><div class="ttname"><a href="classWindFarm.html#a80014fbca537f74f24f5c54d69467866">WindFarm::bld_airfoil_Cd</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; bld_airfoil_Cd</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:287</div></div>
+<div class="ttc" id="aclassWindFarm_html_a9e263152650471997aa43658904bc563"><div class="ttname"><a href="classWindFarm.html#a9e263152650471997aa43658904bc563">WindFarm::n_bld_sections</a></div><div class="ttdeci">int n_bld_sections</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:288</div></div>
+<div class="ttc" id="aclassWindFarm_html_aa96d62f2d3d93c79e318ed0e321973fa"><div class="ttname"><a href="classWindFarm.html#aa96d62f2d3d93c79e318ed0e321973fa">WindFarm::set_blade_airfoil_spec</a></div><div class="ttdeci">void set_blade_airfoil_spec(const amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;a_bld_airfoil_aoa, const amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;a_bld_airfoil_Cl, const amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;a_bld_airfoil_Cd) override</div><div class="ttdoc">Set blade airfoil specifications.</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:256</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1617,10 +1627,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <a class="code" href="classWindFarm.html#a9e263152650471997aa43658904bc563">n_bld_sections</a> = <a class="code" href="classWindFarm.html#aecf311136c814318eccea16a2a3c5efd">bld_rad_loc</a>.size();</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    }</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;}</div>
-<div class="ttc" id="aclassWindFarm_html_a6206e875bd0ab78e9b997d115a6c7b33"><div class="ttname"><a href="classWindFarm.html#a6206e875bd0ab78e9b997d115a6c7b33">WindFarm::set_blade_spec</a></div><div class="ttdeci">void set_blade_spec(const amrex::Vector&lt; amrex::Real &gt; &amp;a_bld_rad_loc, const amrex::Vector&lt; amrex::Real &gt; &amp;a_bld_twist, const amrex::Vector&lt; amrex::Real &gt; &amp;a_bld_chord) override</div><div class="ttdoc">Set blade specifications.</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:241</div></div>
-<div class="ttc" id="aclassWindFarm_html_a735f2980748b427839b5a5f492f3add8"><div class="ttname"><a href="classWindFarm.html#a735f2980748b427839b5a5f492f3add8">WindFarm::bld_twist</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; bld_twist</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:284</div></div>
-<div class="ttc" id="aclassWindFarm_html_aaab919aaa049f74aaa240318df77a890"><div class="ttname"><a href="classWindFarm.html#aaab919aaa049f74aaa240318df77a890">WindFarm::bld_chord</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; bld_chord</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:284</div></div>
-<div class="ttc" id="aclassWindFarm_html_aecf311136c814318eccea16a2a3c5efd"><div class="ttname"><a href="classWindFarm.html#aecf311136c814318eccea16a2a3c5efd">WindFarm::bld_rad_loc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; bld_rad_loc</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:284</div></div>
+<div class="ttc" id="aclassWindFarm_html_a6206e875bd0ab78e9b997d115a6c7b33"><div class="ttname"><a href="classWindFarm.html#a6206e875bd0ab78e9b997d115a6c7b33">WindFarm::set_blade_spec</a></div><div class="ttdeci">void set_blade_spec(const amrex::Vector&lt; amrex::Real &gt; &amp;a_bld_rad_loc, const amrex::Vector&lt; amrex::Real &gt; &amp;a_bld_twist, const amrex::Vector&lt; amrex::Real &gt; &amp;a_bld_chord) override</div><div class="ttdoc">Set blade specifications.</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:243</div></div>
+<div class="ttc" id="aclassWindFarm_html_a735f2980748b427839b5a5f492f3add8"><div class="ttname"><a href="classWindFarm.html#a735f2980748b427839b5a5f492f3add8">WindFarm::bld_twist</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; bld_twist</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:286</div></div>
+<div class="ttc" id="aclassWindFarm_html_aaab919aaa049f74aaa240318df77a890"><div class="ttname"><a href="classWindFarm.html#aaab919aaa049f74aaa240318df77a890">WindFarm::bld_chord</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; bld_chord</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:286</div></div>
+<div class="ttc" id="aclassWindFarm_html_aecf311136c814318eccea16a2a3c5efd"><div class="ttname"><a href="classWindFarm.html#aecf311136c814318eccea16a2a3c5efd">WindFarm::bld_rad_loc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; bld_rad_loc</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:286</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1704,7 +1714,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classWindFarm.html#a5defcbb732ba325db7b6e8a819ab381e">set_turb_loc</a>(<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>, <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="ttc" id="aclassWindFarm_html_a5defcbb732ba325db7b6e8a819ab381e"><div class="ttname"><a href="classWindFarm.html#a5defcbb732ba325db7b6e8a819ab381e">WindFarm::set_turb_loc</a></div><div class="ttdeci">void set_turb_loc(const amrex::Vector&lt; amrex::Real &gt; &amp;a_xloc, const amrex::Vector&lt; amrex::Real &gt; &amp;a_yloc) override</div><div class="ttdoc">Set turbine locations.</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:220</div></div>
+<div class="ttc" id="aclassWindFarm_html_a5defcbb732ba325db7b6e8a819ab381e"><div class="ttname"><a href="classWindFarm.html#a5defcbb732ba325db7b6e8a819ab381e">WindFarm::set_turb_loc</a></div><div class="ttdeci">void set_turb_loc(const amrex::Vector&lt; amrex::Real &gt; &amp;a_xloc, const amrex::Vector&lt; amrex::Real &gt; &amp;a_yloc) override</div><div class="ttdoc">Set turbine locations.</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:222</div></div>
 <div class="ttc" id="aclassWindFarm_html_aaa79cb89d8f18f2a059d1ff62c5e5dd3"><div class="ttname"><a href="classWindFarm.html#aaa79cb89d8f18f2a059d1ff62c5e5dd3">WindFarm::init_windfarm_x_y</a></div><div class="ttdeci">void init_windfarm_x_y(const std::string windfarm_loc_table)</div><div class="ttdoc">Initialize wind farm using Cartesian coordinates.</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.cpp:187</div></div>
 <div class="ttc" id="aclassWindFarm_html_aab3b5df05c4a5f0604ad7c378ba34d1e"><div class="ttname"><a href="classWindFarm.html#aab3b5df05c4a5f0604ad7c378ba34d1e">WindFarm::init_windfarm_lat_lon</a></div><div class="ttdeci">void init_windfarm_lat_lon(const std::string windfarm_loc_table, const amrex::Real windfarm_x_shift, const amrex::Real windfarm_y_shift)</div><div class="ttdoc">Initialize wind farm using latitude and longitude coordinates.</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.cpp:71</div></div>
 </div><!-- fragment -->
@@ -1795,12 +1805,12 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                  <a class="code" href="classWindFarm.html#a5d1dbc2f5df3a2ee2b239f04b82a2c6b">wind_speed</a>, <a class="code" href="classWindFarm.html#a8d5e6333f2f9f8e36dfd4766ad171b84">thrust_coeff</a>, <a class="code" href="classWindFarm.html#aea801fd8c22bf9d4bdcec847f4e7f50a">power</a>);</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
-<div class="ttc" id="aclassWindFarm_html_a5d1dbc2f5df3a2ee2b239f04b82a2c6b"><div class="ttname"><a href="classWindFarm.html#a5d1dbc2f5df3a2ee2b239f04b82a2c6b">WindFarm::wind_speed</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; wind_speed</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:283</div></div>
-<div class="ttc" id="aclassWindFarm_html_a8d5e6333f2f9f8e36dfd4766ad171b84"><div class="ttname"><a href="classWindFarm.html#a8d5e6333f2f9f8e36dfd4766ad171b84">WindFarm::thrust_coeff</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; thrust_coeff</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:283</div></div>
-<div class="ttc" id="aclassWindFarm_html_aa542d50137f25dcb568fafc483a83178"><div class="ttname"><a href="classWindFarm.html#aa542d50137f25dcb568fafc483a83178">WindFarm::nominal_power</a></div><div class="ttdeci">amrex::Real nominal_power</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:282</div></div>
-<div class="ttc" id="aclassWindFarm_html_aabf18956cad4a8546eb60ff8300c94c8"><div class="ttname"><a href="classWindFarm.html#aabf18956cad4a8546eb60ff8300c94c8">WindFarm::set_turb_spec</a></div><div class="ttdeci">void set_turb_spec(const amrex::Real &amp;a_rotor_rad, const amrex::Real &amp;a_hub_height, const amrex::Real &amp;a_thrust_coeff_standing, const amrex::Vector&lt; amrex::Real &gt; &amp;a_wind_speed, const amrex::Vector&lt; amrex::Real &gt; &amp;a_thrust_coeff, const amrex::Vector&lt; amrex::Real &gt; &amp;a_power) override</div><div class="ttdoc">Set general turbine specifications.</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:206</div></div>
-<div class="ttc" id="aclassWindFarm_html_ab8d68a72cf4346074daf47f825eff105"><div class="ttname"><a href="classWindFarm.html#ab8d68a72cf4346074daf47f825eff105">WindFarm::thrust_coeff_standing</a></div><div class="ttdeci">amrex::Real thrust_coeff_standing</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:282</div></div>
-<div class="ttc" id="aclassWindFarm_html_aea801fd8c22bf9d4bdcec847f4e7f50a"><div class="ttname"><a href="classWindFarm.html#aea801fd8c22bf9d4bdcec847f4e7f50a">WindFarm::power</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; power</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:283</div></div>
+<div class="ttc" id="aclassWindFarm_html_a5d1dbc2f5df3a2ee2b239f04b82a2c6b"><div class="ttname"><a href="classWindFarm.html#a5d1dbc2f5df3a2ee2b239f04b82a2c6b">WindFarm::wind_speed</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; wind_speed</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:285</div></div>
+<div class="ttc" id="aclassWindFarm_html_a8d5e6333f2f9f8e36dfd4766ad171b84"><div class="ttname"><a href="classWindFarm.html#a8d5e6333f2f9f8e36dfd4766ad171b84">WindFarm::thrust_coeff</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; thrust_coeff</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:285</div></div>
+<div class="ttc" id="aclassWindFarm_html_aa542d50137f25dcb568fafc483a83178"><div class="ttname"><a href="classWindFarm.html#aa542d50137f25dcb568fafc483a83178">WindFarm::nominal_power</a></div><div class="ttdeci">amrex::Real nominal_power</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:284</div></div>
+<div class="ttc" id="aclassWindFarm_html_aabf18956cad4a8546eb60ff8300c94c8"><div class="ttname"><a href="classWindFarm.html#aabf18956cad4a8546eb60ff8300c94c8">WindFarm::set_turb_spec</a></div><div class="ttdeci">void set_turb_spec(const amrex::Real &amp;a_rotor_rad, const amrex::Real &amp;a_hub_height, const amrex::Real &amp;a_thrust_coeff_standing, const amrex::Vector&lt; amrex::Real &gt; &amp;a_wind_speed, const amrex::Vector&lt; amrex::Real &gt; &amp;a_thrust_coeff, const amrex::Vector&lt; amrex::Real &gt; &amp;a_power) override</div><div class="ttdoc">Set general turbine specifications.</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:208</div></div>
+<div class="ttc" id="aclassWindFarm_html_ab8d68a72cf4346074daf47f825eff105"><div class="ttname"><a href="classWindFarm.html#ab8d68a72cf4346074daf47f825eff105">WindFarm::thrust_coeff_standing</a></div><div class="ttdeci">amrex::Real thrust_coeff_standing</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:284</div></div>
+<div class="ttc" id="aclassWindFarm_html_aea801fd8c22bf9d4bdcec847f4e7f50a"><div class="ttname"><a href="classWindFarm.html#aea801fd8c22bf9d4bdcec847f4e7f50a">WindFarm::power</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; power</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:285</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1869,13 +1879,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <a class="code" href="classWindFarm.html#a4afb42d44ea84a770d4dbfe8beb33f7e">set_turb_spec_extra</a>(<a class="code" href="classWindFarm.html#a57a72ded446162e2e365dc0ff7c6e06a">velocity</a>, <a class="code" href="classWindFarm.html#a63c20a3eac21bceea0ae4bfbe4c9acac">C_P</a>, <a class="code" href="classWindFarm.html#a87e2fe5c89e49801a70f6acf9836e1e1">C_T</a>, <a class="code" href="classWindFarm.html#ae10dbee3f3d8b126e52df83ea97d57b1">rotor_RPM</a>, <a class="code" href="classWindFarm.html#a2fc81cd15b5bbaec6e10bab30997fa7c">blade_pitch</a>);</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;}</div>
-<div class="ttc" id="aclassWindFarm_html_a2fc81cd15b5bbaec6e10bab30997fa7c"><div class="ttname"><a href="classWindFarm.html#a2fc81cd15b5bbaec6e10bab30997fa7c">WindFarm::blade_pitch</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; blade_pitch</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:287</div></div>
-<div class="ttc" id="aclassWindFarm_html_a4afb42d44ea84a770d4dbfe8beb33f7e"><div class="ttname"><a href="classWindFarm.html#a4afb42d44ea84a770d4dbfe8beb33f7e">WindFarm::set_turb_spec_extra</a></div><div class="ttdeci">void set_turb_spec_extra(const amrex::Vector&lt; amrex::Real &gt; &amp;a_velocity, const amrex::Vector&lt; amrex::Real &gt; &amp;a_C_P, const amrex::Vector&lt; amrex::Real &gt; &amp;a_C_T, const amrex::Vector&lt; amrex::Real &gt; &amp;a_rotor_RPM, const amrex::Vector&lt; amrex::Real &gt; &amp;a_blade_pitch) override</div><div class="ttdoc">Set extra turbine specifications.</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:269</div></div>
-<div class="ttc" id="aclassWindFarm_html_a57a72ded446162e2e365dc0ff7c6e06a"><div class="ttname"><a href="classWindFarm.html#a57a72ded446162e2e365dc0ff7c6e06a">WindFarm::velocity</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; velocity</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:287</div></div>
-<div class="ttc" id="aclassWindFarm_html_a63c20a3eac21bceea0ae4bfbe4c9acac"><div class="ttname"><a href="classWindFarm.html#a63c20a3eac21bceea0ae4bfbe4c9acac">WindFarm::C_P</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; C_P</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:287</div></div>
-<div class="ttc" id="aclassWindFarm_html_a87e2fe5c89e49801a70f6acf9836e1e1"><div class="ttname"><a href="classWindFarm.html#a87e2fe5c89e49801a70f6acf9836e1e1">WindFarm::C_T</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; C_T</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:287</div></div>
-<div class="ttc" id="aclassWindFarm_html_ae10dbee3f3d8b126e52df83ea97d57b1"><div class="ttname"><a href="classWindFarm.html#ae10dbee3f3d8b126e52df83ea97d57b1">WindFarm::rotor_RPM</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; rotor_RPM</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:287</div></div>
-<div class="ttc" id="anamespaceRealBdyVars_html_a2827de2ca16290ba8c0d89dee276ecccaeb7c7786202be202372af9778caaa59a"><div class="ttname"><a href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276ecccaeb7c7786202be202372af9778caaa59a">RealBdyVars::V</a></div><div class="ttdeci">@ V</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:167</div></div>
+<div class="ttc" id="aclassWindFarm_html_a2fc81cd15b5bbaec6e10bab30997fa7c"><div class="ttname"><a href="classWindFarm.html#a2fc81cd15b5bbaec6e10bab30997fa7c">WindFarm::blade_pitch</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; blade_pitch</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:289</div></div>
+<div class="ttc" id="aclassWindFarm_html_a4afb42d44ea84a770d4dbfe8beb33f7e"><div class="ttname"><a href="classWindFarm.html#a4afb42d44ea84a770d4dbfe8beb33f7e">WindFarm::set_turb_spec_extra</a></div><div class="ttdeci">void set_turb_spec_extra(const amrex::Vector&lt; amrex::Real &gt; &amp;a_velocity, const amrex::Vector&lt; amrex::Real &gt; &amp;a_C_P, const amrex::Vector&lt; amrex::Real &gt; &amp;a_C_T, const amrex::Vector&lt; amrex::Real &gt; &amp;a_rotor_RPM, const amrex::Vector&lt; amrex::Real &gt; &amp;a_blade_pitch) override</div><div class="ttdoc">Set extra turbine specifications.</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:271</div></div>
+<div class="ttc" id="aclassWindFarm_html_a57a72ded446162e2e365dc0ff7c6e06a"><div class="ttname"><a href="classWindFarm.html#a57a72ded446162e2e365dc0ff7c6e06a">WindFarm::velocity</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; velocity</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:289</div></div>
+<div class="ttc" id="aclassWindFarm_html_a63c20a3eac21bceea0ae4bfbe4c9acac"><div class="ttname"><a href="classWindFarm.html#a63c20a3eac21bceea0ae4bfbe4c9acac">WindFarm::C_P</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; C_P</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:289</div></div>
+<div class="ttc" id="aclassWindFarm_html_a87e2fe5c89e49801a70f6acf9836e1e1"><div class="ttname"><a href="classWindFarm.html#a87e2fe5c89e49801a70f6acf9836e1e1">WindFarm::C_T</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; C_T</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:289</div></div>
+<div class="ttc" id="aclassWindFarm_html_ae10dbee3f3d8b126e52df83ea97d57b1"><div class="ttname"><a href="classWindFarm.html#ae10dbee3f3d8b126e52df83ea97d57b1">WindFarm::rotor_RPM</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; rotor_RPM</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:289</div></div>
+<div class="ttc" id="anamespaceRealBdyVars_html_a2827de2ca16290ba8c0d89dee276ecccaeb7c7786202be202372af9778caaa59a"><div class="ttname"><a href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276ecccaeb7c7786202be202372af9778caaa59a">RealBdyVars::V</a></div><div class="ttdeci">@ V</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:179</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1930,9 +1940,9 @@ Here is the call graph for this function:</div>
 </dl>
 
 <p>Reimplemented from <a class="el" href="classNullWindFarm.html#af31330323768a6cc38c99205d987b558">NullWindFarm</a>.</p>
-<div class="fragment"><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[0]-&gt;set_blade_airfoil_spec(a_bld_airfoil_aoa, a_bld_airfoil_Cl, a_bld_airfoil_Cd);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[0]-&gt;set_blade_airfoil_spec(a_bld_airfoil_aoa, a_bld_airfoil_Cl, a_bld_airfoil_Cd);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1987,9 +1997,9 @@ Here is the call graph for this function:</div>
 </dl>
 
 <p>Reimplemented from <a class="el" href="classNullWindFarm.html#aafc6a8e226961e71a95bda3b3f040225">NullWindFarm</a>.</p>
-<div class="fragment"><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[0]-&gt;set_blade_spec(a_bld_rad_loc, a_bld_twist, a_bld_chord);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[0]-&gt;set_blade_spec(a_bld_rad_loc, a_bld_twist, a_bld_chord);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2026,9 +2036,9 @@ Here is the call graph for this function:</div>
 </dl>
 
 <p>Reimplemented from <a class="el" href="classNullWindFarm.html#ad3f68562d1b6b5a224644e283f8a146d">NullWindFarm</a>.</p>
-<div class="fragment"><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    {</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[0]-&gt;set_turb_disk_angle(a_turb_disk_angle);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[0]-&gt;set_turb_disk_angle(a_turb_disk_angle);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2076,9 +2086,9 @@ Here is the call graph for this function:</div>
 </dl>
 
 <p>Reimplemented from <a class="el" href="classNullWindFarm.html#aadf3ba54909c2931d089f631889dbd5b">NullWindFarm</a>.</p>
-<div class="fragment"><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[0]-&gt;set_turb_loc(a_xloc, a_yloc);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    {</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[0]-&gt;set_turb_loc(a_xloc, a_yloc);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2154,10 +2164,10 @@ Here is the call graph for this function:</div>
 </dl>
 
 <p>Reimplemented from <a class="el" href="classNullWindFarm.html#a745c730028714c13ff11fefb5440b2e5">NullWindFarm</a>.</p>
-<div class="fragment"><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[0]-&gt;set_turb_spec(a_rotor_rad, a_hub_height, a_thrust_coeff_standing,</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                  a_wind_speed, a_thrust_coeff, a_power);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[0]-&gt;set_turb_spec(a_rotor_rad, a_hub_height, a_thrust_coeff_standing,</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                  a_wind_speed, a_thrust_coeff, a_power);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2226,9 +2236,9 @@ Here is the call graph for this function:</div>
 </dl>
 
 <p>Reimplemented from <a class="el" href="classNullWindFarm.html#ade1a0b0eacbb79784db4c49cd8b1bae2">NullWindFarm</a>.</p>
-<div class="fragment"><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[0]-&gt;set_turb_spec_extra(a_velocity, a_C_P, a_C_T, a_rotor_RPM, a_blade_pitch);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[0]-&gt;set_turb_spec_extra(a_velocity, a_C_P, a_C_T, a_rotor_RPM, a_blade_pitch);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2258,11 +2268,11 @@ template&lt;class NewWindFarmModel &gt; </div>
 </div><div class="memdoc">
 
 <p>Create and set the specified windfarm model. </p>
-<div class="fragment"><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev(0); lev&lt;<a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>.size(); ++lev) {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[lev] = std::make_unique&lt;NewWindFarmModel&gt;();</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        }</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev(0); lev&lt;<a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>.size(); ++lev) {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            <a class="code" href="classWindFarm.html#af3953694e6a246585c20f50436a65123">m_windfarm_model</a>[lev] = std::make_unique&lt;NewWindFarmModel&gt;();</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2308,107 +2318,107 @@ template&lt;class NewWindFarmModel &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;{</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160; </div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> sampling_distance = sampling_distance_by_D*<a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*<a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>;</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160; </div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()){</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;        FILE *file_actuator_disks_all, *file_actuator_disks_in_dom, *file_averaging_disks_in_dom;</div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;        file_actuator_disks_all = fopen(<span class="stringliteral">&quot;actuator_disks_all.vtk&quot;</span>,<span class="stringliteral">&quot;w&quot;</span>);</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;        fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;# vtk DataFile Version 3.0&quot;</span>);</div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;Actuator Disks&quot;</span>);</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;        fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;ASCII&quot;</span>);</div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;        fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;DATASET POLYDATA&quot;</span>);</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160; </div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;        file_actuator_disks_in_dom = fopen(<span class="stringliteral">&quot;actuator_disks_in_dom.vtk&quot;</span>,<span class="stringliteral">&quot;w&quot;</span>);</div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;# vtk DataFile Version 3.0&quot;</span>);</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;        fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;Actuator Disks&quot;</span>);</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;        fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;ASCII&quot;</span>);</div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;        fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;DATASET POLYDATA&quot;</span>);</div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160; </div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;        file_averaging_disks_in_dom = fopen(<span class="stringliteral">&quot;averaging_disks_in_dom.vtk&quot;</span>,<span class="stringliteral">&quot;w&quot;</span>);</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;        fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;# vtk DataFile Version 3.0&quot;</span>);</div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;        fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;Actuator Disks&quot;</span>);</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;        fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;ASCII&quot;</span>);</div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;        fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;DATASET POLYDATA&quot;</span>);</div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160; </div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160; </div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;        <span class="keywordtype">int</span> npts = 100;</div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;        fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%s %ld %s\n&quot;</span>, <span class="stringliteral">&quot;POINTS&quot;</span>, <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size()*npts, <span class="stringliteral">&quot;float&quot;</span>);</div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;        <span class="keyword">auto</span> ProbLoArr = geom.ProbLoArray();</div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;        <span class="keyword">auto</span> ProbHiArr = geom.ProbHiArray();</div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;        <span class="keywordtype">int</span> num_turb_in_dom = 0;</div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160; </div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;        <span class="comment">// Find the number of turbines inside the specified computational domain</span></div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160; </div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> it=0; it&lt;<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size(); it++){</div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>[it];</div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>[it];</div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt; ProbLoArr[0] and <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> &lt; ProbHiArr[0] and <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; ProbLoArr[1] and <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt; ProbHiArr[1]) {</div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;                num_turb_in_dom++;</div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;            }</div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;        }</div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;        fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%s %ld %s\n&quot;</span>, <span class="stringliteral">&quot;POINTS&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(num_turb_in_dom*npts), <span class="stringliteral">&quot;float&quot;</span>);</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;        fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%s %ld %s\n&quot;</span>, <span class="stringliteral">&quot;POINTS&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(num_turb_in_dom*npts), <span class="stringliteral">&quot;float&quot;</span>);</div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160; </div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> = std::cos(<a class="code" href="classWindFarm.html#a0d274380a6e7a61593459bb0b0f642d2">my_turb_disk_angle</a>+<a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*<a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>);</div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> = std::sin(<a class="code" href="classWindFarm.html#a0d274380a6e7a61593459bb0b0f642d2">my_turb_disk_angle</a>+<a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*<a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>);</div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160; </div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> nx1 = -std::cos(<a class="code" href="classWindFarm.html#a0d274380a6e7a61593459bb0b0f642d2">my_turb_disk_angle</a>);</div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ny1 = -std::sin(<a class="code" href="classWindFarm.html#a0d274380a6e7a61593459bb0b0f642d2">my_turb_disk_angle</a>);</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160; </div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> it=0; it&lt;<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size(); it++){</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> pt=0;pt&lt;100;pt++){</div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>, xavg, yavg;</div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*<a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>/npts*pt;</div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>[it] + <a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>*cos(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>)*<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>;</div>
-<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>[it] + <a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>*cos(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>)*<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>;</div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = <a class="code" href="classWindFarm.html#a6dfd6451498f50c17cb67c386d13ddfb">hub_height</a> + <a class="code" href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">zloc</a>[it] + <a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>*sin(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>);</div>
-<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160; </div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;                xavg = <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>[it] + sampling_distance*nx1 + <a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>*cos(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>)*<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>;</div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;                yavg = <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>[it] + sampling_distance*ny1 + <a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>*cos(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>)*<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>;</div>
-<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160; </div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;                fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%0.15g %0.15g %0.15g\n&quot;</span>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
-<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>[it] &gt; ProbLoArr[0] and <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>[it] &lt; ProbHiArr[0] and <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>[it] &gt; ProbLoArr[1] and <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>[it] &lt; ProbHiArr[1]) {</div>
-<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;                    fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%0.15g %0.15g %0.15g\n&quot;</span>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;                    fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%0.15g %0.15g %0.15g\n&quot;</span>, xavg, yavg, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;                }</div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;            }</div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;        }</div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;        fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%s %ld %ld\n&quot;</span>, <span class="stringliteral">&quot;LINES&quot;</span>, <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size()*(npts-1), <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size()*(npts-1)*3));</div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;        fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%s %ld %ld\n&quot;</span>, <span class="stringliteral">&quot;LINES&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(num_turb_in_dom*(npts-1)), <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(num_turb_in_dom*(npts-1)*3));</div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;        fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%s %ld %ld\n&quot;</span>, <span class="stringliteral">&quot;LINES&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(num_turb_in_dom*(npts-1)), <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(num_turb_in_dom*(npts-1)*3));</div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> it=0; it&lt;<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size(); it++){</div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> pt=0;pt&lt;99;pt++){</div>
-<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;                fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%ld %ld %ld\n&quot;</span>,</div>
-<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(2),</div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(it*npts+pt),</div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(it*npts+pt+1));</div>
-<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;            }</div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;        }</div>
-<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> it=0; it&lt;num_turb_in_dom; it++){</div>
-<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> pt=0;pt&lt;99;pt++){</div>
-<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;                fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%ld %ld %ld\n&quot;</span>,</div>
-<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(2),</div>
-<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(it*npts+pt),</div>
-<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(it*npts+pt+1));</div>
-<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;            }</div>
-<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;        }</div>
-<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160; </div>
-<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> it=0; it&lt;num_turb_in_dom; it++){</div>
-<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> pt=0;pt&lt;99;pt++){</div>
-<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;                fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%ld %ld %ld\n&quot;</span>,</div>
-<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(2),</div>
-<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(it*npts+pt),</div>
-<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(it*npts+pt+1));</div>
-<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;            }</div>
-<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;        }</div>
-<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160; </div>
-<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;        fclose(file_actuator_disks_all);</div>
-<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;        fclose(file_actuator_disks_in_dom);</div>
-<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;        fclose(file_averaging_disks_in_dom);</div>
-<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;    }</div>
-<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;{</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160; </div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> sampling_distance = sampling_distance_by_D*<a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*<a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>;</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160; </div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()){</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;        FILE *file_actuator_disks_all, *file_actuator_disks_in_dom, *file_averaging_disks_in_dom;</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;        file_actuator_disks_all = fopen(<span class="stringliteral">&quot;actuator_disks_all.vtk&quot;</span>,<span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;        fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;# vtk DataFile Version 3.0&quot;</span>);</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;        fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;Actuator Disks&quot;</span>);</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;ASCII&quot;</span>);</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;        fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;DATASET POLYDATA&quot;</span>);</div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160; </div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;        file_actuator_disks_in_dom = fopen(<span class="stringliteral">&quot;actuator_disks_in_dom.vtk&quot;</span>,<span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;        fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;# vtk DataFile Version 3.0&quot;</span>);</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;        fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;Actuator Disks&quot;</span>);</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;        fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;ASCII&quot;</span>);</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;        fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;DATASET POLYDATA&quot;</span>);</div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160; </div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;        file_averaging_disks_in_dom = fopen(<span class="stringliteral">&quot;averaging_disks_in_dom.vtk&quot;</span>,<span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;        fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;# vtk DataFile Version 3.0&quot;</span>);</div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;        fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;Actuator Disks&quot;</span>);</div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;        fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;ASCII&quot;</span>);</div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;        fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;DATASET POLYDATA&quot;</span>);</div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160; </div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160; </div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;        <span class="keywordtype">int</span> npts = 100;</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;        fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%s %ld %s\n&quot;</span>, <span class="stringliteral">&quot;POINTS&quot;</span>, <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size()*npts, <span class="stringliteral">&quot;float&quot;</span>);</div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;        <span class="keyword">auto</span> ProbLoArr = geom.ProbLoArray();</div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;        <span class="keyword">auto</span> ProbHiArr = geom.ProbHiArray();</div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;        <span class="keywordtype">int</span> num_turb_in_dom = 0;</div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160; </div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;        <span class="comment">// Find the number of turbines inside the specified computational domain</span></div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160; </div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> it=0; it&lt;<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size(); it++){</div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>[it];</div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>[it];</div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt; ProbLoArr[0] and <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> &lt; ProbHiArr[0] and <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; ProbLoArr[1] and <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt; ProbHiArr[1]) {</div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;                num_turb_in_dom++;</div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;            }</div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;        }</div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;        fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%s %ld %s\n&quot;</span>, <span class="stringliteral">&quot;POINTS&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(num_turb_in_dom*npts), <span class="stringliteral">&quot;float&quot;</span>);</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;        fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%s %ld %s\n&quot;</span>, <span class="stringliteral">&quot;POINTS&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(num_turb_in_dom*npts), <span class="stringliteral">&quot;float&quot;</span>);</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160; </div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> = std::cos(<a class="code" href="classWindFarm.html#a0d274380a6e7a61593459bb0b0f642d2">my_turb_disk_angle</a>+<a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*<a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>);</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> = std::sin(<a class="code" href="classWindFarm.html#a0d274380a6e7a61593459bb0b0f642d2">my_turb_disk_angle</a>+<a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*<a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>);</div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160; </div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> nx1 = -std::cos(<a class="code" href="classWindFarm.html#a0d274380a6e7a61593459bb0b0f642d2">my_turb_disk_angle</a>);</div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ny1 = -std::sin(<a class="code" href="classWindFarm.html#a0d274380a6e7a61593459bb0b0f642d2">my_turb_disk_angle</a>);</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160; </div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> it=0; it&lt;<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size(); it++){</div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> pt=0;pt&lt;100;pt++){</div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>, xavg, yavg;</div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*<a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>/npts*pt;</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>[it] + <a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>*cos(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>)*<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>;</div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>[it] + <a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>*cos(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>)*<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>;</div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = <a class="code" href="classWindFarm.html#a6dfd6451498f50c17cb67c386d13ddfb">hub_height</a> + <a class="code" href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">zloc</a>[it] + <a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>*sin(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>);</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160; </div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;                xavg = <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>[it] + sampling_distance*nx1 + <a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>*cos(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>)*<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>;</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;                yavg = <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>[it] + sampling_distance*ny1 + <a class="code" href="classWindFarm.html#ad0925f54be32d71ae431a2078afee91b">rotor_rad</a>*cos(<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>)*<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>;</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160; </div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;                fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%0.15g %0.15g %0.15g\n&quot;</span>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>[it] &gt; ProbLoArr[0] and <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>[it] &lt; ProbHiArr[0] and <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>[it] &gt; ProbLoArr[1] and <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>[it] &lt; ProbHiArr[1]) {</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;                    fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%0.15g %0.15g %0.15g\n&quot;</span>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;                    fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%0.15g %0.15g %0.15g\n&quot;</span>, xavg, yavg, <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;                }</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;            }</div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;        }</div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;        fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%s %ld %ld\n&quot;</span>, <span class="stringliteral">&quot;LINES&quot;</span>, <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size()*(npts-1), <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size()*(npts-1)*3));</div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;        fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%s %ld %ld\n&quot;</span>, <span class="stringliteral">&quot;LINES&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(num_turb_in_dom*(npts-1)), <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(num_turb_in_dom*(npts-1)*3));</div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;        fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%s %ld %ld\n&quot;</span>, <span class="stringliteral">&quot;LINES&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(num_turb_in_dom*(npts-1)), <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(num_turb_in_dom*(npts-1)*3));</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> it=0; it&lt;<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size(); it++){</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> pt=0;pt&lt;99;pt++){</div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;                fprintf(file_actuator_disks_all, <span class="stringliteral">&quot;%ld %ld %ld\n&quot;</span>,</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(2),</div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(it*npts+pt),</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(it*npts+pt+1));</div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;            }</div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;        }</div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> it=0; it&lt;num_turb_in_dom; it++){</div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> pt=0;pt&lt;99;pt++){</div>
+<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;                fprintf(file_actuator_disks_in_dom, <span class="stringliteral">&quot;%ld %ld %ld\n&quot;</span>,</div>
+<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(2),</div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(it*npts+pt),</div>
+<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(it*npts+pt+1));</div>
+<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;            }</div>
+<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;        }</div>
+<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160; </div>
+<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> it=0; it&lt;num_turb_in_dom; it++){</div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> pt=0;pt&lt;99;pt++){</div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;                fprintf(file_averaging_disks_in_dom, <span class="stringliteral">&quot;%ld %ld %ld\n&quot;</span>,</div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(2),</div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(it*npts+pt),</div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;                                             <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(it*npts+pt+1));</div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;            }</div>
+<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;        }</div>
+<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160; </div>
+<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;        fclose(file_actuator_disks_all);</div>
+<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;        fclose(file_actuator_disks_in_dom);</div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;        fclose(file_averaging_disks_in_dom);</div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;    }</div>
+<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 </div><!-- fragment -->
@@ -2431,21 +2441,21 @@ template&lt;class NewWindFarmModel &gt; </div>
 
 <p>Write turbine locations to a VTK file. </p>
 <p>Write the turbine hub locations to a VTK file. </p>
-<div class="fragment"><div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;{</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()){</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;        FILE* file_turbloc_vtk;</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        file_turbloc_vtk = fopen(<span class="stringliteral">&quot;turbine_locations.vtk&quot;</span>,<span class="stringliteral">&quot;w&quot;</span>);</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;        fprintf(file_turbloc_vtk, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;# vtk DataFile Version 3.0&quot;</span>);</div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;        fprintf(file_turbloc_vtk, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;Wind turbine locations&quot;</span>);</div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;        fprintf(file_turbloc_vtk, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;ASCII&quot;</span>);</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;        fprintf(file_turbloc_vtk, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;DATASET POLYDATA&quot;</span>);</div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;        fprintf(file_turbloc_vtk, <span class="stringliteral">&quot;%s %ld %s\n&quot;</span>, <span class="stringliteral">&quot;POINTS&quot;</span>, <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size(), <span class="stringliteral">&quot;float&quot;</span>);</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> it=0; it&lt;<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size(); it++){</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;            fprintf(file_turbloc_vtk, <span class="stringliteral">&quot;%0.15g %0.15g %0.15g\n&quot;</span>, <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>[it], <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>[it], <a class="code" href="classWindFarm.html#a6dfd6451498f50c17cb67c386d13ddfb">hub_height</a>);</div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;        }</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;        fclose(file_turbloc_vtk);</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    }</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;{</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()){</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;        FILE* file_turbloc_vtk;</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;        file_turbloc_vtk = fopen(<span class="stringliteral">&quot;turbine_locations.vtk&quot;</span>,<span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;        fprintf(file_turbloc_vtk, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;# vtk DataFile Version 3.0&quot;</span>);</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;        fprintf(file_turbloc_vtk, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;Wind turbine locations&quot;</span>);</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;        fprintf(file_turbloc_vtk, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;ASCII&quot;</span>);</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;        fprintf(file_turbloc_vtk, <span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;DATASET POLYDATA&quot;</span>);</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;        fprintf(file_turbloc_vtk, <span class="stringliteral">&quot;%s %ld %s\n&quot;</span>, <span class="stringliteral">&quot;POINTS&quot;</span>, <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size(), <span class="stringliteral">&quot;float&quot;</span>);</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> it=0; it&lt;<a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>.size(); it++){</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;            fprintf(file_turbloc_vtk, <span class="stringliteral">&quot;%0.15g %0.15g %0.15g\n&quot;</span>, <a class="code" href="classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c">xloc</a>[it], <a class="code" href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">yloc</a>[it], <a class="code" href="classWindFarm.html#a6dfd6451498f50c17cb67c386d13ddfb">hub_height</a>);</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;        }</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;        fclose(file_turbloc_vtk);</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;    }</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

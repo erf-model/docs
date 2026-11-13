@@ -46,6 +46,7 @@ var structTurbChoice =
     [ "pbl_mrf_coriolis_freq", "structTurbChoice.html#ac649c819fbea4c0a7f3cef2dac7fe24c", null ],
     [ "pbl_mrf_highres_bounds", "structTurbChoice.html#a9a8d7a1fa07ff97f5d3bba71d904fdcc", null ],
     [ "pbl_mrf_Ribcr", "structTurbChoice.html#ab49d632c5317d1547f9896a641746667", null ],
+    [ "pbl_mrf_Sc_t", "structTurbChoice.html#a0cd7229bd71bb43b6801f3c59147cb48", null ],
     [ "pbl_mrf_sf", "structTurbChoice.html#ab706d6a0e42c295cd161e199b4555dbf", null ],
     [ "pbl_mrf_use_zero_ri_extent", "structTurbChoice.html#a1dae70814be91f03365ef6f384881ba0", null ],
     [ "pbl_mynn", "structTurbChoice.html#a9e9856abf3351c473563f18b4f9a2ec0", null ],

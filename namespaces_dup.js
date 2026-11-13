@@ -177,6 +177,14 @@ var namespaces_dup =
       [ "apply", "namespaceerf__resolved__wall__flux.html#af4bb1fd6bad609edefd5f661c60672ef", null ]
     ] ],
     [ "erf_sbm", "namespaceerf__sbm.html", "namespaceerf__sbm" ],
+    [ "erf_structure", "namespaceerf__structure.html", [
+      [ "face_source_force", "namespaceerf__structure.html#adcdf9b83014d6f28c43bad123bb9551b", null ],
+      [ "face_source_force", "namespaceerf__structure.html#a031962e37cd24875ef903f3afdb01b09", null ],
+      [ "restrict_face_sources", "namespaceerf__structure.html#a64b9e318a2e9255f5a65e38083bedd03", null ],
+      [ "restrict_face_sources", "namespaceerf__structure.html#afd46f85d274d27f9e0467bc9e8d3603d", null ],
+      [ "scale_by_face_jacobian", "namespaceerf__structure.html#a7532264cdd77815d310e289f7bb05730", null ],
+      [ "scale_by_face_jacobian", "namespaceerf__structure.html#a9e9ab2f4bb1ddc114ac5596ecee68fc8", null ]
+    ] ],
     [ "erf_surface_layer", "namespaceerf__surface__layer.html", [
       [ "planar_sources_supported_for_terrain", "namespaceerf__surface__layer.html#ab5b83491e05460dd63f196ebee0a1ca7", null ]
     ] ],

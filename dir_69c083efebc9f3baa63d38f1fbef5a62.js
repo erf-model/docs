@@ -1,5 +1,7 @@
 var dir_69c083efebc9f3baa63d38f1fbef5a62 =
 [
+    [ "ERF_StructureCoarseSource.cpp", "ERF__StructureCoarseSource_8cpp.html", "ERF__StructureCoarseSource_8cpp" ],
+    [ "ERF_StructureCoarseSource.H", "ERF__StructureCoarseSource_8H.html", "ERF__StructureCoarseSource_8H" ],
     [ "ERF_StructureCoupling.cpp", "ERF__StructureCoupling_8cpp.html", null ],
     [ "ERF_StructureModel.H", "ERF__StructureModel_8H.html", [
       [ "StructureInit", "structStructureInit.html", "structStructureInit" ],

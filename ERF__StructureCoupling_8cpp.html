@@ -87,72 +87,76 @@ $(document).ready(function(){initNavTree('ERF__StructureCoupling_8cpp.html','');
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="classERF.html">ERF</a>'s side of the structure coupling: the start-up and advance calls of the structure model, and the check of its support against the finer level.  
+<p><a class="el" href="classERF.html">ERF</a>'s side of the structure coupling: the start-up and advance calls of the structure model, the check of its support against the finer level, and its source on the coarser levels with the checkpoint of that source.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="ERF_8H_source.html">ERF.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__StructureModel_8H_source.html">ERF_StructureModel.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__ActuatorSampling_8H_source.html">ERF_ActuatorSampling.H</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ERF__StructureCoarseSource_8H_source.html">ERF_StructureCoarseSource.H</a>&quot;</code><br />
+<code>#include &lt;AMReX_VisMF.H&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_StructureCoupling.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__StructureCoupling_8cpp__incl.png" border="0" usemap="#aSource_2MovingBodies_2Coupling_2ERF__StructureCoupling_8cpp" alt=""/></div>
 <map name="aSource_2MovingBodies_2Coupling_2ERF__StructureCoupling_8cpp" id="aSource_2MovingBodies_2Coupling_2ERF__StructureCoupling_8cpp">
-<area shape="rect" title="ERF&#39;s side of the structure coupling: the start&#45;up and advance calls of the structure model,..." alt="" coords="203,5,466,47"/>
-<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="2840,95,2899,121"/>
-<area shape="rect" title=" " alt="" coords="577,393,639,420"/>
-<area shape="rect" href="ERF__StructureModel_8H.html" title="The interface between ERF and a model of structures in the flow." alt="" coords="251,244,418,271"/>
-<area shape="rect" href="ERF__ActuatorSampling_8H.html" title=" " alt="" coords="43,244,227,271"/>
-<area shape="rect" title=" " alt="" coords="2923,95,2997,121"/>
-<area shape="rect" title=" " alt="" coords="1823,393,1881,420"/>
-<area shape="rect" title=" " alt="" coords="4315,468,4381,495"/>
-<area shape="rect" title=" " alt="" coords="940,393,999,420"/>
-<area shape="rect" title=" " alt="" coords="3501,319,3579,345"/>
-<area shape="rect" title=" " alt="" coords="3375,169,3417,196"/>
-<area shape="rect" title=" " alt="" coords="250,319,313,345"/>
-<area shape="rect" title=" " alt="" coords="3331,319,3477,345"/>
-<area shape="rect" title=" " alt="" coords="2222,244,2354,271"/>
-<area shape="rect" title=" " alt="" coords="1197,393,1317,420"/>
-<area shape="rect" title=" " alt="" coords="2669,393,2873,420"/>
-<area shape="rect" title=" " alt="" coords="2090,393,2249,420"/>
-<area shape="rect" title=" " alt="" coords="3009,468,3177,495"/>
-<area shape="rect" title=" " alt="" coords="4351,244,4518,271"/>
-<area shape="rect" title=" " alt="" coords="3823,169,3951,196"/>
-<area shape="rect" title=" " alt="" coords="3975,169,4150,196"/>
-<area shape="rect" title=" " alt="" coords="4175,169,4361,196"/>
-<area shape="rect" title=" " alt="" coords="4385,169,4529,196"/>
-<area shape="rect" title=" " alt="" coords="3131,319,3306,345"/>
-<area shape="rect" title=" " alt="" coords="4554,169,4739,196"/>
-<area shape="rect" title=" " alt="" coords="4764,169,4919,196"/>
-<area shape="rect" href="ERF__EB_8H.html" title="Declares the embedded&#45;boundary factory manager used by ERF levels." alt="" coords="3115,244,3200,271"/>
-<area shape="rect" href="ERF__CloudChamberBudget_8H.html" title=" " alt="" coords="1965,319,2208,345"/>
-<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="2491,393,2645,420"/>
-<area shape="rect" href="ERF__CloudChamber_8H.html" title=" " alt="" coords="697,244,893,271"/>
-<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="2283,319,2421,345"/>
-<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="2897,393,3055,420"/>
-<area shape="rect" href="ERF__ProbCommon_8H.html" title=" " alt="" coords="1487,244,1643,271"/>
-<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="1488,319,1688,345"/>
-<area shape="rect" href="ERF__RefinementCriterion_8H.html" title=" " alt="" coords="695,319,894,345"/>
-<area shape="rect" href="ERF__TopographicShading_8H.html" title=" " alt="" coords="3441,169,3639,196"/>
-<area shape="rect" href="ERF__PlotfileSelection_8H.html" title=" " alt="" coords="1973,244,2147,271"/>
-<area shape="rect" href="ERF__BaseStateParams_8H.html" title=" " alt="" coords="337,319,519,345"/>
-<area shape="rect" href="ERF__InputSoundingData_8H.html" title=" " alt="" coords="1069,319,1261,345"/>
-<area shape="rect" href="ERF__LargeScaleForcingData_8H.html" title=" " alt="" coords="1194,244,1411,271"/>
-<area shape="rect" href="ERF__InputSpongeData_8H.html" title=" " alt="" coords="1667,244,1847,271"/>
-<area shape="rect" href="ERF__SurfaceLayer_8H.html" title=" " alt="" coords="2737,169,2889,196"/>
-<area shape="rect" href="ERF__Derive_8H.html" title=" " alt="" coords="4943,169,5054,196"/>
-<area shape="rect" href="ERF__ReadBndryPlanes_8H.html" title=" " alt="" coords="2481,244,2663,271"/>
-<area shape="rect" href="ERF__WriteBndryPlanes_8H.html" title=" " alt="" coords="3116,169,3300,196"/>
-<area shape="rect" href="ERF__MRI_8H.html" title=" " alt="" coords="5079,169,5172,196"/>
-<area shape="rect" href="ERF__PhysBCFunct_8H.html" title=" " alt="" coords="2367,169,2519,196"/>
-<area shape="rect" href="ERF__WallScalarBC_8H.html" title=" " alt="" coords="2648,319,2803,345"/>
-<area shape="rect" href="ERF__FillPatcher_8H.html" title=" " alt="" coords="3663,169,3798,196"/>
-<area shape="rect" href="ERF__SampleData_8H.html" title=" " alt="" coords="2942,244,3090,271"/>
+<area shape="rect" title="ERF&#39;s side of the structure coupling: the start&#45;up and advance calls of the structure model,..." alt="" coords="2225,5,2487,47"/>
+<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="2327,95,2385,121"/>
+<area shape="rect" title=" " alt="" coords="3881,169,4009,196"/>
+<area shape="rect" title=" " alt="" coords="1189,393,1251,420"/>
+<area shape="rect" title=" " alt="" coords="2581,319,2654,345"/>
+<area shape="rect" title=" " alt="" coords="312,319,387,345"/>
+<area shape="rect" href="ERF__StructureModel_8H.html" title="The interface between ERF and a model of structures in the flow." alt="" coords="257,244,423,271"/>
+<area shape="rect" href="ERF__ActuatorSampling_8H.html" title=" " alt="" coords="48,244,232,271"/>
+<area shape="rect" href="ERF__StructureCoarseSource_8H.html" title="The restriction of a structure model&#39;s momentum source onto the coarser levels." alt="" coords="4084,95,4300,121"/>
+<area shape="rect" title=" " alt="" coords="4324,95,4399,121"/>
+<area shape="rect" title=" " alt="" coords="1977,393,2036,420"/>
+<area shape="rect" title=" " alt="" coords="2980,468,3047,495"/>
+<area shape="rect" title=" " alt="" coords="2193,393,2252,420"/>
+<area shape="rect" title=" " alt="" coords="2367,244,2444,271"/>
+<area shape="rect" title=" " alt="" coords="1232,169,1275,196"/>
+<area shape="rect" title=" " alt="" coords="411,319,474,345"/>
+<area shape="rect" title=" " alt="" coords="1015,319,1161,345"/>
+<area shape="rect" title=" " alt="" coords="1126,244,1258,271"/>
+<area shape="rect" title=" " alt="" coords="3024,393,3144,420"/>
+<area shape="rect" title=" " alt="" coords="585,319,789,345"/>
+<area shape="rect" title=" " alt="" coords="3331,393,3490,420"/>
+<area shape="rect" title=" " alt="" coords="1672,468,1840,495"/>
+<area shape="rect" title=" " alt="" coords="1299,169,1466,196"/>
+<area shape="rect" title=" " alt="" coords="1490,169,1665,196"/>
+<area shape="rect" title=" " alt="" coords="1689,169,1876,196"/>
+<area shape="rect" title=" " alt="" coords="1900,169,2044,196"/>
+<area shape="rect" title=" " alt="" coords="3685,393,3859,420"/>
+<area shape="rect" title=" " alt="" coords="2069,169,2254,196"/>
+<area shape="rect" title=" " alt="" coords="2279,169,2433,196"/>
+<area shape="rect" href="ERF__EB_8H.html" title="Declares the embedded&#45;boundary factory manager used by ERF levels." alt="" coords="3727,319,3812,345"/>
+<area shape="rect" href="ERF__CloudChamberBudget_8H.html" title=" " alt="" coords="600,244,843,271"/>
+<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="1275,393,1429,420"/>
+<area shape="rect" href="ERF__CloudChamber_8H.html" title=" " alt="" coords="1593,244,1789,271"/>
+<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="2317,319,2454,345"/>
+<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="2306,393,2465,420"/>
+<area shape="rect" href="ERF__ProbCommon_8H.html" title=" " alt="" coords="2570,244,2726,271"/>
+<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="2729,319,2929,345"/>
+<area shape="rect" href="ERF__RefinementCriterion_8H.html" title=" " alt="" coords="2094,319,2293,345"/>
+<area shape="rect" href="ERF__TopographicShading_8H.html" title=" " alt="" coords="2710,169,2909,196"/>
+<area shape="rect" href="ERF__PlotfileSelection_8H.html" title=" " alt="" coords="1920,244,2093,271"/>
+<area shape="rect" href="ERF__BaseStateParams_8H.html" title=" " alt="" coords="1786,319,1969,345"/>
+<area shape="rect" href="ERF__InputSoundingData_8H.html" title=" " alt="" coords="3055,319,3247,345"/>
+<area shape="rect" href="ERF__LargeScaleForcingData_8H.html" title=" " alt="" coords="3079,244,3297,271"/>
+<area shape="rect" href="ERF__InputSpongeData_8H.html" title=" " alt="" coords="3423,244,3603,271"/>
+<area shape="rect" href="ERF__SurfaceLayer_8H.html" title=" " alt="" coords="2801,244,2953,271"/>
+<area shape="rect" href="ERF__Derive_8H.html" title=" " alt="" coords="2458,169,2569,196"/>
+<area shape="rect" href="ERF__ReadBndryPlanes_8H.html" title=" " alt="" coords="1334,244,1517,271"/>
+<area shape="rect" href="ERF__WriteBndryPlanes_8H.html" title=" " alt="" coords="867,244,1051,271"/>
+<area shape="rect" href="ERF__MRI_8H.html" title=" " alt="" coords="2593,169,2687,196"/>
+<area shape="rect" href="ERF__PhysBCFunct_8H.html" title=" " alt="" coords="803,169,955,196"/>
 </map>
 </div>
 </div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classERF.html">ERF</a>'s side of the structure coupling: the start-up and advance calls of the structure model, and the check of its support against the finer level. </p>
+<div class="textblock"><p><a class="el" href="classERF.html">ERF</a>'s side of the structure coupling: the start-up and advance calls of the structure model, the check of its support against the finer level, and its source on the coarser levels with the checkpoint of that source. </p>
 <p>The other calls (momentum sources, checkpoint, plotfile) sit where <a class="el" href="classERF.html">ERF</a> does that work; see the call order in ERF_StructureModel.H. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
