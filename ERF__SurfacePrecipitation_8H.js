@@ -2,6 +2,7 @@ var ERF__SurfacePrecipitation_8H =
 [
     [ "SurfacePrecipAccumulationSource", "structSurfacePrecipAccumulationSource.html", "structSurfacePrecipAccumulationSource" ],
     [ "SurfacePrecipAccumulationSources", "structSurfacePrecipAccumulationSources.html", "structSurfacePrecipAccumulationSources" ],
+    [ "surface_precip_accum_k0", "ERF__SurfacePrecipitation_8H.html#a981ded00ddd6b3be0eacc5189894efb8", null ],
     [ "surface_precip_has_any_frozen_source", "ERF__SurfacePrecipitation_8H.html#a325837335daac14fda44882063ec5ca9", null ],
     [ "surface_precip_has_any_source", "ERF__SurfacePrecipitation_8H.html#a3d69b2a5f8030d6adc75316746acbdb1", null ],
     [ "surface_precip_has_explicit_rain_source", "ERF__SurfacePrecipitation_8H.html#ad410285369e90722fad8ebc91aa10f9e", null ],

@@ -2,6 +2,7 @@ var ERF__SBMTransport_8cpp =
 [
     [ "LevelStorage", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html", "structerf__sbm_1_1SBMTransport_1_1LevelStorage" ],
     [ "DeviceMetadata", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html", "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata" ],
+    [ "make_stage_mixing_inputs", "ERF__SBMTransport_8cpp.html#a2a56c9fc5146994ec07aa4ed22327756", null ],
     [ "canonical_mass_coefficient", "ERF__SBMTransport_8cpp.html#ad48dae744e30a67d7e73b12c17a296ae", null ],
     [ "canonical_mass_local", "ERF__SBMTransport_8cpp.html#a55f4383a460e6daaf0304c78f0d1a01c", null ],
     [ "canonical_number_coefficient", "ERF__SBMTransport_8cpp.html#a31110d5d1bde7b1ecc0728ba493acd91", null ],

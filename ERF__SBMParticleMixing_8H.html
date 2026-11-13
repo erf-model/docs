@@ -93,65 +93,67 @@ $(document).ready(function(){initNavTree('ERF__SBMParticleMixing_8H.html',''); i
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="ERF__AuxiliaryDiffusion_8H_source.html">ERF_AuxiliaryDiffusion.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__DataStruct_8H_source.html">ERF_DataStruct.H</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ERF__SBMPhysicalBoundary_8H_source.html">ERF_SBMPhysicalBoundary.H</a>&quot;</code><br />
 <code>#include &lt;AMReX_Geometry.H&gt;</code><br />
 <code>#include &lt;AMReX_MultiFab.H&gt;</code><br />
 <code>#include &lt;AMReX_REAL.H&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_SBMParticleMixing.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SBMParticleMixing_8H__incl.png" border="0" usemap="#aSource_2Microphysics_2SBM_2ERF__SBMParticleMixing_8H" alt=""/></div>
 <map name="aSource_2Microphysics_2SBM_2ERF__SBMParticleMixing_8H" id="aSource_2Microphysics_2SBM_2ERF__SBMParticleMixing_8H">
-<area shape="rect" title=" " alt="" coords="1061,5,1288,47"/>
-<area shape="rect" href="ERF__AuxiliaryDiffusion_8H.html" title=" " alt="" coords="857,95,1041,121"/>
-<area shape="rect" title=" " alt="" coords="483,319,629,345"/>
-<area shape="rect" title=" " alt="" coords="2084,319,2143,345"/>
-<area shape="rect" title=" " alt="" coords="1508,617,1631,644"/>
-<area shape="rect" title=" " alt="" coords="1266,319,1419,345"/>
-<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="2482,169,2619,196"/>
-<area shape="rect" href="ERF__AuxiliaryMappedTransport_8H.html" title=" " alt="" coords="94,244,333,271"/>
-<area shape="rect" title=" " alt="" coords="543,543,721,569"/>
-<area shape="rect" href="ERF__ScalarDiffusion_8H.html" title=" " alt="" coords="866,169,1033,196"/>
-<area shape="rect" title=" " alt="" coords="409,169,471,196"/>
-<area shape="rect" title=" " alt="" coords="93,319,227,345"/>
-<area shape="rect" title=" " alt="" coords="825,319,908,345"/>
-<area shape="rect" title=" " alt="" coords="251,319,307,345"/>
-<area shape="rect" title=" " alt="" coords="331,319,408,345"/>
-<area shape="rect" title=" " alt="" coords="459,244,551,271"/>
-<area shape="rect" title=" " alt="" coords="575,244,707,271"/>
-<area shape="rect" title=" " alt="" coords="732,244,847,271"/>
-<area shape="rect" title=" " alt="" coords="871,244,1027,271"/>
-<area shape="rect" title=" " alt="" coords="2959,319,3075,345"/>
-<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="2333,244,2462,271"/>
-<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="1607,543,1807,569"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html" title=" " alt="" coords="1103,244,1263,271"/>
-<area shape="rect" href="ERF__TerrainImplicitMetric_8H.html" title=" " alt="" coords="316,468,519,495"/>
-<area shape="rect" title=" " alt="" coords="2855,319,2935,345"/>
-<area shape="rect" title=" " alt="" coords="2218,319,2377,345"/>
-<area shape="rect" title=" " alt="" coords="2711,319,2831,345"/>
-<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="1527,319,1681,345"/>
-<area shape="rect" title=" " alt="" coords="1396,393,1524,420"/>
-<area shape="rect" title=" " alt="" coords="1548,393,1703,420"/>
-<area shape="rect" title=" " alt="" coords="1952,617,2011,644"/>
-<area shape="rect" title=" " alt="" coords="1830,543,1893,569"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="1929,468,2063,495"/>
-<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="2537,244,2668,271"/>
-<area shape="rect" href="ERF__DampingStruct_8H.html" title=" " alt="" coords="3172,244,3337,271"/>
-<area shape="rect" href="ERF__EBStruct_8H.html" title=" " alt="" coords="2847,244,2969,271"/>
-<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="2993,244,3148,271"/>
-<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="3100,319,3233,345"/>
-<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="3615,244,3774,271"/>
-<area shape="rect" href="ERF__RadStruct_8H.html" title="Radiation model type and control parameters." alt="" coords="2692,244,2823,271"/>
-<area shape="rect" href="ERF__ShocTransportStruct_8H.html" title=" " alt="" coords="2111,244,2308,271"/>
-<area shape="rect" href="ERF__CanopyTurbStruct_8H.html" title=" " alt="" coords="1693,244,1875,271"/>
-<area shape="rect" href="ERF__MOSTUtils_8H.html" title=" " alt="" coords="1951,244,2087,271"/>
-<area shape="rect" title=" " alt="" coords="2019,543,2141,569"/>
-<area shape="rect" title=" " alt="" coords="2581,393,2785,420"/>
-<area shape="rect" href="ERF__MYNNStruct_8H.html" title=" " alt="" coords="2819,393,2965,420"/>
-<area shape="rect" href="ERF__RANSClosure_8H.html" title=" " alt="" coords="2087,468,2241,495"/>
-<area shape="rect" title=" " alt="" coords="3095,393,3169,420"/>
-<area shape="rect" title=" " alt="" coords="3193,393,3268,420"/>
-<area shape="rect" title=" " alt="" coords="3611,319,3779,345"/>
+<area shape="rect" title=" " alt="" coords="3209,5,3435,47"/>
+<area shape="rect" href="ERF__AuxiliaryDiffusion_8H.html" title=" " alt="" coords="1059,95,1243,121"/>
+<area shape="rect" title=" " alt="" coords="567,319,712,345"/>
+<area shape="rect" title=" " alt="" coords="2822,319,2881,345"/>
+<area shape="rect" title=" " alt="" coords="3309,468,3431,495"/>
+<area shape="rect" title=" " alt="" coords="1153,319,1307,345"/>
+<area shape="rect" title=" " alt="" coords="4351,319,4413,345"/>
+<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="2488,169,2625,196"/>
+<area shape="rect" href="ERF__SBMPhysicalBoundary_8H.html" title=" " alt="" coords="3849,169,4059,196"/>
+<area shape="rect" href="ERF__AuxiliaryMappedTransport_8H.html" title=" " alt="" coords="852,244,1091,271"/>
+<area shape="rect" title=" " alt="" coords="1697,393,1875,420"/>
+<area shape="rect" href="ERF__ScalarDiffusion_8H.html" title=" " alt="" coords="605,169,772,196"/>
+<area shape="rect" title=" " alt="" coords="995,319,1129,345"/>
+<area shape="rect" title=" " alt="" coords="737,319,819,345"/>
+<area shape="rect" title=" " alt="" coords="2391,319,2447,345"/>
+<area shape="rect" title=" " alt="" coords="894,319,971,345"/>
+<area shape="rect" title=" " alt="" coords="24,244,116,271"/>
+<area shape="rect" title=" " alt="" coords="140,244,272,271"/>
+<area shape="rect" title=" " alt="" coords="297,244,411,271"/>
+<area shape="rect" title=" " alt="" coords="436,244,592,271"/>
+<area shape="rect" title=" " alt="" coords="2147,319,2263,345"/>
+<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="1881,244,2011,271"/>
+<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="1473,393,1673,420"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html" title=" " alt="" coords="667,244,827,271"/>
+<area shape="rect" href="ERF__TerrainImplicitMetric_8H.html" title=" " alt="" coords="1610,319,1813,345"/>
+<area shape="rect" title=" " alt="" coords="2287,319,2367,345"/>
+<area shape="rect" title=" " alt="" coords="2616,319,2775,345"/>
+<area shape="rect" title=" " alt="" coords="2471,319,2591,345"/>
+<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="1331,319,1484,345"/>
+<area shape="rect" title=" " alt="" coords="1091,393,1219,420"/>
+<area shape="rect" title=" " alt="" coords="1243,393,1398,420"/>
+<area shape="rect" title=" " alt="" coords="3134,468,3193,495"/>
+<area shape="rect" title=" " alt="" coords="3028,393,3091,420"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="3147,319,3281,345"/>
+<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="1571,244,1702,271"/>
+<area shape="rect" href="ERF__DampingStruct_8H.html" title=" " alt="" coords="2086,244,2251,271"/>
+<area shape="rect" href="ERF__EBStruct_8H.html" title=" " alt="" coords="2275,244,2398,271"/>
+<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="2422,244,2577,271"/>
+<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="1887,319,2021,345"/>
+<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="3596,244,3755,271"/>
+<area shape="rect" href="ERF__RadStruct_8H.html" title="Radiation model type and control parameters." alt="" coords="1726,244,1857,271"/>
+<area shape="rect" href="ERF__ShocTransportStruct_8H.html" title=" " alt="" coords="2753,244,2950,271"/>
+<area shape="rect" href="ERF__CanopyTurbStruct_8H.html" title=" " alt="" coords="3185,244,3368,271"/>
+<area shape="rect" href="ERF__MOSTUtils_8H.html" title=" " alt="" coords="2974,244,3110,271"/>
+<area shape="rect" title=" " alt="" coords="3251,393,3374,420"/>
+<area shape="rect" title=" " alt="" coords="1955,393,2159,420"/>
+<area shape="rect" title=" " alt="" coords="3642,319,3709,345"/>
+<area shape="rect" href="ERF__SBMAdvectionBoundary_8H.html" title=" " alt="" coords="3732,319,3955,345"/>
+<area shape="rect" href="ERF__SBMLayout_8H.html" title=" " alt="" coords="3830,244,3971,271"/>
+<area shape="rect" title=" " alt="" coords="4046,244,4209,271"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -159,8 +161,20 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SBMParticleMixing_8H__dep__incl.png" border="0" usemap="#aSource_2Microphysics_2SBM_2ERF__SBMParticleMixing_8Hdep" alt=""/></div>
 <map name="aSource_2Microphysics_2SBM_2ERF__SBMParticleMixing_8Hdep" id="aSource_2Microphysics_2SBM_2ERF__SBMParticleMixing_8Hdep">
-<area shape="rect" title=" " alt="" coords="11,5,238,47"/>
-<area shape="rect" href="ERF__SBMParticleMixing_8cpp.html" title=" " alt="" coords="5,95,244,136"/>
+<area shape="rect" title=" " alt="" coords="745,5,972,47"/>
+<area shape="rect" href="ERF__Constructors_8cpp.html" title=" " alt="" coords="5,191,216,218"/>
+<area shape="rect" href="ERF__SBMParticleMixing_8cpp.html" title=" " alt="" coords="739,95,978,136"/>
+<area shape="rect" href="ERF__SBMTransport_8H.html" title=" " alt="" coords="1156,95,1351,136"/>
+<area shape="rect" href="ERF__MakeNewLevel_8cpp.html" title=" " alt="" coords="241,191,469,218"/>
+<area shape="rect" href="ERF__Checkpoint_8cpp.html" title=" " alt="" coords="493,191,713,218"/>
+<area shape="rect" href="ERF__SBMAMRCoupling_8cpp.html" title=" " alt="" coords="737,184,972,225"/>
+<area shape="rect" href="ERF__SBMAMRQualification_8cpp.html" title=" " alt="" coords="996,184,1255,225"/>
+<area shape="rect" href="ERF__SBMTransport_8cpp.html" title=" " alt="" coords="1279,184,1486,225"/>
+<area shape="rect" href="ERF__Advance_8cpp.html" title=" " alt="" coords="1510,184,1685,225"/>
+<area shape="rect" href="ERF__AdvanceDycore_8cpp.html" title=" " alt="" coords="1709,184,1896,225"/>
+<area shape="rect" href="ERF__ComputeTimestep_8cpp.html" title=" " alt="" coords="1920,184,2125,225"/>
+<area shape="rect" href="ERF__SlowRhsPost_8cpp.html" title=" " alt="" coords="2150,184,2325,225"/>
+<area shape="rect" href="ERF__TimeStep_8cpp.html" title=" " alt="" coords="2349,184,2523,225"/>
 </map>
 </div>
 </div>
@@ -192,6 +206,14 @@ Functions</h2></td></tr>
 <tr class="separator:a9558a135241477b20f10c5441e3d9988"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a250efeebff95e91b2c5855dbb44471a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a250efeebff95e91b2c5855dbb44471a0">erf_sbm::validate_particle_mixing_config</a> (const ParticleMixingConfig &amp;<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, std::string &amp;reason)</td></tr>
 <tr class="separator:a250efeebff95e91b2c5855dbb44471a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1383fa5262d1490606d917f065e5c64b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a1383fa5262d1490606d917f065e5c64b">erf_sbm::make_particle_mixing_config</a> (const std::string &amp;<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> reference_kh, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> reference_kv, ParticleMixingConfig &amp;<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, std::string &amp;reason)</td></tr>
+<tr class="separator:a1383fa5262d1490606d917f065e5c64b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa3db44d53fdfb78e02737d6401facdd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#afa3db44d53fdfb78e02737d6401facdd">erf_sbm::validate_particle_mixing_host</a> (const ParticleMixingConfig &amp;<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, const std::vector&lt; <a class="el" href="structTurbChoice.html">TurbChoice</a> &gt; &amp;turbulence, const <a class="el" href="ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735">MolecDiffType</a> molecular, const MeshType mesh, const int max_level, std::string &amp;reason)</td></tr>
+<tr class="separator:afa3db44d53fdfb78e02737d6401facdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be40ff462ba09350fcdcfe2475bf422"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a7be40ff462ba09350fcdcfe2475bf422">erf_sbm::validate_particle_mixing_boundaries</a> (const ParticleMixingConfig &amp;<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, const SBMPhysicalBoundaryConfig &amp;boundaries, std::string &amp;reason)</td></tr>
+<tr class="separator:a7be40ff462ba09350fcdcfe2475bf422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0789815652e8a5c11f110085447ddf86"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#a0789815652e8a5c11f110085447ddf86">erf_sbm::particle_mixing_schema</a> (const ParticleMixingConfig &amp;<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>)</td></tr>
+<tr class="separator:a0789815652e8a5c11f110085447ddf86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac71d1d4ca7caacbb3b5a7c8184af22ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#ac71d1d4ca7caacbb3b5a7c8184af22ab">erf_sbm::particle_mixing_coefficients</a> (const ParticleMixingConfig &amp;<a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a>, <a class="el" href="structerf__auxiliary_1_1MappedDiffusionCoefficients.html">erf_auxiliary::MappedDiffusionCoefficients</a> &amp;coefficients, std::string &amp;reason)</td></tr>
 <tr class="separator:ac71d1d4ca7caacbb3b5a7c8184af22ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb77d7c1a9268caabf5fa8577752794f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__sbm.html#aeb77d7c1a9268caabf5fa8577752794f">erf_sbm::particle_mixing_mesh</a> (const MeshType mesh_type, <a class="el" href="namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575ec">erf_auxiliary::DiffusionMesh</a> &amp;mesh, std::string &amp;reason)</td></tr>

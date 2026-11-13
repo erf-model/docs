@@ -1,6 +1,7 @@
 var classSDInjection =
 [
     [ "~SDInjection", "classSDInjection.html#ae35272bfbf5519d95d33c6641d40b75c", null ],
+    [ "cellCounts", "classSDInjection.html#af7d8dc85558f921887d671cdb9b67a54", null ],
     [ "injectBoxCount", "classSDInjection.html#a18b071deb8d98937b517af8c389dd3c3", null ],
     [ "injectMultiplicity", "classSDInjection.html#a6466a3a9adb6b592cb780ff6dd48f356", null ],
     [ "injectSeed", "classSDInjection.html#a75799cca71294d8497d350cb3ee01eb2", null ],
@@ -15,6 +16,7 @@ var classSDInjection =
     [ "m_box_volume", "classSDInjection.html#aafab3e3c547ae11f0efd215ba3bb7fca", null ],
     [ "m_cell_volume", "classSDInjection.html#acb08a0e2d850d9ad3a50bf06b72bd24f", null ],
     [ "m_domain_vel", "classSDInjection.html#ae9f76def6a1d4caa4560727d0c23a07b", null ],
+    [ "m_dt", "classSDInjection.html#ae3b1e086b69eed25efaed87ccc41f890", null ],
     [ "m_eff_sd_rate", "classSDInjection.html#a1eb420d4fa50ff31bf6b23eeacd6267d", null ],
     [ "m_frac_tol", "classSDInjection.html#ab5460ce7fbb20c5ef73dba411781fc53", null ],
     [ "m_inj_rate", "classSDInjection.html#ab82ee342cc1df63998685955876f08ca", null ],
@@ -26,6 +28,8 @@ var classSDInjection =
     [ "m_mm_specified", "classSDInjection.html#a4e816fcd9d37caecb3b0e024fa6ed4c6", null ],
     [ "m_numdens_accum", "classSDInjection.html#a0d2de7c142a51ad2e9123c136a039bff", null ],
     [ "m_numdens_sd", "classSDInjection.html#a1e0f6d2e706c493bc1798c3b9ac69534", null ],
+    [ "m_numdens_total", "classSDInjection.html#a0cf5933ea4e0bfbdd8ab73ff031eed18", null ],
+    [ "m_numdens_total_old", "classSDInjection.html#ab734ff2e55f685fd4d66ee1f84cd65af", null ],
     [ "m_perbox", "classSDInjection.html#ac3ef68abdf55a1a942157b8c9a127ed6", null ],
     [ "m_ppc_specified", "classSDInjection.html#a67749c8527080f38a7424b35f593562c", null ],
     [ "m_prefix", "classSDInjection.html#ae8e787ff7170024bf7bdbee1c2e026d3", null ],
@@ -33,5 +37,6 @@ var classSDInjection =
     [ "m_sd_inj_rate", "classSDInjection.html#a2f0c397ab736c41ff0e5fdee851840da", null ],
     [ "m_sd_specified", "classSDInjection.html#a54a9fb610b368855e2c87a735778e828", null ],
     [ "m_tstart", "classSDInjection.html#a31f15a00f426cc1a74b275e29b47707a", null ],
-    [ "m_tstop", "classSDInjection.html#a287032098a1d9dbe475397929d79f60b", null ]
+    [ "m_tstop", "classSDInjection.html#a287032098a1d9dbe475397929d79f60b", null ],
+    [ "m_variable_dz", "classSDInjection.html#a0fb2d2f99c69fdf30e92a1f385cf8bca", null ]
 ];

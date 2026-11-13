@@ -149,6 +149,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSDDistributionParams.html">SDDistributionParams</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSDCellCounts.html">SDCellCounts</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numbers of super-droplets and of physical particles that an initialization, or one per-cell injection step, places in a cell of volume a_dv.  <a href="structSDCellCounts.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDInitProperties.html">SDInitProperties</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Super-droplets initial properties.  <a href="classSDInitProperties.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,6 +185,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a44d8e9f3cba7aa4ba034df24806ac276"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SDInitialization_8H.html#a44d8e9f3cba7aa4ba034df24806ac276">SD_sample_mass_gpu</a> (const <a class="el" href="structSDDistributionParams.html">SDDistributionParams</a> &amp;params, const amrex::RandomEngine &amp;engine, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;mult_contribution)</td></tr>
 <tr class="memdesc:a44d8e9f3cba7aa4ba034df24806ac276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate mass from distribution parameters on GPU.  <a href="ERF__SDInitialization_8H.html#a44d8e9f3cba7aa4ba034df24806ac276">More...</a><br /></td></tr>
 <tr class="separator:a44d8e9f3cba7aa4ba034df24806ac276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65266c336a5f60900f6d6b64339cb111"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SDInitialization_8H.html#a65266c336a5f60900f6d6b64339cb111">SD_init_multiplicity</a> (const <a class="el" href="structSDCellCounts.html">SDCellCounts</a> *a_counts, const int a_num, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a_dv) noexcept</td></tr>
+<tr class="memdesc:a65266c336a5f60900f6d6b64339cb111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mean multiplicity that a set of initializations gives in a cell of volume a_dv.  <a href="ERF__SDInitialization_8H.html#a65266c336a5f60900f6d6b64339cb111">More...</a><br /></td></tr>
+<tr class="separator:a65266c336a5f60900f6d6b64339cb111"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -366,6 +372,61 @@ Here is the caller graph for this function:</div>
 </map>
 </div>
 
+</div>
+</div>
+<a id="a65266c336a5f60900f6d6b64339cb111"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65266c336a5f60900f6d6b64339cb111">&#9670;&nbsp;</a></span>SD_init_multiplicity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SD_init_multiplicity </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structSDCellCounts.html">SDCellCounts</a> *&#160;</td>
+          <td class="paramname"><em>a_counts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>a_num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>a_dv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mean multiplicity that a set of initializations gives in a cell of volume a_dv. </p>
+<div class="fragment"><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;{</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordtype">int</span> num_sd = 0;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num_par = 0;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; a_num; n++) {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        num_sd  += a_counts[n].<a class="code" href="structSDCellCounts.html#a84be4d801fd3419aaf1029f2db292e2a">numSDCell</a>(a_dv);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        num_par += a_counts[n].<a class="code" href="structSDCellCounts.html#ad3889edb5a646cf4e0997ddfb9404c10">numParticles</a>(a_dv);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">return</span> (num_sd &gt; 0) ? num_par / num_sd : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
+<div class="ttc" id="astructSDCellCounts_html_a84be4d801fd3419aaf1029f2db292e2a"><div class="ttname"><a href="structSDCellCounts.html#a84be4d801fd3419aaf1029f2db292e2a">SDCellCounts::numSDCell</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int numSDCell(const amrex::Real a_dv) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:264</div></div>
+<div class="ttc" id="astructSDCellCounts_html_ad3889edb5a646cf4e0997ddfb9404c10"><div class="ttname"><a href="structSDCellCounts.html#ad3889edb5a646cf4e0997ddfb9404c10">SDCellCounts::numParticles</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real numParticles(const amrex::Real a_dv) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:251</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a44d8e9f3cba7aa4ba034df24806ac276"></a>

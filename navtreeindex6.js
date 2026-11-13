@@ -1,5 +1,13 @@
 var NAVTREEINDEX6 =
 {
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad00775a8a12a6ab0aa0b70d7d6cca197":[3,0,1,22,36,21],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad0665f7cbddf3a7f15d78b72a92c5e80":[3,0,1,22,36,3],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#ae40e267a3c278551001f3792a076b9ca":[3,0,1,22,36,4],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#ae478668870b1a908d8b34d2ce5e25129":[3,0,1,22,36,22],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#afc76506e900c68bcbf23487e6ac15b82":[3,0,1,22,36,7],
+"ERF__InitCustomPertVels__IsentropicVortex_8H_source.html":[3,0,1,22,36],
+"ERF__InitCustomPertVels__MovingTerrain_8H.html":[3,0,1,22,37],
+"ERF__InitCustomPertVels__MovingTerrain_8H.html#a287a9c75b73d1d5227f58a0ac3054621":[3,0,1,22,37,4],
 "ERF__InitCustomPertVels__MovingTerrain_8H.html#a39b81fc0906dc717588b6451db11ef41":[3,0,1,22,37,6],
 "ERF__InitCustomPertVels__MovingTerrain_8H.html#a3de20e6c53dab6e405480f55ede7c937":[3,0,1,22,37,7],
 "ERF__InitCustomPertVels__MovingTerrain_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb":[3,0,1,22,37,3],
@@ -241,13 +249,5 @@ var NAVTREEINDEX6 =
 "ERF__InitCustomPertVels__UserDefined_8H.html#ad3f35fb74a893ceb0d8afcc39e39a84b":[3,0,1,22,46,5],
 "ERF__InitCustomPertVels__UserDefined_8H.html#afcc136319159fcdf66beaff0b0782f93":[3,0,1,22,46,0],
 "ERF__InitCustomPertVels__UserDefined_8H_source.html":[3,0,1,22,46],
-"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html":[3,0,1,22,47],
-"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a420d78bf983d6025fd797e5276faa2fb":[3,0,1,22,47,3],
-"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a43ae77dd0457ed5fefa12e4ff2e72114":[3,0,1,22,47,2],
-"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a7f74e9554c1ab66998e1319960f1e82c":[3,0,1,22,47,8],
-"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a909f374b2bb8aa28889a14e5fcbc2671":[3,0,1,22,47,5],
-"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb":[3,0,1,22,47,9],
-"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#aada30199a52709bfe69b46aa5a2b9731":[3,0,1,22,47,6],
-"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#adf8f0b71a56c6dbc77312a07ce0e0f64":[3,0,1,22,47,4],
-"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15":[3,0,1,22,47,7]
+"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html":[3,0,1,22,47]
 };

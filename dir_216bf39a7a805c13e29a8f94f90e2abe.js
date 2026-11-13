@@ -1,6 +1,13 @@
 var dir_216bf39a7a805c13e29a8f94f90e2abe =
 [
     [ "ERF_AerosolOpticalDepth.H", "ERF__AerosolOpticalDepth_8H.html", "ERF__AerosolOpticalDepth_8H" ],
+    [ "ERF_ForceRestoreHydrology.H", "ERF__ForceRestoreHydrology_8H.html", "ERF__ForceRestoreHydrology_8H" ],
+    [ "ERF_ForceRestoreHydrologyState.cpp", "ERF__ForceRestoreHydrologyState_8cpp.html", null ],
+    [ "ERF_ForceRestoreHydrologyState.H", "ERF__ForceRestoreHydrologyState_8H.html", [
+      [ "ForceRestoreSoil", "structForceRestoreSoil.html", "structForceRestoreSoil" ],
+      [ "ForceRestoreHydrology", "classForceRestoreHydrology.html", "classForceRestoreHydrology" ],
+      [ "StepSums", "structForceRestoreHydrology_1_1StepSums.html", "structForceRestoreHydrology_1_1StepSums" ]
+    ] ],
     [ "ERF_NoahMPSoilTable.H", "ERF__NoahMPSoilTable_8H.html", "ERF__NoahMPSoilTable_8H" ],
     [ "ERF_NoahMPVegetationTable.H", "ERF__NoahMPVegetationTable_8H.html", "ERF__NoahMPVegetationTable_8H" ],
     [ "ERF_PrognosticCloudFraction.H", "ERF__PrognosticCloudFraction_8H.html", "ERF__PrognosticCloudFraction_8H" ],

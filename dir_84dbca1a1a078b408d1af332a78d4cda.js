@@ -45,11 +45,7 @@ var dir_84dbca1a1a078b408d1af332a78d4cda =
       [ "LevelState", "structerf__sbm_1_1SBMStateManager_1_1LevelState.html", "structerf__sbm_1_1SBMStateManager_1_1LevelState" ]
     ] ],
     [ "ERF_SBMTransport.cpp", "ERF__SBMTransport_8cpp.html", "ERF__SBMTransport_8cpp" ],
-    [ "ERF_SBMTransport.H", "ERF__SBMTransport_8H.html", [
-      [ "SBMAMRStageGhostProbe", "structerf__sbm_1_1SBMAMRStageGhostProbe.html", "structerf__sbm_1_1SBMAMRStageGhostProbe" ],
-      [ "SBMAMRStageParent", "structerf__sbm_1_1SBMAMRStageParent.html", "structerf__sbm_1_1SBMAMRStageParent" ],
-      [ "SBMTransport", "classerf__sbm_1_1SBMTransport.html", "classerf__sbm_1_1SBMTransport" ]
-    ] ],
+    [ "ERF_SBMTransport.H", "ERF__SBMTransport_8H.html", "ERF__SBMTransport_8H" ],
     [ "ERF_SpectralGrid.cpp", "ERF__SpectralGrid_8cpp.html", null ],
     [ "ERF_SpectralGrid.H", "ERF__SpectralGrid_8H.html", "ERF__SpectralGrid_8H" ]
 ];

@@ -1,5 +1,13 @@
 var NAVTREEINDEX7 =
 {
+"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a420d78bf983d6025fd797e5276faa2fb":[3,0,1,22,47,3],
+"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a43ae77dd0457ed5fefa12e4ff2e72114":[3,0,1,22,47,2],
+"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a7f74e9554c1ab66998e1319960f1e82c":[3,0,1,22,47,8],
+"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a909f374b2bb8aa28889a14e5fcbc2671":[3,0,1,22,47,5],
+"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb":[3,0,1,22,47,9],
+"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#aada30199a52709bfe69b46aa5a2b9731":[3,0,1,22,47,6],
+"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#adf8f0b71a56c6dbc77312a07ce0e0f64":[3,0,1,22,47,4],
+"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15":[3,0,1,22,47,7],
 "ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#af5890b6713e7019bff61c8c4183ad200":[3,0,1,22,47,0],
 "ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#afcc136319159fcdf66beaff0b0782f93":[3,0,1,22,47,1],
 "ERF__InitCustomPertVels__WitchOfAgnesi_8H_source.html":[3,0,1,22,47],
@@ -241,13 +249,5 @@ var NAVTREEINDEX7 =
 "ERF__InitCustomPert__EBPoiseuille_8H.html#abdcb0f357373e0449fd719f67e0983c0":[3,0,1,22,10,2],
 "ERF__InitCustomPert__EBPoiseuille_8H.html#acd4be70decb52e2f9460e71708b197a2":[3,0,1,22,10,18],
 "ERF__InitCustomPert__EBPoiseuille_8H.html#ad260f9d29239eb005c068b984604d3ee":[3,0,1,22,10,14],
-"ERF__InitCustomPert__EBPoiseuille_8H.html#ad43921f167a7c50e44323710ad38b4cb":[3,0,1,22,10,7],
-"ERF__InitCustomPert__EBPoiseuille_8H.html#ad9eb4755f9ca56079d97722b60d11c1c":[3,0,1,22,10,13],
-"ERF__InitCustomPert__EBPoiseuille_8H.html#af0d7ef0920197566d13fc1147dbfb39b":[3,0,1,22,10,23],
-"ERF__InitCustomPert__EBPoiseuille_8H.html#af588d6ded72010445c1e55ef92c7b516":[3,0,1,22,10,9],
-"ERF__InitCustomPert__EBPoiseuille_8H.html#af686714c0058e88fe58d897c790297a9":[3,0,1,22,10,19],
-"ERF__InitCustomPert__EBPoiseuille_8H.html#af8a463ed0f4ec0cf481163a088151edd":[3,0,1,22,10,1],
-"ERF__InitCustomPert__EBPoiseuille_8H.html#afd594beb5e87119f485c9e590e4f8183":[3,0,1,22,10,17],
-"ERF__InitCustomPert__EBPoiseuille_8H_source.html":[3,0,1,22,10],
-"ERF__InitCustomPert__FlowInABox_8H.html":[3,0,1,22,11]
+"ERF__InitCustomPert__EBPoiseuille_8H.html#ad43921f167a7c50e44323710ad38b4cb":[3,0,1,22,10,7]
 };

@@ -1,6 +1,7 @@
 var classSDInitialization =
 [
     [ "~SDInitialization", "classSDInitialization.html#a9608821a58b998eb82aa65f55334220a", null ],
+    [ "cellCounts", "classSDInitialization.html#a6b9c974959e066ba43eed2b898a48f3d", null ],
     [ "numParticlesPerCell", "classSDInitialization.html#ad2c2f56485d3aa45058b4b14bfade685", null ],
     [ "numSDPerCell", "classSDInitialization.html#a52161d5077d085b2569f4710c5e210b5", null ],
     [ "printParameters", "classSDInitialization.html#a7992b988ef996b5e2d03bdb86ac469fa", null ],

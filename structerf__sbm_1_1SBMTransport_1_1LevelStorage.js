@@ -23,6 +23,7 @@ var structerf__sbm_1_1SBMTransport_1_1LevelStorage =
     [ "low_trial_h", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#ad44e1d710a0e58570d07ce3f582c5bc7", null ],
     [ "measure", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a4403fd369bfba7cc34c5670cfb2efa13", null ],
     [ "measure_ready", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#aacfa08e04f9b31651a95f3472012b6fe", null ],
+    [ "mixing_rate", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a61a3413b506f1dfe9d19bd0aea158912", null ],
     [ "outgoing_demand", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#ae4c341f1d0318059833f852e7199df24", null ],
     [ "physical_input_intensive", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#af3e02cd09aca478e2df8b1afac6bffcc", null ],
     [ "profile_fine_step_start", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#aa41b331215ca64d72f0d4c834d76971d", null ],
@@ -30,5 +31,6 @@ var structerf__sbm_1_1SBMTransport_1_1LevelStorage =
     [ "projected_ledger", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#ad28c156528a7f1ac22077c821d577a0c", null ],
     [ "projected_rate", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#affb1eb84198d9aa96d8d03e9311c0d0d", null ],
     [ "spectral_ledger", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a99cf92d2de75a6dccc7d2f3fd56808f8", null ],
-    [ "target", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#ad310306ab9dcda8dea175de897f43234", null ]
+    [ "target", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#ad310306ab9dcda8dea175de897f43234", null ],
+    [ "transmissibility", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#abd3189462fe0742326a55a4bb43cae47", null ]
 ];
