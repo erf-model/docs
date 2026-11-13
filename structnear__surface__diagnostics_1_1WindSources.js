@@ -1,6 +1,8 @@
 var structnear__surface__diagnostics_1_1WindSources =
 [
     [ "cos_alpha", "structnear__surface__diagnostics_1_1WindSources.html#ac96b5b7b2238d2d51bdbd6bb87aa8500", null ],
+    [ "current_x", "structnear__surface__diagnostics_1_1WindSources.html#ae98df810f04a941f1f707a039128d179", null ],
+    [ "current_y", "structnear__surface__diagnostics_1_1WindSources.html#a9617f8b074cf130d8b33974304deef27", null ],
     [ "klo", "structnear__surface__diagnostics_1_1WindSources.html#afc9f0ccd12675369efdb44f68b87e352", null ],
     [ "obukhov_length", "structnear__surface__diagnostics_1_1WindSources.html#aeb0eb045e1b9acebd48e07ffd54a9782", null ],
     [ "roughness_height", "structnear__surface__diagnostics_1_1WindSources.html#ad5b38bd2674ba369ff655b9a1cb63173", null ],
