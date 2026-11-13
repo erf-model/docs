@@ -5,7 +5,7 @@ var structerf__actuator_1_1ActuatorDeviceBuffers =
     [ "image_point", "structerf__actuator_1_1ActuatorDeviceBuffers.html#a571bea284457c59f0eaec5ac05e3a891", null ],
     [ "image_pos", "structerf__actuator_1_1ActuatorDeviceBuffers.html#ad5ecaad063fa408fa9785cf097802c15", null ],
     [ "image_reach", "structerf__actuator_1_1ActuatorDeviceBuffers.html#a8be8006e525775bbe9c9ad755c863394", null ],
-    [ "kernel_launches", "structerf__actuator_1_1ActuatorDeviceBuffers.html#a02b160d3f1ead4bc52a22037e0f7c226", null ],
+    [ "kernel_launches", "structerf__actuator_1_1ActuatorDeviceBuffers.html#ab3980e8aae7a0e45cd52ad0ffad5447f", null ],
     [ "norms", "structerf__actuator_1_1ActuatorDeviceBuffers.html#a7cc3c2de2e6a4c9490e24294daa9eed8", null ],
     [ "point_eps", "structerf__actuator_1_1ActuatorDeviceBuffers.html#a5bb0ecfecb9963920db007c31ee58043", null ],
     [ "sample_cnt", "structerf__actuator_1_1ActuatorDeviceBuffers.html#a023da2fe7233d28b7402f87aa0f36fba", null ],

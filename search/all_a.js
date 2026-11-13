@@ -22,7 +22,7 @@ var searchData=
   ['ke_5fh_3981',['KE_h',['../namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205afa0c87454b22a819e328491f78bf6767',1,'EddyDiff']]],
   ['ke_5fv_3982',['KE_v',['../namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a937c191d351b2c26cd7ea07878978b94',1,'EddyDiff']]],
   ['keqn_5frans_3983',['keqn_rans',['../structStructureInit.html#a27eb49a534744e7566141dd5706d4de3',1,'StructureInit']]],
-  ['kernel_5flaunches_3984',['kernel_launches',['../structerf__actuator_1_1ActuatorDeviceBuffers.html#a02b160d3f1ead4bc52a22037e0f7c226',1,'erf_actuator::ActuatorDeviceBuffers']]],
+  ['kernel_5flaunches_3984',['kernel_launches',['../structerf__actuator_1_1ActuatorDeviceBuffers.html#ab3980e8aae7a0e45cd52ad0ffad5447f',1,'erf_actuator::ActuatorDeviceBuffers']]],
   ['kessler_3985',['Kessler',['../classKessler.html',1,'Kessler'],['../classKessler.html#a50fbd35f964f8dce148e2174bfcaa939',1,'Kessler::Kessler()']]],
   ['kessler_5fcopy_5fstate_5fto_5fmicro_5fcell_3986',['kessler_copy_state_to_micro_cell',['../ERF__Kessler_8H.html#ad50c28997a3f50b38f6269cc4fd0a4f9',1,'ERF_Kessler.H']]],
   ['kessler_5fface_5fdonor_5fk_3987',['kessler_face_donor_k',['../ERF__KesslerUtils_8H.html#af826e8d68a07c7a4418f90820149a2a1',1,'ERF_KesslerUtils.H']]],
