@@ -104,7 +104,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a076c4a4df72a6fd403d65557fc0bbf89"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__GetRhoAlphaForFaces_8H.html#a076c4a4df72a6fd403d65557fc0bbf89">getRhoAlphaForFaces</a> (int i, int j, int k, int ioff, int joff, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;rhoAlpha_lo, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;rhoAlpha_hi, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_data, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mu_turb, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mu_eff, bool l_consA, bool l_turb, const int eddy_comp=<a class="el" href="namespaceEddyDiff.html#a6853a35a18e4e76df6fd47dbba251697a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</td></tr>
+<tr class="memitem:a076c4a4df72a6fd403d65557fc0bbf89"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__GetRhoAlphaForFaces_8H.html#a076c4a4df72a6fd403d65557fc0bbf89">getRhoAlphaForFaces</a> (int i, int j, int k, int ioff, int joff, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;rhoAlpha_lo, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;rhoAlpha_hi, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_data, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mu_turb, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mu_eff, bool l_consA, bool l_turb, const int eddy_comp=<a class="el" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</td></tr>
 <tr class="separator:a076c4a4df72a6fd403d65557fc0bbf89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -190,7 +190,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>eddy_comp</em> = <code><a class="el" href="namespaceEddyDiff.html#a6853a35a18e4e76df6fd47dbba251697a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></code>&#160;</td>
+          <td class="paramname"><em>eddy_comp</em> = <code><a class="el" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -214,7 +214,7 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mu_eff</td><td>effective molecular viscosity. NOTE: unlike the mu_eff in <a class="el" href="ERF__MakeTauTerms_8cpp.html">ERF_MakeTauTerms.cpp</a> and ComputeStress*, this does not include the factor of 2, because the u/v correction strains carry a factor of 1/2. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">l_consA</td><td>flag for conservative constant-alpha diffusion </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">l_turb</td><td>flag for turbulent diffusion </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">eddy_comp</td><td>eddy-viscosity component to average (<a class="el" href="namespaceEddyDiff.html#a6853a35a18e4e76df6fd47dbba251697a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>, or <a class="el" href="namespaceEddyDiff.html#a6853a35a18e4e76df6fd47dbba251697a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a> for the terrain-metric coefficient) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">eddy_comp</td><td>eddy-viscosity component to average (<a class="el" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>, or <a class="el" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a> for the terrain-metric coefficient) </td></tr>
   </table>
   </dd>
 </dl>

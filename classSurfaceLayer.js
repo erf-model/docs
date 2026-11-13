@@ -124,6 +124,8 @@ var classSurfaceLayer =
     [ "depth", "classSurfaceLayer.html#a8b6a95c0f5f67a32f6c6dc62cf55ab75", null ],
     [ "flux_type", "classSurfaceLayer.html#acbb6236c8f0741cafba01dbbf20cd713", null ],
     [ "inv_Cmu2", "classSurfaceLayer.html#ad5d1ac2bd5634d6b507b86cdad265900", null ],
+    [ "m_bulk_fixed_tflux", "classSurfaceLayer.html#ad0eeb85cc091e79eb31f5eac97bea3eb", null ],
+    [ "m_bulk_use_fixed_tflux", "classSurfaceLayer.html#a5a647ac3659716b38088544a42659ae0", null ],
     [ "m_Cd", "classSurfaceLayer.html#ae895bf19520480b90f8171c262f17426", null ],
     [ "m_Ch", "classSurfaceLayer.html#a2d9040ed167429e929a7c590e6390e58", null ],
     [ "m_coupled_sst_lev", "classSurfaceLayer.html#a8ba23a085f16e0a8bb3a72bcf6d95e2b", null ],

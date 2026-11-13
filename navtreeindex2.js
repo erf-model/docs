@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"ERF__CoarseFineFaces_8cpp.html":[3,0,1,14,0],
 "ERF__CoarseFineFaces_8cpp.html#a58016c8fdb4edffdfc59aafcfc001dd6":[3,0,1,14,0,0],
 "ERF__CoarseFineFaces_8cpp.html#aeebe354ae17907787d42576b9d9ca4ad":[3,0,1,14,0,1],
 "ERF__ColumnBands_8H.html":[3,0,1,29,3],
@@ -10,7 +11,7 @@ var NAVTREEINDEX2 =
 "ERF__ColumnBands_8cpp.html#a1c1790237da8b8c69d989b7c6084ec7b":[3,0,1,29,2,0],
 "ERF__ColumnBands_8cpp.html#a3c6772888e620a4fe1851194131ac5a9":[3,0,1,29,2,1],
 "ERF__ComputeDiffusivityMRF_8cpp.html":[3,0,1,20,1],
-"ERF__ComputeDiffusivityMRF_8cpp.html#a89013025accc63eca809f03df9678f0b":[3,0,1,20,1,0],
+"ERF__ComputeDiffusivityMRF_8cpp.html#aebc338e4e22dfbdedc3b9d0fd7d381f5":[3,0,1,20,1,0],
 "ERF__ComputeDiffusivityMYJ_8cpp.html":[3,0,1,20,2],
 "ERF__ComputeDiffusivityMYJ_8cpp.html#adada87eb7bda86a035c52160bf7e346d":[3,0,1,20,2,0],
 "ERF__ComputeDiffusivityMYNN25_8cpp.html":[3,0,1,20,3],
@@ -47,8 +48,8 @@ var NAVTREEINDEX2 =
 "ERF__ComputeTurbulentViscosity_8cpp.html":[3,0,1,6,10],
 "ERF__ComputeTurbulentViscosity_8cpp.html#a04cae04cfe9fffb26f5894aebe0ebb54":[3,0,1,6,10,3],
 "ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda":[3,0,1,6,10,2],
+"ERF__ComputeTurbulentViscosity_8cpp.html#a96c0d37a4f9c5959f5bfe1818fa9145b":[3,0,1,6,10,0],
 "ERF__ComputeTurbulentViscosity_8cpp.html#ae2dce36c0088a0243d29d3c90b38c21c":[3,0,1,6,10,1],
-"ERF__ComputeTurbulentViscosity_8cpp.html#affb79ce0630f5bd76dc399601d693fbb":[3,0,1,6,10,0],
 "ERF__ConsoleIO_8cpp.html":[3,0,1,12,5],
 "ERF__ConsoleIO_8cpp.html#a8f794ff24efbc4b60058492d1a073c78":[3,0,1,12,5,0],
 "ERF__ConsoleIO_8cpp.html#a9d270ec83f99e836cca454cac4e0af5e":[3,0,1,12,5,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__Diffusion_8H.html#a64b9d634d8fdc9f2e514605cf14bcc0b":[3,0,1,6,11,4],
 "ERF__Diffusion_8H.html#a8c410fe85d93e4cd505897a3d593f48a":[3,0,1,6,11,8],
 "ERF__Diffusion_8H.html#a9a7302219e8efdb16afaf31f1d60b1a0":[3,0,1,6,11,11],
-"ERF__Diffusion_8H.html#a9f66933a68c4ca05b5aae2ead3b76a2d":[3,0,1,6,11,19],
-"ERF__Diffusion_8H.html#aa82238e32cce9f203e827f2adbbc63a9":[3,0,1,6,11,1]
+"ERF__Diffusion_8H.html#a9f66933a68c4ca05b5aae2ead3b76a2d":[3,0,1,6,11,19]
 };

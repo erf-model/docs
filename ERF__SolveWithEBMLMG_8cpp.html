@@ -300,7 +300,7 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="comment">// against this rather than assumed to fit (issue #3699)</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keyword">const</span> Box rbx = <a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a>[mfi].box() &amp; geom.growPeriodicDomain(<a class="code" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">phi</a>.nGrowVect());</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> rlo = lbound(rbx);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd642011fa45a5a419fe9a6afb6119c2">rhi</a> = ubound(rbx);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8acd642011fa45a5a419fe9a6afb6119c2">rhi</a> = ubound(rbx);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(xbx, ybx, zbx,</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="comment">// x-face</span></div>
@@ -312,14 +312,14 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                            <span class="comment">// Extrapolate from the uncovered side, at i-1 and below</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                            <span class="keywordflow">if</span> (i-3 &gt;= rlo.x) {</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                fx(i,j,k) = dxInv[0] * (p_arr(i-3,j,k) - three*p_arr(i-2,j,k) + two*p_arr(i-1,j,k));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                            } <span class="keywordflow">else</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438">if</a> (i-2 &gt;= rlo.x) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                            } <span class="keywordflow">else</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#ad9a15d481999f6a0d74a22d672a59fb5">if</a> (i-2 &gt;= rlo.x) {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                fx(i,j,k) = dxInv[0] * (p_arr(i-1,j,k) - p_arr(i-2,j,k));</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                            }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cflag(i-1,j,k).isCovered() &amp;&amp; !cflag(i,j,k).isCovered()) {</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                            <span class="comment">// Extrapolate from the uncovered side, at i and above</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                            <span class="keywordflow">if</span> (i+2 &lt;= <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd642011fa45a5a419fe9a6afb6119c2">rhi</a>.x) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                            <span class="keywordflow">if</span> (i+2 &lt;= <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8acd642011fa45a5a419fe9a6afb6119c2">rhi</a>.x) {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                fx(i,j,k) = dxInv[0] * (three*p_arr(i+1,j,k) - p_arr(i+2,j,k) - two*p_arr(i,j,k));</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                            } <span class="keywordflow">else</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438">if</a> (i+1 &lt;= <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd642011fa45a5a419fe9a6afb6119c2">rhi</a>.x) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                            } <span class="keywordflow">else</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#ad9a15d481999f6a0d74a22d672a59fb5">if</a> (i+1 &lt;= <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8acd642011fa45a5a419fe9a6afb6119c2">rhi</a>.x) {</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                fx(i,j,k) = dxInv[0] * (p_arr(i+1,j,k) - p_arr(i,j,k));</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                            }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        }</div>
@@ -340,9 +340,9 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                            }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cflag(i,j-1,k).isCovered() &amp;&amp; !cflag(i,j,k).isCovered()) {</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                            <span class="comment">// Extrapolate from the uncovered side, at j and above</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                            <span class="keywordflow">if</span> (j+2 &lt;= <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd642011fa45a5a419fe9a6afb6119c2">rhi</a>.y) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                            <span class="keywordflow">if</span> (j+2 &lt;= <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8acd642011fa45a5a419fe9a6afb6119c2">rhi</a>.y) {</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                fy(i,j,k) = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>[1] * (<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*p_arr(i,j+1,k) - p_arr(i,j+2,k) - <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*p_arr(i,j,k));</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j+1 &lt;= <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd642011fa45a5a419fe9a6afb6119c2">rhi</a>.y) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j+1 &lt;= <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8acd642011fa45a5a419fe9a6afb6119c2">rhi</a>.y) {</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                fy(i,j,k) = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>[1] * (p_arr(i,j+1,k) - p_arr(i,j,k));</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                            }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                        }</div>
@@ -363,9 +363,9 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                            }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cflag(i,j,k-1).isCovered() &amp;&amp; !cflag(i,j,k).isCovered()) {</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                            <span class="comment">// Extrapolate from the uncovered side, at k and above</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                            <span class="keywordflow">if</span> (k+2 &lt;= <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd642011fa45a5a419fe9a6afb6119c2">rhi</a>.z) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                            <span class="keywordflow">if</span> (k+2 &lt;= <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8acd642011fa45a5a419fe9a6afb6119c2">rhi</a>.z) {</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                fz(i,j,k) = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>[2] * (<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*p_arr(i,j,k+1) - p_arr(i,j,k+2) - <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*p_arr(i,j,k));</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k+1 &lt;= <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd642011fa45a5a419fe9a6afb6119c2">rhi</a>.z) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k+1 &lt;= <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8acd642011fa45a5a419fe9a6afb6119c2">rhi</a>.z) {</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                fz(i,j,k) = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>[2] * (p_arr(i,j,k+1) - p_arr(i,j,k));</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                            }</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                        }</div>
@@ -376,13 +376,13 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:16</div></div>
-<div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a861f3a0e37e4f9568407b620e5776438"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438">if</a></div><div class="ttdeci">if(KE_decay_height &gt; 0 &amp;&amp;state_pert.nComp() &gt; RhoKE_comp)</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:74</div></div>
+<div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_ad9a15d481999f6a0d74a22d672a59fb5"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#ad9a15d481999f6a0d74a22d672a59fb5">if</a></div><div class="ttdeci">if(add_bubble)</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:60</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a0aec04a101a1a92c2f32ff394b510bfd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a></div><div class="ttdeci">constexpr amrex::Real three</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:39</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:38</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:36</div></div>
 <div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
-<div class="ttc" id="anamespaceWSM6Ind_html_aa080c2fd4acd9ccb8c87d956a055c00dacd642011fa45a5a419fe9a6afb6119c2"><div class="ttname"><a href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00dacd642011fa45a5a419fe9a6afb6119c2">WSM6Ind::rhi</a></div><div class="ttdeci">@ rhi</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:360</div></div>
+<div class="ttc" id="anamespaceWSM6Ind_html_a93329be948dcf39b320f2beb5ad33ef8acd642011fa45a5a419fe9a6afb6119c2"><div class="ttname"><a href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8acd642011fa45a5a419fe9a6afb6119c2">WSM6Ind::rhi</a></div><div class="ttdeci">@ rhi</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:360</div></div>
 <div class="ttc" id="anamespaceib__wall_html_a7dc8e106dfd34123ba8cd4de917cc291"><div class="ttname"><a href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">ib_wall::phi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real phi(amrex::Real d, amrex::Real z0, amrex::Real psi) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_ImmersedWallCell.H:176</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__SolveWithEBMLMG_8cpp.html#a27290e54c2b12947c6310a31efd9e9e7">solve_with_EB_mlmg()</a>.</p>
@@ -391,11 +391,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SolveWithEBMLMG_8cpp_a107da7bd2e6038750f7763c95925ec7d_cgraph.png" border="0" usemap="#aERF__SolveWithEBMLMG_8cpp_a107da7bd2e6038750f7763c95925ec7d_cgraph" alt=""/></div>
 <map name="aERF__SolveWithEBMLMG_8cpp_a107da7bd2e6038750f7763c95925ec7d_cgraph" id="aERF__SolveWithEBMLMG_8cpp_a107da7bd2e6038750f7763c95925ec7d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,81,177,108"/>
-<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438" title=" " alt="" coords="254,5,293,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="228,56,319,83"/>
-<area shape="rect" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291" title=" " alt="" coords="225,107,321,133"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="237,157,310,184"/>
+<area shape="rect" title=" " alt="" coords="5,89,177,115"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#ad9a15d481999f6a0d74a22d672a59fb5" title=" " alt="" coords="254,13,293,39"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="228,63,319,90"/>
+<area shape="rect" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291" title=" " alt="" coords="225,114,321,141"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="237,165,310,191"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="369,5,552,47"/>
 </map>
 </div>
 <div class="dynheader">
@@ -593,8 +594,8 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        bcoef[idim].define(convert(ba_tmp[0],IntVect::TheDimensionVector(idim)),</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                            dm_tmp[0], 1, 0, MFInfo(), ebfact);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7">beta</a>) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            MultiFab::Copy(bcoef[idim], (*<a class="code" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7">beta</a>)[idim], 0, 0, 1, 0);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceSLM__DST.html#aa7a602b4eb9c68e791a0f6584224c621a305e1b84959c5478a92080f7e8c9e9e7">beta</a>) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            MultiFab::Copy(bcoef[idim], (*<a class="code" href="namespaceSLM__DST.html#aa7a602b4eb9c68e791a0f6584224c621a305e1b84959c5478a92080f7e8c9e9e7">beta</a>)[idim], 0, 0, 1, 0);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            bcoef[idim].mult(-<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            bcoef[idim].setVal(-1.0);</div>
@@ -624,9 +625,9 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="comment">// The fluxes carry b = -beta: divide it out, so that they are the gradient of phi on every</span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="comment">// face as with b = -1 (FillZeroAreaFaceFluxes below fills the gradient itself)</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7">beta</a>) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceSLM__DST.html#aa7a602b4eb9c68e791a0f6584224c621a305e1b84959c5478a92080f7e8c9e9e7">beta</a>) {</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            MultiFab::Divide(fluxes[0][idim], (*<a class="code" href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7">beta</a>)[idim], 0, 0, 1, 0);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            MultiFab::Divide(fluxes[0][idim], (*<a class="code" href="namespaceSLM__DST.html#aa7a602b4eb9c68e791a0f6584224c621a305e1b84959c5478a92080f7e8c9e9e7">beta</a>)[idim], 0, 0, 1, 0);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        }</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
@@ -661,20 +662,21 @@ template&lt;typename T &gt; </div>
 <div class="ttc" id="aERF__SolveWithEBMLMG_8cpp_html_a107da7bd2e6038750f7763c95925ec7d"><div class="ttname"><a href="ERF__SolveWithEBMLMG_8cpp.html#a107da7bd2e6038750f7763c95925ec7d">FillZeroAreaFaceFluxes</a></div><div class="ttdeci">void FillZeroAreaFaceFluxes(MultiFab &amp;phi, Array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;fluxes, const Geometry &amp;geom, EBFArrayBoxFactory const &amp;ebfact, T const &amp;ebfact_u, T const &amp;ebfact_v, T const &amp;ebfact_w)</div><div class="ttdef"><b>Definition:</b> ERF_FillZeroAreaFaceFluxes.cpp:29</div></div>
 <div class="ttc" id="aERF__SolverUtils_8H_html_a3611957f9ce37c1d538c9a596dc02acf"><div class="ttname"><a href="ERF__SolverUtils_8H.html#a3611957f9ce37c1d538c9a596dc02acf">get_lo_projection_bc</a></div><div class="ttdeci">Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; get_lo_projection_bc(Geometry const &amp;lev_geom, Array&lt; std::string, 2 *AMREX_SPACEDIM &gt; l_domain_bc_type)</div><div class="ttdef"><b>Definition:</b> ERF_SolverUtils.H:20</div></div>
 <div class="ttc" id="aERF__SolverUtils_8H_html_a9071f295efe69b41bdccada862d83682"><div class="ttname"><a href="ERF__SolverUtils_8H.html#a9071f295efe69b41bdccada862d83682">get_hi_projection_bc</a></div><div class="ttdeci">Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; get_hi_projection_bc(Geometry const &amp;lev_geom, Array&lt; std::string, 2 *AMREX_SPACEDIM &gt; l_domain_bc_type)</div><div class="ttdef"><b>Definition:</b> ERF_SolverUtils.H:48</div></div>
-<div class="ttc" id="anamespaceSLM__DST_html_ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7"><div class="ttname"><a href="namespaceSLM__DST.html#ad76fd0969f8b36689bee737b22da53a7a305e1b84959c5478a92080f7e8c9e9e7">SLM_DST::beta</a></div><div class="ttdeci">@ beta</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:152</div></div>
+<div class="ttc" id="anamespaceSLM__DST_html_aa7a602b4eb9c68e791a0f6584224c621a305e1b84959c5478a92080f7e8c9e9e7"><div class="ttname"><a href="namespaceSLM__DST.html#aa7a602b4eb9c68e791a0f6584224c621a305e1b84959c5478a92080f7e8c9e9e7">SLM_DST::beta</a></div><div class="ttdeci">@ beta</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:152</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SolveWithEBMLMG_8cpp_a27290e54c2b12947c6310a31efd9e9e7_cgraph.png" border="0" usemap="#aERF__SolveWithEBMLMG_8cpp_a27290e54c2b12947c6310a31efd9e9e7_cgraph" alt=""/></div>
 <map name="aERF__SolveWithEBMLMG_8cpp_a27290e54c2b12947c6310a31efd9e9e7_cgraph" id="aERF__SolveWithEBMLMG_8cpp_a27290e54c2b12947c6310a31efd9e9e7_cgraph">
-<area shape="rect" title=" " alt="" coords="5,183,167,209"/>
-<area shape="rect" href="ERF__SolveWithEBMLMG_8cpp.html#a107da7bd2e6038750f7763c95925ec7d" title=" " alt="" coords="215,107,387,133"/>
-<area shape="rect" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291" title=" " alt="" coords="435,157,531,184"/>
-<area shape="rect" href="ERF__SolverUtils_8H.html#a9071f295efe69b41bdccada862d83682" title=" " alt="" coords="223,208,379,235"/>
-<area shape="rect" href="ERF__SolverUtils_8H.html#a3611957f9ce37c1d538c9a596dc02acf" title=" " alt="" coords="223,259,379,285"/>
-<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438" title=" " alt="" coords="463,5,502,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="437,56,528,83"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="446,107,519,133"/>
+<area shape="rect" title=" " alt="" coords="5,190,167,217"/>
+<area shape="rect" href="ERF__SolveWithEBMLMG_8cpp.html#a107da7bd2e6038750f7763c95925ec7d" title=" " alt="" coords="215,114,387,141"/>
+<area shape="rect" href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291" title=" " alt="" coords="435,165,531,191"/>
+<area shape="rect" href="ERF__SolverUtils_8H.html#a9071f295efe69b41bdccada862d83682" title=" " alt="" coords="223,215,379,242"/>
+<area shape="rect" href="ERF__SolverUtils_8H.html#a3611957f9ce37c1d538c9a596dc02acf" title=" " alt="" coords="223,266,379,293"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#ad9a15d481999f6a0d74a22d672a59fb5" title=" " alt="" coords="463,13,502,39"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="437,63,528,90"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="446,114,519,141"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="579,5,761,47"/>
 </map>
 </div>
 

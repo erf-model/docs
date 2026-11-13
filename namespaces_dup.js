@@ -852,7 +852,6 @@ var namespaces_dup =
     [ "NoahmpPrecipSlot", "namespaceNoahmpPrecipSlot.html", null ],
     [ "obs_nudging", "namespaceobs__nudging.html", "namespaceobs__nudging" ],
     [ "plotfile2d", "namespaceplotfile2d.html", "namespaceplotfile2d" ],
-    [ "RealBdyHydrometeorVars", "namespaceRealBdyHydrometeorVars.html", null ],
     [ "RealBdyVars", "namespaceRealBdyVars.html", null ],
     [ "rrtmgp", "namespacerrtmgp.html", [
       [ "compute_aerocom_cloudtop", "namespacerrtmgp.html#a49374093beae1d74627741563a8018f9", null ],
@@ -995,10 +994,7 @@ var namespaces_dup =
     [ "WDM6Sed", "namespaceWDM6Sed.html", null ],
     [ "WDM6SedCellScratch", "namespaceWDM6SedCellScratch.html", null ],
     [ "WDM6SedNodeScratch", "namespaceWDM6SedNodeScratch.html", null ],
-    [ "WRFBdyHydrometeorVars", "namespaceWRFBdyHydrometeorVars.html", null ],
-    [ "WRFBdyVars", "namespaceWRFBdyVars.html", [
-      [ "LegacyNumTypes", "namespaceWRFBdyVars.html#a56661641c6eecad2759ac2eb8bc093dc", null ]
-    ] ],
+    [ "WRFBdyVars", "namespaceWRFBdyVars.html", null ],
     [ "WSM6Ind", "namespaceWSM6Ind.html", null ],
     [ "WSM6Sed", "namespaceWSM6Sed.html", null ],
     [ "WSM6SedCellScratch", "namespaceWSM6SedCellScratch.html", null ],

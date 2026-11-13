@@ -4,6 +4,7 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     [ "ERF_BoundaryConditionsBaseState.cpp", "ERF__BoundaryConditionsBaseState_8cpp.html", null ],
     [ "ERF_BoundaryConditionsBndryReg.cpp", "ERF__BoundaryConditionsBndryReg_8cpp.html", null ],
     [ "ERF_BoundaryConditionsCons.cpp", "ERF__BoundaryConditionsCons_8cpp.html", null ],
+    [ "ERF_BoundaryConditionsInflowProfile.cpp", "ERF__BoundaryConditionsInflowProfile_8cpp.html", null ],
     [ "ERF_BoundaryConditionsRealbdy.cpp", "ERF__BoundaryConditionsRealbdy_8cpp.html", null ],
     [ "ERF_BoundaryConditionsXvel.cpp", "ERF__BoundaryConditionsXvel_8cpp.html", null ],
     [ "ERF_BoundaryConditionsYvel.cpp", "ERF__BoundaryConditionsYvel_8cpp.html", null ],
@@ -16,6 +17,8 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     [ "ERF_FillPatcher.H", "ERF__FillPatcher_8H.html", [
       [ "ERFFillPatcher", "classERFFillPatcher.html", "classERFFillPatcher" ]
     ] ],
+    [ "ERF_InflowProfile.cpp", "ERF__InflowProfile_8cpp.html", "ERF__InflowProfile_8cpp" ],
+    [ "ERF_InflowProfile.H", "ERF__InflowProfile_8H.html", "ERF__InflowProfile_8H" ],
     [ "ERF_MOSTAverage.cpp", "ERF__MOSTAverage_8cpp.html", null ],
     [ "ERF_MOSTAverage.H", "ERF__MOSTAverage_8H.html", [
       [ "MOSTAverage", "classMOSTAverage.html", "classMOSTAverage" ]

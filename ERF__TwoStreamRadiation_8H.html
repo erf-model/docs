@@ -331,7 +331,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// Orbital parameters of the year (Berger 1978) unless overridden: a few</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// hundred series terms and six vectors, so once per year, not per step.</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438">if</a> (orbit.<a class="code" href="structTwoStreamRadiation_1_1OrbitalCache.html#a50011a8164b4e43e4c63b99997d1e857">year</a> != year) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#ad9a15d481999f6a0d74a22d672a59fb5">if</a> (orbit.<a class="code" href="structTwoStreamRadiation_1_1OrbitalCache.html#a50011a8164b4e43e4c63b99997d1e857">year</a> != year) {</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordtype">int</span>  iyear = year;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordtype">double</span> eccen = <a class="code" href="namespaceSLMDefaultParams.html#a90d5d5db742c1b7d85318540f5218edd">rc</a>.rad_orbital_eccentricity;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordtype">double</span> obliq = <a class="code" href="namespaceSLMDefaultParams.html#a90d5d5db742c1b7d85318540f5218edd">rc</a>.rad_orbital_obliquity;</div>
@@ -354,7 +354,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    out.<a class="code" href="structTwoStreamSunDate.html#a5fd034c26cc64ad9b1c7005355ac82ba">eccf</a>   = eccf;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">return</span> out;</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a861f3a0e37e4f9568407b620e5776438"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438">if</a></div><div class="ttdeci">if(KE_decay_height &gt; 0 &amp;&amp;state_pert.nComp() &gt; RhoKE_comp)</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:74</div></div>
+<div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_ad9a15d481999f6a0d74a22d672a59fb5"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#ad9a15d481999f6a0d74a22d672a59fb5">if</a></div><div class="ttdeci">if(add_bubble)</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:60</div></div>
 <div class="ttc" id="aERF__OrbCosZenith_8H_html_a5b6412e79a7ee47be65433ec6a7760a2"><div class="ttname"><a href="ERF__OrbCosZenith_8H.html#a5b6412e79a7ee47be65433ec6a7760a2">orbital_calday</a></div><div class="ttdeci">AMREX_GPU_HOST AMREX_FORCE_INLINE double orbital_calday(int year, int mon, int day, int sec)</div><div class="ttdef"><b>Definition:</b> ERF_OrbCosZenith.H:485</div></div>
 <div class="ttc" id="aERF__OrbCosZenith_8H_html_a81525cd301fba12368ba6b6d90d33f7f"><div class="ttname"><a href="ERF__OrbCosZenith_8H.html#a81525cd301fba12368ba6b6d90d33f7f">orbital_decl</a></div><div class="ttdeci">AMREX_GPU_HOST AMREX_FORCE_INLINE void orbital_decl(double &amp;calday, double &amp;eccen, double &amp;mvelpp, double &amp;lambm0, double &amp;obliqr, double &amp;delta, double &amp;eccf)</div><div class="ttdef"><b>Definition:</b> ERF_OrbCosZenith.H:18</div></div>
 <div class="ttc" id="aERF__OrbCosZenith_8H_html_a9c8c0474bef8d3005bbf31f6404472c6"><div class="ttname"><a href="ERF__OrbCosZenith_8H.html#a9c8c0474bef8d3005bbf31f6404472c6">orbital_params</a></div><div class="ttdeci">AMREX_GPU_HOST AMREX_FORCE_INLINE void orbital_params(int &amp;iyear_AD, double &amp;eccen, double &amp;obliq, double &amp;mvelp, double &amp;obliqr, double &amp;lambm0, double &amp;mvelpp)</div><div class="ttdef"><b>Definition:</b> ERF_OrbCosZenith.H:84</div></div>
@@ -375,11 +375,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__TwoStreamRadiation_8H_a0f0467b71baf040e5e59eca06cfa460e_cgraph.png" border="0" usemap="#aERF__TwoStreamRadiation_8H_a0f0467b71baf040e5e59eca06cfa460e_cgraph" alt=""/></div>
 <map name="aERF__TwoStreamRadiation_8H_a0f0467b71baf040e5e59eca06cfa460e_cgraph" id="aERF__TwoStreamRadiation_8H_a0f0467b71baf040e5e59eca06cfa460e_cgraph">
-<area shape="rect" title="The calendar sun of the two&#45;stream model at a UTC epoch time (start_time + t)." alt="" coords="5,81,171,108"/>
-<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a861f3a0e37e4f9568407b620e5776438" title=" " alt="" coords="259,5,298,32"/>
-<area shape="rect" href="ERF__OrbCosZenith_8H.html#a5b6412e79a7ee47be65433ec6a7760a2" title=" " alt="" coords="221,56,336,83"/>
-<area shape="rect" href="ERF__OrbCosZenith_8H.html#a81525cd301fba12368ba6b6d90d33f7f" title=" " alt="" coords="229,107,328,133"/>
-<area shape="rect" href="ERF__OrbCosZenith_8H.html#a9c8c0474bef8d3005bbf31f6404472c6" title=" " alt="" coords="219,157,339,184"/>
+<area shape="rect" title="The calendar sun of the two&#45;stream model at a UTC epoch time (start_time + t)." alt="" coords="5,89,171,115"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#ad9a15d481999f6a0d74a22d672a59fb5" title=" " alt="" coords="259,13,298,39"/>
+<area shape="rect" href="ERF__OrbCosZenith_8H.html#a5b6412e79a7ee47be65433ec6a7760a2" title=" " alt="" coords="221,63,336,90"/>
+<area shape="rect" href="ERF__OrbCosZenith_8H.html#a81525cd301fba12368ba6b6d90d33f7f" title=" " alt="" coords="229,114,328,141"/>
+<area shape="rect" href="ERF__OrbCosZenith_8H.html#a9c8c0474bef8d3005bbf31f6404472c6" title=" " alt="" coords="219,165,339,191"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="387,5,569,47"/>
 </map>
 </div>
 <div class="dynheader">

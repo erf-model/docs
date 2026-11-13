@@ -33,11 +33,9 @@ var ERF__Utils_8H =
     [ "MakeProjectionWeights", "ERF__Utils_8H.html#aeb7450538d7139212cfc15e6fcd383fc", null ],
     [ "MomentumToVelocity", "ERF__Utils_8H.html#a0b812d5c2bdd531d6df797b1b227b335", null ],
     [ "quad_interp_1d", "ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604", null ],
-    [ "real_bdy_cons_maps", "ERF__Utils_8H.html#a03ffacde1cdc45e8241f236b95e18fc8", null ],
+    [ "real_bdy_cons_maps", "ERF__Utils_8H.html#a9b1378bdfe39d264cd301b9d1a5e1e87", null ],
     [ "realbdy_bc_bxs_xy", "ERF__Utils_8H.html#ab8d345634b200fdd14e878954e222f4a", null ],
     [ "realbdy_compute_interior_ghost_rhs", "ERF__Utils_8H.html#a9c92c48ea64fcef9f8cb1ebdb10f9077", null ],
-    [ "realbdy_compute_moisture_relaxation", "ERF__Utils_8H.html#a4a91dd2e8bbc3707a7a5ec4df0600b82", null ],
-    [ "realbdy_compute_moisture_relaxation", "ERF__Utils_8H.html#af55ecbb4697b206cdde0a1838d6649a2", null ],
     [ "realbdy_compute_relaxation", "ERF__Utils_8H.html#ac2249529c08cee787c0b9b56259d3447", null ],
     [ "realbdy_interior_bxs_xy", "ERF__Utils_8H.html#abc480bd281f755246fa9e6faf149b588", null ],
     [ "rebalance_columns", "ERF__Utils_8H.html#a3742f619397543dafbbe2a182d5cdf33", null ],
@@ -46,8 +44,5 @@ var ERF__Utils_8H =
     [ "thinbody_wall_dist", "ERF__Utils_8H.html#a99650b0d59ae9542586a873ea8ac142e", null ],
     [ "Time_Avg_Vel_atCC", "ERF__Utils_8H.html#abc0c2271844c330847fe737ed8ab9a68", null ],
     [ "VelocityToMomentum", "ERF__Utils_8H.html#a2e5e0e7af417da64f77e0778ed824bf9", null ],
-    [ "WeatherDataInterpolation", "ERF__Utils_8H.html#a05d64b70fcd8d62e0946cc27a429ab69", null ],
-    [ "wrf_bdy_has_separate_hydrometeors", "ERF__Utils_8H.html#a5f6321bb6d3d1baeb3ef480c9fb381cf", null ],
-    [ "wrf_bdy_var_for_moisture_component", "ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524", null ],
-    [ "wrf_moisture_target", "ERF__Utils_8H.html#aa0ecaa37e90c244d5e79cb1ab2bb7986", null ]
+    [ "WeatherDataInterpolation", "ERF__Utils_8H.html#a05d64b70fcd8d62e0946cc27a429ab69", null ]
 ];

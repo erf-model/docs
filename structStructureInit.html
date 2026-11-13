@@ -99,17 +99,17 @@ Collaboration diagram for StructureInit:</div>
 <div class="dyncontent">
 <div class="center"><img src="structStructureInit__coll__graph.png" border="0" usemap="#aStructureInit_coll__map" alt="Collaboration graph"/></div>
 <map name="aStructureInit_coll__map" id="aStructureInit_coll__map">
-<area shape="rect" title="What a structure model reads once, at start&#45;up." alt="" coords="353,200,455,227"/>
+<area shape="rect" title="What a structure model reads once, at start&#45;up." alt="" coords="393,215,495,241"/>
 <area shape="rect" title=" " alt="" coords="5,96,72,123"/>
 <area shape="rect" title=" " alt="" coords="96,96,187,123"/>
 <area shape="rect" title=" " alt="" coords="211,96,299,123"/>
 <area shape="rect" title=" " alt="" coords="329,96,367,123"/>
-<area shape="rect" title=" " alt="" coords="391,96,478,123"/>
-<area shape="rect" title=" " alt="" coords="365,5,504,47"/>
-<area shape="rect" title=" " alt="" coords="507,96,557,123"/>
-<area shape="rect" title=" " alt="" coords="612,96,713,123"/>
-<area shape="rect" title=" " alt="" coords="737,96,836,123"/>
-<area shape="rect" title=" " alt="" coords="955,96,1005,123"/>
+<area shape="rect" title=" " alt="" coords="401,96,487,123"/>
+<area shape="rect" title=" " alt="" coords="375,5,513,47"/>
+<area shape="rect" title=" " alt="" coords="547,96,597,123"/>
+<area shape="rect" title=" " alt="" coords="667,96,768,123"/>
+<area shape="rect" title=" " alt="" coords="792,96,891,123"/>
+<area shape="rect" title=" " alt="" coords="1009,96,1060,123"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -144,8 +144,15 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:aa08d9e4eedc75b77b2b928e0cb565bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">The closure's C_mu^0 on level lev.  <a href="structStructureInit.html#aa08d9e4eedc75b77b2b928e0cb565bef">More...</a><br /></td></tr>
 <tr class="separator:aa08d9e4eedc75b77b2b928e0cb565bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad22c4bcf918bbb728a023c183681a33a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStructureInit.html#ad22c4bcf918bbb728a023c183681a33a">restart_chkfile</a></td></tr>
-<tr class="memdesc:ad22c4bcf918bbb728a023c183681a33a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The checkpoint <a class="el" href="classERF.html">ERF</a> restarts from; empty on a fresh start.  <a href="structStructureInit.html#ad22c4bcf918bbb728a023c183681a33a">More...</a><br /></td></tr>
 <tr class="separator:ad22c4bcf918bbb728a023c183681a33a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a446a21f6562db583c44facf6bbc797d5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStructureInit.html#a446a21f6562db583c44facf6bbc797d5">fixed_dt</a></td></tr>
+<tr class="separator:a446a21f6562db583c44facf6bbc797d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9050371aa19288cbcf2c3d8a371c3f7c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStructureInit.html#a9050371aa19288cbcf2c3d8a371c3f7c">stop_time</a></td></tr>
+<tr class="separator:a9050371aa19288cbcf2c3d8a371c3f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aaca71fc52c26f277902a21d2072919"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStructureInit.html#a9aaca71fc52c26f277902a21d2072919">max_step</a></td></tr>
+<tr class="separator:a9aaca71fc52c26f277902a21d2072919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa04f27c7b5621630622c7e61328f89eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStructureInit.html#aa04f27c7b5621630622c7e61328f89eb">fully_compressible</a></td></tr>
+<tr class="separator:aa04f27c7b5621630622c7e61328f89eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>What a structure model reads once, at start-up. </p>
@@ -179,6 +186,36 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Cell Jacobian of a stretched or terrain-following mesh; nullptr on a uniform-dz mesh </p>
+
+</div>
+</div>
+<a id="a446a21f6562db583c44facf6bbc797d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a446a21f6562db583c44facf6bbc797d5">&#9670;&nbsp;</a></span>fixed_dt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double StructureInit::fixed_dt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The nominal step of level lev [s]: erf.fixed_dt divided by the sub-cycling ratios down to lev. Not positive when the run has no fixed step (<a class="el" href="classERF.html">ERF</a> then chooses each step from erf.cfl). <a class="el" href="structStructureStep.html#aa5d4c0896393ce8617530b8e408a97e5" title="Step of level lev [s], in double as ERF keeps it, also in a single-precision build.">StructureStep::dt</a> is the step taken: it differs on the first steps with erf.init_shrink below 1 or after a restart (growth limited by erf.change_max), and on a last step that <a class="el" href="classERF.html">ERF</a> fits to the stop time </p>
+
+</div>
+</div>
+<a id="aa04f27c7b5621630622c7e61328f89eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa04f27c7b5621630622c7e61328f89eb">&#9670;&nbsp;</a></span>fully_compressible</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool StructureInit::fully_compressible</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A level of the run, not only lev, is FullyCompressible (erf.compressibility_type); false when every level is Anelastic or PseudoIncompressible. It names the solver, not the time scheme: a FullyCompressible level with erf.timestepping_type = RK3_NoSubstepping counts </p>
 
 </div>
 </div>
@@ -245,6 +282,21 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a9aaca71fc52c26f277902a21d2072919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aaca71fc52c26f277902a21d2072919">&#9670;&nbsp;</a></span>max_step</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StructureInit::max_step</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The run stops after this many level-0 steps, counted from the start of the first run (a restart continues the count); the largest int when max_step is not given or negative </p>
+
+</div>
+</div>
 <a id="ad22c4bcf918bbb728a023c183681a33a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad22c4bcf918bbb728a023c183681a33a">&#9670;&nbsp;</a></span>restart_chkfile</h2>
 
@@ -256,8 +308,22 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>The checkpoint <a class="el" href="classERF.html">ERF</a> restarts from; empty on a fresh start </p>
 
-<p>The checkpoint <a class="el" href="classERF.html">ERF</a> restarts from; empty on a fresh start. </p>
+</div>
+</div>
+<a id="a9050371aa19288cbcf2c3d8a371c3f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9050371aa19288cbcf2c3d8a371c3f7c">&#9670;&nbsp;</a></span>stop_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double StructureInit::stop_time</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The time [s], on the clock of time, at which the run stops: the input stop_time, or stop_datetime less start_datetime; the largest double when neither is given. It is <a class="el" href="classERF.html">ERF</a>'s own stop, which can differ from the input by about 1e-7 s when start_datetime is given, so compare with a tolerance. max_step may end the run earlier </p>
 
 </div>
 </div>

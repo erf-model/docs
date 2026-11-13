@@ -112,6 +112,8 @@ var hierarchy =
     [ "IBSEBMaterial", "structIBSEBMaterial.html", null ],
     [ "IBSEBParams", "structIBSEBParams.html", null ],
     [ "erf_sbm::SBMStateAdmission::Impl", "structerf__sbm_1_1SBMStateAdmission_1_1Impl.html", null ],
+    [ "InflowLogLaw", "structInflowLogLaw.html", null ],
+    [ "InflowProfile", "structInflowProfile.html", null ],
     [ "erf_cloud_chamber::InitializationContract", "structerf__cloud__chamber_1_1InitializationContract.html", null ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],
     [ "InputSpongeData", "structInputSpongeData.html", null ],

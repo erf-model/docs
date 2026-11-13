@@ -23,6 +23,7 @@ var structInputSoundingData =
     [ "rho_inp_sound_d", "structInputSoundingData.html#a0ed3963d7dcc3c6109544a02c954d7e7", null ],
     [ "rhod_integ", "structInputSoundingData.html#a69082f3cc1ebb21e4c56a4f159ee3230", null ],
     [ "tau_nudging", "structInputSoundingData.html#ad171bf373bc5a2e5b26a058fc9fb19f9", null ],
+    [ "theta_above_ground", "structInputSoundingData.html#a57c91e9504d0b5857c22d93f2376b29a", null ],
     [ "theta_inp_sound", "structInputSoundingData.html#a620e9fa369aabdf74d3dcaf158deee09", null ],
     [ "theta_inp_sound_d", "structInputSoundingData.html#aac5ecede08aff15cf8493358020b4bae", null ],
     [ "theta_ref_inp_sound", "structInputSoundingData.html#ab6bc4d8c6a292c9bf064b1fa992a42fe", null ],
@@ -30,6 +31,7 @@ var structInputSoundingData =
     [ "U_inp_sound_d", "structInputSoundingData.html#ab9fbbffe47f91c0d123f98983e579521", null ],
     [ "V_inp_sound", "structInputSoundingData.html#a14347a117d3eaf2869ba59683e9e27cd", null ],
     [ "V_inp_sound_d", "structInputSoundingData.html#a88b37b701b1b26c9c7e29f01cf46999b", null ],
+    [ "wind_above_ground", "structInputSoundingData.html#a55f2a409d6b58a8ca81e901829b8d721", null ],
     [ "z_inp_sound", "structInputSoundingData.html#ac91199c7bdd35e8f6022297281cbd884", null ],
     [ "z_inp_sound_d", "structInputSoundingData.html#a89d2902b7ae8d6fcd81fa256bb87add8", null ]
 ];

@@ -301,7 +301,7 @@ UNITS:</h2>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> qv_index = moisture_indices.<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> qc_index = moisture_indices.<a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a> = cell_data(i, j, k, rho_comp);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a89de8c3bfc941080efb960e5119fbd61">rho</a> = cell_data(i, j, k, rho_comp);</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">bool</span> saturated = <a class="code" href="ERF__RichardsonNumber_8H.html#a21090879f1976d676d69d9856e656451">IsSaturated</a>(i, j, k, cell_data, qc_index);</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
@@ -325,11 +325,11 @@ UNITS:</h2>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        dtheta_dz = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (theta_v_kp1 - theta_v_km1) * dzInv;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = cell_data(i, j, k, rhoTheta_comp) / <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a8e4ed7630edede7500eef0da31218c36">theta</a> = cell_data(i, j, k, rhoTheta_comp) / <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_kp1 = cell_data(i, j, k+1, rhoTheta_comp) / cell_data(i, j, k+1, rho_comp);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_km1 = cell_data(i, j, k-1, rhoTheta_comp) / cell_data(i, j, k-1, rho_comp);</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        inv_theta = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        inv_theta = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a8e4ed7630edede7500eef0da31218c36">theta</a>;</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        dtheta_dz = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (theta_kp1 - theta_km1) * dzInv;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    }</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
@@ -343,8 +343,8 @@ UNITS:</h2>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:41</div></div>
 <div class="ttc" id="aERF__RichardsonNumber_8H_html_a21090879f1976d676d69d9856e656451"><div class="ttname"><a href="ERF__RichardsonNumber_8H.html#a21090879f1976d676d69d9856e656451">IsSaturated</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE bool IsSaturated(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, int qc_index)</div><div class="ttdef"><b>Definition:</b> ERF_RichardsonNumber.H:82</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="anamespaceMicVar__Kess_html_a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:25</div></div>
-<div class="ttc" id="anamespaceMicVar__Kess_html_a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36"><div class="ttname"><a href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">MicVar_Kess::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:26</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_a088df7ec05bdf710003427a60850dc14a89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:25</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_a088df7ec05bdf710003427a60850dc14a8e4ed7630edede7500eef0da31218c36"><div class="ttname"><a href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a8e4ed7630edede7500eef0da31218c36">MicVar_Kess::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:26</div></div>
 <div class="ttc" id="astructMoistureComponentIndices_html_a6e5a18c589f998753e87ccb458a5374b"><div class="ttname"><a href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">MoistureComponentIndices::qv</a></div><div class="ttdeci">int qv</div><div class="ttdoc">water vapor</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:277</div></div>
 <div class="ttc" id="astructMoistureComponentIndices_html_ab99846e54aa46d95389fd611836723e3"><div class="ttname"><a href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">MoistureComponentIndices::qc</a></div><div class="ttdeci">int qc</div><div class="ttdoc">cloud liquid water</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:278</div></div>
 </div><!-- fragment -->
@@ -373,7 +373,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="732,35,831,61"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#ae2dce36c0088a0243d29d3c90b38c21c" title=" " alt="" coords="461,5,684,32"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda" title=" " alt="" coords="473,57,673,98"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#affb79ce0630f5bd76dc399601d693fbb" title=" " alt="" coords="213,35,413,61"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a96c0d37a4f9c5959f5bfe1818fa9145b" title=" " alt="" coords="213,35,413,61"/>
 <area shape="rect" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc" title=" " alt="" coords="5,35,165,61"/>
 </map>
 </div>
@@ -462,7 +462,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> qv_index = moisture_indices.<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> qc_index = moisture_indices.<a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a> = cell_data(i, j, k, rho_comp);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a89de8c3bfc941080efb960e5119fbd61">rho</a> = cell_data(i, j, k, rho_comp);</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordtype">bool</span> saturated = <a class="code" href="ERF__RichardsonNumber_8H.html#a21090879f1976d676d69d9856e656451">IsSaturated</a>(i, j, k, cell_data, qc_index);</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
@@ -552,9 +552,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> = cell_data(i, j, k, rhoTheta_comp) / <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a8e4ed7630edede7500eef0da31218c36">theta</a> = cell_data(i, j, k, rhoTheta_comp) / <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        inv_theta = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        inv_theta = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a8e4ed7630edede7500eef0da31218c36">theta</a>;</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="keywordflow">if</span> (is_covered_kp1) {</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
@@ -565,10 +565,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_km1 = cell_data(i, j, k-1, rhoTheta_comp) / cell_data(i, j, k-1, rho_comp);</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <span class="keywordflow">if</span> (c_cflag(i,j,k-2).isCovered()) {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                dtheta_dz = (<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> - theta_km1) * dzInv;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                dtheta_dz = (<a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a8e4ed7630edede7500eef0da31218c36">theta</a> - theta_km1) * dzInv;</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_km2 = cell_data(i, j, k-2, rhoTheta_comp) / cell_data(i, j, k-2, rho_comp);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                dtheta_dz = (<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a> - <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_km1 + theta_km2) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                dtheta_dz = (<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*<a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a8e4ed7630edede7500eef0da31218c36">theta</a> - <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_km1 + theta_km2) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            }</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_covered_km1) {</div>
@@ -576,10 +576,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_kp1 = cell_data(i, j, k+1, rhoTheta_comp) / cell_data(i, j, k+1, rho_comp);</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="keywordflow">if</span> (c_cflag(i,j,k+2).isCovered()) {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                dtheta_dz = (theta_kp1 - <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>) * dzInv;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                dtheta_dz = (theta_kp1 - <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a8e4ed7630edede7500eef0da31218c36">theta</a>) * dzInv;</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_kp2 = cell_data(i, j, k+2, rhoTheta_comp) / cell_data(i, j, k+2, rho_comp);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                dtheta_dz = (-theta_kp2 + <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_kp1 - <a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*<a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa8e4ed7630edede7500eef0da31218c36">theta</a>) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                dtheta_dz = (-theta_kp2 + <a class="code" href="ERF__NumericalConstants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_kp1 - <a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*<a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a8e4ed7630edede7500eef0da31218c36">theta</a>) * <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            }</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        } <span class="keywordflow">else</span> {</div>
@@ -620,7 +620,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__RichardsonNumber_8H_acca27ff2b620424a346a1222d84ff664_icgraph" id="aERF__RichardsonNumber_8H_acca27ff2b620424a346a1222d84ff664_icgraph">
 <area shape="rect" title=" " alt="" coords="709,13,832,39"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda" title=" " alt="" coords="461,5,661,47"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#affb79ce0630f5bd76dc399601d693fbb" title=" " alt="" coords="213,13,413,39"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a96c0d37a4f9c5959f5bfe1818fa9145b" title=" " alt="" coords="213,13,413,39"/>
 <area shape="rect" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc" title=" " alt="" coords="5,13,165,39"/>
 </map>
 </div>
@@ -675,7 +675,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="732,35,885,61"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#ae2dce36c0088a0243d29d3c90b38c21c" title=" " alt="" coords="461,5,684,32"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda" title=" " alt="" coords="473,57,673,98"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#affb79ce0630f5bd76dc399601d693fbb" title=" " alt="" coords="213,35,413,61"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a96c0d37a4f9c5959f5bfe1818fa9145b" title=" " alt="" coords="213,35,413,61"/>
 <area shape="rect" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc" title=" " alt="" coords="5,35,165,61"/>
 </map>
 </div>
@@ -775,7 +775,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="732,35,907,61"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#ae2dce36c0088a0243d29d3c90b38c21c" title=" " alt="" coords="461,5,684,32"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda" title=" " alt="" coords="473,57,673,98"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#affb79ce0630f5bd76dc399601d693fbb" title=" " alt="" coords="213,35,413,61"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a96c0d37a4f9c5959f5bfe1818fa9145b" title=" " alt="" coords="213,35,413,61"/>
 <area shape="rect" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc" title=" " alt="" coords="5,35,165,61"/>
 </map>
 </div>
@@ -880,13 +880,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keyword">auto</span> cell_avg = [=] (<span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; vfrac,</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                         <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; vel,</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                         <span class="keywordtype">int</span> ii, <span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> kk, <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a>, <span class="keywordtype">int</span> dj,</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                         <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00da3ccb29f130aa6df36688aa0e9a234f28">q</a>) -&gt; <span class="keywordtype">bool</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                         <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8a3ccb29f130aa6df36688aa0e9a234f28">q</a>) -&gt; <span class="keywordtype">bool</span></div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    {</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> f0   = vfrac(ii,    jj,    kk);</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> f1   = vfrac(ii+<a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a>, jj+dj, kk);</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fsum = f0 + f1;</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keywordflow">if</span> (fsum &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00da3ccb29f130aa6df36688aa0e9a234f28">q</a> = ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * vel(ii,    jj,    kk) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8a3ccb29f130aa6df36688aa0e9a234f28">q</a> = ((f0 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f0 * vel(ii,    jj,    kk) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) +</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;             (f1 &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> ? f1 * vel(ii+<a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a>, jj+dj, kk) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) / fsum;</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    };</div>
@@ -956,7 +956,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160; </div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="keywordflow">return</span> S2_vert;</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;}</div>
-<div class="ttc" id="anamespaceWSM6Ind_html_aa080c2fd4acd9ccb8c87d956a055c00da3ccb29f130aa6df36688aa0e9a234f28"><div class="ttname"><a href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00da3ccb29f130aa6df36688aa0e9a234f28">WSM6Ind::q</a></div><div class="ttdeci">@ q</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:294</div></div>
+<div class="ttc" id="anamespaceWSM6Ind_html_a93329be948dcf39b320f2beb5ad33ef8a3ccb29f130aa6df36688aa0e9a234f28"><div class="ttname"><a href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8a3ccb29f130aa6df36688aa0e9a234f28">WSM6Ind::q</a></div><div class="ttdeci">@ q</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:294</div></div>
 <div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_af40ac9cec1030364aec22c7d21109401"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">module_mp_morr_two_moment::di</a></div><div class="ttdeci">real(c_double), private di</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:203</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB()</a>.</p>
@@ -967,7 +967,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__RichardsonNumber_8H_ad5428fe149f7586c87e660d821e4757e_icgraph" id="aERF__RichardsonNumber_8H_ad5428fe149f7586c87e660d821e4757e_icgraph">
 <area shape="rect" title=" " alt="" coords="709,13,908,39"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda" title=" " alt="" coords="461,5,661,47"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#affb79ce0630f5bd76dc399601d693fbb" title=" " alt="" coords="213,13,413,39"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a96c0d37a4f9c5959f5bfe1818fa9145b" title=" " alt="" coords="213,13,413,39"/>
 <area shape="rect" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc" title=" " alt="" coords="5,13,165,39"/>
 </map>
 </div>
@@ -1032,13 +1032,13 @@ Here is the caller graph for this function:</div>
 <p>PHYSICAL JUSTIFICATION: Threshold of 1e-8 kg/kg (0.01 g/kg) is typical for distinguishing cloudy from clear regions in LES. Below this threshold, condensate is negligible and air is effectively unsaturated. </p>
 <div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (qc_index &gt;= 0) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a> = cell_data(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMorrSed.html#aa201fbac574ab839618a9c34b8a0d29eacc9abefa6649d1e5bf14534c1a2c98ec">qc</a> = cell_data(i, j, k, qc_index) / <a class="code" href="namespaceMicVar__Kess.html#a41cb5c1d3a61a2148162f8f9f368926aa89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="namespaceMorrSed.html#aa201fbac574ab839618a9c34b8a0d29eacc9abefa6649d1e5bf14534c1a2c98ec">qc</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-8));  <span class="comment">// 0.01 g/kg threshold</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a89de8c3bfc941080efb960e5119fbd61">rho</a> = cell_data(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMorrSed.html#a51000aee465e071387f2323a5b862de2acc9abefa6649d1e5bf14534c1a2c98ec">qc</a> = cell_data(i, j, k, qc_index) / <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="namespaceMorrSed.html#a51000aee465e071387f2323a5b862de2acc9abefa6649d1e5bf14534c1a2c98ec">qc</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-8));  <span class="comment">// 0.01 g/kg threshold</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
-<div class="ttc" id="anamespaceMorrSed_html_aa201fbac574ab839618a9c34b8a0d29eacc9abefa6649d1e5bf14534c1a2c98ec"><div class="ttname"><a href="namespaceMorrSed.html#aa201fbac574ab839618a9c34b8a0d29eacc9abefa6649d1e5bf14534c1a2c98ec">MorrSed::qc</a></div><div class="ttdeci">@ qc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:110</div></div>
+<div class="ttc" id="anamespaceMorrSed_html_a51000aee465e071387f2323a5b862de2acc9abefa6649d1e5bf14534c1a2c98ec"><div class="ttname"><a href="namespaceMorrSed.html#a51000aee465e071387f2323a5b862de2acc9abefa6649d1e5bf14534c1a2c98ec">MorrSed::qc</a></div><div class="ttdeci">@ qc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:110</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__RichardsonNumber_8H.html#ac3c81017043d7d3027d85ff48698e9b3">ComputeN2()</a>, and <a class="el" href="ERF__RichardsonNumber_8H.html#acca27ff2b620424a346a1222d84ff664">ComputeN2_EB()</a>.</p>
 <div class="dynheader">
@@ -1051,7 +1051,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__RichardsonNumber_8H.html#acca27ff2b620424a346a1222d84ff664" title=" " alt="" coords="732,64,855,91"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#ae2dce36c0088a0243d29d3c90b38c21c" title=" " alt="" coords="461,5,684,32"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda" title=" " alt="" coords="473,57,673,98"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#affb79ce0630f5bd76dc399601d693fbb" title=" " alt="" coords="213,35,413,61"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a96c0d37a4f9c5959f5bfe1818fa9145b" title=" " alt="" coords="213,35,413,61"/>
 <area shape="rect" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc" title=" " alt="" coords="5,35,165,61"/>
 </map>
 </div>
@@ -1113,7 +1113,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="732,35,863,61"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#ae2dce36c0088a0243d29d3c90b38c21c" title=" " alt="" coords="461,5,684,32"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda" title=" " alt="" coords="473,57,673,98"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#affb79ce0630f5bd76dc399601d693fbb" title=" " alt="" coords="213,35,413,61"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a96c0d37a4f9c5959f5bfe1818fa9145b" title=" " alt="" coords="213,35,413,61"/>
 <area shape="rect" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc" title=" " alt="" coords="5,35,165,61"/>
 </map>
 </div>

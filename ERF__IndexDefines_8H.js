@@ -84,6 +84,5 @@ var ERF__IndexDefines_8H =
       [ "ext_dir_upwind", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d", null ]
     ] ],
     [ "cons_bc_comp", "ERF__IndexDefines_8H.html#a2884cbba5893be6246a15c6f98bdb2c2", null ],
-    [ "cons_bc_run_contiguous", "ERF__IndexDefines_8H.html#aabb4e193af171369deb24f5057c12187", null ],
-    [ "LegacyNumTypes", "ERF__IndexDefines_8H.html#a56661641c6eecad2759ac2eb8bc093dc", null ]
+    [ "cons_bc_run_contiguous", "ERF__IndexDefines_8H.html#aabb4e193af171369deb24f5057c12187", null ]
 ];

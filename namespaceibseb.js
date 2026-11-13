@@ -18,6 +18,7 @@ var namespaceibseb =
     [ "hemisphere_min_sz", "namespaceibseb.html#a71f3d5118721dd712b05f248d3bdf901", null ],
     [ "hemisphere_ray_weight", "namespaceibseb.html#a960e31ef0c9dcb2ab36bf17656c649e3", null ],
     [ "landing_kept", "namespaceibseb.html#aee9f8549fed2ab2a3b823529a619d8da", null ],
+    [ "louis_factors", "namespaceibseb.html#a8c0c3ac1e47db1184733f97c735f4900", null ],
     [ "orbital_hour_angle", "namespaceibseb.html#a68b72fa022d84204be8fccd9cd49220a", null ],
     [ "pack_landing", "namespaceibseb.html#a20bd24c434f13e1ca9335d611f9ca144", null ],
     [ "ray_blocked", "namespaceibseb.html#ad57393ea9cb57e0e9ef59027908c6e3b", null ],

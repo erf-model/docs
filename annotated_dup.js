@@ -268,6 +268,8 @@ var annotated_dup =
     [ "IBFaceSet", "classIBFaceSet.html", "classIBFaceSet" ],
     [ "IBSEBMaterial", "structIBSEBMaterial.html", "structIBSEBMaterial" ],
     [ "IBSEBParams", "structIBSEBParams.html", "structIBSEBParams" ],
+    [ "InflowLogLaw", "structInflowLogLaw.html", "structInflowLogLaw" ],
+    [ "InflowProfile", "structInflowProfile.html", "structInflowProfile" ],
     [ "InputSoundingData", "structInputSoundingData.html", "structInputSoundingData" ],
     [ "InputSpongeData", "structInputSpongeData.html", "structInputSpongeData" ],
     [ "IRadiation", "classIRadiation.html", "classIRadiation" ],

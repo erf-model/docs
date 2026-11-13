@@ -14,5 +14,6 @@ var dir_474797bc848e6fb9c6c58a517f541e7d =
       [ "IBSEBParams", "structIBSEBParams.html", "structIBSEBParams" ]
     ] ],
     [ "ERF_IBSEBSlab.H", "ERF__IBSEBSlab_8H.html", "ERF__IBSEBSlab_8H" ],
-    [ "ERF_IBSEBSolar.H", "ERF__IBSEBSolar_8H.html", "ERF__IBSEBSolar_8H" ]
+    [ "ERF_IBSEBSolar.H", "ERF__IBSEBSolar_8H.html", "ERF__IBSEBSolar_8H" ],
+    [ "ERF_IBSEBWallFunction.H", "ERF__IBSEBWallFunction_8H.html", "ERF__IBSEBWallFunction_8H" ]
 ];

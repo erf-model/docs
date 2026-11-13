@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"ERF__GridUtils_8H.html#ae7384a4c73e97b7a05717834c3b102f7":[3,0,1,29,13,4],
 "ERF__GridUtils_8H.html#aff966df71b057d306bfcafcfbac29716":[3,0,1,29,13,8],
 "ERF__GridUtils_8H_source.html":[3,0,1,29,13],
 "ERF__HSEUtils_8H.html":[3,0,1,29,16],
@@ -89,6 +90,9 @@ var NAVTREEINDEX4 =
 "ERF__IBSEBSolar_8H.html#aefea37a58bd4fed1e073d17b371177db":[3,0,1,10,8,2],
 "ERF__IBSEBSolar_8H.html#af9e6022105b8e33706d0555e274bbfb3":[3,0,1,10,8,31],
 "ERF__IBSEBSolar_8H_source.html":[3,0,1,10,8],
+"ERF__IBSEBWallFunction_8H.html":[3,0,1,10,9],
+"ERF__IBSEBWallFunction_8H.html#a8c0c3ac1e47db1184733f97c735f4900":[3,0,1,10,9,0],
+"ERF__IBSEBWallFunction_8H_source.html":[3,0,1,10,9],
 "ERF__IBSEB_8cpp.html":[3,0,1,10,2],
 "ERF__IceFall_8cpp.html":[3,0,1,16,4,1],
 "ERF__ImmersedBuildingMasks_8H.html":[3,0,1,25,10],
@@ -220,7 +224,6 @@ var NAVTREEINDEX4 =
 "ERF__IndexDefines_8H.html#a49fe20d81f4d923a4a6ec4eb1652072b":[3,0,1,38,29],
 "ERF__IndexDefines_8H.html#a4d0a4735b7019c88a28b42c3d4787154":[3,0,1,38,17],
 "ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c":[3,0,1,38,0],
-"ERF__IndexDefines_8H.html#a56661641c6eecad2759ac2eb8bc093dc":[3,0,1,38,43],
 "ERF__IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9":[3,0,1,38,4],
 "ERF__IndexDefines_8H.html#a7f9c844ee8a2e1930ade0911e8692667":[3,0,1,38,16],
 "ERF__IndexDefines_8H.html#a7fb02ae8fd2f46fd9cb1b247b058bd46":[3,0,1,38,11],
@@ -246,8 +249,5 @@ var NAVTREEINDEX4 =
 "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a5b53c212c70ca8def8f3e0f2c5016998":[3,0,1,38,38,2],
 "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a6edd20e2cefe2061bec0e1ebbf5c8573":[3,0,1,38,38,12],
 "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161":[3,0,1,38,38,3],
-"ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a":[3,0,1,38,38,4],
-"ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a88183b946cc5f0e8c96b2e66e1c74a7e":[3,0,1,38,38,13],
-"ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9":[3,0,1,38,38,5],
-"ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a9c29b64a7627155706a1cd93682b4351":[3,0,1,38,38,7]
+"ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a":[3,0,1,38,38,4]
 };

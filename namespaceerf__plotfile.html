@@ -239,14 +239,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.size() &gt; 4 &amp;&amp; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.compare(0, 4, <span class="stringliteral">&quot;rhoQ&quot;</span>) == 0) {</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment">// Parse the digits by hand, stopping once past the RhoQ11 limit, so a</span></div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="comment">// long numeric suffix cannot overflow int (std::stoi would throw)</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00da3ccb29f130aa6df36688aa0e9a234f28">q</a> = 0;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8a3ccb29f130aa6df36688aa0e9a234f28">q</a> = 0;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">for</span> (std::size_t i = 4; i &lt; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.size(); ++i) {</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span> c = <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>[i];</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keywordflow">if</span> (c &lt; &#39;0&#39; || c &gt; <span class="charliteral">&#39;9&#39;</span>) <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00da3ccb29f130aa6df36688aa0e9a234f28">q</a> = 10 * <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00da3ccb29f130aa6df36688aa0e9a234f28">q</a> + (c - <span class="charliteral">&#39;0&#39;</span>);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00da3ccb29f130aa6df36688aa0e9a234f28">q</a> &gt; 11) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8a3ccb29f130aa6df36688aa0e9a234f28">q</a> = 10 * <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8a3ccb29f130aa6df36688aa0e9a234f28">q</a> + (c - <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8a3ccb29f130aa6df36688aa0e9a234f28">q</a> &gt; 11) <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        }</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">plot3d_q_conserved_component_index</a>(<a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00da3ccb29f130aa6df36688aa0e9a234f28">q</a>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">plot3d_q_conserved_component_index</a>(<a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8a3ccb29f130aa6df36688aa0e9a234f28">q</a>);</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">return</span> -1;</div>
@@ -257,10 +257,10 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:63</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_afe652c9255014a6a625e75d2b654aebb"><div class="ttname"><a href="ERF__IndexDefines_8H.html#afe652c9255014a6a625e75d2b654aebb">NSCALARS_DUST</a></div><div class="ttdeci">#define NSCALARS_DUST</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:30</div></div>
 <div class="ttc" id="aERF__Plotfile2DCatalog_8cpp_html_a9b45b3e13bd9167aab02e17e08916231"><div class="ttname"><a href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DCatalog.cpp:128</div></div>
-<div class="ttc" id="anamespaceWSM6Ind_html_aa080c2fd4acd9ccb8c87d956a055c00da3ccb29f130aa6df36688aa0e9a234f28"><div class="ttname"><a href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00da3ccb29f130aa6df36688aa0e9a234f28">WSM6Ind::q</a></div><div class="ttdeci">@ q</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:294</div></div>
+<div class="ttc" id="anamespaceWSM6Ind_html_a93329be948dcf39b320f2beb5ad33ef8a3ccb29f130aa6df36688aa0e9a234f28"><div class="ttname"><a href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8a3ccb29f130aa6df36688aa0e9a234f28">WSM6Ind::q</a></div><div class="ttdeci">@ q</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:294</div></div>
 <div class="ttc" id="anamespaceerf__plotfile_html_a11cf3940bc14ad31912d5df8d5f81402"><div class="ttname"><a href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">erf_plotfile::plot3d_q_conserved_component_index</a></div><div class="ttdeci">int plot3d_q_conserved_component_index(const int q)</div><div class="ttdoc">Conserved-state component holding the q-th moist variable, or -1 if q is outside the fixed RhoQ1....</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:109</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#acf3039bca346f059829657aaa321faa6">ERF::FillPlot3DVars()</a>, and <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#acf3039bca346f059829657aaa321faa6">ERF::FillPlot3DVars()</a>, <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>, and <a class="el" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f">ERF::WriteSubvolume()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -275,9 +275,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__plotfile_a2a0598d635fec5686185ce5597c9e985_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a2a0598d635fec5686185ce5597c9e985_icgraph" alt=""/></div>
 <map name="anamespaceerf__plotfile_a2a0598d635fec5686185ce5597c9e985_icgraph" id="anamespaceerf__plotfile_a2a0598d635fec5686185ce5597c9e985_icgraph">
-<area shape="rect" title="Conserved&#45;state component behind a raw state variable name (&quot;density&quot;, &quot;rhotheta&quot;,..." alt="" coords="705,27,924,69"/>
+<area shape="rect" title="Conserved&#45;state component behind a raw state variable name (&quot;density&quot;, &quot;rhotheta&quot;,..." alt="" coords="705,57,924,98"/>
 <area shape="rect" href="classERF.html#acf3039bca346f059829657aaa321faa6" title=" " alt="" coords="492,5,636,32"/>
 <area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="471,57,657,98"/>
+<area shape="rect" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f" title=" " alt="" coords="483,123,645,149"/>
 <area shape="rect" href="classERF.html#a254731b18d5438af1e37b7cb128da4f0" title=" " alt="" coords="184,39,423,65"/>
 <area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="214,89,393,116"/>
 <area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,89,136,116"/>
@@ -656,7 +657,7 @@ Here is the caller graph for this function:</div>
 <p>Conserved-state component holding the q-th moist variable, or -1 if q is outside the fixed RhoQ1..RhoQ11 layout. </p>
 <div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span> (q &lt; 1 || q &gt; 11) <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a> + <a class="code" href="namespaceWSM6Ind.html#aa080c2fd4acd9ccb8c87d956a055c00da3ccb29f130aa6df36688aa0e9a234f28">q</a> - 1;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a> + <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8a3ccb29f130aa6df36688aa0e9a234f28">q</a> - 1;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">plot3d_conserved_component_index()</a>.</p>
@@ -665,10 +666,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__plotfile_a11cf3940bc14ad31912d5df8d5f81402_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a11cf3940bc14ad31912d5df8d5f81402_icgraph" alt=""/></div>
 <map name="anamespaceerf__plotfile_a11cf3940bc14ad31912d5df8d5f81402_icgraph" id="anamespaceerf__plotfile_a11cf3940bc14ad31912d5df8d5f81402_icgraph">
-<area shape="rect" title="Conserved&#45;state component holding the q&#45;th moist variable, or &#45;1 if q is outside the fixed RhoQ1...." alt="" coords="972,27,1207,69"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985" title="Conserved&#45;state component behind a raw state variable name (&quot;density&quot;, &quot;rhotheta&quot;,..." alt="" coords="705,27,924,69"/>
+<area shape="rect" title="Conserved&#45;state component holding the q&#45;th moist variable, or &#45;1 if q is outside the fixed RhoQ1...." alt="" coords="972,57,1207,98"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985" title="Conserved&#45;state component behind a raw state variable name (&quot;density&quot;, &quot;rhotheta&quot;,..." alt="" coords="705,57,924,98"/>
 <area shape="rect" href="classERF.html#acf3039bca346f059829657aaa321faa6" title=" " alt="" coords="492,5,636,32"/>
 <area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="471,57,657,98"/>
+<area shape="rect" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f" title=" " alt="" coords="483,123,645,149"/>
 <area shape="rect" href="classERF.html#a254731b18d5438af1e37b7cb128da4f0" title=" " alt="" coords="184,39,423,65"/>
 <area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="214,89,393,116"/>
 <area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,89,136,116"/>
@@ -892,9 +894,9 @@ Here is the caller graph for this function:</div>
 
 <p>Whether the SW/LW heating-rate storage (qsrc_sw, qsrc_lw) exists: every erf.radiation_model other than None (RRTMGP, Simple, TwoStream) allocates the same qheating_rates array. </p>
 <div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> rad_model != <a class="code" href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75">RadiationType::None</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> rad_model != <a class="code" href="namespaceLSM__Type.html#a44a19287cd78f948d37b7896e5099f61aa18cb2995cf0825da0134679265f2c75">RadiationType::None</a>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="ttc" id="anamespaceLSM__Type_html_a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75"><div class="ttname"><a href="namespaceLSM__Type.html#a9d49e9b75bcf353e7edffdf36d048263aa18cb2995cf0825da0134679265f2c75">LSM_Type::None</a></div><div class="ttdeci">@ None</div><div class="ttdef"><b>Definition:</b> ERF_LSM_Types.H:6</div></div>
+<div class="ttc" id="anamespaceLSM__Type_html_a44a19287cd78f948d37b7896e5099f61aa18cb2995cf0825da0134679265f2c75"><div class="ttname"><a href="namespaceLSM__Type.html#a44a19287cd78f948d37b7896e5099f61aa18cb2995cf0825da0134679265f2c75">LSM_Type::None</a></div><div class="ttdeci">@ None</div><div class="ttdef"><b>Definition:</b> ERF_LSM_Types.H:6</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a254731b18d5438af1e37b7cb128da4f0">ERF::canonicalizePlot3DVariables()</a>.</p>
 <div class="dynheader">

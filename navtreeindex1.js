@@ -82,10 +82,11 @@ var NAVTREEINDEX1 =
 "ERF__BoundaryConditionsBaseState_8cpp.html":[3,0,1,2,1],
 "ERF__BoundaryConditionsBndryReg_8cpp.html":[3,0,1,2,2],
 "ERF__BoundaryConditionsCons_8cpp.html":[3,0,1,2,3],
-"ERF__BoundaryConditionsRealbdy_8cpp.html":[3,0,1,2,4],
-"ERF__BoundaryConditionsXvel_8cpp.html":[3,0,1,2,5],
-"ERF__BoundaryConditionsYvel_8cpp.html":[3,0,1,2,6],
-"ERF__BoundaryConditionsZvel_8cpp.html":[3,0,1,2,7],
+"ERF__BoundaryConditionsInflowProfile_8cpp.html":[3,0,1,2,4],
+"ERF__BoundaryConditionsRealbdy_8cpp.html":[3,0,1,2,5],
+"ERF__BoundaryConditionsXvel_8cpp.html":[3,0,1,2,6],
+"ERF__BoundaryConditionsYvel_8cpp.html":[3,0,1,2,7],
+"ERF__BoundaryConditionsZvel_8cpp.html":[3,0,1,2,8],
 "ERF__BuildDescription_8cpp.html":[3,0,1,12,0],
 "ERF__BuildDescription_8cpp.html#a3ddee66953de2cc0c4c08088fe6dcf86":[3,0,1,12,0,0],
 "ERF__BuildDescription_8cpp.html#adf692ad3e31b26f7a749f9b3a2e02787":[3,0,1,12,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__CloudChamber_8H.html#af2ac51aadbcdbcf6794bd3eb5bd7b427":[3,0,1,22,0,11],
 "ERF__CloudChamber_8H.html#afd26525f3c6aeca1d4527922bd6897e1":[3,0,1,22,0,10],
 "ERF__CloudChamber_8H_source.html":[3,0,1,22,0],
-"ERF__CloudSAM_8cpp.html":[3,0,1,16,4,0],
-"ERF__CoarseFineFaces_8cpp.html":[3,0,1,14,0]
+"ERF__CloudSAM_8cpp.html":[3,0,1,16,4,0]
 };
