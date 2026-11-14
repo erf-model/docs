@@ -1,6 +1,7 @@
 var structRadChoice =
 [
     [ "check_seb_hydrology", "structRadChoice.html#a045c5bf73435f93c5e2e7a97f296705a", null ],
+    [ "check_seb_snow", "structRadChoice.html#ab1ec97d7b209747ada0cc86b045f4e30", null ],
     [ "clamp_high", "structRadChoice.html#a2a8a519f944e5d3ee43b1a55702970d6", null ],
     [ "clamp_low", "structRadChoice.html#a9f0a6c09f68870ec3155711e48281ba4", null ],
     [ "init_params", "structRadChoice.html#a4ea2593a6aa37cd8b1755e666f483034", null ],
@@ -69,6 +70,10 @@ var structRadChoice =
     [ "seb_q_deep_default", "structRadChoice.html#adb5f6ceebb2e17de0ab25f498829cf3d", null ],
     [ "seb_q_sfc_default", "structRadChoice.html#a624193db9250fe0e0facd659b48a8854", null ],
     [ "seb_restore_timescale_s", "structRadChoice.html#a37770d5c5a25e46546a38d718ef2ef6b", null ],
+    [ "seb_snow_albedo", "structRadChoice.html#a280d8cc9ef1155cac465ad75c36d441a", null ],
+    [ "seb_snow_critical_swe_kg_m2", "structRadChoice.html#ac446626da82fdf2b03c8e21086950d74", null ],
+    [ "seb_snow_enable", "structRadChoice.html#a1be7c07e004a8693d2531ddf9d7f1f65", null ],
+    [ "seb_snow_initial_swe_kg_m2", "structRadChoice.html#ab7febedaeff28879b19075d5bd99fcde", null ],
     [ "seb_soil_moisture_fc", "structRadChoice.html#ab61594db1c73a65d868814fe88a8f26e", null ],
     [ "seb_soil_moisture_wilt", "structRadChoice.html#a9a8c2fd125b38a9573f243041bef1579", null ],
     [ "seb_soil_porosity", "structRadChoice.html#a7c45dc6685c5750ad01362a1f99186fd", null ],

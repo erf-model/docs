@@ -1,5 +1,17 @@
 var NAVTREEINDEX6 =
 {
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#a420d78bf983d6025fd797e5276faa2fb":[3,0,1,22,36,2],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#a42ead2536925d1d432b8786250822ff3":[3,0,1,22,36,0],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#a44cb0df5234976159e854b6592f1ec96":[3,0,1,22,36,5],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#a452cb7fe74e616d1c42256bea70249f0":[3,0,1,22,36,12],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#a5e9caa74b9ef9befb527201d7e904801":[3,0,1,22,36,20],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#a7bfcbac61864ac586a487dbd01121849":[3,0,1,22,36,1],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30":[3,0,1,22,36,13],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#aa0d108780ca098fb9e01ad8e1395c11e":[3,0,1,22,36,23],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#aa65c804881ec6cd9875c25960b6a199d":[3,0,1,22,36,17],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12":[3,0,1,22,36,14],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#abacc952d5e5647ae139adc36747da411":[3,0,1,22,36,16],
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#acbee75078fca666d65082f58f68e94f0":[3,0,1,22,36,25],
 "ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad00775a8a12a6ab0aa0b70d7d6cca197":[3,0,1,22,36,21],
 "ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad0665f7cbddf3a7f15d78b72a92c5e80":[3,0,1,22,36,3],
 "ERF__InitCustomPertVels__IsentropicVortex_8H.html#ae40e267a3c278551001f3792a076b9ca":[3,0,1,22,36,4],
@@ -237,17 +249,5 @@ var NAVTREEINDEX6 =
 "ERF__InitCustomPertVels__TurbulentInflow_8H.html#ad657c068e6dd792762ab78e1eb94f6c1":[3,0,1,22,45,14],
 "ERF__InitCustomPertVels__TurbulentInflow_8H.html#adf8f0b71a56c6dbc77312a07ce0e0f64":[3,0,1,22,45,17],
 "ERF__InitCustomPertVels__TurbulentInflow_8H_source.html":[3,0,1,22,45],
-"ERF__InitCustomPertVels__UserDefined_8H.html":[3,0,1,22,46],
-"ERF__InitCustomPertVels__UserDefined_8H.html#a43ae77dd0457ed5fefa12e4ff2e72114":[3,0,1,22,46,1],
-"ERF__InitCustomPertVels__UserDefined_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb":[3,0,1,22,46,3],
-"ERF__InitCustomPertVels__UserDefined_8H.html#a5db62fb521a31b18ce526b18e18e17b8":[3,0,1,22,46,2],
-"ERF__InitCustomPertVels__UserDefined_8H.html#a6b5813abfd29d3281784d304d31a86b3":[3,0,1,22,46,4],
-"ERF__InitCustomPertVels__UserDefined_8H.html#a7f74e9554c1ab66998e1319960f1e82c":[3,0,1,22,46,7],
-"ERF__InitCustomPertVels__UserDefined_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb":[3,0,1,22,46,8],
-"ERF__InitCustomPertVels__UserDefined_8H.html#aab0721caeef18467e0169b40bc1f8dd1":[3,0,1,22,46,6],
-"ERF__InitCustomPertVels__UserDefined_8H.html#acd69dd589ed4831828bc6de35ee45844":[3,0,1,22,46,9],
-"ERF__InitCustomPertVels__UserDefined_8H.html#ad3f35fb74a893ceb0d8afcc39e39a84b":[3,0,1,22,46,5],
-"ERF__InitCustomPertVels__UserDefined_8H.html#afcc136319159fcdf66beaff0b0782f93":[3,0,1,22,46,0],
-"ERF__InitCustomPertVels__UserDefined_8H_source.html":[3,0,1,22,46],
-"ERF__InitCustomPertVels__WitchOfAgnesi_8H.html":[3,0,1,22,47]
+"ERF__InitCustomPertVels__UserDefined_8H.html":[3,0,1,22,46]
 };
