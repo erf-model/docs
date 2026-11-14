@@ -1,5 +1,10 @@
 var NAVTREEINDEX50 =
 {
+"structDiffusiveRateSettings.html#a7e4561bac3928c48d9656f0ac44c9b42":[2,0,50,0],
+"structDiffusiveRateSettings.html#aabe25f485742495dc89a31ca36d4fe8e":[2,0,50,13],
+"structDiffusiveRateSettings.html#abaa0f5dec23e1c544f10d80d301c6b72":[2,0,50,6],
+"structDiffusiveRateSettings.html#abd430a113b133e497e598e4036940e91":[2,0,50,4],
+"structDiffusiveRateSettings.html#ad30c89773b6b92de43c9ef8bd4ea8dce":[2,0,50,2],
 "structDiffusiveRateSettings.html#ae0e9f220cd0335038a1bf61491eac55b":[2,0,50,5],
 "structDiffusiveRateSettings.html#af607c3947fbf2a7d21cf1d27bebd4248":[2,0,50,1],
 "structDirectionSelector.html":[2,0,51],
@@ -244,10 +249,5 @@ var NAVTREEINDEX50 =
 "structIBSEBParams.html#af8f349f81d8f118e66d29399f8554601":[2,0,89,12],
 "structIBSEBParams.html#afefffff7cbf005c0b83e8808de30c0f7":[2,0,89,26],
 "structInflowLogLaw.html":[2,0,90],
-"structInflowLogLaw.html#a3c04ff7b6f6dc49c5ea10c3955cf1983":[2,0,90,2],
-"structInflowLogLaw.html#a3f880145f174b4cdc35392e60f685883":[2,0,90,4],
-"structInflowLogLaw.html#a6958b47515dc13bc11178702716110fc":[2,0,90,0],
-"structInflowLogLaw.html#a7f7da02554b3aed69f6204278cd4d335":[2,0,90,6],
-"structInflowLogLaw.html#a9103d4ab5ee357f392cfa8d04c70a71b":[2,0,90,1],
-"structInflowLogLaw.html#aca912bc0fce7d5222a7e57563cd37f23":[2,0,90,3]
+"structInflowLogLaw.html#a3c04ff7b6f6dc49c5ea10c3955cf1983":[2,0,90,2]
 };
