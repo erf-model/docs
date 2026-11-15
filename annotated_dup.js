@@ -376,6 +376,7 @@ var annotated_dup =
     [ "SDInitProperties", "classSDInitProperties.html", "classSDInitProperties" ],
     [ "SDInjection", "classSDInjection.html", "classSDInjection" ],
     [ "SDInputs", "structSDInputs.html", "structSDInputs" ],
+    [ "SEBLandMaskView", "structSEBLandMaskView.html", "structSEBLandMaskView" ],
     [ "SedimentationFlux", "structSedimentationFlux.html", "structSedimentationFlux" ],
     [ "ShocColumnData", "structShocColumnData.html", "structShocColumnData" ],
     [ "ShocColumnLayout", "structShocColumnLayout.html", "structShocColumnLayout" ],

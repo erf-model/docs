@@ -12,7 +12,7 @@ var classTwoStreamRadiation =
     ] ],
     [ "TwoStreamRadiation", "classTwoStreamRadiation.html#a24f5984550ff5e062aae765fa8a63f12", null ],
     [ "active", "classTwoStreamRadiation.html#a729a742dd46a93c80bcceb6c5fb423f9", null ],
-    [ "advance", "classTwoStreamRadiation.html#ab59dbf2ff9770f8015307dff75214071", null ],
+    [ "advance", "classTwoStreamRadiation.html#a568b9c5ff1091a8e139fbe4b79c9caa4", null ],
     [ "canopy_forcing", "classTwoStreamRadiation.html#a9e70deec3e363edd2661b61a79eccd1f", null ],
     [ "define_level", "classTwoStreamRadiation.html#a330dd501c8d3d8a3803f700c5c0173d3", null ],
     [ "force_restore_soil", "classTwoStreamRadiation.html#ab9d6b1189b0710850f4cbde7c52bd01f", null ],
@@ -98,5 +98,6 @@ var classTwoStreamRadiation =
     [ "m_sweep_step", "classTwoStreamRadiation.html#ad52c70dc9f30e5005b12c0aad15ffe5f", null ],
     [ "m_t_deep", "classTwoStreamRadiation.html#ab658d563f857d6fd1a2014ce23fe8014", null ],
     [ "m_t_sfc", "classTwoStreamRadiation.html#a96a37511ad069269b71bf90256e1f264", null ],
-    [ "m_walls_step", "classTwoStreamRadiation.html#a8277b32252691aa88ed3ed44ba492e61", null ]
+    [ "m_walls_step", "classTwoStreamRadiation.html#a8277b32252691aa88ed3ed44ba492e61", null ],
+    [ "m_water_message", "classTwoStreamRadiation.html#af4375a33d11cf9a511e4202689da2038", null ]
 ];
