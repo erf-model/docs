@@ -1,5 +1,6 @@
 var NAVTREEINDEX55 =
 {
+"structSedimentationFlux.html#a54c428e1ba31f369d25acca70942bacc":[2,0,194,3],
 "structSedimentationFlux.html#a6e5d8c8842a24cb49280015fb50c2979":[2,0,194,0],
 "structSedimentationFlux.html#aaad36702599b454971f956d271c7d5d3":[2,0,194,2],
 "structShocColumnData.html":[2,0,195],
@@ -248,6 +249,5 @@ var NAVTREEINDEX55 =
 "structSolverChoice.html#a7e9c98719abc09394721338b46a091c3":[2,0,213,63],
 "structSolverChoice.html#a7fc1c5a57eb8aae17a438328e75d034f":[2,0,213,102],
 "structSolverChoice.html#a7ff5867d5187a7b5b12432efaddddf86":[2,0,213,174],
-"structSolverChoice.html#a815d0ae4872f56e837a83a10c8342b4c":[2,0,213,81],
-"structSolverChoice.html#a83f6ee9b907101da14d3f805807c72c3":[2,0,213,179]
+"structSolverChoice.html#a815d0ae4872f56e837a83a10c8342b4c":[2,0,213,81]
 };

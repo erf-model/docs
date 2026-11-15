@@ -1,5 +1,6 @@
 var NAVTREEINDEX40 =
 {
+"classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa":[2,0,1,15,17],
 "classerf__auxiliary_1_1CompletedStepFluxLedger.html#aea6280894f504f11f044422c67330cb9":[2,0,1,15,11],
 "classerf__auxiliary_1_1MappedFaceField.html":[2,0,1,6],
 "classerf__auxiliary_1_1MappedFaceField.html#a1da71e8b3176012064b572443dfbf1c8":[2,0,1,6,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX40 =
 "classpolygon__.html#a558e318b4655635bf2a4f9b21bc2674a":[2,0,150,7],
 "classpolygon__.html#a5e7a4057742f0f1e134e5113d39e4a76":[2,0,150,5],
 "classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4":[2,0,150,3],
-"classpolygon__.html#a6ab3d0fa0f9d6faebc53101265068216":[2,0,150,13],
-"classpolygon__.html#a7a9d2640e1ee2d6868513a1cbab1c0da":[2,0,150,4]
+"classpolygon__.html#a6ab3d0fa0f9d6faebc53101265068216":[2,0,150,13]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX54 =
 {
+"structSAMPrecipFaceState.html#ad2bfe279784b592c7b85ee6c40a8fc51":[2,0,172,1],
 "structSAMPrecipFluxComponents.html":[2,0,173],
 "structSAMPrecipFluxComponents.html#a40101502c2211cf0001012f0e03f76af":[2,0,173,2],
 "structSAMPrecipFluxComponents.html#ae8edc029b5764e27edb4cc2ec82fb4a1":[2,0,173,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX54 =
 "structSedimentationFlux.html":[2,0,194],
 "structSedimentationFlux.html#a102f2749b984888d6a4a0c701a04fbf4":[2,0,194,5],
 "structSedimentationFlux.html#a2661f365c1ddd1af417b3b5615a12683":[2,0,194,1],
-"structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524":[2,0,194,4],
-"structSedimentationFlux.html#a54c428e1ba31f369d25acca70942bacc":[2,0,194,3]
+"structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524":[2,0,194,4]
 };
