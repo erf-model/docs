@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['boxz_19191',['BoxZ',['../structRefinementCriterion.html#a3a663c744bdae23a2786444ebf5b6d88',1,'RefinementCriterion']]]
+  ['boxz_19192',['BoxZ',['../structRefinementCriterion.html#a3a663c744bdae23a2786444ebf5b6d88',1,'RefinementCriterion']]]
 ];

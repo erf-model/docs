@@ -126,18 +126,18 @@ var NAVTREEINDEX =
 "structCENTERED4.html#a7ea42a6b96e49bfb56b9b10aedee089a",
 "structGroundWallTerms.html#a5defb4f3f061be47c1b853d7a05a6441",
 "structLineSampler.html#aada4cca554d22f4c7a523748504525fa",
-"structPlanarBoundary_1_1Buffer.html#a756bebbfe01ca18aece4fbcd0c91f5f5",
-"structSAMPrecipSources.html#aae8e45439b5297547b8e3cc388372dd8",
-"structShocColumnData.html#a3c410d0cefc4b0028cd93d316845d12f",
-"structSolverChoice.html#a8e2678944caf6819ee7a924b509fb7da",
-"structSurfaceModel_1_1InterpTransfer.html#abe49504f4575f7f3c7a2443d11cd8ef8",
-"structTwoStreamCanopyView.html#a9b76b0ddf4076b1427e59814231ee66f",
-"structadiabatic__mod__charnock.html#a25528aa63a9025d49f5d294192b1e35c",
-"structerf__cloud__chamber__wall__flux_1_1ScalarWallSample.html#ad1a113a6420c9d62c7090207f7e4b16d",
-"structerf__sbm_1_1PopulationRemapView.html#aa4d46e4696119c4ba6125dca634fdfe0",
-"structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html#ab32d696e6e44aa35defe6837a93c3786",
-"structobs__nudging_1_1StationRecord.html#ad9d38f93b25e780b691ace588f0cc1a5",
-"structsurface__temp__mod__charnock.html#a77dc7e5a012fbe6066fa21f57145c938"
+"structPlanarBoundary_1_1Buffer.html#a8dcc90ff46d5a949a0edae75804abb79",
+"structSAMPrecipSources.html#aaf501cffd5851f4e84089e30400c9200",
+"structShocColumnData.html#a3cd9317196f1fe648c1f00cb0d0a1274",
+"structSolverChoice.html#a8ffa49a241bf3c536255c38ad50aafb0",
+"structSurfaceModel_1_1RadiationField.html",
+"structTwoStreamCanopyView.html#afc00258e6561ba08584a3f4740fd5593",
+"structadiabatic__mod__charnock.html#a27cd9d96ee9e54b27d07d962a836b570",
+"structerf__cloud__chamber__wall__flux_1_1ScalarWallSample.html#ad209d3eee6b8bf4a802681816b763875",
+"structerf__sbm_1_1PopulationRemapView.html#aaa622dfac55f7e4d12c941d03599999d",
+"structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html#ac7cb07f2e247d83d780de6ccf75e542a",
+"structobs__nudging_1_1StationRecord.html#af0bf94a25cfbcab76d22b0e3bcfac350",
+"structsurface__temp__mod__charnock.html#a7cbc26f61383ef464e8b641318dc7b0a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
