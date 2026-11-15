@@ -32,7 +32,6 @@ var ERF__Utils_8H =
     [ "MakeAdvectiveProjectionWeights", "ERF__Utils_8H.html#a91d696d640d18a728a3dd9179336ffe8", null ],
     [ "MakeProjectionWeights", "ERF__Utils_8H.html#aeb7450538d7139212cfc15e6fcd383fc", null ],
     [ "MomentumToVelocity", "ERF__Utils_8H.html#a0b812d5c2bdd531d6df797b1b227b335", null ],
-    [ "quad_interp_1d", "ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604", null ],
     [ "real_bdy_cons_maps", "ERF__Utils_8H.html#a9b1378bdfe39d264cd301b9d1a5e1e87", null ],
     [ "realbdy_bc_bxs_xy", "ERF__Utils_8H.html#ab8d345634b200fdd14e878954e222f4a", null ],
     [ "realbdy_compute_interior_ghost_rhs", "ERF__Utils_8H.html#a9c92c48ea64fcef9f8cb1ebdb10f9077", null ],

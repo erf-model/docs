@@ -1,5 +1,8 @@
 var NAVTREEINDEX52 =
 {
+"structLineSampler.html#aada4cca554d22f4c7a523748504525fa":[2,0,108,21],
+"structLineSampler.html#ab090838f2c0a95330992b0f95cdf0904":[2,0,108,50],
+"structLineSampler.html#ab57c029ead25e3dd759d8a17da3028ca":[2,0,108,6],
 "structLineSampler.html#ab6c16e75ce71250fbb3cc456b9f92fed":[2,0,108,20],
 "structLineSampler.html#ac521faef0c3edaa68edf3534175cd7d1":[2,0,108,44],
 "structLineSampler.html#ac889ff22f183b545b4360af78068b503":[2,0,108,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX52 =
 "structPerturbationWindSample.html#a3927309d7614a3fcd7b5430ed47657e4":[2,0,145,0],
 "structPerturbationWindSample.html#a7b66fcde9dcd3fa09b72fe14a56aaddd":[2,0,145,2],
 "structPerturbationWindSample.html#ab2824876f1500b098174e6f8f1f53fa9":[2,0,145,1],
-"structPlanarBoundary_1_1Buffer.html":[2,0,146,0],
-"structPlanarBoundary_1_1Buffer.html#a756bebbfe01ca18aece4fbcd0c91f5f5":[2,0,146,0,0],
-"structPlanarBoundary_1_1Buffer.html#a8dcc90ff46d5a949a0edae75804abb79":[2,0,146,0,3],
-"structPlanarBoundary_1_1Buffer.html#a911eb78af1d00ecfa0ca6a0a99b2cd41":[2,0,146,0,2]
+"structPlanarBoundary_1_1Buffer.html":[2,0,146,0]
 };

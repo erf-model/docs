@@ -1,5 +1,9 @@
 var NAVTREEINDEX57 =
 {
+"structSurfaceModel_1_1InterpTransfer.html#abe49504f4575f7f3c7a2443d11cd8ef8":[2,0,239,1,2],
+"structSurfaceModel_1_1RadiationField.html":[2,0,239,2],
+"structSurfaceModel_1_1RadiationField.html#ac348ef2c176b6c0686fc6124580851ba":[2,0,239,2,0],
+"structSurfaceModel_1_1RadiationField.html#ad1786e279986863ca45a3ee9698ee9fe":[2,0,239,2,1],
 "structSurfacePrecipAccumulationSource.html":[2,0,240],
 "structSurfacePrecipAccumulationSource.html#a49dd72622851cd384f0c2759d7dc9e5f":[2,0,240,0],
 "structSurfacePrecipAccumulationSource.html#ac5e954c65185f62925e8eae515672fca":[2,0,240,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX57 =
 "structTwoStreamCanopyView.html":[2,0,251],
 "structTwoStreamCanopyView.html#a287ba7236927d1adc1787b3274d1e890":[2,0,251,3],
 "structTwoStreamCanopyView.html#a6914adc7bb4d476f2bf906994eae414d":[2,0,251,1],
-"structTwoStreamCanopyView.html#a8be33fb7380e8c1cbcd1bb4ce13d5700":[2,0,251,2],
-"structTwoStreamCanopyView.html#a9b76b0ddf4076b1427e59814231ee66f":[2,0,251,0],
-"structTwoStreamCanopyView.html#afc00258e6561ba08584a3f4740fd5593":[2,0,251,4],
-"structTwoStreamFaceSky.html":[2,0,252],
-"structTwoStreamFaceSky.html#a1f089958127916619854e969e553edfe":[2,0,252,4]
+"structTwoStreamCanopyView.html#a8be33fb7380e8c1cbcd1bb4ce13d5700":[2,0,251,2]
 };

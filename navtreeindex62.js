@@ -1,5 +1,9 @@
 var NAVTREEINDEX62 =
 {
+"structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html#ab32d696e6e44aa35defe6837a93c3786":[2,0,15,1,2],
+"structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html#ac7cb07f2e247d83d780de6ccf75e542a":[2,0,15,1,0],
+"structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html":[2,0,15,0],
+"structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html#a0e4d7c00ae16d635cef72255dc65047c":[2,0,15,0,0],
 "structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html#a21f539c4ced0b92f8bc221350b17d8f7":[2,0,15,0,1],
 "structerf__wall__scalar__bc_1_1WallFaceParseResult.html":[2,0,15,2],
 "structerf__wall__scalar__bc_1_1WallFaceParseResult.html#a697bcbb1f3c8c27b12d7f05b92c81c03":[2,0,15,2,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX62 =
 "structobs__nudging_1_1Profile.html#aae643fa0bb9ed31e666f801a3c60eab1":[2,0,24,3,1],
 "structobs__nudging_1_1Profile.html#afbf09c07cb19a6d5871223b504d87d34":[2,0,24,3,3],
 "structobs__nudging_1_1StationRecord.html":[2,0,24,1],
-"structobs__nudging_1_1StationRecord.html#ad5e340cdcca2994482ee5459e9891a05":[2,0,24,1,2],
-"structobs__nudging_1_1StationRecord.html#ad9d38f93b25e780b691ace588f0cc1a5":[2,0,24,1,0],
-"structobs__nudging_1_1StationRecord.html#af0bf94a25cfbcab76d22b0e3bcfac350":[2,0,24,1,1],
-"structobs__nudging_1_1StationSeries.html":[2,0,24,2],
-"structobs__nudging_1_1StationSeries.html#a1b333bb1f2451089fa11dbb6bd49693c":[2,0,24,2,0]
+"structobs__nudging_1_1StationRecord.html#ad5e340cdcca2994482ee5459e9891a05":[2,0,24,1,2]
 };

@@ -81,6 +81,7 @@ var structSolverChoice =
     [ "forest_leaf_theta_fixed", "structSolverChoice.html#a0b3f8288fd52de1e19b60ed6f974b6ef", null ],
     [ "forest_substep", "structSolverChoice.html#a4debf5afcc5ec0916137ae18da73d1a5", null ],
     [ "four_stream_radiation", "structSolverChoice.html#a78fb3809695985439ac38e309d79bc44", null ],
+    [ "gradp_2nd_order_bndry", "structSolverChoice.html#a815d0ae4872f56e837a83a10c8342b4c", null ],
     [ "gradp_type", "structSolverChoice.html#a7c5334aa5e7212ee5cb00587487e1f0c", null ],
     [ "gravity", "structSolverChoice.html#a1b0c7204fdf4e1c0b2cd0b3b04806dfc", null ],
     [ "grid_stretching_ratio", "structSolverChoice.html#ad93c566df44b6c2831cb2863226b5447", null ],

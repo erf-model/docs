@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"ERF__IndexDefines_8H.html#a979d0acdc611c2b5b804b77cd50315ed":[3,0,1,38,19],
 "ERF__IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2":[3,0,1,38,9],
 "ERF__IndexDefines_8H.html#a9cdf9eec96791d8431ba6882a0d733e0":[3,0,1,38,35],
 "ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15":[3,0,1,38,27],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "ERF__InitCustomPertVels__IsentropicVortex_8H.html#a264f04140b0299fe19c16b87062aad49":[3,0,1,22,36,9],
 "ERF__InitCustomPertVels__IsentropicVortex_8H.html#a2eb49bcb918e6f110a8827b8bc95beec":[3,0,1,22,36,6],
 "ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf":[3,0,1,22,36,19],
-"ERF__InitCustomPertVels__IsentropicVortex_8H.html#a396dfff886b27f97c04ce4578b8e9184":[3,0,1,22,36,11],
-"ERF__InitCustomPertVels__IsentropicVortex_8H.html#a40fd6a063f9a0a3b792ee8d7ab053e6c":[3,0,1,22,36,24]
+"ERF__InitCustomPertVels__IsentropicVortex_8H.html#a396dfff886b27f97c04ce4578b8e9184":[3,0,1,22,36,11]
 };

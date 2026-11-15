@@ -1,5 +1,9 @@
 var NAVTREEINDEX18 =
 {
+"ERF__SurfaceModel_8H.html#abe8d3c91e03e68dd691887e3b789d7f6ac1772c85f6594aab550e10ecf11d2d77":[3,0,1,2,28,6,2],
+"ERF__SurfaceModel_8H.html#aee4129a23327ef05502fcec2d6b71c2a":[3,0,1,2,28,5],
+"ERF__SurfaceModel_8H.html#aee4129a23327ef05502fcec2d6b71c2aa020389bbc8308bea419f7828d9b6d6eb":[3,0,1,2,28,5,0],
+"ERF__SurfaceModel_8H.html#aee4129a23327ef05502fcec2d6b71c2aad299fddac2aa295df4b7d508292d5953":[3,0,1,2,28,5,1],
 "ERF__SurfaceModel_8H_source.html":[3,0,1,2,28],
 "ERF__SurfaceModel_8cpp.html":[3,0,1,2,27],
 "ERF__SurfaceMoisture_8H.html":[3,0,1,29,45],
@@ -245,9 +249,5 @@ var NAVTREEINDEX18 =
 "ERF__TopographicShading_8cpp.html":[3,0,1,23,7],
 "ERF__TrackerOutput_8cpp.html":[3,0,1,12,56],
 "ERF__TurbKESources_8H.html":[3,0,1,6,34],
-"ERF__TurbKESources_8H.html#a69958dda4f0fb004c97af1b191d89b23":[3,0,1,6,34,0],
-"ERF__TurbKESources_8H_source.html":[3,0,1,6,34],
-"ERF__TurbPertStruct_8H.html":[3,0,1,4,13],
-"ERF__TurbPertStruct_8H.html#ac5d6f12e32794be38d7e68b8786d65cf":[3,0,1,4,13,3],
-"ERF__TurbPertStruct_8H_source.html":[3,0,1,4,13]
+"ERF__TurbKESources_8H.html#a69958dda4f0fb004c97af1b191d89b23":[3,0,1,6,34,0]
 };

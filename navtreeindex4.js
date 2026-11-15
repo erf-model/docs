@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"ERF__ForestDrag_8H.html":[3,0,1,25,9],
 "ERF__ForestDrag_8H_source.html":[3,0,1,25,9],
 "ERF__ForestDrag_8cpp.html":[3,0,1,25,8],
 "ERF__ForestUtils_8H.html":[3,0,1,29,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "ERF__IndexDefines_8H.html#a7f9c844ee8a2e1930ade0911e8692667":[3,0,1,38,16],
 "ERF__IndexDefines_8H.html#a7fb02ae8fd2f46fd9cb1b247b058bd46":[3,0,1,38,11],
 "ERF__IndexDefines_8H.html#a843b0608565e0e58653f5ef40d682fa9":[3,0,1,38,26],
-"ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040":[3,0,1,38,22],
-"ERF__IndexDefines_8H.html#a979d0acdc611c2b5b804b77cd50315ed":[3,0,1,38,19]
+"ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040":[3,0,1,38,22]
 };

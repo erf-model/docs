@@ -1,5 +1,9 @@
 var NAVTREEINDEX63 =
 {
+"structobs__nudging_1_1StationRecord.html#ad9d38f93b25e780b691ace588f0cc1a5":[2,0,24,1,0],
+"structobs__nudging_1_1StationRecord.html#af0bf94a25cfbcab76d22b0e3bcfac350":[2,0,24,1,1],
+"structobs__nudging_1_1StationSeries.html":[2,0,24,2],
+"structobs__nudging_1_1StationSeries.html#a1b333bb1f2451089fa11dbb6bd49693c":[2,0,24,2,0],
 "structobs__nudging_1_1StationSeries.html#a2b65ae6a3d3d994577ae5b830eb4a344":[2,0,24,2,2],
 "structobs__nudging_1_1StationSeries.html#a43bbdc00351b6837b8d1515e9cb0bfb8":[2,0,24,2,1],
 "structplotfile2d_1_1CloudOpticsParameters.html":[2,0,25,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX63 =
 "structsurface__temp__mod__charnock.html":[2,0,235],
 "structsurface__temp__mod__charnock.html#a09b4d8ab7dc69c4714635a28351e053c":[2,0,235,0],
 "structsurface__temp__mod__charnock.html#a1f329567f9dbb2f1f7a09e32603c9964":[2,0,235,5],
-"structsurface__temp__mod__charnock.html#a43f52ff9713100c00e8822d9eeb24da4":[2,0,235,2],
-"structsurface__temp__mod__charnock.html#a77dc7e5a012fbe6066fa21f57145c938":[2,0,235,7],
-"structsurface__temp__mod__charnock.html#a7cbc26f61383ef464e8b641318dc7b0a":[2,0,235,8],
-"structsurface__temp__mod__charnock.html#a85bd49a9221c24cd27422abc18190628":[2,0,235,9],
-"structsurface__temp__mod__charnock.html#a98f673e5030f4509a8874466337f50c4":[2,0,235,4]
+"structsurface__temp__mod__charnock.html#a43f52ff9713100c00e8822d9eeb24da4":[2,0,235,2]
 };
