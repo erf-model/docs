@@ -199,6 +199,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a19d8d55f67c478f047e2eed3728c3003"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a815d3e6377a2356c9859807874066d37"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMOSTAverage.html#a815d3e6377a2356c9859807874066d37">get_zref</a> (const int &amp;lev) const</td></tr>
 <tr class="separator:a815d3e6377a2356c9859807874066d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add9befabf039e11844bf9370a61e7546"><td class="memItemLeft" align="right" valign="top">const amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMOSTAverage.html#add9befabf039e11844bf9370a61e7546">get_field_ptr</a> (const int &amp;lev, const int &amp;comp) const</td></tr>
+<tr class="separator:add9befabf039e11844bf9370a61e7546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa764748ca573c4b1b915638f6b9d9724"><td class="memItemLeft" align="right" valign="top">const amrex::iMultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMOSTAverage.html#aa764748ca573c4b1b915638f6b9d9724">get_k_indices</a> (const int &amp;lev) const</td></tr>
 <tr class="separator:aa764748ca573c4b1b915638f6b9d9724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9751b66e98ab40abc0fe4604447cec0"><td class="memItemLeft" align="right" valign="top">amrex::IntVect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMOSTAverage.html#af9751b66e98ab40abc0fe4604447cec0">get_ng_fill</a> (const int &amp;lev) const</td></tr>
@@ -528,9 +530,9 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    {</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (zlevels[k] + zlevels[k+1]) - zlevels[0];</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    {</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (zlevels[k] + zlevels[k+1]) - zlevels[0];</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    }</div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:41</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#a215719d573d21b73a4cdbd3a306a35ec">k_index_below()</a>, and <a class="el" href="classMOSTAverage.html#acea63f9601c5d2ee2cb21eee27d843fc">set_k_indices_N()</a>.</p>
@@ -580,9 +582,9 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    {</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="keywordflow">return</span> zlevels.back() - zlevels[0];</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    {</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <span class="keywordflow">return</span> zlevels.back() - zlevels[0];</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#acea63f9601c5d2ee2cb21eee27d843fc">set_k_indices_N()</a>.</p>
 <div class="dynheader">
@@ -650,13 +652,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01615"></a><span class="lineno"> 1615</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47">m_t_avg</a>) <a class="code" href="classMOSTAverage.html#a3fe20fc4a4eb0b283f1d658b6237004c">m_t_init</a>[lev] = 1;</div>
 <div class="line"><a name="l01616"></a><span class="lineno"> 1616</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a05905a4754c7eb39b766b96889b1bd47"><div class="ttname"><a href="classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47">MOSTAverage::m_t_avg</a></div><div class="ttdeci">bool m_t_avg</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:680</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a05905a4754c7eb39b766b96889b1bd47"><div class="ttname"><a href="classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47">MOSTAverage::m_t_avg</a></div><div class="ttdeci">bool m_t_avg</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:692</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a094b17b7929c7b3dd680e400049d9e69"><div class="ttname"><a href="classMOSTAverage.html#a094b17b7929c7b3dd680e400049d9e69">MOSTAverage::compute_plane_averages</a></div><div class="ttdeci">void compute_plane_averages(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:1625</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a0e87c91bf31d0e60a31b906081d24eea"><div class="ttname"><a href="classMOSTAverage.html#a0e87c91bf31d0e60a31b906081d24eea">MOSTAverage::m_policy</a></div><div class="ttdeci">int m_policy</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:644</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a0e87c91bf31d0e60a31b906081d24eea"><div class="ttname"><a href="classMOSTAverage.html#a0e87c91bf31d0e60a31b906081d24eea">MOSTAverage::m_policy</a></div><div class="ttdeci">int m_policy</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:656</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a38361381cf969ee42ba45f73ae499973"><div class="ttname"><a href="classMOSTAverage.html#a38361381cf969ee42ba45f73ae499973">MOSTAverage::compute_region_averages</a></div><div class="ttdeci">void compute_region_averages(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:2243</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a3fe20fc4a4eb0b283f1d658b6237004c"><div class="ttname"><a href="classMOSTAverage.html#a3fe20fc4a4eb0b283f1d658b6237004c">MOSTAverage::m_t_init</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_t_init</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:681</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a3fe20fc4a4eb0b283f1d658b6237004c"><div class="ttname"><a href="classMOSTAverage.html#a3fe20fc4a4eb0b283f1d658b6237004c">MOSTAverage::m_t_init</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_t_init</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:693</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a4b14ba1b568a0106ffd883d8c1c8f53c"><div class="ttname"><a href="classMOSTAverage.html#a4b14ba1b568a0106ffd883d8c1c8f53c">MOSTAverage::set_rotated_fields</a></div><div class="ttdeci">void set_rotated_fields(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:600</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a7d43a66f7518f75e694e0582dd40ec44"><div class="ttname"><a href="classMOSTAverage.html#a7d43a66f7518f75e694e0582dd40ec44">MOSTAverage::m_rotate</a></div><div class="ttdeci">bool m_rotate</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:645</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a7d43a66f7518f75e694e0582dd40ec44"><div class="ttname"><a href="classMOSTAverage.html#a7d43a66f7518f75e694e0582dd40ec44">MOSTAverage::m_rotate</a></div><div class="ttdeci">bool m_rotate</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:657</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_af3ddc4c0c5fb5e95bc4fa8793508675e"><div class="ttname"><a href="classMOSTAverage.html#af3ddc4c0c5fb5e95bc4fa8793508675e">MOSTAverage::compute_eb_averages</a></div><div class="ttdeci">void compute_eb_averages(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:2876</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1022,17 +1024,17 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:36</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a0554ee593b5deca61ef0d26ebd26f6d6"><div class="ttname"><a href="classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6">MOSTAverage::m_navg</a></div><div class="ttdeci">int m_navg</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:642</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a158b82286f1bed8b02da2c8b2ac7f4c0"><div class="ttname"><a href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">MOSTAverage::m_averages</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; &gt; m_averages</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:653</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a4f8b85f2557e3363d84fe6b0a71037bc"><div class="ttname"><a href="classMOSTAverage.html#a4f8b85f2557e3363d84fe6b0a71037bc">MOSTAverage::m_total_bndry_area</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; m_total_bndry_area</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:676</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a5bb4359ffa50a426fe617e0b52e2a180"><div class="ttname"><a href="classMOSTAverage.html#a5bb4359ffa50a426fe617e0b52e2a180">MOSTAverage::m_face</a></div><div class="ttdeci">amrex::Orientation m_face</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:630</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a5dfb4235703aaa2364d49d7fbb8d1512"><div class="ttname"><a href="classMOSTAverage.html#a5dfb4235703aaa2364d49d7fbb8d1512">MOSTAverage::m_Vsg</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_Vsg</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:688</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a81ad3bc2787e30025f8bee91bc5c9dc2"><div class="ttname"><a href="classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2">MOSTAverage::m_plane_average</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; m_plane_average</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:660</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a960bae1d528aef6d0e7034dbea65a2c3"><div class="ttname"><a href="classMOSTAverage.html#a960bae1d528aef6d0e7034dbea65a2c3">MOSTAverage::m_fact_new</a></div><div class="ttdeci">amrex::Real m_fact_new</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:683</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_ad301df8e1ee46557a4d277c3f87fae69"><div class="ttname"><a href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">MOSTAverage::m_fields</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_fields</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:632</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_ad61d52687b80658c88dfefc7051d705d"><div class="ttname"><a href="classMOSTAverage.html#ad61d52687b80658c88dfefc7051d705d">MOSTAverage::m_eb_vec</a></div><div class="ttdeci">amrex::Vector&lt; const eb_ * &gt; m_eb_vec</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:675</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_ae1d62c88d62bbef8458d0084200f65f2"><div class="ttname"><a href="classMOSTAverage.html#ae1d62c88d62bbef8458d0084200f65f2">MOSTAverage::m_fact_old</a></div><div class="ttdeci">amrex::Real m_fact_old</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:683</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_aed9b6c726189d8858abba0a2a66feca1"><div class="ttname"><a href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">MOSTAverage::m_geom</a></div><div class="ttdeci">const amrex::Vector&lt; amrex::Geometry &gt; m_geom</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:631</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a0554ee593b5deca61ef0d26ebd26f6d6"><div class="ttname"><a href="classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6">MOSTAverage::m_navg</a></div><div class="ttdeci">int m_navg</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:654</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a158b82286f1bed8b02da2c8b2ac7f4c0"><div class="ttname"><a href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">MOSTAverage::m_averages</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; &gt; m_averages</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:665</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a4f8b85f2557e3363d84fe6b0a71037bc"><div class="ttname"><a href="classMOSTAverage.html#a4f8b85f2557e3363d84fe6b0a71037bc">MOSTAverage::m_total_bndry_area</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; m_total_bndry_area</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:688</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a5bb4359ffa50a426fe617e0b52e2a180"><div class="ttname"><a href="classMOSTAverage.html#a5bb4359ffa50a426fe617e0b52e2a180">MOSTAverage::m_face</a></div><div class="ttdeci">amrex::Orientation m_face</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:642</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a5dfb4235703aaa2364d49d7fbb8d1512"><div class="ttname"><a href="classMOSTAverage.html#a5dfb4235703aaa2364d49d7fbb8d1512">MOSTAverage::m_Vsg</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_Vsg</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:700</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a81ad3bc2787e30025f8bee91bc5c9dc2"><div class="ttname"><a href="classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2">MOSTAverage::m_plane_average</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; m_plane_average</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:672</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a960bae1d528aef6d0e7034dbea65a2c3"><div class="ttname"><a href="classMOSTAverage.html#a960bae1d528aef6d0e7034dbea65a2c3">MOSTAverage::m_fact_new</a></div><div class="ttdeci">amrex::Real m_fact_new</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:695</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_ad301df8e1ee46557a4d277c3f87fae69"><div class="ttname"><a href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">MOSTAverage::m_fields</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_fields</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:644</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_ad61d52687b80658c88dfefc7051d705d"><div class="ttname"><a href="classMOSTAverage.html#ad61d52687b80658c88dfefc7051d705d">MOSTAverage::m_eb_vec</a></div><div class="ttdeci">amrex::Vector&lt; const eb_ * &gt; m_eb_vec</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:687</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_ae1d62c88d62bbef8458d0084200f65f2"><div class="ttname"><a href="classMOSTAverage.html#ae1d62c88d62bbef8458d0084200f65f2">MOSTAverage::m_fact_old</a></div><div class="ttdeci">amrex::Real m_fact_old</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:695</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_aed9b6c726189d8858abba0a2a66feca1"><div class="ttname"><a href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">MOSTAverage::m_geom</a></div><div class="ttdeci">const amrex::Vector&lt; amrex::Geometry &gt; m_geom</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:643</div></div>
 <div class="ttc" id="anamespaceWDM6SedCellScratch_html_acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:273</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#a41ef10e076e2099d0fd845e318fd00a0">compute_averages()</a>.</p>
@@ -1581,19 +1583,19 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l02115"></a><span class="lineno"> 2115</span>&#160;}</div>
 <div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_a8c60d2d529b44fc6e0856ad21f4737db"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#a8c60d2d529b44fc6e0856ad21f4737db">plo</a></div><div class="ttdeci">GpuArray&lt; Real, AMREX_SPACEDIM &gt; plo</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:131</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:16</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a1beb0dad926be2f2d9cb1de69a1a3374"><div class="ttname"><a href="classMOSTAverage.html#a1beb0dad926be2f2d9cb1de69a1a3374">MOSTAverage::m_y_pos</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; m_y_pos</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:648</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a2f5fb25e7c5196338ee5a051708d8f62"><div class="ttname"><a href="classMOSTAverage.html#a2f5fb25e7c5196338ee5a051708d8f62">MOSTAverage::m_i_indx</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; m_i_indx</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:650</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a3a49018467b69573ef84df9cdfd86da4"><div class="ttname"><a href="classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4">MOSTAverage::m_z_phys_nd</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:633</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a58c320eb48f9b8a1b0983d2770e9f3ea"><div class="ttname"><a href="classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea">MOSTAverage::m_x_pos</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; m_x_pos</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:647</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a733f1b5c94de8ee530f4f257510cb277"><div class="ttname"><a href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">MOSTAverage::m_rot_fields</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; &gt; m_rot_fields</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:655</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a81ff1b7e8d026f0cd74147cbcc016d15"><div class="ttname"><a href="classMOSTAverage.html#a81ff1b7e8d026f0cd74147cbcc016d15">MOSTAverage::m_z_pos</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; m_z_pos</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:649</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a89b9ec10eb8dee9a8be7c9597a3f5008"><div class="ttname"><a href="classMOSTAverage.html#a89b9ec10eb8dee9a8be7c9597a3f5008">MOSTAverage::m_ncell_plane</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt; m_ncell_plane</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:659</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a8b2f4bb5cbc870ec5dee6644c1eed174"><div class="ttname"><a href="classMOSTAverage.html#a8b2f4bb5cbc870ec5dee6644c1eed174">MOSTAverage::m_terrain_type</a></div><div class="ttdeci">TerrainType m_terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:636</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a90d1df8bd48dd2bf45776a01ba1a89f7"><div class="ttname"><a href="classMOSTAverage.html#a90d1df8bd48dd2bf45776a01ba1a89f7">MOSTAverage::m_norm_vec</a></div><div class="ttdeci">bool m_norm_vec</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:671</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_acdc75484e6ed5d2fadfb93573b6dded2"><div class="ttname"><a href="classMOSTAverage.html#acdc75484e6ed5d2fadfb93573b6dded2">MOSTAverage::m_j_indx</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; m_j_indx</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:651</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_aeac5da9c3972fdde64f60720f88efe2e"><div class="ttname"><a href="classMOSTAverage.html#aeac5da9c3972fdde64f60720f88efe2e">MOSTAverage::m_interp</a></div><div class="ttdeci">bool m_interp</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:670</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_aefb42b9f2a5c3347e7ab87abdfcab3d7"><div class="ttname"><a href="classMOSTAverage.html#aefb42b9f2a5c3347e7ab87abdfcab3d7">MOSTAverage::trilinear_interp_T</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_INLINE void trilinear_interp_T(const amrex::Real &amp;xp, const amrex::Real &amp;yp, const amrex::Real &amp;zp, amrex::Real *interp_vals, amrex::Array4&lt; amrex::Real const &gt; const &amp;interp_array, amrex::Array4&lt; amrex::Real const &gt; const &amp;z_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;plo, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxi, const int interp_comp)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:510</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_afbe752293b7c2790b1994a2349261fda"><div class="ttname"><a href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">MOSTAverage::m_k_indx</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; m_k_indx</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:652</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a1beb0dad926be2f2d9cb1de69a1a3374"><div class="ttname"><a href="classMOSTAverage.html#a1beb0dad926be2f2d9cb1de69a1a3374">MOSTAverage::m_y_pos</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; m_y_pos</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:660</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a2f5fb25e7c5196338ee5a051708d8f62"><div class="ttname"><a href="classMOSTAverage.html#a2f5fb25e7c5196338ee5a051708d8f62">MOSTAverage::m_i_indx</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; m_i_indx</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:662</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a3a49018467b69573ef84df9cdfd86da4"><div class="ttname"><a href="classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4">MOSTAverage::m_z_phys_nd</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:645</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a58c320eb48f9b8a1b0983d2770e9f3ea"><div class="ttname"><a href="classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea">MOSTAverage::m_x_pos</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; m_x_pos</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:659</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a733f1b5c94de8ee530f4f257510cb277"><div class="ttname"><a href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">MOSTAverage::m_rot_fields</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; &gt; m_rot_fields</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:667</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a81ff1b7e8d026f0cd74147cbcc016d15"><div class="ttname"><a href="classMOSTAverage.html#a81ff1b7e8d026f0cd74147cbcc016d15">MOSTAverage::m_z_pos</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; m_z_pos</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:661</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a89b9ec10eb8dee9a8be7c9597a3f5008"><div class="ttname"><a href="classMOSTAverage.html#a89b9ec10eb8dee9a8be7c9597a3f5008">MOSTAverage::m_ncell_plane</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt; m_ncell_plane</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:671</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a8b2f4bb5cbc870ec5dee6644c1eed174"><div class="ttname"><a href="classMOSTAverage.html#a8b2f4bb5cbc870ec5dee6644c1eed174">MOSTAverage::m_terrain_type</a></div><div class="ttdeci">TerrainType m_terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:648</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a90d1df8bd48dd2bf45776a01ba1a89f7"><div class="ttname"><a href="classMOSTAverage.html#a90d1df8bd48dd2bf45776a01ba1a89f7">MOSTAverage::m_norm_vec</a></div><div class="ttdeci">bool m_norm_vec</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:683</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_acdc75484e6ed5d2fadfb93573b6dded2"><div class="ttname"><a href="classMOSTAverage.html#acdc75484e6ed5d2fadfb93573b6dded2">MOSTAverage::m_j_indx</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; m_j_indx</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:663</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_aeac5da9c3972fdde64f60720f88efe2e"><div class="ttname"><a href="classMOSTAverage.html#aeac5da9c3972fdde64f60720f88efe2e">MOSTAverage::m_interp</a></div><div class="ttdeci">bool m_interp</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:682</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_aefb42b9f2a5c3347e7ab87abdfcab3d7"><div class="ttname"><a href="classMOSTAverage.html#aefb42b9f2a5c3347e7ab87abdfcab3d7">MOSTAverage::trilinear_interp_T</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_INLINE void trilinear_interp_T(const amrex::Real &amp;xp, const amrex::Real &amp;yp, const amrex::Real &amp;zp, amrex::Real *interp_vals, amrex::Array4&lt; amrex::Real const &gt; const &amp;interp_array, amrex::Array4&lt; amrex::Real const &gt; const &amp;z_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;plo, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxi, const int interp_comp)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:522</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_afbe752293b7c2790b1994a2349261fda"><div class="ttname"><a href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">MOSTAverage::m_k_indx</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; m_k_indx</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:664</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#a41ef10e076e2099d0fd845e318fd00a0">compute_averages()</a>.</p>
 <div class="dynheader">
@@ -2277,9 +2279,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l02867"></a><span class="lineno"> 2867</span>&#160;    } <span class="comment">// Not periodic</span></div>
 <div class="line"><a name="l02868"></a><span class="lineno"> 2868</span>&#160;}</div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_ac9525e0a2d2539f96c7fbebe4f9497a0"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#ac9525e0a2d2539f96c7fbebe4f9497a0">Compute_h_zeta_AtCellCenter</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:202</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a2c167351f6655ef3276f8e5b39439e91"><div class="ttname"><a href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">MOSTAverage::m_radius</a></div><div class="ttdeci">int m_radius</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:664</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a2c167351f6655ef3276f8e5b39439e91"><div class="ttname"><a href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">MOSTAverage::m_radius</a></div><div class="ttdeci">int m_radius</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:676</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a958132e508b0415f27ab9de0af39bdca"><div class="ttname"><a href="classMOSTAverage.html#a958132e508b0415f27ab9de0af39bdca">MOSTAverage::fill_planar_boundary</a></div><div class="ttdeci">void fill_planar_boundary(const int &amp;lev, amrex::MultiFab &amp;mf)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:2206</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_ab227f9a8e9224820c00fa8b223712b3e"><div class="ttname"><a href="classMOSTAverage.html#ab227f9a8e9224820c00fa8b223712b3e">MOSTAverage::m_ncell_region</a></div><div class="ttdeci">int m_ncell_region</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:665</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_ab227f9a8e9224820c00fa8b223712b3e"><div class="ttname"><a href="classMOSTAverage.html#ab227f9a8e9224820c00fa8b223712b3e">MOSTAverage::m_ncell_region</a></div><div class="ttdeci">int m_ncell_region</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:677</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_ac140e262fd58291f9535e62a1d2255de"><div class="ttname"><a href="classMOSTAverage.html#ac140e262fd58291f9535e62a1d2255de">MOSTAverage::extrap_ghost_cells</a></div><div class="ttdeci">void extrap_ghost_cells(const int &amp;lev, const int &amp;iavg, const amrex::IntVect &amp;ng_fill)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:2133</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_af9751b66e98ab40abc0fe4604447cec0"><div class="ttname"><a href="classMOSTAverage.html#af9751b66e98ab40abc0fe4604447cec0">MOSTAverage::get_ng_fill</a></div><div class="ttdeci">amrex::IntVect get_ng_fill(const int &amp;lev) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:473</div></div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:51</div></div>
@@ -2338,7 +2340,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Return whether the averages are filtered in time (erf.most.time_average). </p>
-<div class="fragment"><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47">m_t_avg</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47">m_t_avg</a>; }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a3eddb856be964d20a174cfaffcb60c8a">SurfaceLayer::mac_avg_is_time_averaged()</a>.</p>
 <div class="dynheader">
@@ -2536,7 +2538,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l02215"></a><span class="lineno"> 2215</span>&#160;    }</div>
 <div class="line"><a name="l02216"></a><span class="lineno"> 2216</span>&#160;}</div>
 <div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_a40f41e8dc5aa2c6b46cde59a015f4185"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#a40f41e8dc5aa2c6b46cde59a015f4185">period</a></div><div class="ttdeci">GpuArray&lt; Real, AMREX_SPACEDIM &gt; period</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:131</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_ab8c01b0df9485259c47eb657854ffb58"><div class="ttname"><a href="classMOSTAverage.html#ab8c01b0df9485259c47eb657854ffb58">MOSTAverage::m_planar_bndry</a></div><div class="ttdeci">amrex::Vector&lt; PlanarBoundary &gt; m_planar_bndry</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:654</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_ab8c01b0df9485259c47eb657854ffb58"><div class="ttname"><a href="classMOSTAverage.html#ab8c01b0df9485259c47eb657854ffb58">MOSTAverage::m_planar_bndry</a></div><div class="ttdeci">amrex::Vector&lt; PlanarBoundary &gt; m_planar_bndry</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:666</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#a38361381cf969ee42ba45f73ae499973">compute_region_averages()</a>, and <a class="el" href="classMOSTAverage.html#a0801f2e878c0473d27a5cad9da2d9bea">fill_zref_planar()</a>.</p>
 <div class="dynheader">
@@ -2594,7 +2596,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l02233"></a><span class="lineno"> 2233</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classMOSTAverage.html#ab9f916aea0c336c883ed954ff0ef258f">m_zref</a>[lev]-&gt;min(0) &gt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>,</div>
 <div class="line"><a name="l02234"></a><span class="lineno"> 2234</span>&#160;                                     <span class="stringliteral">&quot;MOSTAverage: a column has no reference height&quot;</span>);</div>
 <div class="line"><a name="l02235"></a><span class="lineno"> 2235</span>&#160;}</div>
-<div class="ttc" id="aclassMOSTAverage_html_ab9f916aea0c336c883ed954ff0ef258f"><div class="ttname"><a href="classMOSTAverage.html#ab9f916aea0c336c883ed954ff0ef258f">MOSTAverage::m_zref</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; m_zref</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:646</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_ab9f916aea0c336c883ed954ff0ef258f"><div class="ttname"><a href="classMOSTAverage.html#ab9f916aea0c336c883ed954ff0ef258f">MOSTAverage::m_zref</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; m_zref</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:658</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9">set_k_indices_T()</a>, <a class="el" href="classMOSTAverage.html#ab43d75918dd8805b804b2054ec1be1ee">set_norm_indices_T()</a>, <a class="el" href="classMOSTAverage.html#a5d4563f98ba7112ceb8be723f1799b7a">set_norm_positions_T()</a>, and <a class="el" href="classMOSTAverage.html#a517ea430338f8474d89418cd92886b8e">set_z_positions_T()</a>.</p>
 <div class="dynheader">
@@ -2715,62 +2717,62 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>whether the column holds the point </dd></dl>
-<div class="fragment"><div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    {</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <span class="comment">// Search to get z/k</span></div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        <span class="keywordtype">int</span> kmax   = ubound(z_arr).z;</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        zval       = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_target = zp;</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160; </div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        <span class="comment">// Map position to i,j (must be same mapping in cpp file)</span></div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        ireal = (xp - <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a8c60d2d529b44fc6e0856ad21f4737db">plo</a>[0]) * dxi[0];</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;        jreal = (yp - <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a8c60d2d529b44fc6e0856ad21f4737db">plo</a>[1]) * dxi[1];</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        <span class="keywordtype">int</span> i_new = (int) (ireal - <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>);</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        <span class="keywordtype">int</span> j_new = (int) (jreal - <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>);</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160; </div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lk(0); lk&lt;kmax; ++lk) {</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_lo = <a class="code" href="ERF__NumericalConstants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_arr(i_new,j_new  ,lk  ) + z_arr(i_new+1,j_new  ,lk  )</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                                      + z_arr(i_new,j_new+1,lk  ) + z_arr(i_new+1,j_new+1,lk  ) );</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_hi = <a class="code" href="ERF__NumericalConstants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_arr(i_new,j_new  ,lk+1) + z_arr(i_new+1,j_new  ,lk+1)</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                                      + z_arr(i_new,j_new+1,lk+1) + z_arr(i_new+1,j_new+1,lk+1) );</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classMOSTAverage.html#aaf8ba26a674ef204580c6565d8eec1df">in_cell_z</a>(z_target, z_lo, z_hi)) {</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                found = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                <span class="comment">// Weight between the two cell centers that bracket z_target by</span></div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                <span class="comment">// their physical heights, so the interpolation is linear in z</span></div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                <span class="comment">// on a stretched or terrain-following column.  A weight taken</span></div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                <span class="comment">// from the fraction of the containing cell alone (as before)</span></div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                <span class="comment">// is exact only for equal cell heights: at the 10 m face of a</span></div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                <span class="comment">// 10 m / 11 m pair it returned the wind at 10.25 m.  A center</span></div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                <span class="comment">// beyond the nodes searched here is mirrored about the shared</span></div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;                <span class="comment">// face, which gives the equal-height weight at those ends.</span></div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a> = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (z_lo + z_hi);</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                <span class="keywordflow">if</span> (z_target &gt;= <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>) {</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zc_up = <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * z_hi - <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>;</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                    <span class="keywordflow">if</span> (lk + 2 &lt;= kmax) {</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_up = <a class="code" href="ERF__NumericalConstants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_arr(i_new,j_new  ,lk+2) + z_arr(i_new+1,j_new  ,lk+2)</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                                                  + z_arr(i_new,j_new+1,lk+2) + z_arr(i_new+1,j_new+1,lk+2) );</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                        zc_up = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (z_hi + z_up);</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                    }</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                    zval = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>) (lk + 1) + (z_target - <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>) / (zc_up - <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>);</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zc_dn = <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * z_lo - <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>;</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                    <span class="keywordflow">if</span> (lk &gt;= 1) {</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_dn = <a class="code" href="ERF__NumericalConstants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_arr(i_new,j_new  ,lk-1) + z_arr(i_new+1,j_new  ,lk-1)</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                                                  + z_arr(i_new,j_new+1,lk-1) + z_arr(i_new+1,j_new+1,lk-1) );</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                        zc_dn = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (z_dn + z_lo);</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                    }</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                    zval = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>) lk + (z_target - zc_dn) / (<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a> - zc_dn);</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                }</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;            }</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        }</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160; </div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        <span class="keywordflow">return</span> found;</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    {</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        <span class="comment">// Search to get z/k</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        <span class="keywordtype">int</span> kmax   = ubound(z_arr).z;</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        zval       = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_target = zp;</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160; </div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        <span class="comment">// Map position to i,j (must be same mapping in cpp file)</span></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        ireal = (xp - <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a8c60d2d529b44fc6e0856ad21f4737db">plo</a>[0]) * dxi[0];</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        jreal = (yp - <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a8c60d2d529b44fc6e0856ad21f4737db">plo</a>[1]) * dxi[1];</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        <span class="keywordtype">int</span> i_new = (int) (ireal - <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>);</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        <span class="keywordtype">int</span> j_new = (int) (jreal - <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>);</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160; </div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lk(0); lk&lt;kmax; ++lk) {</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_lo = <a class="code" href="ERF__NumericalConstants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_arr(i_new,j_new  ,lk  ) + z_arr(i_new+1,j_new  ,lk  )</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;                                      + z_arr(i_new,j_new+1,lk  ) + z_arr(i_new+1,j_new+1,lk  ) );</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_hi = <a class="code" href="ERF__NumericalConstants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_arr(i_new,j_new  ,lk+1) + z_arr(i_new+1,j_new  ,lk+1)</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                                      + z_arr(i_new,j_new+1,lk+1) + z_arr(i_new+1,j_new+1,lk+1) );</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classMOSTAverage.html#aaf8ba26a674ef204580c6565d8eec1df">in_cell_z</a>(z_target, z_lo, z_hi)) {</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                found = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                <span class="comment">// Weight between the two cell centers that bracket z_target by</span></div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                <span class="comment">// their physical heights, so the interpolation is linear in z</span></div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                <span class="comment">// on a stretched or terrain-following column.  A weight taken</span></div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                <span class="comment">// from the fraction of the containing cell alone (as before)</span></div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                <span class="comment">// is exact only for equal cell heights: at the 10 m face of a</span></div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                <span class="comment">// 10 m / 11 m pair it returned the wind at 10.25 m.  A center</span></div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                <span class="comment">// beyond the nodes searched here is mirrored about the shared</span></div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                <span class="comment">// face, which gives the equal-height weight at those ends.</span></div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a> = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (z_lo + z_hi);</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                <span class="keywordflow">if</span> (z_target &gt;= <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>) {</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zc_up = <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * z_hi - <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                    <span class="keywordflow">if</span> (lk + 2 &lt;= kmax) {</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_up = <a class="code" href="ERF__NumericalConstants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_arr(i_new,j_new  ,lk+2) + z_arr(i_new+1,j_new  ,lk+2)</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                                                  + z_arr(i_new,j_new+1,lk+2) + z_arr(i_new+1,j_new+1,lk+2) );</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                        zc_up = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (z_hi + z_up);</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                    }</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                    zval = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>) (lk + 1) + (z_target - <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>) / (zc_up - <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>);</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zc_dn = <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * z_lo - <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>;</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                    <span class="keywordflow">if</span> (lk &gt;= 1) {</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_dn = <a class="code" href="ERF__NumericalConstants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_arr(i_new,j_new  ,lk-1) + z_arr(i_new+1,j_new  ,lk-1)</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                                                  + z_arr(i_new,j_new+1,lk-1) + z_arr(i_new+1,j_new+1,lk-1) );</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                        zc_dn = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (z_dn + z_lo);</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                    }</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                    zval = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>) lk + (z_target - zc_dn) / (<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a> - zc_dn);</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;                }</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;            }</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        }</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;        <span class="keywordflow">return</span> found;</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    }</div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a4235fbbc097a41601ddc3d64a491551c"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a></div><div class="ttdeci">const Real zc</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:111</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:38</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a51fd20c46a81551dee3956734c5f7bcc"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a></div><div class="ttdeci">constexpr amrex::Real fourth</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:42</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_aaf8ba26a674ef204580c6565d8eec1df"><div class="ttname"><a href="classMOSTAverage.html#aaf8ba26a674ef204580c6565d8eec1df">MOSTAverage::in_cell_z</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_INLINE bool in_cell_z(const amrex::Real &amp;z, const amrex::Real &amp;z_lo, const amrex::Real &amp;z_hi)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:366</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_aaf8ba26a674ef204580c6565d8eec1df"><div class="ttname"><a href="classMOSTAverage.html#aaf8ba26a674ef204580c6565d8eec1df">MOSTAverage::in_cell_z</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_INLINE bool in_cell_z(const amrex::Real &amp;z, const amrex::Real &amp;z_lo, const amrex::Real &amp;z_hi)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:378</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#ac344f26a0cd5a8b073b70545d808782e">max_k_read()</a>, and <a class="el" href="classMOSTAverage.html#aefb42b9f2a5c3347e7ab87abdfcab3d7">trilinear_interp_T()</a>.</p>
 <div class="dynheader">
@@ -2839,7 +2841,7 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][comp].get(); }</div>
+<div class="fragment"><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][comp].get(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2884,7 +2886,7 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][comp].get(); }</div>
+<div class="fragment"><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][comp].get(); }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#ada5eabfddd39d2b0176b357429c2dbe3">SurfaceLayer::get_mac_avg()</a>, and <a class="el" href="classSurfaceLayer.html#aa0ed351bfb0b92b4eab2e1c8080ba38a">SurfaceLayer::get_mac_avg_ptr()</a>.</p>
 <div class="dynheader">
@@ -2898,6 +2900,53 @@ Here is the caller graph for this function:</div>
 </map>
 </div>
 
+</div>
+</div>
+<a id="add9befabf039e11844bf9370a61e7546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add9befabf039e11844bf9370a61e7546">&#9670;&nbsp;</a></span>get_field_ptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const amrex::MultiFab* MOSTAverage::get_field_ptr </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>comp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Return the field the averages read.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lev</td><td>level index </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">comp</td><td>0 x-velocity, 1 y-velocity, 2 z-velocity, 3 theta, 4 qv, 5 qr </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][comp];</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa764748ca573c4b1b915638f6b9d9724"></a>
@@ -2930,7 +2979,7 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">m_k_indx</a>[lev].get(); }</div>
+<div class="fragment"><div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">m_k_indx</a>[lev].get(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2957,7 +3006,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Return the number of average components. </p>
-<div class="fragment"><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6">m_navg</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6">m_navg</a>; }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a6a7451c8c231a856e1494574f3101902">SurfaceLayer::get_num_mac_avg()</a>.</p>
 <div class="dynheader">
@@ -3035,7 +3084,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    }</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <span class="keywordflow">return</span> ng_fill;</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;}</div>
-<div class="ttc" id="aclassMOSTAverage_html_a94ece9d178d0e85296cce07bab556bc7"><div class="ttname"><a href="classMOSTAverage.html#a94ece9d178d0e85296cce07bab556bc7">MOSTAverage::m_nvar</a></div><div class="ttdeci">int m_nvar</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:641</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a94ece9d178d0e85296cce07bab556bc7"><div class="ttname"><a href="classMOSTAverage.html#a94ece9d178d0e85296cce07bab556bc7">MOSTAverage::m_nvar</a></div><div class="ttdeci">int m_nvar</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:653</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#a38361381cf969ee42ba45f73ae499973">compute_region_averages()</a>, <a class="el" href="classMOSTAverage.html#ac344f26a0cd5a8b073b70545d808782e">max_k_read()</a>, <a class="el" href="classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9">set_k_indices_T()</a>, <a class="el" href="classMOSTAverage.html#ab43d75918dd8805b804b2054ec1be1ee">set_norm_indices_T()</a>, <a class="el" href="classMOSTAverage.html#a5d4563f98ba7112ceb8be723f1799b7a">set_norm_positions_T()</a>, and <a class="el" href="classMOSTAverage.html#a517ea430338f8474d89418cd92886b8e">set_z_positions_T()</a>.</p>
 <div class="dynheader">
@@ -3088,10 +3137,10 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordflow">if</span> (lev &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2">m_plane_average</a>.size())) { <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2">m_plane_average</a>[lev]; }</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">return</span> amrex::Vector&lt;amrex::Real&gt;{};</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">if</span> (lev &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2">m_plane_average</a>.size())) { <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2">m_plane_average</a>[lev]; }</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">return</span> amrex::Vector&lt;amrex::Real&gt;{};</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#aa3601856062fbf67aad757b10046f590">SurfaceLayer::get_mac_plane_avg()</a>.</p>
 <div class="dynheader">
@@ -3136,7 +3185,7 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#ab9f916aea0c336c883ed954ff0ef258f">m_zref</a>[lev].get(); }</div>
+<div class="fragment"><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#ab9f916aea0c336c883ed954ff0ef258f">m_zref</a>[lev].get(); }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a8c16d4c0dcbb2ab304eafc53a16e9590">SurfaceLayer::get_zref()</a>, <a class="el" href="classSurfaceLayer.html#ad997afbedb6f79a8d5e63b4865fe3104">SurfaceLayer::get_zref_min()</a>, and <a class="el" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50">SurfaceLayer::make_SurfaceLayer_at_level()</a>.</p>
 <div class="dynheader">
@@ -3202,9 +3251,9 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    {</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">return</span> ( (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &gt;= z_lo) &amp;&amp; (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt; z_hi) );</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    {</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordflow">return</span> ( (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &gt;= z_lo) &amp;&amp; (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt; z_hi) );</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    }</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#afca1dc80aee47e2c9b76002819aa9602">find_interp_height_T()</a>, and <a class="el" href="classMOSTAverage.html#ab43d75918dd8805b804b2054ec1be1ee">set_norm_indices_T()</a>.</p>
@@ -3270,15 +3319,15 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the cell index, or -1 if zref lies below the first cell center </dd></dl>
-<div class="fragment"><div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    {</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> nz = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(zlevels.size()) - 1;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordtype">int</span> lk = -1;</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(0); k &lt; nz; ++k) {</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classMOSTAverage.html#ac6cd8186e859ca08c5ba0cc6ebdbcbb1">cell_center_height</a>(zlevels, k) &lt;= zref) { lk = k; } <span class="keywordflow">else</span> { <span class="keywordflow">break</span>; }</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        }</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <span class="keywordflow">return</span> lk;</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    }</div>
-<div class="ttc" id="aclassMOSTAverage_html_ac6cd8186e859ca08c5ba0cc6ebdbcbb1"><div class="ttname"><a href="classMOSTAverage.html#ac6cd8186e859ca08c5ba0cc6ebdbcbb1">MOSTAverage::cell_center_height</a></div><div class="ttdeci">static amrex::Real cell_center_height(const amrex::Vector&lt; amrex::Real &gt; &amp;zlevels, const int &amp;k)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:400</div></div>
+<div class="fragment"><div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    {</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> nz = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(zlevels.size()) - 1;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordtype">int</span> lk = -1;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(0); k &lt; nz; ++k) {</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classMOSTAverage.html#ac6cd8186e859ca08c5ba0cc6ebdbcbb1">cell_center_height</a>(zlevels, k) &lt;= zref) { lk = k; } <span class="keywordflow">else</span> { <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        }</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        <span class="keywordflow">return</span> lk;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    }</div>
+<div class="ttc" id="aclassMOSTAverage_html_ac6cd8186e859ca08c5ba0cc6ebdbcbb1"><div class="ttname"><a href="classMOSTAverage.html#ac6cd8186e859ca08c5ba0cc6ebdbcbb1">MOSTAverage::cell_center_height</a></div><div class="ttdeci">static amrex::Real cell_center_height(const amrex::Vector&lt; amrex::Real &gt; &amp;zlevels, const int &amp;k)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:412</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#acea63f9601c5d2ee2cb21eee27d843fc">set_k_indices_N()</a>.</p>
 <div class="dynheader">
@@ -3633,19 +3682,19 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__ActuatorSampling_8cpp_html_a148e3876077787926724625411d6e7a9"><div class="ttname"><a href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a></div><div class="ttdeci">int b</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSampling.cpp:625</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a319ff1c970342978d83ed3795c78afa7"><div class="ttname"><a href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a></div><div class="ttdeci">constexpr amrex::Real bogus_large_value</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:19</div></div>
 <div class="ttc" id="aERF__InitCustomPert__KE_8H_html_aed00ad22578e3e1116178a2d586f95b6"><div class="ttname"><a href="ERF__InitCustomPert__KE_8H.html#aed00ad22578e3e1116178a2d586f95b6">use_eb</a></div><div class="ttdeci">const bool use_eb</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_KE.H:8</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a219026ba697d1e93f4b4c67e07d2e5e2"><div class="ttname"><a href="classMOSTAverage.html#a219026ba697d1e93f4b4c67e07d2e5e2">MOSTAverage::zref_sentinel</a></div><div class="ttdeci">const amrex::Real zref_sentinel</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:705</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a247925f30f45ee01c65fbcef9f677acc"><div class="ttname"><a href="classMOSTAverage.html#a247925f30f45ee01c65fbcef9f677acc">MOSTAverage::m_time_window</a></div><div class="ttdeci">double m_time_window</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:682</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a219026ba697d1e93f4b4c67e07d2e5e2"><div class="ttname"><a href="classMOSTAverage.html#a219026ba697d1e93f4b4c67e07d2e5e2">MOSTAverage::zref_sentinel</a></div><div class="ttdeci">const amrex::Real zref_sentinel</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:717</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a247925f30f45ee01c65fbcef9f677acc"><div class="ttname"><a href="classMOSTAverage.html#a247925f30f45ee01c65fbcef9f677acc">MOSTAverage::m_time_window</a></div><div class="ttdeci">double m_time_window</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:694</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a2d95e963377f9e2089740d3b3ad24f30"><div class="ttname"><a href="classMOSTAverage.html#a2d95e963377f9e2089740d3b3ad24f30">MOSTAverage::set_z_positions_EB</a></div><div class="ttdeci">void set_z_positions_EB(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:1070</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a49cb4a29276c80a13be2a7be2a2ca2a0"><div class="ttname"><a href="classMOSTAverage.html#a49cb4a29276c80a13be2a7be2a2ca2a0">MOSTAverage::validate_lateral_reference_stencil</a></div><div class="ttdeci">void validate_lateral_reference_stencil(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:1031</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a514120312387f28a1624387b0e3af360"><div class="ttname"><a href="classMOSTAverage.html#a514120312387f28a1624387b0e3af360">MOSTAverage::set_region_normalization</a></div><div class="ttdeci">void set_region_normalization(const int &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:147</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a514120312387f28a1624387b0e3af360"><div class="ttname"><a href="classMOSTAverage.html#a514120312387f28a1624387b0e3af360">MOSTAverage::set_region_normalization</a></div><div class="ttdeci">void set_region_normalization(const int &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:148</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a517ea430338f8474d89418cd92886b8e"><div class="ttname"><a href="classMOSTAverage.html#a517ea430338f8474d89418cd92886b8e">MOSTAverage::set_z_positions_T</a></div><div class="ttdeci">void set_z_positions_T(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:1385</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a5d4563f98ba7112ceb8be723f1799b7a"><div class="ttname"><a href="classMOSTAverage.html#a5d4563f98ba7112ceb8be723f1799b7a">MOSTAverage::set_norm_positions_T</a></div><div class="ttdeci">void set_norm_positions_T(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:1475</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a712f8ad33d8a87d2979330dec0a873d9"><div class="ttname"><a href="classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9">MOSTAverage::set_k_indices_T</a></div><div class="ttdeci">void set_k_indices_T(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:1097</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a8a1c27722c5b0df803889bfadb9a98e0"><div class="ttname"><a href="classMOSTAverage.html#a8a1c27722c5b0df803889bfadb9a98e0">MOSTAverage::set_plane_normalization</a></div><div class="ttdeci">void set_plane_normalization(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:673</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_ab43d75918dd8805b804b2054ec1be1ee"><div class="ttname"><a href="classMOSTAverage.html#ab43d75918dd8805b804b2054ec1be1ee">MOSTAverage::set_norm_indices_T</a></div><div class="ttdeci">void set_norm_indices_T(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:1255</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_abc66735142b394193e3b6934ea817015"><div class="ttname"><a href="classMOSTAverage.html#abc66735142b394193e3b6934ea817015">MOSTAverage::m_maxlev</a></div><div class="ttdeci">int m_maxlev</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:643</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_abc66735142b394193e3b6934ea817015"><div class="ttname"><a href="classMOSTAverage.html#abc66735142b394193e3b6934ea817015">MOSTAverage::m_maxlev</a></div><div class="ttdeci">int m_maxlev</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:655</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_ac32eedeed872c97981047c81f9157297"><div class="ttname"><a href="classMOSTAverage.html#ac32eedeed872c97981047c81f9157297">MOSTAverage::set_eb_normalization</a></div><div class="ttdeci">void set_eb_normalization(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:731</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_ac3c62b4015d62ae8d1ad85cb6ad651ad"><div class="ttname"><a href="classMOSTAverage.html#ac3c62b4015d62ae8d1ad85cb6ad651ad">MOSTAverage::include_subgrid_vel</a></div><div class="ttdeci">bool include_subgrid_vel</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:687</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_ac3c62b4015d62ae8d1ad85cb6ad651ad"><div class="ttname"><a href="classMOSTAverage.html#ac3c62b4015d62ae8d1ad85cb6ad651ad">MOSTAverage::include_subgrid_vel</a></div><div class="ttdeci">bool include_subgrid_vel</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:699</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_acea63f9601c5d2ee2cb21eee27d843fc"><div class="ttname"><a href="classMOSTAverage.html#acea63f9601c5d2ee2cb21eee27d843fc">MOSTAverage::set_k_indices_N</a></div><div class="ttdeci">void set_k_indices_N(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:825</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:232</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:234</div></div>
@@ -3798,7 +3847,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <span class="keywordflow">return</span> kmax;</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__KE_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_KE.H:9</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_afca1dc80aee47e2c9b76002819aa9602"><div class="ttname"><a href="classMOSTAverage.html#afca1dc80aee47e2c9b76002819aa9602">MOSTAverage::find_interp_height_T</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_INLINE bool find_interp_height_T(const amrex::Real &amp;xp, const amrex::Real &amp;yp, const amrex::Real &amp;zp, amrex::Array4&lt; amrex::Real const &gt; const &amp;z_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;plo, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxi, amrex::Real &amp;ireal, amrex::Real &amp;jreal, amrex::Real &amp;zval)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:434</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_afca1dc80aee47e2c9b76002819aa9602"><div class="ttname"><a href="classMOSTAverage.html#afca1dc80aee47e2c9b76002819aa9602">MOSTAverage::find_interp_height_T</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_INLINE bool find_interp_height_T(const amrex::Real &amp;xp, const amrex::Real &amp;yp, const amrex::Real &amp;zp, amrex::Array4&lt; amrex::Real const &gt; const &amp;z_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;plo, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxi, amrex::Real &amp;ireal, amrex::Real &amp;jreal, amrex::Real &amp;zval)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:446</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3838,9 +3887,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Return whether max_k_read can change after the level is made: the interpolation searches the current heights, which move with a moving mesh. </p>
-<div class="fragment"><div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    {</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#aeac5da9c3972fdde64f60720f88efe2e">m_interp</a> &amp;&amp; (<a class="code" href="classMOSTAverage.html#a8b2f4bb5cbc870ec5dee6644c1eed174">m_terrain_type</a> == TerrainType::MovingFittedMesh);</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    {</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#aeac5da9c3972fdde64f60720f88efe2e">m_interp</a> &amp;&amp; (<a class="code" href="classMOSTAverage.html#a8b2f4bb5cbc870ec5dee6644c1eed174">m_terrain_type</a> == TerrainType::MovingFittedMesh);</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4275,12 +4324,12 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a7817547f51392c7251d45619d61b1a39"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a7817547f51392c7251d45619d61b1a39">length</a></div><div class="ttdeci">const Real length</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_AnelasticWallDiffusion.H:16</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__SquallLine_8H_html_a8fb3bd5ad3c5764ad93ca714ea8b3b31"><div class="ttname"><a href="ERF__InitCustomPert__SquallLine_8H.html#a8fb3bd5ad3c5764ad93ca714ea8b3b31">height</a></div><div class="ttdeci">Real height</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_SquallLine.H:37</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a102fd0a7205cfe4d9673c3bdb22a87a7"><div class="ttname"><a href="classMOSTAverage.html#a102fd0a7205cfe4d9673c3bdb22a87a7">MOSTAverage::column_height</a></div><div class="ttdeci">static amrex::Real column_height(const amrex::Vector&lt; amrex::Real &gt; &amp;zlevels)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:412</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a215719d573d21b73a4cdbd3a306a35ec"><div class="ttname"><a href="classMOSTAverage.html#a215719d573d21b73a4cdbd3a306a35ec">MOSTAverage::k_index_below</a></div><div class="ttdeci">static int k_index_below(const amrex::Vector&lt; amrex::Real &gt; &amp;zlevels, const amrex::Real &amp;zref)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:382</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a8e48f835a742b02f039aeb6bc520aef8"><div class="ttname"><a href="classMOSTAverage.html#a8e48f835a742b02f039aeb6bc520aef8">MOSTAverage::m_pp_prefix</a></div><div class="ttdeci">std::string m_pp_prefix</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:634</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_acadf868a2179acfad54aa6808fee5c60"><div class="ttname"><a href="classMOSTAverage.html#acadf868a2179acfad54aa6808fee5c60">MOSTAverage::m_mesh_type</a></div><div class="ttdeci">MeshType m_mesh_type</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:635</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_ace73efcfb2d478d8a1f108667005f355"><div class="ttname"><a href="classMOSTAverage.html#ace73efcfb2d478d8a1f108667005f355">MOSTAverage::m_zlevels_stag</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; m_zlevels_stag</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:637</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_ad570edb25d41640aa2d52122ae303884"><div class="ttname"><a href="classMOSTAverage.html#ad570edb25d41640aa2d52122ae303884">MOSTAverage::m_k_in</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_k_in</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:666</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a102fd0a7205cfe4d9673c3bdb22a87a7"><div class="ttname"><a href="classMOSTAverage.html#a102fd0a7205cfe4d9673c3bdb22a87a7">MOSTAverage::column_height</a></div><div class="ttdeci">static amrex::Real column_height(const amrex::Vector&lt; amrex::Real &gt; &amp;zlevels)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:424</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a215719d573d21b73a4cdbd3a306a35ec"><div class="ttname"><a href="classMOSTAverage.html#a215719d573d21b73a4cdbd3a306a35ec">MOSTAverage::k_index_below</a></div><div class="ttdeci">static int k_index_below(const amrex::Vector&lt; amrex::Real &gt; &amp;zlevels, const amrex::Real &amp;zref)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:394</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a8e48f835a742b02f039aeb6bc520aef8"><div class="ttname"><a href="classMOSTAverage.html#a8e48f835a742b02f039aeb6bc520aef8">MOSTAverage::m_pp_prefix</a></div><div class="ttdeci">std::string m_pp_prefix</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:646</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_acadf868a2179acfad54aa6808fee5c60"><div class="ttname"><a href="classMOSTAverage.html#acadf868a2179acfad54aa6808fee5c60">MOSTAverage::m_mesh_type</a></div><div class="ttdeci">MeshType m_mesh_type</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:647</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_ace73efcfb2d478d8a1f108667005f355"><div class="ttname"><a href="classMOSTAverage.html#ace73efcfb2d478d8a1f108667005f355">MOSTAverage::m_zlevels_stag</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; m_zlevels_stag</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:649</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_ad570edb25d41640aa2d52122ae303884"><div class="ttname"><a href="classMOSTAverage.html#ad570edb25d41640aa2d52122ae303884">MOSTAverage::m_k_in</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_k_in</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:678</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db">make_MOSTAverage_at_level()</a>, and <a class="el" href="classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9">set_k_indices_T()</a>.</p>
@@ -4928,13 +4977,13 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> n_have = (lev &lt; static_cast&lt;int&gt;(<a class="code" href="classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2">m_plane_average</a>.size())) ?</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                            <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2">m_plane_average</a>[lev].size()) : 0;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordflow">if</span> (n_have != <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(pavg.size())) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">if</span> (n_have &gt; 0) { <a class="code" href="classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2">m_plane_average</a>[lev] = pavg; }</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> n_have = (lev &lt; static_cast&lt;int&gt;(<a class="code" href="classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2">m_plane_average</a>.size())) ?</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                            <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2">m_plane_average</a>[lev].size()) : 0;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">if</span> (n_have != <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(pavg.size())) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">if</span> (n_have &gt; 0) { <a class="code" href="classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2">m_plane_average</a>[lev] = pavg; }</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a7a2882ececdd0f242cfc7d66dbdc00b9">SurfaceLayer::set_mac_plane_avg()</a>.</p>
 <div class="dynheader">
@@ -5073,7 +5122,7 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    {<a class="code" href="classMOSTAverage.html#ab227f9a8e9224820c00fa8b223712b3e">m_ncell_region</a> = (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1) * (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1) * (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1);}</div>
+<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {<a class="code" href="classMOSTAverage.html#ab227f9a8e9224820c00fa8b223712b3e">m_ncell_region</a> = (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1) * (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1) * (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1);}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db">make_MOSTAverage_at_level()</a>.</p>
 <div class="dynheader">
@@ -5241,9 +5290,9 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47">m_t_avg</a>) { <a class="code" href="classMOSTAverage.html#a3fe20fc4a4eb0b283f1d658b6237004c">m_t_init</a>[lev] = 1; }</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47">m_t_avg</a>) { <a class="code" href="classMOSTAverage.html#a3fe20fc4a4eb0b283f1d658b6237004c">m_t_init</a>[lev] = 1; }</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#aebf068809f03540cbec4c31c09b21241">SurfaceLayer::set_mac_avg_initialized()</a>.</p>
 <div class="dynheader">
@@ -5297,7 +5346,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Average these horizontal velocities instead of the level's own, until the next update_field_ptrs. They must have the level's boxes, ghost cells included, cut at the top no lower than max_k_read: each box keeps its lower end, and a box wholly above max_k_read may keep a single plane, which is never read.</p>
+<p>Average these horizontal velocities instead of the level's own, until the next update_field_ptrs or make_MOSTAverage_at_level, which point the averages back at the level's own. They must have the level's boxes, ghost cells included, cut at the top no lower than max_k_read: each box keeps its lower end, and a box wholly above max_k_read may keep a single plane, which is never read.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">lev</td><td>level index </td></tr>
@@ -5306,10 +5355,10 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][0] = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][1] = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][0] = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][1] = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a325a1c27c6de3c673aa25ddf256eab7b">SurfaceLayer::update_mac_ptrs()</a>.</p>
 <div class="dynheader">
@@ -5567,9 +5616,9 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    {</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">return</span> ( <a class="code" href="classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47">m_t_avg</a> &amp;&amp; (lev &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classMOSTAverage.html#a3fe20fc4a4eb0b283f1d658b6237004c">m_t_init</a>.size())) &amp;&amp; (<a class="code" href="classMOSTAverage.html#a3fe20fc4a4eb0b283f1d658b6237004c">m_t_init</a>[lev] == 1) );</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordflow">return</span> ( <a class="code" href="classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47">m_t_avg</a> &amp;&amp; (lev &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classMOSTAverage.html#a3fe20fc4a4eb0b283f1d658b6237004c">m_t_init</a>.size())) &amp;&amp; (<a class="code" href="classMOSTAverage.html#a3fe20fc4a4eb0b283f1d658b6237004c">m_t_init</a>[lev] == 1) );</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a3d8f5ef37620ff90e5b7d2d69b77d7b2">SurfaceLayer::mac_avg_is_initialized()</a>.</p>
 <div class="dynheader">
@@ -5674,41 +5723,41 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    {</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ireal, jreal, zval;</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> found = <a class="code" href="classMOSTAverage.html#afca1dc80aee47e2c9b76002819aa9602">find_interp_height_T</a>(xp, yp, zp, z_arr, <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a8c60d2d529b44fc6e0856ad21f4737db">plo</a>, dxi, ireal, jreal, zval);</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160; </div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        amrex::ignore_unused(found);</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(found, <span class="stringliteral">&quot;MOSTAverage: Height above terrain not found, try increasing z_ref!&quot;</span>);</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160; </div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        <span class="comment">// NOTE: This is the point ahead of the current i,j (e.g. i/j_new + 1);</span></div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <span class="comment">//       in z, floor(zval) is the upper of the two bracketing cells</span></div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        <span class="keyword">const</span> amrex::RealVect <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a3d340509023c65150ab762f72adc72bb">lx</a>(ireal + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>, jreal + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>, zval);</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160; </div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        <span class="keyword">const</span> amrex::IntVect ijk = <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a3d340509023c65150ab762f72adc72bb">lx</a>.floor();</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160; </div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        <span class="keywordtype">int</span> i = ijk[0]; <span class="keywordtype">int</span> j = ijk[1]; <span class="keywordtype">int</span> k = ijk[2];</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160; </div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        <span class="comment">// Convert ijk (IntVect) to a RealVect explicitly</span></div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        amrex::RealVect ijk_r(<span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(ijk[0]),</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                              <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(ijk[1]),</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                              <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(ijk[2]));</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160; </div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <span class="comment">// Weights</span></div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        <span class="keyword">const</span> amrex::RealVect sx_hi = <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a3d340509023c65150ab762f72adc72bb">lx</a>  - ijk_r;</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        <span class="keyword">const</span> amrex::RealVect sx_lo = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - sx_hi;</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160; </div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; interp_comp; n++) {</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;            interp_vals[n] = sx_lo[0]*sx_lo[1]*sx_lo[2]*interp_array(i-1, j-1, k-1,n) +</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                             sx_lo[0]*sx_lo[1]*sx_hi[2]*interp_array(i-1, j-1, k  ,n) +</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                             sx_lo[0]*sx_hi[1]*sx_lo[2]*interp_array(i-1, j  , k-1,n) +</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                             sx_lo[0]*sx_hi[1]*sx_hi[2]*interp_array(i-1, j  , k  ,n) +</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                             sx_hi[0]*sx_lo[1]*sx_lo[2]*interp_array(i  , j-1, k-1,n) +</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                             sx_hi[0]*sx_lo[1]*sx_hi[2]*interp_array(i  , j-1, k  ,n) +</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                             sx_hi[0]*sx_hi[1]*sx_lo[2]*interp_array(i  , j  , k-1,n) +</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                             sx_hi[0]*sx_hi[1]*sx_hi[2]*interp_array(i  , j  , k  ,n);</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        }</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    {</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ireal, jreal, zval;</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> found = <a class="code" href="classMOSTAverage.html#afca1dc80aee47e2c9b76002819aa9602">find_interp_height_T</a>(xp, yp, zp, z_arr, <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a8c60d2d529b44fc6e0856ad21f4737db">plo</a>, dxi, ireal, jreal, zval);</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160; </div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        amrex::ignore_unused(found);</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(found, <span class="stringliteral">&quot;MOSTAverage: Height above terrain not found, try increasing z_ref!&quot;</span>);</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160; </div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        <span class="comment">// NOTE: This is the point ahead of the current i,j (e.g. i/j_new + 1);</span></div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <span class="comment">//       in z, floor(zval) is the upper of the two bracketing cells</span></div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        <span class="keyword">const</span> amrex::RealVect <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a3d340509023c65150ab762f72adc72bb">lx</a>(ireal + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>, jreal + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>, zval);</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160; </div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        <span class="keyword">const</span> amrex::IntVect ijk = <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a3d340509023c65150ab762f72adc72bb">lx</a>.floor();</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160; </div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        <span class="keywordtype">int</span> i = ijk[0]; <span class="keywordtype">int</span> j = ijk[1]; <span class="keywordtype">int</span> k = ijk[2];</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160; </div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        <span class="comment">// Convert ijk (IntVect) to a RealVect explicitly</span></div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;        amrex::RealVect ijk_r(<span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(ijk[0]),</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                              <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(ijk[1]),</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                              <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(ijk[2]));</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160; </div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        <span class="comment">// Weights</span></div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        <span class="keyword">const</span> amrex::RealVect sx_hi = <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a3d340509023c65150ab762f72adc72bb">lx</a>  - ijk_r;</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        <span class="keyword">const</span> amrex::RealVect sx_lo = <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - sx_hi;</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160; </div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; interp_comp; n++) {</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;            interp_vals[n] = sx_lo[0]*sx_lo[1]*sx_lo[2]*interp_array(i-1, j-1, k-1,n) +</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                             sx_lo[0]*sx_lo[1]*sx_hi[2]*interp_array(i-1, j-1, k  ,n) +</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                             sx_lo[0]*sx_hi[1]*sx_lo[2]*interp_array(i-1, j  , k-1,n) +</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;                             sx_lo[0]*sx_hi[1]*sx_hi[2]*interp_array(i-1, j  , k  ,n) +</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                             sx_hi[0]*sx_lo[1]*sx_lo[2]*interp_array(i  , j-1, k-1,n) +</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                             sx_hi[0]*sx_lo[1]*sx_hi[2]*interp_array(i  , j-1, k  ,n) +</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                             sx_hi[0]*sx_hi[1]*sx_lo[2]*interp_array(i  , j  , k-1,n) +</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                             sx_hi[0]*sx_hi[1]*sx_hi[2]*interp_array(i  , j  , k  ,n);</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        }</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    }</div>
 <div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a3d340509023c65150ab762f72adc72bb"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a3d340509023c65150ab762f72adc72bb">lx</a></div><div class="ttdeci">const Real lx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:10</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#a094b17b7929c7b3dd680e400049d9e69">compute_plane_averages()</a>, and <a class="el" href="classMOSTAverage.html#a38361381cf969ee42ba45f73ae499973">compute_region_averages()</a>.</p>
@@ -6489,7 +6538,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#af3ddc4c0c5fb5e95bc4fa8793508675e">compute_eb_averages()</a>, <a class="el" href="classMOSTAverage.html#a094b17b7929c7b3dd680e400049d9e69">compute_plane_averages()</a>, <a class="el" href="classMOSTAverage.html#a38361381cf969ee42ba45f73ae499973">compute_region_averages()</a>, <a class="el" href="classMOSTAverage.html#af9751b66e98ab40abc0fe4604447cec0">get_ng_fill()</a>, <a class="el" href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db">make_MOSTAverage_at_level()</a>, <a class="el" href="classMOSTAverage.html#ac344f26a0cd5a8b073b70545d808782e">max_k_read()</a>, <a class="el" href="classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9">set_k_indices_T()</a>, <a class="el" href="classMOSTAverage.html#ab43d75918dd8805b804b2054ec1be1ee">set_norm_indices_T()</a>, <a class="el" href="classMOSTAverage.html#a5d4563f98ba7112ceb8be723f1799b7a">set_norm_positions_T()</a>, <a class="el" href="classMOSTAverage.html#a8a1c27722c5b0df803889bfadb9a98e0">set_plane_normalization()</a>, <a class="el" href="classMOSTAverage.html#a4b14ba1b568a0106ffd883d8c1c8f53c">set_rotated_fields()</a>, <a class="el" href="classMOSTAverage.html#af862662c94b3bc62bf6f75ca464faac9">set_velocity_field_ptrs()</a>, <a class="el" href="classMOSTAverage.html#a517ea430338f8474d89418cd92886b8e">set_z_positions_T()</a>, <a class="el" href="classMOSTAverage.html#ac5470caa62893417ee6eadc28da3816f">update_field_ptrs()</a>, <a class="el" href="classMOSTAverage.html#a49cb4a29276c80a13be2a7be2a2ca2a0">validate_lateral_reference_stencil()</a>, <a class="el" href="classMOSTAverage.html#a2e0caf3f5752fc5edbe6e0fd877a4821">write_averages()</a>, <a class="el" href="classMOSTAverage.html#a8afcba5a6463fa300161c33080dafd36">write_k_indices()</a>, <a class="el" href="classMOSTAverage.html#ad100930fbf216f0482922cb62df43432">write_norm_indices()</a>, and <a class="el" href="classMOSTAverage.html#a08da948d93e79175ba5bf9b48e402846">write_xz_positions()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#af3ddc4c0c5fb5e95bc4fa8793508675e">compute_eb_averages()</a>, <a class="el" href="classMOSTAverage.html#a094b17b7929c7b3dd680e400049d9e69">compute_plane_averages()</a>, <a class="el" href="classMOSTAverage.html#a38361381cf969ee42ba45f73ae499973">compute_region_averages()</a>, <a class="el" href="classMOSTAverage.html#add9befabf039e11844bf9370a61e7546">get_field_ptr()</a>, <a class="el" href="classMOSTAverage.html#af9751b66e98ab40abc0fe4604447cec0">get_ng_fill()</a>, <a class="el" href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db">make_MOSTAverage_at_level()</a>, <a class="el" href="classMOSTAverage.html#ac344f26a0cd5a8b073b70545d808782e">max_k_read()</a>, <a class="el" href="classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9">set_k_indices_T()</a>, <a class="el" href="classMOSTAverage.html#ab43d75918dd8805b804b2054ec1be1ee">set_norm_indices_T()</a>, <a class="el" href="classMOSTAverage.html#a5d4563f98ba7112ceb8be723f1799b7a">set_norm_positions_T()</a>, <a class="el" href="classMOSTAverage.html#a8a1c27722c5b0df803889bfadb9a98e0">set_plane_normalization()</a>, <a class="el" href="classMOSTAverage.html#a4b14ba1b568a0106ffd883d8c1c8f53c">set_rotated_fields()</a>, <a class="el" href="classMOSTAverage.html#af862662c94b3bc62bf6f75ca464faac9">set_velocity_field_ptrs()</a>, <a class="el" href="classMOSTAverage.html#a517ea430338f8474d89418cd92886b8e">set_z_positions_T()</a>, <a class="el" href="classMOSTAverage.html#ac5470caa62893417ee6eadc28da3816f">update_field_ptrs()</a>, <a class="el" href="classMOSTAverage.html#a49cb4a29276c80a13be2a7be2a2ca2a0">validate_lateral_reference_stencil()</a>, <a class="el" href="classMOSTAverage.html#a2e0caf3f5752fc5edbe6e0fd877a4821">write_averages()</a>, <a class="el" href="classMOSTAverage.html#a8afcba5a6463fa300161c33080dafd36">write_k_indices()</a>, <a class="el" href="classMOSTAverage.html#ad100930fbf216f0482922cb62df43432">write_norm_indices()</a>, and <a class="el" href="classMOSTAverage.html#a08da948d93e79175ba5bf9b48e402846">write_xz_positions()</a>.</p>
 
 </div>
 </div>

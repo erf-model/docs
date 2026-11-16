@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"ERF__InitCustomPertVels__TurbulentInflow_8H_source.html":[3,0,1,22,45],
 "ERF__InitCustomPertVels__UserDefined_8H.html":[3,0,1,22,46],
 "ERF__InitCustomPertVels__UserDefined_8H.html#a43ae77dd0457ed5fefa12e4ff2e72114":[3,0,1,22,46,1],
 "ERF__InitCustomPertVels__UserDefined_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb":[3,0,1,22,46,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "ERF__InitCustomPert__EBPoiseuille_8H.html#a1b82d131b2060ea0cb6c35fcb1ff1bb8":[3,0,1,22,10,15],
 "ERF__InitCustomPert__EBPoiseuille_8H.html#a20be64624d4f94cb6b431f5fe0061df9":[3,0,1,22,10,25],
 "ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c":[3,0,1,22,10,0],
-"ERF__InitCustomPert__EBPoiseuille_8H.html#a321323b8a0b0353c5aeed9cb11101059":[3,0,1,22,10,22],
-"ERF__InitCustomPert__EBPoiseuille_8H.html#a3e766fc466013ff394d51a37dc2c2549":[3,0,1,22,10,20]
+"ERF__InitCustomPert__EBPoiseuille_8H.html#a321323b8a0b0353c5aeed9cb11101059":[3,0,1,22,10,22]
 };

@@ -17,6 +17,7 @@ var classMOSTAverage =
     [ "find_interp_height_T", "classMOSTAverage.html#afca1dc80aee47e2c9b76002819aa9602", null ],
     [ "get_average", "classMOSTAverage.html#a24f628d2e60c7220ec17d3fe8e7eaf9a", null ],
     [ "get_average", "classMOSTAverage.html#ac08baeafe98b80401526bfe20562aa5d", null ],
+    [ "get_field_ptr", "classMOSTAverage.html#add9befabf039e11844bf9370a61e7546", null ],
     [ "get_k_indices", "classMOSTAverage.html#aa764748ca573c4b1b915638f6b9d9724", null ],
     [ "get_navg", "classMOSTAverage.html#a9573fd4f737c22d635345413fef67834", null ],
     [ "get_ng_fill", "classMOSTAverage.html#af9751b66e98ab40abc0fe4604447cec0", null ],

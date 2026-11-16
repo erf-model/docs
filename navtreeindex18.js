@@ -1,5 +1,6 @@
 var NAVTREEINDEX18 =
 {
+"ERF__SurfaceFluxDiagnostics_8H_source.html":[3,0,1,5,4],
 "ERF__SurfaceLayerStress_8H.html":[3,0,1,2,26],
 "ERF__SurfaceLayerStress_8H.html#a5a26fea3011e6a5d2d9bbe1c770c98dd":[3,0,1,2,26,2],
 "ERF__SurfaceLayerStress_8H.html#a9a45b74e34f33537f0c28bb17da95cdd":[3,0,1,2,26,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX18 =
 "ERF__TimeStep_8cpp.html":[3,0,1,26,29],
 "ERF__TimestepUtils_8H.html":[3,0,1,29,57],
 "ERF__TimestepUtils_8H.html#ab7ce8e7be1f62efbd31303795419c0fe":[3,0,1,29,57,1],
-"ERF__TimestepUtils_8H.html#afed352acf55d695580d8642027f22b19":[3,0,1,29,57,0],
-"ERF__TimestepUtils_8H_source.html":[3,0,1,29,57]
+"ERF__TimestepUtils_8H.html#afed352acf55d695580d8642027f22b19":[3,0,1,29,57,0]
 };

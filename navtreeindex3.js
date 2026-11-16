@@ -115,10 +115,11 @@ var NAVTREEINDEX3 =
 "ERF__EWP_8H.html":[3,0,1,30,0,1],
 "ERF__EWP_8H_source.html":[3,0,1,30,0,1],
 "ERF__EarthRelativeWind_8H.html":[3,0,1,29,7],
-"ERF__EarthRelativeWind_8H.html#a59637fce3b9d13cb48e6c210652a3590":[3,0,1,29,7,1],
-"ERF__EarthRelativeWind_8H.html#a810b5f59736e2f478921e1062c7daf00":[3,0,1,29,7,2],
-"ERF__EarthRelativeWind_8H.html#ac5b5839f58f4fdeed22dc9fa26768f24":[3,0,1,29,7,3],
-"ERF__EarthRelativeWind_8H.html#ad89ede7cea1c4e249d62325c8ebcacaa":[3,0,1,29,7,0],
+"ERF__EarthRelativeWind_8H.html#a35ec06553ae6e7b6e7814a2a93b74d8a":[3,0,1,29,7,0],
+"ERF__EarthRelativeWind_8H.html#a59637fce3b9d13cb48e6c210652a3590":[3,0,1,29,7,2],
+"ERF__EarthRelativeWind_8H.html#a810b5f59736e2f478921e1062c7daf00":[3,0,1,29,7,3],
+"ERF__EarthRelativeWind_8H.html#ac5b5839f58f4fdeed22dc9fa26768f24":[3,0,1,29,7,4],
+"ERF__EarthRelativeWind_8H.html#ad89ede7cea1c4e249d62325c8ebcacaa":[3,0,1,29,7,1],
 "ERF__EarthRelativeWind_8H_source.html":[3,0,1,29,7],
 "ERF__EddyViscosity_8H.html":[3,0,1,6,18],
 "ERF__EddyViscosity_8H.html#a1a8e03c9d0a2b9decd215a2b2b2425e1":[3,0,1,6,18,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__ForceRestoreSnow_8H.html#a10d997f6bf4c424cd991d288b3bee007":[3,0,1,23,2,6,3],
 "ERF__ForceRestoreSnow_8H.html#a26ee9ee59b97035a9028b2cac73a9167":[3,0,1,23,2,6,4],
 "ERF__ForceRestoreSnow_8H.html#aa36952947311903ba9dd551901d17f03":[3,0,1,23,2,6,2],
-"ERF__ForceRestoreSnow_8H.html#aa950a74988bda77389e17fa460191fa6":[3,0,1,23,2,6,5],
-"ERF__ForceRestoreSnow_8H_source.html":[3,0,1,23,2,6]
+"ERF__ForceRestoreSnow_8H.html#aa950a74988bda77389e17fa460191fa6":[3,0,1,23,2,6,5]
 };

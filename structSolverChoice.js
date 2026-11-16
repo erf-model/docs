@@ -220,6 +220,7 @@ var structSolverChoice =
     [ "urban_enabled_lev", "structSolverChoice.html#acc31605518b83e0e133bbfaef7b2dfff", null ],
     [ "urban_type", "structSolverChoice.html#a72a826893a1acc6eea2d61919ccf983c", null ],
     [ "use_coriolis", "structSolverChoice.html#a6c45de94f60778d9414445fc2a79a32c", null ],
+    [ "use_coupled_currents", "structSolverChoice.html#af6059672d8d06f403ad31fb39eda70e9", null ],
     [ "use_coupled_sst", "structSolverChoice.html#a00dd4f3a673552e9a4e43f1151b9f568", null ],
     [ "use_eamxx_shoc", "structSolverChoice.html#ae12ca52a02ba13cde9e67018780b6224", null ],
     [ "use_gravity", "structSolverChoice.html#a5187ec19d377d421f348a36b7e8f22a4", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"ERF__ForceRestoreSnow_8H_source.html":[3,0,1,23,2,6],
 "ERF__ForestDrag_8H.html":[3,0,1,25,9],
 "ERF__ForestDrag_8H_source.html":[3,0,1,25,9],
 "ERF__ForestDrag_8cpp.html":[3,0,1,25,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "ERF__IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9":[3,0,1,38,4],
 "ERF__IndexDefines_8H.html#a7f9c844ee8a2e1930ade0911e8692667":[3,0,1,38,16],
 "ERF__IndexDefines_8H.html#a7fb02ae8fd2f46fd9cb1b247b058bd46":[3,0,1,38,11],
-"ERF__IndexDefines_8H.html#a843b0608565e0e58653f5ef40d682fa9":[3,0,1,38,26],
-"ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040":[3,0,1,38,22]
+"ERF__IndexDefines_8H.html#a843b0608565e0e58653f5ef40d682fa9":[3,0,1,38,26]
 };
