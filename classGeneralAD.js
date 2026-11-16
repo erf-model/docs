@@ -2,10 +2,10 @@ var classGeneralAD =
 [
     [ "GeneralAD", "classGeneralAD.html#a94e69e67c451652660642f85b48de07b", null ],
     [ "~GeneralAD", "classGeneralAD.html#ac44ff0908ec3c419196fb45efd0c7c13", null ],
-    [ "advance", "classGeneralAD.html#a4414efb5d3cd1323eace262d33420796", null ],
+    [ "advance", "classGeneralAD.html#ac8471441745a4ab1c74bfbe618ee4a25", null ],
     [ "compute_freestream_velocity", "classGeneralAD.html#aaa071c6bfd4e647404242328fd1b3643", null ],
     [ "compute_power_output", "classGeneralAD.html#ad14867dc077e05b0b3e360ad5379a2aa", null ],
-    [ "source_terms_cellcentered", "classGeneralAD.html#a5be79013be63b8105a01534ca186de32", null ],
+    [ "source_terms_cellcentered", "classGeneralAD.html#a45e71f7e1c7b95bfc7f1682fbc3be48c", null ],
     [ "update", "classGeneralAD.html#a5a785bd37358f2e3c19c918d254c94e1", null ],
     [ "blade_pitch", "classGeneralAD.html#a735e81390aef6a10e396bf4b7f1c7661", null ],
     [ "bld_airfoil_aoa", "classGeneralAD.html#ae95fc1dda876a138123f8eddce348d28", null ],

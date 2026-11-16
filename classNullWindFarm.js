@@ -2,7 +2,7 @@ var classNullWindFarm =
 [
     [ "NullWindFarm", "classNullWindFarm.html#ae4797e5a94227d10ed3b39dfd7bf4444", null ],
     [ "~NullWindFarm", "classNullWindFarm.html#a0dbf7ce260bc3c29e53b3650a0a4c40f", null ],
-    [ "advance", "classNullWindFarm.html#a747f0d122312ccfde581f020a061d442", null ],
+    [ "advance", "classNullWindFarm.html#a5f2933188fe9bf73139606e13ffe36e0", null ],
     [ "find_if_marked", "classNullWindFarm.html#a4d117768ddbdf31c864c4bc7eac57c46", null ],
     [ "get_blade_airfoil_spec", "classNullWindFarm.html#abc6967908665ee89bd0546d24ef6f2a6", null ],
     [ "get_blade_spec", "classNullWindFarm.html#ac88481b8d5d1cf63fabe89edee9cc8cd", null ],
@@ -16,6 +16,7 @@ var classNullWindFarm =
     [ "set_turb_loc", "classNullWindFarm.html#aadf3ba54909c2931d089f631889dbd5b", null ],
     [ "set_turb_spec", "classNullWindFarm.html#a745c730028714c13ff11fefb5440b2e5", null ],
     [ "set_turb_spec_extra", "classNullWindFarm.html#ade1a0b0eacbb79784db4c49cd8b1bae2", null ],
+    [ "set_turb_zloc", "classNullWindFarm.html#acadd8530589c5cbb63b9c698a0346a4d", null ],
     [ "m_blade_pitch", "classNullWindFarm.html#aabb34a6b16b5001624bf06c98aa226a9", null ],
     [ "m_bld_airfoil_aoa", "classNullWindFarm.html#a6f6bd907d33ec99543896b82fac6b4e4", null ],
     [ "m_bld_airfoil_Cd", "classNullWindFarm.html#a85b5fcee1d9a35f884255e9dec414bfd", null ],
@@ -36,5 +37,6 @@ var classNullWindFarm =
     [ "m_velocity", "classNullWindFarm.html#af83e2833c70c7374fa00ec94755e8038", null ],
     [ "m_wind_speed", "classNullWindFarm.html#a9beae3f8f39bb7bde432530da926d6ef", null ],
     [ "m_xloc", "classNullWindFarm.html#ac8ff132b0d2d52032ec19344ec6a74c6", null ],
-    [ "m_yloc", "classNullWindFarm.html#a86792dc0d8fb3dfc9b9646c38a2926da", null ]
+    [ "m_yloc", "classNullWindFarm.html#a86792dc0d8fb3dfc9b9646c38a2926da", null ],
+    [ "m_zloc", "classNullWindFarm.html#a71c1800c4886d596ba56534b1e6f709a", null ]
 ];

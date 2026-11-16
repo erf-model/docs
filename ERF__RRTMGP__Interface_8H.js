@@ -18,14 +18,14 @@ var ERF__RRTMGP__Interface_8H =
     [ "get_cloud_optics_lw", "ERF__RRTMGP__Interface_8H.html#a5880e93afd0b514fdeadc1a74b80001e", null ],
     [ "get_cloud_optics_sw", "ERF__RRTMGP__Interface_8H.html#a825e4ec715986e7ce3ccbc7fa0a16959", null ],
     [ "get_subcolumn_mask", "ERF__RRTMGP__Interface_8H.html#ab333c4574d3068f73b4b248d56588d6d", null ],
-    [ "get_subsampled_clouds", "ERF__RRTMGP__Interface_8H.html#a5ea46949a2a093209cb2f55d8d763a9c", null ],
-    [ "get_subsampled_clouds", "ERF__RRTMGP__Interface_8H.html#acead9e93668a3956675a2cd920a0c491", null ],
+    [ "get_subsampled_clouds", "ERF__RRTMGP__Interface_8H.html#aaf953ac8302ecaf7766cc9d89227d69f", null ],
+    [ "get_subsampled_clouds", "ERF__RRTMGP__Interface_8H.html#a973dfebfef9b5d3801e742796bbfc049", null ],
     [ "get_wavelength_index", "ERF__RRTMGP__Interface_8H.html#a686baa053db8c7c8b88243794e6eff5c", null ],
     [ "get_wavelength_index_lw", "ERF__RRTMGP__Interface_8H.html#a36564577866391c3de00afc0f6c3e0fe", null ],
     [ "get_wavelength_index_sw", "ERF__RRTMGP__Interface_8H.html#a28e3587b50833fd1f2c5a910b1392c43", null ],
     [ "rrtmgp_finalize", "ERF__RRTMGP__Interface_8H.html#a009ddf7de8b3d47a8732243e945e431c", null ],
     [ "rrtmgp_initialize", "ERF__RRTMGP__Interface_8H.html#a71b108ea480a6f323cedec4c27ab4944", null ],
     [ "rrtmgp_lw", "ERF__RRTMGP__Interface_8H.html#aa920f756cc57d6c9fe755483ac1b4582", null ],
-    [ "rrtmgp_main", "ERF__RRTMGP__Interface_8H.html#a38b1a9281557b02960339297bd401ef1", null ],
+    [ "rrtmgp_main", "ERF__RRTMGP__Interface_8H.html#a4b776a73ec477528f729fe91c5ab159c", null ],
     [ "rrtmgp_sw", "ERF__RRTMGP__Interface_8H.html#a83b2e0892e5b475f2f464b4285edfe47", null ]
 ];

@@ -2,7 +2,7 @@ var classSimpleAD =
 [
     [ "SimpleAD", "classSimpleAD.html#a708d4346c7d8900854def95ffd127985", null ],
     [ "~SimpleAD", "classSimpleAD.html#affe2efa65acb68bd027a69ad1410253a", null ],
-    [ "advance", "classSimpleAD.html#ae759fb5df64762b03bffed4820292ee0", null ],
+    [ "advance", "classSimpleAD.html#a165a56e1c7716b447e4275a118dffd7c", null ],
     [ "compute_freestream_velocity", "classSimpleAD.html#a1320fd9378b5802905f2a101a81b8067", null ],
     [ "compute_power_output", "classSimpleAD.html#a9f75f6209ce0398af008972baf3ba69b", null ],
     [ "source_terms_cellcentered", "classSimpleAD.html#ad5e7e7f089518b2158277c94013e4f01", null ],
