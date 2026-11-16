@@ -1,5 +1,9 @@
 var NAVTREEINDEX14 =
 {
+"ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb":[3,0,1,12,37,13],
+"ERF__Plotfile2DWaterPath_8cpp.html#a97844a229993c2b5f224f87b7624d875":[3,0,1,12,37,3],
+"ERF__Plotfile2DWaterPath_8cpp.html#a9c30ab2b82e9a275c74b5e81348e6e05":[3,0,1,12,37,2],
+"ERF__Plotfile2DWaterPath_8cpp.html#aa82b17461180193f9227396c88f656c6":[3,0,1,12,37,11],
 "ERF__Plotfile2DWaterPath_8cpp.html#ad0d2488d0d7c6486f8ba9c370e15a1e4":[3,0,1,12,37,9],
 "ERF__Plotfile2DWaterPath_8cpp.html#aeb39831ce22b67e3631a8d20e60a3be9":[3,0,1,12,37,4],
 "ERF__Plotfile2DWaterPath_8cpp.html#aeda6e076414bdf745c60d7b16b6fa0e7":[3,0,1,12,37,12],
@@ -245,9 +249,5 @@ var NAVTREEINDEX14 =
 "ERF__Rebalance_8cpp.html":[3,0,1,29,40],
 "ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379":[3,0,1,29,40,0],
 "ERF__RefineBox_8cpp.html":[3,0,1,24,0],
-"ERF__RefineHurricane_8cpp.html":[3,0,1,24,1],
-"ERF__RefineHurricane_8cpp.html#a661478614baa822c243e10e73731de2a":[3,0,1,24,1,0],
-"ERF__RefinementCriterion_8H.html":[3,0,1,24,2],
-"ERF__RefinementCriterion_8H_source.html":[3,0,1,24,2],
-"ERF__ResolvedWallFlux_8H.html":[3,0,1,6,26]
+"ERF__RefineHurricane_8cpp.html":[3,0,1,24,1]
 };

@@ -292,6 +292,7 @@ var annotated_dup =
     [ "LatLonLocation", "structLatLonLocation.html", "structLatLonLocation" ],
     [ "LatLonMap", "classLatLonMap.html", "classLatLonMap" ],
     [ "LineSampler", "structLineSampler.html", "structLineSampler" ],
+    [ "MassSource", "classMassSource.html", "classMassSource" ],
     [ "MaterialProperties", "structMaterialProperties.html", "structMaterialProperties" ],
     [ "MaterialPropertiesCore", "structMaterialPropertiesCore.html", "structMaterialPropertiesCore" ],
     [ "Microphysics", "classMicrophysics.html", "classMicrophysics" ],

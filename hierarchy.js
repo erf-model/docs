@@ -152,6 +152,7 @@ var hierarchy =
     [ "LatLonMap", "classLatLonMap.html", null ],
     [ "erf_sbm::LayoutValidation", "structerf__sbm_1_1LayoutValidation.html", null ],
     [ "TopographicShading::Level", "structTopographicShading_1_1Level.html", null ],
+    [ "MassSource::LevelGeometry", "structMassSource_1_1LevelGeometry.html", null ],
     [ "erf_actuator::LevelHeights", "classerf__actuator_1_1LevelHeights.html", null ],
     [ "erf_interval_means::LevelMetadata", "structerf__interval__means_1_1LevelMetadata.html", null ],
     [ "erf_sbm::SBMStateManager::LevelState", "structerf__sbm_1_1SBMStateManager_1_1LevelState.html", null ],
@@ -167,6 +168,7 @@ var hierarchy =
     [ "erf_auxiliary::MappedFaceField< MappedFaceFluxRateTag >", "classerf__auxiliary_1_1MappedFaceField.html", null ],
     [ "erf_auxiliary::MappedFaceFluxRateTag", "structerf__auxiliary_1_1MappedFaceFluxRateTag.html", null ],
     [ "erf_auxiliary::MappedFaceTransmissibilityTag", "structerf__auxiliary_1_1MappedFaceTransmissibilityTag.html", null ],
+    [ "MassSource", "classMassSource.html", null ],
     [ "MaterialPropertiesCore", "structMaterialPropertiesCore.html", [
       [ "MaterialProperties", "structMaterialProperties.html", null ]
     ] ],

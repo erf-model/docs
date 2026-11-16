@@ -1,5 +1,9 @@
 var NAVTREEINDEX15 =
 {
+"ERF__RefineHurricane_8cpp.html#a661478614baa822c243e10e73731de2a":[3,0,1,24,1,0],
+"ERF__RefinementCriterion_8H.html":[3,0,1,24,2],
+"ERF__RefinementCriterion_8H_source.html":[3,0,1,24,2],
+"ERF__ResolvedWallFlux_8H.html":[3,0,1,6,26],
 "ERF__ResolvedWallFlux_8H.html#af4bb1fd6bad609edefd5f661c60672ef":[3,0,1,6,26,0],
 "ERF__ResolvedWallFlux_8H_source.html":[3,0,1,6,26],
 "ERF__RichardsonNumber_8H.html":[3,0,1,6,27],
@@ -245,9 +249,5 @@ var NAVTREEINDEX15 =
 "ERF__SBMRemapping_8H.html#a40bea6a3a7b504cca12a50039ea4eb97aa60852f204ed8028c1c58808b746d115":[3,0,1,16,6,26,10,0],
 "ERF__SBMRemapping_8H.html#a5643e20531a1b81ce6a989853ba4e1c6":[3,0,1,16,6,26,29],
 "ERF__SBMRemapping_8H.html#a5b6a31885b9fa463a92ddb814696040a":[3,0,1,16,6,26,30],
-"ERF__SBMRemapping_8H.html#a65647dd6a55c331bcfaac6a4361e53be":[3,0,1,16,6,26,22],
-"ERF__SBMRemapping_8H.html#a684b16d29f85402b6f14dfd56ba5abe3":[3,0,1,16,6,26,43],
-"ERF__SBMRemapping_8H.html#a75c2d7b043b74b8ca25c2739cde7d9b1":[3,0,1,16,6,26,13],
-"ERF__SBMRemapping_8H.html#a75c2d7b043b74b8ca25c2739cde7d9b1a129e8109f319870e328cc7a1d5b5cae3":[3,0,1,16,6,26,13,3],
-"ERF__SBMRemapping_8H.html#a75c2d7b043b74b8ca25c2739cde7d9b1a1d63296a6652a409957bab1064517db6":[3,0,1,16,6,26,13,4]
+"ERF__SBMRemapping_8H.html#a65647dd6a55c331bcfaac6a4361e53be":[3,0,1,16,6,26,22]
 };

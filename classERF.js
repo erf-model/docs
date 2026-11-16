@@ -527,6 +527,7 @@ var classERF =
     [ "m_forest_drag", "classERF.html#a8b181e6ed0bb62d79e4a62555210abc9", null ],
     [ "m_ibseb", "classERF.html#ae8ec7a0c139b93daf3d3beaf1a005435", null ],
     [ "m_inflow_profiles", "classERF.html#aad1daa2ad8a10781db70c8a2c93c1317", null ],
+    [ "m_mass_source", "classERF.html#a37e6651e471f88f0b11368d2f600fddc", null ],
     [ "m_mom_reflux_p", "classERF.html#a6efa97f9601966b1c861c138d59408f9", null ],
     [ "m_mom_reflux_src", "classERF.html#af54baf47c2259017880f65ce7a990837", null ],
     [ "m_mom_reflux_stale", "classERF.html#a49ba99c799ff8816fe329a4b0a626931", null ],

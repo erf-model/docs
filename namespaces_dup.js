@@ -149,6 +149,10 @@ var namespaces_dup =
     ] ],
     [ "erf_inputs_detail", "namespaceerf__inputs__detail.html", "namespaceerf__inputs__detail" ],
     [ "erf_interval_means", "namespaceerf__interval__means.html", "namespaceerf__interval__means" ],
+    [ "erf_mass_source", "namespaceerf__mass__source.html", [
+      [ "in_source", "namespaceerf__mass__source.html#a719a9110867e88964810eadd828d5068", null ],
+      [ "periodic_lengths", "namespaceerf__mass__source.html#a7e58718205d0727c77c13b63507b1b18", null ]
+    ] ],
     [ "erf_moist_perturbation", "namespaceerf__moist__perturbation.html", [
       [ "perturb_temperature_and_vapour", "namespaceerf__moist__perturbation.html#a6cbcd6b4f9f8da24575a33044849934f", null ]
     ] ],
