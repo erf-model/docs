@@ -110,6 +110,7 @@ var hierarchy =
     [ "ForestDrag", "classForestDrag.html", null ],
     [ "erf_grid_utils::GeometricStretch", "structerf__grid__utils_1_1GeometricStretch.html", null ],
     [ "amrex::GPUable", null, [
+      [ "BuildingsLevelsetIF", "classBuildingsLevelsetIF.html", null ],
       [ "TerrainIF", "classTerrainIF.html", null ]
     ] ],
     [ "erf_sbm::GridValidation", "structerf__sbm_1_1GridValidation.html", null ],
@@ -340,6 +341,7 @@ var hierarchy =
       [ "SDInjection", "classSDInjection.html", null ]
     ] ],
     [ "SDInputs", "structSDInputs.html", null ],
+    [ "SDSampledWeight", "structSDSampledWeight.html", null ],
     [ "SEBLandMaskView", "structSEBLandMaskView.html", null ],
     [ "SedimentationFlux", "structSedimentationFlux.html", null ],
     [ "plotfile2d::SelectedSurfacePrecipAccumulationComponents", "structplotfile2d_1_1SelectedSurfacePrecipAccumulationComponents.html", null ],
