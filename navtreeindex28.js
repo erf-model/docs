@@ -137,9 +137,12 @@ var NAVTREEINDEX28 =
 "classIRadiation.html":[2,0,100],
 "classIRadiation.html#a05617d334e0ba8f86a1c2010a33368ec":[2,0,100,7],
 "classIRadiation.html#a077cf4e3cdf2e521e4bf856b27c4c871":[2,0,100,3],
-"classIRadiation.html#a2e4010d756cc604aa90ceb71a955584c":[2,0,100,14],
+"classIRadiation.html#a2e4010d756cc604aa90ceb71a955584c":[2,0,100,17],
+"classIRadiation.html#a4d35290564cae6e1f501f3553fb3ec07":[2,0,100,15],
 "classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4":[2,0,100,12],
+"classIRadiation.html#a69e095ab1f1b335f27eb2443f53b645c":[2,0,100,16],
 "classIRadiation.html#a75a399c98c8696ffca01b1af72297451":[2,0,100,10],
+"classIRadiation.html#a7894b210d214134b49e9c377ba18ad63":[2,0,100,14],
 "classIRadiation.html#a869627344662a3d31c962dc8bc615868":[2,0,100,8],
 "classIRadiation.html#a93a49facdea9a509245196a463491013":[2,0,100,4],
 "classIRadiation.html#a9752cd3320c4015e18b82891da1b3b20":[2,0,100,5],
@@ -246,8 +249,5 @@ var NAVTREEINDEX28 =
 "classLatLonMap.html#a30d48ecebdcfb1f8f62c94ef3b3921b2":[2,0,108,4],
 "classLatLonMap.html#a4b86f03650dac09b5861f35401d2ee8e":[2,0,108,2],
 "classLatLonMap.html#a50c1f67cc3c0798522eb233129f88eb5":[2,0,108,5],
-"classLatLonMap.html#a60bfcc164f1dd4c365e024d11f11edd5":[2,0,108,7],
-"classLatLonMap.html#a71f3f8349dc87bac84df8178c51dacf3":[2,0,108,0],
-"classLatLonMap.html#acbaeba497ad248c87fbd6d636180fd43":[2,0,108,6],
-"classMOSTAverage.html":[2,0,124]
+"classLatLonMap.html#a60bfcc164f1dd4c365e024d11f11edd5":[2,0,108,7]
 };

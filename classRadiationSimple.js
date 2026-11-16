@@ -2,13 +2,19 @@ var classRadiationSimple =
 [
     [ "RadiationSimple", "classRadiationSimple.html#af49597974da08150de29961fef03edba", null ],
     [ "~RadiationSimple", "classRadiationSimple.html#ac9ebe99c61308640466ee694848fe778", null ],
-    [ "get_radlwdn", "classRadiationSimple.html#ae7468df38d2b8a433fd0c46c3e4b6277", null ],
-    [ "get_radqrlw", "classRadiationSimple.html#a67caf8c72c972ea190fb9ee2ddd2d009", null ],
     [ "Init", "classRadiationSimple.html#a7236402f81fdbed48467a3c67b25f3e6", null ],
     [ "is_nested_patch", "classRadiationSimple.html#a65c6394323de777d240073dd6dc1fd08", null ],
     [ "Run", "classRadiationSimple.html#a60ad489081299f0387e19f8a3b53568e", null ],
     [ "WriteDataLog", "classRadiationSimple.html#ad17d203f960fa01eb0a8b458a442c686", null ],
+    [ "bdy_sfc_comp", "classRadiationSimple.html#a13b86c821f1cd951bf75d70ec0de9d30", null ],
+    [ "bdy_toa_comp", "classRadiationSimple.html#a6e389a8bac368cb67f154c8626e8f813", null ],
+    [ "bdy_ztop_comp", "classRadiationSimple.html#a592c9792f0ab49683384f89e4d3ff022", null ],
+    [ "datalog_bdy_mf", "classRadiationSimple.html#a15a8b5b3a3f8fd76b260409616a3bfa7", null ],
+    [ "datalog_mf", "classRadiationSimple.html#abe98b6a163302a296d311d7a65976dd4", null ],
     [ "deltaq", "classRadiationSimple.html#a33916e849e305f54ca250cbe3593798f", null ],
+    [ "dl_flux_comp", "classRadiationSimple.html#a6b43e5a71a422824fa3c26e0538df8d9", null ],
+    [ "dl_heating_comp", "classRadiationSimple.html#aef7725ad64386daee6ded04bc0efea11", null ],
+    [ "dl_z_comp", "classRadiationSimple.html#a8a43e9334490cd078cbdd39d0999d701", null ],
     [ "flux", "classRadiationSimple.html#ab09366df386ba613092b2b705341e7b5", null ],
     [ "m_ba", "classRadiationSimple.html#a6eb6d08884efceceb59305639e23a95a", null ],
     [ "m_geom", "classRadiationSimple.html#a4e247e52c3a7104810cf2f06a468e453", null ],
@@ -19,6 +25,6 @@ var classRadiationSimple =
     [ "m_qc_comp", "classRadiationSimple.html#a3261ac819e5ff4eae0c7535000b1d862", null ],
     [ "m_qi_comp", "classRadiationSimple.html#a7c40d4330571da3246455e86093d2bc1", null ],
     [ "m_qv_comp", "classRadiationSimple.html#abdfbfec5b21bf21daf4775f20b8f760b", null ],
-    [ "radlwdn", "classRadiationSimple.html#a0d82d09fdd1585bf536abbd1542d057c", null ],
-    [ "radqrlw", "classRadiationSimple.html#afbcc59e419b3bc8c6ad6240e318db1bf", null ]
+    [ "n_datalog_bdy_comp", "classRadiationSimple.html#a2c353a5d2f2208f6520a58311b22169c", null ],
+    [ "n_datalog_comp", "classRadiationSimple.html#a865411e946b39b54f15f1d60628e6de9", null ]
 ];

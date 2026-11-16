@@ -14,5 +14,8 @@ var classIRadiation =
     [ "WriteDataLog", "classIRadiation.html#ae2e629edd84a192f87d2251099a9a5de", null ],
     [ "datalog", "classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4", null ],
     [ "datalog_int", "classIRadiation.html#ab7a8ceb8c09be4f9df4241f81197f553", null ],
+    [ "datalog_precision", "classIRadiation.html#a7894b210d214134b49e9c377ba18ad63", null ],
+    [ "datalog_time_precision", "classIRadiation.html#a4d35290564cae6e1f501f3553fb3ec07", null ],
+    [ "datalog_width", "classIRadiation.html#a69e095ab1f1b335f27eb2443f53b645c", null ],
     [ "datalogname", "classIRadiation.html#a2e4010d756cc604aa90ceb71a955584c", null ]
 ];
