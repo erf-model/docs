@@ -106,6 +106,9 @@ var NAVTREEINDEX20 =
 "ERF__WDM6__Fortran__Interface_8H.html#a6fd47fb081ea55cfa9a81866c9edb79d":[3,0,1,16,8,9,1],
 "ERF__WDM6__Fortran__Interface_8H.html#af034d67fcc0e6ae8a72bd081290ff570":[3,0,1,16,8,9,0],
 "ERF__WDM6__Fortran__Interface_8H_source.html":[3,0,1,16,8,9],
+"ERF__WRFSurfaceFields_8H.html":[3,0,1,11,21],
+"ERF__WRFSurfaceFields_8H_source.html":[3,0,1,11,21],
+"ERF__WRFSurfaceFields_8cpp.html":[3,0,1,11,20],
 "ERF__WSM6_8H.html":[3,0,1,16,9,7],
 "ERF__WSM6_8H.html#a0fe02f7f3982b90945fb66c8ac37b085":[3,0,1,16,9,7,2],
 "ERF__WSM6_8H.html#a2df21baf4739784bafd35af41d9cf780":[3,0,1,16,9,7,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX20 =
 "ERF__module__mp__morr__two__moment_8F90.html#a653424210363bb2e25f48c07c4ac1f52":[3,0,1,16,2,3,100],
 "ERF__module__mp__morr__two__moment_8F90.html#a65fef70ad99ccd78c81b09a9f376759c":[3,0,1,16,2,3,77],
 "ERF__module__mp__morr__two__moment_8F90.html#a671a32c11c18f9067873e08fd694f848":[3,0,1,16,2,3,88],
-"ERF__module__mp__morr__two__moment_8F90.html#a6776c123b25fe31fa67b8a142c6738cf":[3,0,1,16,2,3,62],
-"ERF__module__mp__morr__two__moment_8F90.html#a68a317dfbf0c197230cbe40633ac022b":[3,0,1,16,2,3,36],
-"ERF__module__mp__morr__two__moment_8F90.html#a6c92b5839436f4d72dd0f7c2871db0ad":[3,0,1,16,2,3,18],
-"ERF__module__mp__morr__two__moment_8F90.html#a6ecff2c6fe26928e12c3e2d842fea562":[3,0,1,16,2,3,2]
+"ERF__module__mp__morr__two__moment_8F90.html#a6776c123b25fe31fa67b8a142c6738cf":[3,0,1,16,2,3,62]
 };

@@ -749,6 +749,7 @@ var classERF =
     [ "wrf_MUB", "classERF.html#a1f035a01fe56833f83e99195bd610535", null ],
     [ "wrf_PHB", "classERF.html#a42bc3f4b5273c279f23cfea2059cd7d6", null ],
     [ "wrf_RDNW", "classERF.html#ac4b6769d2561dd0d25b41c6062e58d75", null ],
+    [ "wrf_surface_fields", "classERF.html#aaf3edb4f9eaf1b95d9f212628d399782", null ],
     [ "write_erfbdy", "classERF.html#a3b5f18f03b67c07d6a6ac9b2826d863a", null ],
     [ "xflux_imask", "classERF.html#af044f075df34caa2a530aa13e1801a5b", null ],
     [ "xvel_bc_data", "classERF.html#a902f60d94be5eaf86361d1d5ad942105", null ],
