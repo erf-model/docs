@@ -1,5 +1,6 @@
 var NAVTREEINDEX62 =
 {
+"structerf__sbm_1_1SpectralGridSpec.html#a92ff789ceab304008f703930e5af09dc":[2,0,11,44,1],
 "structerf__sbm_1_1SpectralGridSpec.html#ab1c38eeb1e3ecf666400b1934978422d":[2,0,11,44,3],
 "structerf__sbm_1_1SpectralGridSpec.html#ac45794dd5289baa3e52da51fe29affac":[2,0,11,44,2],
 "structerf__sbm_1_1SpectralGridSpec.html#ad0804b6874aa3c801df5c086dbdff521":[2,0,11,44,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX62 =
 "structnear__surface__diagnostics_1_1WindSources.html":[2,0,22,5],
 "structnear__surface__diagnostics_1_1WindSources.html#a9617f8b074cf130d8b33974304deef27":[2,0,22,5,2],
 "structnear__surface__diagnostics_1_1WindSources.html#a9981f28728da1f4ef06c1429eef004ac":[2,0,22,5,8],
-"structnear__surface__diagnostics_1_1WindSources.html#ab3a9e626d13c8ae200282dec5d7b5511":[2,0,22,5,10],
-"structnear__surface__diagnostics_1_1WindSources.html#ac96b5b7b2238d2d51bdbd6bb87aa8500":[2,0,22,5,0]
+"structnear__surface__diagnostics_1_1WindSources.html#ab3a9e626d13c8ae200282dec5d7b5511":[2,0,22,5,10]
 };

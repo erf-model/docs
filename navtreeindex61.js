@@ -1,5 +1,6 @@
 var NAVTREEINDEX61 =
 {
+"structerf__sbm_1_1PacketApplicationCoreResult.html#a103865a12368a171548395dfdb6fa7c3":[2,0,11,31,1],
 "structerf__sbm_1_1PacketApplicationCoreResult.html#a17e62e697727ddc6ad420267e2787aaa":[2,0,11,31,4],
 "structerf__sbm_1_1PacketApplicationCoreResult.html#a770f2e7000e2302fa8cccd7bb76740d3":[2,0,11,31,3],
 "structerf__sbm_1_1PacketApplicationCoreResult.html#abd1ff51ba391b760cd213119e87cb4dd":[2,0,11,31,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX61 =
 "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#af3e02cd09aca478e2df8b1afac6bffcc":[2,0,11,43,1,25],
 "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#afb0c267931267e1cc060d7ae95f33aaa":[2,0,11,43,1,5],
 "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#affb1eb84198d9aa96d8d03e9311c0d0d":[2,0,11,43,1,29],
-"structerf__sbm_1_1SpectralGridSpec.html":[2,0,11,44],
-"structerf__sbm_1_1SpectralGridSpec.html#a92ff789ceab304008f703930e5af09dc":[2,0,11,44,1]
+"structerf__sbm_1_1SpectralGridSpec.html":[2,0,11,44]
 };
