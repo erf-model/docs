@@ -5203,9 +5203,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;            0, <a class="code" href="classERF.html#af912226e3a21599be45ea6d7ddcbccfa">m_coupled_sst</a>.get(), <a class="code" href="classERF.html#a6cccf0325742d782db1464f0c16d1cd4">m_coupled_sst_valid</a>.get());</div>
 <div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;    }</div>
 <div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160; </div>
-<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;    <span class="comment">// Diagnostics only from here on. The driver calls this every ERF substep with</span></div>
-<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;    <span class="comment">// the SST of the last exchange, and REMORA already checks that SST on its wet</span></div>
-<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;    <span class="comment">// cells once per exchange, so run this on the first call and at erf.v &gt;= 2 only.</span></div>
+<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;    <span class="comment">// Diagnostics only from here on. The driver calls this once per exchange with</span></div>
+<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;    <span class="comment">// that exchange&#39;s SST, which REMORA has already checked on its wet cells when</span></div>
+<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;    <span class="comment">// it packed it, so run this on the first call and at erf.v &gt;= 2 only.</span></div>
 <div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;    <span class="comment">// verbose is a ParmParse value, so every rank returns together.</span></div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a99ae52d882374ca388a88605511011cf">m_checked_coupled_sst</a> &amp;&amp; <a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a> &lt; 2) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;    <a class="code" href="classERF.html#a99ae52d882374ca388a88605511011cf">m_checked_coupled_sst</a> = <span class="keyword">true</span>;</div>
