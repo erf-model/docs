@@ -15,5 +15,10 @@ var ERF__KesslerUtils_8H =
     [ "kessler_warm_rain_sources", "ERF__KesslerUtils_8H.html#a7b173466750097304a64eb343d84335e", null ],
     [ "kessler_millimeters_per_meter", "ERF__KesslerUtils_8H.html#a66a813d6c9215aadaa0e38007cde35a3", null ],
     [ "kessler_sedimentation_cfl_max", "ERF__KesslerUtils_8H.html#a26e6add2393882212b4b72c0add0c468", null ],
+    [ "kessler_vt_coeff", "ERF__KesslerUtils_8H.html#abeacbe4754ecc57556f2d55d9b502451", null ],
+    [ "kessler_vt_density_exponent", "ERF__KesslerUtils_8H.html#a68b63aa9c0983aa357303a24634b8700", null ],
+    [ "kessler_vt_exponent", "ERF__KesslerUtils_8H.html#ae9209c7092bea9368b0cd43f2bac9ea2", null ],
+    [ "kessler_vt_rho0", "ERF__KesslerUtils_8H.html#af8b6a5f6335846da6ff43d04653b464a", null ],
+    [ "kessler_vt_rho_to_cgs", "ERF__KesslerUtils_8H.html#a69a90e4ccec022b3dfd0249e76ab0877", null ],
     [ "kessler_water_depth_m_per_kg_m2", "ERF__KesslerUtils_8H.html#a42a32b471664236ec2662a467ee4be47", null ]
 ];

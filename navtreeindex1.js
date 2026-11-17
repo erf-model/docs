@@ -1,5 +1,13 @@
 var NAVTREEINDEX1 =
 {
+"ERF__AuxiliaryDiffusion_8cpp.html#a925047fb0c73e084afb9f0660faaf1ad":[3,0,1,1,0,2],
+"ERF__AuxiliaryDiffusion_8cpp.html#a954ffa9748da0260a8739bb9264bb80f":[3,0,1,1,0,1],
+"ERF__AuxiliaryDiffusion_8cpp.html#a9a93cb4cbf8ab8f715091376a2d54876":[3,0,1,1,0,3],
+"ERF__AuxiliaryDiffusion_8cpp.html#abcfac5ddea6aa64fca6ebd94bfa305a3":[3,0,1,1,0,6],
+"ERF__AuxiliaryDiffusion_8cpp.html#afd248b2dcf1362bf3d7ad345f469ab80":[3,0,1,1,0,4],
+"ERF__AuxiliaryInertTracer_8H.html":[3,0,1,1,3],
+"ERF__AuxiliaryInertTracer_8H_source.html":[3,0,1,1,3],
+"ERF__AuxiliaryInertTracer_8cpp.html":[3,0,1,1,2],
 "ERF__AuxiliaryMappedTransport_8H.html":[3,0,1,1,5],
 "ERF__AuxiliaryMappedTransport_8H.html#a0c9f140deff66b4c8fdf8fd9483b6ca6":[3,0,1,1,5,7],
 "ERF__AuxiliaryMappedTransport_8H.html#a3b828db99bd66fb5cc21a0e01a892c50":[3,0,1,1,5,5],
@@ -241,13 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__CloudChamberWallStress_8H.html#aaa5c883b1e03d45bd71406bdf00497d1":[3,0,1,6,1,5],
 "ERF__CloudChamberWallStress_8H.html#ac4307af0458ef2f88c2981c46c747d91":[3,0,1,6,1,4],
 "ERF__CloudChamberWallStress_8H.html#ae5436c562fc8c95e0de2c18e90f1b3f1":[3,0,1,6,1,3],
-"ERF__CloudChamberWallStress_8H_source.html":[3,0,1,6,1],
-"ERF__CloudChamber_8H.html":[3,0,1,22,0],
-"ERF__CloudChamber_8H.html#a02a62e6e64c8518560d8a18f75cdf911":[3,0,1,22,0,19],
-"ERF__CloudChamber_8H.html#a09412b9da4a2870290d1055915395ad5":[3,0,1,22,0,5],
-"ERF__CloudChamber_8H.html#a09412b9da4a2870290d1055915395ad5a242b9aee8341e5c242b20383f1d4ba68":[3,0,1,22,0,5,5],
-"ERF__CloudChamber_8H.html#a09412b9da4a2870290d1055915395ad5a6e8014fe75654940776b47810654135f":[3,0,1,22,0,5,4],
-"ERF__CloudChamber_8H.html#a09412b9da4a2870290d1055915395ad5a9108c943fce57b33542839d145765a5c":[3,0,1,22,0,5,3],
-"ERF__CloudChamber_8H.html#a09412b9da4a2870290d1055915395ad5a95c9f94ba1764e963103695dd8374612":[3,0,1,22,0,5,0],
-"ERF__CloudChamber_8H.html#a09412b9da4a2870290d1055915395ad5aa2328544e5e53ba8702b78aee1d18fef":[3,0,1,22,0,5,2]
+"ERF__CloudChamberWallStress_8H_source.html":[3,0,1,6,1]
 };

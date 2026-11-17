@@ -567,9 +567,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160; </div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vortz = (dat(i+1,j,k,1) - dat(i-1,j,k,1)) / (<a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>)  <span class="comment">// dv/dx</span></div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                           - (dat(i,j+1,k,0) - dat(i,j-1,k,0)) / (<a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a>); <span class="comment">// du/dy</span></div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>     = dat(i,j,k,2); <span class="comment">// vertical velocity</span></div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w     = dat(i,j,k,2); <span class="comment">// vertical velocity</span></div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160; </div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                int_hel += vortz * <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a> * <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a>;</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                int_hel += vortz * w * <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a>;</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;            }</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        }</div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160; </div>
@@ -585,7 +585,6 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__KE_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_KE.H:9</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:41</div></div>
-<div class="ttc" id="aERF__Plotfile2DInterpolator_8cpp_html_a658e24fc592c43471ed399f60665a22f"><div class="ttname"><a href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a></div><div class="ttdeci">Real w</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DInterpolator.cpp:23</div></div>
 <div class="ttc" id="anamespaceWDM6SedCellScratch_html_acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:273</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa57f46c06e1038e523b8948fdd6e7261">ERF::compute_tag_field()</a>, and <a class="el" href="classERF.html#acf3039bca346f059829657aaa321faa6">ERF::FillPlot3DVars()</a>.</p>
@@ -956,10 +955,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    {</div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vortz = (dat(i+1,j,k,1) - dat(i-1,j,k,1)) / two_dx  <span class="comment">// dv/dx</span></div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                   - (dat(i,j+1,k,0) - dat(i,j-1,k,0)) / two_dy; <span class="comment">// du/dy</span></div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>     = dat(i,j,k,2);</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w     = dat(i,j,k,2);</div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160; </div>
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;        <span class="comment">// Helicity</span></div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;        dfab(i,j,k,dcomp) = vortz * <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>;</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;        dfab(i,j,k,dcomp) = vortz * w;</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    });</div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;}</div>
 </div><!-- fragment -->
@@ -1146,8 +1145,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    {</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> u = dat(i,j,k,0);</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> v = dat(i,j,k,1);</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a> = dat(i,j,k,2);</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        tfab(i,j,k,dcomp) = std::sqrt(u*u + v*v + <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>*<a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>);</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w = dat(i,j,k,2);</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        tfab(i,j,k,dcomp) = std::sqrt(u*u + v*v + w*w);</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    });</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;}</div>
 </div><!-- fragment -->
@@ -1335,8 +1334,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    {</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> u = dat(i,j,k,0);</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> v = dat(i,j,k,1);</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a> = dat(i,j,k,2);</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        tfab(i,j,k,dcomp) = u*u + v*v + <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>*<a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>;</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w = dat(i,j,k,2);</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        tfab(i,j,k,dcomp) = u*u + v*v + w*w;</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    });</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;}</div>
 </div><!-- fragment -->

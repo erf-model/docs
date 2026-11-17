@@ -490,8 +490,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      <span class="keyword">const</span> IntVect dom_grown_hi = dom_grown.bigEnd();</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      BoxList diffList = boxDiff(bx_grown, bx);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> Box&amp; <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> : diffList) {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> Box&amp; b : diffList) {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(b, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        {</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;          <span class="keywordflow">if</span> ( i &lt; dom_grown_lo[0] || i &gt; dom_grown_hi[0] ||</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;               j &lt; dom_grown_lo[1] || j &gt; dom_grown_hi[1] ||</div>
@@ -1279,8 +1279,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;      Box bx_grown_1 = bx; bx_grown_1.grow(a_idim,1);</div>
 <div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;      BoxList slab_diffList = boxDiff(upper_slab, bx_grown_1);</div>
 <div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160; </div>
-<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> Box&amp; <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> : slab_diffList) {</div>
-<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> Box&amp; b : slab_diffList) {</div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(b, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;        {</div>
 <div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;          IntVect iv(AMREX_D_DECL(i,j,k));</div>
 <div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;          IntVect iv_nearest = iv;</div>
@@ -1460,7 +1460,6 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;  }</div>
 <div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;}</div>
-<div class="ttc" id="aERF__ActuatorSampling_8cpp_html_a148e3876077787926724625411d6e7a9"><div class="ttname"><a href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a></div><div class="ttdeci">int b</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSampling.cpp:625</div></div>
 <div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_acc64e1753972a11f986bfc7ac9bd9103"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a></div><div class="ttdeci">GpuArray&lt; Real, AMREX_SPACEDIM &gt; dx</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:131</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>

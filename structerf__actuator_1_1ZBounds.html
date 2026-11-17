@@ -312,12 +312,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="structerf__actuator_1_1ZBounds.html#a27c4f91bbdc6c6706904d0db05df8eb0">has_ground</a>()) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">// counted from the ground&#39;s cell klo. A cell that only touches the range at a node is not always</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="comment">// within [kb, kt]: the spreader takes one face level more each way (reach_box_k())</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> = <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> + std::floor((<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(zl) - <a class="code" href="structerf__actuator_1_1ZBounds.html#a7bc2fdc43c2214a753acf2f4ec00ba43">ground_hi</a>) / <a class="code" href="structerf__actuator_1_1ZBounds.html#ac81f21de98ff3d6d5268cef6c1582936">dz_hi</a>);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> b = <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> + std::floor((<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(zl) - <a class="code" href="structerf__actuator_1_1ZBounds.html#a7bc2fdc43c2214a753acf2f4ec00ba43">ground_hi</a>) / <a class="code" href="structerf__actuator_1_1ZBounds.html#ac81f21de98ff3d6d5268cef6c1582936">dz_hi</a>);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8acd9c9ab9115542c95cb81d1fccb59419">t</a> = <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> + std::floor((<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(zh) - <a class="code" href="structerf__actuator_1_1ZBounds.html#ae3c0c73f2d6b6bb53c19d50682227120">ground_lo</a>) / <a class="code" href="structerf__actuator_1_1ZBounds.html#a28b7465a55e0eae86866b4b61eb5c4ff">dz_lo</a>);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        kb = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::min&lt;double&gt;(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> + 1, std::max&lt;double&gt;(<a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> - 1, <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>)));</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        kb = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::min&lt;double&gt;(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> + 1, std::max&lt;double&gt;(<a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> - 1, b)));</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        kt = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::min&lt;double&gt;(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> + 1, std::max&lt;double&gt;(<a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> - 1, <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8acd9c9ab9115542c95cb81d1fccb59419">t</a>)));</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
-<div class="ttc" id="aERF__ActuatorSampling_8cpp_html_a148e3876077787926724625411d6e7a9"><div class="ttname"><a href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a></div><div class="ttdeci">int b</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSampling.cpp:625</div></div>
 <div class="ttc" id="aERF__Advection_8H_html_a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b"><div class="ttname"><a href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">OpenSide::hi</a></div><div class="ttdeci">@ hi</div></div>
 <div class="ttc" id="aERF__Advection_8H_html_a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe"><div class="ttname"><a href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">OpenSide::lo</a></div><div class="ttdeci">@ lo</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:25</div></div>
@@ -372,7 +371,7 @@ Here is the caller graph for this function:</div>
 
 <p>every box of the level reaches the ground (else the bounds hold for those that do) </p>
 
-<p class="reference">Referenced by <a class="el" href="namespaceerf__actuator.html#ac9ebcca38f6b7152b68fe185e9a38bd6">erf_actuator::region_touches_grids()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__actuator.html#a8fd41deddfdbd0358f5d4b27678cc7b3">erf_actuator::mesh_z_bounds()</a>, and <a class="el" href="namespaceerf__actuator.html#ac9ebcca38f6b7152b68fe185e9a38bd6">erf_actuator::region_touches_grids()</a>.</p>
 
 </div>
 </div>
@@ -388,7 +387,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>, and <a class="el" href="namespaceerf__actuator.html#af46e4ec88ec35d96ec843657080a88da">erf_actuator::points_covered_by()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>, <a class="el" href="namespaceerf__actuator.html#a8fd41deddfdbd0358f5d4b27678cc7b3">erf_actuator::mesh_z_bounds()</a>, and <a class="el" href="namespaceerf__actuator.html#af46e4ec88ec35d96ec843657080a88da">erf_actuator::points_covered_by()</a>.</p>
 
 </div>
 </div>
@@ -404,7 +403,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>, and <a class="el" href="namespaceerf__actuator.html#af46e4ec88ec35d96ec843657080a88da">erf_actuator::points_covered_by()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>, <a class="el" href="namespaceerf__actuator.html#a8fd41deddfdbd0358f5d4b27678cc7b3">erf_actuator::mesh_z_bounds()</a>, and <a class="el" href="namespaceerf__actuator.html#af46e4ec88ec35d96ec843657080a88da">erf_actuator::points_covered_by()</a>.</p>
 
 </div>
 </div>
@@ -420,7 +419,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>, and <a class="el" href="namespaceerf__actuator.html#af46e4ec88ec35d96ec843657080a88da">erf_actuator::points_covered_by()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>, <a class="el" href="namespaceerf__actuator.html#a8fd41deddfdbd0358f5d4b27678cc7b3">erf_actuator::mesh_z_bounds()</a>, and <a class="el" href="namespaceerf__actuator.html#af46e4ec88ec35d96ec843657080a88da">erf_actuator::points_covered_by()</a>.</p>
 
 </div>
 </div>
@@ -436,7 +435,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>, and <a class="el" href="namespaceerf__actuator.html#af46e4ec88ec35d96ec843657080a88da">erf_actuator::points_covered_by()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>, <a class="el" href="namespaceerf__actuator.html#a8fd41deddfdbd0358f5d4b27678cc7b3">erf_actuator::mesh_z_bounds()</a>, and <a class="el" href="namespaceerf__actuator.html#af46e4ec88ec35d96ec843657080a88da">erf_actuator::points_covered_by()</a>.</p>
 
 </div>
 </div>
@@ -454,7 +453,7 @@ Here is the caller graph for this function:</div>
 
 <p>cell k0 + n is in one of the boxes </p>
 
-<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#ad1630806dd7c67c8417ea48535435aec">has_table()</a>, and <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#ad1630806dd7c67c8417ea48535435aec">has_table()</a>, <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>, <a class="el" href="namespaceerf__actuator.html#aa4fd30fcf91cc4d20b193a05b963a820">erf_actuator::mesh_z_levels()</a>, and <a class="el" href="namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a0ec2bade866903687eacfdea5e0ff767">erf_actuator::erf_detail_ActuatorSampling::node_level_table()</a>.</p>
 
 </div>
 </div>
@@ -472,7 +471,7 @@ Here is the caller graph for this function:</div>
 
 <p>the node level of node_lo[0] and the cell of has_cell[0] </p>
 
-<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>, and <a class="el" href="namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a0ec2bade866903687eacfdea5e0ff767">erf_actuator::erf_detail_ActuatorSampling::node_level_table()</a>.</p>
 
 </div>
 </div>
@@ -490,7 +489,7 @@ Here is the caller graph for this function:</div>
 
 <p>node level k0 + n: the lowest and highest height (empty: no table) </p>
 
-<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>, <a class="el" href="namespaceerf__actuator.html#aa4fd30fcf91cc4d20b193a05b963a820">erf_actuator::mesh_z_levels()</a>, and <a class="el" href="namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a0ec2bade866903687eacfdea5e0ff767">erf_actuator::erf_detail_ActuatorSampling::node_level_table()</a>.</p>
 
 </div>
 </div>
@@ -506,7 +505,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structerf__actuator_1_1ZBounds.html#a9fbdd9d6c5d7042f47f8d69b205343c1">k_range()</a>, <a class="el" href="namespaceerf__actuator.html#aa4fd30fcf91cc4d20b193a05b963a820">erf_actuator::mesh_z_levels()</a>, and <a class="el" href="namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a0ec2bade866903687eacfdea5e0ff767">erf_actuator::erf_detail_ActuatorSampling::node_level_table()</a>.</p>
 
 </div>
 </div>

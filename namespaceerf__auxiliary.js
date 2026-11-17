@@ -1,5 +1,11 @@
 var namespaceerf__auxiliary =
 [
+    [ "erf_detail_AuxiliaryDiffusion", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html", [
+      [ "count_invalid_coefficient_reads", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a9a93cb4cbf8ab8f715091376a2d54876", null ],
+      [ "fill_transmissibility", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#afd248b2dcf1362bf3d7ad345f469ab80", null ],
+      [ "on_physical_face", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a4bbbbd63de66963fe556facf00763edf", null ],
+      [ "same_face_layout", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#abcfac5ddea6aa64fca6ebd94bfa305a3", null ]
+    ] ],
     [ "MappedFaceTransmissibilityTag", "structerf__auxiliary_1_1MappedFaceTransmissibilityTag.html", null ],
     [ "MappedDiffusionMetrics", "structerf__auxiliary_1_1MappedDiffusionMetrics.html", "structerf__auxiliary_1_1MappedDiffusionMetrics" ],
     [ "MappedDiffusionCoefficients", "structerf__auxiliary_1_1MappedDiffusionCoefficients.html", "structerf__auxiliary_1_1MappedDiffusionCoefficients" ],

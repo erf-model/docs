@@ -144,20 +144,19 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    : <a class="code" href="structerf__actuator_1_1CoverageGrids.html#af60d0fab77b42d366335679f4a9d5153">cells</a>(amrex::convert(ba, IntVect::TheZeroVector()))</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;{</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;erf_actuator::CoverageGrids()&quot;</span>);</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    <span class="keyword">const</span> Box&amp; domain = geom.Domain();</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    BoxList flat;</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> = 0; b &lt; static_cast&lt;int&gt;(<a class="code" href="structerf__actuator_1_1CoverageGrids.html#af60d0fab77b42d366335679f4a9d5153">cells</a>.size()); ++<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>) {</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        Box f = <a class="code" href="structerf__actuator_1_1CoverageGrids.html#af60d0fab77b42d366335679f4a9d5153">cells</a>[<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>];</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        f.setSmall(2, domain.smallEnd(2));</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        f.setBig(2, domain.smallEnd(2));</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        flat.push_back(f);</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    }</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    <a class="code" href="structerf__actuator_1_1CoverageGrids.html#a80959b3eab0d36f9c5860fe0bbd5b4d3">footprints</a> = BoxArray(flat);</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;}</div>
-<div class="ttc" id="aERF__ActuatorSampling_8cpp_html_a148e3876077787926724625411d6e7a9"><div class="ttname"><a href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a></div><div class="ttdeci">int b</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSampling.cpp:625</div></div>
+<div class="fragment"><div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    : <a class="code" href="structerf__actuator_1_1CoverageGrids.html#af60d0fab77b42d366335679f4a9d5153">cells</a>(amrex::convert(ba, IntVect::TheZeroVector()))</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;{</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;erf_actuator::CoverageGrids()&quot;</span>);</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    <span class="keyword">const</span> Box&amp; domain = geom.Domain();</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    BoxList flat;</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> b = 0; b &lt; static_cast&lt;int&gt;(<a class="code" href="structerf__actuator_1_1CoverageGrids.html#af60d0fab77b42d366335679f4a9d5153">cells</a>.size()); ++b) {</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        Box f = <a class="code" href="structerf__actuator_1_1CoverageGrids.html#af60d0fab77b42d366335679f4a9d5153">cells</a>[b];</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        f.setSmall(2, domain.smallEnd(2));</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        f.setBig(2, domain.smallEnd(2));</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        flat.push_back(f);</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    }</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <a class="code" href="structerf__actuator_1_1CoverageGrids.html#a80959b3eab0d36f9c5860fe0bbd5b4d3">footprints</a> = BoxArray(flat);</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;}</div>
 <div class="ttc" id="astructerf__actuator_1_1CoverageGrids_html_a80959b3eab0d36f9c5860fe0bbd5b4d3"><div class="ttname"><a href="structerf__actuator_1_1CoverageGrids.html#a80959b3eab0d36f9c5860fe0bbd5b4d3">erf_actuator::CoverageGrids::footprints</a></div><div class="ttdeci">amrex::BoxArray footprints</div><div class="ttdoc">each box flattened onto the bottom layer (they may overlap)</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSampling.H:300</div></div>
 <div class="ttc" id="astructerf__actuator_1_1CoverageGrids_html_af60d0fab77b42d366335679f4a9d5153"><div class="ttname"><a href="structerf__actuator_1_1CoverageGrids.html#af60d0fab77b42d366335679f4a9d5153">erf_actuator::CoverageGrids::cells</a></div><div class="ttdeci">amrex::BoxArray cells</div><div class="ttdoc">the boxes, cell-centred</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSampling.H:299</div></div>
 </div><!-- fragment -->

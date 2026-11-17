@@ -107,6 +107,165 @@ var namespaces_dup =
       [ "wall_traction_at_cell", "namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f", null ]
     ] ],
     [ "erf_description", "namespaceerf__description.html", "namespaceerf__description" ],
+    [ "erf_detail_AdvanceLSM", "namespaceerf__detail__AdvanceLSM.html", [
+      [ "update_slm_precipitation", "namespaceerf__detail__AdvanceLSM.html#a799645d42c36d68b5003bdad5574e58f", null ]
+    ] ],
+    [ "erf_detail_AdvanceMicrophysics", "namespaceerf__detail__AdvanceMicrophysics.html", [
+      [ "make_sed_inflow", "namespaceerf__detail__AdvanceMicrophysics.html#a69e2de93cc8f19a13d8a94cff65f9a36", null ],
+      [ "register_sed_fluxes", "namespaceerf__detail__AdvanceMicrophysics.html#a7c4d77497af4ab0f41cceb163feee188", null ]
+    ] ],
+    [ "erf_detail_CoarseFineFaces", "namespaceerf__detail__CoarseFineFaces.html", [
+      [ "clamp_outside_domain", "namespaceerf__detail__CoarseFineFaces.html#a9de022ab857238a9d971e83931d4fa2c", null ],
+      [ "copy_slabs_into", "namespaceerf__detail__CoarseFineFaces.html#a9147091141c15d90d52910e259d5cf5f", null ],
+      [ "fill_cf_momentum", "namespaceerf__detail__CoarseFineFaces.html#a3bf871589387975e50cca8fbce62ba4e", null ],
+      [ "make_cf_zface_patches", "namespaceerf__detail__CoarseFineFaces.html#aae17db7b9748627618f32a8c77bf5243", null ],
+      [ "scale_by_column_mapfac", "namespaceerf__detail__CoarseFineFaces.html#a3971bd55421c7b3cacfbf5e22f5ef345", null ],
+      [ "weighted_mass_flux", "namespaceerf__detail__CoarseFineFaces.html#a888674c8c29121e539dcef147aaafffd", null ]
+    ] ],
+    [ "erf_detail_DiffusionSrcForMom_EB", "namespaceerf__detail__DiffusionSrcForMom__EB.html", [
+      [ "eb_wall_correction", "namespaceerf__detail__DiffusionSrcForMom__EB.html#ae252580f050ac3d04774c605b1029849", null ],
+      [ "launch_eb_wall_correction", "namespaceerf__detail__DiffusionSrcForMom__EB.html#ad26486cccc34736dd4b890dd9d9fe162", null ]
+    ] ],
+    [ "erf_detail_EB", "namespaceerf__detail__EB.html", null ],
+    [ "erf_detail_EnforceConstraintOnBdy", "namespaceerf__detail__EnforceConstraintOnBdy.html", [
+      [ "correct_bdy_outflow_on_face", "namespaceerf__detail__EnforceConstraintOnBdy.html#a5a74a4624046f34027518839dba10848", null ],
+      [ "scale_bdy_normal_by_rho0", "namespaceerf__detail__EnforceConstraintOnBdy.html#a87e6cfa73270df81d3ae3465a53ffbff", null ]
+    ] ],
+    [ "erf_detail_ForestDrag", "namespaceerf__detail__ForestDrag.html", [
+      [ "compute_lad_normalization", "namespaceerf__detail__ForestDrag.html#a1f65a20eecf0290fb0569c18ea0d0450", null ],
+      [ "warn_if_forest_grid_does_not_cover_targets", "namespaceerf__detail__ForestDrag.html#a919b81f87543804625e4d99c04d8c1ac", null ],
+      [ "lad_quadrature_points", "namespaceerf__detail__ForestDrag.html#a361e4d0b27d43f25fae51a44a964cf9e", null ]
+    ] ],
+    [ "erf_detail_MakeNewArrays", "namespaceerf__detail__MakeNewArrays.html", [
+      [ "set_test_mapfactor", "namespaceerf__detail__MakeNewArrays.html#a5eb928f982e00399a6ada27244828695", null ]
+    ] ],
+    [ "erf_detail_MakeNewLevel", "namespaceerf__detail__MakeNewLevel.html", [
+      [ "fill_qmoist_restart_var", "namespaceerf__detail__MakeNewLevel.html#a45a8c6ee4307c85a9e785eb29e541ea7", null ],
+      [ "fill_time_average_sum", "namespaceerf__detail__MakeNewLevel.html#a6f3a71654e447136d4e48495860c877b", null ],
+      [ "mask_thin_body_faces", "namespaceerf__detail__MakeNewLevel.html#a7fc1c907ce7e1aa03e69d9a86e679bb8", null ]
+    ] ],
+    [ "erf_detail_PoissonWallDist", "namespaceerf__detail__PoissonWallDist.html", [
+      [ "assert_surface_gathered", "namespaceerf__detail__PoissonWallDist.html#a847c863fe70740478b1919a5329ed34f", null ]
+    ] ],
+    [ "erf_detail_SEBTurbulentFlux", "namespaceerf__detail__SEBTurbulentFlux.html", [
+      [ "overwrite_valid_land_surface_cells", "namespaceerf__detail__SEBTurbulentFlux.html#a80cf79147648673db55a5c83f4cc9293", null ]
+    ] ],
+    [ "erf_detail_ShocDriver", "namespaceerf__detail__ShocDriver.html", "namespaceerf__detail__ShocDriver" ],
+    [ "erf_detail_ShocImplicit", "namespaceerf__detail__ShocImplicit.html", [
+      [ "interface_spacing", "namespaceerf__detail__ShocImplicit.html#ac08758b6ee138be936c146e8410945ef", null ],
+      [ "interpolate_cc_to_iface", "namespaceerf__detail__ShocImplicit.html#a84074447568419c5f9d07e94295b1063", null ],
+      [ "shoc_ksrf_min", "namespaceerf__detail__ShocImplicit.html#a6a90403237b06bc659db8efd01ad0fc8", null ],
+      [ "shoc_max_tke", "namespaceerf__detail__ShocImplicit.html#a136de4aed4f4df8e4f9ca33f6618d792", null ],
+      [ "shoc_min_qw", "namespaceerf__detail__ShocImplicit.html#a64a1e85d9abd4a8db7a94d9b5b719ea5", null ],
+      [ "shoc_min_tke", "namespaceerf__detail__ShocImplicit.html#a5493e430c8a08c5099a3da3f4de2f8e5", null ],
+      [ "shoc_u_ws_min", "namespaceerf__detail__ShocImplicit.html#accd5b63db1a36bd39a56b9a0f4f2c85d", null ],
+      [ "shoc_ustar_min", "namespaceerf__detail__ShocImplicit.html#afff6fe26c4880deeb092d45b78356a3d", null ],
+      [ "shoc_zvir", "namespaceerf__detail__ShocImplicit.html#ad90f413698ca0e4e3113deacd8877bb1", null ],
+      [ "weighted_linear_interp", "namespaceerf__detail__ShocImplicit.html#a40eba52f230796ab438445979ce9cebd", null ]
+    ] ],
+    [ "erf_detail_ShocMoments", "namespaceerf__detail__ShocMoments.html", [
+      [ "apply_second_moment_boundary_conditions", "namespaceerf__detail__ShocMoments.html#ad621f50a74127c7956f0e1d3c89cb4d6", null ],
+      [ "apply_top_taper_to_second_moments", "namespaceerf__detail__ShocMoments.html#a3a7f4075a701063a20774c56ef0fe411", null ],
+      [ "apply_top_taper_to_third_moments", "namespaceerf__detail__ShocMoments.html#a8b69e27c2b3f250ccca3500fc9cc0461", null ],
+      [ "cell_spacing_at_iface", "namespaceerf__detail__ShocMoments.html#af936ade3a03b54ea82b03af3c97f157b", null ],
+      [ "eps", "namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d", null ],
+      [ "interpolate_cc_to_iface", "namespaceerf__detail__ShocMoments.html#a286624a4c4fb8ce795c36a5096ae3d25", null ],
+      [ "shoc_base_temp", "namespaceerf__detail__ShocMoments.html#a32c0d559f5ac5d94eec4b7a57ad6feac", null ],
+      [ "shoc_large_neg", "namespaceerf__detail__ShocMoments.html#aea94e3b1e057ec6e5ea90e02478f963c", null ],
+      [ "shoc_min_tke", "namespaceerf__detail__ShocMoments.html#afbc1edf919b017d772f2055a802be78e", null ],
+      [ "shoc_ufmin", "namespaceerf__detail__ShocMoments.html#afec9ba5d04d388cfedd6f8ba1730ab73", null ],
+      [ "shoc_w3clip", "namespaceerf__detail__ShocMoments.html#a18bd04c3280ebe0a9e091e80d70c33c9", null ],
+      [ "signed_denominator", "namespaceerf__detail__ShocMoments.html#a8e805cea1d738fe1510d88affebcb7d7", null ],
+      [ "top_taper_cell", "namespaceerf__detail__ShocMoments.html#ae1ab5ac8a786dbb2a6c642d1c0dd2cd0", null ],
+      [ "top_taper_from_distance", "namespaceerf__detail__ShocMoments.html#ad77629ea0f2a15ac1efdec807cabd6cc", null ],
+      [ "top_taper_iface", "namespaceerf__detail__ShocMoments.html#a10dfa520804eec4e4bd8e205ef361537", null ],
+      [ "weighted_linear_interp", "namespaceerf__detail__ShocMoments.html#a88bbe82786a88457c890e5d2e1c014bb", null ]
+    ] ],
+    [ "erf_detail_ShocPDF", "namespaceerf__detail__ShocPDF.html", [
+      [ "clamp01", "namespaceerf__detail__ShocPDF.html#a9cf5d0fcf62a2ce43028520320489c51", null ],
+      [ "compute_buoyancy_flux", "namespaceerf__detail__ShocPDF.html#a6aa20054dd3654a631ed644dcd8606f8", null ],
+      [ "compute_qs_beta", "namespaceerf__detail__ShocPDF.html#a56fd560aa860deb631c0e87db6aa14cb", null ],
+      [ "compute_s_terms", "namespaceerf__detail__ShocPDF.html#a1c96f51490775581085b88e8abc58f0e", null ],
+      [ "compute_temperature", "namespaceerf__detail__ShocPDF.html#aadaa5cdb5e60d76942eb71d5b615ce53", null ],
+      [ "eps", "namespaceerf__detail__ShocPDF.html#a3d58cc9c75a4bc13568f834686976b38", null ],
+      [ "inplume_correlation", "namespaceerf__detail__ShocPDF.html#a16ede48051fb040b44c1ba17d0632891", null ],
+      [ "interpolate_iface_to_cc", "namespaceerf__detail__ShocPDF.html#af24d7a8106c8c9fd56df984129a18475", null ],
+      [ "inv_sqrt_two_pi", "namespaceerf__detail__ShocPDF.html#acc7859cb483e35112fd1e035d14859e3", null ],
+      [ "qw_parameters", "namespaceerf__detail__ShocPDF.html#a9b9e19e0b5f8b9df6068ddebb6c252ef", null ],
+      [ "shoc_base_temp", "namespaceerf__detail__ShocPDF.html#a3cb5b55ec8983a49881e97a6689f9fef", null ],
+      [ "shoc_do_thetal_skew", "namespaceerf__detail__ShocPDF.html#a889f38421cff7d6a0d796cc9f24dd781", null ],
+      [ "shoc_large_neg", "namespaceerf__detail__ShocPDF.html#a800eb3da078d63dce959089392ce0fc6", null ],
+      [ "shoc_pdf_tmp", "namespaceerf__detail__ShocPDF.html#aaad612d275692df04f034fd07738fc27", null ],
+      [ "shoc_rt_tol", "namespaceerf__detail__ShocPDF.html#a1d98da779d0d4941ccc0ccc41afe1b6f", null ],
+      [ "shoc_sqrt_pdf_tmp", "namespaceerf__detail__ShocPDF.html#a6d7b718120821b0e3b824b736f5b40b5", null ],
+      [ "shoc_thl_tol", "namespaceerf__detail__ShocPDF.html#a2da9a48d3df34ee88ed08de6ddbd0ef4", null ],
+      [ "shoc_tl_min", "namespaceerf__detail__ShocPDF.html#ac0c32fa286e62d73ca0841e328cb2e64", null ],
+      [ "shoc_w_thresh", "namespaceerf__detail__ShocPDF.html#a5b6d7bfe11be900e70a31e8248d39f71", null ],
+      [ "shoc_w_tol_sqd", "namespaceerf__detail__ShocPDF.html#a9bb0ae1b102e78042d69fd75dc6fa8c4", null ],
+      [ "signed_denominator", "namespaceerf__detail__ShocPDF.html#ac58c3498cc9aed79667d0ea19c16e617", null ],
+      [ "thl_parameters", "namespaceerf__detail__ShocPDF.html#a211cadd1c7d2088b525d44685b6f465b", null ],
+      [ "vv_parameters", "namespaceerf__detail__ShocPDF.html#a1be55e131e91031a94ee95c400a7a007", null ],
+      [ "weighted_linear_interp", "namespaceerf__detail__ShocPDF.html#adf36e4cf975906780a509c458e56d034", null ]
+    ] ],
+    [ "erf_detail_ShocTKE", "namespaceerf__detail__ShocTKE.html", [
+      [ "interface_spacing", "namespaceerf__detail__ShocTKE.html#a5b6eb06e9ac11c453675c95182fde79e", null ],
+      [ "interpolate_iface_to_cc", "namespaceerf__detail__ShocTKE.html#a924c9fab7224eb748c7a1f26b8f823f7", null ],
+      [ "shoc_base_temp", "namespaceerf__detail__ShocTKE.html#a5dc0ddef8967b0b29ac39e14bc39c17e", null ],
+      [ "shoc_max_iso", "namespaceerf__detail__ShocTKE.html#a2690334b7094821257ba33d7c8ed4ee8", null ],
+      [ "shoc_max_tke", "namespaceerf__detail__ShocTKE.html#a6349a505ce4c1baea2f9510132a2a44b", null ],
+      [ "shoc_min_tke", "namespaceerf__detail__ShocTKE.html#a280e340dc886ec6581ed56cceab132db", null ],
+      [ "shoc_pbl_trans", "namespaceerf__detail__ShocTKE.html#a0af0321f3fe2d8cf8fd106aa6f61839a", null ],
+      [ "shoc_shear_ck", "namespaceerf__detail__ShocTKE.html#a4536902d2b606ffaf831890279a155c2", null ],
+      [ "shoc_stable_ckh", "namespaceerf__detail__ShocTKE.html#a57fa522d397653f8878986b611c63b01", null ],
+      [ "shoc_stable_ckm", "namespaceerf__detail__ShocTKE.html#a376942a2b386374d2aa3ee9b3aad05fd", null ],
+      [ "shoc_tabs_crit", "namespaceerf__detail__ShocTKE.html#abb291d28dc2e165149fe4991c0f379bd", null ],
+      [ "shoc_tke_ce", "namespaceerf__detail__ShocTKE.html#af0e10c14b9d0cf0f40f016a59146cd5c", null ],
+      [ "shoc_tke_cee", "namespaceerf__detail__ShocTKE.html#a4f4a4db9b6339d2d958cc80ccfa24ad8", null ],
+      [ "shoc_tke_cs", "namespaceerf__detail__ShocTKE.html#af83a4af874ac0abcb6a0bc5e7f1dbb2d", null ],
+      [ "shoc_trop_pres", "namespaceerf__detail__ShocTKE.html#a4e324417cd52f197001e617b5d6de0ce", null ],
+      [ "top_taper_factor", "namespaceerf__detail__ShocTKE.html#ad85b8856709ee70e24aafb0755681810", null ],
+      [ "weighted_linear_interp", "namespaceerf__detail__ShocTKE.html#a3f20424e85c97bd29ede45d1d1288edf", null ]
+    ] ],
+    [ "erf_detail_StructureCoarseSource", "namespaceerf__detail__StructureCoarseSource.html", [
+      [ "restrict_face_field", "namespaceerf__detail__StructureCoarseSource.html#ae91407bf324bda53560b312ed3626453", null ]
+    ] ],
+    [ "erf_detail_SurfaceLayer", "namespaceerf__detail__SurfaceLayer.html", "namespaceerf__detail__SurfaceLayer" ],
+    [ "erf_detail_to_REMORA", "namespaceerf__detail__to__REMORA.html", [
+      [ "ApplyConservativeRemap", "namespaceerf__detail__to__REMORA.html#a473c9b9a2fd9cfcde8eadf24899eacfe", null ],
+      [ "FillEastNorth", "namespaceerf__detail__to__REMORA.html#ae3d5b38497040d5a55ac10992e007d9d", null ],
+      [ "PrintFluxLaneStats", "namespaceerf__detail__to__REMORA.html#aab3ca5a4200ee20126f280e15acd3bf4", null ],
+      [ "StagedSourceBoxArray", "namespaceerf__detail__to__REMORA.html#a1900e11f835df7597f298770d59fcec8", null ],
+      [ "iCloud", "namespaceerf__detail__to__REMORA.html#a2df17a64ed046545a9b875b678732bd6", null ],
+      [ "iFluxEvap", "namespaceerf__detail__to__REMORA.html#adf8ebe20686f51a4f3c5fda091f816e4", null ],
+      [ "iFluxLWrad", "namespaceerf__detail__to__REMORA.html#a08bc5e98079061edd17fe4157ee38f82", null ],
+      [ "iFluxRain", "namespaceerf__detail__to__REMORA.html#a77780852f02c4d6c5ceebaa400a5d3c4", null ],
+      [ "iFluxSWrad", "namespaceerf__detail__to__REMORA.html#a053549a1c1702967a402218a341db250", null ],
+      [ "iLHflux", "namespaceerf__detail__to__REMORA.html#a55a232d4300deef4faf63e6e232e5571", null ],
+      [ "iLWrad", "namespaceerf__detail__to__REMORA.html#a2158e7955d14c64a46a76e072f576672", null ],
+      [ "iPatm", "namespaceerf__detail__to__REMORA.html#ac1f7c54c1ae7f6604b87a70318c2227a", null ],
+      [ "iRain", "namespaceerf__detail__to__REMORA.html#a53f187b195990942ab2697c1de90403b", null ],
+      [ "iRH", "namespaceerf__detail__to__REMORA.html#a2f735de58e3a50306d6caff057df4be7", null ],
+      [ "iSHflux", "namespaceerf__detail__to__REMORA.html#aafeb9816a1a92b0ba9bbb884d19114ec", null ],
+      [ "iSWrad", "namespaceerf__detail__to__REMORA.html#a7bd784b9425914a9559f44d08a802e49", null ],
+      [ "iTair", "namespaceerf__detail__to__REMORA.html#a03acb2fccdfaf7759d03a0a42ae9eb54", null ],
+      [ "iTauX", "namespaceerf__detail__to__REMORA.html#abbf3818a6f0b4bcbbde9b06d82c2e534", null ],
+      [ "iTauY", "namespaceerf__detail__to__REMORA.html#a9d3c7de4b37d8dfb73cc2627ad0cfb12", null ],
+      [ "iUwind", "namespaceerf__detail__to__REMORA.html#a215788ee1f13288431606eb2eeda8798", null ],
+      [ "iVwind", "namespaceerf__detail__to__REMORA.html#ad58017440a5b02aab1dbd5c03e06247a", null ],
+      [ "nFluxLanes", "namespaceerf__detail__to__REMORA.html#a74ef360a13cfb55c825a3f5b2ae6efe8", null ],
+      [ "nStateLanes", "namespaceerf__detail__to__REMORA.html#a80ac9a00cde95a2de430283c1f781fe5", null ]
+    ] ],
+    [ "erf_detail_TopographicShading", "namespaceerf__detail__TopographicShading.html", [
+      [ "horizontal_ratio", "namespaceerf__detail__TopographicShading.html#ab6847ef56327c4b0e9ee120f59494d72", null ],
+      [ "prolong", "namespaceerf__detail__TopographicShading.html#adc5d5fb332ed2f35b6e78915dcfb9188", null ],
+      [ "missing", "namespaceerf__detail__TopographicShading.html#a544c74e00f47f9045a5d8b2f993ce31e", null ]
+    ] ],
+    [ "erf_detail_WRFSurfaceFields", "namespaceerf__detail__WRFSurfaceFields.html", [
+      [ "fill_from_coarser", "namespaceerf__detail__WRFSurfaceFields.html#a8919dc5eb4b964f5eb3d6ee239c2d1ba", null ],
+      [ "chk_magic", "namespaceerf__detail__WRFSurfaceFields.html#a8a647c1b51a170669f321640bcddc41a", null ],
+      [ "chk_mf_prefix", "namespaceerf__detail__WRFSurfaceFields.html#a4fd6dc0d235fceb0835d57966f483cb3", null ],
+      [ "chk_version", "namespaceerf__detail__WRFSurfaceFields.html#a320626301bd9901c3652be7be76b6a6c", null ]
+    ] ],
     [ "erf_earth_wind", "namespaceerf__earth__wind.html", [
       [ "earth_to_grid", "namespaceerf__earth__wind.html#a35ec06553ae6e7b6e7814a2a93b74d8a", null ],
       [ "grid_rotation_at", "namespaceerf__earth__wind.html#ad89ede7cea1c4e249d62325c8ebcacaa", null ],

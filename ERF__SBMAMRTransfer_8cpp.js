@@ -1,14 +1,25 @@
 var ERF__SBMAMRTransfer_8cpp =
 [
     [ "ApplyMappedRefluxCorrectionChunk", "ERF__SBMAMRTransfer_8cpp.html#af294a71e91c3421c1003db0adfbf01cd", null ],
+    [ "candidate_is_separate", "ERF__SBMAMRTransfer_8cpp.html#afbc2e6dd26daa1483edc247486008d86", null ],
+    [ "collective_all_true", "ERF__SBMAMRTransfer_8cpp.html#a09d9a1e84dedf5d24c68de93376ad947", null ],
     [ "CountRegridCells", "ERF__SBMAMRTransfer_8cpp.html#a9548ceed70e57e8f8dca440740edb7b1", null ],
+    [ "form_carrier_relative_chunk", "ERF__SBMAMRTransfer_8cpp.html#a6044f2bc7d281d0dd5c9fa554a6c7eb5", null ],
+    [ "form_mapped_chunk", "ERF__SBMAMRTransfer_8cpp.html#a0839271a89842c18cb88992ab9fc139d", null ],
     [ "MappedRefluxCorrectionMaskIsValid", "ERF__SBMAMRTransfer_8cpp.html#a8ee8b441699727c38978fcb261141d94", null ],
     [ "prolong_carrier_relative_chunks", "ERF__SBMAMRTransfer_8cpp.html#a0a07a42f7aaff4c1f51dedbef513832e", null ],
     [ "prolong_carrier_relative_spectrum_impl", "ERF__SBMAMRTransfer_8cpp.html#a96e5ddede2fa840d9576ffced619800b", null ],
     [ "ProlongCarrierRelativeSpectrum", "ERF__SBMAMRTransfer_8cpp.html#ae830f8f54b54a1cd8c0f372443362244", null ],
     [ "ProlongCarrierRelativeSpectrumPrivate", "ERF__SBMAMRTransfer_8cpp.html#a5aac822d5f124305bf4084433eb79a0c", null ],
+    [ "reconstruct_carrier_relative_chunk", "ERF__SBMAMRTransfer_8cpp.html#afbe638247e84606db093428c582ee6c4", null ],
     [ "RemapRegriddedSpectrumPrivate", "ERF__SBMAMRTransfer_8cpp.html#a7cfe63aa055190432c624410f97f902d", null ],
     [ "restrict_mapped_spectrum_impl", "ERF__SBMAMRTransfer_8cpp.html#a8422dbc94a0d04ac89af28431bdaf57c", null ],
     [ "RestrictMappedSpectrum", "ERF__SBMAMRTransfer_8cpp.html#aacd9597e7a66a035141e54d6fbbc6a78", null ],
-    [ "RestrictMappedSpectrumPrivate", "ERF__SBMAMRTransfer_8cpp.html#a412defb51ed8c4dfcc0f516f6a6c7df1", null ]
+    [ "RestrictMappedSpectrumPrivate", "ERF__SBMAMRTransfer_8cpp.html#a412defb51ed8c4dfcc0f516f6a6c7df1", null ],
+    [ "valid_ratio", "ERF__SBMAMRTransfer_8cpp.html#adb2e2647a177baba56821849cc90f062", null ],
+    [ "validate_mapped_carrier_inventory", "ERF__SBMAMRTransfer_8cpp.html#af43e9d76390cac193409281ae62a35fe", null ],
+    [ "validate_view_carriers", "ERF__SBMAMRTransfer_8cpp.html#af1b7589ae443b658f21a69db6005796d", null ],
+    [ "validate_view_spectrum", "ERF__SBMAMRTransfer_8cpp.html#aef1c7570ae9c7f9a69734141355777f4", null ],
+    [ "validate_view_structure", "ERF__SBMAMRTransfer_8cpp.html#abf38b6b8a1e053da7c75d88bd10a2add", null ],
+    [ "write_restricted_chunk", "ERF__SBMAMRTransfer_8cpp.html#a4f181745370a74238fcebf2a9c28eaea", null ]
 ];

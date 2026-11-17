@@ -1,6 +1,9 @@
 var annotated_dup =
 [
     [ "erf_actuator", "namespaceerf__actuator.html", [
+      [ "erf_detail_ActuatorSampling", "namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html", [
+        [ "ColumnWork", "structerf__actuator_1_1erf__detail__ActuatorSampling_1_1ColumnWork.html", "structerf__actuator_1_1erf__detail__ActuatorSampling_1_1ColumnWork" ]
+      ] ],
       [ "StagedBuffer", "structerf__actuator_1_1StagedBuffer.html", "structerf__actuator_1_1StagedBuffer" ],
       [ "ActuatorDeviceBuffers", "structerf__actuator_1_1ActuatorDeviceBuffers.html", "structerf__actuator_1_1ActuatorDeviceBuffers" ],
       [ "ZBounds", "structerf__actuator_1_1ZBounds.html", "structerf__actuator_1_1ZBounds" ],
@@ -54,6 +57,14 @@ var annotated_dup =
     [ "erf_description", "namespaceerf__description.html", [
       [ "Writer", "classerf__description_1_1Writer.html", "classerf__description_1_1Writer" ]
     ] ],
+    [ "erf_detail_ShocDriver", "namespaceerf__detail__ShocDriver.html", [
+      [ "ShocBadColumnReport", "structerf__detail__ShocDriver_1_1ShocBadColumnReport.html", "structerf__detail__ShocDriver_1_1ShocBadColumnReport" ]
+    ] ],
+    [ "erf_detail_SurfaceLayer", "namespaceerf__detail__SurfaceLayer.html", [
+      [ "NearestColumn", "structerf__detail__SurfaceLayer_1_1NearestColumn.html", "structerf__detail__SurfaceLayer_1_1NearestColumn" ],
+      [ "LsmFluxColumn", "structerf__detail__SurfaceLayer_1_1LsmFluxColumn.html", "structerf__detail__SurfaceLayer_1_1LsmFluxColumn" ],
+      [ "CoupledCurrentCells", "structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html", "structerf__detail__SurfaceLayer_1_1CoupledCurrentCells" ]
+    ] ],
     [ "erf_grid_utils", "namespaceerf__grid__utils.html", [
       [ "UniformGridMetadata", "structerf__grid__utils_1_1UniformGridMetadata.html", "structerf__grid__utils_1_1UniformGridMetadata" ],
       [ "GeometricStretch", "structerf__grid__utils_1_1GeometricStretch.html", "structerf__grid__utils_1_1GeometricStretch" ],
@@ -83,6 +94,10 @@ var annotated_dup =
       [ "ProvenanceParseResult", "structerf__provenance_1_1ProvenanceParseResult.html", "structerf__provenance_1_1ProvenanceParseResult" ]
     ] ],
     [ "erf_sbm", "namespaceerf__sbm.html", [
+      [ "erf_detail_SBMTransport", "namespaceerf__sbm_1_1erf__detail__SBMTransport.html", [
+        [ "DeviceGroupInfo", "structerf__sbm_1_1erf__detail__SBMTransport_1_1DeviceGroupInfo.html", "structerf__sbm_1_1erf__detail__SBMTransport_1_1DeviceGroupInfo" ],
+        [ "LocalPropertySupport", "structerf__sbm_1_1erf__detail__SBMTransport_1_1LocalPropertySupport.html", "structerf__sbm_1_1erf__detail__SBMTransport_1_1LocalPropertySupport" ]
+      ] ],
       [ "remap_detail", "namespaceerf__sbm_1_1remap__detail.html", [
         [ "RemapCellStateView", "structerf__sbm_1_1remap__detail_1_1RemapCellStateView.html", "structerf__sbm_1_1remap__detail_1_1RemapCellStateView" ]
       ] ],
@@ -197,6 +212,10 @@ var annotated_dup =
       [ "Profile", "structobs__nudging_1_1Profile.html", "structobs__nudging_1_1Profile" ]
     ] ],
     [ "plotfile2d", "namespaceplotfile2d.html", [
+      [ "erf_detail_Plotfile2DInterpolator", "namespaceplotfile2d_1_1erf__detail__Plotfile2DInterpolator.html", [
+        [ "SampledEarthWind", "structplotfile2d_1_1erf__detail__Plotfile2DInterpolator_1_1SampledEarthWind.html", "structplotfile2d_1_1erf__detail__Plotfile2DInterpolator_1_1SampledEarthWind" ],
+        [ "SampledRotation", "structplotfile2d_1_1erf__detail__Plotfile2DInterpolator_1_1SampledRotation.html", "structplotfile2d_1_1erf__detail__Plotfile2DInterpolator_1_1SampledRotation" ]
+      ] ],
       [ "DiagnosticDescriptor", "structplotfile2d_1_1DiagnosticDescriptor.html", "structplotfile2d_1_1DiagnosticDescriptor" ],
       [ "CloudOpticsParameters", "structplotfile2d_1_1CloudOpticsParameters.html", "structplotfile2d_1_1CloudOpticsParameters" ],
       [ "SampledBracket", "structplotfile2d_1_1SampledBracket.html", "structplotfile2d_1_1SampledBracket" ],

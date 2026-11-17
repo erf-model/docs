@@ -706,7 +706,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Called after <a class="el" href="classFireEngineTemplate.html#a8af2a2f248793bf1487649a9b56cce45">initialize()</a>, once the run's end is known: anything that depends on stop_time or max_step (output schedules, a check that the ignition happens before the run ends). On a restart, <a class="el" href="classFireEngineTemplate.html#a11d5e8e4427f854985d5c8c3bae09c48">read_checkpoint()</a> comes after this. </p>
+<p>Called after <a class="el" href="classFireEngineTemplate.html#a8af2a2f248793bf1487649a9b56cce45">initialize()</a>, once the run's end is known: anything that depends on stop_time or max_step (output schedules, a check that the ignition happens before the run ends). On a restart, <a class="el" href="classFireEngineTemplate.html#a11d5e8e4427f854985d5c8c3bae09c48">read_checkpoint()</a> comes after this.</p>
+<p>stop_time is the elapsed time at which the run stops [s], on the clock the engine's step times use (<a class="el" href="classERF.html">ERF</a>'s stop_time less start_time), and numeric_limits&lt;amrex::Real&gt;::max() when no stop time is set. max_step counts level-0 steps and is numeric_limits&lt;int&gt;::max() when unset (never negative). </p>
 
 <p>Reimplemented from <a class="el" href="classFireEngine.html#a5fb35adacc1e6bec28028428aef47f61">FireEngine</a>.</p>
 

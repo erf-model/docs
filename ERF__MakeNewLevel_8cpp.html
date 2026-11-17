@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('ERF__MakeNewLevel_8cpp.html',''); init
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_MakeNewLevel.cpp File Reference</div>  </div>
@@ -155,128 +156,23 @@ Include dependency graph for ERF_MakeNewLevel.cpp:</div>
 </map>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceerf__detail__MakeNewLevel"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__MakeNewLevel.html">erf_detail_MakeNewLevel</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a6f3a71654e447136d4e48495860c877b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__MakeNewLevel.html#a6f3a71654e447136d4e48495860c877b">erf_detail_MakeNewLevel::fill_time_average_sum</a> (MultiFab &amp;new_sum, const MultiFab *old_sum, double fine_cnt, const MultiFab *crse_sum, double crse_cnt, const Geometry &amp;crse_geom, const Geometry &amp;fine_geom, const IntVect &amp;ratio)</td></tr>
+<tr class="separator:a6f3a71654e447136d4e48495860c877b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c9e6883145b36950b6e468cbd9d39d7"><td class="memItemLeft" align="right" valign="top">static Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MakeNewLevel_8cpp.html#a8c9e6883145b36950b6e468cbd9d39d7">save_qmoist_restart_vars</a> (const Vector&lt; MultiFab * &gt; &amp;qmoist_lev, const std::vector&lt; int &gt; &amp;<a class="el" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>)</td></tr>
 <tr class="separator:a8c9e6883145b36950b6e468cbd9d39d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73ae815130c982b63afd914254b325b0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MakeNewLevel_8cpp.html#a73ae815130c982b63afd914254b325b0">fill_qmoist_restart_var</a> (MultiFab &amp;dst, const MultiFab *old_mf, const MultiFab *crse_mf, const Geometry &amp;crse_geom, const Geometry &amp;fine_geom, const IntVect &amp;ratio)</td></tr>
-<tr class="separator:a73ae815130c982b63afd914254b325b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45a8c6ee4307c85a9e785eb29e541ea7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__MakeNewLevel.html#a45a8c6ee4307c85a9e785eb29e541ea7">erf_detail_MakeNewLevel::fill_qmoist_restart_var</a> (MultiFab &amp;dst, const MultiFab *old_mf, const MultiFab *crse_mf, const Geometry &amp;crse_geom, const Geometry &amp;fine_geom, const IntVect &amp;ratio)</td></tr>
+<tr class="separator:a45a8c6ee4307c85a9e785eb29e541ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fc1c907ce7e1aa03e69d9a86e679bb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__MakeNewLevel.html#a7fc1c907ce7e1aa03e69d9a86e679bb8">erf_detail_MakeNewLevel::mask_thin_body_faces</a> (iMultiFab &amp;imask, const Vector&lt; IntVect &gt; &amp;faces, int dir, const char *<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)</td></tr>
+<tr class="separator:a7fc1c907ce7e1aa03e69d9a86e679bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a73ae815130c982b63afd914254b325b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73ae815130c982b63afd914254b325b0">&#9670;&nbsp;</a></span>fill_qmoist_restart_var()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void fill_qmoist_restart_var </td>
-          <td>(</td>
-          <td class="paramtype">MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>dst</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const MultiFab *&#160;</td>
-          <td class="paramname"><em>old_mf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const MultiFab *&#160;</td>
-          <td class="paramname"><em>crse_mf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Geometry &amp;&#160;</td>
-          <td class="paramname"><em>crse_geom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Geometry &amp;&#160;</td>
-          <td class="paramname"><em>fine_geom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const IntVect &amp;&#160;</td>
-          <td class="paramname"><em>ratio</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;{</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = dst.nComp();</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keywordflow">if</span> (crse_mf != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        MultiFab <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>(dst.boxArray(), dst.DistributionMap(), ncomp, 0);</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        Vector&lt;BCRec&gt; bcs(ncomp); <span class="comment">// unused by pc_interp, which needs no coarse ghost cells</span></div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                bcs[n].setLo(dir, <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">BCType::foextrap</a>);</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                bcs[n].setHi(dir, <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">BCType::foextrap</a>);</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;            }</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        }</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        InterpFromCoarseLevel(<a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>, IntVect(0), IntVect(0), *crse_mf, 0, 0, ncomp,</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                              crse_geom, fine_geom, ratio, &amp;pc_interp, bcs, 0);</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = fine_geom.Domain().smallEnd(2);</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(dst, TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            Box bx = mfi.tilebox();</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            <span class="keywordflow">if</span> (bx.smallEnd(2) &gt; <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            bx.setBig(2, <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dst_arr = dst.array(mfi);</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tmp_arr = <a class="code" href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">tmp</a>.const_array(mfi);</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            {</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                dst_arr(i,j,k,n) = tmp_arr(i,j,k,n);</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;            });</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        }</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    }</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <span class="keywordflow">if</span> (old_mf != <span class="keyword">nullptr</span>) { dst.ParallelCopy(*old_mf, 0, 0, ncomp); }</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    dst.FillBoundary(fine_geom.periodicity());</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__KE_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_KE.H:9</div></div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
-<div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a></div><div class="ttdeci">@ foextrap</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:316</div></div>
-<div class="ttc" id="anamespaceWSM6SedCellScratch_html_a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a9da5f6928c0b96be40439bc0d2384d8aa381cd8133166e8909183cb00eaec8da1">WSM6SedCellScratch::tmp</a></div><div class="ttdeci">@ tmp</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:116</div></div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#abb6175c28b36d23f5dda2994ca4a85e7">ERF::MakeNewLevelFromCoarse()</a>, and <a class="el" href="classERF.html#aae7a3a76e08e54c618cf79b30ed2d73d">ERF::RemakeLevel()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="ERF__MakeNewLevel_8cpp_a73ae815130c982b63afd914254b325b0_cgraph.png" border="0" usemap="#aERF__MakeNewLevel_8cpp_a73ae815130c982b63afd914254b325b0_cgraph" alt=""/></div>
-<map name="aERF__MakeNewLevel_8cpp_a73ae815130c982b63afd914254b325b0_cgraph" id="aERF__MakeNewLevel_8cpp_a73ae815130c982b63afd914254b325b0_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,173,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="221,5,312,32"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="ERF__MakeNewLevel_8cpp_a73ae815130c982b63afd914254b325b0_icgraph.png" border="0" usemap="#aERF__MakeNewLevel_8cpp_a73ae815130c982b63afd914254b325b0_icgraph" alt=""/></div>
-<map name="aERF__MakeNewLevel_8cpp_a73ae815130c982b63afd914254b325b0_icgraph" id="aERF__MakeNewLevel_8cpp_a73ae815130c982b63afd914254b325b0_icgraph">
-<area shape="rect" title=" " alt="" coords="284,31,452,57"/>
-<area shape="rect" href="classERF.html#abb6175c28b36d23f5dda2994ca4a85e7" title=" " alt="" coords="5,5,236,32"/>
-<area shape="rect" href="classERF.html#aae7a3a76e08e54c618cf79b30ed2d73d" title=" " alt="" coords="49,56,192,83"/>
-</map>
-</div>
-
-</div>
-</div>
 <a id="a8c9e6883145b36950b6e468cbd9d39d7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c9e6883145b36950b6e468cbd9d39d7">&#9670;&nbsp;</a></span>save_qmoist_restart_vars()</h2>
 
@@ -310,17 +206,17 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;{</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    Vector&lt;std::unique_ptr&lt;MultiFab&gt;&gt; saved;</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i : <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>) {</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        <span class="keyword">const</span> MultiFab* src = (i &lt; qmoist_lev.size()) ? qmoist_lev[i] : <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <span class="keywordflow">if</span> (src == <span class="keyword">nullptr</span>) { saved.push_back(<span class="keyword">nullptr</span>); <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        saved.push_back(std::make_unique&lt;MultiFab&gt;(src-&gt;boxArray(), src-&gt;DistributionMap(),</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                                                   src-&gt;nComp(), 0));</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        MultiFab::Copy(*saved.back(), *src, 0, 0, src-&gt;nComp(), 0);</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    }</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <span class="keywordflow">return</span> saved;</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;{</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    Vector&lt;std::unique_ptr&lt;MultiFab&gt;&gt; saved;</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i : <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>) {</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <span class="keyword">const</span> MultiFab* src = (i &lt; qmoist_lev.size()) ? qmoist_lev[i] : <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        <span class="keywordflow">if</span> (src == <span class="keyword">nullptr</span>) { saved.push_back(<span class="keyword">nullptr</span>); <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        saved.push_back(std::make_unique&lt;MultiFab&gt;(src-&gt;boxArray(), src-&gt;DistributionMap(),</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                                                   src-&gt;nComp(), 0));</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        MultiFab::Copy(*saved.back(), *src, 0, 0, src-&gt;nComp(), 0);</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    }</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    <span class="keywordflow">return</span> saved;</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;}</div>
 <div class="ttc" id="aERF__InitForEnsemble_8cpp_html_a221b1f8dc1b747f1e88990c65e3681de"><div class="ttname"><a href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int idx(int i, int j, int k, int nx, int ny)</div><div class="ttdef"><b>Definition:</b> ERF_InitForEnsemble.cpp:404</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aae7a3a76e08e54c618cf79b30ed2d73d">ERF::RemakeLevel()</a>.</p>

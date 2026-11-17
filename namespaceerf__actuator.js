@@ -1,5 +1,6 @@
 var namespaceerf__actuator =
 [
+    [ "erf_detail_ActuatorSampling", "namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html", "namespaceerf__actuator_1_1erf__detail__ActuatorSampling" ],
     [ "StagedBuffer", "structerf__actuator_1_1StagedBuffer.html", "structerf__actuator_1_1StagedBuffer" ],
     [ "ActuatorDeviceBuffers", "structerf__actuator_1_1ActuatorDeviceBuffers.html", "structerf__actuator_1_1ActuatorDeviceBuffers" ],
     [ "ZBounds", "structerf__actuator_1_1ZBounds.html", "structerf__actuator_1_1ZBounds" ],

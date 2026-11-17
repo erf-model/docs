@@ -403,8 +403,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        Box domain_cc(fdomain); domain_cc.enclosedCells();</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        BoxList bl_mf = fba.boxList();</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        BoxList bl_mf_new;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> : bl_mf) {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            Box bcc(<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>); bcc.enclosedCells();</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : bl_mf) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            Box bcc(b); bcc.enclosedCells();</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="comment">// Per direction, collect the periodic shifts that can bring this box back</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="comment">// into the bounding box.  A box only has an image across a face it actually</span></div>
@@ -433,14 +433,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <span class="keywordflow">if</span> (ii == 0 &amp;&amp; jj == 0 &amp;&amp; kk == 0) { <span class="keywordflow">continue</span>; }  <span class="comment">// already in bl_mf</span></div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                Box bb(bcc);</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                bb.shift(IntVect(shift[0][ii],shift[1][jj],shift[2][kk]));</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                bb.setType(<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>.ixType());</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                bb.setType(b.ixType());</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                bb &amp;= fba_bnd;</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <span class="keywordflow">if</span> (bb.ok()) { bl_mf_new.push_back(bb); }</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            }}} <span class="comment">// shift combinations</span></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        } <span class="comment">// bl_mf</span></div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> : bl_mf_new) {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            bl_mf.push_back(<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : bl_mf_new) {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            bl_mf.push_back(b);</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        } <span class="comment">// bl_mf</span></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        fba_per.define(std::move(bl_mf));</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
@@ -506,8 +506,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keyword">const</span> Box&amp; vbx = mfi.validbox();</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keyword">const</span> Array4&lt;int&gt;&amp; mask_arr = <a class="code" href="classERFFillPatcher.html#a874bf44ab38e936013bbf8454a41a680">m_cf_mask</a>-&gt;array(mfi);</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> : com_bl) {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            Box com_bx = vbx &amp; <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; b : com_bl) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            Box com_bx = vbx &amp; b;</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(com_bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            {</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                mask_arr(i,j,k) = mask_val;</div>
@@ -515,7 +515,6 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        }</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    }</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;}</div>
-<div class="ttc" id="aERF__ActuatorSampling_8cpp_html_a148e3876077787926724625411d6e7a9"><div class="ttname"><a href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a></div><div class="ttdeci">int b</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSampling.cpp:625</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_a874bf44ab38e936013bbf8454a41a680"><div class="ttname"><a href="classERFFillPatcher.html#a874bf44ab38e936013bbf8454a41a680">ERFFillPatcher::m_cf_mask</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::iMultiFab &gt; m_cf_mask</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:184</div></div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_ad185f34e02252e291d260e44fa3f94eda92a76bfaaf4385e0d2051d0124f254ea"><div class="ttname"><a href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda92a76bfaaf4385e0d2051d0124f254ea">MicVar_Morr::ns</a></div><div class="ttdeci">@ ns</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:50</div></div>
@@ -850,16 +849,16 @@ template&lt;typename BC &gt; </div>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;{</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    constexpr <span class="keywordtype">double</span> eps = <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;float&gt;::epsilon</a>();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    constexpr <span class="keywordtype">double</span> <a class="code" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d">eps</a> = <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;float&gt;::epsilon</a>();</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>((time_d &gt;= <a class="code" href="classERFFillPatcher.html#a9dd7c4cb4510f4178600a28d12302624">m_crse_times</a>[0]-eps) &amp;&amp; (time_d &lt;= <a class="code" href="classERFFillPatcher.html#a9dd7c4cb4510f4178600a28d12302624">m_crse_times</a>[1]+eps));</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>((time_d &gt;= <a class="code" href="classERFFillPatcher.html#a9dd7c4cb4510f4178600a28d12302624">m_crse_times</a>[0]-<a class="code" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d">eps</a>) &amp;&amp; (time_d &lt;= <a class="code" href="classERFFillPatcher.html#a9dd7c4cb4510f4178600a28d12302624">m_crse_times</a>[1]+<a class="code" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d">eps</a>));</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> time = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(time_d);</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="comment">// Time interpolation factors</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fac_new = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0);</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fac_old = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">if</span> (amrex::Math::abs(<a class="code" href="classERFFillPatcher.html#ad50e8c2b4c9cbfc3159e792f1f1cd389">m_dt_crse</a>) &gt; eps) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">if</span> (amrex::Math::abs(<a class="code" href="classERFFillPatcher.html#ad50e8c2b4c9cbfc3159e792f1f1cd389">m_dt_crse</a>) &gt; <a class="code" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d">eps</a>) {</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        fac_new = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>((time_d - <a class="code" href="classERFFillPatcher.html#a9dd7c4cb4510f4178600a28d12302624">m_crse_times</a>[0]) / <a class="code" href="classERFFillPatcher.html#ad50e8c2b4c9cbfc3159e792f1f1cd389">m_dt_crse</a>);</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        fac_old = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) - fac_new;</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    }</div>
@@ -896,6 +895,7 @@ template&lt;typename BC &gt; </div>
 <div class="ttc" id="aclassERFFillPatcher_html_a713333f0602eb39a96836c5ea8825a67"><div class="ttname"><a href="classERFFillPatcher.html#a713333f0602eb39a96836c5ea8825a67">ERFFillPatcher::InterpFace</a></div><div class="ttdeci">void InterpFace(amrex::MultiFab &amp;fine, amrex::MultiFab const &amp;crse, int mask_val)</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.cpp:348</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_ab1e2657e50f7ab6f3255decee073fff8"><div class="ttname"><a href="classERFFillPatcher.html#ab1e2657e50f7ab6f3255decee073fff8">ERFFillPatcher::InterpCell</a></div><div class="ttdeci">void InterpCell(amrex::MultiFab &amp;fine, amrex::MultiFab const &amp;crse, amrex::Vector&lt; amrex::BCRec &gt; const &amp;bcr, int mask_val)</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.cpp:544</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_ad50e8c2b4c9cbfc3159e792f1f1cd389"><div class="ttname"><a href="classERFFillPatcher.html#ad50e8c2b4c9cbfc3159e792f1f1cd389">ERFFillPatcher::m_dt_crse</a></div><div class="ttdeci">double m_dt_crse</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:189</div></div>
+<div class="ttc" id="anamespaceerf__detail__ShocMoments_html_abdca3961c578b7fe0332cd971f9dea6d"><div class="ttname"><a href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d">erf_detail_ShocMoments::eps</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Real eps()</div><div class="ttdef"><b>Definition:</b> ERF_ShocMoments.cpp:19</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#a85a543672f1e6220a305e20c73e987c1">FillRelax()</a>, and <a class="el" href="classERFFillPatcher.html#acf6a9c991985f990efe6ef0b06104cfd">FillSet()</a>.</p>
@@ -904,11 +904,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classERFFillPatcher_a1293b67fb21389c95c423465d04eb686_cgraph.png" border="0" usemap="#aclassERFFillPatcher_a1293b67fb21389c95c423465d04eb686_cgraph" alt=""/></div>
 <map name="aclassERFFillPatcher_a1293b67fb21389c95c423465d04eb686_cgraph" id="aclassERFFillPatcher_a1293b67fb21389c95c423465d04eb686_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,147,57"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="432,5,615,32"/>
-<area shape="rect" href="classERFFillPatcher.html#ab1e2657e50f7ab6f3255decee073fff8" title=" " alt="" coords="197,31,382,57"/>
-<area shape="rect" href="classERFFillPatcher.html#a713333f0602eb39a96836c5ea8825a67" title=" " alt="" coords="195,81,384,108"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="478,81,569,108"/>
+<area shape="rect" title=" " alt="" coords="5,53,147,79"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="457,27,640,54"/>
+<area shape="rect" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d" title=" " alt="" coords="195,27,409,54"/>
+<area shape="rect" href="classERFFillPatcher.html#ab1e2657e50f7ab6f3255decee073fff8" title=" " alt="" coords="209,78,395,105"/>
+<area shape="rect" href="classERFFillPatcher.html#a713333f0602eb39a96836c5ea8825a67" title=" " alt="" coords="207,129,397,155"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="503,129,594,155"/>
 </map>
 </div>
 <div class="dynheader">
@@ -916,12 +917,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classERFFillPatcher_a1293b67fb21389c95c423465d04eb686_icgraph.png" border="0" usemap="#aclassERFFillPatcher_a1293b67fb21389c95c423465d04eb686_icgraph" alt=""/></div>
 <map name="aclassERFFillPatcher_a1293b67fb21389c95c423465d04eb686_icgraph" id="aclassERFFillPatcher_a1293b67fb21389c95c423465d04eb686_icgraph">
-<area shape="rect" title=" " alt="" coords="732,42,873,69"/>
-<area shape="rect" href="classERFFillPatcher.html#a85a543672f1e6220a305e20c73e987c1" title=" " alt="" coords="505,15,684,42"/>
-<area shape="rect" href="classERFFillPatcher.html#acf6a9c991985f990efe6ef0b06104cfd" title=" " alt="" coords="513,67,676,94"/>
-<area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#a2f15a0d6f02e491c1b86c8f899c91cce" title=" " alt="" coords="293,5,457,47"/>
-<area shape="rect" href="ERF__CoarseFineFaces_8cpp.html#a58016c8fdb4edffdfc59aafcfc001dd6" title=" " alt="" coords="305,71,445,98"/>
-<area shape="rect" href="classERF.html#a8717bf32b998275b426d81669dee60c3" title=" " alt="" coords="5,71,245,98"/>
+<area shape="rect" title=" " alt="" coords="767,46,908,73"/>
+<area shape="rect" href="classERFFillPatcher.html#a85a543672f1e6220a305e20c73e987c1" title=" " alt="" coords="540,17,719,43"/>
+<area shape="rect" href="classERFFillPatcher.html#acf6a9c991985f990efe6ef0b06104cfd" title=" " alt="" coords="548,71,711,98"/>
+<area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#a2f15a0d6f02e491c1b86c8f899c91cce" title=" " alt="" coords="311,5,475,47"/>
+<area shape="rect" href="namespaceerf__detail__CoarseFineFaces.html#a3bf871589387975e50cca8fbce62ba4e" title=" " alt="" coords="293,71,492,112"/>
+<area shape="rect" href="classERF.html#a8717bf32b998275b426d81669dee60c3" title=" " alt="" coords="5,78,245,105"/>
 </map>
 </div>
 
@@ -998,12 +999,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classERFFillPatcher_a85a543672f1e6220a305e20c73e987c1_cgraph.png" border="0" usemap="#aclassERFFillPatcher_a85a543672f1e6220a305e20c73e987c1_cgraph" alt=""/></div>
 <map name="aclassERFFillPatcher_a85a543672f1e6220a305e20c73e987c1_cgraph" id="aclassERFFillPatcher_a85a543672f1e6220a305e20c73e987c1_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,184,57"/>
-<area shape="rect" href="classERFFillPatcher.html#a1293b67fb21389c95c423465d04eb686" title=" " alt="" coords="232,31,373,57"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="659,5,841,32"/>
-<area shape="rect" href="classERFFillPatcher.html#ab1e2657e50f7ab6f3255decee073fff8" title=" " alt="" coords="423,31,609,57"/>
-<area shape="rect" href="classERFFillPatcher.html#a713333f0602eb39a96836c5ea8825a67" title=" " alt="" coords="421,81,611,108"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="705,81,795,108"/>
+<area shape="rect" title=" " alt="" coords="5,53,184,79"/>
+<area shape="rect" href="classERFFillPatcher.html#a1293b67fb21389c95c423465d04eb686" title=" " alt="" coords="232,53,373,79"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="684,27,867,54"/>
+<area shape="rect" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d" title=" " alt="" coords="421,27,636,54"/>
+<area shape="rect" href="classERFFillPatcher.html#ab1e2657e50f7ab6f3255decee073fff8" title=" " alt="" coords="436,78,621,105"/>
+<area shape="rect" href="classERFFillPatcher.html#a713333f0602eb39a96836c5ea8825a67" title=" " alt="" coords="434,129,623,155"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="730,129,821,155"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1081,18 +1083,19 @@ template&lt;typename BC &gt; </div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="classERFFillPatcher.html#a1293b67fb21389c95c423465d04eb686">Fill</a>(mf,time,cbc,bcs,<a class="code" href="classERFFillPatcher.html#a9d188e7b7e85221b257799a5a9c5098e">m_set_mask</a>);</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__CoarseFineFaces_8cpp.html#a58016c8fdb4edffdfc59aafcfc001dd6">fill_cf_momentum()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__detail__CoarseFineFaces.html#a3bf871589387975e50cca8fbce62ba4e">erf_detail_CoarseFineFaces::fill_cf_momentum()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classERFFillPatcher_acf6a9c991985f990efe6ef0b06104cfd_cgraph.png" border="0" usemap="#aclassERFFillPatcher_acf6a9c991985f990efe6ef0b06104cfd_cgraph" alt=""/></div>
 <map name="aclassERFFillPatcher_acf6a9c991985f990efe6ef0b06104cfd_cgraph" id="aclassERFFillPatcher_acf6a9c991985f990efe6ef0b06104cfd_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,168,57"/>
-<area shape="rect" href="classERFFillPatcher.html#a1293b67fb21389c95c423465d04eb686" title=" " alt="" coords="216,31,357,57"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="643,5,825,32"/>
-<area shape="rect" href="classERFFillPatcher.html#ab1e2657e50f7ab6f3255decee073fff8" title=" " alt="" coords="407,31,593,57"/>
-<area shape="rect" href="classERFFillPatcher.html#a713333f0602eb39a96836c5ea8825a67" title=" " alt="" coords="405,81,595,108"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="689,81,779,108"/>
+<area shape="rect" title=" " alt="" coords="5,53,168,79"/>
+<area shape="rect" href="classERFFillPatcher.html#a1293b67fb21389c95c423465d04eb686" title=" " alt="" coords="216,53,357,79"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="668,27,851,54"/>
+<area shape="rect" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d" title=" " alt="" coords="405,27,620,54"/>
+<area shape="rect" href="classERFFillPatcher.html#ab1e2657e50f7ab6f3255decee073fff8" title=" " alt="" coords="420,78,605,105"/>
+<area shape="rect" href="classERFFillPatcher.html#a713333f0602eb39a96836c5ea8825a67" title=" " alt="" coords="418,129,607,155"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="714,129,805,155"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1100,9 +1103,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classERFFillPatcher_acf6a9c991985f990efe6ef0b06104cfd_icgraph.png" border="0" usemap="#aclassERFFillPatcher_acf6a9c991985f990efe6ef0b06104cfd_icgraph" alt=""/></div>
 <map name="aclassERFFillPatcher_acf6a9c991985f990efe6ef0b06104cfd_icgraph" id="aclassERFFillPatcher_acf6a9c991985f990efe6ef0b06104cfd_icgraph">
-<area shape="rect" title=" " alt="" coords="481,5,644,32"/>
-<area shape="rect" href="ERF__CoarseFineFaces_8cpp.html#a58016c8fdb4edffdfc59aafcfc001dd6" title=" " alt="" coords="293,5,433,32"/>
-<area shape="rect" href="classERF.html#a8717bf32b998275b426d81669dee60c3" title=" " alt="" coords="5,5,245,32"/>
+<area shape="rect" title=" " alt="" coords="540,13,703,39"/>
+<area shape="rect" href="namespaceerf__detail__CoarseFineFaces.html#a3bf871589387975e50cca8fbce62ba4e" title=" " alt="" coords="293,5,492,47"/>
+<area shape="rect" href="classERF.html#a8717bf32b998275b426d81669dee60c3" title=" " alt="" coords="5,13,245,39"/>
 </map>
 </div>
 
@@ -1337,13 +1340,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classERFFillPatcher_ab1e2657e50f7ab6f3255decee073fff8_icgraph.png" border="0" usemap="#aclassERFFillPatcher_ab1e2657e50f7ab6f3255decee073fff8_icgraph" alt=""/></div>
 <map name="aclassERFFillPatcher_ab1e2657e50f7ab6f3255decee073fff8_icgraph" id="aclassERFFillPatcher_ab1e2657e50f7ab6f3255decee073fff8_icgraph">
-<area shape="rect" title=" " alt="" coords="921,42,1107,69"/>
-<area shape="rect" href="classERFFillPatcher.html#a1293b67fb21389c95c423465d04eb686" title=" " alt="" coords="732,42,873,69"/>
-<area shape="rect" href="classERFFillPatcher.html#a85a543672f1e6220a305e20c73e987c1" title=" " alt="" coords="505,15,684,42"/>
-<area shape="rect" href="classERFFillPatcher.html#acf6a9c991985f990efe6ef0b06104cfd" title=" " alt="" coords="513,67,676,94"/>
-<area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#a2f15a0d6f02e491c1b86c8f899c91cce" title=" " alt="" coords="293,5,457,47"/>
-<area shape="rect" href="ERF__CoarseFineFaces_8cpp.html#a58016c8fdb4edffdfc59aafcfc001dd6" title=" " alt="" coords="305,71,445,98"/>
-<area shape="rect" href="classERF.html#a8717bf32b998275b426d81669dee60c3" title=" " alt="" coords="5,71,245,98"/>
+<area shape="rect" title=" " alt="" coords="956,46,1141,73"/>
+<area shape="rect" href="classERFFillPatcher.html#a1293b67fb21389c95c423465d04eb686" title=" " alt="" coords="767,46,908,73"/>
+<area shape="rect" href="classERFFillPatcher.html#a85a543672f1e6220a305e20c73e987c1" title=" " alt="" coords="540,17,719,43"/>
+<area shape="rect" href="classERFFillPatcher.html#acf6a9c991985f990efe6ef0b06104cfd" title=" " alt="" coords="548,71,711,98"/>
+<area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#a2f15a0d6f02e491c1b86c8f899c91cce" title=" " alt="" coords="311,5,475,47"/>
+<area shape="rect" href="namespaceerf__detail__CoarseFineFaces.html#a3bf871589387975e50cca8fbce62ba4e" title=" " alt="" coords="293,71,492,112"/>
+<area shape="rect" href="classERF.html#a8717bf32b998275b426d81669dee60c3" title=" " alt="" coords="5,78,245,105"/>
 </map>
 </div>
 
@@ -1451,8 +1454,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                <span class="keywordflow">if</span> (mask_arr(i,j,k) == mask_val) {</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> ii = coarsen(i,ratio[0]);</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                    <span class="keywordflow">if</span> (i-ii*ratio[0] != 0) {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <span class="keyword">const</span> <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a> = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(i-ii*ratio[0]) * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(ratio[0]));</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                        fine_arr(i,j,k,0) = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)-<a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>) * fine_arr(ii*ratio[0],j,k,0) + <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a> * fine_arr((ii+1)*ratio[0],j,k,0);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <span class="keyword">const</span> w = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(i-ii*ratio[0]) * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(ratio[0]));</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                        fine_arr(i,j,k,0) = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)-w) * fine_arr(ii*ratio[0],j,k,0) + w * fine_arr((ii+1)*ratio[0],j,k,0);</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                    }</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                }</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            });</div>
@@ -1478,8 +1481,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                <span class="keywordflow">if</span> (mask_arr(i,j,k) == mask_val) {</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> jj = coarsen(j,ratio[1]);</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                    <span class="keywordflow">if</span> (j-jj*ratio[1] != 0) {</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <span class="keyword">const</span> <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a> = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(j-jj*ratio[1]) * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(ratio[1]));</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                        fine_arr(i,j,k,0) = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)-<a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>) * fine_arr(i,jj*ratio[1],k,0) + <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a> * fine_arr(i,(jj+1)*ratio[1],k,0);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <span class="keyword">const</span> w = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(j-jj*ratio[1]) * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(ratio[1]));</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                        fine_arr(i,j,k,0) = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)-w) * fine_arr(i,jj*ratio[1],k,0) + w * fine_arr(i,(jj+1)*ratio[1],k,0);</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                    }</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                }</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            });</div>
@@ -1504,8 +1507,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                <span class="keywordflow">if</span> (mask_arr(i,j,k) == mask_val) {</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> kk = coarsen(k,ratio[2]);</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                    <span class="keywordflow">if</span> (k-kk*ratio[2] != 0) {</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <span class="keyword">const</span> <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a> = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(k-kk*ratio[2]) * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(ratio[2]));</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                        fine_arr(i,j,k,0) = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)-<a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>) * fine_arr(i,j,kk*ratio[2],0) + <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a> * fine_arr(i,j,(kk+1)*ratio[2],0);</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <span class="keyword">const</span> w = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(k-kk*ratio[2]) * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(ratio[2]));</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                        fine_arr(i,j,k,0) = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)-w) * fine_arr(i,j,kk*ratio[2],0) + w * fine_arr(i,j,(kk+1)*ratio[2],0);</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;                    }</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                }</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            });</div>
@@ -1586,7 +1589,6 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__InitCustomPertVels__ScalarAdvDiff_8H_html_a3686b9abefe6dda622283bf7109e68fe"><div class="ttname"><a href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a></div><div class="ttdeci">Real z0</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ScalarAdvDiff.H:12</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:25</div></div>
 <div class="ttc" id="aERF__InitCustomPert__KE_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_KE.H:9</div></div>
-<div class="ttc" id="aERF__Plotfile2DInterpolator_8cpp_html_a658e24fc592c43471ed399f60665a22f"><div class="ttname"><a href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a></div><div class="ttdeci">Real w</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DInterpolator.cpp:23</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_a36a1909e3b0c0ea807265562ad09674c"><div class="ttname"><a href="classERFFillPatcher.html#a36a1909e3b0c0ea807265562ad09674c">ERFFillPatcher::m_loglaw</a></div><div class="ttdeci">bool m_loglaw</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:185</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_a4e525f51d3901c3828a2e3db560ff7be"><div class="ttname"><a href="classERFFillPatcher.html#a4e525f51d3901c3828a2e3db560ff7be">ERFFillPatcher::m_loglaw_tblank</a></div><div class="ttdeci">amrex::MultiFab const  * m_loglaw_tblank</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:187</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_ab55453e0a4434dfed964f5dd9a653bab"><div class="ttname"><a href="classERFFillPatcher.html#ab55453e0a4434dfed964f5dd9a653bab">ERFFillPatcher::m_loglaw_z0</a></div><div class="ttdeci">amrex::Real m_loglaw_z0</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:186</div></div>
@@ -1609,13 +1611,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classERFFillPatcher_a713333f0602eb39a96836c5ea8825a67_icgraph.png" border="0" usemap="#aclassERFFillPatcher_a713333f0602eb39a96836c5ea8825a67_icgraph" alt=""/></div>
 <map name="aclassERFFillPatcher_a713333f0602eb39a96836c5ea8825a67_icgraph" id="aclassERFFillPatcher_a713333f0602eb39a96836c5ea8825a67_icgraph">
-<area shape="rect" title=" " alt="" coords="921,42,1111,69"/>
-<area shape="rect" href="classERFFillPatcher.html#a1293b67fb21389c95c423465d04eb686" title=" " alt="" coords="732,42,873,69"/>
-<area shape="rect" href="classERFFillPatcher.html#a85a543672f1e6220a305e20c73e987c1" title=" " alt="" coords="505,15,684,42"/>
-<area shape="rect" href="classERFFillPatcher.html#acf6a9c991985f990efe6ef0b06104cfd" title=" " alt="" coords="513,67,676,94"/>
-<area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#a2f15a0d6f02e491c1b86c8f899c91cce" title=" " alt="" coords="293,5,457,47"/>
-<area shape="rect" href="ERF__CoarseFineFaces_8cpp.html#a58016c8fdb4edffdfc59aafcfc001dd6" title=" " alt="" coords="305,71,445,98"/>
-<area shape="rect" href="classERF.html#a8717bf32b998275b426d81669dee60c3" title=" " alt="" coords="5,71,245,98"/>
+<area shape="rect" title=" " alt="" coords="956,46,1145,73"/>
+<area shape="rect" href="classERFFillPatcher.html#a1293b67fb21389c95c423465d04eb686" title=" " alt="" coords="767,46,908,73"/>
+<area shape="rect" href="classERFFillPatcher.html#a85a543672f1e6220a305e20c73e987c1" title=" " alt="" coords="540,17,719,43"/>
+<area shape="rect" href="classERFFillPatcher.html#acf6a9c991985f990efe6ef0b06104cfd" title=" " alt="" coords="548,71,711,98"/>
+<area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#a2f15a0d6f02e491c1b86c8f899c91cce" title=" " alt="" coords="311,5,475,47"/>
+<area shape="rect" href="namespaceerf__detail__CoarseFineFaces.html#a3bf871589387975e50cca8fbce62ba4e" title=" " alt="" coords="293,71,492,112"/>
+<area shape="rect" href="classERF.html#a8717bf32b998275b426d81669dee60c3" title=" " alt="" coords="5,78,245,105"/>
 </map>
 </div>
 

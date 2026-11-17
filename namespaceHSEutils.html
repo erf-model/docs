@@ -167,14 +167,13 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_dp, <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a>, <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a>;</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a> = T_b - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(273.15);</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160; </div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(18.678), c = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(257.14), d = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(234.5);</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a> = std::log(RH*std::exp((<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> - <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a>/d)*<a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a>/(c + <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a>)));</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> b = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(18.678), c = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(257.14), d = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(234.5);</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a> = std::log(RH*std::exp((b - <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a>/d)*<a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a>/(c + <a class="code" href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">T</a>)));</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160; </div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    T_dp = c*<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a>/(<a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a> - <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a>);</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    T_dp = c*<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a>/(b - <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a>);</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160; </div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <span class="keywordflow">return</span> T_dp;</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;}</div>
-<div class="ttc" id="aERF__ActuatorSampling_8cpp_html_a148e3876077787926724625411d6e7a9"><div class="ttname"><a href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a></div><div class="ttdeci">int b</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSampling.cpp:625</div></div>
 <div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_a0b6c95d9cbe21c8a94590c64b1459844"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a></div><div class="ttdeci">amrex::Real gamma</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_DataAssimilation_ISV.H:9</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceRealBdyVars_html_a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79"><div class="ttname"><a href="namespaceRealBdyVars.html#a2827de2ca16290ba8c0d89dee276eccca8ecd2dbb16824e5c68db7daf2254fc79">RealBdyVars::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:180</div></div>
@@ -361,23 +360,24 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceHSEutils_a9cf272333e0b571135d1f8ccf5307656_cgraph.png" border="0" usemap="#anamespaceHSEutils_a9cf272333e0b571135d1f8ccf5307656_cgraph" alt=""/></div>
 <map name="anamespaceHSEutils_a9cf272333e0b571135d1f8ccf5307656_cgraph" id="anamespaceHSEutils_a9cf272333e0b571135d1f8ccf5307656_cgraph">
-<area shape="rect" title=" " alt="" coords="5,214,161,241"/>
-<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="209,214,379,241"/>
+<area shape="rect" title=" " alt="" coords="5,265,161,291"/>
+<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="209,265,379,291"/>
 <area shape="rect" href="namespaceHSEutils.html#a110bf2ce123041ca2a045531c2d65f6d" title=" " alt="" coords="437,5,645,47"/>
-<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="908,39,1107,80"/>
-<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="427,134,656,161"/>
-<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="921,207,1094,248"/>
-<area shape="rect" href="namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b" title=" " alt="" coords="450,239,633,266"/>
-<area shape="rect" href="ERF__EOS_8H.html#a7668916ec63c2868ff5879714ad2401e" title=" " alt="" coords="457,290,626,317"/>
-<area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="474,341,609,367"/>
-<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="475,391,608,418"/>
-<area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="1155,97,1369,139"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="1417,105,1504,131"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="1604,54,1711,81"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="1811,130,1976,157"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="1552,105,1763,131"/>
-<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="704,123,860,164"/>
-<area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="1169,189,1355,215"/>
+<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="967,64,1165,105"/>
+<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="427,189,656,215"/>
+<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="979,232,1153,273"/>
+<area shape="rect" href="namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b" title=" " alt="" coords="450,290,633,317"/>
+<area shape="rect" href="ERF__EOS_8H.html#a7668916ec63c2868ff5879714ad2401e" title=" " alt="" coords="457,341,626,367"/>
+<area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="474,391,609,418"/>
+<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="475,442,608,469"/>
+<area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="1213,123,1428,164"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="1476,130,1563,157"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="1663,79,1769,106"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="1869,155,2035,182"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="1611,130,1821,157"/>
+<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="733,123,889,164"/>
+<area shape="rect" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d" title=" " alt="" coords="704,189,919,215"/>
+<area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="1227,214,1414,241"/>
 </map>
 </div>
 <div class="dynheader">
@@ -498,18 +498,15 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceHSEutils_a881776b214b9d819cea9a32ab97384e7_icgraph.png" border="0" usemap="#anamespaceHSEutils_a881776b214b9d819cea9a32ab97384e7_icgraph" alt=""/></div>
 <map name="anamespaceHSEutils_a881776b214b9d819cea9a32ab97384e7_icgraph" id="anamespaceHSEutils_a881776b214b9d819cea9a32ab97384e7_icgraph">
-<area shape="rect" title=" " alt="" coords="1632,53,1788,94"/>
-<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="1355,60,1584,87"/>
-<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="1135,33,1305,60"/>
-<area shape="rect" href="classShocPDF.html#a4f06d230cd1f338a9fe4d21f9a7ff17c" title=" " alt="" coords="1133,85,1307,112"/>
-<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="909,31,1065,57"/>
+<area shape="rect" title=" " alt="" coords="1588,23,1744,65"/>
+<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="1311,31,1540,57"/>
+<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="1093,31,1263,57"/>
+<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="889,31,1045,57"/>
 <area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="685,23,841,65"/>
 <area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="457,23,637,65"/>
 <area shape="rect" href="namespaceHSEutils.html#afdbe0b1edca9e8a2b8e3121884c85c0a" title=" " alt="" coords="233,23,409,65"/>
 <area shape="rect" href="ERF__InitDensityHSE_8H.html#a1dfb45c3986d99fa2877dd4769a4e276" title="Initialize density in hydrostatic equilibrium for moist cases." alt="" coords="5,5,185,32"/>
 <area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992" title=" " alt="" coords="76,56,115,83"/>
-<area shape="rect" href="classShocDiagnostics.html#a66b05ec19cd5ed4e2ef2d1022ba40067" title=" " alt="" coords="889,82,1085,123"/>
-<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="685,89,841,116"/>
 </map>
 </div>
 
@@ -653,9 +650,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    <span class="comment">// double-precision perturbation is left exactly as it was so that results</span></div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <span class="comment">// in double are unchanged.</span></div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_FLOAT</span></div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> eps = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.e-5) * std::abs(p_k);</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d">eps</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.e-5) * std::abs(p_k);</div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> eps = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1e-10);</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d">eps</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1e-10);</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160; </div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> iter=0; iter&lt;20; iter++)</div>
@@ -663,10 +660,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> F         = <a class="code" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656">compute_F</a>(p_k      , p_k_minus_1, theta_k, rho_k, q_v_k, T_dp, T_b, <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a>, rho_k_minus_1,</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                                   <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a53f503b12f901c51930a7e802ae58f12">q_t</a>, <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a90ac495e0a01273196da003523dc5fa3">eq_pot_temp</a>, <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a92b9670f4a05eec7de9776e8c21a8248">use_empirical</a>, which_zone, scaled_height, T_from_theta,</div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                                   <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#acdfe0f2210f14b2aa8008de71d4121c8">theta_0</a>, <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#abaeaeabd3ca11aaa5ecb8f972342e402">theta_tr</a>, <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#ae17544d1b564380ad3ec8f614d1fc5c2">z_tr</a>, <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a156a2f05796f36d50ce05cc423f05c15">T_tr</a>);</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> F_plus_dF = <a class="code" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656">compute_F</a>(p_k+eps, p_k_minus_1, theta_k, rho_k, q_v_k, T_dp, T_b, <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a>, rho_k_minus_1,</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> F_plus_dF = <a class="code" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656">compute_F</a>(p_k+<a class="code" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d">eps</a>, p_k_minus_1, theta_k, rho_k, q_v_k, T_dp, T_b, <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a>, rho_k_minus_1,</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;                                   <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a53f503b12f901c51930a7e802ae58f12">q_t</a>, <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a90ac495e0a01273196da003523dc5fa3">eq_pot_temp</a>, <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a92b9670f4a05eec7de9776e8c21a8248">use_empirical</a>, which_zone, scaled_height, T_from_theta,</div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;                                   <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#acdfe0f2210f14b2aa8008de71d4121c8">theta_0</a>, <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#abaeaeabd3ca11aaa5ecb8f972342e402">theta_tr</a>, <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#ae17544d1b564380ad3ec8f614d1fc5c2">z_tr</a>, <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a156a2f05796f36d50ce05cc423f05c15">T_tr</a>);</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> F_prime   = (F_plus_dF - F)/eps;</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> F_prime   = (F_plus_dF - F)/<a class="code" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d">eps</a>;</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        delta_p_k = -F/F_prime;</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;        p_k            = p_k + delta_p_k;</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    }</div>
@@ -688,6 +685,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <span class="keywordflow">return</span> p_k;</div>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;}</div>
 <div class="ttc" id="anamespaceHSEutils_html_a9cf272333e0b571135d1f8ccf5307656"><div class="ttname"><a href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656">HSEutils::compute_F</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_HOST_DEVICE Real compute_F(const Real &amp;p_k, const Real &amp;p_k_minus_1, Real &amp;theta_k, Real &amp;rho_k, Real &amp;q_v_k, Real &amp;T_dp, Real &amp;T_b, const Real &amp;dz, const Real &amp;rho_k_minus_1, const Real q_t, const Real eq_pot_temp, const bool use_empirical, const int which_zone, const Real scaled_height, const bool T_from_theta, const Real theta_0, const Real theta_tr, const Real z_tr, const Real T_tr)</div><div class="ttdef"><b>Definition:</b> ERF_HSEUtils.H:595</div></div>
+<div class="ttc" id="anamespaceerf__detail__ShocMoments_html_abdca3961c578b7fe0332cd971f9dea6d"><div class="ttname"><a href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d">erf_detail_ShocMoments::eps</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Real eps()</div><div class="ttdef"><b>Definition:</b> ERF_ShocMoments.cpp:19</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc">init_isentropic_hse_no_terrain_column()</a>.</p>
 <div class="dynheader">
@@ -695,24 +693,25 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceHSEutils_a38c34dda470e8efb00e34dfc56a5d3cc_cgraph.png" border="0" usemap="#anamespaceHSEutils_a38c34dda470e8efb00e34dfc56a5d3cc_cgraph" alt=""/></div>
 <map name="anamespaceHSEutils_a38c34dda470e8efb00e34dfc56a5d3cc_cgraph" id="anamespaceHSEutils_a38c34dda470e8efb00e34dfc56a5d3cc_cgraph">
-<area shape="rect" title=" " alt="" coords="5,207,161,248"/>
-<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="209,214,365,241"/>
-<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="413,214,583,241"/>
-<area shape="rect" href="namespaceHSEutils.html#a110bf2ce123041ca2a045531c2d65f6d" title=" " alt="" coords="641,5,849,47"/>
-<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="1112,39,1311,80"/>
-<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="631,134,860,161"/>
-<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="1125,207,1298,248"/>
-<area shape="rect" href="namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b" title=" " alt="" coords="654,239,837,266"/>
-<area shape="rect" href="ERF__EOS_8H.html#a7668916ec63c2868ff5879714ad2401e" title=" " alt="" coords="661,290,830,317"/>
-<area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="678,341,813,367"/>
-<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="679,391,812,418"/>
-<area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="1359,97,1573,139"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="1621,105,1708,131"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="1808,54,1915,81"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="2015,130,2180,157"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="1756,105,1967,131"/>
-<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="908,123,1064,164"/>
-<area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="1373,189,1559,215"/>
+<area shape="rect" title=" " alt="" coords="5,427,161,469"/>
+<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="209,304,365,331"/>
+<area shape="rect" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d" title=" " alt="" coords="908,337,1123,364"/>
+<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="413,224,583,251"/>
+<area shape="rect" href="namespaceHSEutils.html#a110bf2ce123041ca2a045531c2d65f6d" title=" " alt="" coords="641,158,849,199"/>
+<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="1171,213,1369,254"/>
+<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="631,279,860,305"/>
+<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="1183,381,1357,422"/>
+<area shape="rect" href="namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b" title=" " alt="" coords="654,409,837,436"/>
+<area shape="rect" href="ERF__EOS_8H.html#a7668916ec63c2868ff5879714ad2401e" title=" " alt="" coords="661,5,830,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="678,56,813,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="679,107,812,133"/>
+<area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="1417,271,1632,313"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="1680,279,1767,305"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="1867,228,1973,255"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="2073,304,2239,331"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="1815,279,2025,305"/>
+<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="937,271,1093,313"/>
+<area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="1431,363,1618,389"/>
 </map>
 </div>
 <div class="dynheader">
@@ -811,20 +810,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceHSEutils_a9a2b96b3435039d14223cafb5415ef58_icgraph.png" border="0" usemap="#anamespaceHSEutils_a9a2b96b3435039d14223cafb5415ef58_icgraph" alt=""/></div>
 <map name="anamespaceHSEutils_a9a2b96b3435039d14223cafb5415ef58_icgraph" id="anamespaceHSEutils_a9a2b96b3435039d14223cafb5415ef58_icgraph">
-<area shape="rect" title=" " alt="" coords="1836,64,2035,105"/>
-<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="1632,5,1788,47"/>
-<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="1135,71,1305,98"/>
-<area shape="rect" href="ERF__InitCustomPert__SquallLine_8H.html#a8d4cb26ec873a9dc9734efd82be956b9" title=" " alt="" coords="1665,122,1755,149"/>
-<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="1355,13,1584,39"/>
-<area shape="rect" href="classShocPDF.html#a4f06d230cd1f338a9fe4d21f9a7ff17c" title=" " alt="" coords="1133,13,1307,39"/>
-<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="909,71,1065,98"/>
-<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="685,64,841,105"/>
-<area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="457,64,637,105"/>
-<area shape="rect" href="namespaceHSEutils.html#afdbe0b1edca9e8a2b8e3121884c85c0a" title=" " alt="" coords="233,64,409,105"/>
-<area shape="rect" href="ERF__InitDensityHSE_8H.html#a1dfb45c3986d99fa2877dd4769a4e276" title="Initialize density in hydrostatic equilibrium for moist cases." alt="" coords="5,46,185,73"/>
-<area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992" title=" " alt="" coords="76,97,115,123"/>
-<area shape="rect" href="classShocDiagnostics.html#a66b05ec19cd5ed4e2ef2d1022ba40067" title=" " alt="" coords="889,5,1085,47"/>
-<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="685,13,841,39"/>
+<area shape="rect" title=" " alt="" coords="1792,64,1991,105"/>
+<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="1588,5,1744,47"/>
+<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="1093,46,1263,73"/>
+<area shape="rect" href="ERF__InitCustomPert__SquallLine_8H.html#a8d4cb26ec873a9dc9734efd82be956b9" title=" " alt="" coords="1621,122,1711,149"/>
+<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="1311,17,1540,43"/>
+<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="889,46,1045,73"/>
+<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="685,39,841,80"/>
+<area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="457,39,637,80"/>
+<area shape="rect" href="namespaceHSEutils.html#afdbe0b1edca9e8a2b8e3121884c85c0a" title=" " alt="" coords="233,39,409,80"/>
+<area shape="rect" href="ERF__InitDensityHSE_8H.html#a1dfb45c3986d99fa2877dd4769a4e276" title="Initialize density in hydrostatic equilibrium for moist cases." alt="" coords="5,21,185,47"/>
+<area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992" title=" " alt="" coords="76,71,115,98"/>
 </map>
 </div>
 
@@ -979,22 +975,23 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceHSEutils_a0a8957703dba2ef55e8d1639f82ad3b4_cgraph.png" border="0" usemap="#anamespaceHSEutils_a0a8957703dba2ef55e8d1639f82ad3b4_cgraph" alt=""/></div>
 <map name="anamespaceHSEutils_a0a8957703dba2ef55e8d1639f82ad3b4_cgraph" id="anamespaceHSEutils_a0a8957703dba2ef55e8d1639f82ad3b4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,214,175,241"/>
+<area shape="rect" title=" " alt="" coords="5,265,175,291"/>
 <area shape="rect" href="namespaceHSEutils.html#a110bf2ce123041ca2a045531c2d65f6d" title=" " alt="" coords="233,5,441,47"/>
-<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="704,39,903,80"/>
-<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="223,134,452,161"/>
-<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="717,207,890,248"/>
-<area shape="rect" href="namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b" title=" " alt="" coords="246,239,429,266"/>
-<area shape="rect" href="ERF__EOS_8H.html#a7668916ec63c2868ff5879714ad2401e" title=" " alt="" coords="253,290,422,317"/>
-<area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="270,341,405,367"/>
-<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="271,391,404,418"/>
-<area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="951,97,1165,139"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="1213,105,1300,131"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="1400,54,1507,81"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="1607,130,1772,157"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="1348,105,1559,131"/>
-<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="500,123,656,164"/>
-<area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="965,189,1151,215"/>
+<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="763,64,961,105"/>
+<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="223,189,452,215"/>
+<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="775,232,949,273"/>
+<area shape="rect" href="namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b" title=" " alt="" coords="246,290,429,317"/>
+<area shape="rect" href="ERF__EOS_8H.html#a7668916ec63c2868ff5879714ad2401e" title=" " alt="" coords="253,341,422,367"/>
+<area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="270,391,405,418"/>
+<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="271,442,404,469"/>
+<area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="1009,123,1224,164"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="1272,130,1359,157"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="1459,79,1565,106"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="1665,155,1831,182"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="1407,130,1617,157"/>
+<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="529,123,685,164"/>
+<area shape="rect" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d" title=" " alt="" coords="500,189,715,215"/>
+<area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="1023,214,1210,241"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1063,27 +1060,24 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceHSEutils_a2fb7000d65654e1bd6a9e4d31f9b8ead_icgraph.png" border="0" usemap="#anamespaceHSEutils_a2fb7000d65654e1bd6a9e4d31f9b8ead_icgraph" alt=""/></div>
 <map name="anamespaceHSEutils_a2fb7000d65654e1bd6a9e4d31f9b8ead_icgraph" id="anamespaceHSEutils_a2fb7000d65654e1bd6a9e4d31f9b8ead_icgraph">
-<area shape="rect" title=" " alt="" coords="2169,64,2384,105"/>
-<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="1675,5,1831,47"/>
-<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="1923,64,2121,105"/>
-<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="1935,263,2109,304"/>
-<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="1355,17,1584,43"/>
-<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="1135,122,1305,149"/>
-<area shape="rect" href="classShocPDF.html#a4f06d230cd1f338a9fe4d21f9a7ff17c" title=" " alt="" coords="1133,17,1307,43"/>
-<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="909,151,1065,178"/>
-<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="685,201,841,243"/>
-<area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="457,216,637,257"/>
-<area shape="rect" href="namespaceHSEutils.html#afdbe0b1edca9e8a2b8e3121884c85c0a" title=" " alt="" coords="233,223,409,264"/>
-<area shape="rect" href="ERF__InitDensityHSE_8H.html#a1dfb45c3986d99fa2877dd4769a4e276" title="Initialize density in hydrostatic equilibrium for moist cases." alt="" coords="5,230,185,257"/>
-<area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992" title=" " alt="" coords="76,397,115,423"/>
-<area shape="rect" href="classShocDiagnostics.html#a66b05ec19cd5ed4e2ef2d1022ba40067" title=" " alt="" coords="889,9,1085,51"/>
-<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="685,17,841,43"/>
-<area shape="rect" href="ERF__InitCustomPert__SquallLine_8H.html#a8d4cb26ec873a9dc9734efd82be956b9" title=" " alt="" coords="1708,122,1799,149"/>
-<area shape="rect" href="namespacesea__level__pressure__diagnostics.html#af58b20b1a6675aed4a5d01200e3eeb7e" title=" " alt="" coords="1362,325,1577,381"/>
-<area shape="rect" href="namespacesea__level__pressure__diagnostics.html#a0dec851e0fcbd9ef9bbbe0b92c843a6a" title=" " alt="" coords="1141,350,1299,406"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#adfa53fd44a2aef99b4f5953cfed30184" title=" " alt="" coords="1708,303,1799,330"/>
-<area shape="rect" href="namespacesea__level__pressure__diagnostics.html#a7182f3ca49cd8040b55b84ad03de57c3" title=" " alt="" coords="1632,223,1875,279"/>
-<area shape="rect" href="classERF.html#a68174258bfc0f89b45b68ffd0c46a35f" title=" " alt="" coords="915,365,1059,391"/>
+<area shape="rect" title=" " alt="" coords="2125,64,2340,105"/>
+<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="1631,5,1787,47"/>
+<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="1879,64,2077,105"/>
+<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="1891,263,2065,304"/>
+<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="1311,17,1540,43"/>
+<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="1093,122,1263,149"/>
+<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="889,231,1045,258"/>
+<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="685,259,841,300"/>
+<area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="457,327,637,368"/>
+<area shape="rect" href="namespaceHSEutils.html#afdbe0b1edca9e8a2b8e3121884c85c0a" title=" " alt="" coords="233,361,409,403"/>
+<area shape="rect" href="ERF__InitDensityHSE_8H.html#a1dfb45c3986d99fa2877dd4769a4e276" title="Initialize density in hydrostatic equilibrium for moist cases." alt="" coords="5,369,185,395"/>
+<area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992" title=" " alt="" coords="76,423,115,450"/>
+<area shape="rect" href="ERF__InitCustomPert__SquallLine_8H.html#a8d4cb26ec873a9dc9734efd82be956b9" title=" " alt="" coords="1664,122,1755,149"/>
+<area shape="rect" href="namespacesea__level__pressure__diagnostics.html#af58b20b1a6675aed4a5d01200e3eeb7e" title=" " alt="" coords="1318,325,1533,381"/>
+<area shape="rect" href="namespacesea__level__pressure__diagnostics.html#a0dec851e0fcbd9ef9bbbe0b92c843a6a" title=" " alt="" coords="1099,350,1257,406"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#adfa53fd44a2aef99b4f5953cfed30184" title=" " alt="" coords="1664,303,1755,330"/>
+<area shape="rect" href="namespacesea__level__pressure__diagnostics.html#a7182f3ca49cd8040b55b84ad03de57c3" title=" " alt="" coords="1588,223,1831,279"/>
+<area shape="rect" href="classERF.html#a68174258bfc0f89b45b68ffd0c46a35f" title=" " alt="" coords="895,365,1039,391"/>
 </map>
 </div>
 
@@ -1142,15 +1136,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_b = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(200.0), delta_T; <span class="comment">// Initial guess</span></div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160; </div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_FLOAT</span></div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> eps = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.e-4) * T_b;</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d">eps</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.e-4) * T_b;</div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> eps = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.e-10) * T_b;</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d">eps</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.e-10) * T_b;</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iter=0; iter&lt;20; iter++)</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    {</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> F         = <a class="code" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7">compute_F_for_temp_in_zone</a>(T_b    , p_b, <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a53f503b12f901c51930a7e802ae58f12">q_t</a>, <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a90ac495e0a01273196da003523dc5fa3">eq_pot_temp</a>, <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a92b9670f4a05eec7de9776e8c21a8248">use_empirical</a>, which_zone, scaled_height);</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> F_plus_dF = <a class="code" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7">compute_F_for_temp_in_zone</a>(T_b+eps, p_b, <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a53f503b12f901c51930a7e802ae58f12">q_t</a>, <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a90ac495e0a01273196da003523dc5fa3">eq_pot_temp</a>, <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a92b9670f4a05eec7de9776e8c21a8248">use_empirical</a>, which_zone, scaled_height);</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> F_prime   = (F_plus_dF - F)/eps;</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> F_plus_dF = <a class="code" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7">compute_F_for_temp_in_zone</a>(T_b+<a class="code" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d">eps</a>, p_b, <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a53f503b12f901c51930a7e802ae58f12">q_t</a>, <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a90ac495e0a01273196da003523dc5fa3">eq_pot_temp</a>, <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a92b9670f4a05eec7de9776e8c21a8248">use_empirical</a>, which_zone, scaled_height);</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> F_prime   = (F_plus_dF - F)/<a class="code" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d">eps</a>;</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        delta_T = -F/F_prime;</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        T_b = T_b + delta_T;</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    }</div>
@@ -1164,22 +1158,23 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceHSEutils_html_a881776b214b9d819cea9a32ab97384e7"><div class="ttname"><a href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7">HSEutils::compute_F_for_temp_in_zone</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_HOST_DEVICE Real compute_F_for_temp_in_zone(const Real T_b, const Real p_b, const Real q_t, const Real eq_pot_temp, const bool use_empirical, const int which_zone, const Real scaled_height)</div><div class="ttdef"><b>Definition:</b> ERF_HSEUtils.H:491</div></div>
 <div class="ttc" id="anamespaceHSEutils_html_aace33d14958f235a111e6cead400a61e"><div class="ttname"><a href="namespaceHSEutils.html#aace33d14958f235a111e6cead400a61e">HSEutils::TOL</a></div><div class="ttdeci">const amrex::Real TOL</div><div class="ttdef"><b>Definition:</b> ERF_HSEUtils.H:23</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4">compute_rho()</a>, and <a class="el" href="classShocPDF.html#a4f06d230cd1f338a9fe4d21f9a7ff17c">ShocPDF::diagnose_pdf()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4">compute_rho()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceHSEutils_a93a5cf59ff6896ff699626bd7b605bd0_cgraph.png" border="0" usemap="#anamespaceHSEutils_a93a5cf59ff6896ff699626bd7b605bd0_cgraph" alt=""/></div>
 <map name="anamespaceHSEutils_a93a5cf59ff6896ff699626bd7b605bd0_cgraph" id="anamespaceHSEutils_a93a5cf59ff6896ff699626bd7b605bd0_cgraph">
-<area shape="rect" title=" " alt="" coords="5,101,235,127"/>
-<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="283,93,439,135"/>
-<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="487,5,685,47"/>
-<area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="733,64,948,105"/>
-<area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="747,159,934,186"/>
-<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="499,123,673,164"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="996,71,1083,98"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="1183,21,1289,47"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="1389,97,1555,123"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="1131,122,1341,149"/>
+<area shape="rect" title=" " alt="" coords="5,130,235,157"/>
+<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="312,93,468,135"/>
+<area shape="rect" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d" title=" " alt="" coords="283,159,497,186"/>
+<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="545,5,744,47"/>
+<area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="792,64,1007,105"/>
+<area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="806,159,993,186"/>
+<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="558,123,731,164"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="1055,71,1141,98"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="1241,21,1348,47"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="1448,97,1613,123"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="1189,122,1400,149"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1187,17 +1182,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceHSEutils_a93a5cf59ff6896ff699626bd7b605bd0_icgraph.png" border="0" usemap="#anamespaceHSEutils_a93a5cf59ff6896ff699626bd7b605bd0_icgraph" alt=""/></div>
 <map name="anamespaceHSEutils_a93a5cf59ff6896ff699626bd7b605bd0_icgraph" id="anamespaceHSEutils_a93a5cf59ff6896ff699626bd7b605bd0_icgraph">
-<area shape="rect" title=" " alt="" coords="1355,60,1584,87"/>
-<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="1135,33,1305,60"/>
-<area shape="rect" href="classShocPDF.html#a4f06d230cd1f338a9fe4d21f9a7ff17c" title=" " alt="" coords="1133,85,1307,112"/>
-<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="909,31,1065,57"/>
+<area shape="rect" title=" " alt="" coords="1311,31,1540,57"/>
+<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="1093,31,1263,57"/>
+<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="889,31,1045,57"/>
 <area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="685,23,841,65"/>
 <area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="457,23,637,65"/>
 <area shape="rect" href="namespaceHSEutils.html#afdbe0b1edca9e8a2b8e3121884c85c0a" title=" " alt="" coords="233,23,409,65"/>
 <area shape="rect" href="ERF__InitDensityHSE_8H.html#a1dfb45c3986d99fa2877dd4769a4e276" title="Initialize density in hydrostatic equilibrium for moist cases." alt="" coords="5,5,185,32"/>
 <area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992" title=" " alt="" coords="76,56,115,83"/>
-<area shape="rect" href="classShocDiagnostics.html#a66b05ec19cd5ed4e2ef2d1022ba40067" title=" " alt="" coords="889,82,1085,123"/>
-<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="685,89,841,116"/>
 </map>
 </div>
 
@@ -1616,26 +1608,27 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceHSEutils_afdbe0b1edca9e8a2b8e3121884c85c0a_cgraph.png" border="0" usemap="#anamespaceHSEutils_afdbe0b1edca9e8a2b8e3121884c85c0a_cgraph" alt=""/></div>
 <map name="anamespaceHSEutils_afdbe0b1edca9e8a2b8e3121884c85c0a_cgraph" id="anamespaceHSEutils_afdbe0b1edca9e8a2b8e3121884c85c0a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,207,181,248"/>
-<area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="229,207,409,248"/>
-<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="457,207,613,248"/>
-<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="661,214,817,241"/>
-<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="865,214,1035,241"/>
-<area shape="rect" href="namespaceHSEutils.html#a110bf2ce123041ca2a045531c2d65f6d" title=" " alt="" coords="1093,5,1301,47"/>
-<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="1564,39,1763,80"/>
-<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="1083,134,1312,161"/>
-<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="1577,207,1750,248"/>
-<area shape="rect" href="namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b" title=" " alt="" coords="1106,239,1289,266"/>
-<area shape="rect" href="ERF__EOS_8H.html#a7668916ec63c2868ff5879714ad2401e" title=" " alt="" coords="1113,290,1282,317"/>
-<area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="1130,341,1265,367"/>
-<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="1131,391,1264,418"/>
-<area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="1811,97,2025,139"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="2073,105,2160,131"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="2260,54,2367,81"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="2467,130,2632,157"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="2208,105,2419,131"/>
-<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="1360,123,1516,164"/>
-<area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="1825,189,2011,215"/>
+<area shape="rect" title=" " alt="" coords="5,427,181,469"/>
+<area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="229,427,409,469"/>
+<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="457,427,613,469"/>
+<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="661,304,817,331"/>
+<area shape="rect" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d" title=" " alt="" coords="1360,337,1575,364"/>
+<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="865,224,1035,251"/>
+<area shape="rect" href="namespaceHSEutils.html#a110bf2ce123041ca2a045531c2d65f6d" title=" " alt="" coords="1093,158,1301,199"/>
+<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="1623,213,1821,254"/>
+<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="1083,279,1312,305"/>
+<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="1635,381,1809,422"/>
+<area shape="rect" href="namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b" title=" " alt="" coords="1106,409,1289,436"/>
+<area shape="rect" href="ERF__EOS_8H.html#a7668916ec63c2868ff5879714ad2401e" title=" " alt="" coords="1113,5,1282,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="1130,56,1265,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="1131,107,1264,133"/>
+<area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="1869,271,2084,313"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="2132,279,2219,305"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="2319,228,2425,255"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="2525,304,2691,331"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="2267,279,2477,305"/>
+<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="1389,271,1545,313"/>
+<area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="1883,363,2070,389"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1775,26 +1768,27 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceHSEutils_a7a5045d1b31e68655d6def7ac6a11e5b_cgraph.png" border="0" usemap="#anamespaceHSEutils_a7a5045d1b31e68655d6def7ac6a11e5b_cgraph" alt=""/></div>
 <map name="anamespaceHSEutils_a7a5045d1b31e68655d6def7ac6a11e5b_cgraph" id="anamespaceHSEutils_a7a5045d1b31e68655d6def7ac6a11e5b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,207,181,248"/>
-<area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="229,207,409,248"/>
-<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="457,207,613,248"/>
-<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="661,214,817,241"/>
-<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="865,214,1035,241"/>
-<area shape="rect" href="namespaceHSEutils.html#a110bf2ce123041ca2a045531c2d65f6d" title=" " alt="" coords="1093,5,1301,47"/>
-<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="1564,39,1763,80"/>
-<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="1083,134,1312,161"/>
-<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="1577,207,1750,248"/>
-<area shape="rect" href="namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b" title=" " alt="" coords="1106,239,1289,266"/>
-<area shape="rect" href="ERF__EOS_8H.html#a7668916ec63c2868ff5879714ad2401e" title=" " alt="" coords="1113,290,1282,317"/>
-<area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="1130,341,1265,367"/>
-<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="1131,391,1264,418"/>
-<area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="1811,97,2025,139"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="2073,105,2160,131"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="2260,54,2367,81"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="2467,130,2632,157"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="2208,105,2419,131"/>
-<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="1360,123,1516,164"/>
-<area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="1825,189,2011,215"/>
+<area shape="rect" title=" " alt="" coords="5,427,181,469"/>
+<area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="229,427,409,469"/>
+<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="457,427,613,469"/>
+<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="661,304,817,331"/>
+<area shape="rect" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d" title=" " alt="" coords="1360,337,1575,364"/>
+<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="865,224,1035,251"/>
+<area shape="rect" href="namespaceHSEutils.html#a110bf2ce123041ca2a045531c2d65f6d" title=" " alt="" coords="1093,158,1301,199"/>
+<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="1623,213,1821,254"/>
+<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="1083,279,1312,305"/>
+<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="1635,381,1809,422"/>
+<area shape="rect" href="namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b" title=" " alt="" coords="1106,409,1289,436"/>
+<area shape="rect" href="ERF__EOS_8H.html#a7668916ec63c2868ff5879714ad2401e" title=" " alt="" coords="1113,5,1282,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="1130,56,1265,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="1131,107,1264,133"/>
+<area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="1869,271,2084,313"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="2132,279,2219,305"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="2319,228,2425,255"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="2525,304,2691,331"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="2267,279,2477,305"/>
+<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="1389,271,1545,313"/>
+<area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="1883,363,2070,389"/>
 </map>
 </div>
 
@@ -1980,25 +1974,26 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceHSEutils_a25fa3eac422edce93049aaaed68785fc_cgraph.png" border="0" usemap="#anamespaceHSEutils_a25fa3eac422edce93049aaaed68785fc_cgraph" alt=""/></div>
 <map name="anamespaceHSEutils_a25fa3eac422edce93049aaaed68785fc_cgraph" id="anamespaceHSEutils_a25fa3eac422edce93049aaaed68785fc_cgraph">
-<area shape="rect" title=" " alt="" coords="5,207,185,248"/>
-<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="233,207,389,248"/>
-<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="437,214,593,241"/>
-<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="641,214,811,241"/>
-<area shape="rect" href="namespaceHSEutils.html#a110bf2ce123041ca2a045531c2d65f6d" title=" " alt="" coords="869,5,1077,47"/>
-<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="1340,39,1539,80"/>
-<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="859,134,1088,161"/>
-<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="1353,207,1526,248"/>
-<area shape="rect" href="namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b" title=" " alt="" coords="882,239,1065,266"/>
-<area shape="rect" href="ERF__EOS_8H.html#a7668916ec63c2868ff5879714ad2401e" title=" " alt="" coords="889,290,1058,317"/>
-<area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="906,341,1041,367"/>
-<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="907,391,1040,418"/>
-<area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="1587,97,1801,139"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="1849,105,1936,131"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="2036,54,2143,81"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="2243,130,2408,157"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="1984,105,2195,131"/>
-<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="1136,123,1292,164"/>
-<area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="1601,189,1787,215"/>
+<area shape="rect" title=" " alt="" coords="5,427,185,469"/>
+<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="233,427,389,469"/>
+<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="437,304,593,331"/>
+<area shape="rect" href="namespaceerf__detail__ShocMoments.html#abdca3961c578b7fe0332cd971f9dea6d" title=" " alt="" coords="1136,337,1351,364"/>
+<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="641,224,811,251"/>
+<area shape="rect" href="namespaceHSEutils.html#a110bf2ce123041ca2a045531c2d65f6d" title=" " alt="" coords="869,158,1077,199"/>
+<area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="1399,213,1597,254"/>
+<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="859,279,1088,305"/>
+<area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="1411,381,1585,422"/>
+<area shape="rect" href="namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b" title=" " alt="" coords="882,409,1065,436"/>
+<area shape="rect" href="ERF__EOS_8H.html#a7668916ec63c2868ff5879714ad2401e" title=" " alt="" coords="889,5,1058,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="906,56,1041,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="907,107,1040,133"/>
+<area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="1645,271,1860,313"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="1908,279,1995,305"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="2095,228,2201,255"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="2301,304,2467,331"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="2043,279,2253,305"/>
+<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="1165,271,1321,313"/>
+<area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="1659,363,1846,389"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2660,24 +2655,21 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceHSEutils_a1e8b5caf26be0ab8a97c021bd4f1a983_icgraph.png" border="0" usemap="#anamespaceHSEutils_a1e8b5caf26be0ab8a97c021bd4f1a983_icgraph" alt=""/></div>
 <map name="anamespaceHSEutils_a1e8b5caf26be0ab8a97c021bd4f1a983_icgraph" id="anamespaceHSEutils_a1e8b5caf26be0ab8a97c021bd4f1a983_icgraph">
-<area shape="rect" title=" " alt="" coords="1923,173,2096,215"/>
-<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="1675,13,1831,55"/>
-<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="1135,71,1305,98"/>
-<area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992" title=" " alt="" coords="76,126,115,153"/>
-<area shape="rect" href="namespacesea__level__pressure__diagnostics.html#af58b20b1a6675aed4a5d01200e3eeb7e" title=" " alt="" coords="1362,231,1577,287"/>
-<area shape="rect" href="namespacesea__level__pressure__diagnostics.html#a0dec851e0fcbd9ef9bbbe0b92c843a6a" title=" " alt="" coords="1141,206,1299,262"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#adfa53fd44a2aef99b4f5953cfed30184" title=" " alt="" coords="1708,282,1799,309"/>
-<area shape="rect" href="namespacesea__level__pressure__diagnostics.html#a7182f3ca49cd8040b55b84ad03de57c3" title=" " alt="" coords="1632,333,1875,389"/>
-<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="1355,21,1584,47"/>
-<area shape="rect" href="classShocPDF.html#a4f06d230cd1f338a9fe4d21f9a7ff17c" title=" " alt="" coords="1133,17,1307,43"/>
-<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="909,71,1065,98"/>
-<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="685,64,841,105"/>
-<area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="457,64,637,105"/>
-<area shape="rect" href="namespaceHSEutils.html#afdbe0b1edca9e8a2b8e3121884c85c0a" title=" " alt="" coords="233,64,409,105"/>
-<area shape="rect" href="ERF__InitDensityHSE_8H.html#a1dfb45c3986d99fa2877dd4769a4e276" title="Initialize density in hydrostatic equilibrium for moist cases." alt="" coords="5,71,185,98"/>
-<area shape="rect" href="classShocDiagnostics.html#a66b05ec19cd5ed4e2ef2d1022ba40067" title=" " alt="" coords="889,5,1085,47"/>
-<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="685,13,841,39"/>
-<area shape="rect" href="classERF.html#a68174258bfc0f89b45b68ffd0c46a35f" title=" " alt="" coords="915,221,1059,247"/>
+<area shape="rect" title=" " alt="" coords="1879,165,2052,207"/>
+<area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="1631,5,1787,47"/>
+<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="1093,63,1263,90"/>
+<area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992" title=" " alt="" coords="76,118,115,145"/>
+<area shape="rect" href="namespacesea__level__pressure__diagnostics.html#af58b20b1a6675aed4a5d01200e3eeb7e" title=" " alt="" coords="1318,223,1533,279"/>
+<area shape="rect" href="namespacesea__level__pressure__diagnostics.html#a0dec851e0fcbd9ef9bbbe0b92c843a6a" title=" " alt="" coords="1099,198,1257,254"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#adfa53fd44a2aef99b4f5953cfed30184" title=" " alt="" coords="1664,274,1755,301"/>
+<area shape="rect" href="namespacesea__level__pressure__diagnostics.html#a7182f3ca49cd8040b55b84ad03de57c3" title=" " alt="" coords="1588,325,1831,381"/>
+<area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="1311,17,1540,43"/>
+<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="889,63,1045,90"/>
+<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="685,56,841,97"/>
+<area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="457,56,637,97"/>
+<area shape="rect" href="namespaceHSEutils.html#afdbe0b1edca9e8a2b8e3121884c85c0a" title=" " alt="" coords="233,56,409,97"/>
+<area shape="rect" href="ERF__InitDensityHSE_8H.html#a1dfb45c3986d99fa2877dd4769a4e276" title="Initialize density in hydrostatic equilibrium for moist cases." alt="" coords="5,63,185,90"/>
+<area shape="rect" href="classERF.html#a68174258bfc0f89b45b68ffd0c46a35f" title=" " alt="" coords="895,213,1039,239"/>
 </map>
 </div>
 

@@ -265,7 +265,7 @@ Public Member Functions</h2></td></tr>
 <p>Area burned so far [m2], for the run log; negative when the engine does not track it. </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#a3747dcc31da532ab5a3a19990115f6db">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-1.0); }</div>
+<div class="fragment"><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-1.0); }</div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
 </div>
@@ -327,7 +327,7 @@ Public Member Functions</h2></td></tr>
 <p>Optional heat placement per atmospheric column, for erf.fire.heat_open_fraction: the fraction of the column's footprint open to the air [0-1] and the mean roof height of the rest [m], on the k = 0 slabs of the fire grid's level with one ghost cell: one slab per box of the level, in the level's box order and on its DistributionMapping (the coupling reads them with the level's MFIter and stops otherwise). nullptr when the engine has no such blocking. </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#a357ce8da19cac445f1cb3a3240b66c21">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+<div class="fragment"><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -356,7 +356,7 @@ Public Member Functions</h2></td></tr>
 <p>Heat released by the fire on the fire grid [W/m2], before any partition into sensible and latent flux; nullptr if the engine has none. </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#a13cfbc94671215fc18f3200039b08ade">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+<div class="fragment"><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -454,7 +454,7 @@ Public Member Functions</h2></td></tr>
 <p>Level set on the fire grid, negative where burned; nullptr if the engine has none. </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#a3d239dc3373c3d53b9e0a082e49cfb9b">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+<div class="fragment"><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -526,7 +526,7 @@ Here is the caller graph for this function:</div>
 <p>True by default: the coupling then stops at start-up unless zlo.type = surface_layer. An engine that reads nothing from the surface layer (it takes the wind and heights from <a class="el" href="structFireForcing.html" title="The atmospheric state a fire engine reads at the start of its step.">FireForcing</a> alone) returns false and may run over any bottom boundary. </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#a586f40a1b88d3f2d3dc78444efbfee6c">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="fragment"><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -558,10 +558,10 @@ Here is the caller graph for this function:</div>
 <p>One component, on <a class="el" href="structFireGrid.html#a334293a2fecdf1218a92c09de6b36918" title="2D BoxArray (C*nx × C*ny × 1)">FireGrid::ba</a> and <a class="el" href="structFireGrid.html#a65d6874c65bc8f5344659c9746534164" title="Distribution map (x-y decomposition aligned with atm)">FireGrid::dm</a>, valid until the next <a class="el" href="classFireEngine.html#a747308159ad5519507843a1dd8356086" title="Advance the fire over one step of its level.">advance()</a>. The coupler averages it over each atmospheric column (the grid_ratio^2 fire cells under it) and writes it into the k = 0 layer of the <a class="el" href="classERF.html">ERF</a> plotfile, zero elsewhere. nullptr writes zeros. </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#af79d7d06b22d5138e52a428c0db14290">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        amrex::ignore_unused(<a class="code" href="classFireEngine.html#aa97c3de4bc5bd31efe249aa23b5c6704">name</a>);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        amrex::ignore_unused(<a class="code" href="classFireEngine.html#aa97c3de4bc5bd31efe249aa23b5c6704">name</a>);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
 <div class="ttc" id="aclassFireEngine_html_aa97c3de4bc5bd31efe249aa23b5c6704"><div class="ttname"><a href="classFireEngine.html#aa97c3de4bc5bd31efe249aa23b5c6704">FireEngine::name</a></div><div class="ttdeci">virtual const char * name() const =0</div><div class="ttdoc">Name of the engine, as erf.fire.engine selects it.</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -602,7 +602,7 @@ Here is the call graph for this function:</div>
 <p>The names the deck may list in erf.plot_vars_* (for example "fire_phi", "fire_heat_flux"); they should start with "fire_" so they never collide with an <a class="el" href="classERF.html">ERF</a> variable. The coupler asks once, when it is constructed: before <a class="el" href="classFireEngine.html#a3289e9175711d765c55278e3107dd104" title="Set the engine up on the fire grid.">initialize()</a> and before <a class="el" href="classERF.html">ERF</a> reads its plot variable lists, so the answer depends on the engine's inputs only. The default lists none. </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#ab08a27bd6638e5ae0eaa738b097cd810">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;{ <span class="keywordflow">return</span> {}; }</div>
+<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;{ <span class="keywordflow">return</span> {}; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -658,11 +658,11 @@ Here is the call graph for this function:</div>
 <p>The default stops the run: an engine that does not implement restart says so instead of continuing from its initial state. </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#a11d5e8e4427f854985d5c8c3bae09c48">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        amrex::ignore_unused(restart_chkfile, max_level, step);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        amrex::Abort(std::string(<span class="stringliteral">&quot;[FIRE] fire engine \&quot;&quot;</span>) + <a class="code" href="classFireEngine.html#aa97c3de4bc5bd31efe249aa23b5c6704">name</a>()</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                     + <span class="stringliteral">&quot;\&quot; does not support restart from a checkpoint&quot;</span>);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        amrex::ignore_unused(restart_chkfile, max_level, step);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        amrex::Abort(std::string(<span class="stringliteral">&quot;[FIRE] fire engine \&quot;&quot;</span>) + <a class="code" href="classFireEngine.html#aa97c3de4bc5bd31efe249aa23b5c6704">name</a>()</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                     + <span class="stringliteral">&quot;\&quot; does not support restart from a checkpoint&quot;</span>);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -701,7 +701,7 @@ Here is the call graph for this function:</div>
 <p>Wind (u, v) [m/s] the engine sampled at <a class="el" href="classFireEngine.html#a26f82c1da66536e41636206d61e7c21b" title="Height above ground [m] of reference_wind().">reference_wind_height()</a> on the fire grid; nullptr if none. </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#a8f020148a199466ed4d24fd756345b09">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+<div class="fragment"><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -731,7 +731,7 @@ Here is the call graph for this function:</div>
 <p>Height above ground [m] of <a class="el" href="classFireEngine.html#a5a3f1594bb990daaee24a656b8775411" title="Wind (u, v) [m/s] the engine sampled at reference_wind_height() on the fire grid; nullptr if none.">reference_wind()</a>. </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#acdf6a9e234f542377fa370419acb2587">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0); }</div>
+<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -759,7 +759,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#a4b53fd9ddcf3d2b1b9ab8223a3eab8a2">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+<div class="fragment"><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -835,17 +835,17 @@ Here is the call graph for this function:</div>
 <p>Start-up after <a class="el" href="classFireEngine.html#a3289e9175711d765c55278e3107dd104" title="Set the engine up on the fire grid.">initialize()</a>, once the run's end is known. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">stop_time</td><td><a class="el" href="classERF.html">ERF</a>'s stop_time [s] (numeric_limits max when unset) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">max_step</td><td><a class="el" href="classERF.html">ERF</a>'s max_step, counting level-0 steps (negative when unset) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">stop_time</td><td>Elapsed time at which the run stops [s], on the clock the engine's step times use (<a class="el" href="classERF.html">ERF</a>'s stop_time less start_time); numeric_limits&lt;amrex::Real&gt;::max() when no stop time is set </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_step</td><td><a class="el" href="classERF.html">ERF</a>'s max_step, counting level-0 steps; numeric_limits&lt;int&gt;::max() when unset (never negative) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">steps_per_coarse_step</td><td>Steps of the fire grid's level per level-0 step </td></tr>
   </table>
   </dd>
 </dl>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#ad3f81d1cf543bd786b19523f1be03c8d">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        amrex::ignore_unused(stop_time, max_step, steps_per_coarse_step);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        amrex::ignore_unused(stop_time, max_step, steps_per_coarse_step);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -923,7 +923,7 @@ Here is the call graph for this function:</div>
 <p>The engine needs the surface precipitation accumulation in <a class="el" href="structFireForcing.html" title="The atmospheric state a fire engine reads at the start of its step.">FireForcing</a>. </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#a91598d7d4b29762e208ac5532e845c0a">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="fragment"><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -955,9 +955,9 @@ Here is the call graph for this function:</div>
 <p>Everything the engine carries from one step to the next, under checkpointname/Level_&lt;lev&gt;/ of the fire grid's level. Called by <a class="el" href="classFireCoupler.html#a321f5c563a72cb4e8566e031833cf833" title="Write the fire to a checkpoint: the engine&#39;s state (FireEngine::write_checkpoint),...">FireCoupler::write_checkpoint</a>, which then writes the lagged fluxes. The default writes nothing; such an engine cannot restart (read_checkpoint). </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#a005b7e97d1b96e9206b93ea2369ef55c">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        amrex::ignore_unused(checkpointname);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        amrex::ignore_unused(checkpointname);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1013,9 +1013,9 @@ Here is the call graph for this function:</div>
 <p>The default writes nothing (the engine's fields may still reach the <a class="el" href="classERF.html">ERF</a> plotfile through <a class="el" href="classFireEngine.html#a0469be0f08ea2a1e10ac5533696e1a99" title="Fire fields the ERF plotfile can carry, by name.">plot_var_names()</a>). </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#a801ec0bca0685fb04c0e81bb3c0d4b6c">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        amrex::ignore_unused(plotfile_prefix, time, step);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        amrex::ignore_unused(plotfile_prefix, time, step);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

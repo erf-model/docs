@@ -728,17 +728,16 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp;       src = cc_src.array(mfi);</div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; c   = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">cons</a>.const_array(mfi);</div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; s   = zs.const_array(mfi);</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;  <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>   = has_blank ? blank-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;  b   = has_blank ? blank-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        <span class="keywordflow">if</span> (z_phys_nd) {</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;            obs_nudging::add_cell_theta_source&lt;true&gt;(bx, src, c, z_phys_nd-&gt;const_array(mfi), s, <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>,</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;            obs_nudging::add_cell_theta_source&lt;true&gt;(bx, src, c, z_phys_nd-&gt;const_array(mfi), s, b,</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                                                     has_blank, <a class="code" href="ERF__InitCustomPertVels__ABL_8H.html#ada6bdc46e2435400f2c431495eaa6ffb">problo</a>, <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>, v);</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            obs_nudging::add_cell_theta_source&lt;false&gt;(bx, src, c, Array4&lt;const Real&gt;{}, s, <a class="code" href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a>,</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            obs_nudging::add_cell_theta_source&lt;false&gt;(bx, src, c, Array4&lt;const Real&gt;{}, s, b,</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                                                      has_blank, <a class="code" href="ERF__InitCustomPertVels__ABL_8H.html#ada6bdc46e2435400f2c431495eaa6ffb">problo</a>, <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>, v);</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        }</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    }</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;}</div>
-<div class="ttc" id="aERF__ActuatorSampling_8cpp_html_a148e3876077787926724625411d6e7a9"><div class="ttname"><a href="ERF__ActuatorSampling_8cpp.html#a148e3876077787926724625411d6e7a9">b</a></div><div class="ttdeci">int b</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSampling.cpp:625</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

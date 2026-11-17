@@ -1,5 +1,19 @@
 var namespaceerf__sbm =
 [
+    [ "erf_detail_SBMAMRTransfer", "namespaceerf__sbm_1_1erf__detail__SBMAMRTransfer.html", [
+      [ "candidate_is_separate", "namespaceerf__sbm_1_1erf__detail__SBMAMRTransfer.html#afbc2e6dd26daa1483edc247486008d86", null ],
+      [ "collective_all_true", "namespaceerf__sbm_1_1erf__detail__SBMAMRTransfer.html#a09d9a1e84dedf5d24c68de93376ad947", null ],
+      [ "form_carrier_relative_chunk", "namespaceerf__sbm_1_1erf__detail__SBMAMRTransfer.html#a6044f2bc7d281d0dd5c9fa554a6c7eb5", null ],
+      [ "form_mapped_chunk", "namespaceerf__sbm_1_1erf__detail__SBMAMRTransfer.html#a0839271a89842c18cb88992ab9fc139d", null ],
+      [ "reconstruct_carrier_relative_chunk", "namespaceerf__sbm_1_1erf__detail__SBMAMRTransfer.html#afbe638247e84606db093428c582ee6c4", null ],
+      [ "valid_ratio", "namespaceerf__sbm_1_1erf__detail__SBMAMRTransfer.html#adb2e2647a177baba56821849cc90f062", null ],
+      [ "validate_mapped_carrier_inventory", "namespaceerf__sbm_1_1erf__detail__SBMAMRTransfer.html#af43e9d76390cac193409281ae62a35fe", null ],
+      [ "validate_view_carriers", "namespaceerf__sbm_1_1erf__detail__SBMAMRTransfer.html#af1b7589ae443b658f21a69db6005796d", null ],
+      [ "validate_view_spectrum", "namespaceerf__sbm_1_1erf__detail__SBMAMRTransfer.html#aef1c7570ae9c7f9a69734141355777f4", null ],
+      [ "validate_view_structure", "namespaceerf__sbm_1_1erf__detail__SBMAMRTransfer.html#abf38b6b8a1e053da7c75d88bd10a2add", null ],
+      [ "write_restricted_chunk", "namespaceerf__sbm_1_1erf__detail__SBMAMRTransfer.html#a4f181745370a74238fcebf2a9c28eaea", null ]
+    ] ],
+    [ "erf_detail_SBMTransport", "namespaceerf__sbm_1_1erf__detail__SBMTransport.html", "namespaceerf__sbm_1_1erf__detail__SBMTransport" ],
     [ "qualification", "namespaceerf__sbm_1_1qualification.html", [
       [ "add_layout_properties", "namespaceerf__sbm_1_1qualification.html#acce88d2644e2677eab60687bd9a3b23b", null ],
       [ "first_coarse_only_ghost", "namespaceerf__sbm_1_1qualification.html#a55de2ba0287ceb500acca8f0d0336c40", null ],

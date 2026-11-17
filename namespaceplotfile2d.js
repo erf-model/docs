@@ -1,5 +1,6 @@
 var namespaceplotfile2d =
 [
+    [ "erf_detail_Plotfile2DInterpolator", "namespaceplotfile2d_1_1erf__detail__Plotfile2DInterpolator.html", "namespaceplotfile2d_1_1erf__detail__Plotfile2DInterpolator" ],
     [ "DiagnosticDescriptor", "structplotfile2d_1_1DiagnosticDescriptor.html", "structplotfile2d_1_1DiagnosticDescriptor" ],
     [ "CloudOpticsParameters", "structplotfile2d_1_1CloudOpticsParameters.html", "structplotfile2d_1_1CloudOpticsParameters" ],
     [ "SampledBracket", "structplotfile2d_1_1SampledBracket.html", "structplotfile2d_1_1SampledBracket" ],
