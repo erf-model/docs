@@ -4888,10 +4888,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;            landtype_arr(i, j, 0) = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(vegtype_arr(i, j, d_khi_lsm));</div>
 <div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;            lai_arr(i, j, 0) = in_lai_arr(i, j, d_khi_lsm);</div>
 <div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160; </div>
-<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tsk = in_tsk_arr(i, j, d_khi_lsm);</div>
-<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;            sstxy_arr(i, j, 0) = tsk;</div>
-<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;            in_tsk_arr(i, j, 0) = tsk;</div>
-<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;            tskin_arr(i, j, 0) = tsk;</div>
+<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceerf__surface__temperature.html#aafd9a55e6cc17f85025da0fb034cb715ac1e7c5cfd3d06ee8ef28b5c807d50f3b">tsk</a> = in_tsk_arr(i, j, d_khi_lsm);</div>
+<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;            sstxy_arr(i, j, 0) = <a class="code" href="namespaceerf__surface__temperature.html#aafd9a55e6cc17f85025da0fb034cb715ac1e7c5cfd3d06ee8ef28b5c807d50f3b">tsk</a>;</div>
+<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;            in_tsk_arr(i, j, 0) = <a class="code" href="namespaceerf__surface__temperature.html#aafd9a55e6cc17f85025da0fb034cb715ac1e7c5cfd3d06ee8ef28b5c807d50f3b">tsk</a>;</div>
+<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;            tskin_arr(i, j, 0) = <a class="code" href="namespaceerf__surface__temperature.html#aafd9a55e6cc17f85025da0fb034cb715ac1e7c5cfd3d06ee8ef28b5c807d50f3b">tsk</a>;</div>
 <div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;            t_ground_skin_arr(i, j, 0) = in_tsoil_arr(i, j, d_khi_lsm);</div>
 <div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160; </div>
 <div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;            in_vegfrac_arr(i, j, d_khi_lsm) *= 0.01;</div>
@@ -4962,6 +4962,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;    <a class="code" href="classSLM.html#a5b3b7d99aa06cf40a9f2c32a23cdab9f">wrfinput_initialized</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;}</div>
 <div class="ttc" id="aclassSLM_html_a152c1581ac7161f6f17879dbe1f2973b"><div class="ttname"><a href="classSLM.html#a152c1581ac7161f6f17879dbe1f2973b">SLM::init_slm_vars</a></div><div class="ttdeci">void init_slm_vars()</div><div class="ttdef"><b>Definition:</b> ERF_SLM.cpp:2227</div></div>
+<div class="ttc" id="anamespaceerf__surface__temperature_html_aafd9a55e6cc17f85025da0fb034cb715ac1e7c5cfd3d06ee8ef28b5c807d50f3b"><div class="ttname"><a href="namespaceerf__surface__temperature.html#aafd9a55e6cc17f85025da0fb034cb715ac1e7c5cfd3d06ee8ef28b5c807d50f3b">erf_surface_temperature::SurfaceTemperatureSource::tsk</a></div><div class="ttdeci">@ tsk</div><div class="ttdoc">the skin temperature, TSK</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSLM.html#a5e367b698ec2c395db1fd597bf959652">Advance()</a>, and <a class="el" href="classSLM.html#aad7b7bbb378dd920afa9a8c0b74f0af2">Update_Lsm_Vars()</a>.</p>
 <div class="dynheader">
@@ -8217,12 +8218,12 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l05215"></a><span class="lineno"> 5215</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">bool</span> d_use_wrfinput = <a class="code" href="classSLM.html#ae62a98db27ee3005044bff99e3c0f09f">use_wrfinput</a>;</div>
 <div class="line"><a name="l05216"></a><span class="lineno"> 5216</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l05217"></a><span class="lineno"> 5217</span>&#160;            {</div>
-<div class="line"><a name="l05218"></a><span class="lineno"> 5218</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tsk = d_use_wrfinput</div>
+<div class="line"><a name="l05218"></a><span class="lineno"> 5218</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceerf__surface__temperature.html#aafd9a55e6cc17f85025da0fb034cb715ac1e7c5cfd3d06ee8ef28b5c807d50f3b">tsk</a> = d_use_wrfinput</div>
 <div class="line"><a name="l05219"></a><span class="lineno"> 5219</span>&#160;                    ? slm_tsk(i, j, d_khi_lsm)</div>
 <div class="line"><a name="l05220"></a><span class="lineno"> 5220</span>&#160;                    : sst_array(i, j, k, 0);</div>
-<div class="line"><a name="l05221"></a><span class="lineno"> 5221</span>&#160;                slm_sst(i, j, k) = tsk;</div>
-<div class="line"><a name="l05222"></a><span class="lineno"> 5222</span>&#160;                slm_tsk(i, j, k) = tsk;</div>
-<div class="line"><a name="l05223"></a><span class="lineno"> 5223</span>&#160;                slm_tskin(i, j, k) = tsk;</div>
+<div class="line"><a name="l05221"></a><span class="lineno"> 5221</span>&#160;                slm_sst(i, j, k) = <a class="code" href="namespaceerf__surface__temperature.html#aafd9a55e6cc17f85025da0fb034cb715ac1e7c5cfd3d06ee8ef28b5c807d50f3b">tsk</a>;</div>
+<div class="line"><a name="l05222"></a><span class="lineno"> 5222</span>&#160;                slm_tsk(i, j, k) = <a class="code" href="namespaceerf__surface__temperature.html#aafd9a55e6cc17f85025da0fb034cb715ac1e7c5cfd3d06ee8ef28b5c807d50f3b">tsk</a>;</div>
+<div class="line"><a name="l05223"></a><span class="lineno"> 5223</span>&#160;                slm_tskin(i, j, k) = <a class="code" href="namespaceerf__surface__temperature.html#aafd9a55e6cc17f85025da0fb034cb715ac1e7c5cfd3d06ee8ef28b5c807d50f3b">tsk</a>;</div>
 <div class="line"><a name="l05224"></a><span class="lineno"> 5224</span>&#160;            });</div>
 <div class="line"><a name="l05225"></a><span class="lineno"> 5225</span>&#160;        }</div>
 <div class="line"><a name="l05226"></a><span class="lineno"> 5226</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="classSLM.html#ae62a98db27ee3005044bff99e3c0f09f">use_wrfinput</a>) {</div>

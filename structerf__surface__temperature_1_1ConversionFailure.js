@@ -12,5 +12,6 @@ var structerf__surface__temperature_1_1ConversionFailure =
     [ "rho", "structerf__surface__temperature_1_1ConversionFailure.html#a51574c2a8fbf55a4914a5b2d6f39d0b0", null ],
     [ "rho_qv", "structerf__surface__temperature_1_1ConversionFailure.html#a5000aa2333bdfa9942a6763ef7651574", null ],
     [ "rho_theta", "structerf__surface__temperature_1_1ConversionFailure.html#a92b74243d56d4fb85b8bf944eab71278", null ],
+    [ "skip_qsat", "structerf__surface__temperature_1_1ConversionFailure.html#ad8fd1bf8cdef6f7a5e74c2dfb2e1b572", null ],
     [ "t_surf", "structerf__surface__temperature_1_1ConversionFailure.html#ab90cc8212749b3e0a99e441f14b5f3fc", null ]
 ];

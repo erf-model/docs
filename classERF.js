@@ -62,6 +62,7 @@ var classERF =
     [ "ConfigureDriverAtmosToOceanCoupling", "classERF.html#a02ac7c5474e3ff00efc5513eebcde726", null ],
     [ "Construct_ERFFillPatchers", "classERF.html#adc284f421c5fd9dd15c0e5cbe4ff5fc8", null ],
     [ "convert_legacy_precip_accumulations", "classERF.html#a727b81b3050ded341da8002e8b02e6f4", null ],
+    [ "convert_legacy_surface_temperature", "classERF.html#a8362985fe54eee8aad1a4d11c04c3453", null ],
     [ "create_background_state_for_ensemble", "classERF.html#a504a6a2a4d68c9a82ae3f1a3436393f4", null ],
     [ "create_random_perturbations", "classERF.html#a841b9c35530690660acbb386ef9cbb24", null ],
     [ "DataLog", "classERF.html#aa2c3ee1910008b828b9da79ccdfe3871", null ],

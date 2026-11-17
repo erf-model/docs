@@ -87,30 +87,7 @@ var namespaces_dup =
       [ "is_separately_named", "namespaceerf__checkpoint__lsm__data.html#a8b46ce5773862375e18d9b01d1d7c5b3", null ],
       [ "may_be_absent", "namespaceerf__checkpoint__lsm__data.html#a1bd8a97653ccbd165b99a125be22c261", null ]
     ] ],
-    [ "erf_checkpoint_surface_temperature", "namespaceerf__checkpoint__surface__temperature.html", [
-      [ "ContractReadStatus", "namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4", [
-        [ "Valid", "namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4a3ac705f2acd51a4613f9188c05c91d0d", null ],
-        [ "Malformed", "namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4a0dc7301026e66d38061d7eaba481c9a5", null ],
-        [ "UnknownVersion", "namespaceerf__checkpoint__surface__temperature.html#a768e2f06d02c852b77a92e1c3f3a2bb4a44766ce89c0a6bd59c7e1860e782fc78", null ]
-      ] ],
-      [ "LegacyInitType", "namespaceerf__checkpoint__surface__temperature.html#a5c99be1058301fec83ca1f2e9842aa7e", [
-        [ "WRFInput", "namespaceerf__checkpoint__surface__temperature.html#a5c99be1058301fec83ca1f2e9842aa7ead82a7a3abd42ab64290b196adc9863be", null ],
-        [ "Metgrid", "namespaceerf__checkpoint__surface__temperature.html#a5c99be1058301fec83ca1f2e9842aa7eaeaa694fdc691d84a487ba196865b03ee", null ],
-        [ "Unknown", "namespaceerf__checkpoint__surface__temperature.html#a5c99be1058301fec83ca1f2e9842aa7ea88183b946cc5f0e8c96b2e66e1c74a7e", null ]
-      ] ],
-      [ "LegacySurfaceTemperatureCompatibility", "namespaceerf__checkpoint__surface__temperature.html#a8d05f2030bed11f067f65f171d13f514", [
-        [ "Compatible", "namespaceerf__checkpoint__surface__temperature.html#a8d05f2030bed11f067f65f171d13f514a923b5fd7dc0ac6f70f77bcc7ec3f5546", null ],
-        [ "UnsafeMetgrid", "namespaceerf__checkpoint__surface__temperature.html#a8d05f2030bed11f067f65f171d13f514a1442bda6d3347fd202d397c8248f37ad", null ],
-        [ "UnknownProvenance", "namespaceerf__checkpoint__surface__temperature.html#a8d05f2030bed11f067f65f171d13f514aec8e6e30a6f75ffb6b9ec91a76ca5239", null ]
-      ] ],
-      [ "classify_legacy_surface_temperature_checkpoint", "namespaceerf__checkpoint__surface__temperature.html#af6d6015b08b0d7b3b1c8f46437a440fb", null ],
-      [ "first_legacy_surface_temperature_level", "namespaceerf__checkpoint__surface__temperature.html#a4bd1bbd5b9f06eeb834c6f7bc8dbd6bf", null ],
-      [ "parse_legacy_init_type_from_job_info", "namespaceerf__checkpoint__surface__temperature.html#aa82796f3196b271cb8bba2942abb8112", null ],
-      [ "parse_legacy_init_type_value", "namespaceerf__checkpoint__surface__temperature.html#a0f96e51e47eaa12021104e7376442b49", null ],
-      [ "read_contract_version", "namespaceerf__checkpoint__surface__temperature.html#a04ef199886242e32ed4c9b84e002ae1f", null ],
-      [ "write_contract_version", "namespaceerf__checkpoint__surface__temperature.html#ae175f2698846df94ca3d25d853be6a6b", null ],
-      [ "contract_version", "namespaceerf__checkpoint__surface__temperature.html#a1a0baec3ffeee14e71e243070e1870bd", null ]
-    ] ],
+    [ "erf_checkpoint_surface_temperature", "namespaceerf__checkpoint__surface__temperature.html", "namespaceerf__checkpoint__surface__temperature" ],
     [ "erf_cloud_chamber", "namespaceerf__cloud__chamber.html", "namespaceerf__cloud__chamber" ],
     [ "erf_cloud_chamber_wall_dt_guard", "namespaceerf__cloud__chamber__wall__dt__guard.html", [
       [ "enforce_fixed_dt_limit", "namespaceerf__cloud__chamber__wall__dt__guard.html#a746a20f2e661da63a6d0af43dac6f37c", null ],
@@ -215,6 +192,10 @@ var namespaces_dup =
     [ "erf_topography", "namespaceerf__topography.html", "namespaceerf__topography" ],
     [ "erf_wall_scalar_bc", "namespaceerf__wall__scalar__bc.html", "namespaceerf__wall__scalar__bc" ],
     [ "erf_wall_thermodynamics", "namespaceerf__wall__thermodynamics.html", "namespaceerf__wall__thermodynamics" ],
+    [ "erf_wrfinput", "namespaceerf__wrfinput.html", [
+      [ "file_box_to_erf", "namespaceerf__wrfinput.html#ac74ada2a2c4d1c4276d958a0f6ec9289", null ],
+      [ "file_to_erf_shift", "namespaceerf__wrfinput.html#a4724c958184cb8602bf20d2750100f10", null ]
+    ] ],
     [ "ERFBCType", "namespaceERFBCType.html", [
       [ "mathematicalBndryTypes", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c", [
         [ "bogus", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca5e7251ff4badd9a198c0601a7929b1c4", null ],

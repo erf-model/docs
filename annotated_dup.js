@@ -30,6 +30,12 @@ var annotated_dup =
       [ "ComponentDescriptor", "structerf__auxiliary_1_1ComponentDescriptor.html", "structerf__auxiliary_1_1ComponentDescriptor" ],
       [ "AuxiliaryStateLayout", "classerf__auxiliary_1_1AuxiliaryStateLayout.html", "classerf__auxiliary_1_1AuxiliaryStateLayout" ]
     ] ],
+    [ "erf_checkpoint_surface_temperature", "namespaceerf__checkpoint__surface__temperature.html", [
+      [ "SurfaceTemperatureProvenance", "structerf__checkpoint__surface__temperature_1_1SurfaceTemperatureProvenance.html", "structerf__checkpoint__surface__temperature_1_1SurfaceTemperatureProvenance" ],
+      [ "SurfaceTemperatureMigrationPlan", "structerf__checkpoint__surface__temperature_1_1SurfaceTemperatureMigrationPlan.html", "structerf__checkpoint__surface__temperature_1_1SurfaceTemperatureMigrationPlan" ],
+      [ "SurfaceTemperatureUse", "structerf__checkpoint__surface__temperature_1_1SurfaceTemperatureUse.html", "structerf__checkpoint__surface__temperature_1_1SurfaceTemperatureUse" ],
+      [ "LegacyConversionFailure", "structerf__checkpoint__surface__temperature_1_1LegacyConversionFailure.html", "structerf__checkpoint__surface__temperature_1_1LegacyConversionFailure" ]
+    ] ],
     [ "erf_cloud_chamber", "namespaceerf__cloud__chamber.html", [
       [ "WallSpec", "structerf__cloud__chamber_1_1WallSpec.html", "structerf__cloud__chamber_1_1WallSpec" ],
       [ "Config", "structerf__cloud__chamber_1_1Config.html", "structerf__cloud__chamber_1_1Config" ],
@@ -129,6 +135,7 @@ var annotated_dup =
       [ "SpectralGrid", "classerf__sbm_1_1SpectralGrid.html", "classerf__sbm_1_1SpectralGrid" ]
     ] ],
     [ "erf_surface_temperature", "namespaceerf__surface__temperature.html", [
+      [ "SurfacePressureResult", "structerf__surface__temperature_1_1SurfacePressureResult.html", "structerf__surface__temperature_1_1SurfacePressureResult" ],
       [ "ConversionFailure", "structerf__surface__temperature_1_1ConversionFailure.html", "structerf__surface__temperature_1_1ConversionFailure" ]
     ] ],
     [ "erf_terrain_file", "namespaceerf__terrain__file.html", [
