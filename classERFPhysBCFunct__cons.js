@@ -2,6 +2,7 @@ var classERFPhysBCFunct__cons =
 [
     [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html#aad9bc5ddcb7919a03da68223d85198f2", null ],
     [ "~ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html#ab1f895ffdda9477b380a088bdf48a6de", null ],
+    [ "face_rho_is_extdir", "classERFPhysBCFunct__cons.html#a962224c4e037a51a7220de7a49672eb3", null ],
     [ "impose_inflow_profile_cons", "classERFPhysBCFunct__cons.html#afe3a8aa80d260ed9a7bddda3f06d6ac4", null ],
     [ "impose_lateral_cons_bcs", "classERFPhysBCFunct__cons.html#a8a208e8874c2a6ee75b935c3b82a655c", null ],
     [ "impose_vertical_cons_bcs", "classERFPhysBCFunct__cons.html#a8467d70225a1e97d0a0ac8caa4c9a8f8", null ],

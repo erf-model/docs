@@ -12,7 +12,7 @@ var ERF__Utils_8H =
     [ "ApplyMask", "ERF__Utils_8H.html#acebead6f3a33cb7737a1fea98341c3ae", null ],
     [ "bdy_time_weights", "ERF__Utils_8H.html#abd8a972b1781d69a8305bad84f356b68", null ],
     [ "ChopGrids2D", "ERF__Utils_8H.html#ae73f998519cf6628e7c4a90cea4cb4f5", null ],
-    [ "compute_influx_outflux_bdy", "ERF__Utils_8H.html#a237676f7809709fcab1a99c2db0b4b0d", null ],
+    [ "compute_influx_outflux_bdy", "ERF__Utils_8H.html#acb3c9211edf9fc17b071e01378c84e44", null ],
     [ "cons_to_prim", "ERF__Utils_8H.html#a4daf8959fb5126b74213fefeaca9dbef", null ],
     [ "ConvertForProjection", "ERF__Utils_8H.html#ae4ec302147b124c88534706646a1cd71", null ],
     [ "enforceInOutSolvability", "ERF__Utils_8H.html#af201d25507c085bccb92d2dc74c3cb90", null ],
