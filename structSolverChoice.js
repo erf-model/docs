@@ -37,8 +37,6 @@ var structSolverChoice =
     [ "bdy_rho_nudge_factor", "structSolverChoice.html#a9923042e3bf875d9565cfb8a4cd79dae", null ],
     [ "beta_d", "structSolverChoice.html#abcc18000c9bf4263ffdda16c70ddcd84", null ],
     [ "beta_s", "structSolverChoice.html#a437400cb65df4fca18cded67930bbc78", null ],
-    [ "beta_s_max", "structSolverChoice.html#a51d8ab8689ceebbf4ec481e1849eec9d", null ],
-    [ "beta_s_min", "structSolverChoice.html#a7b0ae23539e5c623f6a7dc55bde875c5", null ],
     [ "buildings_fc_factories", "structSolverChoice.html#a360c131464cd14a0985c9187f1cb717c", null ],
     [ "buildings_type", "structSolverChoice.html#ab9cbed75684285bac4390cb039b2e74a", null ],
     [ "buoyancy_type", "structSolverChoice.html#a238ef93b20dbaaf61dd00f9d0d149cc2", null ],

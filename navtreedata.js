@@ -131,14 +131,14 @@ var NAVTREEINDEX =
 "structRadChoice.html#a9389adf771fd166bbb458cf7845df9aa",
 "structSHOCInterface_1_1Buffer.html#a554112c8d21ede3ae9f454f21f25e775",
 "structShocRuntimeOptions.html#a7ce554cd8aeff89358b1be0348d2fc18",
-"structSolverChoice.html#ad9861d4e33ddb42d03fd03873e2e7a9c",
-"structTurbChoice.html#a0895a7b1a1e7894ab579df470c0d44ac",
-"structTwoStreamRoof.html#a0e2451f6d3ffaacfc276e6c725d8bc98",
-"structerf__actuator_1_1CoverageGrids.html#a80959b3eab0d36f9c5860fe0bbd5b4d3",
-"structerf__noahmp_1_1PrecipSlots.html",
-"structerf__sbm_1_1SBMAMRStageGhostProbe.html#a80221b764bb92f27f540d1ea7574e231",
-"structibseb_1_1RayMap.html#a6b704a421c6aeecef4cbeb7444577a47",
-"structplotfile2d_1_1SampledWindSources.html#a08e4617c4a5dbcaace484d3a645478d0"
+"structSolverChoice.html#add60278ef0b0c1f27e968b4719a71afe",
+"structTurbChoice.html#a0c661ffb867afcb266c04be428715ffb",
+"structTwoStreamRoof.html#a7dfbd07a804dd321d7b9cfa68b7b0175",
+"structerf__actuator_1_1StagedBuffer.html",
+"structerf__noahmp_1_1PrecipSlots.html#a3fe3211fc25b9a4c4ba4943b5d88f24e",
+"structerf__sbm_1_1SBMAMRStageGhostProbe.html#a9e676092ee8ada1ced91f4664cfefdc2",
+"structibseb_1_1RayMap.html#a72d6536f37cb7ec4037a32e9089f87b1",
+"structplotfile2d_1_1SampledWindSources.html#af8edafc14b6e54ab5d98d5a0f4ee2a11"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
