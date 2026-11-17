@@ -75,6 +75,7 @@ var namespaces_dup =
     [ "erf_actuator", "namespaceerf__actuator.html", "namespaceerf__actuator" ],
     [ "erf_auxiliary", "namespaceerf__auxiliary.html", "namespaceerf__auxiliary" ],
     [ "erf_checkpoint", "namespaceerf__checkpoint.html", [
+      [ "fill_unread_ghosts", "namespaceerf__checkpoint.html#a01085e9e743ed75d567f4231749e1b82", null ],
       [ "lateral_periodicity", "namespaceerf__checkpoint.html#a543f256009bdc56c433b9cb6a1da5177", null ],
       [ "read_checkpoint_imultifab", "namespaceerf__checkpoint.html#a1f8405aab1181ae522fa1bd9b9e26daf", null ],
       [ "read_checkpoint_multifab", "namespaceerf__checkpoint.html#aba22b9daf8305eee0648716ae0142fe1", null ]

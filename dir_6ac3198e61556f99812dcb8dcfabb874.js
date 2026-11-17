@@ -4,9 +4,7 @@ var dir_6ac3198e61556f99812dcb8dcfabb874 =
     [ "Simple", "dir_29f426185853d001277b0040421254b1.html", "dir_29f426185853d001277b0040421254b1" ],
     [ "TwoStream", "dir_216bf39a7a805c13e29a8f94f90e2abe.html", "dir_216bf39a7a805c13e29a8f94f90e2abe" ],
     [ "ERF_OrbCosZenith.H", "ERF__OrbCosZenith_8H.html", "ERF__OrbCosZenith_8H" ],
-    [ "ERF_RadiationInterface.H", "ERF__RadiationInterface_8H.html", [
-      [ "IRadiation", "classIRadiation.html", "classIRadiation" ]
-    ] ],
+    [ "ERF_RadiationInterface.H", "ERF__RadiationInterface_8H.html", "ERF__RadiationInterface_8H" ],
     [ "ERF_RadiationModels.H", "ERF__RadiationModels_8H.html", null ],
     [ "ERF_RRTMGP_SurfaceTemperature.H", "ERF__RRTMGP__SurfaceTemperature_8H.html", "ERF__RRTMGP__SurfaceTemperature_8H" ],
     [ "ERF_TopographicShading.cpp", "ERF__TopographicShading_8cpp.html", null ],

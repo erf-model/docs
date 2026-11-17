@@ -1,5 +1,7 @@
 var NAVTREEINDEX21 =
 {
+"ERF__Wstar_8H_source.html":[3,0,1,29,63],
+"ERF__module__mp__morr__two__moment_8F90.html":[3,0,1,16,2,3],
 "ERF__module__mp__morr__two__moment_8F90.html#a066467cadea7dac6760ea26260bdc820":[3,0,1,16,2,3,121],
 "ERF__module__mp__morr__two__moment_8F90.html#a07d9b07e864c009aedd865a0086cf337":[3,0,1,16,2,3,95],
 "ERF__module__mp__morr__two__moment_8F90.html#a0837c77c9c2ae661f249c87d9710274d":[3,0,1,16,2,3,91],
@@ -247,7 +249,5 @@ var NAVTREEINDEX21 =
 "ERF__module__mp__wdm6_8F90.html#adc38053f3efad6907904e21bc60bcb31":[3,0,1,16,8,4,55],
 "ERF__module__mp__wdm6_8F90.html#adcff476caf9522dd779005aa21113e6f":[3,0,1,16,8,4,36],
 "ERF__module__mp__wdm6_8F90.html#adda95193d9d2f8026fb36b0177cf8d1a":[3,0,1,16,8,4,72],
-"ERF__module__mp__wdm6_8F90.html#ade67706e46753f0576c226e4fd4f671a":[3,0,1,16,8,4,103],
-"ERF__module__mp__wdm6_8F90.html#adfd2c67fee44ce3e6593bd4df95de5e5":[3,0,1,16,8,4,106],
-"ERF__module__mp__wdm6_8F90.html#ae53f9d9909dec34f99e74baacb5df8b6":[3,0,1,16,8,4,52]
+"ERF__module__mp__wdm6_8F90.html#ade67706e46753f0576c226e4fd4f671a":[3,0,1,16,8,4,103]
 };

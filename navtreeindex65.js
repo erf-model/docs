@@ -1,5 +1,7 @@
 var NAVTREEINDEX65 =
 {
+"structsurface__flux__eb.html#ac9ed7fdbe6a53f9a079d0dd996e2f08c":[2,0,233,3],
+"structsurface__flux__eb.html#ae73547cd4cae85523f2888b84f6c7d58":[2,0,233,6],
 "structsurface__flux__eb.html#af43312469a16f64fe24416314d7b8fde":[2,0,233,0],
 "structsurface__flux__mod__charnock.html":[2,0,234],
 "structsurface__flux__mod__charnock.html#a23f28b507477e760ce15dae3420e75c9":[2,0,234,1],

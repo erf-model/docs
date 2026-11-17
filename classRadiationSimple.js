@@ -3,7 +3,6 @@ var classRadiationSimple =
     [ "RadiationSimple", "classRadiationSimple.html#af49597974da08150de29961fef03edba", null ],
     [ "~RadiationSimple", "classRadiationSimple.html#ac9ebe99c61308640466ee694848fe778", null ],
     [ "Init", "classRadiationSimple.html#a7236402f81fdbed48467a3c67b25f3e6", null ],
-    [ "is_nested_patch", "classRadiationSimple.html#a65c6394323de777d240073dd6dc1fd08", null ],
     [ "Run", "classRadiationSimple.html#a60ad489081299f0387e19f8a3b53568e", null ],
     [ "WriteDataLog", "classRadiationSimple.html#ad17d203f960fa01eb0a8b458a442c686", null ],
     [ "bdy_sfc_comp", "classRadiationSimple.html#a13b86c821f1cd951bf75d70ec0de9d30", null ],

@@ -12,7 +12,6 @@ var classRadiation =
     [ "get_lsm_output_varnames", "classRadiation.html#a038bcfac8ac0960f2e065b8869724d38", null ],
     [ "Init", "classRadiation.html#a62fe26da6c5ccbda9b26521828438256", null ],
     [ "initialize_impl", "classRadiation.html#a1b62f5c6d533259bde824b1789b9505c", null ],
-    [ "is_nested_patch", "classRadiation.html#a09f92e50a3a634b48a0c9b037bb49be4", null ],
     [ "kokkos_buffers_to_mf", "classRadiation.html#a64b61e1d8721c194b8bac4978d5186ed", null ],
     [ "mf_to_kokkos_buffers", "classRadiation.html#a0f4ddbf3696945fd595bf2c1c66862b3", null ],
     [ "nDatalogBdyComp", "classRadiation.html#a24fd67c36af87f2e71790cc77deaae89", null ],
