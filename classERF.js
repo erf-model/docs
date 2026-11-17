@@ -543,6 +543,7 @@ var classERF =
     [ "m_plot_face_terrain_blanking", "classERF.html#af892a1fdb76798432cd31e465ef9a130", null ],
     [ "m_plot_face_vels", "classERF.html#a367a3daba5d844efbed84c52e647cea6", null ],
     [ "m_r2d", "classERF.html#addf62bfc534515447b94e928ac0b7135", null ],
+    [ "m_restart_step", "classERF.html#a9e44ad85ae9df2bf8d70d92b36bbdcc8", null ],
     [ "m_seb_surface_layer_checked", "classERF.html#a7d0355e6b37093b7b81ef7d16d19225d", null ],
     [ "m_skin_uncoupled_warned", "classERF.html#a4df6f68a3be96a1114e0c4e29ab691f4", null ],
     [ "m_subvol_int", "classERF.html#af53da2b3e858437c959c8970149a91ec", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX52 =
 {
+"structInflowLogLaw.html#afe9bfb8939bba1fd2a20fe3ef73eb3f5":[2,0,96,5],
 "structInflowProfile.html":[2,0,97],
 "structInflowProfile.html#a0ccacf9112b24fb6f073a398193e4efc":[2,0,97,7],
 "structInflowProfile.html#a3426c63823fbf91da5ec9f52876df2ae":[2,0,97,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX52 =
 "structMaterialProperties.html#a7145378bf78b0cc1f515476eaecaa04e":[2,0,111,12],
 "structMaterialProperties.html#a795ab3f69cf3b254d1f383743ee96e7c":[2,0,111,10],
 "structMaterialProperties.html#a87387d75c303a464c95fbeeaea5556a1":[2,0,111,0],
-"structMaterialProperties.html#a89ef062ca1ae53473a5df19ef7f41ab2":[2,0,111,5],
-"structMaterialProperties.html#a8fe310f02a1bd3c9795bb06beee4b883":[2,0,111,9]
+"structMaterialProperties.html#a89ef062ca1ae53473a5df19ef7f41ab2":[2,0,111,5]
 };

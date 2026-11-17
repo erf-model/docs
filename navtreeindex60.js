@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"structerf__actuator_1_1CoverageGrids.html#a80959b3eab0d36f9c5860fe0bbd5b4d3":[2,0,0,5,2],
 "structerf__actuator_1_1CoverageGrids.html#af60d0fab77b42d366335679f4a9d5153":[2,0,0,5,1],
 "structerf__actuator_1_1StagedBuffer.html":[2,0,0,0],
 "structerf__actuator_1_1StagedBuffer.html#a0c52385c3217509f048c8091296c06fc":[2,0,0,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "structerf__noahmp_1_1NoahmpBlockViews.html":[2,0,8,3],
 "structerf__noahmp_1_1NoahmpBlockViews.html#a197e3aeeca6c7189eda8e32232c45edb":[2,0,8,3,1],
 "structerf__noahmp_1_1NoahmpBlockViews.html#a1a68cdd76f379b058b180c84d1d779b2":[2,0,8,3,2],
-"structerf__noahmp_1_1NoahmpBlockViews.html#a2abf6fc1e253e3b32fa5d2b1a87005ac":[2,0,8,3,0],
-"structerf__noahmp_1_1PrecipSlots.html":[2,0,8,0]
+"structerf__noahmp_1_1NoahmpBlockViews.html#a2abf6fc1e253e3b32fa5d2b1a87005ac":[2,0,8,3,0]
 };
