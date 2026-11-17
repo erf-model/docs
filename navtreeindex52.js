@@ -1,5 +1,7 @@
 var NAVTREEINDEX52 =
 {
+"structForceRestoreSoil.html#a181b373aca3eed54eed122cbca4d8291":[2,0,90,0],
+"structForceRestoreSoil.html#a1d5f895eb5779ea098f584ee504e0e30":[2,0,90,4],
 "structForceRestoreSoil.html#a2bb3fdbed2033621797ada00325acb69":[2,0,90,8],
 "structForceRestoreSoil.html#a411766cbab189138b15cd1e4fbbcd270":[2,0,90,2],
 "structForceRestoreSoil.html#a736080f401f0d6eca3ccaa7f33788839":[2,0,90,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX52 =
 "structLineSampler.html#a693c8a5b850f080399f5c1af40e5aa4e":[2,0,110,11],
 "structLineSampler.html#a6a0a7542b87da677f3bb620a4bd686c1":[2,0,110,54],
 "structLineSampler.html#a7753bb5a48ce7fb653ff2685a445c403":[2,0,110,43],
-"structLineSampler.html#a7cab8011055d36120dec2192b25b18ff":[2,0,110,7],
-"structLineSampler.html#a7db61474f3f5cc476aeaa9ca5c97a078":[2,0,110,30],
-"structLineSampler.html#a8161657be39cddd5f8564fbafe45f8e8":[2,0,110,29]
+"structLineSampler.html#a7cab8011055d36120dec2192b25b18ff":[2,0,110,7]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX63 =
 {
+"structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a2c96503371fdf9bd202e38d10f73d24d":[2,0,12,43,1,6],
+"structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a2d1af3c78f1fc78294333b772311b8ba":[2,0,12,43,1,18],
 "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a365808dc110635f7076f9264ea2b1575":[2,0,12,43,1,17],
 "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a40ea15d8bfd0be68faf8237d291d4a70":[2,0,12,43,1,11],
 "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a4403fd369bfba7cc34c5670cfb2efa13":[2,0,12,43,1,21],
@@ -247,7 +249,5 @@ var NAVTREEINDEX63 =
 "structnear__surface__diagnostics_1_1MostState.html#a79176c97cf12c15b027d5f2bb206040b":[2,0,23,2,2],
 "structnear__surface__diagnostics_1_1MostState.html#aa911e01543d151839d5273aa669eb46a":[2,0,23,2,1],
 "structnear__surface__diagnostics_1_1MostState.html#aea0e9734d94e79d1d935f347b8383127":[2,0,23,2,3],
-"structnear__surface__diagnostics_1_1NativeAggregate.html":[2,0,23,1],
-"structnear__surface__diagnostics_1_1NativeAggregate.html#a5a22224cdb416679d3f94fde7006e1e7":[2,0,23,1,1],
-"structnear__surface__diagnostics_1_1NativeAggregate.html#ae064427e65cd008985547cf6722b6030":[2,0,23,1,0]
+"structnear__surface__diagnostics_1_1NativeAggregate.html":[2,0,23,1]
 };

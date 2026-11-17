@@ -1,5 +1,7 @@
 var NAVTREEINDEX55 =
 {
+"structSAMPrecipFaceState.html#a899bcc7b8b4eb1c96a80cc06241d52bc":[2,0,175,2],
+"structSAMPrecipFaceState.html#a98961b345d25e32e69a6709f3dde99fc":[2,0,175,7],
 "structSAMPrecipFaceState.html#ad2bfe279784b592c7b85ee6c40a8fc51":[2,0,175,1],
 "structSAMPrecipFluxComponents.html":[2,0,176],
 "structSAMPrecipFluxComponents.html#a40101502c2211cf0001012f0e03f76af":[2,0,176,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX55 =
 "structScalarDiffusionRawFluxDiagnostic.html#a72da58bf8e6b0f8322faed959dc92218":[2,0,188,0],
 "structScalarDiffusionSurfaceFaces.html":[2,0,189],
 "structScalarDiffusionSurfaceFaces.html#a14de0417e648af8e590eee21d6802d6c":[2,0,189,5],
-"structScalarDiffusionSurfaceFaces.html#a2fd712eba472a1b09a51e93aba7af393":[2,0,189,1],
-"structScalarDiffusionSurfaceFaces.html#a8362a44561b8944fff113d6b13a6c09d":[2,0,189,3],
-"structScalarDiffusionSurfaceFaces.html#a8c03712387f0ec8243bf85bda62de9cc":[2,0,189,0]
+"structScalarDiffusionSurfaceFaces.html#a2fd712eba472a1b09a51e93aba7af393":[2,0,189,1]
 };

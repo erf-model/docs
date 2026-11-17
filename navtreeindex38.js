@@ -1,5 +1,7 @@
 var NAVTREEINDEX38 =
 {
+"classTwoStreamRadiation.html#ad52c70dc9f30e5005b12c0aad15ffe5f":[2,0,260,88],
+"classTwoStreamRadiation.html#ad685b4e9cf0834419fce910e683d7cdb":[2,0,260,39],
 "classTwoStreamRadiation.html#ad88c5fc22e065e23d68692167ad6b22e":[2,0,260,18],
 "classTwoStreamRadiation.html#ade72ac19d7b8cdddb7b712fedd567364":[2,0,260,81],
 "classTwoStreamRadiation.html#ae519400a30a3fbe4b3d230dc6cb25196":[2,0,260,84],
@@ -247,7 +249,5 @@ var NAVTREEINDEX38 =
 "classWRFSurfaceFields.html#a5456d85fdfc74caf3755156a13daeb95":[2,0,279,32],
 "classWRFSurfaceFields.html#a59f43d7f53b8eb84382471626432b7be":[2,0,279,27],
 "classWRFSurfaceFields.html#a6d643aa58c65aff85d9ebb5d955b1a7b":[2,0,279,22],
-"classWRFSurfaceFields.html#a730568b0f77b48813d4ceac4454e7377":[2,0,279,10],
-"classWRFSurfaceFields.html#a7ed58d562f00d264bd7cf0cf4c404be1":[2,0,279,30],
-"classWRFSurfaceFields.html#a8854f273c8cbc2c9ef34e9ace20564e7":[2,0,279,20]
+"classWRFSurfaceFields.html#a730568b0f77b48813d4ceac4454e7377":[2,0,279,10]
 };

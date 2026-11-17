@@ -1,5 +1,7 @@
 var NAVTREEINDEX64 =
 {
+"structnear__surface__diagnostics_1_1NativeAggregate.html#a5a22224cdb416679d3f94fde7006e1e7":[2,0,23,1,1],
+"structnear__surface__diagnostics_1_1NativeAggregate.html#ae064427e65cd008985547cf6722b6030":[2,0,23,1,0],
 "structnear__surface__diagnostics_1_1NativeBundle.html":[2,0,23,0],
 "structnear__surface__diagnostics_1_1NativeBundle.html#a38c686eec935d59435a0c9e8fb4c93cc":[2,0,23,0,1],
 "structnear__surface__diagnostics_1_1NativeBundle.html#a45e95d82ec45e0c9e5112d5f49251761":[2,0,23,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX64 =
 "structsurface__flux__eb.html#a503d0f599fdf39dc1be3810c7acd0a42":[2,0,233,2],
 "structsurface__flux__eb.html#a5d88d4c5c4b6a3a4ff1878cd80f42d62":[2,0,233,8],
 "structsurface__flux__eb.html#a928b29a8f6afb96b8a5418ca1216c984":[2,0,233,5],
-"structsurface__flux__eb.html#aaaaec1afbc96682a35455eb5738fcb7f":[2,0,233,7],
-"structsurface__flux__eb.html#ab42b18b0bfc9fef667627f31c3dcc032":[2,0,233,4],
-"structsurface__flux__eb.html#ab48baaade873c7dd4b539d33f7fa9085":[2,0,233,1]
+"structsurface__flux__eb.html#aaaaec1afbc96682a35455eb5738fcb7f":[2,0,233,7]
 };
