@@ -1,7 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"ERF__DiagnosticsLog_8H.html":[3,0,1,17,0,6],
-"ERF__DiagnosticsLog_8H.html#a06b44de01e958d41ce098e3fa9cac35c":[3,0,1,17,0,6,0],
 "ERF__DiagnosticsLog_8H.html#aba2e79df4ffd89277505dc23a9d73ba9":[3,0,1,17,0,6,1],
 "ERF__DiagnosticsLog_8H_source.html":[3,0,1,17,0,6],
 "ERF__Diagnostics_8cpp.html":[3,0,1,37],
@@ -249,5 +247,7 @@ var NAVTREEINDEX3 =
 "ERF__FireSmokeEmission_8H.html":[3,0,1,9,15],
 "ERF__FireSmokeEmission_8H_source.html":[3,0,1,9,15],
 "ERF__FireSmokeEmission_8cpp.html":[3,0,1,9,14],
-"ERF__FireSurfaceHeight_8H.html":[3,0,1,9,17]
+"ERF__FireSurfaceHeight_8H.html":[3,0,1,9,17],
+"ERF__FireSurfaceHeight_8H.html#a24948016a962c7af1b18daec12f9999c":[3,0,1,9,17,0],
+"ERF__FireSurfaceHeight_8H.html#ad402bf741eab63fefb01c9d287a4793a":[3,0,1,9,17,1]
 };

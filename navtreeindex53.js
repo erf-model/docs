@@ -1,9 +1,5 @@
 var NAVTREEINDEX53 =
 {
-"structDustStep.html#a50f2f5f6eeb9793bd1376caacd7e1b9b":[2,0,61,8],
-"structDustStep.html#a6c91c29c72ccaab720cde22ee8afd2cb":[2,0,61,2],
-"structDustStep.html#a6cef5dfc4119fb27dc7cb43dbfeaf8e3":[2,0,61,11],
-"structDustStep.html#a8d0ef387c78fa2c35d822237eb830248":[2,0,61,6],
 "structDustStep.html#a92e6ca481578de8d3e669c3a8d72af1c":[2,0,61,3],
 "structDustStep.html#ac779df2150bcee370fcb937b3095745d":[2,0,61,9],
 "structDustStep.html#adf1496d1000f68a297e2fdb745302b0a":[2,0,61,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX53 =
 "structInflowLogLaw.html#a6958b47515dc13bc11178702716110fc":[2,0,100,0],
 "structInflowLogLaw.html#a7f7da02554b3aed69f6204278cd4d335":[2,0,100,6],
 "structInflowLogLaw.html#a9103d4ab5ee357f392cfa8d04c70a71b":[2,0,100,1],
-"structInflowLogLaw.html#aca912bc0fce7d5222a7e57563cd37f23":[2,0,100,3]
+"structInflowLogLaw.html#aca912bc0fce7d5222a7e57563cd37f23":[2,0,100,3],
+"structInflowLogLaw.html#afe9bfb8939bba1fd2a20fe3ef73eb3f5":[2,0,100,5],
+"structInflowProfile.html":[2,0,101],
+"structInflowProfile.html#a0ccacf9112b24fb6f073a398193e4efc":[2,0,101,7],
+"structInflowProfile.html#a3426c63823fbf91da5ec9f52876df2ae":[2,0,101,3]
 };

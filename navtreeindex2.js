@@ -58,10 +58,8 @@ var NAVTREEINDEX2 =
 "ERF__ComputeDiffusivityMYNN25_8cpp.html#affcac1eae4418e1180b41a501492cdaf":[3,0,1,20,3,0],
 "ERF__ComputeDiffusivityMYNNEDMF_8cpp.html":[3,0,1,20,4],
 "ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a090d80a8a25356617d50a07cd7e6e8d2":[3,0,1,20,4,0],
-"ERF__ComputeDiffusivityYSUNew_8cpp.html":[3,0,1,20,6],
-"ERF__ComputeDiffusivityYSUNew_8cpp.html#acd969aa4381ec10a22f7634fada36fca":[3,0,1,20,6,0],
 "ERF__ComputeDiffusivityYSU_8cpp.html":[3,0,1,20,5],
-"ERF__ComputeDiffusivityYSU_8cpp.html#a0f640f100aa8b5fbe7480f9e0495e06e":[3,0,1,20,5,0],
+"ERF__ComputeDiffusivityYSU_8cpp.html#a89d4cf51a23fd5063f9459684caf35ee":[3,0,1,20,5,0],
 "ERF__ComputeDivergence_8cpp.html":[3,0,1,14,1],
 "ERF__ComputeStrain__EB_8cpp.html":[3,0,1,6,2],
 "ERF__ComputeStrain__EB_8cpp.html#a416c43cf1410a62066bbdd19ab9c9724":[3,0,1,6,2,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX2 =
 "ERF__DescriptionWriter_8H.html#a547535de6f63d9d4bcbe255d731b2dc0":[3,0,1,12,6,1],
 "ERF__DescriptionWriter_8H.html#a547535de6f63d9d4bcbe255d731b2dc0a0ecd11c1d7a287401d148a23bbd7a2f8":[3,0,1,12,6,1,0],
 "ERF__DescriptionWriter_8H.html#a547535de6f63d9d4bcbe255d731b2dc0a9463f87bbed1fcdacfb8d40e185ca2bc":[3,0,1,12,6,1,1],
-"ERF__DescriptionWriter_8H_source.html":[3,0,1,12,6]
+"ERF__DescriptionWriter_8H_source.html":[3,0,1,12,6],
+"ERF__DiagnosticsLog_8H.html":[3,0,1,17,0,6],
+"ERF__DiagnosticsLog_8H.html#a06b44de01e958d41ce098e3fa9cac35c":[3,0,1,17,0,6,0]
 };
