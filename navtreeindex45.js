@@ -1,5 +1,6 @@
 var NAVTREEINDEX45 =
 {
+"namespaceerf__cloud__chamber.html#a0e78153f04c88fd386ff30bbfc6ea1c4":[1,0,15,9],
 "namespaceerf__cloud__chamber.html#a1f7c4bf60b72bae7dc737fe831037857":[1,0,15,6],
 "namespaceerf__cloud__chamber.html#a32c9dddf666fd0e3978c883fa02d44c0":[1,0,15,27],
 "namespaceerf__cloud__chamber.html#a331e1f3a185d6320511a2b48f1e81760":[1,0,15,26],
@@ -248,6 +249,5 @@ var NAVTREEINDEX45 =
 "namespaceerf__detail__to__REMORA.html#aafeb9816a1a92b0ba9bbb884d19114ec":[1,0,38,14],
 "namespaceerf__detail__to__REMORA.html#abbf3818a6f0b4bcbbde9b06d82c2e534":[1,0,38,17],
 "namespaceerf__detail__to__REMORA.html#ac1f7c54c1ae7f6604b87a70318c2227a":[1,0,38,11],
-"namespaceerf__detail__to__REMORA.html#ad58017440a5b02aab1dbd5c03e06247a":[1,0,38,20],
-"namespaceerf__detail__to__REMORA.html#adf8ebe20686f51a4f3c5fda091f816e4":[1,0,38,5]
+"namespaceerf__detail__to__REMORA.html#ad58017440a5b02aab1dbd5c03e06247a":[1,0,38,20]
 };

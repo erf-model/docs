@@ -29,7 +29,6 @@ var structTurbChoice =
     [ "enable_ysu_entrainment", "structTurbChoice.html#a56530a504286ea84a83c582e1c40fd86", null ],
     [ "enable_ysu_rad_tend_limiter", "structTurbChoice.html#af85ee41e7f98e65534b8b158b6ddde3e", null ],
     [ "enable_ysu_sat_limiter", "structTurbChoice.html#a58e4f386b26ad3fa6981491f1488044c", null ],
-    [ "enable_ysu_terrain_pblh_floor", "structTurbChoice.html#aef8d76f8bf4147e29080148354a65677", null ],
     [ "enable_ysu_topdown", "structTurbChoice.html#a8d506875a9192d030405690e104c8369", null ],
     [ "implicit_tke_dissipation", "structTurbChoice.html#a087b5444c461847b725a8ab80998f9bb", null ],
     [ "init_tke_from_ustar", "structTurbChoice.html#a6f4688ee866803ed3ed320a7b4d50f69", null ],
