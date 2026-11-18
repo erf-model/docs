@@ -1407,7 +1407,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;                <span class="comment">// The first-level offset ZL1 belongs to ZFAC alone: the linear factor</span></div>
 <div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;                <span class="comment">// is the full height above the surface, ZQ(I,K).  Subtracting zl1 from</span></div>
 <div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;                <span class="comment">// both drives K_m to exactly zero in the first fluid cell.</span></div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;                <span class="comment">// ERF_ComputeDiffusivityYSU.cpp:1699-1720 splits them the same way.</span></div>
+<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;                <span class="comment">// The YSU K profile (ERF_ComputeDiffusivityYSU.cpp, Step 5) splits them the same way.</span></div>
 <div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;                <span class="comment">//</span></div>
 <div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;                <span class="comment">// zval already measures height from the top of an immersed column (zib</span></div>
 <div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;                <span class="comment">// was subtracted where it was formed), so it is that height directly;</span></div>
@@ -1420,7 +1420,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;                <span class="comment">// The Rib passes floor pblh at max(zl1, 10), so pblh - zl1 is exactly</span></div>
 <div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;                <span class="comment">// zero for any column whose height lands on that floor with a first</span></div>
 <div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;                <span class="comment">// layer thicker than 20 m -- and zval - zl1 is zero too at k == ksrf,</span></div>
-<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;                <span class="comment">// making the quotient 0/0.  Guard it, as YSU does (line 1701).</span></div>
+<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;                <span class="comment">// making the quotient 0/0.  Guard it, as the YSU K profile does.</span></div>
 <div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pblh_rel = amrex::max(pblh - zl1, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0e-4));</div>
 <div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zfac = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1) - (zval - zl1) / pblh_rel, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0e-8));</div>
 <div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160; </div>
