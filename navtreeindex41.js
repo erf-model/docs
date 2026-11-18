@@ -1,5 +1,7 @@
 var NAVTREEINDEX41 =
 {
+"classerf__actuator_1_1LevelHeights.html#a6a38cbc301428d200df0d5e6267d0f6f":[2,0,0,4,2],
+"classerf__actuator_1_1LevelHeights.html#abdbf412247c51f52ea764fc24cb56a91":[2,0,0,4,1],
 "classerf__actuator_1_1LevelHeights.html#ac8bbf8d9858e7a977b5b3ceb18bab02b":[2,0,0,4,3],
 "classerf__actuator_1_1LevelHeights.html#afa7768393fa257f87a1be1334dde8558":[2,0,0,4,5],
 "classerf__actuator_1_1RunningStats.html":[2,0,0,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX41 =
 "classerf__sbm_1_1SBMStateManager.html#a0a4278b2b2bd1760352bbc0f720b6549":[2,0,14,40,16],
 "classerf__sbm_1_1SBMStateManager.html#a189ee6ac81426363068deab86f70ee91":[2,0,14,40,27],
 "classerf__sbm_1_1SBMStateManager.html#a18b7376888d4b6a8ae9aaff69f370297":[2,0,14,40,28],
-"classerf__sbm_1_1SBMStateManager.html#a1b8a9e41870e751e5526587f2480237e":[2,0,14,40,12],
-"classerf__sbm_1_1SBMStateManager.html#a289937f8af5be013446d3893a4a88271":[2,0,14,40,23],
-"classerf__sbm_1_1SBMStateManager.html#a485f1d7d6d0c1ffbbcf612d3d355f2c7":[2,0,14,40,22]
+"classerf__sbm_1_1SBMStateManager.html#a1b8a9e41870e751e5526587f2480237e":[2,0,14,40,12]
 };

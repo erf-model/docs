@@ -1,5 +1,10 @@
 var NAVTREEINDEX62 =
 {
+"structerf__actuator_1_1ActuatorDeviceBuffers.html#ad5ecaad063fa408fa9785cf097802c15":[2,0,0,2,3],
+"structerf__actuator_1_1ActuatorDeviceBuffers.html#af5d993c788f6fe802da2eb95338251cf":[2,0,0,2,9],
+"structerf__actuator_1_1ColumnCells.html":[2,0,0,5],
+"structerf__actuator_1_1ColumnCells.html#a5b4d423b95718e6e4cbebd20d8e780b8":[2,0,0,5,2],
+"structerf__actuator_1_1ColumnCells.html#a61bd766d7f058eeaf78b99bbba9c1123":[2,0,0,5,0],
 "structerf__actuator_1_1ColumnCells.html#ac2fd15ea512a5de0ff772be750663e44":[2,0,0,5,1],
 "structerf__actuator_1_1CoverageGrids.html":[2,0,0,6],
 "structerf__actuator_1_1CoverageGrids.html#a3a31d310ddba659aef31de1969c4d3a3":[2,0,0,6,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX62 =
 "structerf__detail__ShocDriver_1_1ShocBadColumnReport.html#a63dd2a0b4f7a21fa1d5ec6f854215360":[2,0,6,0,6],
 "structerf__detail__ShocDriver_1_1ShocBadColumnReport.html#a75bd9d51cb67f837c794a84a4dacc9f3":[2,0,6,0,3],
 "structerf__detail__ShocDriver_1_1ShocBadColumnReport.html#ab822168ed04021b415a8ac52a4ae5743":[2,0,6,0,7],
-"structerf__detail__ShocDriver_1_1ShocBadColumnReport.html#ae17bddb03130a6c088de582daee5e258":[2,0,6,0,4],
-"structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html":[2,0,7,2],
-"structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a062f96f4e76535a66ebf05d95953de45":[2,0,7,2,0],
-"structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a100ed5c7c170179fff3667acedf4698f":[2,0,7,2,1],
-"structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a14aec06e62dce9fddc6b7cda4baa8411":[2,0,7,2,2],
-"structerf__detail__SurfaceLayer_1_1LsmFluxColumn.html":[2,0,7,1]
+"structerf__detail__ShocDriver_1_1ShocBadColumnReport.html#ae17bddb03130a6c088de582daee5e258":[2,0,6,0,4]
 };

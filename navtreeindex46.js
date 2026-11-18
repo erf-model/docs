@@ -1,5 +1,7 @@
 var NAVTREEINDEX46 =
 {
+"namespaceerf__detail__to__REMORA.html#ac1f7c54c1ae7f6604b87a70318c2227a":[1,0,38,11],
+"namespaceerf__detail__to__REMORA.html#ad58017440a5b02aab1dbd5c03e06247a":[1,0,38,20],
 "namespaceerf__detail__to__REMORA.html#adf8ebe20686f51a4f3c5fda091f816e4":[1,0,38,5],
 "namespaceerf__detail__to__REMORA.html#ae3d5b38497040d5a55ac10992e007d9d":[1,0,38,1],
 "namespaceerf__earth__wind.html":[1,0,41],
@@ -247,7 +249,5 @@ var NAVTREEINDEX46 =
 "namespaceerf__sbm.html#afa926d0b187ed1dcbc2ddda26794b234ae9e003c325eec6946ed1d23c6ac90a21":[1,0,56,59,1],
 "namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaa":[1,0,56,56],
 "namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaaa6adf97f83acf6453d4a6a4b1070f3754":[1,0,56,56,0],
-"namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaaa77284624daf90059f8d61a8ff9dfd118":[1,0,56,56,2],
-"namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaaafee4940127a94a4840158938e38c18c4":[1,0,56,56,1],
-"namespaceerf__sbm.html#aff357092090cedbf5ccadf1ad8cb434c":[1,0,56,65]
+"namespaceerf__sbm.html#afce4ca97b2d8b87e05df4de2c5527eaaa77284624daf90059f8d61a8ff9dfd118":[1,0,56,56,2]
 };
