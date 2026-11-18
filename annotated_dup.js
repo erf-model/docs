@@ -151,7 +151,6 @@ var annotated_dup =
     ] ],
     [ "erf_surface_temperature", "namespaceerf__surface__temperature.html", [
       [ "SurfacePressureResult", "structerf__surface__temperature_1_1SurfacePressureResult.html", "structerf__surface__temperature_1_1SurfacePressureResult" ],
-      [ "SurfacePressureColumn", "structerf__surface__temperature_1_1SurfacePressureColumn.html", "structerf__surface__temperature_1_1SurfacePressureColumn" ],
       [ "ConversionFailure", "structerf__surface__temperature_1_1ConversionFailure.html", "structerf__surface__temperature_1_1ConversionFailure" ]
     ] ],
     [ "erf_terrain_file", "namespaceerf__terrain__file.html", [

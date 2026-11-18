@@ -1,5 +1,13 @@
 var NAVTREEINDEX61 =
 {
+"structTwoStreamRadiation_1_1OrbitalCache.html#ab3bc3c80a27bc7da1d1c351acb717d07":[2,0,263,1,2],
+"structTwoStreamRadiation_1_1OrbitalCache.html#ac8baf8a918099efa13a1e466f0387849":[2,0,263,1,0],
+"structTwoStreamRoof.html":[2,0,264],
+"structTwoStreamRoof.html#a0e2451f6d3ffaacfc276e6c725d8bc98":[2,0,264,1],
+"structTwoStreamRoof.html#a7222f09b354055230cc939280bf0bed7":[2,0,264,0],
+"structTwoStreamRoof.html#a7dfbd07a804dd321d7b9cfa68b7b0175":[2,0,264,3],
+"structTwoStreamRoof.html#ada901df5117658fe18a93da83d4f98f7":[2,0,264,2],
+"structTwoStreamRoof.html#af1ec1635ba3dfeef609af99463559341":[2,0,264,4],
 "structTwoStreamSunDate.html":[2,0,265],
 "structTwoStreamSunDate.html#a5fd034c26cc64ad9b1c7005355ac82ba":[2,0,265,2],
 "structTwoStreamSunDate.html#ac1229c67dccc836576d27566d54a7a6c":[2,0,265,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX61 =
 "structerf__actuator_1_1ActuatorDeviceBuffers.html#af5d993c788f6fe802da2eb95338251cf":[2,0,0,2,9],
 "structerf__actuator_1_1ColumnCells.html":[2,0,0,5],
 "structerf__actuator_1_1ColumnCells.html#a5b4d423b95718e6e4cbebd20d8e780b8":[2,0,0,5,2],
-"structerf__actuator_1_1ColumnCells.html#a61bd766d7f058eeaf78b99bbba9c1123":[2,0,0,5,0],
-"structerf__actuator_1_1ColumnCells.html#ac2fd15ea512a5de0ff772be750663e44":[2,0,0,5,1],
-"structerf__actuator_1_1CoverageGrids.html":[2,0,0,6],
-"structerf__actuator_1_1CoverageGrids.html#a3a31d310ddba659aef31de1969c4d3a3":[2,0,0,6,0],
-"structerf__actuator_1_1CoverageGrids.html#a80959b3eab0d36f9c5860fe0bbd5b4d3":[2,0,0,6,2],
-"structerf__actuator_1_1CoverageGrids.html#af60d0fab77b42d366335679f4a9d5153":[2,0,0,6,1],
-"structerf__actuator_1_1StagedBuffer.html":[2,0,0,1],
-"structerf__actuator_1_1StagedBuffer.html#a0c52385c3217509f048c8091296c06fc":[2,0,0,1,2],
-"structerf__actuator_1_1StagedBuffer.html#aa096c553c5bd097492de31a4e1921a02":[2,0,0,1,4]
+"structerf__actuator_1_1ColumnCells.html#a61bd766d7f058eeaf78b99bbba9c1123":[2,0,0,5,0]
 };

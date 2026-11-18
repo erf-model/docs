@@ -1,5 +1,7 @@
 var NAVTREEINDEX40 =
 {
+"classWSM6.html#a7b1ef5502b7a1b842fbd6d5a653c2f4b":[2,0,284,19],
+"classWSM6.html#a7cc995f69ff2c95625f4db45075d4b17":[2,0,284,80],
 "classWSM6.html#a7e92c6df4e36079c14f923013bcf5897":[2,0,284,8],
 "classWSM6.html#a7f83a80737d353b5fefd3c39878453cf":[2,0,284,27],
 "classWSM6.html#a843d523de6efc5a8d1389edc69ea8e8a":[2,0,284,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX40 =
 "classerf__actuator_1_1LevelHeights.html#a434165cddb9e0fb372c6b2330afb4812":[2,0,0,4,0],
 "classerf__actuator_1_1LevelHeights.html#a6a38cbc301428d200df0d5e6267d0f6f":[2,0,0,4,2],
 "classerf__actuator_1_1LevelHeights.html#abdbf412247c51f52ea764fc24cb56a91":[2,0,0,4,1],
-"classerf__actuator_1_1LevelHeights.html#ac8bbf8d9858e7a977b5b3ceb18bab02b":[2,0,0,4,3],
-"classerf__actuator_1_1LevelHeights.html#afa7768393fa257f87a1be1334dde8558":[2,0,0,4,5],
-"classerf__actuator_1_1RunningStats.html":[2,0,0,7]
+"classerf__actuator_1_1LevelHeights.html#ac8bbf8d9858e7a977b5b3ceb18bab02b":[2,0,0,4,3]
 };
