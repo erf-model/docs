@@ -1,5 +1,6 @@
 var NAVTREEINDEX53 =
 {
+"structERFHostFabView.html#a7102aff300f65a83b7d76585c5251478":[2,0,68,2],
 "structERFHostFabView.html#ac3be9ecaa051c234f0e5160ba4ef16bd":[2,0,68,1],
 "structERF_1_1CFFluxHistory.html":[2,0,66,0],
 "structERF_1_1CFFluxHistory.html#a24582e733935385eaeab6d223e35fc01":[2,0,66,0,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX53 =
 "structInflowProfile.html#ac4ae69fa2b97bd4f3a7e9a50c1db5a49":[2,0,100,10],
 "structInflowProfile.html#acc62a338235d12445cd0cf89d0fdd3b5":[2,0,100,12],
 "structInflowProfile.html#ad12b4e88b1f99f79fee65afd4c17d38f":[2,0,100,13],
-"structInflowProfile.html#ad4db094b27655fd6b2a96745f04e6029":[2,0,100,2],
-"structInflowProfile.html#ae4b8185ddee3e44b7db998f37f81efa5":[2,0,100,1]
+"structInflowProfile.html#ad4db094b27655fd6b2a96745f04e6029":[2,0,100,2]
 };

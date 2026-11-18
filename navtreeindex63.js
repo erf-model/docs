@@ -1,5 +1,6 @@
 var NAVTREEINDEX63 =
 {
+"structerf__grid__utils_1_1GeometricStretch.html#ac5b7bbd8abc09bbb17c7e1f69a425fc6":[2,0,8,1,4],
 "structerf__grid__utils_1_1GeometricStretch.html#ac779eebce9162cab5d42ba647cfab037":[2,0,8,1,1],
 "structerf__grid__utils_1_1InterpolationStencil.html":[2,0,8,2],
 "structerf__grid__utils_1_1InterpolationStencil.html#a1c570a601861e2fa950fa6122a946254":[2,0,8,2,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX63 =
 "structerf__sbm_1_1ReconstructionDelta.html#a6af5a391dd71cc40abb7ddc8c640f7c1":[2,0,14,36,0],
 "structerf__sbm_1_1ReconstructionDelta.html#a7aaf7e56704fde47256e8f06d0f7b771":[2,0,14,36,4],
 "structerf__sbm_1_1ReconstructionDelta.html#a7f9da69bdbe2d75f2d2136cf02817266":[2,0,14,36,5],
-"structerf__sbm_1_1ReconstructionDelta.html#af03afb78a5e35374175a3001d1e250ab":[2,0,14,36,1],
-"structerf__sbm_1_1ReconstructionDelta.html#af7e80813926c5baa7df931a545a2cf77":[2,0,14,36,3]
+"structerf__sbm_1_1ReconstructionDelta.html#af03afb78a5e35374175a3001d1e250ab":[2,0,14,36,1]
 };

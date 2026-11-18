@@ -1,6 +1,7 @@
 var namespaceerf__surface__temperature =
 [
     [ "SurfacePressureResult", "structerf__surface__temperature_1_1SurfacePressureResult.html", "structerf__surface__temperature_1_1SurfacePressureResult" ],
+    [ "SurfacePressureColumn", "structerf__surface__temperature_1_1SurfacePressureColumn.html", "structerf__surface__temperature_1_1SurfacePressureColumn" ],
     [ "ConversionFailure", "structerf__surface__temperature_1_1ConversionFailure.html", "structerf__surface__temperature_1_1ConversionFailure" ],
     [ "ConversionError", "namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3", [
       [ "none", "namespaceerf__surface__temperature.html#a74505cb65b7826cc3a91154572c7b9f3a334c4a4c42fdb79d7ebc3e73b517e6f8", null ],

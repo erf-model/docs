@@ -419,6 +419,7 @@ var hierarchy =
     [ "SurfaceModel", "classSurfaceModel.html", null ],
     [ "SurfacePrecipAccumulationSource", "structSurfacePrecipAccumulationSource.html", null ],
     [ "SurfacePrecipAccumulationSources", "structSurfacePrecipAccumulationSources.html", null ],
+    [ "erf_surface_temperature::SurfacePressureColumn", "structerf__surface__temperature_1_1SurfacePressureColumn.html", null ],
     [ "erf_surface_temperature::SurfacePressureResult", "structerf__surface__temperature_1_1SurfacePressureResult.html", null ],
     [ "erf_checkpoint_surface_temperature::SurfaceTemperatureMigrationPlan", "structerf__checkpoint__surface__temperature_1_1SurfaceTemperatureMigrationPlan.html", null ],
     [ "erf_checkpoint_surface_temperature::SurfaceTemperatureProvenance", "structerf__checkpoint__surface__temperature_1_1SurfaceTemperatureProvenance.html", null ],

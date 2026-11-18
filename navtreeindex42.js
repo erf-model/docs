@@ -1,5 +1,6 @@
 var NAVTREEINDEX42 =
 {
+"classerf__sbm_1_1SBMStateManager.html#abf5f9ca5796d952869b1fa57fac3f3e0":[2,0,14,40,7],
 "classerf__sbm_1_1SBMStateManager.html#ad04bd76a5acedb78f56e3b2b81e95336":[2,0,14,40,6],
 "classerf__sbm_1_1SBMStateManager.html#ad35a14f2264a5ae61df420edbafdedff":[2,0,14,40,14],
 "classerf__sbm_1_1SBMStateManager.html#ad8460974cd9f320bc2e2bb99d9931521":[2,0,14,40,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX42 =
 "functions_vars_r.html":[2,3,2,17],
 "functions_vars_s.html":[2,3,2,18],
 "functions_vars_t.html":[2,3,2,19],
-"functions_vars_u.html":[2,3,2,20],
-"functions_vars_v.html":[2,3,2,21]
+"functions_vars_u.html":[2,3,2,20]
 };

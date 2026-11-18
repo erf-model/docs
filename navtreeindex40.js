@@ -1,5 +1,6 @@
 var NAVTREEINDEX40 =
 {
+"classWSM6.html#a9723e1fbac13992e1c9f3659eba048bc":[2,0,283,3],
 "classWSM6.html#a9e5d2201fbe5987323987109f3dad97a":[2,0,283,76],
 "classWSM6.html#a9f09b78a02bbeaf90f6a3b544c76859a":[2,0,283,89],
 "classWSM6.html#a9f12de0b533b4418a5a4cc0b2edba4ee":[2,0,283,41],
@@ -248,6 +249,5 @@ var NAVTREEINDEX40 =
 "classerf__actuator_1_1RunningStats.html#a54e1bd6968233a58794842a1076c31b5":[2,0,0,7,1],
 "classerf__actuator_1_1RunningStats.html#a5cf04fdd246570261f700ba5d3e5c929":[2,0,0,7,22],
 "classerf__actuator_1_1RunningStats.html#a63e65b631d2f1f3500fe15f0a7a737ba":[2,0,0,7,0],
-"classerf__actuator_1_1RunningStats.html#a78ecb464af01d5be009b3a7fc308c79c":[2,0,0,7,17],
-"classerf__actuator_1_1RunningStats.html#a801583288c4c0aafe1bbcc4519c61e3f":[2,0,0,7,19]
+"classerf__actuator_1_1RunningStats.html#a78ecb464af01d5be009b3a7fc308c79c":[2,0,0,7,17]
 };

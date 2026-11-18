@@ -1,5 +1,6 @@
 var NAVTREEINDEX57 =
 {
+"structSHOCInterface_1_1Buffer.html#aac3c34af6700b6d50afb611e7deb691e":[2,0,208,0,29],
 "structSHOCInterface_1_1Buffer.html#ab09bd2d3cef8e0a18ac458eac166a5a4":[2,0,208,0,19],
 "structSHOCInterface_1_1Buffer.html#ab6121d3130e7282c6383b8b10f22607c":[2,0,208,0,30],
 "structSHOCInterface_1_1Buffer.html#ab62e759e8aa81b5c73a0a026df076172":[2,0,208,0,13],
@@ -248,6 +249,5 @@ var NAVTREEINDEX57 =
 "structShocRuntimeOptions.html#ac8abb96c7fa16e460e109a8bfd5667ab":[2,0,212,1],
 "structShocRuntimeOptions.html#acef509981f4ee990eeb60482c4f70e1f":[2,0,212,8],
 "structShocRuntimeOptions.html#ad6675ebb3165480fb7c7644989af546b":[2,0,212,0],
-"structShocRuntimeOptions.html#ada8716f498c6f3f83e668248011597e8":[2,0,212,3],
-"structShocRuntimeOptions.html#ae7c15318573d6615219d818e92d44c75":[2,0,212,25]
+"structShocRuntimeOptions.html#ada8716f498c6f3f83e668248011597e8":[2,0,212,3]
 };

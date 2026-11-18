@@ -112,6 +112,7 @@ var classSurfaceLayer =
     [ "similarity_functions", "classSurfaceLayer.html#a3a7d5642a86e564bddf865393e990af4", null ],
     [ "skin_moisture_conflict", "classSurfaceLayer.html#a6d1d8dd1294ddf7cae65124490eaf45c", null ],
     [ "skin_temperature_conflict", "classSurfaceLayer.html#a61581a4f9a8bfdbaccb61c12b1696f9b", null ],
+    [ "surface_pressure_column", "classSurfaceLayer.html#a9ea34bfac65f4b079eb0cf8182b085bd", null ],
     [ "surface_sum", "classSurfaceLayer.html#a6479440b70dec0f7f98705d4995f0b9a", null ],
     [ "update_coupled_sst_ptr", "classSurfaceLayer.html#a5e773212bdccaa4e72ad48aa23c47e3d", null ],
     [ "update_coupled_surface_current", "classSurfaceLayer.html#ac49c31d482a28e31c6a3ed6f2eb89f01", null ],

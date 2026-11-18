@@ -1,5 +1,6 @@
 var NAVTREEINDEX54 =
 {
+"structInflowProfile.html#ae4b8185ddee3e44b7db998f37f81efa5":[2,0,100,1],
 "structInflowProfile.html#ae84c1ee3641c958a86b701b095ee1f03":[2,0,100,9],
 "structInputSoundingData.html":[2,0,101],
 "structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8":[2,0,101,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX54 =
 "structMaterialPropertiesCore.html#a3095b4ac7c04380fc386a6c83d132ef4":[2,0,115,20],
 "structMaterialPropertiesCore.html#a439e47e69f86c27f7863f022357b3a9f":[2,0,115,19],
 "structMaterialPropertiesCore.html#a62f4fe116d4c0126d3bb402fa6047150":[2,0,115,15],
-"structMaterialPropertiesCore.html#a6e3af712aeb6badeedf867422b241413":[2,0,115,3],
-"structMaterialPropertiesCore.html#a70d69c8c88e93f929632cb2f7ab87431":[2,0,115,18]
+"structMaterialPropertiesCore.html#a6e3af712aeb6badeedf867422b241413":[2,0,115,3]
 };
