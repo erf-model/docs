@@ -1,5 +1,6 @@
 var structSDCellCounts =
 [
+    [ "densityMode", "structSDCellCounts.html#a47b624c29e7bb44268e2288a2a7eee55", null ],
     [ "numParticles", "structSDCellCounts.html#ad3889edb5a646cf4e0997ddfb9404c10", null ],
     [ "numSD", "structSDCellCounts.html#a912d29a466967fef99b9a7f8b54114aa", null ],
     [ "numSDCell", "structSDCellCounts.html#a84be4d801fd3419aaf1029f2db292e2a", null ],

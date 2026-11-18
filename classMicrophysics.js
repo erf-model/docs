@@ -4,6 +4,7 @@ var classMicrophysics =
     [ "~Microphysics", "classMicrophysics.html#a09486c3bc292538d5a26683fb1e19451", null ],
     [ "Advance", "classMicrophysics.html#ae6f104e6b42a2b0a9c9f3d71985880f0", null ],
     [ "AverageDownMicroVars", "classMicrophysics.html#a49700256caeff6ec46ae5e2e746a865a", null ],
+    [ "ClearLevel", "classMicrophysics.html#a168d53f7ec604577c3a2d1739d8a11a4", null ],
     [ "Define", "classMicrophysics.html#a380240aa9ec93af02a9b27ba1be4172a", null ],
     [ "Diagnostics", "classMicrophysics.html#a65a32c5c6792aae66f468b774d7c4bf2", null ],
     [ "FinishInit", "classMicrophysics.html#ad0fcf196828eb25456ee8f3d808ae8a9", null ],

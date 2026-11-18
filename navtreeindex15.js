@@ -1,5 +1,10 @@
 var NAVTREEINDEX15 =
 {
+"ERF__RRTMGP__Utils_8H.html#a330f3ddc4245c802986216ff51504e50":[3,0,1,23,0,4,4],
+"ERF__RRTMGP__Utils_8H.html#a8179e28926650ddbac40ebf2aecbe1a7":[3,0,1,23,0,4,2],
+"ERF__RRTMGP__Utils_8H.html#a88d561ab08b6cffb186a838b5840b274":[3,0,1,23,0,4,3],
+"ERF__RRTMGP__Utils_8H.html#aa7956500d2e4612dfd097a3d3556c051":[3,0,1,23,0,4,0],
+"ERF__RRTMGP__Utils_8H.html#af4b69bff8dd184127a31693738155898":[3,0,1,23,0,4,1],
 "ERF__RRTMGP__Utils_8H_source.html":[3,0,1,23,0,4],
 "ERF__RadStruct_8H.html":[3,0,1,4,10],
 "ERF__RadStruct_8H.html#a1645fb5d36c1dc243271358943797223":[3,0,1,4,10,4],
@@ -34,9 +39,9 @@ var NAVTREEINDEX15 =
 "ERF__ReadCheckpointMF_8H.html#a543f256009bdc56c433b9cb6a1da5177":[3,0,1,12,44,1],
 "ERF__ReadCheckpointMF_8H.html#aba22b9daf8305eee0648716ae0142fe1":[3,0,1,12,44,3],
 "ERF__ReadCheckpointMF_8H_source.html":[3,0,1,12,44],
-"ERF__ReadCustomBinaryIC_8H.html":[3,0,1,29,39],
-"ERF__ReadCustomBinaryIC_8H.html#a60f8ae2428844a5b2fe598a7a225e6b4":[3,0,1,29,39,0],
-"ERF__ReadCustomBinaryIC_8H_source.html":[3,0,1,29,39],
+"ERF__ReadCustomBinaryIC_8H.html":[3,0,1,29,40],
+"ERF__ReadCustomBinaryIC_8H.html#a60f8ae2428844a5b2fe598a7a225e6b4":[3,0,1,29,40,0],
+"ERF__ReadCustomBinaryIC_8H_source.html":[3,0,1,29,40],
 "ERF__ReadFromERFBdy_8H.html":[3,0,1,12,46],
 "ERF__ReadFromERFBdy_8H.html#a0552b526d38a21b140f9383d73bb960b":[3,0,1,12,46,1],
 "ERF__ReadFromERFBdy_8H.html#ad34db57d1f254e2d8a8ed2aa0514a190":[3,0,1,12,46,0],
@@ -55,8 +60,8 @@ var NAVTREEINDEX15 =
 "ERF__ReadFromWRFInput_8cpp.html":[3,0,1,12,50],
 "ERF__ReadFromWRFLow_8cpp.html":[3,0,1,12,52],
 "ERF__ReadWaves_8cpp.html":[3,0,1,3,0],
-"ERF__Rebalance_8cpp.html":[3,0,1,29,40],
-"ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379":[3,0,1,29,40,0],
+"ERF__Rebalance_8cpp.html":[3,0,1,29,41],
+"ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379":[3,0,1,29,41,0],
 "ERF__RefineBox_8cpp.html":[3,0,1,24,0],
 "ERF__RefineHurricane_8cpp.html":[3,0,1,24,1],
 "ERF__RefineHurricane_8cpp.html#a661478614baa822c243e10e73731de2a":[3,0,1,24,1,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX15 =
 "ERF__SBMLayout_8H.html#afa926d0b187ed1dcbc2ddda26794b234ae9e003c325eec6946ed1d23c6ac90a21":[3,0,1,16,6,17,9,1],
 "ERF__SBMLayout_8H_source.html":[3,0,1,16,6,17],
 "ERF__SBMLayout_8cpp.html":[3,0,1,16,6,16],
-"ERF__SBMNullMoist_8H.html":[3,0,1,16,6,18],
-"ERF__SBMNullMoist_8H_source.html":[3,0,1,16,6,18],
-"ERF__SBMOwnership_8H.html":[3,0,1,16,6,20],
-"ERF__SBMOwnership_8H.html#a10d359268234c0d8706f5a89a54b284e":[3,0,1,16,6,20,0],
-"ERF__SBMOwnership_8H.html#a10d359268234c0d8706f5a89a54b284ea23c38a1f05a85a9c6707ec8cf9c83b80":[3,0,1,16,6,20,0,0],
-"ERF__SBMOwnership_8H.html#a10d359268234c0d8706f5a89a54b284ea94e8a499539d1a472f3b5dbbb85508c0":[3,0,1,16,6,20,0,5]
+"ERF__SBMNullMoist_8H.html":[3,0,1,16,6,18]
 };

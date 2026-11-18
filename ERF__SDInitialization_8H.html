@@ -431,17 +431,17 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Mean multiplicity that a set of initializations gives in a cell of volume a_dv. </p>
-<div class="fragment"><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;{</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordtype">int</span> num_sd = 0;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num_par = 0;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; a_num; n++) {</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        num_sd  += a_counts[n].<a class="code" href="structSDCellCounts.html#a84be4d801fd3419aaf1029f2db292e2a">numSDCell</a>(a_dv);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        num_par += a_counts[n].<a class="code" href="structSDCellCounts.html#ad3889edb5a646cf4e0997ddfb9404c10">numParticles</a>(a_dv);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    }</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordflow">return</span> (num_sd &gt; 0) ? num_par / num_sd : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;}</div>
-<div class="ttc" id="astructSDCellCounts_html_a84be4d801fd3419aaf1029f2db292e2a"><div class="ttname"><a href="structSDCellCounts.html#a84be4d801fd3419aaf1029f2db292e2a">SDCellCounts::numSDCell</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int numSDCell(const amrex::Real a_dv) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:307</div></div>
-<div class="ttc" id="astructSDCellCounts_html_ad3889edb5a646cf4e0997ddfb9404c10"><div class="ttname"><a href="structSDCellCounts.html#ad3889edb5a646cf4e0997ddfb9404c10">SDCellCounts::numParticles</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real numParticles(const amrex::Real a_dv) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:294</div></div>
+<div class="fragment"><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordtype">int</span> num_sd = 0;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num_par = 0;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; a_num; n++) {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        num_sd  += a_counts[n].<a class="code" href="structSDCellCounts.html#a84be4d801fd3419aaf1029f2db292e2a">numSDCell</a>(a_dv);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        num_par += a_counts[n].<a class="code" href="structSDCellCounts.html#ad3889edb5a646cf4e0997ddfb9404c10">numParticles</a>(a_dv);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    }</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">return</span> (num_sd &gt; 0) ? num_par / num_sd : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
+<div class="ttc" id="astructSDCellCounts_html_a84be4d801fd3419aaf1029f2db292e2a"><div class="ttname"><a href="structSDCellCounts.html#a84be4d801fd3419aaf1029f2db292e2a">SDCellCounts::numSDCell</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int numSDCell(const amrex::Real a_dv) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:312</div></div>
+<div class="ttc" id="astructSDCellCounts_html_ad3889edb5a646cf4e0997ddfb9404c10"><div class="ttname"><a href="structSDCellCounts.html#ad3889edb5a646cf4e0997ddfb9404c10">SDCellCounts::numParticles</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real numParticles(const amrex::Real a_dv) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:299</div></div>
 </div><!-- fragment -->
 </div>
 </div>

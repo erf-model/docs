@@ -302,6 +302,7 @@ var annotated_dup =
     [ "ForceRestoreSoil", "structForceRestoreSoil.html", "structForceRestoreSoil" ],
     [ "ForestDrag", "classForestDrag.html", "classForestDrag" ],
     [ "GeneralAD", "classGeneralAD.html", "classGeneralAD" ],
+    [ "GroundAverageDown", "classGroundAverageDown.html", "classGroundAverageDown" ],
     [ "GroundWallTerms", "structGroundWallTerms.html", "structGroundWallTerms" ],
     [ "IBFaceSet", "classIBFaceSet.html", "classIBFaceSet" ],
     [ "IBSEBMaterial", "structIBSEBMaterial.html", "structIBSEBMaterial" ],

@@ -581,27 +581,28 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    golovin,</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    sedimentation,</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    Longs,</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    Halls</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;};</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="comment">/*! \brief Types of kernel relative velocity calculation: terminal_velocity</span></div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;<span class="comment"> *  (only terminal fall speed; default), absolute_velocity (flow velocity minus</span></div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;<span class="comment"> *  terminal), radial_velocity (radial component of the relative velocity along</span></div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;<span class="comment"> *  the pair separation vector). */</span></div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;<a class="code" href="ERF__DataStruct_8H.html#a6b6b6faa8ce9b3e9b869c29b6e7a4cf4">AMREX_ENUM</a>(SDKernelRelativeVelocityType,</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    terminal_velocity,</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    absolute_velocity,</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    radial_velocity</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;);</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<span class="comment">/*! \brief Types of phase change ODE time integrator */</span></div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;<span class="keyword">enum struct</span> SDMassChangeTIMethod {</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    RK3BS, RK4, BE, CN, DIRK2</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;};</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160; </div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    Halls,</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    geometric</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;};</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;<span class="comment">/*! \brief Types of kernel relative velocity calculation: terminal_velocity</span></div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;<span class="comment"> *  (only terminal fall speed; default), absolute_velocity (flow velocity minus</span></div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;<span class="comment"> *  terminal), radial_velocity (radial component of the relative velocity along</span></div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;<span class="comment"> *  the pair separation vector). */</span></div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;<a class="code" href="ERF__DataStruct_8H.html#a6b6b6faa8ce9b3e9b869c29b6e7a4cf4">AMREX_ENUM</a>(SDKernelRelativeVelocityType,</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    terminal_velocity,</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    absolute_velocity,</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    radial_velocity</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;);</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;<span class="comment">/*! \brief Types of phase change ODE time integrator */</span></div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;<span class="keyword">enum struct</span> SDMassChangeTIMethod {</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    RK3BS, RK4, BE, CN, DIRK2</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;};</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160; </div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160; </div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
 <div class="ttc" id="aERFPC_8H_html"><div class="ttname"><a href="ERFPC_8H.html">ERFPC.H</a></div></div>
 <div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_acc64e1753972a11f986bfc7ac9bd9103"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a></div><div class="ttdeci">GpuArray&lt; Real, AMREX_SPACEDIM &gt; dx</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:131</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
