@@ -1,5 +1,9 @@
 var NAVTREEINDEX20 =
 {
+"ERF__TwoStreamColumn_8H.html#a8941894e92ddfd442caaa9a369584d24":[3,0,1,23,2,21,28],
+"ERF__TwoStreamColumn_8H.html#a8e45043e3bb5b1180064ae0c33b9b3c2":[3,0,1,23,2,21,5],
+"ERF__TwoStreamColumn_8H.html#a8e54fd0d27e7c6e3c26f13c5b67f73ce":[3,0,1,23,2,21,10],
+"ERF__TwoStreamColumn_8H.html#a937d803574166fc8580cd33905bec314":[3,0,1,23,2,21,11],
 "ERF__TwoStreamColumn_8H.html#a9a534efed958be7d03e766311e3d89b5":[3,0,1,23,2,21,22],
 "ERF__TwoStreamColumn_8H.html#aa49b1716d474d6e3f4fb7d67aa5740f9":[3,0,1,23,2,21,23],
 "ERF__TwoStreamColumn_8H.html#aaff7967bc69075022d51be6bef8bac6b":[3,0,1,23,2,21,31],
@@ -245,9 +249,5 @@ var NAVTREEINDEX20 =
 "ERF__Utils_8H.html#a2e5e0e7af417da64f77e0778ed824bf9":[3,0,1,29,60,38],
 "ERF__Utils_8H.html#a3742f619397543dafbbe2a182d5cdf33":[3,0,1,29,60,33],
 "ERF__Utils_8H.html#a4166c23e462d90d416fbc14486acace0":[3,0,1,29,60,34],
-"ERF__Utils_8H.html#a4daf8959fb5126b74213fefeaca9dbef":[3,0,1,29,60,9],
-"ERF__Utils_8H.html#a5b8a253be317fc3eeb0c1cfdfe81b1dd":[3,0,1,29,60,20],
-"ERF__Utils_8H.html#a60e8e097c41bbb67aef2c27f5a15a836":[3,0,1,29,60,14],
-"ERF__Utils_8H.html#a668d034ff95e9d36a328cd77f7bf3ebc":[3,0,1,29,60,3],
-"ERF__Utils_8H.html#a8a4cb18ee065a40fbb1a1ee1d6985315":[3,0,1,29,60,12]
+"ERF__Utils_8H.html#a4daf8959fb5126b74213fefeaca9dbef":[3,0,1,29,60,9]
 };

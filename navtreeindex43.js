@@ -1,5 +1,7 @@
 var NAVTREEINDEX43 =
 {
+"interfacemodule__libmassv_1_1vsqrt.html":[2,0,23,1],
+"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,23,1,0],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,23,1,1],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,23,1,3],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,23,1,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX43 =
 "namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html":[1,0,9,0],
 "namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a0ec2bade866903687eacfdea5e0ff767":[1,0,9,0,6],
 "namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a28ae70fc760e9b53db3ecc8a7f1a65cc":[1,0,9,0,7],
-"namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a5c833396de3971841a1da2dd3bb6ef28":[1,0,9,0,5],
-"namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a64936851bf8f630835af9bdfb457ffd7":[1,0,9,0,4],
-"namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a694d2aa720161d4521b057921cac1953":[1,0,9,0,2]
+"namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a5c833396de3971841a1da2dd3bb6ef28":[1,0,9,0,5]
 };

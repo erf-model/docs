@@ -1,5 +1,7 @@
 var NAVTREEINDEX48 =
 {
+"namespacemembers_vars_q.html":[1,1,2,15],
+"namespacemembers_vars_r.html":[1,1,2,16],
 "namespacemembers_vars_s.html":[1,1,2,17],
 "namespacemembers_vars_t.html":[1,1,2,18],
 "namespacemembers_vars_v.html":[1,1,2,19],
@@ -247,7 +249,5 @@ var NAVTREEINDEX48 =
 "namespacemodule__mp__morr__two__moment.html#aeceb8efd1a75fb4fea37a1de63b1a456":[1,0,91,110],
 "namespacemodule__mp__morr__two__moment.html#aee4087d7161368589d1da4c618c09113":[1,0,91,26],
 "namespacemodule__mp__morr__two__moment.html#aefe7ad28dcb6d3d095f8d9ea86077369":[1,0,91,39],
-"namespacemodule__mp__morr__two__moment.html#af11f1d093484c24bcfe7ca392ab7f34f":[1,0,91,4],
-"namespacemodule__mp__morr__two__moment.html#af1754508fdbc9910fecca96245c777dc":[1,0,91,41],
-"namespacemodule__mp__morr__two__moment.html#af1e477a09e751e2630ec7f333fdae227":[1,0,91,6]
+"namespacemodule__mp__morr__two__moment.html#af11f1d093484c24bcfe7ca392ab7f34f":[1,0,91,4]
 };
