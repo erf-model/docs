@@ -1,5 +1,9 @@
 var NAVTREEINDEX52 =
 {
+"structAutomaticPerturbationFace.html#a6c9a54de41e6152dcde31e61bc573377":[2,0,38,3],
+"structAutomaticPerturbationFace.html#a8b0da49fc0cc29df0230e33d1f19dc60":[2,0,38,6],
+"structAutomaticPerturbationFace.html#ad01afdf10535c94b8a503d9e846253a5":[2,0,38,0],
+"structBaseStateParams.html":[2,0,39],
 "structBaseStateParams.html#a272e419b921c7b4e03a3c9da9ad02703":[2,0,39,2],
 "structBaseStateParams.html#a2b0a73f5813d5982890af5f2a16ca7fa":[2,0,39,1],
 "structBaseStateParams.html#a4f97375a9fbb53c9a9cf822fc017b6ed":[2,0,39,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX52 =
 "structForceRestoreHydrologyParams.html#a6f71e0e3e61ecc617c9398a380cd051f":[2,0,86,10],
 "structForceRestoreHydrologyParams.html#a7317e0af9574b3cd8ee0b7cc0d860927":[2,0,86,9],
 "structForceRestoreHydrologyParams.html#aa4d6e43ce5019f1777668527aac06411":[2,0,86,4],
-"structForceRestoreHydrologyParams.html#ad47e2df481b5e1acfb0c16a2be2babda":[2,0,86,0],
-"structForceRestoreHydrologyParams.html#aed6245e7a2379e35827903400503a589":[2,0,86,2],
-"structForceRestoreHydrologyParams.html#af32a5fa7e987855cc35401f943bf909e":[2,0,86,1],
-"structForceRestoreHydrology_1_1StepSums.html":[2,0,84,0],
-"structForceRestoreHydrology_1_1StepSums.html#a053bdfeee3dc2a1ed18258493e409444":[2,0,84,0,1]
+"structForceRestoreHydrologyParams.html#ad47e2df481b5e1acfb0c16a2be2babda":[2,0,86,0]
 };

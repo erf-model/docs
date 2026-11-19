@@ -40,7 +40,7 @@ var annotated_dup =
       [ "LegacyConversionFailure", "structerf__checkpoint__surface__temperature_1_1LegacyConversionFailure.html", "structerf__checkpoint__surface__temperature_1_1LegacyConversionFailure" ]
     ] ],
     [ "erf_cloud_chamber", "namespaceerf__cloud__chamber.html", [
-      [ "WallSpec", "structerf__cloud__chamber_1_1WallSpec.html", "structerf__cloud__chamber_1_1WallSpec" ],
+      [ "Initialization", "structerf__cloud__chamber_1_1Initialization.html", "structerf__cloud__chamber_1_1Initialization" ],
       [ "Config", "structerf__cloud__chamber_1_1Config.html", "structerf__cloud__chamber_1_1Config" ],
       [ "InitializationContract", "structerf__cloud__chamber_1_1InitializationContract.html", "structerf__cloud__chamber_1_1InitializationContract" ],
       [ "WallTransferContract", "structerf__cloud__chamber_1_1WallTransferContract.html", "structerf__cloud__chamber_1_1WallTransferContract" ]
@@ -52,7 +52,9 @@ var annotated_dup =
       [ "ScalarWallSample", "structerf__cloud__chamber__wall__flux_1_1ScalarWallSample.html", "structerf__cloud__chamber__wall__flux_1_1ScalarWallSample" ],
       [ "NeutralLogMomentumState", "structerf__cloud__chamber__wall__flux_1_1NeutralLogMomentumState.html", "structerf__cloud__chamber__wall__flux_1_1NeutralLogMomentumState" ],
       [ "MomentumWallSample", "structerf__cloud__chamber__wall__flux_1_1MomentumWallSample.html", "structerf__cloud__chamber__wall__flux_1_1MomentumWallSample" ],
-      [ "ScalarFluxReplacement", "structerf__cloud__chamber__wall__flux_1_1ScalarFluxReplacement.html", "structerf__cloud__chamber__wall__flux_1_1ScalarFluxReplacement" ]
+      [ "ScalarFluxReplacement", "structerf__cloud__chamber__wall__flux_1_1ScalarFluxReplacement.html", "structerf__cloud__chamber__wall__flux_1_1ScalarFluxReplacement" ],
+      [ "DirectionalMomentumRate", "structerf__cloud__chamber__wall__flux_1_1DirectionalMomentumRate.html", "structerf__cloud__chamber__wall__flux_1_1DirectionalMomentumRate" ],
+      [ "CellScalarWallRate", "structerf__cloud__chamber__wall__flux_1_1CellScalarWallRate.html", "structerf__cloud__chamber__wall__flux_1_1CellScalarWallRate" ]
     ] ],
     [ "erf_description", "namespaceerf__description.html", [
       [ "Writer", "classerf__description_1_1Writer.html", "classerf__description_1_1Writer" ]

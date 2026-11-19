@@ -1,5 +1,7 @@
 var NAVTREEINDEX17 =
 {
+"ERF__SampleData_8H_source.html":[3,0,1,12,53],
+"ERF__SatAdj_8H.html":[3,0,1,16,5,2],
 "ERF__SatAdj_8H_source.html":[3,0,1,16,5,2],
 "ERF__SatAdj_8cpp.html":[3,0,1,16,5,1],
 "ERF__SatMethods_8H.html":[3,0,1,29,42],
@@ -247,7 +249,5 @@ var NAVTREEINDEX17 =
 "ERF__ShocTransportStruct_8H.html#a8d1e041750938c6f35f1e9e061b0210b":[3,0,1,4,11,7],
 "ERF__ShocTransportStruct_8H.html#ab74ad802f6140554af11f465e8d913e9":[3,0,1,4,11,6],
 "ERF__ShocTransportStruct_8H.html#acbdaa73f9d7db1f6fdc09d1661abb298":[3,0,1,4,11,4],
-"ERF__ShocTransportStruct_8H.html#afeb44c2565539dcc7b6083629bfda26d":[3,0,1,4,11,1],
-"ERF__ShocTransportStruct_8H.html#afeb44c2565539dcc7b6083629bfda26dafa6de437bd00200bf3178386cf7d7f1a":[3,0,1,4,11,1,0],
-"ERF__ShocTransportStruct_8H_source.html":[3,0,1,4,11]
+"ERF__ShocTransportStruct_8H.html#afeb44c2565539dcc7b6083629bfda26d":[3,0,1,4,11,1]
 };

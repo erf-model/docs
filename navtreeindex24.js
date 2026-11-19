@@ -1,5 +1,7 @@
 var NAVTREEINDEX24 =
 {
+"annotated.html":[2,0],
+"classBuildingsIF.html":[2,0,42],
 "classBuildingsIF.html#a3295596937d8b695a72fb2a5a8885a37":[2,0,42,4],
 "classBuildingsIF.html#a48a8eb90d62ebd361cdb5d6ffc7f44cf":[2,0,42,2],
 "classBuildingsIF.html#a5e448f1295f76bba078cdaad476efd83":[2,0,42,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX24 =
 "classERF.html#a3a4ed122e6a4eba24daf1f0768b11912":[2,0,66,142],
 "classERF.html#a3a81497bf61bc0f6ba3123fc823ac525":[2,0,66,267],
 "classERF.html#a3a852c089fe874e5fdf56e380273febd":[2,0,66,256],
-"classERF.html#a3b5f18f03b67c07d6a6ac9b2826d863a":[2,0,66,761],
-"classERF.html#a3b68b5272f89529e97680b891314e084":[2,0,66,297],
-"classERF.html#a3b9bcb54c278dfec6027e9727cc01bc5":[2,0,66,388]
+"classERF.html#a3b5f18f03b67c07d6a6ac9b2826d863a":[2,0,66,761]
 };

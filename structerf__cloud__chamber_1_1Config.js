@@ -1,21 +1,9 @@
 var structerf__cloud__chamber_1_1Config =
 [
-    [ "has_bulk_scalar_wall", "structerf__cloud__chamber_1_1Config.html#ad05a059afe75d41c5d6d28bdb2d4264b", null ],
-    [ "has_wall_rate_channel", "structerf__cloud__chamber_1_1Config.html#a5a53ed9ec5c4a2b1dc59535aa98b1b41", null ],
-    [ "wall_boundary", "structerf__cloud__chamber_1_1Config.html#a16aef4ec3cdf8a3d2cae8b93903ad613", null ],
-    [ "active", "structerf__cloud__chamber_1_1Config.html#a23475ebf69ebc39f7594e05538f84e34", null ],
-    [ "has_moisture", "structerf__cloud__chamber_1_1Config.html#a2607f008afefc72ddbac20849837e80a", null ],
-    [ "initial_relative_humidity", "structerf__cloud__chamber_1_1Config.html#acf257f1af0dd161c2572b4d5a8718eb9", null ],
-    [ "initial_temperature_bottom", "structerf__cloud__chamber_1_1Config.html#a8ea04e5800b0499e37f5349e8506ad19", null ],
-    [ "initial_temperature_top", "structerf__cloud__chamber_1_1Config.html#a2620a9ae09589d4743268f9d14769195", null ],
-    [ "physical_initialization", "structerf__cloud__chamber_1_1Config.html#ae4c8bf0774249767dcc532985f1bab32", null ],
-    [ "prob_hi", "structerf__cloud__chamber_1_1Config.html#a43c02a7b706060da33daeed6d85dbc6d", null ],
-    [ "prob_lo", "structerf__cloud__chamber_1_1Config.html#a8dd6ea026e56fe196e85ff1370a77455", null ],
-    [ "qv_bottom", "structerf__cloud__chamber_1_1Config.html#a749e52b4717e9cdeba264be9414ec4e5", null ],
-    [ "qv_top", "structerf__cloud__chamber_1_1Config.html#a01eaef5b7135606f30d2c440dd1df5b1", null ],
-    [ "temperature_perturbation_amplitude", "structerf__cloud__chamber_1_1Config.html#a8f935bee85ea9d56f33c6a531757175e", null ],
-    [ "theta_bottom", "structerf__cloud__chamber_1_1Config.html#abe18a14bd0cc2128f55b87fbe272c173", null ],
-    [ "theta_perturbation_amplitude", "structerf__cloud__chamber_1_1Config.html#aa3cf5894419cf281f3d82f5f322e4ac8", null ],
-    [ "theta_top", "structerf__cloud__chamber_1_1Config.html#ae0c53d0b04ca3e3380a058c1fcadb01a", null ],
-    [ "walls", "structerf__cloud__chamber_1_1Config.html#a088bfdd79096b8a99f818ff9a671291b", null ]
+    [ "has_bulk_scalar_wall", "structerf__cloud__chamber_1_1Config.html#aac0bb7c6f969990e4c58d624401c78ec", null ],
+    [ "has_wall_rate_channel", "structerf__cloud__chamber_1_1Config.html#a4fecb10b530145468d0f5b46b2e0ef1a", null ],
+    [ "transport_boundary", "structerf__cloud__chamber_1_1Config.html#af62f99b6b4a8785e38f3257b7af44d43", null ],
+    [ "transport_boundary", "structerf__cloud__chamber_1_1Config.html#a772059f7c7e1eeb7169b7aea116aafed", null ],
+    [ "parse_config", "structerf__cloud__chamber_1_1Config.html#aca9088948b3f42311ed8666902289f04", null ],
+    [ "m_boundary", "structerf__cloud__chamber_1_1Config.html#a8231d0bca88e05e1d6eca0efe1f1bb55", null ]
 ];
