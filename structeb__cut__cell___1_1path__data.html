@@ -130,10 +130,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a14295c690faa302c0e8c9e1f5fad9f50"><td class="memItemLeft" align="right" valign="top">amrex::RealVect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeb__cut__cell___1_1path__data.html#a14295c690faa302c0e8c9e1f5fad9f50">vIP</a> {}</td></tr>
 <tr class="memdesc:a14295c690faa302c0e8c9e1f5fad9f50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coordinates of the intersection point.  <a href="structeb__cut__cell___1_1path__data.html#a14295c690faa302c0e8c9e1f5fad9f50">More...</a><br /></td></tr>
 <tr class="separator:a14295c690faa302c0e8c9e1f5fad9f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a436b875ad93b4ffa3d7737dd5a84e3cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeb__cut__cell___1_1path__data.html#a436b875ad93b4ffa3d7737dd5a84e3cc">distIP</a> {}</td></tr>
+<tr class="memitem:a436b875ad93b4ffa3d7737dd5a84e3cc"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeb__cut__cell___1_1path__data.html#a436b875ad93b4ffa3d7737dd5a84e3cc">distIP</a> {}</td></tr>
 <tr class="memdesc:a436b875ad93b4ffa3d7737dd5a84e3cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance from the start vertex to the intersection point.  <a href="structeb__cut__cell___1_1path__data.html#a436b875ad93b4ffa3d7737dd5a84e3cc">More...</a><br /></td></tr>
 <tr class="separator:a436b875ad93b4ffa3d7737dd5a84e3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f49651b508aac684c4b5d5b260dedd1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeb__cut__cell___1_1path__data.html#a5f49651b508aac684c4b5d5b260dedd1">edge_length</a> {}</td></tr>
+<tr class="memitem:a5f49651b508aac684c4b5d5b260dedd1"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeb__cut__cell___1_1path__data.html#a5f49651b508aac684c4b5d5b260dedd1">edge_length</a> {}</td></tr>
 <tr class="memdesc:a5f49651b508aac684c4b5d5b260dedd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical length of the edge.  <a href="structeb__cut__cell___1_1path__data.html#a5f49651b508aac684c4b5d5b260dedd1">More...</a><br /></td></tr>
 <tr class="separator:a5f49651b508aac684c4b5d5b260dedd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -228,9 +228,9 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="comment">// NOTE: this is an absolute length tolerance compared against a distance</span></div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="comment">//       along the edge, so it is only meaningful for edges of order unity;</span></div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="comment">//       it is scaled with the working precision but not with edge_length.</span></div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tol = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10)*<a class="code" href="ERF__NumericalConstants_8H.html#a2c48ae0f73264d2e88e15a0a587a370c">real_eps</a>;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    constexpr amrex::Real tol = amrex::Real(10)*<a class="code" href="ERF__NumericalConstants_8H.html#a2c48ae0f73264d2e88e15a0a587a370c">real_eps</a>;</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    amrex::RealVect v_intersect{v_start};</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>    dist_intersect = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    amrex::Real    dist_intersect = std::numeric_limits&lt;amrex::Real&gt;::quiet_NaN();</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    <a class="code" href="structeb__cut__cell___1_1path__data.html#ac1fd631e786501567cdceddd710c0e19">intersected</a> = <a class="code" href="ERF__EBCutCell_8H.html#a85f6b9006454bc88f78571ca8741b7e4">intersect_plane_edge</a>(</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;      eb_point, eb_normal, v_start, v_end, v_intersect, dist_intersect</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    );</div>
@@ -244,12 +244,11 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;      <a class="code" href="structeb__cut__cell___1_1path__data.html#ad9fc951a84ff59b24f58e9c52573d2b9">intersected_start</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;      <a class="code" href="structeb__cut__cell___1_1path__data.html#a6428897ec26d806204f0a9d6a88dba5e">intersected_end</a>   = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;      <a class="code" href="structeb__cut__cell___1_1path__data.html#a436b875ad93b4ffa3d7737dd5a84e3cc">distIP</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-1.0);</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;      <a class="code" href="structeb__cut__cell___1_1path__data.html#a436b875ad93b4ffa3d7737dd5a84e3cc">distIP</a> = amrex::Real(-1.0);</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    }</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;  }</div>
 <div class="ttc" id="aERF__EBCutCell_8H_html_a85f6b9006454bc88f78571ca8741b7e4"><div class="ttname"><a href="ERF__EBCutCell_8H.html#a85f6b9006454bc88f78571ca8741b7e4">intersect_plane_edge</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int intersect_plane_edge(amrex::RealVect const &amp;a_plane_point, amrex::RealVect const &amp;a_plane_normal, amrex::RealVect const &amp;a_edge_point0, amrex::RealVect const &amp;a_edge_point1, amrex::RealVect &amp;a_intersection_point, amrex::Real &amp;a_intersection_dist)</div><div class="ttdoc">Intersect a plane with a line segment.</div><div class="ttdef"><b>Definition:</b> ERF_EBCutCell.H:31</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a2c48ae0f73264d2e88e15a0a587a370c"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a2c48ae0f73264d2e88e15a0a587a370c">real_eps</a></div><div class="ttdeci">constexpr amrex::Real real_eps</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:34</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="astructeb__cut__cell___1_1path__data_html_a14295c690faa302c0e8c9e1f5fad9f50"><div class="ttname"><a href="structeb__cut__cell___1_1path__data.html#a14295c690faa302c0e8c9e1f5fad9f50">eb_cut_cell_::path_data::vIP</a></div><div class="ttdeci">amrex::RealVect vIP</div><div class="ttdoc">Coordinates of the intersection point.</div><div class="ttdef"><b>Definition:</b> ERF_EBCutCell.H:451</div></div>
 <div class="ttc" id="astructeb__cut__cell___1_1path__data_html_a436b875ad93b4ffa3d7737dd5a84e3cc"><div class="ttname"><a href="structeb__cut__cell___1_1path__data.html#a436b875ad93b4ffa3d7737dd5a84e3cc">eb_cut_cell_::path_data::distIP</a></div><div class="ttdeci">amrex::Real distIP</div><div class="ttdoc">Distance from the start vertex to the intersection point.</div><div class="ttdef"><b>Definition:</b> ERF_EBCutCell.H:453</div></div>
 <div class="ttc" id="astructeb__cut__cell___1_1path__data_html_a5f49651b508aac684c4b5d5b260dedd1"><div class="ttname"><a href="structeb__cut__cell___1_1path__data.html#a5f49651b508aac684c4b5d5b260dedd1">eb_cut_cell_::path_data::edge_length</a></div><div class="ttdeci">amrex::Real edge_length</div><div class="ttdoc">Physical length of the edge.</div><div class="ttdef"><b>Definition:</b> ERF_EBCutCell.H:455</div></div>
@@ -288,7 +287,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> eb_cut_cell_::path_data::distIP {}</td>
+          <td class="memname">amrex::Real eb_cut_cell_::path_data::distIP {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -306,7 +305,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> eb_cut_cell_::path_data::edge_length {}</td>
+          <td class="memname">amrex::Real eb_cut_cell_::path_data::edge_length {}</td>
         </tr>
       </table>
 </div><div class="memdoc">

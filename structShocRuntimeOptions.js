@@ -1,9 +1,7 @@
 var structShocRuntimeOptions =
 [
     [ "allow_tendency_microphysics_overlap", "structShocRuntimeOptions.html#ad6675ebb3165480fb7c7644989af546b", null ],
-    [ "apply_tms", "structShocRuntimeOptions.html#ac8abb96c7fa16e460e109a8bfd5667ab", null ],
     [ "c_diag_3rd_mom", "structShocRuntimeOptions.html#a5c9fc07fda806629e01a1767447de278", null ],
-    [ "check_flux_state", "structShocRuntimeOptions.html#ada8716f498c6f3f83e668248011597e8", null ],
     [ "coeff_kh", "structShocRuntimeOptions.html#a29c8fff0bc9665dfbeede5f5f2a0d80f", null ],
     [ "coeff_km", "structShocRuntimeOptions.html#a7ce554cd8aeff89358b1be0348d2fc18", null ],
     [ "column_conservation_check", "structShocRuntimeOptions.html#a6292ac7af6b94cb3d044e5be68061ec0", null ],

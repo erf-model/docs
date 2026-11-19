@@ -132,7 +132,7 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a609fd49ffe44b73cc1f8aa13eb48ccdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba5c1bc221aa7f01fa2c38c659aba9f7"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a> {&quot;magvel&quot;,&quot;theta&quot;}</td></tr>
 <tr class="separator:aba5c1bc221aa7f01fa2c38c659aba9f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a276ae730af1515e57d0a10251715217e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html#a276ae730af1515e57d0a10251715217e">m_covered_value</a> {<a class="el" href="ERF__SampleData_8H.html#a0b10e5c6476ae6ae0af86ea98adb256e">sampling_covered_value</a>()}</td></tr>
+<tr class="memitem:a276ae730af1515e57d0a10251715217e"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html#a276ae730af1515e57d0a10251715217e">m_covered_value</a> {<a class="el" href="ERF__SampleData_8H.html#a0b10e5c6476ae6ae0af86ea98adb256e">sampling_covered_value</a>()}</td></tr>
 <tr class="separator:a276ae730af1515e57d0a10251715217e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -349,7 +349,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01875"></a><span class="lineno"> 1875</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iplane(0); iplane&lt;nplane; ++iplane) {</div>
 <div class="line"><a name="l01876"></a><span class="lineno"> 1876</span>&#160;            <span class="keywordtype">int</span> dir = <a class="code" href="structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6">m_dir</a>[iplane];</div>
 <div class="line"><a name="l01877"></a><span class="lineno"> 1877</span>&#160;            amrex::RealBox bnd_rbx  = <a class="code" href="structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24">m_bnd_rbx</a>[iplane];</div>
-<div class="line"><a name="l01878"></a><span class="lineno"> 1878</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a> = bnd_rbx.lo(dir);</div>
+<div class="line"><a name="l01878"></a><span class="lineno"> 1878</span>&#160;            amrex::Real <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a> = bnd_rbx.lo(dir);</div>
 <div class="line"><a name="l01879"></a><span class="lineno"> 1879</span>&#160; </div>
 <div class="line"><a name="l01880"></a><span class="lineno"> 1880</span>&#160;            <span class="comment">// Collect every level 0..lev_cap whose grids intersect the plane.</span></div>
 <div class="line"><a name="l01881"></a><span class="lineno"> 1881</span>&#160;            <span class="keywordtype">int</span> lev_cap = (<a class="code" href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">m_max_level</a> &gt;= 0 &amp;&amp; <a class="code" href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">m_max_level</a> &lt; nlev-1) ? <a class="code" href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">m_max_level</a> : nlev-1;</div>
@@ -489,7 +489,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l02015"></a><span class="lineno"> 2015</span>&#160; </div>
 <div class="line"><a name="l02016"></a><span class="lineno"> 2016</span>&#160;                            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l02017"></a><span class="lineno"> 2017</span>&#160;                            {</div>
-<div class="line"><a name="l02018"></a><span class="lineno"> 2018</span>&#160;                                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_val = (qv_comp &gt;= 0) ? dfab(i,j,k,qv_comp)</div>
+<div class="line"><a name="l02018"></a><span class="lineno"> 2018</span>&#160;                                amrex::Real qv_val = (qv_comp &gt;= 0) ? dfab(i,j,k,qv_comp)</div>
 <div class="line"><a name="l02019"></a><span class="lineno"> 2019</span>&#160;                                                                     : cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l02020"></a><span class="lineno"> 2020</span>&#160;                                dfab(i,j,k,mf_comp) = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_val);</div>
 <div class="line"><a name="l02021"></a><span class="lineno"> 2021</span>&#160;                            });</div>
@@ -537,8 +537,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l02063"></a><span class="lineno"> 2063</span>&#160;                        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; out = mf_cc_data.array(mfi);</div>
 <div class="line"><a name="l02064"></a><span class="lineno"> 2064</span>&#160;                        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; vf  = volfrac-&gt;const_array(mfi);</div>
 <div class="line"><a name="l02065"></a><span class="lineno"> 2065</span>&#160;                        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l02066"></a><span class="lineno"> 2066</span>&#160;                            out(i,j,k,cov_comp) = (vf(i,j,k) == <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0)</div>
-<div class="line"><a name="l02067"></a><span class="lineno"> 2067</span>&#160;                                                                                  : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l02066"></a><span class="lineno"> 2066</span>&#160;                            out(i,j,k,cov_comp) = (vf(i,j,k) == amrex::Real(0.0)) ? amrex::Real(1.0)</div>
+<div class="line"><a name="l02067"></a><span class="lineno"> 2067</span>&#160;                                                                                  : amrex::Real(0.0);</div>
 <div class="line"><a name="l02068"></a><span class="lineno"> 2068</span>&#160;                        });</div>
 <div class="line"><a name="l02069"></a><span class="lineno"> 2069</span>&#160;                    }</div>
 <div class="line"><a name="l02070"></a><span class="lineno"> 2070</span>&#160;                } <span class="keywordflow">else</span> {</div>
@@ -582,7 +582,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l02108"></a><span class="lineno"> 2108</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> rr_l    = 1 &lt;&lt; ilev;</div>
 <div class="line"><a name="l02109"></a><span class="lineno"> 2109</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> k_slice = slice-&gt;boxArray().minimalBox().smallEnd(dir);</div>
 <div class="line"><a name="l02110"></a><span class="lineno"> 2110</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> l_dir   = dir;</div>
-<div class="line"><a name="l02111"></a><span class="lineno"> 2111</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> covered_value = <a class="code" href="structPlaneSampler.html#a276ae730af1515e57d0a10251715217e">m_covered_value</a>;</div>
+<div class="line"><a name="l02111"></a><span class="lineno"> 2111</span>&#160;                <span class="keyword">const</span> amrex::Real covered_value = <a class="code" href="structPlaneSampler.html#a276ae730af1515e57d0a10251715217e">m_covered_value</a>;</div>
 <div class="line"><a name="l02112"></a><span class="lineno"> 2112</span>&#160; </div>
 <div class="line"><a name="l02113"></a><span class="lineno"> 2113</span>&#160;                amrex::BoxList bl;</div>
 <div class="line"><a name="l02114"></a><span class="lineno"> 2114</span>&#160;                <span class="keyword">const</span> amrex::BoxArray&amp; slice_ba = slice-&gt;boxArray();</div>
@@ -608,7 +608,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l02134"></a><span class="lineno"> 2134</span>&#160;                        <span class="keywordflow">else</span>                 { sk = k_slice; }</div>
 <div class="line"><a name="l02135"></a><span class="lineno"> 2135</span>&#160;                        <span class="comment">// A sample interpolated from a covered cell is written as</span></div>
 <div class="line"><a name="l02136"></a><span class="lineno"> 2136</span>&#160;                        <span class="comment">// erf.sampling_covered_value, except for the volume fraction</span></div>
-<div class="line"><a name="l02137"></a><span class="lineno"> 2137</span>&#160;                        ofab(i,j,k,n) = (sfab(si,sj,sk,ncomp) &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp; n != vf_comp)</div>
+<div class="line"><a name="l02137"></a><span class="lineno"> 2137</span>&#160;                        ofab(i,j,k,n) = (sfab(si,sj,sk,ncomp) &gt; amrex::Real(0.0) &amp;&amp; n != vf_comp)</div>
 <div class="line"><a name="l02138"></a><span class="lineno"> 2138</span>&#160;                                      ? covered_value : sfab(si,sj,sk,n);</div>
 <div class="line"><a name="l02139"></a><span class="lineno"> 2139</span>&#160;                    });</div>
 <div class="line"><a name="l02140"></a><span class="lineno"> 2140</span>&#160;                }</div>
@@ -627,7 +627,6 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__SampleData_8H_html_aa41452e75c3b9c8417c506d98e74ae1e"><div class="ttname"><a href="ERF__SampleData_8H.html#aa41452e75c3b9c8417c506d98e74ae1e">sampling_num_levels</a></div><div class="ttdeci">int sampling_num_levels(const amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;vars_new)</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:44</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:232</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:231</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:234</div></div>
@@ -751,12 +750,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l02159"></a><span class="lineno"> 2159</span>&#160; </div>
 <div class="line"><a name="l02160"></a><span class="lineno"> 2160</span>&#160;            <span class="keywordtype">int</span> dir = <a class="code" href="structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6">m_dir</a>[iplane];</div>
 <div class="line"><a name="l02161"></a><span class="lineno"> 2161</span>&#160;            amrex::RealBox bnd_rbx = <a class="code" href="structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24">m_bnd_rbx</a>[iplane];</div>
-<div class="line"><a name="l02162"></a><span class="lineno"> 2162</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a> = bnd_rbx.lo(dir);</div>
+<div class="line"><a name="l02162"></a><span class="lineno"> 2162</span>&#160;            amrex::Real <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a> = bnd_rbx.lo(dir);</div>
 <div class="line"><a name="l02163"></a><span class="lineno"> 2163</span>&#160; </div>
 <div class="line"><a name="l02164"></a><span class="lineno"> 2164</span>&#160;            <span class="comment">// One shared physical RealBox for every level: full in-plane extent of the</span></div>
 <div class="line"><a name="l02165"></a><span class="lineno"> 2165</span>&#160;            <span class="comment">// requested plane, and a dir-slab of level-0 thickness centered on the plane.</span></div>
 <div class="line"><a name="l02166"></a><span class="lineno"> 2166</span>&#160;            <span class="comment">// Level 0 supplies prob_lo/hi to the writer, so this object must be shared.</span></div>
-<div class="line"><a name="l02167"></a><span class="lineno"> 2167</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dx0 = geom[0].CellSize(dir);</div>
+<div class="line"><a name="l02167"></a><span class="lineno"> 2167</span>&#160;            amrex::Real dx0 = geom[0].CellSize(dir);</div>
 <div class="line"><a name="l02168"></a><span class="lineno"> 2168</span>&#160;            amrex::RealBox shared_rbx = bnd_rbx;</div>
 <div class="line"><a name="l02169"></a><span class="lineno"> 2169</span>&#160;            shared_rbx.setLo(dir, <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a> - <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dx0);</div>
 <div class="line"><a name="l02170"></a><span class="lineno"> 2170</span>&#160;            shared_rbx.setHi(dir, <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a> + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dx0);</div>
@@ -780,9 +779,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l02188"></a><span class="lineno"> 2188</span>&#160;                <span class="comment">// ratio per level, so multi-level output requires factor-2</span></div>
 <div class="line"><a name="l02189"></a><span class="lineno"> 2189</span>&#160;                <span class="comment">// isotropic refinement.</span></div>
 <div class="line"><a name="l02190"></a><span class="lineno"> 2190</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d(0); d&lt;AMREX_SPACEDIM; ++d) {</div>
-<div class="line"><a name="l02191"></a><span class="lineno"> 2191</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ratio = geom[0].CellSize(d) / geom[l].CellSize(d);</div>
+<div class="line"><a name="l02191"></a><span class="lineno"> 2191</span>&#160;                    amrex::Real ratio = geom[0].CellSize(d) / geom[l].CellSize(d);</div>
 <div class="line"><a name="l02192"></a><span class="lineno"> 2192</span>&#160;                    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
-<div class="line"><a name="l02193"></a><span class="lineno"> 2193</span>&#160;                        std::abs(ratio - <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(rr_l)) &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.e-6) * rr_l,</div>
+<div class="line"><a name="l02193"></a><span class="lineno"> 2193</span>&#160;                        std::abs(ratio - <span class="keyword">static_cast&lt;</span>amrex::Real<span class="keyword">&gt;</span>(rr_l)) &lt; amrex::Real(1.e-6) * rr_l,</div>
 <div class="line"><a name="l02194"></a><span class="lineno"> 2194</span>&#160;                        <span class="stringliteral">&quot;PlaneSampler multi-level output requires factor-2 isotropic refinement (amr.ref_ratio = 2 2 2)&quot;</span>);</div>
 <div class="line"><a name="l02195"></a><span class="lineno"> 2195</span>&#160;                }</div>
 <div class="line"><a name="l02196"></a><span class="lineno"> 2196</span>&#160; </div>
@@ -803,7 +802,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l02211"></a><span class="lineno"> 2211</span>&#160; </div>
 <div class="line"><a name="l02212"></a><span class="lineno"> 2212</span>&#160;            <span class="comment">// Write the nested multi-level plane plotfile</span></div>
 <div class="line"><a name="l02213"></a><span class="lineno"> 2213</span>&#160;            WriteMultiLevelPlotfile(plotfilename, nlev_c, mf,</div>
-<div class="line"><a name="l02214"></a><span class="lineno"> 2214</span>&#160;                                    <a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, m_geom, <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(time[0]),</div>
+<div class="line"><a name="l02214"></a><span class="lineno"> 2214</span>&#160;                                    <a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, m_geom, <span class="keyword">static_cast&lt;</span>amrex::Real<span class="keyword">&gt;</span>(time[0]),</div>
 <div class="line"><a name="l02215"></a><span class="lineno"> 2215</span>&#160;                                    m_level_steps, m_ref_ratio);</div>
 <div class="line"><a name="l02216"></a><span class="lineno"> 2216</span>&#160;        } <span class="comment">// iplane</span></div>
 <div class="line"><a name="l02217"></a><span class="lineno"> 2217</span>&#160;    }</div>
@@ -846,7 +845,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> PlaneSampler::m_covered_value {<a class="el" href="ERF__SampleData_8H.html#a0b10e5c6476ae6ae0af86ea98adb256e">sampling_covered_value</a>()}</td>
+          <td class="memname">amrex::Real PlaneSampler::m_covered_value {<a class="el" href="ERF__SampleData_8H.html#a0b10e5c6476ae6ae0af86ea98adb256e">sampling_covered_value</a>()}</td>
         </tr>
       </table>
 </div><div class="memdoc">

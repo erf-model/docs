@@ -11,6 +11,6 @@ var ERF__ObsNudgingSeries_8H =
       [ "NComp", "ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3a207ee46baa1e2caed2e1faddce0adea3", null ]
     ] ],
     [ "comp_name", "ERF__ObsNudgingSeries_8H.html#a921cb9f3a74d99aa1abdfc9e2ca90927", null ],
-    [ "parse_station_series", "ERF__ObsNudgingSeries_8H.html#a07bd759549c15526226b514d0d072d12", null ],
-    [ "profiles_at_time", "ERF__ObsNudgingSeries_8H.html#ac2cb7b1bd8e06e1cf8c7f2b9dbc53910", null ]
+    [ "parse_station_series", "ERF__ObsNudgingSeries_8H.html#a46ac95a5144234706c279778f5cadaa0", null ],
+    [ "profiles_at_time", "ERF__ObsNudgingSeries_8H.html#a4c7ef4392d7c8c72198d6bad273f4c1e", null ]
 ];

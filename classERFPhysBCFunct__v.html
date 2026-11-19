@@ -118,19 +118,19 @@ Collaboration diagram for ERFPhysBCFunct_v:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9065eb7bf7459942c0ac88a2dc9f9c1a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a9065eb7bf7459942c0ac88a2dc9f9c1a">ERFPhysBCFunct_v</a> (const int lev, const amrex::Geometry &amp;geom, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, amrex::Array&lt; amrex::Array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a> &gt; bc_extdir_vals, amrex::Array&lt; amrex::Array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a> &gt; bc_neumann_vals, const TerrainType &amp;terrain_type, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, const bool use_real_bcs, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *v_bc_data)</td></tr>
+<tr class="memitem:a9065eb7bf7459942c0ac88a2dc9f9c1a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a9065eb7bf7459942c0ac88a2dc9f9c1a">ERFPhysBCFunct_v</a> (const int lev, const amrex::Geometry &amp;geom, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a> &gt; bc_extdir_vals, amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a> &gt; bc_neumann_vals, const TerrainType &amp;terrain_type, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, const bool use_real_bcs, amrex::Real *v_bc_data)</td></tr>
 <tr class="separator:a9065eb7bf7459942c0ac88a2dc9f9c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a684936c8b176bfd48a383ae1de421777"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a684936c8b176bfd48a383ae1de421777">~ERFPhysBCFunct_v</a> ()</td></tr>
 <tr class="separator:a684936c8b176bfd48a383ae1de421777"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd918ce5b65699cea94c8a061fa4d66e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#abd918ce5b65699cea94c8a061fa4d66e">set_inflow_profiles</a> (const amrex::Array&lt; <a class="el" href="structInflowProfile.html">InflowProfile</a>, 2 *AMREX_SPACEDIM &gt; *profiles)</td></tr>
 <tr class="separator:abd918ce5b65699cea94c8a061fa4d66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b894d4aad7492ff65ca5322c4513a7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a2b894d4aad7492ff65ca5322c4513a7c">impose_inflow_profile_yvel</a> (const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;dest_arr, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; &amp;xvel_arr, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; &amp;yvel_arr, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; &amp;z_nd, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int bccomp)</td></tr>
+<tr class="memitem:a2b894d4aad7492ff65ca5322c4513a7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a2b894d4aad7492ff65ca5322c4513a7c">impose_inflow_profile_yvel</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;xvel_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;yvel_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int bccomp)</td></tr>
 <tr class="separator:a2b894d4aad7492ff65ca5322c4513a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d2a54d5d590c6811b50ea67a45375f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a0d2a54d5d590c6811b50ea67a45375f3">operator()</a> (amrex::MultiFab &amp;mf, amrex::MultiFab &amp;xvel, amrex::MultiFab &amp;yvel, amrex::IntVect const &amp;nghost, const double time, int bccomp, bool do_fb)</td></tr>
 <tr class="separator:a0d2a54d5d590c6811b50ea67a45375f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0118acb2da736e441311582af0a7c9a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a0118acb2da736e441311582af0a7c9a7">impose_lateral_yvel_bcs</a> (const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;dest_arr, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; &amp;xvel_arr, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; &amp;yvel_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int bccomp, const double time)</td></tr>
+<tr class="memitem:a0118acb2da736e441311582af0a7c9a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a0118acb2da736e441311582af0a7c9a7">impose_lateral_yvel_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;xvel_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;yvel_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int bccomp, const double time)</td></tr>
 <tr class="separator:a0118acb2da736e441311582af0a7c9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80f93a841d1e3cc27397ada471d1484f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a80f93a841d1e3cc27397ada471d1484f">impose_vertical_yvel_bcs</a> (const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; &amp;z_nd, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; <a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, int bccomp, const double time)</td></tr>
+<tr class="memitem:a80f93a841d1e3cc27397ada471d1484f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a80f93a841d1e3cc27397ada471d1484f">impose_vertical_yvel_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; <a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, int bccomp, const double time)</td></tr>
 <tr class="separator:a80f93a841d1e3cc27397ada471d1484f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -143,9 +143,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ae26c0b8c1a5145f1e1f2d44717745cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bc0f76b47d1d805161695e977dad5fb"><td class="memItemLeft" align="right" valign="top">amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a0bc0f76b47d1d805161695e977dad5fb">m_domain_bcs_type_d</a></td></tr>
 <tr class="separator:a0bc0f76b47d1d805161695e977dad5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afac2b29228e83f3693609ae1374d91e2"><td class="memItemLeft" align="right" valign="top">amrex::Array&lt; amrex::Array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#afac2b29228e83f3693609ae1374d91e2">m_bc_extdir_vals</a></td></tr>
+<tr class="memitem:afac2b29228e83f3693609ae1374d91e2"><td class="memItemLeft" align="right" valign="top">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#afac2b29228e83f3693609ae1374d91e2">m_bc_extdir_vals</a></td></tr>
 <tr class="separator:afac2b29228e83f3693609ae1374d91e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e82182923ff12b9ee242d7aaf8b25d9"><td class="memItemLeft" align="right" valign="top">amrex::Array&lt; amrex::Array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a7e82182923ff12b9ee242d7aaf8b25d9">m_bc_neumann_vals</a></td></tr>
+<tr class="memitem:a7e82182923ff12b9ee242d7aaf8b25d9"><td class="memItemLeft" align="right" valign="top">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a7e82182923ff12b9ee242d7aaf8b25d9">m_bc_neumann_vals</a></td></tr>
 <tr class="separator:a7e82182923ff12b9ee242d7aaf8b25d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d33f61975394a115a6d94fffd55cefb"><td class="memItemLeft" align="right" valign="top">TerrainType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a7d33f61975394a115a6d94fffd55cefb">m_terrain_type</a></td></tr>
 <tr class="separator:a7d33f61975394a115a6d94fffd55cefb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,7 +153,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:afffa0e227916c179928f9a3eb7a07c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa17ac5983f98d1b13f952fa7f2c39b54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#aa17ac5983f98d1b13f952fa7f2c39b54">m_use_real_bcs</a></td></tr>
 <tr class="separator:aa17ac5983f98d1b13f952fa7f2c39b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1abc171e8cfcd542f4d9e312e0f586c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1">m_v_bc_data</a></td></tr>
+<tr class="memitem:a1abc171e8cfcd542f4d9e312e0f586c1"><td class="memItemLeft" align="right" valign="top">amrex::Real *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1">m_v_bc_data</a></td></tr>
 <tr class="separator:a1abc171e8cfcd542f4d9e312e0f586c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98fb27c39d050c77fd22c5f3714b6ece"><td class="memItemLeft" align="right" valign="top">const amrex::Array&lt; <a class="el" href="structInflowProfile.html">InflowProfile</a>, 2 *AMREX_SPACEDIM &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a98fb27c39d050c77fd22c5f3714b6ece">m_inflow_profiles</a> = nullptr</td></tr>
 <tr class="separator:a98fb27c39d050c77fd22c5f3714b6ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,13 +197,13 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::Array&lt; amrex::Array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a> &gt;&#160;</td>
+          <td class="paramtype">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a> &gt;&#160;</td>
           <td class="paramname"><em>bc_extdir_vals</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::Array&lt; amrex::Array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a> &gt;&#160;</td>
+          <td class="paramtype">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a> &gt;&#160;</td>
           <td class="paramname"><em>bc_neumann_vals</em>, </td>
         </tr>
         <tr>
@@ -227,7 +227,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *&#160;</td>
+          <td class="paramtype">amrex::Real *&#160;</td>
           <td class="paramname"><em>v_bc_data</em>&#160;</td>
         </tr>
         <tr>
@@ -258,26 +258,26 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        : <a class="code" href="classERFPhysBCFunct__v.html#a22e73a039ee130b072f3a9ad079fc160">m_lev</a>(lev),</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a01f7c56f64ac414f4ec69ff8c45a2f2a">m_geom</a>(geom), <a class="code" href="classERFPhysBCFunct__v.html#ae26c0b8c1a5145f1e1f2d44717745cfd">m_domain_bcs_type</a>(domain_bcs_type),</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a0bc0f76b47d1d805161695e977dad5fb">m_domain_bcs_type_d</a>(domain_bcs_type_d),</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#afac2b29228e83f3693609ae1374d91e2">m_bc_extdir_vals</a>(bc_extdir_vals),</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a7e82182923ff12b9ee242d7aaf8b25d9">m_bc_neumann_vals</a>(bc_neumann_vals),</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a7d33f61975394a115a6d94fffd55cefb">m_terrain_type</a>(terrain_type),</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#afffa0e227916c179928f9a3eb7a07c3c">m_z_phys_nd</a>(z_phys_nd.get()),</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#aa17ac5983f98d1b13f952fa7f2c39b54">m_use_real_bcs</a>(use_real_bcs),</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1">m_v_bc_data</a>(v_bc_data)</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    { }</div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_a01f7c56f64ac414f4ec69ff8c45a2f2a"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a01f7c56f64ac414f4ec69ff8c45a2f2a">ERFPhysBCFunct_v::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:425</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_a0bc0f76b47d1d805161695e977dad5fb"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a0bc0f76b47d1d805161695e977dad5fb">ERFPhysBCFunct_v::m_domain_bcs_type_d</a></div><div class="ttdeci">amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; m_domain_bcs_type_d</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:427</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_a1abc171e8cfcd542f4d9e312e0f586c1"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1">ERFPhysBCFunct_v::m_v_bc_data</a></div><div class="ttdeci">amrex::Real * m_v_bc_data</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:433</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_a22e73a039ee130b072f3a9ad079fc160"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a22e73a039ee130b072f3a9ad079fc160">ERFPhysBCFunct_v::m_lev</a></div><div class="ttdeci">int m_lev</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:424</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_a7d33f61975394a115a6d94fffd55cefb"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a7d33f61975394a115a6d94fffd55cefb">ERFPhysBCFunct_v::m_terrain_type</a></div><div class="ttdeci">TerrainType m_terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:430</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_a7e82182923ff12b9ee242d7aaf8b25d9"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a7e82182923ff12b9ee242d7aaf8b25d9">ERFPhysBCFunct_v::m_bc_neumann_vals</a></div><div class="ttdeci">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+NBCVAR_max &gt; m_bc_neumann_vals</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:429</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_aa17ac5983f98d1b13f952fa7f2c39b54"><div class="ttname"><a href="classERFPhysBCFunct__v.html#aa17ac5983f98d1b13f952fa7f2c39b54">ERFPhysBCFunct_v::m_use_real_bcs</a></div><div class="ttdeci">bool m_use_real_bcs</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:432</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_ae26c0b8c1a5145f1e1f2d44717745cfd"><div class="ttname"><a href="classERFPhysBCFunct__v.html#ae26c0b8c1a5145f1e1f2d44717745cfd">ERFPhysBCFunct_v::m_domain_bcs_type</a></div><div class="ttdeci">amrex::Vector&lt; amrex::BCRec &gt; m_domain_bcs_type</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:426</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_afac2b29228e83f3693609ae1374d91e2"><div class="ttname"><a href="classERFPhysBCFunct__v.html#afac2b29228e83f3693609ae1374d91e2">ERFPhysBCFunct_v::m_bc_extdir_vals</a></div><div class="ttdeci">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+NBCVAR_max &gt; m_bc_extdir_vals</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:428</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_afffa0e227916c179928f9a3eb7a07c3c"><div class="ttname"><a href="classERFPhysBCFunct__v.html#afffa0e227916c179928f9a3eb7a07c3c">ERFPhysBCFunct_v::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:431</div></div>
+<div class="fragment"><div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        : <a class="code" href="classERFPhysBCFunct__v.html#a22e73a039ee130b072f3a9ad079fc160">m_lev</a>(lev),</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a01f7c56f64ac414f4ec69ff8c45a2f2a">m_geom</a>(geom), <a class="code" href="classERFPhysBCFunct__v.html#ae26c0b8c1a5145f1e1f2d44717745cfd">m_domain_bcs_type</a>(domain_bcs_type),</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a0bc0f76b47d1d805161695e977dad5fb">m_domain_bcs_type_d</a>(domain_bcs_type_d),</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#afac2b29228e83f3693609ae1374d91e2">m_bc_extdir_vals</a>(bc_extdir_vals),</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a7e82182923ff12b9ee242d7aaf8b25d9">m_bc_neumann_vals</a>(bc_neumann_vals),</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a7d33f61975394a115a6d94fffd55cefb">m_terrain_type</a>(terrain_type),</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#afffa0e227916c179928f9a3eb7a07c3c">m_z_phys_nd</a>(z_phys_nd.get()),</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#aa17ac5983f98d1b13f952fa7f2c39b54">m_use_real_bcs</a>(use_real_bcs),</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1">m_v_bc_data</a>(v_bc_data)</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    { }</div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_a01f7c56f64ac414f4ec69ff8c45a2f2a"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a01f7c56f64ac414f4ec69ff8c45a2f2a">ERFPhysBCFunct_v::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:444</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_a0bc0f76b47d1d805161695e977dad5fb"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a0bc0f76b47d1d805161695e977dad5fb">ERFPhysBCFunct_v::m_domain_bcs_type_d</a></div><div class="ttdeci">amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; m_domain_bcs_type_d</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:446</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_a1abc171e8cfcd542f4d9e312e0f586c1"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1">ERFPhysBCFunct_v::m_v_bc_data</a></div><div class="ttdeci">amrex::Real * m_v_bc_data</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:452</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_a22e73a039ee130b072f3a9ad079fc160"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a22e73a039ee130b072f3a9ad079fc160">ERFPhysBCFunct_v::m_lev</a></div><div class="ttdeci">int m_lev</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:443</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_a7d33f61975394a115a6d94fffd55cefb"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a7d33f61975394a115a6d94fffd55cefb">ERFPhysBCFunct_v::m_terrain_type</a></div><div class="ttdeci">TerrainType m_terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:449</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_a7e82182923ff12b9ee242d7aaf8b25d9"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a7e82182923ff12b9ee242d7aaf8b25d9">ERFPhysBCFunct_v::m_bc_neumann_vals</a></div><div class="ttdeci">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+NBCVAR_max &gt; m_bc_neumann_vals</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:448</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_aa17ac5983f98d1b13f952fa7f2c39b54"><div class="ttname"><a href="classERFPhysBCFunct__v.html#aa17ac5983f98d1b13f952fa7f2c39b54">ERFPhysBCFunct_v::m_use_real_bcs</a></div><div class="ttdeci">bool m_use_real_bcs</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:451</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_ae26c0b8c1a5145f1e1f2d44717745cfd"><div class="ttname"><a href="classERFPhysBCFunct__v.html#ae26c0b8c1a5145f1e1f2d44717745cfd">ERFPhysBCFunct_v::m_domain_bcs_type</a></div><div class="ttdeci">amrex::Vector&lt; amrex::BCRec &gt; m_domain_bcs_type</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:445</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_afac2b29228e83f3693609ae1374d91e2"><div class="ttname"><a href="classERFPhysBCFunct__v.html#afac2b29228e83f3693609ae1374d91e2">ERFPhysBCFunct_v::m_bc_extdir_vals</a></div><div class="ttdeci">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+NBCVAR_max &gt; m_bc_extdir_vals</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:447</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_afffa0e227916c179928f9a3eb7a07c3c"><div class="ttname"><a href="classERFPhysBCFunct__v.html#afffa0e227916c179928f9a3eb7a07c3c">ERFPhysBCFunct_v::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:450</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -304,7 +304,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Destroy the y-velocity physical boundary-condition functor. </p>
-<div class="fragment"><div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -318,25 +318,25 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void ERFPhysBCFunct_v::impose_inflow_profile_yvel </td>
           <td>(</td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>dest_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real const &gt; &amp;&#160;</td>
           <td class="paramname"><em>xvel_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real const &gt; &amp;&#160;</td>
           <td class="paramname"><em>yvel_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real const &gt; &amp;&#160;</td>
           <td class="paramname"><em>z_nd</em>, </td>
         </tr>
         <tr>
@@ -372,7 +372,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dom_lo  = lbound(domain);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dom_hi  = ubound(domain);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> terrain = <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(z_nd);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a>      = <a class="code" href="classERFPhysBCFunct__v.html#a01f7c56f64ac414f4ec69ff8c45a2f2a">m_geom</a>.CellSize(2);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">const</span> Real <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a>      = <a class="code" href="classERFPhysBCFunct__v.html#a01f7c56f64ac414f4ec69ff8c45a2f2a">m_geom</a>.CellSize(2);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; 2; ++dir) {</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__v.html#a01f7c56f64ac414f4ec69ff8c45a2f2a">m_geom</a>.isPeriodic(dir)) { <span class="keywordflow">continue</span>; }</div>
@@ -382,8 +382,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">if</span> (bct &lt; 0) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; prof  = (*m_inflow_profiles)[ori];</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* zt    = prof.z_d.data();</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* ft    = prof.v_d.data();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keyword">const</span> Real* zt    = prof.z_d.data();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keyword">const</span> Real* ft    = prof.v_d.data();</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>   nt    = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(prof.z_d.size());</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">bool</span> upwind = (bct == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a>);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">bool</span> low    = ori.isLow();</div>
@@ -412,19 +412,19 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            {</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> kk = amrex::max(dom_lo.z, amrex::min(k, dom_hi.z));</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <span class="keywordflow">if</span> (upwind) {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> un = (dir == 0) ? xvel_arr(iface, amrex::Clamp(j,ulo.y,uhi.y), amrex::Clamp(kk,ulo.z,uhi.z))</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    <span class="keyword">const</span> Real un = (dir == 0) ? xvel_arr(iface, amrex::Clamp(j,ulo.y,uhi.y), amrex::Clamp(kk,ulo.z,uhi.z))</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                               : yvel_arr(amrex::Clamp(i,vlo.x,vhi.x), jface, amrex::Clamp(kk,vlo.z,vhi.z));</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    <span class="keywordflow">if</span> (low ? (un &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0)) : (un &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0))) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    <span class="keywordflow">if</span> (low ? (un &lt; Real(0.0)) : (un &gt; Real(0.0))) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zq;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                Real zq;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="keywordflow">if</span> (dir == 0) {</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> jj = amrex::max(dom_lo.y, amrex::min(j, dom_hi.y+1));</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                    zq = (terrain) ? <a class="code" href="ERF__InflowProfile_8H.html#ab3173f81dcbd4078e3c34781da89357a">height_above_ground</a>(z_nd, icol, icol+1, jj, jj, kk, dom_lo.z)</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                   : (<span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(kk - dom_lo.z) + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) * <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                   : (<span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(kk - dom_lo.z) + Real(0.5)) * <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a>;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> ii = amrex::max(dom_lo.x, amrex::min(i, dom_hi.x));</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                    zq = (terrain) ? <a class="code" href="ERF__InflowProfile_8H.html#ab3173f81dcbd4078e3c34781da89357a">height_above_ground</a>(z_nd, ii, ii+1, jface, jface, kk, dom_lo.z)</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                                   : (<span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(kk - dom_lo.z) + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) * <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                                   : (<span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(kk - dom_lo.z) + Real(0.5)) * <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a>;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                }</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                dest_arr(i,j,k) = <a class="code" href="ERF__InflowProfile_8H.html#a3b0e245a0c8398ec3bc1279bcb89b6c3">inflow_profile_value</a>(zt, ft, nt, zq);</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            });</div>
@@ -434,8 +434,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__InflowProfile_8H_html_a3b0e245a0c8398ec3bc1279bcb89b6c3"><div class="ttname"><a href="ERF__InflowProfile_8H.html#a3b0e245a0c8398ec3bc1279bcb89b6c3">inflow_profile_value</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real inflow_profile_value(const amrex::Real *z, const amrex::Real *f, const int n, const amrex::Real zq) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_InflowProfile.H:64</div></div>
 <div class="ttc" id="aERF__InflowProfile_8H_html_ab3173f81dcbd4078e3c34781da89357a"><div class="ttname"><a href="ERF__InflowProfile_8H.html#ab3173f81dcbd4078e3c34781da89357a">height_above_ground</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real height_above_ground(const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, int ilo, int ihi, int jlo, int jhi, const int k, const int klo) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_InflowProfile.H:86</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_a98fb27c39d050c77fd22c5f3714b6ece"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a98fb27c39d050c77fd22c5f3714b6ece">ERFPhysBCFunct_v::m_inflow_profiles</a></div><div class="ttdeci">const amrex::Array&lt; InflowProfile, 2 *AMREX_SPACEDIM &gt; * m_inflow_profiles</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:434</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_a98fb27c39d050c77fd22c5f3714b6ece"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a98fb27c39d050c77fd22c5f3714b6ece">ERFPhysBCFunct_v::m_inflow_profiles</a></div><div class="ttdeci">const amrex::Array&lt; InflowProfile, 2 *AMREX_SPACEDIM &gt; * m_inflow_profiles</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:453</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a></div><div class="ttdeci">@ ext_dir_upwind</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:325</div></div>
 <div class="ttc" id="anamespaceWDM6SedCellScratch_html_acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:273</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -461,19 +460,19 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void ERFPhysBCFunct_v::impose_lateral_yvel_bcs </td>
           <td>(</td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>dest_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real const &gt; &amp;&#160;</td>
           <td class="paramname"><em>xvel_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real const &gt; &amp;&#160;</td>
           <td class="paramname"><em>yvel_arr</em>, </td>
         </tr>
         <tr>
@@ -585,7 +584,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (!is_periodic_in_x)</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">// Populate ghost cells on lo-x and hi-x domain boundaries</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* yvel_bc_ptr = <a class="code" href="classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1">m_v_bc_data</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        Real* yvel_bc_ptr = <a class="code" href="classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1">m_v_bc_data</a>;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        Box bx_xlo(bx);  bx_xlo.setBig  (0,dom_lo.x-1);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        Box bx_xhi(bx);  bx_xhi.setSmall(0,dom_hi.x+1);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx_xlo, bx_xhi,</div>
@@ -605,7 +604,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705">ERFBCType::reflect_odd</a>) {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    dest_arr(i,j,k) = -dest_arr(iflip,j,k);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42f56b8b6a6f3b72ff598d9df25651c5">ERFBCType::hoextrap</a>) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> delta_i = (dom_lo.x - i);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    Real delta_i = (dom_lo.x - i);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    dest_arr(i,j,k) = (<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + delta_i)*dest_arr(dom_lo.x,j,k) - delta_i*dest_arr(dom_lo.x+1,j,k);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            },</div>
@@ -625,7 +624,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705">ERFBCType::reflect_odd</a>) {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    dest_arr(i,j,k) = -dest_arr(iflip,j,k);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42f56b8b6a6f3b72ff598d9df25651c5">ERFBCType::hoextrap</a>) {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> delta_i = (i - dom_hi.x);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    Real delta_i = (i - dom_hi.x);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    dest_arr(i,j,k) = (<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + delta_i)*dest_arr(dom_hi.x,j,k) - delta_i*dest_arr(dom_hi.x-1,j,k);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                }</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            }</div>
@@ -635,7 +634,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> (!is_periodic_in_y)</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    {</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="comment">// Populate ghost cells on lo-y and hi-y domain boundaries</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* yvel_bc_ptr = <a class="code" href="classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1">m_v_bc_data</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        Real* yvel_bc_ptr = <a class="code" href="classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1">m_v_bc_data</a>;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        Box bx_ylo(bx);  bx_ylo.setBig  (1,dom_lo.y-1);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        Box bx_yhi(bx);  bx_yhi.setSmall(1,dom_hi.y+2);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        Box bx_ylo_face(bx); bx_ylo_face.setSmall(1,dom_lo.y  ); bx_ylo_face.setBig(1,dom_lo.y  );</div>
@@ -658,9 +657,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705">ERFBCType::reflect_odd</a>) {</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                    dest_arr(i,j,k) = -dest_arr(i,jflip,k);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9">ERFBCType::neumann_int</a>) {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                    dest_arr(i,j,k) = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(4.0)*dest_arr(i,dom_lo.y+1,k) - dest_arr(i,dom_lo.y+2,k))/<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                    dest_arr(i,j,k) = (Real(4.0)*dest_arr(i,dom_lo.y+1,k) - dest_arr(i,dom_lo.y+2,k))/<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42f56b8b6a6f3b72ff598d9df25651c5">ERFBCType::hoextrap</a>) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> delta_j = (dom_lo.y - j);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                    Real delta_j = (dom_lo.y - j);</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                    dest_arr(i,j,k) = (<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + delta_j)*dest_arr(i,dom_lo.y,k) - delta_j*dest_arr(i,dom_lo.y+1,k);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                }</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            },</div>
@@ -672,7 +671,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a> &amp;&amp; yvel_arr(Clamp(i,yvel_lo.x,yvel_hi.x),dom_lo.y,Clamp(k,yvel_lo.z,yvel_hi.z)) &gt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    dest_arr(i,j,k) = (yvel_bc_ptr) ? yvel_bc_ptr[k] : l_bc_extdir_vals_d[0][1];</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9">ERFBCType::neumann_int</a>) {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    dest_arr(i,j,k) = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(4.0)*dest_arr(i,dom_lo.y+1,k) - dest_arr(i,dom_lo.y+2,k))/<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    dest_arr(i,j,k) = (Real(4.0)*dest_arr(i,dom_lo.y+1,k) - dest_arr(i,dom_lo.y+2,k))/<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                }</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            }</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        );</div>
@@ -694,9 +693,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705">ERFBCType::reflect_odd</a>) {</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                    dest_arr(i,j,k) = -dest_arr(i,jflip,k);</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9">ERFBCType::neumann_int</a>) {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                   dest_arr(i,j,k) = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(4.0)*dest_arr(i,dom_hi.y,k) - dest_arr(i,dom_hi.y-1,k))/<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                   dest_arr(i,j,k) = (Real(4.0)*dest_arr(i,dom_hi.y,k) - dest_arr(i,dom_hi.y-1,k))/<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42f56b8b6a6f3b72ff598d9df25651c5">ERFBCType::hoextrap</a>) {</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> delta_j = (j - dom_hi.y - 1);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                    Real delta_j = (j - dom_hi.y - 1);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                    dest_arr(i,j,k) = (<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + delta_j)*dest_arr(i,dom_hi.y+1,k) - delta_j*dest_arr(i,dom_hi.y,k);</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                }</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            },</div>
@@ -708,7 +707,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a> &amp;&amp; yvel_arr(Clamp(i,yvel_lo.x,yvel_hi.x),dom_hi.y+1,Clamp(k,yvel_lo.z,yvel_hi.z)) &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    dest_arr(i,j,k) = (yvel_bc_ptr) ? yvel_bc_ptr[k] : l_bc_extdir_vals_d[0][4];</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9">ERFBCType::neumann_int</a>) {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    dest_arr(i,j,k) = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(4.0)*dest_arr(i,dom_hi.y,k) - dest_arr(i,dom_hi.y-1,k))/<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    dest_arr(i,j,k) = (Real(4.0)*dest_arr(i,dom_hi.y,k) - dest_arr(i,dom_hi.y-1,k))/<a class="code" href="ERF__NumericalConstants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                }</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            }</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        );</div>
@@ -749,7 +748,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void ERFPhysBCFunct_v::impose_vertical_yvel_bcs </td>
           <td>(</td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>dest_arr</em>, </td>
         </tr>
         <tr>
@@ -767,13 +766,13 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real const &gt; &amp;&#160;</td>
           <td class="paramname"><em>z_nd</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt;&#160;</td>
+          <td class="paramtype">const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt;&#160;</td>
           <td class="paramname"><em>dxInv</em>, </td>
         </tr>
         <tr>
@@ -876,7 +875,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705">ERFBCType::reflect_odd</a>) {</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                    dest_arr(i,j,k) = -dest_arr(i,j,kflip);</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42f56b8b6a6f3b72ff598d9df25651c5">ERFBCType::hoextrap</a>) {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> delta_k = (dom_lo.z - k);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                    Real delta_k = (dom_lo.z - k);</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    dest_arr(i,j,k) = (<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + delta_k)*dest_arr(i,j,dom_lo.z) - delta_k*dest_arr(i,j,dom_lo.z+1);</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                }</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            },</div>
@@ -893,7 +892,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705">ERFBCType::reflect_odd</a>) {</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                    dest_arr(i,j,k) = -dest_arr(i,j,kflip);</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[0].<a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42f56b8b6a6f3b72ff598d9df25651c5">ERFBCType::hoextrap</a>){</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> delta_k = (k - dom_hi.z);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                    Real delta_k = (k - dom_hi.z);</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                    dest_arr(i,j,k) = (<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + delta_k)*dest_arr(i,j,dom_hi.z) - delta_k*dest_arr(i,j,dom_hi.z-1);</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                }</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            }</div>
@@ -922,7 +921,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <span class="keywordtype">int</span> k0 = 0;</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="comment">// Get the dz cell size</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a> = geomdata.CellSize(2);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            Real <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a> = geomdata.CellSize(2);</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            <span class="comment">// Fill all the Neumann srcs with terrain</span></div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(xybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
@@ -934,13 +933,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                    jj = amrex::min(amrex::max(jj,zphys_lo.y),zphys_hi.y);</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                <span class="comment">// Get metrics</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_xi   = <a class="code" href="ERF__TerrainMetrics_8H.html#a9ec5ec17f16954e56733db6dd98fe07d">Compute_h_xi_AtJface</a>  (ii, jj, k0, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, z_phys_nd);</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_eta  = <a class="code" href="ERF__TerrainMetrics_8H.html#a1bd1550a0467cfa83e96893d943b1047">Compute_h_eta_AtJface</a> (ii, jj, k0, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, z_phys_nd);</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(ii, jj, k0, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, z_phys_nd);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                Real met_h_xi   = <a class="code" href="ERF__TerrainMetrics_8H.html#a9ec5ec17f16954e56733db6dd98fe07d">Compute_h_xi_AtJface</a>  (ii, jj, k0, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, z_phys_nd);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                Real met_h_eta  = <a class="code" href="ERF__TerrainMetrics_8H.html#a1bd1550a0467cfa83e96893d943b1047">Compute_h_eta_AtJface</a> (ii, jj, k0, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, z_phys_nd);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                Real met_h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(ii, jj, k0, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, z_phys_nd);</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <span class="comment">// GradX at IJK location inside domain -- this relies on the assumption that we have</span></div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> GradVarx, GradVary;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                Real GradVarx, GradVary;</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="keywordflow">if</span> ( i &lt; dom_lo.x-1 || i &gt; dom_hi.x+1 || (i+1 &gt; bx_hi.x &amp;&amp; i-1 &lt; bx_lo.x) ) {</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                    GradVarx = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i+1 &gt; bx_hi.x) {</div>
@@ -964,7 +963,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                }</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                <span class="comment">// Prefactor</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_fac =  met_h_zeta / ( met_h_xi*met_h_xi + met_h_eta*met_h_eta + <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> );</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                Real met_fac =  met_h_zeta / ( met_h_xi*met_h_xi + met_h_eta*met_h_eta + <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> );</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                <span class="comment">// Accumulate in bottom ghost cell (EXTRAP already populated)</span></div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                dest_arr(i,j,k) -= <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a> * met_fac * ( met_h_xi * GradVarx + met_h_eta * GradVary );</div>
@@ -1151,7 +1150,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    }</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;} <span class="comment">// operator()</span></div>
 <div class="ttc" id="aclassERFPhysBCFunct__v_html_a2b894d4aad7492ff65ca5322c4513a7c"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a2b894d4aad7492ff65ca5322c4513a7c">ERFPhysBCFunct_v::impose_inflow_profile_yvel</a></div><div class="ttdeci">void impose_inflow_profile_yvel(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;xvel_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;yvel_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int bccomp)</div><div class="ttdef"><b>Definition:</b> ERF_BoundaryConditionsInflowProfile.cpp:106</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_adc8cb8944e51b61a447a6bc70bf17182"><div class="ttname"><a href="classERFPhysBCFunct__v.html#adc8cb8944e51b61a447a6bc70bf17182">ERFPhysBCFunct_v::m_below_ground_sync</a></div><div class="ttdeci">BelowGroundGhostSync m_below_ground_sync</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:435</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_adc8cb8944e51b61a447a6bc70bf17182"><div class="ttname"><a href="classERFPhysBCFunct__v.html#adc8cb8944e51b61a447a6bc70bf17182">ERFPhysBCFunct_v::m_below_ground_sync</a></div><div class="ttdeci">BelowGroundGhostSync m_below_ground_sync</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:454</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:232</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:233</div></div>
 </div><!-- fragment -->
@@ -1181,7 +1180,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Terrain-following inflow profiles per face (xlo.inflow_profile), owned by <a class="el" href="classERF.html">ERF</a> </p>
-<div class="fragment"><div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;{ <a class="code" href="classERFPhysBCFunct__v.html#a98fb27c39d050c77fd22c5f3714b6ece">m_inflow_profiles</a> = profiles; }</div>
+<div class="fragment"><div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;{ <a class="code" href="classERFPhysBCFunct__v.html#a98fb27c39d050c77fd22c5f3714b6ece">m_inflow_profiles</a> = profiles; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1196,7 +1195,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Array&lt;amrex::Array&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM*2&gt;,AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a>&gt; ERFPhysBCFunct_v::m_bc_extdir_vals</td>
+          <td class="memname">amrex::Array&lt;amrex::Array&lt;amrex::Real, AMREX_SPACEDIM*2&gt;,AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a>&gt; ERFPhysBCFunct_v::m_bc_extdir_vals</td>
         </tr>
       </table>
   </td>
@@ -1218,7 +1217,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Array&lt;amrex::Array&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM*2&gt;,AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a>&gt; ERFPhysBCFunct_v::m_bc_neumann_vals</td>
+          <td class="memname">amrex::Array&lt;amrex::Array&lt;amrex::Real, AMREX_SPACEDIM*2&gt;,AMREX_SPACEDIM+<a class="el" href="ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c">NBCVAR_max</a>&gt; ERFPhysBCFunct_v::m_bc_neumann_vals</td>
         </tr>
       </table>
   </td>
@@ -1418,7 +1417,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* ERFPhysBCFunct_v::m_v_bc_data</td>
+          <td class="memname">amrex::Real* ERFPhysBCFunct_v::m_v_bc_data</td>
         </tr>
       </table>
   </td>

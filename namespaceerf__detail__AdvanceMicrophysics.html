@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('namespaceerf__detail__AdvanceMicrophys
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a69e2de93cc8f19a13d8a94cff65f9a36"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__AdvanceMicrophysics.html#a69e2de93cc8f19a13d8a94cff65f9a36">make_sed_inflow</a> (const BoxArray &amp;ba, const DistributionMapping &amp;dm, const Box &amp;domain, const IntVect &amp;rr, const <a class="el" href="structSedimentationFlux.html">SedimentationFlux</a> &amp;crse, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dt_fine, MultiFab &amp;inflow)</td></tr>
+<tr class="memitem:a69e2de93cc8f19a13d8a94cff65f9a36"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__AdvanceMicrophysics.html#a69e2de93cc8f19a13d8a94cff65f9a36">make_sed_inflow</a> (const BoxArray &amp;ba, const DistributionMapping &amp;dm, const Box &amp;domain, const IntVect &amp;rr, const <a class="el" href="structSedimentationFlux.html">SedimentationFlux</a> &amp;crse, Real dt_fine, MultiFab &amp;inflow)</td></tr>
 <tr class="separator:a69e2de93cc8f19a13d8a94cff65f9a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c4d77497af4ab0f41cceb163feee188"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__AdvanceMicrophysics.html#a7c4d77497af4ab0f41cceb163feee188">register_sed_fluxes</a> (YAFluxRegister &amp;fr, bool as_crse, const <a class="el" href="structSedimentationFlux.html">SedimentationFlux</a> &amp;sf, const MultiFab &amp;cons, const MultiFab &amp;mfx, const MultiFab &amp;mfy, const Geometry &amp;geom)</td></tr>
 <tr class="separator:a7c4d77497af4ab0f41cceb163feee188"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,7 +136,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>dt_fine</em>, </td>
         </tr>
         <tr>
@@ -161,7 +161,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span> (!any_short) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(crse.<a class="code" href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">down</a> &amp;&amp; crse.<a class="code" href="structSedimentationFlux.html#a102f2749b984888d6a4a0c701a04fbf4">dt</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0));</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(crse.<a class="code" href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">down</a> &amp;&amp; crse.<a class="code" href="structSedimentationFlux.html#a102f2749b984888d6a4a0c701a04fbf4">dt</a> &gt; Real(0));</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = crse.<a class="code" href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">down</a>-&gt;nComp();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// The coarse faces over the top face of each fine box, on the fine distribution</span></div>
@@ -179,7 +179,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9ad37e67db17cfd059f2852e2673b9e8ef">inflow</a>.define(convert(ba, IntVect(0,0,1)), dm, ncomp+1, 0);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9ad37e67db17cfd059f2852e2673b9e8ef">inflow</a>.setVal(0.0);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> frac = dt_fine / crse.<a class="code" href="structSedimentationFlux.html#a102f2749b984888d6a4a0c701a04fbf4">dt</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">const</span> Real frac = dt_fine / crse.<a class="code" href="structSedimentationFlux.html#a102f2749b984888d6a4a0c701a04fbf4">dt</a>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(inflow); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">const</span> Box&amp; b = ba[mfi.index()];</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (b.bigEnd(2) &gt;= domain.bigEnd(2)) { <span class="keywordflow">continue</span>; }</div>
@@ -198,7 +198,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    in(i,j,k,n) = ct(ic,jc,kc,n) * frac;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                in(i,j,k,ncomp) = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                in(i,j,k,ncomp) = Real(1);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            });</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
@@ -207,7 +207,6 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__IndexDefines_8H_html_adf340bf1893bad34b2bf452d987d86c9ad37e67db17cfd059f2852e2673b9e8ef"><div class="ttname"><a href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9ad37e67db17cfd059f2852e2673b9e8ef">ERF_BC::inflow</a></div><div class="ttdeci">@ inflow</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_a649e184a5c5c6d2eef72a390c18eb4e4"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">module_mp_morr_two_moment::rr</a></div><div class="ttdeci">real(c_double), private rr</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:224</div></div>
 <div class="ttc" id="astructSedimentationFlux_html_a102f2749b984888d6a4a0c701a04fbf4"><div class="ttname"><a href="structSedimentationFlux.html#a102f2749b984888d6a4a0c701a04fbf4">SedimentationFlux::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> ERF_SedimentationFlux.H:41</div></div>
 <div class="ttc" id="astructSedimentationFlux_html_a4fb8506ddd4c50202da07b4354ba3524"><div class="ttname"><a href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">SedimentationFlux::down</a></div><div class="ttdeci">std::shared_ptr&lt; amrex::MultiFab &gt; down</div><div class="ttdef"><b>Definition:</b> ERF_SedimentationFlux.H:39</div></div>
@@ -294,7 +293,7 @@ Here is the caller graph for this function:</div>
 <p>The register works with the advective form d(rho q)/dt = -(m^2/detJ) dF_z/dz on the computational grid, so the downward amount D per unit area over sf.dt is registered as F_z = -D / (sf.dt m_x m_y). Sedimentation has no x or y flux. </p>
 <div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = sf.<a class="code" href="structSedimentationFlux.html#a4fb8506ddd4c50202da07b4354ba3524">down</a>-&gt;nComp();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> inv_dt = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1) / sf.<a class="code" href="structSedimentationFlux.html#a102f2749b984888d6a4a0c701a04fbf4">dt</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">const</span> Real inv_dt = Real(1) / sf.<a class="code" href="structSedimentationFlux.html#a102f2749b984888d6a4a0c701a04fbf4">dt</a>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">cons</a>); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.validbox();</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        FArrayBox fx(surroundingNodes(bx,0), ncomp, The_Async_Arena());</div>

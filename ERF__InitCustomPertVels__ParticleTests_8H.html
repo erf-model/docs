@@ -98,20 +98,20 @@ Functions</h2></td></tr>
 <tr class="separator:a420d78bf983d6025fd797e5276faa2fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf8f0b71a56c6dbc77312a07ce0e0f64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a420d78bf983d6025fd797e5276faa2fb">pp_for_pert_vels</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#adf8f0b71a56c6dbc77312a07ce0e0f64">query</a> (&quot;U_0&quot;, U_0)</td></tr>
 <tr class="separator:adf8f0b71a56c6dbc77312a07ce0e0f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac369a85a69eb433df3e6399def673c31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ac369a85a69eb433df3e6399def673c31">ParallelFor</a> (xbx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zbot=z_sfc_nd(i, j, 0);x_vel_pert(i, j, k)=<a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> *<a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a>/(<a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a> - zbot);})</td></tr>
+<tr class="memitem:ac369a85a69eb433df3e6399def673c31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ac369a85a69eb433df3e6399def673c31">ParallelFor</a> (xbx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { Real zbot=z_sfc_nd(i, j, 0);x_vel_pert(i, j, k)=<a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> *<a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a>/(<a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a> - zbot);})</td></tr>
 <tr class="separator:ac369a85a69eb433df3e6399def673c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2380f6cf0b1ce3875380c9fa45e1f07"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aa2380f6cf0b1ce3875380c9fa45e1f07">ParallelFor</a> (zbx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { z_vel_pert(i, j, k)=<a class="el" href="ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a">WFromOmega</a>(i, j, k, <a class="el" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, x_vel_pert, y_vel_pert, mf_u, mf_v, z_nd, <a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>);})</td></tr>
 <tr class="separator:aa2380f6cf0b1ce3875380c9fa45e1f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a7f74e9554c1ab66998e1319960f1e82c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> = <a class="el" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
+<tr class="memitem:a7f74e9554c1ab66998e1319960f1e82c"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> = <a class="el" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:a7f74e9554c1ab66998e1319960f1e82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39bf0788bda16ae90f09c6eb11cb6106"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a> = phys_zhi(geomdata, lev)</td></tr>
+<tr class="memitem:a39bf0788bda16ae90f09c6eb11cb6106"><td class="memItemLeft" align="right" valign="top">const Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a> = phys_zhi(geomdata, lev)</td></tr>
 <tr class="separator:a39bf0788bda16ae90f09c6eb11cb6106"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aada30199a52709bfe69b46aa5a2b9731"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = geomdata.CellSize()</td></tr>
 <tr class="separator:aada30199a52709bfe69b46aa5a2b9731"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae44ee844a27ad92e3e12a8cfc523ca15"><td class="memItemLeft" align="right" valign="top">amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = <a class="el" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0]</td></tr>
+<tr class="memitem:ae44ee844a27ad92e3e12a8cfc523ca15"><td class="memItemLeft" align="right" valign="top">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = <a class="el" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0]</td></tr>
 <tr class="separator:ae44ee844a27ad92e3e12a8cfc523ca15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -130,7 +130,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">[=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zbot=z_sfc_nd(i, j, 0);x_vel_pert(i, j, k)=<a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> *<a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a>/(<a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a> - zbot);}&#160;</td>
+          <td class="paramtype">[=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { Real zbot=z_sfc_nd(i, j, 0);x_vel_pert(i, j, k)=<a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> *<a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a>/(<a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a> - zbot);}&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -265,7 +265,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> U_0 = <a class="el" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
+          <td class="memname">Real U_0 = <a class="el" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -281,7 +281,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ztop = phys_zhi(geomdata, lev)</td>
+          <td class="memname">const Real ztop = phys_zhi(geomdata, lev)</td>
         </tr>
       </table>
 </div><div class="memdoc">

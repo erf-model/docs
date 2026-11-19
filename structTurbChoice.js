@@ -6,7 +6,6 @@ var structTurbChoice =
     [ "kh_kv_can_differ", "structTurbChoice.html#a7c3614a59283922601fca9beba5f1491", null ],
     [ "pbl_requires_surface_layer", "structTurbChoice.html#afda6be5303ff955c7cc5415d5deb8f18", null ],
     [ "pbl_suppresses_microphysics_condensation", "structTurbChoice.html#ab28a44aa98246cc06c5c2834c6b396d9", null ],
-    [ "uses_eamxx_shoc", "structTurbChoice.html#a5531ae916857b889a20a6e4a6551ec30", null ],
     [ "uses_native_shoc", "structTurbChoice.html#a7588911507d5b592f8f3d24e048130c6", null ],
     [ "uses_shoc_family", "structTurbChoice.html#a6666992840e2253334a557f9e4e10d8e", null ],
     [ "advect_tke", "structTurbChoice.html#a0225887f1a9614b2e84b5319468e3aa7", null ],

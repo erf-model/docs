@@ -174,7 +174,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a47aa75012ec159fee27f0806bff6c4c0"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
-<tr class="memitem:a47aa75012ec159fee27f0806bff6c4c0"><td class="memTemplItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF__SedimentationFlux_8H.html#a47aa75012ec159fee27f0806bff6c4c0">sedimentation_add_column_sums</a> (const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;sed, int n, int i, int j, int <a class="el" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>, int <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sign, F &amp;&amp;w) noexcept</td></tr>
+<tr class="memitem:a47aa75012ec159fee27f0806bff6c4c0"><td class="memTemplItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF__SedimentationFlux_8H.html#a47aa75012ec159fee27f0806bff6c4c0">sedimentation_add_column_sums</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;sed, int n, int i, int j, int <a class="el" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>, int <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>, amrex::Real sign, F &amp;&amp;w) noexcept</td></tr>
 <tr class="separator:a47aa75012ec159fee27f0806bff6c4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -194,7 +194,7 @@ template&lt;typename F &gt; </div>
         <tr>
           <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void sedimentation_add_column_sums </td>
           <td>(</td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>sed</em>, </td>
         </tr>
         <tr>
@@ -230,7 +230,7 @@ template&lt;typename F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>sign</em>, </td>
         </tr>
         <tr>
@@ -254,7 +254,7 @@ template&lt;typename F &gt; </div>
 <p>Add sign * (sum over m = k..khi of w(m)) to sed(i,j,k,n) for every k in [klo, khi].</p>
 <p>Called with sign = +1 and w(m) = rho*q*dz before a sedimentation step and with sign = -1 and the same w after it, this adds to each face k the mass that crossed it downward: what the cells above it lost. The face above khi gets nothing (no inflow). </p>
 <div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sum = 0.0;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    amrex::Real sum = 0.0;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k &gt;= <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>; --k) {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        sum += w(k);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        sed(i,j,k,n) += sign * sum;</div>
@@ -262,7 +262,6 @@ template&lt;typename F &gt; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:25</div></div>
 <div class="ttc" id="aERF__InitCustomPert__KE_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_KE.H:9</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classWDM6.html#a188b61eeaa7c207636d0b988d0b42537">WDM6::AdvanceColumns()</a>, and <a class="el" href="classWSM6.html#a86c541c50bcd3ea8f43b5acf16340ebe">WSM6::AdvanceColumns()</a>.</p>
 <div class="dynheader">

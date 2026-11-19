@@ -111,7 +111,7 @@ Collaboration diagram for GroundAverageDown:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a316fdbcbc128487f6d520a41bf0ab7de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGroundAverageDown.html#a316fdbcbc128487f6d520a41bf0ab7de">GroundAverageDown</a> (const amrex::BoxArray &amp;a_fba, const amrex::DistributionMapping &amp;a_fdm, const amrex::IntVect &amp;a_rr, int a_kf, int a_kc)</td></tr>
 <tr class="separator:a316fdbcbc128487f6d520a41bf0ab7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2326765f7e2d2621f9ff1ed2ca7ce3b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGroundAverageDown.html#a2326765f7e2d2621f9ff1ed2ca7ce3b7">apply</a> (const amrex::MultiFab &amp;a_fine, amrex::MultiFab &amp;a_crse, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a_scale, const int a_fcomp=0, const int a_ccomp=0)</td></tr>
+<tr class="memitem:a2326765f7e2d2621f9ff1ed2ca7ce3b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGroundAverageDown.html#a2326765f7e2d2621f9ff1ed2ca7ce3b7">apply</a> (const amrex::MultiFab &amp;a_fine, amrex::MultiFab &amp;a_crse, const amrex::Real a_scale, const int a_fcomp=0, const int a_ccomp=0)</td></tr>
 <tr class="separator:a2326765f7e2d2621f9ff1ed2ca7ce3b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -241,7 +241,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">const amrex::Real&#160;</td>
           <td class="paramname"><em>a_scale</em>, </td>
         </tr>
         <tr>
@@ -279,7 +279,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> c = <a class="code" href="classGroundAverageDown.html#a959559db0fa92bfced14c3d8f5d9947e">m_tmp</a>.array(mfi);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(mfi.validbox(), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> ic, <span class="keywordtype">int</span> jc, <span class="keywordtype">int</span> kc) noexcept</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sum = 0.0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                amrex::Real sum = 0.0;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = jc*<a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>[1]; j &lt; (jc+1)*<a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>[1]; ++j) {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = ic*<a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>[0]; i &lt; (ic+1)*<a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>[0]; ++i) {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        sum += f(i,j,kf);</div>
@@ -291,7 +291,6 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        a_crse.ParallelCopy(<a class="code" href="classGroundAverageDown.html#a959559db0fa92bfced14c3d8f5d9947e">m_tmp</a>, 0, a_ccomp, 1);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_a649e184a5c5c6d2eef72a390c18eb4e4"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">module_mp_morr_two_moment::rr</a></div><div class="ttdeci">real(c_double), private rr</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:224</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a0283270546a99c123a9a9a12d62c0865">ERF::average_down_precip_accumulators()</a>.</p>

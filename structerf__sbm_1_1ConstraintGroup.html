@@ -117,9 +117,9 @@ Collaboration diagram for erf_sbm::ConstraintGroup:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1489d7065e05c196fa8cb6c91133cdff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ConstraintGroup.html#a1489d7065e05c196fa8cb6c91133cdff">contains</a> (const int component) const noexcept</td></tr>
 <tr class="separator:a1489d7065e05c196fa8cb6c91133cdff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b2d7bee487efebd80a9da9cc471a609"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ConstraintGroup.html#a6b2d7bee487efebd80a9da9cc471a609">evaluate</a> (const <a class="el" href="structerf__sbm_1_1LinearConstraint.html">LinearConstraint</a> &amp;constraint, const std::vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;state) const</td></tr>
+<tr class="memitem:a6b2d7bee487efebd80a9da9cc471a609"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ConstraintGroup.html#a6b2d7bee487efebd80a9da9cc471a609">evaluate</a> (const <a class="el" href="structerf__sbm_1_1LinearConstraint.html">LinearConstraint</a> &amp;constraint, const std::vector&lt; amrex::Real &gt; &amp;state) const</td></tr>
 <tr class="separator:a6b2d7bee487efebd80a9da9cc471a609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaaa697e399d1bc8a3a0d042e9af92947"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ConstraintGroup.html#aaaa697e399d1bc8a3a0d042e9af92947">admissible</a> (const std::vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;state, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *minimum_margin=nullptr, std::string *failed_constraint=nullptr) const</td></tr>
+<tr class="memitem:aaaa697e399d1bc8a3a0d042e9af92947"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1ConstraintGroup.html#aaaa697e399d1bc8a3a0d042e9af92947">admissible</a> (const std::vector&lt; amrex::Real &gt; &amp;state, amrex::Real *minimum_margin=nullptr, std::string *failed_constraint=nullptr) const</td></tr>
 <tr class="separator:aaaa697e399d1bc8a3a0d042e9af92947"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -153,13 +153,13 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">bool erf_sbm::ConstraintGroup::admissible </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>state</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *&#160;</td>
+          <td class="paramtype">amrex::Real *&#160;</td>
           <td class="paramname"><em>minimum_margin</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
@@ -176,17 +176,17 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> minimum = std::numeric_limits&lt;amrex::Real&gt;::infinity();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    amrex::Real minimum = std::numeric_limits&lt;amrex::Real&gt;::infinity();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; constraint : <a class="code" href="structerf__sbm_1_1ConstraintGroup.html#a79fb01f227c0189b7d36664f193844a2">constraints</a>) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> value = <a class="code" href="structerf__sbm_1_1ConstraintGroup.html#a6b2d7bee487efebd80a9da9cc471a609">evaluate</a>(constraint, state);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">const</span> amrex::Real value = <a class="code" href="structerf__sbm_1_1ConstraintGroup.html#a6b2d7bee487efebd80a9da9cc471a609">evaluate</a>(constraint, state);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__cloud__chamber.html#ad6386a142314152cfe77637718c16780">finite</a>(value)) {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> (failed_constraint) *failed_constraint = constraint.semantic_id;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">if</span> (minimum_margin) *minimum_margin = value;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        minimum = std::min(minimum, value);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> scale = [&amp;]() {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> s = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">const</span> amrex::Real scale = [&amp;]() {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            amrex::Real s = amrex::Real(0.0);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; term : constraint.terms) {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">if</span> (term.component &gt;= 0 &amp;&amp; term.component &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(state.size())) {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    s += std::abs(term.coefficient * state[<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(term.component)]);</div>
@@ -194,7 +194,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">return</span> s;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tolerance = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(128.0) *</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">const</span> amrex::Real tolerance = amrex::Real(128.0) *</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;amrex::Real&gt;::epsilon</a>() * scale;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (value &lt; -tolerance) {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">if</span> (failed_constraint) *failed_constraint = constraint.semantic_id;</div>
@@ -205,7 +205,6 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (minimum_margin) *minimum_margin = minimum;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceerf__cloud__chamber_html_ad6386a142314152cfe77637718c16780"><div class="ttname"><a href="namespaceerf__cloud__chamber.html#ad6386a142314152cfe77637718c16780">erf_cloud_chamber::finite</a></div><div class="ttdeci">bool finite(amrex::Real value) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamber.H:375</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
 <div class="ttc" id="astructerf__sbm_1_1ConstraintGroup_html_a6b2d7bee487efebd80a9da9cc471a609"><div class="ttname"><a href="structerf__sbm_1_1ConstraintGroup.html#a6b2d7bee487efebd80a9da9cc471a609">erf_sbm::ConstraintGroup::evaluate</a></div><div class="ttdeci">amrex::Real evaluate(const LinearConstraint &amp;constraint, const std::vector&lt; amrex::Real &gt; &amp;state) const</div><div class="ttdef"><b>Definition:</b> ERF_SBMConstraintGroups.cpp:30</div></div>
@@ -261,7 +260,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> erf_sbm::ConstraintGroup::evaluate </td>
+          <td class="memname">amrex::Real erf_sbm::ConstraintGroup::evaluate </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structerf__sbm_1_1LinearConstraint.html">LinearConstraint</a> &amp;&#160;</td>
           <td class="paramname"><em>constraint</em>, </td>
@@ -269,7 +268,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>state</em>&#160;</td>
         </tr>
         <tr>
@@ -280,7 +279,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> result = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    amrex::Real result = amrex::Real(0.0);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; term : constraint.terms) {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> (term.component &lt; 0 || term.component &gt;= <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(state.size())) {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;constraint references an unavailable component&quot;</span>);</div>

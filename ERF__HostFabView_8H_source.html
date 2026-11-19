@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('ERF__HostFabView_8H_source.html',''); 
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">// The staging FAB carries the device FAB&#39;s own box, so an Array4 taken</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">// from it is indexed with the same global (i,j,k).</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        amrex::Gpu::dtoh_memcpy_async(fab.dataPtr(), <a class="code" href="structERFHostFabView.html#a7102aff300f65a83b7d76585c5251478">dev_fab</a>.dataPtr(),</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                      <a class="code" href="structERFHostFabView.html#a7102aff300f65a83b7d76585c5251478">dev_fab</a>.size() * <span class="keyword">sizeof</span>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                      <a class="code" href="structERFHostFabView.html#a7102aff300f65a83b7d76585c5251478">dev_fab</a>.size() * <span class="keyword">sizeof</span>(amrex::Real));</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        amrex::Gpu::streamSynchronize();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
@@ -155,7 +155,6 @@ $(document).ready(function(){initNavTree('ERF__HostFabView_8H_source.html',''); 
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ERF_HOST_FAB_VIEW_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="astructERFHostFabView_html"><div class="ttname"><a href="structERFHostFabView.html">ERFHostFabView</a></div><div class="ttdef"><b>Definition:</b> ERF_HostFabView.H:39</div></div>
 <div class="ttc" id="astructERFHostFabView_html_a54d69ce1fa68d5cee820bd03985ad616"><div class="ttname"><a href="structERFHostFabView.html#a54d69ce1fa68d5cee820bd03985ad616">ERFHostFabView::ERFHostFabView</a></div><div class="ttdeci">ERFHostFabView(const amrex::FArrayBox &amp;d)</div><div class="ttdef"><b>Definition:</b> ERF_HostFabView.H:60</div></div>
 <div class="ttc" id="astructERFHostFabView_html_a7102aff300f65a83b7d76585c5251478"><div class="ttname"><a href="structERFHostFabView.html#a7102aff300f65a83b7d76585c5251478">ERFHostFabView::dev_fab</a></div><div class="ttdeci">const amrex::FArrayBox * dev_fab</div><div class="ttdef"><b>Definition:</b> ERF_HostFabView.H:58</div></div>

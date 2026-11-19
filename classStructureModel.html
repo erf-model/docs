@@ -296,9 +296,8 @@ Public Member Functions</h2></td></tr>
 <p>One cell-centred component written into dst at component comp, on dst's boxes, with no ghost cells; zero where the model has nothing (for example on levels other than <a class="el" href="classStructureModel.html#aea3eccca08db1897aa25e06d6b6b8e2d" title="The level the model couples to.">level()</a>). </p>
 <div class="fragment"><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    {</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        amrex::ignore_unused(<a class="code" href="classStructureModel.html#ad209caf9b942ffde27b6aa98c1d806f9">name</a>, lev);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        dst.setVal(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), comp, 1, 0);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        dst.setVal(amrex::Real(0.0), comp, 1, 0);</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassStructureModel_html_ad209caf9b942ffde27b6aa98c1d806f9"><div class="ttname"><a href="classStructureModel.html#ad209caf9b942ffde27b6aa98c1d806f9">StructureModel::name</a></div><div class="ttdeci">virtual const char * name() const =0</div><div class="ttdoc">Name of the model, as erf.structures.model selects it.</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>

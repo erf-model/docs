@@ -134,7 +134,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afd75fe60b497df63072012b422a65480"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestoreSnow.html#afd75fe60b497df63072012b422a65480">defined</a> (int lev) const noexcept</td></tr>
 <tr class="memdesc:afd75fe60b497df63072012b422a65480"><td class="mdescLeft">&#160;</td><td class="mdescRight">True once define_level allocated <code>lev</code>.  <a href="classForceRestoreSnow.html#afd75fe60b497df63072012b422a65480">More...</a><br /></td></tr>
 <tr class="separator:afd75fe60b497df63072012b422a65480"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d195fe64dff4af25b8ff22f8b5726ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structForceRestoreSnow_1_1StepSums.html">StepSums</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestoreSnow.html#a3d195fe64dff4af25b8ff22f8b5726ee">step</a> (int lev, amrex::MultiFab &amp;t_s, const amrex::MultiFab &amp;lh, const amrex::MultiFab *footprint, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt, const <a class="el" href="structForceRestoreSnowParams.html">ForceRestoreSnowParams</a> &amp;prm, const <a class="el" href="structForceRestorePrecipInput.html">ForceRestorePrecipInput</a> &amp;snowfall, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;t_s_sum_local, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;t_s_max_local, const amrex::iMultiFab *land_mask=nullptr)</td></tr>
+<tr class="memitem:a3d195fe64dff4af25b8ff22f8b5726ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structForceRestoreSnow_1_1StepSums.html">StepSums</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestoreSnow.html#a3d195fe64dff4af25b8ff22f8b5726ee">step</a> (int lev, amrex::MultiFab &amp;t_s, const amrex::MultiFab &amp;lh, const amrex::MultiFab *footprint, amrex::Real dt, const <a class="el" href="structForceRestoreSnowParams.html">ForceRestoreSnowParams</a> &amp;prm, const <a class="el" href="structForceRestorePrecipInput.html">ForceRestorePrecipInput</a> &amp;snowfall, amrex::Real &amp;t_s_sum_local, amrex::Real &amp;t_s_max_local, const amrex::iMultiFab *land_mask=nullptr)</td></tr>
 <tr class="memdesc:a3d195fe64dff4af25b8ff22f8b5726ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">One snow step on every open column of <code>lev</code>, after the balance has updated T_s. A footprint cell (footprint &gt; 0.5) keeps its state and hands the soil no water; so does a water column (land_mask 0), which the balance does not run on.  <a href="classForceRestoreSnow.html#a3d195fe64dff4af25b8ff22f8b5726ee">More...</a><br /></td></tr>
 <tr class="separator:a3d195fe64dff4af25b8ff22f8b5726ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64665285b57fd085980f13df26a487a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestoreSnow.html#a64665285b57fd085980f13df26a487a8">apply_albedo</a> (int lev, amrex::MultiFab &amp;alb_sw, const <a class="el" href="structForceRestoreSnowParams.html">ForceRestoreSnowParams</a> &amp;prm, const amrex::MultiFab *footprint=nullptr, const amrex::iMultiFab *land_mask=nullptr) const</td></tr>
@@ -267,7 +267,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="comment">// step() takes the snow off a footprint, but W_n there still holds the initial</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <span class="comment">// value before the first step (at the start, and after a restart from a</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="comment">// checkpoint without the snow layer).</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <span class="keywordflow">if</span> (has_foot &amp;&amp; foot(i, j, k) &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <span class="keywordflow">if</span> (has_foot &amp;&amp; foot(i, j, k) &gt; Real(0.5)) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="comment">// Nor on a water column, the same columns step() leaves out.</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">if</span> (mask.<a class="code" href="structSEBLandMaskView.html#a773d317314a7f123af74d478f96223f2">water</a>(i, j)) { return; }</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            a(i, j, k) = <a class="code" href="ERF__ForceRestoreSnow_8H.html#aa36952947311903ba9dd551901d17f03">force_restore_snow_albedo</a>(a(i, j, k), wn(i, j, k), prm);</div>
@@ -278,7 +278,6 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__SEBLandMask_8H_html_a01489bee60b5d4dac415c7238ab4f0f2"><div class="ttname"><a href="ERF__SEBLandMask_8H.html#a01489bee60b5d4dac415c7238ab4f0f2">seb_land_mask_view</a></div><div class="ttdeci">SEBLandMaskView seb_land_mask_view(const amrex::iMultiFab *mask, const amrex::MFIter &amp;mfi)</div><div class="ttdoc">The view of mask on the box of mfi; off when mask is nullptr.</div><div class="ttdef"><b>Definition:</b> ERF_SEBLandMask.H:54</div></div>
 <div class="ttc" id="aERF__SEBLandMask_8H_html_a99f5157556974d215c290baff25b66f4"><div class="ttname"><a href="ERF__SEBLandMask_8H.html#a99f5157556974d215c290baff25b66f4">seb_assert_land_mask_layout</a></div><div class="ttdeci">void seb_assert_land_mask_layout(const amrex::iMultiFab *mask, const amrex::FabArrayBase &amp;field, const char *who)</div><div class="ttdoc">Stop when mask is given and is not on the grids of field.</div><div class="ttdef"><b>Definition:</b> ERF_SEBLandMask.H:43</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassForceRestoreSnow_html_a497ad601137a5aef170f982fdf9e7382"><div class="ttname"><a href="classForceRestoreSnow.html#a497ad601137a5aef170f982fdf9e7382">ForceRestoreSnow::m_swe</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; m_swe</div><div class="ttdoc">W_n.</div><div class="ttdef"><b>Definition:</b> ERF_ForceRestoreSnowState.H:125</div></div>
 <div class="ttc" id="aclassForceRestoreSnow_html_afd75fe60b497df63072012b422a65480"><div class="ttname"><a href="classForceRestoreSnow.html#afd75fe60b497df63072012b422a65480">ForceRestoreSnow::defined</a></div><div class="ttdeci">bool defined(int lev) const noexcept</div><div class="ttdoc">True once define_level allocated lev.</div><div class="ttdef"><b>Definition:</b> ERF_ForceRestoreSnowState.H:63</div></div>
 <div class="ttc" id="astructSEBLandMaskView_html"><div class="ttname"><a href="structSEBLandMaskView.html">SEBLandMaskView</a></div><div class="ttdoc">The land mask of one box, for a device kernel. Captured by value.</div><div class="ttdef"><b>Definition:</b> ERF_SEBLandMask.H:29</div></div>
@@ -636,7 +635,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>dt</em>, </td>
         </tr>
         <tr>
@@ -654,13 +653,13 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>t_s_sum_local</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>t_s_max_local</em>, </td>
         </tr>
         <tr>
@@ -695,14 +694,14 @@ Here is the call graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>the step's domain sums, reduced over ranks </dd></dl>
 <div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    StepSums sums;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    t_s_sum_local = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    t_s_sum_local = Real(0.0);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    t_s_max_local = std::numeric_limits&lt;Real&gt;::lowest();</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classForceRestoreSnow.html#afd75fe60b497df63072012b422a65480">defined</a>(lev)) { <span class="keywordflow">return</span> sums; }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="ERF__SEBLandMask_8H.html#a99f5157556974d215c290baff25b66f4">seb_assert_land_mask_layout</a>(land_mask, t_s, <span class="stringliteral">&quot;ForceRestoreSnow::step&quot;</span>);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// The snowfall of the step: the rate times its scale (ERF_ForceRestorePrecipRate.H).</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> has_snowfall = snowfall.<a class="code" href="structForceRestorePrecipInput.html#af00a719ca1db8177e2358294c8901bf4">rate</a> != <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> snow_scale = snowfall.<a class="code" href="structForceRestorePrecipInput.html#a440638b08ad4307e96ab0584ec24e899">scale</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> Real snow_scale = snowfall.<a class="code" href="structForceRestorePrecipInput.html#a440638b08ad4307e96ab0584ec24e899">scale</a>;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> snow_comp = snowfall.<a class="code" href="structForceRestorePrecipInput.html#a87365c3360e08a9311c4f2365683363d">comp</a>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// The last sum counts the columns the step left in a state the caller refuses.</span></div>
@@ -728,7 +727,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        reduce_op.eval(bx, reduce_data,</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept -&gt; ReduceTuple</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">if</span> ((has_foot &amp;&amp; foot(i, j, k) &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) || mask.<a class="code" href="structSEBLandMaskView.html#a773d317314a7f123af74d478f96223f2">water</a>(i, j)) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">if</span> ((has_foot &amp;&amp; foot(i, j, k) &gt; Real(0.5)) || mask.<a class="code" href="structSEBLandMaskView.html#a773d317314a7f123af74d478f96223f2">water</a>(i, j)) {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="comment">// No snow lies on a building footprint, and the layer is not kept on water</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="comment">// (the balance does not run there): the initial cover is taken off.</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                wn(i, j, k) = Real(0.0);</div>
@@ -736,12 +735,12 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                return {Real(0.), Real(0.), Real(0.), Real(0.), Real(0.), Long(0), Real(0.),</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                        std::numeric_limits&lt;Real&gt;::lowest(), Long(0)};</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8ad6cb403596ec7a348234a3a3bf0221bc">p</a> = has_snowfall ? pn(i, j, k, snow_comp) * snow_scale : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> e = le(i, j, k) / <a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keyword">const</span> Real <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8ad6cb403596ec7a348234a3a3bf0221bc">p</a> = has_snowfall ? pn(i, j, k, snow_comp) * snow_scale : Real(0.0);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keyword">const</span> Real e = le(i, j, k) / <a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w_old = wn(i, j, k);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> t_old = ts(i, j, k);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w_c = w_old, t_c = t_old;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keyword">const</span> Real w_old = wn(i, j, k);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keyword">const</span> Real t_old = ts(i, j, k);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            Real w_c = w_old, t_c = t_old;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keyword">const</span> <a class="code" href="structForceRestoreSnowFluxes.html">ForceRestoreSnowFluxes</a> f = <a class="code" href="ERF__ForceRestoreSnow_8H.html#a26ee9ee59b97035a9028b2cac73a9167">force_restore_snow_step</a>(w_c, t_c, <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8ad6cb403596ec7a348234a3a3bf0221bc">p</a>, e, dt, prm);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            wn(i, j, k) = w_c;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            ts(i, j, k) = t_c;</div>
@@ -752,22 +751,22 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            tot(i, j, k, <a class="code" href="classForceRestoreSnow.html#a735c34830f8d7e5c6b77d213171fc4aaa28282e8dcae25c51d0fadf84bbbaabed">Melt</a>)        += f.<a class="code" href="structForceRestoreSnowFluxes.html#a008fdc37bf6789d718ad6c683ae87a70">melt</a>;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="comment">// The column&#39;s snow budget, DRM95 Eq. (6), which closes to round-off.</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> residual = amrex::Math::abs((w_c - w_old)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keyword">const</span> Real residual = amrex::Math::abs((w_c - w_old)</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                                   - (f.<a class="code" href="structForceRestoreSnowFluxes.html#ac07494ce1d873f7e252e6c81c1114083">snowfall</a> - f.<a class="code" href="structForceRestoreSnowFluxes.html#ad9b63dfafda082bf1df5ec2463d46fa2">sublimation</a> - f.<a class="code" href="structForceRestoreSnowFluxes.html#a008fdc37bf6789d718ad6c683ae87a70">melt</a>));</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="comment">// A column is refused on what the step was given as well as on what it leaves: the</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="comment">// bounds of the step (the melt, the upper bound of T_s) can hide a bad input.</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">bool</span> bad = !amrex::Math::isfinite(t_old) || !amrex::Math::isfinite(w_old) ||</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                             w_old &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0) ||</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                             w_old &lt; Real(0.0) ||</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                             !amrex::Math::isfinite(t_c) || !amrex::Math::isfinite(w_c) ||</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                             w_c &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                             w_c &lt; Real(0.0);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">return</span> {f.<a class="code" href="structForceRestoreSnowFluxes.html#ac07494ce1d873f7e252e6c81c1114083">snowfall</a>, f.<a class="code" href="structForceRestoreSnowFluxes.html#ad9b63dfafda082bf1df5ec2463d46fa2">sublimation</a>, f.<a class="code" href="structForceRestoreSnowFluxes.html#a008fdc37bf6789d718ad6c683ae87a70">melt</a>, w_c, residual, Long(1), t_c,</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    amrex::Math::abs(t_c), bad ? Long(1) : Long(0)};</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        });</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    ReduceTuple h = reduce_data.value(reduce_op);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> s[4] = {amrex::get&lt;0&gt;(h), amrex::get&lt;1&gt;(h), amrex::get&lt;2&gt;(h), amrex::get&lt;3&gt;(h)};</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rmax = amrex::get&lt;4&gt;(h);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    Real s[4] = {amrex::get&lt;0&gt;(h), amrex::get&lt;1&gt;(h), amrex::get&lt;2&gt;(h), amrex::get&lt;3&gt;(h)};</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    Real rmax = amrex::get&lt;4&gt;(h);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// The two counts go through one collective.</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    Long counts[2] = {amrex::get&lt;5&gt;(h), amrex::get&lt;8&gt;(h)};</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    t_s_sum_local = amrex::get&lt;6&gt;(h);</div>

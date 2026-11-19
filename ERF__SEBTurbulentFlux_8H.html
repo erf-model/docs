@@ -167,10 +167,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a303434d4e6fbf77e8c5e88dac2f45853"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532">SEBFluxOrigin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SEBTurbulentFlux_8H.html#a303434d4e6fbf77e8c5e88dac2f45853">select_seb_flux_origin</a> (bool land_surface_field_present, SEBTurbulentFluxSource source, bool surface_layer_flux_present) noexcept</td></tr>
 <tr class="memdesc:a303434d4e6fbf77e8c5e88dac2f45853"><td class="mdescLeft">&#160;</td><td class="mdescRight">The precedence rule: land-surface field, then surface layer, then default.  <a href="ERF__SEBTurbulentFlux_8H.html#a303434d4e6fbf77e8c5e88dac2f45853">More...</a><br /></td></tr>
 <tr class="separator:a303434d4e6fbf77e8c5e88dac2f45853"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78ca98452224b41f06e8679dc8fabc21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532">SEBFluxOrigin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SEBTurbulentFlux_8H.html#a78ca98452224b41f06e8679dc8fabc21">fill_seb_turbulent_flux</a> (amrex::MultiFab &amp;seb_flux, <a class="el" href="ERF__SEBTurbulentFlux_8H.html#a90a56c14e23c0b3d911980d3438d70d5">SEBTurbulentFlux</a> kind, const amrex::MultiFab *land_surface_field, const amrex::MultiFab *surface_layer_flux, int surface_k, SEBTurbulentFluxSource source, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fallback)</td></tr>
+<tr class="memitem:a78ca98452224b41f06e8679dc8fabc21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__SEBTurbulentFlux_8H.html#a458980b49c0f8bdd68460060f9280532">SEBFluxOrigin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SEBTurbulentFlux_8H.html#a78ca98452224b41f06e8679dc8fabc21">fill_seb_turbulent_flux</a> (amrex::MultiFab &amp;seb_flux, <a class="el" href="ERF__SEBTurbulentFlux_8H.html#a90a56c14e23c0b3d911980d3438d70d5">SEBTurbulentFlux</a> kind, const amrex::MultiFab *land_surface_field, const amrex::MultiFab *surface_layer_flux, int surface_k, SEBTurbulentFluxSource source, amrex::Real fallback)</td></tr>
 <tr class="memdesc:a78ca98452224b41f06e8679dc8fabc21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the SEB's H or LE [W/m^2] on the valid cells of seb_flux.  <a href="ERF__SEBTurbulentFlux_8H.html#a78ca98452224b41f06e8679dc8fabc21">More...</a><br /></td></tr>
 <tr class="separator:a78ca98452224b41f06e8679dc8fabc21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1025338c07a65482c0f05461f529df6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SEBTurbulentFlux_8H.html#a1025338c07a65482c0f05461f529df6a">fill_seb_field_from_land_surface</a> (amrex::MultiFab &amp;seb_field, const amrex::MultiFab *field, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fallback, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> scale=<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0), const amrex::MultiFab *add_field=nullptr)</td></tr>
+<tr class="memitem:a1025338c07a65482c0f05461f529df6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SEBTurbulentFlux_8H.html#a1025338c07a65482c0f05461f529df6a">fill_seb_field_from_land_surface</a> (amrex::MultiFab &amp;seb_field, const amrex::MultiFab *field, amrex::Real fallback, amrex::Real scale=amrex::Real(1.0), const amrex::MultiFab *add_field=nullptr)</td></tr>
 <tr class="memdesc:a1025338c07a65482c0f05461f529df6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill one 2D surface-energy-balance input from land-surface model fields, cell by cell.  <a href="ERF__SEBTurbulentFlux_8H.html#a1025338c07a65482c0f05461f529df6a">More...</a><br /></td></tr>
 <tr class="separator:a1025338c07a65482c0f05461f529df6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -270,14 +270,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>fallback</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
-          <td class="paramname"><em>scale</em> = <code><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0)</code>, </td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>scale</em> = <code>amrex::Real(1.0)</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -353,7 +353,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>fallback</em>&#160;</td>
         </tr>
         <tr>

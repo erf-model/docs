@@ -195,11 +195,11 @@ Functions</h2></td></tr>
 <tr class="separator:afe3f26a0804dbe21b32ba33a0a219d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade14a6aa24a07311a381556306d3e62e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#ade14a6aa24a07311a381556306d3e62e">if_average_down</a> (const amrex::MultiFab &amp;S_fine, amrex::MultiFab &amp;S_crse, const amrex::MultiFab &amp;beta_fine, const amrex::MultiFab &amp;beta_crse, const amrex::MultiFab &amp;vol_fine, int scomp, int ncomp, const amrex::IntVect &amp;ratio)</td></tr>
 <tr class="separator:ade14a6aa24a07311a381556306d3e62e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02e3c214f8e5a760c762ad8e9f0f1180"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a02e3c214f8e5a760c762ad8e9f0f1180">immersed_wall_dist</a> (amrex::MultiFab &amp;wdist, const amrex::MultiFab &amp;terrain_blank, const amrex::MultiFab &amp;z_phys_nd, const amrex::MultiFab &amp;z_phys_cc, const amrex::Box &amp;domain, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> small_volfrac, amrex::MultiFab *wall_height=nullptr, const amrex::MultiFab *wall_height_crse=nullptr)</td></tr>
+<tr class="memitem:a02e3c214f8e5a760c762ad8e9f0f1180"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a02e3c214f8e5a760c762ad8e9f0f1180">immersed_wall_dist</a> (amrex::MultiFab &amp;wdist, const amrex::MultiFab &amp;terrain_blank, const amrex::MultiFab &amp;z_phys_nd, const amrex::MultiFab &amp;z_phys_cc, const amrex::Box &amp;domain, amrex::Real small_volfrac, amrex::MultiFab *wall_height=nullptr, const amrex::MultiFab *wall_height_crse=nullptr)</td></tr>
 <tr class="separator:a02e3c214f8e5a760c762ad8e9f0f1180"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b8a253be317fc3eeb0c1cfdfe81b1dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a5b8a253be317fc3eeb0c1cfdfe81b1dd">make_ib_wall_face_masks</a> (const amrex::MultiFab &amp;terrain_blank, amrex::MultiFab &amp;mask13, amrex::MultiFab &amp;mask23, amrex::MultiFab &amp;mask33, const amrex::Box &amp;domain, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> small_volfrac, int spacing=0, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a8df85b10e897a77f1f0516906934529b">dz</a>=<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0), <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>=<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.1))</td></tr>
+<tr class="memitem:a5b8a253be317fc3eeb0c1cfdfe81b1dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a5b8a253be317fc3eeb0c1cfdfe81b1dd">make_ib_wall_face_masks</a> (const amrex::MultiFab &amp;terrain_blank, amrex::MultiFab &amp;mask13, amrex::MultiFab &amp;mask23, amrex::MultiFab &amp;mask33, const amrex::Box &amp;domain, amrex::Real small_volfrac, int spacing=0, amrex::Real <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a8df85b10e897a77f1f0516906934529b">dz</a>=amrex::Real(1.0), amrex::Real <a class="el" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>=amrex::Real(0.1))</td></tr>
 <tr class="separator:a5b8a253be317fc3eeb0c1cfdfe81b1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13083ce0fbade87a61458294f91d1643"><td class="memItemLeft" align="right" valign="top">std::pair&lt; int, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a13083ce0fbade87a61458294f91d1643">if_cf_surface_mismatch</a> (const amrex::MultiFab &amp;fine_tb, const amrex::BoxArray &amp;fine_grids, const amrex::BoxArray &amp;crse_grids, const amrex::DistributionMapping &amp;crse_dmap, const amrex::Geometry &amp;crse_geom, const amrex::IntVect &amp;ratio, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> warn)</td></tr>
+<tr class="memitem:a13083ce0fbade87a61458294f91d1643"><td class="memItemLeft" align="right" valign="top">std::pair&lt; int, amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a13083ce0fbade87a61458294f91d1643">if_cf_surface_mismatch</a> (const amrex::MultiFab &amp;fine_tb, const amrex::BoxArray &amp;fine_grids, const amrex::BoxArray &amp;crse_grids, const amrex::DistributionMapping &amp;crse_dmap, const amrex::Geometry &amp;crse_geom, const amrex::IntVect &amp;ratio, amrex::Real warn)</td></tr>
 <tr class="separator:a13083ce0fbade87a61458294f91d1643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accb87d367dfa749571761aa789fd3fea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#accb87d367dfa749571761aa789fd3fea">make_J</a> (const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::MultiFab &amp;detJ_cc)</td></tr>
 <tr class="separator:accb87d367dfa749571761aa789fd3fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -217,9 +217,9 @@ Functions</h2></td></tr>
 <tr class="separator:ae4ec302147b124c88534706646a1cd71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb7450538d7139212cfc15e6fcd383fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#aeb7450538d7139212cfc15e6fcd383fc">MakeProjectionWeights</a> (const amrex::MultiFab &amp;den_div, const amrex::MultiFab &amp;den_mlt, const amrex::MultiFab &amp;xmom, const amrex::MultiFab &amp;ymom, const amrex::MultiFab &amp;zmom, amrex::Array&lt; amrex::MultiFab, AMREX_SPACEDIM &gt; &amp;<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>, const amrex::Box &amp;domain, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_h)</td></tr>
 <tr class="separator:aeb7450538d7139212cfc15e6fcd383fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91d696d640d18a728a3dd9179336ffe8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a91d696d640d18a728a3dd9179336ffe8">MakeAdvectiveProjectionWeights</a> (const amrex::MultiFab &amp;den_div, const amrex::MultiFab &amp;den_mlt, const amrex::MultiFab &amp;xmom, const amrex::MultiFab &amp;ymom, const amrex::MultiFab &amp;zmom, amrex::Array&lt; amrex::MultiFab, AMREX_SPACEDIM &gt; &amp;<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> horiz_upw_frac, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vert_upw_frac, const amrex::Periodicity &amp;<a class="el" href="ERF__ActuatorSpreading_8cpp.html#a40f41e8dc5aa2c6b46cde59a015f4185">period</a>)</td></tr>
+<tr class="memitem:a91d696d640d18a728a3dd9179336ffe8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a91d696d640d18a728a3dd9179336ffe8">MakeAdvectiveProjectionWeights</a> (const amrex::MultiFab &amp;den_div, const amrex::MultiFab &amp;den_mlt, const amrex::MultiFab &amp;xmom, const amrex::MultiFab &amp;ymom, const amrex::MultiFab &amp;zmom, amrex::Array&lt; amrex::MultiFab, AMREX_SPACEDIM &gt; &amp;<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, const amrex::Periodicity &amp;<a class="el" href="ERF__ActuatorSpreading_8cpp.html#a40f41e8dc5aa2c6b46cde59a015f4185">period</a>)</td></tr>
 <tr class="separator:a91d696d640d18a728a3dd9179336ffe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb3c9211edf9fc17b071e01378c84e44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#acb3c9211edf9fc17b071e01378c84e44">compute_influx_outflux_bdy</a> (amrex::FArrayBox &amp;bdy_data_xlo, amrex::FArrayBox &amp;bdy_data_xhi, amrex::FArrayBox &amp;bdy_data_ylo, amrex::FArrayBox &amp;bdy_data_yhi, amrex::Array&lt; amrex::MultiFab *, AMREX_SPACEDIM &gt; &amp;area_vec, const amrex::iMultiFab &amp;mask_x, const amrex::iMultiFab &amp;mask_y, const amrex::Geometry &amp;geom, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;influx, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;outflux, const int n)</td></tr>
+<tr class="memitem:acb3c9211edf9fc17b071e01378c84e44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#acb3c9211edf9fc17b071e01378c84e44">compute_influx_outflux_bdy</a> (amrex::FArrayBox &amp;bdy_data_xlo, amrex::FArrayBox &amp;bdy_data_xhi, amrex::FArrayBox &amp;bdy_data_ylo, amrex::FArrayBox &amp;bdy_data_yhi, amrex::Array&lt; amrex::MultiFab *, AMREX_SPACEDIM &gt; &amp;area_vec, const amrex::iMultiFab &amp;mask_x, const amrex::iMultiFab &amp;mask_y, const amrex::Geometry &amp;geom, amrex::Real &amp;influx, amrex::Real &amp;outflux, const int n)</td></tr>
 <tr class="separator:acb3c9211edf9fc17b071e01378c84e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a4cb18ee065a40fbb1a1ee1d6985315"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a8a4cb18ee065a40fbb1a1ee1d6985315">enforceInOutSolvability_bdy</a> (const amrex::MultiFab &amp;rho0, amrex::FArrayBox &amp;bdy_data_xlo, amrex::FArrayBox &amp;bdy_data_xhi, amrex::FArrayBox &amp;bdy_data_ylo, amrex::FArrayBox &amp;bdy_data_yhi, amrex::Array&lt; amrex::MultiFab *, AMREX_SPACEDIM &gt; &amp;area_vec, const amrex::Geometry &amp;geom, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_h)</td></tr>
 <tr class="separator:a8a4cb18ee065a40fbb1a1ee1d6985315"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -231,7 +231,7 @@ Functions</h2></td></tr>
 <tr class="separator:ab8d345634b200fdd14e878954e222f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd8a972b1781d69a8305bad84f356b68"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE <a class="el" href="structBdyTimeWeights.html">BdyTimeWeights</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#abd8a972b1781d69a8305bad84f356b68">bdy_time_weights</a> (const double time_since_start, const double data_span, const double dT)</td></tr>
 <tr class="separator:abd8a972b1781d69a8305bad84f356b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c92c48ea64fcef9f8cb1ebdb10f9077"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a9c92c48ea64fcef9f8cb1ebdb10f9077">realbdy_compute_interior_ghost_rhs</a> (const double &amp;elapsed_time, const double &amp;start_time, const double &amp;delta_t, const double &amp;start_bdy_time, const double &amp;final_bdy_time, const double &amp;bdy_time_interval, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;nudge_factor, int width, const amrex::Geometry &amp;geom, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_cur_data, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_xlo, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_xhi, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_ylo, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_yhi, std::unique_ptr&lt; <a class="el" href="classReadBndryPlanes.html">ReadBndryPlanes</a> &gt; &amp;m_r2d, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;c_p, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SLM_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>, const bool use_wrf_bdy_density, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;bdy_rho_nudge_factor)</td></tr>
+<tr class="memitem:a9c92c48ea64fcef9f8cb1ebdb10f9077"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a9c92c48ea64fcef9f8cb1ebdb10f9077">realbdy_compute_interior_ghost_rhs</a> (const double &amp;elapsed_time, const double &amp;start_time, const double &amp;delta_t, const double &amp;start_bdy_time, const double &amp;final_bdy_time, const double &amp;bdy_time_interval, const amrex::Real &amp;nudge_factor, int width, const amrex::Geometry &amp;geom, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_cur_data, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_xlo, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_xhi, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_ylo, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_yhi, std::unique_ptr&lt; <a class="el" href="classReadBndryPlanes.html">ReadBndryPlanes</a> &gt; &amp;m_r2d, const amrex::Real &amp;c_p, const amrex::Real &amp;<a class="el" href="ERF__InitCustomPert__SLM_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>, const bool use_wrf_bdy_density, const amrex::Real &amp;bdy_rho_nudge_factor)</td></tr>
 <tr class="separator:a9c92c48ea64fcef9f8cb1ebdb10f9077"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a980857d0da78387b8b54ce93246f19fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a980857d0da78387b8b54ce93246f19fe">fine_compute_interior_ghost_rhs</a> (const double &amp;time, const double &amp;delta_t, const int &amp;width, const int &amp;set_width, const amrex::Geometry &amp;geom, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_c, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_u, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_v, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_w, amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs_f, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data_f)</td></tr>
 <tr class="separator:a980857d0da78387b8b54ce93246f19fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,7 +239,7 @@ Functions</h2></td></tr>
 <tr class="separator:abc0c2271844c330847fe737ed8ab9a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a668d034ff95e9d36a328cd77f7bf3ebc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a668d034ff95e9d36a328cd77f7bf3ebc">Accumulate_Interval_Means</a> (double dt, double &amp;t_mean_cnt, amrex::MultiFab *interval_means, amrex::MultiFab &amp;xvel, amrex::MultiFab &amp;yvel, amrex::MultiFab &amp;zvel, amrex::MultiFab &amp;cons)</td></tr>
 <tr class="separator:a668d034ff95e9d36a328cd77f7bf3ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2249529c08cee787c0b9b56259d3447"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#ac2249529c08cee787c0b9b56259d3447">realbdy_compute_relaxation</a> (const int &amp;icomp, const int &amp;num_var, const int &amp;width, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;ProbLo, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;ProbHi, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;F1, const amrex::Box &amp;bx_xlo, const amrex::Box &amp;bx_xhi, const amrex::Box &amp;bx_ylo, const amrex::Box &amp;bx_yhi, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;arr_xlo, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;arr_xhi, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;arr_ylo, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;arr_yhi, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;data_arr, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rhs_arr, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;c_p, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SLM_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>, const int bdy_moist_nudge_type=0)</td></tr>
+<tr class="memitem:ac2249529c08cee787c0b9b56259d3447"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#ac2249529c08cee787c0b9b56259d3447">realbdy_compute_relaxation</a> (const int &amp;icomp, const int &amp;num_var, const int &amp;width, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;ProbLo, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;ProbHi, const amrex::Real &amp;F1, const amrex::Box &amp;bx_xlo, const amrex::Box &amp;bx_xhi, const amrex::Box &amp;bx_ylo, const amrex::Box &amp;bx_yhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_xlo, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_xhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_ylo, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_yhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;data_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs_arr, const amrex::Real &amp;c_p, const amrex::Real &amp;<a class="el" href="ERF__InitCustomPert__SLM_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>, const int bdy_moist_nudge_type=0)</td></tr>
 <tr class="separator:ac2249529c08cee787c0b9b56259d3447"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acebead6f3a33cb7737a1fea98341c3ae"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#acebead6f3a33cb7737a1fea98341c3ae">ApplyMask</a> (amrex::MultiFab &amp;dst, const amrex::iMultiFab &amp;imask, const int nghost=0)</td></tr>
 <tr class="separator:acebead6f3a33cb7737a1fea98341c3ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -558,7 +558,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        w.<a class="code" href="structBdyTimeWeights.html#af449ae2e84ba7fa6c55a38501b14e5bd">n_lo</a>  = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(time_since_start / dT);</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        w.<a class="code" href="structBdyTimeWeights.html#a61fdfca29ef6694b429000558c0fd568">n_hi</a>  = w.<a class="code" href="structBdyTimeWeights.html#af449ae2e84ba7fa6c55a38501b14e5bd">n_lo</a> + 1;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        w.<a class="code" href="structBdyTimeWeights.html#adeb2414dd6a9a97e903fdae255396b44">alpha</a> = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>((time_since_start - w.<a class="code" href="structBdyTimeWeights.html#af449ae2e84ba7fa6c55a38501b14e5bd">n_lo</a> * dT) / dT);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        w.<a class="code" href="structBdyTimeWeights.html#adeb2414dd6a9a97e903fdae255396b44">alpha</a> = <span class="keyword">static_cast&lt;</span>amrex::Real<span class="keyword">&gt;</span>((time_since_start - w.<a class="code" href="structBdyTimeWeights.html#af449ae2e84ba7fa6c55a38501b14e5bd">n_lo</a> * dT) / dT);</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    }</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(w.<a class="code" href="structBdyTimeWeights.html#adeb2414dd6a9a97e903fdae255396b44">alpha</a> &gt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> &amp;&amp; w.<a class="code" href="structBdyTimeWeights.html#adeb2414dd6a9a97e903fdae255396b44">alpha</a> &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>);</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordflow">return</span> w;</div>
@@ -566,7 +566,6 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:37</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:36</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="astructBdyTimeWeights_html"><div class="ttname"><a href="structBdyTimeWeights.html">BdyTimeWeights</a></div><div class="ttdef"><b>Definition:</b> ERF_Utils.H:376</div></div>
 <div class="ttc" id="astructBdyTimeWeights_html_a61fdfca29ef6694b429000558c0fd568"><div class="ttname"><a href="structBdyTimeWeights.html#a61fdfca29ef6694b429000558c0fd568">BdyTimeWeights::n_hi</a></div><div class="ttdeci">int n_hi</div><div class="ttdef"><b>Definition:</b> ERF_Utils.H:378</div></div>
 <div class="ttc" id="astructBdyTimeWeights_html_adeb2414dd6a9a97e903fdae255396b44"><div class="ttname"><a href="structBdyTimeWeights.html#adeb2414dd6a9a97e903fdae255396b44">BdyTimeWeights::alpha</a></div><div class="ttdeci">amrex::Real alpha</div><div class="ttdef"><b>Definition:</b> ERF_Utils.H:379</div></div>
@@ -685,13 +684,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>influx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>outflux</em>, </td>
         </tr>
         <tr>
@@ -1149,7 +1148,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::pair&lt;int, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; if_cf_surface_mismatch </td>
+          <td class="memname">std::pair&lt;int, amrex::Real&gt; if_cf_surface_mismatch </td>
           <td>(</td>
           <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
           <td class="paramname"><em>fine_tb</em>, </td>
@@ -1187,7 +1186,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>warn</em>&#160;</td>
         </tr>
         <tr>
@@ -1253,7 +1252,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>small_volfrac</em>, </td>
         </tr>
         <tr>
@@ -1376,7 +1375,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>small_volfrac</em>, </td>
         </tr>
         <tr>
@@ -1388,14 +1387,14 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
-          <td class="paramname"><em>dz</em> = <code><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0)</code>, </td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>dz</em> = <code>amrex::Real(1.0)</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
-          <td class="paramname"><em>z0</em> = <code><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.1)</code>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>z0</em> = <code>amrex::Real(0.1)</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1634,13 +1633,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">const amrex::Real&#160;</td>
           <td class="paramname"><em>horiz_upw_frac</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">const amrex::Real&#160;</td>
           <td class="paramname"><em>vert_upw_frac</em>, </td>
         </tr>
         <tr>
@@ -1972,7 +1971,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>nudge_factor</em>, </td>
         </tr>
         <tr>
@@ -2032,13 +2031,13 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>c_p</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>rdOcp</em>, </td>
         </tr>
         <tr>
@@ -2050,7 +2049,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>bdy_rho_nudge_factor</em>&#160;</td>
         </tr>
         <tr>
@@ -2090,25 +2089,25 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>dx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>ProbLo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>ProbHi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>F1</em>, </td>
         </tr>
         <tr>
@@ -2138,49 +2137,49 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>arr_xlo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>arr_xhi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>arr_ylo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>arr_yhi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>data_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>rhs_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>c_p</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>rdOcp</em>, </td>
         </tr>
         <tr>
@@ -2221,13 +2220,13 @@ Here is the call graph for this function:</div>
 </dl>
 <div class="fragment"><div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;{</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    amrex::IntVect iv = bx_xlo.type();</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ioff  = (iv[0]==1) ? <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> : <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>;</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> joff  = (iv[1]==1) ? <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> : <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>;</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    amrex::Real ioff  = (iv[0]==1) ? <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> : <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>;</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    amrex::Real joff  = (iv[1]==1) ? <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> : <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>;</div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160; </div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <span class="comment">// These are defined in ERF_Constants.H</span></div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> l_rdOcp  = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>;</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> cond_fac = <a class="code" href="ERF__MicrophysicsConstants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a> / c_p; <span class="comment">// condensation</span></div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>  sub_fac = <a class="code" href="ERF__MicrophysicsConstants_8H.html#a3ab435b88eae71bef826cb01254ff33d">lsub</a>  / c_p;  <span class="comment">// sublimation</span></div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    amrex::Real l_rdOcp  = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>;</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    amrex::Real cond_fac = <a class="code" href="ERF__MicrophysicsConstants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a> / c_p; <span class="comment">// condensation</span></div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    amrex::Real  sub_fac = <a class="code" href="ERF__MicrophysicsConstants_8H.html#a3ab435b88eae71bef826cb01254ff33d">lsub</a>  / c_p;  <span class="comment">// sublimation</span></div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160; </div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <span class="keywordtype">int</span> nq = num_var;</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160; </div>
@@ -2235,24 +2234,24 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    {</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        <span class="comment">// Corners with x boxes</span></div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = ProbLo[0] + (i + ioff) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = ProbLo[1] + (j + joff) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> x_end  = ProbLo[0] + width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y_end  = ProbLo[1] + width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y_strt = ProbHi[1] - width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> xi     = (x_end - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>) / (x_end - ProbLo[0]);</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> eta_lo = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt; y_end ) ? (y_end  - y) / (y_end  - ProbLo[1]) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> eta_hi = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; y_strt) ? (y - y_strt) / (ProbHi[1] - y_strt) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> eta    = std::max(eta_lo,eta_hi);</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Factor = std::max(xi*xi,eta*eta) * F1;</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = ProbLo[0] + (i + ioff) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = ProbLo[1] + (j + joff) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;        amrex::Real x_end  = ProbLo[0] + width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;        amrex::Real y_end  = ProbLo[1] + width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;        amrex::Real y_strt = ProbHi[1] - width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;        amrex::Real xi     = (x_end - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>) / (x_end - ProbLo[0]);</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        amrex::Real eta_lo = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt; y_end ) ? (y_end  - y) / (y_end  - ProbLo[1]) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        amrex::Real eta_hi = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; y_strt) ? (y - y_strt) / (ProbHi[1] - y_strt) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        amrex::Real eta    = std::max(eta_lo,eta_hi);</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        amrex::Real Factor = std::max(xi*xi,eta*eta) * F1;</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160; </div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        <span class="keywordflow">if</span> (icomp == <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        {</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> exner_pi = <a class="code" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a>(data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),l_rdOcp,</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;            amrex::Real exner_pi = <a class="code" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a>(data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),l_rdOcp,</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;                                                    data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160; </div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            <span class="comment">// qv</span></div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> delta = arr_xlo(i,j,k,0) - data_arr(i,j,k,icomp);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;            amrex::Real delta = arr_xlo(i,j,k,0) - data_arr(i,j,k,icomp);</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;            rhs_arr(i,j,k,icomp) += Factor*delta;</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            <span class="keywordflow">if</span> (bdy_moist_nudge_type==2) {</div>
@@ -2273,7 +2272,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            } <span class="comment">// moist_nudge_type</span></div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; nq; n++) {</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> delta = arr_xlo(i,j,k,n) - data_arr(i,j,k,n+icomp);</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                amrex::Real delta = arr_xlo(i,j,k,n) - data_arr(i,j,k,n+icomp);</div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                rhs_arr(i,j,k,n+icomp) += Factor*delta;</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;            }</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;        }</div>
@@ -2281,24 +2280,24 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    {</div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        <span class="comment">// Corners with x boxes</span></div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = ProbLo[0] + (i + ioff) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = ProbLo[1] + (j + joff) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> x_strt = ProbHi[0] - width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y_strt = ProbHi[1] - width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y_end  = ProbLo[1] + width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> xi     = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - x_strt) / (ProbHi[0] - x_strt);</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> eta_lo = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt; y_end ) ? (y_end  - y) / (y_end  - ProbLo[1]) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> eta_hi = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; y_strt) ? (y - y_strt) / (ProbHi[1] - y_strt) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> eta    = std::max(eta_lo,eta_hi);</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Factor = std::max(xi*xi,eta*eta) * F1;</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = ProbLo[0] + (i + ioff) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = ProbLo[1] + (j + joff) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        amrex::Real x_strt = ProbHi[0] - width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        amrex::Real y_strt = ProbHi[1] - width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        amrex::Real y_end  = ProbLo[1] + width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        amrex::Real xi     = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - x_strt) / (ProbHi[0] - x_strt);</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        amrex::Real eta_lo = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt; y_end ) ? (y_end  - y) / (y_end  - ProbLo[1]) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        amrex::Real eta_hi = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; y_strt) ? (y - y_strt) / (ProbHi[1] - y_strt) : <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        amrex::Real eta    = std::max(eta_lo,eta_hi);</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        amrex::Real Factor = std::max(xi*xi,eta*eta) * F1;</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        <span class="keywordflow">if</span> (icomp == <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        {</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> exner_pi = <a class="code" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a>(data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),l_rdOcp,</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;            amrex::Real exner_pi = <a class="code" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a>(data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),l_rdOcp,</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                                                    data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;            <span class="comment">// qv</span></div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> delta = arr_xhi(i,j,k,0) - data_arr(i,j,k,icomp);</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;            amrex::Real delta = arr_xhi(i,j,k,0) - data_arr(i,j,k,icomp);</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;            rhs_arr(i,j,k,icomp) += Factor*delta;</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160; </div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;            <span class="keywordflow">if</span> (bdy_moist_nudge_type==2) {</div>
@@ -2319,7 +2318,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;            } <span class="comment">// moist_nudge_type</span></div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; nq; n++) {</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> delta = arr_xhi(i,j,k,n) - data_arr(i,j,k,n+icomp);</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                amrex::Real delta = arr_xhi(i,j,k,n) - data_arr(i,j,k,n+icomp);</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;                rhs_arr(i,j,k,n+icomp) += Factor*delta;</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;            }</div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        }</div>
@@ -2329,17 +2328,17 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    {</div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        <span class="comment">// No corners for y boxes</span></div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>      = ProbLo[1] + (j + joff) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y_end  = ProbLo[1] + width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> eta    = (y_end - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>) / (y_end - ProbLo[1]);</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Factor = eta*eta * F1;</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>      = ProbLo[1] + (j + joff) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        amrex::Real y_end  = ProbLo[1] + width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        amrex::Real eta    = (y_end - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>) / (y_end - ProbLo[1]);</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        amrex::Real Factor = eta*eta * F1;</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160; </div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;        <span class="keywordflow">if</span> (icomp == <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)</div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;        {</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> exner_pi = <a class="code" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a>(data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),l_rdOcp,</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;            amrex::Real exner_pi = <a class="code" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a>(data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),l_rdOcp,</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;                                                    data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;            <span class="comment">// qv</span></div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> delta = arr_ylo(i,j,k,0) - data_arr(i,j,k,icomp);</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            amrex::Real delta = arr_ylo(i,j,k,0) - data_arr(i,j,k,icomp);</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;            rhs_arr(i,j,k,icomp) += Factor*delta;</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160; </div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;            <span class="keywordflow">if</span> (bdy_moist_nudge_type==2) {</div>
@@ -2360,7 +2359,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;            } <span class="comment">// moist_nudge_type</span></div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; nq; n++) {</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> delta = arr_ylo(i,j,k,n) - data_arr(i,j,k,n+icomp);</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                amrex::Real delta = arr_ylo(i,j,k,n) - data_arr(i,j,k,n+icomp);</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                rhs_arr(i,j,k,n+icomp) += Factor*delta;</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;            }</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;        }</div>
@@ -2368,17 +2367,17 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    {</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;        <span class="comment">// No corners for y boxes</span></div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>      = ProbLo[1] + (j + joff) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y_strt = ProbHi[1] - width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> eta    = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> - y_strt) / (ProbHi[1] - y_strt);</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Factor = eta*eta * F1;</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>      = ProbLo[1] + (j + joff) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;        amrex::Real y_strt = ProbHi[1] - width * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        amrex::Real eta    = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> - y_strt) / (ProbHi[1] - y_strt);</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        amrex::Real Factor = eta*eta * F1;</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160; </div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        <span class="keywordflow">if</span> (icomp == <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        {</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> exner_pi = <a class="code" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a>(data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),l_rdOcp,</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;            amrex::Real exner_pi = <a class="code" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a>(data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),l_rdOcp,</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                                                    data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/data_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;            <span class="comment">// qv</span></div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> delta = arr_yhi(i,j,k,0) - data_arr(i,j,k,icomp);</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;            amrex::Real delta = arr_yhi(i,j,k,0) - data_arr(i,j,k,icomp);</div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;            rhs_arr(i,j,k,icomp) += Factor*delta;</div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160; </div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;            <span class="keywordflow">if</span> (bdy_moist_nudge_type==2) {</div>
@@ -2399,7 +2398,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;            } <span class="comment">// moist_nudge_type</span></div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; nq; n++) {</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> delta = arr_yhi(i,j,k,n) - data_arr(i,j,k,n+icomp);</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                amrex::Real delta = arr_yhi(i,j,k,n) - data_arr(i,j,k,n+icomp);</div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                rhs_arr(i,j,k,n+icomp) += Factor*delta;</div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;            }</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        }</div>

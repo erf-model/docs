@@ -155,7 +155,7 @@ Include dependency graph for ERF_SolveWithMLMG.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9285fc2860db342a9350ae1bf2e43eef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SolveWithMLMG_8cpp.html#a9285fc2860db342a9350ae1bf2e43eef">solve_with_mlmg</a> (int lev, Vector&lt; MultiFab &gt; &amp;rhs, Vector&lt; MultiFab &gt; &amp;phi, Vector&lt; Array&lt; MultiFab, AMREX_SPACEDIM &gt;&gt; &amp;fluxes, const Geometry &amp;geom, const Vector&lt; IntVect &gt; &amp;ref_ratio, Array&lt; std::string, 2 *AMREX_SPACEDIM &gt; domain_bc_type, int mg_verbose, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> reltol, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> abstol)</td></tr>
+<tr class="memitem:a9285fc2860db342a9350ae1bf2e43eef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SolveWithMLMG_8cpp.html#a9285fc2860db342a9350ae1bf2e43eef">solve_with_mlmg</a> (int lev, Vector&lt; MultiFab &gt; &amp;rhs, Vector&lt; MultiFab &gt; &amp;phi, Vector&lt; Array&lt; MultiFab, AMREX_SPACEDIM &gt;&gt; &amp;fluxes, const Geometry &amp;geom, const Vector&lt; IntVect &gt; &amp;ref_ratio, Array&lt; std::string, 2 *AMREX_SPACEDIM &gt; domain_bc_type, int mg_verbose, Real reltol, Real abstol)</td></tr>
 <tr class="separator:a9285fc2860db342a9350ae1bf2e43eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -216,13 +216,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>reltol</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>abstol</em>&#160;</td>
         </tr>
         <tr>
@@ -270,13 +270,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// V-cycle diverges (#5064). For anisotropic cells, coarsen the directions on their own.</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">bool</span> aniso = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a> = geom.CellSize();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> hmin = std::numeric_limits&lt;Real&gt;::max();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keyword">const</span> Real* <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a> = geom.CellSize();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        Real hmin = std::numeric_limits&lt;Real&gt;::max();</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">if</span> (idim != info.hidden_direction) { hmin = std::min(hmin, <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[idim]); }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">if</span> (idim != info.hidden_direction &amp;&amp; <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[idim] &gt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.5)*hmin) { aniso = <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">if</span> (idim != info.hidden_direction &amp;&amp; <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[idim] &gt;= Real(1.5)*hmin) { aniso = <span class="keyword">true</span>; }</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">if</span> (aniso) {</div>
@@ -329,7 +329,6 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">// ImposeBCsOnPhi(lev, phi[0], geom.Domain()));</span></div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
 <div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_acc64e1753972a11f986bfc7ac9bd9103"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a></div><div class="ttdeci">GpuArray&lt; Real, AMREX_SPACEDIM &gt; dx</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:131</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__SolverUtils_8H_html_a3611957f9ce37c1d538c9a596dc02acf"><div class="ttname"><a href="ERF__SolverUtils_8H.html#a3611957f9ce37c1d538c9a596dc02acf">get_lo_projection_bc</a></div><div class="ttdeci">Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; get_lo_projection_bc(Geometry const &amp;lev_geom, Array&lt; std::string, 2 *AMREX_SPACEDIM &gt; l_domain_bc_type)</div><div class="ttdef"><b>Definition:</b> ERF_SolverUtils.H:20</div></div>
 <div class="ttc" id="aERF__SolverUtils_8H_html_a9071f295efe69b41bdccada862d83682"><div class="ttname"><a href="ERF__SolverUtils_8H.html#a9071f295efe69b41bdccada862d83682">get_hi_projection_bc</a></div><div class="ttdeci">Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; get_hi_projection_bc(Geometry const &amp;lev_geom, Array&lt; std::string, 2 *AMREX_SPACEDIM &gt; l_domain_bc_type)</div><div class="ttdef"><b>Definition:</b> ERF_SolverUtils.H:48</div></div>
 <div class="ttc" id="anamespaceib__wall_html_a7dc8e106dfd34123ba8cd4de917cc291"><div class="ttname"><a href="namespaceib__wall.html#a7dc8e106dfd34123ba8cd4de917cc291">ib_wall::phi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real phi(amrex::Real d, amrex::Real z0, amrex::Real psi) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_ImmersedWallCell.H:176</div></div>

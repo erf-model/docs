@@ -110,12 +110,12 @@ $(document).ready(function(){initNavTree('ERF__NCInterface_8H_source.html',''); 
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//! Wrapper around NetCDF data types</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span><span class="keyword">struct </span>NCDType</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">static</span> constexpr nc_type <a class="code" href="ERF__ShocInterface_8H.html#a008e7f6ae8f621fbb1d876061812b9b2">Int</a> = NC_INT;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">static</span> constexpr nc_type Int = NC_INT;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_FLOAT</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">static</span> constexpr nc_type <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> = NC_FLOAT;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">static</span> constexpr nc_type Real = NC_FLOAT;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">using</span> RType = float;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">static</span> constexpr nc_type <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> = NC_DOUBLE;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">static</span> constexpr nc_type Real = NC_DOUBLE;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">using</span> RType = double;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
@@ -448,8 +448,6 @@ $(document).ready(function(){initNavTree('ERF__NCInterface_8H_source.html',''); 
 <div class="ttc" id="aERF__InitCustomPertVels__CouettePoiseuille_8H_html_a15979e857437874d84fd52db041001af"><div class="ttname"><a href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a></div><div class="ttdeci">pp_for_pert_vels get(&quot;prob_type&quot;, prob_type)</div></div>
 <div class="ttc" id="aERF__Plotfile2DCatalog_8cpp_html_a9b45b3e13bd9167aab02e17e08916231"><div class="ttname"><a href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DCatalog.cpp:139</div></div>
 <div class="ttc" id="aERF__Plotfile2DWaterPath_8cpp_html_aeda6e076414bdf745c60d7b16b6fa0e7"><div class="ttname"><a href="ERF__Plotfile2DWaterPath_8cpp.html#aeda6e076414bdf745c60d7b16b6fa0e7">id</a></div><div class="ttdeci">DiagnosticID id</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DWaterPath.cpp:28</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_a008e7f6ae8f621fbb1d876061812b9b2"><div class="ttname"><a href="ERF__ShocInterface_8H.html#a008e7f6ae8f621fbb1d876061812b9b2">Int</a></div><div class="ttdeci">int Int</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:20</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassncutils_1_1NCFile_html"><div class="ttname"><a href="classncutils_1_1NCFile.html">ncutils::NCFile</a></div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:351</div></div>
 <div class="ttc" id="aclassncutils_1_1NCGroup_html"><div class="ttname"><a href="classncutils_1_1NCGroup.html">ncutils::NCGroup</a></div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:345</div></div>
 <div class="ttc" id="aclassncutils_1_1NCGroup_html_a860fe8aaf1cd7859541c67594fb8eabd"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncutils::NCGroup::ncid</a></div><div class="ttdeci">const int ncid</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:347</div></div>

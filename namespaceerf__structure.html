@@ -95,7 +95,7 @@ Functions</h2></td></tr>
 <tr class="separator:a9e9ab2f4bb1ddc114ac5596ecee68fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd46f85d274d27f9e0467bc9e8d3603d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__structure.html#afd46f85d274d27f9e0467bc9e8d3603d">restrict_face_sources</a> (std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;src, int L, int lev, const Vector&lt; BoxArray &gt; &amp;grids, const Vector&lt; DistributionMapping &gt; &amp;dmap, const Vector&lt; Geometry &gt; &amp;geom, const Vector&lt; IntVect &gt; &amp;ref_ratio, const Vector&lt; const MultiFab * &gt; &amp;detJ)</td></tr>
 <tr class="separator:afd46f85d274d27f9e0467bc9e8d3603d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a031962e37cd24875ef903f3afdb01b09"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__structure.html#a031962e37cd24875ef903f3afdb01b09">face_source_force</a> (const std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;src, const Geometry &amp;geom, const MultiFab *detJ)</td></tr>
+<tr class="memitem:a031962e37cd24875ef903f3afdb01b09"><td class="memItemLeft" align="right" valign="top">std::array&lt; Real, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__structure.html#a031962e37cd24875ef903f3afdb01b09">face_source_force</a> (const std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;src, const Geometry &amp;geom, const MultiFab *detJ)</td></tr>
 <tr class="separator:a031962e37cd24875ef903f3afdb01b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64b9e318a2e9255f5a65e38083bedd03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__structure.html#a64b9e318a2e9255f5a65e38083bedd03">restrict_face_sources</a> (std::array&lt; amrex::MultiFab, AMREX_SPACEDIM &gt; &amp;src, int L, int lev, const amrex::Vector&lt; amrex::BoxArray &gt; &amp;grids, const amrex::Vector&lt; amrex::DistributionMapping &gt; &amp;dmap, const amrex::Vector&lt; amrex::Geometry &gt; &amp;geom, const amrex::Vector&lt; amrex::IntVect &gt; &amp;ref_ratio, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;detJ)</td></tr>
 <tr class="memdesc:a64b9e318a2e9255f5a65e38083bedd03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restrict face-centred momentum sources from level L down to level lev &lt; L.  <a href="namespaceerf__structure.html#a64b9e318a2e9255f5a65e38083bedd03">More...</a><br /></td></tr>
@@ -103,7 +103,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a7532264cdd77815d310e289f7bb05730"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__structure.html#a7532264cdd77815d310e289f7bb05730">scale_by_face_jacobian</a> (amrex::MultiFab &amp;mf, int dir, const amrex::MultiFab &amp;detJ, const amrex::Geometry &amp;geom, bool divide)</td></tr>
 <tr class="memdesc:a7532264cdd77815d310e289f7bb05730"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply (divide = false) or divide (divide = true) the valid faces normal to dir by the face Jacobian J_f described above.  <a href="namespaceerf__structure.html#a7532264cdd77815d310e289f7bb05730">More...</a><br /></td></tr>
 <tr class="separator:a7532264cdd77815d310e289f7bb05730"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcdf9b83014d6f28c43bad123bb9551b"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__structure.html#adcdf9b83014d6f28c43bad123bb9551b">face_source_force</a> (const std::array&lt; amrex::MultiFab, AMREX_SPACEDIM &gt; &amp;src, const amrex::Geometry &amp;geom, const amrex::MultiFab *detJ)</td></tr>
+<tr class="memitem:adcdf9b83014d6f28c43bad123bb9551b"><td class="memItemLeft" align="right" valign="top">std::array&lt; amrex::Real, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__structure.html#adcdf9b83014d6f28c43bad123bb9551b">face_source_force</a> (const std::array&lt; amrex::MultiFab, AMREX_SPACEDIM &gt; &amp;src, const amrex::Geometry &amp;geom, const amrex::MultiFab *detJ)</td></tr>
 <tr class="memdesc:adcdf9b83014d6f28c43bad123bb9551b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The force [N] a face source puts on the air, per direction: the sum over the faces of the source times J_f dx dy dz, each face counted once.  <a href="namespaceerf__structure.html#adcdf9b83014d6f28c43bad123bb9551b">More...</a><br /></td></tr>
 <tr class="separator:adcdf9b83014d6f28c43bad123bb9551b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -115,7 +115,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>,AMREX_SPACEDIM&gt; erf_structure::face_source_force </td>
+          <td class="memname">std::array&lt;amrex::Real,AMREX_SPACEDIM&gt; erf_structure::face_source_force </td>
           <td>(</td>
           <td class="paramtype">const std::array&lt; amrex::MultiFab, AMREX_SPACEDIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>src</em>, </td>
@@ -152,7 +152,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>,AMREX_SPACEDIM&gt; erf_structure::face_source_force </td>
+          <td class="memname">std::array&lt;Real,AMREX_SPACEDIM&gt; erf_structure::face_source_force </td>
           <td>(</td>
           <td class="paramtype">const std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>src</em>, </td>
@@ -178,7 +178,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    std::array&lt;Real,AMREX_SPACEDIM&gt; force{};</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dV = AMREX_D_TERM(geom.CellSize(0), * geom.CellSize(1), * geom.CellSize(2));</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">const</span> Real dV = AMREX_D_TERM(geom.CellSize(0), * geom.CellSize(1), * geom.CellSize(2));</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; AMREX_SPACEDIM; ++d) {</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        MultiFab f(src[d].boxArray(), src[d].DistributionMap(), 1, 0);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        MultiFab::Copy(f, src[d], 0, 0, 1, 0);</div>
@@ -187,7 +187,6 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">return</span> force;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceerf__structure_html_a9e9ab2f4bb1ddc114ac5596ecee68fc8"><div class="ttname"><a href="namespaceerf__structure.html#a9e9ab2f4bb1ddc114ac5596ecee68fc8">erf_structure::scale_by_face_jacobian</a></div><div class="ttdeci">void scale_by_face_jacobian(MultiFab &amp;mf, int dir, const MultiFab &amp;detJ, const Geometry &amp;geom, bool divide)</div><div class="ttdef"><b>Definition:</b> ERF_StructureCoarseSource.cpp:91</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -350,7 +349,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            ng_fine[d] = ref_ratio[l][d] - 1;</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">if</span> (src[d].nGrowVect() != ng_fine) {</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                MultiFab grown(src[d].boxArray(), src[d].DistributionMap(), 1, ng_fine);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                grown.setVal(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0));</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                grown.setVal(Real(0.0));</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                MultiFab::Copy(grown, src[d], 0, 0, 1, 0);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                src[d] = std::move(grown);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            }</div>
@@ -493,13 +492,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keyword">const</span> IntVect <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>(AMREX_D_DECL(i, j, k));   <span class="comment">// the cell on the high side of the face</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            IntVect <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a> = <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>;                           <span class="comment">// and the one on its low side</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>[dir] -= 1;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Jf;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            Real Jf;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">if</span> (!periodic &amp;&amp; hi[dir] == <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a74e685c09f4db0503f3140696dee41b0">dlo</a>) {</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                Jf = J(hi);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!periodic &amp;&amp; hi[dir] == <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a4d615ed5bea4451ee31584e47d99429c">dhi</a>) {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                Jf = J(lo);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                Jf = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * (J(lo) + J(hi));</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                Jf = Real(0.5) * (J(lo) + J(hi));</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            a(i, j, k) = divide ? a(i, j, k) / Jf : a(i, j, k) * Jf;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        });</div>

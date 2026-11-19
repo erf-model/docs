@@ -732,15 +732,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        grids, mapping, <a class="code" href="classerf__sbm_1_1SBMStateManager.html#a5c6ccec111e70bdbf765326f29c02d2b">m_layout</a>.<a class="code" href="classerf__sbm_1_1SBMLayout.html#adb1a22842f1ea1ff789401031d9ef91a">ncomp</a>(), ngrow);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Both buffers are deterministic. Zero is a valid physical spectrum;</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// validity is carried only by the semantic flags below.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    state.old_state-&gt;setVal(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    state.new_state-&gt;setVal(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    state.old_state-&gt;setVal(amrex::Real(0.0));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    state.new_state-&gt;setVal(amrex::Real(0.0));</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    state.old_valid = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    state.new_valid = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    state.old_time = 0.0;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    state.new_time = current_time;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    state.step_active = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1601,7 +1600,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    state.old_state = std::make_unique&lt;amrex::MultiFab&gt;(</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        state.new_state-&gt;boxArray(), state.new_state-&gt;DistributionMap(),</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <a class="code" href="classerf__sbm_1_1SBMStateManager.html#a5c6ccec111e70bdbf765326f29c02d2b">m_layout</a>.<a class="code" href="classerf__sbm_1_1SBMLayout.html#adb1a22842f1ea1ff789401031d9ef91a">ncomp</a>(), state.new_state-&gt;nGrowVect());</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    state.old_state-&gt;setVal(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0));</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    state.old_state-&gt;setVal(amrex::Real(0.0));</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    state.old_valid = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    state.old_time = 0.0;</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    state.new_valid = <span class="keyword">true</span>;</div>

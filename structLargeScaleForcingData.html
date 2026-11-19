@@ -120,10 +120,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d342cee4a22ba2ace7b9629abb68127"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a1d342cee4a22ba2ace7b9629abb68127">read_forcing_file</a> ()</td></tr>
 <tr class="memdesc:a1d342cee4a22ba2ace7b9629abb68127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the forcing file and cache the raw time slices on host.  <a href="structLargeScaleForcingData.html#a1d342cee4a22ba2ace7b9629abb68127">More...</a><br /></td></tr>
 <tr class="separator:a1d342cee4a22ba2ace7b9629abb68127"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb3bacd9f5e4150782878d75cb443ac7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#abb3bacd9f5e4150782878d75cb443ac7">interp_forcing</a> (const amrex::GeometryData &amp;geom, const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;zlevels_stag, const <a class="el" href="structInputSoundingData.html">InputSoundingData</a> &amp;sounding)</td></tr>
+<tr class="memitem:abb3bacd9f5e4150782878d75cb443ac7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#abb3bacd9f5e4150782878d75cb443ac7">interp_forcing</a> (const amrex::GeometryData &amp;geom, const amrex::Vector&lt; amrex::Real &gt; &amp;zlevels_stag, const <a class="el" href="structInputSoundingData.html">InputSoundingData</a> &amp;sounding)</td></tr>
 <tr class="memdesc:abb3bacd9f5e4150782878d75cb443ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolate the forcing profiles onto the model grid.  <a href="structLargeScaleForcingData.html#abb3bacd9f5e4150782878d75cb443ac7">More...</a><br /></td></tr>
 <tr class="separator:abb3bacd9f5e4150782878d75cb443ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39515ee6abee849347eb7ddd0c35dd72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a39515ee6abee849347eb7ddd0c35dd72">get_forcing_time_coeffs</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;time, int &amp;curr, int &amp;next, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;coeff_curr, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;coeff_next) const</td></tr>
+<tr class="memitem:a39515ee6abee849347eb7ddd0c35dd72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a39515ee6abee849347eb7ddd0c35dd72">get_forcing_time_coeffs</a> (const amrex::Real &amp;time, int &amp;curr, int &amp;next, amrex::Real &amp;coeff_curr, amrex::Real &amp;coeff_next) const</td></tr>
 <tr class="memdesc:a39515ee6abee849347eb7ddd0c35dd72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine interpolation coefficients to apply tendencies for the given time.  <a href="structLargeScaleForcingData.html#a39515ee6abee849347eb7ddd0c35dd72">More...</a><br /></td></tr>
 <tr class="separator:a39515ee6abee849347eb7ddd0c35dd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1275b32f31a3d3461e608149208d5df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#ae1275b32f31a3d3461e608149208d5df">host_to_device</a> (int itime)</td></tr>
@@ -132,7 +132,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ad2d67d8fdfc50fa03ec118ee9d250664"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#ad2d67d8fdfc50fa03ec118ee9d250664">tau_lsf</a> = <a class="el" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
+<tr class="memitem:ad2d67d8fdfc50fa03ec118ee9d250664"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#ad2d67d8fdfc50fa03ec118ee9d250664">tau_lsf</a> = <a class="el" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:ad2d67d8fdfc50fa03ec118ee9d250664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4519b861108c8c215eeb8f820f06bdb5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a4519b861108c8c215eeb8f820f06bdb5">lsf_file</a> = &quot;&quot;</td></tr>
 <tr class="separator:a4519b861108c8c215eeb8f820f06bdb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,45 +144,45 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a5d911bea52d7b8c9c413eb3b95800909"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8b8ef45102b3e86ff40123ddaec53ae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#af8b8ef45102b3e86ff40123ddaec53ae">num_times</a> = -1</td></tr>
 <tr class="separator:af8b8ef45102b3e86ff40123ddaec53ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07284146d9c1cd187171554ad8dd7e1c"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a07284146d9c1cd187171554ad8dd7e1c">times_lsf</a></td></tr>
+<tr class="memitem:a07284146d9c1cd187171554ad8dd7e1c"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a07284146d9c1cd187171554ad8dd7e1c">times_lsf</a></td></tr>
 <tr class="separator:a07284146d9c1cd187171554ad8dd7e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2df66238fae5ba0ca5ade711393be576"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a2df66238fae5ba0ca5ade711393be576">z_lsf</a></td></tr>
+<tr class="memitem:a2df66238fae5ba0ca5ade711393be576"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a2df66238fae5ba0ca5ade711393be576">z_lsf</a></td></tr>
 <tr class="separator:a2df66238fae5ba0ca5ade711393be576"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99fbf347bd841f0be8d30abe5ad11b8c"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a99fbf347bd841f0be8d30abe5ad11b8c">p_lsf</a></td></tr>
+<tr class="memitem:a99fbf347bd841f0be8d30abe5ad11b8c"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a99fbf347bd841f0be8d30abe5ad11b8c">p_lsf</a></td></tr>
 <tr class="separator:a99fbf347bd841f0be8d30abe5ad11b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addea1195f5f3e692178213d90ba19284"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#addea1195f5f3e692178213d90ba19284">t_lsf</a></td></tr>
+<tr class="memitem:addea1195f5f3e692178213d90ba19284"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#addea1195f5f3e692178213d90ba19284">t_lsf</a></td></tr>
 <tr class="separator:addea1195f5f3e692178213d90ba19284"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3205c7b90c8afed61297e26fd0590b28"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a3205c7b90c8afed61297e26fd0590b28">q_lsf</a></td></tr>
+<tr class="memitem:a3205c7b90c8afed61297e26fd0590b28"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a3205c7b90c8afed61297e26fd0590b28">q_lsf</a></td></tr>
 <tr class="separator:a3205c7b90c8afed61297e26fd0590b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14e4a76ce38bfc153827f91d1f420af4"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a14e4a76ce38bfc153827f91d1f420af4">u_lsf</a></td></tr>
+<tr class="memitem:a14e4a76ce38bfc153827f91d1f420af4"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a14e4a76ce38bfc153827f91d1f420af4">u_lsf</a></td></tr>
 <tr class="separator:a14e4a76ce38bfc153827f91d1f420af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c173ab520db779c01df58bce1c8411e"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a7c173ab520db779c01df58bce1c8411e">v_lsf</a></td></tr>
+<tr class="memitem:a7c173ab520db779c01df58bce1c8411e"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a7c173ab520db779c01df58bce1c8411e">v_lsf</a></td></tr>
 <tr class="separator:a7c173ab520db779c01df58bce1c8411e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1b6c21292c768de65f357d6acc29e4b"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#aa1b6c21292c768de65f357d6acc29e4b">w_lsf</a></td></tr>
+<tr class="memitem:aa1b6c21292c768de65f357d6acc29e4b"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#aa1b6c21292c768de65f357d6acc29e4b">w_lsf</a></td></tr>
 <tr class="separator:aa1b6c21292c768de65f357d6acc29e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfaace92552978d8e2445a6fffb01819"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#adfaace92552978d8e2445a6fffb01819">z_int_lsf</a></td></tr>
+<tr class="memitem:adfaace92552978d8e2445a6fffb01819"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#adfaace92552978d8e2445a6fffb01819">z_int_lsf</a></td></tr>
 <tr class="separator:adfaace92552978d8e2445a6fffb01819"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96f7cd3c547a23e80786865fc54a0e09"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a96f7cd3c547a23e80786865fc54a0e09">t_int_lsf</a></td></tr>
+<tr class="memitem:a96f7cd3c547a23e80786865fc54a0e09"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a96f7cd3c547a23e80786865fc54a0e09">t_int_lsf</a></td></tr>
 <tr class="separator:a96f7cd3c547a23e80786865fc54a0e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5db1662367548e9457f783554ac4a448"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a5db1662367548e9457f783554ac4a448">q_int_lsf</a></td></tr>
+<tr class="memitem:a5db1662367548e9457f783554ac4a448"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a5db1662367548e9457f783554ac4a448">q_int_lsf</a></td></tr>
 <tr class="separator:a5db1662367548e9457f783554ac4a448"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ad49593df47bd69e30fa064ca58d1e4"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a8ad49593df47bd69e30fa064ca58d1e4">u_int_lsf</a></td></tr>
+<tr class="memitem:a8ad49593df47bd69e30fa064ca58d1e4"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a8ad49593df47bd69e30fa064ca58d1e4">u_int_lsf</a></td></tr>
 <tr class="separator:a8ad49593df47bd69e30fa064ca58d1e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7bea8e2536d602391644143f733b530"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#ac7bea8e2536d602391644143f733b530">v_int_lsf</a></td></tr>
+<tr class="memitem:ac7bea8e2536d602391644143f733b530"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#ac7bea8e2536d602391644143f733b530">v_int_lsf</a></td></tr>
 <tr class="separator:ac7bea8e2536d602391644143f733b530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d70e1f5cd403a778e7137719887bd27"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a6d70e1f5cd403a778e7137719887bd27">w_int_lsf</a></td></tr>
+<tr class="memitem:a6d70e1f5cd403a778e7137719887bd27"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a6d70e1f5cd403a778e7137719887bd27">w_int_lsf</a></td></tr>
 <tr class="separator:a6d70e1f5cd403a778e7137719887bd27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa28a24f28b44b6f36ac9579c0f77c00d"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#aa28a24f28b44b6f36ac9579c0f77c00d">z_int_lsf_d</a></td></tr>
+<tr class="memitem:aa28a24f28b44b6f36ac9579c0f77c00d"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#aa28a24f28b44b6f36ac9579c0f77c00d">z_int_lsf_d</a></td></tr>
 <tr class="separator:aa28a24f28b44b6f36ac9579c0f77c00d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f740b2f7780bc5e8cdd924d1428bd05"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a8f740b2f7780bc5e8cdd924d1428bd05">t_int_lsf_d</a></td></tr>
+<tr class="memitem:a8f740b2f7780bc5e8cdd924d1428bd05"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a8f740b2f7780bc5e8cdd924d1428bd05">t_int_lsf_d</a></td></tr>
 <tr class="separator:a8f740b2f7780bc5e8cdd924d1428bd05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e1ffb32329ddda412c598f9ddc43627"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a1e1ffb32329ddda412c598f9ddc43627">q_int_lsf_d</a></td></tr>
+<tr class="memitem:a1e1ffb32329ddda412c598f9ddc43627"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a1e1ffb32329ddda412c598f9ddc43627">q_int_lsf_d</a></td></tr>
 <tr class="separator:a1e1ffb32329ddda412c598f9ddc43627"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbfc1ca24d418b3e362baae396f00561"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#adbfc1ca24d418b3e362baae396f00561">u_int_lsf_d</a></td></tr>
+<tr class="memitem:adbfc1ca24d418b3e362baae396f00561"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#adbfc1ca24d418b3e362baae396f00561">u_int_lsf_d</a></td></tr>
 <tr class="separator:adbfc1ca24d418b3e362baae396f00561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6909b1074d379a19297a4c751f0a193f"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a6909b1074d379a19297a4c751f0a193f">v_int_lsf_d</a></td></tr>
+<tr class="memitem:a6909b1074d379a19297a4c751f0a193f"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#a6909b1074d379a19297a4c751f0a193f">v_int_lsf_d</a></td></tr>
 <tr class="separator:a6909b1074d379a19297a4c751f0a193f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae20a45c2e5328fbfa60609f86b9ab113"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#ae20a45c2e5328fbfa60609f86b9ab113">w_int_lsf_d</a></td></tr>
+<tr class="memitem:ae20a45c2e5328fbfa60609f86b9ab113"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLargeScaleForcingData.html#ae20a45c2e5328fbfa60609f86b9ab113">w_int_lsf_d</a></td></tr>
 <tr class="separator:ae20a45c2e5328fbfa60609f86b9ab113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -304,7 +304,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void LargeScaleForcingData::get_forcing_time_coeffs </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>time</em>, </td>
         </tr>
         <tr>
@@ -322,13 +322,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>coeff_curr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>coeff_next</em>&#160;</td>
         </tr>
         <tr>
@@ -506,7 +506,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>zlevels_stag</em>, </td>
         </tr>
         <tr>
@@ -541,11 +541,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = 0;</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = geom.Domain().bigEnd()[AMREX_SPACEDIM-1];</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> Nz = geom.Domain().size()[AMREX_SPACEDIM-1];</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a> = geom.CellSize()[AMREX_SPACEDIM-1];</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a> = geom.CellSize()[AMREX_SPACEDIM-1];</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="ERF__InitCustomPert__SLM_8H.html#a108fff77e0afb6e74b4b24e60fe1cf37">use_terrain</a> = (zlevels_stag.size() &gt; 0);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zbot = (<a class="code" href="ERF__InitCustomPert__SLM_8H.html#a108fff77e0afb6e74b4b24e60fe1cf37">use_terrain</a>) ? zlevels_stag[<a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>]   : geom.ProbLo(AMREX_SPACEDIM-1);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a> = (<a class="code" href="ERF__InitCustomPert__SLM_8H.html#a108fff77e0afb6e74b4b24e60fe1cf37">use_terrain</a>) ? zlevels_stag[<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1] : geom.ProbHi(AMREX_SPACEDIM-1);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keyword">const</span> amrex::Real zbot = (<a class="code" href="ERF__InitCustomPert__SLM_8H.html#a108fff77e0afb6e74b4b24e60fe1cf37">use_terrain</a>) ? zlevels_stag[<a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>]   : geom.ProbLo(AMREX_SPACEDIM-1);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keyword">const</span> amrex::Real <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a> = (<a class="code" href="ERF__InitCustomPert__SLM_8H.html#a108fff77e0afb6e74b4b24e60fe1cf37">use_terrain</a>) ? zlevels_stag[<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1] : geom.ProbHi(AMREX_SPACEDIM-1);</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="structLargeScaleForcingData.html#af8b8ef45102b3e86ff40123ddaec53ae">num_times</a> == <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="structLargeScaleForcingData.html#a07284146d9c1cd187171554ad8dd7e1c">times_lsf</a>.size()));</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="comment">// On pressure levels, cell k is placed by the sounding&#39;s hydrostatic pressure at its</span></div>
@@ -598,8 +598,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    {</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                        <span class="comment">// Interpolation coordinate: z or p depending on mode</span></div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; coord_lsf = <a class="code" href="structLargeScaleForcingData.html#a027e5b6d3c4fc4b1f50d77d3fe0fce5e">use_z_grid</a> ? <a class="code" href="structLargeScaleForcingData.html#a2df66238fae5ba0ca5ade711393be576">z_lsf</a>[itime] : <a class="code" href="structLargeScaleForcingData.html#a99fbf347bd841f0be8d30abe5ad11b8c">p_lsf</a>[itime];</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> coord_k = <a class="code" href="structLargeScaleForcingData.html#a027e5b6d3c4fc4b1f50d77d3fe0fce5e">use_z_grid</a> ? <a class="code" href="structLargeScaleForcingData.html#adfaace92552978d8e2445a6fffb01819">z_int_lsf</a>[itime][k] : sounding.<a class="code" href="structInputSoundingData.html#a2a838e4f47cffda3241d82a611542a05">pm_integ</a>[k+1];</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> coef = (coord_k - coord_lsf[lk - 1]) / (coord_lsf[lk] - coord_lsf[lk - 1]);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                        amrex::Real coord_k = <a class="code" href="structLargeScaleForcingData.html#a027e5b6d3c4fc4b1f50d77d3fe0fce5e">use_z_grid</a> ? <a class="code" href="structLargeScaleForcingData.html#adfaace92552978d8e2445a6fffb01819">z_int_lsf</a>[itime][k] : sounding.<a class="code" href="structInputSoundingData.html#a2a838e4f47cffda3241d82a611542a05">pm_integ</a>[k+1];</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                        amrex::Real coef = (coord_k - coord_lsf[lk - 1]) / (coord_lsf[lk] - coord_lsf[lk - 1]);</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                        <a class="code" href="structLargeScaleForcingData.html#a96f7cd3c547a23e80786865fc54a0e09">t_int_lsf</a>[itime][k] = <a class="code" href="structLargeScaleForcingData.html#addea1195f5f3e692178213d90ba19284">t_lsf</a>[itime][lk - 1] + (<a class="code" href="structLargeScaleForcingData.html#addea1195f5f3e692178213d90ba19284">t_lsf</a>[itime][lk] - <a class="code" href="structLargeScaleForcingData.html#addea1195f5f3e692178213d90ba19284">t_lsf</a>[itime][lk-1])*coef;</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                        <a class="code" href="structLargeScaleForcingData.html#a5db1662367548e9457f783554ac4a448">q_int_lsf</a>[itime][k] = <a class="code" href="structLargeScaleForcingData.html#a3205c7b90c8afed61297e26fd0590b28">q_lsf</a>[itime][lk - 1] + (<a class="code" href="structLargeScaleForcingData.html#a3205c7b90c8afed61297e26fd0590b28">q_lsf</a>[itime][lk] - <a class="code" href="structLargeScaleForcingData.html#a3205c7b90c8afed61297e26fd0590b28">q_lsf</a>[itime][lk-1])*coef;</div>
@@ -651,7 +651,6 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__InitCustomPert__KE_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_KE.H:9</div></div>
 <div class="ttc" id="aERF__InitCustomPert__SLM_8H_html_a108fff77e0afb6e74b4b24e60fe1cf37"><div class="ttname"><a href="ERF__InitCustomPert__SLM_8H.html#a108fff77e0afb6e74b4b24e60fe1cf37">use_terrain</a></div><div class="ttdeci">const bool use_terrain</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_SLM.H:19</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:41</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceWDM6SedCellScratch_html_acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:273</div></div>
 <div class="ttc" id="astructInputSoundingData_html_a2a838e4f47cffda3241d82a611542a05"><div class="ttname"><a href="structInputSoundingData.html#a2a838e4f47cffda3241d82a611542a05">InputSoundingData::pm_integ</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; pm_integ</div><div class="ttdoc">Hydrostatically integrated moist pressure profile.</div><div class="ttdef"><b>Definition:</b> ERF_InputSoundingData.H:571</div></div>
 <div class="ttc" id="astructLargeScaleForcingData_html_a027e5b6d3c4fc4b1f50d77d3fe0fce5e"><div class="ttname"><a href="structLargeScaleForcingData.html#a027e5b6d3c4fc4b1f50d77d3fe0fce5e">LargeScaleForcingData::use_z_grid</a></div><div class="ttdeci">bool use_z_grid</div><div class="ttdef"><b>Definition:</b> ERF_LargeScaleForcingData.H:419</div></div>
@@ -724,9 +723,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="structLargeScaleForcingData.html#af8b8ef45102b3e86ff40123ddaec53ae">num_times</a> = 0;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="structLargeScaleForcingData.html#a5d911bea52d7b8c9c413eb3b95800909">nz_lsf</a> = 0;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> file_start_time = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>; <span class="comment">// first time in file, in days, other inputs are relative to this time</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        amrex::Real file_start_time = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>; <span class="comment">// first time in file, in days, other inputs are relative to this time</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> pres0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        amrex::Real pres0;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">while</span>(std::getline(ifs, line)) {</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            std::istringstream iss(line);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
@@ -740,7 +739,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="comment">// have to read these as strings first to split on commas</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                std::string s_time, s_lev, s_pres0;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                iss &gt;&gt; s_time &gt;&gt; s_lev &gt;&gt; s_pres0;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> time = std::stod(s_time);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                amrex::Real time = std::stod(s_time);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordtype">int</span> nlev = std::stoi(s_lev);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                pres0 = std::stod(s_pres0);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
@@ -749,7 +748,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                {</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    file_start_time = time;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                time = (time - file_start_time) * <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(86400.0);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                time = (time - file_start_time) * amrex::Real(86400.0);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="structLargeScaleForcingData.html#a07284146d9c1cd187171554ad8dd7e1c">times_lsf</a>.size() &gt; 0 &amp;&amp; time != <a class="code" href="structLargeScaleForcingData.html#a07284146d9c1cd187171554ad8dd7e1c">times_lsf</a>.back())</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                {</div>
@@ -775,7 +774,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <a class="code" href="structLargeScaleForcingData.html#a07284146d9c1cd187171554ad8dd7e1c">times_lsf</a>.push_back(time);</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                <a class="code" href="structLargeScaleForcingData.html#af8b8ef45102b3e86ff40123ddaec53ae">num_times</a>++;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                pres0 *= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.0);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                pres0 *= amrex::Real(100.0);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="structLargeScaleForcingData.html#a5d911bea52d7b8c9c413eb3b95800909">nz_lsf</a> == 0)</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                {</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                    <a class="code" href="structLargeScaleForcingData.html#a5d911bea52d7b8c9c413eb3b95800909">nz_lsf</a> = nlev;</div>
@@ -796,7 +795,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ncol == 7)</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            {</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                <span class="comment">// this is defining a level at the current time</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>, <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8ad6cb403596ec7a348234a3a3bf0221bc">p</a>, tls, qls, uls, vls, wls;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>, <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8ad6cb403596ec7a348234a3a3bf0221bc">p</a>, tls, qls, uls, vls, wls;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                iss &gt;&gt; <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &gt;&gt; <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8ad6cb403596ec7a348234a3a3bf0221bc">p</a> &gt;&gt; tls &gt;&gt; qls &gt;&gt; uls &gt;&gt; vls &gt;&gt; wls;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt; <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
@@ -805,7 +804,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                }</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                z_in.push_back(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                p_in.push_back(<a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8ad6cb403596ec7a348234a3a3bf0221bc">p</a> * <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.0));</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                p_in.push_back(<a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8ad6cb403596ec7a348234a3a3bf0221bc">p</a> * amrex::Real(100.0));</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                t_in.push_back(tls);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                q_in.push_back(qls);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                u_in.push_back(uls);</div>
@@ -921,7 +920,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::p_lsf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::p_lsf</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -937,7 +936,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::q_int_lsf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::q_int_lsf</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -953,7 +952,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::q_int_lsf_d</td>
+          <td class="memname">amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::q_int_lsf_d</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -969,7 +968,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::q_lsf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::q_lsf</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -985,7 +984,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::t_int_lsf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::t_int_lsf</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1001,7 +1000,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::t_int_lsf_d</td>
+          <td class="memname">amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::t_int_lsf_d</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1017,7 +1016,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::t_lsf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::t_lsf</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1033,7 +1032,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> LargeScaleForcingData::tau_lsf = <a class="el" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
+          <td class="memname">amrex::Real LargeScaleForcingData::tau_lsf = <a class="el" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1050,7 +1049,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; LargeScaleForcingData::times_lsf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; LargeScaleForcingData::times_lsf</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1067,7 +1066,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::u_int_lsf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::u_int_lsf</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1083,7 +1082,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::u_int_lsf_d</td>
+          <td class="memname">amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::u_int_lsf_d</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1099,7 +1098,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::u_lsf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::u_lsf</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1132,7 +1131,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::v_int_lsf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::v_int_lsf</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1148,7 +1147,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::v_int_lsf_d</td>
+          <td class="memname">amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::v_int_lsf_d</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1164,7 +1163,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::v_lsf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::v_lsf</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1197,7 +1196,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::w_int_lsf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::w_int_lsf</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1213,7 +1212,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::w_int_lsf_d</td>
+          <td class="memname">amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::w_int_lsf_d</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1229,7 +1228,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::w_lsf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::w_lsf</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1245,7 +1244,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::z_int_lsf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::z_int_lsf</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1262,7 +1261,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::z_int_lsf_d</td>
+          <td class="memname">amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::z_int_lsf_d</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1279,7 +1278,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; &gt; LargeScaleForcingData::z_lsf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; LargeScaleForcingData::z_lsf</td>
         </tr>
       </table>
 </div><div class="memdoc">

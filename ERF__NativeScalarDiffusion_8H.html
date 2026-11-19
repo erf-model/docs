@@ -151,7 +151,7 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:afcd0530ce2d8e4352736690d314d96cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNativeScalarDiffusionPolicy.html">NativeScalarDiffusionPolicy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NativeScalarDiffusion_8H.html#afcd0530ce2d8e4352736690d314d96cc">ResolveNativeScalarDiffusionPolicy</a> (const int qty_comp, const <a class="el" href="structDiffChoice.html">DiffChoice</a> &amp;choice)</td></tr>
 <tr class="separator:afcd0530ce2d8e4352736690d314d96cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61d9629dc50ce4006aea4b98602639af"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NativeScalarDiffusion_8H.html#a61d9629dc50ce4006aea4b98602639af">VerticalMolecularAlphaByPrim</a> (const <a class="el" href="structDiffChoice.html">DiffChoice</a> &amp;choice)</td></tr>
+<tr class="memitem:a61d9629dc50ce4006aea4b98602639af"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NativeScalarDiffusion_8H.html#a61d9629dc50ce4006aea4b98602639af">VerticalMolecularAlphaByPrim</a> (const <a class="el" href="structDiffChoice.html">DiffChoice</a> &amp;choice)</td></tr>
 <tr class="separator:a61d9629dc50ce4006aea4b98602639af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -319,7 +319,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; VerticalMolecularAlphaByPrim </td>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; VerticalMolecularAlphaByPrim </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDiffChoice.html">DiffChoice</a> &amp;&#160;</td>
           <td class="paramname"><em>choice</em></td><td>)</td>
@@ -334,10 +334,10 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Molecular diffusivity by primitive component for the implicit vertical solve and the EB diffusion (ERF_SetupVertDiff.H): theta, every passive scalar (all NSCALARS of them) and the moisture species (number concentrations included); everything else &ndash; KE, and any non-moist species a scheme appends after its moisture species &ndash; is left at zero. With erf.molec_diff_type = Constant or ConstantAlpha these are the coefficients <a class="el" href="ERF__NativeScalarDiffusion_8H.html#afcd0530ce2d8e4352736690d314d96cc">ResolveNativeScalarDiffusionPolicy()</a> gives the explicit paths. </p>
 <div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    amrex::Vector&lt;amrex::Real&gt; alpha_eff(<a class="code" href="ERF__IndexDefines_8H.html#a19169754519601f5fe52ede728af2138">NPRIMVAR_max</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    amrex::Vector&lt;amrex::Real&gt; alpha_eff(<a class="code" href="ERF__IndexDefines_8H.html#a19169754519601f5fe52ede728af2138">NPRIMVAR_max</a>, amrex::Real(0));</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> consA = (choice.<a class="code" href="structDiffChoice.html#a566863f96424952c0d690ddc2d2a7673">molec_diff_type</a> == <a class="code" href="ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">MolecDiffType::ConstantAlpha</a>);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> alpha_T_eff = consA ? choice.<a class="code" href="structDiffChoice.html#ae94877ad7cdc7fa7efa30d8f7c3a231a">alpha_T</a> : choice.<a class="code" href="structDiffChoice.html#a7b4d1ae86aa4be3cfde424590f754d07">rhoAlpha_T</a>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> alpha_C_eff = consA ? choice.<a class="code" href="structDiffChoice.html#aa508ec9bd928f67a8e3abd917d09e199">alpha_C</a> : choice.<a class="code" href="structDiffChoice.html#afc17a4e0ab7ba165017df6cdc8b278e2">rhoAlpha_C</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">const</span> amrex::Real alpha_T_eff = consA ? choice.<a class="code" href="structDiffChoice.html#ae94877ad7cdc7fa7efa30d8f7c3a231a">alpha_T</a> : choice.<a class="code" href="structDiffChoice.html#a7b4d1ae86aa4be3cfde424590f754d07">rhoAlpha_T</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">const</span> amrex::Real alpha_C_eff = consA ? choice.<a class="code" href="structDiffChoice.html#aa508ec9bd928f67a8e3abd917d09e199">alpha_C</a> : choice.<a class="code" href="structDiffChoice.html#afc17a4e0ab7ba165017df6cdc8b278e2">rhoAlpha_C</a>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    alpha_eff[<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>] = alpha_T_eff;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; <a class="code" href="ERF__IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9">NSCALARS</a>; ++n) {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        alpha_eff[<a class="code" href="ERF__IndexDefines_8H.html#aa9d1308b0d214f7bfbe9b8c11c4176b7">PrimScalar_comp</a> + n] = alpha_C_eff;</div>
@@ -351,7 +351,6 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a19169754519601f5fe52ede728af2138"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a19169754519601f5fe52ede728af2138">NPRIMVAR_max</a></div><div class="ttdeci">#define NPRIMVAR_max</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:58</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:91</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa9d1308b0d214f7bfbe9b8c11c4176b7"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa9d1308b0d214f7bfbe9b8c11c4176b7">PrimScalar_comp</a></div><div class="ttdeci">#define PrimScalar_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:93</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
 </div>
 </div>

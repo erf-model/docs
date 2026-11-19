@@ -125,7 +125,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afa76c63723dbb667feca6474aef84635"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="structWallGradCoeffs.html">WallGradCoeffs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__WallGradientCoeffs_8H.html#afa76c63723dbb667feca6474aef84635">WallGradientCoeffs</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dz0, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dz1) noexcept</td></tr>
+<tr class="memitem:afa76c63723dbb667feca6474aef84635"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="structWallGradCoeffs.html">WallGradCoeffs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__WallGradientCoeffs_8H.html#afa76c63723dbb667feca6474aef84635">WallGradientCoeffs</a> (const amrex::Real dz0, const amrex::Real dz1) noexcept</td></tr>
 <tr class="separator:afa76c63723dbb667feca6474aef84635"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dec3161ab40dbeb6604c8da0005445b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="structWallGradCoeffs.html">WallGradCoeffs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__WallGradientCoeffs_8H.html#a4dec3161ab40dbeb6604c8da0005445b">WallGradientCoeffsUniform</a> () noexcept</td></tr>
 <tr class="separator:a4dec3161ab40dbeb6604c8da0005445b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,13 +143,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="structWallGradCoeffs.html">WallGradCoeffs</a> WallGradientCoeffs </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">const amrex::Real&#160;</td>
           <td class="paramname"><em>dz0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">const amrex::Real&#160;</td>
           <td class="paramname"><em>dz1</em>&#160;</td>
         </tr>
         <tr>
@@ -165,16 +165,15 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> f  = (dz1 / dz0) + <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> f2 = f*f;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> c3 = <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (f - f2);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a> = -f2*c3;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">c1</a> = -(<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-f2)*c3;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">const</span> amrex::Real f  = (dz1 / dz0) + <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> amrex::Real f2 = f*f;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">const</span> amrex::Real c3 = <a class="code" href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (f - f2);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">const</span> amrex::Real <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a> = -f2*c3;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> amrex::Real <a class="code" href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">c1</a> = -(<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-f2)*c3;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> {<a class="code" href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">c1</a>, <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a>, c3};</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:38</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:37</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_ae746419ec0ae3521a26369d366c01247"><div class="ttname"><a href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">module_model_constants::c2</a></div><div class="ttdeci">real(c_double), parameter c2</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:35</div></div>
 <div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_a5921cee170609ce1181cd5025f636653"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">module_mp_morr_two_moment::c1</a></div><div class="ttdeci">real(c_double), private c1</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:212</div></div>
 </div><!-- fragment -->

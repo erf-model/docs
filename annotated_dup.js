@@ -415,7 +415,6 @@ var annotated_dup =
     [ "ShocDriver", "classShocDriver.html", "classShocDriver" ],
     [ "ShocEnergyFixer", "classShocEnergyFixer.html", "classShocEnergyFixer" ],
     [ "ShocImplicit", "classShocImplicit.html", "classShocImplicit" ],
-    [ "SHOCInterface", "classSHOCInterface.html", "classSHOCInterface" ],
     [ "ShocMoments", "classShocMoments.html", "classShocMoments" ],
     [ "ShocPDF", "classShocPDF.html", "classShocPDF" ],
     [ "ShocPreprocess", "classShocPreprocess.html", "classShocPreprocess" ],

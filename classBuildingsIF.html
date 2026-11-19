@@ -116,7 +116,7 @@ Collaboration diagram for BuildingsIF:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5e448f1295f76bba078cdaad476efd83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuildingsIF.html#a5e448f1295f76bba078cdaad476efd83">BuildingsIF</a> (std::string const &amp;stl_file, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> scale, amrex::Array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 3 &gt; const &amp;center, int reverse_normal, amrex::Geometry const &amp;geom)</td></tr>
+<tr class="memitem:a5e448f1295f76bba078cdaad476efd83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuildingsIF.html#a5e448f1295f76bba078cdaad476efd83">BuildingsIF</a> (std::string const &amp;stl_file, amrex::Real scale, amrex::Array&lt; amrex::Real, 3 &gt; const &amp;center, int reverse_normal, amrex::Geometry const &amp;geom)</td></tr>
 <tr class="memdesc:a5e448f1295f76bba078cdaad476efd83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a buildings implicit function from an STL file.  <a href="classBuildingsIF.html#a5e448f1295f76bba078cdaad476efd83">More...</a><br /></td></tr>
 <tr class="separator:a5e448f1295f76bba078cdaad476efd83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48a8eb90d62ebd361cdb5d6ffc7f44cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBuildingsLevelsetIF.html">BuildingsLevelsetIF</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuildingsIF.html#a48a8eb90d62ebd361cdb5d6ffc7f44cf">getIF</a> () const &amp;noexcept</td></tr>
@@ -163,13 +163,13 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>scale</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::Array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 3 &gt; const &amp;&#160;</td>
+          <td class="paramtype">amrex::Array&lt; amrex::Real, 3 &gt; const &amp;&#160;</td>
           <td class="paramname"><em>center</em>, </td>
         </tr>
         <tr>
@@ -277,8 +277,8 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <a class="code" href="classBuildingsIF.html#a3295596937d8b695a72fb2a5a8885a37">m_if</a>.<a class="code" href="classBuildingsLevelsetIF.html#a9085f35f3ed5bdd48196b8dd2e08a4d3">m_data_box</a> = sampled_box;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="comment">// Cache geometry data for GPU-compatible access</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* problo_ptr = geom.ProbLo();</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* dx_ptr = geom.CellSize();</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keyword">const</span> Real* problo_ptr = geom.ProbLo();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keyword">const</span> Real* dx_ptr = geom.CellSize();</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; AMREX_SPACEDIM; ++d) {</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <a class="code" href="classBuildingsIF.html#a3295596937d8b695a72fb2a5a8885a37">m_if</a>.<a class="code" href="classBuildingsLevelsetIF.html#a417a6214ac9ad99af830e16f45944400">m_problo</a>[d] = problo_ptr[d];</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <a class="code" href="classBuildingsIF.html#a3295596937d8b695a72fb2a5a8885a37">m_if</a>.<a class="code" href="classBuildingsLevelsetIF.html#ab6a87a37899fa658bb681a743b6dec0d">m_dx</a>[d] = dx_ptr[d];</div>
@@ -291,7 +291,6 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordflow">break</span>;  <span class="comment">// Only one box per rank</span></div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        }</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassBuildingsIF_html_a3295596937d8b695a72fb2a5a8885a37"><div class="ttname"><a href="classBuildingsIF.html#a3295596937d8b695a72fb2a5a8885a37">BuildingsIF::m_if</a></div><div class="ttdeci">BuildingsLevelsetIF m_if</div><div class="ttdef"><b>Definition:</b> ERF_EBIFBuildings.H:278</div></div>
 <div class="ttc" id="aclassBuildingsIF_html_acd852fb10411fea3652a2f70365fb4f0"><div class="ttname"><a href="classBuildingsIF.html#acd852fb10411fea3652a2f70365fb4f0">BuildingsIF::m_stl_tools</a></div><div class="ttdeci">amrex::STLtools m_stl_tools</div><div class="ttdoc">STL tools object (for loading and processing STL files)</div><div class="ttdef"><b>Definition:</b> ERF_EBIFBuildings.H:273</div></div>
 <div class="ttc" id="aclassBuildingsIF_html_aee7472680ad101dc8d3fcf40c2235f65"><div class="ttname"><a href="classBuildingsIF.html#aee7472680ad101dc8d3fcf40c2235f65">BuildingsIF::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdoc">Domain geometry (for coordinate transformations)</div><div class="ttdef"><b>Definition:</b> ERF_EBIFBuildings.H:270</div></div>

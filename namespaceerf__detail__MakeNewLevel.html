@@ -273,7 +273,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (crse_sum != <span class="keyword">nullptr</span> &amp;&amp; crse_cnt &gt; 0.0) {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        MultiFab crse_scaled(crse_sum-&gt;boxArray(), crse_sum-&gt;DistributionMap(), ncomp, 0);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        MultiFab::Copy(crse_scaled, *crse_sum, 0, 0, ncomp, 0);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        crse_scaled.mult(<span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(fine_cnt / crse_cnt), 0, ncomp, 0);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        crse_scaled.mult(<span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(fine_cnt / crse_cnt), 0, ncomp, 0);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">// Piecewise-constant interpolation reads no coarse ghost cells, so no boundary</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">// condition is ever applied; the BCRecs are only required by the interface.</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        Vector&lt;BCRec&gt; bcs(ncomp);</div>
@@ -292,7 +292,6 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:36</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_ae58541d74d21c2bf2d281dd74c3fb5f6"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#ae58541d74d21c2bf2d281dd74c3fb5f6">module_mp_morr_two_moment::bc</a></div><div class="ttdeci">real(c_double), private bc</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:182</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#abb6175c28b36d23f5dda2994ca4a85e7">ERF::MakeNewLevelFromCoarse()</a>, and <a class="el" href="classERF.html#aae7a3a76e08e54c618cf79b30ed2d73d">ERF::RemakeLevel()</a>.</p>

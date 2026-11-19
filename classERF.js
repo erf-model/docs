@@ -230,6 +230,7 @@ var classERF =
     [ "PackAtmosphericStates", "classERF.html#a7bbd3122bec60bd0e7fb7be1992f8773", null ],
     [ "ParameterSanityChecks", "classERF.html#ad71a033b3fd107465a8621eaf7c77b28", null ],
     [ "PerformDataAssimilation", "classERF.html#ab0b1c1f98596d2d528394973db65bf9e", null ],
+    [ "pi_theta_inflow_face", "classERF.html#a21377dc0fe863157c127e827f37c5f89", null ],
     [ "PlotFileName", "classERF.html#a54f6c5d799e51521ad10bb57d29d0c44", null ],
     [ "PlotFileVarNames", "classERF.html#a2dcd22cb915d923c687f60267f44542b", null ],
     [ "poisson_wall_dist", "classERF.html#a984c145a81739ab4c7f8fd03a334d239", null ],

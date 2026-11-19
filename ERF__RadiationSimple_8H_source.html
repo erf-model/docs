@@ -141,8 +141,8 @@ $(document).ready(function(){initNavTree('ERF__RadiationSimple_8H_source.html','
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                      amrex::MultiFab* lat,</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                      amrex::MultiFab* lon,</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">bool</span> force_update,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                      <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; declin,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                      <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; calday) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                      amrex::Real&amp; declin,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                      amrex::Real&amp; calday) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRadiationSimple.html#ad17d203f960fa01eb0a8b458a442c686">WriteDataLog</a> (<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;time) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
@@ -183,7 +183,6 @@ $(document).ready(function(){initNavTree('ERF__RadiationSimple_8H_source.html','
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__EOS_8H_html"><div class="ttname"><a href="ERF__EOS_8H.html">ERF_EOS.H</a></div></div>
 <div class="ttc" id="aERF__RadiationInterface_8H_html"><div class="ttname"><a href="ERF__RadiationInterface_8H.html">ERF_RadiationInterface.H</a></div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassIRadiation_html"><div class="ttname"><a href="classIRadiation.html">IRadiation</a></div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:30</div></div>
 <div class="ttc" id="aclassRadiationSimple_html"><div class="ttname"><a href="classRadiationSimple.html">RadiationSimple</a></div><div class="ttdef"><b>Definition:</b> ERF_RadiationSimple.H:15</div></div>
 <div class="ttc" id="aclassRadiationSimple_html_a13b86c821f1cd951bf75d70ec0de9d30"><div class="ttname"><a href="classRadiationSimple.html#a13b86c821f1cd951bf75d70ec0de9d30">RadiationSimple::bdy_sfc_comp</a></div><div class="ttdeci">static constexpr int bdy_sfc_comp</div><div class="ttdef"><b>Definition:</b> ERF_RadiationSimple.H:88</div></div>
@@ -216,7 +215,7 @@ $(document).ready(function(){initNavTree('ERF__RadiationSimple_8H_source.html','
 <div class="ttc" id="astructMoistureComponentIndices_html_a6e5a18c589f998753e87ccb458a5374b"><div class="ttname"><a href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">MoistureComponentIndices::qv</a></div><div class="ttdeci">int qv</div><div class="ttdoc">water vapor</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:289</div></div>
 <div class="ttc" id="astructMoistureComponentIndices_html_ab99846e54aa46d95389fd611836723e3"><div class="ttname"><a href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">MoistureComponentIndices::qc</a></div><div class="ttdeci">int qc</div><div class="ttdoc">cloud liquid water</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:290</div></div>
 <div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:742</div></div>
-<div class="ttc" id="astructSolverChoice_html_ad82941f981c865d555d426246add956d"><div class="ttname"><a href="structSolverChoice.html#ad82941f981c865d555d426246add956d">SolverChoice::moisture_indices</a></div><div class="ttdeci">MoistureComponentIndices moisture_indices</div><div class="ttdoc">Index map of the moisture data carried by the active scheme: conserved-state components for the speci...</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:3383</div></div>
+<div class="ttc" id="astructSolverChoice_html_ad82941f981c865d555d426246add956d"><div class="ttname"><a href="structSolverChoice.html#ad82941f981c865d555d426246add956d">SolverChoice::moisture_indices</a></div><div class="ttdeci">MoistureComponentIndices moisture_indices</div><div class="ttdoc">Index map of the moisture data carried by the active scheme: conserved-state components for the speci...</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:3377</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

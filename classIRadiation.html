@@ -125,7 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab95cafeff7c2b9960532aa5025daedfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93a49facdea9a509245196a463491013"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#a93a49facdea9a509245196a463491013">Init</a> (const amrex::Geometry &amp;geom, const amrex::BoxArray &amp;ba, amrex::MultiFab *cons_in)=0</td></tr>
 <tr class="separator:a93a49facdea9a509245196a463491013"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05617d334e0ba8f86a1c2010a33368ec"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#a05617d334e0ba8f86a1c2010a33368ec">Run</a> (int &amp;level, int &amp;step, double &amp;time, const double &amp;dt, const amrex::BoxArray &amp;ba, amrex::Geometry &amp;geom, amrex::MultiFab *cons_in, amrex::iMultiFab *lmask, amrex::MultiFab *t_surf, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;lsm_input_ptrs, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;lsm_output_ptrs, amrex::MultiFab *qheating_rates, amrex::MultiFab *rad_fluxes, amrex::MultiFab *z_phys, amrex::MultiFab *z_sfc, amrex::MultiFab *lat, amrex::MultiFab *lon, const bool force_update, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;declin, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;calday)=0</td></tr>
+<tr class="memitem:a05617d334e0ba8f86a1c2010a33368ec"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#a05617d334e0ba8f86a1c2010a33368ec">Run</a> (int &amp;level, int &amp;step, double &amp;time, const double &amp;dt, const amrex::BoxArray &amp;ba, amrex::Geometry &amp;geom, amrex::MultiFab *cons_in, amrex::iMultiFab *lmask, amrex::MultiFab *t_surf, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;lsm_input_ptrs, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;lsm_output_ptrs, amrex::MultiFab *qheating_rates, amrex::MultiFab *rad_fluxes, amrex::MultiFab *z_phys, amrex::MultiFab *z_sfc, amrex::MultiFab *lat, amrex::MultiFab *lon, const bool force_update, amrex::Real &amp;declin, amrex::Real &amp;calday)=0</td></tr>
 <tr class="separator:a05617d334e0ba8f86a1c2010a33368ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af084b8bdeaf1237c4638ab61e5e180dd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#af084b8bdeaf1237c4638ab61e5e180dd">radiation_updated</a> () const</td></tr>
 <tr class="memdesc:af084b8bdeaf1237c4638ab61e5e180dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether the last radiation call updated its outputs.  <a href="classIRadiation.html#af084b8bdeaf1237c4638ab61e5e180dd">More...</a><br /></td></tr>
@@ -477,13 +477,13 @@ Private Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>declin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>calday</em>&#160;</td>
         </tr>
         <tr>

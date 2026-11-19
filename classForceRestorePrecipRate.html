@@ -134,13 +134,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a30c3ca5e7a7950a535c7b824052de145"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#a30c3ca5e7a7950a535c7b824052de145">begin_step</a> (int lev, const <a class="el" href="structSurfacePrecipAccumulationSources.html">SurfacePrecipAccumulationSources</a> &amp;sources, int <a class="el" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>)</td></tr>
 <tr class="memdesc:a30c3ca5e7a7950a535c7b824052de145"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the accumulation [kg/m^2] at the start of the level's step. When no step used the rate of the previous end_step, the earlier start is kept.  <a href="classForceRestorePrecipRate.html#a30c3ca5e7a7950a535c7b824052de145">More...</a><br /></td></tr>
 <tr class="separator:a30c3ca5e7a7950a535c7b824052de145"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a265f172fe7cffb421e7aad52a9d4c4c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#a265f172fe7cffb421e7aad52a9d4c4c8">end_step</a> (int lev, const <a class="el" href="structSurfacePrecipAccumulationSources.html">SurfacePrecipAccumulationSources</a> &amp;sources, int <a class="el" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt)</td></tr>
+<tr class="memitem:a265f172fe7cffb421e7aad52a9d4c4c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#a265f172fe7cffb421e7aad52a9d4c4c8">end_step</a> (int lev, const <a class="el" href="structSurfacePrecipAccumulationSources.html">SurfacePrecipAccumulationSources</a> &amp;sources, int <a class="el" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>, amrex::Real dt)</td></tr>
 <tr class="memdesc:a265f172fe7cffb421e7aad52a9d4c4c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rate [kg/m^2/s]: the accumulation now minus the one begin_step stored, over the time since that start; never negative. Zero when begin_step has not run for this step.  <a href="classForceRestorePrecipRate.html#a265f172fe7cffb421e7aad52a9d4c4c8">More...</a><br /></td></tr>
 <tr class="separator:a265f172fe7cffb421e7aad52a9d4c4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ffbe611c9c6d13e32654f87923f90b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structForceRestorePrecipInput.html">ForceRestorePrecipInput</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#a0ffbe611c9c6d13e32654f87923f90b9">rain</a> (int lev, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt) const noexcept</td></tr>
+<tr class="memitem:a0ffbe611c9c6d13e32654f87923f90b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structForceRestorePrecipInput.html">ForceRestorePrecipInput</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#a0ffbe611c9c6d13e32654f87923f90b9">rain</a> (int lev, amrex::Real dt) const noexcept</td></tr>
 <tr class="memdesc:a0ffbe611c9c6d13e32654f87923f90b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rain a step of length <code>dt</code> takes (the total without the snow layer).  <a href="classForceRestorePrecipRate.html#a0ffbe611c9c6d13e32654f87923f90b9">More...</a><br /></td></tr>
 <tr class="separator:a0ffbe611c9c6d13e32654f87923f90b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f3e898f7c324ba44b1923ad347be074"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structForceRestorePrecipInput.html">ForceRestorePrecipInput</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#a5f3e898f7c324ba44b1923ad347be074">frozen</a> (int lev, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt) const noexcept</td></tr>
+<tr class="memitem:a5f3e898f7c324ba44b1923ad347be074"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structForceRestorePrecipInput.html">ForceRestorePrecipInput</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#a5f3e898f7c324ba44b1923ad347be074">frozen</a> (int lev, amrex::Real dt) const noexcept</td></tr>
 <tr class="memdesc:a5f3e898f7c324ba44b1923ad347be074"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frozen precipitation a step of length <code>dt</code> takes; none unless <a class="el" href="classForceRestorePrecipRate.html#aa49de022e68186a09a1451630a4a6aa1" title="True when the rate is split into rain and frozen precipitation.">split()</a>.  <a href="classForceRestorePrecipRate.html#a5f3e898f7c324ba44b1923ad347be074">More...</a><br /></td></tr>
 <tr class="separator:a5f3e898f7c324ba44b1923ad347be074"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbf409cfdce25eaccbd10805b52ea62b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#afbf409cfdce25eaccbd10805b52ea62b">mark_used</a> (int lev) noexcept</td></tr>
@@ -152,7 +152,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a6e98c6c59123114699e76189b487e304"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structForceRestorePrecipInput.html">ForceRestorePrecipInput</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#a6e98c6c59123114699e76189b487e304">input</a> (int lev, int comp, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt) const noexcept</td></tr>
+<tr class="memitem:a6e98c6c59123114699e76189b487e304"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structForceRestorePrecipInput.html">ForceRestorePrecipInput</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#a6e98c6c59123114699e76189b487e304">input</a> (int lev, int comp, amrex::Real dt) const noexcept</td></tr>
 <tr class="separator:a6e98c6c59123114699e76189b487e304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51a1460c6aba504edd795ac7441348bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#a51a1460c6aba504edd795ac7441348bc">fill_accumulation</a> (amrex::MultiFab &amp;accum, const <a class="el" href="structSurfacePrecipAccumulationSources.html">SurfacePrecipAccumulationSources</a> &amp;sources, int <a class="el" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) const</td></tr>
 <tr class="separator:a51a1460c6aba504edd795ac7441348bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,7 +174,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ae77b0f62fd3c8e5bbe41d39bc3941a91"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#ae77b0f62fd3c8e5bbe41d39bc3941a91">m_unused</a></td></tr>
 <tr class="memdesc:ae77b0f62fd3c8e5bbe41d39bc3941a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">end_step's rate not yet taken by a step  <a href="classForceRestorePrecipRate.html#ae77b0f62fd3c8e5bbe41d39bc3941a91">More...</a><br /></td></tr>
 <tr class="separator:ae77b0f62fd3c8e5bbe41d39bc3941a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a086175b115026560be3ebd2c52eb379a"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#a086175b115026560be3ebd2c52eb379a">m_elapsed</a></td></tr>
+<tr class="memitem:a086175b115026560be3ebd2c52eb379a"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#a086175b115026560be3ebd2c52eb379a">m_elapsed</a></td></tr>
 <tr class="memdesc:a086175b115026560be3ebd2c52eb379a"><td class="mdescLeft">&#160;</td><td class="mdescRight">time since m_accum_start [s]  <a href="classForceRestorePrecipRate.html#a086175b115026560be3ebd2c52eb379a">More...</a><br /></td></tr>
 <tr class="separator:a086175b115026560be3ebd2c52eb379a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0055562ee83366e30c2abc11ac3a4932"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForceRestorePrecipRate.html#a0055562ee83366e30c2abc11ac3a4932">m_split</a> = false</td></tr>
@@ -421,7 +421,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>dt</em>&#160;</td>
         </tr>
         <tr>
@@ -439,7 +439,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classForceRestorePrecipRate.html#a51a1460c6aba504edd795ac7441348bc">fill_accumulation</a>(*<a class="code" href="classForceRestorePrecipRate.html#a5e3b9adfb76c19e1d64cf787cc13e10d">m_accum_now</a>[lev], sources, <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// The time since the stored start: this step, plus any step whose rate no step took.</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classForceRestorePrecipRate.html#a086175b115026560be3ebd2c52eb379a">m_elapsed</a>[lev] += dt;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> elapsed = <a class="code" href="classForceRestorePrecipRate.html#a086175b115026560be3ebd2c52eb379a">m_elapsed</a>[lev];</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> Real elapsed = <a class="code" href="classForceRestorePrecipRate.html#a086175b115026560be3ebd2c52eb379a">m_elapsed</a>[lev];</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = <a class="code" href="classForceRestorePrecipRate.html#a461f85a45a201dcccb0ce6b16f4116a4">m_rate</a>[lev]-&gt;nComp();</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<a class="code" href="classForceRestorePrecipRate.html#a461f85a45a201dcccb0ce6b16f4116a4">m_rate</a>[lev], TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
@@ -458,7 +458,6 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
 <div class="ttc" id="aERF__ForceRestoreHydrology_8H_html_a4a517c59ed047266ebeab99185720eb2"><div class="ttname"><a href="ERF__ForceRestoreHydrology_8H.html#a4a517c59ed047266ebeab99185720eb2">force_restore_rain_rate</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real force_restore_rain_rate(amrex::Real accum_end, amrex::Real accum_start, amrex::Real dt) noexcept</div><div class="ttdoc">Rain rate [kg/m^2/s] from the change of the surface precipitation accumulation over one step.</div><div class="ttdef"><b>Definition:</b> ERF_ForceRestoreHydrology.H:110</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -557,7 +556,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>dt</em>&#160;</td>
         </tr>
         <tr>
@@ -615,7 +614,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>dt</em>&#160;</td>
         </tr>
         <tr>
@@ -638,7 +637,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// The rate is a mean over m_elapsed, which exceeds dt when an earlier step&#39;s</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// precipitation was carried: the step takes the whole of it. A rate a step already took</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// (no end_step since) gives nothing.</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    in.<a class="code" href="structForceRestorePrecipInput.html#a440638b08ad4307e96ab0584ec24e899">scale</a> = (<a class="code" href="classForceRestorePrecipRate.html#ae77b0f62fd3c8e5bbe41d39bc3941a91">m_unused</a>[lev] != 0 &amp;&amp; dt &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0)) ? <a class="code" href="classForceRestorePrecipRate.html#a086175b115026560be3ebd2c52eb379a">m_elapsed</a>[lev] / dt : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    in.<a class="code" href="structForceRestorePrecipInput.html#a440638b08ad4307e96ab0584ec24e899">scale</a> = (<a class="code" href="classForceRestorePrecipRate.html#ae77b0f62fd3c8e5bbe41d39bc3941a91">m_unused</a>[lev] != 0 &amp;&amp; dt &gt; Real(0.0)) ? <a class="code" href="classForceRestorePrecipRate.html#a086175b115026560be3ebd2c52eb379a">m_elapsed</a>[lev] / dt : Real(0.0);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> in;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="ttc" id="astructForceRestorePrecipInput_html_a440638b08ad4307e96ab0584ec24e899"><div class="ttname"><a href="structForceRestorePrecipInput.html#a440638b08ad4307e96ab0584ec24e899">ForceRestorePrecipInput::scale</a></div><div class="ttdeci">amrex::Real scale</div><div class="ttdef"><b>Definition:</b> ERF_ForceRestorePrecipRate.H:23</div></div>
@@ -710,7 +709,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>dt</em>&#160;</td>
         </tr>
         <tr>
@@ -906,7 +905,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&gt; ForceRestorePrecipRate::m_elapsed</td>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; ForceRestorePrecipRate::m_elapsed</td>
         </tr>
       </table>
   </td>

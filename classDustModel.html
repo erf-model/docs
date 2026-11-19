@@ -107,7 +107,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a77b0dea7b227d32d0e38b682c0d39c9d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDustModel.html#a77b0dea7b227d32d0e38b682c0d39c9d">initialize</a> (const <a class="el" href="structDustInit.html">DustInit</a> &amp;init)=0</td></tr>
 <tr class="memdesc:a77b0dea7b227d32d0e38b682c0d39c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the model up, and on a restart restore its state.  <a href="classDustModel.html#a77b0dea7b227d32d0e38b682c0d39c9d">More...</a><br /></td></tr>
 <tr class="separator:a77b0dea7b227d32d0e38b682c0d39c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17572d6349e8119f2aebdd610b6eaebd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDustModel.html#a17572d6349e8119f2aebdd610b6eaebd">add_sources</a> (int lev, amrex::MultiFab &amp;cc_src, const amrex::MultiFab &amp;state, const amrex::MultiFab &amp;detJ_cc, const amrex::Geometry &amp;geom, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt)=0</td></tr>
+<tr class="memitem:a17572d6349e8119f2aebdd610b6eaebd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDustModel.html#a17572d6349e8119f2aebdd610b6eaebd">add_sources</a> (int lev, amrex::MultiFab &amp;cc_src, const amrex::MultiFab &amp;state, const amrex::MultiFab &amp;detJ_cc, const amrex::Geometry &amp;geom, amrex::Real dt)=0</td></tr>
 <tr class="memdesc:a17572d6349e8119f2aebdd610b6eaebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the dust tendencies to the source of the conserved state.  <a href="classDustModel.html#a17572d6349e8119f2aebdd610b6eaebd">More...</a><br /></td></tr>
 <tr class="separator:a17572d6349e8119f2aebdd610b6eaebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92de79040d68a4f79aaf3fd0f69c9d34"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDustModel.html#a92de79040d68a4f79aaf3fd0f69c9d34">advance</a> (const <a class="el" href="structDustStep.html">DustStep</a> &amp;step)=0</td></tr>
@@ -191,7 +191,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>dt</em>&#160;</td>
         </tr>
         <tr>

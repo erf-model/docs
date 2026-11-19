@@ -197,13 +197,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; temperature_arr = a_mf_temperature.array(mfi);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                            { psat_arr(i,j,k,0) = <a class="code" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5">erf_esatw</a>(temperature_arr(i,j,k,0))*<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(100); } );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                            { psat_arr(i,j,k,0) = <a class="code" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5">erf_esatw</a>(temperature_arr(i,j,k,0))*Real(100); } );</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                              <span class="comment">// formula gives pressure in hPa; we will save it in Pa.</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_af412f38784e2b8072356234b0474c6f5"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5">erf_esatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_esatw(amrex::Real t, bool use_empirical=false)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:159</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structMaterialProperties.html#ac2420acd6e85c5850262d8188d41c15f">MaterialProperties::setProperties_H2O()</a>.</p>
 <div class="dynheader">
@@ -295,7 +294,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; temperature_arr = a_mf_temperature.array(mfi);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                            { psat_arr(i,j,k,0) = <a class="code" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1">erf_esati</a>(temperature_arr(i,j,k,0))*<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(100); } );</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                            { psat_arr(i,j,k,0) = <a class="code" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1">erf_esati</a>(temperature_arr(i,j,k,0))*Real(100); } );</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                              <span class="comment">// formula gives pressure in hPa; we will save it in Pa.</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
@@ -473,7 +472,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                            {</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                <span class="comment">// pressure is in Pa; formula takes pressure in hPa</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(  temperature_arr(i,j,k,0),</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                            pressure_arr(i,j,k,0)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(100.0),</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                            pressure_arr(i,j,k,0)/Real(100.0),</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                            qsat_arr(i,j,k,0) );</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                            } );</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
@@ -588,7 +587,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                            {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                <span class="comment">// pressure is in Pa; formula takes pressure in hPa</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a>(  temperature_arr(i,j,k,0),</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                            pressure_arr(i,j,k,0)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.0),</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                            pressure_arr(i,j,k,0)/amrex::Real(100.0),</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                            qsat_arr(i,j,k,0) );</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                            } );</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>

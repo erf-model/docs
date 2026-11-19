@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainPoisson_8H_source.html',''
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">using</span> RT = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">using</span> RT = amrex::Real;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">    /**</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">     * Construct a terrain Poisson operator and its FFT preconditioner metadata.</span></div>
@@ -187,7 +187,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainPoisson_8H_source.html',''
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">     * @param lhs Vector to scale</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">     * @param fac Multiplicative scale factor</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> scale (amrex::MultiFab&amp; lhs, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fac);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> scale (amrex::MultiFab&amp; lhs, amrex::Real fac);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">    /**</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">     * Compute the vector dot product.</span></div>
@@ -196,7 +196,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainPoisson_8H_source.html',''
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">     * @param v2 Second input vector</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">     * @return Dot product of v1 and v2</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dotProduct (amrex::MultiFab <span class="keyword">const</span>&amp; v1, amrex::MultiFab <span class="keyword">const</span>&amp; v2);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    amrex::Real dotProduct (amrex::MultiFab <span class="keyword">const</span>&amp; v1, amrex::MultiFab <span class="keyword">const</span>&amp; v2);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">    /**</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">     * Add a scaled vector into another vector.</span></div>
@@ -205,7 +205,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainPoisson_8H_source.html',''
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">     * @param rhs Source vector</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">     * @param a Scale factor applied to rhs</span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">void</span> increment (amrex::MultiFab&amp; lhs, amrex::MultiFab <span class="keyword">const</span>&amp; rhs, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">void</span> increment (amrex::MultiFab&amp; lhs, amrex::MultiFab <span class="keyword">const</span>&amp; rhs, amrex::Real a);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">    /**</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">     * Compute a linear combination of two source vectors.</span></div>
@@ -216,8 +216,8 @@ $(document).ready(function(){initNavTree('ERF__TerrainPoisson_8H_source.html',''
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">     * @param b Scale factor applied to rhs_b</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">     * @param rhs_b Second source vector</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">void</span> linComb (amrex::MultiFab&amp; lhs, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a, amrex::MultiFab <span class="keyword">const</span>&amp; rhs_a,</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                 <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> b, amrex::MultiFab <span class="keyword">const</span>&amp; rhs_b);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">void</span> linComb (amrex::MultiFab&amp; lhs, amrex::Real a, amrex::MultiFab <span class="keyword">const</span>&amp; rhs_a,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                 amrex::Real b, amrex::MultiFab <span class="keyword">const</span>&amp; rhs_b);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">    /**</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">     * Allocate a vector with the right-hand-side ghost-cell layout.</span></div>
@@ -239,7 +239,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainPoisson_8H_source.html',''
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">     * @param v Input vector</span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">     * @return L2 norm of v</span></div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> norm2 (amrex::MultiFab <span class="keyword">const</span>&amp; v);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    amrex::Real norm2 (amrex::MultiFab <span class="keyword">const</span>&amp; v);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">    /**</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">     * Apply the configured preconditioner.</span></div>
@@ -278,7 +278,6 @@ $(document).ready(function(){initNavTree('ERF__TerrainPoisson_8H_source.html',''
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__TI__utils_8H_html_a5e7934b18ef63bc8c4c16db42277c52f"><div class="ttname"><a href="ERF__TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a></div><div class="ttdeci">auto apply_bcs</div><div class="ttdef"><b>Definition:</b> ERF_TI_utils.H:46</div></div>
 <div class="ttc" id="aERF__TerrainPoisson__3D__K_8H_html"><div class="ttname"><a href="ERF__TerrainPoisson__3D__K_8H.html">ERF_TerrainPoisson_3D_K.H</a></div></div>
 <div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_a1f4b55039569ef5aa08d2ed919a1f1ac"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#a1f4b55039569ef5aa08d2ed919a1f1ac">erf_cloud_chamber_wall_flux::apply</a></div><div class="ttdeci">void apply(const amrex::Box &amp;bx, const amrex::Box &amp;domain, const int quantity, const int flux_comp, const amrex::Array4&lt; const amrex::Real &gt; &amp;state, const amrex::Array4&lt; const amrex::Real &gt; &amp;prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;base_state, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;xflux, const amrex::Array4&lt; amrex::Real &gt; &amp;yflux, const amrex::Array4&lt; amrex::Real &gt; &amp;zflux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dx_inv, const erf_wall_thermodynamics::Boundary &amp;walls, const amrex::Real alpha_T, const amrex::Real alpha_C, const amrex::Real rdOcp, const bool cloudy=false)</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:1225</div></div>

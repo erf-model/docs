@@ -123,10 +123,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0389dde0ca37609e09ab801eebc1ae5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUrban.html#a0389dde0ca37609e09ab801eebc1ae5e">Define</a> (const int &amp;lev, <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;sc)</td></tr>
 <tr class="memdesc:a0389dde0ca37609e09ab801eebc1ae5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the urban model on an active level.  <a href="classUrban.html#a0389dde0ca37609e09ab801eebc1ae5e">More...</a><br /></td></tr>
 <tr class="separator:a0389dde0ca37609e09ab801eebc1ae5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab939960a29afce91284d9a2714434a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUrban.html#aab939960a29afce91284d9a2714434a8">Init</a> (const int &amp;lev, const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;u_in, const amrex::MultiFab &amp;v_in, const amrex::Geometry &amp;geom, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;dt_advance, const amrex::MultiFab &amp;z_phys_nd, const amrex::iMultiFab &amp;land_type, const amrex::MultiFab &amp;urb_frac)</td></tr>
+<tr class="memitem:aab939960a29afce91284d9a2714434a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUrban.html#aab939960a29afce91284d9a2714434a8">Init</a> (const int &amp;lev, const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;u_in, const amrex::MultiFab &amp;v_in, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt_advance, const amrex::MultiFab &amp;z_phys_nd, const amrex::iMultiFab &amp;land_type, const amrex::MultiFab &amp;urb_frac)</td></tr>
 <tr class="memdesc:aab939960a29afce91284d9a2714434a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the urban model on an active level.  <a href="classUrban.html#aab939960a29afce91284d9a2714434a8">More...</a><br /></td></tr>
 <tr class="separator:aab939960a29afce91284d9a2714434a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9e7ef17976acc0ea328deedc4b47a40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUrban.html#ab9e7ef17976acc0ea328deedc4b47a40">Advance</a> (const int &amp;lev, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;dt_advance, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;time, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;start_time, const amrex::Geometry &amp;geom, const amrex::MultiFab *z_phys_nd, amrex::MultiFab &amp;eddyDiffs_lev, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;calday)</td></tr>
+<tr class="memitem:ab9e7ef17976acc0ea328deedc4b47a40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUrban.html#ab9e7ef17976acc0ea328deedc4b47a40">Advance</a> (const int &amp;lev, const amrex::Real &amp;dt_advance, const amrex::Real &amp;time, const amrex::Real &amp;start_time, const amrex::Geometry &amp;geom, const amrex::MultiFab *z_phys_nd, amrex::MultiFab &amp;eddyDiffs_lev, const amrex::Real &amp;calday)</td></tr>
 <tr class="memdesc:ab9e7ef17976acc0ea328deedc4b47a40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the urban model on an active level.  <a href="classUrban.html#ab9e7ef17976acc0ea328deedc4b47a40">More...</a><br /></td></tr>
 <tr class="separator:ab9e7ef17976acc0ea328deedc4b47a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10788453e10b827c433fb8ec04a7bdd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUrban.html#a10788453e10b827c433fb8ec04a7bdd2">Update_Urban_Vars_Lev</a> (const int &amp;lev, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;u_in, amrex::MultiFab &amp;v_in)</td></tr>
@@ -153,7 +153,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a47ad658dd349eb6c18eed592da13f3e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUrban.html#a47ad658dd349eb6c18eed592da13f3e8">Get_DataIdx</a> (const int &amp;lev, const std::string &amp;varname)</td></tr>
 <tr class="memdesc:a47ad658dd349eb6c18eed592da13f3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a model data-field index.  <a href="classUrban.html#a47ad658dd349eb6c18eed592da13f3e8">More...</a><br /></td></tr>
 <tr class="separator:a47ad658dd349eb6c18eed592da13f3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaeacf2d6218bf05d9a179b2b108b986"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUrban.html#afaeacf2d6218bf05d9a179b2b108b986">set_urban_flux_inputs</a> (const int &amp;lev, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;declin)</td></tr>
+<tr class="memitem:afaeacf2d6218bf05d9a179b2b108b986"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUrban.html#afaeacf2d6218bf05d9a179b2b108b986">set_urban_flux_inputs</a> (const int &amp;lev, const amrex::Real &amp;declin)</td></tr>
 <tr class="memdesc:afaeacf2d6218bf05d9a179b2b108b986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets flux inputs on an active level.  <a href="classUrban.html#afaeacf2d6218bf05d9a179b2b108b986">More...</a><br /></td></tr>
 <tr class="separator:afaeacf2d6218bf05d9a179b2b108b986"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb9c5703664b36fde49e2fbe5d053587"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUrban.html#afb9c5703664b36fde49e2fbe5d053587">set_urban_terrain_inputs</a> (const int &amp;lev, const amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt;&gt; &amp;tsk_in, const amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt;&gt;&gt; &amp;lmask_in, const amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt;&gt;&gt; &amp;land_type_in, const amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt;&gt; &amp;urb_frac_in, amrex::MultiFab *lat_in, amrex::MultiFab *lon_in)</td></tr>
@@ -241,19 +241,19 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>dt_advance</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>time</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>start_time</em>, </td>
         </tr>
         <tr>
@@ -277,7 +277,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>calday</em>&#160;</td>
         </tr>
         <tr>
@@ -608,7 +608,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>dt_advance</em>, </td>
         </tr>
         <tr>
@@ -723,7 +723,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>declin</em>&#160;</td>
         </tr>
         <tr>

@@ -16,7 +16,9 @@ var namespaceobs__nudging =
     [ "comp_name", "namespaceobs__nudging.html#a921cb9f3a74d99aa1abdfc9e2ca90927", null ],
     [ "nudged_point", "namespaceobs__nudging.html#a7dfcc94a59060851d95a993463afee1f", null ],
     [ "obs_nudging_tendency", "namespaceobs__nudging.html#ae084b4f0e672d256f5d6d82ecc7b626b", null ],
+    [ "parse_station_series", "namespaceobs__nudging.html#a46ac95a5144234706c279778f5cadaa0", null ],
     [ "parse_station_series", "namespaceobs__nudging.html#a07bd759549c15526226b514d0d072d12", null ],
     [ "periodic_separation", "namespaceobs__nudging.html#ad56e71b5e0aa7f3d79d91de506a9cc8f", null ],
+    [ "profiles_at_time", "namespaceobs__nudging.html#a4c7ef4392d7c8c72198d6bad273f4c1e", null ],
     [ "profiles_at_time", "namespaceobs__nudging.html#ac2cb7b1bd8e06e1cf8c7f2b9dbc53910", null ]
 ];

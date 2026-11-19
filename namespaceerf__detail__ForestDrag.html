@@ -92,9 +92,9 @@ $(document).ready(function(){initNavTree('namespaceerf__detail__ForestDrag.html'
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1f65a20eecf0290fb0569c18ea0d0450"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__ForestDrag.html#a1f65a20eecf0290fb0569c18ea0d0450">compute_lad_normalization</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> laimax)</td></tr>
+<tr class="memitem:a1f65a20eecf0290fb0569c18ea0d0450"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__ForestDrag.html#a1f65a20eecf0290fb0569c18ea0d0450">compute_lad_normalization</a> (const Real laimax)</td></tr>
 <tr class="separator:a1f65a20eecf0290fb0569c18ea0d0450"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a919b81f87543804625e4d99c04d8c1ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__ForestDrag.html#a919b81f87543804625e4d99c04d8c1ac">warn_if_forest_grid_does_not_cover_targets</a> (const MultiFab &amp;target_field, const Geometry &amp;geom, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> grid_xmin, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> grid_ymin, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> grid_dx, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> grid_dy, int grid_nx, int grid_ny, int level)</td></tr>
+<tr class="memitem:a919b81f87543804625e4d99c04d8c1ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__ForestDrag.html#a919b81f87543804625e4d99c04d8c1ac">warn_if_forest_grid_does_not_cover_targets</a> (const MultiFab &amp;target_field, const Geometry &amp;geom, Real grid_xmin, Real grid_ymin, Real grid_dx, Real grid_dy, int grid_nx, int grid_ny, int level)</td></tr>
 <tr class="separator:a919b81f87543804625e4d99c04d8c1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -110,9 +110,9 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> erf_detail_ForestDrag::compute_lad_normalization </td>
+          <td class="memname">Real erf_detail_ForestDrag::compute_lad_normalization </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramtype">const Real&#160;</td>
           <td class="paramname"><em>laimax</em></td><td>)</td>
           <td></td>
         </tr>
@@ -123,32 +123,31 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        laimax, <span class="stringliteral">&quot;erf.forest_laimax&quot;</span>);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(error.empty(), error.c_str());</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> inv_n = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0) / <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(<a class="code" href="namespaceerf__detail__ForestDrag.html#a361e4d0b27d43f25fae51a44a964cf9e">lad_quadrature_points</a>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> profile_sum = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">const</span> Real inv_n = Real(1.0) / Real(<a class="code" href="namespaceerf__detail__ForestDrag.html#a361e4d0b27d43f25fae51a44a964cf9e">lad_quadrature_points</a>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Real profile_sum = Real(0.0);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt; <a class="code" href="namespaceerf__detail__ForestDrag.html#a361e4d0b27d43f25fae51a44a964cf9e">lad_quadrature_points</a>; ++kk) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> eta = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(kk) * inv_n;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ratio = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0) - laimax) / (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0) - eta);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">const</span> Real eta = Real(kk) * inv_n;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> Real ratio = (Real(1.0) - laimax) / (Real(1.0) - eta);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (eta &lt; laimax) {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            profile_sum += amrex::Math::powi&lt;6&gt;(ratio) *</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                           std::exp(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(6.0) * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0) - ratio));</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                           std::exp(Real(6.0) * (Real(1.0) - ratio));</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            profile_sum += std::sqrt(ratio) *</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                           std::exp(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0) - ratio));</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                           std::exp(Real(0.5) * (Real(1.0) - ratio));</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> normalization = profile_sum * inv_n;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">const</span> Real normalization = profile_sum * inv_n;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        std::isfinite(normalization) &amp;&amp; normalization &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0),</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        std::isfinite(normalization) &amp;&amp; normalization &gt; Real(0.0),</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="stringliteral">&quot;Lalic--Mihailovic LAD normalization must be finite and positive&quot;</span>);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> normalization;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceerf__detail__ForestDrag_html_a361e4d0b27d43f25fae51a44a964cf9e"><div class="ttname"><a href="namespaceerf__detail__ForestDrag.html#a361e4d0b27d43f25fae51a44a964cf9e">erf_detail_ForestDrag::lad_quadrature_points</a></div><div class="ttdeci">constexpr int lad_quadrature_points</div><div class="ttdef"><b>Definition:</b> ERF_ForestDrag.cpp:15</div></div>
 <div class="ttc" id="anamespaceerf__forest__utils_html_a8b363aacfb7644a85fe49067c6366476"><div class="ttname"><a href="namespaceerf__forest__utils.html#a8b363aacfb7644a85fe49067c6366476">erf_forest_utils::validate_laimax</a></div><div class="ttdeci">std::string validate_laimax(const amrex::Real laimax, const std::string &amp;source)</div><div class="ttdef"><b>Definition:</b> ERF_ForestUtils.H:36</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classForestDrag.html#a2b47d5874a6bab693d71a56e261e9c8c">ForestDrag::define_drag_field()</a>, and <a class="el" href="classForestDrag.html#a3518c9faa5205fae3fde4f3dcee13745">ForestDrag::ForestDrag()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classForestDrag.html#a2b47d5874a6bab693d71a56e261e9c8c">ForestDrag::define_drag_field()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -164,9 +163,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__detail__ForestDrag_a1f65a20eecf0290fb0569c18ea0d0450_icgraph.png" border="0" usemap="#anamespaceerf__detail__ForestDrag_a1f65a20eecf0290fb0569c18ea0d0450_icgraph" alt=""/></div>
 <map name="anamespaceerf__detail__ForestDrag_a1f65a20eecf0290fb0569c18ea0d0450_icgraph" id="anamespaceerf__detail__ForestDrag_a1f65a20eecf0290fb0569c18ea0d0450_icgraph">
-<area shape="rect" title=" " alt="" coords="225,35,436,76"/>
-<area shape="rect" href="classForestDrag.html#a2b47d5874a6bab693d71a56e261e9c8c" title=" " alt="" coords="21,5,162,47"/>
-<area shape="rect" href="classForestDrag.html#a3518c9faa5205fae3fde4f3dcee13745" title=" " alt="" coords="5,71,177,98"/>
+<area shape="rect" title=" " alt="" coords="195,5,405,47"/>
+<area shape="rect" href="classForestDrag.html#a2b47d5874a6bab693d71a56e261e9c8c" title=" " alt="" coords="5,5,147,47"/>
 </map>
 </div>
 
@@ -193,25 +191,25 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>grid_xmin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>grid_ymin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>grid_dx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>grid_dy</em>, </td>
         </tr>
         <tr>
@@ -263,8 +261,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        box.setBig(2, k_ref);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        reduce_op.eval(box, reduce_data,</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>) -&gt; GpuTuple&lt;Long, Long&gt; {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[0] + (<span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(i) + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[1] + (<span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(j) + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[0] + (<span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(i) + Real(0.5)) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[1] + (<span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(j) + Real(0.5)) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> x_stencil = <a class="code" href="namespaceerf__grid__utils.html#a734f8b078f58de298ec7a25b4b59d935">erf_grid_utils::uniform_interpolation_stencil</a>(</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    x, grid_xmin, grid_dx, grid_nx);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> y_stencil = <a class="code" href="namespaceerf__grid__utils.html#a734f8b078f58de298ec7a25b4b59d935">erf_grid_utils::uniform_interpolation_stencil</a>(</div>
@@ -280,15 +278,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    ParallelDescriptor::ReduceLongSum(total_targets);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ParallelDescriptor::ReduceLongSum(outside_targets);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor() &amp;&amp; outside_targets &gt; 0) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> source_xhi = grid_xmin + <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(source_xmax) * grid_dx;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> source_yhi = grid_ymin + <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(source_ymax) * grid_dy;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> target_xlo = geom.ProbLo(0) + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * geom.CellSize(0);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> target_ylo = geom.ProbLo(1) + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * geom.CellSize(1);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> target_xhi = geom.ProbHi(0) - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * geom.CellSize(0);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> target_yhi = geom.ProbHi(1) - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * geom.CellSize(1);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> percentage = total_targets &gt; 0</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(100.0) * <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(outside_targets) /</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;              <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(total_targets) : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">const</span> Real source_xhi = grid_xmin + <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(source_xmax) * grid_dx;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">const</span> Real source_yhi = grid_ymin + <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(source_ymax) * grid_dy;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">const</span> Real target_xlo = geom.ProbLo(0) + Real(0.5) * geom.CellSize(0);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keyword">const</span> Real target_ylo = geom.ProbLo(1) + Real(0.5) * geom.CellSize(1);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">const</span> Real target_xhi = geom.ProbHi(0) - Real(0.5) * geom.CellSize(0);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keyword">const</span> Real target_yhi = geom.ProbHi(1) - Real(0.5) * geom.CellSize(1);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">const</span> Real percentage = total_targets &gt; 0</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            ? Real(100.0) * <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(outside_targets) /</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;              <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(total_targets) : Real(0.0);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;WARNING: Forest source grid does not cover ERF target cell centers&quot;</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                &lt;&lt; <span class="stringliteral">&quot; at level &quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot;: outside &quot;</span> &lt;&lt; outside_targets &lt;&lt; <span class="stringliteral">&quot; of &quot;</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                &lt;&lt; total_targets &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; percentage &lt;&lt; <span class="stringliteral">&quot;%). Source extent x=[&quot;</span></div>

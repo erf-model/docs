@@ -117,7 +117,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3289e9175711d765c55278e3107dd104"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a3289e9175711d765c55278e3107dd104">initialize</a> (const <a class="el" href="classERF.html">ERF</a> &amp;erf, int lev, const <a class="el" href="structFireGrid.html">FireGrid</a> &amp;fg, const <a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> *<a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9af69483cb4bb9623dc65e76ce5bd0a3d5">surface_layer</a>, const amrex::MultiFab *z_phys_nd_atm)=0</td></tr>
 <tr class="memdesc:a3289e9175711d765c55278e3107dd104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the engine up on the fire grid.  <a href="classFireEngine.html#a3289e9175711d765c55278e3107dd104">More...</a><br /></td></tr>
 <tr class="separator:a3289e9175711d765c55278e3107dd104"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fb35adacc1e6bec28028428aef47f61"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a5fb35adacc1e6bec28028428aef47f61">start_run</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stop_time, int max_step, int steps_per_coarse_step)</td></tr>
+<tr class="memitem:a5fb35adacc1e6bec28028428aef47f61"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a5fb35adacc1e6bec28028428aef47f61">start_run</a> (amrex::Real stop_time, int max_step, int steps_per_coarse_step)</td></tr>
 <tr class="memdesc:a5fb35adacc1e6bec28028428aef47f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start-up after <a class="el" href="classFireEngine.html#a3289e9175711d765c55278e3107dd104" title="Set the engine up on the fire grid.">initialize()</a>, once the run's end is known.  <a href="classFireEngine.html#a5fb35adacc1e6bec28028428aef47f61">More...</a><br /></td></tr>
 <tr class="separator:a5fb35adacc1e6bec28028428aef47f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a747308159ad5519507843a1dd8356086"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a747308159ad5519507843a1dd8356086">advance</a> (const <a class="el" href="structFireForcing.html">FireForcing</a> &amp;forcing)=0</td></tr>
@@ -126,7 +126,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af409b1fdad66e0933baf74f7409ae947"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#af409b1fdad66e0933baf74f7409ae947">fill_fluxes</a> (<a class="el" href="structFireFluxes.html">FireFluxes</a> &amp;fluxes)=0</td></tr>
 <tr class="memdesc:af409b1fdad66e0933baf74f7409ae947"><td class="mdescLeft">&#160;</td><td class="mdescRight">The fluxes of the step just taken, on the fire grid.  <a href="classFireEngine.html#af409b1fdad66e0933baf74f7409ae947">More...</a><br /></td></tr>
 <tr class="separator:af409b1fdad66e0933baf74f7409ae947"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50870235c3b252b7048fa0d8fc9eff2d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a50870235c3b252b7048fa0d8fc9eff2d">smoke_heat_per_kg</a> () const =0</td></tr>
+<tr class="memitem:a50870235c3b252b7048fa0d8fc9eff2d"><td class="memItemLeft" align="right" valign="top">virtual amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a50870235c3b252b7048fa0d8fc9eff2d">smoke_heat_per_kg</a> () const =0</td></tr>
 <tr class="memdesc:a50870235c3b252b7048fa0d8fc9eff2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heat released per kilogram of fuel burned [J/kg], matching the sensible flux last handed over, to turn it into the fuel burnt that the smoke emission factor applies to.  <a href="classFireEngine.html#a50870235c3b252b7048fa0d8fc9eff2d">More...</a><br /></td></tr>
 <tr class="separator:a50870235c3b252b7048fa0d8fc9eff2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a634271e08b8215bd22111a9c81cb81ce"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a634271e08b8215bd22111a9c81cb81ce">wants_surface_precip</a> () const</td></tr>
@@ -146,7 +146,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3e6225f0e17322a9926753a03046485a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a3e6225f0e17322a9926753a03046485a">read_checkpoint</a> (const std::string &amp;restart_chkfile, int max_level, int step)</td></tr>
 <tr class="memdesc:a3e6225f0e17322a9926753a03046485a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restore the engine's state from a checkpoint on a restart.  <a href="classFireEngine.html#a3e6225f0e17322a9926753a03046485a">More...</a><br /></td></tr>
 <tr class="separator:a3e6225f0e17322a9926753a03046485a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a600ffb75d3c1a470a0b324144fbf6d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a2a600ffb75d3c1a470a0b324144fbf6d">write_plotfile</a> (const std::string &amp;plotfile_prefix, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> time, int step) const</td></tr>
+<tr class="memitem:a2a600ffb75d3c1a470a0b324144fbf6d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a2a600ffb75d3c1a470a0b324144fbf6d">write_plotfile</a> (const std::string &amp;plotfile_prefix, amrex::Real time, int step) const</td></tr>
 <tr class="memdesc:a2a600ffb75d3c1a470a0b324144fbf6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the engine's plotfile of the fire grid.  <a href="classFireEngine.html#a2a600ffb75d3c1a470a0b324144fbf6d">More...</a><br /></td></tr>
 <tr class="separator:a2a600ffb75d3c1a470a0b324144fbf6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0469be0f08ea2a1e10ac5533696e1a99"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a0469be0f08ea2a1e10ac5533696e1a99">plot_var_names</a> () const</td></tr>
@@ -155,7 +155,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0e2f5ff5f44188e5fe2790fa43263c76"><td class="memItemLeft" align="right" valign="top">virtual const amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a0e2f5ff5f44188e5fe2790fa43263c76">plot_var</a> (const std::string &amp;<a class="el" href="classFireEngine.html#aa97c3de4bc5bd31efe249aa23b5c6704">name</a>) const</td></tr>
 <tr class="memdesc:a0e2f5ff5f44188e5fe2790fa43263c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">The field <a class="el" href="classFireEngine.html#a0469be0f08ea2a1e10ac5533696e1a99" title="Fire fields the ERF plotfile can carry, by name.">plot_var_names()</a> lists as name, on the fire grid.  <a href="classFireEngine.html#a0e2f5ff5f44188e5fe2790fa43263c76">More...</a><br /></td></tr>
 <tr class="separator:a0e2f5ff5f44188e5fe2790fa43263c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a287e2a704b50544b823368a4cb3bf3ed"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a287e2a704b50544b823368a4cb3bf3ed">burned_area</a> () const</td></tr>
+<tr class="memitem:a287e2a704b50544b823368a4cb3bf3ed"><td class="memItemLeft" align="right" valign="top">virtual amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a287e2a704b50544b823368a4cb3bf3ed">burned_area</a> () const</td></tr>
 <tr class="memdesc:a287e2a704b50544b823368a4cb3bf3ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Area burned so far [m2], for the run log; negative when the engine does not track it.  <a href="classFireEngine.html#a287e2a704b50544b823368a4cb3bf3ed">More...</a><br /></td></tr>
 <tr class="separator:a287e2a704b50544b823368a4cb3bf3ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc53873fb3c4de8f1cc5f104c631d286"><td class="memItemLeft" align="right" valign="top">virtual const amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#abc53873fb3c4de8f1cc5f104c631d286">level_set</a> () const</td></tr>
@@ -164,7 +164,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5a3f1594bb990daaee24a656b8775411"><td class="memItemLeft" align="right" valign="top">virtual const amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a5a3f1594bb990daaee24a656b8775411">reference_wind</a> () const</td></tr>
 <tr class="memdesc:a5a3f1594bb990daaee24a656b8775411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wind (u, v) [m/s] the engine sampled at <a class="el" href="classFireEngine.html#a26f82c1da66536e41636206d61e7c21b" title="Height above ground [m] of reference_wind().">reference_wind_height()</a> on the fire grid; nullptr if none.  <a href="classFireEngine.html#a5a3f1594bb990daaee24a656b8775411">More...</a><br /></td></tr>
 <tr class="separator:a5a3f1594bb990daaee24a656b8775411"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26f82c1da66536e41636206d61e7c21b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a26f82c1da66536e41636206d61e7c21b">reference_wind_height</a> () const</td></tr>
+<tr class="memitem:a26f82c1da66536e41636206d61e7c21b"><td class="memItemLeft" align="right" valign="top">virtual amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a26f82c1da66536e41636206d61e7c21b">reference_wind_height</a> () const</td></tr>
 <tr class="memdesc:a26f82c1da66536e41636206d61e7c21b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height above ground [m] of <a class="el" href="classFireEngine.html#a5a3f1594bb990daaee24a656b8775411" title="Wind (u, v) [m/s] the engine sampled at reference_wind_height() on the fire grid; nullptr if none.">reference_wind()</a>.  <a href="classFireEngine.html#a26f82c1da66536e41636206d61e7c21b">More...</a><br /></td></tr>
 <tr class="separator:a26f82c1da66536e41636206d61e7c21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fdf35d4e0ab00710d9ab6cbd42896e0"><td class="memItemLeft" align="right" valign="top">virtual const amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngine.html#a8fdf35d4e0ab00710d9ab6cbd42896e0">heat_release</a> () const</td></tr>
@@ -249,7 +249,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> FireEngine::burned_area </td>
+          <td class="memname">virtual amrex::Real FireEngine::burned_area </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -265,8 +265,7 @@ Public Member Functions</h2></td></tr>
 <p>Area burned so far [m2], for the run log; negative when the engine does not track it. </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#a3747dcc31da532ab5a3a19990115f6db">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-1.0); }</div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+<div class="fragment"><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;{ <span class="keywordflow">return</span> amrex::Real(-1.0); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -715,7 +714,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> FireEngine::reference_wind_height </td>
+          <td class="memname">virtual amrex::Real FireEngine::reference_wind_height </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -731,7 +730,7 @@ Here is the call graph for this function:</div>
 <p>Height above ground [m] of <a class="el" href="classFireEngine.html#a5a3f1594bb990daaee24a656b8775411" title="Wind (u, v) [m/s] the engine sampled at reference_wind_height() on the fire grid; nullptr if none.">reference_wind()</a>. </p>
 
 <p>Reimplemented in <a class="el" href="classFireEngineTemplate.html#acdf6a9e234f542377fa370419acb2587">FireEngineTemplate</a>.</p>
-<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0); }</div>
+<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;{ <span class="keywordflow">return</span> amrex::Real(0.0); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -773,7 +772,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> FireEngine::smoke_heat_per_kg </td>
+          <td class="memname">virtual amrex::Real FireEngine::smoke_heat_per_kg </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -804,7 +803,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">virtual void FireEngine::start_run </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>stop_time</em>, </td>
         </tr>
         <tr>
@@ -979,7 +978,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>time</em>, </td>
         </tr>
         <tr>

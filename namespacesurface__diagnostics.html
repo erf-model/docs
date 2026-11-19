@@ -109,7 +109,7 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a9ae90a5f756a64856f03db4f80fe1f78"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesurface__diagnostics.html#a9ae90a5f756a64856f03db4f80fe1f78">to_int</a> (<a class="el" href="namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccf">SurfaceDiagnosticSource</a> source) noexcept</td></tr>
 <tr class="separator:a9ae90a5f756a64856f03db4f80fe1f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8952f0baf16086becb3702d82d00d158"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesurface__diagnostics.html#a8952f0baf16086becb3702d82d00d158">to_plot_value</a> (<a class="el" href="namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccf">SurfaceDiagnosticSource</a> source) noexcept</td></tr>
+<tr class="memitem:a8952f0baf16086becb3702d82d00d158"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesurface__diagnostics.html#a8952f0baf16086becb3702d82d00d158">to_plot_value</a> (<a class="el" href="namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccf">SurfaceDiagnosticSource</a> source) noexcept</td></tr>
 <tr class="separator:a8952f0baf16086becb3702d82d00d158"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9122f8c636e3844b424279a993fa59b3"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccf">SurfaceDiagnosticSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesurface__diagnostics.html#a9122f8c636e3844b424279a993fa59b3">classify_scalar_source</a> (bool is_custom, bool is_rico, bool is_land, bool has_lsm_flux, bool lsm_flux_is_valid) noexcept</td></tr>
 <tr class="separator:a9122f8c636e3844b424279a993fa59b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -386,7 +386,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> surface_diagnostics::to_plot_value </td>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real surface_diagnostics::to_plot_value </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccf">SurfaceDiagnosticSource</a>&#160;</td>
           <td class="paramname"><em>source</em></td><td>)</td>
@@ -407,9 +407,8 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(<a class="code" href="namespacesurface__diagnostics.html#a9ae90a5f756a64856f03db4f80fe1f78">to_int</a>(source));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>amrex::Real<span class="keyword">&gt;</span>(<a class="code" href="namespacesurface__diagnostics.html#a9ae90a5f756a64856f03db4f80fe1f78">to_int</a>(source));</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespacesurface__diagnostics_html_a9ae90a5f756a64856f03db4f80fe1f78"><div class="ttname"><a href="namespacesurface__diagnostics.html#a9ae90a5f756a64856f03db4f80fe1f78">surface_diagnostics::to_int</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int to_int(SurfaceDiagnosticSource source) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceDiagnosticSource.H:33</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a96d8f94b856d55bc4c1d708b82376727">SurfaceLayer::compute_SurfaceLayer_bcs()</a>, <a class="el" href="classSurfaceLayer.html#afacb49749e5898238b7d71b7638ce209">SurfaceLayer::compute_SurfaceLayer_bcs_EB()</a>, <a class="el" href="namespacenear__surface__diagnostics.html#a7cee41b11fa30d00d43bb88458aad002">near_surface_diagnostics::fill()</a>, and <a class="el" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50">SurfaceLayer::make_SurfaceLayer_at_level()</a>.</p>

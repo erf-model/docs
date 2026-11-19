@@ -178,7 +178,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae6791ca71ca27529d46eb66e3c4dc46b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NullWindFarm_8H.html#ae6791ca71ca27529d46eb66e3c4dc46b">windfarm_face_height_above_ground</a> (const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;zp, int i, int j, int kf, int <a class="el" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a8df85b10e897a77f1f0516906934529b">dz</a>) noexcept</td></tr>
+<tr class="memitem:ae6791ca71ca27529d46eb66e3c4dc46b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NullWindFarm_8H.html#ae6791ca71ca27529d46eb66e3c4dc46b">windfarm_face_height_above_ground</a> (const amrex::Array4&lt; const amrex::Real &gt; &amp;zp, int i, int j, int kf, int <a class="el" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>, amrex::Real <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a8df85b10e897a77f1f0516906934529b">dz</a>) noexcept</td></tr>
 <tr class="separator:ae6791ca71ca27529d46eb66e3c4dc46b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -192,9 +192,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> windfarm_face_height_above_ground </td>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real windfarm_face_height_above_ground </td>
           <td>(</td>
-          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>zp</em>, </td>
         </tr>
         <tr>
@@ -224,7 +224,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">amrex::Real&#160;</td>
           <td class="paramname"><em>dz</em>&#160;</td>
         </tr>
         <tr>
@@ -243,7 +243,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (zp) {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">auto</span> <a class="code" href="ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edbaa91c926df52ecd895a6e1ab31dcac4f5">zface</a> = [&amp;] (<span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.25) * (zp(i,j,k) + zp(i+1,j,k) + zp(i,j+1,k) + zp(i+1,j+1,k));</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">return</span> amrex::Real(0.25) * (zp(i,j,k) + zp(i+1,j,k) + zp(i,j+1,k) + zp(i+1,j+1,k));</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        };</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edbaa91c926df52ecd895a6e1ab31dcac4f5">zface</a>(kf) - <a class="code" href="ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edbaa91c926df52ecd895a6e1ab31dcac4f5">zface</a>(<a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
@@ -251,7 +251,6 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="ttc" id="aERF__EBStruct_8H_html_aa110a77e7ef906690b001fe2dc730edbaa91c926df52ecd895a6e1ab31dcac4f5"><div class="ttname"><a href="ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edbaa91c926df52ecd895a6e1ab31dcac4f5">zface</a></div><div class="ttdeci">@ zface</div><div class="ttdef"><b>Definition:</b> ERF_EBStruct.H:29</div></div>
 <div class="ttc" id="aERF__InitCustomPert__KE_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_KE.H:9</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceWDM6SedCellScratch_html_acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7"><div class="ttname"><a href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">WDM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWDM6.cpp:273</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classEWP.html#af9e028970fd6b7045759b1e3c51bfba7">EWP::source_terms_cellcentered()</a>, and <a class="el" href="classFitch.html#a419cc3741485b52995767938d7bd0f44">Fitch::source_terms_cellcentered()</a>.</p>

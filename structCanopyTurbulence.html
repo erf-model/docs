@@ -115,13 +115,13 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a8d001fe55a7ed48b416f8e9b38037022"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCanopyTurbulence.html#a8d001fe55a7ed48b416f8e9b38037022">enabled</a> = false</td></tr>
 <tr class="memdesc:a8d001fe55a7ed48b416f8e9b38037022"><td class="mdescLeft">&#160;</td><td class="mdescRight">erf.forest_canopy_tke: add the canopy terms to the k-eqn RANS model  <a href="structCanopyTurbulence.html#a8d001fe55a7ed48b416f8e9b38037022">More...</a><br /></td></tr>
 <tr class="separator:a8d001fe55a7ed48b416f8e9b38037022"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79f524571f8dbbb0a458beac6f71d392"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCanopyTurbulence.html#a79f524571f8dbbb0a458beac6f71d392">beta_p</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0)</td></tr>
+<tr class="memitem:a79f524571f8dbbb0a458beac6f71d392"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCanopyTurbulence.html#a79f524571f8dbbb0a458beac6f71d392">beta_p</a> = amrex::Real(1.0)</td></tr>
 <tr class="memdesc:a79f524571f8dbbb0a458beac6f71d392"><td class="mdescLeft">&#160;</td><td class="mdescRight">erf.forest_canopy_beta_p: fraction of the drag work that becomes TKE  <a href="structCanopyTurbulence.html#a79f524571f8dbbb0a458beac6f71d392">More...</a><br /></td></tr>
 <tr class="separator:a79f524571f8dbbb0a458beac6f71d392"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a140273eb457d9fae16ea83d098aeb773"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCanopyTurbulence.html#a140273eb457d9fae16ea83d098aeb773">beta_d</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(4.0)</td></tr>
+<tr class="memitem:a140273eb457d9fae16ea83d098aeb773"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCanopyTurbulence.html#a140273eb457d9fae16ea83d098aeb773">beta_d</a> = amrex::Real(4.0)</td></tr>
 <tr class="memdesc:a140273eb457d9fae16ea83d098aeb773"><td class="mdescLeft">&#160;</td><td class="mdescRight">erf.forest_canopy_beta_d: short-circuit dissipation coefficient  <a href="structCanopyTurbulence.html#a140273eb457d9fae16ea83d098aeb773">More...</a><br /></td></tr>
 <tr class="separator:a140273eb457d9fae16ea83d098aeb773"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06e1c3456e7a1c4eaa8d0eb69a9e35a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCanopyTurbulence.html#a06e1c3456e7a1c4eaa8d0eb69a9e35a0">length_alpha</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.04)</td></tr>
+<tr class="memitem:a06e1c3456e7a1c4eaa8d0eb69a9e35a0"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCanopyTurbulence.html#a06e1c3456e7a1c4eaa8d0eb69a9e35a0">length_alpha</a> = amrex::Real(0.04)</td></tr>
 <tr class="separator:a06e1c3456e7a1c4eaa8d0eb69a9e35a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -189,14 +189,13 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// negative in one step, at time steps of a fraction of a second in a dense</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// canopy (f = 0.6 1/m and k = 5 m^2/s^2 give 5.8 1/s). The implicit form has</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">// no such limit, so the cap requires it rather than warning about it.</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structCanopyTurbulence.html#a06e1c3456e7a1c4eaa8d0eb69a9e35a0">length_alpha</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp; !implicit_diss_on_every_level) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structCanopyTurbulence.html#a06e1c3456e7a1c4eaa8d0eb69a9e35a0">length_alpha</a> &gt; amrex::Real(0.0) &amp;&amp; !implicit_diss_on_every_level) {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;erf.forest_canopy_tke = true with erf.forest_canopy_length_alpha &gt; 0 &quot;</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                         <span class="stringliteral">&quot;needs erf.implicit_tke_dissipation = true on every level: the canopy &quot;</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                         <span class="stringliteral">&quot;length cap makes the explicit TKE dissipation stiff (see the Forest &quot;</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                         <span class="stringliteral">&quot;model section of the docs)&quot;</span>);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="astructCanopyTurbulence_html_a06e1c3456e7a1c4eaa8d0eb69a9e35a0"><div class="ttname"><a href="structCanopyTurbulence.html#a06e1c3456e7a1c4eaa8d0eb69a9e35a0">CanopyTurbulence::length_alpha</a></div><div class="ttdeci">amrex::Real length_alpha</div><div class="ttdef"><b>Definition:</b> ERF_CanopyTurbStruct.H:25</div></div>
 <div class="ttc" id="astructCanopyTurbulence_html_a8d001fe55a7ed48b416f8e9b38037022"><div class="ttname"><a href="structCanopyTurbulence.html#a8d001fe55a7ed48b416f8e9b38037022">CanopyTurbulence::enabled</a></div><div class="ttdeci">bool enabled</div><div class="ttdoc">erf.forest_canopy_tke: add the canopy terms to the k-eqn RANS model</div><div class="ttdef"><b>Definition:</b> ERF_CanopyTurbStruct.H:18</div></div>
 </div><!-- fragment -->
@@ -240,20 +239,20 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                           <span class="stringliteral">&quot;erf.forest_canopy_length_alpha are not used without &quot;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                           <span class="stringliteral">&quot;erf.forest_canopy_tke = true&quot;</span>);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (!(<a class="code" href="structCanopyTurbulence.html#a79f524571f8dbbb0a458beac6f71d392">beta_p</a> &gt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp; <a class="code" href="structCanopyTurbulence.html#a79f524571f8dbbb0a458beac6f71d392">beta_p</a> &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0))) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (!(<a class="code" href="structCanopyTurbulence.html#a79f524571f8dbbb0a458beac6f71d392">beta_p</a> &gt;= amrex::Real(0.0) &amp;&amp; <a class="code" href="structCanopyTurbulence.html#a79f524571f8dbbb0a458beac6f71d392">beta_p</a> &lt;= amrex::Real(1.0))) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;erf.forest_canopy_beta_p must be in [0, 1], the fraction of the &quot;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                         <span class="stringliteral">&quot;drag work that becomes TKE; got &quot;</span> + std::to_string(<a class="code" href="structCanopyTurbulence.html#a79f524571f8dbbb0a458beac6f71d392">beta_p</a>));</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (!(<a class="code" href="structCanopyTurbulence.html#a140273eb457d9fae16ea83d098aeb773">beta_d</a> &gt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp; std::isfinite(<a class="code" href="structCanopyTurbulence.html#a140273eb457d9fae16ea83d098aeb773">beta_d</a>))) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (!(<a class="code" href="structCanopyTurbulence.html#a140273eb457d9fae16ea83d098aeb773">beta_d</a> &gt;= amrex::Real(0.0) &amp;&amp; std::isfinite(<a class="code" href="structCanopyTurbulence.html#a140273eb457d9fae16ea83d098aeb773">beta_d</a>))) {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;erf.forest_canopy_beta_d must be finite and not negative; got &quot;</span> +</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                         std::to_string(<a class="code" href="structCanopyTurbulence.html#a140273eb457d9fae16ea83d098aeb773">beta_d</a>));</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> (!(<a class="code" href="structCanopyTurbulence.html#a06e1c3456e7a1c4eaa8d0eb69a9e35a0">length_alpha</a> &gt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp; <a class="code" href="structCanopyTurbulence.html#a06e1c3456e7a1c4eaa8d0eb69a9e35a0">length_alpha</a> &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0))) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> (!(<a class="code" href="structCanopyTurbulence.html#a06e1c3456e7a1c4eaa8d0eb69a9e35a0">length_alpha</a> &gt;= amrex::Real(0.0) &amp;&amp; <a class="code" href="structCanopyTurbulence.html#a06e1c3456e7a1c4eaa8d0eb69a9e35a0">length_alpha</a> &lt;= amrex::Real(1.0))) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;erf.forest_canopy_length_alpha must be in [0, 1] (0 disables the &quot;</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                         <span class="stringliteral">&quot;length scale cap); got &quot;</span> + std::to_string(<a class="code" href="structCanopyTurbulence.html#a06e1c3456e7a1c4eaa8d0eb69a9e35a0">length_alpha</a>));</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structCanopyTurbulence.html#a8d001fe55a7ed48b416f8e9b38037022">enabled</a> &amp;&amp; <a class="code" href="structCanopyTurbulence.html#a79f524571f8dbbb0a458beac6f71d392">beta_p</a> == <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp; <a class="code" href="structCanopyTurbulence.html#a140273eb457d9fae16ea83d098aeb773">beta_d</a> == <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0) &amp;&amp;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="structCanopyTurbulence.html#a06e1c3456e7a1c4eaa8d0eb69a9e35a0">length_alpha</a> == <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structCanopyTurbulence.html#a8d001fe55a7ed48b416f8e9b38037022">enabled</a> &amp;&amp; <a class="code" href="structCanopyTurbulence.html#a79f524571f8dbbb0a458beac6f71d392">beta_p</a> == amrex::Real(0.0) &amp;&amp; <a class="code" href="structCanopyTurbulence.html#a140273eb457d9fae16ea83d098aeb773">beta_d</a> == amrex::Real(0.0) &amp;&amp;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="structCanopyTurbulence.html#a06e1c3456e7a1c4eaa8d0eb69a9e35a0">length_alpha</a> == amrex::Real(0.0)) {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;erf.forest_canopy_tke = true with erf.forest_canopy_beta_p, &quot;</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                         <span class="stringliteral">&quot;erf.forest_canopy_beta_d and erf.forest_canopy_length_alpha all &quot;</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                         <span class="stringliteral">&quot;zero would change nothing; set erf.forest_canopy_tke = false&quot;</span>);</div>
@@ -293,7 +292,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> CanopyTurbulence::beta_d = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(4.0)</td>
+          <td class="memname">amrex::Real CanopyTurbulence::beta_d = amrex::Real(4.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -311,7 +310,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> CanopyTurbulence::beta_p = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0)</td>
+          <td class="memname">amrex::Real CanopyTurbulence::beta_p = amrex::Real(1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -347,7 +346,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> CanopyTurbulence::length_alpha = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.04)</td>
+          <td class="memname">amrex::Real CanopyTurbulence::length_alpha = amrex::Real(0.04)</td>
         </tr>
       </table>
 </div><div class="memdoc">
