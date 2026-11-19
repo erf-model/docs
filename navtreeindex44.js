@@ -1,5 +1,9 @@
 var NAVTREEINDEX44 =
 {
+"namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a9f81542b5b78481fd2894e748b7ded28":[1,0,9,0,3],
+"namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#abcd8d8d5b870727d474b4c1a7ccc00bb":[1,0,9,0,1],
+"namespaceerf__auxiliary.html":[1,0,10],
+"namespaceerf__auxiliary.html#a0c9f140deff66b4c8fdf8fd9483b6ca6":[1,0,10,35],
 "namespaceerf__auxiliary.html#a25368e9217271e6d57bdb152f71e5138":[1,0,10,31],
 "namespaceerf__auxiliary.html#a25f090ba55ee2afbd3c76c92e4101bfb":[1,0,10,29],
 "namespaceerf__auxiliary.html#a374dd3e61464eefcce9e31314cf5f1b5":[1,0,10,48],
@@ -245,9 +249,5 @@ var NAVTREEINDEX44 =
 "namespaceerf__detail__ForestDrag.html#a919b81f87543804625e4d99c04d8c1ac":[1,0,26,1],
 "namespaceerf__detail__MakeNewArrays.html":[1,0,27],
 "namespaceerf__detail__MakeNewArrays.html#a5eb928f982e00399a6ada27244828695":[1,0,27,0],
-"namespaceerf__detail__MakeNewLevel.html":[1,0,28],
-"namespaceerf__detail__MakeNewLevel.html#a45a8c6ee4307c85a9e785eb29e541ea7":[1,0,28,0],
-"namespaceerf__detail__MakeNewLevel.html#a6f3a71654e447136d4e48495860c877b":[1,0,28,1],
-"namespaceerf__detail__MakeNewLevel.html#a7fc1c907ce7e1aa03e69d9a86e679bb8":[1,0,28,2],
-"namespaceerf__detail__PoissonWallDist.html":[1,0,29]
+"namespaceerf__detail__MakeNewLevel.html":[1,0,28]
 };

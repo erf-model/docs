@@ -1,5 +1,9 @@
 var NAVTREEINDEX65 =
 {
+"structnear__surface__diagnostics_1_1Sources.html#af1c517a45dfc5d673618d6f4b46bae23":[2,0,25,4,5],
+"structnear__surface__diagnostics_1_1Sources.html#afc35739a64f876a60a802b8eab97cf86":[2,0,25,4,9],
+"structnear__surface__diagnostics_1_1Sources.html#aff7bb7013cb0f00bd073e4d3b4491a20":[2,0,25,4,12],
+"structnear__surface__diagnostics_1_1WindSources.html":[2,0,25,5],
 "structnear__surface__diagnostics_1_1WindSources.html#a9617f8b074cf130d8b33974304deef27":[2,0,25,5,2],
 "structnear__surface__diagnostics_1_1WindSources.html#a9981f28728da1f4ef06c1429eef004ac":[2,0,25,5,8],
 "structnear__surface__diagnostics_1_1WindSources.html#ab3a9e626d13c8ae200282dec5d7b5511":[2,0,25,5,10],
@@ -245,9 +249,5 @@ var NAVTREEINDEX65 =
 "structsurface__flux__wave__coupled.html#a10d71fe6dd2f38c54562aa3ab207ef25":[2,0,237,9],
 "structsurface__flux__wave__coupled.html#a7c81c888df97ef0ff4dc54be9c4e163a":[2,0,237,5],
 "structsurface__flux__wave__coupled.html#a866ba6c866f7518251a5b31b7813c381":[2,0,237,3],
-"structsurface__flux__wave__coupled.html#a91a27aa83da28c6bed01137ad0619b45":[2,0,237,6],
-"structsurface__flux__wave__coupled.html#a928bb0b9a4141fc6452c6f83fbec58aa":[2,0,237,8],
-"structsurface__flux__wave__coupled.html#ab13214a680f07a51caf7b1821f05147e":[2,0,237,2],
-"structsurface__flux__wave__coupled.html#abef93543a05f28d642a9b48a1e5b3198":[2,0,237,0],
-"structsurface__flux__wave__coupled.html#ae3f826d7a5599da490c38ee3fbb43a34":[2,0,237,7]
+"structsurface__flux__wave__coupled.html#a91a27aa83da28c6bed01137ad0619b45":[2,0,237,6]
 };

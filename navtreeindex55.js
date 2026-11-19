@@ -1,5 +1,9 @@
 var NAVTREEINDEX55 =
 {
+"structObsNudgingStation.html#a02d8a235409fea45f4863aa8b93f8339":[2,0,144,4],
+"structObsNudgingStation.html#a06bb0e7c05b41bc46609b9b734a7a219":[2,0,144,7],
+"structObsNudgingStation.html#a2870936c8e42f2c1043a6a9e57802173":[2,0,144,1],
+"structObsNudgingStation.html#a6c830a3f7ace5b3cfaef03fdf63110c5":[2,0,144,11],
 "structObsNudgingStation.html#a77a8b904386b1445ffaf72c8b3c4421e":[2,0,144,12],
 "structObsNudgingStation.html#a840aca4cffb2fc64e88f7f88994a1ef9":[2,0,144,2],
 "structObsNudgingStation.html#a85972c0dd4578b7efe569a381d4ff09b":[2,0,144,8],
@@ -245,9 +249,5 @@ var NAVTREEINDEX55 =
 "structSAMPhaseFractions.html":[2,0,174],
 "structSAMPhaseFractions.html#a20c9d09227a84d37d871914970c7e65c":[2,0,174,0],
 "structSAMPhaseFractions.html#a6369f0c62d9b61c96720a53547ceac72":[2,0,174,2],
-"structSAMPhaseFractions.html#a73f8e00f9b519a6e38b288bb05ddc93f":[2,0,174,1],
-"structSAMPrecipCellDiagnostics.html":[2,0,175],
-"structSAMPrecipCellDiagnostics.html#a00aec052e0cb147b679acee08c7ef2bc":[2,0,175,3],
-"structSAMPrecipCellDiagnostics.html#a2885e87ee78d16caa7fac54d20e57786":[2,0,175,4],
-"structSAMPrecipCellDiagnostics.html#a2d4535851eb17996b6b60c12c711d1a1":[2,0,175,6]
+"structSAMPhaseFractions.html#a73f8e00f9b519a6e38b288bb05ddc93f":[2,0,174,1]
 };
