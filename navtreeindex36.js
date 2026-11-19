@@ -1,5 +1,6 @@
 var NAVTREEINDEX36 =
 {
+"classShocImplicit.html#af8fb7c828a17b5f17b80bf899b1cb63a":[2,0,208,3],
 "classShocMoments.html":[2,0,209],
 "classShocMoments.html#a48c6d655591dc3a4d8ed667f52213f3c":[2,0,209,4],
 "classShocMoments.html#a4f28a26e542b3ffd7935165f628dc142":[2,0,209,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX36 =
 "classSurfaceLayer.html#aa586a4238ccbc5260a7efd23435bf8e0":[2,0,245,119],
 "classSurfaceLayer.html#aa5a9a5ae71905c6ac32a144d98dde018":[2,0,245,25],
 "classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7":[2,0,245,3],
-"classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7a6adf97f83acf6453d4a6a4b1070f3754":[2,0,245,3,0],
-"classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7ab573e0bb23d2f8009358b4d851deb66e":[2,0,245,3,3]
+"classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7a6adf97f83acf6453d4a6a4b1070f3754":[2,0,245,3,0]
 };

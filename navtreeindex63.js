@@ -1,5 +1,6 @@
 var NAVTREEINDEX63 =
 {
+"structerf__sbm_1_1PacketRoutingPlan.html#a946c1e835d14fcf2528daf30f408dc8b":[2,0,14,31,6],
 "structerf__sbm_1_1PacketRoutingPlan.html#a97e8743df21e372aabbabd36ba5259f7":[2,0,14,31,0],
 "structerf__sbm_1_1PacketRoutingPlan.html#aacadb8305fc2864dee3b9a0601644180":[2,0,14,31,5],
 "structerf__sbm_1_1ParticleMixingConfig.html":[2,0,14,26],
@@ -248,6 +249,5 @@ var NAVTREEINDEX63 =
 "structerf__sbm_1_1erf__detail__SBMTransport_1_1DeviceGroupInfo.html#a19bdbce0217b83702bee8da0e6303b75":[2,0,14,0,0,1],
 "structerf__sbm_1_1erf__detail__SBMTransport_1_1DeviceGroupInfo.html#a29de748af56c7a88d5187fee4a41ca66":[2,0,14,0,0,3],
 "structerf__sbm_1_1erf__detail__SBMTransport_1_1DeviceGroupInfo.html#a4e22a65423e6e5401794ed3d3c2f0e05":[2,0,14,0,0,10],
-"structerf__sbm_1_1erf__detail__SBMTransport_1_1DeviceGroupInfo.html#a53da5bf2cef9adf0b1213ce83999441a":[2,0,14,0,0,9],
-"structerf__sbm_1_1erf__detail__SBMTransport_1_1DeviceGroupInfo.html#a56d26e4b33e6c2d29ebfbbfe9765acbe":[2,0,14,0,0,7]
+"structerf__sbm_1_1erf__detail__SBMTransport_1_1DeviceGroupInfo.html#a53da5bf2cef9adf0b1213ce83999441a":[2,0,14,0,0,9]
 };

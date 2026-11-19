@@ -1,5 +1,6 @@
 var NAVTREEINDEX56 =
 {
+"structSAMPhaseFractions.html#a20c9d09227a84d37d871914970c7e65c":[2,0,174,0],
 "structSAMPhaseFractions.html#a6369f0c62d9b61c96720a53547ceac72":[2,0,174,2],
 "structSAMPhaseFractions.html#a73f8e00f9b519a6e38b288bb05ddc93f":[2,0,174,1],
 "structSAMPrecipCellDiagnostics.html":[2,0,175],
@@ -248,6 +249,5 @@ var NAVTREEINDEX56 =
 "structShocColumnData.html#ae753ac04c3fe855c8cdb30a4ad566023":[2,0,202,20],
 "structShocColumnData.html#ae949a65af7e09ec49f597e513749c916":[2,0,202,63],
 "structShocColumnData.html#ae9665ecb7107d960c9ea466429e4f9dd":[2,0,202,43],
-"structShocColumnData.html#aeb2af8ea725cc9c883734f78f541bcaf":[2,0,202,31],
-"structShocColumnData.html#af2cd402ff504a41e34e64e73f9ef20bf":[2,0,202,42]
+"structShocColumnData.html#aeb2af8ea725cc9c883734f78f541bcaf":[2,0,202,31]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX43 =
 {
+"interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,23,0,1],
 "interfacemodule__libmassv_1_1vsqrt.html":[2,0,23,1],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,23,1,0],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,23,1,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX43 =
 "namespaceerf__actuator.html#afa39bf0e6b3b08d6225c791d9cbc99d1":[1,0,9,36],
 "namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html":[1,0,9,0],
 "namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a0ec2bade866903687eacfdea5e0ff767":[1,0,9,0,6],
-"namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a28ae70fc760e9b53db3ecc8a7f1a65cc":[1,0,9,0,7],
-"namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a5c833396de3971841a1da2dd3bb6ef28":[1,0,9,0,5]
+"namespaceerf__actuator_1_1erf__detail__ActuatorSampling.html#a28ae70fc760e9b53db3ecc8a7f1a65cc":[1,0,9,0,7]
 };

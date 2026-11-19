@@ -1,5 +1,6 @@
 var NAVTREEINDEX65 =
 {
+"structnear__surface__diagnostics_1_1Sources.html#acb47f839b39d91683041c9852bed84f1":[2,0,25,4,8],
 "structnear__surface__diagnostics_1_1Sources.html#acca2e9723abdcbfd5178cd62aa6250e4":[2,0,25,4,1],
 "structnear__surface__diagnostics_1_1Sources.html#ae154e64e0eeb5b62e505a102d2891371":[2,0,25,4,16],
 "structnear__surface__diagnostics_1_1Sources.html#af1c517a45dfc5d673618d6f4b46bae23":[2,0,25,4,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX65 =
 "structsurface__flux__mod__charnock.html#adb4a96d510f1e437c9efc41ba5fd16f9":[2,0,236,5],
 "structsurface__flux__mod__charnock.html#ae323b983c915bb8325b8efe3b7a718b8":[2,0,236,2],
 "structsurface__flux__wave__coupled.html":[2,0,237],
-"structsurface__flux__wave__coupled.html#a10d71fe6dd2f38c54562aa3ab207ef25":[2,0,237,9],
-"structsurface__flux__wave__coupled.html#a7c81c888df97ef0ff4dc54be9c4e163a":[2,0,237,5]
+"structsurface__flux__wave__coupled.html#a10d71fe6dd2f38c54562aa3ab207ef25":[2,0,237,9]
 };

@@ -333,6 +333,7 @@ var classERF =
     [ "writeBuildInfoJSON", "classERF.html#a1ecb21a53102bf8049e832ecb0555f46", null ],
     [ "writeBuildInfoYAML", "classERF.html#a2f138eb6a90e3330a03c1d5c3d3135aa", null ],
     [ "WriteCheckpointFile", "classERF.html#ad101fd46096db2d6b21544bfede6551f", null ],
+    [ "WriteEBLevelSet", "classERF.html#a5bf12f6a598a0579d56ee6f3f3369f4a", null ],
     [ "WriteGenericPlotfileHeaderWithTerrain", "classERF.html#a348849a5ec30756b97f7a50e10cdaad2", null ],
     [ "writeJobInfo", "classERF.html#ab8fdc162ee0e0287b64e68bdcf04ebd7", null ],
     [ "WriteLinePlot", "classERF.html#acc09d9fff8183ff646e21478760fccb0", null ],
