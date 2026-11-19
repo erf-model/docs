@@ -128,7 +128,7 @@ var searchData=
   ['get_5fradiation_5foutput_5ffield_3312',['get_radiation_output_field',['../classSurfaceModel.html#a0ebc534f68b997b105883763d642f582',1,'SurfaceModel']]],
   ['get_5fradiation_5foutput_5ffields_3313',['get_radiation_output_fields',['../classSurfaceModel.html#a613e6a059acea5acc214092e262fab08',1,'SurfaceModel']]],
   ['get_5frhs_3314',['get_rhs',['../classMRISplitIntegrator.html#a0c49cf3ecc2130a2064d7b0d3d8e7cbf',1,'MRISplitIntegrator']]],
-  ['get_5fsample_5fdata_3315',['get_sample_data',['../structPlaneSampler.html#a12e61d861b70268c746fb25d6e065a54',1,'PlaneSampler::get_sample_data()'],['../structLineSampler.html#a693c8a5b850f080399f5c1af40e5aa4e',1,'LineSampler::get_sample_data()']]],
+  ['get_5fsample_5fdata_3315',['get_sample_data',['../structPlaneSampler.html#aee3fbd4f1d9d51e77a7448402ce446b2',1,'PlaneSampler::get_sample_data()'],['../structLineSampler.html#a693c8a5b850f080399f5c1af40e5aa4e',1,'LineSampler::get_sample_data()']]],
   ['get_5fsed_5fflux_3316',['Get_Sed_Flux',['../classMicrophysics.html#a8739d85dd66d5d33e5484780343fbae6',1,'Microphysics::Get_Sed_Flux()'],['../classEulerianMicrophysics.html#a8ff95f5297049516a7afc6b3e92074e7',1,'EulerianMicrophysics::Get_Sed_Flux()']]],
   ['get_5fsingle_5findex_3317',['get_single_index',['../ERF__Interpolation__Bilinear_8H.html#a52bd6811a2a793c28afc6faa0800215b',1,'ERF_Interpolation_Bilinear.H']]],
   ['get_5fslow_5ffast_5ftimestep_5fratio_3318',['get_slow_fast_timestep_ratio',['../classMRISplitIntegrator.html#aba63019a6ac3ea9135772dcd91f49c86',1,'MRISplitIntegrator']]],

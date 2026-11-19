@@ -1,7 +1,7 @@
 var structPlaneSampler =
 [
     [ "PlaneSampler", "structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca", null ],
-    [ "get_sample_data", "structPlaneSampler.html#a12e61d861b70268c746fb25d6e065a54", null ],
+    [ "get_sample_data", "structPlaneSampler.html#aee3fbd4f1d9d51e77a7448402ce446b2", null ],
     [ "getIndexBox", "structPlaneSampler.html#a1f71b67544dbc9c4cba7d11bc5e5b45d", null ],
     [ "write_sample_data", "structPlaneSampler.html#a47d485269a664d190e81d64babf0bbfb", null ],
     [ "m_bnd_rbx", "structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24", null ],
