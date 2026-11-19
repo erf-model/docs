@@ -1,5 +1,7 @@
 var NAVTREEINDEX61 =
 {
+"structTwoStreamRadiation_1_1FluxDiag.html#ace4d04e6a65e451344ddb7d6541b9319":[2,0,263,0,2],
+"structTwoStreamRadiation_1_1FluxDiag.html#ad7f91a4bb468b7bcdf88fd61731232c1":[2,0,263,0,5],
 "structTwoStreamRadiation_1_1OrbitalCache.html":[2,0,263,1],
 "structTwoStreamRadiation_1_1OrbitalCache.html#a2ef2657f40b538a27e58948be86cec80":[2,0,263,1,3],
 "structTwoStreamRadiation_1_1OrbitalCache.html#a3b6d4d4e5b4d81011b1211fcac776fd3":[2,0,263,1,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX61 =
 "structerf__actuator_1_1ActuatorDeviceBuffers.html#a5bb0ecfecb9963920db007c31ee58043":[2,0,0,2,7],
 "structerf__actuator_1_1ActuatorDeviceBuffers.html#a5d0982e5f0d1ff0a7ba4d9585cd6689b":[2,0,0,2,11],
 "structerf__actuator_1_1ActuatorDeviceBuffers.html#a7cc3c2de2e6a4c9490e24294daa9eed8":[2,0,0,2,6],
-"structerf__actuator_1_1ActuatorDeviceBuffers.html#a7f7aaf9014fdfb157d38c3b795925470":[2,0,0,2,1],
-"structerf__actuator_1_1ActuatorDeviceBuffers.html#a8be8006e525775bbe9c9ad755c863394":[2,0,0,2,4],
-"structerf__actuator_1_1ActuatorDeviceBuffers.html#ab3980e8aae7a0e45cd52ad0ffad5447f":[2,0,0,2,5]
+"structerf__actuator_1_1ActuatorDeviceBuffers.html#a7f7aaf9014fdfb157d38c3b795925470":[2,0,0,2,1]
 };

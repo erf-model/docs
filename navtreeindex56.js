@@ -1,5 +1,7 @@
 var NAVTREEINDEX56 =
 {
+"structRadChoice.html#a6c076fe7b0b886a094b2b59f99e7816c":[2,0,159,82],
+"structRadChoice.html#a6e327bd4bac1b879d18d0c51b2776006":[2,0,159,9],
 "structRadChoice.html#a7c45dc6685c5750ad01362a1f99186fd":[2,0,159,76],
 "structRadChoice.html#a7da38793c53ae932a56a9769a632d041":[2,0,159,65],
 "structRadChoice.html#a8162aa39b1b18054a44da8a86fb7eb3b":[2,0,159,46],
@@ -247,7 +249,5 @@ var NAVTREEINDEX56 =
 "structSHOCInterface_1_1Buffer.html":[2,0,209,0],
 "structSHOCInterface_1_1Buffer.html#a014a66993e6b505022e6f3dd0a738933":[2,0,209,0,28],
 "structSHOCInterface_1_1Buffer.html#a06e7ffd7af93d4c1d5d154f830f3e73b":[2,0,209,0,11],
-"structSHOCInterface_1_1Buffer.html#a07ee6c1f73276a97282668308a86482c":[2,0,209,0,1],
-"structSHOCInterface_1_1Buffer.html#a0b85ef85bb4772df6eb13cde709202cd":[2,0,209,0,24],
-"structSHOCInterface_1_1Buffer.html#a0db5913abb87506d30b741db0c868710":[2,0,209,0,27]
+"structSHOCInterface_1_1Buffer.html#a07ee6c1f73276a97282668308a86482c":[2,0,209,0,1]
 };
