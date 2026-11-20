@@ -38,6 +38,7 @@ var ERF__Utils_8H =
     [ "realbdy_compute_relaxation", "ERF__Utils_8H.html#ac2249529c08cee787c0b9b56259d3447", null ],
     [ "realbdy_interior_bxs_xy", "ERF__Utils_8H.html#abc480bd281f755246fa9e6faf149b588", null ],
     [ "rebalance_columns", "ERF__Utils_8H.html#a3742f619397543dafbbe2a182d5cdf33", null ],
+    [ "recompute_p_pi_hse", "ERF__Utils_8H.html#a47d69b01cc5a68722492130015b89646", null ],
     [ "select_time_data", "ERF__Utils_8H.html#a4166c23e462d90d416fbc14486acace0", null ],
     [ "select_time_level", "ERF__Utils_8H.html#af4a2cf5eb4601a9de9d12390158c74ea", null ],
     [ "thinbody_wall_dist", "ERF__Utils_8H.html#a99650b0d59ae9542586a873ea8ac142e", null ],

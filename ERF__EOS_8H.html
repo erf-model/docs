@@ -356,7 +356,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">return</span> std::pow(<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhotheta *  (amrex::Real(1) + <a class="code" href="ERF__Constants_8H.html#aae71ea8828e8a55eec132d24564842d7">RvoRd</a>*<a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14af099273d19f4b8cdca199c5177231e35">qv</a>) * <a class="code" href="ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000">ip_0</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>);</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classIBFaceSet.html#a6b50730c3a8b33e330d4d58227c673c6">IBFaceSet::add_heat_flux_to_source()</a>, <a class="el" href="ERF__InitDensityHSE_8H.html#a34ab896915f05a0d580a4b1eb1258d0a">erf_init_const_dens_and_linear_th_hse()</a>, <a class="el" href="ERF__InitDensityHSE_8H.html#ab69c03b611b51f3fe4531d97e268b994">erf_init_const_dens_and_th_hse()</a>, <a class="el" href="ERF__TwoStreamColumn_8H.html#a16f94178cc4f56932356247e2f8fad96">get_inverse_exner()</a>, <a class="el" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec">ERF::init_from_input_sounding()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#ad7d196f80cca83971318dbf6f3fe9b67">init_state_from_input_sounding_hse()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#a171977f28ff16ba1046ef18d4b59dc7e">make_sources()</a>, and <a class="el" href="ERF__Utils_8H.html#ac2249529c08cee787c0b9b56259d3447">realbdy_compute_relaxation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classIBFaceSet.html#a6b50730c3a8b33e330d4d58227c673c6">IBFaceSet::add_heat_flux_to_source()</a>, <a class="el" href="ERF__InitDensityHSE_8H.html#a34ab896915f05a0d580a4b1eb1258d0a">erf_init_const_dens_and_linear_th_hse()</a>, <a class="el" href="ERF__InitDensityHSE_8H.html#ab69c03b611b51f3fe4531d97e268b994">erf_init_const_dens_and_th_hse()</a>, <a class="el" href="ERF__TwoStreamColumn_8H.html#a16f94178cc4f56932356247e2f8fad96">get_inverse_exner()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#ad7d196f80cca83971318dbf6f3fe9b67">init_state_from_input_sounding_hse()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#a171977f28ff16ba1046ef18d4b59dc7e">make_sources()</a>, <a class="el" href="ERF__Utils_8H.html#ac2249529c08cee787c0b9b56259d3447">realbdy_compute_relaxation()</a>, and <a class="el" href="ERF__RebuildBaseState_8cpp.html#af54fae92272d81b28df332e51a2a2500">recompute_p_pi_hse()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -367,13 +367,16 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__InitDensityHSE_8H.html#a34ab896915f05a0d580a4b1eb1258d0a" title="Initialize constant density and linearly varying potential temperature in HSE." alt="" coords="477,71,625,112"/>
 <area shape="rect" href="ERF__InitDensityHSE_8H.html#ab69c03b611b51f3fe4531d97e268b994" title="Initialize constant density and potential temperature in HSE." alt="" coords="477,136,625,177"/>
 <area shape="rect" href="ERF__TwoStreamColumn_8H.html#a16f94178cc4f56932356247e2f8fad96" title="Inverse Exner function 1/pi at (i,j,k) from the state, with pi = (p / p_0)^(R_d/c_p) evaluated by get..." alt="" coords="479,202,622,229"/>
-<area shape="rect" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec" title=" " alt="" coords="227,283,381,324"/>
-<area shape="rect" href="ERF__InitFromInputSounding_8cpp.html#ad7d196f80cca83971318dbf6f3fe9b67" title=" " alt="" coords="470,304,631,345"/>
-<area shape="rect" href="ERF__MakeSources_8cpp.html#a171977f28ff16ba1046ef18d4b59dc7e" title=" " alt="" coords="493,370,608,397"/>
-<area shape="rect" href="ERF__Utils_8H.html#ac2249529c08cee787c0b9b56259d3447" title=" " alt="" coords="447,421,655,447"/>
-<area shape="rect" href="ERF__TwoStreamColumn_8H.html#ad9fb3e8d724ff2848a3667533c96a882" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="227,195,381,236"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a568b9c5ff1091a8e139fbe4b79c9caa4" title="One radiation call at one level." alt="" coords="5,195,161,236"/>
-<area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#ac6797a080884713fcc9fec656d881546" title=" " alt="" coords="209,413,399,455"/>
+<area shape="rect" href="ERF__InitFromInputSounding_8cpp.html#ad7d196f80cca83971318dbf6f3fe9b67" title=" " alt="" coords="470,355,631,396"/>
+<area shape="rect" href="ERF__MakeSources_8cpp.html#a171977f28ff16ba1046ef18d4b59dc7e" title=" " alt="" coords="493,303,608,330"/>
+<area shape="rect" href="ERF__Utils_8H.html#ac2249529c08cee787c0b9b56259d3447" title=" " alt="" coords="447,253,655,279"/>
+<area shape="rect" href="ERF__RebuildBaseState_8cpp.html#af54fae92272d81b28df332e51a2a2500" title=" " alt="" coords="473,422,629,449"/>
+<area shape="rect" href="ERF__TwoStreamColumn_8H.html#ad9fb3e8d724ff2848a3667533c96a882" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="227,187,381,228"/>
+<area shape="rect" href="classTwoStreamRadiation.html#a568b9c5ff1091a8e139fbe4b79c9caa4" title="One radiation call at one level." alt="" coords="5,187,161,228"/>
+<area shape="rect" href="classERF.html#a89f3657e95ac24d49364351a9f134987" title=" " alt="" coords="221,352,387,393"/>
+<area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#ac6797a080884713fcc9fec656d881546" title=" " alt="" coords="209,252,399,293"/>
+<area shape="rect" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec" title=" " alt="" coords="227,483,381,524"/>
+<area shape="rect" href="classERF.html#a2dbe2a0f5fb2f5f1bfdf280dec1576a9" title=" " alt="" coords="215,417,393,459"/>
 </map>
 </div>
 
@@ -410,7 +413,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> * std::pow(<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhotheta * ( amrex::Real(1) + <a class="code" href="ERF__Constants_8H.html#aae71ea8828e8a55eec132d24564842d7">RvoRd</a>*<a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14af099273d19f4b8cdca199c5177231e35">qv</a>) * <a class="code" href="ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000">ip_0</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a>);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__FireAtmCoupling_8H.html#a07dcb016b5da511f15e51068e6e5f469">apply_fire_tendency_to_cc_source()</a>, <a class="el" href="classSAM.html#a3819e6ae643e73a80dfc43a0dbcf92d1">SAM::Compute_Coefficients()</a>, <a class="el" href="namespacesea__level__pressure__diagnostics.html#af58b20b1a6675aed4a5d01200e3eeb7e">sea_level_pressure_diagnostics::compute_from_erf_lowest_level_state()</a>, <a class="el" href="classERF.html#a68cadb0e228fe398bd1ee7bd96788bb4">ERF::compute_max_pressure_gradient_diagnostic()</a>, <a class="el" href="ERF__FireUtils_8H.html#af44e69d345dcbdc552f2efdab681e679">compute_rh_from_conservative()</a>, <a class="el" href="ERF__FireUtils_8H.html#ae72b8bb5c2202e751df3e6a6fcd81a24">compute_t_from_conservative()</a>, <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#aebc338e4e22dfbdedc3b9d0fd7d381f5">ComputeDiffusivityMRF()</a>, <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#a89d4cf51a23fd5063f9459684caf35ee">ComputeDiffusivityYSU()</a>, <a class="el" href="classSLM.html#a765efc2c92780f95b6d587f4d164a722">SLM::Copy_State_to_Lsm()</a>, <a class="el" href="classERF.html#aed9077991e966a0253526b77b72d879e">ERF::derive_diag_profiles()</a>, <a class="el" href="classERF.html#a465f1ca51374212c2608900044d75971">ERF::derive_diag_profiles_stag()</a>, <a class="el" href="ERF__TwoStreamColumn_8H.html#a4eddb061cf71b1bf8a90f01ab2dee90c">diagnose_cloud_fraction_prognostic()</a>, <a class="el" href="ERF__MicrophysicsUtils_8H.html#a53f42881e64c89dee8b44969e3099826">diagnose_microphysics_thermo_state()</a>, <a class="el" href="namespaceerf__surface__temperature.html#a83ce05c0d313d2576705d41ee2627051">erf_surface_temperature::diagnose_surface_pressure()</a>, <a class="el" href="namespacederived.html#aee8374cee1420bcd1da6e0e85ea8cae1">derived::erf_dermucape()</a>, <a class="el" href="namespacederived.html#a801a5fbaa64a43782de50c0278dffef2">derived::erf_dersoundspeed()</a>, <a class="el" href="ERF__InitDensityHSE_8H.html#a34ab896915f05a0d580a4b1eb1258d0a">erf_init_const_dens_and_linear_th_hse()</a>, <a class="el" href="ERF__InitDensityHSE_8H.html#ab69c03b611b51f3fe4531d97e268b994">erf_init_const_dens_and_th_hse()</a>, <a class="el" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4">ERF::estTimeStep()</a>, <a class="el" href="namespacenear__surface__diagnostics.html#a7cee41b11fa30d00d43bb88458aad002">near_surface_diagnostics::fill()</a>, <a class="el" href="classShocPreprocess.html#af1020985491ed9af9e79d9ae46c12a71">ShocPreprocess::fill_columns()</a>, <a class="el" href="classERF.html#acf3039bca346f059829657aaa321faa6">ERF::FillPlot3DVars()</a>, <a class="el" href="classERF.html#aa5c7eff8fe01b01054d38c3866f01c14">ERF::HurricaneMinPressureTracker()</a>, <a class="el" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec">ERF::init_from_input_sounding()</a>, <a class="el" href="namespaceHSEutils.html#a42945880529b25892b8bac3c26e00dcd">HSEutils::init_isentropic_hse_constant_dz()</a>, <a class="el" href="namespaceHSEutils.html#a8130e78848531ae6668c651be0be010f">HSEutils::init_isentropic_hse_stretched_dz()</a>, <a class="el" href="namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07">HSEutils::init_isentropic_hse_terrain()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#ad7d196f80cca83971318dbf6f3fe9b67">init_state_from_input_sounding_hse()</a>, <a class="el" href="ERF__MakeFastCoeffs_8cpp.html#a132355e34a043bf66c5c5c6299541f39">make_fast_coeffs()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#abca816643026224eca2abdc2146c7ffb">make_gradp_pert()</a>, <a class="el" href="classERF.html#a01987b2556834788694f2f3741a2afe4">ERF::MakeHorizontalAverages()</a>, <a class="el" href="classRadiation.html#a0f4ddbf3696945fd595bf2c1c66862b3">Radiation::mf_to_kokkos_buffers()</a>, <a class="el" href="classERF.html#aff798e77c7bab2420a3447fcc026ad41">ERF::momentum_reflux_add_slow()</a>, <a class="el" href="classERF.html#a7bbd3122bec60bd0e7fb7be1992f8773">ERF::PackAtmosphericStates()</a>, <a class="el" href="ERF__InitCustomPert__ABL_8H.html#af45003e0dba25701fed7b69707130702">ParallelForRNG()</a>, <a class="el" href="namespaceerf__moist__perturbation.html#a6cbcd6b4f9f8da24575a33044849934f">erf_moist_perturbation::perturb_temperature_and_vapour()</a>, <a class="el" href="namespaceerf__surface__temperature.html#a80efa527a259b57d2d2826f1fc63d87d">erf_surface_temperature::pressure_at_boundary_from_cell()</a>, <a class="el" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379">rebalance_columns()</a>, <a class="el" href="classRadiationSimple.html#a60ad489081299f0387e19f8a3b53568e">RadiationSimple::Run()</a>, <a class="el" href="ERF__SAMUtils_8H.html#acd480ad96ed08bfba623065a293938cb">sam_cons_to_primitive()</a>, <a class="el" href="namespaceplotfile2d.html#a69a952912d9c48e14f166a3721e78a04">plotfile2d::sampled_field_value()</a>, and <a class="el" href="classNOAHMP.html#a4fe330708ef3ad6cdba4687b0f372c9f">NOAHMP::stage_forcing()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__FireAtmCoupling_8H.html#a07dcb016b5da511f15e51068e6e5f469">apply_fire_tendency_to_cc_source()</a>, <a class="el" href="classSAM.html#a3819e6ae643e73a80dfc43a0dbcf92d1">SAM::Compute_Coefficients()</a>, <a class="el" href="namespacesea__level__pressure__diagnostics.html#af58b20b1a6675aed4a5d01200e3eeb7e">sea_level_pressure_diagnostics::compute_from_erf_lowest_level_state()</a>, <a class="el" href="classERF.html#a68cadb0e228fe398bd1ee7bd96788bb4">ERF::compute_max_pressure_gradient_diagnostic()</a>, <a class="el" href="ERF__FireUtils_8H.html#af44e69d345dcbdc552f2efdab681e679">compute_rh_from_conservative()</a>, <a class="el" href="ERF__FireUtils_8H.html#ae72b8bb5c2202e751df3e6a6fcd81a24">compute_t_from_conservative()</a>, <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#aebc338e4e22dfbdedc3b9d0fd7d381f5">ComputeDiffusivityMRF()</a>, <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#a89d4cf51a23fd5063f9459684caf35ee">ComputeDiffusivityYSU()</a>, <a class="el" href="classSLM.html#a765efc2c92780f95b6d587f4d164a722">SLM::Copy_State_to_Lsm()</a>, <a class="el" href="classERF.html#aed9077991e966a0253526b77b72d879e">ERF::derive_diag_profiles()</a>, <a class="el" href="classERF.html#a465f1ca51374212c2608900044d75971">ERF::derive_diag_profiles_stag()</a>, <a class="el" href="ERF__TwoStreamColumn_8H.html#a4eddb061cf71b1bf8a90f01ab2dee90c">diagnose_cloud_fraction_prognostic()</a>, <a class="el" href="ERF__MicrophysicsUtils_8H.html#a53f42881e64c89dee8b44969e3099826">diagnose_microphysics_thermo_state()</a>, <a class="el" href="namespaceerf__surface__temperature.html#a83ce05c0d313d2576705d41ee2627051">erf_surface_temperature::diagnose_surface_pressure()</a>, <a class="el" href="namespacederived.html#aee8374cee1420bcd1da6e0e85ea8cae1">derived::erf_dermucape()</a>, <a class="el" href="namespacederived.html#a801a5fbaa64a43782de50c0278dffef2">derived::erf_dersoundspeed()</a>, <a class="el" href="ERF__InitDensityHSE_8H.html#a34ab896915f05a0d580a4b1eb1258d0a">erf_init_const_dens_and_linear_th_hse()</a>, <a class="el" href="ERF__InitDensityHSE_8H.html#ab69c03b611b51f3fe4531d97e268b994">erf_init_const_dens_and_th_hse()</a>, <a class="el" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4">ERF::estTimeStep()</a>, <a class="el" href="namespacenear__surface__diagnostics.html#a7cee41b11fa30d00d43bb88458aad002">near_surface_diagnostics::fill()</a>, <a class="el" href="classShocPreprocess.html#af1020985491ed9af9e79d9ae46c12a71">ShocPreprocess::fill_columns()</a>, <a class="el" href="classERF.html#acf3039bca346f059829657aaa321faa6">ERF::FillPlot3DVars()</a>, <a class="el" href="classERF.html#aa5c7eff8fe01b01054d38c3866f01c14">ERF::HurricaneMinPressureTracker()</a>, <a class="el" href="namespaceHSEutils.html#a42945880529b25892b8bac3c26e00dcd">HSEutils::init_isentropic_hse_constant_dz()</a>, <a class="el" href="namespaceHSEutils.html#a8130e78848531ae6668c651be0be010f">HSEutils::init_isentropic_hse_stretched_dz()</a>, <a class="el" href="namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07">HSEutils::init_isentropic_hse_terrain()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#ad7d196f80cca83971318dbf6f3fe9b67">init_state_from_input_sounding_hse()</a>, <a class="el" href="ERF__MakeFastCoeffs_8cpp.html#a132355e34a043bf66c5c5c6299541f39">make_fast_coeffs()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#abca816643026224eca2abdc2146c7ffb">make_gradp_pert()</a>, <a class="el" href="classERF.html#a01987b2556834788694f2f3741a2afe4">ERF::MakeHorizontalAverages()</a>, <a class="el" href="classRadiation.html#a0f4ddbf3696945fd595bf2c1c66862b3">Radiation::mf_to_kokkos_buffers()</a>, <a class="el" href="classERF.html#aff798e77c7bab2420a3447fcc026ad41">ERF::momentum_reflux_add_slow()</a>, <a class="el" href="classERF.html#a7bbd3122bec60bd0e7fb7be1992f8773">ERF::PackAtmosphericStates()</a>, <a class="el" href="ERF__InitCustomPert__ABL_8H.html#af45003e0dba25701fed7b69707130702">ParallelForRNG()</a>, <a class="el" href="namespaceerf__moist__perturbation.html#a6cbcd6b4f9f8da24575a33044849934f">erf_moist_perturbation::perturb_temperature_and_vapour()</a>, <a class="el" href="namespaceerf__surface__temperature.html#a80efa527a259b57d2d2826f1fc63d87d">erf_surface_temperature::pressure_at_boundary_from_cell()</a>, <a class="el" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379">rebalance_columns()</a>, <a class="el" href="ERF__RebuildBaseState_8cpp.html#af54fae92272d81b28df332e51a2a2500">recompute_p_pi_hse()</a>, <a class="el" href="classRadiationSimple.html#a60ad489081299f0387e19f8a3b53568e">RadiationSimple::Run()</a>, <a class="el" href="ERF__SAMUtils_8H.html#acd480ad96ed08bfba623065a293938cb">sam_cons_to_primitive()</a>, <a class="el" href="namespaceplotfile2d.html#a69a952912d9c48e14f166a3721e78a04">plotfile2d::sampled_field_value()</a>, and <a class="el" href="classNOAHMP.html#a4fe330708ef3ad6cdba4687b0f372c9f">NOAHMP::stage_forcing()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -440,25 +443,25 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="namespacenear__surface__diagnostics.html#a7cee41b11fa30d00d43bb88458aad002" title=" " alt="" coords="274,1156,461,1197"/>
 <area shape="rect" href="classShocPreprocess.html#af1020985491ed9af9e79d9ae46c12a71" title=" " alt="" coords="293,1221,441,1263"/>
 <area shape="rect" href="classERF.html#aa5c7eff8fe01b01054d38c3866f01c14" title=" " alt="" coords="269,1287,466,1328"/>
-<area shape="rect" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec" title=" " alt="" coords="29,1600,182,1641"/>
-<area shape="rect" href="namespaceHSEutils.html#a42945880529b25892b8bac3c26e00dcd" title=" " alt="" coords="279,1404,455,1445"/>
-<area shape="rect" href="namespaceHSEutils.html#a8130e78848531ae6668c651be0be010f" title=" " alt="" coords="279,1469,455,1511"/>
-<area shape="rect" href="namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07" title=" " alt="" coords="279,1535,455,1576"/>
-<area shape="rect" href="ERF__InitFromInputSounding_8cpp.html#ad7d196f80cca83971318dbf6f3fe9b67" title=" " alt="" coords="287,1600,448,1641"/>
-<area shape="rect" href="ERF__MakeFastCoeffs_8cpp.html#a132355e34a043bf66c5c5c6299541f39" title=" " alt="" coords="299,1666,435,1693"/>
-<area shape="rect" href="ERF__MakeGradP_8cpp.html#abca816643026224eca2abdc2146c7ffb" title=" " alt="" coords="300,1717,435,1743"/>
-<area shape="rect" href="classERF.html#a01987b2556834788694f2f3741a2afe4" title=" " alt="" coords="259,1767,475,1794"/>
-<area shape="rect" href="classRadiation.html#a0f4ddbf3696945fd595bf2c1c66862b3" title=" " alt="" coords="276,1819,459,1860"/>
-<area shape="rect" href="classERF.html#aff798e77c7bab2420a3447fcc026ad41" title=" " alt="" coords="280,1884,455,1925"/>
-<area shape="rect" href="classERF.html#a7bbd3122bec60bd0e7fb7be1992f8773" title=" " alt="" coords="264,1950,471,1977"/>
-<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#af45003e0dba25701fed7b69707130702" title=" " alt="" coords="308,2001,427,2027"/>
-<area shape="rect" href="namespaceerf__moist__perturbation.html#a6cbcd6b4f9f8da24575a33044849934f" title=" " alt="" coords="282,2051,453,2107"/>
-<area shape="rect" href="namespaceerf__surface__temperature.html#a80efa527a259b57d2d2826f1fc63d87d" title=" " alt="" coords="276,2131,459,2187"/>
-<area shape="rect" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379" title=" " alt="" coords="293,2211,441,2238"/>
-<area shape="rect" href="classRadiationSimple.html#a60ad489081299f0387e19f8a3b53568e" title=" " alt="" coords="286,2262,449,2289"/>
-<area shape="rect" href="ERF__SAMUtils_8H.html#acd480ad96ed08bfba623065a293938cb" title=" " alt="" coords="281,2313,454,2339"/>
-<area shape="rect" href="namespaceplotfile2d.html#a69a952912d9c48e14f166a3721e78a04" title=" " alt="" coords="294,2364,441,2405"/>
-<area shape="rect" href="classNOAHMP.html#a4fe330708ef3ad6cdba4687b0f372c9f" title=" " alt="" coords="279,2430,456,2457"/>
+<area shape="rect" href="namespaceHSEutils.html#a42945880529b25892b8bac3c26e00dcd" title=" " alt="" coords="279,1352,455,1393"/>
+<area shape="rect" href="namespaceHSEutils.html#a8130e78848531ae6668c651be0be010f" title=" " alt="" coords="279,1417,455,1459"/>
+<area shape="rect" href="namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07" title=" " alt="" coords="279,1483,455,1524"/>
+<area shape="rect" href="ERF__InitFromInputSounding_8cpp.html#ad7d196f80cca83971318dbf6f3fe9b67" title=" " alt="" coords="287,1548,448,1589"/>
+<area shape="rect" href="ERF__MakeFastCoeffs_8cpp.html#a132355e34a043bf66c5c5c6299541f39" title=" " alt="" coords="299,1614,435,1641"/>
+<area shape="rect" href="ERF__MakeGradP_8cpp.html#abca816643026224eca2abdc2146c7ffb" title=" " alt="" coords="300,1665,435,1691"/>
+<area shape="rect" href="classERF.html#a01987b2556834788694f2f3741a2afe4" title=" " alt="" coords="259,1715,475,1742"/>
+<area shape="rect" href="classRadiation.html#a0f4ddbf3696945fd595bf2c1c66862b3" title=" " alt="" coords="276,1767,459,1808"/>
+<area shape="rect" href="classERF.html#aff798e77c7bab2420a3447fcc026ad41" title=" " alt="" coords="280,1832,455,1873"/>
+<area shape="rect" href="classERF.html#a7bbd3122bec60bd0e7fb7be1992f8773" title=" " alt="" coords="264,1898,471,1925"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#af45003e0dba25701fed7b69707130702" title=" " alt="" coords="308,1949,427,1975"/>
+<area shape="rect" href="namespaceerf__moist__perturbation.html#a6cbcd6b4f9f8da24575a33044849934f" title=" " alt="" coords="282,1999,453,2055"/>
+<area shape="rect" href="namespaceerf__surface__temperature.html#a80efa527a259b57d2d2826f1fc63d87d" title=" " alt="" coords="276,2079,459,2135"/>
+<area shape="rect" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379" title=" " alt="" coords="293,2159,441,2186"/>
+<area shape="rect" href="ERF__RebuildBaseState_8cpp.html#af54fae92272d81b28df332e51a2a2500" title=" " alt="" coords="289,2210,445,2237"/>
+<area shape="rect" href="classRadiationSimple.html#a60ad489081299f0387e19f8a3b53568e" title=" " alt="" coords="286,2261,449,2287"/>
+<area shape="rect" href="ERF__SAMUtils_8H.html#acd480ad96ed08bfba623065a293938cb" title=" " alt="" coords="281,2311,454,2338"/>
+<area shape="rect" href="namespaceplotfile2d.html#a69a952912d9c48e14f166a3721e78a04" title=" " alt="" coords="294,2363,441,2404"/>
+<area shape="rect" href="classNOAHMP.html#a4fe330708ef3ad6cdba4687b0f372c9f" title=" " alt="" coords="279,2429,456,2455"/>
 <area shape="rect" href="classFireCoupler.html#a1b519c750af4aba98c2e661c56484511" title="Inject the lagged fire heat, vapor and smoke into the cell sources." alt="" coords="13,13,198,39"/>
 <area shape="rect" href="classSAM.html#a2e6ff95cf827306bbcf3661c954a692e" title=" " alt="" coords="13,71,198,98"/>
 <area shape="rect" href="namespacesea__level__pressure__diagnostics.html#a0dec851e0fcbd9ef9bbbe0b92c843a6a" title=" " alt="" coords="27,122,184,178"/>
@@ -516,19 +519,20 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__EOS_8H_a7668916ec63c2868ff5879714ad2401e_icgraph.png" border="0" usemap="#aERF__EOS_8H_a7668916ec63c2868ff5879714ad2401e_icgraph" alt=""/></div>
 <map name="aERF__EOS_8H_a7668916ec63c2868ff5879714ad2401e_icgraph" id="aERF__EOS_8H_a7668916ec63c2868ff5879714ad2401e_icgraph">
-<area shape="rect" title=" " alt="" coords="1368,89,1537,116"/>
-<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="1122,35,1291,61"/>
-<area shape="rect" href="namespaceHSEutils.html#af006ebbfafe3deddc3bf90a75f129b00" title=" " alt="" coords="1093,89,1320,116"/>
-<area shape="rect" href="ERF__InitCustomPert__SuperCell_8H.html#a13fac7867f97003095b778eb96856638" title=" " alt="" coords="1161,140,1252,167"/>
-<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="889,31,1045,57"/>
-<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="685,23,841,65"/>
+<area shape="rect" title=" " alt="" coords="1389,132,1559,159"/>
+<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="1143,48,1313,75"/>
+<area shape="rect" href="namespaceHSEutils.html#af006ebbfafe3deddc3bf90a75f129b00" title=" " alt="" coords="1115,132,1341,159"/>
+<area shape="rect" href="ERF__InitCustomPert__SuperCell_8H.html#a13fac7867f97003095b778eb96856638" title=" " alt="" coords="1183,183,1273,209"/>
+<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="911,31,1067,57"/>
+<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="696,23,852,65"/>
 <area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="457,23,637,65"/>
 <area shape="rect" href="namespaceHSEutils.html#afdbe0b1edca9e8a2b8e3121884c85c0a" title=" " alt="" coords="233,23,409,65"/>
 <area shape="rect" href="ERF__InitDensityHSE_8H.html#a1dfb45c3986d99fa2877dd4769a4e276" title="Initialize density in hydrostatic equilibrium for moist cases." alt="" coords="5,5,185,32"/>
 <area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992" title=" " alt="" coords="76,56,115,83"/>
-<area shape="rect" href="structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31" title="Hydrostatically integrate density and pressure for one sounding." alt="" coords="890,82,1045,123"/>
-<area shape="rect" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379" title=" " alt="" coords="893,148,1041,175"/>
-<area shape="rect" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec" title=" " alt="" coords="687,141,840,182"/>
+<area shape="rect" href="structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31" title="Hydrostatically integrate density and pressure for one sounding." alt="" coords="911,82,1066,123"/>
+<area shape="rect" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379" title=" " alt="" coords="915,148,1063,175"/>
+<area shape="rect" href="classERF.html#a2dbe2a0f5fb2f5f1bfdf280dec1576a9" title=" " alt="" coords="685,191,863,233"/>
+<area shape="rect" href="classERF.html#a89f3657e95ac24d49364351a9f134987" title=" " alt="" coords="691,126,857,167"/>
 </map>
 </div>
 
@@ -580,23 +584,24 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_ab24194b3b11ee04368e1087acda6bde7"><div class="ttname"><a href="ERF__Constants_8H.html#ab24194b3b11ee04368e1087acda6bde7">iGamma</a></div><div class="ttdeci">constexpr amrex::Real iGamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:77</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31">InputSoundingData::calc_rho_p()</a>, <a class="el" href="structInputSoundingData.html#a909a9876dabbbe90d4c03efa05d416f2">InputSoundingData::calc_rho_p_isentropic()</a>, <a class="el" href="classERFPhysBCFunct__base.html#ac98f2d46b5c83f90a7708e5ef4f2a188">ERFPhysBCFunct_base::impose_lateral_basestate_bcs()</a>, <a class="el" href="namespaceHSEutils.html#af006ebbfafe3deddc3bf90a75f129b00">HSEutils::Newton_Raphson_hse()</a>, <a class="el" href="ERF__InitCustomPert__ABL_8H.html#af45003e0dba25701fed7b69707130702">ParallelForRNG()</a>, <a class="el" href="namespaceerf__moist__perturbation.html#a6cbcd6b4f9f8da24575a33044849934f">erf_moist_perturbation::perturb_temperature_and_vapour()</a>, and <a class="el" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379">rebalance_columns()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31">InputSoundingData::calc_rho_p()</a>, <a class="el" href="structInputSoundingData.html#a909a9876dabbbe90d4c03efa05d416f2">InputSoundingData::calc_rho_p_isentropic()</a>, <a class="el" href="classERFPhysBCFunct__base.html#ac98f2d46b5c83f90a7708e5ef4f2a188">ERFPhysBCFunct_base::impose_lateral_basestate_bcs()</a>, <a class="el" href="namespaceHSEutils.html#af006ebbfafe3deddc3bf90a75f129b00">HSEutils::Newton_Raphson_hse()</a>, <a class="el" href="ERF__InitCustomPert__ABL_8H.html#af45003e0dba25701fed7b69707130702">ParallelForRNG()</a>, <a class="el" href="namespaceerf__moist__perturbation.html#a6cbcd6b4f9f8da24575a33044849934f">erf_moist_perturbation::perturb_temperature_and_vapour()</a>, <a class="el" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379">rebalance_columns()</a>, and <a class="el" href="classERF.html#a2dbe2a0f5fb2f5f1bfdf280dec1576a9">ERF::rebuild_base_state_from_coarse()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__EOS_8H_a379090cc33ef1f049644b05e94fd35c8_icgraph.png" border="0" usemap="#aERF__EOS_8H_a379090cc33ef1f049644b05e94fd35c8_icgraph" alt=""/></div>
 <map name="aERF__EOS_8H_a379090cc33ef1f049644b05e94fd35c8_icgraph" id="aERF__EOS_8H_a379090cc33ef1f049644b05e94fd35c8_icgraph">
-<area shape="rect" title=" " alt="" coords="684,170,860,197"/>
-<area shape="rect" href="structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31" title="Hydrostatically integrate density and pressure for one sounding." alt="" coords="207,53,361,95"/>
-<area shape="rect" href="structInputSoundingData.html#a909a9876dabbbe90d4c03efa05d416f2" title="Compute density and pressure for an isentropic sounding profile." alt="" coords="441,39,604,80"/>
-<area shape="rect" href="classERFPhysBCFunct__base.html#ac98f2d46b5c83f90a7708e5ef4f2a188" title=" " alt="" coords="409,104,636,145"/>
-<area shape="rect" href="namespaceHSEutils.html#af006ebbfafe3deddc3bf90a75f129b00" title=" " alt="" coords="409,170,636,197"/>
-<area shape="rect" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379" title=" " alt="" coords="210,191,358,218"/>
-<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#af45003e0dba25701fed7b69707130702" title=" " alt="" coords="463,271,582,298"/>
-<area shape="rect" href="namespaceerf__moist__perturbation.html#a6cbcd6b4f9f8da24575a33044849934f" title=" " alt="" coords="437,322,608,378"/>
-<area shape="rect" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec" title=" " alt="" coords="5,184,159,225"/>
-<area shape="rect" href="classERF.html#a841b9c35530690660acbb386ef9cbb24" title=" " alt="" coords="208,264,360,305"/>
-<area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#a9799ef3347df3cbf15fcd98727a62f56" title=" " alt="" coords="225,337,343,363"/>
+<area shape="rect" title=" " alt="" coords="708,202,884,229"/>
+<area shape="rect" href="structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31" title="Hydrostatically integrate density and pressure for one sounding." alt="" coords="231,5,385,47"/>
+<area shape="rect" href="structInputSoundingData.html#a909a9876dabbbe90d4c03efa05d416f2" title="Compute density and pressure for an isentropic sounding profile." alt="" coords="465,224,628,265"/>
+<area shape="rect" href="classERFPhysBCFunct__base.html#ac98f2d46b5c83f90a7708e5ef4f2a188" title=" " alt="" coords="433,289,660,331"/>
+<area shape="rect" href="namespaceHSEutils.html#af006ebbfafe3deddc3bf90a75f129b00" title=" " alt="" coords="433,71,660,98"/>
+<area shape="rect" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379" title=" " alt="" coords="234,173,382,199"/>
+<area shape="rect" href="classERF.html#a2dbe2a0f5fb2f5f1bfdf280dec1576a9" title=" " alt="" coords="5,108,183,149"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#af45003e0dba25701fed7b69707130702" title=" " alt="" coords="487,355,606,382"/>
+<area shape="rect" href="namespaceerf__moist__perturbation.html#a6cbcd6b4f9f8da24575a33044849934f" title=" " alt="" coords="461,406,632,462"/>
+<area shape="rect" href="classERF.html#a89f3657e95ac24d49364351a9f134987" title=" " alt="" coords="11,173,177,215"/>
+<area shape="rect" href="classERF.html#a841b9c35530690660acbb386ef9cbb24" title=" " alt="" coords="232,348,384,389"/>
+<area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#a9799ef3347df3cbf15fcd98727a62f56" title=" " alt="" coords="249,421,367,447"/>
 </map>
 </div>
 
@@ -643,13 +648,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__EOS_8H_a41f48ff9136ae4cce2507ec72a6575b3_icgraph.png" border="0" usemap="#aERF__EOS_8H_a41f48ff9136ae4cce2507ec72a6575b3_icgraph" alt=""/></div>
 <map name="aERF__EOS_8H_a41f48ff9136ae4cce2507ec72a6575b3_icgraph" id="aERF__EOS_8H_a41f48ff9136ae4cce2507ec72a6575b3_icgraph">
-<area shape="rect" title=" " alt="" coords="437,115,587,141"/>
-<area shape="rect" href="classERF.html#a29929644893f3e44beb5ed9403cbdaac" title=" " alt="" coords="219,5,377,32"/>
-<area shape="rect" href="classERF.html#a857a8f76768ec4451b995cbf4f4ac176" title=" " alt="" coords="227,56,369,83"/>
-<area shape="rect" href="ERF__InitFromInputSounding_8cpp.html#ad7d196f80cca83971318dbf6f3fe9b67" title=" " alt="" coords="217,107,379,149"/>
-<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a3c982845c412381f8f3493afa3cc75ce" title=" " alt="" coords="253,173,343,200"/>
-<area shape="rect" href="classERF.html#af285247b24b173cd851fe49799d17f42" title=" " alt="" coords="207,224,389,251"/>
-<area shape="rect" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec" title=" " alt="" coords="5,107,159,149"/>
+<area shape="rect" title=" " alt="" coords="451,115,600,141"/>
+<area shape="rect" href="classERF.html#a29929644893f3e44beb5ed9403cbdaac" title=" " alt="" coords="232,5,391,32"/>
+<area shape="rect" href="classERF.html#a857a8f76768ec4451b995cbf4f4ac176" title=" " alt="" coords="240,56,383,83"/>
+<area shape="rect" href="ERF__InitFromInputSounding_8cpp.html#ad7d196f80cca83971318dbf6f3fe9b67" title=" " alt="" coords="231,107,392,149"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a3c982845c412381f8f3493afa3cc75ce" title=" " alt="" coords="266,173,357,200"/>
+<area shape="rect" href="classERF.html#af285247b24b173cd851fe49799d17f42" title=" " alt="" coords="220,224,403,251"/>
+<area shape="rect" href="classERF.html#a89f3657e95ac24d49364351a9f134987" title=" " alt="" coords="5,107,172,149"/>
 </map>
 </div>
 
@@ -692,62 +697,62 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> th / std::pow(<a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>/<a class="code" href="namespaceMetGridTmpDstVars.html#ac3da1ef0f8563c978ab97fac68dd6d3ba27030d565c2d0967c7560ba20d5db963">P</a>, <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__BuoyancyUtils_8H.html#af7221f6410c5653a81147553dcb7ad43">buoyancy_dry_Tpert()</a>, <a class="el" href="ERF__BuoyancyUtils_8H.html#a9b7de196e5a1bf22ab46723d2d536cd6">buoyancy_moist_Tpert()</a>, <a class="el" href="structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31">InputSoundingData::calc_rho_p()</a>, <a class="el" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4">HSEutils::compute_rho()</a>, <a class="el" href="ERF__MicrophysicsUtils_8H.html#a53f42881e64c89dee8b44969e3099826">diagnose_microphysics_thermo_state()</a>, <a class="el" href="namespacederived.html#aee8374cee1420bcd1da6e0e85ea8cae1">derived::erf_dermucape()</a>, <a class="el" href="namespacenear__surface__diagnostics.html#a7cee41b11fa30d00d43bb88458aad002">near_surface_diagnostics::fill()</a>, <a class="el" href="classERF.html#acf3039bca346f059829657aaa321faa6">ERF::FillPlot3DVars()</a>, <a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992">if()</a>, <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#adfa53fd44a2aef99b4f5953cfed30184">ParallelFor()</a>, <a class="el" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379">rebalance_columns()</a>, and <a class="el" href="namespaceerf__surface__temperature.html#aa97f737767e883b152887e497e706c3b">erf_surface_temperature::theta_to_temperature()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__BuoyancyUtils_8H.html#af7221f6410c5653a81147553dcb7ad43">buoyancy_dry_Tpert()</a>, <a class="el" href="ERF__BuoyancyUtils_8H.html#a9b7de196e5a1bf22ab46723d2d536cd6">buoyancy_moist_Tpert()</a>, <a class="el" href="structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31">InputSoundingData::calc_rho_p()</a>, <a class="el" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4">HSEutils::compute_rho()</a>, <a class="el" href="ERF__MicrophysicsUtils_8H.html#a53f42881e64c89dee8b44969e3099826">diagnose_microphysics_thermo_state()</a>, <a class="el" href="namespacederived.html#aee8374cee1420bcd1da6e0e85ea8cae1">derived::erf_dermucape()</a>, <a class="el" href="namespacenear__surface__diagnostics.html#a7cee41b11fa30d00d43bb88458aad002">near_surface_diagnostics::fill()</a>, <a class="el" href="classERF.html#acf3039bca346f059829657aaa321faa6">ERF::FillPlot3DVars()</a>, <a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992">if()</a>, <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#adfa53fd44a2aef99b4f5953cfed30184">ParallelFor()</a>, <a class="el" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379">rebalance_columns()</a>, <a class="el" href="classERF.html#a2dbe2a0f5fb2f5f1bfdf280dec1576a9">ERF::rebuild_base_state_from_coarse()</a>, and <a class="el" href="namespaceerf__surface__temperature.html#aa97f737767e883b152887e497e706c3b">erf_surface_temperature::theta_to_temperature()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__EOS_8H_ae76d3ce3486d0e450849c56159f2dbd4_icgraph.png" border="0" usemap="#aERF__EOS_8H_ae76d3ce3486d0e450849c56159f2dbd4_icgraph" alt=""/></div>
 <map name="aERF__EOS_8H_ae76d3ce3486d0e450849c56159f2dbd4_icgraph" id="aERF__EOS_8H_ae76d3ce3486d0e450849c56159f2dbd4_icgraph">
-<area shape="rect" title=" " alt="" coords="1048,495,1183,521"/>
-<area shape="rect" href="ERF__BuoyancyUtils_8H.html#af7221f6410c5653a81147553dcb7ad43" title=" " alt="" coords="829,5,984,32"/>
+<area shape="rect" title=" " alt="" coords="1048,448,1183,475"/>
+<area shape="rect" href="ERF__BuoyancyUtils_8H.html#af7221f6410c5653a81147553dcb7ad43" title=" " alt="" coords="829,56,984,83"/>
 <area shape="rect" href="classERF.html#acf3039bca346f059829657aaa321faa6" title=" " alt="" coords="310,111,454,137"/>
-<area shape="rect" href="ERF__BuoyancyUtils_8H.html#a9b7de196e5a1bf22ab46723d2d536cd6" title=" " alt="" coords="821,56,992,83"/>
-<area shape="rect" href="structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31" title="Hydrostatically integrate density and pressure for one sounding." alt="" coords="829,247,984,289"/>
-<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="822,556,991,583"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a53f42881e64c89dee8b44969e3099826" title=" " alt="" coords="819,423,994,465"/>
-<area shape="rect" href="namespacederived.html#aee8374cee1420bcd1da6e0e85ea8cae1" title=" " alt="" coords="818,313,995,340"/>
-<area shape="rect" href="namespacenear__surface__diagnostics.html#a7cee41b11fa30d00d43bb88458aad002" title=" " alt="" coords="813,903,1000,945"/>
-<area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992" title=" " alt="" coords="887,969,926,996"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#adfa53fd44a2aef99b4f5953cfed30184" title=" " alt="" coords="861,1020,952,1047"/>
-<area shape="rect" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379" title=" " alt="" coords="833,1227,981,1253"/>
-<area shape="rect" href="namespaceerf__surface__temperature.html#aa97f737767e883b152887e497e706c3b" title=" " alt="" coords="815,1511,998,1553"/>
+<area shape="rect" href="ERF__BuoyancyUtils_8H.html#a9b7de196e5a1bf22ab46723d2d536cd6" title=" " alt="" coords="821,5,992,32"/>
+<area shape="rect" href="structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31" title="Hydrostatically integrate density and pressure for one sounding." alt="" coords="829,186,984,227"/>
+<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="822,360,991,387"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a53f42881e64c89dee8b44969e3099826" title=" " alt="" coords="819,441,994,482"/>
+<area shape="rect" href="namespacederived.html#aee8374cee1420bcd1da6e0e85ea8cae1" title=" " alt="" coords="818,252,995,279"/>
+<area shape="rect" href="namespacenear__surface__diagnostics.html#a7cee41b11fa30d00d43bb88458aad002" title=" " alt="" coords="813,914,1000,955"/>
+<area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992" title=" " alt="" coords="887,980,926,1007"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#adfa53fd44a2aef99b4f5953cfed30184" title=" " alt="" coords="861,1031,952,1057"/>
+<area shape="rect" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379" title=" " alt="" coords="833,1409,981,1436"/>
+<area shape="rect" href="classERF.html#a2dbe2a0f5fb2f5f1bfdf280dec1576a9" title=" " alt="" coords="565,1467,742,1509"/>
+<area shape="rect" href="namespaceerf__surface__temperature.html#aa97f737767e883b152887e497e706c3b" title=" " alt="" coords="815,1569,998,1610"/>
 <area shape="rect" href="ERF__MakeBuoyancy_8cpp.html#a423dc40a9974cb9a38f75bf033f2a7ba" title=" " alt="" coords="589,53,717,80"/>
 <area shape="rect" href="classERF.html#a89f6efe981fd8dea3f8b8791a25a0e53" title=" " alt="" coords="273,45,491,86"/>
-<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="575,587,731,613"/>
-<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="304,575,460,617"/>
-<area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="24,575,204,617"/>
-<area shape="rect" href="ERF__Kessler_8H.html#ad50c28997a3f50b38f6269cc4fd0a4f9" title=" " alt="" coords="580,390,727,431"/>
-<area shape="rect" href="ERF__Morrison_8H.html#af4f4ce472bc223635c90be4ce482c501" title=" " alt="" coords="574,455,733,497"/>
-<area shape="rect" href="ERF__SAMUtils_8H.html#a7cc497d20e5199ca9c6cc99cc369ed2e" title=" " alt="" coords="567,521,740,562"/>
-<area shape="rect" href="ERF__WDM6_8H.html#af03567346c720321bbf522322a2dc1d5" title=" " alt="" coords="573,259,733,301"/>
-<area shape="rect" href="ERF__WSM6_8H.html#a0fe02f7f3982b90945fb66c8ac37b085" title=" " alt="" coords="574,325,733,366"/>
-<area shape="rect" href="ERF__SAMUtils_8H.html#a188f0dfcd16f6a40b00b295807cda226" title=" " alt="" coords="271,524,493,551"/>
+<area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="575,259,731,285"/>
+<area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="304,251,460,293"/>
+<area shape="rect" href="ERF__Kessler_8H.html#ad50c28997a3f50b38f6269cc4fd0a4f9" title=" " alt="" coords="580,441,727,482"/>
+<area shape="rect" href="ERF__Morrison_8H.html#af4f4ce472bc223635c90be4ce482c501" title=" " alt="" coords="574,506,733,547"/>
+<area shape="rect" href="ERF__SAMUtils_8H.html#a7cc497d20e5199ca9c6cc99cc369ed2e" title=" " alt="" coords="567,571,740,613"/>
+<area shape="rect" href="ERF__WDM6_8H.html#af03567346c720321bbf522322a2dc1d5" title=" " alt="" coords="573,310,733,351"/>
+<area shape="rect" href="ERF__WSM6_8H.html#a0fe02f7f3982b90945fb66c8ac37b085" title=" " alt="" coords="574,375,733,417"/>
+<area shape="rect" href="ERF__SAMUtils_8H.html#a188f0dfcd16f6a40b00b295807cda226" title=" " alt="" coords="271,579,493,605"/>
 <area shape="rect" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f" title=" " alt="" coords="572,208,735,235"/>
-<area shape="rect" href="classerf__sbm_1_1SBMAMRFluxRegister.html#a17a314689cdaf808876750465491ceb7" title=" " alt="" coords="541,689,765,730"/>
-<area shape="rect" href="classerf__sbm_1_1SBMTransport.html#a53cb5a5f24ed432234704f5526af7a36" title=" " alt="" coords="567,754,739,795"/>
-<area shape="rect" href="classerf__sbm_1_1SBMAMRFluxRegister.html#a18eb72a20fb179c0058e042bd63296f8" title=" " alt="" coords="541,819,765,861"/>
-<area shape="rect" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a600e2276cc3e2bfa392a9ba6f180d540" title=" " alt="" coords="277,905,487,946"/>
-<area shape="rect" href="classIBFaceSet.html#a7db84a010e9f8b8564d996e37bc29f3d" title=" " alt="" coords="591,936,716,963"/>
-<area shape="rect" href="classerf__sbm_1_1SBMAMRFluxRegister.html#abc4bb2465091d7c73cd42a4744bc2fb9" title=" " alt="" coords="541,987,765,1029"/>
-<area shape="rect" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a8673596714b36b7746e2aabf861312bf" title=" " alt="" coords="547,1053,760,1094"/>
-<area shape="rect" href="classERF.html#a68174258bfc0f89b45b68ffd0c46a35f" title=" " alt="" coords="581,1119,725,1145"/>
-<area shape="rect" href="classSLM.html#a2d4663512644b4a3bfb041e7447e6bb7" title=" " alt="" coords="572,1169,735,1196"/>
-<area shape="rect" href="classPlaneAverage.html#aa58d4a708d46cd0d12120e9bf90d5de2" title=" " alt="" coords="561,1220,745,1247"/>
-<area shape="rect" href="namespaceobs__nudging.html#a07bd759549c15526226b514d0d072d12" title=" " alt="" coords="579,1271,727,1313"/>
-<area shape="rect" href="classerf__sbm_1_1SBMAMRFluxRegister.html#a9bb165a8ad406ae6e81c722d33fcc92c" title=" " alt="" coords="541,1337,765,1378"/>
-<area shape="rect" href="ERF__PBLModels_8H.html#a02ad9ef2e4c50413560acb04b7cebeff" title=" " alt="" coords="595,637,712,664"/>
-<area shape="rect" href="classerf__sbm_1_1SBMTransport.html#ab03788fe4354d913808eb8bbcd37698b" title=" " alt="" coords="281,754,483,795"/>
-<area shape="rect" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a1136e7902d3567fb5ab3bffecf158696" title=" " alt="" coords="5,965,223,1006"/>
-<area shape="rect" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a286976a61850ac74a7dbbc7ca6d412b3" title=" " alt="" coords="277,1025,487,1066"/>
-<area shape="rect" href="ERF__ComputeDiffusivityMRF_8cpp.html#aebc338e4e22dfbdedc3b9d0fd7d381f5" title=" " alt="" coords="293,641,471,668"/>
-<area shape="rect" href="ERF__ComputeDiffusivityYSU_8cpp.html#a89d4cf51a23fd5063f9459684caf35ee" title=" " alt="" coords="295,692,469,719"/>
-<area shape="rect" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec" title=" " alt="" coords="577,1402,730,1443"/>
-<area shape="rect" href="namespaceerf__checkpoint__surface__temperature.html#a2c3ce549c69af985d2f315b8f84a4564" title=" " alt="" coords="557,1468,750,1524"/>
-<area shape="rect" href="namespacerrtmgp.html#abe0424eff009566c0f357c0855d3fe3f" title=" " alt="" coords="565,1549,742,1590"/>
-<area shape="rect" href="ERF__TwoStreamColumn_8H.html#ad9fb3e8d724ff2848a3667533c96a882" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="576,1614,731,1655"/>
-<area shape="rect" href="classERF.html#a8362985fe54eee8aad1a4d11c04c3453" title=" " alt="" coords="299,1475,465,1517"/>
-<area shape="rect" href="classRadiation.html#a0f4ddbf3696945fd595bf2c1c66862b3" title=" " alt="" coords="291,1549,473,1590"/>
-<area shape="rect" href="classTwoStreamRadiation.html#a568b9c5ff1091a8e139fbe4b79c9caa4" title="One radiation call at one level." alt="" coords="304,1614,460,1655"/>
+<area shape="rect" href="classerf__sbm_1_1SBMAMRFluxRegister.html#a17a314689cdaf808876750465491ceb7" title=" " alt="" coords="541,754,765,795"/>
+<area shape="rect" href="classerf__sbm_1_1SBMTransport.html#a53cb5a5f24ed432234704f5526af7a36" title=" " alt="" coords="567,819,739,861"/>
+<area shape="rect" href="classerf__sbm_1_1SBMAMRFluxRegister.html#a18eb72a20fb179c0058e042bd63296f8" title=" " alt="" coords="541,885,765,926"/>
+<area shape="rect" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a600e2276cc3e2bfa392a9ba6f180d540" title=" " alt="" coords="277,998,487,1039"/>
+<area shape="rect" href="classIBFaceSet.html#a7db84a010e9f8b8564d996e37bc29f3d" title=" " alt="" coords="591,1001,716,1028"/>
+<area shape="rect" href="classerf__sbm_1_1SBMAMRFluxRegister.html#abc4bb2465091d7c73cd42a4744bc2fb9" title=" " alt="" coords="541,1053,765,1094"/>
+<area shape="rect" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a8673596714b36b7746e2aabf861312bf" title=" " alt="" coords="547,1118,760,1159"/>
+<area shape="rect" href="classERF.html#a68174258bfc0f89b45b68ffd0c46a35f" title=" " alt="" coords="581,1184,725,1211"/>
+<area shape="rect" href="classSLM.html#a2d4663512644b4a3bfb041e7447e6bb7" title=" " alt="" coords="572,1235,735,1261"/>
+<area shape="rect" href="classPlaneAverage.html#aa58d4a708d46cd0d12120e9bf90d5de2" title=" " alt="" coords="561,1285,745,1312"/>
+<area shape="rect" href="namespaceobs__nudging.html#a07bd759549c15526226b514d0d072d12" title=" " alt="" coords="579,1337,727,1378"/>
+<area shape="rect" href="classerf__sbm_1_1SBMAMRFluxRegister.html#a9bb165a8ad406ae6e81c722d33fcc92c" title=" " alt="" coords="541,637,765,678"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#a02ad9ef2e4c50413560acb04b7cebeff" title=" " alt="" coords="595,703,712,729"/>
+<area shape="rect" href="classerf__sbm_1_1SBMTransport.html#ab03788fe4354d913808eb8bbcd37698b" title=" " alt="" coords="281,819,483,861"/>
+<area shape="rect" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a1136e7902d3567fb5ab3bffecf158696" title=" " alt="" coords="5,1031,223,1073"/>
+<area shape="rect" href="classerf__auxiliary_1_1CompletedStepFluxLedger.html#a286976a61850ac74a7dbbc7ca6d412b3" title=" " alt="" coords="277,1091,487,1133"/>
+<area shape="rect" href="ERF__ComputeDiffusivityMRF_8cpp.html#aebc338e4e22dfbdedc3b9d0fd7d381f5" title=" " alt="" coords="293,677,471,704"/>
+<area shape="rect" href="ERF__ComputeDiffusivityYSU_8cpp.html#a89d4cf51a23fd5063f9459684caf35ee" title=" " alt="" coords="295,728,469,755"/>
+<area shape="rect" href="classERF.html#a89f3657e95ac24d49364351a9f134987" title=" " alt="" coords="570,1402,737,1443"/>
+<area shape="rect" href="namespaceerf__checkpoint__surface__temperature.html#a2c3ce549c69af985d2f315b8f84a4564" title=" " alt="" coords="557,1599,750,1655"/>
+<area shape="rect" href="namespacerrtmgp.html#abe0424eff009566c0f357c0855d3fe3f" title=" " alt="" coords="565,1679,742,1721"/>
+<area shape="rect" href="ERF__TwoStreamColumn_8H.html#ad9fb3e8d724ff2848a3667533c96a882" title="GPU&#45;safe per&#45;column vertical integration kernel for two&#45;stream radiation, computing either the clear&#45;..." alt="" coords="576,1533,731,1574"/>
+<area shape="rect" href="classERF.html#a8362985fe54eee8aad1a4d11c04c3453" title=" " alt="" coords="299,1606,465,1647"/>
+<area shape="rect" href="classRadiation.html#a0f4ddbf3696945fd595bf2c1c66862b3" title=" " alt="" coords="291,1679,473,1721"/>
+<area shape="rect" href="classTwoStreamRadiation.html#a568b9c5ff1091a8e139fbe4b79c9caa4" title="One radiation call at one level." alt="" coords="304,1533,460,1574"/>
 </map>
 </div>
 
@@ -964,17 +969,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__EOS_8H_a8770405e52bfe8feb427eca945370fb2_icgraph.png" border="0" usemap="#aERF__EOS_8H_a8770405e52bfe8feb427eca945370fb2_icgraph" alt=""/></div>
 <map name="aERF__EOS_8H_a8770405e52bfe8feb427eca945370fb2_icgraph" id="aERF__EOS_8H_a8770405e52bfe8feb427eca945370fb2_icgraph">
-<area shape="rect" title=" " alt="" coords="1456,283,1589,309"/>
-<area shape="rect" href="classSatAdj.html#a05ead2fec0c8e0ee4f396112db4e6316" title=" " alt="" coords="1203,32,1383,59"/>
-<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="1209,83,1378,109"/>
-<area shape="rect" href="namespacederived.html#aee8374cee1420bcd1da6e0e85ea8cae1" title=" " alt="" coords="1205,133,1382,160"/>
-<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#af45003e0dba25701fed7b69707130702" title=" " alt="" coords="1234,184,1353,211"/>
-<area shape="rect" href="namespaceerf__moist__perturbation.html#a6cbcd6b4f9f8da24575a33044849934f" title=" " alt="" coords="1208,235,1379,291"/>
-<area shape="rect" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379" title=" " alt="" coords="1219,315,1367,341"/>
-<area shape="rect" href="ERF__SAMUtils_8H.html#ac17dfc54de87dd8155a238455f0d31b9" title=" " alt="" coords="1204,366,1383,407"/>
-<area shape="rect" href="namespaceerf__surface__temperature.html#a0e54a32154f7a2327fad71b277e2bd2e" title=" " alt="" coords="1202,599,1385,641"/>
-<area shape="rect" href="ERF__WDM6_8H.html#a8a6a96e9ec36723232466066d16d2a5c" title=" " alt="" coords="1179,710,1408,751"/>
-<area shape="rect" href="ERF__WSM6_8H.html#a857b60e947714ca3395ae541832daf45" title=" " alt="" coords="1179,866,1407,907"/>
+<area shape="rect" title=" " alt="" coords="1456,289,1589,316"/>
+<area shape="rect" href="classSatAdj.html#a05ead2fec0c8e0ee4f396112db4e6316" title=" " alt="" coords="1203,35,1383,61"/>
+<area shape="rect" href="namespaceHSEutils.html#a0a8957703dba2ef55e8d1639f82ad3b4" title=" " alt="" coords="1209,85,1378,112"/>
+<area shape="rect" href="namespacederived.html#aee8374cee1420bcd1da6e0e85ea8cae1" title=" " alt="" coords="1205,136,1382,163"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#af45003e0dba25701fed7b69707130702" title=" " alt="" coords="1234,191,1353,217"/>
+<area shape="rect" href="namespaceerf__moist__perturbation.html#a6cbcd6b4f9f8da24575a33044849934f" title=" " alt="" coords="1208,241,1379,297"/>
+<area shape="rect" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379" title=" " alt="" coords="1219,321,1367,348"/>
+<area shape="rect" href="ERF__SAMUtils_8H.html#ac17dfc54de87dd8155a238455f0d31b9" title=" " alt="" coords="1204,425,1383,466"/>
+<area shape="rect" href="namespaceerf__surface__temperature.html#a0e54a32154f7a2327fad71b277e2bd2e" title=" " alt="" coords="1202,665,1385,706"/>
+<area shape="rect" href="ERF__WDM6_8H.html#a8a6a96e9ec36723232466066d16d2a5c" title=" " alt="" coords="1179,775,1408,817"/>
+<area shape="rect" href="ERF__WSM6_8H.html#a857b60e947714ca3395ae541832daf45" title=" " alt="" coords="1179,931,1407,973"/>
 <area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="945,31,1101,57"/>
 <area shape="rect" href="namespaceHSEutils.html#a38c34dda470e8efb00e34dfc56a5d3cc" title=" " alt="" coords="705,23,861,65"/>
 <area shape="rect" href="namespaceHSEutils.html#a25fa3eac422edce93049aaaed68785fc" title=" " alt="" coords="465,23,645,65"/>
@@ -985,21 +990,22 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f" title=" " alt="" coords="941,132,1104,159"/>
 <area shape="rect" href="classERF.html#a841b9c35530690660acbb386ef9cbb24" title=" " alt="" coords="947,183,1099,225"/>
 <area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#a9799ef3347df3cbf15fcd98727a62f56" title=" " alt="" coords="963,249,1082,276"/>
-<area shape="rect" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec" title=" " alt="" coords="946,301,1099,342"/>
-<area shape="rect" href="classSAM.html#a48d25f57da2ba1d7ddb503ede0b8d998" title=" " alt="" coords="735,367,832,393"/>
-<area shape="rect" href="ERF__SAMUtils_8H.html#a63db6f672fcb05e84879e4b22c9196ad" title=" " alt="" coords="933,417,1112,444"/>
-<area shape="rect" href="classSAM.html#a012056ae20ded7928adf1be8afa665b9" title=" " alt="" coords="497,392,613,419"/>
-<area shape="rect" href="classSAM.html#a05218bdc2187b79e456ade5b6f5bdb3c" title=" " alt="" coords="733,417,833,444"/>
-<area shape="rect" href="classSurfaceLayer.html#adb18ddf7c701fb9484b6282729265ddc" title=" " alt="" coords="924,469,1121,510"/>
-<area shape="rect" href="classSurfaceLayer.html#a0e718e2e4a25e1c49f08a648b3e15a72" title=" " alt="" coords="933,534,1112,575"/>
-<area shape="rect" href="classSurfaceLayer.html#aacca05de00777670cb821591ac38dc8d" title=" " alt="" coords="949,599,1096,641"/>
-<area shape="rect" href="classSurfaceLayer.html#a30ca1aff503a71f158f99cf250d75d47" title=" " alt="" coords="915,665,1131,706"/>
-<area shape="rect" href="classSurfaceLayer.html#a8427650770c2c2d7460fe36ff5f3ed3a" title=" " alt="" coords="933,730,1112,771"/>
-<area shape="rect" href="classSurfaceLayer.html#a5ae10a419cb102f5a6c46c92ef26571b" title=" " alt="" coords="939,795,1106,837"/>
-<area shape="rect" href="classWDM6.html#a188b61eeaa7c207636d0b988d0b42537" title=" " alt="" coords="929,861,1116,888"/>
-<area shape="rect" href="ERF__WSM6_8H.html#a2df21baf4739784bafd35af41d9cf780" title=" " alt="" coords="941,913,1104,954"/>
-<area shape="rect" href="classWSM6.html#aa1ade1b9b9e4effa8525e530e7bd4a5b" title=" " alt="" coords="700,913,867,954"/>
-<area shape="rect" href="classWSM6.html#a6e9fb09f6813d603d7a2064f5bd4d742" title=" " alt="" coords="457,920,652,947"/>
+<area shape="rect" href="classERF.html#a89f3657e95ac24d49364351a9f134987" title=" " alt="" coords="939,301,1106,342"/>
+<area shape="rect" href="classERF.html#a2dbe2a0f5fb2f5f1bfdf280dec1576a9" title=" " alt="" coords="934,366,1111,407"/>
+<area shape="rect" href="classSAM.html#a48d25f57da2ba1d7ddb503ede0b8d998" title=" " alt="" coords="735,432,832,459"/>
+<area shape="rect" href="ERF__SAMUtils_8H.html#a63db6f672fcb05e84879e4b22c9196ad" title=" " alt="" coords="933,483,1112,509"/>
+<area shape="rect" href="classSAM.html#a012056ae20ded7928adf1be8afa665b9" title=" " alt="" coords="497,457,613,484"/>
+<area shape="rect" href="classSAM.html#a05218bdc2187b79e456ade5b6f5bdb3c" title=" " alt="" coords="733,483,833,509"/>
+<area shape="rect" href="classSurfaceLayer.html#adb18ddf7c701fb9484b6282729265ddc" title=" " alt="" coords="924,534,1121,575"/>
+<area shape="rect" href="classSurfaceLayer.html#a0e718e2e4a25e1c49f08a648b3e15a72" title=" " alt="" coords="933,599,1112,641"/>
+<area shape="rect" href="classSurfaceLayer.html#aacca05de00777670cb821591ac38dc8d" title=" " alt="" coords="949,665,1096,706"/>
+<area shape="rect" href="classSurfaceLayer.html#a30ca1aff503a71f158f99cf250d75d47" title=" " alt="" coords="915,730,1131,771"/>
+<area shape="rect" href="classSurfaceLayer.html#a8427650770c2c2d7460fe36ff5f3ed3a" title=" " alt="" coords="933,795,1112,837"/>
+<area shape="rect" href="classSurfaceLayer.html#a5ae10a419cb102f5a6c46c92ef26571b" title=" " alt="" coords="939,861,1106,902"/>
+<area shape="rect" href="classWDM6.html#a188b61eeaa7c207636d0b988d0b42537" title=" " alt="" coords="929,927,1116,953"/>
+<area shape="rect" href="ERF__WSM6_8H.html#a2df21baf4739784bafd35af41d9cf780" title=" " alt="" coords="941,978,1104,1019"/>
+<area shape="rect" href="classWSM6.html#aa1ade1b9b9e4effa8525e530e7bd4a5b" title=" " alt="" coords="700,978,867,1019"/>
+<area shape="rect" href="classWSM6.html#a6e9fb09f6813d603d7a2064f5bd4d742" title=" " alt="" coords="457,985,652,1012"/>
 </map>
 </div>
 
