@@ -328,6 +328,7 @@ var classERF =
     [ "update_diffusive_arrays", "classERF.html#a419510fced05e9afc05c466beeeb66f7", null ],
     [ "update_terrain_arrays", "classERF.html#a7dba7f9e6bd3f6898fac9ac2efcec692", null ],
     [ "update_zsfc_nd", "classERF.html#a1603887aac4f8153aa6ad590d330f95b", null ],
+    [ "use_eb_surface_layer", "classERF.html#a9f41cb1f80f021edc136fd0668f9ad45", null ],
     [ "use_native_fc_factories", "classERF.html#acea2cd02c4e00f08de4e6ed300cdc653", null ],
     [ "volWgtColumnSum", "classERF.html#a1b601757b2d24225cf9e7980e9a16c51", null ],
     [ "volWgtSumMF", "classERF.html#a95d6b706cdf0192a149b5f1aa3239800", null ],

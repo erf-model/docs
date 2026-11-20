@@ -101,6 +101,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ad5b7690018b26c45d7589c879cd47ddd"><td class="memItemLeft" align="right" valign="top">Gpu::HostVector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__SurfaceLayer.html#ad5b7690018b26c45d7589c879cd47ddd">read_eb_roughness</a> (std::istream &amp;file, const std::string &amp;fname, const Geometry &amp;geom, int lev)</td></tr>
+<tr class="separator:ad5b7690018b26c45d7589c879cd47ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a008eec9505de7b0b6fc227c57221813f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__SurfaceLayer.html#a008eec9505de7b0b6fc227c57221813f">covers_columns</a> (const Array4&lt; const Real &gt; &amp;a, const Box &amp;b)</td></tr>
 <tr class="separator:a008eec9505de7b0b6fc227c57221813f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7152b09b37474df8e449786c33d3d9e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structerf__detail__SurfaceLayer_1_1NearestColumn.html">NearestColumn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__SurfaceLayer.html#a7152b09b37474df8e449786c33d3d9e2">surface_columns</a> (const Geometry &amp;geom, const IntVect &amp;ng)</td></tr>
@@ -135,10 +137,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Whether a planar field covers the columns of b laterally; a null field covers nothing and is not tested. </p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> !a || (a.begin[0] &lt;= b.smallEnd(0) &amp;&amp; a.end[0] &gt; b.bigEnd(0) &amp;&amp;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                  a.begin[1] &lt;= b.smallEnd(1) &amp;&amp; a.end[1] &gt; b.bigEnd(1));</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">return</span> !a || (a.begin[0] &lt;= b.smallEnd(0) &amp;&amp; a.end[0] &gt; b.bigEnd(0) &amp;&amp;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                  a.begin[1] &lt;= b.smallEnd(1) &amp;&amp; a.end[1] &gt; b.bigEnd(1));</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a96d8f94b856d55bc4c1d708b82376727">SurfaceLayer::compute_SurfaceLayer_bcs()</a>.</p>
 <div class="dynheader">
@@ -214,52 +216,52 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> has_mask = (lmask != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> is_coupled = (coupled != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a> = (dir == 0) ? 1 : 0;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dj = (dir == 1) ? 1 : 0;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(current, TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> c = current.array(mfi);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> m = has_mask ? lmask-&gt;const_array(mfi) : Array4&lt;const int&gt;{};</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> km = has_mask ? amrex::lbound(m).z : 0;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> en  = is_coupled ? coupled-&gt;<a class="code" href="structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a100ed5c7c170179fff3667acedf4698f">east_north</a>-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> rot = is_coupled ? coupled-&gt;<a class="code" href="structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a14aec06e62dce9fddc6b7cda4baa8411">rotation</a>-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> cov = is_coupled ? coupled-&gt;<a class="code" href="structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a062f96f4e76535a66ebf05d95953de45">covered</a>-&gt;const_array(mfi) : Array4&lt;const int&gt;{};</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(mfi.growntilebox(), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordtype">bool</span> moves = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            Real sum = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> side = 0; side &lt; 2; ++side) {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> ii = in_domain.<a class="code" href="structerf__detail__SurfaceLayer_1_1NearestColumn.html#abaf3a1d6cc82b5db914fcadb2ae669a0">i</a>(i - <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a> * (1 - side));</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> jj = in_domain.<a class="code" href="structerf__detail__SurfaceLayer_1_1NearestColumn.html#a963683759ea4839be42ccd3f39bab51f">j</a>(j - dj * (1 - side));</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                moves = moves &amp;&amp; (!has_mask || m(ii,jj,km) == 0) &amp;&amp;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                        (!is_coupled || cov(ii,jj,0) != 0);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <span class="keywordflow">if</span> (is_coupled) {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                    Real u_grid, v_grid;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                    <a class="code" href="namespaceerf__earth__wind.html#a35ec06553ae6e7b6e7814a2a93b74d8a">erf_earth_wind::earth_to_grid</a>(en(ii,jj,0,0), en(ii,jj,0,1),</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                                  rot(ii,jj,0,0), rot(ii,jj,0,1),</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                                  u_grid, v_grid);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                    sum += (dir == 0) ? u_grid : v_grid;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            c(i,j,k) = !moves ? <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> : (is_coupled ? <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * sum : speed);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        });</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;{</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> has_mask = (lmask != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> is_coupled = (coupled != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a> = (dir == 0) ? 1 : 0;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dj = (dir == 1) ? 1 : 0;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(current, TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> c = current.array(mfi);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> m = has_mask ? lmask-&gt;const_array(mfi) : Array4&lt;const int&gt;{};</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> km = has_mask ? amrex::lbound(m).z : 0;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> en  = is_coupled ? coupled-&gt;<a class="code" href="structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a100ed5c7c170179fff3667acedf4698f">east_north</a>-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> rot = is_coupled ? coupled-&gt;<a class="code" href="structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a14aec06e62dce9fddc6b7cda4baa8411">rotation</a>-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> cov = is_coupled ? coupled-&gt;<a class="code" href="structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a062f96f4e76535a66ebf05d95953de45">covered</a>-&gt;const_array(mfi) : Array4&lt;const int&gt;{};</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(mfi.growntilebox(), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keywordtype">bool</span> moves = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            Real sum = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> side = 0; side &lt; 2; ++side) {</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> ii = in_domain.<a class="code" href="structerf__detail__SurfaceLayer_1_1NearestColumn.html#abaf3a1d6cc82b5db914fcadb2ae669a0">i</a>(i - <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a> * (1 - side));</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> jj = in_domain.<a class="code" href="structerf__detail__SurfaceLayer_1_1NearestColumn.html#a963683759ea4839be42ccd3f39bab51f">j</a>(j - dj * (1 - side));</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                moves = moves &amp;&amp; (!has_mask || m(ii,jj,km) == 0) &amp;&amp;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                        (!is_coupled || cov(ii,jj,0) != 0);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                <span class="keywordflow">if</span> (is_coupled) {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                    Real u_grid, v_grid;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                    <a class="code" href="namespaceerf__earth__wind.html#a35ec06553ae6e7b6e7814a2a93b74d8a">erf_earth_wind::earth_to_grid</a>(en(ii,jj,0,0), en(ii,jj,0,1),</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                                                  rot(ii,jj,0,0), rot(ii,jj,0,1),</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                                                  u_grid, v_grid);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    sum += (dir == 0) ? u_grid : v_grid;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            c(i,j,k) = !moves ? <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> : (is_coupled ? <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * sum : speed);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        });</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    }</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:36</div></div>
 <div class="ttc" id="aERF__NumericalConstants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:41</div></div>
 <div class="ttc" id="anamespaceerf__earth__wind_html_a35ec06553ae6e7b6e7814a2a93b74d8a"><div class="ttname"><a href="namespaceerf__earth__wind.html#a35ec06553ae6e7b6e7814a2a93b74d8a">erf_earth_wind::earth_to_grid</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void earth_to_grid(amrex::Real u_east, amrex::Real v_north, amrex::Real cos_alpha, amrex::Real sin_alpha, amrex::Real &amp;u, amrex::Real &amp;v) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_EarthRelativeWind.H:39</div></div>
 <div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_af40ac9cec1030364aec22c7d21109401"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">module_mp_morr_two_moment::di</a></div><div class="ttdeci">real(c_double), private di</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:203</div></div>
-<div class="ttc" id="astructerf__detail__SurfaceLayer_1_1CoupledCurrentCells_html_a062f96f4e76535a66ebf05d95953de45"><div class="ttname"><a href="structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a062f96f4e76535a66ebf05d95953de45">erf_detail_SurfaceLayer::CoupledCurrentCells::covered</a></div><div class="ttdeci">const iMultiFab * covered</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:107</div></div>
-<div class="ttc" id="astructerf__detail__SurfaceLayer_1_1CoupledCurrentCells_html_a100ed5c7c170179fff3667acedf4698f"><div class="ttname"><a href="structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a100ed5c7c170179fff3667acedf4698f">erf_detail_SurfaceLayer::CoupledCurrentCells::east_north</a></div><div class="ttdeci">const MultiFab * east_north</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:105</div></div>
-<div class="ttc" id="astructerf__detail__SurfaceLayer_1_1CoupledCurrentCells_html_a14aec06e62dce9fddc6b7cda4baa8411"><div class="ttname"><a href="structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a14aec06e62dce9fddc6b7cda4baa8411">erf_detail_SurfaceLayer::CoupledCurrentCells::rotation</a></div><div class="ttdeci">const MultiFab * rotation</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:106</div></div>
-<div class="ttc" id="astructerf__detail__SurfaceLayer_1_1NearestColumn_html_a963683759ea4839be42ccd3f39bab51f"><div class="ttname"><a href="structerf__detail__SurfaceLayer_1_1NearestColumn.html#a963683759ea4839be42ccd3f39bab51f">erf_detail_SurfaceLayer::NearestColumn::j</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int j(int jj) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:33</div></div>
-<div class="ttc" id="astructerf__detail__SurfaceLayer_1_1NearestColumn_html_abaf3a1d6cc82b5db914fcadb2ae669a0"><div class="ttname"><a href="structerf__detail__SurfaceLayer_1_1NearestColumn.html#abaf3a1d6cc82b5db914fcadb2ae669a0">erf_detail_SurfaceLayer::NearestColumn::i</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int i(int ii) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:30</div></div>
+<div class="ttc" id="astructerf__detail__SurfaceLayer_1_1CoupledCurrentCells_html_a062f96f4e76535a66ebf05d95953de45"><div class="ttname"><a href="structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a062f96f4e76535a66ebf05d95953de45">erf_detail_SurfaceLayer::CoupledCurrentCells::covered</a></div><div class="ttdeci">const iMultiFab * covered</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:226</div></div>
+<div class="ttc" id="astructerf__detail__SurfaceLayer_1_1CoupledCurrentCells_html_a100ed5c7c170179fff3667acedf4698f"><div class="ttname"><a href="structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a100ed5c7c170179fff3667acedf4698f">erf_detail_SurfaceLayer::CoupledCurrentCells::east_north</a></div><div class="ttdeci">const MultiFab * east_north</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:224</div></div>
+<div class="ttc" id="astructerf__detail__SurfaceLayer_1_1CoupledCurrentCells_html_a14aec06e62dce9fddc6b7cda4baa8411"><div class="ttname"><a href="structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html#a14aec06e62dce9fddc6b7cda4baa8411">erf_detail_SurfaceLayer::CoupledCurrentCells::rotation</a></div><div class="ttdeci">const MultiFab * rotation</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:225</div></div>
+<div class="ttc" id="astructerf__detail__SurfaceLayer_1_1NearestColumn_html_a963683759ea4839be42ccd3f39bab51f"><div class="ttname"><a href="structerf__detail__SurfaceLayer_1_1NearestColumn.html#a963683759ea4839be42ccd3f39bab51f">erf_detail_SurfaceLayer::NearestColumn::j</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int j(int jj) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:42</div></div>
+<div class="ttc" id="astructerf__detail__SurfaceLayer_1_1NearestColumn_html_abaf3a1d6cc82b5db914fcadb2ae669a0"><div class="ttname"><a href="structerf__detail__SurfaceLayer_1_1NearestColumn.html#abaf3a1d6cc82b5db914fcadb2ae669a0">erf_detail_SurfaceLayer::NearestColumn::i</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int i(int ii) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:39</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#ad0614c0dceb4e3b6ea6facc91a580f07">SurfaceLayer::fill_surface_current()</a>.</p>
 <div class="dynheader">
@@ -281,6 +283,170 @@ Here is the caller graph for this function:</div>
 <map name="anamespaceerf__detail__SurfaceLayer_ac487d53483efd01da0775e5bef28f10c_icgraph" id="anamespaceerf__detail__SurfaceLayer_ac487d53483efd01da0775e5bef28f10c_icgraph">
 <area shape="rect" title=" " alt="" coords="184,5,360,47"/>
 <area shape="rect" href="classSurfaceLayer.html#ad0614c0dceb4e3b6ea6facc91a580f07" title=" " alt="" coords="5,5,136,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad5b7690018b26c45d7589c879cd47ddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b7690018b26c45d7589c879cd47ddd">&#9670;&nbsp;</a></span>read_eb_roughness()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gpu::HostVector&lt;Real&gt; erf_detail_SurfaceLayer::read_eb_roughness </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lev</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">const</span> std::string context = <span class="stringliteral">&quot;MOST roughness file \&quot;&quot;</span> + fname + <span class="stringliteral">&quot;\&quot; at level &quot;</span> +</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                std::to_string(lev);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> Box&amp; dom = geom.Domain();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> = dom.length(0), <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a> = dom.length(1);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">const</span> Long nvalues = Long(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>) * Long(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (nvalues &gt; std::numeric_limits&lt;int&gt;::max()) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        Abort(context + <span class="stringliteral">&quot;: horizontal grid is too large for the roughness broadcast&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    Gpu::HostVector&lt;Real&gt; values(nvalues);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    Vector&lt;Long&gt; source_line((Long(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>)+1) * (Long(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>)+1), -1);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a> = geom.CellSizeArray();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a> = geom.ProbLoArray();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aa65c804881ec6cd9875c25960b6a199d">prob_hi</a> = geom.ProbHiArray();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">const</span> Real tol = Real(1.e-4);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">const</span> std::array&lt;const char*, 3&gt; names{<span class="stringliteral">&quot;x&quot;</span>, <span class="stringliteral">&quot;y&quot;</span>, <span class="stringliteral">&quot;z0&quot;</span>};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">auto</span> location = [] (Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        std::ostringstream os;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        os &lt;&lt; std::setprecision(std::numeric_limits&lt;Real&gt;::max_digits10)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;           &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> os.str();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    };</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::string line;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    Long lineno = 0, nrecords = 0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">while</span> (std::getline(file, line)) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        ++lineno;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (line.find_first_not_of(<span class="stringliteral">&quot; \t\r&quot;</span>) == std::string::npos) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">auto</span> line_error = [&amp;] (<span class="keyword">const</span> std::string&amp; problem) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            Abort(context + <span class="stringliteral">&quot;: line &quot;</span> + std::to_string(lineno) + <span class="stringliteral">&quot;: &quot;</span> + problem);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        };</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        std::istringstream record(line);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        std::array&lt;std::string, 3&gt; tokens;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        std::string extra;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (!(record &gt;&gt; tokens[0] &gt;&gt; tokens[1] &gt;&gt; tokens[2]) || record &gt;&gt; extra) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            line_error(<span class="stringliteral">&quot;expected exactly three numbers: x y z0&quot;</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        std::array&lt;Real, 3&gt; <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a>{};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> c = 0; c &lt; 3; ++c) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span>* first = tokens[c].c_str();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordtype">char</span>* end = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="comment">// strtod is available on older standard libraries. Suppress conversion</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="comment">// exceptions so out-of-range input reports an error even with FPE traps.</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            std::fenv_t saved_env;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">if</span> (std::feholdexcept(&amp;saved_env) != 0) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                line_error(<span class="stringliteral">&quot;could not suspend floating-point exceptions for input validation&quot;</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            errno = 0;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">double</span> parsed = std::strtod(first, &amp;end);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> parse_errno = errno;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            std::fesetenv(&amp;saved_env);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">if</span> (end == first || *end != <span class="charliteral">&#39;\0&#39;</span>) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                line_error(std::string(<span class="stringliteral">&quot;invalid number for &quot;</span>) + names[c]);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="comment">// Keep representable subnormal values; strtod may set ERANGE for them.</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">if</span> (parse_errno == ERANGE &amp;&amp; (parsed == 0.0 || !std::isfinite(parsed))) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                line_error(std::string(<span class="stringliteral">&quot;number out of range for &quot;</span>) + names[c]);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">if</span> (!std::isfinite(parsed) || (c == 2 &amp;&amp; parsed &lt;= 0.0)) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                line_error(std::string(names[c]) +</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                           (c == 2 ? <span class="stringliteral">&quot; must be finite and strictly positive&quot;</span> : <span class="stringliteral">&quot; must be finite&quot;</span>));</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">if</span> (std::abs(parsed) &gt; <span class="keywordtype">double</span>(std::numeric_limits&lt;Real&gt;::max())) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                line_error(std::string(<span class="stringliteral">&quot;number out of range for &quot;</span>) + names[c]);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a>[c] = Real(parsed);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">if</span> (c == 2 &amp;&amp; <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a>[c] &lt;= <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                line_error(<span class="stringliteral">&quot;z0 must be finite and strictly positive at the model precision&quot;</span>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        ++nrecords;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a>[0], <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a>[1];</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="comment">// Extra samples outside the model grid remain allowed, but every</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="comment">// record above is checked even when it will not be used.</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">if</span> (x &lt; <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[0]-tol || x &gt; <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aa65c804881ec6cd9875c25960b6a199d">prob_hi</a>[0]+tol ||</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            y &lt; <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[1]-tol || y &gt; <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aa65c804881ec6cd9875c25960b6a199d">prob_hi</a>[1]+tol) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keyword">const</span> Real ri = std::round((x-<a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[0]) / <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0]);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">const</span> Real rj = std::round((y-<a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[1]) / <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1]);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">if</span> (ri &lt; zero || ri &gt; Real(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>) || rj &lt; zero || rj &gt; Real(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>)) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> i = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ri), j = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(rj);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keyword">const</span> Real model_x = <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[0] + i*<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keyword">const</span> Real model_y = <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[1] + j*<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">if</span> (std::hypot(x-model_x, y-model_y) &gt;= tol) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keyword">const</span> Long node = Long(i) + Long(j)*(Long(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>)+1);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">if</span> (source_line[node] &gt;= 0) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            line_error(<span class="stringliteral">&quot;duplicate grid location &quot;</span> + location(model_x, model_y) +</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                       <span class="stringliteral">&quot;, already supplied on line &quot;</span> + std::to_string(source_line[node]));</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        source_line[node] = lineno;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">if</span> (i &lt; <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a> &amp;&amp; j &lt; <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>) { values[Long(i)+Long(j)*<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>] = <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a>[2]; }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">if</span> (file.bad()) { Abort(context + <span class="stringliteral">&quot;: could not read the complete file&quot;</span>); }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> (nrecords == 0) { Abort(context + <span class="stringliteral">&quot;: holds no (x, y, z0) triples&quot;</span>); }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a>; ++j) {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>; ++i) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordflow">if</span> (source_line[Long(i)+Long(j)*(Long(<a class="code" href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a>)+1)] &lt; 0) {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                Abort(context + <span class="stringliteral">&quot;: missing horizontal model coordinate &quot;</span> +</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                      location(<a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[0]+i*<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0], <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[1]+j*<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1]) +</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                      <span class="stringliteral">&quot;; domain-wide horizontal coverage is required&quot;</span>);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">return</span> values;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
+<div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_a0e2e2385be4849ee0ca19c89a12ea615"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#a0e2e2385be4849ee0ca19c89a12ea615">point</a></div><div class="ttdeci">std::vector&lt; int &gt; point</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:221</div></div>
+<div class="ttc" id="aERF__ActuatorSpreading_8cpp_html_acc64e1753972a11f986bfc7ac9bd9103"><div class="ttname"><a href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a></div><div class="ttdeci">GpuArray&lt; Real, AMREX_SPACEDIM &gt; dx</div><div class="ttdef"><b>Definition:</b> ERF_ActuatorSpreading.cpp:131</div></div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a4f88110916f09b2adef33396203ff015"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a4f88110916f09b2adef33396203ff015">nx</a></div><div class="ttdeci">const int nx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:14</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__CloudChamber_8H_html_a811734e12750524808dba01c57e92c66"><div class="ttname"><a href="ERF__InitCustomPertVels__CloudChamber_8H.html#a811734e12750524808dba01c57e92c66">ny</a></div><div class="ttdeci">const int ny</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_CloudChamber.H:15</div></div>
+<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_aa9fd06f7fe187d6c39d38c7473e19c7c"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a></div><div class="ttdeci">const GpuArray&lt; Real, AMREX_SPACEDIM &gt; prob_lo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_CloudChamber.H:33</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_aa65c804881ec6cd9875c25960b6a199d"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aa65c804881ec6cd9875c25960b6a199d">prob_hi</a></div><div class="ttdeci">const amrex::Real * prob_hi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_DataAssimilation_ISV.H:17</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#af866fe6c505ef4e5a551486d9aa3941b">SurfaceLayer::read_custom_roughness()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__detail__SurfaceLayer_ad5b7690018b26c45d7589c879cd47ddd_icgraph.png" border="0" usemap="#anamespaceerf__detail__SurfaceLayer_ad5b7690018b26c45d7589c879cd47ddd_icgraph" alt=""/></div>
+<map name="anamespaceerf__detail__SurfaceLayer_ad5b7690018b26c45d7589c879cd47ddd_icgraph" id="anamespaceerf__detail__SurfaceLayer_ad5b7690018b26c45d7589c879cd47ddd_icgraph">
+<area shape="rect" title=" " alt="" coords="425,5,601,47"/>
+<area shape="rect" href="classSurfaceLayer.html#af866fe6c505ef4e5a551486d9aa3941b" title=" " alt="" coords="227,5,377,47"/>
+<area shape="rect" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50" title=" " alt="" coords="5,5,179,47"/>
 </map>
 </div>
 
@@ -320,15 +486,15 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    Box columns = geom.Domain();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; 2; ++d) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span> (geom.isPeriodic(d)) { columns.grow(d, <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>[d]); }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structerf__detail__SurfaceLayer_1_1NearestColumn.html">NearestColumn</a>(columns);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;{</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    Box columns = geom.Domain();</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; 2; ++d) {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordflow">if</span> (geom.isPeriodic(d)) { columns.grow(d, <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>[d]); }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structerf__detail__SurfaceLayer_1_1NearestColumn.html">NearestColumn</a>(columns);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;}</div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:51</div></div>
-<div class="ttc" id="astructerf__detail__SurfaceLayer_1_1NearestColumn_html"><div class="ttname"><a href="structerf__detail__SurfaceLayer_1_1NearestColumn.html">erf_detail_SurfaceLayer::NearestColumn</a></div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:23</div></div>
+<div class="ttc" id="astructerf__detail__SurfaceLayer_1_1NearestColumn_html"><div class="ttname"><a href="structerf__detail__SurfaceLayer_1_1NearestColumn.html">erf_detail_SurfaceLayer::NearestColumn</a></div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:32</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#ad0614c0dceb4e3b6ea6facc91a580f07">SurfaceLayer::fill_surface_current()</a>, <a class="el" href="classSurfaceLayer.html#a0e718e2e4a25e1c49f08a648b3e15a72">SurfaceLayer::fill_tsurf_with_coupled_sst()</a>, <a class="el" href="classSurfaceLayer.html#aacca05de00777670cb821591ac38dc8d">SurfaceLayer::fill_tsurf_with_sfc_sst()</a>, and <a class="el" href="classSurfaceLayer.html#a8427650770c2c2d7460fe36ff5f3ed3a">SurfaceLayer::fill_tsurf_with_sst_and_tsk()</a>.</p>
 <div class="dynheader">

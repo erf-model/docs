@@ -137,6 +137,7 @@ var namespaces_dup =
       [ "lad_quadrature_points", "namespaceerf__detail__ForestDrag.html#a361e4d0b27d43f25fae51a44a964cf9e", null ]
     ] ],
     [ "erf_detail_MakeNewArrays", "namespaceerf__detail__MakeNewArrays.html", [
+      [ "set_covered_face_velocity", "namespaceerf__detail__MakeNewArrays.html#ae9a120cddeef93c0563477237fe9d5b2", null ],
       [ "set_test_mapfactor", "namespaceerf__detail__MakeNewArrays.html#a5eb928f982e00399a6ada27244828695", null ]
     ] ],
     [ "erf_detail_MakeNewLevel", "namespaceerf__detail__MakeNewLevel.html", [
@@ -328,7 +329,7 @@ var namespaces_dup =
       [ "scale_by_face_jacobian", "namespaceerf__structure.html#a9e9ab2f4bb1ddc114ac5596ecee68fc8", null ]
     ] ],
     [ "erf_surface_layer", "namespaceerf__surface__layer.html", [
-      [ "planar_sources_supported_for_terrain", "namespaceerf__surface__layer.html#ab5b83491e05460dd63f196ebee0a1ca7", null ]
+      [ "planar_sources_supported_for_terrain", "namespaceerf__surface__layer.html#aa6be10d5be511bc4d7ea5ecd65f03e48", null ]
     ] ],
     [ "erf_surface_moisture", "namespaceerf__surface__moisture.html", [
       [ "Component", "namespaceerf__surface__moisture.html#ad52981881b38f49aa4f92ded62999e8a", [

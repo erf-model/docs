@@ -1,5 +1,10 @@
 var NAVTREEINDEX66 =
 {
+"structsimilarity__funs.html#a6187f69d2632fec928fa2c604c4af23c":[2,0,215,7],
+"structsimilarity__funs.html#a61ce8bed71f6ba44607c2c313217c893":[2,0,215,6],
+"structsimilarity__funs.html#a6c53efd885ed922115193bc9a36cb0e6":[2,0,215,13],
+"structsimilarity__funs.html#a738bbb6546906489be12ad0eed6e7548":[2,0,215,17],
+"structsimilarity__funs.html#a77be592d4474babc872a5de04cbf92ab":[2,0,215,9],
 "structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2":[2,0,215,2],
 "structsimilarity__funs.html#aac794cc508a1f13ae22b0a1320890f35":[2,0,215,1],
 "structsimilarity__funs.html#ae1a0d9ec56c9f90e0aba3bcadc8a3d63":[2,0,215,10],

@@ -1,5 +1,10 @@
 var NAVTREEINDEX60 =
 {
+"structTwoStreamParams.html#a1062a8996e6981c46a0f3d1073127840":[2,0,261,24],
+"structTwoStreamParams.html#a1a8dcb8428062210a8bce72994bc091e":[2,0,261,21],
+"structTwoStreamParams.html#a1b744edc815b4fd08bb8766a9a25d72e":[2,0,261,3],
+"structTwoStreamParams.html#a1d46f89bb25afb2a8a0d22d0c7c882cf":[2,0,261,33],
+"structTwoStreamParams.html#a37acb468f6bad7f3ae9596309bcb6f9b":[2,0,261,13],
 "structTwoStreamParams.html#a39eb187293cfe3cccfa9299dd701d510":[2,0,261,36],
 "structTwoStreamParams.html#a3c97640720a8669050eccba118f35655":[2,0,261,49],
 "structTwoStreamParams.html#a3f3a5a1f0be021ad333d6833575c41fb":[2,0,261,15],
@@ -244,10 +249,5 @@ var NAVTREEINDEX60 =
 "structadiabatic__donelan.html#aa25cdb19140e9d291b7256301b22d271":[2,0,33,0],
 "structadiabatic__eb.html":[2,0,34],
 "structadiabatic__eb.html#a1c4d4c360bfc98c83596b21ed6e8b751":[2,0,34,1],
-"structadiabatic__eb.html#a5c4ffa19839e4be4e3d41b23e5a68665":[2,0,34,0],
-"structadiabatic__eb.html#a64fbb44bb72a0313eea627d4505d1a18":[2,0,34,2],
-"structadiabatic__eb.html#a6c4c07ff44ca997237cd09d5685f76ed":[2,0,34,3],
-"structadiabatic__eb.html#abb59a44fa38c0876cda97ad063621535":[2,0,34,4],
-"structadiabatic__mod__charnock.html":[2,0,35],
-"structadiabatic__mod__charnock.html#a25528aa63a9025d49f5d294192b1e35c":[2,0,35,0]
+"structadiabatic__eb.html#a5c4ffa19839e4be4e3d41b23e5a68665":[2,0,34,0]
 };

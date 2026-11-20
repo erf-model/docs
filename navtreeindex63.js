@@ -1,5 +1,10 @@
 var NAVTREEINDEX63 =
 {
+"structerf__sbm_1_1FixtureInitialStateCanonicality.html":[2,0,14,17],
+"structerf__sbm_1_1FixtureInitialStateCanonicality.html#a42d69cd9e2f9b9578b13cc89a41dfe0b":[2,0,14,17,0],
+"structerf__sbm_1_1FixtureInitialStateCanonicality.html#a792786be038e2620ac168d100a53d2b4":[2,0,14,17,1],
+"structerf__sbm_1_1FixtureInitialStateCanonicality.html#aea4537ce3dd003be3516c213e160b3fa":[2,0,14,17,2],
+"structerf__sbm_1_1FixtureInitialStateCanonicality.html#af8a16467a1d551648b89a65c6ae2c778":[2,0,14,17,3],
 "structerf__sbm_1_1FlattenedConstraintSet.html":[2,0,14,14],
 "structerf__sbm_1_1FlattenedConstraintSet.html#a578b6ffeb1b245fba90af429f7cdaf59":[2,0,14,14,1],
 "structerf__sbm_1_1FlattenedConstraintSet.html#ab2774a87399f14871ece84c3da5632b9":[2,0,14,14,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX63 =
 "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#af4453b31141d0c6b96a6279ac7617249":[2,0,14,44,0,8],
 "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#aff118248242a49c2a0980565d1449da1":[2,0,14,44,0,1],
 "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html":[2,0,14,44,1],
-"structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a08bcfe0f946827d4f98071367fe77b31":[2,0,14,44,1,14],
-"structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a0f4a6082bc09cccbd2c3c7a0157bc189":[2,0,14,44,1,12],
-"structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a102a34a6c0671b0b32372a89617092d5":[2,0,14,44,1,13],
-"structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a1f9d06bc661be7b2a92cff2eec4cfeb7":[2,0,14,44,1,1],
-"structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a22f5e2772c46359acac1d74c9b150f13":[2,0,14,44,1,16],
-"structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a2c96503371fdf9bd202e38d10f73d24d":[2,0,14,44,1,6]
+"structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a08bcfe0f946827d4f98071367fe77b31":[2,0,14,44,1,14]
 };

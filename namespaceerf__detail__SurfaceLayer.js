@@ -5,5 +5,6 @@ var namespaceerf__detail__SurfaceLayer =
     [ "CoupledCurrentCells", "structerf__detail__SurfaceLayer_1_1CoupledCurrentCells.html", "structerf__detail__SurfaceLayer_1_1CoupledCurrentCells" ],
     [ "covers_columns", "namespaceerf__detail__SurfaceLayer.html#a008eec9505de7b0b6fc227c57221813f", null ],
     [ "fill_face_current", "namespaceerf__detail__SurfaceLayer.html#ac487d53483efd01da0775e5bef28f10c", null ],
+    [ "read_eb_roughness", "namespaceerf__detail__SurfaceLayer.html#ad5b7690018b26c45d7589c879cd47ddd", null ],
     [ "surface_columns", "namespaceerf__detail__SurfaceLayer.html#a7152b09b37474df8e449786c33d3d9e2", null ]
 ];

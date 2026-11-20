@@ -1,5 +1,8 @@
 var NAVTREEINDEX41 =
 {
+"classerf__auxiliary_1_1AuxiliaryStateLayout.html#af284738721d4f7b134055685d1d39309":[2,0,1,17,4],
+"classerf__auxiliary_1_1AuxiliaryStateLayout.html#afd5fc9bf86dcd201f4cfdfd5685070ae":[2,0,1,17,0],
+"classerf__auxiliary_1_1CompletedStepFluxLedger.html":[2,0,1,15],
 "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a1136e7902d3567fb5ab3bffecf158696":[2,0,1,15,2],
 "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a27618e008cffc1fdd0c52be0437e97d0":[2,0,1,15,19],
 "classerf__auxiliary_1_1CompletedStepFluxLedger.html#a286976a61850ac74a7dbbc7ca6d412b3":[2,0,1,15,7],
@@ -246,8 +249,5 @@ var NAVTREEINDEX41 =
 "classerf__sbm_1_1SpectralGrid.html":[2,0,14,48],
 "classerf__sbm_1_1SpectralGrid.html#a0f1bc7772c65ec936184e57f58e7c176":[2,0,14,48,5],
 "classerf__sbm_1_1SpectralGrid.html#a1157a36c97b3be492191514fb8dff1cc":[2,0,14,48,6],
-"classerf__sbm_1_1SpectralGrid.html#a2868f9105a679eaab5e8bcc48b38d60c":[2,0,14,48,8],
-"classerf__sbm_1_1SpectralGrid.html#a32323f8af1038026a31b46c1bfb7f09b":[2,0,14,48,7],
-"classerf__sbm_1_1SpectralGrid.html#a3a6bf953cc53af6c0426697d50802f4e":[2,0,14,48,9],
-"classerf__sbm_1_1SpectralGrid.html#a3f4931e7137f29dbf4aa998190064e04":[2,0,14,48,0]
+"classerf__sbm_1_1SpectralGrid.html#a2868f9105a679eaab5e8bcc48b38d60c":[2,0,14,48,8]
 };

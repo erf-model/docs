@@ -1,5 +1,10 @@
 var NAVTREEINDEX53 =
 {
+"structFireCouplingParams.html#abe6bdb86d679edae88e3ec504a995d62":[2,0,77,10],
+"structFireCouplingParams.html#ac22bd19367816622cf59a004de9a1b30":[2,0,77,3],
+"structFireFluxes.html":[2,0,80],
+"structFireFluxes.html#a290bcdd1df2dfd521e72ffcf625c68be":[2,0,80,1],
+"structFireFluxes.html#a9a970a12f870154c00a7c4526b228c22":[2,0,80,0],
 "structFireFluxes.html#af289cd3e2d0c67a5ec21d53da83daacb":[2,0,80,2],
 "structFireForcing.html":[2,0,81],
 "structFireForcing.html#a02ca7d8dda9dd83f92ec82fb22fccf71":[2,0,81,4],
@@ -244,10 +249,5 @@ var NAVTREEINDEX53 =
 "structKesslerSourceTerms.html#a9fd1cd79d1f959f399314e99a9b9351b":[2,0,108,0],
 "structKesslerSourceTerms.html#ab4087e5bcf61c7d467e94bcda7b648a5":[2,0,108,3],
 "structLargeScaleForcingData.html":[2,0,110],
-"structLargeScaleForcingData.html#a027e5b6d3c4fc4b1f50d77d3fe0fce5e":[2,0,110,21],
-"structLargeScaleForcingData.html#a07284146d9c1cd187171554ad8dd7e1c":[2,0,110,17],
-"structLargeScaleForcingData.html#a14e4a76ce38bfc153827f91d1f420af4":[2,0,110,20],
-"structLargeScaleForcingData.html#a1d342cee4a22ba2ace7b9629abb68127":[2,0,110,5],
-"structLargeScaleForcingData.html#a1e1ffb32329ddda412c598f9ddc43627":[2,0,110,11],
-"structLargeScaleForcingData.html#a1ed4e9a340685ac6699ff5cfe9d8cf89":[2,0,110,25]
+"structLargeScaleForcingData.html#a027e5b6d3c4fc4b1f50d77d3fe0fce5e":[2,0,110,21]
 };
