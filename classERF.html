@@ -33309,28 +33309,33 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160; </div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <span class="keyword">const</span> Box everywhere(IntVect(std::numeric_limits&lt;int&gt;::lowest()/2),</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                         IntVect(std::numeric_limits&lt;int&gt;::max()/2));</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <span class="keyword">auto</span> pre_interp = [&amp;] (MultiFab&amp; crse_patch, int, int) {</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;        add_base_cons(crse_patch, IntVect(0), everywhere, bs_crse, cgeom.periodicity(),</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                      -<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>, iqv);</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    };</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <span class="comment">// InterpFromCoarseLevel&#39;s post hook sees one fab at a time, without its index, so the</span></div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <span class="comment">//    fine base state is added below instead</span></div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <span class="keyword">auto</span> post_interp = [] (FArrayBox&amp;, <span class="keyword">const</span> Box&amp;, int, int) {};</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160; </div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    PhysBCFunctUseCoarseGhost erfbc(cmf, nghost, IntVect(0,0,0), refRatio(lev-1), mapper);</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    InterpFromCoarseLevel(mf, nghost, Real(0.0), cmf, 0, 0, ncomp, cgeom, fgeom,</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                          erfbc, 0, erfbc, 0, refRatio(lev-1), mapper,</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                          <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>, <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>, pre_interp, post_interp);</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <span class="comment">// With PhysBCFunctUseCoarseGhost, InterpFromCoarseLevel&#39;s coarse patch is coarsen(ba) with</span></div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    <span class="comment">//    ghost cells, which the interpolation reads, so take the base state out of those too:</span></div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    <span class="comment">//    left as the full state, the slopes across the edge of each patch mix it with the</span></div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <span class="comment">//    perturbation, and the fine cells near every box edge -- including the edges between</span></div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <span class="comment">//    a level&#39;s boxes -- then depend on how the level is chopped</span></div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <span class="keyword">auto</span> pre_interp = [&amp;] (MultiFab&amp; crse_patch, int, int) {</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        add_base_cons(crse_patch, crse_patch.nGrowVect(), everywhere, bs_crse, cgeom.periodicity(),</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                      -<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>, iqv);</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    };</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    <span class="comment">// InterpFromCoarseLevel&#39;s post hook sees one fab at a time, without its index, so the</span></div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="comment">//    fine base state is added below instead</span></div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <span class="keyword">auto</span> post_interp = [] (FArrayBox&amp;, <span class="keyword">const</span> Box&amp;, int, int) {};</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160; </div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <span class="comment">// The cells the interpolation filled: inside the domain, which extends across a</span></div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    <span class="comment">//    periodic boundary</span></div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    Box fdomain_g(fgeom.Domain());</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; AMREX_SPACEDIM; ++d) {</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        <span class="keywordflow">if</span> (fgeom.isPeriodic(d)) { fdomain_g.grow(d, nghost[d]); }</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    }</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    add_base_cons(mf, nghost, fdomain_g, <a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev], fgeom.periodicity(),</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                  <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>, iqv);</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;}</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    PhysBCFunctUseCoarseGhost erfbc(cmf, nghost, IntVect(0,0,0), refRatio(lev-1), mapper);</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    InterpFromCoarseLevel(mf, nghost, Real(0.0), cmf, 0, 0, ncomp, cgeom, fgeom,</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                          erfbc, 0, erfbc, 0, refRatio(lev-1), mapper,</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                          <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>, <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>, pre_interp, post_interp);</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160; </div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <span class="comment">// The cells the interpolation filled: inside the domain, which extends across a</span></div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="comment">//    periodic boundary</span></div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    Box fdomain_g(fgeom.Domain());</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; AMREX_SPACEDIM; ++d) {</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;        <span class="keywordflow">if</span> (fgeom.isPeriodic(d)) { fdomain_g.grow(d, nghost[d]); }</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    }</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    add_base_cons(mf, nghost, fdomain_g, <a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev], fgeom.periodicity(),</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                  <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>, iqv);</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
