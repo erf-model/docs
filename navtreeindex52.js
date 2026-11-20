@@ -1,5 +1,11 @@
 var NAVTREEINDEX52 =
 {
+"namespacewdm6__isohelper.html#a7c1b4fa7f0809c3f0470541dec9887b8":[1,0,126,2],
+"namespacewdm6__isohelper.html#accff4a99b8ef762289dc6cc2e8207aac":[1,0,126,0],
+"namespacewdm6__isohelper.html#afe71b8acf0e08e4fbb37f5e026401ac3":[1,0,126,3],
+"pages.html":[],
+"structAdvChoice.html":[2,0,37],
+"structAdvChoice.html#a025b0198181305ae6e0a82591c9dae1c":[2,0,37,5],
 "structAdvChoice.html#a064ffc0bac9fc0fdd1aa41a45f4e5ed4":[2,0,37,2],
 "structAdvChoice.html#a0913a61ad5530639cdbf84579c34041a":[2,0,37,3],
 "structAdvChoice.html#a09add6c3603c00bfb5611a799017079b":[2,0,37,12],
@@ -243,11 +249,5 @@ var NAVTREEINDEX52 =
 "structFireCouplingParams.html#ac22bd19367816622cf59a004de9a1b30":[2,0,77,3],
 "structFireFluxes.html":[2,0,80],
 "structFireFluxes.html#a290bcdd1df2dfd521e72ffcf625c68be":[2,0,80,1],
-"structFireFluxes.html#a9a970a12f870154c00a7c4526b228c22":[2,0,80,0],
-"structFireFluxes.html#af289cd3e2d0c67a5ec21d53da83daacb":[2,0,80,2],
-"structFireForcing.html":[2,0,81],
-"structFireForcing.html#a02ca7d8dda9dd83f92ec82fb22fccf71":[2,0,81,4],
-"structFireForcing.html#a13e04b9ea9a8f4a5c8d72311c0364213":[2,0,81,3],
-"structFireForcing.html#a13fd8cd500cf3b41b34482dc172d3d70":[2,0,81,0],
-"structFireForcing.html#a3d1b01f4625f10352d78707a1cc4e882":[2,0,81,7]
+"structFireFluxes.html#a9a970a12f870154c00a7c4526b228c22":[2,0,80,0]
 };

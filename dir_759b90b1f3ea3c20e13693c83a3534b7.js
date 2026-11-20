@@ -31,5 +31,6 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
     [ "ERF_TI_slow_rhs_pre.H", "ERF__TI__slow__rhs__pre_8H.html", "ERF__TI__slow__rhs__pre_8H" ],
     [ "ERF_TI_substep_fun.H", "ERF__TI__substep__fun_8H.html", "ERF__TI__substep__fun_8H" ],
     [ "ERF_TI_utils.H", "ERF__TI__utils_8H.html", "ERF__TI__utils_8H" ],
-    [ "ERF_TimeStep.cpp", "ERF__TimeStep_8cpp.html", null ]
+    [ "ERF_TimeStep.cpp", "ERF__TimeStep_8cpp.html", null ],
+    [ "ERF_VariableBetaSSwitch.H", "ERF__VariableBetaSSwitch_8H.html", "ERF__VariableBetaSSwitch_8H" ]
 ];

@@ -30,6 +30,7 @@ var structSolverChoice =
     [ "abl_geo_wind_table", "structSolverChoice.html#a11a26e88a82b292dd93fd684ad525375", null ],
     [ "abl_pressure_grad", "structSolverChoice.html#a78134024e67244f72eeebd5ca89521c9", null ],
     [ "advChoice", "structSolverChoice.html#a7116cd238a1ddbc4324978a48695eca4", null ],
+    [ "auto_variable_beta_s", "structSolverChoice.html#a3c34da4d9161113d49ec9a6f50d0b68b", null ],
     [ "ave_plane", "structSolverChoice.html#a2a8692be6bad4b699043f5b4f9d5343c", null ],
     [ "avg_grid_faces_to_nodes", "structSolverChoice.html#a8976921b98c9202cc9f14a2bd4f87d4b", null ],
     [ "bdy_moist_nudge_type", "structSolverChoice.html#a6bd52d4ad676b2da4fdc3333d73ad519", null ],

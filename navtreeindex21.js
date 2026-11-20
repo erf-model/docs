@@ -51,6 +51,9 @@ var NAVTREEINDEX21 =
 "ERF__Utils_8cpp.html#a81e410915ecae464b0108ade86e6ed95":[3,0,1,29,59,2],
 "ERF__Utils_8cpp.html#a91bab1e9e931065947d7c2a565afc0e2":[3,0,1,29,59,3],
 "ERF__Utils_8cpp.html#aabb9d66304d3cc9557d414a8f4d4bf21":[3,0,1,29,59,5],
+"ERF__VariableBetaSSwitch_8H.html":[3,0,1,26,30],
+"ERF__VariableBetaSSwitch_8H.html#a786ebf9844b47fafea35d09f6f288e50":[3,0,1,26,30,0],
+"ERF__VariableBetaSSwitch_8H_source.html":[3,0,1,26,30],
 "ERF__VelocityToMomentum_8cpp.html":[3,0,1,29,61],
 "ERF__VelocityToMomentum_8cpp.html#a4cfe9a7638d2010942da4394318216d3":[3,0,1,29,61,0],
 "ERF__VolWgtSum_8cpp.html":[3,0,1,29,62],
@@ -246,8 +249,5 @@ var NAVTREEINDEX21 =
 "ERF__module__mp__morr__two__moment_8F90.html#ab256061b2540d4b7ebc215d3a714aa19":[3,0,1,16,2,3,50],
 "ERF__module__mp__morr__two__moment_8F90.html#ab584e915b59c4731b98afde17fcdfa7e":[3,0,1,16,2,3,47],
 "ERF__module__mp__morr__two__moment_8F90.html#ab9f824b8a94e985308935bcf5c082cad":[3,0,1,16,2,3,53],
-"ERF__module__mp__morr__two__moment_8F90.html#ab9f86a57e5af184694156ec32626d749":[3,0,1,16,2,3,71],
-"ERF__module__mp__morr__two__moment_8F90.html#abe5e461fd76360c181c60b4cf0ae382d":[3,0,1,16,2,3,102],
-"ERF__module__mp__morr__two__moment_8F90.html#abf97fbe5bd7818ee2961d2cf0c6c1111":[3,0,1,16,2,3,109],
-"ERF__module__mp__morr__two__moment_8F90.html#ac1f602991a2bc1a593b4237bc7fa528e":[3,0,1,16,2,3,5]
+"ERF__module__mp__morr__two__moment_8F90.html#ab9f86a57e5af184694156ec32626d749":[3,0,1,16,2,3,71]
 };

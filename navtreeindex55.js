@@ -1,5 +1,11 @@
 var NAVTREEINDEX55 =
 {
+"structNDArray.html#a1b3ece1ab109568fcb919d1af8f14eee":[2,0,134,6],
+"structNDArray.html#a1f33dbd861944bc1494f4790f4f8543d":[2,0,134,2],
+"structNDArray.html#a4d7550e3c00d13d8397f1cfbdfd2ab48":[2,0,134,4],
+"structNDArray.html#a6a0a485b6da8ce09dda81fc51607da73":[2,0,134,7],
+"structNDArray.html#a7bd19397e539424afc06e9fe12760434":[2,0,134,1],
+"structNDArray.html#a96033b69f69ea0ae537a24288715752d":[2,0,134,0],
 "structNDArray.html#a99d704051dda7b5635b12cbe785d7bb5":[2,0,134,10],
 "structNDArray.html#aa1c5762c2de2f4286d4f341b618df1e5":[2,0,134,3],
 "structNDArray.html#ad839c3c65bd755311afb6f0dad08f336":[2,0,134,5],
@@ -243,11 +249,5 @@ var NAVTREEINDEX55 =
 "structRefinementCriterion.html#a61c5c05e1f07e2f386a87828ce5002bf":[2,0,165,8],
 "structRefinementCriterion.html#a99236fdadae38d576030b867517db7e0":[2,0,165,7],
 "structRefinementCriterion.html#a9af23219fddb0812b79b71ebc2430256":[2,0,165,5],
-"structRefinementCriterion.html#aacd0803c39f2e38eb645eac7aa89a474":[2,0,165,3],
-"structRefinementCriterion.html#aba62e3d5c866017957890af481c990dd":[2,0,165,2],
-"structRibCrossing.html":[2,0,166],
-"structRibCrossing.html#a2898b413ad1f3a50b76d9d5b724d5037":[2,0,166,2],
-"structRibCrossing.html#a4ac2b3d6916afd7c3a7b2f12987acece":[2,0,166,1],
-"structRibCrossing.html#aeb2ed9796c6881523482899dd1c7b18c":[2,0,166,0],
-"structSAMCloudPhaseChange.html":[2,0,171]
+"structRefinementCriterion.html#aacd0803c39f2e38eb645eac7aa89a474":[2,0,165,3]
 };
