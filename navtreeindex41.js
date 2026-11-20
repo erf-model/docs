@@ -1,5 +1,8 @@
 var NAVTREEINDEX41 =
 {
+"classerf__auxiliary_1_1CompletedStepFluxLedger.html#a9da8aca59b888ff02ce1c9bfeebe7ee5":[2,0,1,15,13],
+"classerf__auxiliary_1_1CompletedStepFluxLedger.html#aa286e57b355b60353abf9625e3c57273":[2,0,1,15,5],
+"classerf__auxiliary_1_1CompletedStepFluxLedger.html#ab1490d30dc601fa09ecd71d771e7db4e":[2,0,1,15,12],
 "classerf__auxiliary_1_1CompletedStepFluxLedger.html#acbfc4475766a6ba6bfcf8959a17bbc33":[2,0,1,15,9],
 "classerf__auxiliary_1_1CompletedStepFluxLedger.html#ace666279301bf37246d2b30b05f23be7":[2,0,1,15,10],
 "classerf__auxiliary_1_1CompletedStepFluxLedger.html#ae6304f3cf59617dd174b71f9931fdffa":[2,0,1,15,17],
@@ -246,8 +249,5 @@ var NAVTREEINDEX41 =
 "classpolygon__.html#a156f350b46e9dfd7439e3cbb2c690b4e":[2,0,156,14],
 "classpolygon__.html#a1ab69432c8c151b29906a462bbc1d142":[2,0,156,23],
 "classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f":[2,0,156,11],
-"classpolygon__.html#a29c4ebc9696b5b3ae8480e2bc4cbeaa9":[2,0,156,22],
-"classpolygon__.html#a418204875c722510d5b0396ac1639a2b":[2,0,156,2],
-"classpolygon__.html#a558e318b4655635bf2a4f9b21bc2674a":[2,0,156,7],
-"classpolygon__.html#a5e7a4057742f0f1e134e5113d39e4a76":[2,0,156,5]
+"classpolygon__.html#a29c4ebc9696b5b3ae8480e2bc4cbeaa9":[2,0,156,22]
 };

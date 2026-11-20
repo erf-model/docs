@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"ERF__DescriptionWriter_8H.html":[3,0,1,12,6],
+"ERF__DescriptionWriter_8H.html#a547535de6f63d9d4bcbe255d731b2dc0":[3,0,1,12,6,1],
+"ERF__DescriptionWriter_8H.html#a547535de6f63d9d4bcbe255d731b2dc0a0ecd11c1d7a287401d148a23bbd7a2f8":[3,0,1,12,6,1,0],
 "ERF__DescriptionWriter_8H.html#a547535de6f63d9d4bcbe255d731b2dc0a9463f87bbed1fcdacfb8d40e185ca2bc":[3,0,1,12,6,1,1],
 "ERF__DescriptionWriter_8H_source.html":[3,0,1,12,6],
 "ERF__DiagnosticsLog_8H.html":[3,0,1,17,0,6],
@@ -246,8 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__FirePrerequisites_8H_source.html":[3,0,1,9,13],
 "ERF__FirePrerequisites_8cpp.html":[3,0,1,9,12],
 "ERF__FirePrerequisites_8cpp.html#a2fb0fd2f1104bd2c5a8a5c0a393cd64f":[3,0,1,9,12,0],
-"ERF__FirePrerequisites_8cpp.html#a706a8db437b3757e08d8303f01a76e4f":[3,0,1,9,12,2],
-"ERF__FirePrerequisites_8cpp.html#aed13cbd8f35ade468eea6c67f2c205f6":[3,0,1,9,12,1],
-"ERF__FireSmokeEmission_8H.html":[3,0,1,9,15],
-"ERF__FireSmokeEmission_8H_source.html":[3,0,1,9,15]
+"ERF__FirePrerequisites_8cpp.html#a706a8db437b3757e08d8303f01a76e4f":[3,0,1,9,12,2]
 };

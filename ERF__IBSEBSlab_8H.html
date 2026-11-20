@@ -137,7 +137,7 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>One-dimensional heat conduction through a wall or roof slab. </p>
 <p>Adapted from the ERF-SLUCM branch's ERF_UCMSlabConduction.H (implicit Euler, Thomas algorithm, all-plus tridiagonal convention). The one change is the top boundary: the SLUCM solver takes a flux at the top, this one takes the skin temperature, which is what the face balance holds, and returns the conduction into the slab that results. The bottom boundary is the interior temperature of the building.</p>
-<p>Layers are uniform, <code>dz = L / N</code>, with layer centres at <code>(l + 1/2) dz</code> below the skin; the skin sits half a layer above the first centre and the interior half a layer below the last, so both boundary fluxes use the half-layer spacing <code>2 k / dz</code>. </p>
+<p>Layers are uniform, <code>dz = L / N</code>, with layer centers at <code>(l + 1/2) dz</code> below the skin; the skin sits half a layer above the first center and the interior half a layer below the last, so both boundary fluxes use the half-layer spacing <code>2 k / dz</code>. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

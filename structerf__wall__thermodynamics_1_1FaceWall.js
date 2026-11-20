@@ -14,5 +14,6 @@ var structerf__wall__thermodynamics_1_1FaceWall =
     [ "momentum", "structerf__wall__thermodynamics_1_1FaceWall.html#a8717113845ddad6747fe2ed51bed5f1c", null ],
     [ "thermal", "structerf__wall__thermodynamics_1_1FaceWall.html#ac16eed6c88058836f7e229c7800baa3e", null ],
     [ "vapor", "structerf__wall__thermodynamics_1_1FaceWall.html#a20eda26801b71a8dd6e2da33ca5552e8", null ],
-    [ "wall_velocity", "structerf__wall__thermodynamics_1_1FaceWall.html#a11885e6e1b22a344cae3d21264f37a7a", null ]
+    [ "wall_velocity", "structerf__wall__thermodynamics_1_1FaceWall.html#a11885e6e1b22a344cae3d21264f37a7a", null ],
+    [ "wetness", "structerf__wall__thermodynamics_1_1FaceWall.html#aa2389304fb0811313e641dc1d3ed4ffa", null ]
 ];

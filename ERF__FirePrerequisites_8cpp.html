@@ -254,7 +254,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Start-up check for an engine that reads the rain of every column (<a class="el" href="classFireEngine.html#a634271e08b8215bd22111a9c81cb81ce" title="The engine needs the surface precipitation accumulation in FireForcing.">FireEngine::wants_surface_precip</a>): the microphysics scheme must provide surface precipitation accumulators. </p>
-<p>Aborts, naming the engine and erf.moisture_model, when the sources are empty (no moisture model, Kessler_NoRain, saturation adjustment only, ...). Called after the microphysics of the fire grid's level is initialised.</p>
+<p>Aborts, naming the engine and erf.moisture_model, when the sources are empty (no moisture model, Kessler_NoRain, saturation adjustment only, ...). Called after the microphysics of the fire grid's level is initialized.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">engine_name</td><td>The engine's name (<a class="el" href="classFireEngine.html#aa97c3de4bc5bd31efe249aa23b5c6704" title="Name of the engine, as erf.fire.engine selects it.">FireEngine::name</a>) </td></tr>
@@ -412,7 +412,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">// Check 7b: the boxes cover one rectangle. The fire grid treats the edges of</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// their bounding rectangle as its domain edges and fills its ghost cells</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// there; a hole or a second patch would leave cells with no neighbour data.</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// there; a hole or a second patch would leave cells with no neighbor data.</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    {</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        BoxList bl_2d;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ba.size(); ++i) {</div>

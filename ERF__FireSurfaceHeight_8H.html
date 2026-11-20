@@ -172,7 +172,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fill the ground elevations of a fire cell's bilinear wind stencil. </p>
-<p>Bilinear wind interpolation blends the four atmospheric columns surrounding a fire cell. Each of those columns has its own ground, and near the surface the wind profile is anchored to it, so every column has to be sampled at the same height <em>above its own ground</em> before the horizontal blend. Over the ridge of the ROS_Slope_Effects case, neighbouring column grounds differ by up to 28 m, so blending at a single absolute height would sample a neighbour at 35 m above ground while asking for 6 m.</p>
+<p>Bilinear wind interpolation blends the four atmospheric columns surrounding a fire cell. Each of those columns has its own ground, and near the surface the wind profile is anchored to it, so every column has to be sampled at the same height <em>above its own ground</em> before the horizontal blend. Over the ridge of the ROS_Slope_Effects case, neighboring column grounds differ by up to 28 m, so blending at a single absolute height would sample a neighbor at 35 m above ground while asking for 6 m.</p>
 <p>Component c holds the ground of stencil column c, ordered (i0,j0), (i0+1,j0), (i0,j0+1), (i0+1,j0+1), with i0 = floor((i_f + 0.5)/C - 0.5).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -183,7 +183,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>Called once by the fire engine at initialisation; terrain is static. </p>
+<p>Called once by the fire engine at initialization; terrain is static. </p>
 
 </div>
 </div>
@@ -226,7 +226,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fill the ground elevation of each fire cell's atmospheric column. </p>
-<p>The fire module extracts wind at a height above ground by walking the atmospheric column's z_phys_cc profile, so the ground it measures from has to be the ground of that same column: the average of the four k = 0 nodes of atmospheric cell (i_f/C, j_f/C). Taking the first cell centre instead puts the extraction height half an atmospheric cell too high, and by an amount that changes with vertical resolution.</p>
+<p>The fire module extracts wind at a height above ground by walking the atmospheric column's z_phys_cc profile, so the ground it measures from has to be the ground of that same column: the average of the four k = 0 nodes of atmospheric cell (i_f/C, j_f/C). Taking the first cell center instead puts the extraction height half an atmospheric cell too high, and by an amount that changes with vertical resolution.</p>
 <p>This is deliberately the atmospheric column's ground, not the fire-resolved terrain, even when a finer terrain file is supplied for the slopes: the wind profile being interpolated belongs to the atmospheric column.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -237,7 +237,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>Called once by the fire engine at initialisation; terrain is static. </p>
+<p>Called once by the fire engine at initialization; terrain is static. </p>
 
 </div>
 </div>

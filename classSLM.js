@@ -26,7 +26,7 @@ var classSLM =
     [ "init_from_params", "classSLM.html#a34322eceb0d727e91c54cdece743b9ed", null ],
     [ "init_landtype", "classSLM.html#ad3fb2ff366dd239213852aef1c37a1e4", null ],
     [ "init_layer_depths", "classSLM.html#a9b7feed6bc0daaed04c827612b52de9e", null ],
-    [ "init_slm_vars", "classSLM.html#a152c1581ac7161f6f17879dbe1f2973b", null ],
+    [ "init_slm_vars", "classSLM.html#a86aae13de72b6f06ef3f7f678624afc5", null ],
     [ "init_soil_tw", "classSLM.html#a3fc0b0402511692b9011bfed7ab6d160", null ],
     [ "init_soil_vars", "classSLM.html#a24b65438459387ae80dd37ff1cd016bd", null ],
     [ "init_wrfinput_vars", "classSLM.html#ab6622b75212a2b52b56135912bc014a6", null ],

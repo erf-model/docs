@@ -25,7 +25,7 @@ var ERF__CloudChamberWallFlux_8H =
     [ "apply", "ERF__CloudChamberWallFlux_8H.html#a1f4b55039569ef5aa08d2ed919a1f1ac", null ],
     [ "apply_face", "ERF__CloudChamberWallFlux_8H.html#af8b4ff166bd6dc38ce58fe756d0d072a", null ],
     [ "bulk_theta_flux_in", "ERF__CloudChamberWallFlux_8H.html#adb2eaa7bf84773c6ea70beaaea8d752e", null ],
-    [ "bulk_vapor_flux_in", "ERF__CloudChamberWallFlux_8H.html#aedf4a1d74b294371b3c696392bed647c", null ],
+    [ "bulk_vapor_flux_in", "ERF__CloudChamberWallFlux_8H.html#a14d29e98f09bf68ed52ae1fee47fc09d", null ],
     [ "evaluate_momentum_traction", "ERF__CloudChamberWallFlux_8H.html#a1b2e2a80e2d343a3286be2cfbfb638bb", null ],
     [ "evaluate_scalar_flux_in", "ERF__CloudChamberWallFlux_8H.html#a5eb71414ca9b0722d498197f2f4eee87", null ],
     [ "has_velocity_dependent_scalar_wall", "ERF__CloudChamberWallFlux_8H.html#a4409efb69c9886c7b26b04f5bb750606", null ],
@@ -45,7 +45,7 @@ var ERF__CloudChamberWallFlux_8H =
     [ "requires_tangential_momentum", "ERF__CloudChamberWallFlux_8H.html#adcabeb6a8dc0fc15a858029f999013f5", null ],
     [ "requires_tangential_speed", "ERF__CloudChamberWallFlux_8H.html#a7cc5b29789d1869be36bb21b74bda790", null ],
     [ "resolved_theta_flux_in", "ERF__CloudChamberWallFlux_8H.html#a8a19cfdc4c537e38ebcc8a8a4b23b1ed", null ],
-    [ "resolved_vapor_flux_in", "ERF__CloudChamberWallFlux_8H.html#a7a1e0c5b6418f7b5ed247adc274337de", null ],
+    [ "resolved_vapor_flux_in", "ERF__CloudChamberWallFlux_8H.html#a22cd746f2b3719f4aef9e3f796323c65", null ],
     [ "scalar_channel_from_quantity", "ERF__CloudChamberWallFlux_8H.html#a8de44a2afdb14c12ada1429df44f239d", null ],
     [ "scalar_channel_mask", "ERF__CloudChamberWallFlux_8H.html#a9c6136f5624a7d499e55ec3a04573703", null ],
     [ "scalar_flux_in", "ERF__CloudChamberWallFlux_8H.html#a9054bbdc285ff0ceebc47b38f224afc4", null ],
@@ -61,5 +61,6 @@ var ERF__CloudChamberWallFlux_8H =
     [ "wall_rate_requires_tangential_speed", "ERF__CloudChamberWallFlux_8H.html#a6d43c27e8e196d6ce884f3ea879abcf4", null ],
     [ "wall_uses_most", "ERF__CloudChamberWallFlux_8H.html#af6f795e480f5c96f8e340ecc24e5b6bd", null ],
     [ "wall_uses_most_heat", "ERF__CloudChamberWallFlux_8H.html#aadbccd657606d5586a772eaecef87b27", null ],
-    [ "wall_uses_most_vapor", "ERF__CloudChamberWallFlux_8H.html#ac856a151e465df437fcf57d2f53c5719", null ]
+    [ "wall_uses_most_vapor", "ERF__CloudChamberWallFlux_8H.html#ac856a151e465df437fcf57d2f53c5719", null ],
+    [ "wet_wall_qv", "ERF__CloudChamberWallFlux_8H.html#a1f529920cd92920ef9aedc006d8149db", null ]
 ];

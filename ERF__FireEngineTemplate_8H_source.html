@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('ERF__FireEngineTemplate_8H_source.html
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * What the coupling layer already does for every engine: it builds the fire</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * grid over erf.fire.anchor_level, hands the engine the atmosphere&#39;s state</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * each step, averages the engine&#39;s fluxes onto the atmospheric columns, holds</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> * them one step, injects heat, vapour and smoke, and saves those lagged fluxes</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> * them one step, injects heat, vapor and smoke, and saves those lagged fluxes</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> * in the checkpoint. An engine owns only its fire physics and its own state.</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> * The call order is the one documented on FireEngine (ERF_FireEngine.H).</span></div>
@@ -174,7 +174,7 @@ $(document).ready(function(){initNavTree('ERF__FireEngineTemplate_8H_source.html
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">    /**</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">     * Advance the fire over one step of the fire grid&#39;s level (forcing.dt from</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">     * forcing.time). forcing holds the face velocities, the cell-centre</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">     * forcing.time). forcing holds the face velocities, the cell-center</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">     * heights, the lowest cell&#39;s temperature and humidity, and the surface</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">     * rain if wants_surface_precip() is true; sample them onto the fire grid</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">     * here and keep no pointer to them after this call.</span></div>
@@ -186,7 +186,7 @@ $(document).ready(function(){initNavTree('ERF__FireEngineTemplate_8H_source.html
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">     * the heat flux into the air on the fire grid [W/m2], positive upward,</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">     * averaged over exactly [forcing.time, forcing.time + forcing.dt] of the</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">     * last advance() (sum over any substeps, divided by forcing.dt); leave a</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">     * pointer nullptr for none. A vapour mass flux becomes a latent flux by</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">     * pointer nullptr for none. A vapor mass flux becomes a latent flux by</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">     * multiplying by L_v (ERF_Constants.H). The fields must stay valid until the next</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">     * advance(). Called only when the coupling injects heat or smoke.</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">     */</span></div>

@@ -446,7 +446,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copy the k = 0 plane of a cell-centred atmospheric field into a MultiFab on the same boxes coarsened to one cell in z. A namespace-scope function because nvcc rejects a device kernel inside a private member such as <a class="el" href="classERF.html#a9b87129b86887ed08dba76ad405bdea9">ERF::Advance</a>. </p>
+<p>Copy the k = 0 plane of a cell-centered atmospheric field into a MultiFab on the same boxes coarsened to one cell in z. A namespace-scope function because nvcc rejects a device kernel inside a private member such as <a class="el" href="classERF.html#a9b87129b86887ed08dba76ad405bdea9">ERF::Advance</a>. </p>
 <div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(dst_2d); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        amrex::Array4&lt;amrex::Real&gt; d = dst_2d.array(mfi);</div>
@@ -515,7 +515,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Copy a MultiFab between device and host-accessible memory, for an engine whose fire physics runs on the host. </p>
-<p>The memory contract of ERF_FireEngine.H: the coupling's fields are in the default arena (device memory on a GPU build) and are only valid during the call that hands them over; an engine's returned fields must be readable there too. dst and src have the same BoxArray and DistributionMapping; ncomp components and nghost ghost cells are copied from component 0. dst belongs to the caller (allocate a host copy once with amrex::MFInfo().SetArena(amrex::The_Pinned_Arena()), or The_Managed_Arena(), and reuse it). The copy completes before the call returns: the GPU stream is synchronised, so the host may read dst, or the device read it, right away. On a CPU build it is a plain copy. </p>
+<p>The memory contract of ERF_FireEngine.H: the coupling's fields are in the default arena (device memory on a GPU build) and are only valid during the call that hands them over; an engine's returned fields must be readable there too. dst and src have the same BoxArray and DistributionMapping; ncomp components and nghost ghost cells are copied from component 0. dst belongs to the caller (allocate a host copy once with amrex::MFInfo().SetArena(amrex::The_Pinned_Arena()), or The_Managed_Arena(), and reuse it). The copy completes before the call returns: the GPU stream is synchronized, so the host may read dst, or the device read it, right away. On a CPU build it is a plain copy. </p>
 <div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;{</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dst.boxArray() == src.boxArray() &amp;&amp; dst.DistributionMap() == src.DistributionMap());</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    amrex::MultiFab::Copy(dst, src, 0, 0, ncomp, nghost);</div>

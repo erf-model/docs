@@ -295,7 +295,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">// Source conversion must use the same dry-air heat capacity as ERF&#39;s EOS.</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    constexpr Real Cp_fire = <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">// and the latent heat ERF uses (an engine converting a vapour mass flux to</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">// and the latent heat ERF uses (an engine converting a vapor mass flux to</span></div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="comment">// its latent flux multiplies by this same L_v, so the water round-trips exactly)</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    constexpr Real L_V  = <a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="comment">// Exner function of the cell from its rho theta (erf.fire.heat_tendency_exner):</span></div>
@@ -336,7 +336,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        }</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    }</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">// Column normalisation of the open-fraction weights: one k = klo slab per</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">// Column normalization of the open-fraction weights: one k = klo slab per</span></div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="comment">// box, filled once per column (the boxes hold whole columns, which the</span></div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="comment">// fire prerequisites assert), before the tiled loop that reads it.</span></div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="comment">// The engine&#39;s open fraction and roof height are read with the level&#39;s</span></div>
@@ -398,7 +398,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; z_cc_a   = z_phys_cc.array(mfi);</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; s_old_a  = S_old.array(mfi);</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="comment">// Faces of cell k: the mean of its four lower (upper) nodes where the</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="comment">// nodal heights exist, half a cell below (above) the centre otherwise</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="comment">// nodal heights exist, half a cell below (above) the center otherwise</span></div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> has_nd = (z_phys_nd != <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        Array4&lt;Real const&gt; z_nd_a;</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">if</span> (has_nd) { z_nd_a = z_phys_nd-&gt;const_array(mfi); }</div>
@@ -418,7 +418,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        Array4&lt;Real&gt; dbg_arr;</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">if</span> (fire_debug) { dbg_arr = tend_dbg.array(mfi); }</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="comment">// Column normalisation of the open-fraction weights, computed once per</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="comment">// Column normalization of the open-fraction weights, computed once per</span></div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="comment">// column above the tile loop.</span></div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        Array4&lt;Real const&gt; norm_arr;</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">if</span> (use_open) { norm_arr = norm_mf.const_array(mfi); }</div>
@@ -443,7 +443,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            <span class="comment">// The cell&#39;s own thickness, face to face: the column then receives</span></div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            <span class="comment">// sum_k w_k of the flux, 1 - exp(-z_top/alfg), on any vertical</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            <span class="comment">// spacing (the centre-to-centre spacing used before put a share</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            <span class="comment">// spacing (the center-to-center spacing used before put a share</span></div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            <span class="comment">// dz_cell / dz_cc into each cell, 2 / (1 + r) of the flux on a grid</span></div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            <span class="comment">// stretched by r)</span></div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            <span class="keyword">const</span> Real z_lo = <a class="code" href="ERF__FireAtmCoupling_8H.html#ab8df218b3292f7535a992f01ecac5ca0">fire_cell_face</a>(z_nd_a, z_cc_a, has_nd, dz_avg, i, j, k, 0);</div>
@@ -464,7 +464,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            Real heat_fac = mass_fac;</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <span class="keywordflow">if</span> (exner_factor) {</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                <span class="keyword">const</span> Real rhotheta = amrex::max(s_old_a(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), Real(1.0e-10));</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                <span class="comment">// the moist pressure where there is vapour (about 1 % in Pi at 15 g/kg)</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                <span class="comment">// the moist pressure where there is vapor (about 1 % in Pi at 15 g/kg)</span></div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                <span class="keyword">const</span> Real <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14af099273d19f4b8cdca199c5177231e35">qv</a> = has_moisture ? amrex::max(s_old_a(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>), Real(0.0)) / <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a89de8c3bfc941080efb960e5119fbd61">rho</a> : Real(0.0);</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                <span class="keyword">const</span> Real <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8ad6cb403596ec7a348234a3a3bf0221bc">p</a> = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rhotheta, <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14af099273d19f4b8cdca199c5177231e35">qv</a>);</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                <span class="keyword">const</span> Real exner = std::pow(<a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8ad6cb403596ec7a348234a3a3bf0221bc">p</a> / <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>, <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>);</div>
@@ -475,7 +475,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <span class="comment">// that falls in this cell. Without an open fraction this is the flux</span></div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <span class="comment">// difference form used since the coupling was written. With the</span></div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            <span class="comment">// open-fraction option, cells below the sampled roof height carry</span></div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            <span class="comment">// only their open share and the column is renormalised over the</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            <span class="comment">// only their open share and the column is renormalized over the</span></div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            <span class="comment">// cells that remain, so the injected energy per column is unchanged</span></div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            <span class="comment">// and none of it lands inside a building.</span></div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            Real w_k = exp_k - exp_kp1;</div>
@@ -496,7 +496,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                    <span class="keywordflow">if</span> (zhi_g &lt;= h_roof)      { share = f_open; }</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (zlo_g &lt; h_roof)  { share = f_open + (Real(1.0) - f_open) * (zhi_g - h_roof) / <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a>; }</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                }</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                <span class="comment">// Column normalisation over the open shares of the same</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                <span class="comment">// Column normalization over the open shares of the same</span></div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                <span class="comment">// profile, precomputed per column above.</span></div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                <span class="keyword">const</span> Real norm = norm_arr(i, j, <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                <span class="comment">// The legacy profile integrates to (1 - exp(-z_top/alfg)); keep</span></div>
@@ -575,9 +575,9 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;        <span class="comment">// fire cells are masked. For those partial columns report the largest</span></div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        <span class="comment">// share of the column&#39;s heating that lands below the roof H (above the</span></div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        <span class="comment">// ground). With B the plain profile&#39;s share below the roof (measured</span></div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        <span class="comment">// from the first cell centre) and L = 1 - exp(-z_top/alfg), the</span></div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        <span class="comment">// from the first cell center) and L = 1 - exp(-z_top/alfg), the</span></div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        <span class="comment">// open-fraction weights give f B L / (L - (1 - f) B), more than f B</span></div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        <span class="comment">// because the column is renormalised; and the largest potential temperature of the</span></div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        <span class="comment">// because the column is renormalized; and the largest potential temperature of the</span></div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        <span class="comment">// state in cells below a roof, which shows heat that earlier steps left</span></div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        <span class="comment">// inside buildings.</span></div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        Real below_roof_max = -Real(1.0), theta_blocked_max = -Real(1.0);</div>
@@ -628,7 +628,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            below_roof_max    = col.max(0);</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            theta_blocked_max = thb.max(0);</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        }</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        <span class="comment">// The ratio divides only when e_in &gt; 0, but the optimiser evaluates the division</span></div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        <span class="comment">// The ratio divides only when e_in &gt; 0, but the optimizer evaluates the division</span></div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        <span class="comment">// speculatively for both arms of the selection, and 0/0 on the first lagged step</span></div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        <span class="comment">// raised the invalid flag that aborts the run under amrex.fpe_trap_invalid; the</span></div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        <span class="comment">// floored denominator (the smallest normal Real, so it holds in single</span></div>
@@ -684,7 +684,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__FireAtmCoupling_8H_a07dcb016b5da511f15e51068e6e5f469_icgraph.png" border="0" usemap="#aERF__FireAtmCoupling_8H_a07dcb016b5da511f15e51068e6e5f469_icgraph" alt=""/></div>
 <map name="aERF__FireAtmCoupling_8H_a07dcb016b5da511f15e51068e6e5f469_icgraph" id="aERF__FireAtmCoupling_8H_a07dcb016b5da511f15e51068e6e5f469_icgraph">
 <area shape="rect" title=" " alt="" coords="239,5,392,47"/>
-<area shape="rect" href="classFireCoupler.html#a1b519c750af4aba98c2e661c56484511" title="Inject the lagged fire heat, vapour and smoke into the cell sources." alt="" coords="5,13,191,39"/>
+<area shape="rect" href="classFireCoupler.html#a1b519c750af4aba98c2e661c56484511" title="Inject the lagged fire heat, vapor and smoke into the cell sources." alt="" coords="5,13,191,39"/>
 </map>
 </div>
 
@@ -887,7 +887,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__FireAtmCoupling_8H_ab8df218b3292f7535a992f01ecac5ca0_icgraph" id="aERF__FireAtmCoupling_8H_ab8df218b3292f7535a992f01ecac5ca0_icgraph">
 <area shape="rect" title=" " alt="" coords="440,13,548,39"/>
 <area shape="rect" href="ERF__FireAtmCoupling_8H.html#a07dcb016b5da511f15e51068e6e5f469" title=" " alt="" coords="239,5,392,47"/>
-<area shape="rect" href="classFireCoupler.html#a1b519c750af4aba98c2e661c56484511" title="Inject the lagged fire heat, vapour and smoke into the cell sources." alt="" coords="5,13,191,39"/>
+<area shape="rect" href="classFireCoupler.html#a1b519c750af4aba98c2e661c56484511" title="Inject the lagged fire heat, vapor and smoke into the cell sources." alt="" coords="5,13,191,39"/>
 </map>
 </div>
 
@@ -944,7 +944,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__FireAtmCoupling_8H_a3d5df2e454f70034e9efaffd6900f22b_icgraph" id="aERF__FireAtmCoupling_8H_a3d5df2e454f70034e9efaffd6900f22b_icgraph">
 <area shape="rect" title=" " alt="" coords="440,13,583,39"/>
 <area shape="rect" href="ERF__FireAtmCoupling_8H.html#a07dcb016b5da511f15e51068e6e5f469" title=" " alt="" coords="239,5,392,47"/>
-<area shape="rect" href="classFireCoupler.html#a1b519c750af4aba98c2e661c56484511" title="Inject the lagged fire heat, vapour and smoke into the cell sources." alt="" coords="5,13,191,39"/>
+<area shape="rect" href="classFireCoupler.html#a1b519c750af4aba98c2e661c56484511" title="Inject the lagged fire heat, vapor and smoke into the cell sources." alt="" coords="5,13,191,39"/>
 </map>
 </div>
 

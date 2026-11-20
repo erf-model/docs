@@ -146,7 +146,7 @@ Classes</h2></td></tr>
 <p><a class="el" href="classERF.html">ERF</a> holds one <a class="el" href="classFireCoupler.html">FireCoupler</a> (std::unique_ptr&lt;FireCoupler&gt; m_fire_coupler), which owns the fire engine selected by erf.fire.engine. The coupler:</p><ul>
 <li>checks the <a class="el" href="classERF.html">ERF</a> configuration a fire grid needs and builds that grid on the level it refines (erf.fire.anchor_level);</li>
 <li>each step of that level, hands the engine the atmospheric state (<a class="el" href="structFireForcing.html" title="The atmospheric state a fire engine reads at the start of its step.">FireForcing</a>) and advances it; with lagged or synchronous coupling, or with the smoke tracer, it averages the fluxes the engine reports (<a class="el" href="structFireFluxes.html" title="The fluxes a fire engine hands to the atmosphere after its step.">FireFluxes</a>) onto the atmospheric columns, where they wait for the next step (the one-step explicit lag of WRF-Fire);</li>
-<li>at every Runge-Kutta stage of that next step, injects the lagged heat and vapour into the cell sources with the WRF-Fire exponential profile (ERF_FireAtmCoupling.H; lagged and synchronous coupling only) and the smoke tracer (ERF_FireSmokeEmission.H; erf.fire.smoke_enable);</li>
+<li>at every Runge-Kutta stage of that next step, injects the lagged heat and vapor into the cell sources with the WRF-Fire exponential profile (ERF_FireAtmCoupling.H; lagged and synchronous coupling only) and the smoke tracer (ERF_FireSmokeEmission.H; erf.fire.smoke_enable);</li>
 <li>holds the lagged fluxes for the boundary-layer scheme and the checkpoint.</li>
 </ul>
 <p>Coarser levels see the fire through average-down, finer levels not at all. </p>
