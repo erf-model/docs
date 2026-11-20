@@ -27,6 +27,7 @@ var namespaceerf__cloud__chamber =
     [ "linear_profile", "namespaceerf__cloud__chamber.html#ada393f7c2dc2faf21670956a8869c710", null ],
     [ "parse_config", "namespaceerf__cloud__chamber.html#ab22ffce278526e147d1caf51f235fae8", null ],
     [ "parse_initialization", "namespaceerf__cloud__chamber.html#ae1d6fe6e56bc0285a12b9c982bddcd39", null ],
+    [ "parse_wall_heat", "namespaceerf__cloud__chamber.html#a1d7fe78b2c9af5f7990a275feee5c61c", null ],
     [ "qv_at", "namespaceerf__cloud__chamber.html#aabafa74f17c512ec54b0b88281228f25", null ],
     [ "read_wall_transfer_contract", "namespaceerf__cloud__chamber.html#a5a4bf1cede6729d13f1b4d0f1f459ca1", null ],
     [ "reject_unsupported_face_keys", "namespaceerf__cloud__chamber.html#abefe8f46f35e63fd46be3e775f2a1a4c", null ],
@@ -39,7 +40,7 @@ var namespaceerf__cloud__chamber =
     [ "theta_at", "namespaceerf__cloud__chamber.html#a1232d583779c9cdc92327890cacb8bbd", null ],
     [ "validate_wall_roughness_geometry", "namespaceerf__cloud__chamber.html#aaf23e1de34bb37a13bc54e17628bd447", null ],
     [ "vapor_mixing_ratio_from_relative_humidity", "namespaceerf__cloud__chamber.html#a6a92042cd9a46f3cbc0aff4a8d1c3378", null ],
-    [ "wall_coupled_most_roughness_error", "namespaceerf__cloud__chamber.html#a0aada77faf19b5efebb430c2e1b0c6a0", null ],
+    [ "wall_coupled_most_roughness_error", "namespaceerf__cloud__chamber.html#a3ee29df557868eceffcd126e75f2baba", null ],
     [ "wall_roughness_geometry_error", "namespaceerf__cloud__chamber.html#a331e1f3a185d6320511a2b48f1e81760", null ],
     [ "wall_transfer_contract_error", "namespaceerf__cloud__chamber.html#a32c9dddf666fd0e3978c883fa02d44c0", null ]
 ];

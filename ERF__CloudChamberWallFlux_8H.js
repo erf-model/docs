@@ -60,5 +60,6 @@ var ERF__CloudChamberWallFlux_8H =
     [ "wall_rate_for_cell", "ERF__CloudChamberWallFlux_8H.html#ab842e353cd2c539fe72060fbb96de80f", null ],
     [ "wall_rate_requires_tangential_speed", "ERF__CloudChamberWallFlux_8H.html#a6d43c27e8e196d6ce884f3ea879abcf4", null ],
     [ "wall_uses_most", "ERF__CloudChamberWallFlux_8H.html#af6f795e480f5c96f8e340ecc24e5b6bd", null ],
+    [ "wall_uses_most_heat", "ERF__CloudChamberWallFlux_8H.html#aadbccd657606d5586a772eaecef87b27", null ],
     [ "wall_uses_most_vapor", "ERF__CloudChamberWallFlux_8H.html#ac856a151e465df437fcf57d2f53c5719", null ]
 ];

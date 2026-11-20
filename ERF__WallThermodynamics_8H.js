@@ -27,6 +27,7 @@ var ERF__WallThermodynamics_8H =
     ] ],
     [ "ThermalMode", "ERF__WallThermodynamics_8H.html#aaf06043ce86732c214aaea9bc322d4ea", [
       [ "LegacyNumerical", "ERF__WallThermodynamics_8H.html#aaf06043ce86732c214aaea9bc322d4eaafe3330a98ba654913f5153ebf68d016e", null ],
-      [ "FixedPhysicalTemperature", "ERF__WallThermodynamics_8H.html#aaf06043ce86732c214aaea9bc322d4eaab7d036528108019653da1be67ec689ba", null ]
+      [ "FixedPhysicalTemperature", "ERF__WallThermodynamics_8H.html#aaf06043ce86732c214aaea9bc322d4eaab7d036528108019653da1be67ec689ba", null ],
+      [ "Adiabatic", "ERF__WallThermodynamics_8H.html#aaf06043ce86732c214aaea9bc322d4eaaa3c19d748c876c698e9b54d68e0bb41f", null ]
     ] ]
 ];
