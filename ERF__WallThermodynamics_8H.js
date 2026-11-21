@@ -1,10 +1,13 @@
 var ERF__WallThermodynamics_8H =
 [
     [ "ThermalBoundary", "structerf__wall__thermodynamics_1_1ThermalBoundary.html", "structerf__wall__thermodynamics_1_1ThermalBoundary" ],
+    [ "TemperaturePanel", "structerf__wall__thermodynamics_1_1TemperaturePanel.html", "structerf__wall__thermodynamics_1_1TemperaturePanel" ],
+    [ "TemperatureBandView", "structerf__wall__thermodynamics_1_1TemperatureBandView.html", "structerf__wall__thermodynamics_1_1TemperatureBandView" ],
     [ "MomentumTransfer", "structerf__wall__thermodynamics_1_1MomentumTransfer.html", "structerf__wall__thermodynamics_1_1MomentumTransfer" ],
     [ "ScalarTransfer", "structerf__wall__thermodynamics_1_1ScalarTransfer.html", "structerf__wall__thermodynamics_1_1ScalarTransfer" ],
     [ "FaceWall", "structerf__wall__thermodynamics_1_1FaceWall.html", "structerf__wall__thermodynamics_1_1FaceWall" ],
     [ "Boundary", "ERF__WallThermodynamics_8H.html#acf6e111fffb75ec5ef33e70f3be7d82f", null ],
+    [ "SidewallBandViews", "ERF__WallThermodynamics_8H.html#a48e0a7f3d53994aefdf3283d750caae6", null ],
     [ "CoefficientProvider", "ERF__WallThermodynamics_8H.html#a62a00c830244c4bbc74ffa0cba677e98", [
       [ "None", "ERF__WallThermodynamics_8H.html#a62a00c830244c4bbc74ffa0cba677e98a6adf97f83acf6453d4a6a4b1070f3754", null ],
       [ "Fixed", "ERF__WallThermodynamics_8H.html#a62a00c830244c4bbc74ffa0cba677e98a4457d440870ad6d42bab9082d9bf9b61", null ],

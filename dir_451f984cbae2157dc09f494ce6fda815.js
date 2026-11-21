@@ -4,6 +4,9 @@ var dir_451f984cbae2157dc09f494ce6fda815 =
     [ "ERF_CloudChamberBudget.H", "ERF__CloudChamberBudget_8H.html", [
       [ "CloudChamberBudget", "classCloudChamberBudget.html", "classCloudChamberBudget" ]
     ] ],
+    [ "ERF_CloudChamberTemperatureBands.H", "ERF__CloudChamberTemperatureBands_8H.html", [
+      [ "SidewallTemperatureBands", "classerf__cloud__chamber_1_1SidewallTemperatureBands.html", "classerf__cloud__chamber_1_1SidewallTemperatureBands" ]
+    ] ],
     [ "ERF_InitCustomPert.H", "ERF__InitCustomPert_8H.html", "ERF__InitCustomPert_8H" ],
     [ "ERF_InitCustomPert_ABL.H", "ERF__InitCustomPert__ABL_8H.html", "ERF__InitCustomPert__ABL_8H" ],
     [ "ERF_InitCustomPert_AnelasticWallDiffusion.H", "ERF__InitCustomPert__AnelasticWallDiffusion_8H.html", "ERF__InitCustomPert__AnelasticWallDiffusion_8H" ],

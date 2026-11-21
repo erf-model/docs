@@ -1,5 +1,8 @@
 var NAVTREEINDEX11 =
 {
+"ERF__Kokkos_8H_source.html":[3,0,1,21,0],
+"ERF__LSM__Types_8H.html":[3,0,1,13,4],
+"ERF__LSM__Types_8H_source.html":[3,0,1,13,4],
 "ERF__LagrangianMicrophysics_8H.html":[3,0,1,16,11],
 "ERF__LagrangianMicrophysics_8H_source.html":[3,0,1,16,11],
 "ERF__LandSurface_8H.html":[3,0,1,13,3],
@@ -206,9 +209,9 @@ var NAVTREEINDEX11 =
 "ERF__Microphysics_8H_source.html":[3,0,1,16,12],
 "ERF__MoistNoCondensation_8H.html":[3,0,1,16,1,0],
 "ERF__MoistNoCondensation_8H_source.html":[3,0,1,16,1,0],
-"ERF__MoistPerturbation_8H.html":[3,0,1,22,50],
-"ERF__MoistPerturbation_8H.html#a6cbcd6b4f9f8da24575a33044849934f":[3,0,1,22,50,0],
-"ERF__MoistPerturbation_8H_source.html":[3,0,1,22,50],
+"ERF__MoistPerturbation_8H.html":[3,0,1,22,51],
+"ERF__MoistPerturbation_8H.html#a6cbcd6b4f9f8da24575a33044849934f":[3,0,1,22,51,0],
+"ERF__MoistPerturbation_8H_source.html":[3,0,1,22,51],
 "ERF__MoistUtils_8H.html":[3,0,1,29,33],
 "ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d":[3,0,1,29,33,5],
 "ERF__MoistUtils_8H.html#a7aeb5dcc6b510a14357233c04b16a8c1":[3,0,1,29,33,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX11 =
 "ERF__Morrison__Advance__F_8H.html#a5236f5ee5fee3d7229a6a45d22525600":[3,0,1,16,2,6,14],
 "ERF__Morrison__Advance__F_8H.html#a52bc9588b652a68e97ed4991ba1ad338":[3,0,1,16,2,6,5],
 "ERF__Morrison__Advance__F_8H.html#a579e030a79cadb3a018bdf4033ffbaf8":[3,0,1,16,2,6,22],
-"ERF__Morrison__Advance__F_8H.html#a60cf187524eb736f0c19d2960fb885e3":[3,0,1,16,2,6,30],
-"ERF__Morrison__Advance__F_8H.html#a6aec17fab3a1300ff70432e9f537ca00":[3,0,1,16,2,6,19],
-"ERF__Morrison__Advance__F_8H.html#a75578c82d1d23c1fc56200f1c9e409dd":[3,0,1,16,2,6,8],
-"ERF__Morrison__Advance__F_8H.html#a902f4409bf5c721720d353c7b3bfedcc":[3,0,1,16,2,6,10]
+"ERF__Morrison__Advance__F_8H.html#a60cf187524eb736f0c19d2960fb885e3":[3,0,1,16,2,6,30]
 };

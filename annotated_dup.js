@@ -43,7 +43,8 @@ var annotated_dup =
       [ "Initialization", "structerf__cloud__chamber_1_1Initialization.html", "structerf__cloud__chamber_1_1Initialization" ],
       [ "Config", "structerf__cloud__chamber_1_1Config.html", "structerf__cloud__chamber_1_1Config" ],
       [ "InitializationContract", "structerf__cloud__chamber_1_1InitializationContract.html", "structerf__cloud__chamber_1_1InitializationContract" ],
-      [ "WallTransferContract", "structerf__cloud__chamber_1_1WallTransferContract.html", "structerf__cloud__chamber_1_1WallTransferContract" ]
+      [ "WallTransferContract", "structerf__cloud__chamber_1_1WallTransferContract.html", "structerf__cloud__chamber_1_1WallTransferContract" ],
+      [ "SidewallTemperatureBands", "classerf__cloud__chamber_1_1SidewallTemperatureBands.html", "classerf__cloud__chamber_1_1SidewallTemperatureBands" ]
     ] ],
     [ "erf_cloud_chamber_wall_flux", "namespaceerf__cloud__chamber__wall__flux.html", [
       [ "WallFlux", "structerf__cloud__chamber__wall__flux_1_1WallFlux.html", "structerf__cloud__chamber__wall__flux_1_1WallFlux" ],
@@ -168,6 +169,8 @@ var annotated_dup =
     ] ],
     [ "erf_wall_thermodynamics", "namespaceerf__wall__thermodynamics.html", [
       [ "ThermalBoundary", "structerf__wall__thermodynamics_1_1ThermalBoundary.html", "structerf__wall__thermodynamics_1_1ThermalBoundary" ],
+      [ "TemperaturePanel", "structerf__wall__thermodynamics_1_1TemperaturePanel.html", "structerf__wall__thermodynamics_1_1TemperaturePanel" ],
+      [ "TemperatureBandView", "structerf__wall__thermodynamics_1_1TemperatureBandView.html", "structerf__wall__thermodynamics_1_1TemperatureBandView" ],
       [ "MomentumTransfer", "structerf__wall__thermodynamics_1_1MomentumTransfer.html", "structerf__wall__thermodynamics_1_1MomentumTransfer" ],
       [ "ScalarTransfer", "structerf__wall__thermodynamics_1_1ScalarTransfer.html", "structerf__wall__thermodynamics_1_1ScalarTransfer" ],
       [ "FaceWall", "structerf__wall__thermodynamics_1_1FaceWall.html", "structerf__wall__thermodynamics_1_1FaceWall" ]

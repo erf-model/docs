@@ -22,10 +22,11 @@ var ERF__CloudChamberWallFlux_8H =
       [ "Vapor", "ERF__CloudChamberWallFlux_8H.html#a7d287264b0a3f33cc39ed5308255e5a9a8f5c726a79d28111b32b6a4e3bc56dc5", null ],
       [ "CloudWater", "ERF__CloudChamberWallFlux_8H.html#a7d287264b0a3f33cc39ed5308255e5a9a2eefe6c8f723e0eb0f229933b0f07544", null ]
     ] ],
-    [ "apply", "ERF__CloudChamberWallFlux_8H.html#a1f4b55039569ef5aa08d2ed919a1f1ac", null ],
-    [ "apply_face", "ERF__CloudChamberWallFlux_8H.html#af8b4ff166bd6dc38ce58fe756d0d072a", null ],
+    [ "apply", "ERF__CloudChamberWallFlux_8H.html#a9f0a0d004d38fd745d91900636e1f20e", null ],
+    [ "apply_face", "ERF__CloudChamberWallFlux_8H.html#ad1a1af2bbd9eaa843a3a1f280743363d", null ],
     [ "bulk_theta_flux_in", "ERF__CloudChamberWallFlux_8H.html#adb2eaa7bf84773c6ea70beaaea8d752e", null ],
     [ "bulk_vapor_flux_in", "ERF__CloudChamberWallFlux_8H.html#a14d29e98f09bf68ed52ae1fee47fc09d", null ],
+    [ "evaluate_face_scalar_flux_in", "ERF__CloudChamberWallFlux_8H.html#a6d008d1554b4c0857bdd80780fb73dd9", null ],
     [ "evaluate_momentum_traction", "ERF__CloudChamberWallFlux_8H.html#a1b2e2a80e2d343a3286be2cfbfb638bb", null ],
     [ "evaluate_scalar_flux_in", "ERF__CloudChamberWallFlux_8H.html#a5eb71414ca9b0722d498197f2f4eee87", null ],
     [ "has_velocity_dependent_scalar_wall", "ERF__CloudChamberWallFlux_8H.html#a4409efb69c9886c7b26b04f5bb750606", null ],

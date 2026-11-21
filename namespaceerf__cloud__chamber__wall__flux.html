@@ -207,14 +207,16 @@ Functions</h2></td></tr>
 <tr class="separator:a5eb71414ca9b0722d498197f2f4eee87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9054bbdc285ff0ceebc47b38f224afc4"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a9054bbdc285ff0ceebc47b38f224afc4">scalar_flux_in</a> (const <a class="el" href="structerf__cloud__chamber__wall__flux_1_1WallFlux.html">WallFlux</a> &amp;flux, <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a7d287264b0a3f33cc39ed5308255e5a9">ScalarChannel</a> channel) noexcept</td></tr>
 <tr class="separator:a9054bbdc285ff0ceebc47b38f224afc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d008d1554b4c0857bdd80780fb73dd9"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9">evaluate_face_scalar_flux_in</a> (const <a class="el" href="structerf__wall__thermodynamics_1_1FaceWall.html">erf_wall_thermodynamics::FaceWall</a> &amp;wall, <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a7d287264b0a3f33cc39ed5308255e5a9">ScalarChannel</a> channel, const <a class="el" href="structerf__cloud__chamber__wall__flux_1_1ScalarWallSample.html">ScalarWallSample</a> &amp;sample, const <a class="el" href="structerf__wall__thermodynamics_1_1TemperatureBandView.html">erf_wall_thermodynamics::TemperatureBandView</a> &amp;bands, int k) noexcept</td></tr>
+<tr class="separator:a6d008d1554b4c0857bdd80780fb73dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8f79c0f957d995b2adf67ad76085800"><td class="memTemplParams" colspan="2">template&lt;int DIR, bool HIGH&gt; </td></tr>
 <tr class="memitem:ae8f79c0f957d995b2adf67ad76085800"><td class="memTemplItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="structerf__cloud__chamber__wall__flux_1_1ScalarFluxReplacement.html">ScalarFluxReplacement</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#ae8f79c0f957d995b2adf67ad76085800">scalar_flux_replacement</a> (amrex::Real old_flux, amrex::Real inward_flux, amrex::Real dx_inv) noexcept</td></tr>
 <tr class="separator:ae8f79c0f957d995b2adf67ad76085800"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8b4ff166bd6dc38ce58fe756d0d072a"><td class="memTemplParams" colspan="2">template&lt;int DIR, bool HIGH&gt; </td></tr>
-<tr class="memitem:af8b4ff166bd6dc38ce58fe756d0d072a"><td class="memTemplItemLeft" align="right" valign="top">AMREX_FORCE_INLINE void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a">apply_face</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, const int quantity, const int flux_comp, const amrex::Array4&lt; const amrex::Real &gt; &amp;state, const amrex::Array4&lt; const amrex::Real &gt; &amp;prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;base_state, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;xflux, const amrex::Array4&lt; amrex::Real &gt; &amp;yflux, const amrex::Array4&lt; amrex::Real &gt; &amp;zflux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dx_inv, const <a class="el" href="namespaceerf__wall__thermodynamics.html#acf6e111fffb75ec5ef33e70f3be7d82f">erf_wall_thermodynamics::Boundary</a> &amp;walls, const amrex::Real alpha_T, const amrex::Real alpha_C, const amrex::Real <a class="el" href="ERF__InitCustomPert__SLM_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>, const bool cloudy)</td></tr>
-<tr class="separator:af8b4ff166bd6dc38ce58fe756d0d072a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f4b55039569ef5aa08d2ed919a1f1ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a1f4b55039569ef5aa08d2ed919a1f1ac">apply</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, const int quantity, const int flux_comp, const amrex::Array4&lt; const amrex::Real &gt; &amp;state, const amrex::Array4&lt; const amrex::Real &gt; &amp;prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;base_state, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;xflux, const amrex::Array4&lt; amrex::Real &gt; &amp;yflux, const amrex::Array4&lt; amrex::Real &gt; &amp;zflux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dx_inv, const <a class="el" href="namespaceerf__wall__thermodynamics.html#acf6e111fffb75ec5ef33e70f3be7d82f">erf_wall_thermodynamics::Boundary</a> &amp;walls, const amrex::Real alpha_T, const amrex::Real alpha_C, const amrex::Real <a class="el" href="ERF__InitCustomPert__SLM_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>, const bool cloudy=false)</td></tr>
-<tr class="separator:a1f4b55039569ef5aa08d2ed919a1f1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a1af2bbd9eaa843a3a1f280743363d"><td class="memTemplParams" colspan="2">template&lt;int DIR, bool HIGH&gt; </td></tr>
+<tr class="memitem:ad1a1af2bbd9eaa843a3a1f280743363d"><td class="memTemplItemLeft" align="right" valign="top">AMREX_FORCE_INLINE void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#ad1a1af2bbd9eaa843a3a1f280743363d">apply_face</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, const int quantity, const int flux_comp, const amrex::Array4&lt; const amrex::Real &gt; &amp;state, const amrex::Array4&lt; const amrex::Real &gt; &amp;prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;base_state, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;xflux, const amrex::Array4&lt; amrex::Real &gt; &amp;yflux, const amrex::Array4&lt; amrex::Real &gt; &amp;zflux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dx_inv, const <a class="el" href="namespaceerf__wall__thermodynamics.html#acf6e111fffb75ec5ef33e70f3be7d82f">erf_wall_thermodynamics::Boundary</a> &amp;walls, const amrex::Real alpha_T, const amrex::Real alpha_C, const amrex::Real <a class="el" href="ERF__InitCustomPert__SLM_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>, const bool cloudy, const <a class="el" href="structerf__wall__thermodynamics_1_1TemperatureBandView.html">erf_wall_thermodynamics::TemperatureBandView</a> bands={})</td></tr>
+<tr class="separator:ad1a1af2bbd9eaa843a3a1f280743363d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f0a0d004d38fd745d91900636e1f20e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a9f0a0d004d38fd745d91900636e1f20e">apply</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, const int quantity, const int flux_comp, const amrex::Array4&lt; const amrex::Real &gt; &amp;state, const amrex::Array4&lt; const amrex::Real &gt; &amp;prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;base_state, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;xflux, const amrex::Array4&lt; amrex::Real &gt; &amp;yflux, const amrex::Array4&lt; amrex::Real &gt; &amp;zflux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dx_inv, const <a class="el" href="namespaceerf__wall__thermodynamics.html#acf6e111fffb75ec5ef33e70f3be7d82f">erf_wall_thermodynamics::Boundary</a> &amp;walls, const amrex::Real alpha_T, const amrex::Real alpha_C, const amrex::Real <a class="el" href="ERF__InitCustomPert__SLM_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>, const bool cloudy=false, const <a class="el" href="namespaceerf__wall__thermodynamics.html#a48e0a7f3d53994aefdf3283d750caae6">erf_wall_thermodynamics::SidewallBandViews</a> &amp;bands={})</td></tr>
+<tr class="separator:a9f0a0d004d38fd745d91900636e1f20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4409efb69c9886c7b26b04f5bb750606"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a4409efb69c9886c7b26b04f5bb750606">has_velocity_dependent_scalar_wall</a> (const <a class="el" href="namespaceerf__wall__thermodynamics.html#acf6e111fffb75ec5ef33e70f3be7d82f">erf_wall_thermodynamics::Boundary</a> &amp;walls) noexcept</td></tr>
 <tr class="separator:a4409efb69c9886c7b26b04f5bb750606"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a206019ce2cf0bb1d72aaf39e48f7c5"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a6a206019ce2cf0bb1d72aaf39e48f7c5">wall_dt_from_max_rate</a> (amrex::Real max_rate, amrex::Real wall_cfl=amrex::Real(0.5)) noexcept</td></tr>
@@ -293,8 +295,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a1f4b55039569ef5aa08d2ed919a1f1ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f4b55039569ef5aa08d2ed919a1f1ac">&#9670;&nbsp;</a></span>apply()</h2>
+<a id="a9f0a0d004d38fd745d91900636e1f20e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f0a0d004d38fd745d91900636e1f20e">&#9670;&nbsp;</a></span>apply()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -420,7 +422,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>cloudy</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>cloudy</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceerf__wall__thermodynamics.html#a48e0a7f3d53994aefdf3283d750caae6">erf_wall_thermodynamics::SidewallBandViews</a> &amp;&#160;</td>
+          <td class="paramname"><em>bands</em> = <code>{}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -434,22 +442,23 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;{</div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;    apply_face&lt;0,false&gt;(bx,domain,quantity,flux_comp,state,prim,base_state,u,v,w,rhs,xflux,yflux,zflux,dx_inv,walls,alpha_T,alpha_C,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,cloudy);</div>
-<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;    apply_face&lt;0,true &gt;(bx,domain,quantity,flux_comp,state,prim,base_state,u,v,w,rhs,xflux,yflux,zflux,dx_inv,walls,alpha_T,alpha_C,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,cloudy);</div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;    apply_face&lt;1,false&gt;(bx,domain,quantity,flux_comp,state,prim,base_state,u,v,w,rhs,xflux,yflux,zflux,dx_inv,walls,alpha_T,alpha_C,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,cloudy);</div>
-<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;    apply_face&lt;1,true &gt;(bx,domain,quantity,flux_comp,state,prim,base_state,u,v,w,rhs,xflux,yflux,zflux,dx_inv,walls,alpha_T,alpha_C,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,cloudy);</div>
-<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;    apply_face&lt;2,false&gt;(bx,domain,quantity,flux_comp,state,prim,base_state,u,v,w,rhs,xflux,yflux,zflux,dx_inv,walls,alpha_T,alpha_C,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,cloudy);</div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;    apply_face&lt;2,true &gt;(bx,domain,quantity,flux_comp,state,prim,base_state,u,v,w,rhs,xflux,yflux,zflux,dx_inv,walls,alpha_T,alpha_C,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,cloudy);</div>
-<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;                                                                           {})</div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;{</div>
+<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;    apply_face&lt;0,false&gt;(bx,domain,quantity,flux_comp,state,prim,base_state,u,v,w,rhs,xflux,yflux,zflux,dx_inv,walls,alpha_T,alpha_C,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,cloudy,bands[0]);</div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;    apply_face&lt;0,true &gt;(bx,domain,quantity,flux_comp,state,prim,base_state,u,v,w,rhs,xflux,yflux,zflux,dx_inv,walls,alpha_T,alpha_C,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,cloudy,bands[1]);</div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;    apply_face&lt;1,false&gt;(bx,domain,quantity,flux_comp,state,prim,base_state,u,v,w,rhs,xflux,yflux,zflux,dx_inv,walls,alpha_T,alpha_C,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,cloudy,bands[2]);</div>
+<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;    apply_face&lt;1,true &gt;(bx,domain,quantity,flux_comp,state,prim,base_state,u,v,w,rhs,xflux,yflux,zflux,dx_inv,walls,alpha_T,alpha_C,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,cloudy,bands[3]);</div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    apply_face&lt;2,false&gt;(bx,domain,quantity,flux_comp,state,prim,base_state,u,v,w,rhs,xflux,yflux,zflux,dx_inv,walls,alpha_T,alpha_C,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,cloudy);</div>
+<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;    apply_face&lt;2,true &gt;(bx,domain,quantity,flux_comp,state,prim,base_state,u,v,w,rhs,xflux,yflux,zflux,dx_inv,walls,alpha_T,alpha_C,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,cloudy);</div>
+<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a46e52004c860b2aef260fce99d025bce"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a></div><div class="ttdeci">const Real rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:127</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__resolved__wall__flux.html#af4bb1fd6bad609edefd5f661c60672ef">erf_resolved_wall_flux::apply()</a>, <a class="el" href="structTurbulentPerturbation.html#a985db53371d5f4741f1d516761b1ac20">TurbulentPerturbation::apply_tpi()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#afeee1f7ba74d6e2dfaa266abb8d0ed1c">erf_slow_rhs_post()</a>, and <a class="el" href="ERF__SlowRhsPre_8cpp.html#a5706bf86d24a17054a7278afc8183456">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a1f4b55039569ef5aa08d2ed919a1f1ac_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a1f4b55039569ef5aa08d2ed919a1f1ac_icgraph" alt=""/></div>
-<map name="anamespaceerf__cloud__chamber__wall__flux_a1f4b55039569ef5aa08d2ed919a1f1ac_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a1f4b55039569ef5aa08d2ed919a1f1ac_icgraph">
+<div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a9f0a0d004d38fd745d91900636e1f20e_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a9f0a0d004d38fd745d91900636e1f20e_icgraph" alt=""/></div>
+<map name="anamespaceerf__cloud__chamber__wall__flux_a9f0a0d004d38fd745d91900636e1f20e_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a9f0a0d004d38fd745d91900636e1f20e_icgraph">
 <area shape="rect" title=" " alt="" coords="384,100,564,141"/>
 <area shape="rect" href="namespaceerf__resolved__wall__flux.html#af4bb1fd6bad609edefd5f661c60672ef" title=" " alt="" coords="168,5,336,47"/>
 <area shape="rect" href="structTurbulentPerturbation.html#a985db53371d5f4741f1d516761b1ac20" title="Apply stored turbulent perturbations to a source or state array." alt="" coords="171,71,333,112"/>
@@ -461,8 +470,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="af8b4ff166bd6dc38ce58fe756d0d072a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8b4ff166bd6dc38ce58fe756d0d072a">&#9670;&nbsp;</a></span>apply_face()</h2>
+<a id="ad1a1af2bbd9eaa843a3a1f280743363d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a1af2bbd9eaa843a3a1f280743363d">&#9670;&nbsp;</a></span>apply_face()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -587,7 +596,13 @@ template&lt;int DIR, bool HIGH&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>cloudy</em>&#160;</td>
+          <td class="paramname"><em>cloudy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structerf__wall__thermodynamics_1_1TemperatureBandView.html">erf_wall_thermodynamics::TemperatureBandView</a>&#160;</td>
+          <td class="paramname"><em>bands</em> = <code>{}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -596,76 +611,72 @@ template&lt;int DIR, bool HIGH&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;{</div>
-<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;    <span class="comment">// A tile may belong to an interior BoxArray box. Do not relocate that</span></div>
-<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;    <span class="comment">// tile to a global boundary: its Array4 views do not own data there.</span></div>
-<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;    <span class="keywordflow">if</span> constexpr (HIGH) {</div>
-<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;        <span class="keywordflow">if</span> (bx.bigEnd(DIR) != domain.bigEnd(DIR)) { <span class="keywordflow">return</span>; }</div>
-<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;        <span class="keywordflow">if</span> (bx.smallEnd(DIR) != domain.smallEnd(DIR)) { <span class="keywordflow">return</span>; }</div>
-<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;    }</div>
-<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160; </div>
-<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;    <span class="keyword">const</span> <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a7d287264b0a3f33cc39ed5308255e5a9">ScalarChannel</a> channel =</div>
-<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;        <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a8de44a2afdb14c12ada1429df44f239d">scalar_channel_from_quantity</a>(quantity);</div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;    <span class="keywordflow">if</span> (channel == <a class="code" href="namespaceLSM__Type.html#a44a19287cd78f948d37b7896e5099f61aa18cb2995cf0825da0134679265f2c75">ScalarChannel::None</a>) { <span class="keywordflow">return</span>; }</div>
-<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160; </div>
-<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> wall = walls[2*DIR + (HIGH ? 1 : 0)];</div>
-<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#ac202df54981635ac8554e1d014e54887">wall_owns_scalar_channel</a>(wall, channel)) { <span class="keywordflow">return</span>; }</div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160; </div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> prim_comp = <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#ad301ec5377f03ce9f187ec33506c4ca2">primitive_component</a>(channel);</div>
-<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(prim_comp &gt;= 0);</div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160; </div>
-<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> cell_face = HIGH ? domain.bigEnd(DIR) : domain.smallEnd(DIR);</div>
-<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;    amrex::Box face_cells = bx;</div>
-<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;    face_cells.setSmall(DIR, cell_face);</div>
-<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;    face_cells.setBig(DIR, cell_face);</div>
-<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;    face_cells &amp;= domain;</div>
-<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;    <span class="keywordflow">if</span> (face_cells.isEmpty()) { <span class="keywordflow">return</span>; }</div>
-<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(bx.contains(face_cells));</div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160; </div>
-<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> needs_speed = <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a7cc5b29789d1869be36bb21b74bda790">requires_tangential_speed</a>(wall, channel);</div>
-<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; flux =</div>
-<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;        (DIR == 0) ? xflux : ((DIR == 1) ? yflux : zflux);</div>
-<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160; </div>
-<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(face_cells,</div>
-<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;    {</div>
-<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3ad0671d719b5ab63d2acf62bfcdccc5d2">fi</a> = HIGH &amp;&amp; DIR == 0 ? i + 1 : i;</div>
-<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> fj = HIGH &amp;&amp; DIR == 1 ? j + 1 : j;</div>
-<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> fk = HIGH &amp;&amp; DIR == 2 ? k + 1 : k;</div>
+<div class="fragment"><div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;                                                                          {})</div>
+<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;{</div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;    <span class="comment">// A tile may belong to an interior BoxArray box. Do not relocate that</span></div>
+<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;    <span class="comment">// tile to a global boundary: its Array4 views do not own data there.</span></div>
+<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;    <span class="keywordflow">if</span> constexpr (HIGH) {</div>
+<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;        <span class="keywordflow">if</span> (bx.bigEnd(DIR) != domain.bigEnd(DIR)) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;        <span class="keywordflow">if</span> (bx.smallEnd(DIR) != domain.smallEnd(DIR)) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;    }</div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160; </div>
+<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;    <span class="keyword">const</span> <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a7d287264b0a3f33cc39ed5308255e5a9">ScalarChannel</a> channel =</div>
+<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;        <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a8de44a2afdb14c12ada1429df44f239d">scalar_channel_from_quantity</a>(quantity);</div>
+<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;    <span class="keywordflow">if</span> (channel == <a class="code" href="namespaceLSM__Type.html#a44a19287cd78f948d37b7896e5099f61aa18cb2995cf0825da0134679265f2c75">ScalarChannel::None</a>) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160; </div>
-<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;        <span class="keyword">const</span> amrex::Real old_flux = flux(<a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3ad0671d719b5ab63d2acf62bfcdccc5d2">fi</a>,fj,fk,flux_comp);</div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;        <span class="keyword">const</span> ScalarWallSample sample{</div>
-<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;            state(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),</div>
-<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;            prim(i,j,k,prim_comp),</div>
-<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;            base_state(i,j,k,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e">BaseState::p0_comp</a>),</div>
-<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;            needs_speed ?</div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;                <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#ae20acb1d05f1b69837d1fdd7817621db">tangential_speed</a>(DIR, i, j, k, u, v, w, wall) :</div>
-<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;                <a class="code" href="namespaceamrex.html">amrex</a>::Real(0.0),</div>
-<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;            alpha_T,</div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;            alpha_C,</div>
-<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;            dx_inv[DIR],</div>
-<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;            <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,</div>
-<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;            <a class="code" href="namespaceamrex.html">amrex</a>::Real(0.5) / dx_inv[DIR],</div>
-<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;            prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>),</div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;            cloudy ? prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) : <a class="code" href="namespaceamrex.html">amrex</a>::Real(0.0),</div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;            DIR == 2 ? (HIGH ? -1 : 1) : 0</div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;        };</div>
+<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> wall = walls[2*DIR + (HIGH ? 1 : 0)];</div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#ac202df54981635ac8554e1d014e54887">wall_owns_scalar_channel</a>(wall, channel)) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160; </div>
+<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> prim_comp = <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#ad301ec5377f03ce9f187ec33506c4ca2">primitive_component</a>(channel);</div>
+<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(prim_comp &gt;= 0);</div>
+<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160; </div>
+<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> cell_face = HIGH ? domain.bigEnd(DIR) : domain.smallEnd(DIR);</div>
+<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;    amrex::Box face_cells = bx;</div>
+<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;    face_cells.setSmall(DIR, cell_face);</div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;    face_cells.setBig(DIR, cell_face);</div>
+<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;    face_cells &amp;= domain;</div>
+<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;    <span class="keywordflow">if</span> (face_cells.isEmpty()) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(bx.contains(face_cells));</div>
+<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160; </div>
+<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> needs_speed = <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a7cc5b29789d1869be36bb21b74bda790">requires_tangential_speed</a>(wall, channel);</div>
+<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; flux =</div>
+<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;        (DIR == 0) ? xflux : ((DIR == 1) ? yflux : zflux);</div>
 <div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160; </div>
-<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;        <span class="keyword">const</span> WallFlux physical =</div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;            <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87">evaluate_scalar_flux_in</a>(wall, channel, sample);</div>
-<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a051bdfa0f27f38b3ff71772217bf7e6b">owns</a>(physical, channel)) { <span class="keywordflow">return</span>; }</div>
-<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160; </div>
-<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;        <span class="keyword">const</span> ScalarFluxReplacement update =</div>
-<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;            scalar_flux_replacement&lt;DIR,HIGH&gt;(</div>
-<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;                old_flux,</div>
-<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;                <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a9054bbdc285ff0ceebc47b38f224afc4">scalar_flux_in</a>(physical, channel),</div>
-<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;                dx_inv[DIR]);</div>
-<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160; </div>
-<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;        flux(<a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3ad0671d719b5ab63d2acf62bfcdccc5d2">fi</a>,fj,fk,flux_comp) = update.coordinate_flux;</div>
-<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;        rhs(i,j,k,quantity) += update.rhs_delta;</div>
-<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;    });</div>
-<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;}</div>
+<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(face_cells,</div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;    {</div>
+<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3ad0671d719b5ab63d2acf62bfcdccc5d2">fi</a> = HIGH &amp;&amp; DIR == 0 ? i + 1 : i;</div>
+<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> fj = HIGH &amp;&amp; DIR == 1 ? j + 1 : j;</div>
+<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> fk = HIGH &amp;&amp; DIR == 2 ? k + 1 : k;</div>
+<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160; </div>
+<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;        <span class="keyword">const</span> amrex::Real old_flux = flux(<a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3ad0671d719b5ab63d2acf62bfcdccc5d2">fi</a>,fj,fk,flux_comp);</div>
+<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;        <span class="keyword">const</span> ScalarWallSample sample{</div>
+<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;            state(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),</div>
+<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;            prim(i,j,k,prim_comp),</div>
+<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;            base_state(i,j,k,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e">BaseState::p0_comp</a>),</div>
+<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;            needs_speed ?</div>
+<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;                <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#ae20acb1d05f1b69837d1fdd7817621db">tangential_speed</a>(DIR, i, j, k, u, v, w, wall) :</div>
+<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;                <a class="code" href="namespaceamrex.html">amrex</a>::Real(0.0),</div>
+<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;            alpha_T,</div>
+<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;            alpha_C,</div>
+<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;            dx_inv[DIR],</div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;            <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,</div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;            <a class="code" href="namespaceamrex.html">amrex</a>::Real(0.5) / dx_inv[DIR],</div>
+<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;            prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>),</div>
+<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;            cloudy ? prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) : <a class="code" href="namespaceamrex.html">amrex</a>::Real(0.0),</div>
+<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;            DIR == 2 ? (HIGH ? -1 : 1) : 0</div>
+<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;        };</div>
+<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160; </div>
+<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;        <span class="comment">// Ownership was checked for this face/channel before the launch.</span></div>
+<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> inward = <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9">evaluate_face_scalar_flux_in</a>(wall, channel, sample, bands, k);</div>
+<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;        <span class="keyword">const</span> ScalarFluxReplacement update =</div>
+<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;            scalar_flux_replacement&lt;DIR,HIGH&gt;(old_flux, inward, dx_inv[DIR]);</div>
+<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160; </div>
+<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;        flux(<a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3ad0671d719b5ab63d2acf62bfcdccc5d2">fi</a>,fj,fk,flux_comp) = update.coordinate_flux;</div>
+<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;        rhs(i,j,k,quantity) += update.rhs_delta;</div>
+<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;    });</div>
+<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a046484d86c968f85c3b8e574c1fe3e29"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a></div><div class="ttdeci">#define PrimQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:94</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:61</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:91</div></div>
@@ -674,59 +685,14 @@ template&lt;int DIR, bool HIGH&gt; </div>
 <div class="ttc" id="anamespaceBaseState_html_a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e"><div class="ttname"><a href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e">BaseState::p0_comp</a></div><div class="ttdeci">@ p0_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:110</div></div>
 <div class="ttc" id="anamespaceMORRInd_html_a5203b29054dbc5558f9dcd22c37793a3ad0671d719b5ab63d2acf62bfcdccc5d2"><div class="ttname"><a href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3ad0671d719b5ab63d2acf62bfcdccc5d2">MORRInd::fi</a></div><div class="ttdeci">@ fi</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:109</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:17</div></div>
-<div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_a051bdfa0f27f38b3ff71772217bf7e6b"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#a051bdfa0f27f38b3ff71772217bf7e6b">erf_cloud_chamber_wall_flux::owns</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool owns(const WallFlux &amp;flux, ScalarChannel channel) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:213</div></div>
-<div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_a5eb71414ca9b0722d498197f2f4eee87"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87">erf_cloud_chamber_wall_flux::evaluate_scalar_flux_in</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE WallFlux evaluate_scalar_flux_in(const erf_wall_thermodynamics::FaceWall &amp;wall, ScalarChannel channel, const ScalarWallSample &amp;sample) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:994</div></div>
+<div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_a6d008d1554b4c0857bdd80780fb73dd9"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9">erf_cloud_chamber_wall_flux::evaluate_face_scalar_flux_in</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real evaluate_face_scalar_flux_in(const erf_wall_thermodynamics::FaceWall &amp;wall, ScalarChannel channel, const ScalarWallSample &amp;sample, const erf_wall_thermodynamics::TemperatureBandView &amp;bands, int k) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:1149</div></div>
 <div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_a7cc5b29789d1869be36bb21b74bda790"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#a7cc5b29789d1869be36bb21b74bda790">erf_cloud_chamber_wall_flux::requires_tangential_speed</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool requires_tangential_speed(const erf_wall_thermodynamics::FaceWall &amp;wall, ScalarChannel channel) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:653</div></div>
 <div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_a7d287264b0a3f33cc39ed5308255e5a9"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#a7d287264b0a3f33cc39ed5308255e5a9">erf_cloud_chamber_wall_flux::ScalarChannel</a></div><div class="ttdeci">ScalarChannel</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:55</div></div>
 <div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_a8de44a2afdb14c12ada1429df44f239d"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#a8de44a2afdb14c12ada1429df44f239d">erf_cloud_chamber_wall_flux::scalar_channel_from_quantity</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE ScalarChannel scalar_channel_from_quantity(int quantity) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:143</div></div>
-<div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_a9054bbdc285ff0ceebc47b38f224afc4"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#a9054bbdc285ff0ceebc47b38f224afc4">erf_cloud_chamber_wall_flux::scalar_flux_in</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real scalar_flux_in(const WallFlux &amp;flux, ScalarChannel channel) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:1130</div></div>
 <div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_ac202df54981635ac8554e1d014e54887"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#ac202df54981635ac8554e1d014e54887">erf_cloud_chamber_wall_flux::wall_owns_scalar_channel</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool wall_owns_scalar_channel(const erf_wall_thermodynamics::FaceWall &amp;wall, ScalarChannel channel) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:172</div></div>
 <div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_ad301ec5377f03ce9f187ec33506c4ca2"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#ad301ec5377f03ce9f187ec33506c4ca2">erf_cloud_chamber_wall_flux::primitive_component</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int primitive_component(ScalarChannel channel) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:154</div></div>
 <div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_ae20acb1d05f1b69837d1fdd7817621db"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#ae20acb1d05f1b69837d1fdd7817621db">erf_cloud_chamber_wall_flux::tangential_speed</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real tangential_speed(int dir, int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const erf_wall_thermodynamics::FaceWall &amp;wall) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:834</div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_af8b4ff166bd6dc38ce58fe756d0d072a_cgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_af8b4ff166bd6dc38ce58fe756d0d072a_cgraph" alt=""/></div>
-<map name="anamespaceerf__cloud__chamber__wall__flux_af8b4ff166bd6dc38ce58fe756d0d072a_cgraph" id="anamespaceerf__cloud__chamber__wall__flux_af8b4ff166bd6dc38ce58fe756d0d072a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,754,185,795"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="543,5,725,32"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="260,389,440,445"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ac202df54981635ac8554e1d014e54887" title=" " alt="" coords="544,663,724,719"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a051bdfa0f27f38b3ff71772217bf7e6b" title=" " alt="" coords="260,601,440,642"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="305,791,395,817"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ad301ec5377f03ce9f187ec33506c4ca2" title=" " alt="" coords="250,842,450,883"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a7cc5b29789d1869be36bb21b74bda790" title=" " alt="" coords="233,725,467,766"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a8de44a2afdb14c12ada1429df44f239d" title=" " alt="" coords="260,908,440,964"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a9054bbdc285ff0ceebc47b38f224afc4" title=" " alt="" coords="260,989,440,1030"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ae20acb1d05f1b69837d1fdd7817621db" title=" " alt="" coords="260,1054,440,1095"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#adb2eaa7bf84773c6ea70beaaea8d752e" title=" " alt="" coords="544,363,724,405"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a14d29e98f09bf68ed52ae1fee47fc09d" title=" " alt="" coords="543,57,725,98"/>
-<area shape="rect" href="structerf__wall__thermodynamics_1_1FaceWall.html#a012cb82f655e74dc5487708beb374734" title=" " alt="" coords="801,755,1021,797"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a85172966d0ccf20e9236cd1d5bec6980" title=" " alt="" coords="529,429,739,470"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5d3858514cbadcd0c2228103d96e6bda" title=" " alt="" coords="544,203,724,259"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a8a19cfdc4c537e38ebcc8a8a4b23b1ed" title=" " alt="" coords="544,283,724,339"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a22cd746f2b3719f4aef9e3f796323c65" title=" " alt="" coords="544,123,724,179"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a9c6136f5624a7d499e55ec3a04573703" title=" " alt="" coords="533,597,735,638"/>
-<area shape="rect" href="structerf__wall__thermodynamics_1_1FaceWall.html#a75680397031da8ff9f697701d5163c45" title=" " alt="" coords="816,690,1007,731"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a1f529920cd92920ef9aedc006d8149db" title=" " alt="" coords="821,130,1001,171"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="1116,163,1203,189"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a6d191b122d8b5541ef4b8515ce55d570" title=" " alt="" coords="1085,112,1233,139"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="1349,112,1456,139"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="1556,188,1721,215"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="1297,163,1508,189"/>
-<area shape="rect" href="structsimilarity__funs.html#a38b867a4d10be55d2329ff85040889d3" title=" " alt="" coords="1083,353,1236,394"/>
-<area shape="rect" href="structsimilarity__funs.html#af2d77e837d453feccf9d5de094e1653b" title=" " alt="" coords="1083,423,1236,465"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a2a902928ca3c278cc65fdf50c1bb97bb" title=" " alt="" coords="821,389,1001,445"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6b1842327624debd052e062aa9676e45" title=" " alt="" coords="1069,500,1249,556"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#aadbccd657606d5586a772eaecef87b27" title=" " alt="" coords="811,571,1012,613"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ac856a151e465df437fcf57d2f53c5719" title=" " alt="" coords="807,273,1016,314"/>
-<area shape="rect" href="structerf__wall__thermodynamics_1_1FaceWall.html#aff4ce5790f2060d0234c9f468b5f1126" title=" " alt="" coords="519,809,749,850"/>
-<area shape="rect" href="structerf__wall__thermodynamics_1_1FaceWall.html#af0b048792641fbdd5e4562638e043644" title=" " alt="" coords="515,743,753,785"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a798e4105e3a372d6d40ef8922a4f49b8" title=" " alt="" coords="542,1083,726,1139"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a06d0accac5ee876aaeb503290434deed" title=" " alt="" coords="532,1017,736,1058"/>
-</map>
-</div>
-
+</div><!-- fragment -->
 </div>
 </div>
 <a id="adb2eaa7bf84773c6ea70beaaea8d752e"></a>
@@ -812,9 +778,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_adb2eaa7bf84773c6ea70beaaea8d752e_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_adb2eaa7bf84773c6ea70beaaea8d752e_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_adb2eaa7bf84773c6ea70beaaea8d752e_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_adb2eaa7bf84773c6ea70beaaea8d752e_icgraph">
-<area shape="rect" title=" " alt="" coords="461,13,641,54"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="233,5,413,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,13,185,54"/>
+<area shape="rect" title=" " alt="" coords="480,13,660,54"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="252,5,432,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,5,204,61"/>
 </map>
 </div>
 
@@ -909,9 +875,120 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a14d29e98f09bf68ed52ae1fee47fc09d_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a14d29e98f09bf68ed52ae1fee47fc09d_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a14d29e98f09bf68ed52ae1fee47fc09d_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a14d29e98f09bf68ed52ae1fee47fc09d_icgraph">
-<area shape="rect" title=" " alt="" coords="461,13,644,54"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="233,5,413,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,13,185,54"/>
+<area shape="rect" title=" " alt="" coords="480,13,663,54"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="252,5,432,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,5,204,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6d008d1554b4c0857bdd80780fb73dd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d008d1554b4c0857bdd80780fb73dd9">&#9670;&nbsp;</a></span>evaluate_face_scalar_flux_in()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_cloud_chamber_wall_flux::evaluate_face_scalar_flux_in </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structerf__wall__thermodynamics_1_1FaceWall.html">erf_wall_thermodynamics::FaceWall</a> &amp;&#160;</td>
+          <td class="paramname"><em>wall</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a7d287264b0a3f33cc39ed5308255e5a9">ScalarChannel</a>&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structerf__cloud__chamber__wall__flux_1_1ScalarWallSample.html">ScalarWallSample</a> &amp;&#160;</td>
+          <td class="paramname"><em>sample</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structerf__wall__thermodynamics_1_1TemperatureBandView.html">erf_wall_thermodynamics::TemperatureBandView</a> &amp;&#160;</td>
+          <td class="paramname"><em>bands</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;{</div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> uses_temperature = (channel == ScalarChannel::Heat &amp;&amp; wall.<a class="code" href="structerf__wall__thermodynamics_1_1FaceWall.html#a012cb82f655e74dc5487708beb374734">heat_is_conductive</a>()) ||</div>
+<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;                                  (channel == ScalarChannel::Vapor &amp;&amp; wall.<a class="code" href="structerf__wall__thermodynamics_1_1FaceWall.html#a75680397031da8ff9f697701d5163c45">vapor_is_wet</a>());</div>
+<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;    <span class="keywordflow">if</span> (!bands.<a class="code" href="structerf__wall__thermodynamics_1_1TemperatureBandView.html#a7fabe29aacca8ac49730c9f1a18df82b">offsets</a> || !uses_temperature) {</div>
+<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a9054bbdc285ff0ceebc47b38f224afc4">scalar_flux_in</a>(<a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87">evaluate_scalar_flux_in</a>(wall, channel, sample), channel);</div>
+<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;    }</div>
+<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> row = k - bands.<a class="code" href="structerf__wall__thermodynamics_1_1TemperatureBandView.html#afdf50626696a0b163f04924507d245f4">k_lo</a>;</div>
+<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;    <span class="keyword">auto</span> panel_wall = wall;</div>
+<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;    amrex::Real inward = 0;</div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = bands.<a class="code" href="structerf__wall__thermodynamics_1_1TemperatureBandView.html#a7fabe29aacca8ac49730c9f1a18df82b">offsets</a>[row]; n &lt; bands.<a class="code" href="structerf__wall__thermodynamics_1_1TemperatureBandView.html#a7fabe29aacca8ac49730c9f1a18df82b">offsets</a>[row+1]; ++n) {</div>
+<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> panel = bands.<a class="code" href="structerf__wall__thermodynamics_1_1TemperatureBandView.html#a314c2bbb34a53b9790d7b2ee8d68c730">panels</a>[n];</div>
+<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;        panel_wall.thermal.<a class="code" href="structerf__wall__thermodynamics_1_1TemperaturePanel.html#a157aa4e1b53f674568cebad2bab26605">temperature_K</a> = panel.temperature_K;</div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;        inward += panel.fraction * <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a9054bbdc285ff0ceebc47b38f224afc4">scalar_flux_in</a>(<a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87">evaluate_scalar_flux_in</a>(panel_wall, channel, sample), channel);</div>
+<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;    }</div>
+<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;    <span class="keywordflow">return</span> inward;</div>
+<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;}</div>
+<div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_a5eb71414ca9b0722d498197f2f4eee87"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87">erf_cloud_chamber_wall_flux::evaluate_scalar_flux_in</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE WallFlux evaluate_scalar_flux_in(const erf_wall_thermodynamics::FaceWall &amp;wall, ScalarChannel channel, const ScalarWallSample &amp;sample) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:994</div></div>
+<div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_a9054bbdc285ff0ceebc47b38f224afc4"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#a9054bbdc285ff0ceebc47b38f224afc4">erf_cloud_chamber_wall_flux::scalar_flux_in</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real scalar_flux_in(const WallFlux &amp;flux, ScalarChannel channel) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:1130</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a012cb82f655e74dc5487708beb374734"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a012cb82f655e74dc5487708beb374734">erf_wall_thermodynamics::FaceWall::heat_is_conductive</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool heat_is_conductive() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:96</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a75680397031da8ff9f697701d5163c45"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a75680397031da8ff9f697701d5163c45">erf_wall_thermodynamics::FaceWall::vapor_is_wet</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool vapor_is_wet() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:99</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1TemperatureBandView_html_a314c2bbb34a53b9790d7b2ee8d68c730"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1TemperatureBandView.html#a314c2bbb34a53b9790d7b2ee8d68c730">erf_wall_thermodynamics::TemperatureBandView::panels</a></div><div class="ttdeci">const TemperaturePanel * panels</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:59</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1TemperatureBandView_html_a7fabe29aacca8ac49730c9f1a18df82b"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1TemperatureBandView.html#a7fabe29aacca8ac49730c9f1a18df82b">erf_wall_thermodynamics::TemperatureBandView::offsets</a></div><div class="ttdeci">const int * offsets</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:58</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1TemperatureBandView_html_afdf50626696a0b163f04924507d245f4"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1TemperatureBandView.html#afdf50626696a0b163f04924507d245f4">erf_wall_thermodynamics::TemperatureBandView::k_lo</a></div><div class="ttdeci">int k_lo</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:60</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1TemperaturePanel_html_a157aa4e1b53f674568cebad2bab26605"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1TemperaturePanel.html#a157aa4e1b53f674568cebad2bab26605">erf_wall_thermodynamics::TemperaturePanel::temperature_K</a></div><div class="ttdeci">amrex::Real temperature_K</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:53</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a6d008d1554b4c0857bdd80780fb73dd9_cgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a6d008d1554b4c0857bdd80780fb73dd9_cgraph" alt=""/></div>
+<map name="anamespaceerf__cloud__chamber__wall__flux_a6d008d1554b4c0857bdd80780fb73dd9_cgraph" id="anamespaceerf__cloud__chamber__wall__flux_a6d008d1554b4c0857bdd80780fb73dd9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,498,204,554"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="252,465,432,521"/>
+<area shape="rect" href="structerf__wall__thermodynamics_1_1FaceWall.html#a012cb82f655e74dc5487708beb374734" title=" " alt="" coords="480,100,700,141"/>
+<area shape="rect" href="structerf__wall__thermodynamics_1_1FaceWall.html#a75680397031da8ff9f697701d5163c45" title=" " alt="" coords="495,800,685,841"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a9054bbdc285ff0ceebc47b38f224afc4" title=" " alt="" coords="252,596,432,637"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="499,618,681,645"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#adb2eaa7bf84773c6ea70beaaea8d752e" title=" " alt="" coords="500,669,680,711"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a14d29e98f09bf68ed52ae1fee47fc09d" title=" " alt="" coords="499,735,681,776"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a85172966d0ccf20e9236cd1d5bec6980" title=" " alt="" coords="485,165,695,207"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5d3858514cbadcd0c2228103d96e6bda" title=" " alt="" coords="500,231,680,287"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a8a19cfdc4c537e38ebcc8a8a4b23b1ed" title=" " alt="" coords="500,311,680,367"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a22cd746f2b3719f4aef9e3f796323c65" title=" " alt="" coords="500,391,680,447"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a9c6136f5624a7d499e55ec3a04573703" title=" " alt="" coords="489,472,691,513"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ac202df54981635ac8554e1d014e54887" title=" " alt="" coords="500,538,680,594"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a1f529920cd92920ef9aedc006d8149db" title=" " alt="" coords="763,399,943,440"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="1052,381,1139,407"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a6d191b122d8b5541ef4b8515ce55d570" title=" " alt="" coords="1021,431,1169,458"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="1285,330,1392,357"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="1492,406,1657,433"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="1233,381,1444,407"/>
+<area shape="rect" href="structsimilarity__funs.html#a38b867a4d10be55d2329ff85040889d3" title=" " alt="" coords="1019,69,1172,111"/>
+<area shape="rect" href="structsimilarity__funs.html#af2d77e837d453feccf9d5de094e1653b" title=" " alt="" coords="1019,145,1172,187"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a2a902928ca3c278cc65fdf50c1bb97bb" title=" " alt="" coords="763,122,943,178"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6b1842327624debd052e062aa9676e45" title=" " alt="" coords="1005,233,1185,289"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#aadbccd657606d5586a772eaecef87b27" title=" " alt="" coords="752,304,953,345"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ac856a151e465df437fcf57d2f53c5719" title=" " alt="" coords="748,5,957,47"/>
 </map>
 </div>
 
@@ -994,12 +1071,12 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_a25ccda56812eabb5eda8942c8179ec65a5105f56cdf666bdbf3b6194479d4d701"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65a5105f56cdf666bdbf3b6194479d4d701">erf_wall_thermodynamics::MomentumModel::NeutralRoughnessLog</a></div><div class="ttdeci">@ NeutralRoughnessLog</div></div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_a25ccda56812eabb5eda8942c8179ec65a8fd21f2dfc7a3c126447713c95e2f3f8"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65a8fd21f2dfc7a3c126447713c95e2f3f8">erf_wall_thermodynamics::MomentumModel::BulkAero</a></div><div class="ttdeci">@ BulkAero</div></div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_a62a00c830244c4bbc74ffa0cba677e98a882dd232c0425bb9366544f84f0a7b6c"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#a62a00c830244c4bbc74ffa0cba677e98a882dd232c0425bb9366544f84f0a7b6c">erf_wall_thermodynamics::CoefficientProvider::MOST</a></div><div class="ttdeci">@ MOST</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a8717113845ddad6747fe2ed51bed5f1c"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a8717113845ddad6747fe2ed51bed5f1c">erf_wall_thermodynamics::FaceWall::momentum</a></div><div class="ttdeci">MomentumTransfer momentum</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:73</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1MomentumTransfer_html_a53e38e340cc30afd0053e20d2ae27d8f"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1MomentumTransfer.html#a53e38e340cc30afd0053e20d2ae27d8f">erf_wall_thermodynamics::MomentumTransfer::z0_m</a></div><div class="ttdeci">amrex::Real z0_m</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:53</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1MomentumTransfer_html_a62e204d19811a2a523c9bcb1b2b94e9e"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1MomentumTransfer.html#a62e204d19811a2a523c9bcb1b2b94e9e">erf_wall_thermodynamics::MomentumTransfer::provider</a></div><div class="ttdeci">CoefficientProvider provider</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:51</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1MomentumTransfer_html_a7ddc9d99a7360e73ec43c3e16ab717dc"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1MomentumTransfer.html#a7ddc9d99a7360e73ec43c3e16ab717dc">erf_wall_thermodynamics::MomentumTransfer::C_D</a></div><div class="ttdeci">amrex::Real C_D</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:52</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1MomentumTransfer_html_a917fd4d722df25068829b3daa6912000"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1MomentumTransfer.html#a917fd4d722df25068829b3daa6912000">erf_wall_thermodynamics::MomentumTransfer::model</a></div><div class="ttdeci">MomentumModel model</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:50</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1MomentumTransfer_html_aeff44cc96a7eafc7b43469444d99d3ee"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1MomentumTransfer.html#aeff44cc96a7eafc7b43469444d99d3ee">erf_wall_thermodynamics::MomentumTransfer::molecular_speed</a></div><div class="ttdeci">amrex::Real molecular_speed</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:54</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a8717113845ddad6747fe2ed51bed5f1c"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a8717113845ddad6747fe2ed51bed5f1c">erf_wall_thermodynamics::FaceWall::momentum</a></div><div class="ttdeci">MomentumTransfer momentum</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:90</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1MomentumTransfer_html_a53e38e340cc30afd0053e20d2ae27d8f"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1MomentumTransfer.html#a53e38e340cc30afd0053e20d2ae27d8f">erf_wall_thermodynamics::MomentumTransfer::z0_m</a></div><div class="ttdeci">amrex::Real z0_m</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:70</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1MomentumTransfer_html_a62e204d19811a2a523c9bcb1b2b94e9e"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1MomentumTransfer.html#a62e204d19811a2a523c9bcb1b2b94e9e">erf_wall_thermodynamics::MomentumTransfer::provider</a></div><div class="ttdeci">CoefficientProvider provider</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:68</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1MomentumTransfer_html_a7ddc9d99a7360e73ec43c3e16ab717dc"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1MomentumTransfer.html#a7ddc9d99a7360e73ec43c3e16ab717dc">erf_wall_thermodynamics::MomentumTransfer::C_D</a></div><div class="ttdeci">amrex::Real C_D</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:69</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1MomentumTransfer_html_a917fd4d722df25068829b3daa6912000"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1MomentumTransfer.html#a917fd4d722df25068829b3daa6912000">erf_wall_thermodynamics::MomentumTransfer::model</a></div><div class="ttdeci">MomentumModel model</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:67</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1MomentumTransfer_html_aeff44cc96a7eafc7b43469444d99d3ee"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1MomentumTransfer.html#aeff44cc96a7eafc7b43469444d99d3ee">erf_wall_thermodynamics::MomentumTransfer::molecular_speed</a></div><div class="ttdeci">amrex::Real molecular_speed</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:71</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f">erf_cloud_chamber_wall_stress::wall_traction_at_cell()</a>.</p>
 <div class="dynheader">
@@ -1214,19 +1291,17 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_a8049a8e10dc09eaf6fcf3f27e9da6363a1cec84fe7a8d909774f89ff2810e570b"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#a8049a8e10dc09eaf6fcf3f27e9da6363a1cec84fe7a8d909774f89ff2810e570b">erf_wall_thermodynamics::ScalarModel::ResolvedMolecular</a></div><div class="ttdeci">@ ResolvedMolecular</div></div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_a8049a8e10dc09eaf6fcf3f27e9da6363a5105f56cdf666bdbf3b6194479d4d701"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#a8049a8e10dc09eaf6fcf3f27e9da6363a5105f56cdf666bdbf3b6194479d4d701">erf_wall_thermodynamics::ScalarModel::NeutralRoughnessLog</a></div><div class="ttdeci">@ NeutralRoughnessLog</div></div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_a8049a8e10dc09eaf6fcf3f27e9da6363a8fd21f2dfc7a3c126447713c95e2f3f8"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#a8049a8e10dc09eaf6fcf3f27e9da6363a8fd21f2dfc7a3c126447713c95e2f3f8">erf_wall_thermodynamics::ScalarModel::BulkAero</a></div><div class="ttdeci">@ BulkAero</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a012cb82f655e74dc5487708beb374734"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a012cb82f655e74dc5487708beb374734">erf_wall_thermodynamics::FaceWall::heat_is_conductive</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool heat_is_conductive() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:79</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a20eda26801b71a8dd6e2da33ca5552e8"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a20eda26801b71a8dd6e2da33ca5552e8">erf_wall_thermodynamics::FaceWall::vapor</a></div><div class="ttdeci">ScalarTransfer vapor</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:75</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a44987de6f313c4a10c6f690591ba9809"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a44987de6f313c4a10c6f690591ba9809">erf_wall_thermodynamics::FaceWall::heat</a></div><div class="ttdeci">ScalarTransfer heat</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:74</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a75680397031da8ff9f697701d5163c45"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a75680397031da8ff9f697701d5163c45">erf_wall_thermodynamics::FaceWall::vapor_is_wet</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool vapor_is_wet() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:82</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_ac16eed6c88058836f7e229c7800baa3e"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#ac16eed6c88058836f7e229c7800baa3e">erf_wall_thermodynamics::FaceWall::thermal</a></div><div class="ttdeci">ThermalBoundary thermal</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:70</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1ScalarTransfer_html_a0381486bc9c4f3252850a4a5047aa3c4"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1ScalarTransfer.html#a0381486bc9c4f3252850a4a5047aa3c4">erf_wall_thermodynamics::ScalarTransfer::coefficient</a></div><div class="ttdeci">amrex::Real coefficient</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:61</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1ScalarTransfer_html_a2c504fc8968a96921451aa9f6c00c01e"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1ScalarTransfer.html#a2c504fc8968a96921451aa9f6c00c01e">erf_wall_thermodynamics::ScalarTransfer::provider</a></div><div class="ttdeci">CoefficientProvider provider</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:60</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1ScalarTransfer_html_a362219a8815abe4f2bc08c418944c686"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1ScalarTransfer.html#a362219a8815abe4f2bc08c418944c686">erf_wall_thermodynamics::ScalarTransfer::z0</a></div><div class="ttdeci">amrex::Real z0</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:62</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1ScalarTransfer_html_adfb5182e5c37dd5a75c3976a3981e282"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1ScalarTransfer.html#adfb5182e5c37dd5a75c3976a3981e282">erf_wall_thermodynamics::ScalarTransfer::molecular_speed</a></div><div class="ttdeci">amrex::Real molecular_speed</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:64</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1ScalarTransfer_html_af325db7c5d5a9a8a83d55165a3a2fbb9"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1ScalarTransfer.html#af325db7c5d5a9a8a83d55165a3a2fbb9">erf_wall_thermodynamics::ScalarTransfer::model</a></div><div class="ttdeci">ScalarModel model</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:59</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a20eda26801b71a8dd6e2da33ca5552e8"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a20eda26801b71a8dd6e2da33ca5552e8">erf_wall_thermodynamics::FaceWall::vapor</a></div><div class="ttdeci">ScalarTransfer vapor</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:92</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a44987de6f313c4a10c6f690591ba9809"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a44987de6f313c4a10c6f690591ba9809">erf_wall_thermodynamics::FaceWall::heat</a></div><div class="ttdeci">ScalarTransfer heat</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:91</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_ac16eed6c88058836f7e229c7800baa3e"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#ac16eed6c88058836f7e229c7800baa3e">erf_wall_thermodynamics::FaceWall::thermal</a></div><div class="ttdeci">ThermalBoundary thermal</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:87</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1ScalarTransfer_html_a0381486bc9c4f3252850a4a5047aa3c4"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1ScalarTransfer.html#a0381486bc9c4f3252850a4a5047aa3c4">erf_wall_thermodynamics::ScalarTransfer::coefficient</a></div><div class="ttdeci">amrex::Real coefficient</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:78</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1ScalarTransfer_html_a2c504fc8968a96921451aa9f6c00c01e"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1ScalarTransfer.html#a2c504fc8968a96921451aa9f6c00c01e">erf_wall_thermodynamics::ScalarTransfer::provider</a></div><div class="ttdeci">CoefficientProvider provider</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:77</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1ScalarTransfer_html_a362219a8815abe4f2bc08c418944c686"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1ScalarTransfer.html#a362219a8815abe4f2bc08c418944c686">erf_wall_thermodynamics::ScalarTransfer::z0</a></div><div class="ttdeci">amrex::Real z0</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:79</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1ScalarTransfer_html_adfb5182e5c37dd5a75c3976a3981e282"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1ScalarTransfer.html#adfb5182e5c37dd5a75c3976a3981e282">erf_wall_thermodynamics::ScalarTransfer::molecular_speed</a></div><div class="ttdeci">amrex::Real molecular_speed</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:81</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1ScalarTransfer_html_af325db7c5d5a9a8a83d55165a3a2fbb9"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1ScalarTransfer.html#af325db7c5d5a9a8a83d55165a3a2fbb9">erf_wall_thermodynamics::ScalarTransfer::model</a></div><div class="ttdeci">ScalarModel model</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:76</div></div>
 <div class="ttc" id="astructerf__wall__thermodynamics_1_1ThermalBoundary_html_a84a5994552993900f42c606cc372da9e"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1ThermalBoundary.html#a84a5994552993900f42c606cc372da9e">erf_wall_thermodynamics::ThermalBoundary::temperature_K</a></div><div class="ttdeci">amrex::Real temperature_K</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:46</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a">apply_face()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9">evaluate_face_scalar_flux_in()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1263,8 +1338,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a5eb71414ca9b0722d498197f2f4eee87_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a5eb71414ca9b0722d498197f2f4eee87_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a5eb71414ca9b0722d498197f2f4eee87_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a5eb71414ca9b0722d498197f2f4eee87_icgraph">
-<area shape="rect" title=" " alt="" coords="233,5,413,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,13,185,54"/>
+<area shape="rect" title=" " alt="" coords="252,5,432,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,5,204,61"/>
 </map>
 </div>
 
@@ -1293,15 +1368,15 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;{</div>
-<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; wall : walls) {</div>
-<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a7cc5b29789d1869be36bb21b74bda790">requires_tangential_speed</a>(wall, ScalarChannel::Heat) ||</div>
-<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;            <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a7cc5b29789d1869be36bb21b74bda790">requires_tangential_speed</a>(wall, ScalarChannel::Vapor)) {</div>
-<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;        }</div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;    }</div>
-<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;{</div>
+<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; wall : walls) {</div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a7cc5b29789d1869be36bb21b74bda790">requires_tangential_speed</a>(wall, ScalarChannel::Heat) ||</div>
+<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;            <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a7cc5b29789d1869be36bb21b74bda790">requires_tangential_speed</a>(wall, ScalarChannel::Vapor)) {</div>
+<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;        }</div>
+<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;    }</div>
+<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__resolved__wall__flux.html#af4bb1fd6bad609edefd5f661c60672ef">erf_resolved_wall_flux::apply()</a>.</p>
 <div class="dynheader">
@@ -1763,14 +1838,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a2a902928ca3c278cc65fdf50c1bb97bb_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a2a902928ca3c278cc65fdf50c1bb97bb_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a2a902928ca3c278cc65fdf50c1bb97bb_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a2a902928ca3c278cc65fdf50c1bb97bb_icgraph">
-<area shape="rect" title=" " alt="" coords="741,85,921,141"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a85172966d0ccf20e9236cd1d5bec6980" title=" " alt="" coords="483,93,693,134"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a1b2e2a80e2d343a3286be2cfbfb638bb" title=" " alt="" coords="233,5,435,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="244,85,424,141"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f" title=" " alt="" coords="244,166,424,207"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="5,5,185,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,93,185,134"/>
-<area shape="rect" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4" title=" " alt="" coords="27,173,163,200"/>
+<area shape="rect" title=" " alt="" coords="760,85,940,141"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a85172966d0ccf20e9236cd1d5bec6980" title=" " alt="" coords="501,93,712,134"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a1b2e2a80e2d343a3286be2cfbfb638bb" title=" " alt="" coords="252,5,453,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="263,85,443,141"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f" title=" " alt="" coords="263,166,443,207"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="15,5,195,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,85,204,141"/>
+<area shape="rect" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4" title=" " alt="" coords="37,173,173,200"/>
 </map>
 </div>
 
@@ -1829,15 +1904,15 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a6b1842327624debd052e062aa9676e45_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a6b1842327624debd052e062aa9676e45_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a6b1842327624debd052e062aa9676e45_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a6b1842327624debd052e062aa9676e45_icgraph">
-<area shape="rect" title=" " alt="" coords="969,85,1149,141"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a2a902928ca3c278cc65fdf50c1bb97bb" title=" " alt="" coords="741,52,921,108"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a85172966d0ccf20e9236cd1d5bec6980" title=" " alt="" coords="483,93,693,134"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a1b2e2a80e2d343a3286be2cfbfb638bb" title=" " alt="" coords="233,5,435,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="244,85,424,141"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f" title=" " alt="" coords="244,166,424,207"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="5,5,185,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,93,185,134"/>
-<area shape="rect" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4" title=" " alt="" coords="27,173,163,200"/>
+<area shape="rect" title=" " alt="" coords="988,85,1168,141"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a2a902928ca3c278cc65fdf50c1bb97bb" title=" " alt="" coords="760,52,940,108"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a85172966d0ccf20e9236cd1d5bec6980" title=" " alt="" coords="501,93,712,134"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a1b2e2a80e2d343a3286be2cfbfb638bb" title=" " alt="" coords="252,5,453,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="263,85,443,141"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f" title=" " alt="" coords="263,166,443,207"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="15,5,195,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,85,204,141"/>
+<area shape="rect" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4" title=" " alt="" coords="37,173,173,200"/>
 </map>
 </div>
 
@@ -1994,7 +2069,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_ac856a151e465df437fcf57d2f53c5719"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#ac856a151e465df437fcf57d2f53c5719">erf_cloud_chamber_wall_flux::wall_uses_most_vapor</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool wall_uses_most_vapor(const erf_wall_thermodynamics::FaceWall &amp;wall) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:127</div></div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_aaf06043ce86732c214aaea9bc322d4eaaa3c19d748c876c698e9b54d68e0bb41f"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#aaf06043ce86732c214aaea9bc322d4eaaa3c19d748c876c698e9b54d68e0bb41f">erf_wall_thermodynamics::ThermalMode::Adiabatic</a></div><div class="ttdeci">@ Adiabatic</div></div>
 <div class="ttc" id="astructadiabatic_html"><div class="ttname"><a href="structadiabatic.html">adiabatic</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:20</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a765dff901b88c4c6ff03a1fc6f5cca12"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a765dff901b88c4c6ff03a1fc6f5cca12">erf_wall_thermodynamics::FaceWall::momentum_uses_most</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool momentum_uses_most() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:85</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a765dff901b88c4c6ff03a1fc6f5cca12"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a765dff901b88c4c6ff03a1fc6f5cca12">erf_wall_thermodynamics::FaceWall::momentum_uses_most</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool momentum_uses_most() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:102</div></div>
 <div class="ttc" id="astructerf__wall__thermodynamics_1_1ThermalBoundary_html_ac74383ecf06ea833c4c740377853bfa9"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1ThermalBoundary.html#ac74383ecf06ea833c4c740377853bfa9">erf_wall_thermodynamics::ThermalBoundary::mode</a></div><div class="ttdeci">ThermalMode mode</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:45</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a1b2e2a80e2d343a3286be2cfbfb638bb">evaluate_momentum_traction()</a>, <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87">evaluate_scalar_flux_in()</a>, and <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f">wall_rate_for_cell()</a>.</p>
@@ -2023,13 +2098,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a85172966d0ccf20e9236cd1d5bec6980_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a85172966d0ccf20e9236cd1d5bec6980_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a85172966d0ccf20e9236cd1d5bec6980_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a85172966d0ccf20e9236cd1d5bec6980_icgraph">
-<area shape="rect" title=" " alt="" coords="483,93,693,134"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a1b2e2a80e2d343a3286be2cfbfb638bb" title=" " alt="" coords="233,5,435,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="244,85,424,141"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f" title=" " alt="" coords="244,166,424,207"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="5,5,185,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,93,185,134"/>
-<area shape="rect" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4" title=" " alt="" coords="27,173,163,200"/>
+<area shape="rect" title=" " alt="" coords="501,93,712,134"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a1b2e2a80e2d343a3286be2cfbfb638bb" title=" " alt="" coords="252,5,453,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="263,85,443,141"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f" title=" " alt="" coords="263,166,443,207"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="15,5,195,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,85,204,141"/>
+<area shape="rect" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4" title=" " alt="" coords="37,173,173,200"/>
 </map>
 </div>
 
@@ -2145,10 +2220,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a5d3858514cbadcd0c2228103d96e6bda_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a5d3858514cbadcd0c2228103d96e6bda_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a5d3858514cbadcd0c2228103d96e6bda_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a5d3858514cbadcd0c2228103d96e6bda_icgraph">
-<area shape="rect" title=" " alt="" coords="497,35,677,91"/>
-<area shape="rect" href="structerf__cloud__chamber__wall__flux_1_1CellScalarWallRate.html#a5dd482c159e6d65448ca68194df0494b" title=" " alt="" coords="233,5,449,47"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="251,71,431,127"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,79,185,120"/>
+<area shape="rect" title=" " alt="" coords="516,35,696,91"/>
+<area shape="rect" href="structerf__cloud__chamber__wall__flux_1_1CellScalarWallRate.html#a5dd482c159e6d65448ca68194df0494b" title=" " alt="" coords="252,5,468,47"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="270,71,450,127"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,71,204,127"/>
 </map>
 </div>
 
@@ -2301,24 +2376,13 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;{</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">return</span> (flux.owned_channels &amp; <a class="code" href="namespaceerf__cloud__chamber__wall__flux.html#a9c6136f5624a7d499e55ec3a04573703">scalar_channel_mask</a>(channel)) != 0;</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a">apply_face()</a>.</p>
-<div class="dynheader">
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a051bdfa0f27f38b3ff71772217bf7e6b_cgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a051bdfa0f27f38b3ff71772217bf7e6b_cgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a051bdfa0f27f38b3ff71772217bf7e6b_cgraph" id="anamespaceerf__cloud__chamber__wall__flux_a051bdfa0f27f38b3ff71772217bf7e6b_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,185,47"/>
 <area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a9c6136f5624a7d499e55ec3a04573703" title=" " alt="" coords="233,5,435,47"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a051bdfa0f27f38b3ff71772217bf7e6b_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a051bdfa0f27f38b3ff71772217bf7e6b_icgraph" alt=""/></div>
-<map name="anamespaceerf__cloud__chamber__wall__flux_a051bdfa0f27f38b3ff71772217bf7e6b_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a051bdfa0f27f38b3ff71772217bf7e6b_icgraph">
-<area shape="rect" title=" " alt="" coords="233,5,413,47"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,5,185,47"/>
 </map>
 </div>
 
@@ -2362,17 +2426,6 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a2564ef35937a97a2a6c90ca51ae7cdf3"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a></div><div class="ttdeci">#define PrimQ2_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:95</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a">apply_face()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_ad301ec5377f03ce9f187ec33506c4ca2_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_ad301ec5377f03ce9f187ec33506c4ca2_icgraph" alt=""/></div>
-<map name="anamespaceerf__cloud__chamber__wall__flux_ad301ec5377f03ce9f187ec33506c4ca2_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_ad301ec5377f03ce9f187ec33506c4ca2_icgraph">
-<area shape="rect" title=" " alt="" coords="233,5,433,47"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,5,185,47"/>
-</map>
-</div>
-
 </div>
 </div>
 <a id="a798e4105e3a372d6d40ef8922a4f49b8"></a>
@@ -2455,7 +2508,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    result[dir] = amrex::Real(0.0);</div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;}</div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a11885e6e1b22a344cae3d21264f37a7a"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a11885e6e1b22a344cae3d21264f37a7a">erf_wall_thermodynamics::FaceWall::wall_velocity</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; wall_velocity</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:76</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a11885e6e1b22a344cae3d21264f37a7a"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a11885e6e1b22a344cae3d21264f37a7a">erf_wall_thermodynamics::FaceWall::wall_velocity</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; wall_velocity</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:93</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#ae20acb1d05f1b69837d1fdd7817621db">tangential_speed()</a>, and <a class="el" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f">erf_cloud_chamber_wall_stress::wall_traction_at_cell()</a>.</p>
 <div class="dynheader">
@@ -2463,10 +2516,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a798e4105e3a372d6d40ef8922a4f49b8_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a798e4105e3a372d6d40ef8922a4f49b8_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a798e4105e3a372d6d40ef8922a4f49b8_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a798e4105e3a372d6d40ef8922a4f49b8_icgraph">
-<area shape="rect" title=" " alt="" coords="461,35,645,91"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ae20acb1d05f1b69837d1fdd7817621db" title=" " alt="" coords="233,5,413,47"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="233,71,413,127"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,5,185,47"/>
+<area shape="rect" title=" " alt="" coords="233,35,417,91"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ae20acb1d05f1b69837d1fdd7817621db" title=" " alt="" coords="5,5,185,47"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="5,71,185,127"/>
 </map>
 </div>
 
@@ -2498,7 +2550,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;{</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="keywordflow">return</span> wall.<a class="code" href="structerf__wall__thermodynamics_1_1FaceWall.html#afae8d476a0333d302a5c41b0c0df84ff">momentum_requires_speed</a>();</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;}</div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_afae8d476a0333d302a5c41b0c0df84ff"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#afae8d476a0333d302a5c41b0c0df84ff">erf_wall_thermodynamics::FaceWall::momentum_requires_speed</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool momentum_requires_speed() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:103</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_afae8d476a0333d302a5c41b0c0df84ff"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#afae8d476a0333d302a5c41b0c0df84ff">erf_wall_thermodynamics::FaceWall::momentum_requires_speed</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool momentum_requires_speed() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:120</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__stress.html#a07a5b632659f950cfe2b6811fde912f9">erf_cloud_chamber_wall_stress::apply_face()</a>, <a class="el" href="namespaceerf__cloud__chamber__wall__stress.html#aaa5c883b1e03d45bd71406bdf00497d1">erf_cloud_chamber_wall_stress::has_momentum_wall()</a>, and <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f">wall_rate_for_cell()</a>.</p>
 <div class="dynheader">
@@ -2572,10 +2624,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160; </div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;}</div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_af0b048792641fbdd5e4562638e043644"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#af0b048792641fbdd5e4562638e043644">erf_wall_thermodynamics::FaceWall::vapor_requires_speed</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool vapor_requires_speed() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:109</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_aff4ce5790f2060d0234c9f468b5f1126"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#aff4ce5790f2060d0234c9f468b5f1126">erf_wall_thermodynamics::FaceWall::heat_requires_speed</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool heat_requires_speed() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:106</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_af0b048792641fbdd5e4562638e043644"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#af0b048792641fbdd5e4562638e043644">erf_wall_thermodynamics::FaceWall::vapor_requires_speed</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool vapor_requires_speed() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:126</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_aff4ce5790f2060d0234c9f468b5f1126"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#aff4ce5790f2060d0234c9f468b5f1126">erf_wall_thermodynamics::FaceWall::heat_requires_speed</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool heat_requires_speed() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:123</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a">apply_face()</a>, and <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a4409efb69c9886c7b26b04f5bb750606">has_velocity_dependent_scalar_wall()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a4409efb69c9886c7b26b04f5bb750606">has_velocity_dependent_scalar_wall()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2593,10 +2645,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a7cc5b29789d1869be36bb21b74bda790_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a7cc5b29789d1869be36bb21b74bda790_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a7cc5b29789d1869be36bb21b74bda790_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a7cc5b29789d1869be36bb21b74bda790_icgraph">
-<area shape="rect" title=" " alt="" coords="488,43,721,84"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="241,5,421,47"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a4409efb69c9886c7b26b04f5bb750606" title=" " alt="" coords="221,71,440,127"/>
-<area shape="rect" href="namespaceerf__resolved__wall__flux.html#af4bb1fd6bad609edefd5f661c60672ef" title=" " alt="" coords="5,79,173,120"/>
+<area shape="rect" title=" " alt="" coords="488,13,721,54"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a4409efb69c9886c7b26b04f5bb750606" title=" " alt="" coords="221,5,440,61"/>
+<area shape="rect" href="namespaceerf__resolved__wall__flux.html#af4bb1fd6bad609edefd5f661c60672ef" title=" " alt="" coords="5,13,173,54"/>
 </map>
 </div>
 
@@ -2678,9 +2729,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a8a19cfdc4c537e38ebcc8a8a4b23b1ed_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a8a19cfdc4c537e38ebcc8a8a4b23b1ed_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a8a19cfdc4c537e38ebcc8a8a4b23b1ed_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a8a19cfdc4c537e38ebcc8a8a4b23b1ed_icgraph">
-<area shape="rect" title=" " alt="" coords="461,5,641,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="233,5,413,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,13,185,54"/>
+<area shape="rect" title=" " alt="" coords="480,5,660,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="252,5,432,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,5,204,61"/>
 </map>
 </div>
 
@@ -2769,9 +2820,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a22cd746f2b3719f4aef9e3f796323c65_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a22cd746f2b3719f4aef9e3f796323c65_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a22cd746f2b3719f4aef9e3f796323c65_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a22cd746f2b3719f4aef9e3f796323c65_icgraph">
-<area shape="rect" title=" " alt="" coords="461,5,641,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="233,5,413,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,13,185,54"/>
+<area shape="rect" title=" " alt="" coords="480,5,660,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="252,5,432,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,5,204,61"/>
 </map>
 </div>
 
@@ -2810,17 +2861,6 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a3bf0a4783e82ba30db2b7c0a332c2f16"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a></div><div class="ttdeci">#define RhoQ2_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:79</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:78</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a">apply_face()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a8de44a2afdb14c12ada1429df44f239d_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a8de44a2afdb14c12ada1429df44f239d_icgraph" alt=""/></div>
-<map name="anamespaceerf__cloud__chamber__wall__flux_a8de44a2afdb14c12ada1429df44f239d_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a8de44a2afdb14c12ada1429df44f239d_icgraph">
-<area shape="rect" title=" " alt="" coords="233,5,413,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,13,185,54"/>
-</map>
-</div>
-
 </div>
 </div>
 <a id="a9c6136f5624a7d499e55ec3a04573703"></a>
@@ -2867,10 +2907,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a9c6136f5624a7d499e55ec3a04573703_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a9c6136f5624a7d499e55ec3a04573703_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a9c6136f5624a7d499e55ec3a04573703_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a9c6136f5624a7d499e55ec3a04573703_icgraph">
-<area shape="rect" title=" " alt="" coords="461,50,663,91"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="233,5,413,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a051bdfa0f27f38b3ff71772217bf7e6b" title=" " alt="" coords="233,86,413,127"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,50,185,91"/>
+<area shape="rect" title=" " alt="" coords="480,50,681,91"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="252,5,432,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a051bdfa0f27f38b3ff71772217bf7e6b" title=" " alt="" coords="252,86,432,127"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,5,204,61"/>
 </map>
 </div>
 
@@ -2924,14 +2964,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;    <span class="keywordflow">return</span> amrex::Real(0.0);</div>
 <div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a">apply_face()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9">evaluate_face_scalar_flux_in()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a9054bbdc285ff0ceebc47b38f224afc4_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a9054bbdc285ff0ceebc47b38f224afc4_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a9054bbdc285ff0ceebc47b38f224afc4_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a9054bbdc285ff0ceebc47b38f224afc4_icgraph">
-<area shape="rect" title=" " alt="" coords="233,5,413,47"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,5,185,47"/>
+<area shape="rect" title=" " alt="" coords="252,13,432,54"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,5,204,61"/>
 </map>
 </div>
 
@@ -2978,16 +3018,16 @@ template&lt;int DIR, bool HIGH&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;{</div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;    <span class="keyword">const</span> amrex::Real new_flux =</div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;        to_coordinate_flux&lt;DIR,HIGH&gt;(inward_flux);</div>
-<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    <span class="keyword">const</span> amrex::Real correction =</div>
-<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;        (new_flux - old_flux) * dx_inv;</div>
-<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;    <span class="keywordflow">return</span> {</div>
-<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;        new_flux,</div>
-<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;        HIGH ? -correction : correction</div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;    };</div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;{</div>
+<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;    <span class="keyword">const</span> amrex::Real new_flux =</div>
+<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;        to_coordinate_flux&lt;DIR,HIGH&gt;(inward_flux);</div>
+<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;    <span class="keyword">const</span> amrex::Real correction =</div>
+<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;        (new_flux - old_flux) * dx_inv;</div>
+<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;    <span class="keywordflow">return</span> {</div>
+<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;        new_flux,</div>
+<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;        HIGH ? -correction : correction</div>
+<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;    };</div>
+<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3024,10 +3064,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a06d0accac5ee876aaeb503290434deed_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a06d0accac5ee876aaeb503290434deed_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a06d0accac5ee876aaeb503290434deed_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a06d0accac5ee876aaeb503290434deed_icgraph">
-<area shape="rect" title=" " alt="" coords="461,43,665,84"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ae20acb1d05f1b69837d1fdd7817621db" title=" " alt="" coords="233,5,413,47"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="233,71,413,127"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,5,185,47"/>
+<area shape="rect" title=" " alt="" coords="233,43,437,84"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ae20acb1d05f1b69837d1fdd7817621db" title=" " alt="" coords="5,5,185,47"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="5,71,185,127"/>
 </map>
 </div>
 
@@ -3108,9 +3147,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;}</div>
 <div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_a06d0accac5ee876aaeb503290434deed"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#a06d0accac5ee876aaeb503290434deed">erf_cloud_chamber_wall_flux::tangential_magnitude</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real tangential_magnitude(const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;u_t) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:825</div></div>
 <div class="ttc" id="anamespaceerf__cloud__chamber__wall__flux_html_a798e4105e3a372d6d40ef8922a4f49b8"><div class="ttname"><a href="namespaceerf__cloud__chamber__wall__flux.html#a798e4105e3a372d6d40ef8922a4f49b8">erf_cloud_chamber_wall_flux::relative_tangential_velocity_cell_centered</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; relative_tangential_velocity_cell_centered(int dir, int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const erf_wall_thermodynamics::FaceWall &amp;wall) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamberWallFlux.H:804</div></div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a">apply_face()</a>.</p>
-<div class="dynheader">
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_ae20acb1d05f1b69837d1fdd7817621db_cgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_ae20acb1d05f1b69837d1fdd7817621db_cgraph" alt=""/></div>
@@ -3118,15 +3155,6 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,50,185,91"/>
 <area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a798e4105e3a372d6d40ef8922a4f49b8" title=" " alt="" coords="243,5,427,61"/>
 <area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a06d0accac5ee876aaeb503290434deed" title=" " alt="" coords="233,86,437,127"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_ae20acb1d05f1b69837d1fdd7817621db_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_ae20acb1d05f1b69837d1fdd7817621db_icgraph" alt=""/></div>
-<map name="anamespaceerf__cloud__chamber__wall__flux_ae20acb1d05f1b69837d1fdd7817621db_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_ae20acb1d05f1b69837d1fdd7817621db_icgraph">
-<area shape="rect" title=" " alt="" coords="233,5,413,47"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,5,185,47"/>
 </map>
 </div>
 
@@ -3343,10 +3371,10 @@ template&lt;int DIR, bool HIGH&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;{</div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    <span class="keywordflow">return</span> max_rate &gt; amrex::Real(0.0) ?</div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;        wall_cfl / max_rate : amrex::Real(1.0e30);</div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;{</div>
+<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;    <span class="keywordflow">return</span> max_rate &gt; amrex::Real(0.0) ?</div>
+<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;        wall_cfl / max_rate : amrex::Real(1.0e30);</div>
+<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4">ERF::estTimeStep()</a>.</p>
 <div class="dynheader">
@@ -3411,17 +3439,17 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_aa4abb01cec6cd74f06d3b7e0a5cc87b4afe3330a98ba654913f5153ebf68d016e"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#aa4abb01cec6cd74f06d3b7e0a5cc87b4afe3330a98ba654913f5153ebf68d016e">erf_wall_thermodynamics::MoistureMode::LegacyNumerical</a></div><div class="ttdeci">@ LegacyNumerical</div></div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_aaf06043ce86732c214aaea9bc322d4eaafe3330a98ba654913f5153ebf68d016e"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#aaf06043ce86732c214aaea9bc322d4eaafe3330a98ba654913f5153ebf68d016e">erf_wall_thermodynamics::ThermalMode::LegacyNumerical</a></div><div class="ttdeci">@ LegacyNumerical</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a7a95a1f556295753236fc34101fc5596"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a7a95a1f556295753236fc34101fc5596">erf_wall_thermodynamics::FaceWall::moisture</a></div><div class="ttdeci">MoistureMode moisture</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:71</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a7a95a1f556295753236fc34101fc5596"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a7a95a1f556295753236fc34101fc5596">erf_wall_thermodynamics::FaceWall::moisture</a></div><div class="ttdeci">MoistureMode moisture</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:88</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a">apply_face()</a>, and <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87">evaluate_scalar_flux_in()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87">evaluate_scalar_flux_in()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_ac202df54981635ac8554e1d014e54887_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_ac202df54981635ac8554e1d014e54887_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_ac202df54981635ac8554e1d014e54887_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_ac202df54981635ac8554e1d014e54887_icgraph">
-<area shape="rect" title=" " alt="" coords="461,5,641,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,13,185,54"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="233,37,413,93"/>
+<area shape="rect" title=" " alt="" coords="480,5,660,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="252,5,432,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,5,204,61"/>
 </map>
 </div>
 
@@ -3611,7 +3639,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;{</div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="keywordflow">return</span> wall.<a class="code" href="structerf__wall__thermodynamics_1_1FaceWall.html#a45425ed1cb164e0570c73e66401af533">has_wall_rate_channel</a>();</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;}</div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a45425ed1cb164e0570c73e66401af533"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a45425ed1cb164e0570c73e66401af533">erf_wall_thermodynamics::FaceWall::has_wall_rate_channel</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool has_wall_rate_channel() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:112</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a45425ed1cb164e0570c73e66401af533"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a45425ed1cb164e0570c73e66401af533">erf_wall_thermodynamics::FaceWall::has_wall_rate_channel</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool has_wall_rate_channel() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:129</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f">wall_rate_for_cell()</a>.</p>
 <div class="dynheader">
@@ -3667,8 +3695,8 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;{</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> wall.<a class="code" href="structerf__wall__thermodynamics_1_1FaceWall.html#a765dff901b88c4c6ff03a1fc6f5cca12">momentum_uses_most</a>() || wall.<a class="code" href="structerf__wall__thermodynamics_1_1FaceWall.html#a62f030249c9f285150dbbc0e9e008ed9">heat_uses_most</a>() || wall.<a class="code" href="structerf__wall__thermodynamics_1_1FaceWall.html#aa818b975e6f8feb13a50aedd6664a071">vapor_uses_most</a>();</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a62f030249c9f285150dbbc0e9e008ed9"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a62f030249c9f285150dbbc0e9e008ed9">erf_wall_thermodynamics::FaceWall::heat_uses_most</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool heat_uses_most() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:91</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_aa818b975e6f8feb13a50aedd6664a071"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#aa818b975e6f8feb13a50aedd6664a071">erf_wall_thermodynamics::FaceWall::vapor_uses_most</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool vapor_uses_most() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:97</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_a62f030249c9f285150dbbc0e9e008ed9"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#a62f030249c9f285150dbbc0e9e008ed9">erf_wall_thermodynamics::FaceWall::heat_uses_most</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool heat_uses_most() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:108</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_aa818b975e6f8feb13a50aedd6664a071"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#aa818b975e6f8feb13a50aedd6664a071">erf_wall_thermodynamics::FaceWall::vapor_uses_most</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE bool vapor_uses_most() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:114</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f">wall_rate_for_cell()</a>.</p>
 <div class="dynheader">
@@ -3717,14 +3745,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_aadbccd657606d5586a772eaecef87b27_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_aadbccd657606d5586a772eaecef87b27_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_aadbccd657606d5586a772eaecef87b27_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_aadbccd657606d5586a772eaecef87b27_icgraph">
-<area shape="rect" title=" " alt="" coords="741,93,943,134"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a85172966d0ccf20e9236cd1d5bec6980" title=" " alt="" coords="483,93,693,134"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a1b2e2a80e2d343a3286be2cfbfb638bb" title=" " alt="" coords="233,5,435,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="244,85,424,141"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f" title=" " alt="" coords="244,166,424,207"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="5,5,185,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,93,185,134"/>
-<area shape="rect" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4" title=" " alt="" coords="27,173,163,200"/>
+<area shape="rect" title=" " alt="" coords="760,93,961,134"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a85172966d0ccf20e9236cd1d5bec6980" title=" " alt="" coords="501,93,712,134"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a1b2e2a80e2d343a3286be2cfbfb638bb" title=" " alt="" coords="252,5,453,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="263,85,443,141"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f" title=" " alt="" coords="263,166,443,207"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="15,5,195,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,85,204,141"/>
+<area shape="rect" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4" title=" " alt="" coords="37,173,173,200"/>
 </map>
 </div>
 
@@ -3763,14 +3791,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_ac856a151e465df437fcf57d2f53c5719_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_ac856a151e465df437fcf57d2f53c5719_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_ac856a151e465df437fcf57d2f53c5719_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_ac856a151e465df437fcf57d2f53c5719_icgraph">
-<area shape="rect" title=" " alt="" coords="741,93,951,134"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a85172966d0ccf20e9236cd1d5bec6980" title=" " alt="" coords="483,93,693,134"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a1b2e2a80e2d343a3286be2cfbfb638bb" title=" " alt="" coords="233,5,435,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="244,85,424,141"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f" title=" " alt="" coords="244,166,424,207"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="5,5,185,61"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,93,185,134"/>
-<area shape="rect" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4" title=" " alt="" coords="27,173,163,200"/>
+<area shape="rect" title=" " alt="" coords="760,93,969,134"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a85172966d0ccf20e9236cd1d5bec6980" title=" " alt="" coords="501,93,712,134"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a1b2e2a80e2d343a3286be2cfbfb638bb" title=" " alt="" coords="252,5,453,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="263,85,443,141"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f" title=" " alt="" coords="263,166,443,207"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="15,5,195,61"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,85,204,141"/>
+<area shape="rect" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4" title=" " alt="" coords="37,173,173,200"/>
 </map>
 </div>
 
@@ -3817,7 +3845,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;}</div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a6d191b122d8b5541ef4b8515ce55d570"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a6d191b122d8b5541ef4b8515ce55d570">erf_qsat_from_esat</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_qsat_from_esat(amrex::Real esat, amrex::Real p)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:233</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_af412f38784e2b8072356234b0474c6f5"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5">erf_esatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_esatw(amrex::Real t, bool use_empirical=false)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:159</div></div>
-<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_aa2389304fb0811313e641dc1d3ed4ffa"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#aa2389304fb0811313e641dc1d3ed4ffa">erf_wall_thermodynamics::FaceWall::wetness</a></div><div class="ttdeci">amrex::Real wetness</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:72</div></div>
+<div class="ttc" id="astructerf__wall__thermodynamics_1_1FaceWall_html_aa2389304fb0811313e641dc1d3ed4ffa"><div class="ttname"><a href="structerf__wall__thermodynamics_1_1FaceWall.html#aa2389304fb0811313e641dc1d3ed4ffa">erf_wall_thermodynamics::FaceWall::wetness</a></div><div class="ttdeci">amrex::Real wetness</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:89</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a14d29e98f09bf68ed52ae1fee47fc09d">bulk_vapor_flux_in()</a>, <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a85172966d0ccf20e9236cd1d5bec6980">most_wall_coefficients()</a>, and <a class="el" href="namespaceerf__cloud__chamber__wall__flux.html#a22cd746f2b3719f4aef9e3f796323c65">resolved_vapor_flux_in()</a>.</p>
 <div class="dynheader">
@@ -3838,16 +3866,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__cloud__chamber__wall__flux_a1f529920cd92920ef9aedc006d8149db_icgraph.png" border="0" usemap="#anamespaceerf__cloud__chamber__wall__flux_a1f529920cd92920ef9aedc006d8149db_icgraph" alt=""/></div>
 <map name="anamespaceerf__cloud__chamber__wall__flux_a1f529920cd92920ef9aedc006d8149db_icgraph" id="anamespaceerf__cloud__chamber__wall__flux_a1f529920cd92920ef9aedc006d8149db_icgraph">
-<area shape="rect" title=" " alt="" coords="741,79,921,120"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a14d29e98f09bf68ed52ae1fee47fc09d" title=" " alt="" coords="497,5,679,47"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a85172966d0ccf20e9236cd1d5bec6980" title=" " alt="" coords="483,152,693,193"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a22cd746f2b3719f4aef9e3f796323c65" title=" " alt="" coords="498,71,678,127"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="244,65,424,121"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#af8b4ff166bd6dc38ce58fe756d0d072a" title=" " alt="" coords="5,72,185,113"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a1b2e2a80e2d343a3286be2cfbfb638bb" title=" " alt="" coords="233,145,435,201"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f" title=" " alt="" coords="244,225,424,267"/>
-<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="5,145,185,201"/>
-<area shape="rect" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4" title=" " alt="" coords="27,233,163,259"/>
+<area shape="rect" title=" " alt="" coords="760,79,940,120"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a14d29e98f09bf68ed52ae1fee47fc09d" title=" " alt="" coords="515,5,698,47"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a85172966d0ccf20e9236cd1d5bec6980" title=" " alt="" coords="501,152,712,193"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a22cd746f2b3719f4aef9e3f796323c65" title=" " alt="" coords="517,71,697,127"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a5eb71414ca9b0722d498197f2f4eee87" title=" " alt="" coords="263,65,443,121"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a6d008d1554b4c0857bdd80780fb73dd9" title=" " alt="" coords="5,65,204,121"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#a1b2e2a80e2d343a3286be2cfbfb638bb" title=" " alt="" coords="252,145,453,201"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__flux.html#ab842e353cd2c539fe72060fbb96de80f" title=" " alt="" coords="263,225,443,267"/>
+<area shape="rect" href="namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f" title=" " alt="" coords="15,145,195,201"/>
+<area shape="rect" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4" title=" " alt="" coords="37,233,173,259"/>
 </map>
 </div>
 

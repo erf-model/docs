@@ -4,6 +4,7 @@ var namespaceerf__cloud__chamber =
     [ "Config", "structerf__cloud__chamber_1_1Config.html", "structerf__cloud__chamber_1_1Config" ],
     [ "InitializationContract", "structerf__cloud__chamber_1_1InitializationContract.html", "structerf__cloud__chamber_1_1InitializationContract" ],
     [ "WallTransferContract", "structerf__cloud__chamber_1_1WallTransferContract.html", "structerf__cloud__chamber_1_1WallTransferContract" ],
+    [ "SidewallTemperatureBands", "classerf__cloud__chamber_1_1SidewallTemperatureBands.html", "classerf__cloud__chamber_1_1SidewallTemperatureBands" ],
     [ "InitializationMode", "namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7", [
       [ "PhysicalTemperatureRH", "namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7a771279d249d1fa5c25e791ef3971f8ee", null ],
       [ "LegacyThetaQv", "namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7ae30f844e44d8afad7ee7383f32e676bf", null ]
@@ -27,7 +28,7 @@ var namespaceerf__cloud__chamber =
     [ "linear_profile", "namespaceerf__cloud__chamber.html#ada393f7c2dc2faf21670956a8869c710", null ],
     [ "parse_config", "namespaceerf__cloud__chamber.html#ab22ffce278526e147d1caf51f235fae8", null ],
     [ "parse_initialization", "namespaceerf__cloud__chamber.html#ae1d6fe6e56bc0285a12b9c982bddcd39", null ],
-    [ "parse_wall_heat", "namespaceerf__cloud__chamber.html#a1d7fe78b2c9af5f7990a275feee5c61c", null ],
+    [ "parse_wall_heat", "namespaceerf__cloud__chamber.html#a1df8d976e1b5d4b1fa8a4343399963e4", null ],
     [ "parse_wall_wetness", "namespaceerf__cloud__chamber.html#aa717d8834ac90750d40a09c994af57ec", null ],
     [ "qv_at", "namespaceerf__cloud__chamber.html#aabafa74f17c512ec54b0b88281228f25", null ],
     [ "read_wall_transfer_contract", "namespaceerf__cloud__chamber.html#a5a4bf1cede6729d13f1b4d0f1f459ca1", null ],
