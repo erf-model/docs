@@ -1,5 +1,18 @@
 var NAVTREEINDEX66 =
 {
+"structshoc_1_1ShocEnergyFixerView.html#ac92453ab6f2ba8e446e9de0540e7d859":[2,0,29,0,5],
+"structshoc_1_1ShocEnergyFixerView.html#ae3b0fea969f794f816a91c80c33eec96":[2,0,29,0,13],
+"structshoc_1_1ShocEnergyFixerView.html#ae8dc43f5360d8e1c37303cfb9250e59b":[2,0,29,0,0],
+"structshoc_1_1ShocEnergyFixerView.html#aec5f2e0bb8516a9a9dd73ccc35871b84":[2,0,29,0,7],
+"structsimilarity__funs.html":[2,0,215],
+"structsimilarity__funs.html#a162d7d1aa4113335a7d5ad9d0c184c75":[2,0,215,0],
+"structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2":[2,0,215,4],
+"structsimilarity__funs.html#a2e7b6f6e771c53a23c39c630840b7555":[2,0,215,8],
+"structsimilarity__funs.html#a3658f855e05c54c9cbc27c8dfb3b0355":[2,0,215,12],
+"structsimilarity__funs.html#a38b867a4d10be55d2329ff85040889d3":[2,0,215,3],
+"structsimilarity__funs.html#a5254469dd7ec9856ed6d1e0034306cc4":[2,0,215,11],
+"structsimilarity__funs.html#a588c0c9a1bc68ee6a686c8e20d936460":[2,0,215,19],
+"structsimilarity__funs.html#a5ce91ca168db1b1f2419a6cdf10b6842":[2,0,215,18],
 "structsimilarity__funs.html#a6187f69d2632fec928fa2c604c4af23c":[2,0,215,7],
 "structsimilarity__funs.html#a61ce8bed71f6ba44607c2c313217c893":[2,0,215,6],
 "structsimilarity__funs.html#a6c53efd885ed922115193bc9a36cb0e6":[2,0,215,13],

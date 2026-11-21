@@ -70,6 +70,7 @@ var structTurbChoice =
     [ "rans_lscale_min", "structTurbChoice.html#a94fa31b781faf5c46240999bf1becb45", null ],
     [ "rans_moist_buoyancy", "structTurbChoice.html#a79b7d165230099622f9c0f7b0579c765", null ],
     [ "rans_realizability", "structTurbChoice.html#a87b440824dda270c98ad703778471ce7", null ],
+    [ "rans_shear_stencil", "structTurbChoice.html#a2c8860befe391c27f83267784279a12c", null ],
     [ "rans_type", "structTurbChoice.html#a2ae286befd8c38445f513d13cffc314e", null ],
     [ "Ri_crit", "structTurbChoice.html#aa05d3ca8f214bf797266004b60b19a0d", null ],
     [ "Rt_crit", "structTurbChoice.html#aa99a9ae49defaad06be154f984c557de", null ],

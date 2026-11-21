@@ -1,5 +1,12 @@
 var NAVTREEINDEX41 =
 {
+"classerf__auxiliary_1_1AuxiliaryProjection.html#acfa45f49d91c3cd15cb9eaa160f5021b":[2,0,1,9,0],
+"classerf__auxiliary_1_1AuxiliaryStateLayout.html":[2,0,1,17],
+"classerf__auxiliary_1_1AuxiliaryStateLayout.html#a150f2bad0c9d348d690a2ac58c6d906a":[2,0,1,17,5],
+"classerf__auxiliary_1_1AuxiliaryStateLayout.html#a3a3d1358e290f4e65960f74e048416f9":[2,0,1,17,1],
+"classerf__auxiliary_1_1AuxiliaryStateLayout.html#a7fd358c0b9e952207067bec39c40ff73":[2,0,1,17,6],
+"classerf__auxiliary_1_1AuxiliaryStateLayout.html#a94d8fb849de5e78bd6ebe2e34bfb5e01":[2,0,1,17,2],
+"classerf__auxiliary_1_1AuxiliaryStateLayout.html#a9b95404ad3749c3a2079610987958ae5":[2,0,1,17,3],
 "classerf__auxiliary_1_1AuxiliaryStateLayout.html#af284738721d4f7b134055685d1d39309":[2,0,1,17,4],
 "classerf__auxiliary_1_1AuxiliaryStateLayout.html#afd5fc9bf86dcd201f4cfdfd5685070ae":[2,0,1,17,0],
 "classerf__auxiliary_1_1CompletedStepFluxLedger.html":[2,0,1,15],
@@ -242,12 +249,5 @@ var NAVTREEINDEX41 =
 "classerf__sbm_1_1SBMTransport.html#ae3b6146416baf121208ce2f9491ac5b3":[2,0,14,44,31],
 "classerf__sbm_1_1SBMTransport.html#ae42a3c3475d37012206e43dcf08aa079":[2,0,14,44,43],
 "classerf__sbm_1_1SBMTransport.html#ae5a33a3610b1aa5c853b01c0072c1bf1":[2,0,14,44,52],
-"classerf__sbm_1_1SBMTransport.html#aedd6f276061619800d1b6384cd7ce15b":[2,0,14,44,5],
-"classerf__sbm_1_1SBMTransport.html#af213935ccb739cc3ea055574096aae51":[2,0,14,44,28],
-"classerf__sbm_1_1SBMTransport.html#af7eca9dd348e54367afaa2e80d75a13a":[2,0,14,44,17],
-"classerf__sbm_1_1SBMTransport.html#af80dfa691d15c9c3f38ef084de8c08e4":[2,0,14,44,24],
-"classerf__sbm_1_1SpectralGrid.html":[2,0,14,48],
-"classerf__sbm_1_1SpectralGrid.html#a0f1bc7772c65ec936184e57f58e7c176":[2,0,14,48,5],
-"classerf__sbm_1_1SpectralGrid.html#a1157a36c97b3be492191514fb8dff1cc":[2,0,14,48,6],
-"classerf__sbm_1_1SpectralGrid.html#a2868f9105a679eaab5e8bcc48b38d60c":[2,0,14,48,8]
+"classerf__sbm_1_1SBMTransport.html#aedd6f276061619800d1b6384cd7ce15b":[2,0,14,44,5]
 };

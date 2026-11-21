@@ -411,6 +411,12 @@ var namespaces_dup =
     [ "ibseb", "namespaceibseb.html", "namespaceibseb" ],
     [ "if_bld", "namespaceif__bld.html", "namespaceif__bld" ],
     [ "IntVars", "namespaceIntVars.html", null ],
+    [ "log_shear", "namespacelog__shear.html", [
+      [ "correct_box", "namespacelog__shear.html#a27dc75f0cd8a39f078c359ccac8fe189", null ],
+      [ "corrected_SmnSmn", "namespacelog__shear.html#a1e35dba8391c51f647411d81aa5d93e3", null ],
+      [ "inv_dz_xedge", "namespacelog__shear.html#ad3b8e0861c61f613aa6b9a1a2c7d53f5", null ],
+      [ "inv_dz_yedge", "namespacelog__shear.html#a86a24e95e0931e86356684f4a9553a19", null ]
+    ] ],
     [ "LSM_Type", "namespaceLSM__Type.html", null ],
     [ "LsmData_NOAHMP", "namespaceLsmData__NOAHMP.html", null ],
     [ "LsmFlux_NOAHMP", "namespaceLsmFlux__NOAHMP.html", null ],

@@ -1,5 +1,12 @@
 var NAVTREEINDEX47 =
 {
+"namespaceerf__sbm_1_1remap__detail.html#afc85b4c9bf730f1e15c41ea4ca7f940b":[1,0,56,3,7],
+"namespaceerf__structure.html":[1,0,57],
+"namespaceerf__structure.html#a031962e37cd24875ef903f3afdb01b09":[1,0,57,1],
+"namespaceerf__structure.html#a64b9e318a2e9255f5a65e38083bedd03":[1,0,57,2],
+"namespaceerf__structure.html#a7532264cdd77815d310e289f7bb05730":[1,0,57,4],
+"namespaceerf__structure.html#a9e9ab2f4bb1ddc114ac5596ecee68fc8":[1,0,57,5],
+"namespaceerf__structure.html#adcdf9b83014d6f28c43bad123bb9551b":[1,0,57,0],
 "namespaceerf__structure.html#afd46f85d274d27f9e0467bc9e8d3603d":[1,0,57,3],
 "namespaceerf__surface__layer.html":[1,0,58],
 "namespaceerf__surface__layer.html#aa6be10d5be511bc4d7ea5ecd65f03e48":[1,0,58,0],
@@ -202,6 +209,11 @@ var NAVTREEINDEX47 =
 "namespaceif__bld.html#ad05cb559657b21f0fa2a2a7e0416fa04":[1,0,72,5],
 "namespaceif__bld.html#ad2a9a6b662b75685fc724a3b23de258e":[1,0,72,11],
 "namespaceif__bld.html#af29f6ea4be87ae1c7dbb6667fff5ad07":[1,0,72,8],
+"namespacelog__shear.html":[1,0,74],
+"namespacelog__shear.html#a1e35dba8391c51f647411d81aa5d93e3":[1,0,74,1],
+"namespacelog__shear.html#a27dc75f0cd8a39f078c359ccac8fe189":[1,0,74,0],
+"namespacelog__shear.html#a86a24e95e0931e86356684f4a9553a19":[1,0,74,3],
+"namespacelog__shear.html#ad3b8e0861c61f613aa6b9a1a2c7d53f5":[1,0,74,2],
 "namespacemembers.html":[1,1,0],
 "namespacemembers.html":[1,1,0,0],
 "namespacemembers_b.html":[1,1,0,1],
@@ -237,17 +249,5 @@ var NAVTREEINDEX47 =
 "namespacemembers_eval_z.html":[1,1,5,24],
 "namespacemembers_f.html":[1,1,0,5],
 "namespacemembers_func.html":[1,1,1],
-"namespacemembers_func.html":[1,1,1,0],
-"namespacemembers_func_b.html":[1,1,1,1],
-"namespacemembers_func_c.html":[1,1,1,2],
-"namespacemembers_func_d.html":[1,1,1,3],
-"namespacemembers_func_e.html":[1,1,1,4],
-"namespacemembers_func_f.html":[1,1,1,5],
-"namespacemembers_func_g.html":[1,1,1,6],
-"namespacemembers_func_h.html":[1,1,1,7],
-"namespacemembers_func_i.html":[1,1,1,8],
-"namespacemembers_func_l.html":[1,1,1,9],
-"namespacemembers_func_m.html":[1,1,1,10],
-"namespacemembers_func_n.html":[1,1,1,11],
-"namespacemembers_func_o.html":[1,1,1,12]
+"namespacemembers_func.html":[1,1,1,0]
 };
