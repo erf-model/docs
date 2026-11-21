@@ -1,5 +1,13 @@
 var NAVTREEINDEX46 =
 {
+"namespaceerf__plotfile.html#a5b32422f1d46c78c9584826bf9cfb0b7":[1,0,50,6],
+"namespaceerf__plotfile.html#a5e7b2de00bfcf71b0b6173022d1cb41b":[1,0,50,10],
+"namespaceerf__plotfile.html#a7f6d1e86b47b91cf5bb5f8151bed0ca3":[1,0,50,7],
+"namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06":[1,0,50,5],
+"namespaceerf__plotfile.html#a94e531d296bc7fdb658082f30086521d":[1,0,50,3],
+"namespaceerf__plotfile.html#ab55dc271098ed902b53a7f4090148b87":[1,0,50,9],
+"namespaceerf__plotfile.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99":[1,0,50,4],
+"namespaceerf__plotfile.html#adeec399e5474b8bce8830aac35becc11":[1,0,50,12],
 "namespaceerf__preflight.html":[1,0,51],
 "namespaceerf__preflight.html#ab940d11a42ab960fa3b20446fab2efcf":[1,0,51,0],
 "namespaceerf__prob__heights.html":[1,0,52],
@@ -241,13 +249,5 @@ var NAVTREEINDEX46 =
 "namespaceerf__sbm_1_1remap__detail.html#a04cb65e1f5cfb15248107c43ab261225":[1,0,56,3,11],
 "namespaceerf__sbm_1_1remap__detail.html#a22189aa9d7b2f80c15d6d5f9088c2aed":[1,0,56,3,8],
 "namespaceerf__sbm_1_1remap__detail.html#a28219d7cec98fac11f8c8056b0afa848":[1,0,56,3,4],
-"namespaceerf__sbm_1_1remap__detail.html#a3150d172d3a2420b343a5c4cd66b67b3":[1,0,56,3,12],
-"namespaceerf__sbm_1_1remap__detail.html#a40bea6a3a7b504cca12a50039ea4eb97":[1,0,56,3,1],
-"namespaceerf__sbm_1_1remap__detail.html#a40bea6a3a7b504cca12a50039ea4eb97a07f6a565e17a0b5f7341422b6f9101cc":[1,0,56,3,1,1],
-"namespaceerf__sbm_1_1remap__detail.html#a40bea6a3a7b504cca12a50039ea4eb97a4bbb8f967da6d1a610596d7257179c2b":[1,0,56,3,1,2],
-"namespaceerf__sbm_1_1remap__detail.html#a40bea6a3a7b504cca12a50039ea4eb97aa60852f204ed8028c1c58808b746d115":[1,0,56,3,1,0],
-"namespaceerf__sbm_1_1remap__detail.html#a65647dd6a55c331bcfaac6a4361e53be":[1,0,56,3,9],
-"namespaceerf__sbm_1_1remap__detail.html#a684b16d29f85402b6f14dfd56ba5abe3":[1,0,56,3,19],
-"namespaceerf__sbm_1_1remap__detail.html#a7cd188a8adce8a9bf84747cd9179cb17":[1,0,56,3,5],
-"namespaceerf__sbm_1_1remap__detail.html#a7d48ce6144947d257e83430e76f3274f":[1,0,56,3,14]
+"namespaceerf__sbm_1_1remap__detail.html#a3150d172d3a2420b343a5c4cd66b67b3":[1,0,56,3,12]
 };

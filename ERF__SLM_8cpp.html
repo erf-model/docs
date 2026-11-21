@@ -89,6 +89,7 @@ $(document).ready(function(){initNavTree('ERF__SLM_8cpp.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="ERF__SLM_8H_source.html">ERF_SLM.H</a>&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
 <code>#include &quot;<a class="el" href="ERF__SLM__DefaultParams_8H_source.html">ERF_SLM_DefaultParams.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__EOS_8H_source.html">ERF_EOS.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__TileNoZ_8H_source.html">ERF_TileNoZ.H</a>&quot;</code><br />
@@ -106,56 +107,56 @@ Include dependency graph for ERF_SLM.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SLM_8cpp__incl.png" border="0" usemap="#aSource_2LandSurfaceModel_2SLM_2ERF__SLM_8cpp" alt=""/></div>
 <map name="aSource_2LandSurfaceModel_2SLM_2ERF__SLM_8cpp" id="aSource_2LandSurfaceModel_2SLM_2ERF__SLM_8cpp">
-<area shape="rect" title=" " alt="" coords="3565,5,3756,47"/>
-<area shape="rect" href="ERF__SLM_8H.html" title=" " alt="" coords="1113,95,1208,121"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="3190,319,3323,345"/>
-<area shape="rect" title=" " alt="" coords="3646,468,3705,495"/>
-<area shape="rect" title=" " alt="" coords="1705,393,1827,420"/>
+<area shape="rect" title=" " alt="" coords="3281,5,3472,47"/>
+<area shape="rect" href="ERF__SLM_8H.html" title=" " alt="" coords="1129,95,1224,121"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="3001,319,3134,345"/>
+<area shape="rect" title=" " alt="" coords="3439,468,3498,495"/>
+<area shape="rect" title=" " alt="" coords="1686,393,1809,420"/>
+<area shape="rect" title=" " alt="" coords="3190,244,3275,271"/>
 <area shape="rect" href="ERF__SLM__DefaultParams_8H.html" title=" " alt="" coords="5,95,204,121"/>
-<area shape="rect" href="ERF__EOS_8H.html" title=" " alt="" coords="3985,244,4080,271"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="3771,95,3889,121"/>
-<area shape="rect" href="ERF__PlanarBoundary_8H.html" title=" " alt="" coords="2504,169,2673,196"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html" title=" " alt="" coords="3569,169,3752,196"/>
-<area shape="rect" href="ERF__TypedInterp_8H.html" title=" " alt="" coords="4035,169,4179,196"/>
-<area shape="rect" title=" " alt="" coords="4087,95,4248,121"/>
+<area shape="rect" href="ERF__EOS_8H.html" title=" " alt="" coords="3993,244,4088,271"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="3624,95,3743,121"/>
+<area shape="rect" href="ERF__PlanarBoundary_8H.html" title=" " alt="" coords="2616,169,2785,196"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html" title=" " alt="" coords="3351,169,3533,196"/>
+<area shape="rect" href="ERF__TypedInterp_8H.html" title=" " alt="" coords="3993,169,4137,196"/>
+<area shape="rect" title=" " alt="" coords="4044,95,4205,121"/>
 <area shape="rect" href="ERF_8H.html" title=" " alt="" coords="1737,169,1795,196"/>
-<area shape="rect" title=" " alt="" coords="4414,95,4489,121"/>
-<area shape="rect" title=" " alt="" coords="1171,244,1214,271"/>
-<area shape="rect" title=" " alt="" coords="814,169,929,196"/>
-<area shape="rect" title=" " alt="" coords="1230,319,1289,345"/>
-<area shape="rect" title=" " alt="" coords="2007,244,2069,271"/>
-<area shape="rect" title=" " alt="" coords="1905,244,1982,271"/>
-<area shape="rect" title=" " alt="" coords="1198,169,1257,196"/>
-<area shape="rect" title=" " alt="" coords="1281,169,1437,196"/>
-<area shape="rect" title=" " alt="" coords="1001,319,1155,345"/>
-<area shape="rect" title=" " alt="" coords="766,244,934,271"/>
+<area shape="rect" title=" " alt="" coords="4403,95,4478,121"/>
+<area shape="rect" title=" " alt="" coords="1179,244,1222,271"/>
+<area shape="rect" title=" " alt="" coords="763,169,878,196"/>
+<area shape="rect" title=" " alt="" coords="926,319,985,345"/>
+<area shape="rect" title=" " alt="" coords="2015,244,2077,271"/>
+<area shape="rect" title=" " alt="" coords="1913,244,1990,271"/>
+<area shape="rect" title=" " alt="" coords="1147,169,1206,196"/>
+<area shape="rect" title=" " alt="" coords="1231,169,1387,196"/>
+<area shape="rect" title=" " alt="" coords="1009,319,1163,345"/>
+<area shape="rect" title=" " alt="" coords="774,244,942,271"/>
 <area shape="rect" title=" " alt="" coords="1513,169,1662,196"/>
-<area shape="rect" title=" " alt="" coords="1289,244,1443,271"/>
-<area shape="rect" title=" " alt="" coords="819,319,977,345"/>
+<area shape="rect" title=" " alt="" coords="1297,244,1451,271"/>
+<area shape="rect" title=" " alt="" coords="1239,319,1397,345"/>
 <area shape="rect" href="ERF__NullSurf_8H.html" title=" " alt="" coords="953,169,1072,196"/>
-<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="1009,244,1147,271"/>
-<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="1441,319,1595,345"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html" title=" " alt="" coords="1721,244,1881,271"/>
-<area shape="rect" href="ERF__LSM__Types_8H.html" title=" " alt="" coords="430,169,569,196"/>
-<area shape="rect" href="ERF__NCInterface_8H.html" title=" " alt="" coords="593,169,739,196"/>
-<area shape="rect" title=" " alt="" coords="3225,393,3288,420"/>
-<area shape="rect" title=" " alt="" coords="1958,468,2081,495"/>
-<area shape="rect" title=" " alt="" coords="2178,393,2357,420"/>
-<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="1919,393,2119,420"/>
-<area shape="rect" title=" " alt="" coords="3841,319,3923,345"/>
-<area shape="rect" title=" " alt="" coords="3020,319,3165,345"/>
+<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="1017,244,1155,271"/>
+<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="1449,319,1603,345"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html" title=" " alt="" coords="1729,244,1889,271"/>
+<area shape="rect" href="ERF__LSM__Types_8H.html" title=" " alt="" coords="379,169,518,196"/>
+<area shape="rect" href="ERF__NCInterface_8H.html" title=" " alt="" coords="543,169,688,196"/>
+<area shape="rect" title=" " alt="" coords="2967,393,3029,420"/>
+<area shape="rect" title=" " alt="" coords="1885,468,2007,495"/>
+<area shape="rect" title=" " alt="" coords="2077,393,2255,420"/>
+<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="1846,393,2046,420"/>
+<area shape="rect" title=" " alt="" coords="3830,319,3913,345"/>
+<area shape="rect" title=" " alt="" coords="2831,319,2976,345"/>
 <area shape="rect" title=" " alt="" coords="142,169,198,196"/>
-<area shape="rect" title=" " alt="" coords="4153,319,4288,345"/>
-<area shape="rect" title=" " alt="" coords="3947,319,4078,345"/>
-<area shape="rect" title=" " alt="" coords="2305,244,2453,271"/>
-<area shape="rect" title=" " alt="" coords="2477,244,2700,271"/>
-<area shape="rect" title=" " alt="" coords="2724,244,2880,271"/>
-<area shape="rect" title=" " alt="" coords="2905,244,3062,271"/>
-<area shape="rect" title=" " alt="" coords="3086,244,3217,271"/>
-<area shape="rect" title=" " alt="" coords="2145,244,2230,271"/>
-<area shape="rect" title=" " alt="" coords="3635,244,3758,271"/>
-<area shape="rect" title=" " alt="" coords="3241,244,3408,271"/>
-<area shape="rect" title=" " alt="" coords="4105,244,4270,271"/>
+<area shape="rect" title=" " alt="" coords="4143,319,4277,345"/>
+<area shape="rect" title=" " alt="" coords="3937,319,4067,345"/>
+<area shape="rect" title=" " alt="" coords="2204,244,2352,271"/>
+<area shape="rect" title=" " alt="" coords="2376,244,2599,271"/>
+<area shape="rect" title=" " alt="" coords="2623,244,2779,271"/>
+<area shape="rect" title=" " alt="" coords="2803,244,2961,271"/>
+<area shape="rect" title=" " alt="" coords="2985,244,3115,271"/>
+<area shape="rect" title=" " alt="" coords="3643,244,3766,271"/>
+<area shape="rect" title=" " alt="" coords="3452,244,3619,271"/>
+<area shape="rect" title=" " alt="" coords="4113,244,4278,271"/>
 </map>
 </div>
 </div><table class="memberdecls">

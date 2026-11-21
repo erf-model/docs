@@ -197,6 +197,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3a117bfdb8dfbeb835674c0becf37189"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26a5b5e703255bd308af70f90f5b382b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#a26a5b5e703255bd308af70f90f5b382b">Lsm_Set_Source_Unmapped_Ptr</a> (const int &amp;, amrex::MultiFab *)</td></tr>
 <tr class="separator:a26a5b5e703255bd308af70f90f5b382b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b0548300099390b454f758ad891dbb9"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#a8b0548300099390b454f758ad891dbb9">Lsm_Surface_State_Size</a> ()</td></tr>
+<tr class="separator:a8b0548300099390b454f758ad891dbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08e134327ea3382c44cdcce3d8e30b88"><td class="memItemLeft" align="right" valign="top">virtual amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#a08e134327ea3382c44cdcce3d8e30b88">Lsm_Surface_State_Ptr</a> (const int &amp;)</td></tr>
+<tr class="separator:a08e134327ea3382c44cdcce3d8e30b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18a81aa4ee37dad2922af9554737a74d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#a18a81aa4ee37dad2922af9554737a74d">Lsm_Set_Source_Surface_State_Ptr</a> (const int &amp;, amrex::MultiFab *)</td></tr>
+<tr class="separator:a18a81aa4ee37dad2922af9554737a74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e6dffc4b28586dd4133ba736330ee61"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#a6e6dffc4b28586dd4133ba736330ee61">Lsm_Has_Atmos_State</a> ()</td></tr>
 <tr class="separator:a6e6dffc4b28586dd4133ba736330ee61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae17d15a8217ab9d135b655e1a9422ead"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#ae17d15a8217ab9d135b655e1a9422ead">Lsm_Set_Source_Has_Atmos_State</a> (bool)</td></tr>
@@ -640,7 +646,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classNOAHMP.html#a348cd5be86064baca3a2ecc09ba1d14b">NOAHMP</a>.</p>
-<div class="fragment"><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;{ <span class="keywordflow">return</span> 0; }</div>
+<div class="fragment"><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;{ <span class="keywordflow">return</span> 0; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -668,7 +674,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSLM.html#ad2129ba7d472088db4c01c20b644c040">SLM</a>, and <a class="el" href="classNOAHMP.html#a52bc16ee1108070e6097f862df4ccc05">NOAHMP</a>.</p>
-<div class="fragment"><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -890,8 +896,8 @@ Here is the call graph for this function:</div>
 <p>Returns the atmospheric geometry used by coupling fields. </p>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#ade04a281a6a692f49b1614274a8194fa">SLM</a>.</p>
-<div class="fragment"><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#ac722d317f14ff1793ce7a38362987513">m_lsm_geom</a>; }</div>
-<div class="ttc" id="aclassNullSurf_html_ac722d317f14ff1793ce7a38362987513"><div class="ttname"><a href="classNullSurf.html#ac722d317f14ff1793ce7a38362987513">NullSurf::m_lsm_geom</a></div><div class="ttdeci">amrex::Geometry m_lsm_geom</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:281</div></div>
+<div class="fragment"><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#ac722d317f14ff1793ce7a38362987513">m_lsm_geom</a>; }</div>
+<div class="ttc" id="aclassNullSurf_html_ac722d317f14ff1793ce7a38362987513"><div class="ttname"><a href="classNullSurf.html#ac722d317f14ff1793ce7a38362987513">NullSurf::m_lsm_geom</a></div><div class="ttdeci">amrex::Geometry m_lsm_geom</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:305</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -949,7 +955,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#accf5369cbeeab014dd8aab4ed28c3516">SLM</a>, and <a class="el" href="classNOAHMP.html#a55eed6ab58df45bbbc5c47392608e8aa">NOAHMP</a>.</p>
 <div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#a00480a80b00d313460c898669225b2ef">NullSurf::m_lsm_size</a>; }</div>
-<div class="ttc" id="aclassNullSurf_html_a00480a80b00d313460c898669225b2ef"><div class="ttname"><a href="classNullSurf.html#a00480a80b00d313460c898669225b2ef">NullSurf::m_lsm_size</a></div><div class="ttdeci">int m_lsm_size</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:280</div></div>
+<div class="ttc" id="aclassNullSurf_html_a00480a80b00d313460c898669225b2ef"><div class="ttname"><a href="classNullSurf.html#a00480a80b00d313460c898669225b2ef">NullSurf::m_lsm_size</a></div><div class="ttdeci">int m_lsm_size</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:304</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1008,7 +1014,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#aa184e09e8d8e0c1123e5b1f79574dda1">SLM</a>, and <a class="el" href="classNOAHMP.html#a05bc395e7bba1c8a19c37b5bfe95160a">NOAHMP</a>.</p>
 <div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#af3849ee01ca4299dc35079c60b91c017">dataname</a>; }</div>
-<div class="ttc" id="aclassNullSurf_html_af3849ee01ca4299dc35079c60b91c017"><div class="ttname"><a href="classNullSurf.html#af3849ee01ca4299dc35079c60b91c017">NullSurf::dataname</a></div><div class="ttdeci">std::string dataname</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:282</div></div>
+<div class="ttc" id="aclassNullSurf_html_af3849ee01ca4299dc35079c60b91c017"><div class="ttname"><a href="classNullSurf.html#af3849ee01ca4299dc35079c60b91c017">NullSurf::dataname</a></div><div class="ttdeci">std::string dataname</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:306</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1124,7 +1130,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#ac39c8fa006d56c4248f5608666dfff54">SLM</a>, and <a class="el" href="classNOAHMP.html#a15624320849a5fffe20fec9afb86b06e">NOAHMP</a>.</p>
 <div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#a6e0f0ff82e70b6126db8ed148b512ea2">fluxname</a>; }</div>
-<div class="ttc" id="aclassNullSurf_html_a6e0f0ff82e70b6126db8ed148b512ea2"><div class="ttname"><a href="classNullSurf.html#a6e0f0ff82e70b6126db8ed148b512ea2">NullSurf::fluxname</a></div><div class="ttdeci">std::string fluxname</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:283</div></div>
+<div class="ttc" id="aclassNullSurf_html_a6e0f0ff82e70b6126db8ed148b512ea2"><div class="ttname"><a href="classNullSurf.html#a6e0f0ff82e70b6126db8ed148b512ea2">NullSurf::fluxname</a></div><div class="ttdeci">std::string fluxname</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:307</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1181,7 +1187,7 @@ Here is the call graph for this function:</div>
 <p>Returns whether the reference-level atmospheric fields have been filled. </p>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#a2eb4c166e65e7ecb888ac3c53d4e1278">SLM</a>.</p>
-<div class="fragment"><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="fragment"><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1233,7 +1239,7 @@ Here is the call graph for this function:</div>
 <p>Transfers exposed state from a source AMR level. </p>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#a0bce778ff8b9e5b4cea59240ba312f27">SLM</a>.</p>
-<div class="fragment"><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    {}</div>
+<div class="fragment"><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1351,7 +1357,7 @@ Here is the call graph for this function:</div>
 <p>Rebuilds a land-surface level after its atmospheric grid changes. </p>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#ac5df3dd4e41fc1523c53da90964e5b38">SLM</a>.</p>
-<div class="fragment"><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    {}</div>
+<div class="fragment"><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1539,7 +1545,47 @@ Here is the call graph for this function:</div>
 <p>Registers whether the source level's atmospheric fields have been filled. </p>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#ac902b51925fe2e521a0132dadb225de3">SLM</a>.</p>
-<div class="fragment"><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a18a81aa4ee37dad2922af9554737a74d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18a81aa4ee37dad2922af9554737a74d">&#9670;&nbsp;</a></span>Lsm_Set_Source_Surface_State_Ptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void NullSurf::Lsm_Set_Source_Surface_State_Ptr </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Registers a 2D surface state field of the source level. </p>
+
+<p>Reimplemented in <a class="el" href="classSLM.html#ae3900ae28496012c14e4c1c466e26433">SLM</a>.</p>
+<div class="fragment"><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1580,6 +1626,65 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#a76c745dc3ab4f0cfd5cc6f77e46fde68">SLM</a>.</p>
 <div class="fragment"><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a08e134327ea3382c44cdcce3d8e30b88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08e134327ea3382c44cdcce3d8e30b88">&#9670;&nbsp;</a></span>Lsm_Surface_State_Ptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual amrex::MultiFab* NullSurf::Lsm_Surface_State_Ptr </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns a 2D surface state field required for transfer. </p>
+
+<p>Reimplemented in <a class="el" href="classSLM.html#a7d1ff9d33208d30a1ac9ae701dc5119c">SLM</a>.</p>
+<div class="fragment"><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8b0548300099390b454f758ad891dbb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b0548300099390b454f758ad891dbb9">&#9670;&nbsp;</a></span>Lsm_Surface_State_Size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int NullSurf::Lsm_Surface_State_Size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the number of 2D surface state fields kept outside lsm_data that carry state from one step to the next, and so are transferred when a level is made or remade. </p>
+
+<p>Reimplemented in <a class="el" href="classSLM.html#a2d27cc1677119e290eeaa4b729b87a8e">SLM</a>.</p>
+<div class="fragment"><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;{ <span class="keywordflow">return</span> 0; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1695,7 +1800,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#a16d679cc05ce9839175dee5e3194c7cc">SLM</a>.</p>
 <div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#af72223f3e91bdf350ca767a706d9974d">wrfinput_map</a>; }</div>
-<div class="ttc" id="aclassNullSurf_html_af72223f3e91bdf350ca767a706d9974d"><div class="ttname"><a href="classNullSurf.html#af72223f3e91bdf350ca767a706d9974d">NullSurf::wrfinput_map</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::string &gt; wrfinput_map</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:285</div></div>
+<div class="ttc" id="aclassNullSurf_html_af72223f3e91bdf350ca767a706d9974d"><div class="ttname"><a href="classNullSurf.html#af72223f3e91bdf350ca767a706d9974d">NullSurf::wrfinput_map</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::string &gt; wrfinput_map</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:309</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1753,7 +1858,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classNOAHMP.html#a60f3cea25a3041d994c36c69ec0685b8">NOAHMP</a>.</p>
-<div class="fragment"><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1820,7 +1925,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classNOAHMP.html#adf01af6f8ca375aa56b66a68da72d6be">NOAHMP</a>.</p>
-<div class="fragment"><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="fragment"><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1849,7 +1954,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classNOAHMP.html#ac2c06f896a91768d2e0ed99216a68268">NOAHMP</a>.</p>
-<div class="fragment"><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2047,7 +2152,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classNOAHMP.html#a354150974c9660e4196eab7986a8d169">NOAHMP</a>.</p>
-<div class="fragment"><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
