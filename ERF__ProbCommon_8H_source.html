@@ -709,12 +709,12 @@ $(document).ready(function(){initNavTree('ERF__ProbCommon_8H_source.html',''); i
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> map_proj = require_int_attribute(<span class="stringliteral">&quot;MAP_PROJ&quot;</span>);</div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                <span class="comment">// Projection 6 (latitude/longitude) is deliberately excluded.</span></div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                <span class="comment">// WPS writes DX/DY in degrees for that projection, whereas</span></div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                <span class="comment">// everything below consumes them as metres -- both the</span></div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                <span class="comment">// everything below consumes them as meters -- both the</span></div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                <span class="comment">// geometry-consistency check and the m_xterrain/m_yterrain</span></div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                <span class="comment">// axes built from ProbLo + (i+0.5)*DX.  Accepting it would</span></div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;                <span class="comment">// either abort with a misleading &quot;grid does not match&quot;</span></div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;                <span class="comment">// message, or, if prob_hi were specified in degrees to get</span></div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                <span class="comment">// past that check, silently place metre-valued terrain</span></div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                <span class="comment">// past that check, silently place meter-valued terrain</span></div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;                <span class="comment">// heights on a degree-spaced horizontal grid and corrupt the</span></div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                <span class="comment">// terrain-fitted metrics with no warning.</span></div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                <span class="keywordflow">if</span> (map_proj != 1 &amp;&amp; map_proj != 2 &amp;&amp; map_proj != 3) {</div>

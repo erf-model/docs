@@ -1545,7 +1545,7 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">if</span> (k == hi_z_face) {</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        centFluxZZNext *=  w(i,j,k);</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="comment">// The centre next to the top or bottom face is second order, seen from either side</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="comment">// The center next to the top or bottom face is second order, seen from either side</span></div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">if</span> (k == hi_z_face-1 || k == lo_z_face)</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        {</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            interp_omega_wall.InterpolateInZ(i,j,k+1,0,interp_hi,Omega_avg_hi,<a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>);</div>

@@ -742,7 +742,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Diagnose pressure at a boundary face from the adjacent atmospheric cell.</p>
-<p>The state pressure is diagnosed at the cell centre. Adding rho*g*delta_z gives the pressure at the boundary face, where delta_z is the signed distance from the face to the cell centre. The moisture component is read only when moisture is enabled and present. </p>
+<p>The state pressure is diagnosed at the cell center. Adding rho*g*delta_z gives the pressure at the boundary face, where delta_z is the signed distance from the face to the cell center. The moisture component is read only when moisture is enabled and present. </p>
 <div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    SurfacePressureResult result{};</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (!amrex::Math::isfinite(<a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a89de8c3bfc941080efb960e5119fbd61">rho</a>) || <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a89de8c3bfc941080efb960e5119fbd61">rho</a> &lt;= amrex::Real(0.0)) {</div>
@@ -853,7 +853,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Pressure at a boundary face from the adjacent atmospheric cell state.</p>
-<p>The state pressure is diagnosed at the cell centre. Adding rho*g*delta_z gives the pressure at the boundary face, where delta_z is the signed distance from the face to the cell centre. </p>
+<p>The state pressure is diagnosed at the cell center. Adding rho*g*delta_z gives the pressure at the boundary face, where delta_z is the signed distance from the face to the cell center. </p>
 <div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rho_theta, <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14af099273d19f4b8cdca199c5177231e35">qv</a>) + <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a89de8c3bfc941080efb960e5119fbd61">rho</a> * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> * delta_z;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>

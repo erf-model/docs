@@ -128,7 +128,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Make the ghost cells below the bottom of the domain agree between boxes.</p>
 <p>On a terrain-fitted mesh the zero-gradient condition at the bottom is corrected by the slope of the terrain times the lateral gradient of the variable at the first cell (impose_vertical_*_bcs). Each box computes that for its own ghost cells, and in the outermost ring of its lateral ghost cells the gradient can only be one-sided, so the same ghost cell below the ground holds different values in different boxes. The fill of a finer level copies ghost cells of this level, taking whichever box's copy it meets, so the finer level then depends on the box decomposition.</p>
-<p>This replaces every ghost cell below the domain with the value computed by the box whose valid columns contain it (or, outside the domain laterally, the box at that boundary), where the lateral stencil is always centred. Values in the owning box are unchanged. The layout of the owning slabs is cached. </p>
+<p>This replaces every ghost cell below the domain with the value computed by the box whose valid columns contain it (or, outside the domain laterally, the box at that boundary), where the lateral stencil is always centered. Values in the owning box are unchanged. The layout of the owning slabs is cached. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a87c552b6583712e54b515b297a069062"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a87c552b6583712e54b515b297a069062">&#9670;&nbsp;</a></span>operator()()</h2>
@@ -183,8 +183,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// The owning slab of each box that reaches the bottom of the domain: the</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// cells below the domain under its valid columns, extended laterally over</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// the ghost columns outside a non-periodic side of the domain that the box</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// touches.  The slabs of different boxes meet only where face-centred boxes</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// share a face, and there both compute the value with a centred stencil.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// touches.  The slabs of different boxes meet only where face-centered boxes</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// share a face, and there both compute the value with a centered stencil.</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// A box that starts above the bottom (a refined level that does not reach</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// the ground) owns no cells below it and is left out.</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (!(<a class="code" href="structBelowGroundGhostSync.html#ac5e8aca356092ec9643a983d82df173c">m_src_ba</a> == mf.boxArray()) || !(<a class="code" href="structBelowGroundGhostSync.html#a966b90036864c25516406acbe46d3713">m_src_dm</a> == mf.DistributionMap()) || <a class="code" href="structBelowGroundGhostSync.html#a594628cbf86325c9dc62c9325004f58f">m_nghost</a> != nghost)</div>

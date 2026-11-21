@@ -108,8 +108,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#a088df7ec05bdf710003427a60850dc14a8e4ed7630edede7500eef0da31218c36">theta</a>,       <span class="comment">/*!&lt; Potential temperature */</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        temperature, <span class="comment">/*!&lt; Temperature */</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        pressure,    <span class="comment">/*!&lt; Pressure */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a53f503b12f901c51930a7e802ae58f12">q_t</a>,         <span class="comment">/*!&lt; Total (vapour + cloud) */</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        q_v,         <span class="comment">/*!&lt; Water vapour */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a53f503b12f901c51930a7e802ae58f12">q_t</a>,         <span class="comment">/*!&lt; Total (vapor + cloud) */</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        q_v,         <span class="comment">/*!&lt; Water vapor */</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        q_c,         <span class="comment">/*!&lt; Liquid water */</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        q_i,         <span class="comment">/*!&lt; Ice */</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        q_r,         <span class="comment">/*!&lt; Rain */</span></div>
@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span>MicVar_SD_Species {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">enum</span> {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a53f503b12f901c51930a7e802ae58f12">q_t</a> = 0,    <span class="comment">/*!&lt; Total density ratio */</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        q_v,        <span class="comment">/*!&lt; Vapour density ratio */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        q_v,        <span class="comment">/*!&lt; Vapor density ratio */</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        q_c,        <span class="comment">/*!&lt; Condensate density ratio */</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        sr,         <span class="comment">/*!&lt; Saturation ratio */</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        accum,      <span class="comment">/*!&lt; Ground accumulation */</span></div>
@@ -627,8 +627,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;            std::string <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>;</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;            <span class="keywordtype">bool</span> by_cell = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            amrex::IntVect cell{0}; <span class="comment">// level 0</span></div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            amrex::GpuArray&lt;amrex::Real,3&gt; <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>{}, <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>{}; <span class="comment">// physical metres</span></div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;            amrex::Vector&lt;double&gt; edges; <span class="comment">// liquid-water-equivalent radii, metres</span></div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            amrex::GpuArray&lt;amrex::Real,3&gt; <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca7ce8636c076f5f42316676f7ca5ccfbe">lo</a>{}, <a class="code" href="ERF__Advection_8H.html#a3cc8de22318f19d5e4c9c1a41c47b59ca49f68a5c8493ec2c0bf489821c21fc3b">hi</a>{}; <span class="comment">// physical meters</span></div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;            amrex::Vector&lt;double&gt; edges; <span class="comment">// liquid-water-equivalent radii, meters</span></div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;            <span class="keywordtype">bool</span> write_mass = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            amrex::Gpu::DeviceVector&lt;double&gt; device_edges, histogram;</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;            amrex::Vector&lt;double&gt; sums;</div>
@@ -662,7 +662,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;<span class="comment">        /*! current AMR level being processed */</span></div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;        <span class="keyword">mutable</span> <span class="keywordtype">int</span> m_current_lev = 0;</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;<span class="comment">        /*! names of vapour/condensate species */</span></div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;<span class="comment">        /*! names of vapor/condensate species */</span></div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        std::vector&lt;Species::Name&gt; <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#af6bc3495a87c8f20d80ca9f2bb85a835">m_species</a>;</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a131599bd9427bd628525c7ae3fea8422">m_num_species</a>;</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;<span class="comment"></span> </div>

@@ -144,17 +144,17 @@ $(document).ready(function(){initNavTree('ERF__SEBLandFill_8H_source.html',''); 
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> * A water column holds a value the balance never updated. The fill keeps it out of the</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> * land columns:</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> * - A fine column whose parent and the parent&#39;s eight neighbours are all land takes the</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> * - A fine column whose parent and the parent&#39;s eight neighbors are all land takes the</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> *   conservative linear interpolation, as on a level with no water.</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> * - Elsewhere no slope is used: the slope of a coarse column next to water is formed with</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> *   the held value. A fine land column over a coarse land column takes the parent&#39;s value.</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"> *   A fine land column over a coarse water column takes the mean of the land columns among</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> *   the parent&#39;s eight neighbours.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> * - A fine land column whose parent and all eight neighbours are water has no land source.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> *   the parent&#39;s eight neighbors.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> * - A fine land column whose parent and all eight neighbors are water has no land source.</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"> *   It takes the parent&#39;s held value and is counted.</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"> * - A fine water column in that region takes its parent&#39;s value.</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"> * Neighbours beyond a non-periodic domain face are left out. RemakeLevel copies the old</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"> * Neighbors beyond a non-periodic domain face are left out. RemakeLevel copies the old</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> * fine values on top afterwards, so only columns new to the level keep this fill.</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> * @param fine      the fine field; valid and ghost columns inside the domain are set</span></div>
@@ -186,8 +186,8 @@ $(document).ready(function(){initNavTree('ERF__SEBLandFill_8H_source.html',''); 
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                 crse, 0, 0, <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda32b6a00f33c7394555eff62ce6457bc6">nc</a>, cgeom, fgeom, ratio, &amp;amrex::cell_cons_interp, bcs, 0);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Per coarse column: [0, nc) the value a fine land column takes, [nc, 2 nc) the column&#39;s</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// own value, 2 nc whether the column or one of its eight neighbours is water, 2 nc + 1</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// whether it is water with no land neighbour.</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// own value, 2 nc whether the column or one of its eight neighbors is water, 2 nc + 1</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// whether it is water with no land neighbor.</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> i_near = 2 * <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda32b6a00f33c7394555eff62ce6457bc6">nc</a>;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> i_none = 2 * <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda32b6a00f33c7394555eff62ce6457bc6">nc</a> + 1;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    amrex::MultiFab src(crse.boxArray(), crse.DistributionMap(), 2 * <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda32b6a00f33c7394555eff62ce6457bc6">nc</a> + 2, crse.nGrowVect());</div>

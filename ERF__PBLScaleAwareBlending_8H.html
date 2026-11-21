@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('ERF__PBLScaleAwareBlending_8H.html',''
 </div><!--header-->
 <div class="contents">
 
-<p>GPU-inline blending functions for PBL diffusivity at grey-zone resolution.  
+<p>GPU-inline blending functions for PBL diffusivity at gray-zone resolution.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;AMReX_REAL.H&gt;</code><br />
 <code>#include &lt;AMReX_GpuQualifiers.H&gt;</code><br />
@@ -99,7 +99,7 @@ Include dependency graph for ERF_PBLScaleAwareBlending.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__PBLScaleAwareBlending_8H__incl.png" border="0" usemap="#aSource_2PBL_2ERF__PBLScaleAwareBlending_8H" alt=""/></div>
 <map name="aSource_2PBL_2ERF__PBLScaleAwareBlending_8H" id="aSource_2PBL_2ERF__PBLScaleAwareBlending_8H">
-<area shape="rect" title="GPU&#45;inline blending functions for PBL diffusivity at grey&#45;zone resolution." alt="" coords="126,5,357,47"/>
+<area shape="rect" title="GPU&#45;inline blending functions for PBL diffusivity at gray&#45;zone resolution." alt="" coords="126,5,357,47"/>
 <area shape="rect" title=" " alt="" coords="5,95,128,121"/>
 <area shape="rect" title=" " alt="" coords="152,95,331,121"/>
 <area shape="rect" title=" " alt="" coords="355,95,418,121"/>
@@ -110,7 +110,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__PBLScaleAwareBlending_8H__dep__incl.png" border="0" usemap="#aSource_2PBL_2ERF__PBLScaleAwareBlending_8Hdep" alt=""/></div>
 <map name="aSource_2PBL_2ERF__PBLScaleAwareBlending_8Hdep" id="aSource_2PBL_2ERF__PBLScaleAwareBlending_8Hdep">
-<area shape="rect" title="GPU&#45;inline blending functions for PBL diffusivity at grey&#45;zone resolution." alt="" coords="18,5,249,47"/>
+<area shape="rect" title="GPU&#45;inline blending functions for PBL diffusivity at gray&#45;zone resolution." alt="" coords="18,5,249,47"/>
 <area shape="rect" href="ERF__ComputeDiffusivityMRF_8cpp.html" title=" " alt="" coords="5,95,261,136"/>
 </map>
 </div>
@@ -133,12 +133,12 @@ Functions</h2></td></tr>
 <tr class="separator:a299ce1273fc86a2d8bc31ef9ac3eaa52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>GPU-inline blending functions for PBL diffusivity at grey-zone resolution. </p>
+<div class="textblock"><p>GPU-inline blending functions for PBL diffusivity at gray-zone resolution. </p>
 <p>Provides scale-aware reduction of PBL vertical diffusivity (K_h) when the horizontal grid spacing falls between mesoscale and LES resolution.</p>
 <p>Designed as a standalone header callable from any PBL scheme (MRF, YSU, MYNN) without code duplication. All functions are AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE free functions with no state.</p>
 <p>Usage in an MFIter loop after K_h is computed: K_h_eff = pbl_kh_blend_and_cap(K_h, dx, L_blend, C_s, c_max, SmnSmn, use_smag);</p>
 <p>K_h is a kinematic diffusivity [m^2/s], because that is the unit of the ceilings applied here. Schemes that carry rho*K in K_turb (all of the <a class="el" href="classERF.html">ERF</a> PBL models do) must divide by rho on the way in and multiply by rho on the way out, or the cap ends up scaling like 1/rho instead of being a constant diffusivity.</p>
-<p>Gating: pbl_kh_blend_and_cap returns K_h unchanged when L_blend &lt;= 0. Setting L_blend = 0 recovers original PBL behaviour exactly.</p>
+<p>Gating: pbl_kh_blend_and_cap returns K_h unchanged when L_blend &lt;= 0. Setting L_blend = 0 recovers original PBL behavior exactly.</p>
 <p>References: Boutle, I.A. et al. (2014). Mon. Wea. Rev., 142, 1655. <a href="https://doi.org/10.1175/MWR-D-13-00229.1">https://doi.org/10.1175/MWR-D-13-00229.1</a> Smagorinsky, J. (1963). Mon. Wea. Rev., 91, 99. <a href="https://doi.org/10.1175/1520-0493(1963)091">https://doi.org/10.1175/1520-0493(1963)091</a>&lt;0099:GCEWTP&gt;2.3.CO;2 Honnert, R., V. Masson, and F. Couvreux (2011). J. Atmos. Sci., 68, 3112. <a href="https://doi.org/10.1175/JAS-D-11-061.1">https://doi.org/10.1175/JAS-D-11-061.1</a> Beare, R.J. (2014). Bound.-Layer Meteor., 153, 345. <a href="https://doi.org/10.1007/s10546-013-9881-3">https://doi.org/10.1007/s10546-013-9881-3</a> Hong, S.-Y., &amp; Pan, H.-L. (1996). Mon. Wea. Rev., 124, 2322. <a href="https://doi.org/10.1175/1520-0493(1996)124">https://doi.org/10.1175/1520-0493(1996)124</a>&lt;2322:NBLVDI&gt;2.0.CO;2 </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a314c0663616955ad8114e5c898c9d3d6"></a>

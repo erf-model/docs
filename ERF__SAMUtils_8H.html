@@ -1732,7 +1732,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;        result.qp_avg = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;        <span class="comment">// Sedimentation only moves mass down, out of cell k: keep rho and T</span></div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;        <span class="comment">// centred on the face but take the transported mixing ratios from that</span></div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;        <span class="comment">// centered on the face but take the transported mixing ratios from that</span></div>
 <div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;        <span class="comment">// donor cell, so the flux does not depend on the receiving cell below</span></div>
 <div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;        <span class="comment">// (a dry donor sends nothing).</span></div>
 <div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;        result.rho_avg = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (rho_km1 + rho_k);</div>
@@ -3127,7 +3127,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;        result.qps_avg = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;        result.qpg_avg = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;        <span class="comment">// Centred rho and T, donor (upwind) qpr/qps/qpg from the cell above the face.</span></div>
+<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;        <span class="comment">// Centered rho and T, donor (upwind) qpr/qps/qpg from the cell above the face.</span></div>
 <div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;        result.rho_avg = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (rho_array(i,j,k-1) + rho_array(i,j,k));</div>
 <div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;        result.tabs_avg = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (tabs_array(i,j,k-1) + tabs_array(i,j,k));</div>
 <div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;        result.qpr_avg = qpr_array(i,j,k);</div>
@@ -3663,7 +3663,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;        result.tabs_avg = tabs_array(i,j,k-1);</div>
 <div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;        result.qp_avg = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;        <span class="comment">// Centred rho and T, donor (upwind) qp from the cell above the face.</span></div>
+<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;        <span class="comment">// Centered rho and T, donor (upwind) qp from the cell above the face.</span></div>
 <div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;        result.rho_avg = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (rho_array(i,j,k-1) + rho_array(i,j,k));</div>
 <div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;        result.tabs_avg = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (tabs_array(i,j,k-1) + tabs_array(i,j,k));</div>
 <div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;        result.qp_avg = qp_array(i,j,k);</div>

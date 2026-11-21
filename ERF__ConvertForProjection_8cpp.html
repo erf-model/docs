@@ -863,7 +863,7 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<p>The ratio is computed on the valid and ghost cells and then its ghost cells inside the domain (between boxes and across periodic boundaries) are filled from the neighbouring valid cells, so that they hold the same values as the valid cells there: the reconstruction reads two or three cells past the face, and the base state's ghost cells beyond the first are not filled between boxes. Outside the domain the ratio comes from the ghost cells of den_div and den_mlt; a cell with no density (covered by an embedded boundary, or a corner the boundary conditions leave unfilled) gets the ratio one. </p>
+<p>The ratio is computed on the valid and ghost cells and then its ghost cells inside the domain (between boxes and across periodic boundaries) are filled from the neighboring valid cells, so that they hold the same values as the valid cells there: the reconstruction reads two or three cells past the face, and the base state's ghost cells beyond the first are not filled between boxes. Outside the domain the ratio comes from the ghost cells of den_div and den_mlt; a cell with no density (covered by an embedded boundary, or a corner the boundary conditions leave unfilled) gets the ratio one. </p>
 <div class="fragment"><div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;{</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;MakeAdvectiveProjectionWeights()&quot;</span>);</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160; </div>

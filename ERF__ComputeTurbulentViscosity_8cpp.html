@@ -610,7 +610,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;            });</div>
 <div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;            <span class="comment">//</span></div>
 <div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;            <span class="comment">// Edge and corner ghost cells at a C/F boundary are skipped above when every face</span></div>
-<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;            <span class="comment">// neighbour toward the valid box is itself a C/F ghost cell, e.g. (i_lo-1,j_lo-1).</span></div>
+<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;            <span class="comment">// neighbor toward the valid box is itself a C/F ghost cell, e.g. (i_lo-1,j_lo-1).</span></div>
 <div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;            <span class="comment">// Fill these from a cell that is valid at this level (in this grid or another),</span></div>
 <div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;            <span class="comment">// stepping toward the valid box in two directions (xy, xz, yz) before all three.</span></div>
 <div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;            <span class="comment">// The sources are never written in this block, and taking covered cells as well as</span></div>
@@ -907,7 +907,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            Box bxcc  = mfi.growntilebox(1) &amp; domain;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="comment">// NOTE: the closures deliberately store no subgrid heat flux.  hfx_z (Hfx3)</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="comment">//       is z-nodal, (0,0,1), while the closure&#39;s -K dtheta/dz is cell-centred,</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="comment">//       is z-nodal, (0,0,1), while the closure&#39;s -K dtheta/dz is cell-centered,</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="comment">//       and the theta diffusion of every RK stage overwrites all z-faces (the</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="comment">//       surface layer the bottom face) before anything reads them, so the value</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="comment">//       written here was both misplaced and unused.  The TKE buoyancy source</span></div>
@@ -1019,7 +1019,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            Box bxcc  = mfi.tilebox();</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="comment">// NOTE: the closures deliberately store no subgrid heat flux.  hfx_z (Hfx3)</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="comment">//       is z-nodal, (0,0,1), while the closure&#39;s -K dtheta/dz is cell-centred,</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="comment">//       is z-nodal, (0,0,1), while the closure&#39;s -K dtheta/dz is cell-centered,</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="comment">//       and the theta diffusion of every RK stage overwrites all z-faces (the</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="comment">//       surface layer the bottom face) before anything reads them, so the value</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="comment">//       written here was both misplaced and unused.  The TKE buoyancy source</span></div>
@@ -1543,7 +1543,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                    <span class="comment">// the only writer of the SGS heat flux output (the surface layer</span></div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                    <span class="comment">// overwrites the bottom).  Elsewhere the theta diffusion writes the</span></div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                    <span class="comment">// face fluxes and the closures do not store a heat flux.  This write</span></div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                    <span class="comment">// keeps the z-nodal/cell-centred mismatch noted above; moving the EB</span></div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                    <span class="comment">// keeps the z-nodal/cell-centered mismatch noted above; moving the EB</span></div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                    <span class="comment">// heat-flux output to the EB face fluxes belongs with that diffusion.</span></div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                    hfx_x(i,j,k) = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                    hfx_y(i,j,k) = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
@@ -1906,7 +1906,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                                                                        : Array4&lt;Real const&gt;{};</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160; </div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;            <span class="comment">// NOTE: the closures deliberately store no subgrid heat flux.  hfx_z (Hfx3)</span></div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;            <span class="comment">//       is z-nodal, (0,0,1), while the closure&#39;s -K dtheta/dz is cell-centred,</span></div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;            <span class="comment">//       is z-nodal, (0,0,1), while the closure&#39;s -K dtheta/dz is cell-centered,</span></div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;            <span class="comment">//       and the theta diffusion of every RK stage overwrites all z-faces (the</span></div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;            <span class="comment">//       surface layer the bottom face) before anything reads them, so the value</span></div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            <span class="comment">//       written here was both misplaced and unused.  The TKE buoyancy source</span></div>
@@ -2056,7 +2056,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    <span class="comment">// With erf.rans_consistent_diffusivities every heat, scalar and moisture</span></div>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    <span class="comment">// diffusivity is rho * cmu&#39; * sqrt(k) * L, i.e. the Theta_v value set by</span></div>
 <div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;    <span class="comment">// the closure; without it the horizontal heat and all scalar diffusivities</span></div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;    <span class="comment">// are the eddy viscosity over Pr_t / Sc_t (the historical behaviour).</span></div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;    <span class="comment">// are the eddy viscosity over Pr_t / Sc_t (the historical behavior).</span></div>
 <div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> consistent = use_KE &amp;&amp; turbChoice.<a class="code" href="structTurbChoice.html#a08d1798646eaefe2c455be7f39d1bb2b">rans_consistent_diffusivities</a>;</div>
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160; </div>
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>

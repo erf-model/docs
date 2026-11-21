@@ -319,7 +319,7 @@ template&lt;int dir&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">t</td><td>Cell blanking (with at least one ghost cell in each direction) </td></tr>
-    <tr><td class="paramname">tf</td><td>Face-centred blanking of this direction, or an empty Array4 </td></tr>
+    <tr><td class="paramname">tf</td><td>Face-centered blanking of this direction, or an empty Array4 </td></tr>
     <tr><td class="paramname">klo</td><td>Lowest cell index of the domain (the face below the domain bottom counts as fluid) </td></tr>
     <tr><td class="paramname">snap</td><td>erf.if_snap_partial_cells </td></tr>
     <tr><td class="paramname">small</td><td>eb2.small_volfrac </td></tr>
@@ -432,8 +432,8 @@ Here is the call graph for this function:</div>
     <tr><td class="paramname">t</td><td>Blanking of the face </td></tr>
     <tr><td class="paramname">below</td><td>Blanking of the face below (zero at the domain bottom) </td></tr>
     <tr><td class="paramname">above</td><td>Blanking of the face above </td></tr>
-    <tr><td class="paramname">lo</td><td>Blanking of the neighbouring face on the low side across the other direction </td></tr>
-    <tr><td class="paramname">hi</td><td>Blanking of the neighbouring face on the high side across the other direction </td></tr>
+    <tr><td class="paramname">lo</td><td>Blanking of the neighboring face on the low side across the other direction </td></tr>
+    <tr><td class="paramname">hi</td><td>Blanking of the neighboring face on the high side across the other direction </td></tr>
     <tr><td class="paramname">normal_face</td><td>With the snap, a face joining a solid and a fluid cell (wall-normal) </td></tr>
     <tr><td class="paramname">use_most</td><td>erf.if_use_most </td></tr>
     <tr><td class="paramname">snap</td><td>erf.if_snap_partial_cells </td></tr>
@@ -649,7 +649,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The face blanking the explicit path zeroes on after the projection (<a class="el" href="ERF__SlowRhsPost_8cpp.html">ERF_SlowRhsPost.cpp</a>): the face-centred fraction when the build has it, else the mean of the two cells the face joins. (io, jo, ko) is the unit vector of the face's direction. </p>
+<p>The face blanking the explicit path zeroes on after the projection (<a class="el" href="ERF__SlowRhsPost_8cpp.html">ERF_SlowRhsPost.cpp</a>): the face-centered fraction when the build has it, else the mean of the two cells the face joins. (io, jo, ko) is the unit vector of the face's direction. </p>
 <div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> (tf) ? tf(i,j,k) : <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (<a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8acd9c9ab9115542c95cb81d1fccb59419">t</a>(i,j,k) + <a class="code" href="namespaceWSM6Ind.html#a93329be948dcf39b320f2beb5ad33ef8acd9c9ab9115542c95cb81d1fccb59419">t</a>(i-io,j-jo,k-ko));</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
@@ -917,7 +917,7 @@ Here is the caller graph for this function:</div>
   <table class="params">
     <tr><td class="paramname">t</td><td>Blanking of the face </td></tr>
     <tr><td class="paramname">above</td><td>Blanking of the face above </td></tr>
-    <tr><td class="paramname">south,north,west,east</td><td>Blanking of the neighbouring z-faces </td></tr>
+    <tr><td class="paramname">south,north,west,east</td><td>Blanking of the neighboring z-faces </td></tr>
     <tr><td class="paramname">above_floor</td><td>The face is not the domain bottom (k &gt;= 1) </td></tr>
     <tr><td class="paramname">normal_face</td><td>With the snap, a face joining a solid and a fluid cell (wall-normal) </td></tr>
     <tr><td class="paramname">use_most</td><td>erf.if_use_most </td></tr>

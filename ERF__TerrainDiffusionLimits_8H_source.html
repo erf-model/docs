@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainDiffusionLimits_8H_source.
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * coordinate surfaces, each the mean of the absolute differences on the four</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * cell edges in that direction; dz is the physical thickness of the cell, the</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * mean of its four vertical edges (detJ * dz at the cell center).  All three</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * are in metres and read only the eight nodes of the cell.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * are in meters and read only the eight nodes of the cell.</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structTerrainCellDrops.html">   28</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structTerrainCellDrops.html">TerrainCellDrops</a></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
@@ -268,10 +268,10 @@ $(document).ready(function(){initNavTree('ERF__TerrainDiffusionLimits_8H_source.
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment"> * Largest value of component n over cell (i,j,k) and its 26 neighbours.  The diffusion</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment"> * Largest value of component n over cell (i,j,k) and its 26 neighbors.  The diffusion</span></div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment"> * operators average the cell diffusivities to faces and edges, so a row of the operator</span></div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment"> * never carries more than this.  With NeighbourhoodMinPositive for the density and the</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment"> * coefficients frozen, the scalar rate is a Gershgorin bound on the centred interior stencil</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment"> * coefficients frozen, the scalar rate is a Gershgorin bound on the centered interior stencil</span></div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment"> * of the Cartesian operator (the higher-order one-sided gradients next to Dirichlet</span></div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment"> * boundaries, ERF_ScalarDiffusion.H, whose row is about 4/3 larger, are not covered); for</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment"> * momentum it is a bound for</span></div>
@@ -295,7 +295,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainDiffusionLimits_8H_source.
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment"> * Smallest positive value of component n over cell (i,j,k) and its 26 neighbours; ghost</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment"> * Smallest positive value of component n over cell (i,j,k) and its 26 neighbors; ghost</span></div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment"> * cells that hold no density (&lt;= 0) are skipped.  Returns `fallback` if none is positive.</span></div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;AMREX_GPU_HOST_DEVICE</div>
@@ -349,7 +349,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainDiffusionLimits_8H_source.
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="comment"> * Explicit diffusion rates of cell (i,j,k), momentum and scalars (1/s), as the diffusive</span></div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment"> * time-step check reduces them: MomentumDiffusiveRate and ScalarDiffusiveRate with the largest</span></div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment"> * diffusivities -- eddy plus molecular -- and the smallest positive density over the cell and</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment"> * its 26 neighbours.  Both are zero in a cell without density (covered).</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment"> * its 26 neighbors.  Both are zero in a cell without density (covered).</span></div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment"> * @param[in]  s_arr  conserved state (Rho_comp), one ghost cell</span></div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment"> * @param[in]  k_arr  eddy diffusivities (EddyDiff components), one ghost cell; read only when</span></div>

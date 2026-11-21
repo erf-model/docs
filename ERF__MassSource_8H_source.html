@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('ERF__MassSource_8H_source.html',''); i
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * from a ruptured pipeline.</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * The gas is injected at a total rate mdot(t) [kg/s], spread uniformly over the cells</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * whose centres lie within erf.mass_source.radius of (center_x, center_y) horizontally</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * whose centers lie within erf.mass_source.radius of (center_x, center_y) horizontally</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * and less than erf.mass_source.height above the local ground.  The same source is</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * added to</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *   - rho, so the mass enters the continuity equation (FullyCompressible only: the</span></div>
@@ -144,10 +144,10 @@ $(document).ready(function(){initNavTree('ERF__MassSource_8H_source.html',''); i
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="namespaceerf__mass__source.html">   57</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceerf__mass__source.html">erf_mass_source</a> {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/// Is the centre of cell (i,j,k) inside the source region?  z is the nodal height z_phys_nd</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/// Is the center of cell (i,j,k) inside the source region?  z is the nodal height z_phys_nd</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/// and zg the nodal height of the ground under the column (2D, at k = kg).  period holds the</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/// domain length in x and y where the domain is periodic and 0 where it is not: there the</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/// distance is to the nearest periodic image of the centre, so the region wraps around</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/// distance is to the nearest periodic image of the center, so the region wraps around</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"></span>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <span class="keywordtype">bool</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="namespaceerf__mass__source.html#a719a9110867e88964810eadd828d5068">   64</a></span>&#160;<a class="code" href="namespaceerf__mass__source.html#a719a9110867e88964810eadd828d5068">in_source</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k,</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;           amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; z,</div>
@@ -182,8 +182,8 @@ $(document).ready(function(){initNavTree('ERF__MassSource_8H_source.html',''); i
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">public</span>:<span class="comment"></span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">    /// The source the inputs ask for, or nullptr when no erf.mass_source input is given.</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">    /// Stops on an unknown erf.mass_source key (a misspelt one would otherwise be ignored,</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">    /// and a misspelt rate would turn the source off) and on inputs without a rate.</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">    /// Stops on an unknown erf.mass_source key (a misspelled one would otherwise be ignored,</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">    /// and a misspelled rate would turn the source off) and on inputs without a rate.</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classMassSource.html#addc93cfdb5a9c83784fdce8d259ea7dc">   99</a></span>&#160;<span class="comment"></span>    <span class="keyword">static</span> std::unique_ptr&lt;MassSource&gt; <a class="code" href="classMassSource.html#addc93cfdb5a9c83784fdce8d259ea7dc">from_inputs</a> ()</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">const</span> std::string prefix = <span class="stringliteral">&quot;erf.mass_source.&quot;</span>;</div>
@@ -285,7 +285,7 @@ $(document).ready(function(){initNavTree('ERF__MassSource_8H_source.html',''); i
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">    /**</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">     * Bring the ground heights and the composite source volume up to date with the grids:</span></div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">     * a no-op unless the BoxArray or DistributionMapping of a level, or the finest level,</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">     * has changed since the last call.  Aborts if no level has a cell centre in the region.</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">     * has changed since the last call.  Aborts if no level has a cell center in the region.</span></div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">     * z_phys_nd and detJ must be allocated on every level.  fill_ground(lev, slab)</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">     * must fill a one-node-thick nodal slab at the bottom of the domain, on the footprint of</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">     * every box of the level, with the ground heights (ERF::fill_surface_nodes, which</span></div>
@@ -382,7 +382,7 @@ $(document).ready(function(){initNavTree('ERF__MassSource_8H_source.html',''); i
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="comment">    /**</span></div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="comment">     * Add the source at time `time` to cc_src of `level` (per unit physical volume, as the</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">     * other cell-centred sources).  cons is the current conserved state and z_phys_nd the</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">     * other cell-centered sources).  cons is the current conserved state and z_phys_nd the</span></div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="comment">     * nodal heights of the level.  update_geometry must have been called for the current grids.</span></div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="classMassSource.html#a4008ee62b588152d07c403ce26990458">  300</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMassSource.html#a4008ee62b588152d07c403ce26990458">add_sources</a> (<span class="keywordtype">int</span> level,</div>

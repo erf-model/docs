@@ -190,10 +190,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:a664944cc8ab8caf85520a9f3acf03755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moisture availability beta of the force-restore surface, from its water content.  <a href="ERF__SimplifiedSEB_8H.html#a664944cc8ab8caf85520a9f3acf03755">More...</a><br /></td></tr>
 <tr class="separator:a664944cc8ab8caf85520a9f3acf03755"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac810996cd7ae8cc41718884011c1b61b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SimplifiedSEB_8H.html#ac810996cd7ae8cc41718884011c1b61b">seb_canopy_resistance_without_vpd</a> (amrex::Real rs_min, amrex::Real rs_max, amrex::Real rgl, amrex::Real t_opt, amrex::Real lai, amrex::Real sw_down, amrex::Real t_canopy, amrex::Real soil_factor)</td></tr>
-<tr class="memdesc:ac810996cd7ae8cc41718884011c1b61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Canopy resistance to transpiration [s/m] without its vapour-deficit factor.  <a href="ERF__SimplifiedSEB_8H.html#ac810996cd7ae8cc41718884011c1b61b">More...</a><br /></td></tr>
+<tr class="memdesc:ac810996cd7ae8cc41718884011c1b61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Canopy resistance to transpiration [s/m] without its vapor-deficit factor.  <a href="ERF__SimplifiedSEB_8H.html#ac810996cd7ae8cc41718884011c1b61b">More...</a><br /></td></tr>
 <tr class="separator:ac810996cd7ae8cc41718884011c1b61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42a91e3ac607e0f22525f0c98e6a6d34"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SimplifiedSEB_8H.html#a42a91e3ac607e0f22525f0c98e6a6d34">seb_soil_evaporation_resistance</a> (amrex::Real theta, amrex::Real theta_sat, amrex::Real theta_wilt, amrex::Real b, amrex::Real d1, amrex::Real <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>)</td></tr>
-<tr class="memdesc:a42a91e3ac607e0f22525f0c98e6a6d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resistance of bare soil to evaporation [s/m], Noah-MP's ground-evaporation option 1 (Sakaguchi and Zeng 2009; ResistanceGroundEvaporationMod): vapour diffuses through a dry surface layer whose thickness grows as the top soil dries,.  <a href="ERF__SimplifiedSEB_8H.html#a42a91e3ac607e0f22525f0c98e6a6d34">More...</a><br /></td></tr>
+<tr class="memdesc:a42a91e3ac607e0f22525f0c98e6a6d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resistance of bare soil to evaporation [s/m], Noah-MP's ground-evaporation option 1 (Sakaguchi and Zeng 2009; ResistanceGroundEvaporationMod): vapor diffuses through a dry surface layer whose thickness grows as the top soil dries,.  <a href="ERF__SimplifiedSEB_8H.html#a42a91e3ac607e0f22525f0c98e6a6d34">More...</a><br /></td></tr>
 <tr class="separator:a42a91e3ac607e0f22525f0c98e6a6d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fd2d4a5da57acb23b0fbdaca60dcaff"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SimplifiedSEB_8H.html#a7fd2d4a5da57acb23b0fbdaca60dcaff">seb_soil_surface_relative_humidity</a> (amrex::Real theta, amrex::Real theta_sat, amrex::Real psi_sat, amrex::Real b, amrex::Real t_ground)</td></tr>
 <tr class="memdesc:a7fd2d4a5da57acb23b0fbdaca60dcaff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relative humidity of the air in the top soil's pores, Noah-MP's for bare ground (ResistanceGroundEvaporationMod), so that bare soil evaporates from RH * q_sat(T):  <a href="ERF__SimplifiedSEB_8H.html#a7fd2d4a5da57acb23b0fbdaca60dcaff">More...</a><br /></td></tr>
@@ -585,10 +585,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Canopy resistance to transpiration [s/m] without its vapour-deficit factor. </p>
+<p>Canopy resistance to transpiration [s/m] without its vapor-deficit factor. </p>
 <p>Noah's big-leaf Jarvis form (Chen et al. 1996) on the parameters and floors of Noah-MP's canopy-resistance option 2 (ResistanceCanopyStomataJarvisMod). Noah-MP itself applies the factors per sunlit and shaded leaf, with the absorbed PAR (f = 2 PAR / RGL), the canopy temperature and canopy-air humidity, and a root-zone soil-water factor; here one big leaf takes the shortwave reaching the surface, the skin temperature, the air at the surface layer's reference height and the top layer's soil-water factor:</p>
 <p>r_c = RS / (LAI * F_sw * F_T * F_vpd * F_soil), F_sw = (f + RS/RSMAX) / (1 + f), f = 0.55 * 2 SW_down / (RGL * LAI), F_T = 1 - 0.0016 (TOPT - T)^2,</p>
-<p>F_soil the soil-water factor (seb_moisture_availability) and F_vpd the vapour-deficit factor, which needs the air's humidity and is applied by the surface layer (<a class="el" href="namespaceerf__surface__moisture.html#ae18e92b1c5ae6ca8233cf8ccd2e8498c">erf_surface_moisture::vapour_deficit_factor</a>); this returns r_c * F_vpd. F_sw and F_T are floored at 1e-4 as in Noah-MP, F_soil at 1e-6 (Noah-MP's MinThr).</p>
+<p>F_soil the soil-water factor (seb_moisture_availability) and F_vpd the vapor-deficit factor, which needs the air's humidity and is applied by the surface layer (<a class="el" href="namespaceerf__surface__moisture.html#ae18e92b1c5ae6ca8233cf8ccd2e8498c">erf_surface_moisture::vapour_deficit_factor</a>); this returns r_c * F_vpd. F_sw and F_T are floored at 1e-4 as in Noah-MP, F_soil at 1e-6 (Noah-MP's MinThr).</p>
 <dl class="section return"><dt>Returns</dt><dd>r_c * F_vpd [s/m], capped at 1e6 (no transpiration), which is also the value without leaves or for a non-finite input. The surface layer divides by F_vpd and caps the result at 1e6 again (<a class="el" href="namespaceerf__surface__moisture.html#a5f903861ac3af3cfbc90e09e950f4cb6">erf_surface_moisture::canopy_resistance</a>). </dd></dl>
 <div class="fragment"><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;{</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    constexpr amrex::Real no_transpiration = amrex::Real(1.0e6);</div>
@@ -615,7 +615,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SimplifiedSEB_8H_ac810996cd7ae8cc41718884011c1b61b_icgraph.png" border="0" usemap="#aERF__SimplifiedSEB_8H_ac810996cd7ae8cc41718884011c1b61b_icgraph" alt=""/></div>
 <map name="aERF__SimplifiedSEB_8H_ac810996cd7ae8cc41718884011c1b61b_icgraph" id="aERF__SimplifiedSEB_8H_ac810996cd7ae8cc41718884011c1b61b_icgraph">
-<area shape="rect" title="Canopy resistance to transpiration [s/m] without its vapour&#45;deficit factor." alt="" coords="227,5,400,47"/>
+<area shape="rect" title="Canopy resistance to transpiration [s/m] without its vapor&#45;deficit factor." alt="" coords="227,5,400,47"/>
 <area shape="rect" href="classTwoStreamRadiation.html#a62178193012720d3688c1c342dc30c55" title="What level lev&#39;s surface hands the surface layer for its surface mixing ratio (erf...." alt="" coords="5,5,179,47"/>
 </map>
 </div>
@@ -791,7 +791,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Resistance of bare soil to evaporation [s/m], Noah-MP's ground-evaporation option 1 (Sakaguchi and Zeng 2009; ResistanceGroundEvaporationMod): vapour diffuses through a dry surface layer whose thickness grows as the top soil dries,. </p>
+<p>Resistance of bare soil to evaporation [s/m], Noah-MP's ground-evaporation option 1 (Sakaguchi and Zeng 2009; ResistanceGroundEvaporationMod): vapor diffuses through a dry surface layer whose thickness grows as the top soil dries,. </p>
 <p>d_dry = d1 (exp((1 - min(1, theta/theta_sat))^p) - 1) / (e - 1), D = 2.2e-5 theta_sat^2 (1 - theta_wilt/theta_sat)^(2 + 3/b), r = d_dry / D,</p>
 <p>with d1 the top layer's thickness and p = RSURF_EXP; 1e6 below theta = 0.01, as in Noah-MP. </p>
 <div class="fragment"><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;{</div>

@@ -1907,8 +1907,8 @@ template&lt;typename ZccFunc , typename DzFunc &gt; </div>
 <p>Column integration shared by the two versions of init_isentropic_hse_no_terrain.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">z_cc</td><td>z_cc(k) is the height of the centre of cell k above the surface. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dz_cc</td><td>dz_cc(k) is the distance used for the hydrostatic step to cell k: for k = 0, twice the absolute height of the centre of cell 0 (half of it is taken), so that the column starts from p_0 at z = 0, as in the other HSE initializers; for k &gt; 0, the distance between the centres of cells k-1 and k.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z_cc</td><td>z_cc(k) is the height of the center of cell k above the surface. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dz_cc</td><td>dz_cc(k) is the distance used for the hydrostatic step to cell k: for k = 0, twice the absolute height of the center of cell 0 (half of it is taken), so that the column starts from p_0 at z = 0, as in the other HSE initializers; for k &gt; 0, the distance between the centers of cells k-1 and k.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1916,7 +1916,7 @@ template&lt;typename ZccFunc , typename DzFunc &gt; </div>
 <div class="fragment"><div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;{</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="comment">// theta_0, theta_tr and T_tr are used only when T_from_theta is set. Their</span></div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="comment">// defaults are still physical temperatures: compute_theta is inlined into</span></div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="comment">// the Newton loops and optimised builds evaluate its arm speculatively, so</span></div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="comment">// the Newton loops and optimized builds evaluate its arm speculatively, so</span></div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <span class="comment">// zeros would raise an FPE (g/(Cp_d*0), then 0*exp(inf)) on a discarded value.</span></div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    Real T_b, T_dp;</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>

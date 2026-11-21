@@ -644,7 +644,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstraction layer for different surface layer schemes (e.g. MOST, Cd)</p>
 <p>van der Laan, P., Kelly, M. C., &amp; Sørensen, N. N. (2017). A new k-epsilon model consistent with Monin-Obukhov similarity theory. Wind Energy, 20(3), 479–amrex::Real(489.) <a href="https://doi.org/amrex::Real(10.1002)/we.2017">https://doi.org/amrex::Real(10.1002)/we.2017</a></p>
-<p>Consistent with Dyer (1974) formulation from page 57, Chapter 2, Modeling the vertical ABL structure in Modelling of Atmospheric Flow Fields, Demetri P Lalas and Corrado F Ratto, January 1996, <a href="https://doi.org/amrex::Real(10.1142)/amrex::Real(2975.)">https://doi.org/amrex::Real(10.1142)/amrex::Real(2975.)</a> </p>
+<p>Consistent with Dyer (1974) formulation from page 57, Chapter 2, Modeling the vertical ABL structure in Modeling of Atmospheric Flow Fields, Demetri P Lalas and Corrado F Ratto, January 1996, <a href="https://doi.org/amrex::Real(10.1142)/amrex::Real(2975.)">https://doi.org/amrex::Real(10.1142)/amrex::Real(2975.)</a> </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a840dbc7f009282fdf8951863d37c6db7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a840dbc7f009282fdf8951863d37c6db7">&#9670;&nbsp;</a></span>FluxCalcType</h2>
@@ -2172,7 +2172,7 @@ template&lt;typename PBLHeightEstimator &gt; </div>
 <div class="line"><a name="l03794"></a><span class="lineno"> 3794</span>&#160;    <span class="comment">// passes below leave no cell of the columns unset.  Ghost cells go first (they hold the</span></div>
 <div class="line"><a name="l03795"></a><span class="lineno"> 3795</span>&#160;    <span class="comment">// physical boundary values and, next to a coarser level, the values interpolated from</span></div>
 <div class="line"><a name="l03796"></a><span class="lineno"> 3796</span>&#160;    <span class="comment">// it), then the valid cells, so that every cell this level owns comes from the box that</span></div>
-<div class="line"><a name="l03797"></a><span class="lineno"> 3797</span>&#160;    <span class="comment">// owns it and not from a neighbour&#39;s ghost cell.</span></div>
+<div class="line"><a name="l03797"></a><span class="lineno"> 3797</span>&#160;    <span class="comment">// owns it and not from a neighbor&#39;s ghost cell.</span></div>
 <div class="line"><a name="l03798"></a><span class="lineno"> 3798</span>&#160;    MultiFab cons_col(cols.ba_col, cols.dm_col, ncomp_col, ng_col);</div>
 <div class="line"><a name="l03799"></a><span class="lineno"> 3799</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> IntVect&amp; ng_src : {ng_col, IntVect(0)}) {</div>
 <div class="line"><a name="l03800"></a><span class="lineno"> 3800</span>&#160;        cons_col.ParallelCopy(<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">cons</a>, 0, 0, ncomp_col, ng_src, ng_col, <a class="code" href="ERF__ActuatorSpreading_8cpp.html#a40f41e8dc5aa2c6b46cde59a015f4185">period</a>);</div>
@@ -2692,7 +2692,7 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l01572"></a><span class="lineno"> 1572</span>&#160; </div>
 <div class="line"><a name="l01573"></a><span class="lineno"> 1573</span>&#160;    <span class="comment">// The face stresses read the LSM fluxes of the cells on both sides of a face, one cell</span></div>
 <div class="line"><a name="l01574"></a><span class="lineno"> 1574</span>&#160;    <span class="comment">// beyond the grid.  Beside another grid or a periodic image that cell holds the</span></div>
-<div class="line"><a name="l01575"></a><span class="lineno"> 1575</span>&#160;    <span class="comment">// neighbour&#39;s own fluxes, so both grids compute the face from the same values.  Outside</span></div>
+<div class="line"><a name="l01575"></a><span class="lineno"> 1575</span>&#160;    <span class="comment">// neighbor&#39;s own fluxes, so both grids compute the face from the same values.  Outside</span></div>
 <div class="line"><a name="l01576"></a><span class="lineno"> 1576</span>&#160;    <span class="comment">// a non-periodic domain it holds no LSM value, and the column there was set by</span></div>
 <div class="line"><a name="l01577"></a><span class="lineno"> 1577</span>&#160;    <span class="comment">// compute_fluxes and compute_sfc_params_from_lsm_fluxes from the nearest column of the</span></div>
 <div class="line"><a name="l01578"></a><span class="lineno"> 1578</span>&#160;    <span class="comment">// grid, so it reads that column, as set_pblh does.  The face-normal direction of a</span></div>
@@ -4416,7 +4416,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Overwrite the land surface mixing ratio from the external skin temperature and the moisture field of set_skin_moisture, with q_air the reference-height mixing ratio the flux uses. Without resistances: beta * q_sat(T_skin, p_s) + (1 - beta) * q_air (<a class="el" href="namespaceerf__surface__moisture.html#a08aa991026634aa9c133cb8c4988805a">erf_surface_moisture::surface_mixing_ratio</a>) with beta the soil-water factor, so the moisture flux is beta times the potential one. With resistances: <a class="el" href="namespaceerf__surface__moisture.html#a9cb78ab1242bbb7cd3f1f07b96c21626">erf_surface_moisture::two_source_surface_mixing_ratio</a> of the aerodynamic resistance (from the last u* and Obukhov length; neutral before the first flux), the canopy resistance with its vapour-deficit factor, the soil resistance and the soil pore air's relative humidity. Needs set_skin_temperature and the averages of this step.</p>
+<p>Overwrite the land surface mixing ratio from the external skin temperature and the moisture field of set_skin_moisture, with q_air the reference-height mixing ratio the flux uses. Without resistances: beta * q_sat(T_skin, p_s) + (1 - beta) * q_air (<a class="el" href="namespaceerf__surface__moisture.html#a08aa991026634aa9c133cb8c4988805a">erf_surface_moisture::surface_mixing_ratio</a>) with beta the soil-water factor, so the moisture flux is beta times the potential one. With resistances: <a class="el" href="namespaceerf__surface__moisture.html#a9cb78ab1242bbb7cd3f1f07b96c21626">erf_surface_moisture::two_source_surface_mixing_ratio</a> of the aerodynamic resistance (from the last u* and Obukhov length; neutral before the first flux), the canopy resistance with its vapor-deficit factor, the soil resistance and the soil pore air's relative humidity. Needs set_skin_temperature and the averages of this step.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">lev</td><td>level index </td></tr>
@@ -4657,7 +4657,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l03279"></a><span class="lineno"> 3279</span>&#160;    <span class="keyword">const</span> Real <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].CellSize(2);</div>
 <div class="line"><a name="l03280"></a><span class="lineno"> 3280</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> moist = <a class="code" href="classSurfaceLayer.html#a15946fd94cdd1dd7a3dd46d701b023a3">use_moisture</a>;</div>
 <div class="line"><a name="l03281"></a><span class="lineno"> 3281</span>&#160;    <span class="keyword">const</span> Real <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a> = <a class="code" href="classSurfaceLayer.html#a8589b81288d66c99d1fcdeac08883673">m_rdOcp</a>;</div>
-<div class="line"><a name="l03282"></a><span class="lineno"> 3282</span>&#160;    <span class="comment">// As in fill_tsurf_with_coupled_sst: a moist run whose state lacks the vapour</span></div>
+<div class="line"><a name="l03282"></a><span class="lineno"> 3282</span>&#160;    <span class="comment">// As in fill_tsurf_with_coupled_sst: a moist run whose state lacks the vapor</span></div>
 <div class="line"><a name="l03283"></a><span class="lineno"> 3283</span>&#160;    <span class="comment">// component aborts below rather than reading past the components.</span></div>
 <div class="line"><a name="l03284"></a><span class="lineno"> 3284</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> have_rho_qv = cons_in.nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
 <div class="line"><a name="l03285"></a><span class="lineno"> 3285</span>&#160; </div>
@@ -5178,7 +5178,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l03364"></a><span class="lineno"> 3364</span>&#160;    <span class="keyword">const</span> Real <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].CellSize(2);</div>
 <div class="line"><a name="l03365"></a><span class="lineno"> 3365</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> moist = <a class="code" href="classSurfaceLayer.html#a15946fd94cdd1dd7a3dd46d701b023a3">use_moisture</a>;</div>
 <div class="line"><a name="l03366"></a><span class="lineno"> 3366</span>&#160;    <span class="keyword">const</span> Real <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a> = <a class="code" href="classSurfaceLayer.html#a8589b81288d66c99d1fcdeac08883673">m_rdOcp</a>;</div>
-<div class="line"><a name="l03367"></a><span class="lineno"> 3367</span>&#160;    <span class="comment">// As in fill_tsurf_with_coupled_sst: a moist run whose state lacks the vapour</span></div>
+<div class="line"><a name="l03367"></a><span class="lineno"> 3367</span>&#160;    <span class="comment">// As in fill_tsurf_with_coupled_sst: a moist run whose state lacks the vapor</span></div>
 <div class="line"><a name="l03368"></a><span class="lineno"> 3368</span>&#160;    <span class="comment">// component aborts below rather than reading past the components.</span></div>
 <div class="line"><a name="l03369"></a><span class="lineno"> 3369</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> have_rho_qv = cons_in.nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
 <div class="line"><a name="l03370"></a><span class="lineno"> 3370</span>&#160; </div>
@@ -5374,7 +5374,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l02617"></a><span class="lineno"> 2617</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(2);</div>
 <div class="line"><a name="l02618"></a><span class="lineno"> 2618</span>&#160;    <span class="keyword">const</span> Real <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].CellSize(2);</div>
 <div class="line"><a name="l02619"></a><span class="lineno"> 2619</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> moist = <a class="code" href="classSurfaceLayer.html#a15946fd94cdd1dd7a3dd46d701b023a3">use_moisture</a>;</div>
-<div class="line"><a name="l02620"></a><span class="lineno"> 2620</span>&#160;    <span class="comment">// As in fill_tsurf_with_coupled_sst: a moist run whose state lacks the vapour</span></div>
+<div class="line"><a name="l02620"></a><span class="lineno"> 2620</span>&#160;    <span class="comment">// As in fill_tsurf_with_coupled_sst: a moist run whose state lacks the vapor</span></div>
 <div class="line"><a name="l02621"></a><span class="lineno"> 2621</span>&#160;    <span class="comment">// component aborts below rather than reading past the components.</span></div>
 <div class="line"><a name="l02622"></a><span class="lineno"> 2622</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> have_rho_qv = cons_in.nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
 <div class="line"><a name="l02623"></a><span class="lineno"> 2623</span>&#160;    <span class="keyword">const</span> Real <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a> = <a class="code" href="classSurfaceLayer.html#a8589b81288d66c99d1fcdeac08883673">m_rdOcp</a>;</div>
@@ -7900,7 +7900,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;          <a class="code" href="classSurfaceLayer.html#af866fe6c505ef4e5a551486d9aa3941b">read_custom_roughness</a>(lev, fname);</div>
 <div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;      }</div>
 <div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160; </div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;      <span class="comment">// The surface layer normalises with ln(zref / z0), so the reference height</span></div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;      <span class="comment">// The surface layer normalizes with ln(zref / z0), so the reference height</span></div>
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;      <span class="comment">// must lie above the roughness length in every column.  With the default</span></div>
 <div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;      <span class="comment">// (the first cell center) a fine mesh over a rough surface can fail this.</span></div>
 <div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;      {</div>
@@ -9167,7 +9167,7 @@ Here is the call graph for this function:</div>
     <tr><td class="paramdir">[in]</td><td class="paramname">lev</td><td>level index </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">moisture</td><td>per-column field in the components of <a class="el" href="namespaceerf__surface__moisture.html#ad52981881b38f49aa4f92ded62999e8a">erf_surface_moisture::Component</a>, on the surface-layer layout </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">use_resistances</td><td>form q_surf from the soil resistance and pore humidity and, where the field's VegetationFraction is positive, the canopy's (two_source_surface_mixing_ratio), not from the soil-water factor alone: the two-stream balance passes true whenever it has a soil type </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">hs</td><td>the canopy's vapour-deficit parameter [1/(kg/kg)]; 0 without vegetation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hs</td><td>the canopy's vapor-deficit parameter [1/(kg/kg)]; 0 without vegetation </td></tr>
   </table>
   </dd>
 </dl>
@@ -9514,7 +9514,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;        <span class="keywordflow">return</span> sumToLine(mf, comp, 1, <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain(), 2)[0];</div>
 <div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;    }</div>
 <div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;    <span class="comment">// A face-centered planar field (the MOST velocity averages) shares the planar BoxArray</span></div>
-<div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;    <span class="comment">// but not its index type, and neighbouring surface boxes would then share a face, which</span></div>
+<div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;    <span class="comment">// but not its index type, and neighboring surface boxes would then share a face, which</span></div>
 <div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;    <span class="comment">// this sum would count twice</span></div>
 <div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(mf.boxArray().ixType().cellCentered(),</div>
 <div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;        <span class="stringliteral">&quot;SurfaceLayer::surface_sum is only defined for a cell-centered planar MultiFab&quot;</span>);</div>
@@ -9647,16 +9647,16 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Set the surface current on this level from an ocean coupler's current at the cell centres of the surface.</p>
+<p>Set the surface current on this level from an ocean coupler's current at the cell centers of the surface.</p>
 <p>The current is rotated from east and north to the grid axes and averaged to the faces. A face takes it where the cells on both sides of it are water (land mask 0) and covered by the ocean, and is at rest elsewhere. Outside a non-periodic domain, the cells beside a face are those of the nearest column inside it.</p>
 <p>The fields are borrowed, like the coupled SST's: the surface layer keeps them and sets the current from them again whenever the level is remade, so they must outlive it or be replaced by a later call.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">lev</td><td>level index </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">east</td><td>eastward current [m/s], cell-centred on the 2D surface layout </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">east</td><td>eastward current [m/s], cell-centered on the 2D surface layout </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">north</td><td>northward current [m/s], on the layout of east </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">covered</td><td>nonzero where the ocean covers the cell, on the layout of east; null when it covers none, as for the coupled SST </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cos_alpha</td><td>cosine of the angle of the grid x axis from east, cell-centred on the 2D surface layout; null when the grid is aligned with east </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cos_alpha</td><td>cosine of the angle of the grid x axis from east, cell-centered on the 2D surface layout; null when the grid is aligned with east </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">sin_alpha</td><td>sine of that angle, on the layout of cos_alpha </td></tr>
   </table>
   </dd>

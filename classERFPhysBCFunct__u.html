@@ -403,7 +403,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> jface = low ? dom_lo.y : dom_hi.y+1;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="comment">// The loop box carries one more ghost than the velocity arrays (and is nodal</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="comment">// where they are cell centred), so clamp the upwind read to the array read,</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="comment">// where they are cell centered), so clamp the upwind read to the array read,</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="comment">// as the lateral fills do (kk is clamped to the domain only: it also sets zq)</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> ulo = lbound(xvel_arr), uhi = ubound(xvel_arr);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> vlo = lbound(yvel_arr), vhi = ubound(yvel_arr);</div>

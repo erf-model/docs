@@ -511,7 +511,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04423"></a><span class="lineno"> 4423</span>&#160;            Real Rf  = level2.calc_Rf(GM, GH);</div>
 <div class="line"><a name="l04424"></a><span class="lineno"> 4424</span>&#160;            Real SM2 = level2.calc_SM(Rf);</div>
 <div class="line"><a name="l04425"></a><span class="lineno"> 4425</span>&#160;            Real qe2 = mynn.B1*Lm*Lm*SM2*(<a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-Rf)*shearProd;</div>
-<div class="line"><a name="l04426"></a><span class="lineno"> 4426</span>&#160;            <span class="comment">// Clamp before the sqrt rather than selecting after it: the optimiser</span></div>
+<div class="line"><a name="l04426"></a><span class="lineno"> 4426</span>&#160;            <span class="comment">// Clamp before the sqrt rather than selecting after it: the optimizer</span></div>
 <div class="line"><a name="l04427"></a><span class="lineno"> 4427</span>&#160;            <span class="comment">// evaluates a guarded sqrt of a negative qe2 before the selection, which</span></div>
 <div class="line"><a name="l04428"></a><span class="lineno"> 4428</span>&#160;            <span class="comment">// trips amrex.fpe_trap_invalid. The value is unchanged for every qe2.</span></div>
 <div class="line"><a name="l04429"></a><span class="lineno"> 4429</span>&#160;            Real qe  = std::sqrt(amrex::max(qe2, amrex::Real(<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)));</div>

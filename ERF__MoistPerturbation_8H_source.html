@@ -90,11 +90,11 @@ $(document).ready(function(){initNavTree('ERF__MoistPerturbation_8H_source.html'
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ERF_MOIST_PERTURBATION_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Initial temperature and vapour perturbations of a moist column, applied together.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Initial temperature and vapor perturbations of a moist column, applied together.</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Shared by the BOMEX, GATE and RICO setups (and DYCOMS, which uses the RICO one).</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * rho*theta is held, so the temperature perturbation is stored as a density change;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * the vapour mixing ratio after the perturbation is qv + dqv, whatever the density.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * the vapor mixing ratio after the perturbation is qv + dqv, whatever the density.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;AMReX_GpuQualifiers.H&gt;</span></div>
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('ERF__MoistPerturbation_8H_source.html'
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespaceerf__moist__perturbation.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceerf__moist__perturbation.html">erf_moist_perturbation</a> {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Perturbation of rho and rho*qv for a temperature change dT and a vapour change dqv.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Perturbation of rho and rho*qv for a temperature change dT and a vapor change dqv.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * With perturb_T, the new density gives T = T_old + dT at the pressure of the new state,</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * P(rho*theta, qv + dqv); with dqv = 0 that is the old pressure. Without perturb_T the</span></div>
@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('ERF__MoistPerturbation_8H_source.html'
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * @param[in]  rhotheta  rho*theta of the unperturbed state (held)</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * @param[in]  rhoqv     rho*qv of the unperturbed state (0 without moisture)</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * @param[in]  dT        temperature change [K]</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * @param[in]  dqv       vapour mixing ratio change</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * @param[in]  dqv       vapor mixing ratio change</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * @param[in]  perturb_T whether the temperature is perturbed</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * @param[in]  moist     whether a moisture model is active</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * @param[in]  rdOcp     R_d / c_p</span></div>

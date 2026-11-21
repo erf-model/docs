@@ -167,7 +167,7 @@ Functions</h2></td></tr>
 <div class="textblock"><p>The structure models compiled into this executable. </p>
 <p><a class="el" href="classERF.html">ERF</a> lists no model itself. Each model registers itself from its own .cpp with </p><pre class="fragment">ERF_REGISTER_STRUCTURE_MODEL(MyModel, "mymodel")
 </pre><p> at namespace scope, and erf.structures.model then selects it by that name. The model's directory (STRUCTURE_HOME in GNU make, ERF_STRUCTURE_MODEL_DIRS in CMake) adds that .cpp to the build, so adding a model changes no file of <a class="el" href="classERF.html">ERF</a>.</p>
-<p>The registration runs during static initialisation, so the .cpp that holds it must be linked as an object file (<a class="el" href="classERF.html">ERF</a>'s CMake build compiles model directories into its OBJECT library, and GNU make links every object). This is the scheme of the fire engines (ERF_FireEngineRegistry.H). </p>
+<p>The registration runs during static initialization, so the .cpp that holds it must be linked as an object file (<a class="el" href="classERF.html">ERF</a>'s CMake build compiles model directories into its OBJECT library, and GNU make links every object). This is the scheme of the fire engines (ERF_FireEngineRegistry.H). </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aeab3fbaa316e9a7760e9d66d83c14519"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeab3fbaa316e9a7760e9d66d83c14519">&#9670;&nbsp;</a></span>ERF_REGISTER_STRUCTURE_MODEL</h2>

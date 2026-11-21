@@ -771,7 +771,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keyword">const</span> Real area_z = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(domain.length(0)*domain.length(1));</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nz = domain.length(2);</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="comment">// Planar averages of the cell-centred profiles</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="comment">// Planar averages of the cell-centered profiles</span></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    Vector&lt;Gpu::HostVector&lt;Real&gt;&gt; cc_avg(<a class="code" href="classRadiationSimple.html#a865411e946b39b54f15f1d60628e6de9">n_datalog_comp</a>);</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; <a class="code" href="classRadiationSimple.html#a865411e946b39b54f15f1d60628e6de9">n_datalog_comp</a>; ++n) {</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        cc_avg[n] = sumToLine(<a class="code" href="classRadiationSimple.html#abe98b6a163302a296d311d7a65976dd4">datalog_mf</a>, n, 1, domain, 2);</div>

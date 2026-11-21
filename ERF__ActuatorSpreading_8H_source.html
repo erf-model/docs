@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('ERF__ActuatorSpreading_8H_source.html'
 <a href="ERF__ActuatorSpreading_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ERF_ACTUATOR_SPREADING_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ERF_ACTUATOR_SPREADING_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/** Spreading of point forces onto the face-centred momentum sources with a normalised Gaussian kernel, and the integral check. */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/** Spreading of point forces onto the face-centered momentum sources with a normalized Gaussian kernel, and the integral check. */</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('ERF__ActuatorSpreading_8H_source.html'
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceerf__actuator.html">erf_actuator</a> {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Spread point forces onto the face-centred momentum sources with a 3-D Gaussian kernel.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Spread point forces onto the face-centered momentum sources with a 3-D Gaussian kernel.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * The points are spread where they are given, with the periodic images within reach of the domain: a</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * caller whose points may lie outside a periodic domain moves them inside first (wrap_periodic()).</span></div>
@@ -113,17 +113,17 @@ $(document).ready(function(){initNavTree('ERF__ActuatorSpreading_8H_source.html'
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * (the conductor lines and the towers of a run may differ). Its share of the source at a face is</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * F_p w_p(face) / S_p, where w_p = exp(-|x_face - x_p|^2 / epsilon_p^2) is cut off beyond</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * 3 epsilon_p and S_p = sum over the faces of that component of w_p dV is the discrete</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * normalisation with the face volumes (dx dy dz detJ on a terrain-following mesh). The sum</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * normalization with the face volumes (dx dy dz detJ on a terrain-following mesh). The sum</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * of src dV over the mesh therefore equals F_p exactly for every point and component,</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * whatever the resolution and however much of the kernel is cut off by the ground or the</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * domain top; the kernel&#39;s shape is Gaussian only where it is resolved. The faces sit at</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * prob_lo + i dx with the volumes dx dy dz detJ, with no map factors: a body model must refuse a</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * run whose map factors are not 1 until the core carries them. The normalisation sums and the</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * run whose map factors are not 1 until the core carries them. The normalization sums and the</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * sources are accumulated in a fixed order without atomic adds (spread_partial_norms(),</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * add_scaled_kernels()), so the source does not depend on the device&#39;s scheduling.</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * Every rank accumulates the faces its boxes own (each physical face once, however the boxes</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * share their boundary faces) and the normalisations are summed across ranks, so the result</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * share their boundary faces) and the normalizations are summed across ranks, so the result</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> * does not depend on the domain decomposition; every rank must pass the same points. Every periodic image of a point within</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> * 3 epsilon_p of the domain (in x and y; z is not imaged) adds its kernel, so a kernel wraps across</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> * a periodic boundary, and overlaps itself when the period is under 6 epsilon_p. The sources are</span></div>
@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('ERF__ActuatorSpreading_8H_source.html'
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> * non-periodic domain boundary get no source.</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * Aborts when a position or force is not finite. z_phys_nd and detJ_cc must share the boxes and</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> * distribution of src_x; src_x, src_y and src_z are face-centred in x, y and z.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> * distribution of src_x; src_x, src_y and src_z are face-centered in x, y and z.</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> * @param[in] pos 3*n point coordinates (m, ERF domain coordinates)</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> * @param[in] force 3*n forces ON the fluid BY the body (N, ERF frame): minus the fluid&#39;s force on the body</span></div>
@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('ERF__ActuatorSpreading_8H_source.html'
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> * @param[in] z_phys_nd nodal heights (m), or nullptr on a uniform-dz mesh</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> * @param[in] detJ_cc cell Jacobians (1 ghost cell), or nullptr on a uniform-dz mesh</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> * @param[in] geom the level&#39;s geometry</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> * @param[out] src_x,src_y,src_z face-centred momentum sources (N/m^3), one component each</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> * @param[out] src_x,src_y,src_z face-centered momentum sources (N/m^3), one component each</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="namespaceerf__actuator.html#a8c995711903dfabdb54a9c49b6388c7d">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceerf__actuator.html#a5dbfe7987ed58be8550367142d55279b">spread_forces</a> (<span class="keyword">const</span> std::vector&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acefa00c53d662ed779c57d6324a16ce9">pos</a>,</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    <span class="keyword">const</span> std::vector&lt;amrex::Real&gt;&amp; force,</div>
@@ -178,7 +178,7 @@ $(document).ready(function(){initNavTree('ERF__ActuatorSpreading_8H_source.html'
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> * The first of spread_forces()&#39;s two passes, on this rank&#39;s boxes only: for each point and each</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> * component, this rank&#39;s part of the normalisation S_p (the sum of w_p dV over the faces its boxes</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> * component, this rank&#39;s part of the normalization S_p (the sum of w_p dV over the faces its boxes</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"> * own). No reduction: the caller sums the ranks&#39; parts (spread_forces() over every rank; a model</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment"> * whose ranks hold different points, over the ranks a point reaches). The boxes are src_x&#39;s, which</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment"> * z_phys_nd and detJ_cc must share.</span></div>
@@ -190,7 +190,7 @@ $(document).ready(function(){initNavTree('ERF__ActuatorSpreading_8H_source.html'
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> * their faces k, j, i) without atomics, so the result does not depend on the device&#39;s scheduling.</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"> * The call checks only the arrays&#39; sizes: the caller checks the points, widths and layouts first</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"> * (check_spread_points(), check_spread_layout()), as spread_forces() does; the same for add_scaled_kernels().</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"> * @param[out] norm 3*n partial normalisations (m^3), component fastest</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"> * @param[out] norm 3*n partial normalizations (m^3), component fastest</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"> * @param buffers device memory kept from call to call (the call uses its own when nullptr)</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="namespaceerf__actuator.html#a7e799084297822e366f419528da6ca16">  108</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceerf__actuator.html#a346f549b5c08d67498fbb4efa0ae4427">spread_partial_norms</a> (<span class="keyword">const</span> std::vector&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acefa00c53d662ed779c57d6324a16ce9">pos</a>,</div>
@@ -215,7 +215,7 @@ $(document).ready(function(){initNavTree('ERF__ActuatorSpreading_8H_source.html'
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment"> * sources are bit-identical, without the tile pass&#39;s walk over images that miss the face (with the</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment"> * compilers&#39; standard floating-point contraction: with clang&#39;s -ffp-contract=fast, icpx&#39;s default, the</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment"> * two loops may fuse a kernel&#39;s squared distance differently, so the last bits may differ).</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment"> * @param[in] f_over_s 3*n forces over their whole normalisations (N/m^3), component fastest; a zero skips the point&#39;s component</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment"> * @param[in] f_over_s 3*n forces over their whole normalizations (N/m^3), component fastest; a zero skips the point&#39;s component</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment"> * @param buffers device memory kept from call to call (the call uses its own when nullptr)</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="namespaceerf__actuator.html#a9eaadff19debf4efea3a1c19a52fca79">  133</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceerf__actuator.html#a1bbaa762f6a9af2bc9618b5137f3ba13">add_scaled_kernels</a> (<span class="keyword">const</span> std::vector&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acefa00c53d662ed779c57d6324a16ce9">pos</a>,</div>
@@ -238,12 +238,12 @@ $(document).ready(function(){initNavTree('ERF__ActuatorSpreading_8H_source.html'
 <div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="namespaceerf__actuator.html#a3f33c6cf36fd5ce6b874677f17b4e321">  150</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceerf__actuator.html#aaf43c6a54e18f87057db0912c93429c5">check_spread_points</a> (<span class="keyword">const</span> std::vector&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acefa00c53d662ed779c57d6324a16ce9">pos</a>, <span class="keyword">const</span> std::vector&lt;amrex::Real&gt;&amp; force,</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                          <span class="keyword">const</span> std::vector&lt;amrex::Real&gt;&amp; <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">epsilon</a>);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">/** Abort unless the sources are face-centred in x, y and z and share boxes and distribution with z_phys_nd and detJ_cc (one ghost cell). */</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">/** Abort unless the sources are face-centered in x, y and z and share boxes and distribution with z_phys_nd and detJ_cc (one ghost cell). */</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="namespaceerf__actuator.html#a367d7077b3970dbdc95e4bf75d3a4f51">  154</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceerf__actuator.html#a12830997f2634d658b2dff5423cc4e07">check_spread_layout</a> (<span class="keyword">const</span> amrex::MultiFab* z_phys_nd, <span class="keyword">const</span> amrex::MultiFab* detJ_cc, <span class="keyword">const</span> amrex::MultiFab&amp; src_x,</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                          <span class="keyword">const</span> amrex::MultiFab&amp; src_y, <span class="keyword">const</span> amrex::MultiFab&amp; src_z);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment"> * Return the integral of a face-centred source over the mesh, sum of src dV (the total force, N).</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment"> * Return the integral of a face-centered source over the mesh, sum of src dV (the total force, N).</span></div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment"> * @param dir 0, 1 or 2: src holds the x-, y- or z-face component</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment"> */</span></div>

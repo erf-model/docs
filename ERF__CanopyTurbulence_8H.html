@@ -230,14 +230,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Add the canopy TKE source to the RhoKE component of the staged cell source on one box. Called by make_sources inside its loop over the boxes, so it adds no pass over the level; cells outside the forest (f &lt;= 0) return before the velocities are read. Fully immersed cells (terrain_blank = 1) get no source, where <a class="el" href="ERF__AdvanceDycore_8cpp.html">ERF_AdvanceDycore.cpp</a> also zeroes the eddy diffusivities. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">bx</td><td>cell-centred box to fill </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bx</td><td>cell-centered box to fill </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">cell_src</td><td>staged source terms for the conserved state </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cell_data</td><td>conserved state of the stage (Rho_comp is read) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cell_old</td><td>conserved state at the start of the step (RhoKE_comp is read) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">u</td><td>x-face velocity </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>y-face velocity </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>z-face velocity </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">f_arr</td><td>cell-centred forest drag field f = C_d LAD </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f_arr</td><td>cell-centered forest drag field f = C_d LAD </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">t_blank_arr</td><td>immersed-forcing blanking, or an empty Array4 without immersed forcing </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">canopy</td><td>canopy turbulence inputs </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dt</td><td>time step of the stage the source enters </td></tr>

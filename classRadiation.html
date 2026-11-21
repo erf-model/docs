@@ -3431,7 +3431,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;    <span class="keyword">const</span> Real area_z = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(domain.length(0)*domain.length(1));</div>
 <div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nz = domain.length(2);</div>
 <div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160; </div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;    <span class="comment">// Planar averages of the cell-centred profiles</span></div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;    <span class="comment">// Planar averages of the cell-centered profiles</span></div>
 <div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;    Vector&lt;Gpu::HostVector&lt;Real&gt;&gt; cc_avg(icc);</div>
 <div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; icc; ++n) {</div>
 <div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;        cc_avg[n] = sumToLine(<a class="code" href="classRadiation.html#a230f1c962f8cca773e2d08c4d19778c3">datalog_mf</a>, n, 1, domain, 2);</div>

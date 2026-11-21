@@ -3112,7 +3112,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">if</span> (use_lsf) {</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <a class="code" href="classERF.html#ac3ca9559f9952b63b4fbffc9b1ccb127">lsf_data</a>[level]-&gt;setVal(0.0);</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="comment">// The forcing profiles interpolated to this level&#39;s cell centres, so that index k</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="comment">// The forcing profiles interpolated to this level&#39;s cell centers, so that index k</span></div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="comment">// below is this level&#39;s cell k</span></div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keyword">const</span> <a class="code" href="structLargeScaleForcingData.html">LargeScaleForcingData</a>&amp; lsf_lev = <a class="code" href="classERF.html#aa63de0507fcd85e07d172f7d5d55c18c">lsf_at_level</a>(level);</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
@@ -3208,7 +3208,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordflow">if</span> (use_nudging) {</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <a class="code" href="classERF.html#ac0056ef6c77130cac944bcb9b643d10c">nudge_data</a>[level]-&gt;setVal(0.0);</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="comment">// The sounding sampled at this level&#39;s cell centres, so that index k below is this</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="comment">// The sounding sampled at this level&#39;s cell centers, so that index k below is this</span></div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="comment">// level&#39;s cell k (the level-0 profile indexed by a fine k is the wrong height)</span></div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="keyword">const</span> <a class="code" href="structInputSoundingData.html">InputSoundingData</a>&amp; snd = <a class="code" href="classERF.html#aac417461ecc1c8f1eaca5d3bc6e43fa7">sounding_at_level</a>(level);</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
@@ -4474,7 +4474,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="comment">// the LSM the radiation fields it needs for that step.</span></div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="comment">//</span></div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="comment">// This sits ahead of the model dispatch because the flag is set for whichever model is</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">// running (ERF_MakeNewLevel.cpp) and the reason for honouring it is a property of the</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">// running (ERF_MakeNewLevel.cpp) and the reason for honoring it is a property of the</span></div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">// state, not of the model.  For the two-stream model, the post-dycore call that still</span></div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="comment">// follows holds back the prognostic surface energy balance on such a level until its</span></div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="comment">// first sweep (TwoStreamRadiation::advance), since the balance takes its surface</span></div>
@@ -6144,7 +6144,7 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;{</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a697098391d0c3d1b191f8ded3ea55a2a">sounding_type</a> != SoundingType::ConstantDensity);</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">// The sounding sampled at this level&#39;s own cell centres</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">// The sounding sampled at this level&#39;s own cell centers</span></div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keyword">const</span> <a class="code" href="structInputSoundingData.html">InputSoundingData</a>&amp; sounding = <a class="code" href="classERF.html#aac417461ecc1c8f1eaca5d3bc6e43fa7">sounding_at_level</a>(lev);</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_isentropic = (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a697098391d0c3d1b191f8ded3ea55a2a">sounding_type</a> == SoundingType::Isentropic ||</div>
@@ -8081,7 +8081,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Check that base_state[lev] is in discrete hydrostatic balance, and abort (or warn) if it is not.</p>
-<p>The residual is dp_0/dz + rho_0 (1 + qv_0) |g| between vertically adjacent cells of the same grid, with dz the distance between the cell centres (from z_phys_nd), which is the balance rebalance_columns and the initializations enforce. It is checked over the valid region, as compute_max_pressure_gradient_diagnostic does. The tolerance is the one compute_max_pressure_gradient_diagnostic uses.</p>
+<p>The residual is dp_0/dz + rho_0 (1 + qv_0) |g| between vertically adjacent cells of the same grid, with dz the distance between the cell centers (from z_phys_nd), which is the balance rebalance_columns and the initializations enforce. It is checked over the valid region, as compute_max_pressure_gradient_diagnostic does. The tolerance is the one compute_max_pressure_gradient_diagnostic uses.</p>
 <p>Not checked: runs without gravity, EB (covered cells hold no meaningful base state), and the init types whose base state is not built in hydrostatic balance (Uniform and ConstantDensityLinearTheta, which skip erf_enforce_hse).</p>
 <p>A restart only warns: a checkpoint written before the base state of a refined level was rebuilt in balance (erf-model/ERF#5228, #5236) holds one that is not, and the run that wrote it should still be able to continue.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -8119,7 +8119,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;        {</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;            <span class="comment">// Cell-centre heights as rebalance_columns forms them, from the nodal heights</span></div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;            <span class="comment">// Cell-center heights as rebalance_columns forms them, from the nodal heights</span></div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;            <span class="keyword">auto</span> zcc = [&amp;] (<span class="keywordtype">int</span> kk) {</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                <span class="keywordflow">return</span> Real(0.125) * (zn(i,j,kk  ) + zn(i+1,j,kk  ) + zn(i,j+1,kk  ) + zn(i+1,j+1,kk  )</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                                     +zn(i,j,kk+1) + zn(i+1,j,kk+1) + zn(i,j+1,kk+1) + zn(i+1,j+1,kk+1));</div>
@@ -10192,7 +10192,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        <span class="comment">// [levc, finest_level] and averaged down level-by-level so that</span></div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="comment">// a signal present only on a finer level still triggers</span></div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <span class="comment">// refinement at the coarser level being tagged.  Without this,</span></div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <span class="comment">// particles localised at level 1 would not register at level 0</span></div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <span class="comment">// particles localized at level 1 would not register at level 0</span></div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <span class="comment">// and the fine grid would disappear at the next regrid.</span></div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        <span class="comment">//</span></div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; particles_namelist( particleData.getNames() );</div>
@@ -10339,7 +10339,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Largest explicit diffusion rates on a level, for the diffusive time-step check: the maximum over valid cells of CellDiffusiveRates (ERF_TerrainDiffusionLimits.H), which takes the largest diffusivities and the smallest density over each cell's 3x3x3 neighbourhood, built from the eddy diffusivities of the last step (zero before the first step and on the first step after a restart, since they are not checkpointed; a regrid happens before the advance that recomputes them) plus the molecular ones of erf.molec_diff_type.</p>
+<p>Largest explicit diffusion rates on a level, for the diffusive time-step check: the maximum over valid cells of CellDiffusiveRates (ERF_TerrainDiffusionLimits.H), which takes the largest diffusivities and the smallest density over each cell's 3x3x3 neighborhood, built from the eddy diffusivities of the last step (zero before the first step and on the first step after a restart, since they are not checkpointed; a regrid happens before the advance that recomputes them) plus the molecular ones of erf.molec_diff_type.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">lev</td><td>level </td></tr>
@@ -10394,7 +10394,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keyword">const</span> MultiFab&amp; <a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a> = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>];</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="comment">// CellDiffusiveRates reads the 3x3x3 neighbourhood of each valid cell</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="comment">// CellDiffusiveRates reads the 3x3x3 neighborhood of each valid cell</span></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b">S</a>.nGrowVect().min() &gt;= 1);</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(!has_eddy || <a class="code" href="classERF.html#a327d704704abd516be19339cb2d226f9">eddyDiffs_lev</a>[lev]-&gt;nGrowVect().min() &gt;= 1);</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
@@ -10533,7 +10533,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">// The terrain slope factor is reported only when one of the options it informs is on:</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// the diffusive check or limit, or a Smagorinsky2D limit at this level.  It is printed</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">// whenever a level has a new set of grids (at initialisation, on the first step after a</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">// whenever a level has a new set of grids (at initialization, on the first step after a</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// restart, and on the coarse step after a regrid), and on a moving terrain also whenever</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">// its largest value changes by more than 1 %.</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">const</span> <a class="code" href="structTurbChoice.html">TurbChoice</a>&amp; tc = <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a1297a9e5ac82884e594d2d6443c06f50">turbChoice</a>[lev];</div>
@@ -16296,7 +16296,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;             <span class="comment">//</span></div>
 <div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;             <span class="comment">// Check dt_sub_max BEFORE dividing by it, and the quotient before casting it.</span></div>
 <div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;             <span class="comment">// Converting a non-finite or wildly out-of-range double to long is undefined</span></div>
-<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;             <span class="comment">// behaviour and in practice traps, and the division itself raises on a zero</span></div>
+<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;             <span class="comment">// behavior and in practice traps, and the division itself raises on a zero</span></div>
 <div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;             <span class="comment">// denominator under erf&#39;s FPE trapping.  A level handed corrupted state</span></div>
 <div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;             <span class="comment">// arrives here with an enormous sound speed, hence a vanishing estdt_comp_T</span></div>
 <div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;             <span class="comment">// and a vanishing dt_sub_max; without this the first symptom is a bare signal</span></div>
@@ -16757,7 +16757,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Impose boundary conditions using data read in as BndryRegisters from a previous <a class="el" href="classERF.html">ERF</a> run</p>
-<p>The planes are read at level-0 resolution only, one cell wide just outside each lateral face of the level-0 domain. On a finer level they are interpolated linearly along the face, in the two directions tangential to it, onto the fine ghost cells and faces; the fine ghost cells take the same value at every distance from the face, as they do at level 0. The planes hold cell-centred values (the writer averages the face velocities to cell centres), so at level 0 a cell-centred component copies the plane, and a velocity component that is nodal along the face (y-velocity on an x face, x-velocity on a y face, z-velocity on either) takes the average of the two plane cells either side of its node (plane_index).</p>
+<p>The planes are read at level-0 resolution only, one cell wide just outside each lateral face of the level-0 domain. On a finer level they are interpolated linearly along the face, in the two directions tangential to it, onto the fine ghost cells and faces; the fine ghost cells take the same value at every distance from the face, as they do at level 0. The planes hold cell-centered values (the writer averages the face velocities to cell centers), so at level 0 a cell-centered component copies the plane, and a velocity component that is nodal along the face (y-velocity on an x face, x-velocity on a y face, z-velocity on either) takes the average of the two plane cells either side of its node (plane_index).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">lev</td><td>level the MultiFabs live on </td></tr>
@@ -17461,7 +17461,7 @@ Here is the call graph for this function:</div>
 <p>Fill the coarse/fine ghost cells of the state used by an implicit vertical solve with coarse data at the time that solve advances to.</p>
 <p>The solves are done on a state whose valid region has been advanced to the new stage time but whose ghost cells have not: the scratch state of ERF_TI_slow_rhs_pre.H (S_old + dt * S_rhs, with the ghost values of S_old), and S_new in ERF_TI_slow_rhs_post.H (updated on the valid region only, with the ghost values of the previous stage). A column whose top or bottom is a coarse/fine boundary closes its tridiagonal system with the value on the other side of that boundary, which should be at the new stage time rather than lagged.</p>
 <p>Only ghost cells that are neither covered by another grid at this level nor outside the domain are changed: those between grids at this level are filled by FillBoundary, and those outside the domain carry the boundary data the physical-BC rows of the solve read.</p>
-<p>Only the ghost cells the solves read are filled; the others keep their old values, which nothing reads before the state is next filled (the scratch state of slow_rhs_pre is used on its valid region only, and apply_bcs fills all the ghost cells of S_new at the end of slow_rhs_post). Every column is closed in z, so a solved component is read at the cell above and below the column, but not at its sides; the same holds for the momenta. Density is read at those cells too, and also by the face averages: at the neighbouring cell in x (y) all the way up the column for the x- (y-) momentum, and at two cells above and below for the z-momentum.</p>
+<p>Only the ghost cells the solves read are filled; the others keep their old values, which nothing reads before the state is next filled (the scratch state of slow_rhs_pre is used on its valid region only, and apply_bcs fills all the ghost cells of S_new at the end of slow_rhs_post). Every column is closed in z, so a solved component is read at the cell above and below the column, but not at its sides; the same holds for the momenta. Density is read at those cells too, and also by the face averages: at the neighboring cell in x (y) all the way up the column for the x- (y-) momentum, and at two cells above and below for the z-momentum.</p>
 <p>The momenta are formed from the interpolated velocity and the refreshed density with the same face average the solve divides by, so that it recovers the interpolated velocity.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -17712,7 +17712,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Fill ghost cells of coarse momentum before interpolation to fine level.</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// VelocityToMomentum above fills only valid cells (IntVect{0} grow).  On restart</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// from a non-AMR checkpoint, init_stuff initialises rU/rV/rW_new[lev-1] with large</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// from a non-AMR checkpoint, init_stuff initializes rU/rV/rW_new[lev-1] with large</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// sentinel values for ALL cells including ghost cells; the checkpoint read then</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// overwrites only valid cells.  InterpFromCoarseLevel (see comments below) ASSUMES</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// ghost cells at lev-1 are already filled and uses them in its stencil near periodic</span></div>
@@ -18022,7 +18022,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="comment">// Geometry (note we must include these here to get the data on device)</span></div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>        = <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[0] + (i + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0];</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>        = <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[1] + (j + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1];</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="comment">// Height of the cell centre from z_phys_nd -- the average of its eight corner</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="comment">// Height of the cell center from z_phys_nd -- the average of its eight corner</span></div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="comment">//    nodes, taken in pairs so that a flat column gives back its height exactly --</span></div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="comment">//    or the flat-mesh height if there is no z_phys_nd</span></div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (z_arr) ?</div>
@@ -18090,7 +18090,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;             <span class="comment">// Physical location of the fine node</span></div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = prob_lo_erf[0] + i       * dx_erf[0];</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = prob_lo_erf[1] + (j+<a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) * dx_erf[1];</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="comment">// Height of the x-face centre: the average of nodes (i, j..j+1, k..k+1)</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="comment">// Height of the x-face center: the average of nodes (i, j..j+1, k..k+1)</span></div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (z_arr) ?</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (z_arr(i,j,k  ) + z_arr(i,j+1,k  ))</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                         + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (z_arr(i,j,k+1) + z_arr(i,j+1,k+1)) )</div>
@@ -18109,7 +18109,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;             <span class="comment">// Physical location of the fine node</span></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = prob_lo_erf[0] + (i+<a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) * dx_erf[0];</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = prob_lo_erf[1] + j       * dx_erf[1];</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="comment">// Height of the y-face centre: the average of nodes (i..i+1, j, k..k+1)</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="comment">// Height of the y-face center: the average of nodes (i..i+1, j, k..k+1)</span></div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (z_arr) ?</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (z_arr(i,j,k  ) + z_arr(i+1,j,k  ))</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                         + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (z_arr(i,j,k+1) + z_arr(i+1,j,k+1)) )</div>
@@ -19730,7 +19730,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160; </div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(plot_var_names, <span class="stringliteral">&quot;surf_pres&quot;</span>)) {</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        <span class="comment">// The pressure at the ground, as WRF&#39;s PSFC: the lowest cell&#39;s pressure plus</span></div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        <span class="comment">//    rho g times the height of that cell&#39;s centre above the ground, the same</span></div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        <span class="comment">//    rho g times the height of that cell&#39;s center above the ground, the same</span></div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;        <span class="comment">//    surface pressure the radiation and surface layer use</span></div>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        <span class="keywordtype">bool</span> moist = (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">moisture_type</a> != <a class="code" href="namespaceLSM__Type.html#a44a19287cd78f948d37b7896e5099f61aa18cb2995cf0825da0134679265f2c75">MoistureType::None</a>);</div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a> = geom[lev].CellSize(2);</div>
@@ -21955,7 +21955,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Set a refined level's momenta on its coarse/fine faces from the coarse level (FillSet), and on an anelastic level over terrain give its faces in z the (rho w) whose Omega is the coarse Omega, rho w = WFromOmega(Omega_coarse, rho u, rho v), with the layer of (rho u), (rho v) outside the level taken from the coarse level too. Every fine-level fill of the momenta goes through here, before any ghost fill or FillBoundary, so every copy of these faces (the box's own and its neighbours' ghost copies) gets the same value, and the time step transports theta and the other scalars with the fluxes the projection balanced. Setting them in the projection alone left the fill's (rho w) in the advection, and theta in the layer next to the face drifted (2.7 K in 300 s on a 100 m hill).</p>
+<p>Set a refined level's momenta on its coarse/fine faces from the coarse level (FillSet), and on an anelastic level over terrain give its faces in z the (rho w) whose Omega is the coarse Omega, rho w = WFromOmega(Omega_coarse, rho u, rho v), with the layer of (rho u), (rho v) outside the level taken from the coarse level too. Every fine-level fill of the momenta goes through here, before any ghost fill or FillBoundary, so every copy of these faces (the box's own and its neighbors' ghost copies) gets the same value, and the time step transports theta and the other scalars with the fluxes the projection balanced. Setting them in the projection alone left the fill's (rho w) in the advection, and theta in the layer next to the face drifted (2.7 K in 300 s on a 100 m hill).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lev</td><td>Level index (&gt; 0) </td></tr>
@@ -22457,7 +22457,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mask of the coarse/fine ghost cells of level lev (1 there, 0 in the valid region, in ghost cells covered by another grid at this level and outside the domain), for the cell-centred (which = 0) or face-centred (which = 1 + dir) data of FillCoarseFineGhostsForImplicit. It depends only on the grids, so it is kept and rebuilt only when they change. </p>
+<p>Mask of the coarse/fine ghost cells of level lev (1 there, 0 in the valid region, in ghost cells covered by another grid at this level and outside the domain), for the cell-centered (which = 0) or face-centered (which = 1 + dir) data of FillCoarseFineGhostsForImplicit. It depends only on the grids, so it is kept and rebuilt only when they change. </p>
 <div class="fragment"><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;{</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    std::unique_ptr&lt;iMultiFab&gt;&amp; mask = <a class="code" href="classERF.html#af4bb0ab42ff6a9603e8b8885223024a9">cf_implicit_mask</a>[lev][which];</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">if</span> (!mask || mask-&gt;boxArray() != ba || mask-&gt;DistributionMap() != dm || mask-&gt;nGrowVect() != <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>)</div>
@@ -26571,7 +26571,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;         (*<a class="code" href="classERF.html#af4e7dc93dae16aa2cc94bbb20b699a6f">physbcs_base</a>[lev])(<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev],0,<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nComp(),<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nGrowVect());</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment">// The sounding sampled at this level&#39;s own cell centres</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment">// The sounding sampled at this level&#39;s own cell centers</span></div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keyword">const</span> <a class="code" href="structInputSoundingData.html">InputSoundingData</a>&amp; sounding = <a class="code" href="classERF.html#aac417461ecc1c8f1eaca5d3bc6e43fa7">sounding_at_level</a>(lev);</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keyword">auto</span>&amp; lev_new = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev];</div>
@@ -29315,7 +29315,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;        <span class="comment">// average_down the terrain (see ERF_MakeNewLevel.cpp).</span></div>
 <div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;        <span class="comment">//</span></div>
 <div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;        <span class="comment">// If a file IS present at this level, the terrain has already been built from</span></div>
-<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;        <span class="comment">// that file&#39;s PH + PHB by init_terrain_from_wrfinput (or its metgrid analogue),</span></div>
+<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;        <span class="comment">// that file&#39;s PH + PHB by init_terrain_from_wrfinput (or its metgrid analog),</span></div>
 <div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;        <span class="comment">// which runs BEFORE this routine on both the from-scratch and the from-coarse</span></div>
 <div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;        <span class="comment">// paths (init_only precedes init_zphys there because level 0 has to read its</span></div>
 <div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;        <span class="comment">// terrain and its data in the same pass). Interpolating from the coarse level</span></div>
@@ -30008,7 +30008,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01705"></a><span class="lineno"> 1705</span>&#160;    }</div>
 <div class="line"><a name="l01706"></a><span class="lineno"> 1706</span>&#160; </div>
 <div class="line"><a name="l01707"></a><span class="lineno"> 1707</span>&#160;<span class="preprocessor">#ifdef ERF_USE_FIRE</span></div>
-<div class="line"><a name="l01708"></a><span class="lineno"> 1708</span>&#160;    <span class="comment">// The fire coupling is initialised after the surface layers are built (so its</span></div>
+<div class="line"><a name="l01708"></a><span class="lineno"> 1708</span>&#160;    <span class="comment">// The fire coupling is initialized after the surface layers are built (so its</span></div>
 <div class="line"><a name="l01709"></a><span class="lineno"> 1709</span>&#160;    <span class="comment">// own prerequisite checks run there). An engine that reads the surface layer</span></div>
 <div class="line"><a name="l01710"></a><span class="lineno"> 1710</span>&#160;    <span class="comment">// (FireEngine::needs_surface_layer, the default) needs one at the bottom, so</span></div>
 <div class="line"><a name="l01711"></a><span class="lineno"> 1711</span>&#160;    <span class="comment">// stop here, with the inputs to set, instead of in the coupler&#39;s checks.</span></div>
@@ -32074,7 +32074,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l03489"></a><span class="lineno"> 3489</span>&#160;                     <span class="stringliteral">&quot; (the smoke tracer is advected with the scalars)&quot;</span>);</div>
 <div class="line"><a name="l03490"></a><span class="lineno"> 3490</span>&#160;    }</div>
 <div class="line"><a name="l03491"></a><span class="lineno"> 3491</span>&#160;    <span class="comment">// erf.fire.source_mode = overwrite (the default) REPLACES the theta (and,</span></div>
-<div class="line"><a name="l03492"></a><span class="lineno"> 3492</span>&#160;    <span class="comment">// with latent heat, the vapour) slots of the cell source on the fire level</span></div>
+<div class="line"><a name="l03492"></a><span class="lineno"> 3492</span>&#160;    <span class="comment">// with latent heat, the vapor) slots of the cell source on the fire level</span></div>
 <div class="line"><a name="l03493"></a><span class="lineno"> 3493</span>&#160;    <span class="comment">// every stage, discarding whatever make_sources put there. With no other</span></div>
 <div class="line"><a name="l03494"></a><span class="lineno"> 3494</span>&#160;    <span class="comment">// source that is the intended result; with one it silently drops physics.</span></div>
 <div class="line"><a name="l03495"></a><span class="lineno"> 3495</span>&#160;    <span class="comment">// Make the choice explicit in that case.</span></div>
@@ -33453,7 +33453,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The large-scale forcing profiles interpolated to the cell centres of level lev. Level 0 is lsf itself; a finer level gets its own copy, interpolated at geom[lev] / zlevels_stag[lev] against sounding_at_level(lev), so that its profile index k is its own cell k. </p>
+<p>The large-scale forcing profiles interpolated to the cell centers of level lev. Level 0 is lsf itself; a finer level gets its own copy, interpolated at geom[lev] / zlevels_stag[lev] against sounding_at_level(lev), so that its profile index k is its own cell k. </p>
 <div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">// Level 0, or a run without large-scale forcing (the callers pass it on whatever the</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">// physics options): there is nothing to interpolate</span></div>
@@ -33462,7 +33462,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ad09be98420dd1971d5e3d79c7b78c7d9">lsf_fine</a>.size() &lt;= lev) { <a class="code" href="classERF.html#ad09be98420dd1971d5e3d79c7b78c7d9">lsf_fine</a>.resize(lev+1); }</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classERF.html#ad09be98420dd1971d5e3d79c7b78c7d9">lsf_fine</a>[lev]) {</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="comment">// lsf holds the forcing file as read and its profiles interpolated to the level-0 cell</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="comment">// centres; interpolate the same file to this level&#39;s cell centres instead</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="comment">// centers; interpolate the same file to this level&#39;s cell centers instead</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keyword">auto</span> l = std::make_unique&lt;LargeScaleForcingData&gt;(<a class="code" href="classERF.html#a81554ebca4f96b752cd74e8d8130945e">lsf</a>);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        l-&gt;verbose_print = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        l-&gt;interp_forcing(geom[lev].data(), <a class="code" href="classERF.html#ace4f0c79f84075dd7a43bd2b0ede1a9b">zlevels_stag</a>[lev], <a class="code" href="classERF.html#aac417461ecc1c8f1eaca5d3bc6e43fa7">sounding_at_level</a>(lev));</div>
@@ -33531,7 +33531,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>A copy of bs, a base state of level lev, on the boxes of bs's BoxArray grown laterally by grow, and level lev's heights on the same boxes.</p>
-<p>The grown boxes overlap where bs's boxes are neighbours; a column they share is built from the same heights in each. A base state built in their valid cells and copied back from those alone, base_state.ParallelCopy(bs_g, 0, 0, ncomp, IntVect(0,0,ng[2]), bs.nGrowVect()), therefore holds in each of bs's lateral ghost cells (grow = bs's lateral ghost cells) the column it would hold were the cell valid, the same whichever box it is a ghost cell of.</p>
+<p>The grown boxes overlap where bs's boxes are neighbors; a column they share is built from the same heights in each. A base state built in their valid cells and copied back from those alone, base_state.ParallelCopy(bs_g, 0, 0, ncomp, IntVect(0,0,ng[2]), bs.nGrowVect()), therefore holds in each of bs's lateral ghost cells (grow = bs's lateral ghost cells) the column it would hold were the cell valid, the same whichever box it is a ghost cell of.</p>
 <p>Where the heights of a whole column are known without z_phys_nd[lev] (MeshType::ConstantDz and StretchedDz, which are flat), the grown boxes span the full height of the domain, so that each column is built from the bottom of the domain up, as on level 0. The base state then does not depend on where the level's boxes start: a box that starts above the bottom would otherwise start its column from the coarse interpolation below it, and boxes that start at different heights would build the same height differently (erf-model/ERF#5308). Over terrain (MeshType::VariableDz) the heights of the level are known only on its grids, and the grown boxes keep the vertical range of their box.</p>
 <p>The lateral ghost cells of bs_g, z_nd_g and z_cc_g are there for constructions that also write the ring around the cells they are given; what lands in them is not to be used. bs_g's cells that bs does not cover take the values of the nearest cell it does; where z_phys_nd[lev] does not reach z_nd_g's they start from the heights of the flat mesh.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -33542,7 +33542,7 @@ Here is the call graph for this function:</div>
     <tr><td class="paramdir">[in]</td><td class="paramname">ng</td><td>ghost cells of bs_g, z_nd_g and z_cc_g; ng[2] at most bs's vertical ones </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">bs_g</td><td>the copy </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">z_nd_g</td><td>z_phys_nd[lev] on the grown boxes (nodal) </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">z_cc_g</td><td>the cell-centre heights on the grown boxes, as make_zcc forms them </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">z_cc_g</td><td>the cell-center heights on the grown boxes, as make_zcc forms them </td></tr>
   </table>
   </dd>
 </dl>
@@ -34606,7 +34606,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The immersed terrain's (or buildings') solid fraction on level lev, one minus the EB volume fraction, with fractions below eb2.small_volfrac (almost fluid cells) set to zero in the valid cells and in the ghost cells FillBoundary fills; with the face-centred factories, the same on the faces. A fresh start, a regrid and a restart all build it here, so a restarted run forces the same cells as the run it continues. On levels coarser than the building cutoff, all allocated masks are zero.</p>
+<p>The immersed terrain's (or buildings') solid fraction on level lev, one minus the EB volume fraction, with fractions below eb2.small_volfrac (almost fluid cells) set to zero in the valid cells and in the ghost cells FillBoundary fills; with the face-centered factories, the same on the faces. A fresh start, a regrid and a restart all build it here, so a restarted run forces the same cells as the run it continues. On levels coarser than the building cutoff, all allocated masks are zero.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lev</td><td>Integer specifying the level </td></tr>
@@ -34722,7 +34722,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The RANS wall distance at this level: the distance to the bottom wall from poisson_wall_dist, corrected for thin immersed bodies. Does nothing when this level runs no RANS model. init_stuff resets walldist to bogus_large_value whenever a level is made on new grids, so this runs at initialisation (and on a restart) and again for each level a regrid adds or remakes.</p>
+<p>The RANS wall distance at this level: the distance to the bottom wall from poisson_wall_dist, corrected for thin immersed bodies. Does nothing when this level runs no RANS model. init_stuff resets walldist to bogus_large_value whenever a level is made on new grids, so this runs at initialization (and on a restart) and again for each level a regrid adds or remakes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lev</td><td>Level index </td></tr>
@@ -37093,9 +37093,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        <span class="comment">//       have to be checked before they are dereferenced.</span></div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        <span class="comment">//</span></div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        <span class="comment">// The stress goes east and north at the cell centres, like the wind. A vector can</span></div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        <span class="comment">// The stress goes east and north at the cell centers, like the wind. A vector can</span></div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;        <span class="comment">// only be turned where both of its components are, so tau13 and tau23 are averaged</span></div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        <span class="comment">// from the faces to the centres first; REMORA turns the stress to its own axes at</span></div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        <span class="comment">// from the faces to the centers first; REMORA turns the stress to its own axes at</span></div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        <span class="comment">// its rho points and averages it to its u and v points, as ROMS does with the</span></div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        <span class="comment">// stress COAWST sends it from WRF.</span></div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> want_taux = iTauX &lt; static_cast&lt;int&gt;(states.size()) &amp;&amp; states[<a class="code" href="namespaceerf__detail__to__REMORA.html#abbf3818a6f0b4bcbbde9b06d82c2e534">iTauX</a>] != <span class="keyword">nullptr</span>;</div>
@@ -37207,7 +37207,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    }</div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160; </div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <span class="comment">// --- Uwind + Vwind, east and north at the cell centres of the lowest level ---</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <span class="comment">// --- Uwind + Vwind, east and north at the cell centers of the lowest level ---</span></div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    <span class="keywordflow">if</span> ((<a class="code" href="namespaceerf__detail__to__REMORA.html#a215788ee1f13288431606eb2eeda8798">iUwind</a> &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(states.size()) &amp;&amp; states[<a class="code" href="namespaceerf__detail__to__REMORA.html#a215788ee1f13288431606eb2eeda8798">iUwind</a>] != <span class="keyword">nullptr</span>) ||</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        (<a class="code" href="namespaceerf__detail__to__REMORA.html#ad58017440a5b02aab1dbd5c03e06247a">iVwind</a> &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(states.size()) &amp;&amp; states[<a class="code" href="namespaceerf__detail__to__REMORA.html#ad58017440a5b02aab1dbd5c03e06247a">iVwind</a>] != <span class="keyword">nullptr</span>)) {</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160; </div>
@@ -38179,11 +38179,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        <span class="keyword">auto</span> dist_arr = <a class="code" href="classERF.html#a0276b556fdefec8b99be95846a3a35fe">walldist</a>[lev]-&gt;arrays();</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(*<a class="code" href="classERF.html#a0276b556fdefec8b99be95846a3a35fe">walldist</a>[lev], [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> b, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;            <span class="comment">// Cell-centred gradient of phi in physical space: centred</span></div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;            <span class="comment">// differences in computational space with the cell-centre</span></div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;            <span class="comment">// Cell-centered gradient of phi in physical space: centered</span></div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;            <span class="comment">// differences in computational space with the cell-center</span></div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;            <span class="comment">// terrain metrics (chain rule for a mesh deformed in z only).</span></div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;            <span class="comment">// The face fluxes used before sat half a cell below and beside</span></div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;            <span class="comment">// the centre, which overstated |grad phi| by dz/2 and shortened</span></div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;            <span class="comment">// the center, which overstated |grad phi| by dz/2 and shortened</span></div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;            <span class="comment">// every distance by z dz / (2H) on a flat mesh (0.8 % for 64</span></div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;            <span class="comment">// cells). The ghost cells of phi carry the Dirichlet (odd) value</span></div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;            <span class="comment">// below the wall and even values elsewhere, so the stencil needs</span></div>
@@ -39345,7 +39345,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="comment">// OmegaFromW below averages (rho0 u) and (rho0 v) over the faces below and above</span></div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="comment">// each w-face, so at the lowest and highest w-face of a box it reads one face in the</span></div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="comment">// z-ghost layer. Where a box face lies inside the domain (a BoxArray split in z) that</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="comment">// ghost face must hold the neighbouring box&#39;s momentum, in the same rho0 scaling as</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="comment">// ghost face must hold the neighboring box&#39;s momentum, in the same rho0 scaling as</span></div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="comment">// the valid faces; VelocityToMomentum and ConvertForProjection both write the valid</span></div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="comment">// faces only. Fill the z-ghost layer here, after the conversion, so no caller has to.</span></div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="comment">// At the domain bottom the w-face k = 0 is set to zero and nothing below it is read;</span></div>
@@ -39355,7 +39355,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                            mom_mf[<a class="code" href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169a2e60798bc45154a8f905b1aa228a24e5">IntVars::ymom</a>].nGrowVect()[2] &gt;= 1);</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="comment">// Where the level stops inside the domain in z there is no fine box to copy from: take</span></div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="comment">// those faces from the coarse level first, in the projected scaling, built from coarse</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="comment">// data only.  FillBoundary below then overwrites the faces that a neighbouring fine box</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="comment">// data only.  FillBoundary below then overwrites the faces that a neighboring fine box</span></div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="comment">// does cover.  The same call returns the coarse Omega for the level&#39;s top and bottom.</span></div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        MultiFab cf_omega_t;</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        Vector&lt;int&gt; cf_slab_box;</div>
@@ -41650,7 +41650,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01614"></a><span class="lineno"> 1614</span>&#160;            <span class="comment">//</span></div>
 <div class="line"><a name="l01615"></a><span class="lineno"> 1615</span>&#160;            <span class="comment">// The grids a fresh start would build.  MakeBaseGrids keeps every box inside the</span></div>
 <div class="line"><a name="l01616"></a><span class="lineno"> 1616</span>&#160;            <span class="comment">// domain when a direction has an odd number of cells (it then does not coarsen</span></div>
-<div class="line"><a name="l01617"></a><span class="lineno"> 1617</span>&#160;            <span class="comment">// that direction before splitting), and it honours amr.no_box_split_dir.</span></div>
+<div class="line"><a name="l01617"></a><span class="lineno"> 1617</span>&#160;            <span class="comment">// that direction before splitting), and it honors amr.no_box_split_dir.</span></div>
 <div class="line"><a name="l01618"></a><span class="lineno"> 1618</span>&#160;            <span class="comment">//</span></div>
 <div class="line"><a name="l01619"></a><span class="lineno"> 1619</span>&#160;            BoxArray new_ba = MakeBaseGrids();</div>
 <div class="line"><a name="l01620"></a><span class="lineno"> 1620</span>&#160; </div>
@@ -42129,7 +42129,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l02093"></a><span class="lineno"> 2093</span>&#160;        <span class="comment">// The min dz the microphysics sizes its sedimentation substeps with, for</span></div>
 <div class="line"><a name="l02094"></a><span class="lineno"> 2094</span>&#160;        <span class="comment">// every mesh type as init_zphys does on a fresh start. Set only on fitted</span></div>
 <div class="line"><a name="l02095"></a><span class="lineno"> 2095</span>&#160;        <span class="comment">// meshes before, so a restart on a constant-dz mesh left Kessler&#39;s (and</span></div>
-<div class="line"><a name="l02096"></a><span class="lineno"> 2096</span>&#160;        <span class="comment">// SAM&#39;s, Morrison&#39;s) dzmin uninitialised and the substep count unbounded:</span></div>
+<div class="line"><a name="l02096"></a><span class="lineno"> 2096</span>&#160;        <span class="comment">// SAM&#39;s, Morrison&#39;s) dzmin uninitialized and the substep count unbounded:</span></div>
 <div class="line"><a name="l02097"></a><span class="lineno"> 2097</span>&#160;        <span class="comment">// the first restarted step of a raining run never finished.</span></div>
 <div class="line"><a name="l02098"></a><span class="lineno"> 2098</span>&#160;        {</div>
 <div class="line"><a name="l02099"></a><span class="lineno"> 2099</span>&#160;            Real dzmin = <a class="code" href="ERF__TerrainMetrics_8cpp.html#a6f3b32ea207dacad3e0525d419d23b99">get_dzmin_terrain</a>(*<a class="code" href="classERF.html#a93e63e5af35efa564fd4195e8703f84c">z_phys_nd</a>[lev]);</div>
@@ -44354,7 +44354,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Rebuild base_state[lev] from the coarser level alone, in discrete hydrostatic balance.</p>
-<p>theta_0 and qv_0 are interpolated from the coarser level; they vary smoothly and are kept. In each column of the valid region and of the lateral ghost cells, the lowest cell of the level is then given the density that puts it in hydrostatic balance with the coarse cell that contains it, integrating from the height of that coarse cell's centre to its own, and the column is integrated upward from there with rebalance_columns. p_0 and pi_0 follow from the equation of state. Working in physical heights, this also holds where the fine terrain differs from the coarse terrain.</p>
+<p>theta_0 and qv_0 are interpolated from the coarser level; they vary smoothly and are kept. In each column of the valid region and of the lateral ghost cells, the lowest cell of the level is then given the density that puts it in hydrostatic balance with the coarse cell that contains it, integrating from the height of that coarse cell's center to its own, and the column is integrated upward from there with rebalance_columns. p_0 and pi_0 follow from the equation of state. Working in physical heights, this also holds where the fine terrain differs from the coarse terrain.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">lev</td><td>level to rebuild (&gt; 0) </td></tr>
@@ -44400,7 +44400,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    MultiFab z_nd(gba_nd, dm, 1, 0);</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    z_nd.ParallelCopy(*<a class="code" href="classERF.html#a93e63e5af35efa564fd4195e8703f84c">z_phys_nd</a>[lev], 0, 0, 1, <a class="code" href="classERF.html#a93e63e5af35efa564fd4195e8703f84c">z_phys_nd</a>[lev]-&gt;nGrowVect(), IntVect(0));</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="comment">// The coarse cell containing each fine cell: p_0, theta_0, qv_0 and the height of its centre</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="comment">// The coarse cell containing each fine cell: p_0, theta_0, qv_0 and the height of its center</span></div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keyword">enum</span> { Pc = 0, Thc, Qvc, Zc, n_crse };</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    MultiFab crse(<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev-1].boxArray(), <a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev-1].DistributionMap(), n_crse, 1);</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev-1].FillBoundary(geom[lev-1].periodicity());</div>
@@ -44432,13 +44432,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(slab, [=,RdoCp_d=<a class="code" href="ERF__Constants_8H.html#af138df04a1c81f39657c2a5a3337f4bb">RdoCp</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        {</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            <span class="comment">// From the coarse cell centre ...</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            <span class="comment">// From the coarse cell center ...</span></div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            <span class="keyword">const</span> Real P_lo  = s(i,j,k,Pc);</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            <span class="keyword">const</span> Real Th_lo = s(i,j,k,Thc);</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            <span class="keyword">const</span> Real qv_lo = s(i,j,k,Qvc);</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            <span class="keyword">const</span> Real z_lo  = s(i,j,k,Zc);</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            <span class="comment">// ... to the centre of this fine cell, at the height rebalance_columns uses</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            <span class="comment">// ... to the center of this fine cell, at the height rebalance_columns uses</span></div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            <span class="keyword">const</span> Real z_hi = Real(0.125) * (zna(i,j,k  ) + zna(i+1,j,k  ) + zna(i,j+1,k  ) + zna(i+1,j+1,k  )</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                                            +zna(i,j,k+1) + zna(i+1,j,k+1) + zna(i,j+1,k+1) + zna(i+1,j+1,k+1));</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="keyword">const</span> Real <a class="code" href="namespaceWDM6SedCellScratch.html#acaae474f64eabd1c679ab9871bfff6b7aeaf93dae2185f9a45d471709664f2de7">dz</a> = z_hi - z_lo;</div>
@@ -45843,7 +45843,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160;        <span class="comment">// reads only the valid region of cons/xvel/yvel/zvel and then deliberately poisons</span></div>
 <div class="line"><a name="l01473"></a><span class="lineno"> 1473</span>&#160;        <span class="comment">// their halos with bogus_large_value (Source/IO/ERF_Checkpoint.cpp -- the only</span></div>
 <div class="line"><a name="l01474"></a><span class="lineno"> 1474</span>&#160;        <span class="comment">// setBndry calls on state in the code).  An old box&#39;s interior halo overlaps its</span></div>
-<div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160;        <span class="comment">// neighbour&#39;s valid region, and ParallelCopy intersects the GROWN source box with</span></div>
+<div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160;        <span class="comment">// neighbor&#39;s valid region, and ParallelCopy intersects the GROWN source box with</span></div>
 <div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;        <span class="comment">// the grown destination boxes with no exclusion and no ordering guarantee between</span></div>
 <div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;        <span class="comment">// overlapping sources.  Offering those halos would therefore land 1e150 in valid</span></div>
 <div class="line"><a name="l01478"></a><span class="lineno"> 1478</span>&#160;        <span class="comment">// cells of the new grids -- which is how a level-0 regrid on restart used to reach</span></div>
@@ -46655,7 +46655,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;        }</div>
 <div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;    }</div>
 <div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160; </div>
-<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;    <span class="comment">// ---- the cell centre heights of the candidate columns, on the IO rank ----</span></div>
+<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;    <span class="comment">// ---- the cell center heights of the candidate columns, on the IO rank ----</span></div>
 <div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;    <span class="comment">//</span></div>
 <div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;    <span class="comment">// Which cells the vertical interpolation reads depends on the terrain under</span></div>
 <div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;    <span class="comment">// the station, so choosing the level needs the heights themselves.  They are</span></div>
@@ -46806,7 +46806,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;                    first_cc[ip] = z_of_k(<a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) - z_zero;</div>
 <div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160; </div>
 <div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;                    <span class="comment">// Nothing in the model lives between the terrain and the first</span></div>
-<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;                    <span class="comment">// cell centre, so a height there is the first cell centre&#39;s</span></div>
+<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;                    <span class="comment">// cell center, so a height there is the first cell center&#39;s</span></div>
 <div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;                    <span class="comment">// value.  That is a trap for exactly the heights an observation</span></div>
 <div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;                    <span class="comment">// comparison asks for, so say so, once.</span></div>
 <div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;                    <span class="keywordflow">if</span> (below_first_cell &amp;&amp; !<a class="code" href="classERF.html#aa271c7cb0bb5bc1e411b07a05f03bcc4">station_sampler</a>-&gt;lowHeightWarned()) {</div>
@@ -47250,7 +47250,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;                         +            wy  * ( (Real(1.0)-wx)*a(i0,j1,k,comp) + wx*a(i1,j1,k,comp) );</div>
 <div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160;                };</div>
 <div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160; </div>
-<div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;                <span class="comment">// Height of the cell centres in the station&#39;s column</span></div>
+<div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;                <span class="comment">// Height of the cell centers in the station&#39;s column</span></div>
 <div class="line"><a name="l01520"></a><span class="lineno"> 1520</span>&#160;                Array4&lt;const Real&gt; zc_arr;</div>
 <div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a31be0f1ae705c52c8ccc520369013284">z_phys_cc</a>[lev]) { zc_arr = stzc[lev].const_array(ib); }</div>
 <div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;                <span class="keyword">auto</span> z_of_k = [&amp;](<span class="keywordtype">int</span> k)</div>
@@ -47302,7 +47302,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01568"></a><span class="lineno"> 1568</span>&#160;                    <span class="keyword">const</span> Real zk1 = z_of_k(std::min(kk+1, loc.<a class="code" href="structStationLoc.html#a864b2adc331ebcf699b1067d3b107515">ktop</a>));</div>
 <div class="line"><a name="l01569"></a><span class="lineno"> 1569</span>&#160;                    Real wz = (zk1 &gt; zk) ? (z_target - zk) / (zk1 - zk) : Real(0.0);</div>
 <div class="line"><a name="l01570"></a><span class="lineno"> 1570</span>&#160;                    wz = std::min(std::max(wz, Real(0.0)), Real(1.0));   <span class="comment">// clamp below the first</span></div>
-<div class="line"><a name="l01571"></a><span class="lineno"> 1571</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">k1</a> = std::min(kk+1, loc.<a class="code" href="structStationLoc.html#a864b2adc331ebcf699b1067d3b107515">ktop</a>);             <span class="comment">// cell centre and above the top</span></div>
+<div class="line"><a name="l01571"></a><span class="lineno"> 1571</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">k1</a> = std::min(kk+1, loc.<a class="code" href="structStationLoc.html#a864b2adc331ebcf699b1067d3b107515">ktop</a>);             <span class="comment">// cell center and above the top</span></div>
 <div class="line"><a name="l01572"></a><span class="lineno"> 1572</span>&#160; </div>
 <div class="line"><a name="l01573"></a><span class="lineno"> 1573</span>&#160;                    <span class="keyword">auto</span> at_height = [&amp;](<span class="keywordtype">int</span> comp)</div>
 <div class="line"><a name="l01574"></a><span class="lineno"> 1574</span>&#160;                    {</div>
@@ -48729,7 +48729,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_a4df6f68a3be96a1114e0c4e29ab691f4"><div class="ttname"><a href="classERF.html#a4df6f68a3be96a1114e0c4e29ab691f4">ERF::m_skin_uncoupled_warned</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_skin_uncoupled_warned</div><div class="ttdef"><b>Definition:</b> ERF.H:617</div></div>
 <div class="ttc" id="aclassTwoStreamRadiation_html_a62178193012720d3688c1c342dc30c55"><div class="ttname"><a href="classTwoStreamRadiation.html#a62178193012720d3688c1c342dc30c55">TwoStreamRadiation::seb_surface_moisture</a></div><div class="ttdeci">const amrex::MultiFab * seb_surface_moisture(int lev)</div><div class="ttdoc">What level lev's surface hands the surface layer for its surface mixing ratio (erf....</div><div class="ttdef"><b>Definition:</b> ERF_TwoStreamRadiation.cpp:606</div></div>
 <div class="ttc" id="astructNoahMPVegetationParams_html"><div class="ttname"><a href="structNoahMPVegetationParams.html">NoahMPVegetationParams</a></div><div class="ttdef"><b>Definition:</b> ERF_NoahMPVegetationTable.H:23</div></div>
-<div class="ttc" id="astructNoahMPVegetationParams_html_aa6e8072a6346ac321f50296835a9735f"><div class="ttname"><a href="structNoahMPVegetationParams.html#aa6e8072a6346ac321f50296835a9735f">NoahMPVegetationParams::hs</a></div><div class="ttdeci">amrex::Real hs</div><div class="ttdoc">HS vapour pressure deficit parameter [1/(kg/kg)].</div><div class="ttdef"><b>Definition:</b> ERF_NoahMPVegetationTable.H:26</div></div>
+<div class="ttc" id="astructNoahMPVegetationParams_html_aa6e8072a6346ac321f50296835a9735f"><div class="ttname"><a href="structNoahMPVegetationParams.html#aa6e8072a6346ac321f50296835a9735f">NoahMPVegetationParams::hs</a></div><div class="ttdeci">amrex::Real hs</div><div class="ttdoc">HS vapor pressure deficit parameter [1/(kg/kg)].</div><div class="ttdef"><b>Definition:</b> ERF_NoahMPVegetationTable.H:26</div></div>
 <div class="ttc" id="astructRadChoice_html_a5fd206b265cf844f381c9c238b149001"><div class="ttname"><a href="structRadChoice.html#a5fd206b265cf844f381c9c238b149001">RadChoice::seb_surface_layer_uses_skin</a></div><div class="ttdeci">bool seb_surface_layer_uses_skin</div><div class="ttdoc">Two-way coupling with the zlo surface layer: the surface layer takes its land surface temperature fro...</div><div class="ttdef"><b>Definition:</b> ERF_RadStruct.H:469</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -49061,7 +49061,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Set Rayleigh mean profiles at a level from the input sounding. </p>
-<p>Sets the Rayleigh Damping reference profiles at one level from the input sounding (sounding 0), at the cell-centre heights of that level. The sounding is the one sampled at this level's own cell centres (sounding_at_level), as for the level's initial state, so that the damping targets are the profile the level starts from. Called from initRayleigh_at_level, before the profiles are copied to the device. The sounding is already loaded: at start-up by init_only, on a restart by MakeNewLevelFromScratch.</p>
+<p>Sets the Rayleigh Damping reference profiles at one level from the input sounding (sounding 0), at the cell-center heights of that level. The sounding is the one sampled at this level's own cell centers (sounding_at_level), as for the level's initial state, so that the damping targets are the profile the level starts from. Called from initRayleigh_at_level, before the profiles are copied to the device. The sounding is already loaded: at start-up by init_only, on a restart by MakeNewLevelFromScratch.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">lev</td><td>Level whose reference profiles to set </td></tr>
@@ -50010,7 +50010,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// A region one cell wide in x or y is solved as two-dimensional, as solve_with_mlmg does,</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// but only where that direction is periodic: MLTerrainPoisson then drops the face fluxes</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// and the terrain cross terms in it, which are zero only when the one cell is its own</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// periodic neighbour (its two node columns are the same).  Across a wall, inflow or</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// periodic neighbor (its two node columns are the same).  Across a wall, inflow or</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// outflow face they are not, so such a region keeps all three directions.</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    LPInfo info;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (sub_lo.x == sub_hi.x &amp;&amp; is_per[0]) {</div>
@@ -50093,7 +50093,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The input sounding sampled at the cell centres of level lev. Level 0 is input_sounding_data itself; a finer level gets its own copy, resampled at geom[lev] / zlevels_stag[lev], so that its profile index k is its own cell k and no fine cell blends in the surface line of the sounding. </p>
+<p>The input sounding sampled at the cell centers of level lev. Level 0 is input_sounding_data itself; a finer level gets its own copy, resampled at geom[lev] / zlevels_stag[lev], so that its profile index k is its own cell k and no fine cell blends in the surface line of the sounding. </p>
 <div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// Level 0, or a run that never read a sounding (the callers pass it on whatever the</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// physics options): there is nothing to resample</span></div>
@@ -50103,12 +50103,12 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a6f0f5d1e7d99a8cc12d82ba45cd1e950">input_sounding_data_fine</a>.size() &lt;= lev) { <a class="code" href="classERF.html#a6f0f5d1e7d99a8cc12d82ba45cd1e950">input_sounding_data_fine</a>.resize(lev+1); }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classERF.html#a6f0f5d1e7d99a8cc12d82ba45cd1e950">input_sounding_data_fine</a>[lev]) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">// input_sounding_data holds the profiles sampled at the level-0 cell centres, with the</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">// input_sounding_data holds the profiles sampled at the level-0 cell centers, with the</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">// surface line of the sounding at z = 0. Interpolating those to a fine cell below the</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="comment">// first level-0 centre blends in the surface values (with erf.most.surf_temp the surface</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="comment">// first level-0 center blends in the surface values (with erf.most.surf_temp the surface</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="comment">// theta is the surface temperature, and U = V = 0) even where the sounding has air</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">// values, and indexing them with a fine k reads the wrong height. So resample the file</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="comment">// at this level&#39;s own cell centres, exactly as a single-level run at this resolution does.</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="comment">// at this level&#39;s own cell centers, exactly as a single-level run at this resolution does.</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">auto</span> snd = std::make_unique&lt;InputSoundingData&gt;(<a class="code" href="classERF.html#a83572d8dfad51158945b4a5ab06b2f72">input_sounding_data</a>);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> is_moist = (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">moisture_type</a> != <a class="code" href="namespaceLSM__Type.html#a44a19287cd78f948d37b7896e5099f61aa18cb2995cf0825da0134679265f2c75">MoistureType::None</a>);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; snd-&gt;n_sounding_files; n++) {</div>
@@ -50438,7 +50438,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                                                                Array4&lt;const Real&gt;{};</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        {</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;            <span class="comment">// Mixing ratios of vapour, of all liquid (cloud and rain) and of all ice (cloud</span></div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;            <span class="comment">// Mixing ratios of vapor, of all liquid (cloud and rain) and of all ice (cloud</span></div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;            <span class="comment">// ice, snow, graupel); the state holds rho_d times each species</span></div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            Real <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da2e5deda3717abe0b21f464e0b8b9e54d">Qv</a> = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, Ql = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6daebfc26a474835c1ad7c18f712064485f">Qi</a> = <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            <span class="keywordflow">if</span> (is_moist) { <a class="code" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19">GetMoistureVars</a>(i, j, k, cons_arr, Qv, Ql, Qi, moist_idx); }</div>
@@ -50449,11 +50449,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;            Real TKE  = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( cc_vel_arr(i,j,k,0)*cc_vel_arr(i,j,k,0)</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                              + cc_vel_arr(i,j,k,1)*cc_vel_arr(i,j,k,1)</div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                              + cc_vel_arr(i,j,k,2)*cc_vel_arr(i,j,k,2) );</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;            <span class="comment">// Height of the cell centre</span></div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;            <span class="comment">// Height of the cell center</span></div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;            Real zval = (z_arr) ? z_arr(i,j,k) : <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a>[2] + (Real(k) + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)*<a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[2];</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160; </div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;            <span class="comment">// Internal energy with constant heat capacities (Romps 2008, J. Atmos. Sci. 65,</span></div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;            <span class="comment">// 3779), measured from liquid water at the triple point: vapour carries</span></div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;            <span class="comment">// 3779), measured from liquid water at the triple point: vapor carries</span></div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;            <span class="comment">// E0v = L_v - R_v T_trip, ice -E0s with E0s = L_f. The latent heats this</span></div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;            <span class="comment">// implies follow Kirchhoff&#39;s law, e.g. L_v(T) = L_v + (c_pv - c_l)(T - T_trip).</span></div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;            Real Cv   = <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> - <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>;</div>
@@ -52815,7 +52815,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Warn when the terrain next to an inflow or outflow face of level lev is steep and no steep-terrain option is on (erf.smag2d_slope_limiter and erf.smag2d_kh_cap per level). ComputeDt calls it whenever a level has a new set of grids (at initialisation, on the first step after a restart, and after a regrid), so a fine level created later that reaches a face is checked too; each level and face is reported at most once. Only on a terrain-fitted mesh without real-data lateral boundaries; the band is the cells whose stencils read the face's ghost cells (ComputeGhostCells).</p>
+<p>Warn when the terrain next to an inflow or outflow face of level lev is steep and no steep-terrain option is on (erf.smag2d_slope_limiter and erf.smag2d_kh_cap per level). ComputeDt calls it whenever a level has a new set of grids (at initialization, on the first step after a restart, and after a regrid), so a fine level created later that reaches a face is checked too; each level and face is reported at most once. Only on a terrain-fitted mesh without real-data lateral boundaries; the band is the cells whose stencils read the face's ghost cells (ComputeGhostCells).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">lev</td><td>level </td></tr>
@@ -56321,7 +56321,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> cons_comp = <a class="code" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">erf_plotfile::plot3d_conserved_component_index</a>(<a class="code" href="classERF.html#afd8cd5a477754776135befa668fdd0c9">cons_names</a>[i]);</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(cons_comp &gt;= 0 &amp;&amp; cons_comp &lt; <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev_for_sub][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nComp());</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="comment">// valid cells only: the subvolume lies inside the domain, so every output cell is a</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="comment">// valid source cell, and a ghost cell of a neighbouring box may be out of date</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="comment">// valid source cell, and a ghost cell of a neighboring box may be out of date</span></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            mf.ParallelCopy(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev_for_sub][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],cons_comp,mf_comp,1,0,0);</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            mf_comp++;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        }</div>

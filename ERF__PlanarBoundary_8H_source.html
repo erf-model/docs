@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('ERF__PlanarBoundary_8H_source.html',''
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * The buffer is kept for each target layout, index type, and number of components, so only</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * the first fill of each kind allocates.  For a face-centered MultiFab (the MOST velocity averages)</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * neighbouring surface boxes share a face in the buffer.  Both should hold the same value</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * neighboring surface boxes share a face in the buffer.  Both should hold the same value</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * there, but nothing enforces it, so fill() gives the shared faces a single value before</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * it copies: the lowest global box index wins, which does not depend on the decomposition</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * or the rank count, and every copy of the field then agrees.</span></div>
@@ -162,7 +162,7 @@ $(document).ready(function(){initNavTree('ERF__PlanarBoundary_8H_source.html',''
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">     * of the surface copy that holds the column it faces.</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">     *</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">     * Where a box seam meets a non-periodic edge, the ghost cells beyond the edge next to</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">     * the seam lie in the grown boxes of both neighbours, and no FillBoundary reconciles</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">     * the seam lie in the grown boxes of both neighbors, and no FillBoundary reconciles</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">     * them: each box fills its copy from its own valid region.  A cell beyond the edge is</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">     * here assigned to the surface copy whose valid region holds the cell&#39;s projection into</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">     * the domain (its index clamped into the domain in each non-periodic direction), and that</span></div>

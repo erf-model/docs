@@ -225,7 +225,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Add the source at time <code>time</code> to cc_src of <code>level</code> (per unit physical volume, as the other cell-centred sources). cons is the current conserved state and z_phys_nd the nodal heights of the level. update_geometry must have been called for the current grids. </p>
+<p>Add the source at time <code>time</code> to cc_src of <code>level</code> (per unit physical volume, as the other cell-centered sources). cons is the current conserved state and z_phys_nd the nodal heights of the level. update_geometry must have been called for the current grids. </p>
 <div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    {</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(level &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classMassSource.html#a2e55f7eb7dece994be1f1bbe909265fd">m_lev</a>.size()) &amp;&amp; <a class="code" href="classMassSource.html#a345f5292eff04f16c0341ac8d8c4adc6">m_volume</a> &gt; 0);</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keyword">const</span> LevelGeometry&amp; lg = <a class="code" href="classMassSource.html#a2e55f7eb7dece994be1f1bbe909265fd">m_lev</a>[level];</div>
@@ -325,7 +325,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The source the inputs ask for, or nullptr when no erf.mass_source input is given. Stops on an unknown erf.mass_source key (a misspelt one would otherwise be ignored, and a misspelt rate would turn the source off) and on inputs without a rate. </p>
+<p>The source the inputs ask for, or nullptr when no erf.mass_source input is given. Stops on an unknown erf.mass_source key (a misspelled one would otherwise be ignored, and a misspelled rate would turn the source off) and on inputs without a rate. </p>
 <div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">const</span> std::string prefix = <span class="stringliteral">&quot;erf.mass_source.&quot;</span>;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keyword">const</span> std::set&lt;std::string&gt; known = {<span class="stringliteral">&quot;rate&quot;</span>, <span class="stringliteral">&quot;rate_file&quot;</span>, <span class="stringliteral">&quot;center&quot;</span>, <span class="stringliteral">&quot;radius&quot;</span>,</div>
@@ -644,7 +644,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Bring the ground heights and the composite source volume up to date with the grids: a no-op unless the BoxArray or DistributionMapping of a level, or the finest level, has changed since the last call. Aborts if no level has a cell centre in the region. z_phys_nd and detJ must be allocated on every level. fill_ground(lev, slab) must fill a one-node-thick nodal slab at the bottom of the domain, on the footprint of every box of the level, with the ground heights (<a class="el" href="classERF.html#aaffcf49bb655c34ca3b689666f6e51f2">ERF::fill_surface_nodes</a>, which interpolates them from coarser levels where the level does not reach the ground). </p>
+<p>Bring the ground heights and the composite source volume up to date with the grids: a no-op unless the BoxArray or DistributionMapping of a level, or the finest level, has changed since the last call. Aborts if no level has a cell center in the region. z_phys_nd and detJ must be allocated on every level. fill_ground(lev, slab) must fill a one-node-thick nodal slab at the bottom of the domain, on the footprint of every box of the level, with the ground heights (<a class="el" href="classERF.html#aaffcf49bb655c34ca3b689666f6e51f2">ERF::fill_surface_nodes</a>, which interpolates them from coarser levels where the level does not reach the ground). </p>
 <div class="fragment"><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    {</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keywordtype">bool</span> same = (finest_level + 1 == <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classMassSource.html#a2e55f7eb7dece994be1f1bbe909265fd">m_lev</a>.size()));</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; same &amp;&amp; lev &lt;= finest_level; ++lev) {</div>

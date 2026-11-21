@@ -856,7 +856,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> has_wall_face = <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(wall_face);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// ... and wall_pin (the TKE solve with erf.if_wall_tke_time_factor = 1) holds the wall value</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// of the TKE where it is &gt;= 0: that row is a Dirichlet row, like the pinned first cell of flat</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// ground, and the row above sees it as a Dirichlet neighbour</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// ground, and the row above sees it as a Dirichlet neighbor</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> has_wall_pin = <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(wall_pin);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;ImplicitDiffForState_N()&quot;</span>,ImplicitDiffForState_N);</div>
@@ -908,7 +908,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// k-eqn RANS with a Dirichlet wall value of k: the first cell is held at</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// the value set by the surface layer, so its row reduces to x(klo) = phi(klo)</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// and the row above sees it as a Dirichlet neighbour.</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// and the row above sees it as a Dirichlet neighbor.</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// NOTE: init_bcs requires zlo.type = surface_layer whenever dirichlet_k is set,</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">//       so this matches the l_dirichlet_k pin in erf_slow_rhs_post, which also</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">//       requires a surface layer. Do not relax one without the other.</span></div>

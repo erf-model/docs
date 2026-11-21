@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('ERF__WakeLines_8H_source.html',''); in
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * Wake sampling lines behind one rotor: at each downstream distance x/D along the horizontal</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * projection of the rotor axis through the hub (a wake follows the wind at hub height, not a</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * tilted shaft), one lateral line (horizontal, normal to that direction) and one vertical</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * line, each of num_points points spanning +-half_width diameters about the centre. The</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * line, each of num_points points spanning +-half_width diameters about the center. The</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * sampled velocities are written as they are and accumulated into a running time average.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * Point order: for each x/D, the lateral line then the vertical line, each from -half_width</span></div>
@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('ERF__WakeLines_8H_source.html',''); in
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;               amrex::Real half_width, <span class="keywordtype">int</span> <a class="code" href="classerf__actuator_1_1WakeLines.html#a90e796854942efd3265b5595d5967e64">num_points</a>, amrex::Real z_min);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     * The same with one ground height per downstream distance (z_min[n] under the centre of</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     * The same with one ground height per downstream distance (z_min[n] under the center of</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     * the lines at lines_xD[n], from terrain_heights), so that on terrain rising or falling</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     * downstream each vertical line stops at its own ground. z_min must have lines_xD&#39;s size.</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">     */</span></div>

@@ -727,7 +727,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        constexpr <span class="keywordtype">double</span> cl = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(<a class="code" href="ERF__Constants_8H.html#acecae1da25fb8c8d32d1f175e18df41f">Cp_l</a>);</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        constexpr <span class="keywordtype">double</span> <a class="code" href="namespacemodule__model__constants.html#a9373ccf0bebbd8f1d7eb57fdd47715a1">cpv</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(<a class="code" href="ERF__Constants_8H.html#aea1cea8d633adb36e2ea5018925b68ee">Cp_v</a>);</div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> ccn0 = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(<a class="code" href="classWDM6.html#a836dcc1e69b22ce8f6e983da0bd087ed">m_ccn0</a>);</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <span class="comment">// Honour wdm6.hail_opt on this leg too. m_hail_opt is resolved in Init</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <span class="comment">// Honor wdm6.hail_opt on this leg too. m_hail_opt is resolved in Init</span></div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        <span class="comment">// from the same input the native coefficients branch on, so the two</span></div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        <span class="comment">// legs cannot disagree about the regime. The bool maps back to {0,1}</span></div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        <span class="comment">// losslessly with respect to the Fortran, whose only test is</span></div>
@@ -2225,7 +2225,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l02216"></a><span class="lineno"> 2216</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l02217"></a><span class="lineno"> 2217</span>&#160;                    <span class="comment">// Same expression as G3; share the one exact port. The</span></div>
 <div class="line"><a name="l02218"></a><span class="lineno"> 2218</span>&#160;                    <span class="comment">// previous wdm6_lamdac() here differed from the Fortran on</span></div>
-<div class="line"><a name="l02219"></a><span class="lineno"> 2219</span>&#160;                    <span class="comment">// three counts: it cancelled den out of the argument, it</span></div>
+<div class="line"><a name="l02219"></a><span class="lineno"> 2219</span>&#160;                    <span class="comment">// three counts: it canceled den out of the argument, it</span></div>
 <div class="line"><a name="l02220"></a><span class="lineno"> 2220</span>&#160;                    <span class="comment">// used std::pow with a true 1/3 rather than exp/log with the</span></div>
 <div class="line"><a name="l02221"></a><span class="lineno"> 2221</span>&#160;                    <span class="comment">// unsuffixed .33333333, and it carried a qc/nc guard of its</span></div>
 <div class="line"><a name="l02222"></a><span class="lineno"> 2222</span>&#160;                    <span class="comment">// own that fired inside this block&#39;s own gate.</span></div>
@@ -2519,7 +2519,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l02510"></a><span class="lineno"> 2510</span>&#160;                <span class="comment">// qc == 0 and qs == 0 case cannot be reached by any consumer --</span></div>
 <div class="line"><a name="l02511"></a><span class="lineno"> 2511</span>&#160;                <span class="comment">// every use is gated on qs &gt; qcrmin, qg &gt; qcrmin or qc &gt; qmin --</span></div>
 <div class="line"><a name="l02512"></a><span class="lineno"> 2512</span>&#160;                <span class="comment">// and 0.0 is returned there only for definiteness. The divisor</span></div>
-<div class="line"><a name="l02513"></a><span class="lineno"> 2513</span>&#160;                <span class="comment">// is never zero either: an optimised build may divide before it</span></div>
+<div class="line"><a name="l02513"></a><span class="lineno"> 2513</span>&#160;                <span class="comment">// is never zero either: an optimized build may divide before it</span></div>
 <div class="line"><a name="l02514"></a><span class="lineno"> 2514</span>&#160;                <span class="comment">// tests qc, and with qs = qc = 0 the 0/0 trips</span></div>
 <div class="line"><a name="l02515"></a><span class="lineno"> 2515</span>&#160;                <span class="comment">// amrex.fpe_trap_invalid although the result is not used. For</span></div>
 <div class="line"><a name="l02516"></a><span class="lineno"> 2516</span>&#160;                <span class="comment">// qc &gt;= the smallest normal number the divisor is qc itself.</span></div>
@@ -3426,7 +3426,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l03417"></a><span class="lineno"> 3417</span>&#160;        <span class="comment">// leg advanced it, and Copy_Micro_to_State then formed</span></div>
 <div class="line"><a name="l03418"></a><span class="lineno"> 3418</span>&#160;        <span class="comment">// RhoTheta = rho * theta from the stale field, dropping microphysical</span></div>
 <div class="line"><a name="l03419"></a><span class="lineno"> 3419</span>&#160;        <span class="comment">// latent heating from the thermodynamic state. Confirmed by comparing</span></div>
-<div class="line"><a name="l03420"></a><span class="lineno"> 3420</span>&#160;        <span class="comment">// theta before and after the bridge call: native PRE theta equalled</span></div>
+<div class="line"><a name="l03420"></a><span class="lineno"> 3420</span>&#160;        <span class="comment">// theta before and after the bridge call: native PRE theta equaled</span></div>
 <div class="line"><a name="l03421"></a><span class="lineno"> 3421</span>&#160;        <span class="comment">// POST theta at 100/100 levels, and the resulting</span></div>
 <div class="line"><a name="l03422"></a><span class="lineno"> 3422</span>&#160;        <span class="comment">// divergence 6.625510053 at k=90 matched the step-1 theta error exactly.</span></div>
 <div class="line"><a name="l03423"></a><span class="lineno"> 3423</span>&#160;        {</div>
@@ -4170,7 +4170,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment">// Routed through wdm6_literal like every other constant: it is constexpr but</span></div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="comment">// not restricted to constant expressions, so it applies the same rounding to</span></div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="comment">// a runtime value. Do not re-expand the toggle inline here; the contract is</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="comment">// that ERF_WDM6_F32_LITERALS is honoured in exactly one place.</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="comment">// that ERF_WDM6_F32_LITERALS is honored in exactly one place.</span></div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <a class="code" href="classWDM6.html#a4eec037db6dfb9b30749f6c13f869343">m_pi_wdm6</a> = <a class="code" href="ERF__WDM6_8H.html#a8412e642f4bdba3c5ef09bd0d3fbbd48">wdm6_literal</a>(Real(4.0) * std::atan(Real(1.0)));</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <a class="code" href="classWDM6.html#ac62e13d2ced7105d7001941d3babd486">m_xlv1</a>    = cl - cpv_loc;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
@@ -4329,7 +4329,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <a class="code" href="classWDM6.html#acbfc5a601e4961cdb2c6246ca46b3a83">m_pacrg</a>   = <a class="code" href="classWDM6.html#a4eec037db6dfb9b30749f6c13f869343">m_pi_wdm6</a> * <a class="code" href="classWDM6.html#aa0ac00ddba83c3e93eac81436ffdb90f">m_n0g</a> * <a class="code" href="classWDM6.html#a67fcd3fa7fcbb3c6c4cbe2785e555532">m_avtg</a> * <a class="code" href="classWDM6.html#a75058188276dfc9c127c381891b2d846">m_g3pbg</a> * Real(0.25);</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <a class="code" href="classWDM6.html#aa52754c35e9b02ff3138dffb20059d52">m_g5pbgo2</a> = <a class="code" href="namespacemp__wdm6.html#ad8a8d338fb37de511b7cd8f30553e95a">rgmma</a>(<a class="code" href="classWDM6.html#ade7f32a6c4cb554f1ce546aa9f6daa78">m_bvtg2</a>);</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <a class="code" href="classWDM6.html#a46ea4af21b42e009641b0f94adb4ba02">m_pvtg</a>    = <a class="code" href="classWDM6.html#a67fcd3fa7fcbb3c6c4cbe2785e555532">m_avtg</a> * <a class="code" href="classWDM6.html#ae41c8c2f2196e9565e7cf7421c547486">m_g4pbg</a> / Real(6.0);</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="comment">// Fortran :3264-3265, the graupel analogues of precs1/precs2 with the same</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="comment">// Fortran :3264-3265, the graupel analogs of precs1/precs2 with the same</span></div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="comment">// unsuffixed .78 and .31. Routed on the same evidence class as precs1 and</span></div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="comment">// precs2 rather than on separate measurements: pgdep reads bitwise in the</span></div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="comment">// current column only because its branch is inactive there.</span></div>

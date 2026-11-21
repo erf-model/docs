@@ -99,7 +99,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A localized source of gas inside the domain (erf.mass_source.*), e.g. the release from a ruptured pipeline.</p>
-<p>The gas is injected at a total rate mdot(t) [kg/s], spread uniformly over the cells whose centres lie within erf.mass_source.radius of (center_x, center_y) horizontally and less than erf.mass_source.height above the local ground. The same source is added to</p><ul>
+<p>The gas is injected at a total rate mdot(t) [kg/s], spread uniformly over the cells whose centers lie within erf.mass_source.radius of (center_x, center_y) horizontally and less than erf.mass_source.height above the local ground. The same source is added to</p><ul>
 <li>rho, so the mass enters the continuity equation (FullyCompressible only: the anelastic projection would remove it),</li>
 <li>rho*theta, at erf.mass_source.theta if given and otherwise at the cell's own theta, so the injection by itself does not change the potential temperature, and</li>
 <li>the first passive scalar (rho*s, plotted as rhoadv_0) when erf.mass_source.tracer is true, so that s is the mass fraction of the released gas. No momentum is added: the gas enters at rest. The gas has the properties of dry air (in a moist run it carries no water, so it dilutes the mixing ratios of the cells it enters). The cell volumes include the terrain metric and the map factors. In a periodic direction the region wraps around the domain. The rate table is in the time since the start of the run. Unknown erf.mass_source keys stop the run.</li>
@@ -206,7 +206,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Is the centre of cell (i,j,k) inside the source region? z is the nodal height z_phys_nd and zg the nodal height of the ground under the column (2D, at k = kg). period holds the domain length in x and y where the domain is periodic and 0 where it is not: there the distance is to the nearest periodic image of the centre, so the region wraps around </p>
+<p>Is the center of cell (i,j,k) inside the source region? z is the nodal height z_phys_nd and zg the nodal height of the ground under the column (2D, at k = kg). period holds the domain length in x and y where the domain is periodic and 0 where it is not: there the distance is to the nearest periodic image of the center, so the region wraps around </p>
 <div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    amrex::Real ddx = <a class="code" href="ERF__InitCustomPertVels__ABL_8H.html#ada6bdc46e2435400f2c431495eaa6ffb">problo</a>[0] + (i + amrex::Real(0.5)) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[0] - x0;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    amrex::Real ddy = <a class="code" href="ERF__InitCustomPertVels__ABL_8H.html#ada6bdc46e2435400f2c431495eaa6ffb">problo</a>[1] + (j + amrex::Real(0.5)) * <a class="code" href="ERF__ActuatorSpreading_8cpp.html#acc64e1753972a11f986bfc7ac9bd9103">dx</a>[1] - y0;</div>

@@ -138,7 +138,7 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><h3>template&lt;class T&gt;<br />
 struct erf_actuator::StagedBuffer&lt; T &gt;</h3>
 
-<p>An array filled on the host and read by the kernels: the host side is a std::vector (<a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#ad5854e72f1ca46482ea3faf302710622">clear()</a> keeps its capacity), copied through pinned memory to the device with one asynchronous copy. The pinned and device sides only grow. A call that uploads must synchronise the stream before it returns, so that the next call may refill the host side. </p>
+<p>An array filled on the host and read by the kernels: the host side is a std::vector (<a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#ad5854e72f1ca46482ea3faf302710622">clear()</a> keeps its capacity), copied through pinned memory to the device with one asynchronous copy. The pinned and device sides only grow. A call that uploads must synchronize the stream before it returns, so that the next call may refill the host side. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab6e9724c5907723a30a359bfd14ae232"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab6e9724c5907723a30a359bfd14ae232">&#9670;&nbsp;</a></span>data()</h2>
@@ -211,7 +211,7 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copy the first n device values to pinned, asynchronously: they are there after the next stream synchronisation. </p>
+<p>Copy the first n device values to pinned, asynchronously: they are there after the next stream synchronization. </p>
 <div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="namespaceerf__actuator.html#a8f3c84a3a5b6cfc5af3329186c22dce7">grow_buffer</a>(<a class="code" href="structerf__actuator_1_1StagedBuffer.html#afa9a29cb81e14760e3af49626208a8f3">pinned</a>, n);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (n == 0) { <span class="keywordflow">return</span>; }</div>

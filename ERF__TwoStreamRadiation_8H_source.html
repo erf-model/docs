@@ -304,7 +304,7 @@ $(document).ready(function(){initNavTree('ERF__TwoStreamRadiation_8H_source.html
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">     * of the current q_s); with erf.radiation.seb_soil_type, the bare-soil resistance and</span></div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">     * the relative humidity of its pore air at the skin temperature; and</span></div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">     * with erf.radiation.seb_vegetation_type as well, the vegetated fraction and the canopy</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">     * resistance without its vapour-deficit factor (from the net shortwave the balance</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">     * resistance without its vapor-deficit factor (from the net shortwave the balance</span></div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">     * holds divided by (1 - surface albedo) -- the sweep&#39;s with seb_use_radiation_fluxes,</span></div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">     * seb_sw_flux_default otherwise -- and the skin temperature). Absent pieces are a</span></div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">     * fraction of 0 and resistances of 1e6 s/m. nullptr</span></div>
@@ -462,7 +462,7 @@ $(document).ready(function(){initNavTree('ERF__TwoStreamRadiation_8H_source.html
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment">     * Call after define_level(); a later define_level() of the level drops it.</span></div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment">     *</span></div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment">     * @param lev      level, which must have been defined</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="comment">     * @param blanking the level&#39;s cell-centred blanking (ERF::terrain_blanking), on the</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="comment">     * @param blanking the level&#39;s cell-centered blanking (ERF::terrain_blanking), on the</span></div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment">     *                 state&#39;s grids: 0 in the air, 1 inside a building</span></div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment">     * @param domain   the level&#39;s domain Box; its bottom cell is the ground&#39;s</span></div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment">     * @param take_ground_walls also take, at the update after the dycore, what the walls</span></div>
@@ -615,7 +615,7 @@ $(document).ready(function(){initNavTree('ERF__TwoStreamRadiation_8H_source.html
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <span class="comment">// False until a column sweep has filled this level&#39;s entry. The post-dycore call</span></div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        <span class="comment">// reports the cached values rather than sweeping again, and a level whose</span></div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        <span class="comment">// pre-dycore sweep was skipped -- the interp-from-coarse-pending path, which</span></div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        <span class="comment">// returns before the sweep -- would otherwise report the zero-initialised struct</span></div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        <span class="comment">// returns before the sweep -- would otherwise report the zero-initialized struct</span></div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        <span class="comment">// as though the fluxes really were zero.</span></div>
 <div class="line"><a name="l00532"></a><span class="lineno"><a class="line" href="structTwoStreamRadiation_1_1FluxDiag.html#a71ff2da1d69bff7d6b303ad3f09ac3d9">  532</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structTwoStreamRadiation_1_1FluxDiag.html#a71ff2da1d69bff7d6b303ad3f09ac3d9">valid</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00533"></a><span class="lineno"><a class="line" href="structTwoStreamRadiation_1_1FluxDiag.html#a3e87dd7432a80b42a1297a6b555bea9f">  533</a></span>&#160;        amrex::Real <a class="code" href="structTwoStreamRadiation_1_1FluxDiag.html#a3e87dd7432a80b42a1297a6b555bea9f">SW_surface</a> = 0.0;</div>

@@ -286,7 +286,7 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">// needs this to know whether the SWrad/LWrad lanes it would hand an ocean</span></div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">// model carry real values or just zeros: passing zeros is worse than passing</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">// nothing, because the ocean model then suppresses its own radiative forcing</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// in favour of them.</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// in favor of them.</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="comment">//</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">// Note this is a configuration predicate, not a data-validity one. rad_fluxes</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="comment">// is allocated and zero-filled as soon as solverChoice.rad_type != None, so</span></div>
@@ -329,12 +329,12 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classERF.html#a400686d4e67214c7ddf4e7bacf63b33b">GetFillableAtmosToOceanLanes</a> (<span class="keywordtype">bool</span> state_contract,</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                       amrex::Vector&lt;int&gt;&amp; can_fill) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="comment">// Every lane is remapped from ERF&#39;s level-0 cell centres to REMORA&#39;s rho points with</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="comment">// Every lane is remapped from ERF&#39;s level-0 cell centers to REMORA&#39;s rho points with</span></div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="comment">// the one set of weights weight_mf/index_mf the driver builds for that pair of grids.</span></div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="comment">// The vectors (Uwind/Vwind and tau_x/tau_y) are sent as their eastward and northward</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="comment">// components, turned from the grid axes with the grid orientation from lat_m/lon_m,</span></div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="comment">// so that the ocean can turn them to its own axes; the stress is averaged from the</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="comment">// faces to the cell centres first.</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="comment">// faces to the cell centers first.</span></div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="comment">// dst_mskr is REMORA&#39;s wet/dry mask (1 = wet, 0 = land) on the rho layout, applied</span></div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="comment">// to the scalar lanes (Patm, Tair, cloud) and to the flux lanes, tau_x/tau_y</span></div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="comment">// included, but deliberately NOT to Uwind/Vwind, so the wind lanes carry live</span></div>
@@ -1118,7 +1118,7 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classERF.html#af39b50045c5b44182d2b519a9df372c5">check_base_state_hse</a> (<span class="keywordtype">int</span> lev, <span class="keyword">const</span> std::string&amp; when, <span class="keywordtype">bool</span> abort_if_fail = <span class="keyword">true</span>);</div>
 <div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;<span class="comment">     * The input sounding sampled at the cell centres of level lev. Level 0 is</span></div>
+<div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;<span class="comment">     * The input sounding sampled at the cell centers of level lev. Level 0 is</span></div>
 <div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;<span class="comment">     * input_sounding_data itself; a finer level gets its own copy, resampled at</span></div>
 <div class="line"><a name="l01035"></a><span class="lineno"> 1035</span>&#160;<span class="comment">     * geom[lev] / zlevels_stag[lev], so that its profile index k is its own cell k</span></div>
 <div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160;<span class="comment">     * and no fine cell blends in the surface line of the sounding.</span></div>
@@ -1126,7 +1126,7 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160;    <span class="keyword">const</span> <a class="code" href="structInputSoundingData.html">InputSoundingData</a>&amp; <a class="code" href="classERF.html#aac417461ecc1c8f1eaca5d3bc6e43fa7">sounding_at_level</a> (<span class="keywordtype">int</span> lev);</div>
 <div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;<span class="comment">     * The large-scale forcing profiles interpolated to the cell centres of level lev.</span></div>
+<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;<span class="comment">     * The large-scale forcing profiles interpolated to the cell centers of level lev.</span></div>
 <div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;<span class="comment">     * Level 0 is lsf itself; a finer level gets its own copy, interpolated at</span></div>
 <div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;<span class="comment">     * geom[lev] / zlevels_stag[lev] against sounding_at_level(lev), so that its profile</span></div>
 <div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;<span class="comment">     * index k is its own cell k.</span></div>
@@ -1716,10 +1716,10 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l01628"></a><span class="lineno"><a class="line" href="classERF.html#ad6a92272a5ad07f176892de07353f268"> 1628</a></span>&#160;    amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt; <a class="code" href="classERF.html#ab54f3fc49bad059469da4e34c82296a6">sinPhi_m</a>, <a class="code" href="classERF.html#ad6a92272a5ad07f176892de07353f268">cosPhi_m</a>; <span class="comment">// Coriolis factors on the grid</span></div>
 <div class="line"><a name="l01629"></a><span class="lineno"> 1629</span>&#160; </div>
 <div class="line"><a name="l01630"></a><span class="lineno"> 1630</span>&#160;    <span class="comment">// Struct for working with the sounding data we take as an input. Its profiles are</span></div>
-<div class="line"><a name="l01631"></a><span class="lineno"> 1631</span>&#160;    <span class="comment">// sampled at the level-0 cell centres; use sounding_at_level for any other level.</span></div>
+<div class="line"><a name="l01631"></a><span class="lineno"> 1631</span>&#160;    <span class="comment">// sampled at the level-0 cell centers; use sounding_at_level for any other level.</span></div>
 <div class="line"><a name="l01632"></a><span class="lineno"><a class="line" href="classERF.html#a83572d8dfad51158945b4a5ab06b2f72"> 1632</a></span>&#160;    <a class="code" href="structInputSoundingData.html">InputSoundingData</a> <a class="code" href="classERF.html#a83572d8dfad51158945b4a5ab06b2f72">input_sounding_data</a>;</div>
 <div class="line"><a name="l01633"></a><span class="lineno"> 1633</span>&#160; </div>
-<div class="line"><a name="l01634"></a><span class="lineno"> 1634</span>&#160;    <span class="comment">// The sounding sampled at the cell centres of each level &gt; 0, built on first use</span></div>
+<div class="line"><a name="l01634"></a><span class="lineno"> 1634</span>&#160;    <span class="comment">// The sounding sampled at the cell centers of each level &gt; 0, built on first use</span></div>
 <div class="line"><a name="l01635"></a><span class="lineno"> 1635</span>&#160;    <span class="comment">// from input_sounding_data (index 0 is unused)</span></div>
 <div class="line"><a name="l01636"></a><span class="lineno"><a class="line" href="classERF.html#a6f0f5d1e7d99a8cc12d82ba45cd1e950"> 1636</a></span>&#160;    amrex::Vector&lt;std::unique_ptr&lt;InputSoundingData&gt;&gt; <a class="code" href="classERF.html#a6f0f5d1e7d99a8cc12d82ba45cd1e950">input_sounding_data_fine</a>;</div>
 <div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160; </div>
@@ -2097,8 +2097,8 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l02009"></a><span class="lineno"> 2009</span>&#160;    <span class="comment">// written by the immersed scalar forcing, read as the TKE buoyancy flux on the wall face</span></div>
 <div class="line"><a name="l02010"></a><span class="lineno"><a class="line" href="classERF.html#ae16f4cf1f9258f452039407a9bd6eefd"> 2010</a></span>&#160;    amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt; <a class="code" href="classERF.html#ae16f4cf1f9258f452039407a9bd6eefd">ib_wall_hfx</a>;</div>
 <div class="line"><a name="l02011"></a><span class="lineno"> 2011</span>&#160;    <span class="comment">// kinematic wall moisture flux -u* q* of the fraction-stress law in the wall cell (zero elsewhere;</span></div>
-<div class="line"><a name="l02012"></a><span class="lineno"> 2012</span>&#160;    <span class="comment">// allocated with a moisture model that carries water vapour), written by the immersed scalar</span></div>
-<div class="line"><a name="l02013"></a><span class="lineno"> 2013</span>&#160;    <span class="comment">// forcing, read as the water vapour flux on the wall face (qfx1_z: the moist TKE buoyancy, the output)</span></div>
+<div class="line"><a name="l02012"></a><span class="lineno"> 2012</span>&#160;    <span class="comment">// allocated with a moisture model that carries water vapor), written by the immersed scalar</span></div>
+<div class="line"><a name="l02013"></a><span class="lineno"> 2013</span>&#160;    <span class="comment">// forcing, read as the water vapor flux on the wall face (qfx1_z: the moist TKE buoyancy, the output)</span></div>
 <div class="line"><a name="l02014"></a><span class="lineno"><a class="line" href="classERF.html#ae45a2aa24189cfe0afa51bde585b8995"> 2014</a></span>&#160;    amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt; <a class="code" href="classERF.html#ae45a2aa24189cfe0afa51bde585b8995">ib_wall_qfx</a>;</div>
 <div class="line"><a name="l02015"></a><span class="lineno"> 2015</span>&#160;    <span class="comment">// wall value of the k-eqn TKE in the wall cell (erf.if_wall_tke; -1 elsewhere), written by the</span></div>
 <div class="line"><a name="l02016"></a><span class="lineno"> 2016</span>&#160;    <span class="comment">// immersed scalar forcing; with erf.if_wall_tke_time_factor = 1 the cell is held at it after</span></div>
@@ -2535,7 +2535,7 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l02447"></a><span class="lineno"><a class="line" href="classERF.html#a0a37911066e33d1257797ca2b45452bd"> 2447</a></span>&#160;    amrex::Vector&lt;std::unique_ptr&lt;amrex::iMultiFab&gt;&gt; <a class="code" href="classERF.html#a0a37911066e33d1257797ca2b45452bd">column_kextent</a>;</div>
 <div class="line"><a name="l02448"></a><span class="lineno"> 2448</span>&#160; </div>
 <div class="line"><a name="l02449"></a><span class="lineno"> 2449</span>&#160;    <span class="comment">// Masks of the coarse/fine ghost cells (1 there, 0 elsewhere) used by</span></div>
-<div class="line"><a name="l02450"></a><span class="lineno"> 2450</span>&#160;    <span class="comment">// FillCoarseFineGhostsForImplicit: entry 0 is cell-centred with two ghost cells, entries</span></div>
+<div class="line"><a name="l02450"></a><span class="lineno"> 2450</span>&#160;    <span class="comment">// FillCoarseFineGhostsForImplicit: entry 0 is cell-centered with two ghost cells, entries</span></div>
 <div class="line"><a name="l02451"></a><span class="lineno"> 2451</span>&#160;    <span class="comment">// 1-3 are on the x-, y- and z-faces with one ghost cell.  Built on first use</span></div>
 <div class="line"><a name="l02452"></a><span class="lineno"> 2452</span>&#160;    <span class="comment">// and rebuilt whenever the grids they were built on change.</span></div>
 <div class="line"><a name="l02453"></a><span class="lineno"><a class="line" href="classERF.html#af4bb0ab42ff6a9603e8b8885223024a9"> 2453</a></span>&#160;    amrex::Vector&lt;amrex::Array&lt;std::unique_ptr&lt;amrex::iMultiFab&gt;,AMREX_SPACEDIM+1&gt;&gt; <a class="code" href="classERF.html#af4bb0ab42ff6a9603e8b8885223024a9">cf_implicit_mask</a>;</div>

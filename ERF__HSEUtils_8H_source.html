@@ -759,11 +759,11 @@ $(document).ready(function(){initNavTree('ERF__HSEUtils_8H_source.html',''); ini
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;<span class="comment"> * Column integration shared by the two versions of init_isentropic_hse_no_terrain.</span></div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;<span class="comment"> * @param[in] z_cc  z_cc(k) is the height of the centre of cell k above the surface.</span></div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;<span class="comment"> * @param[in] z_cc  z_cc(k) is the height of the center of cell k above the surface.</span></div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;<span class="comment"> * @param[in] dz_cc dz_cc(k) is the distance used for the hydrostatic step to cell k:</span></div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;<span class="comment"> *                  for k = 0, twice the absolute height of the centre of cell 0 (half of</span></div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;<span class="comment"> *                  for k = 0, twice the absolute height of the center of cell 0 (half of</span></div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;<span class="comment"> *                  it is taken), so that the column starts from p_0 at z = 0, as in the</span></div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;<span class="comment"> *                  other HSE initializers; for k &gt; 0, the distance between the centres</span></div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;<span class="comment"> *                  other HSE initializers; for k &gt; 0, the distance between the centers</span></div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;<span class="comment"> *                  of cells k-1 and k.</span></div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;<span class="comment"> * The other arguments are those of init_isentropic_hse_no_terrain.</span></div>
@@ -782,7 +782,7 @@ $(document).ready(function(){initNavTree('ERF__HSEUtils_8H_source.html',''); ini
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;{</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="comment">// theta_0, theta_tr and T_tr are used only when T_from_theta is set. Their</span></div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="comment">// defaults are still physical temperatures: compute_theta is inlined into</span></div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="comment">// the Newton loops and optimised builds evaluate its arm speculatively, so</span></div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="comment">// the Newton loops and optimized builds evaluate its arm speculatively, so</span></div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <span class="comment">// zeros would raise an FPE (g/(Cp_d*0), then 0*exp(inf)) on a discarded value.</span></div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    Real T_b, T_dp;</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>

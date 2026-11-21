@@ -184,7 +184,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aff304f38fe2452278bfa873d83128e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Wake sampling lines behind one rotor: at each downstream distance x/D along the horizontal projection of the rotor axis through the hub (a wake follows the wind at hub height, not a tilted shaft), one lateral line (horizontal, normal to that direction) and one vertical line, each of num_points points spanning +-half_width diameters about the centre. The sampled velocities are written as they are and accumulated into a running time average.</p>
+<div class="textblock"><p>Wake sampling lines behind one rotor: at each downstream distance x/D along the horizontal projection of the rotor axis through the hub (a wake follows the wind at hub height, not a tilted shaft), one lateral line (horizontal, normal to that direction) and one vertical line, each of num_points points spanning +-half_width diameters about the center. The sampled velocities are written as they are and accumulated into a running time average.</p>
 <p>Point order: for each x/D, the lateral line then the vertical line, each from -half_width to +half_width; the vertical line is clipped at z_min (the ground), so its lowest point may sit above -half_width. Every point's offset s (in diameters) is recorded in the files. The lateral line runs along (-axis_y, axis_x, 0), from the right of the downstream direction to its left; the vertical line runs up. Positions in m, <a class="el" href="classERF.html">ERF</a> domain coordinates; velocities in m/s. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3a703e89ea1a155fcc1c09cd78786889"></a>
@@ -337,7 +337,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same with one ground height per downstream distance (z_min[n] under the centre of the lines at lines_xD[n], from terrain_heights), so that on terrain rising or falling downstream each vertical line stops at its own ground. z_min must have lines_xD's size. </p>
+<p>The same with one ground height per downstream distance (z_min[n] under the center of the lines at lines_xD[n], from terrain_heights), so that on terrain rising or falling downstream each vertical line stops at its own ground. z_min must have lines_xD's size. </p>
 
 </div>
 </div>

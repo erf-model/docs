@@ -772,7 +772,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="comment">// at a UTM easting near 5e5 the float32 ulp is 0.03125 m, so a 0.4 m</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="comment">// raster stores intervals that deviate from the nominal spacing by up</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="comment">// to 0.025 m: more than 5% of the spacing, yet far below the ulp</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="comment">// allowance.  Integer-metre spacings are unaffected either way, since</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="comment">// allowance.  Integer-meter spacings are unaffected either way, since</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment">// integers are exactly representable in float32 at UTM magnitudes.</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keyword">const</span> amrex::Real local_spacing = coordinate - coordinates[index-1];</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keyword">const</span> amrex::Real spacing_tolerance = std::max(</div>

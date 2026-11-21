@@ -259,7 +259,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// which has not been rebalanced, as given, and the base state would then depend on where</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// the boxes are split.  The boxes are therefore integrated in bands of equal lowest index,</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// bottom up.  The state each column reaches in a cell (pressure, theta, qv, qt and the</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// cell-centre height) is kept in &quot;below&quot;, whose z ghost cells are filled from the bands</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// cell-center height) is kept in &quot;below&quot;, whose z ghost cells are filled from the bands</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// already integrated before the next band starts.  A column whose cell below the box is</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// not covered by this level (the bottom of the domain, or of a refined patch) starts from</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// its own lowest cell.  With a single band nothing is kept and nothing is filled.</span></div>

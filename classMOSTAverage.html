@@ -4415,7 +4415,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(!(user_zref &amp;&amp; read_k),</div>
 <div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;                                     <span class="stringliteral">&quot;Specify erf.most.zref or erf.most.k_arr_in for MOST, not both&quot;</span>);</div>
 <div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160; </div>
-<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;    <span class="comment">// Without most.zref the reference is the centre of the first cell above the</span></div>
+<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;    <span class="comment">// Without most.zref the reference is the center of the first cell above the</span></div>
 <div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;    <span class="comment">// wall, as on every other mesh.  On a terrain-fitted mesh its height above</span></div>
 <div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;    <span class="comment">// the wall varies by column, so it is filled column by column below</span></div>
 <div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;    <span class="comment">// (erf-model/ERF#4935).</span></div>
@@ -4501,7 +4501,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> cell_step = is_lo_face ? 1 : -1;</div>
 <div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;                k_arr(i,j,k) = first_cell;</div>
 <div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160; </div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;                <span class="comment">// Default: the centre of this column&#39;s first cell, half its</span></div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;                <span class="comment">// Default: the center of this column&#39;s first cell, half its</span></div>
 <div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;                <span class="comment">// thickness above the wall</span></div>
 <div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;                <span class="keywordflow">if</span> (!d_user_zref) {</div>
 <div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;                    zref_arr(i,j,k) = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (z_at(i, j, first_cell + 1) - z_at(i, j, first_cell));</div>
@@ -4625,7 +4625,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;most.zref&quot;</span>,zref_tmp);</div>
 <div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> user_zref = (zref_tmp &gt; Real(0));</div>
 <div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;    <span class="keywordflow">if</span> (!user_zref) {</div>
-<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;        <span class="comment">// The centre of each column&#39;s first cell (erf-model/ERF#4935)</span></div>
+<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;        <span class="comment">// The center of each column&#39;s first cell (erf-model/ERF#4935)</span></div>
 <div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;erf.most.zref not set: the MOST reference is the center of the first cell above the surface&quot;</span></div>
 <div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;                &lt;&lt; std::endl;</div>
 <div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> == 0,</div>
@@ -4682,7 +4682,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;            Real z_top_face  = <a class="code" href="ERF__NumericalConstants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_phys_arr(i  ,j  ,k+1) + z_phys_arr(i+1,j  ,k+1)</div>
 <div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;                                          + z_phys_arr(i  ,j+1,k+1) + z_phys_arr(i+1,j+1,k+1) );</div>
 <div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160; </div>
-<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;            <span class="comment">// Default: the centre of this column&#39;s first cell, no displacement</span></div>
+<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;            <span class="comment">// Default: the center of this column&#39;s first cell, no displacement</span></div>
 <div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;            <span class="keywordflow">if</span> (!d_user_zref) {</div>
 <div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;                i_arr(i,j,0)    = i;</div>
 <div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;                j_arr(i,j,0)    = j;</div>
@@ -4711,7 +4711,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160; </div>
 <div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;            Real z_target    = z_bot_face + delta_z;</div>
 <div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;            k_arr(i,j,0)     = <a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>;</div>
-<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;            <span class="comment">// Fallback if no cell holds the target: the first cell&#39;s centre height</span></div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;            <span class="comment">// Fallback if no cell holds the target: the first cell&#39;s center height</span></div>
 <div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;            zref_arr(i,j,0)  = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (z_top_face - z_bot_face);</div>
 <div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lk(<a class="code" href="ERF__InitCustomPert__KE_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>); lk&lt;=kmax; ++lk) {</div>
 <div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;                Real z_lo = <a class="code" href="ERF__NumericalConstants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_phys_arr(i_new,j_new  ,lk  ) + z_phys_arr(i_new+1,j_new  ,lk  )</div>
@@ -4813,7 +4813,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01492"></a><span class="lineno"> 1492</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;most.zref&quot;</span>,zref_tmp);</div>
 <div class="line"><a name="l01493"></a><span class="lineno"> 1493</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> user_zref = (zref_tmp &gt; Real(0));</div>
 <div class="line"><a name="l01494"></a><span class="lineno"> 1494</span>&#160;    <span class="keywordflow">if</span> (!user_zref) {</div>
-<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;        <span class="comment">// The centre of each column&#39;s first cell (erf-model/ERF#4935)</span></div>
+<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;        <span class="comment">// The center of each column&#39;s first cell (erf-model/ERF#4935)</span></div>
 <div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;erf.most.zref not set: the MOST reference is the center of the first cell above the surface&quot;</span></div>
 <div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160;                &lt;&lt; std::endl;</div>
 <div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> == 0,</div>
@@ -4861,7 +4861,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01540"></a><span class="lineno"> 1540</span>&#160;            Real z_bot_face  = <a class="code" href="ERF__NumericalConstants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_phys_arr(i  ,j  ,k) + z_phys_arr(i+1,j  ,k)</div>
 <div class="line"><a name="l01541"></a><span class="lineno"> 1541</span>&#160;                                        + z_phys_arr(i  ,j+1,k) + z_phys_arr(i+1,j+1,k) );</div>
 <div class="line"><a name="l01542"></a><span class="lineno"> 1542</span>&#160; </div>
-<div class="line"><a name="l01543"></a><span class="lineno"> 1543</span>&#160;            <span class="comment">// Default: the centre of this column&#39;s first cell, no displacement</span></div>
+<div class="line"><a name="l01543"></a><span class="lineno"> 1543</span>&#160;            <span class="comment">// Default: the center of this column&#39;s first cell, no displacement</span></div>
 <div class="line"><a name="l01544"></a><span class="lineno"> 1544</span>&#160;            <span class="keywordflow">if</span> (!d_user_zref) {</div>
 <div class="line"><a name="l01545"></a><span class="lineno"> 1545</span>&#160;                Real z_top_face = <a class="code" href="ERF__NumericalConstants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_phys_arr(i  ,j  ,k+1) + z_phys_arr(i+1,j  ,k+1)</div>
 <div class="line"><a name="l01546"></a><span class="lineno"> 1546</span>&#160;                                           + z_phys_arr(i  ,j+1,k+1) + z_phys_arr(i+1,j+1,k+1) );</div>
@@ -5497,7 +5497,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;most.zref&quot;</span>,zref_tmp);</div>
 <div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> user_zref = (zref_tmp &gt; Real(0));</div>
 <div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;    <span class="keywordflow">if</span> (!user_zref) {</div>
-<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;        <span class="comment">// The centre of each column&#39;s first cell (erf-model/ERF#4935)</span></div>
+<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;        <span class="comment">// The center of each column&#39;s first cell (erf-model/ERF#4935)</span></div>
 <div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;erf.most.zref not set: the MOST reference is the center of the first cell above the surface&quot;</span></div>
 <div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;                &lt;&lt; std::endl;</div>
 <div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> == 0,</div>

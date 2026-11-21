@@ -340,7 +340,7 @@ $(document).ready(function(){initNavTree('ERF__AdvectionSrcForMom__N_8H_source.h
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        zflux_hi =  rho_w(i,j,k) * w(i,j,k);</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        rho_w_avg_hi = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (rho_w(i,j,k) + rho_w(i,j,k+1));</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="comment">// The centre next to the top or bottom face is second order, seen from either side</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="comment">// The center next to the top or bottom face is second order, seen from either side</span></div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">if</span> (k == hi_z_face-1 || k == lo_z_face) {</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            interp_w_wall.InterpolateInZ(i,j,k+1,0,interp_hi,rho_w_avg_hi,<a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>);</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == hi_z_face-2 || k == lo_z_face+1) {</div>

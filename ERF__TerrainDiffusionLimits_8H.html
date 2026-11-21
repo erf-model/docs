@@ -314,7 +314,7 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Explicit diffusion rates of cell (i,j,k), momentum and scalars (1/s), as the diffusive time-step check reduces them: MomentumDiffusiveRate and ScalarDiffusiveRate with the largest diffusivities &ndash; eddy plus molecular &ndash; and the smallest positive density over the cell and its 26 neighbours. Both are zero in a cell without density (covered).</p>
+<p>Explicit diffusion rates of cell (i,j,k), momentum and scalars (1/s), as the diffusive time-step check reduces them: MomentumDiffusiveRate and ScalarDiffusiveRate with the largest diffusivities &ndash; eddy plus molecular &ndash; and the smallest positive density over the cell and its 26 neighbors. Both are zero in a cell without density (covered).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">s_arr</td><td>conserved state (Rho_comp), one ghost cell </td></tr>
@@ -770,7 +770,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Largest value of component n over cell (i,j,k) and its 26 neighbours. The diffusion operators average the cell diffusivities to faces and edges, so a row of the operator never carries more than this. With NeighbourhoodMinPositive for the density and the coefficients frozen, the scalar rate is a Gershgorin bound on the centred interior stencil of the Cartesian operator (the higher-order one-sided gradients next to Dirichlet boundaries, ERF_ScalarDiffusion.H, whose row is about 4/3 larger, are not covered); for momentum it is a bound for uniform coefficients when mu_h = mu_v (tight on cubic cells) and an estimate otherwise, since the operator is then not symmetric. Needs one ghost cell. </p>
+<p>Largest value of component n over cell (i,j,k) and its 26 neighbors. The diffusion operators average the cell diffusivities to faces and edges, so a row of the operator never carries more than this. With NeighbourhoodMinPositive for the density and the coefficients frozen, the scalar rate is a Gershgorin bound on the centered interior stencil of the Cartesian operator (the higher-order one-sided gradients next to Dirichlet boundaries, ERF_ScalarDiffusion.H, whose row is about 4/3 larger, are not covered); for momentum it is a bound for uniform coefficients when mu_h = mu_v (tight on cubic cells) and an estimate otherwise, since the operator is then not symmetric. Needs one ghost cell. </p>
 <div class="fragment"><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;{</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    amrex::Real m = a(i,j,k,n);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = -1; kk &lt;= 1; ++kk) {</div>
@@ -853,7 +853,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Smallest positive value of component n over cell (i,j,k) and its 26 neighbours; ghost cells that hold no density (&lt;= 0) are skipped. Returns <code>fallback</code> if none is positive. </p>
+<p>Smallest positive value of component n over cell (i,j,k) and its 26 neighbors; ghost cells that hold no density (&lt;= 0) are skipped. Returns <code>fallback</code> if none is positive. </p>
 <div class="fragment"><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;{</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    amrex::Real m = fallback;</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>

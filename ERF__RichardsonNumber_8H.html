@@ -873,9 +873,9 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>vertical shear squared </dd></dl>
 <div class="fragment"><div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;{</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="comment">// Volume-fraction weighted reconstruction of a velocity component at the</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="comment">// centre of cell (ii,jj,kk) from the two staggered faces that bracket it in</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="comment">// center of cell (ii,jj,kk) from the two staggered faces that bracket it in</span></div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="comment">// the (di,dj) direction. Returns false when neither face carries any volume,</span></div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="comment">// in which case there is no cell-centred value to be had.</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="comment">// in which case there is no cell-centered value to be had.</span></div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keyword">auto</span> cell_avg = [=] (<span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; vfrac,</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                         <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; vel,</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                         <span class="keywordtype">int</span> ii, <span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> kk, <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a>, <span class="keywordtype">int</span> dj,</div>
@@ -891,10 +891,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    };</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="comment">// Vertical derivative of one velocity component at cell (i,j,k), using the</span></div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="comment">// best stencil the EB geometry leaves available: centred when both k-1 and</span></div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="comment">// k+1 are usable, otherwise one-sided towards whichever neighbour is (second</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="comment">// best stencil the EB geometry leaves available: centered when both k-1 and</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="comment">// k+1 are usable, otherwise one-sided towards whichever neighbor is (second</span></div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="comment">// order when k-2 / k+2 is usable as well). Returns false only when no stencil</span></div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="comment">// at all can be formed, so a single unusable neighbour degrades the order of</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="comment">// at all can be formed, so a single unusable neighbor degrades the order of</span></div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="comment">// accuracy rather than discarding the correction.</span></div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keyword">auto</span> vert_deriv = [=] (<span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; vfrac,</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                           <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; vel,</div>
@@ -906,14 +906,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> have_kp1 = !c_cflag(i,j,k+1).isCovered() &amp;&amp;</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                              cell_avg(vfrac, vel, i, j, k+1, <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a>, dj, c_kp1);</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        <span class="comment">// The centred difference never reads the centre cell, so it stays valid</span></div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        <span class="comment">// even when the centre cell&#39;s own faces carry no volume.</span></div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        <span class="comment">// The centered difference never reads the center cell, so it stays valid</span></div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        <span class="comment">// even when the center cell&#39;s own faces carry no volume.</span></div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        <span class="keywordflow">if</span> (have_km1 &amp;&amp; have_kp1) {</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            dq_dz = <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (c_kp1 - c_km1) * dzInv;</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        }</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        <span class="comment">// Every remaining stencil is one-sided, and those do need the centre cell.</span></div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        <span class="comment">// Every remaining stencil is one-sided, and those do need the center cell.</span></div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        amrex::Real c_c;</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        <span class="keywordflow">if</span> (!cell_avg(vfrac, vel, i, j, k, <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a>, dj, c_c)) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
@@ -939,7 +939,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        }</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160; </div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        <span class="comment">// Both vertical neighbours are unusable: no stencil exists at all.</span></div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        <span class="comment">// Both vertical neighbors are unusable: no stencil exists at all.</span></div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    };</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160; </div>

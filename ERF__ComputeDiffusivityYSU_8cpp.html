@@ -386,7 +386,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="comment">// Collect the YSU-computed PBLH for writing back to SurfaceLayer.</span></div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">// NOTE: OpenMP is not used here; if re-enabled, this MultiFab must remain</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// outside any omp parallel structured block to avoid undefined behaviour.</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// outside any omp parallel structured block to avoid undefined behavior.</span></div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    MultiFab pblh_mf(eddyViscosity.boxArray(), eddyViscosity.DistributionMap(), 1, 0);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    pblh_mf.setVal(0.0);</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
@@ -1371,7 +1371,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;                         turbChoice.<a class="code" href="structTurbChoice.html#a804d843847a09e91b53f58aa7a5e719a">pblh_smoothing_passes</a>,</div>
 <div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;                         geom.Domain(), geom.periodicity());</div>
 <div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;        <span class="comment">// The smoothed height stays at or above the column&#39;s own floor (the top</span></div>
-<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;        <span class="comment">// face of its first fluid cell, at least 10 m): beside lower neighbours a</span></div>
+<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;        <span class="comment">// face of its first fluid cell, at least 10 m): beside lower neighbors a</span></div>
 <div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;        <span class="comment">// column over a building (erf.pbl_ib_aware) would otherwise be handed</span></div>
 <div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;        <span class="comment">// a height below its first cell, and the K profile a negative depth.</span></div>
 <div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(xybx_work, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept {</div>

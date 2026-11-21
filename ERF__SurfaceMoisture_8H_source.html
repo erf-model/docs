@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('ERF__SurfaceMoisture_8H_source.html','
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * (TwoStreamRadiation::seb_surface_moisture): the soil-water factor beta in [0, 1]; with a</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * soil type, the bare-soil resistance [s/m] and the relative humidity of the bare soil&#39;s</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * pore air; with a vegetation type as well, the vegetated fraction and the canopy</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * resistance without its vapour-deficit factor [s/m]. Absent pieces are a fraction of 0,</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * resistance without its vapor-deficit factor [s/m]. Absent pieces are a fraction of 0,</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * resistances of no_flux_resistance (1e6 s/m) and a relative humidity of 1.</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespaceerf__surface__moisture.html#ad52981881b38f49aa4f92ded62999e8a">   31</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="namespaceerf__surface__moisture.html#ad52981881b38f49aa4f92ded62999e8a">Component</a> : <span class="keywordtype">int</span> {</div>
@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('ERF__SurfaceMoisture_8H_source.html','
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> * The vapour-deficit factor of the Jarvis canopy resistance,</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> * The vapor-deficit factor of the Jarvis canopy resistance,</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> * 1 / (1 + HS * max(0, q_sat - q_air)), floored at 0.01 as in Noah-MP</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"> * (ResistanceCanopyStomataJarvisMod).</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> */</span></div>
@@ -168,12 +168,12 @@ $(document).ready(function(){initNavTree('ERF__SurfaceMoisture_8H_source.html','
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"> * The canopy resistance the surface layer uses [s/m]: the balance&#39;s resistance without the</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> * vapour-deficit factor (TwoStream&#39;s seb_canopy_resistance_without_vpd) divided by that</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> * vapor-deficit factor (TwoStream&#39;s seb_canopy_resistance_without_vpd) divided by that</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> * factor, capped at no_flux_resistance after the divide (the factor alone can raise it</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> * 100-fold).</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> * @param[in] r_c_without_vpd canopy resistance without the vapour-deficit factor [s/m]</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> * @param[in] hs              the canopy&#39;s vapour-deficit parameter [1/(kg/kg)]</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> * @param[in] r_c_without_vpd canopy resistance without the vapor-deficit factor [s/m]</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> * @param[in] hs              the canopy&#39;s vapor-deficit parameter [1/(kg/kg)]</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> * @param[in] q_sat           saturation mixing ratio at the surface temperature [kg/kg]</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"> * @param[in] q_air           mixing ratio of the air at the reference height [kg/kg]</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"> */</span></div>
@@ -259,7 +259,7 @@ $(document).ready(function(){initNavTree('ERF__SurfaceMoisture_8H_source.html','
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment"> * so that the surface layer&#39;s flux (q_surf - q_air) / r_a is the sum of the two. With</span></div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment"> * rh_ground = 1 it is beta q_sat + (1 - beta) q_air with</span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment"> * beta = f_veg r_a/(r_a + r_c) + (1 - f_veg) r_a/(r_a + r_soil). Over dry soil q_surf can</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"> * fall below q_air: the soil then takes up water vapour, as in Noah-MP.</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"> * fall below q_air: the soil then takes up water vapor, as in Noah-MP.</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;amrex::Real</div>

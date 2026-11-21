@@ -116,11 +116,11 @@ $(document).ready(function(){initNavTree('ERF__BndryPlaneIndex_8H_source.html','
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * Where a fine index sits among the level-0 plane indices along one tangential direction:</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * the two plane indices to blend and the weight on the second.  The plane holds cell-centred</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * values in every direction (the writer averages the face velocities to cell centres), so a</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * cell-centred index and a nodal (face) index are both located by their positions relative</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * to the plane&#39;s cell centres.  At level 0 (ratio 1) a cell-centred index is the plane cell</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * itself with zero weight on its neighbour, and node j is the average of plane cells j - 1</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * the two plane indices to blend and the weight on the second.  The plane holds cell-centered</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * values in every direction (the writer averages the face velocities to cell centers), so a</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * cell-centered index and a nodal (face) index are both located by their positions relative</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * to the plane&#39;s cell centers.  At level 0 (ratio 1) a cell-centered index is the plane cell</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * itself with zero weight on its neighbor, and node j is the average of plane cells j - 1</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * and j, the two cells it separates.  Both indices are brought into the plane&#39;s extent, which</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * is the level-0 domain: along a periodic direction they take the periodic image, as the</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * interior cells across the seam do (bndry_plane_index); otherwise they are clamped.</span></div>

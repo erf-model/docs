@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('ERF__CanopyTurbulence_8H_source.html',
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> * Turbulent length scale capped in the canopy, min(length, alpha / f).</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> * Cells with f &lt;= 0 are unchanged, and alpha = 0 disables the cap. The test</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> * alpha &lt; length f avoids comparing with a large alpha / f. The cap is</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> * computed with a denominator that is never zero, because an optimised build</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> * computed with a denominator that is never zero, because an optimized build</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> * may evaluate it before the test (as for 1/theta_ref in ERF_TurbKESources.H);</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> * adding the smallest normal Real leaves any f above min / epsilon unchanged.</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> */</span></div>
@@ -171,7 +171,7 @@ $(document).ready(function(){initNavTree('ERF__CanopyTurbulence_8H_source.html',
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> * @param rho density of the stage</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> * @param rhok_old rho k at the start of the step</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> * @param f_drag forest drag field f = C_d LAD (1/m), not negative</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> * @param wind cell-centred wind speed |U| of the stage</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> * @param wind cell-centered wind speed |U| of the stage</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> * @param beta_p wake production coefficient</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> * @param beta_d short-circuit dissipation coefficient</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> * @param dt time step of the update the source enters (&gt; 0)</span></div>
@@ -184,7 +184,7 @@ $(document).ready(function(){initNavTree('ERF__CanopyTurbulence_8H_source.html',
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">const</span> amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = beta_d * f_drag * wind * dt;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// 1 - exp(-x), in [0, 1) for x &gt;= 0</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">const</span> amrex::Real decay = -std::expm1(-<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// phi1 with a divisor that is never zero (an optimised build may evaluate it</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// phi1 with a divisor that is never zero (an optimized build may evaluate it</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// for x = 0); at the smallest normal Real, phi1 rounds to its limit 1</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">const</span> amrex::Real x_safe = amrex::max(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, std::numeric_limits&lt;amrex::Real&gt;::min());</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">const</span> amrex::Real phi1 = -std::expm1(-x_safe) / x_safe;</div>
@@ -199,14 +199,14 @@ $(document).ready(function(){initNavTree('ERF__CanopyTurbulence_8H_source.html',
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"> * no pass over the level; cells outside the forest (f &lt;= 0) return before the</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> * velocities are read. Fully immersed cells (terrain_blank = 1) get no source,</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> * where ERF_AdvanceDycore.cpp also zeroes the eddy diffusivities.</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"> * @param[in] bx cell-centred box to fill</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"> * @param[in] bx cell-centered box to fill</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"> * @param[in,out] cell_src staged source terms for the conserved state</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"> * @param[in] cell_data conserved state of the stage (Rho_comp is read)</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment"> * @param[in] cell_old conserved state at the start of the step (RhoKE_comp is read)</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment"> * @param[in] u x-face velocity</span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment"> * @param[in] v y-face velocity</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment"> * @param[in] w z-face velocity</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment"> * @param[in] f_arr cell-centred forest drag field f = C_d LAD</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment"> * @param[in] f_arr cell-centered forest drag field f = C_d LAD</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment"> * @param[in] t_blank_arr immersed-forcing blanking, or an empty Array4 without</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment"> *            immersed forcing</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment"> * @param[in] canopy canopy turbulence inputs</span></div>

@@ -193,7 +193,7 @@ $(document).ready(function(){initNavTree('ERF__StructureModel_8H_source.html',''
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"> * The fire engine&#39;s fields (the getters of ERF_FireEngine.H) on the fire grid: a</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"> * horizontal grid, one cell in z, that refines one atmospheric level</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment"> * (erf.fire.anchor_level). That level need not be the one the model couples to.</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"> * Fire cell (i, j) has its centre at geom.ProbLo() + ((i + 1/2) dx, (j + 1/2) dy),</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"> * Fire cell (i, j) has its center at geom.ProbLo() + ((i + 1/2) dx, (j + 1/2) dy),</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"> * in the coordinates of the model&#39;s own points.</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"> * The fields are the engine&#39;s state at time: the time ERF assigns to the fire&#39;s</span></div>
@@ -313,7 +313,7 @@ $(document).ready(function(){initNavTree('ERF__StructureModel_8H_source.html',''
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">    /**</span></div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">     * @brief Add the structures&#39; force on the air to the momentum sources</span></div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">     *</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">     * Face-centred sources on level lev [N/m^3, i.e. kg/(m^2 s^2)], added (not set),</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">     * Face-centered sources on level lev [N/m^3, i.e. kg/(m^2 s^2)], added (not set),</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">     * held fixed over the step. Called at every Runge-Kutta stage, after ERF&#39;s</span></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">     * own sources. ERF applies no mask to them: the model keeps its kernels clear</span></div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">     * of embedded boundaries, immersed terrain and buildings.</span></div>
@@ -383,7 +383,7 @@ $(document).ready(function(){initNavTree('ERF__StructureModel_8H_source.html',''
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="comment">    /**</span></div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="comment">     * @brief Fill the field plot_var_names() lists as name on level lev</span></div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">     *</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="comment">     * One cell-centred component written into dst at component comp, on dst&#39;s</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="comment">     * One cell-centered component written into dst at component comp, on dst&#39;s</span></div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="comment">     * boxes, with no ghost cells; zero where the model has nothing (for example</span></div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="comment">     * on levels other than level()).</span></div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="comment">     */</span></div>

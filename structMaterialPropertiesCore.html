@@ -128,7 +128,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa7200632698fbb46dc3d1584e63c7fd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the coeff of curvature given the temperature.  <a href="structMaterialPropertiesCore.html#aa7200632698fbb46dc3d1584e63c7fd5">More...</a><br /></td></tr>
 <tr class="separator:aa7200632698fbb46dc3d1584e63c7fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae18da73944b5e6c4d2c7586581afc2df"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMaterialPropertiesCore.html#ae18da73944b5e6c4d2c7586581afc2df">coeffVPSolute</a> () const</td></tr>
-<tr class="memdesc:ae18da73944b5e6c4d2c7586581afc2df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the vapour pressure coefficient.  <a href="structMaterialPropertiesCore.html#ae18da73944b5e6c4d2c7586581afc2df">More...</a><br /></td></tr>
+<tr class="memdesc:ae18da73944b5e6c4d2c7586581afc2df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the vapor pressure coefficient.  <a href="structMaterialPropertiesCore.html#ae18da73944b5e6c4d2c7586581afc2df">More...</a><br /></td></tr>
 <tr class="separator:ae18da73944b5e6c4d2c7586581afc2df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1343e48a073947925e3aae04dd16064"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMaterialPropertiesCore.html#ab1343e48a073947925e3aae04dd16064">coeffMolecularDiffusion</a> (const amrex::Real a_T, const amrex::Real a_P) const</td></tr>
 <tr class="memdesc:ab1343e48a073947925e3aae04dd16064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the molecular diffusion coefficient given temperature and pressure.  <a href="structMaterialPropertiesCore.html#ab1343e48a073947925e3aae04dd16064">More...</a><br /></td></tr>
@@ -327,7 +327,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Return the vapour pressure coefficient. </p>
+<p>Return the vapor pressure coefficient. </p>
 <div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    {</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keyword">auto</span> retval = (amrex::Real(0.75)/<a class="code" href="ERF__NumericalConstants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>)*(<a class="code" href="structMaterialPropertiesCore.html#a085a93e9a7944e7258e2602200c48fa3">m_mol_weight</a>/<a class="code" href="structMaterialPropertiesCore.html#ac6b20a8f9a6868218697f4a30cfb7243">m_density</a>);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structMaterialPropertiesCore.html#a0e30e71a234edf35489cccab2ac244fa">m_is_water</a>) {</div>
@@ -623,7 +623,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Avogadro number by vapour mol. weight </p>
+<p>Avogadro number by vapor mol. weight </p>
 
 <p class="reference">Referenced by <a class="el" href="structMaterialPropertiesCore.html#ab1343e48a073947925e3aae04dd16064">coeffMolecularDiffusion()</a>, <a class="el" href="structMaterialProperties.html#a6088a12a96d87c7eb3aaf6f8b14b7cd6">MaterialProperties::MaterialProperties()</a>, and <a class="el" href="structMaterialProperties.html#a89ef062ca1ae53473a5df19ef7f41ab2">MaterialProperties::print()</a>.</p>
 
@@ -640,7 +640,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>gas constant for vapour of this material </p>
+<p>gas constant for vapor of this material </p>
 
 <p class="reference">Referenced by <a class="el" href="structMaterialPropertiesCore.html#aa7200632698fbb46dc3d1584e63c7fd5">coeffCurv()</a>, <a class="el" href="structMaterialProperties.html#a6088a12a96d87c7eb3aaf6f8b14b7cd6">MaterialProperties::MaterialProperties()</a>, and <a class="el" href="structMaterialProperties.html#a89ef062ca1ae53473a5df19ef7f41ab2">MaterialProperties::print()</a>.</p>
 

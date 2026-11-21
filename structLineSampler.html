@@ -624,7 +624,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Sample the full-depth vertical column through each cell on level 0, with the variables erf.sample_line writes: every conserved component, the cell-centred velocities and the six stresses at cell centres. Each column is written to its own log, one row per sample: the time, then each variable over the column, bottom to top.</p>
+<p>Sample the full-depth vertical column through each cell on level 0, with the variables erf.sample_line writes: every conserved component, the cell-centered velocities and the six stresses at cell centers. Each column is written to its own log, one row per sample: the time, then each variable over the column, bottom to top.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">cells</td><td>a cell in each column; its k is ignored </td></tr>
@@ -1483,7 +1483,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;                mf_comp += <a class="code" href="structLineSampler.html#aa2b8b3f8de223d3ae4127dbf7efc3cc8">m_ncons</a>;</div>
 <div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;            }</div>
 <div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160; </div>
-<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;            <span class="comment">// The height of each cell centre</span></div>
+<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;            <span class="comment">// The height of each cell center</span></div>
 <div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d">m_varnames</a>, std::string(<span class="stringliteral">&quot;z&quot;</span>))) {</div>
 <div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;                amrex::MultiFab* z_cc = ilev &lt; static_cast&lt;int&gt;(z_cc_lev.size()) ? z_cc_lev[ilev] : <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;                <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(z_cc != <span class="keyword">nullptr</span>,</div>
@@ -1658,7 +1658,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;                mf_comp += 1;</div>
 <div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;            }</div>
 <div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160; </div>
-<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;            <span class="comment">// The stresses at cell centres: tau11, tau22 and tau33 are stored there, and the</span></div>
+<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;            <span class="comment">// The stresses at cell centers: tau11, tau22 and tau33 are stored there, and the</span></div>
 <div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;            <span class="comment">// others are averaged from the four edges around the cell</span></div>
 <div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;            <span class="keyword">auto</span> sample_tau = [&amp;] (<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>, <span class="keywordtype">int</span> tau_type,</div>
 <div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;                                   amrex::IntVect <span class="keyword">const</span>&amp; e1, amrex::IntVect <span class="keyword">const</span>&amp; e2) {</div>
@@ -2462,7 +2462,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The samples of line iline on a level (erf.sample_line_interp). Each sample is in a column of cells of the level: the one that holds the line (vertical), or each one it crosses (horizontal). Its height is the requested one, above sea level or, with erf.sample_line_z_agl, above the ground under the column. The ground and the top of a column are those of the level, the means of the four nodes under and over it, where the level holds the column's bottom or top cell; elsewhere the ground is the level-0 ground, bilinear at the column's centre (a level that stops above the ground). Its value is linear in height between the two cell centres of the column that bracket it; between the ground and the lowest cell centre with fluid it is that cell's, and between the top cell centre and the top the top cell's. A sample below the ground or above the top is missing. The level holds the line if it holds every cell the samples read; level 0 always does. Collective: every rank gets the same plan.</p>
+<p>The samples of line iline on a level (erf.sample_line_interp). Each sample is in a column of cells of the level: the one that holds the line (vertical), or each one it crosses (horizontal). Its height is the requested one, above sea level or, with erf.sample_line_z_agl, above the ground under the column. The ground and the top of a column are those of the level, the means of the four nodes under and over it, where the level holds the column's bottom or top cell; elsewhere the ground is the level-0 ground, bilinear at the column's center (a level that stops above the ground). Its value is linear in height between the two cell centers of the column that bracket it; between the ground and the lowest cell center with fluid it is that cell's, and between the top cell center and the top the top cell's. A sample below the ground or above the top is missing. The level holds the line if it holds every cell the samples read; level 0 always does. Collective: every rank gets the same plan.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">z_nd</td><td>the nodal heights of the level, or nullptr (the top is then prob_hi) </td></tr>
@@ -2484,7 +2484,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> along = (dir == 2) ? 0 : dir;</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;        <span class="keyword">const</span> amrex::IntVect clo = plan.cols.smallEnd();</div>
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        <span class="comment">// The heights of the cell centres of the columns, which cells the level holds, and their</span></div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        <span class="comment">// The heights of the cell centers of the columns, which cells the level holds, and their</span></div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;        <span class="comment">// volume fractions, from the bottom of the domain to its top</span></div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;        amrex::Box colbox(plan.cols);</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        colbox.setSmall(2, kdlo);</div>
@@ -2521,7 +2521,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;            <span class="keywordflow">return</span> mean;</div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        };</div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        <span class="comment">// The ground under the centre of each column, bilinear between the level-0 nodes around</span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        <span class="comment">// The ground under the center of each column, bilinear between the level-0 nodes around</span></div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        <span class="comment">// it: for the columns whose bottom the level does not hold</span></div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        amrex::Vector&lt;amrex::Real&gt; ground_col(ncol, geom0.ProbLo(2));</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        <span class="keywordflow">if</span> (ground0 != <span class="keyword">nullptr</span>) {</div>
@@ -2596,15 +2596,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;            <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>    = [&amp;] (<span class="keywordtype">int</span> k) { <span class="keywordflow">return</span> at(icol, k, 0); };</div>
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;            <span class="keywordtype">int</span> k0 = -1, <a class="code" href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">k1</a> = -1;</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;            amrex::Real w = amrex::Real(0.0);</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;            <span class="comment">// between two cell centres with fluid</span></div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;            <span class="comment">// between two cell centers with fluid</span></div>
 <div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(0); k&lt;nz-1 &amp;&amp; k0 &lt; 0; ++k) {</div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                <span class="keywordflow">if</span> (fluid(k) &amp;&amp; fluid(k+1) &amp;&amp; <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>(k) &lt;= <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &amp;&amp; <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt; <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>(k+1)) {</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                    k0 = k; <a class="code" href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">k1</a> = k+1; w = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>(k)) / (<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>(k+1) - <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>(k));</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                }</div>
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;            }</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            <span class="comment">// between the top cell centre and the top</span></div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            <span class="comment">// between the top cell center and the top</span></div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;            <span class="keywordflow">if</span> (k0 &lt; 0 &amp;&amp; fluid(nz-1) &amp;&amp; <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &gt;= <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>(nz-1)) { k0 = <a class="code" href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">k1</a> = nz-1; }</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            <span class="comment">// between the ground and the lowest cell centre with fluid, if the level holds the</span></div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            <span class="comment">// between the ground and the lowest cell center with fluid, if the level holds the</span></div>
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;            <span class="comment">// column up to it</span></div>
 <div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;            <span class="keywordflow">if</span> (k0 &lt; 0) {</div>
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                <span class="keywordtype">int</span> kf = 0;</div>
@@ -3396,7 +3396,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01663"></a><span class="lineno"> 1663</span>&#160;                is_per[d] = geom[lev].isPeriodic(d);</div>
 <div class="line"><a name="l01664"></a><span class="lineno"> 1664</span>&#160;            }</div>
 <div class="line"><a name="l01665"></a><span class="lineno"> 1665</span>&#160;            <span class="comment">// An interpolated line is at its requested heights (above the ground with</span></div>
-<div class="line"><a name="l01666"></a><span class="lineno"> 1666</span>&#160;            <span class="comment">// erf.sample_line_z_agl): its z cells are centred on them</span></div>
+<div class="line"><a name="l01666"></a><span class="lineno"> 1666</span>&#160;            <span class="comment">// erf.sample_line_z_agl): its z cells are centered on them</span></div>
 <div class="line"><a name="l01667"></a><span class="lineno"> 1667</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structLineSampler.html#a543c7fe76261d0afe48a324209f8458b">m_interp</a>) {</div>
 <div class="line"><a name="l01668"></a><span class="lineno"> 1668</span>&#160;                <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt; h = <a class="code" href="structLineSampler.html#a18878b76522dbc9c3b22cf112266b485">interp_heights</a>(iline);</div>
 <div class="line"><a name="l01669"></a><span class="lineno"> 1669</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> nh = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(h.size());</div>

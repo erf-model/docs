@@ -291,8 +291,8 @@ Here is the caller graph for this function:</div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">z_phys_nd</td><td>nodal heights of the level (surface at the domain's lowest k) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mf_mx</td><td>map factor in x at cell centres (<a class="el" href="classERF.html">ERF</a>'s mapfac m_x, on ba2d) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mf_my</td><td>map factor in y at cell centres (m_y) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf_mx</td><td>map factor in x at cell centers (<a class="el" href="classERF.html">ERF</a>'s mapfac m_x, on ba2d) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf_my</td><td>map factor in y at cell centers (m_y) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>geometry of the level </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">band</td><td>width of the band in cells (&gt;= 1) </td></tr>
   </table>
@@ -808,7 +808,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The height table in file fname, read, checked (TableProblem) and summarised (TableSummary) on the I/O rank the first time the file is asked for, then broadcast; later calls return the same table without reading the file again. Aborts, naming the file and the line, on a file that cannot be read as the layout says.</p>
+<p>The height table in file fname, read, checked (TableProblem) and summarized (TableSummary) on the I/O rank the first time the file is asked for, then broadcast; later calls return the same table without reading the file again. Aborts, naming the file and the line, on a file that cannot be read as the layout says.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">fname</td><td>file name </td></tr>
@@ -1179,7 +1179,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Text describing a valid height table: its size and extent, the order its heights are read in, where the lowest and highest heights sit, and the largest slopes |dh/dx| and |dh/dy| between neighbouring table points with where they sit. Meant to be printed once per file, so that a transposed or mis-ordered file can be spotted at start-up.</p>
+<p>Text describing a valid height table: its size and extent, the order its heights are read in, where the lowest and highest heights sit, and the largest slopes |dh/dx| and |dh/dy| between neighboring table points with where they sit. Meant to be printed once per file, so that a transposed or mis-ordered file can be spotted at start-up.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">fname</td><td>file name, for the first line </td></tr>

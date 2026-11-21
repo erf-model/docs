@@ -136,7 +136,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Turbulent length scale capped in the canopy, min(length, alpha / f). Cells with f &lt;= 0 are unchanged, and alpha = 0 disables the cap. The test alpha &lt; length f avoids comparing with a large alpha / f. The cap is computed with a denominator that is never zero, because an optimised build may evaluate it before the test (as for 1/theta_ref in ERF_TurbKESources.H); adding the smallest normal Real leaves any f above min / epsilon unchanged. </p>
+<p>Turbulent length scale capped in the canopy, min(length, alpha / f). Cells with f &lt;= 0 are unchanged, and alpha = 0 disables the cap. The test alpha &lt; length f avoids comparing with a large alpha / f. The cap is computed with a denominator that is never zero, because an optimized build may evaluate it before the test (as for 1/theta_ref in ERF_TurbKESources.H); adding the smallest normal Real leaves any f above min / epsilon unchanged. </p>
 <div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">const</span> amrex::Real cap = <a class="code" href="namespaceSLM__DST.html#aa7a602b4eb9c68e791a0f6584224c621a8d1810892e965b63cab3b5472dde85cb">alpha</a> / (amrex::max(f_drag, amrex::Real(0.0))</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                     + std::numeric_limits&lt;amrex::Real&gt;::min());</div>
@@ -222,7 +222,7 @@ Here is the caller graph for this function:</div>
     <tr><td class="paramname">rho</td><td>density of the stage </td></tr>
     <tr><td class="paramname">rhok_old</td><td>rho k at the start of the step </td></tr>
     <tr><td class="paramname">f_drag</td><td>forest drag field f = C_d LAD (1/m), not negative </td></tr>
-    <tr><td class="paramname">wind</td><td>cell-centred wind speed |U| of the stage </td></tr>
+    <tr><td class="paramname">wind</td><td>cell-centered wind speed |U| of the stage </td></tr>
     <tr><td class="paramname">beta_p</td><td>wake production coefficient </td></tr>
     <tr><td class="paramname">beta_d</td><td>short-circuit dissipation coefficient </td></tr>
     <tr><td class="paramname">dt</td><td>time step of the update the source enters (&gt; 0) </td></tr>
@@ -233,7 +233,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">const</span> amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = beta_d * f_drag * wind * dt;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// 1 - exp(-x), in [0, 1) for x &gt;= 0</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">const</span> amrex::Real decay = -std::expm1(-x);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// phi1 with a divisor that is never zero (an optimised build may evaluate it</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// phi1 with a divisor that is never zero (an optimized build may evaluate it</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// for x = 0); at the smallest normal Real, phi1 rounds to its limit 1</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">const</span> amrex::Real x_safe = amrex::max(x, std::numeric_limits&lt;amrex::Real&gt;::min());</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">const</span> amrex::Real phi1 = -std::expm1(-x_safe) / x_safe;</div>
