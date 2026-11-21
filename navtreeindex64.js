@@ -1,5 +1,6 @@
 var NAVTREEINDEX64 =
 {
+"structerf__sbm_1_1SBMTransferAllocationCensus.html#ae798d7b287bd447c532f2f3ad4017285":[2,0,14,5,3],
 "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html":[2,0,14,44,0],
 "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#a243bc4265bde9a596588c0a198a2bfcb":[2,0,14,44,0,3],
 "structerf__sbm_1_1SBMTransport_1_1DeviceMetadata.html#a6bcb4048b64f494ca879a2679ccfb71a":[2,0,14,44,0,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX64 =
 "structmoeng__flux.html#a81d59f1f06d4d0b1dda02b2be3a36303":[2,0,120,2],
 "structmoeng__flux.html#a91f38ee7fa93b5982b09bc85ab54c40b":[2,0,120,1],
 "structmoeng__flux.html#aad8a4d934fe8f10b0b93ef0780a24e0a":[2,0,120,7],
-"structmoeng__flux.html#ab5a9916cdd1d250ee65cabbeb2d7fa23":[2,0,120,8],
-"structmoeng__flux.html#abb5c3b4b0ce6a796f9a94a2e664f94cf":[2,0,120,3]
+"structmoeng__flux.html#ab5a9916cdd1d250ee65cabbeb2d7fa23":[2,0,120,8]
 };

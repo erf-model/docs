@@ -1,5 +1,6 @@
 var NAVTREEINDEX54 =
 {
+"structKesslerFaceState.html":[2,0,106],
 "structKesslerFaceState.html#a9b9499caf941ad8c0ef421cde29ae6aa":[2,0,106,1],
 "structKesslerFaceState.html#afe4b5bb8d6246db0cea10f7b585a7417":[2,0,106,0],
 "structKesslerSaturationAdjustment.html":[2,0,107],
@@ -248,6 +249,5 @@ var NAVTREEINDEX54 =
 "structMoistureComponentIndices.html#ab999dbbc73321a48d2f5fe98eb4ee86b":[2,0,123,20],
 "structMoistureComponentIndices.html#abcce49c12385061664c8da3cecb80dbb":[2,0,123,11],
 "structMoistureComponentIndices.html#ac7311fe8e3cb4814261927cf668a80d3":[2,0,123,27],
-"structMoistureComponentIndices.html#ac978023269a73ddc51e599e287f6b75e":[2,0,123,8],
-"structMoistureComponentIndices.html#ad1443e2446511fa0a2f100d4da19437f":[2,0,123,24]
+"structMoistureComponentIndices.html#ac978023269a73ddc51e599e287f6b75e":[2,0,123,8]
 };

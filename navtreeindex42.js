@@ -1,5 +1,6 @@
 var NAVTREEINDEX42 =
 {
+"classerf__sbm_1_1SBMTransport.html#aedd6f276061619800d1b6384cd7ce15b":[2,0,14,44,5],
 "classerf__sbm_1_1SBMTransport.html#af213935ccb739cc3ea055574096aae51":[2,0,14,44,28],
 "classerf__sbm_1_1SBMTransport.html#af7eca9dd348e54367afaa2e80d75a13a":[2,0,14,44,17],
 "classerf__sbm_1_1SBMTransport.html#af80dfa691d15c9c3f38ef084de8c08e4":[2,0,14,44,24],
@@ -244,10 +245,9 @@ var NAVTREEINDEX42 =
 "globals_type.html":[3,1,3],
 "globals_u.html":[3,1,0,20],
 "globals_v.html":[3,1,0,21],
-"globals_vars.html":[3,1,2,0],
 "globals_vars.html":[3,1,2],
+"globals_vars.html":[3,1,2,0],
 "globals_vars_b.html":[3,1,2,1],
 "globals_vars_c.html":[3,1,2,2],
-"globals_vars_d.html":[3,1,2,3],
-"globals_vars_e.html":[3,1,2,4]
+"globals_vars_d.html":[3,1,2,3]
 };

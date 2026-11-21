@@ -1,5 +1,6 @@
 var NAVTREEINDEX43 =
 {
+"globals_vars_e.html":[3,1,2,4],
 "globals_vars_f.html":[3,1,2,5],
 "globals_vars_g.html":[3,1,2,6],
 "globals_vars_h.html":[3,1,2,7],
@@ -34,8 +35,8 @@ var NAVTREEINDEX43 =
 "index.html#dev_model":[0,3],
 "index.html#getting_started":[0,2],
 "interfacemodule__libmassv_1_1vrec.html":[2,0,23,0],
-"interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,23,0,3],
 "interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,23,0,2],
+"interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,23,0,3],
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,23,0,0],
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,23,0,1],
 "interfacemodule__libmassv_1_1vsqrt.html":[2,0,23,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX43 =
 "namespaceerf__actuator.html#a3d05ab598fd8dd2a3bb40618a2838248":[1,0,9,26],
 "namespaceerf__actuator.html#a3f33c6cf36fd5ce6b874677f17b4e321":[1,0,9,17],
 "namespaceerf__actuator.html#a4f5473f1fd62acbaa3bb847a9f36ca6f":[1,0,9,54],
-"namespaceerf__actuator.html#a5dbfe7987ed58be8550367142d55279b":[1,0,9,47],
-"namespaceerf__actuator.html#a6d2b0b3627ebcc41e01f456ffaaeb264":[1,0,9,33]
+"namespaceerf__actuator.html#a5dbfe7987ed58be8550367142d55279b":[1,0,9,47]
 };

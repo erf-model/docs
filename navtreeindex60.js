@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"structTwoStreamFaceSky.html":[2,0,259],
 "structTwoStreamFaceSky.html#a1f089958127916619854e969e553edfe":[2,0,259,4],
 "structTwoStreamFaceSky.html#a54040a4f15fbd84b7aa7973eeda8dc9d":[2,0,259,0],
 "structTwoStreamFaceSky.html#a9d7d899391b03f00d6fe0b8bf4ac7ce0":[2,0,259,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "structadiabatic__charnock.html#a03819e12a1ad30169c3016bba7139c17":[2,0,32,2],
 "structadiabatic__charnock.html#a0e78cee7d7f845969fe2da8b72ef7955":[2,0,32,6],
 "structadiabatic__charnock.html#a5c11064c35d6eefd22558180155d6ede":[2,0,32,3],
-"structadiabatic__charnock.html#a6084d37c809512df4159a0425a3c5a51":[2,0,32,0],
-"structadiabatic__charnock.html#a934885ca943ddef47931168f22f5ce0b":[2,0,32,1]
+"structadiabatic__charnock.html#a6084d37c809512df4159a0425a3c5a51":[2,0,32,0]
 };

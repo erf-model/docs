@@ -1,5 +1,6 @@
 var NAVTREEINDEX52 =
 {
+"namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa07c5fab4234d064a77db6f1c4d0903d9":[1,0,122,0,3],
 "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa2aee0be2678ee90fd327cc186826438e":[1,0,122,0,0],
 "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa31b342f23cb16952131736824b9ccdd1":[1,0,122,0,6],
 "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa4f52a5383c582560154ad0ce49e79b1e":[1,0,122,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX52 =
 "structFireCouplingParams.html#a4bb26abfd957406e40f4770a4db21dc4":[2,0,77,18],
 "structFireCouplingParams.html#a5d351d4570ef2aacd3693764a36cc023":[2,0,77,5],
 "structFireCouplingParams.html#a5f20b585608c844f3cee2fe4e1117c19":[2,0,77,15],
-"structFireCouplingParams.html#a6aff5ab905fa67059697c5ec1f74a08d":[2,0,77,9],
-"structFireCouplingParams.html#a6eac7ecdb83505f92223aa4628d0e133":[2,0,77,6]
+"structFireCouplingParams.html#a6aff5ab905fa67059697c5ec1f74a08d":[2,0,77,9]
 };
