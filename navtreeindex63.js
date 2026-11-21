@@ -1,5 +1,6 @@
 var NAVTREEINDEX63 =
 {
+"structerf__sbm_1_1AttachedPropertySupportDescriptor.html#ab5a8121e8c024319d85a1b2bddf4826b":[2,0,14,15,1],
 "structerf__sbm_1_1AttachedPropertySupportDescriptor.html#ac5e3efbf413e316a1e800e6f3df7842b":[2,0,14,15,6],
 "structerf__sbm_1_1AttachedPropertySupportDescriptor.html#afa406d273d23841eb11583bd15d6dd5c":[2,0,14,15,5],
 "structerf__sbm_1_1AttachedPropertySupportDescriptor.html#afa52f2d1319fea0c4bf5daf396f97366":[2,0,14,15,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX63 =
 "structerf__sbm_1_1SBMStateAdmission_1_1Impl.html#a0ffe6cb472b57c93b50f2588429f209d":[2,0,14,39,1,9],
 "structerf__sbm_1_1SBMStateAdmission_1_1Impl.html#a1b6ce07b3b6a4106c55224f7ee69b482":[2,0,14,39,1,6],
 "structerf__sbm_1_1SBMStateAdmission_1_1Impl.html#a2f94b9726e274eadd6e7a13fa8e70825":[2,0,14,39,1,12],
-"structerf__sbm_1_1SBMStateAdmission_1_1Impl.html#a421f0b06cdc67d7c801b84940c43df88":[2,0,14,39,1,8],
-"structerf__sbm_1_1SBMStateAdmission_1_1Impl.html#a55ec7c4d709027564c7e24cdd3e590bf":[2,0,14,39,1,7]
+"structerf__sbm_1_1SBMStateAdmission_1_1Impl.html#a421f0b06cdc67d7c801b84940c43df88":[2,0,14,39,1,8]
 };

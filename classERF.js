@@ -17,6 +17,7 @@ var classERF =
     [ "appendPlotVariables", "classERF.html#a7758f75dc7c9029eddc4c58ac0567654", null ],
     [ "apply_gaussian_smoothing_to_perturbations", "classERF.html#a59565840bb5698b7e6a17eb3ed08fad9", null ],
     [ "ApplyOceanSurfaceState", "classERF.html#ae1f48a84f45dd2915c6b081242f035bd", null ],
+    [ "average_down_detJ", "classERF.html#affb817ca702ad42660896f3fc1bff5eb", null ],
     [ "average_down_mass_flux", "classERF.html#a6ddec289a025ffcd2765be87b7bfdd84", null ],
     [ "average_down_precip_accumulators", "classERF.html#a0283270546a99c123a9a9a12d62c0865", null ],
     [ "AverageDown", "classERF.html#a8202de1f8f372e3e6fdc483447c6a55f", null ],

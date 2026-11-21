@@ -1,5 +1,6 @@
 var NAVTREEINDEX64 =
 {
+"structerf__sbm_1_1SBMStateAdmission_1_1Impl.html#a55ec7c4d709027564c7e24cdd3e590bf":[2,0,14,39,1,7],
 "structerf__sbm_1_1SBMStateAdmission_1_1Impl.html#a88eb8c841421c39b2ff6d0ffd075a66b":[2,0,14,39,1,5],
 "structerf__sbm_1_1SBMStateAdmission_1_1Impl.html#a8dca4b45f65bde20b34abd950c43ca39":[2,0,14,39,1,1],
 "structerf__sbm_1_1SBMStateAdmission_1_1Impl.html#a971060460342c037b92df3d833399de6":[2,0,14,39,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX64 =
 "structif__bld_1_1HorizMasks.html#a0a4a8b6dc9fe9b3ada636a9b17e4b147":[2,0,22,2,4],
 "structif__bld_1_1HorizMasks.html#a0a9a2594b80770a99f6bbd5cbff03c2f":[2,0,22,2,2],
 "structif__bld_1_1HorizMasks.html#a57a388605c398429faf07bd1e77c451f":[2,0,22,2,0],
-"structif__bld_1_1HorizMasks.html#a8fcf04d065914e1e2f12db06a2421cac":[2,0,22,2,1],
-"structif__bld_1_1HorizMasks.html#a98f22576d5843b2050ec7bfe17650c5a":[2,0,22,2,5]
+"structif__bld_1_1HorizMasks.html#a8fcf04d065914e1e2f12db06a2421cac":[2,0,22,2,1]
 };

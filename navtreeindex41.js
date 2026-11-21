@@ -1,5 +1,6 @@
 var NAVTREEINDEX41 =
 {
+"classerf__auxiliary_1_1AuxiliaryInertTracer.html#a60a4ba1458df8e64abfa76edec0bc995":[2,0,1,3,3],
 "classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6c57b9830a9e7f9723c73e0994dd6a99":[2,0,1,3,2],
 "classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6df71c349683962238c8f6447b65e6e9":[2,0,1,3,6],
 "classerf__auxiliary_1_1AuxiliaryInertTracer.html#a72470cac0eae985baff4efb7abc689ef":[2,0,1,3,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX41 =
 "classerf__sbm_1_1SBMTransport.html#a974760e62a5b8eab9c98d69dfafacfcf":[2,0,14,44,25],
 "classerf__sbm_1_1SBMTransport.html#aa417c1369dee77365115d4a97224b85c":[2,0,14,44,47],
 "classerf__sbm_1_1SBMTransport.html#aacc1ddddf1c3f4ecec6bfc07f8875cf3":[2,0,14,44,51],
-"classerf__sbm_1_1SBMTransport.html#aadc8c06206f5cd2865624a79a1a67729":[2,0,14,44,19],
-"classerf__sbm_1_1SBMTransport.html#ab03788fe4354d913808eb8bbcd37698b":[2,0,14,44,8]
+"classerf__sbm_1_1SBMTransport.html#aadc8c06206f5cd2865624a79a1a67729":[2,0,14,44,19]
 };

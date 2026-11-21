@@ -1,5 +1,6 @@
 var NAVTREEINDEX46 =
 {
+"namespaceerf__plotfile.html#a52f6a6d7d8e635d0dd1175f5ca5e2ae5":[1,0,50,1],
 "namespaceerf__plotfile.html#a5b32422f1d46c78c9584826bf9cfb0b7":[1,0,50,6],
 "namespaceerf__plotfile.html#a5e7b2de00bfcf71b0b6173022d1cb41b":[1,0,50,10],
 "namespaceerf__plotfile.html#a7f6d1e86b47b91cf5bb5f8151bed0ca3":[1,0,50,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX46 =
 "namespaceerf__sbm_1_1remap__detail.html":[1,0,56,3],
 "namespaceerf__sbm_1_1remap__detail.html#a04cb65e1f5cfb15248107c43ab261225":[1,0,56,3,11],
 "namespaceerf__sbm_1_1remap__detail.html#a22189aa9d7b2f80c15d6d5f9088c2aed":[1,0,56,3,8],
-"namespaceerf__sbm_1_1remap__detail.html#a28219d7cec98fac11f8c8056b0afa848":[1,0,56,3,4],
-"namespaceerf__sbm_1_1remap__detail.html#a3150d172d3a2420b343a5c4cd66b67b3":[1,0,56,3,12]
+"namespaceerf__sbm_1_1remap__detail.html#a28219d7cec98fac11f8c8056b0afa848":[1,0,56,3,4]
 };

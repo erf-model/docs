@@ -1,5 +1,6 @@
 var NAVTREEINDEX37 =
 {
+"classSurfaceLayer.html#a7c2f77b55037499d5dd7f597c017e272":[2,0,245,209],
 "classSurfaceLayer.html#a7c3ef115e1887034248880e359a232ed":[2,0,245,95],
 "classSurfaceLayer.html#a7c9e3980958aabd3b95a81fdc325411d":[2,0,245,198],
 "classSurfaceLayer.html#a7f7445d3fa3b3015b3db61ec78ce9c31":[2,0,245,100],
@@ -248,6 +249,5 @@ var NAVTREEINDEX37 =
 "classTopographicShading.html#a386c361eb884fec98249ccddeb3dc231":[2,0,254,8],
 "classTopographicShading.html#a549e53336855e6526c368a694a0d597b":[2,0,254,4],
 "classTopographicShading.html#a6f8b9a6fd2feec61fba53ebd1d633dcc":[2,0,254,12],
-"classTopographicShading.html#a793d05cb80104a0e64327a89d5ad0712":[2,0,254,10],
-"classTopographicShading.html#a8321eb7d33621a2ebc4bd387d104d3aa":[2,0,254,9]
+"classTopographicShading.html#a793d05cb80104a0e64327a89d5ad0712":[2,0,254,10]
 };

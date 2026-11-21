@@ -1,5 +1,6 @@
 var NAVTREEINDEX40 =
 {
+"classWSM6.html#afba09f684ba0386d89de17f21dff9801":[2,0,283,44],
 "classWSM6.html#afce5ef05a3f8017eeb8c6c3ca125d75a":[2,0,283,14],
 "classWindFarm.html":[2,0,280],
 "classWindFarm.html#a0d274380a6e7a61593459bb0b0f642d2":[2,0,280,36],
@@ -248,6 +249,5 @@ var NAVTREEINDEX40 =
 "classerf__auxiliary_1_1AuxiliaryInertTracer.html#a3d76745cb657ea1781fae6e0f37dc5a3":[2,0,1,3,15],
 "classerf__auxiliary_1_1AuxiliaryInertTracer.html#a5b0c7ea54ec92c623b3fc9e57617196e":[2,0,1,3,1],
 "classerf__auxiliary_1_1AuxiliaryInertTracer.html#a5ce664cd33acdc0607275f3df64c18d3":[2,0,1,3,5],
-"classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece":[2,0,1,3,4],
-"classerf__auxiliary_1_1AuxiliaryInertTracer.html#a60a4ba1458df8e64abfa76edec0bc995":[2,0,1,3,3]
+"classerf__auxiliary_1_1AuxiliaryInertTracer.html#a6050ed7134f8f004a1f8cfd9e71f7ece":[2,0,1,3,4]
 };

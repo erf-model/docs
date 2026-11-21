@@ -1,5 +1,6 @@
 var NAVTREEINDEX43 =
 {
+"globals_j.html":[3,1,0,9],
 "globals_k.html":[3,1,0,10],
 "globals_l.html":[3,1,0,11],
 "globals_m.html":[3,1,0,12],
@@ -13,8 +14,8 @@ var NAVTREEINDEX43 =
 "globals_type.html":[3,1,3],
 "globals_u.html":[3,1,0,20],
 "globals_v.html":[3,1,0,21],
-"globals_vars.html":[3,1,2],
 "globals_vars.html":[3,1,2,0],
+"globals_vars.html":[3,1,2],
 "globals_vars_b.html":[3,1,2,1],
 "globals_vars_c.html":[3,1,2,2],
 "globals_vars_d.html":[3,1,2,3],
@@ -60,8 +61,8 @@ var NAVTREEINDEX43 =
 "interfacemodule__libmassv_1_1vsqrt.html":[2,0,23,1],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,23,1,0],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,23,1,1],
-"interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,23,1,3],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,23,1,2],
+"interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,23,1,3],
 "main_8cpp.html":[3,0,1,44],
 "main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[3,0,1,44,3],
 "main_8cpp.html#a183e783116d02836167ccbed3b28c1d3":[3,0,1,44,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX43 =
 "namespacederived.html#ad929c4aac97b7749e8f23c514f74cffb":[1,0,6,32],
 "namespacederived.html#ae1b7ade68c620b638d06dc2e59153fa7":[1,0,6,37],
 "namespacederived.html#ae7aff8d5c152597cc23d8946c1f47766":[1,0,6,14],
-"namespacederived.html#aee8374cee1420bcd1da6e0e85ea8cae1":[1,0,6,17],
-"namespacederived.html#af1d55daa7759e72f93563e6ce899d375":[1,0,6,13]
+"namespacederived.html#aee8374cee1420bcd1da6e0e85ea8cae1":[1,0,6,17]
 };

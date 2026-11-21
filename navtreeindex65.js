@@ -1,5 +1,6 @@
 var NAVTREEINDEX65 =
 {
+"structif__bld_1_1HorizMasks.html#a98f22576d5843b2050ec7bfe17650c5a":[2,0,22,2,5],
 "structif__bld_1_1HorizMasks.html#aaf2e69fc71417c331620f23261af4b68":[2,0,22,2,7],
 "structif__bld_1_1HorizMasks.html#ac81679d7254201759bbf1904b31fe114":[2,0,22,2,6],
 "structif__bld_1_1HorizMasks.html#af2c765a7881e1e64f4b3e1554e8cc56d":[2,0,22,2,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX65 =
 "structplotfile2d_1_1erf__detail__Plotfile2DInterpolator_1_1SampledRotation.html#a4708d762d5c7df6fe84adccc9714c582":[2,0,28,0,1,0],
 "structplotfile2d_1_1erf__detail__Plotfile2DInterpolator_1_1SampledRotation.html#a7116895023e2b4f528e7f1f631dbeb53":[2,0,28,0,1,1],
 "structrico__flux.html":[2,0,167],
-"structrico__flux.html#a164569a6f654aae3477872738fec82b2":[2,0,167,0],
-"structrico__flux.html#a38f75d6313c115980e3df2a42f0b29d2":[2,0,167,4]
+"structrico__flux.html#a164569a6f654aae3477872738fec82b2":[2,0,167,0]
 };
