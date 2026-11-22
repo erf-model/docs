@@ -184,6 +184,7 @@ var NAVTREEINDEX52 =
 "structDiffusiveRateSettings.html#a096f2a4471149d8fb385da2e67eb684b":[2,0,54,7],
 "structDiffusiveRateSettings.html#a1892ab010fe28b1fa92aa3dc223309ef":[2,0,54,9],
 "structDiffusiveRateSettings.html#a1d265ebc221c2fbbb9a6c506c604a8a9":[2,0,54,12],
+"structDiffusiveRateSettings.html#a358e1f71f8f873a8862e1fc3ab414cd8":[2,0,54,15],
 "structDiffusiveRateSettings.html#a3bbff071b1f3a5d32711016c652ecb1e":[2,0,54,8],
 "structDiffusiveRateSettings.html#a7e4561bac3928c48d9656f0ac44c9b42":[2,0,54,0],
 "structDiffusiveRateSettings.html#aabe25f485742495dc89a31ca36d4fe8e":[2,0,54,13],
@@ -192,6 +193,7 @@ var NAVTREEINDEX52 =
 "structDiffusiveRateSettings.html#ad30c89773b6b92de43c9ef8bd4ea8dce":[2,0,54,2],
 "structDiffusiveRateSettings.html#ae0e9f220cd0335038a1bf61491eac55b":[2,0,54,5],
 "structDiffusiveRateSettings.html#af607c3947fbf2a7d21cf1d27bebd4248":[2,0,54,1],
+"structDiffusiveRateSettings.html#af98035e599b7fa9bf320ad761f286e0e":[2,0,54,14],
 "structDirectionSelector.html":[2,0,55],
 "structDirectionSelector.html#a3950b636303028f398441fdc43d66dba":[2,0,55,0],
 "structDirectionSelector_3_010_01_4.html":[2,0,56],
@@ -247,7 +249,5 @@ var NAVTREEINDEX52 =
 "structERF_1_1CFZFaceLayout.html#a39a878c8eefcb26fedc6546b722fec14":[2,0,66,1,13],
 "structERF_1_1CFZFaceLayout.html#a4910f07a70f5368276b4b7c52076ef74":[2,0,66,1,4],
 "structERF_1_1CFZFaceLayout.html#a5ac611f426bd3eb6fe46a2b12c42750c":[2,0,66,1,6],
-"structERF_1_1CFZFaceLayout.html#a6711f02b5d73689bc7e8340a09cdfa79":[2,0,66,1,8],
-"structERF_1_1CFZFaceLayout.html#a6e1e246edc77c7949f1af492482a0f41":[2,0,66,1,17],
-"structERF_1_1CFZFaceLayout.html#a77b01dd88ebd530c9c0da29997fe4f79":[2,0,66,1,3]
+"structERF_1_1CFZFaceLayout.html#a6711f02b5d73689bc7e8340a09cdfa79":[2,0,66,1,8]
 };

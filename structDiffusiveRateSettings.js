@@ -13,5 +13,7 @@ var structDiffusiveRateSettings =
     [ "mol_mom", "structDiffusiveRateSettings.html#a03b2035fe4458f9e3ea6202cd598312c", null ],
     [ "mol_th", "structDiffusiveRateSettings.html#a065c857beb4eb4de3d8ca85dd80ea6c9", null ],
     [ "mol_times_rho", "structDiffusiveRateSettings.html#a1d265ebc221c2fbbb9a6c506c604a8a9", null ],
-    [ "variable_dz", "structDiffusiveRateSettings.html#aabe25f485742495dc89a31ca36d4fe8e", null ]
+    [ "variable_dz", "structDiffusiveRateSettings.html#aabe25f485742495dc89a31ca36d4fe8e", null ],
+    [ "x_active", "structDiffusiveRateSettings.html#af98035e599b7fa9bf320ad761f286e0e", null ],
+    [ "y_active", "structDiffusiveRateSettings.html#a358e1f71f8f873a8862e1fc3ab414cd8", null ]
 ];
