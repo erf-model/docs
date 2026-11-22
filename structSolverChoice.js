@@ -7,6 +7,7 @@ var structSolverChoice =
     [ "forest_fast", "structSolverChoice.html#a34f98af1cd4310a020412aa6539766df", null ],
     [ "host_owns_vertical_momentum_diffusion", "structSolverChoice.html#ae2101cc67f2e37fdf1b33406ca19d50d", null ],
     [ "host_owns_vertical_scalar_diffusion", "structSolverChoice.html#ad9861d4e33ddb42d03fd03873e2e7a9c", null ],
+    [ "if_drag_in_projection", "structSolverChoice.html#a0e307632d6d4d7f4e57fe1c5caa22fc5", null ],
     [ "immersed_forcing_fast", "structSolverChoice.html#ab232bfa59b94fb53bbe1eeb56501cf8c", null ],
     [ "init_params", "structSolverChoice.html#a76659aa69edd3370626e3648cbead9be", null ],
     [ "level_substeps", "structSolverChoice.html#abda4f97d0ad1666417333079380cc374", null ],

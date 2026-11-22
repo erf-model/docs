@@ -1,5 +1,6 @@
 var NAVTREEINDEX44 =
 {
+"namespacederived.html#a93723d75ca613561cbba09e53e294789":[1,0,6,39],
 "namespacederived.html#a95e8691e3da0b2cf93da2c92e4b973c5":[1,0,6,16],
 "namespacederived.html#a9935603239fe8510b11179da8e76c39c":[1,0,6,24],
 "namespacederived.html#aac38ebccfd26fccd9ed0c3209312046b":[1,0,6,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX44 =
 "namespaceerf__cloud__chamber__wall__flux.html#a22cd746f2b3719f4aef9e3f796323c65":[1,0,17,35],
 "namespaceerf__cloud__chamber__wall__flux.html#a2a902928ca3c278cc65fdf50c1bb97bb":[1,0,17,22],
 "namespaceerf__cloud__chamber__wall__flux.html#a35470ccca989645d830418c11cc2c322":[1,0,17,42],
-"namespaceerf__cloud__chamber__wall__flux.html#a3cf8c4a625f384e564122c3d7ffa5ce7":[1,0,17,21],
-"namespaceerf__cloud__chamber__wall__flux.html#a4409efb69c9886c7b26b04f5bb750606":[1,0,17,18]
+"namespaceerf__cloud__chamber__wall__flux.html#a3cf8c4a625f384e564122c3d7ffa5ce7":[1,0,17,21]
 };

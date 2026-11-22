@@ -318,6 +318,7 @@ var classERF =
     [ "solve_with_flat_mlmg", "classERF.html#a473d631ab23e90db6dff51bdb213e55b", null ],
     [ "solve_with_gmres", "classERF.html#a3b68b5272f89529e97680b891314e084", null ],
     [ "solve_with_if_gmres", "classERF.html#aedddd8ea21373542335a173ca3f7da3d", null ],
+    [ "solve_with_if_mlmg", "classERF.html#a020a82fbc066faa19ff88dbe436f1fe7", null ],
     [ "solve_with_terrain_mlmg", "classERF.html#ad5433a58f2b8f0649f79588207205ee8", null ],
     [ "sounding_at_level", "classERF.html#aac417461ecc1c8f1eaca5d3bc6e43fa7", null ],
     [ "station_ground", "classERF.html#a87559824e13bb18588b5cf804844b458", null ],

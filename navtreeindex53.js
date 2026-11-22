@@ -1,5 +1,6 @@
 var NAVTREEINDEX53 =
 {
+"structERF_1_1CFFluxHistory.html#a65a01bd3a72ef337b017288d0a18ef33":[2,0,66,0,2],
 "structERF_1_1CFFluxHistory.html#a7278d4a67322851585ea3bbae389886f":[2,0,66,0,4],
 "structERF_1_1CFFluxHistory.html#a72b639ddeb8ff5792984773a8e86f57e":[2,0,66,0,5],
 "structERF_1_1CFFluxHistory.html#a7f60da8d305a257f0702feb0e6bdcfef":[2,0,66,0,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX53 =
 "structInputSoundingData.html#a0bede903644370297e62312bd248182b":[2,0,102,9],
 "structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8":[2,0,102,3],
 "structInputSoundingData.html#a0ed3963d7dcc3c6109544a02c954d7e7":[2,0,102,21],
-"structInputSoundingData.html#a133d3c13161dbdbbf9a808c43575c7bd":[2,0,102,19],
-"structInputSoundingData.html#a14347a117d3eaf2869ba59683e9e27cd":[2,0,102,31]
+"structInputSoundingData.html#a133d3c13161dbdbbf9a808c43575c7bd":[2,0,102,19]
 };
