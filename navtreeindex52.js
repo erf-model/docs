@@ -1,5 +1,7 @@
 var NAVTREEINDEX52 =
 {
+"namespaceshoc.html#a3e4ca8275ed177700891da61cbbe405e":[1,0,113,4],
+"namespaceshoc.html#a54869a642372eb758c54218d9250998e":[1,0,113,6],
 "namespaceshoc.html#a56b51d2385cf38e10dd7cae941593984":[1,0,113,9],
 "namespaceshoc.html#a7345cb6a28f25c872f5fbe82f8abba8b":[1,0,113,13],
 "namespaceshoc.html#a776af5a298fc673858c55f2b1311b2ad":[1,0,113,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX52 =
 "structERF_1_1CFZFaceLayout.html#a5ac611f426bd3eb6fe46a2b12c42750c":[2,0,66,1,6],
 "structERF_1_1CFZFaceLayout.html#a6711f02b5d73689bc7e8340a09cdfa79":[2,0,66,1,8],
 "structERF_1_1CFZFaceLayout.html#a6e1e246edc77c7949f1af492482a0f41":[2,0,66,1,17],
-"structERF_1_1CFZFaceLayout.html#a77b01dd88ebd530c9c0da29997fe4f79":[2,0,66,1,3],
-"structERF_1_1CFZFaceLayout.html#a88c25a21ebaecf10e0b5c6526e7d05f0":[2,0,66,1,15],
-"structERF_1_1CFZFaceLayout.html#a96069649f83d9155abc00c40d337ed6c":[2,0,66,1,2]
+"structERF_1_1CFZFaceLayout.html#a77b01dd88ebd530c9c0da29997fe4f79":[2,0,66,1,3]
 };

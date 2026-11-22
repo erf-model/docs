@@ -1,5 +1,7 @@
 var NAVTREEINDEX66 =
 {
+"structrico__flux.html":[2,0,167],
+"structrico__flux.html#a164569a6f654aae3477872738fec82b2":[2,0,167,0],
 "structrico__flux.html#a38f75d6313c115980e3df2a42f0b29d2":[2,0,167,4],
 "structrico__flux.html#a475fc69ee0b62e0853d925ba5dee4b1c":[2,0,167,6],
 "structrico__flux.html#a67b034a4b25ffb3864431dd769a7908f":[2,0,167,1],
