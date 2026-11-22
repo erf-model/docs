@@ -120,7 +120,8 @@ var namespaces_dup =
       [ "fill_cf_momentum", "namespaceerf__detail__CoarseFineFaces.html#a3bf871589387975e50cca8fbce62ba4e", null ],
       [ "make_cf_zface_patches", "namespaceerf__detail__CoarseFineFaces.html#aae17db7b9748627618f32a8c77bf5243", null ],
       [ "scale_by_column_mapfac", "namespaceerf__detail__CoarseFineFaces.html#a3971bd55421c7b3cacfbf5e22f5ef345", null ],
-      [ "weighted_mass_flux", "namespaceerf__detail__CoarseFineFaces.html#a888674c8c29121e539dcef147aaafffd", null ]
+      [ "weighted_mass_flux", "namespaceerf__detail__CoarseFineFaces.html#a888674c8c29121e539dcef147aaafffd", null ],
+      [ "weighted_zflux", "namespaceerf__detail__CoarseFineFaces.html#a938538d9f9de217a278a9561dca6b455", null ]
     ] ],
     [ "erf_detail_DiffusionSrcForMom_EB", "namespaceerf__detail__DiffusionSrcForMom__EB.html", [
       [ "eb_wall_correction", "namespaceerf__detail__DiffusionSrcForMom__EB.html#ae252580f050ac3d04774c605b1029849", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"ERF__FirePrerequisites_8H_source.html":[3,0,1,9,13],
 "ERF__FirePrerequisites_8cpp.html":[3,0,1,9,12],
 "ERF__FirePrerequisites_8cpp.html#a2fb0fd2f1104bd2c5a8a5c0a393cd64f":[3,0,1,9,12,0],
 "ERF__FirePrerequisites_8cpp.html#a706a8db437b3757e08d8303f01a76e4f":[3,0,1,9,12,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "ERF__ImmersedWallStability_8H.html#af7b5594e36344033f4e2a55b7487cb08":[3,0,1,25,13,7],
 "ERF__ImmersedWallStability_8H_source.html":[3,0,1,25,13],
 "ERF__ImplicitDiff__N_8cpp.html":[3,0,1,6,21],
-"ERF__ImplicitDiff__N_8cpp.html#a21ba6a35255c709df408423be66ddf7c":[3,0,1,6,21,1],
-"ERF__ImplicitDiff__N_8cpp.html#a468825b496be0b211c35772b3f9b487d":[3,0,1,6,21,0]
+"ERF__ImplicitDiff__N_8cpp.html#a21ba6a35255c709df408423be66ddf7c":[3,0,1,6,21,1]
 };

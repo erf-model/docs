@@ -1,5 +1,11 @@
 var NAVTREEINDEX64 =
 {
+"structerf__sbm_1_1SBMStateAdmission_1_1Counters.html#a236a7d3f2f404f067448d7fd9d159539":[2,0,14,39,0,2],
+"structerf__sbm_1_1SBMStateAdmission_1_1Counters.html#a39cc87507e87c891132b277533f09513":[2,0,14,39,0,1],
+"structerf__sbm_1_1SBMStateAdmission_1_1Counters.html#a4568ae9a0e00bac07f0f4a4f21a4fe12":[2,0,14,39,0,4],
+"structerf__sbm_1_1SBMStateAdmission_1_1Counters.html#a550e1c84e7f0528b117036376b329a08":[2,0,14,39,0,3],
+"structerf__sbm_1_1SBMStateAdmission_1_1Counters.html#a8250e83d16e2858cf5e34a41c2c59886":[2,0,14,39,0,5],
+"structerf__sbm_1_1SBMStateAdmission_1_1Impl.html":[2,0,14,39,1],
 "structerf__sbm_1_1SBMStateAdmission_1_1Impl.html#a0ffe6cb472b57c93b50f2588429f209d":[2,0,14,39,1,9],
 "structerf__sbm_1_1SBMStateAdmission_1_1Impl.html#a1b6ce07b3b6a4106c55224f7ee69b482":[2,0,14,39,1,6],
 "structerf__sbm_1_1SBMStateAdmission_1_1Impl.html#a2f94b9726e274eadd6e7a13fa8e70825":[2,0,14,39,1,12],
@@ -243,11 +249,5 @@ var NAVTREEINDEX64 =
 "structibseb_1_1RayMap.html#ae6ad433361d8d9660dd98ec8793695fb":[2,0,21,0,10],
 "structif__bld_1_1HorizFace.html":[2,0,22,0],
 "structif__bld_1_1HorizFace.html#a01d0f6465a6cd0459e97cd419b37a9fa":[2,0,22,0,6],
-"structif__bld_1_1HorizFace.html#a8e57f88f2955ac05caf44976b7c2e738":[2,0,22,0,4],
-"structif__bld_1_1HorizFace.html#a981fd3fc36208a86484e08cba57c9caa":[2,0,22,0,5],
-"structif__bld_1_1HorizFace.html#aa8bd1ad17cb4f8a7d85242c857b62c3d":[2,0,22,0,1],
-"structif__bld_1_1HorizFace.html#ab855305edf2572944fd9073e02548da4":[2,0,22,0,3],
-"structif__bld_1_1HorizFace.html#ae0d155dab47591994c2c2fcd74a544b2":[2,0,22,0,2],
-"structif__bld_1_1HorizFace.html#af0bbeeca4100039469dbf5514af3fcdd":[2,0,22,0,0],
-"structif__bld_1_1HorizMasks.html":[2,0,22,2]
+"structif__bld_1_1HorizFace.html#a8e57f88f2955ac05caf44976b7c2e738":[2,0,22,0,4]
 };

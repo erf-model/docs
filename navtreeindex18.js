@@ -1,5 +1,6 @@
 var NAVTREEINDEX18 =
 {
+"ERF__ShocThermoUtils_8H.html#aa0bc0d7d7c20d5cf7ab14a285ed53d33":[3,0,1,20,0,20,4],
 "ERF__ShocThermoUtils_8H.html#ac404270665343fd3e2e91b7a26aadb61":[3,0,1,20,0,20,5],
 "ERF__ShocThermoUtils_8H.html#ad15cadfc5ee5c8f9fe59ebf7a1634300":[3,0,1,20,0,20,6],
 "ERF__ShocThermoUtils_8H.html#af984a1839991048a21e0b142fb57b2a0":[3,0,1,20,0,20,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX18 =
 "ERF__SurfaceTemperature_8H.html":[3,0,1,29,47],
 "ERF__SurfaceTemperature_8H.html#a00b58c707f5e22343bfc6c0d2f23d25a":[3,0,1,29,47,7],
 "ERF__SurfaceTemperature_8H.html#a0d44f9d42128457beaab296839569b5e":[3,0,1,29,47,11],
-"ERF__SurfaceTemperature_8H.html#a0e54a32154f7a2327fad71b277e2bd2e":[3,0,1,29,47,15],
-"ERF__SurfaceTemperature_8H.html#a0fe51ca2d2ab7da9cd870e3f1fc0e717":[3,0,1,29,47,12]
+"ERF__SurfaceTemperature_8H.html#a0e54a32154f7a2327fad71b277e2bd2e":[3,0,1,29,47,15]
 };

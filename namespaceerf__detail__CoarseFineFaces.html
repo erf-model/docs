@@ -101,6 +101,8 @@ Functions</h2></td></tr>
 <tr class="separator:a3971bd55421c7b3cacfbf5e22f5ef345"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a888674c8c29121e539dcef147aaafffd"><td class="memItemLeft" align="right" valign="top">MultiFab&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__CoarseFineFaces.html#a888674c8c29121e539dcef147aaafffd">weighted_mass_flux</a> (const MultiFab &amp;m, const MultiFab &amp;area, const MultiFab &amp;mf)</td></tr>
 <tr class="separator:a888674c8c29121e539dcef147aaafffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a938538d9f9de217a278a9561dca6b455"><td class="memItemLeft" align="right" valign="top">MultiFab&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__CoarseFineFaces.html#a938538d9f9de217a278a9561dca6b455">weighted_zflux</a> (const MultiFab &amp;w, const MultiFab &amp;mx, const MultiFab &amp;my)</td></tr>
+<tr class="separator:a938538d9f9de217a278a9561dca6b455"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bf871589387975e50cca8fbce62ba4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__detail__CoarseFineFaces.html#a3bf871589387975e50cca8fbce62ba4e">fill_cf_momentum</a> (<a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> &amp;patcher, MultiFab &amp;mom, const MultiFab &amp;area, const MultiFab &amp;mapfac, bool mass_flux, double time_d, const Vector&lt; BCRec &gt; &amp;bcs)</td></tr>
 <tr class="separator:a3bf871589387975e50cca8fbce62ba4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -319,29 +321,29 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;{</div>
-<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;    PhysBCFunctNoOp null_bc;</div>
-<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;    <span class="keywordflow">if</span> (!mass_flux) {</div>
-<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;        patcher.<a class="code" href="classERFFillPatcher.html#acf6a9c991985f990efe6ef0b06104cfd">FillSet</a>(mom, time_d, null_bc, bcs);</div>
-<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;    }</div>
-<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;    constexpr Real not_set = std::numeric_limits&lt;Real&gt;::max();</div>
-<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;    MultiFab flux(mom.boxArray(), mom.DistributionMap(), 1, 0);</div>
-<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;    flux.setVal(not_set);</div>
-<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;    patcher.<a class="code" href="classERFFillPatcher.html#acf6a9c991985f990efe6ef0b06104cfd">FillSet</a>(flux, time_d, null_bc, bcs);</div>
-<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(flux, TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;        <span class="keyword">const</span> Box bx = mfi.tilebox();</div>
-<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> f = flux.const_array(mfi);</div>
-<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> a = area.const_array(mfi);</div>
-<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> mf = mapfac.const_array(mfi);</div>
-<div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> m = mom.array(mfi);</div>
-<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;        <span class="keyword">const</span> Real flag = not_set;</div>
-<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;        {</div>
-<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;            <span class="keywordflow">if</span> (f(i,j,k) != flag) { m(i,j,k) = f(i,j,k) * mf(i,j,0) / a(i,j,k); }</div>
-<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;        });</div>
-<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;    }</div>
-<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;{</div>
+<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;    PhysBCFunctNoOp null_bc;</div>
+<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;    <span class="keywordflow">if</span> (!mass_flux) {</div>
+<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;        patcher.<a class="code" href="classERFFillPatcher.html#acf6a9c991985f990efe6ef0b06104cfd">FillSet</a>(mom, time_d, null_bc, bcs);</div>
+<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;    }</div>
+<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;    constexpr Real not_set = std::numeric_limits&lt;Real&gt;::max();</div>
+<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;    MultiFab flux(mom.boxArray(), mom.DistributionMap(), 1, 0);</div>
+<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;    flux.setVal(not_set);</div>
+<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;    patcher.<a class="code" href="classERFFillPatcher.html#acf6a9c991985f990efe6ef0b06104cfd">FillSet</a>(flux, time_d, null_bc, bcs);</div>
+<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(flux, TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;        <span class="keyword">const</span> Box bx = mfi.tilebox();</div>
+<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> f = flux.const_array(mfi);</div>
+<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> a = area.const_array(mfi);</div>
+<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> mf = mapfac.const_array(mfi);</div>
+<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> m = mom.array(mfi);</div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;        <span class="keyword">const</span> Real flag = not_set;</div>
+<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;        {</div>
+<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;            <span class="keywordflow">if</span> (f(i,j,k) != flag) { m(i,j,k) = f(i,j,k) * mf(i,j,0) / a(i,j,k); }</div>
+<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;        });</div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;    }</div>
+<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;}</div>
 <div class="ttc" id="aclassERFFillPatcher_html_acf6a9c991985f990efe6ef0b06104cfd"><div class="ttname"><a href="classERFFillPatcher.html#acf6a9c991985f990efe6ef0b06104cfd">ERFFillPatcher::FillSet</a></div><div class="ttdeci">void FillSet(amrex::MultiFab &amp;mf, double time, BC &amp;cbc, amrex::Vector&lt; amrex::BCRec &gt; const &amp;bcs)</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:204</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a8717bf32b998275b426d81669dee60c3">ERF::FillSetHorizontalMomentaCF()</a>.</p>
@@ -554,24 +556,24 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;{</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a> = amrex::min(m.nGrowVect(), area.nGrowVect());</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>[0] = amrex::min(<a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>[0], mf.nGrowVect()[0]);</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>[1] = amrex::min(<a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>[1], mf.nGrowVect()[1]);</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    MultiFab w(m.boxArray(), m.DistributionMap(), 1, <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(w, TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        <span class="keyword">const</span> Box bx = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> w_arr = w.array(mfi);</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> m_arr = m.const_array(mfi);</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> a_arr = area.const_array(mfi);</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> f_arr = mf.const_array(mfi);</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        {</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            w_arr(i,j,k) = m_arr(i,j,k) * a_arr(i,j,k) / f_arr(i,j,0);</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        });</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    }</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <span class="keywordflow">return</span> w;</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;{</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a> = amrex::min(m.nGrowVect(), area.nGrowVect());</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>[0] = amrex::min(<a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>[0], mf.nGrowVect()[0]);</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>[1] = amrex::min(<a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>[1], mf.nGrowVect()[1]);</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    MultiFab w(m.boxArray(), m.DistributionMap(), 1, <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(w, TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;        <span class="keyword">const</span> Box bx = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> w_arr = w.array(mfi);</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> m_arr = m.const_array(mfi);</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> a_arr = area.const_array(mfi);</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> f_arr = mf.const_array(mfi);</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;        {</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;            w_arr(i,j,k) = m_arr(i,j,k) * a_arr(i,j,k) / f_arr(i,j,0);</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        });</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    }</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <span class="keywordflow">return</span> w;</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;}</div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:51</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a6ddec289a025ffcd2765be87b7bfdd84">ERF::average_down_mass_flux()</a>, <a class="el" href="classERF.html#a7f25443ff66a4e0712d5aad3766682f7">ERF::cf_anelastic_stage_registration()</a>, and <a class="el" href="classERF.html#a3a852c089fe874e5fdf56e380273febd">ERF::RegisterCoarseMomentumCF()</a>.</p>
@@ -593,6 +595,89 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classERF.html#a6ddec289a025ffcd2765be87b7bfdd84" title=" " alt="" coords="17,5,239,32"/>
 <area shape="rect" href="classERF.html#a7f25443ff66a4e0712d5aad3766682f7" title=" " alt="" coords="41,57,215,98"/>
 <area shape="rect" href="classERF.html#a3a852c089fe874e5fdf56e380273febd" title=" " alt="" coords="5,123,251,149"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a938538d9f9de217a278a9561dca6b455"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a938538d9f9de217a278a9561dca6b455">&#9670;&nbsp;</a></span>weighted_zflux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MultiFab erf_detail_CoarseFineFaces::weighted_zflux </td>
+          <td>(</td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>mx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>my</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The vertical mass flux (rho w) / (m_x m_y) of a flat mesh, on the faces of its valid region and the ghost faces that the momentum and the map factors all hold.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>w-face momenta, (rho w) </td></tr>
+    <tr><td class="paramname">mx</td><td>Map factor m_x </td></tr>
+    <tr><td class="paramname">my</td><td>Map factor m_y </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;{</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a> = w.nGrowVect();</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; 2; ++d) {</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>[d] = amrex::min(<a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>[d], mx.nGrowVect()[d], my.nGrowVect()[d]);</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    }</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    MultiFab f(w.boxArray(), w.DistributionMap(), 1, <a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(f, TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        <span class="keyword">const</span> Box bx = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#ad185f34e02252e291d260e44fa3f94eda281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> f_arr = f.array(mfi);</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> w_arr = w.const_array(mfi);</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> x_arr = mx.const_array(mfi);</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> y_arr = my.const_array(mfi);</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        {</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;            f_arr(i,j,k) = w_arr(i,j,k) / (x_arr(i,j,0) * y_arr(i,j,0));</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        });</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    }</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <span class="keywordflow">return</span> f;</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#a6ddec289a025ffcd2765be87b7bfdd84">ERF::average_down_mass_flux()</a>, and <a class="el" href="classERF.html#a185f42d12097bcea971fe6f0ca399dc2">ERF::RegisterCoarseZMomentumCF()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__detail__CoarseFineFaces_a938538d9f9de217a278a9561dca6b455_cgraph.png" border="0" usemap="#anamespaceerf__detail__CoarseFineFaces_a938538d9f9de217a278a9561dca6b455_cgraph" alt=""/></div>
+<map name="anamespaceerf__detail__CoarseFineFaces_a938538d9f9de217a278a9561dca6b455_cgraph" id="anamespaceerf__detail__CoarseFineFaces_a938538d9f9de217a278a9561dca6b455_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,204,47"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="252,13,343,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__detail__CoarseFineFaces_a938538d9f9de217a278a9561dca6b455_icgraph.png" border="0" usemap="#anamespaceerf__detail__CoarseFineFaces_a938538d9f9de217a278a9561dca6b455_icgraph" alt=""/></div>
+<map name="anamespaceerf__detail__CoarseFineFaces_a938538d9f9de217a278a9561dca6b455_icgraph" id="anamespaceerf__detail__CoarseFineFaces_a938538d9f9de217a278a9561dca6b455_icgraph">
+<area shape="rect" title=" " alt="" coords="308,23,507,65"/>
+<area shape="rect" href="classERF.html#a6ddec289a025ffcd2765be87b7bfdd84" title=" " alt="" coords="21,5,244,32"/>
+<area shape="rect" href="classERF.html#a185f42d12097bcea971fe6f0ca399dc2" title=" " alt="" coords="5,56,260,83"/>
 </map>
 </div>
 

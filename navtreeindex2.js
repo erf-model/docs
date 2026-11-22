@@ -50,6 +50,7 @@ var NAVTREEINDEX2 =
 "ERF__CoarseFineFaces_8cpp.html#a3bf871589387975e50cca8fbce62ba4e":[3,0,1,14,0,2],
 "ERF__CoarseFineFaces_8cpp.html#a888674c8c29121e539dcef147aaafffd":[3,0,1,14,0,5],
 "ERF__CoarseFineFaces_8cpp.html#a9147091141c15d90d52910e259d5cf5f":[3,0,1,14,0,1],
+"ERF__CoarseFineFaces_8cpp.html#a938538d9f9de217a278a9561dca6b455":[3,0,1,14,0,6],
 "ERF__CoarseFineFaces_8cpp.html#a9de022ab857238a9d971e83931d4fa2c":[3,0,1,14,0,0],
 "ERF__CoarseFineFaces_8cpp.html#aae17db7b9748627618f32a8c77bf5243":[3,0,1,14,0,3],
 "ERF__ColumnBands_8H.html":[3,0,1,29,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__Derive_8cpp.html#a93723d75ca613561cbba09e53e294789":[3,0,1,35,19],
 "ERF__Derive_8cpp.html#aac38ebccfd26fccd9ed0c3209312046b":[3,0,1,35,9],
 "ERF__Derive_8cpp.html#aaf81bbd59c401a4ae87df8685d110d07":[3,0,1,35,10],
-"ERF__Derive_8cpp.html#ab47480b9699e0eae636edf6574563237":[3,0,1,35,16],
-"ERF__Derive_8cpp.html#ac1f7a8081649073a58ff89c1f542324b":[3,0,1,35,11]
+"ERF__Derive_8cpp.html#ab47480b9699e0eae636edf6574563237":[3,0,1,35,16]
 };
