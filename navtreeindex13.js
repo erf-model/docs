@@ -1,11 +1,15 @@
 var NAVTREEINDEX13 =
 {
-"ERF__PlanarBoundary_8H_source.html":[3,0,1,29,38],
-"ERF__PlanarBoundary_8cpp.html":[3,0,1,29,37],
-"ERF__PlanarBoundary_8cpp.html#a351e258ea6c114388518eeb58564c851":[3,0,1,29,37,1],
-"ERF__PlanarBoundary_8cpp.html#aff13d690958fec54c3a86a59ab521eb4":[3,0,1,29,37,0],
-"ERF__PlaneAverage_8H.html":[3,0,1,29,39],
-"ERF__PlaneAverage_8H_source.html":[3,0,1,29,39],
+"ERF__PhysBCFunct_8cpp.html":[3,0,1,2,21],
+"ERF__PlanarBoundary_8H.html":[3,0,1,29,39],
+"ERF__PlanarBoundary_8H.html#a3b0057c83df539e16a091dce63486b43":[3,0,1,29,39,4],
+"ERF__PlanarBoundary_8H.html#ae5736f7db233e98814bc5b7cc2753495":[3,0,1,29,39,3],
+"ERF__PlanarBoundary_8H_source.html":[3,0,1,29,39],
+"ERF__PlanarBoundary_8cpp.html":[3,0,1,29,38],
+"ERF__PlanarBoundary_8cpp.html#a351e258ea6c114388518eeb58564c851":[3,0,1,29,38,1],
+"ERF__PlanarBoundary_8cpp.html#aff13d690958fec54c3a86a59ab521eb4":[3,0,1,29,38,0],
+"ERF__PlaneAverage_8H.html":[3,0,1,29,40],
+"ERF__PlaneAverage_8H_source.html":[3,0,1,29,40],
 "ERF__Plotfile2DCatalog_8H.html":[3,0,1,12,20],
 "ERF__Plotfile2DCatalog_8H.html#a0613dde6ea83d4510e535cab71c0c157":[3,0,1,12,20,5],
 "ERF__Plotfile2DCatalog_8H.html#a0ed70bc8256f5893480c5539f085dcc8":[3,0,1,12,20,7],
@@ -245,9 +249,5 @@ var NAVTREEINDEX13 =
 "ERF__Plotfile2DSampledField_8H.html#ae007f8b65adffbef80c98ebbec48bb6daa78578c428179b490a0461e76ba5f319":[3,0,1,12,32,2,3],
 "ERF__Plotfile2DSampledField_8H.html#ae007f8b65adffbef80c98ebbec48bb6daaab08cf22a379ba8849ee403b03ae3c1":[3,0,1,12,32,2,15],
 "ERF__Plotfile2DSampledField_8H.html#ae007f8b65adffbef80c98ebbec48bb6dad028a5b003a44038241a8266df863293":[3,0,1,12,32,2,4],
-"ERF__Plotfile2DSampledField_8H.html#ae007f8b65adffbef80c98ebbec48bb6dad21c855a168b8f09d1ebb1bc596be927":[3,0,1,12,32,2,1],
-"ERF__Plotfile2DSampledField_8H.html#ae007f8b65adffbef80c98ebbec48bb6daebfc26a474835c1ad7c18f712064485f":[3,0,1,12,32,2,8],
-"ERF__Plotfile2DSampledField_8H.html#ae007f8b65adffbef80c98ebbec48bb6daf2d5be7948c3aa5ac0e46d0e6036cf20":[3,0,1,12,32,2,10],
-"ERF__Plotfile2DSampledField_8H_source.html":[3,0,1,12,32],
-"ERF__Plotfile2DSampledField_8cpp.html":[3,0,1,12,31]
+"ERF__Plotfile2DSampledField_8H.html#ae007f8b65adffbef80c98ebbec48bb6dad21c855a168b8f09d1ebb1bc596be927":[3,0,1,12,32,2,1]
 };

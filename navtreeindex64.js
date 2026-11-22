@@ -1,5 +1,14 @@
 var NAVTREEINDEX64 =
 {
+"structerf__sbm_1_1SBMBoundaryLedger.html#aad7a2ee7d7518b4372e6eb36c48ad886":[2,0,14,28,7],
+"structerf__sbm_1_1SBMBoundaryLedger.html#abf266a7eb44274e6ae0a57d694d30c60":[2,0,14,28,4],
+"structerf__sbm_1_1SBMBoundaryLedger.html#adb98fe6a73a0f859ff82b78e71137160":[2,0,14,28,8],
+"structerf__sbm_1_1SBMBoundaryLedger.html#ae0b7ef1cf15cb7627b12552c7cb5d16b":[2,0,14,28,0],
+"structerf__sbm_1_1SBMBoundaryLedger.html#aee49e1903f2e8e2ec380350f49049547":[2,0,14,28,5],
+"structerf__sbm_1_1SBMLayoutSpec.html":[2,0,14,23],
+"structerf__sbm_1_1SBMLayoutSpec.html#a0295717ac34e8283a979ebab6d333094":[2,0,14,23,1],
+"structerf__sbm_1_1SBMLayoutSpec.html#a03b1d2db54c1c16158827797d0dbdd84":[2,0,14,23,2],
+"structerf__sbm_1_1SBMLayoutSpec.html#a9ca15a97f4a80567920d35be97045c61":[2,0,14,23,0],
 "structerf__sbm_1_1SBMPhysicalBoundaryConfig.html":[2,0,14,27],
 "structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#a1b94b30b3f75fe155f40e5db8121da12":[2,0,14,27,4],
 "structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#a30ee84df3d4043f77970407c2efeb4a2":[2,0,14,27,0],
@@ -240,14 +249,5 @@ var NAVTREEINDEX64 =
 "structib__wall_1_1WallState.html#a4cb4b21d0d87db0218561d6e63bc0c79":[2,0,20,1,2],
 "structib__wall_1_1WallState.html#a89c9e37e9397eb3aee3cd0f476b18b71":[2,0,20,1,0],
 "structib__wall_1_1WallState.html#aa8968c2cd7aaef20afe911bd837ed414":[2,0,20,1,3],
-"structib__wall_1_1WallState.html#af405399a578db74ef1508ed24b47be3a":[2,0,20,1,1],
-"structibseb_1_1RayMap.html":[2,0,21,0],
-"structibseb_1_1RayMap.html#a1ca4a39a522cb5859dc1618a60c40d08":[2,0,21,0,17],
-"structibseb_1_1RayMap.html#a1d30cb1bd2e553cf03aa9d9ead2f7fa0":[2,0,21,0,14],
-"structibseb_1_1RayMap.html#a32007121fceba2bbb6de24f05b362066":[2,0,21,0,12],
-"structibseb_1_1RayMap.html#a43b059a09dc425ecd216a6363c34243f":[2,0,21,0,7],
-"structibseb_1_1RayMap.html#a57047fb185e6a68911010add2b5340a4":[2,0,21,0,2],
-"structibseb_1_1RayMap.html#a596cbe679d09404e233ac62d424deeac":[2,0,21,0,18],
-"structibseb_1_1RayMap.html#a5a8ba01cd1f0acb70f52a03202e4a4a4":[2,0,21,0,20],
-"structibseb_1_1RayMap.html#a5f68790a5960b564a33e4e22fbd0397b":[2,0,21,0,1]
+"structib__wall_1_1WallState.html#af405399a578db74ef1508ed24b47be3a":[2,0,20,1,1]
 };

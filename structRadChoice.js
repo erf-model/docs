@@ -56,6 +56,7 @@ var structRadChoice =
     [ "seb_grdflx_default", "structRadChoice.html#a34d1cd57900127b4aff63340e7ca9fbe", null ],
     [ "seb_hfx_default", "structRadChoice.html#ad08e4e36d77a192996f11c93b03a2626", null ],
     [ "seb_init_skin_from_file", "structRadChoice.html#a9a207e3272f34fe95152e06bc3759c26", null ],
+    [ "seb_init_t_deep_from_file", "structRadChoice.html#a2442a2e07f364ae917a60d280f88c833", null ],
     [ "seb_land_roughness", "structRadChoice.html#adaf89afdc4b8bc83de295dd314160362", null ],
     [ "seb_leaf_area_index", "structRadChoice.html#a9b1ea36bbc2d75336b041fed14d80ffc", null ],
     [ "seb_lh_default", "structRadChoice.html#a4c4864a03a86e4a8813312e6c6243566", null ],

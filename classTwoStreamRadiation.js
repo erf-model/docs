@@ -45,6 +45,8 @@ var classTwoStreamRadiation =
     [ "seb_surface_moisture", "classTwoStreamRadiation.html#a62178193012720d3688c1c342dc30c55", null ],
     [ "seb_sw_net", "classTwoStreamRadiation.html#a5977d66e47d395117db978df6567b5c4", null ],
     [ "seb_t_deep", "classTwoStreamRadiation.html#ab864ea9041e7f156a822424830c156ba", null ],
+    [ "seb_t_deep_is_state", "classTwoStreamRadiation.html#a72cfbab10342ee9893da52065ee268ac", null ],
+    [ "seb_t_deep_state", "classTwoStreamRadiation.html#a86dabc6309871b2bc56fc52cd417a46b", null ],
     [ "seb_t_sfc", "classTwoStreamRadiation.html#a62fab41c0ad7c60c2fd3fb12b38d72e7", null ],
     [ "set_building_cover", "classTwoStreamRadiation.html#ad685b4e9cf0834419fce910e683d7cdb", null ],
     [ "snow_swe", "classTwoStreamRadiation.html#a680e2d696fee287ed8b9fa7f161ab2c3", null ],

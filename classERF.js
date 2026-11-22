@@ -173,6 +173,7 @@ var classERF =
     [ "init_phys_bcs", "classERF.html#a5b986828dae61e951f2125ed5409bf53", null ],
     [ "init_sbm_level_from_coarse", "classERF.html#aa8aeb2ccd1b6033aafc3f78fd841d774", null ],
     [ "init_seb_skin_from_file", "classERF.html#a16a17de6272b8d83deaf02d92c8c0dce", null ],
+    [ "init_seb_t_deep_from_file", "classERF.html#ad62fe1342e74d5b949ac9be1a3ba8707", null ],
     [ "init_stations", "classERF.html#a28f17564c3c43617c5f7e3a309c1f91a", null ],
     [ "init_stuff", "classERF.html#aaf237fbe118d80f149295c0579608579", null ],
     [ "init_thin_body", "classERF.html#af4f87fb01d61c18d8eb85ac5ac159785", null ],

@@ -1,5 +1,9 @@
 var NAVTREEINDEX20 =
 {
+"ERF__TurbStruct_8H.html#a454c17db1a1fb2e88057dc6399effcd8":[3,0,1,4,14,1],
+"ERF__TurbStruct_8H.html#a4eae7b00dc1804725e10ef874ffe9e0b":[3,0,1,4,14,7],
+"ERF__TurbStruct_8H.html#aa04592b5e585ba63b39acf1e065191e3":[3,0,1,4,14,6],
+"ERF__TurbStruct_8H.html#aae63bb540db934adb5f1eae4aad5f5e1":[3,0,1,4,14,2],
 "ERF__TurbStruct_8H.html#abf8846591b6ec65580e80d118f08a4b1":[3,0,1,4,14,5],
 "ERF__TurbStruct_8H_source.html":[3,0,1,4,14],
 "ERF__TwoStreamCanopyForcing_8H.html":[3,0,1,23,2,22],
@@ -245,9 +249,5 @@ var NAVTREEINDEX20 =
 "ERF__UpdateWSubsidence__Bomex_8H_source.html":[3,0,1,22,74],
 "ERF__UpdateWSubsidence__DYCOMS2RF01_8H.html":[3,0,1,22,75],
 "ERF__UpdateWSubsidence__DYCOMS2RF01_8H.html#a10051474073f195f0f1a21738ad67576":[3,0,1,22,75,1],
-"ERF__UpdateWSubsidence__DYCOMS2RF01_8H.html#af29fe9389d296d430e7678db018af487":[3,0,1,22,75,0],
-"ERF__UpdateWSubsidence__DYCOMS2RF01_8H_source.html":[3,0,1,22,75],
-"ERF__UpdateWSubsidence__GATE_8H.html":[3,0,1,22,76],
-"ERF__UpdateWSubsidence__GATE_8H.html#aeeeed54f9560a0ff00f4bb21894420fd":[3,0,1,22,76,0],
-"ERF__UpdateWSubsidence__GATE_8H_source.html":[3,0,1,22,76]
+"ERF__UpdateWSubsidence__DYCOMS2RF01_8H.html#af29fe9389d296d430e7678db018af487":[3,0,1,22,75,0]
 };

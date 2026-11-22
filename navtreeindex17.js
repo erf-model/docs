@@ -1,5 +1,9 @@
 var NAVTREEINDEX17 =
 {
+"ERF__SLM_8H.html#a6b38318ab101c9844a79d051c7176b01":[3,0,1,13,2,1,1],
+"ERF__SLM_8H_source.html":[3,0,1,13,2,1],
+"ERF__SLM_8cpp.html":[3,0,1,13,2,0],
+"ERF__SLM__DefaultParams_8H.html":[3,0,1,13,2,2],
 "ERF__SLM__DefaultParams_8H.html#a1b7ccb6fd49624362712db8fc78092a2":[3,0,1,13,2,2,13],
 "ERF__SLM__DefaultParams_8H.html#a3fa50a30652ec294b207891e2bdf088a":[3,0,1,13,2,2,16],
 "ERF__SLM__DefaultParams_8H.html#a42e7c1f8d86f7983b8adc6e97199a313":[3,0,1,13,2,2,18],
@@ -28,8 +32,8 @@ var NAVTREEINDEX17 =
 "ERF__SatAdj_8H.html":[3,0,1,16,5,2],
 "ERF__SatAdj_8H_source.html":[3,0,1,16,5,2],
 "ERF__SatAdj_8cpp.html":[3,0,1,16,5,1],
-"ERF__SatMethods_8H.html":[3,0,1,29,42],
-"ERF__SatMethods_8H_source.html":[3,0,1,29,42],
+"ERF__SatMethods_8H.html":[3,0,1,29,43],
+"ERF__SatMethods_8H_source.html":[3,0,1,29,43],
 "ERF__ScalarDiffusion_8H.html":[3,0,1,6,29],
 "ERF__ScalarDiffusion_8H.html#a0a3e7a69af5fdc2cdb69db58d01fa179":[3,0,1,6,29,18],
 "ERF__ScalarDiffusion_8H.html#a10127d25f04f1733ab1f4a4c97541d87":[3,0,1,6,29,28],
@@ -245,9 +249,5 @@ var NAVTREEINDEX17 =
 "ERF__ShocTKE_8cpp.html#a4f4a4db9b6339d2d958cc80ccfa24ad8":[3,0,1,20,0,21,12],
 "ERF__ShocTKE_8cpp.html#a57fa522d397653f8878986b611c63b01":[3,0,1,20,0,21,8],
 "ERF__ShocTKE_8cpp.html#a5b6eb06e9ac11c453675c95182fde79e":[3,0,1,20,0,21,0],
-"ERF__ShocTKE_8cpp.html#a5dc0ddef8967b0b29ac39e14bc39c17e":[3,0,1,20,0,21,2],
-"ERF__ShocTKE_8cpp.html#a6349a505ce4c1baea2f9510132a2a44b":[3,0,1,20,0,21,4],
-"ERF__ShocTKE_8cpp.html#a924c9fab7224eb748c7a1f26b8f823f7":[3,0,1,20,0,21,1],
-"ERF__ShocTKE_8cpp.html#abb291d28dc2e165149fe4991c0f379bd":[3,0,1,20,0,21,10],
-"ERF__ShocTKE_8cpp.html#ad85b8856709ee70e24aafb0755681810":[3,0,1,20,0,21,15]
+"ERF__ShocTKE_8cpp.html#a5dc0ddef8967b0b29ac39e14bc39c17e":[3,0,1,20,0,21,2]
 };
