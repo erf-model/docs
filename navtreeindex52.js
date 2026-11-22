@@ -1,5 +1,6 @@
 var NAVTREEINDEX52 =
 {
+"namespacesea__level__pressure__diagnostics.html#a52e9ef39acd68fc7f5f1a15467581a96":[1,0,112,10],
 "namespacesea__level__pressure__diagnostics.html#a658c60a9d9f3913c0391139a728558a2":[1,0,112,7],
 "namespacesea__level__pressure__diagnostics.html#a6a1682d34e14ac6da6758e420f97026f":[1,0,112,2],
 "namespacesea__level__pressure__diagnostics.html#a6d0476adac51852c88e0a52078a4f6e9":[1,0,112,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX52 =
 "structERF_1_1CFFluxHistory.html#a3569cf7fe581e13812ea184ef9c6a23e":[2,0,66,0,3],
 "structERF_1_1CFFluxHistory.html#a3ce6189e1a2afc059bcfbfa314bd2036":[2,0,66,0,0],
 "structERF_1_1CFFluxHistory.html#a4ae0431c431d201fb150b481d457389c":[2,0,66,0,7],
-"structERF_1_1CFFluxHistory.html#a65a01bd3a72ef337b017288d0a18ef33":[2,0,66,0,2],
-"structERF_1_1CFFluxHistory.html#a7278d4a67322851585ea3bbae389886f":[2,0,66,0,4]
+"structERF_1_1CFFluxHistory.html#a65a01bd3a72ef337b017288d0a18ef33":[2,0,66,0,2]
 };

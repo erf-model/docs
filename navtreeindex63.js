@@ -1,5 +1,6 @@
 var NAVTREEINDEX63 =
 {
+"structerf__sbm_1_1AdvectionFacePolicyInput.html#a7caa15a2f9e555422db30d22980130a8":[2,0,14,2,4],
 "structerf__sbm_1_1AdvectionFacePolicyInput.html#adf6772cf2901e0c8ceefbec6222506c1":[2,0,14,2,2],
 "structerf__sbm_1_1AdvectionFacePolicyInput.html#aed1bb8f66ea39bd936d7f82a0617767b":[2,0,14,2,0],
 "structerf__sbm_1_1AttachedPropertyDescriptor.html":[2,0,14,21],
@@ -248,6 +249,5 @@ var NAVTREEINDEX63 =
 "structerf__sbm_1_1SBMLayoutSpec.html#a03b1d2db54c1c16158827797d0dbdd84":[2,0,14,23,2],
 "structerf__sbm_1_1SBMLayoutSpec.html#a9ca15a97f4a80567920d35be97045c61":[2,0,14,23,0],
 "structerf__sbm_1_1SBMPhysicalBoundaryConfig.html":[2,0,14,27],
-"structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#a1b94b30b3f75fe155f40e5db8121da12":[2,0,14,27,4],
-"structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#a30ee84df3d4043f77970407c2efeb4a2":[2,0,14,27,0]
+"structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#a1b94b30b3f75fe155f40e5db8121da12":[2,0,14,27,4]
 };

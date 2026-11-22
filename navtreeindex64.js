@@ -1,5 +1,6 @@
 var NAVTREEINDEX64 =
 {
+"structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#a30ee84df3d4043f77970407c2efeb4a2":[2,0,14,27,0],
 "structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#a7bde245e85e1094aa575fa309e34fc66":[2,0,14,27,1],
 "structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#a803cc618911efe150631ff7339221386":[2,0,14,27,3],
 "structerf__sbm_1_1SBMPhysicalBoundaryConfig.html#ab68f3c290580279ff382667ef0a04e99":[2,0,14,27,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX64 =
 "structibseb_1_1RayMap.html#a5a8ba01cd1f0acb70f52a03202e4a4a4":[2,0,21,0,20],
 "structibseb_1_1RayMap.html#a5f68790a5960b564a33e4e22fbd0397b":[2,0,21,0,1],
 "structibseb_1_1RayMap.html#a6599969e993f06e150bcbd87097a399e":[2,0,21,0,15],
-"structibseb_1_1RayMap.html#a6b704a421c6aeecef4cbeb7444577a47":[2,0,21,0,11],
-"structibseb_1_1RayMap.html#a721ff8d47f63b6a9af3805ccf91614b5":[2,0,21,0,0]
+"structibseb_1_1RayMap.html#a6b704a421c6aeecef4cbeb7444577a47":[2,0,21,0,11]
 };
