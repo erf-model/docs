@@ -412,6 +412,7 @@ var annotated_dup =
     [ "SDInputs", "structSDInputs.html", "structSDInputs" ],
     [ "SDSampledWeight", "structSDSampledWeight.html", "structSDSampledWeight" ],
     [ "SEBLandMaskView", "structSEBLandMaskView.html", "structSEBLandMaskView" ],
+    [ "SEBSkinInitReport", "structSEBSkinInitReport.html", "structSEBSkinInitReport" ],
     [ "SedimentationFlux", "structSedimentationFlux.html", "structSedimentationFlux" ],
     [ "ShocColumnData", "structShocColumnData.html", "structShocColumnData" ],
     [ "ShocColumnLayout", "structShocColumnLayout.html", "structShocColumnLayout" ],
