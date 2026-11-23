@@ -148,10 +148,11 @@ var NAVTREEINDEX2 =
 "ERF__ConvertForProjection_8cpp.html#ae7b6af432609f901295686681f7b934b":[3,0,1,29,5,0],
 "ERF__DampingStruct_8H.html":[3,0,1,4,3],
 "ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1":[3,0,1,4,3,1],
-"ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1a09f7d3b242b6ede7372125e32efaaef1":[3,0,1,4,3,1,2],
+"ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1a09f7d3b242b6ede7372125e32efaaef1":[3,0,1,4,3,1,3],
+"ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1a29e93423ca34d9f2c3bbf0b5bf125c0d":[3,0,1,4,3,1,2],
 "ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1a6adf97f83acf6453d4a6a4b1070f3754":[3,0,1,4,3,1,0],
 "ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1ab6dc20114805fb02e063ac1c465490b9":[3,0,1,4,3,1,1],
-"ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1af4e9679a52e3d536f79543ab20f3d8c6":[3,0,1,4,3,1,3],
+"ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1af4e9679a52e3d536f79543ab20f3d8c6":[3,0,1,4,3,1,4],
 "ERF__DampingStruct_8H_source.html":[3,0,1,4,3],
 "ERF__DataStruct_8H.html":[3,0,1,4,4],
 "ERF__DataStruct_8H.html#a01afbed431da562282cc06eef6fb9c88":[3,0,1,4,4,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__Derive_8cpp.html#a924a372e8c2d5d3e0d877d8e6fad2bab":[3,0,1,35,3],
 "ERF__Derive_8cpp.html#a93723d75ca613561cbba09e53e294789":[3,0,1,35,19],
 "ERF__Derive_8cpp.html#aac38ebccfd26fccd9ed0c3209312046b":[3,0,1,35,9],
-"ERF__Derive_8cpp.html#aaf81bbd59c401a4ae87df8685d110d07":[3,0,1,35,10],
-"ERF__Derive_8cpp.html#ab47480b9699e0eae636edf6574563237":[3,0,1,35,16]
+"ERF__Derive_8cpp.html#aaf81bbd59c401a4ae87df8685d110d07":[3,0,1,35,10]
 };

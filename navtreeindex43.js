@@ -1,5 +1,6 @@
 var NAVTREEINDEX43 =
 {
+"globals_func_c.html":[3,1,1,2],
 "globals_func_d.html":[3,1,1,3],
 "globals_func_e.html":[3,1,1,4],
 "globals_func_f.html":[3,1,1,5],
@@ -82,8 +83,8 @@ var NAVTREEINDEX43 =
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,23,0,1],
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,23,0,0],
 "interfacemodule__libmassv_1_1vsqrt.html":[2,0,23,1],
-"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,23,1,0],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,23,1,1],
+"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,23,1,0],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,23,1,2],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,23,1,3],
 "main_8cpp.html":[3,0,1,44],
@@ -248,6 +249,5 @@ var NAVTREEINDEX43 =
 "namespacederived.html#a3cc76e67c0f746748aef32a5a5e57609":[1,0,6,5],
 "namespacederived.html#a4a4e21b79a37a1ba1f6062db4b7b9086":[1,0,6,0],
 "namespacederived.html#a4ae8445c6757b1d0c873e2d4145c1da8":[1,0,6,4],
-"namespacederived.html#a58604ca48dddcfd5a3741abc9d03101e":[1,0,6,1],
-"namespacederived.html#a591cb412598c637cf413d45840c34331":[1,0,6,15]
+"namespacederived.html#a58604ca48dddcfd5a3741abc9d03101e":[1,0,6,1]
 };

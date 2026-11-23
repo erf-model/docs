@@ -1,5 +1,6 @@
 var NAVTREEINDEX52 =
 {
+"namespacesaturation__funcs.html#aab3649a423971059794f41d2a34c234a":[1,0,111,0],
 "namespacesaturation__funcs.html#ab60ab340659e270ccf6fff1085eaac64":[1,0,111,6],
 "namespacesaturation__funcs.html#aba5559eb44895b9b07bded4d5e18578a":[1,0,111,3],
 "namespacesaturation__funcs.html#aea709a084013fba6b646d59efb3cb3c5":[1,0,111,9],
@@ -173,14 +174,15 @@ var NAVTREEINDEX52 =
 "structDampingChoice.html#a298b9e3f7a5c06dad0274cc97180b93f":[2,0,52,3],
 "structDampingChoice.html#a4285c5ca6911d92797b4b246ddd8e904":[2,0,52,4],
 "structDampingChoice.html#a4f28e43f36c945f24c007dfc347b7efa":[2,0,52,5],
-"structDampingChoice.html#a598fa15368159f1f5d4b017719dd4217":[2,0,52,8],
-"structDampingChoice.html#a692fd4e73be3ac2d30d9d1d3931caf89":[2,0,52,10],
-"structDampingChoice.html#a705fde4dd5230a50aa06bdacf6c0d0fb":[2,0,52,9],
+"structDampingChoice.html#a598fa15368159f1f5d4b017719dd4217":[2,0,52,9],
+"structDampingChoice.html#a692fd4e73be3ac2d30d9d1d3931caf89":[2,0,52,11],
+"structDampingChoice.html#a705fde4dd5230a50aa06bdacf6c0d0fb":[2,0,52,10],
+"structDampingChoice.html#a867e2b504c9573052fea06ba391ffa2b":[2,0,52,8],
 "structDampingChoice.html#ad13311a52aafcd872a27c4a390ef43b4":[2,0,52,2],
 "structDampingChoice.html#ad7d14bb652aef5e4c5b6487fc26da60e":[2,0,52,0],
-"structDampingChoice.html#add513b1483c065737271a686e0b41340":[2,0,52,11],
-"structDampingChoice.html#addf4fffe796926a8f419e822f81af1cd":[2,0,52,13],
-"structDampingChoice.html#aff159c0f9285d4c0e2ac0af5c5f0f62f":[2,0,52,12],
+"structDampingChoice.html#add513b1483c065737271a686e0b41340":[2,0,52,12],
+"structDampingChoice.html#addf4fffe796926a8f419e822f81af1cd":[2,0,52,14],
+"structDampingChoice.html#aff159c0f9285d4c0e2ac0af5c5f0f62f":[2,0,52,13],
 "structDiffChoice.html":[2,0,53],
 "structDiffChoice.html#a1f664c5d58a6ef7779297fb6b526ecdf":[2,0,53,9],
 "structDiffChoice.html#a25ff26296aa7303f64cac15a28bf2df6":[2,0,53,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX52 =
 "structEBChoice.html":[2,0,65],
 "structEBChoice.html#a27a604a24adb3c767c187fed54865d58":[2,0,65,0],
 "structEBChoice.html#a6d6d3723ced4f16e9515f108170b4e8d":[2,0,65,3],
-"structEBChoice.html#aac92c1256485157c821f8dc3625ad640":[2,0,65,1],
-"structEBChoice.html#ad8630487546ba19d7c2e38fd228305e4":[2,0,65,2],
-"structERFHostFabView.html":[2,0,68]
+"structEBChoice.html#aac92c1256485157c821f8dc3625ad640":[2,0,65,1]
 };

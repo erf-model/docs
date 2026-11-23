@@ -1,5 +1,6 @@
 var NAVTREEINDEX46 =
 {
+"namespaceerf__inputs__detail.html":[1,0,45],
 "namespaceerf__inputs__detail.html#a074ba375de2722b044717fe2d29a30d4":[1,0,45,3],
 "namespaceerf__inputs__detail.html#a13dd6b39ed7cdcc126549869796c553f":[1,0,45,2],
 "namespaceerf__inputs__detail.html#a4056cedb921fb38fe307329edc2c226f":[1,0,45,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX46 =
 "namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a5fa1ede22373e2cd801619f238ea2de7":[1,0,56,1,3],
 "namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a633932aa47076dee2e854250eab9d217":[1,0,56,1,21],
 "namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a666b7ad648f3e78aeac0e80bb09e8aca":[1,0,56,1,13],
-"namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a794f805082a22b5adfce040d37517411":[1,0,56,1,15],
-"namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a7e6743b88fd584039b47aae0b48c9c0d":[1,0,56,1,18]
+"namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a794f805082a22b5adfce040d37517411":[1,0,56,1,15]
 };

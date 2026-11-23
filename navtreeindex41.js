@@ -1,5 +1,6 @@
 var NAVTREEINDEX41 =
 {
+"classerf__actuator_1_1WakeLines.html#a7a3524ba35ab603705099e6eb6ad4e38":[2,0,0,8,4],
 "classerf__actuator_1_1WakeLines.html#a7f09de7fb189ebb64c18fe2feaba0642":[2,0,0,8,5],
 "classerf__actuator_1_1WakeLines.html#a85a61f8d3a99731eca7c37a780f5537e":[2,0,0,8,10],
 "classerf__actuator_1_1WakeLines.html#a8cdf3a64353d0647708d208f05acf2ec":[2,0,0,8,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX41 =
 "classerf__sbm_1_1SBMTransport.html#a3324927d41a417593804c7c547643415":[2,0,14,44,48],
 "classerf__sbm_1_1SBMTransport.html#a33d60c40c73d58dbde542e8e1e89b468":[2,0,14,44,34],
 "classerf__sbm_1_1SBMTransport.html#a37982079b574ce50971f2511a39b7efe":[2,0,14,44,33],
-"classerf__sbm_1_1SBMTransport.html#a38727fdecac66f2e79fd22ed09a3553f":[2,0,14,44,13],
-"classerf__sbm_1_1SBMTransport.html#a3aa4e3403770826925462f80c4261080":[2,0,14,44,39]
+"classerf__sbm_1_1SBMTransport.html#a38727fdecac66f2e79fd22ed09a3553f":[2,0,14,44,13]
 };

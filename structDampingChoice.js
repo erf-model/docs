@@ -8,6 +8,7 @@ var structDampingChoice =
     [ "rayleigh_damp_W", "structDampingChoice.html#a4f28e43f36c945f24c007dfc347b7efa", null ],
     [ "rayleigh_dampcoef", "structDampingChoice.html#a1fc4420c0b48436683f1f3d8cd8f7ade", null ],
     [ "rayleigh_damping_type", "structDampingChoice.html#a023abcb7e9383b56f7c53feecbf0a9d4", null ],
+    [ "rayleigh_damping_type_given", "structDampingChoice.html#a867e2b504c9573052fea06ba391ffa2b", null ],
     [ "rayleigh_zdamp", "structDampingChoice.html#a598fa15368159f1f5d4b017719dd4217", null ],
     [ "rayleigh_ztop", "structDampingChoice.html#a705fde4dd5230a50aa06bdacf6c0d0fb", null ],
     [ "w_damping", "structDampingChoice.html#a692fd4e73be3ac2d30d9d1d3931caf89", null ],
