@@ -458,14 +458,14 @@ $(document).ready(function(){initNavTree('ERF__TerrainDiffusionLimits_8H_source.
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="comment"> *    S_2 = 1 / (1 + y/2); and S_3 = (1 + (f_3 - 1/2) y) / ((1 + y/2)(1 + f_3 y)), whose</span></div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="comment"> *    numerator is at most 1 + y/2 in size.  The default 1 1 0 is Crank-Nicolson, 1 1 1</span></div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment"> *    backward Euler.</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="comment"> *  - two stages (c = 1/2, 1; anelastic MidPoint): bounded for f_1 = 1 and any f_2 in [0,1]</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="comment"> *  - two stages (c = 1/2, 1; MidPoint, at anelastic and pseudo-incompressible levels): bounded for f_1 = 1 and any f_2 in [0,1]</span></div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment"> *    (the same S_3 form); with f_1 &lt; 1 and f_2 = 0, as MidPoint forces, the second stage</span></div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment"> *    grows without bound.</span></div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="comment"> * Every other pattern returns 1: some are not bounded (0 0 1, 1 0 0, and 0.995 0.1 0.0666,</span></div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment"> * whose last stage reaches 1.0008 near y = 23.5), and the rest are not shown to be.</span></div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment"> * @param[in] nstages  3 for the compressible scheme, 2 for anelastic MidPoint</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment"> * @param[in] nstages  3 for the compressible scheme, 2 for MidPoint (anelastic and pseudo-incompressible)</span></div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="comment"> * @param[in] fac      implicit factor f_k of each stage (erf.vert_implicit_fac)</span></div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="comment"> * @param[in] implicit whether the implicit solve treats this component at all</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="comment"> */</span></div>

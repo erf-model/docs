@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('ERF__EB_8H_source.html',''); initResiz
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     * \param a_geom Geometry used to place the terrain EB.</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     * \param terrain_fab Terrain height data.</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     * \param a_dz_stretched Device vector containing stretched vertical spacing.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     * \param is_anelastic Whether the owning level is using anelastic dynamics.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     * \param is_anelastic Whether the owning level is not FullyCompressible (anelastic or pseudo-incompressible).</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classeb__.html#abcc4045a128dd42fe09f45af4f602576">   42</a></span>&#160;    <a class="code" href="classeb__.html#abcc4045a128dd42fe09f45af4f602576">eb_</a> (amrex::Geometry <span class="keyword">const</span>&amp; a_geom,</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;         amrex::FArrayBox <span class="keyword">const</span>&amp; terrain_fab,</div>
@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('ERF__EB_8H_source.html',''); initResiz
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">     * \param level AMR level index.</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     * \param a_geom Geometry for the level.</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     * \param a_eb_level AMReX EB level owned by the global EB index space.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     * \param is_anelastic Whether the owning level is using anelastic dynamics.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     * \param is_anelastic Whether the owning level is not FullyCompressible (anelastic or pseudo-incompressible).</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classeb__.html#a2888567cad2fc0e89060094a589ce214">   56</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classeb__.html#a2888567cad2fc0e89060094a589ce214">define</a> (<span class="keywordtype">int</span> level,</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                 amrex::Geometry <span class="keyword">const</span>&amp; a_geom,</div>

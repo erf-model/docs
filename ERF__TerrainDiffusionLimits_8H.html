@@ -569,12 +569,12 @@ template&lt;typename V &gt; </div>
 <p>Each stage k starts from S^n with stage step c_k dt; its explicit part (1 - f_k) acts on the previous stage's state and its implicit part f_k on its own, so for dS/dt = lambda S and y = -lambda dt &gt;= 0, S_k = (1 - (1 - f_k) c_k y S_{k-1}) / (1 + f_k c_k y), S_0 = 1. Each stage's state feeds the next stage's explicit terms, so every |S_k| must stay &lt;= 1, not only the last. The result is decided analytically:</p>
 <ul>
 <li>three stages (c = 1/3, 1/2, 1; compressible): bounded for f_1 &gt;= 1/2, f_2 = 1 and any f_3 in [0,1]. |S_1| &lt;= 1 iff f_1 &gt;= 1/2: |1 - (1-f) x| &lt;= 1 + (1-f) x &lt;= 1 + f x for f &gt;= 1/2, and for f &lt; 1/2, S_1 -&gt; -(1-f)/f &lt; -1 as x -&gt; infinity; S_2 = 1 / (1 + y/2); and S_3 = (1 + (f_3 - 1/2) y) / ((1 + y/2)(1 + f_3 y)), whose numerator is at most 1 + y/2 in size. The default 1 1 0 is Crank-Nicolson, 1 1 1 backward Euler.</li>
-<li>two stages (c = 1/2, 1; anelastic MidPoint): bounded for f_1 = 1 and any f_2 in [0,1] (the same S_3 form); with f_1 &lt; 1 and f_2 = 0, as MidPoint forces, the second stage grows without bound.</li>
+<li>two stages (c = 1/2, 1; MidPoint, at anelastic and pseudo-incompressible levels): bounded for f_1 = 1 and any f_2 in [0,1] (the same S_3 form); with f_1 &lt; 1 and f_2 = 0, as MidPoint forces, the second stage grows without bound.</li>
 </ul>
 <p>Every other pattern returns 1: some are not bounded (0 0 1, 1 0 0, and 0.995 0.1 0.0666, whose last stage reaches 1.0008 near y = 23.5), and the rest are not shown to be.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">nstages</td><td>3 for the compressible scheme, 2 for anelastic MidPoint </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nstages</td><td>3 for the compressible scheme, 2 for MidPoint (anelastic and pseudo-incompressible) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">fac</td><td>implicit factor f_k of each stage (erf.vert_implicit_fac) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">implicit</td><td>whether the implicit solve treats this component at all </td></tr>
   </table>

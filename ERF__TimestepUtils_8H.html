@@ -233,7 +233,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Pointwise inverse time step (1/dt, before the CFL is applied) for the anelastic (low Mach) solver &ndash; this is a purely advective constraint.</p>
+<p>Pointwise inverse time step (1/dt, before the CFL is applied) for the anelastic and pseudo-incompressible (low Mach) solvers &ndash; this is a purely advective constraint.</p>
 <p>As above, the metric terms are computed here from z_nd:</p>
 <p>terrain aware : the vertical spacing is the local dxinv[2]/h_zeta and w should be the contravariant (Omega) vertical velocity terrain unaware : the vertical spacing is dxinv[2] and w should be the Cartesian vertical velocity</p>
 <p>The slope metrics h_xi and h_eta do not appear explicitly: for the advective constraint their effect is already carried by Omega, which is the vertical velocity relative to the terrain-following surfaces.</p>

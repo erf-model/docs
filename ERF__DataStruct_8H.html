@@ -276,7 +276,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a167e3ccc662c308c584d8722a013a25c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertical mesh representation.  <a href="ERF__DataStruct_8H.html#a167e3ccc662c308c584d8722a013a25c">More...</a><br /></td></tr>
 <tr class="separator:a167e3ccc662c308c584d8722a013a25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a045a068db0ef5d54a4379b1a5c96e1e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__DataStruct_8H.html#a045a068db0ef5d54a4379b1a5c96e1e4">AMREX_ENUM</a> (TerrainPoissonSolver, gmres_fft, mlmg, gmres_mlmg)</td></tr>
-<tr class="memdesc:a045a068db0ef5d54a4379b1a5c96e1e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear solver for the anelastic projection on a terrain-fitted mesh.  <a href="ERF__DataStruct_8H.html#a045a068db0ef5d54a4379b1a5c96e1e4">More...</a><br /></td></tr>
+<tr class="memdesc:a045a068db0ef5d54a4379b1a5c96e1e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear solver for the anelastic or pseudo-incompressible projection on a terrain-fitted mesh.  <a href="ERF__DataStruct_8H.html#a045a068db0ef5d54a4379b1a5c96e1e4">More...</a><br /></td></tr>
 <tr class="separator:a045a068db0ef5d54a4379b1a5c96e1e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd4fd6918903c5072ef3380dcbadecc7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__DataStruct_8H.html#acd4fd6918903c5072ef3380dcbadecc7">AMREX_ENUM</a> (TerrainType, None, StaticFittedMesh, MovingFittedMesh, EB, ImmersedForcing)</td></tr>
 <tr class="memdesc:acd4fd6918903c5072ef3380dcbadecc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terrain and immersed-boundary representation.  <a href="ERF__DataStruct_8H.html#acd4fd6918903c5072ef3380dcbadecc7">More...</a><br /></td></tr>
@@ -1250,7 +1250,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Linear solver for the anelastic projection on a terrain-fitted mesh. </p>
+<p>Linear solver for the anelastic or pseudo-incompressible projection on a terrain-fitted mesh. </p>
 <p>gmres_fft is GMRES with <a class="el" href="classERF.html">ERF</a>'s TerrainPoisson operator and an FFT preconditioner (needs the FFT build). mlmg and gmres_mlmg use amrex::MLTerrainPoisson (AMReX-Codes/amrex#6030), the same stencil with zero flux through the Neumann faces, solved by geometric multigrid alone or as the preconditioner of GMRES; they need no FFT. </p>
 
 </div>
