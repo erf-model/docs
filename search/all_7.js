@@ -77,7 +77,7 @@ var searchData=
   ['have_5fread_5fnc_5finit_5ffile_3582',['have_read_nc_init_file',['../classERF.html#ab4069df5f357b7707a2aade9bf914772',1,'ERF']]],
   ['have_5fsst_3583',['have_sst',['../structerf__checkpoint__surface__temperature_1_1SurfaceTemperatureUse.html#ab3b561131c8aeecf88571b173fc07d3e',1,'erf_checkpoint_surface_temperature::SurfaceTemperatureUse']]],
   ['have_5ftsk_3584',['have_tsk',['../structerf__checkpoint__surface__temperature_1_1SurfaceTemperatureUse.html#acd33e62b988166efc027d4860efb2285',1,'erf_checkpoint_surface_temperature::SurfaceTemperatureUse']]],
-  ['have_5fvariable_5fsea_5froughness_3585',['have_variable_sea_roughness',['../classSurfaceLayer.html#a99b921f99f7b53fb13c0cddcd269ff2d',1,'SurfaceLayer']]],
+  ['have_5fvariable_5fsea_5froughness_3585',['have_variable_sea_roughness',['../classSurfaceLayer.html#a2669b54b8f762fe46e7727313c927218',1,'SurfaceLayer']]],
   ['have_5fzero_5fflux_5ffaces_3586',['have_zero_flux_faces',['../structAdvChoice.html#a09add6c3603c00bfb5611a799017079b',1,'AdvChoice']]],
   ['headerlevel_3587',['HeaderLevel',['../structWRFSurfaceFields_1_1HeaderLevel.html',1,'WRFSurfaceFields']]],
   ['heat_3588',['heat',['../structerf__wall__thermodynamics_1_1FaceWall.html#a44987de6f313c4a10c6f690591ba9809',1,'erf_wall_thermodynamics::FaceWall']]],

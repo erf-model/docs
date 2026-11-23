@@ -1,5 +1,9 @@
 var NAVTREEINDEX52 =
 {
+"namespacesaturation__funcs.html#a79a910dfe8dcd315ba57111260ed3832":[1,0,111,8],
+"namespacesaturation__funcs.html#a9bb07940e7d0b53e0f608dc4a5c9921a":[1,0,111,4],
+"namespacesaturation__funcs.html#a9bd43c8bbe5f9fe965027489b52e6441":[1,0,111,10],
+"namespacesaturation__funcs.html#aa675e7b5c5296bdfa641923e202f3372":[1,0,111,1],
 "namespacesaturation__funcs.html#aab3649a423971059794f41d2a34c234a":[1,0,111,0],
 "namespacesaturation__funcs.html#ab60ab340659e270ccf6fff1085eaac64":[1,0,111,6],
 "namespacesaturation__funcs.html#aba5559eb44895b9b07bded4d5e18578a":[1,0,111,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX52 =
 "structDustStep.html#ac779df2150bcee370fcb937b3095745d":[2,0,61,9],
 "structDustStep.html#adf1496d1000f68a297e2fdb745302b0a":[2,0,61,0],
 "structDustStep.html#ae45e736a884d73e68fb23c69ede60ba2":[2,0,61,1],
-"structDustStep.html#aec1171be91efe6fa08e6bd731b2d9024":[2,0,61,10],
-"structEBChoice.html":[2,0,65],
-"structEBChoice.html#a27a604a24adb3c767c187fed54865d58":[2,0,65,0],
-"structEBChoice.html#a6d6d3723ced4f16e9515f108170b4e8d":[2,0,65,3],
-"structEBChoice.html#aac92c1256485157c821f8dc3625ad640":[2,0,65,1]
+"structDustStep.html#aec1171be91efe6fa08e6bd731b2d9024":[2,0,61,10]
 };

@@ -1,5 +1,8 @@
 var NAVTREEINDEX11 =
 {
+"ERF__Kokkos_8H.html#a878d2d11bb29ca141a1af1674712aa2b":[3,0,1,21,0,5],
+"ERF__Kokkos_8H.html#a9f6de9f44ad035816820dbb492be6cde":[3,0,1,21,0,6],
+"ERF__Kokkos_8H.html#aa630517ef7020f7b5e39c6bf3f6d4f93":[3,0,1,21,0,2],
 "ERF__Kokkos_8H.html#ac835594e63b2eb3240f8ed950b88892c":[3,0,1,21,0,4],
 "ERF__Kokkos_8H.html#ad9bc05397fd660f7037450087628cfb8":[3,0,1,21,0,10],
 "ERF__Kokkos_8H_source.html":[3,0,1,21,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX11 =
 "ERF__Morrison__Advance__F_8H.html#a2a599be6884ffffd2599c70e1bda64d3":[3,0,1,16,2,6,21],
 "ERF__Morrison__Advance__F_8H.html#a2b48c549810db8a09dd1f4f7155374ab":[3,0,1,16,2,6,0],
 "ERF__Morrison__Advance__F_8H.html#a32ffbd16c6c3a7668d1fb3e0526c142a":[3,0,1,16,2,6,12],
-"ERF__Morrison__Advance__F_8H.html#a33617b0e1a2fe7c56bdae974e741f51e":[3,0,1,16,2,6,20],
-"ERF__Morrison__Advance__F_8H.html#a339b295a35de533546f087a9bdf28519":[3,0,1,16,2,6,23],
-"ERF__Morrison__Advance__F_8H.html#a382f78d45daa0647f171603d3a99d9d4":[3,0,1,16,2,6,16],
-"ERF__Morrison__Advance__F_8H.html#a4638f3612ef70163777d5433253df48d":[3,0,1,16,2,6,33]
+"ERF__Morrison__Advance__F_8H.html#a33617b0e1a2fe7c56bdae974e741f51e":[3,0,1,16,2,6,20]
 };

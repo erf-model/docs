@@ -94,11 +94,12 @@ Include dependency graph for ERF_FireWindExtract.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__FireWindExtract_8cpp__incl.png" border="0" usemap="#aSource_2FireCoupling_2ERF__FireWindExtract_8cpp" alt=""/></div>
 <map name="aSource_2FireCoupling_2ERF__FireWindExtract_8cpp" id="aSource_2FireCoupling_2ERF__FireWindExtract_8cpp">
-<area shape="rect" title=" " alt="" coords="205,5,393,47"/>
-<area shape="rect" href="ERF__FireWindExtract_8H.html" title="Atmospheric wind sampled onto the fire grid." alt="" coords="214,95,385,121"/>
+<area shape="rect" title=" " alt="" coords="255,5,443,47"/>
+<area shape="rect" href="ERF__FireWindExtract_8H.html" title="Atmospheric wind sampled onto the fire grid." alt="" coords="263,95,434,121"/>
 <area shape="rect" title=" " alt="" coords="5,244,151,271"/>
 <area shape="rect" title=" " alt="" coords="175,244,328,271"/>
 <area shape="rect" title=" " alt="" coords="432,169,495,196"/>
+<area shape="rect" title=" " alt="" coords="519,169,578,196"/>
 <area shape="rect" href="ERF__FireGrid_8H.html" title="Fire grid data structure and construction." alt="" coords="289,169,408,196"/>
 <area shape="rect" title=" " alt="" coords="352,244,500,271"/>
 <area shape="rect" title=" " alt="" coords="524,244,747,271"/>
@@ -111,8 +112,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a036657dde6bf3b312e1bb820b2c0768f"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__FireWindExtract_8cpp.html#a036657dde6bf3b312e1bb820b2c0768f">column_wind_at_height</a> (const Array4&lt; const Real &gt; &amp;xvel, const Array4&lt; const Real &gt; &amp;yvel, const Array4&lt; const Real &gt; &amp;z_cc, int ia, int ja, int nz, Real z_target, Real z_ground, Real &amp;u_out, Real &amp;v_out, bool below_first_log=false, Real z0_log=Real(0.1)) noexcept</td></tr>
 <tr class="memdesc:a036657dde6bf3b312e1bb820b2c0768f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wind at a target height within one atmospheric column.  <a href="ERF__FireWindExtract_8cpp.html#a036657dde6bf3b312e1bb820b2c0768f">More...</a><br /></td></tr>
 <tr class="separator:a036657dde6bf3b312e1bb820b2c0768f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af71af3856dc534dba2246fccb98274b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__FireWindExtract_8cpp.html#af71af3856dc534dba2246fccb98274b2">fill_fire_wind_from_interpolation</a> (MultiFab &amp;fire_wind_ref, MultiFab &amp;fire_wind_extract_z_mf, const MultiFab &amp;xvel_mf, const MultiFab &amp;yvel_mf, const MultiFab &amp;z_phys_cc_mf, const MultiFab &amp;fire_surface_z_mf, const MultiFab &amp;fire_col_ground_mf, const <a class="el" href="structFireGrid.html">FireGrid</a> &amp;fg, Real z_ref, int nz, const MultiFab *z_ref_cell_mf, int wind_interp, const MultiFab *col_open, const MultiFab *col_roof, Real z_sample, Real z0_log, bool below_first_log)</td></tr>
-<tr class="separator:af71af3856dc534dba2246fccb98274b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0fd30fea8601c091eea5fd224067128"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__FireWindExtract_8cpp.html#ae0fd30fea8601c091eea5fd224067128">log_law_factor</a> (Real z_to, Real z_from, Real <a class="el" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>) noexcept</td></tr>
+<tr class="memdesc:ae0fd30fea8601c091eea5fd224067128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Neutral log-law factor ln(z_to / z0) / ln(z_from / z0)  <a href="ERF__FireWindExtract_8cpp.html#ae0fd30fea8601c091eea5fd224067128">More...</a><br /></td></tr>
+<tr class="separator:ae0fd30fea8601c091eea5fd224067128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a4e1c8ab324985660ee4cdc0288867c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__FireWindExtract_8cpp.html#a6a4e1c8ab324985660ee4cdc0288867c">fire_column_z0_range_error</a> (const MultiFab &amp;col_z0, Real z_low)</td></tr>
+<tr class="separator:a6a4e1c8ab324985660ee4cdc0288867c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad70f2c3d1c3d3b5b3ed9f0f7d0995c91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__FireWindExtract_8cpp.html#ad70f2c3d1c3d3b5b3ed9f0f7d0995c91">fill_fire_wind_from_interpolation</a> (MultiFab &amp;fire_wind_ref, MultiFab &amp;fire_wind_extract_z_mf, const MultiFab &amp;xvel_mf, const MultiFab &amp;yvel_mf, const MultiFab &amp;z_phys_cc_mf, const MultiFab &amp;fire_surface_z_mf, const MultiFab &amp;fire_col_ground_mf, const <a class="el" href="structFireGrid.html">FireGrid</a> &amp;fg, Real z_ref, int nz, const MultiFab *z_ref_cell_mf, int wind_interp, const MultiFab *col_open, const MultiFab *col_roof, Real z_sample, Real z0_log, bool below_first_log, const MultiFab *col_z0)</td></tr>
+<tr class="separator:ad70f2c3d1c3d3b5b3ed9f0f7d0995c91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3a1dbec31fd04332396b1a272fd9573"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__FireWindExtract_8cpp.html#ad3a1dbec31fd04332396b1a272fd9573">extract_fire_wind_k0</a> (amrex::MultiFab &amp;u_k0, amrex::MultiFab &amp;v_k0, amrex::MultiFab &amp;h_k0, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;z_phys_cc, const amrex::MultiFab *z_phys_nd, const amrex::Geometry &amp;geom)</td></tr>
 <tr class="memdesc:ad3a1dbec31fd04332396b1a272fd9573"><td class="mdescLeft">&#160;</td><td class="mdescRight">The wind at the lowest cell center of each atmospheric column, and its height above that column's ground.  <a href="ERF__FireWindExtract_8cpp.html#ad3a1dbec31fd04332396b1a272fd9573">More...</a><br /></td></tr>
 <tr class="separator:ad3a1dbec31fd04332396b1a272fd9573"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -267,14 +273,14 @@ Functions</h2></td></tr>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:232</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:233</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__FireWindExtract_8cpp.html#af71af3856dc534dba2246fccb98274b2">fill_fire_wind_from_interpolation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__FireWindExtract_8cpp.html#ad70f2c3d1c3d3b5b3ed9f0f7d0995c91">fill_fire_wind_from_interpolation()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__FireWindExtract_8cpp_a036657dde6bf3b312e1bb820b2c0768f_icgraph.png" border="0" usemap="#aERF__FireWindExtract_8cpp_a036657dde6bf3b312e1bb820b2c0768f_icgraph" alt=""/></div>
 <map name="aERF__FireWindExtract_8cpp_a036657dde6bf3b312e1bb820b2c0768f_icgraph" id="aERF__FireWindExtract_8cpp_a036657dde6bf3b312e1bb820b2c0768f_icgraph">
 <area shape="rect" title="Wind at a target height within one atmospheric column." alt="" coords="196,13,372,39"/>
-<area shape="rect" href="ERF__FireWindExtract_8cpp.html#af71af3856dc534dba2246fccb98274b2" title=" " alt="" coords="5,5,148,47"/>
+<area shape="rect" href="ERF__FireWindExtract_8cpp.html#ad70f2c3d1c3d3b5b3ed9f0f7d0995c91" title=" " alt="" coords="5,5,148,47"/>
 </map>
 </div>
 
@@ -355,33 +361,33 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;{</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespaceamrex.html">amrex</a>;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>  k0      = geom.Domain().smallEnd(2);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keyword">const</span> Real z_floor = geom.ProbLo(2);</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> use_znd = (z_phys_nd != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(u_k0); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keyword">const</span> Box bx = mfi.validbox();</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> u   = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>.const_array(mfi);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> v   = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>.const_array(mfi);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> zcc = z_phys_cc.const_array(mfi);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt; znd = use_znd ? z_phys_nd-&gt;const_array(mfi) : Array4&lt;Real const&gt;{};</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> us = u_k0.array(mfi);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> vs = v_k0.array(mfi);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> hs = h_k0.array(mfi);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        {</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            us(i,j,0) = Real(0.5) * (u(i,j,k0) + u(i+1,j,k0));</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            vs(i,j,0) = Real(0.5) * (v(i,j,k0) + v(i,j+1,k0));</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="keyword">const</span> Real zsfc = use_znd ? Real(0.25) * (znd(i,j,k0) + znd(i+1,j,k0) + znd(i,j+1,k0) + znd(i+1,j+1,k0))</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                                      : z_floor;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            hs(i,j,0) = zcc(i,j,k0) - zsfc;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        });</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    }</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    u_k0.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    v_k0.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    h_k0.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;{</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespaceamrex.html">amrex</a>;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>  k0      = geom.Domain().smallEnd(2);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keyword">const</span> Real z_floor = geom.ProbLo(2);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> use_znd = (z_phys_nd != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(u_k0); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keyword">const</span> Box bx = mfi.validbox();</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> u   = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>.const_array(mfi);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> v   = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>.const_array(mfi);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> zcc = z_phys_cc.const_array(mfi);</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt; znd = use_znd ? z_phys_nd-&gt;const_array(mfi) : Array4&lt;Real const&gt;{};</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> us = u_k0.array(mfi);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> vs = v_k0.array(mfi);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> hs = h_k0.array(mfi);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        {</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            us(i,j,0) = Real(0.5) * (u(i,j,k0) + u(i+1,j,k0));</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            vs(i,j,0) = Real(0.5) * (v(i,j,k0) + v(i,j+1,k0));</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            <span class="keyword">const</span> Real zsfc = use_znd ? Real(0.25) * (znd(i,j,k0) + znd(i+1,j,k0) + znd(i,j+1,k0) + znd(i+1,j+1,k0))</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                                      : z_floor;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            hs(i,j,0) = zcc(i,j,k0) - zsfc;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        });</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    }</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    u_k0.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    v_k0.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    h_k0.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;}</div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:17</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -396,8 +402,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="af71af3856dc534dba2246fccb98274b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af71af3856dc534dba2246fccb98274b2">&#9670;&nbsp;</a></span>fill_fire_wind_from_interpolation()</h2>
+<a id="ad70f2c3d1c3d3b5b3ed9f0f7d0995c91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad70f2c3d1c3d3b5b3ed9f0f7d0995c91">&#9670;&nbsp;</a></span>fill_fire_wind_from_interpolation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -502,7 +508,13 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>below_first_log</em>&#160;</td>
+          <td class="paramname"><em>below_first_log</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab *&#160;</td>
+          <td class="paramname"><em>col_z0</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -511,183 +523,378 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> C = <a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3af93b8f7de8e707e3ec38715ac1c499ef">fg</a>.C;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// Fire cell (i_f, j_f) lies in atmospheric cell (i_f / C + lo_x, j_f / C + lo_y)</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> lo_x = <a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3af93b8f7de8e707e3ec38715ac1c499ef">fg</a>.atm_lo[0];</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> lo_y = <a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3af93b8f7de8e707e3ec38715ac1c499ef">fg</a>.atm_lo[1];</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> bilinear = (wind_interp == 1);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> open_weights = bilinear &amp;&amp; (col_open != <span class="keyword">nullptr</span>) &amp;&amp; (col_roof != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> resample = (z_sample &gt; Real(0.0));</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(fire_wind_ref, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        Array4&lt;Real&gt; fire_wind = fire_wind_ref.array(mfi);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        Array4&lt;Real&gt; extract_z = fire_wind_extract_z_mf.array(mfi);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        Array4&lt;const Real&gt; <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a> = xvel_mf.array(mfi);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        Array4&lt;const Real&gt; <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a> = yvel_mf.array(mfi);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        Array4&lt;const Real&gt; z_phys_cc = z_phys_cc_mf.array(mfi);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        Array4&lt;const Real&gt; z_surf_arr = fire_surface_z_mf.const_array(mfi);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        Array4&lt;const Real&gt; z_col_arr  = fire_col_ground_mf.const_array(mfi);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="comment">// Per-cell sampling height, when the engine supplies one</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        Array4&lt;const Real&gt; z_ref_cell_arr;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">if</span> (z_ref_cell_mf != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            z_ref_cell_arr = z_ref_cell_mf-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> per_cell_ht = (z_ref_cell_mf != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="comment">// Open-column weights: the 2D fields carry one ghost cell, which is</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="comment">// all the bilinear stencil reaches; clamp to their box regardless.</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        Array4&lt;const Real&gt; open_arr, roof_arr;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordtype">int</span> io_min = 0, io_max = 0, jo_min = 0, jo_max = 0;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> (open_weights) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            open_arr = col_open-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            roof_arr = col_roof-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keyword">const</span> Box&amp; obox = Box(open_arr);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            io_min = obox.smallEnd(0); io_max = obox.bigEnd(0);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            jo_min = obox.smallEnd(1); jo_max = obox.bigEnd(1);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="comment">// Bilinear reaches one atmospheric cell beyond the column holding the</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="comment">// fire cell, and the face average reaches one further in x or y. Both</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="comment">// land in the atmospheric fab&#39;s ghost region, which carries two cells</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="comment">// for z_phys_cc and more for the velocities; clamp anyway so a fab</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="comment">// without them degrades to one-sided rather than reading past the end.</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keyword">const</span> Box&amp; zbox = Box(z_phys_cc);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ia_min = zbox.smallEnd(0);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ia_max = zbox.bigEnd(0) - 1;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ja_min = zbox.smallEnd(1);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ja_max = zbox.bigEnd(1) - 1;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keyword">const</span> IntVect&amp; iv) {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> i_f = iv[0];</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> j_f = iv[1];</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="comment">// Wind reference height for this cell: its own, or the global one</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            Real z_ref_cell = z_ref;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">if</span> (per_cell_ht) { z_ref_cell = z_ref_cell_arr(i_f, j_f, 0); }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="comment">// Height actually sampled and the log-law factor that brings the</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="comment">// sampled wind down to the target height (1 without resampling).</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="comment">// The log ratio is written so that every argument is valid whether</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <span class="comment">// or not it is selected: clang evaluates the ternary&#39;s arm</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="comment">// speculatively in Release, and with resampling off z_sample is 0,</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="comment">// so log(0) raised the divide-by-zero flag and tripped</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="comment">// amrex.fpe_trap_zero on the first step. abs and the tiny offset</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="comment">// are not selects, so nothing is folded back into the arm; with</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="comment">// resampling on the values are unchanged.</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            constexpr Real z_tiny  = Real(1.0e-30);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keyword">const</span> Real z0_safe     = std::abs(z0_log) + z_tiny;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keyword">const</span> Real log_ref     = std::log((std::abs(z_ref_cell) + z_tiny) / z0_safe);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keyword">const</span> Real log_sample  = std::log((std::abs(z_sample)   + z_tiny) / z0_safe);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keyword">const</span> Real z_at  = resample ? z_sample : z_ref_cell;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keyword">const</span> Real scale = resample ? log_ref / (log_sample + z_tiny) : Real(1.0);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">if</span> (!bilinear) {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <span class="comment">// Nearest atmospheric column: every fire cell in a column shares</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                <span class="comment">// one wind vector, so the fire-grid wind is piecewise constant</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                <span class="comment">// on atmospheric cells.</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> i_a = amrex::max(ia_min, amrex::min(i_f / C + lo_x, ia_max));</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> j_a = amrex::max(ja_min, amrex::min(j_f / C + lo_y, ja_max));</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="comment">// Ground elevation of this fire cell&#39;s atmospheric column. This</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                <span class="comment">// is the terrain surface, not the first cell center, which sits</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                <span class="comment">// half an atmospheric cell higher and would push the extraction</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                <span class="comment">// height up by an amount that varies with vertical resolution.</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                <span class="keyword">const</span> Real z_target = z_surf_arr(i_f, j_f, 0) + z_at;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                extract_z(i_f, j_f, 0) = z_target;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                Real u_out, v_out;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                <a class="code" href="ERF__FireWindExtract_8cpp.html#a036657dde6bf3b312e1bb820b2c0768f">column_wind_at_height</a>(<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>, z_phys_cc, i_a, j_a, nz,</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                                      z_target, z_surf_arr(i_f, j_f, 0), u_out, v_out,</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                      below_first_log, z0_log);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                fire_wind(i_f, j_f, 0, 0) = scale * u_out;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                fire_wind(i_f, j_f, 0, 1) = scale * v_out;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            }</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="comment">// Bilinear between the four surrounding atmospheric columns. The</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="comment">// fire cell center sits at continuous atmospheric cell-center</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="comment">// coordinate (i_f + 0.5)/C - 0.5 relative to the region&#39;s corner; the</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="comment">// weights come from that, the column indices add the corner.</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="keyword">const</span> Real gx = (Real(i_f) + Real(0.5)) / Real(C) - Real(0.5);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keyword">const</span> Real gy = (Real(j_f) + Real(0.5)) / Real(C) - Real(0.5);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> i0_local = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::floor(gx));</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> j0_local = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::floor(gy));</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keyword">const</span> Real wx = gx - Real(i0_local);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keyword">const</span> Real wy = gy - Real(j0_local);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> i0 = i0_local + lo_x;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> j0 = j0_local + lo_y;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            Real u_sum = Real(0.0);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            Real v_sum = Real(0.0);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            Real z_sum = Real(0.0);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="comment">// Open-column factors and their bilinear sum; fall back to the</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="comment">// plain weights when every column is closed.</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            Real f_open[4] = {Real(1.0), Real(1.0), Real(1.0), Real(1.0)};</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            Real w_norm = Real(1.0);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">if</span> (open_weights) {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                Real wsum = Real(0.0);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> c = 0; c &lt; 4; ++c) {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a> = (c &amp; 1);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> dj = ((c &gt;&gt; 1) &amp; 1);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> io = amrex::max(io_min, amrex::min(i0 + <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a>, io_max));</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> jo = amrex::max(jo_min, amrex::min(j0 + dj, jo_max));</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    <span class="keyword">const</span> Real w = (<a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a> ? wx : (Real(1.0) - wx)) * (dj ? wy : (Real(1.0) - wy));</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                    f_open[c] = (roof_arr(io, jo, 0) &gt; z_at) ? open_arr(io, jo, 0) : Real(1.0);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                    wsum += w * f_open[c];</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                <span class="keywordflow">if</span> (wsum &gt; Real(1.0e-6)) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    w_norm = Real(1.0) / wsum;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> c = 0; c &lt; 4; ++c) { f_open[c] = Real(1.0); }</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                }</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            }</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> c = 0; c &lt; 4; ++c) {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a> = (c &amp; 1);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> dj = ((c &gt;&gt; 1) &amp; 1);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> ia = amrex::max(ia_min, amrex::min(i0 + <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a>, ia_max));</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> ja = amrex::max(ja_min, amrex::min(j0 + dj, ja_max));</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="keyword">const</span> Real w = (<a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a> ? wx : (Real(1.0) - wx)) * (dj ? wy : (Real(1.0) - wy))</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                             * f_open[c] * w_norm;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <span class="comment">// Each column is sampled at the same height above *its own*</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <span class="comment">// ground: near the surface the profile is anchored to the local</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                <span class="comment">// terrain, so blending at one absolute height would sample an</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                <span class="comment">// upslope neighbor far higher above ground than asked for.</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <span class="keyword">const</span> Real z_target_c = z_col_arr(i_f, j_f, 0, c) + z_at;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                Real u_c, v_c;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                <a class="code" href="ERF__FireWindExtract_8cpp.html#a036657dde6bf3b312e1bb820b2c0768f">column_wind_at_height</a>(<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>, z_phys_cc, ia, ja, nz,</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                                      z_target_c, z_col_arr(i_f, j_f, 0, c), u_c, v_c,</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                                      below_first_log, z0_log);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                u_sum += w * u_c;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                v_sum += w * v_c;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                z_sum += w * z_target_c;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            }</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            extract_z(i_f, j_f, 0) = z_sum;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            fire_wind(i_f, j_f, 0, 0) = scale * u_sum;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            fire_wind(i_f, j_f, 0, 1) = scale * v_sum;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        });</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> C = <a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3af93b8f7de8e707e3ec38715ac1c499ef">fg</a>.C;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">// Fire cell (i_f, j_f) lies in atmospheric cell (i_f / C + lo_x, j_f / C + lo_y)</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> lo_x = <a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3af93b8f7de8e707e3ec38715ac1c499ef">fg</a>.atm_lo[0];</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> lo_y = <a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3af93b8f7de8e707e3ec38715ac1c499ef">fg</a>.atm_lo[1];</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> bilinear = (wind_interp == 1);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> open_weights = bilinear &amp;&amp; (col_open != <span class="keyword">nullptr</span>) &amp;&amp; (col_roof != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> resample = (z_sample &gt; Real(0.0));</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> z0_cols = (col_z0 != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">// The column roughness is read with the fire grid&#39;s MFIter, on its own</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">// k slab, and every value must leave both log profiles well defined.</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span> (z0_cols) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            col_z0-&gt;size() == fire_wind_ref.size() &amp;&amp;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            col_z0-&gt;DistributionMap() == fire_wind_ref.DistributionMap(),</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="stringliteral">&quot;fill_fire_wind_from_interpolation: col_z0 must have the fire grid&#39;s boxes, in its&quot;</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="stringliteral">&quot; order and with its owners (a copy on the level&#39;s k = 0 slabs)&quot;</span>);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; col_z0-&gt;size(); ++n) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(col_z0-&gt;boxArray()[n].length(2) == 1 &amp;&amp;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                             col_z0-&gt;nGrowVect()[2] == 0,</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="stringliteral">&quot;fill_fire_wind_from_interpolation: col_z0 must be a 2D field, one cell in z&quot;</span>);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="comment">// Only a run that evaluates a log profile depends on the field</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">if</span> (below_first_log || resample) {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            Real z_low = (z_ref_cell_mf != <span class="keyword">nullptr</span>) ? z_ref_cell_mf-&gt;min(0) : z_ref;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">if</span> (resample) { z_low = amrex::min(z_low, z_sample); }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keyword">const</span> std::string err = <a class="code" href="ERF__FireWindExtract_8cpp.html#a6a4e1c8ab324985660ee4cdc0288867c">fire_column_z0_range_error</a>(*col_z0, z_low);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">if</span> (!err.empty()) { amrex::Abort(<span class="stringliteral">&quot;fill_fire_wind_from_interpolation: &quot;</span> + err); }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment">// Atmospheric columns the fire grid covers. Across a non-periodic face of</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">// that region the column roughness is taken from the edge column, so only</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">// valid cells of col_z0 are read: FillBoundary does not fill a ghost cell</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="comment">// there, and the range check sees valid cells only.</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keyword">const</span> Box&amp; fire_dom = <a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3af93b8f7de8e707e3ec38715ac1c499ef">fg</a>.geom.Domain();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(!z0_cols || fire_dom.ok(),</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="stringliteral">&quot;fill_fire_wind_from_interpolation: col_z0 needs the fire grid&#39;s Geometry (create_fire_grid)&quot;</span>);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> z0_reg_ilo = lo_x;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> z0_reg_ihi = lo_x + (fire_dom.bigEnd(0) + 1) / C - 1;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> z0_reg_jlo = lo_y;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> z0_reg_jhi = lo_y + (fire_dom.bigEnd(1) + 1) / C - 1;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> z0_per_x = <a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3af93b8f7de8e707e3ec38715ac1c499ef">fg</a>.geom.isPeriodic(0);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> z0_per_y = <a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3af93b8f7de8e707e3ec38715ac1c499ef">fg</a>.geom.isPeriodic(1);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(fire_wind_ref, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        Array4&lt;Real&gt; fire_wind = fire_wind_ref.array(mfi);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        Array4&lt;Real&gt; extract_z = fire_wind_extract_z_mf.array(mfi);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        Array4&lt;const Real&gt; <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a> = xvel_mf.array(mfi);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        Array4&lt;const Real&gt; <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a> = yvel_mf.array(mfi);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        Array4&lt;const Real&gt; z_phys_cc = z_phys_cc_mf.array(mfi);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        Array4&lt;const Real&gt; z_surf_arr = fire_surface_z_mf.const_array(mfi);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        Array4&lt;const Real&gt; z_col_arr  = fire_col_ground_mf.const_array(mfi);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="comment">// Per-cell sampling height, when the engine supplies one</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        Array4&lt;const Real&gt; z_ref_cell_arr;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">if</span> (z_ref_cell_mf != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            z_ref_cell_arr = z_ref_cell_mf-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> per_cell_ht = (z_ref_cell_mf != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="comment">// Open-column weights: the 2D fields carry one ghost cell, which is</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="comment">// all the bilinear stencil reaches; clamp to their box regardless.</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        Array4&lt;const Real&gt; open_arr, roof_arr;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordtype">int</span> io_min = 0, io_max = 0, jo_min = 0, jo_max = 0;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">if</span> (open_weights) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            open_arr = col_open-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            roof_arr = col_roof-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keyword">const</span> Box&amp; obox = Box(open_arr);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            io_min = obox.smallEnd(0); io_max = obox.bigEnd(0);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            jo_min = obox.smallEnd(1); jo_max = obox.bigEnd(1);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="comment">// Column roughness: same layout as the open-column fields, read on</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="comment">// the field&#39;s own k slab; clamped to the fab and, across a</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment">// non-periodic face of the fire grid&#39;s region, to its edge column</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        Array4&lt;const Real&gt; z0_arr;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordtype">int</span> iz_min = 0, iz_max = 0, jz_min = 0, jz_max = 0, kz = 0;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">if</span> (z0_cols) {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            z0_arr = col_z0-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            <span class="keyword">const</span> Box&amp; z0box = Box(z0_arr);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            iz_min = z0box.smallEnd(0); iz_max = z0box.bigEnd(0);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            jz_min = z0box.smallEnd(1); jz_max = z0box.bigEnd(1);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            kz = z0box.smallEnd(2);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keywordflow">if</span> (!z0_per_x) {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                iz_min = amrex::max(iz_min, z0_reg_ilo);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                iz_max = amrex::min(iz_max, z0_reg_ihi);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keywordflow">if</span> (!z0_per_y) {</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                jz_min = amrex::max(jz_min, z0_reg_jlo);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                jz_max = amrex::min(jz_max, z0_reg_jhi);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="comment">// Bilinear reaches one atmospheric cell beyond the column holding the</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="comment">// fire cell, and the face average reaches one further in x or y. Both</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="comment">// land in the atmospheric fab&#39;s ghost region, which carries two cells</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="comment">// for z_phys_cc and more for the velocities; clamp anyway so a fab</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="comment">// without them degrades to one-sided rather than reading past the end.</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keyword">const</span> Box&amp; zbox = Box(z_phys_cc);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ia_min = zbox.smallEnd(0);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ia_max = zbox.bigEnd(0) - 1;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ja_min = zbox.smallEnd(1);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ja_max = zbox.bigEnd(1) - 1;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keyword">const</span> IntVect&amp; iv) {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> i_f = iv[0];</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> j_f = iv[1];</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="comment">// Wind reference height for this cell: its own, or the global one</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            Real z_ref_cell = z_ref;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">if</span> (per_cell_ht) { z_ref_cell = z_ref_cell_arr(i_f, j_f, 0); }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="comment">// Height actually sampled and the log-law factor that brings the</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="comment">// sampled wind down to the target height (1 without resampling).</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="comment">// With column roughness the factor is taken per column below and</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="comment">// this one is not applied.</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keyword">const</span> Real z_at  = resample ? z_sample : z_ref_cell;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keyword">const</span> Real f_ref = <a class="code" href="ERF__FireWindExtract_8cpp.html#ae0fd30fea8601c091eea5fd224067128">log_law_factor</a>(z_ref_cell, z_sample, z0_log);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keyword">const</span> Real scale = (resample &amp;&amp; !z0_cols) ? f_ref : Real(1.0);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keywordflow">if</span> (!bilinear) {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                <span class="comment">// Nearest atmospheric column: every fire cell in a column shares</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                <span class="comment">// one wind vector, so the fire-grid wind is piecewise constant</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                <span class="comment">// on atmospheric cells.</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> i_a = amrex::max(ia_min, amrex::min(i_f / C + lo_x, ia_max));</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> j_a = amrex::max(ja_min, amrex::min(j_f / C + lo_y, ja_max));</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                <span class="comment">// Ground elevation of this fire cell&#39;s atmospheric column. This</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                <span class="comment">// is the terrain surface, not the first cell center, which sits</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <span class="comment">// half an atmospheric cell higher and would push the extraction</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                <span class="comment">// height up by an amount that varies with vertical resolution.</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <span class="keyword">const</span> Real z_target = z_surf_arr(i_f, j_f, 0) + z_at;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                extract_z(i_f, j_f, 0) = z_target;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                <span class="comment">// Roughness of this column, and its resampling factor</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                Real z0_c  = z0_log;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                Real s_col = Real(1.0);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="keywordflow">if</span> (z0_cols) {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                    z0_c = z0_arr(amrex::max(iz_min, amrex::min(i_a, iz_max)),</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                                  amrex::max(jz_min, amrex::min(j_a, jz_max)), kz);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                    <span class="keyword">const</span> Real f_c = <a class="code" href="ERF__FireWindExtract_8cpp.html#ae0fd30fea8601c091eea5fd224067128">log_law_factor</a>(z_ref_cell, z_sample, z0_c);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    s_col = resample ? f_c : Real(1.0);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                Real u_out, v_out;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                <a class="code" href="ERF__FireWindExtract_8cpp.html#a036657dde6bf3b312e1bb820b2c0768f">column_wind_at_height</a>(<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>, z_phys_cc, i_a, j_a, nz,</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                                      z_target, z_surf_arr(i_f, j_f, 0), u_out, v_out,</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                                      below_first_log, z0_c);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                fire_wind(i_f, j_f, 0, 0) = scale * (s_col * u_out);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                fire_wind(i_f, j_f, 0, 1) = scale * (s_col * v_out);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            }</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="comment">// Bilinear between the four surrounding atmospheric columns. The</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <span class="comment">// fire cell center sits at continuous atmospheric cell-center</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <span class="comment">// coordinate (i_f + 0.5)/C - 0.5 relative to the region&#39;s corner; the</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="comment">// weights come from that, the column indices add the corner.</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="keyword">const</span> Real gx = (Real(i_f) + Real(0.5)) / Real(C) - Real(0.5);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <span class="keyword">const</span> Real gy = (Real(j_f) + Real(0.5)) / Real(C) - Real(0.5);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> i0_local = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::floor(gx));</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> j0_local = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::floor(gy));</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            <span class="keyword">const</span> Real wx = gx - Real(i0_local);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="keyword">const</span> Real wy = gy - Real(j0_local);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> i0 = i0_local + lo_x;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> j0 = j0_local + lo_y;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            Real u_sum = Real(0.0);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            Real v_sum = Real(0.0);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            Real z_sum = Real(0.0);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            <span class="comment">// Open-column factors and their bilinear sum; fall back to the</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            <span class="comment">// plain weights when every column is closed.</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            Real f_open[4] = {Real(1.0), Real(1.0), Real(1.0), Real(1.0)};</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            Real w_norm = Real(1.0);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <span class="keywordflow">if</span> (open_weights) {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                Real wsum = Real(0.0);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> c = 0; c &lt; 4; ++c) {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a> = (c &amp; 1);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> dj = ((c &gt;&gt; 1) &amp; 1);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> io = amrex::max(io_min, amrex::min(i0 + <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a>, io_max));</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> jo = amrex::max(jo_min, amrex::min(j0 + dj, jo_max));</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                    <span class="keyword">const</span> Real w = (<a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a> ? wx : (Real(1.0) - wx)) * (dj ? wy : (Real(1.0) - wy));</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                    f_open[c] = (roof_arr(io, jo, 0) &gt; z_at) ? open_arr(io, jo, 0) : Real(1.0);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                    wsum += w * f_open[c];</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                }</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                <span class="keywordflow">if</span> (wsum &gt; Real(1.0e-6)) {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                    w_norm = Real(1.0) / wsum;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> c = 0; c &lt; 4; ++c) { f_open[c] = Real(1.0); }</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                }</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            }</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> c = 0; c &lt; 4; ++c) {</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a> = (c &amp; 1);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> dj = ((c &gt;&gt; 1) &amp; 1);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> ia = amrex::max(ia_min, amrex::min(i0 + <a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a>, ia_max));</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> ja = amrex::max(ja_min, amrex::min(j0 + dj, ja_max));</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                <span class="keyword">const</span> Real w = (<a class="code" href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">di</a> ? wx : (Real(1.0) - wx)) * (dj ? wy : (Real(1.0) - wy))</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                             * f_open[c] * w_norm;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                <span class="comment">// Each column is sampled at the same height above *its own*</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <span class="comment">// ground: near the surface the profile is anchored to the local</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                <span class="comment">// terrain, so blending at one absolute height would sample an</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                <span class="comment">// upslope neighbor far higher above ground than asked for.</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="keyword">const</span> Real z_target_c = z_col_arr(i_f, j_f, 0, c) + z_at;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                <span class="comment">// Roughness of this column, and its resampling factor</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                Real z0_c  = z0_log;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                Real s_col = Real(1.0);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                <span class="keywordflow">if</span> (z0_cols) {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                    <span class="comment">// The wind&#39;s column (ia, ja, already clamped), so the</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                    <span class="comment">// roughness never comes from a different column</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                    z0_c = z0_arr(amrex::max(iz_min, amrex::min(ia, iz_max)),</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                                  amrex::max(jz_min, amrex::min(ja, jz_max)), kz);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                    <span class="keyword">const</span> Real f_c = <a class="code" href="ERF__FireWindExtract_8cpp.html#ae0fd30fea8601c091eea5fd224067128">log_law_factor</a>(z_ref_cell, z_sample, z0_c);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                    s_col = resample ? f_c : Real(1.0);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                }</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                Real u_c, v_c;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                <a class="code" href="ERF__FireWindExtract_8cpp.html#a036657dde6bf3b312e1bb820b2c0768f">column_wind_at_height</a>(<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>, z_phys_cc, ia, ja, nz,</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                                      z_target_c, z_col_arr(i_f, j_f, 0, c), u_c, v_c,</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                                      below_first_log, z0_c);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                u_sum += w * (s_col * u_c);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                v_sum += w * (s_col * v_c);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                z_sum += w * z_target_c;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            }</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            extract_z(i_f, j_f, 0) = z_sum;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            fire_wind(i_f, j_f, 0, 0) = scale * u_sum;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            fire_wind(i_f, j_f, 0, 1) = scale * v_sum;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        });</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    }</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
 <div class="ttc" id="aERF__FireWindExtract_8cpp_html_a036657dde6bf3b312e1bb820b2c0768f"><div class="ttname"><a href="ERF__FireWindExtract_8cpp.html#a036657dde6bf3b312e1bb820b2c0768f">column_wind_at_height</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void column_wind_at_height(const Array4&lt; const Real &gt; &amp;xvel, const Array4&lt; const Real &gt; &amp;yvel, const Array4&lt; const Real &gt; &amp;z_cc, int ia, int ja, int nz, Real z_target, Real z_ground, Real &amp;u_out, Real &amp;v_out, bool below_first_log=false, Real z0_log=Real(0.1)) noexcept</div><div class="ttdoc">Wind at a target height within one atmospheric column.</div><div class="ttdef"><b>Definition:</b> ERF_FireWindExtract.cpp:20</div></div>
+<div class="ttc" id="aERF__FireWindExtract_8cpp_html_a6a4e1c8ab324985660ee4cdc0288867c"><div class="ttname"><a href="ERF__FireWindExtract_8cpp.html#a6a4e1c8ab324985660ee4cdc0288867c">fire_column_z0_range_error</a></div><div class="ttdeci">std::string fire_column_z0_range_error(const MultiFab &amp;col_z0, Real z_low)</div><div class="ttdef"><b>Definition:</b> ERF_FireWindExtract.cpp:98</div></div>
+<div class="ttc" id="aERF__FireWindExtract_8cpp_html_ae0fd30fea8601c091eea5fd224067128"><div class="ttname"><a href="ERF__FireWindExtract_8cpp.html#ae0fd30fea8601c091eea5fd224067128">log_law_factor</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE Real log_law_factor(Real z_to, Real z_from, Real z0) noexcept</div><div class="ttdoc">Neutral log-law factor ln(z_to / z0) / ln(z_from / z0)</div><div class="ttdef"><b>Definition:</b> ERF_FireWindExtract.cpp:88</div></div>
+<div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a0ff1c019188789cc0c35749d6f523b86"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(axis &gt;=0 &amp;&amp;axis&lt; AMREX_SPACEDIM, &quot;prob.axis must be 0, 1 or 2&quot;)</div></div>
 <div class="ttc" id="anamespaceMORRInd_html_a5203b29054dbc5558f9dcd22c37793a3af93b8f7de8e707e3ec38715ac1c499ef"><div class="ttname"><a href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3af93b8f7de8e707e3ec38715ac1c499ef">MORRInd::fg</a></div><div class="ttdeci">@ fg</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:111</div></div>
 <div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_af40ac9cec1030364aec22c7d21109401"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#af40ac9cec1030364aec22c7d21109401">module_mp_morr_two_moment::di</a></div><div class="ttdeci">real(c_double), private di</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:203</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__FireWindExtract_8cpp_af71af3856dc534dba2246fccb98274b2_cgraph.png" border="0" usemap="#aERF__FireWindExtract_8cpp_af71af3856dc534dba2246fccb98274b2_cgraph" alt=""/></div>
-<map name="aERF__FireWindExtract_8cpp_af71af3856dc534dba2246fccb98274b2_cgraph" id="aERF__FireWindExtract_8cpp_af71af3856dc534dba2246fccb98274b2_cgraph">
-<area shape="rect" title=" " alt="" coords="5,23,148,65"/>
-<area shape="rect" href="ERF__FireWindExtract_8cpp.html#a036657dde6bf3b312e1bb820b2c0768f" title="Wind at a target height within one atmospheric column." alt="" coords="196,5,372,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="239,56,329,83"/>
+<div class="center"><img src="ERF__FireWindExtract_8cpp_ad70f2c3d1c3d3b5b3ed9f0f7d0995c91_cgraph.png" border="0" usemap="#aERF__FireWindExtract_8cpp_ad70f2c3d1c3d3b5b3ed9f0f7d0995c91_cgraph" alt=""/></div>
+<map name="aERF__FireWindExtract_8cpp_ad70f2c3d1c3d3b5b3ed9f0f7d0995c91_cgraph" id="aERF__FireWindExtract_8cpp_ad70f2c3d1c3d3b5b3ed9f0f7d0995c91_cgraph">
+<area shape="rect" title=" " alt="" coords="5,123,148,164"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="196,5,379,47"/>
+<area shape="rect" href="ERF__FireWindExtract_8cpp.html#a036657dde6bf3b312e1bb820b2c0768f" title="Wind at a target height within one atmospheric column." alt="" coords="199,71,375,98"/>
+<area shape="rect" href="ERF__FireWindExtract_8cpp.html#a6a4e1c8ab324985660ee4cdc0288867c" title=" " alt="" coords="205,123,369,164"/>
+<area shape="rect" href="ERF__FireWindExtract_8cpp.html#ae0fd30fea8601c091eea5fd224067128" title="Neutral log&#45;law factor ln(z_to / z0) / ln(z_from / z0)" alt="" coords="229,189,346,215"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="242,239,333,266"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6a4e1c8ab324985660ee4cdc0288867c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a4e1c8ab324985660ee4cdc0288867c">&#9670;&nbsp;</a></span>fire_column_z0_range_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string fire_column_z0_range_error </td>
+          <td>(</td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>col_z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>z_low</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">const</span> Real z0_min = col_z0.min(0);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">const</span> Real z0_max = col_z0.max(0);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span> (!(z0_min &gt; Real(0.0))) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;the column roughness passed to the fire wind sampler has a minimum of &quot;</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;               + std::to_string(z0_min) + <span class="stringliteral">&quot; m; every value must be positive&quot;</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span> (!(z0_max * std::exp(Real(1.0)) &lt;= z_low)) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;the column roughness passed to the fire wind sampler has a maximum of &quot;</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;               + std::to_string(z0_max) + <span class="stringliteral">&quot; m; e times it must not exceed the lowest height the&quot;</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;               <span class="stringliteral">&quot; log profile is evaluated at, &quot;</span> + std::to_string(z_low)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;               + <span class="stringliteral">&quot; m (the reference height, or the sampling height when that is lower)&quot;</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__FireWindExtract_8cpp.html#ad70f2c3d1c3d3b5b3ed9f0f7d0995c91">fill_fire_wind_from_interpolation()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__FireWindExtract_8cpp_a6a4e1c8ab324985660ee4cdc0288867c_icgraph.png" border="0" usemap="#aERF__FireWindExtract_8cpp_a6a4e1c8ab324985660ee4cdc0288867c_icgraph" alt=""/></div>
+<map name="aERF__FireWindExtract_8cpp_a6a4e1c8ab324985660ee4cdc0288867c_icgraph" id="aERF__FireWindExtract_8cpp_a6a4e1c8ab324985660ee4cdc0288867c_icgraph">
+<area shape="rect" title=" " alt="" coords="196,5,360,47"/>
+<area shape="rect" href="ERF__FireWindExtract_8cpp.html#ad70f2c3d1c3d3b5b3ed9f0f7d0995c91" title=" " alt="" coords="5,5,148,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae0fd30fea8601c091eea5fd224067128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0fd30fea8601c091eea5fd224067128">&#9670;&nbsp;</a></span>log_law_factor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE Real log_law_factor </td>
+          <td>(</td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>z_to</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>z_from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>z0</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Neutral log-law factor ln(z_to / z0) / ln(z_from / z0) </p>
+<p>Every argument of the logarithms is kept valid whether or not the caller uses the result: clang evaluates a ternary's arm speculatively in Release, and with resampling off z_from is 0, so log(0) raised the divide-by-zero flag and tripped amrex.fpe_trap_zero on the first step. abs and the tiny offset are not selects, so nothing is folded back into the arm; for positive heights and roughness the values are unchanged. ln(z_to / z0) is floored at zero, so a roughness at or above z_to gives no wind rather than a reversed one, as the clamp below the first center does; the callers keep z0 well below both heights, where the floor is never reached. </p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    constexpr Real z_tiny  = Real(1.0e-30);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">const</span> Real z0_safe     = std::abs(<a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>) + z_tiny;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">const</span> Real log_to      = amrex::max(std::log((std::abs(z_to) + z_tiny) / z0_safe), Real(0.0));</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">const</span> Real log_from    = std::log((std::abs(z_from) + z_tiny) / z0_safe);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> log_to / (log_from + z_tiny);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__FireWindExtract_8cpp.html#ad70f2c3d1c3d3b5b3ed9f0f7d0995c91">fill_fire_wind_from_interpolation()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__FireWindExtract_8cpp_ae0fd30fea8601c091eea5fd224067128_icgraph.png" border="0" usemap="#aERF__FireWindExtract_8cpp_ae0fd30fea8601c091eea5fd224067128_icgraph" alt=""/></div>
+<map name="aERF__FireWindExtract_8cpp_ae0fd30fea8601c091eea5fd224067128_icgraph" id="aERF__FireWindExtract_8cpp_ae0fd30fea8601c091eea5fd224067128_icgraph">
+<area shape="rect" title="Neutral log&#45;law factor ln(z_to / z0) / ln(z_from / z0)" alt="" coords="196,13,313,39"/>
+<area shape="rect" href="ERF__FireWindExtract_8cpp.html#ad70f2c3d1c3d3b5b3ed9f0f7d0995c91" title=" " alt="" coords="5,5,148,47"/>
 </map>
 </div>
 

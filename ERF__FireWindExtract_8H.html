@@ -94,16 +94,18 @@ $(document).ready(function(){initNavTree('ERF__FireWindExtract_8H.html',''); ini
 <div class="textblock"><code>#include &lt;AMReX_MultiFab.H&gt;</code><br />
 <code>#include &lt;AMReX_Geometry.H&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 <code>#include &lt;<a class="el" href="ERF__FireGrid_8H_source.html">ERF_FireGrid.H</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_FireWindExtract.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__FireWindExtract_8H__incl.png" border="0" usemap="#aSource_2FireCoupling_2ERF__FireWindExtract_8H" alt=""/></div>
 <map name="aSource_2FireCoupling_2ERF__FireWindExtract_8H" id="aSource_2FireCoupling_2ERF__FireWindExtract_8H">
-<area shape="rect" title="Atmospheric wind sampled onto the fire grid." alt="" coords="212,5,387,47"/>
+<area shape="rect" title="Atmospheric wind sampled onto the fire grid." alt="" coords="261,5,436,47"/>
 <area shape="rect" title=" " alt="" coords="5,169,151,196"/>
 <area shape="rect" title=" " alt="" coords="175,169,328,196"/>
 <area shape="rect" title=" " alt="" coords="432,95,495,121"/>
+<area shape="rect" title=" " alt="" coords="519,95,578,121"/>
 <area shape="rect" href="ERF__FireGrid_8H.html" title="Fire grid data structure and construction." alt="" coords="289,95,408,121"/>
 <area shape="rect" title=" " alt="" coords="352,169,500,196"/>
 <area shape="rect" title=" " alt="" coords="524,169,747,196"/>
@@ -124,9 +126,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a896e502703ba8ead8cc6bfcdc06f9cf7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__FireWindExtract_8H.html#a896e502703ba8ead8cc6bfcdc06f9cf7">fill_fire_wind_from_interpolation</a> (amrex::MultiFab &amp;fire_wind_ref, amrex::MultiFab &amp;fire_wind_extract_z_mf, const amrex::MultiFab &amp;xvel_mf, const amrex::MultiFab &amp;yvel_mf, const amrex::MultiFab &amp;z_phys_cc_mf, const amrex::MultiFab &amp;fire_surface_z_mf, const amrex::MultiFab &amp;fire_col_ground_mf, const <a class="el" href="structFireGrid.html">FireGrid</a> &amp;fg, amrex::Real z_ref, int nz, const amrex::MultiFab *z_ref_cell_mf=nullptr, int wind_interp=1, const amrex::MultiFab *col_open=nullptr, const amrex::MultiFab *col_roof=nullptr, amrex::Real z_sample=0.0, amrex::Real z0_log=0.1, bool below_first_log=false)</td></tr>
-<tr class="memdesc:a896e502703ba8ead8cc6bfcdc06f9cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract wind from direct vertical interpolation on fire grid.  <a href="ERF__FireWindExtract_8H.html#a896e502703ba8ead8cc6bfcdc06f9cf7">More...</a><br /></td></tr>
-<tr class="separator:a896e502703ba8ead8cc6bfcdc06f9cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a382dc68c6c92e8396eaaed76921f82e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__FireWindExtract_8H.html#a382dc68c6c92e8396eaaed76921f82e5">fill_fire_wind_from_interpolation</a> (amrex::MultiFab &amp;fire_wind_ref, amrex::MultiFab &amp;fire_wind_extract_z_mf, const amrex::MultiFab &amp;xvel_mf, const amrex::MultiFab &amp;yvel_mf, const amrex::MultiFab &amp;z_phys_cc_mf, const amrex::MultiFab &amp;fire_surface_z_mf, const amrex::MultiFab &amp;fire_col_ground_mf, const <a class="el" href="structFireGrid.html">FireGrid</a> &amp;fg, amrex::Real z_ref, int nz, const amrex::MultiFab *z_ref_cell_mf=nullptr, int wind_interp=1, const amrex::MultiFab *col_open=nullptr, const amrex::MultiFab *col_roof=nullptr, amrex::Real z_sample=0.0, amrex::Real z0_log=0.1, bool below_first_log=false, const amrex::MultiFab *col_z0=nullptr)</td></tr>
+<tr class="memdesc:a382dc68c6c92e8396eaaed76921f82e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract wind from direct vertical interpolation on fire grid.  <a href="ERF__FireWindExtract_8H.html#a382dc68c6c92e8396eaaed76921f82e5">More...</a><br /></td></tr>
+<tr class="separator:a382dc68c6c92e8396eaaed76921f82e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78f1e5289bb89e5a98570808f54bc23f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__FireWindExtract_8H.html#a78f1e5289bb89e5a98570808f54bc23f">fire_column_z0_range_error</a> (const amrex::MultiFab &amp;col_z0, amrex::Real z_low)</td></tr>
+<tr class="memdesc:a78f1e5289bb89e5a98570808f54bc23f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Range check of a column roughness field for the fire wind sampler.  <a href="ERF__FireWindExtract_8H.html#a78f1e5289bb89e5a98570808f54bc23f">More...</a><br /></td></tr>
+<tr class="separator:a78f1e5289bb89e5a98570808f54bc23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3a1dbec31fd04332396b1a272fd9573"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__FireWindExtract_8H.html#ad3a1dbec31fd04332396b1a272fd9573">extract_fire_wind_k0</a> (amrex::MultiFab &amp;u_k0, amrex::MultiFab &amp;v_k0, amrex::MultiFab &amp;h_k0, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;z_phys_cc, const amrex::MultiFab *z_phys_nd, const amrex::Geometry &amp;geom)</td></tr>
 <tr class="memdesc:ad3a1dbec31fd04332396b1a272fd9573"><td class="mdescLeft">&#160;</td><td class="mdescRight">The wind at the lowest cell center of each atmospheric column, and its height above that column's ground.  <a href="ERF__FireWindExtract_8H.html#ad3a1dbec31fd04332396b1a272fd9573">More...</a><br /></td></tr>
 <tr class="separator:ad3a1dbec31fd04332396b1a272fd9573"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,33 +215,33 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;{</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespaceamrex.html">amrex</a>;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>  k0      = geom.Domain().smallEnd(2);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keyword">const</span> Real z_floor = geom.ProbLo(2);</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> use_znd = (z_phys_nd != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(u_k0); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keyword">const</span> Box bx = mfi.validbox();</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> u   = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>.const_array(mfi);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> v   = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>.const_array(mfi);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> zcc = z_phys_cc.const_array(mfi);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt; znd = use_znd ? z_phys_nd-&gt;const_array(mfi) : Array4&lt;Real const&gt;{};</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> us = u_k0.array(mfi);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> vs = v_k0.array(mfi);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> hs = h_k0.array(mfi);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        {</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            us(i,j,0) = Real(0.5) * (u(i,j,k0) + u(i+1,j,k0));</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            vs(i,j,0) = Real(0.5) * (v(i,j,k0) + v(i,j+1,k0));</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="keyword">const</span> Real zsfc = use_znd ? Real(0.25) * (znd(i,j,k0) + znd(i+1,j,k0) + znd(i,j+1,k0) + znd(i+1,j+1,k0))</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                                      : z_floor;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            hs(i,j,0) = zcc(i,j,k0) - zsfc;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        });</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    }</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    u_k0.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    v_k0.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    h_k0.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;{</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespaceamrex.html">amrex</a>;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>  k0      = geom.Domain().smallEnd(2);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keyword">const</span> Real z_floor = geom.ProbLo(2);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> use_znd = (z_phys_nd != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(u_k0); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keyword">const</span> Box bx = mfi.validbox();</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> u   = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>.const_array(mfi);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> v   = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>.const_array(mfi);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> zcc = z_phys_cc.const_array(mfi);</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt; znd = use_znd ? z_phys_nd-&gt;const_array(mfi) : Array4&lt;Real const&gt;{};</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> us = u_k0.array(mfi);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> vs = v_k0.array(mfi);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> hs = h_k0.array(mfi);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        {</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            us(i,j,0) = Real(0.5) * (u(i,j,k0) + u(i+1,j,k0));</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            vs(i,j,0) = Real(0.5) * (v(i,j,k0) + v(i,j+1,k0));</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            <span class="keyword">const</span> Real zsfc = use_znd ? Real(0.25) * (znd(i,j,k0) + znd(i+1,j,k0) + znd(i,j+1,k0) + znd(i+1,j+1,k0))</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                                      : z_floor;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            hs(i,j,0) = zcc(i,j,k0) - zsfc;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        });</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    }</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    u_k0.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    v_k0.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    h_k0.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;}</div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:232</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:233</div></div>
@@ -253,8 +258,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a896e502703ba8ead8cc6bfcdc06f9cf7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a896e502703ba8ead8cc6bfcdc06f9cf7">&#9670;&nbsp;</a></span>fill_fire_wind_from_interpolation()</h2>
+<a id="a382dc68c6c92e8396eaaed76921f82e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a382dc68c6c92e8396eaaed76921f82e5">&#9670;&nbsp;</a></span>fill_fire_wind_from_interpolation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -359,7 +364,13 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>below_first_log</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>below_first_log</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab *&#160;</td>
+          <td class="paramname"><em>col_z0</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -383,7 +394,8 @@ Here is the call graph for this function:</div>
     <tr><td class="paramdir">[in]</td><td class="paramname">z_ref</td><td>Global fallback wind reference height [m] </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">nz</td><td>Number of vertical levels </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">z_ref_cell_mf</td><td>Height above ground [m] to sample each fire cell at, on the fire grid; nullptr = the global z_ref </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">below_first_log</td><td>Target below the lowest cell center: false takes the lowest center's wind as it is; true scales it with a neutral log profile of roughness z0_log, U(z) = U(z_1) ln(z/z0)/ln(z_1/z0)</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">below_first_log</td><td>Target below the lowest cell center: false takes the lowest center's wind as it is; true scales it with a neutral log profile of roughness z0_log, U(z) = U(z_1) ln(z/z0)/ln(z_1/z0) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">col_z0</td><td>Roughness length [m] of each atmospheric column (2D, laid out as col_open, one filled ghost cell), used in place of z0_log in both log profiles; nullptr = the scalar z0_log everywhere</td></tr>
   </table>
   </dd>
 </dl>
@@ -404,7 +416,47 @@ Here is the call graph for this function:</div>
 </ol>
 <p>With wind_interp = 1 (bilinear, the default) steps 3-8 run for each of the four atmospheric columns surrounding the fire cell, every one sampled at the reference height above <em>its own</em> ground, and the results are blended with bilinear weights. With wind_interp = 0 only the column containing the cell is used, which makes the fire-grid wind piecewise constant on atmospheric cells.</p>
 <p>With col_open and col_roof given (2D atmospheric-column fields, one ghost cell) each bilinear weight is multiplied by the column's open fraction when its roof is above the cell's wind height, and the four weights are renormalized, so a column inside a building does not contribute its relaxed in-building velocity to the fire cells around it. A cell whose four columns are all closed keeps the plain weights; it is inside a footprint and masked anyway.</p>
-<p>With z_sample &gt; 0 (an engine input) every column is sampled at z_sample above its ground instead of at the target height, and the result is brought down to the target height with a neutral log profile of roughness z0_log: U(z_ref) = U(z_sample) ln(z_ref / z0) / ln(z_sample / z0). This is the second interpolation option of the Community Fire Behavior Model (Jimenez y Munoz et al. 2026), meant to drive the fire with a wind taken above its own plume. fire_wind_extract_z then records the sampled height; the open-column test uses that height as well. </p>
+<p>With z_sample &gt; 0 (an engine input) every column is sampled at z_sample above its ground instead of at the target height, and the result is brought down to the target height with a neutral log profile of roughness z0_log: U(z_ref) = U(z_sample) ln(z_ref / z0) / ln(z_sample / z0). This is the second interpolation option of the Community Fire Behavior Model (Jimenez y Munoz et al. 2026), meant to drive the fire with a wind taken above its own plume. fire_wind_extract_z then records the sampled height; the open-column test uses that height as well.</p>
+<p>With col_z0 given (a 2D roughness field [m] of the atmospheric columns) both log profiles above use the roughness of the column being sampled instead of z0_log: the below-first-center scaling of each column, and with z_sample &gt; 0 the resampling factor, which is then applied to each column before the bilinear blend. Without col_z0 the result is unchanged, bit for bit. The field is read with the fire grid's MFIter, so it must have the fire grid's boxes, in its order and with its owners: a copy of the surface layer's z_0 (<a class="el" href="classSurfaceLayer.html#ab4a02e8a233917356742b1c036637474">SurfaceLayer::get_z0</a>) onto the level's k = 0 slabs, the layout of col_open, works; z_0 itself does not where the fire grid covers a cropped region or the terrain is EB (z_0 is then 3D). Its ghost cell must be filled with FillBoundary before the call (interior and periodic ghosts). Across a non-periodic face of the fire grid's region (fg.geom) a column outside the region takes the edge column's roughness, so ghost cells there are never read and need no fill. Where the sea roughness varies in time (<a class="el" href="classSurfaceLayer.html#a2669b54b8f762fe46e7727313c927218">SurfaceLayer::have_variable_sea_roughness</a>) the copy is refreshed before every call. When a log profile is evaluated (below_first_log, or z_sample &gt; 0) the call aborts unless every valid value is positive and e times the largest does not exceed the lowest height a log profile is evaluated at (z_ref or the smallest z_ref_cell, and z_sample when resampling), the bound fire_column_z0_range_error checks; otherwise the field is not used and not checked.</p>
+<p>The per-column log law from z_sample assumes each column is in equilibrium with its own roughness up to z_sample. Across a sharp roughness change the internal boundary layer one atmospheric cell downwind is often shallower than that, so the per-column factor overstates the local effect there. </p>
+
+</div>
+</div>
+<a id="a78f1e5289bb89e5a98570808f54bc23f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78f1e5289bb89e5a98570808f54bc23f">&#9670;&nbsp;</a></span>fire_column_z0_range_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string fire_column_z0_range_error </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>col_z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>z_low</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Range check of a column roughness field for the fire wind sampler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">col_z0</td><td>Roughness [m] of the atmospheric columns (valid cells are checked) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z_low</td><td>Lowest height [m] a log profile is evaluated at </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An empty string when every value z0 satisfies 0 &lt; z0 and e z0 &lt;= z_low (so ln(z_low / z0) &gt;= 1), otherwise the reason. Collective over MPI. </dd></dl>
 
 </div>
 </div>
