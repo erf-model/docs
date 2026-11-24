@@ -555,7 +555,7 @@ template&lt;class FAB , typename DType &gt; </div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    amrex::Box in_box(amrex::IntVect(0,0,0), amrex::IntVect(ns3-1,ns2-1,ns1-1)); <span class="comment">// ns1 may or may not be staggered</span></div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    amrex::Box my_box(amrex::IntVect(0,0,0), amrex::IntVect(ns3-1,ns2-1,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>));</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;PH&quot;</span> || var_name == <span class="stringliteral">&quot;PHB&quot;</span>) {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;PH&quot;</span> || var_name == <span class="stringliteral">&quot;PHB&quot;</span> || var_name == <span class="stringliteral">&quot;C1F&quot;</span> || var_name == <span class="stringliteral">&quot;C2F&quot;</span>) {</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        my_box.setType(amrex::IndexType(amrex::IntVect(0,0,1)));</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        my_box.setBig(2, <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1);</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    }</div>
