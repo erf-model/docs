@@ -8,6 +8,7 @@ var structShocColumnData =
     [ "host_dse", "structShocColumnData.html#a6e10784e89389520e51fcca292fc4a77", null ],
     [ "isotropy", "structShocColumnData.html#a86cc9b7285f282930c8c6f2d1a83d7ee", null ],
     [ "layout", "structShocColumnData.html#abb95aacab1568120c49cf176a5a35990", null ],
+    [ "mf_area", "structShocColumnData.html#abed62e561a5bc6ec6231d300d64ca35b", null ],
     [ "obklen", "structShocColumnData.html#adeb0faaa396b513b6c532311dda70d96", null ],
     [ "p_int", "structShocColumnData.html#a8c1d329afe441eaf3e5e26fa4961f1a3", null ],
     [ "p_mid", "structShocColumnData.html#ad662d133320891c85852575b8d2a6f4a", null ],

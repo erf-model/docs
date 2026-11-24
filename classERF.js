@@ -187,6 +187,7 @@ var classERF =
     [ "initialize_integrator", "classERF.html#a5600f8ce250d4811012719fdf5e85f00", null ],
     [ "initializeEB", "classERF.html#a1e79e62ce3ef2845be3bac4723b1b7a3", null ],
     [ "initializeFire", "classERF.html#aac64d1275a51ed1bf2b9eb7e091ff2dd", null ],
+    [ "initializeFlood", "classERF.html#aa3946fa957f81db07f170e03fe1933da", null ],
     [ "InitializeFromFile", "classERF.html#a2e1874d47d95c7c858c2a2336fd0eee6", null ],
     [ "InitializeLevelFromData", "classERF.html#a914f576acc2d1a54203a220cce10df62", null ],
     [ "initializeMicrophysics", "classERF.html#afc2898daad269536c1a15443abf3fa75", null ],

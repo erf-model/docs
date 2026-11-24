@@ -3,7 +3,7 @@ var classShocDriver =
     [ "ShocDriver", "classShocDriver.html#a7b7d221e198d43e8bf93ece6a0bd0739", null ],
     [ "add_fast_tend", "classShocDriver.html#a5f4aba13879e67a3a76aba7275601dcd", null ],
     [ "add_slow_tend", "classShocDriver.html#af3f5f0009e1281a9a8c05b4633f2a8bd", null ],
-    [ "advance", "classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b", null ],
+    [ "advance", "classShocDriver.html#a1a088ac7a078e47623720437ab7c9cb8", null ],
     [ "apply_state_update", "classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608", null ],
     [ "brunt_diagnostics", "classShocDriver.html#a4b56dad43db8e457ddf8e8e68506524e", null ],
     [ "buoy_prod_diagnostics", "classShocDriver.html#af3ec51bc73480e7c94248556464e6df5", null ],
