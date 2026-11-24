@@ -1,9 +1,9 @@
 var ERF__Derive_8H =
 [
-    [ "erf_derenstrophysq", "ERF__Derive_8H.html#a4a4e21b79a37a1ba1f6062db4b7b9086", null ],
-    [ "erf_derhelicity", "ERF__Derive_8H.html#a0a98c8c6a7458ac64638255c183096b3", null ],
+    [ "erf_derenstrophysq", "ERF__Derive_8H.html#add92f6727c3836e499820f2a0b1c4d5e", null ],
+    [ "erf_derhelicity", "ERF__Derive_8H.html#ad6f8c334c680184a375cabfc25fd01a1", null ],
     [ "erf_derKE", "ERF__Derive_8H.html#a4ae8445c6757b1d0c873e2d4145c1da8", null ],
-    [ "erf_derlocalhelicity", "ERF__Derive_8H.html#aacde8f6f4ecd3585d69e6db084c35d7c", null ],
+    [ "erf_derlocalhelicity", "ERF__Derive_8H.html#a25de070c2722529a6981768298e67248", null ],
     [ "erf_dermagvel", "ERF__Derive_8H.html#ab56d67d467e4381278f3a4ee05d8ac2d", null ],
     [ "erf_dermagvelsq", "ERF__Derive_8H.html#a73c1e1bed53bf6998df09bfd3a01a961", null ],
     [ "erf_dermaxreflectivity", "ERF__Derive_8H.html#ad2a98426b3ae7eccfb19578dd593c7aa", null ],
@@ -17,8 +17,8 @@ var ERF__Derive_8H =
     [ "erf_dersoundspeed", "ERF__Derive_8H.html#a2652186cf13e326a36cfba8668216212", null ],
     [ "erf_dertemp", "ERF__Derive_8H.html#a220c8e128c78a53558dff78c07c9ca5f", null ],
     [ "erf_dertheta", "ERF__Derive_8H.html#ad929c4aac97b7749e8f23c514f74cffb", null ],
-    [ "erf_dervortstretching", "ERF__Derive_8H.html#a6646e47b82cbe787c56eae42115c3ff3", null ],
-    [ "erf_dervortx", "ERF__Derive_8H.html#a6f89d05c6543b616a3da695b848eb17f", null ],
-    [ "erf_dervorty", "ERF__Derive_8H.html#ac58c107a610669f70bfbbba2b81ce87a", null ],
-    [ "erf_dervortz", "ERF__Derive_8H.html#af7960b1dfff66af34ef20c08ac5cb4ae", null ]
+    [ "erf_dervortstretching", "ERF__Derive_8H.html#ac2d2ebac30723dca1d6cac4d24137fe4", null ],
+    [ "erf_dervortx", "ERF__Derive_8H.html#a0c8980ef5394dfec6fe6b2fc5a147c09", null ],
+    [ "erf_dervorty", "ERF__Derive_8H.html#a5127108ae170cb6cfd08886bc34eafc6", null ],
+    [ "erf_dervortz", "ERF__Derive_8H.html#ad03a3bd2f99f29c605c4c8332620e0b2", null ]
 ];
