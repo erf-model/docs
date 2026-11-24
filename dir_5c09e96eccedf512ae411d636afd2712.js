@@ -1,6 +1,6 @@
 var dir_5c09e96eccedf512ae411d636afd2712 =
 [
-    [ "ERF_AverageDown.cpp", "ERF__AverageDown_8cpp.html", null ],
+    [ "ERF_AverageDown.cpp", "ERF__AverageDown_8cpp.html", "ERF__AverageDown_8cpp" ],
     [ "ERF_ChopGrids.cpp", "ERF__ChopGrids_8cpp.html", "ERF__ChopGrids_8cpp" ],
     [ "ERF_ColumnBands.cpp", "ERF__ColumnBands_8cpp.html", "ERF__ColumnBands_8cpp" ],
     [ "ERF_ColumnBands.H", "ERF__ColumnBands_8H.html", "ERF__ColumnBands_8H" ],

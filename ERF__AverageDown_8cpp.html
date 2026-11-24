@@ -82,6 +82,8 @@ $(document).ready(function(){initNavTree('ERF__AverageDown_8cpp.html',''); initR
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_AverageDown.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -145,7 +147,177 @@ Include dependency graph for ERF_AverageDown.cpp:</div>
 <area shape="rect" href="ERF__ObsNudging_8H.html" title=" " alt="" coords="2353,244,2500,271"/>
 </map>
 </div>
-</div></div><!-- contents -->
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a73e31b49cc35ac41a59c71c3b6c11f6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__AverageDown_8cpp.html#a73e31b49cc35ac41a59c71c3b6c11f6b">average_down_faces_mapfac</a> (const MultiFab &amp;fine, MultiFab &amp;crse, const IntVect &amp;rr, const Periodicity &amp;cper, const MultiFab &amp;mf_f, const MultiFab &amp;mf_c, const MultiFab *mf2_f, const MultiFab *mf2_c, const MultiFab *area_f, const MultiFab *area_c)</td></tr>
+<tr class="separator:a73e31b49cc35ac41a59c71c3b6c11f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a73e31b49cc35ac41a59c71c3b6c11f6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e31b49cc35ac41a59c71c3b6c11f6b">&#9670;&nbsp;</a></span>average_down_faces_mapfac()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void average_down_faces_mapfac </td>
+          <td>(</td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>fine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>crse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IntVect &amp;&#160;</td>
+          <td class="paramname"><em>rr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Periodicity &amp;&#160;</td>
+          <td class="paramname"><em>cper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>mf_f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>mf_c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab *&#160;</td>
+          <td class="paramname"><em>mf2_f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab *&#160;</td>
+          <td class="paramname"><em>mf2_c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab *&#160;</td>
+          <td class="paramname"><em>area_f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MultiFab *&#160;</td>
+          <td class="paramname"><em>area_c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> has_mf2 = (mf2_f != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> has_area = (area_f != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    MultiFab wf(fine.boxArray(), fine.DistributionMap(), 1, 0);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(wf, TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">const</span> Box bx = mfi.tilebox();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> w_arr = wf.array(mfi);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> m_arr = fine.const_array(mfi);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> f_arr = mf_f.const_array(mfi);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> g_arr = (has_mf2) ? mf2_f-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> a_arr = (has_area) ? area_f-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keyword">const</span> Real mf = (has_mf2) ? f_arr(i,j,0) * g_arr(i,j,0) : f_arr(i,j,0);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keyword">const</span> Real a  = (has_area) ? a_arr(i,j,k) : <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            w_arr(i,j,k) = m_arr(i,j,k) * a / mf;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        });</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// The coarse faces under the fine level, on the fine level&#39;s distribution</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">const</span> BoxArray cba = amrex::coarsen(fine.boxArray(), <a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">const</span> DistributionMapping&amp; dm = fine.DistributionMap();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    MultiFab wc(cba, dm, 1, 0);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    amrex::average_down_faces(wf, wc, <a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// The coarse map factors on those faces (cell-centered in z, with no extent in z)</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//    Convert the list, not its boxes, so that it carries the type too; convert before</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">//    collapsing z, since a nodal box of one point in z would convert to an empty cell box</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    BoxList bl2d = cba.boxList();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    bl2d.convert(IndexType(IntVect(cba.ixType()[0], cba.ixType()[1], 0)));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : bl2d) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        b.setRange(2, 0);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> BoxArray ba2d(std::move(bl2d));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    MultiFab <a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3a3ea808135e768fd39d360230431d25a5">fc</a>(ba2d, dm, 1, 0);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3a3ea808135e768fd39d360230431d25a5">fc</a>.ParallelCopy(mf_c, 0, 0, 1, IntVect(0), IntVect(0), cper);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    MultiFab gc;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (has_mf2) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        gc.define(ba2d, dm, 1, 0);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        gc.ParallelCopy(*mf2_c, 0, 0, 1, IntVect(0), IntVect(0), cper);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    MultiFab <a class="code" href="namespacemodule__mp__morr__two__moment.html#af1e477a09e751e2630ec7f333fdae227">ac</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (has_area) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="namespacemodule__mp__morr__two__moment.html#af1e477a09e751e2630ec7f333fdae227">ac</a>.define(cba, dm, 1, 0);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="namespacemodule__mp__morr__two__moment.html#af1e477a09e751e2630ec7f333fdae227">ac</a>.ParallelCopy(*area_c, 0, 0, 1, IntVect(0), IntVect(0), cper);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(wc, TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">const</span> Box bx = mfi.tilebox();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> w_arr = wc.array(mfi);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> f_arr = <a class="code" href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3a3ea808135e768fd39d360230431d25a5">fc</a>.const_array(mfi);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> g_arr = (has_mf2) ? gc.const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> a_arr = (has_area) ? <a class="code" href="namespacemodule__mp__morr__two__moment.html#af1e477a09e751e2630ec7f333fdae227">ac</a>.const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keyword">const</span> Real mf = (has_mf2) ? f_arr(i,j,0) * g_arr(i,j,0) : f_arr(i,j,0);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">const</span> Real a  = (has_area) ? a_arr(i,j,k) : <a class="code" href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            w_arr(i,j,k) *= mf / a;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        });</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    crse.ParallelCopy(wc, 0, 0, 1, IntVect(0), IntVect(0), cper);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__NumericalConstants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:37</div></div>
+<div class="ttc" id="anamespaceMORRInd_html_a5203b29054dbc5558f9dcd22c37793a3a3ea808135e768fd39d360230431d25a5"><div class="ttname"><a href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3a3ea808135e768fd39d360230431d25a5">MORRInd::fc</a></div><div class="ttdeci">@ fc</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:141</div></div>
+<div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_a649e184a5c5c6d2eef72a390c18eb4e4"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">module_mp_morr_two_moment::rr</a></div><div class="ttdeci">real(c_double), private rr</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:224</div></div>
+<div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_af1e477a09e751e2630ec7f333fdae227"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#af1e477a09e751e2630ec7f333fdae227">module_mp_morr_two_moment::ac</a></div><div class="ttdeci">real(c_double), private ac</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:181</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#a5219b2ae7f9ecc3d274a417ad825b5f3">ERF::AverageDownTo()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__AverageDown_8cpp_a73e31b49cc35ac41a59c71c3b6c11f6b_cgraph.png" border="0" usemap="#aERF__AverageDown_8cpp_a73e31b49cc35ac41a59c71c3b6c11f6b_cgraph" alt=""/></div>
+<map name="aERF__AverageDown_8cpp_a73e31b49cc35ac41a59c71c3b6c11f6b_cgraph" id="aERF__AverageDown_8cpp_a73e31b49cc35ac41a59c71c3b6c11f6b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,164,47"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="212,13,303,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__AverageDown_8cpp_a73e31b49cc35ac41a59c71c3b6c11f6b_icgraph.png" border="0" usemap="#aERF__AverageDown_8cpp_a73e31b49cc35ac41a59c71c3b6c11f6b_icgraph" alt=""/></div>
+<map name="aERF__AverageDown_8cpp_a73e31b49cc35ac41a59c71c3b6c11f6b_icgraph" id="aERF__AverageDown_8cpp_a73e31b49cc35ac41a59c71c3b6c11f6b_icgraph">
+<area shape="rect" title=" " alt="" coords="212,5,371,47"/>
+<area shape="rect" href="classERF.html#a5219b2ae7f9ecc3d274a417ad825b5f3" title=" " alt="" coords="5,13,164,39"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

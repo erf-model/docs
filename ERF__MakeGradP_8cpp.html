@@ -405,7 +405,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbx, tby,</div>
 <div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        {</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;            <span class="comment">//Note : mx/my == 1, so no map factor needed here</span></div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;            <span class="comment">// Gradient in computational coordinates; the map factor is applied below</span></div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;            Real <a class="code" href="namespaceGpVars.html#acc4072031cc4332c76925647bf6e3fc8aecfb8189072456062c3c29c137ec2323">gpx</a> = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>[0] * (p_arr(i,j,k) - p_arr(i-1,j,k));</div>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160; </div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
@@ -424,12 +424,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            }</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            gpx_arr(i,j,k) = <a class="code" href="namespaceGpVars.html#acc4072031cc4332c76925647bf6e3fc8aecfb8189072456062c3c29c137ec2323">gpx</a>;</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160; </div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;            <span class="comment">// NOTE that the gradp array now carries the map factor!</span></div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;            <span class="comment">// Apply the map factor; the stored gradp carries it</span></div>
 <div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            gpx_arr(i,j,k) *= mf_ux_arr(i,j,0);</div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        },</div>
 <div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;        {</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;            <span class="comment">//Note : mx/my == 1, so no map factor needed here</span></div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;            <span class="comment">// Gradient in computational coordinates; the map factor is applied below</span></div>
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            Real <a class="code" href="namespaceGpVars.html#acc4072031cc4332c76925647bf6e3fc8a8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a> = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>[1] * (p_arr(i,j,k) - p_arr(i,j-1,k));</div>
 <div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160; </div>
 <div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
@@ -448,7 +448,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;            }</div>
 <div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;            gpy_arr(i,j,k) = <a class="code" href="namespaceGpVars.html#acc4072031cc4332c76925647bf6e3fc8a8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a>;</div>
 <div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160; </div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;            <span class="comment">// NOTE that the gradp array now carries the map factor!</span></div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;            <span class="comment">// Apply the map factor; the stored gradp carries it</span></div>
 <div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;            gpy_arr(i,j,k) *= mf_vy_arr(i,j,0);</div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;        });</div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    } <span class="comment">// mfi</span></div>
@@ -596,7 +596,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbx, tby,</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                <span class="comment">//Note : mx/my == 1, so no map factor needed here</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                <span class="comment">// Gradient in computational coordinates; the map factor is applied below</span></div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                Real <a class="code" href="namespaceGpVars.html#acc4072031cc4332c76925647bf6e3fc8aecfb8189072456062c3c29c137ec2323">gpx</a> = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>[0] * (p_arr(i,j,k) - p_arr(i-1,j,k));</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
@@ -635,12 +635,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                }</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                gpx_arr(i,j,k) = <a class="code" href="namespaceGpVars.html#acc4072031cc4332c76925647bf6e3fc8aecfb8189072456062c3c29c137ec2323">gpx</a>;</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                <span class="comment">// NOTE that the gradp array now carries the map factor!</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                <span class="comment">// Apply the map factor; the stored gradp carries it</span></div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                gpx_arr(i,j,k) *= mf_ux_arr(i,j,0);</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            },</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            {</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                <span class="comment">//Note : mx/my == 1, so no map factor needed here</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                <span class="comment">// Gradient in computational coordinates; the map factor is applied below</span></div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                Real <a class="code" href="namespaceGpVars.html#acc4072031cc4332c76925647bf6e3fc8a8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a> = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>[1] * (p_arr(i,j,k) - p_arr(i,j-1,k));</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
@@ -679,7 +679,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                }</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                gpy_arr(i,j,k) = <a class="code" href="namespaceGpVars.html#acc4072031cc4332c76925647bf6e3fc8a8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a>;</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                <span class="comment">// NOTE that the gradp array now carries the map factor!</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                <span class="comment">// Apply the map factor; the stored gradp carries it</span></div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                gpy_arr(i,j,k) *= mf_vy_arr(i,j,0);</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            });</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>

@@ -1,5 +1,16 @@
 var NAVTREEINDEX12 =
 {
+"ERF__MicrophysicsUtils_8H.html#a2e94fb836d3c733ebac8263bfa479ca8":[3,0,1,30,33,3],
+"ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699":[3,0,1,30,33,8],
+"ERF__MicrophysicsUtils_8H.html#a45320981110c862bac93f657781eb79f":[3,0,1,30,33,2],
+"ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608":[3,0,1,30,33,12],
+"ERF__MicrophysicsUtils_8H.html#a4a77fa91e0b719d43336b4afea42c586":[3,0,1,30,33,5],
+"ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1":[3,0,1,30,33,9],
+"ERF__MicrophysicsUtils_8H.html#a53f42881e64c89dee8b44969e3099826":[3,0,1,30,33,1],
+"ERF__MicrophysicsUtils_8H.html#a66e2273b5b2661fa12fea623630afaf8":[3,0,1,30,33,4],
+"ERF__MicrophysicsUtils_8H.html#a6d191b122d8b5541ef4b8515ce55d570":[3,0,1,30,33,14],
+"ERF__MicrophysicsUtils_8H.html#a7baba5d74922033bf93526933a0d77ec":[3,0,1,30,33,7],
+"ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615":[3,0,1,30,33,16],
 "ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017":[3,0,1,30,33,13],
 "ERF__MicrophysicsUtils_8H.html#ac3237967bf8818774c3b24565d02c5b2":[3,0,1,30,33,6],
 "ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3":[3,0,1,30,33,15],
@@ -238,16 +249,5 @@ var NAVTREEINDEX12 =
 "ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3":[3,0,1,19,4,3],
 "ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3a207ee46baa1e2caed2e1faddce0adea3":[3,0,1,19,4,3,4],
 "ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3a3394ed80a5d683fc03bf6f03c2996a35":[3,0,1,19,4,3,0],
-"ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3a6c6c58a3a6d1e9287692208eb9b38ac0":[3,0,1,19,4,3,1],
-"ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3a80fe2d3c0e1c500f18541e5e62c9693f":[3,0,1,19,4,3,2],
-"ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3aa01b8f1486ffc86e6ea4423daadc6a01":[3,0,1,19,4,3,3],
-"ERF__ObsNudgingSeries_8H_source.html":[3,0,1,19,4],
-"ERF__ObsNudgingSeries_8cpp.html":[3,0,1,19,3],
-"ERF__ObsNudgingSeries_8cpp.html#a07bd759549c15526226b514d0d072d12":[3,0,1,19,3,1],
-"ERF__ObsNudgingSeries_8cpp.html#a921cb9f3a74d99aa1abdfc9e2ca90927":[3,0,1,19,3,0],
-"ERF__ObsNudgingSeries_8cpp.html#ac2cb7b1bd8e06e1cf8c7f2b9dbc53910":[3,0,1,19,3,2],
-"ERF__ObsNudging_8H.html":[3,0,1,19,1],
-"ERF__ObsNudging_8H_source.html":[3,0,1,19,1],
-"ERF__ObsNudging_8cpp.html":[3,0,1,19,0],
-"ERF__ObsNudging_8cpp.html#a7dfcc94a59060851d95a993463afee1f":[3,0,1,19,0,2]
+"ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3a6c6c58a3a6d1e9287692208eb9b38ac0":[3,0,1,19,4,3,1]
 };

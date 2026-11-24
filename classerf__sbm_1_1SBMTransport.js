@@ -16,6 +16,7 @@ var classerf__sbm_1_1SBMTransport =
     [ "define", "classerf__sbm_1_1SBMTransport.html#a38727fdecac66f2e79fd22ed09a3553f", null ],
     [ "destroy", "classerf__sbm_1_1SBMTransport.html#a71aa9a6e48f17c3de512e3dfeb6e90a1", null ],
     [ "enable_zero_flow_diagnostics", "classerf__sbm_1_1SBMTransport.html#ad48985ac0d070bc88cd076cacddc08f3", null ],
+    [ "install_mixing_bc", "classerf__sbm_1_1SBMTransport.html#a45546e44b609842101224a9ceac88f41", null ],
     [ "interval_accepted_rate_linf", "classerf__sbm_1_1SBMTransport.html#abd68b1822ef81e7fe9fedc689275b126", null ],
     [ "interval_carrier_linf", "classerf__sbm_1_1SBMTransport.html#af7eca9dd348e54367afaa2e80d75a13a", null ],
     [ "interval_limiter_active_groups", "classerf__sbm_1_1SBMTransport.html#ad904a59f069f341f9b82b462411a64a4", null ],

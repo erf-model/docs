@@ -1,14 +1,15 @@
 var namespaceerf__auxiliary =
 [
     [ "erf_detail_AuxiliaryDiffusion", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html", [
-      [ "count_invalid_coefficient_reads", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a9a93cb4cbf8ab8f715091376a2d54876", null ],
-      [ "fill_transmissibility", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#afd248b2dcf1362bf3d7ad345f469ab80", null ],
+      [ "count_invalid_coefficient_reads", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#ae17ef3e1e4d1d50d40ec3b7159cb554a", null ],
+      [ "fill_transmissibility", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a5af141a31ec9f597301c3fbb5b9cfaed", null ],
       [ "on_physical_face", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a4bbbbd63de66963fe556facf00763edf", null ],
       [ "same_face_layout", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#abcfac5ddea6aa64fca6ebd94bfa305a3", null ]
     ] ],
     [ "MappedFaceTransmissibilityTag", "structerf__auxiliary_1_1MappedFaceTransmissibilityTag.html", null ],
     [ "MappedDiffusionMetrics", "structerf__auxiliary_1_1MappedDiffusionMetrics.html", "structerf__auxiliary_1_1MappedDiffusionMetrics" ],
     [ "MappedDiffusionCoefficients", "structerf__auxiliary_1_1MappedDiffusionCoefficients.html", "structerf__auxiliary_1_1MappedDiffusionCoefficients" ],
+    [ "MappedDiffusionBoundary", "structerf__auxiliary_1_1MappedDiffusionBoundary.html", "structerf__auxiliary_1_1MappedDiffusionBoundary" ],
     [ "AuxiliaryInertTracer", "classerf__auxiliary_1_1AuxiliaryInertTracer.html", "classerf__auxiliary_1_1AuxiliaryInertTracer" ],
     [ "MappedFaceFluxRateTag", "structerf__auxiliary_1_1MappedFaceFluxRateTag.html", null ],
     [ "IntegratedMappedFaceFluxTag", "structerf__auxiliary_1_1IntegratedMappedFaceFluxTag.html", null ],
@@ -30,6 +31,11 @@ var namespaceerf__auxiliary =
     [ "AuxiliaryFieldValidationPolicy", "namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08", [
       [ "Global", "namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08a4cc6684df7b4a92b1dec6fce3264fac8", null ],
       [ "AssumeValid", "namespaceerf__auxiliary.html#a38f7bc2b27f146e2cefe97ec9581eb08ae0b4b5d13bf9e622d51f68e6646fe656", null ]
+    ] ],
+    [ "DiffusionFaceKind", "namespaceerf__auxiliary.html#ada737ef4722ece60f220d102eeda840a", [
+      [ "Closed", "namespaceerf__auxiliary.html#ada737ef4722ece60f220d102eeda840aa03f4a47830f97377a35321051685071e", null ],
+      [ "Dirichlet", "namespaceerf__auxiliary.html#ada737ef4722ece60f220d102eeda840aabac152b762896edff34ed668ae1a546f", null ],
+      [ "DirichletWhereInward", "namespaceerf__auxiliary.html#ada737ef4722ece60f220d102eeda840aab5ab32aaf61f2047c1eafca60e3edbed", null ]
     ] ],
     [ "DiffusionMesh", "namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575ec", [
       [ "ConstantDz", "namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575eca395e59960cb2f91fa3ac93b5095c8c9c", null ],
@@ -63,7 +69,9 @@ var namespaceerf__auxiliary =
     [ "BuildLowOrderDiffusionRate", "namespaceerf__auxiliary.html#a76076e5f9a33fb047052c40da7fb9e7a", null ],
     [ "BuildLowOrderDiffusionRate", "namespaceerf__auxiliary.html#a53a1c947c5857ce1cabf19be35f39fd0", null ],
     [ "BuildMappedCellMeasure", "namespaceerf__auxiliary.html#a0c9f140deff66b4c8fdf8fd9483b6ca6", null ],
+    [ "BuildMappedDiffusionTransmissibility", "namespaceerf__auxiliary.html#aed47fb1b2c0b515b847565a133a3a78c", null ],
     [ "BuildMappedDiffusionTransmissibility", "namespaceerf__auxiliary.html#af28d0ab356c63f806da09e7b3b09267e", null ],
+    [ "BuildMappedDiffusionTransmissibility", "namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083", null ],
     [ "BuildMappedDiffusionTransmissibility", "namespaceerf__auxiliary.html#a954ffa9748da0260a8739bb9264bb80f", null ],
     [ "BuildMappedDryAirCarrierFluxRate", "namespaceerf__auxiliary.html#a79382f0a251cc4ecd8f868358abc9f8d", null ],
     [ "ComputationalMappedDivergence", "namespaceerf__auxiliary.html#ab967a4eabbe6e144c9ddfefc152cf76c", null ],
@@ -71,6 +79,8 @@ var namespaceerf__auxiliary =
     [ "ComputeMaxMappedCombinedOutgoingRate", "namespaceerf__auxiliary.html#a925047fb0c73e084afb9f0660faaf1ad", null ],
     [ "ComputeMaxMappedOutgoingRate", "namespaceerf__auxiliary.html#a411a1f70c9683e58c0249a9d612f30d0", null ],
     [ "CopyNativeMappedDryAirCarrierFluxRate", "namespaceerf__auxiliary.html#a72565fcb8b90b8bb5b86e18a214a1154", null ],
+    [ "DiffusionDomainFaceIsOpen", "namespaceerf__auxiliary.html#ad42a3897de9a43c33da4c2633fad7ddf", null ],
+    [ "DiffusionFaceIsOpen", "namespaceerf__auxiliary.html#a81bb145cd4e4e69e37f2aabd6c95e559", null ],
     [ "FixedDtExceedsMappedDonorLimit", "namespaceerf__auxiliary.html#af88d6cddb925fe25cb4fdd914f012777", null ],
     [ "HostIntegratorName", "namespaceerf__auxiliary.html#ae34e7d10af171e40a2ba238505a44551", null ],
     [ "HostIntegratorStageCount", "namespaceerf__auxiliary.html#a820173a227d7dc2388b90116f378401c", null ],

@@ -36,12 +36,12 @@ var ERF__TerrainMetrics_8H =
     [ "init_zlevels", "ERF__TerrainMetrics_8H.html#a0884d3650b51866c4a06dda5aef2bbf3", null ],
     [ "join_boxes_stacked_in_z", "ERF__TerrainMetrics_8H.html#a7356a119d0d3fda35dc8588103da6d7d", null ],
     [ "make_terrain_fitted_coords", "ERF__TerrainMetrics_8H.html#a2c0ac89d19925edf79ee3307324a1290", null ],
-    [ "OmegaFromW", "ERF__TerrainMetrics_8H.html#a00a82ef863424210898550c6abb4d055", null ],
+    [ "OmegaFromW", "ERF__TerrainMetrics_8H.html#ac6173492657ed1f4a6f6bab6d5b59e8f", null ],
     [ "rotate_scalar_flux", "ERF__TerrainMetrics_8H.html#a26ff28d8e0387cc0cb634ecff18aeb7b", null ],
     [ "rotate_stress_tensor", "ERF__TerrainMetrics_8H.html#ae69ea9f45ab883c6456e9d0ffcdfa2fe", null ],
     [ "update_stretched_dz", "ERF__TerrainMetrics_8H.html#aa12259218315ea9e55b53683cce38442", null ],
     [ "validate_flat_terrain", "ERF__TerrainMetrics_8H.html#a3f78747a2efa388dbde8732289ce10ca", null ],
     [ "validate_flat_top", "ERF__TerrainMetrics_8H.html#a4f282970572c767e8c10401119c7c239", null ],
-    [ "WFromOmega", "ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a", null ],
+    [ "WFromOmega", "ERF__TerrainMetrics_8H.html#a8bf78d3fe79c78f5303c3a1cea6e92fd", null ],
     [ "which_fine_terrain", "ERF__TerrainMetrics_8H.html#a5a9e39d96b7ebe9f9dbd5d32560e7d3a", null ]
 ];

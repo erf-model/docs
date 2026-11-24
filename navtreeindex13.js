@@ -1,5 +1,16 @@
 var NAVTREEINDEX13 =
 {
+"ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3a80fe2d3c0e1c500f18541e5e62c9693f":[3,0,1,19,4,3,2],
+"ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3aa01b8f1486ffc86e6ea4423daadc6a01":[3,0,1,19,4,3,3],
+"ERF__ObsNudgingSeries_8H_source.html":[3,0,1,19,4],
+"ERF__ObsNudgingSeries_8cpp.html":[3,0,1,19,3],
+"ERF__ObsNudgingSeries_8cpp.html#a07bd759549c15526226b514d0d072d12":[3,0,1,19,3,1],
+"ERF__ObsNudgingSeries_8cpp.html#a921cb9f3a74d99aa1abdfc9e2ca90927":[3,0,1,19,3,0],
+"ERF__ObsNudgingSeries_8cpp.html#ac2cb7b1bd8e06e1cf8c7f2b9dbc53910":[3,0,1,19,3,2],
+"ERF__ObsNudging_8H.html":[3,0,1,19,1],
+"ERF__ObsNudging_8H_source.html":[3,0,1,19,1],
+"ERF__ObsNudging_8cpp.html":[3,0,1,19,0],
+"ERF__ObsNudging_8cpp.html#a7dfcc94a59060851d95a993463afee1f":[3,0,1,19,0,2],
 "ERF__ObsNudging_8cpp.html#a9200ef7c0b70b5b0f84667850456143c":[3,0,1,19,0,1],
 "ERF__ObsNudging_8cpp.html#a98478fb7976adc101231225c89a3b382":[3,0,1,19,0,0],
 "ERF__OrbCosZenith_8H.html":[3,0,1,24,3],
@@ -238,16 +249,5 @@ var NAVTREEINDEX13 =
 "ERF__Plotfile2DMetadata_8H.html":[3,0,1,13,28],
 "ERF__Plotfile2DMetadata_8H.html#a0700c1c9e33d7a696db78ad1091dac30":[3,0,1,13,28,2],
 "ERF__Plotfile2DMetadata_8H.html#a2356a303d260fa136faf416c864a5d44":[3,0,1,13,28,0],
-"ERF__Plotfile2DMetadata_8H.html#a3c4cde148efe55684e56346cc2bf7d4e":[3,0,1,13,28,1],
-"ERF__Plotfile2DMetadata_8H.html#a3cb713ad6ffd9acc8994764bed842098":[3,0,1,13,28,8],
-"ERF__Plotfile2DMetadata_8H.html#a74c6cc91587d3554a06a91d0ab4f5684":[3,0,1,13,28,5],
-"ERF__Plotfile2DMetadata_8H.html#a9f8ef38d188a0bd37d607c7b92510a36":[3,0,1,13,28,6],
-"ERF__Plotfile2DMetadata_8H.html#aaeccc2844594229682d7d671c93d3121":[3,0,1,13,28,3],
-"ERF__Plotfile2DMetadata_8H.html#ab49bbfc634d4902729c81f47c151ea9e":[3,0,1,13,28,7],
-"ERF__Plotfile2DMetadata_8H.html#ae843a5e31ca7a89d4596351e3b8c2534":[3,0,1,13,28,4],
-"ERF__Plotfile2DMetadata_8H_source.html":[3,0,1,13,28],
-"ERF__Plotfile2DMetadata_8cpp.html":[3,0,1,13,27],
-"ERF__Plotfile2DMetadata_8cpp.html#a0700c1c9e33d7a696db78ad1091dac30":[3,0,1,13,27,2],
-"ERF__Plotfile2DMetadata_8cpp.html#a2356a303d260fa136faf416c864a5d44":[3,0,1,13,27,0],
-"ERF__Plotfile2DMetadata_8cpp.html#a3c4cde148efe55684e56346cc2bf7d4e":[3,0,1,13,27,1]
+"ERF__Plotfile2DMetadata_8H.html#a3c4cde148efe55684e56346cc2bf7d4e":[3,0,1,13,28,1]
 };

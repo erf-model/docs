@@ -10,6 +10,7 @@ var ERF__Utils_8H =
     [ "Accumulate_Interval_Means", "ERF__Utils_8H.html#a668d034ff95e9d36a328cd77f7bf3ebc", null ],
     [ "ApplyInvertedMask", "ERF__Utils_8H.html#acbc6116a3309adf87b7dc24242dc50ec", null ],
     [ "ApplyMask", "ERF__Utils_8H.html#acebead6f3a33cb7737a1fea98341c3ae", null ],
+    [ "average_down_faces_mapfac", "ERF__Utils_8H.html#afad6d60d919038e681770823ac8a5ce3", null ],
     [ "bdy_time_weights", "ERF__Utils_8H.html#abd8a972b1781d69a8305bad84f356b68", null ],
     [ "ChopGrids2D", "ERF__Utils_8H.html#ae73f998519cf6628e7c4a90cea4cb4f5", null ],
     [ "compute_influx_outflux_bdy", "ERF__Utils_8H.html#acb3c9211edf9fc17b071e01378c84e44", null ],

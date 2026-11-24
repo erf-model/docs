@@ -17,6 +17,7 @@ var annotated_dup =
       [ "MappedFaceTransmissibilityTag", "structerf__auxiliary_1_1MappedFaceTransmissibilityTag.html", null ],
       [ "MappedDiffusionMetrics", "structerf__auxiliary_1_1MappedDiffusionMetrics.html", "structerf__auxiliary_1_1MappedDiffusionMetrics" ],
       [ "MappedDiffusionCoefficients", "structerf__auxiliary_1_1MappedDiffusionCoefficients.html", "structerf__auxiliary_1_1MappedDiffusionCoefficients" ],
+      [ "MappedDiffusionBoundary", "structerf__auxiliary_1_1MappedDiffusionBoundary.html", "structerf__auxiliary_1_1MappedDiffusionBoundary" ],
       [ "AuxiliaryInertTracer", "classerf__auxiliary_1_1AuxiliaryInertTracer.html", "classerf__auxiliary_1_1AuxiliaryInertTracer" ],
       [ "MappedFaceFluxRateTag", "structerf__auxiliary_1_1MappedFaceFluxRateTag.html", null ],
       [ "IntegratedMappedFaceFluxTag", "structerf__auxiliary_1_1IntegratedMappedFaceFluxTag.html", null ],

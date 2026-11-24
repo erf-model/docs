@@ -180,6 +180,7 @@ var hierarchy =
     [ "erf_sbm::LiquidProjectionSpec", "structerf__sbm_1_1LiquidProjectionSpec.html", null ],
     [ "erf_sbm::erf_detail_SBMTransport::LocalPropertySupport", "structerf__sbm_1_1erf__detail__SBMTransport_1_1LocalPropertySupport.html", null ],
     [ "erf_detail_SurfaceLayer::LsmFluxColumn", "structerf__detail__SurfaceLayer_1_1LsmFluxColumn.html", null ],
+    [ "erf_auxiliary::MappedDiffusionBoundary", "structerf__auxiliary_1_1MappedDiffusionBoundary.html", null ],
     [ "erf_auxiliary::MappedDiffusionCoefficients", "structerf__auxiliary_1_1MappedDiffusionCoefficients.html", null ],
     [ "erf_auxiliary::MappedDiffusionMetrics", "structerf__auxiliary_1_1MappedDiffusionMetrics.html", null ],
     [ "erf_auxiliary::MappedFaceField< Tag >", "classerf__auxiliary_1_1MappedFaceField.html", null ],
