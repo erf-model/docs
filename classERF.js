@@ -27,6 +27,7 @@ var classERF =
     [ "bind_sbm_amr_flux_registers", "classERF.html#ac3ee6e1bc42a89a4fa78a75a4310a926", null ],
     [ "build_base_state_from_input_sounding", "classERF.html#a89f3657e95ac24d49364351a9f134987", null ],
     [ "build_fine_mask", "classERF.html#a544e918fa814be3996d52654b05e5a30", null ],
+    [ "build_zphys_nd", "classERF.html#a5ce3f0bf74b79e207627f70c0c8f603d", null ],
     [ "BuildPlot3DScratch", "classERF.html#a093ca0c9d6a4188ab7cd21560d8feec9", null ],
     [ "canonicalizePlot3DVariables", "classERF.html#a254731b18d5438af1e37b7cb128da4f0", null ],
     [ "cf_anelastic_flux_match", "classERF.html#ae1abf1f37a6ebbb2c86362e65ba892ae", null ],

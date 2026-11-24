@@ -1,5 +1,6 @@
 var NAVTREEINDEX59 =
 {
+"structStretchedDiffusionBoundaryWeights.html#af3bddd707bfe4157ae42679b29ecf891":[2,0,228,0],
 "structStructureFire.html":[2,0,229],
 "structStructureFire.html#a3803acb814134988cab1f7977256d8c9":[2,0,229,0],
 "structStructureFire.html#a628adc35b1bb4171e244c029f7f47cb2":[2,0,229,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX59 =
 "structTurbulentPerturbation.html#a122c1a2b62bde557dd74065996876fe1":[2,0,258,22],
 "structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1":[2,0,258,15],
 "structTurbulentPerturbation.html#a1f7e043e065ceb48645cdf50a9f3ac06":[2,0,258,56],
-"structTurbulentPerturbation.html#a225dd760144e380ddee93da84307da4c":[2,0,258,48],
-"structTurbulentPerturbation.html#a23668c124f34cf7e8c43b36a7a16eab3":[2,0,258,44]
+"structTurbulentPerturbation.html#a225dd760144e380ddee93da84307da4c":[2,0,258,48]
 };
