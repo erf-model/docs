@@ -1,7 +1,5 @@
 var NAVTREEINDEX61 =
 {
-"structWENO__Z3.html#aa6c2eefc18b5f0365c0357ee4f066080":[2,0,278,1],
-"structWENO__Z3.html#aa7976a5cf48e2e1cd1feecbaaa2218f9":[2,0,278,7],
 "structWENO__Z3.html#abf49764630d2f975f9a5309ccfd6a9ad":[2,0,278,2],
 "structWENO__Z3.html#acc8bf5960d4d7e92184f50911c0a4871":[2,0,278,6],
 "structWENO__Z3.html#add74f5cbc4aba41b27a82c6b833615e4":[2,0,278,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX61 =
 "structerf__auxiliary_1_1ProjectionRule.html#a4ab42bba92c4dedd1b63b9f6e2911e57":[2,0,1,7,2],
 "structerf__auxiliary_1_1ProjectionRule.html#a7c4844a092e4a2234787e24b4e686ad9":[2,0,1,7,0],
 "structerf__auxiliary_1_1ProjectionRule.html#a7eca12984781915ca5b0c0332696af0b":[2,0,1,7,3],
-"structerf__auxiliary_1_1ProjectionRule.html#aa402f7fd458f83e30d3743f0193e9ddc":[2,0,1,7,1]
+"structerf__auxiliary_1_1ProjectionRule.html#aa402f7fd458f83e30d3743f0193e9ddc":[2,0,1,7,1],
+"structerf__auxiliary_1_1ProjectionValidation.html":[2,0,1,8],
+"structerf__auxiliary_1_1ProjectionValidation.html#a59c243188d07f991ed0c1b93fa4c3e68":[2,0,1,8,0]
 };

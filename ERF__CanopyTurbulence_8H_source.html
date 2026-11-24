@@ -159,8 +159,8 @@ $(document).ready(function(){initNavTree('ERF__CanopyTurbulence_8H_source.html',
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> *   (rho k)^n exp(-x) + rho (P / c) (1 - exp(-x)),</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> * so the canopy terms balance at rho P / c at any dt, and the canopy sink never</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> * removes more than (rho k)^n. The RK3 stages (dt/3, dt/2, dt from the start of</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> * the step) and the trapezoidal RK2 of anelastic and pseudo-incompressible levels</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"> * (both stages over dt) both update</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> * the step) and, at anelastic and pseudo-incompressible levels, the MidPoint</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"> * stages (dt/2, dt) and the trapezoidal RK2 stages (both over dt) all update</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> * from (rho k)^n.</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"> * The closure&#39;s own dissipation is a separate term: the explicit form adds</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> * -dt rho Cmu0^3 k^1.5 / L to that update, and the implicit form divides the</span></div>

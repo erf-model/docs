@@ -1,7 +1,5 @@
 var NAVTREEINDEX52 =
 {
-"namespacesaturation__funcs.html#a3457f65a811cff737b96b5ff40332063":[1,0,111,11],
-"namespacesaturation__funcs.html#a49fb8e196f8a40d9590fe9da77ce7e74":[1,0,111,2],
 "namespacesaturation__funcs.html#a79a910dfe8dcd315ba57111260ed3832":[1,0,111,8],
 "namespacesaturation__funcs.html#a9bb07940e7d0b53e0f608dc4a5c9921a":[1,0,111,4],
 "namespacesaturation__funcs.html#a9bd43c8bbe5f9fe965027489b52e6441":[1,0,111,10],
@@ -249,5 +247,7 @@ var NAVTREEINDEX52 =
 "structDustStep.html#a8d0ef387c78fa2c35d822237eb830248":[2,0,61,6],
 "structDustStep.html#a92e6ca481578de8d3e669c3a8d72af1c":[2,0,61,3],
 "structDustStep.html#ac779df2150bcee370fcb937b3095745d":[2,0,61,9],
-"structDustStep.html#adf1496d1000f68a297e2fdb745302b0a":[2,0,61,0]
+"structDustStep.html#adf1496d1000f68a297e2fdb745302b0a":[2,0,61,0],
+"structDustStep.html#ae45e736a884d73e68fb23c69ede60ba2":[2,0,61,1],
+"structDustStep.html#aec1171be91efe6fa08e6bd731b2d9024":[2,0,61,10]
 };

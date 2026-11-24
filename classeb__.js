@@ -2,12 +2,10 @@ var classeb__ =
 [
     [ "CutCellList", "classeb__.html#a94e99078a118d992c123a8dcd4e5373c", null ],
     [ "~eb_", "classeb__.html#aaba2e6e2c803801d036e989a9c5799b2", null ],
-    [ "eb_", "classeb__.html#abcc4045a128dd42fe09f45af4f602576", null ],
     [ "eb_", "classeb__.html#a25a8f6edf34c06b87bc8cda216de067c", null ],
     [ "build_cut_cell_lists", "classeb__.html#a600c3e3ff922488a6c4e95102661a976", null ],
     [ "build_level", "classeb__.html#a37b3fc548dfc8eb2ad7723de8e357b8b", null ],
     [ "clear_factories", "classeb__.html#aa83ebd2cc987fabc9eb20ba6758da281", null ],
-    [ "define", "classeb__.html#a2888567cad2fc0e89060094a589ce214", null ],
     [ "get_const_factory", "classeb__.html#a74b48b1a80f3292f6002592f1d1d2bcd", null ],
     [ "get_u_const_factory", "classeb__.html#a8cfa03ce6fe7f6c89a2f0f2109ecd3df", null ],
     [ "get_u_cut_cells", "classeb__.html#a16f383060fc3465376dfbf0ac1d237e0", null ],

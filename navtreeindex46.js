@@ -1,7 +1,5 @@
 var NAVTREEINDEX46 =
 {
-"namespaceerf__grid__utils.html#aff966df71b057d306bfcafcfbac29716":[1,0,43,8],
-"namespaceerf__hash__rng.html":[1,0,44],
 "namespaceerf__hash__rng.html#a28b9b3e5eaa04319db16c9f57a0bc2ec":[1,0,44,0],
 "namespaceerf__hash__rng.html#a31caeafc4db5b971c471833037829e04":[1,0,44,1],
 "namespaceerf__hash__rng.html#a3c58b34f95b150cc36eabdca82d7b4a8":[1,0,44,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX46 =
 "namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a1266d32db85b0faa5a083cd41f12826f":[1,0,56,1,16],
 "namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a345b57525590e9cdfe55a4d59c6f14ee":[1,0,56,1,22],
 "namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a3ddda0680a81f9ffe37254934f3caab6":[1,0,56,1,10],
-"namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a40f26073464cb6a37dbda43333e26c14":[1,0,56,1,14]
+"namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a40f26073464cb6a37dbda43333e26c14":[1,0,56,1,14],
+"namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a4be1e625977c2ecfc20409b6bc07ba28":[1,0,56,1,17],
+"namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a53eb1c2f0defb3cfb9e93ac8a77ed312":[1,0,56,1,8]
 };

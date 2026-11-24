@@ -1,7 +1,5 @@
 var NAVTREEINDEX53 =
 {
-"structDustStep.html#ae45e736a884d73e68fb23c69ede60ba2":[2,0,61,1],
-"structDustStep.html#aec1171be91efe6fa08e6bd731b2d9024":[2,0,61,10],
 "structEBChoice.html":[2,0,65],
 "structEBChoice.html#a27a604a24adb3c767c187fed54865d58":[2,0,65,0],
 "structEBChoice.html#a6d6d3723ced4f16e9515f108170b4e8d":[2,0,65,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX53 =
 "structInflowProfile.html#a0ccacf9112b24fb6f073a398193e4efc":[2,0,101,7],
 "structInflowProfile.html#a3426c63823fbf91da5ec9f52876df2ae":[2,0,101,3],
 "structInflowProfile.html#a4acd9e7a7f579cdb06607bc74f625119":[2,0,101,0],
-"structInflowProfile.html#a55c7979461548a99b1aa9b7f8e57b365":[2,0,101,5]
+"structInflowProfile.html#a55c7979461548a99b1aa9b7f8e57b365":[2,0,101,5],
+"structInflowProfile.html#a7ee6446a981f34aa891edfad6e483769":[2,0,101,14],
+"structInflowProfile.html#a8c021b752fd94ca70dc94973cc5197be":[2,0,101,6]
 };
