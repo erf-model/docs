@@ -1,10 +1,5 @@
 var NAVTREEINDEX38 =
 {
-"classSurfaceModel.html#afb8e3cf0ed6cbf5940593e1eea7d920d":[2,0,247,62],
-"classSurfaceModel.html#afdfaf6506476653d5a31c3b7b6ddf3ab":[2,0,247,78],
-"classSurfaceModel.html#afe8ded87b78c8c0628377df5282ce300":[2,0,247,42],
-"classTerrainIF.html":[2,0,253],
-"classTerrainIF.html#a10fb6cc0a7db054bc8feb2635920c89b":[2,0,253,10],
 "classTerrainIF.html#a15829e0ff64d15364bc65a2f1f975734":[2,0,253,0],
 "classTerrainIF.html#a173b6335da7186e54da1a21d2c710053":[2,0,253,14],
 "classTerrainIF.html#a523acccd9975c290c18bf83f740f3522":[2,0,253,17],
@@ -249,5 +244,10 @@ var NAVTREEINDEX38 =
 "classWDM6.html#a539de6cae464eced1479f37eebde1653":[2,0,273,127],
 "classWDM6.html#a571db5bd6434279aaa7484f79bdaf3a7":[2,0,273,53],
 "classWDM6.html#a59fa6bf7601560052778d84193302b56":[2,0,273,146],
-"classWDM6.html#a5bb6ebe3458ce98cc5398199e6963ab9":[2,0,273,134]
+"classWDM6.html#a5bb6ebe3458ce98cc5398199e6963ab9":[2,0,273,134],
+"classWDM6.html#a5c3acd44ce4311144b1f00894a17e9bd":[2,0,273,6],
+"classWDM6.html#a5cfdf6c96cc401f9c17dc353c09eff76":[2,0,273,118],
+"classWDM6.html#a5dfbb47987fa239da135d79a58920dd2":[2,0,273,120],
+"classWDM6.html#a5f14a48b1c818362d748ed65776d3842":[2,0,273,3],
+"classWDM6.html#a5f5779e2e0f5b9145885f4dcdb221556":[2,0,273,75]
 };

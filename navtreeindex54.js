@@ -1,10 +1,5 @@
 var NAVTREEINDEX54 =
 {
-"structInflowProfile.html#a8c021b752fd94ca70dc94973cc5197be":[2,0,101,6],
-"structInflowProfile.html#a8ffa26e60eac2f3843415563746148f3":[2,0,101,8],
-"structInflowProfile.html#a91a4cddab65d2dbe0553e592e06ecb5c":[2,0,101,11],
-"structInflowProfile.html#abee504d9a8818fb979dab1805e825819":[2,0,101,4],
-"structInflowProfile.html#ac4ae69fa2b97bd4f3a7e9a50c1db5a49":[2,0,101,10],
 "structInflowProfile.html#acc62a338235d12445cd0cf89d0fdd3b5":[2,0,101,12],
 "structInflowProfile.html#ad12b4e88b1f99f79fee65afd4c17d38f":[2,0,101,13],
 "structInflowProfile.html#ad4db094b27655fd6b2a96745f04e6029":[2,0,101,2],
@@ -249,5 +244,10 @@ var NAVTREEINDEX54 =
 "structMaterialProperties.html#ac2420acd6e85c5850262d8188d41c15f":[2,0,115,7],
 "structMaterialProperties.html#acb770dd37785f1959f65ae719beba36e":[2,0,115,6],
 "structMaterialProperties.html#af3060220bc6975f221cd9e956e649f8c":[2,0,115,14],
-"structMaterialProperties.html#af532315f278f04b68461bcd2db4e100f":[2,0,115,16]
+"structMaterialProperties.html#af532315f278f04b68461bcd2db4e100f":[2,0,115,16],
+"structMaterialPropertiesCore.html":[2,0,116],
+"structMaterialPropertiesCore.html#a085a93e9a7944e7258e2602200c48fa3":[2,0,116,13],
+"structMaterialPropertiesCore.html#a0e30e71a234edf35489cccab2ac244fa":[2,0,116,9],
+"structMaterialPropertiesCore.html#a10e00c3fd61a1a344e109b6bf895128b":[2,0,116,7],
+"structMaterialPropertiesCore.html#a1643525881933f909682eb0090aec98d":[2,0,116,22]
 };
