@@ -134,6 +134,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab7fdcce317233360606de3f3e4af8efe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SurfacePrerequisites_8H.html#ab7fdcce317233360606de3f3e4af8efe">verify_surface_grid_level</a> (const <a class="el" href="classERF.html">ERF</a> &amp;erf, int lev, const <a class="el" href="structSurfaceCouplingNames.html">SurfaceCouplingNames</a> &amp;names)</td></tr>
 <tr class="memdesc:ab7fdcce317233360606de3f3e4af8efe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The checks on the level the surface grid refines, each naming the inputs to change.  <a href="ERF__SurfacePrerequisites_8H.html#ab7fdcce317233360606de3f3e4af8efe">More...</a><br /></td></tr>
 <tr class="separator:ab7fdcce317233360606de3f3e4af8efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdc7c4009b40de5eb23d2102d234db2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SurfacePrerequisites_8H.html#acdc7c4009b40de5eb23d2102d234db2e">verify_surface_static_refinement</a> (int lev, const std::string &amp;pp_prefix, const <a class="el" href="structSurfaceCouplingNames.html">SurfaceCouplingNames</a> &amp;names)</td></tr>
+<tr class="memdesc:acdc7c4009b40de5eb23d2102d234db2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check 2 of verify_surface_grid_level: above level 0 the level must keep its boxes.  <a href="ERF__SurfacePrerequisites_8H.html#acdc7c4009b40de5eb23d2102d234db2e">More...</a><br /></td></tr>
+<tr class="separator:acdc7c4009b40de5eb23d2102d234db2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Start-up checks every surface coupling makes on the level its grid refines. </p>
@@ -244,7 +247,7 @@ Here is the caller graph for this function:</div>
 <p>The checks on the level the surface grid refines, each naming the inputs to change. </p>
 <ol type="1">
 <li>The level exists (0 to the finest level).</li>
-<li>Above level 0, the level keeps its boxes (erf.regrid_int &lt;= 0): the grid is built once.</li>
+<li>Above level 0, the level keeps its boxes (regrid_int &lt;= 0, read with <a class="el" href="classERF.html">ERF</a>'s own ParmParse prefix): the grid is built once (verify_surface_static_refinement).</li>
 <li>Every box spans the level's full height: the grid pairs one surface slab with each box, and reads whole columns.</li>
 <li>The boxes cover one rectangle: the grid treats its edges as domain edges.</li>
 <li>The level's domain starts at index 0 (the map i / C + atm_lo assumes it). </li>
@@ -261,71 +264,61 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;              + <span class="stringliteral">&quot; is outside 0..&quot;</span> + std::to_string(erf.finestLevel()));</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Check 2: static refinement. The grid is built once from the boxes of its</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// level, so the level must keep its boxes for the whole run. Level 0 never</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// regrids.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (lev &gt; 0) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        ParmParse pp_erf(<span class="stringliteral">&quot;erf&quot;</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">int</span> regrid_int = -1;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        pp_erf.query(<span class="stringliteral">&quot;regrid_int&quot;</span>, regrid_int);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span> (regrid_int &gt; 0) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            Abort(tag + <span class="stringliteral">&quot; The &quot;</span> + grid + <span class="stringliteral">&quot; on level &quot;</span> + std::to_string(lev)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                  + <span class="stringliteral">&quot; is built once from that level&#39;s boxes, so the refinement must not change, but &quot;</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="stringliteral">&quot;erf.regrid_int = &quot;</span> + std::to_string(regrid_int) + <span class="stringliteral">&quot; regrids it. Use static refinement &quot;</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <span class="stringliteral">&quot;boxes with erf.regrid_int = -1, or set &quot;</span> + names.<a class="code" href="structSurfaceCouplingNames.html#ae099dc4c8a95ca126afc47681bf89136">key</a>(<span class="stringliteral">&quot;anchor_level&quot;</span>) + <span class="stringliteral">&quot; = 0.&quot;</span>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Check 3: no z decomposition. The grid pairs one surface slab with each</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// box of the level.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">const</span> BoxArray&amp; ba = erf.boxArray(lev);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">const</span> Box&amp; domain  = erf.Geom(lev).Domain();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> domain_nz = domain.length(2);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ba.size(); ++i) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (ba[i].<a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a7817547f51392c7251d45619d61b1a39">length</a>(2) != domain_nz) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            Abort(tag + <span class="stringliteral">&quot; Cannot decompose in z direction. Every box on level &quot;</span> + std::to_string(lev)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                  + <span class="stringliteral">&quot; must span the level&#39;s full height, since the &quot;</span> + grid + <span class="stringliteral">&quot; pairs one surface slab &quot;</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    <span class="stringliteral">&quot;with each box: leave amr.no_box_split_dir at its default &quot;</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    <span class="stringliteral">&quot;of 2, or set amr.max_grid_size_z to at least &quot;</span> + std::to_string(domain_nz)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                  + <span class="stringliteral">&quot;, and on a refined level use a refinement box that reaches the domain top &quot;</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    <span class="stringliteral">&quot;(erf.&lt;box&gt;.in_box_hi without a z bound)&quot;</span>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Check 4: the boxes cover one rectangle. The grid treats the edges of</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// their bounding rectangle as its domain edges and fills its ghost cells</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// there; a hole or a second patch would leave cells with no neighbor data.</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        BoxList bl_2d;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ba.size(); ++i) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            Box b = ba[i];</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            b.setSmall(2, 0);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            b.setBig(2, 0);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            bl_2d.push_back(b);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keyword">const</span> BoxArray ba_2d(std::move(bl_2d));</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">const</span> Box region = ba_2d.minimalBox();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">if</span> (region.numPts() != ba_2d.numPts()) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            Abort(tag + <span class="stringliteral">&quot; The boxes of level &quot;</span> + std::to_string(lev) + <span class="stringliteral">&quot; cover &quot;</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                  + std::to_string(ba_2d.numPts()) + <span class="stringliteral">&quot; of the &quot;</span> + std::to_string(region.numPts())</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                  + <span class="stringliteral">&quot; columns of their bounding rectangle, but the &quot;</span> + grid + <span class="stringliteral">&quot; needs one rectangle. &quot;</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    <span class="stringliteral">&quot;Refine one rectangle on that level (a single refinement box), or set &quot;</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                  + names.<a class="code" href="structSurfaceCouplingNames.html#ae099dc4c8a95ca126afc47681bf89136">key</a>(<span class="stringliteral">&quot;anchor_level&quot;</span>) + <span class="stringliteral">&quot; to a level whose boxes form one.&quot;</span>);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// Check 5: a zero-based domain. A surface cell maps back to its</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// atmospheric cell by i_a = i_s / C + atm_lo (ERF_SurfaceGrid.H), and</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// create_surface_grid() takes the region&#39;s physical position from ProbLo</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// plus its index offset from the domain&#39;s corner. Every AMReX level has a</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// zero-based domain, so this asserts the convention rather than relying on</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// it silently.</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> (domain.smallEnd(0) != 0 || domain.smallEnd(1) != 0 || domain.smallEnd(2) != 0) {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        Abort(tag + <span class="stringliteral">&quot; Internal error: the &quot;</span> + names.<a class="code" href="structSurfaceCouplingNames.html#a83b3e9e5ef57a6de900fd6bfa5175423">lower</a></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;              + <span class="stringliteral">&quot; coupling needs a level domain that starts at index 0&quot;</span>);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Check 2: static refinement, with regrid_int read the way ERF reads it</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="ERF__SurfacePrerequisites_8cpp.html#acdc7c4009b40de5eb23d2102d234db2e">verify_surface_static_refinement</a>(lev, erf.<a class="code" href="classERF.html#a59df30e7a5537c8543bb00772bd98b58">pp_prefix</a>, names);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// Check 3: no z decomposition. The grid pairs one surface slab with each</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// box of the level.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> BoxArray&amp; ba = erf.boxArray(lev);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> Box&amp; domain  = erf.Geom(lev).Domain();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> domain_nz = domain.length(2);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ba.size(); ++i) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> (ba[i].<a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a7817547f51392c7251d45619d61b1a39">length</a>(2) != domain_nz) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            Abort(tag + <span class="stringliteral">&quot; Cannot decompose in z direction. Every box on level &quot;</span> + std::to_string(lev)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                  + <span class="stringliteral">&quot; must span the level&#39;s full height, since the &quot;</span> + grid + <span class="stringliteral">&quot; pairs one surface slab &quot;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <span class="stringliteral">&quot;with each box: leave amr.no_box_split_dir at its default &quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    <span class="stringliteral">&quot;of 2, or set amr.max_grid_size_z to at least &quot;</span> + std::to_string(domain_nz)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                  + <span class="stringliteral">&quot;, and on a refined level use a refinement box that reaches the domain top &quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    <span class="stringliteral">&quot;(erf.&lt;box&gt;.in_box_hi without a z bound)&quot;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// Check 4: the boxes cover one rectangle. The grid treats the edges of</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// their bounding rectangle as its domain edges and fills its ghost cells</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// there; a hole or a second patch would leave cells with no neighbor data.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        BoxList bl_2d;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ba.size(); ++i) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            Box b = ba[i];</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            b.setSmall(2, 0);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            b.setBig(2, 0);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            bl_2d.push_back(b);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">const</span> BoxArray ba_2d(std::move(bl_2d));</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">const</span> Box region = ba_2d.minimalBox();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">if</span> (region.numPts() != ba_2d.numPts()) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            Abort(tag + <span class="stringliteral">&quot; The boxes of level &quot;</span> + std::to_string(lev) + <span class="stringliteral">&quot; cover &quot;</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                  + std::to_string(ba_2d.numPts()) + <span class="stringliteral">&quot; of the &quot;</span> + std::to_string(region.numPts())</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                  + <span class="stringliteral">&quot; columns of their bounding rectangle, but the &quot;</span> + grid + <span class="stringliteral">&quot; needs one rectangle. &quot;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    <span class="stringliteral">&quot;Refine one rectangle on that level (a single refinement box), or set &quot;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                  + names.<a class="code" href="structSurfaceCouplingNames.html#ae099dc4c8a95ca126afc47681bf89136">key</a>(<span class="stringliteral">&quot;anchor_level&quot;</span>) + <span class="stringliteral">&quot; to a level whose boxes form one.&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// Check 5: a zero-based domain. A surface cell maps back to its</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// atmospheric cell by i_a = i_s / C + atm_lo (ERF_SurfaceGrid.H), and</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// create_surface_grid() takes the region&#39;s physical position from ProbLo</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// plus its index offset from the domain&#39;s corner. Every AMReX level has a</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// zero-based domain, so this asserts the convention rather than relying on</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// it silently.</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (domain.smallEnd(0) != 0 || domain.smallEnd(1) != 0 || domain.smallEnd(2) != 0) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        Abort(tag + <span class="stringliteral">&quot; Internal error: the &quot;</span> + names.<a class="code" href="structSurfaceCouplingNames.html#a83b3e9e5ef57a6de900fd6bfa5175423">lower</a></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;              + <span class="stringliteral">&quot; coupling needs a level domain that starts at index 0&quot;</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a7817547f51392c7251d45619d61b1a39"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a7817547f51392c7251d45619d61b1a39">length</a></div><div class="ttdeci">const Real length</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_AnelasticWallDiffusion.H:16</div></div>
+<div class="ttc" id="aERF__SurfacePrerequisites_8cpp_html_acdc7c4009b40de5eb23d2102d234db2e"><div class="ttname"><a href="ERF__SurfacePrerequisites_8cpp.html#acdc7c4009b40de5eb23d2102d234db2e">verify_surface_static_refinement</a></div><div class="ttdeci">void verify_surface_static_refinement(int lev, const std::string &amp;pp_prefix, const SurfaceCouplingNames &amp;names)</div><div class="ttdoc">Check 2 of verify_surface_grid_level: above level 0 the level must keep its boxes.</div><div class="ttdef"><b>Definition:</b> ERF_SurfacePrerequisites.cpp:108</div></div>
+<div class="ttc" id="aclassERF_html_a59df30e7a5537c8543bb00772bd98b58"><div class="ttname"><a href="classERF.html#a59df30e7a5537c8543bb00772bd98b58">ERF::pp_prefix</a></div><div class="ttdeci">std::string pp_prefix</div><div class="ttdef"><b>Definition:</b> ERF.H:1230</div></div>
 <div class="ttc" id="astructSurfaceCouplingNames_html_a740704feffd8816138265e4558956a6b"><div class="ttname"><a href="structSurfaceCouplingNames.html#a740704feffd8816138265e4558956a6b">SurfaceCouplingNames::grid</a></div><div class="ttdeci">std::string grid() const</div><div class="ttdoc">&quot;fire grid&quot;</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceCouplingNames.H:28</div></div>
 <div class="ttc" id="astructSurfaceCouplingNames_html_a83b3e9e5ef57a6de900fd6bfa5175423"><div class="ttname"><a href="structSurfaceCouplingNames.html#a83b3e9e5ef57a6de900fd6bfa5175423">SurfaceCouplingNames::lower</a></div><div class="ttdeci">const char * lower</div><div class="ttdoc">&quot;fire&quot;: input prefix erf.&lt;lower&gt;, &quot;the &lt;lower&gt; grid&quot;, &quot;&lt;lower&gt; engine&quot;</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceCouplingNames.H:19</div></div>
 </div><!-- fragment -->
@@ -335,10 +328,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SurfacePrerequisites_8H_ab7fdcce317233360606de3f3e4af8efe_cgraph.png" border="0" usemap="#aERF__SurfacePrerequisites_8H_ab7fdcce317233360606de3f3e4af8efe_cgraph" alt=""/></div>
 <map name="aERF__SurfacePrerequisites_8H_ab7fdcce317233360606de3f3e4af8efe_cgraph" id="aERF__SurfacePrerequisites_8H_ab7fdcce317233360606de3f3e4af8efe_cgraph">
-<area shape="rect" title="The checks on the level the surface grid refines, each naming the inputs to change." alt="" coords="5,64,152,105"/>
-<area shape="rect" href="structSurfaceCouplingNames.html#a740704feffd8816138265e4558956a6b" title="&quot;fire grid&quot;" alt="" coords="215,5,390,47"/>
-<area shape="rect" href="structSurfaceCouplingNames.html#ae099dc4c8a95ca126afc47681bf89136" title="&quot;erf.fire.&quot; followed by key" alt="" coords="200,71,405,98"/>
-<area shape="rect" href="structSurfaceCouplingNames.html#a12874502f9fd283de02478e4670505fb" title="&quot;[FIRE]&quot;" alt="" coords="201,122,404,149"/>
+<area shape="rect" title="The checks on the level the surface grid refines, each naming the inputs to change." alt="" coords="5,85,152,127"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#a740704feffd8816138265e4558956a6b" title="&quot;fire grid&quot;" alt="" coords="421,5,595,47"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#ae099dc4c8a95ca126afc47681bf89136" title="&quot;erf.fire.&quot; followed by key" alt="" coords="405,71,611,98"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#a12874502f9fd283de02478e4670505fb" title="&quot;[FIRE]&quot;" alt="" coords="407,177,609,203"/>
+<area shape="rect" href="ERF__SurfacePrerequisites_8cpp.html#acdc7c4009b40de5eb23d2102d234db2e" title="Check 2 of verify_surface_grid_level: above level 0 the level must keep its boxes." alt="" coords="200,115,357,156"/>
+<area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="489,122,527,149"/>
 </map>
 </div>
 <div class="dynheader">
@@ -436,6 +431,95 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__FirePrerequisites_8cpp.html#aed13cbd8f35ade468eea6c67f2c205f6" title="Start&#45;up check for an engine that reads the rain of every column (FireEngine::wants_surface_precip): ..." alt="" coords="200,5,335,47"/>
 <area shape="rect" href="ERF__FloodPrerequisites_8cpp.html#af0681c2f27396ae64e1fc22b8579a86b" title="Start&#45;up check for an engine that reads the precipitation (FloodEngine::wants_surface_precip): the mi..." alt="" coords="195,71,340,112"/>
 <area shape="rect" href="classERF.html#aa8b243c093bd872b6f7592603ff97792" title=" " alt="" coords="5,46,147,73"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acdc7c4009b40de5eb23d2102d234db2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdc7c4009b40de5eb23d2102d234db2e">&#9670;&nbsp;</a></span>verify_surface_static_refinement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void verify_surface_static_refinement </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>pp_prefix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structSurfaceCouplingNames.html">SurfaceCouplingNames</a> &amp;&#160;</td>
+          <td class="paramname"><em>names</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check 2 of verify_surface_grid_level: above level 0 the level must keep its boxes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lev</td><td>The level the surface grid refines </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pp_prefix</td><td>The ParmParse prefix <a class="el" href="classERF.html">ERF</a> reads regrid_int with (<a class="el" href="classERF.html#a59df30e7a5537c8543bb00772bd98b58">ERF::pp_prefix</a>: "erf", or a MultiBlock block's own) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">names</td><td>The coupling's names, for the message </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// The grid is built once from the boxes of its level, so the level must</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// keep its boxes for the whole run. Level 0 never regrids. ERF reads</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// regrid_int with its own prefix (ERF::ReadParameters), which a MultiBlock</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// block sets to its own name.</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">if</span> (lev == 0) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    ParmParse <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(pp_prefix);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">int</span> regrid_int = -1;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;regrid_int&quot;</span>, regrid_int);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">if</span> (regrid_int &gt; 0) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keyword">const</span> std::string key = pp_prefix + <span class="stringliteral">&quot;.regrid_int&quot;</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        Abort(names.<a class="code" href="structSurfaceCouplingNames.html#a12874502f9fd283de02478e4670505fb">tag</a>() + <span class="stringliteral">&quot; The &quot;</span> + names.<a class="code" href="structSurfaceCouplingNames.html#a740704feffd8816138265e4558956a6b">grid</a>() + <span class="stringliteral">&quot; on level &quot;</span> + std::to_string(lev)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;              + <span class="stringliteral">&quot; is built once from that level&#39;s boxes, so the refinement must not change, but &quot;</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;              + key + <span class="stringliteral">&quot; = &quot;</span> + std::to_string(regrid_int) + <span class="stringliteral">&quot; regrids it. Use static refinement &quot;</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="stringliteral">&quot;boxes with &quot;</span> + key + <span class="stringliteral">&quot; = -1, or set &quot;</span> + names.<a class="code" href="structSurfaceCouplingNames.html#ae099dc4c8a95ca126afc47681bf89136">key</a>(<span class="stringliteral">&quot;anchor_level&quot;</span>) + <span class="stringliteral">&quot; = 0.&quot;</span>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__SurfacePrerequisites_8cpp.html#ab7fdcce317233360606de3f3e4af8efe">verify_surface_grid_level()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__SurfacePrerequisites_8H_acdc7c4009b40de5eb23d2102d234db2e_cgraph.png" border="0" usemap="#aERF__SurfacePrerequisites_8H_acdc7c4009b40de5eb23d2102d234db2e_cgraph" alt=""/></div>
+<map name="aERF__SurfacePrerequisites_8H_acdc7c4009b40de5eb23d2102d234db2e_cgraph" id="aERF__SurfacePrerequisites_8H_acdc7c4009b40de5eb23d2102d234db2e_cgraph">
+<area shape="rect" title="Check 2 of verify_surface_grid_level: above level 0 the level must keep its boxes." alt="" coords="5,89,163,131"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#a740704feffd8816138265e4558956a6b" title="&quot;fire grid&quot;" alt="" coords="226,5,401,47"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#ae099dc4c8a95ca126afc47681bf89136" title="&quot;erf.fire.&quot; followed by key" alt="" coords="211,71,416,98"/>
+<area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="294,122,333,149"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#a12874502f9fd283de02478e4670505fb" title="&quot;[FIRE]&quot;" alt="" coords="212,173,415,199"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__SurfacePrerequisites_8H_acdc7c4009b40de5eb23d2102d234db2e_icgraph.png" border="0" usemap="#aERF__SurfacePrerequisites_8H_acdc7c4009b40de5eb23d2102d234db2e_icgraph" alt=""/></div>
+<map name="aERF__SurfacePrerequisites_8H_acdc7c4009b40de5eb23d2102d234db2e_icgraph" id="aERF__SurfacePrerequisites_8H_acdc7c4009b40de5eb23d2102d234db2e_icgraph">
+<area shape="rect" title="Check 2 of verify_surface_grid_level: above level 0 the level must keep its boxes." alt="" coords="659,23,816,65"/>
+<area shape="rect" href="ERF__SurfacePrerequisites_8cpp.html#ab7fdcce317233360606de3f3e4af8efe" title="The checks on the level the surface grid refines, each naming the inputs to change." alt="" coords="464,23,611,65"/>
+<area shape="rect" href="ERF__FirePrerequisites_8cpp.html#a706a8db437b3757e08d8303f01a76e4f" title="Verify the ERF configuration the fire coupling needs." alt="" coords="231,5,410,32"/>
+<area shape="rect" href="ERF__FloodPrerequisites_8cpp.html#a6085ad7864f040a3a9c1a640471726f4" title="Verify the ERF configuration the flood coupling needs." alt="" coords="225,56,416,83"/>
+<area shape="rect" href="classFireCoupler.html#a2a83d66ffc441ed1a31c46daefb5120b" title="Check the configuration, build the fire grid and set the engine up." alt="" coords="11,5,171,32"/>
+<area shape="rect" href="classFloodCoupler.html#a1d594ae03b036a4dca7278db095e3b5e" title="Check the configuration, build the flood grid and set the engine up." alt="" coords="5,56,177,83"/>
 </map>
 </div>
 

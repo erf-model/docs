@@ -1,5 +1,7 @@
 var NAVTREEINDEX43 =
 {
+"classerf__sbm_1_1SpectralGrid.html#ad6c28f446e0cbf5acafb38c9c900c828":[2,0,14,48,3],
+"classes.html":[2,1],
 "classncutils_1_1NCFile.html":[2,0,24,3],
 "classncutils_1_1NCGroup.html":[2,0,24,2],
 "classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd":[2,0,24,2,0],
@@ -177,8 +179,8 @@ var NAVTREEINDEX43 =
 "functions_y.html":[2,3,0,24],
 "functions_z.html":[2,3,0,25],
 "functions_~.html":[2,3,0,26],
-"globals.html":[3,1,0,0],
 "globals.html":[3,1,0],
+"globals.html":[3,1,0,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -187,8 +189,8 @@ var NAVTREEINDEX43 =
 "globals_enum.html":[3,1,4],
 "globals_eval.html":[3,1,5],
 "globals_f.html":[3,1,0,5],
-"globals_func.html":[3,1,1],
 "globals_func.html":[3,1,1,0],
+"globals_func.html":[3,1,1],
 "globals_func_b.html":[3,1,1,1],
 "globals_func_c.html":[3,1,1,2],
 "globals_func_d.html":[3,1,1,3],
@@ -228,8 +230,8 @@ var NAVTREEINDEX43 =
 "globals_type.html":[3,1,3],
 "globals_u.html":[3,1,0,20],
 "globals_v.html":[3,1,0,21],
-"globals_vars.html":[3,1,2,0],
 "globals_vars.html":[3,1,2],
+"globals_vars.html":[3,1,2,0],
 "globals_vars_b.html":[3,1,2,1],
 "globals_vars_c.html":[3,1,2,2],
 "globals_vars_d.html":[3,1,2,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX43 =
 "globals_vars_p.html":[3,1,2,15],
 "globals_vars_q.html":[3,1,2,16],
 "globals_vars_r.html":[3,1,2,17],
-"globals_vars_s.html":[3,1,2,18],
-"globals_vars_t.html":[3,1,2,19],
-"globals_vars_u.html":[3,1,2,20]
+"globals_vars_s.html":[3,1,2,18]
 };

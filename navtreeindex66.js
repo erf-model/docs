@@ -1,5 +1,7 @@
 var NAVTREEINDEX66 =
 {
+"structibseb_1_1RayMap.html#a1ca4a39a522cb5859dc1618a60c40d08":[2,0,21,0,17],
+"structibseb_1_1RayMap.html#a1d30cb1bd2e553cf03aa9d9ead2f7fa0":[2,0,21,0,14],
 "structibseb_1_1RayMap.html#a32007121fceba2bbb6de24f05b362066":[2,0,21,0,12],
 "structibseb_1_1RayMap.html#a43b059a09dc425ecd216a6363c34243f":[2,0,21,0,7],
 "structibseb_1_1RayMap.html#a57047fb185e6a68911010add2b5340a4":[2,0,21,0,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX66 =
 "structplotfile2d_1_1SampledLevelMetadata.html":[2,0,28,9],
 "structplotfile2d_1_1SampledLevelMetadata.html#a3aef72ad512a0fcbdacf6da1d0f3740d":[2,0,28,9,1],
 "structplotfile2d_1_1SampledLevelMetadata.html#a8a3d109d198d211008b84149f7b9ea2c":[2,0,28,9,0],
-"structplotfile2d_1_1SampledLevelMetadata.html#ac022cad3942d222c9bd1d4810b0c38cd":[2,0,28,9,2],
-"structplotfile2d_1_1SampledVerticalCoordinateMetadata.html":[2,0,28,8],
-"structplotfile2d_1_1SampledVerticalCoordinateMetadata.html#a273f0d93018c380907d465427455a5ba":[2,0,28,8,1]
+"structplotfile2d_1_1SampledLevelMetadata.html#ac022cad3942d222c9bd1d4810b0c38cd":[2,0,28,9,2]
 };

@@ -138,8 +138,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4b53fd9ddcf3d2b1b9ab8223a3eab8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a005b7e97d1b96e9206b93ea2369ef55c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngineTemplate.html#a005b7e97d1b96e9206b93ea2369ef55c">write_checkpoint</a> (const std::string &amp;checkpointname) const override</td></tr>
 <tr class="separator:a005b7e97d1b96e9206b93ea2369ef55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11d5e8e4427f854985d5c8c3bae09c48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngineTemplate.html#a11d5e8e4427f854985d5c8c3bae09c48">read_checkpoint</a> (const std::string &amp;restart_chkfile, int max_level, int step) override</td></tr>
-<tr class="separator:a11d5e8e4427f854985d5c8c3bae09c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a644d820b3386ef6c13b889079dbedf68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngineTemplate.html#a644d820b3386ef6c13b889079dbedf68">read_checkpoint</a> (const std::string &amp;restart_chkfile, int search_level, int step) override</td></tr>
+<tr class="separator:a644d820b3386ef6c13b889079dbedf68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a801ec0bca0685fb04c0e81bb3c0d4b6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngineTemplate.html#a801ec0bca0685fb04c0e81bb3c0d4b6c">write_plotfile</a> (const std::string &amp;plotfile_prefix, amrex::Real time, int step) const override</td></tr>
 <tr class="separator:a801ec0bca0685fb04c0e81bb3c0d4b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab08a27bd6638e5ae0eaa738b097cd810"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireEngineTemplate.html#ab08a27bd6638e5ae0eaa738b097cd810">plot_var_names</a> () const override</td></tr>
@@ -509,8 +509,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a11d5e8e4427f854985d5c8c3bae09c48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11d5e8e4427f854985d5c8c3bae09c48">&#9670;&nbsp;</a></span>read_checkpoint()</h2>
+<a id="a644d820b3386ef6c13b889079dbedf68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a644d820b3386ef6c13b889079dbedf68">&#9670;&nbsp;</a></span>read_checkpoint()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -528,7 +528,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>max_level</em>, </td>
+          <td class="paramname"><em>search_level</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -548,9 +548,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Optional (the default stops the run, saying restart is not supported). Read back what <a class="el" href="classFireEngineTemplate.html#a005b7e97d1b96e9206b93ea2369ef55c">write_checkpoint()</a> wrote, on a restart, after <a class="el" href="classFireEngineTemplate.html#ad3f81d1cf543bd786b19523f1be03c8d">start_run()</a> and before the first step; step is the fire grid level's step count at the checkpoint. Abort if the checkpoint's fire grid is not this run's. </p>
+<p>Optional (the default stops the run, saying restart is not supported). Read back what <a class="el" href="classFireEngineTemplate.html#a005b7e97d1b96e9206b93ea2369ef55c">write_checkpoint()</a> wrote, on a restart, after <a class="el" href="classFireEngineTemplate.html#ad3f81d1cf543bd786b19523f1be03c8d">start_run()</a> and before the first step; step is the fire grid level's step count at the checkpoint; search_level is the finest checkpoint level to look for the fire state on (it may exceed this run's finest level). Abort if the checkpoint's fire grid is not this run's. </p>
 
-<p>Reimplemented from <a class="el" href="classFireEngine.html#a3e6225f0e17322a9926753a03046485a">FireEngine</a>.</p>
+<p>Reimplemented from <a class="el" href="classFireEngine.html#ace2ddc17bf53bdc25933fb044a19f2b8">FireEngine</a>.</p>
 
 </div>
 </div>
@@ -706,7 +706,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Called after <a class="el" href="classFireEngineTemplate.html#a8af2a2f248793bf1487649a9b56cce45">initialize()</a>, once the run's end is known: anything that depends on stop_time or max_step (output schedules, a check that the ignition happens before the run ends). On a restart, <a class="el" href="classFireEngineTemplate.html#a11d5e8e4427f854985d5c8c3bae09c48">read_checkpoint()</a> comes after this.</p>
+<p>Called after <a class="el" href="classFireEngineTemplate.html#a8af2a2f248793bf1487649a9b56cce45">initialize()</a>, once the run's end is known: anything that depends on stop_time or max_step (output schedules, a check that the ignition happens before the run ends). On a restart, <a class="el" href="classFireEngineTemplate.html#a644d820b3386ef6c13b889079dbedf68">read_checkpoint()</a> comes after this.</p>
 <p>stop_time is the elapsed time at which the run stops [s], on the clock the engine's step times use (<a class="el" href="classERF.html">ERF</a>'s stop_time less start_time), and numeric_limits&lt;amrex::Real&gt;::max() when no stop time is set. max_step counts level-0 steps and is numeric_limits&lt;int&gt;::max() when unset (never negative). </p>
 
 <p>Reimplemented from <a class="el" href="classFireEngine.html#a5fb35adacc1e6bec28028428aef47f61">FireEngine</a>.</p>

@@ -1,5 +1,7 @@
 var NAVTREEINDEX54 =
 {
+"structERF_1_1Plot3DScratch.html":[2,0,66,3],
+"structERF_1_1Plot3DScratch.html#a00a9df5d7286814f68c27c75688d1fab":[2,0,66,3,2],
 "structERF_1_1Plot3DScratch.html#a61aac0a71da0711e7a8323c9f29c82e8":[2,0,66,3,0],
 "structERF_1_1Plot3DScratch.html#aaa75f2c09ab8f6d7871bbb38e6c95162":[2,0,66,3,1],
 "structFireCouplingParams.html":[2,0,77],
@@ -31,13 +33,13 @@ var NAVTREEINDEX54 =
 "structFireFluxes.html#a9a970a12f870154c00a7c4526b228c22":[2,0,80,0],
 "structFireFluxes.html#af289cd3e2d0c67a5ec21d53da83daacb":[2,0,80,2],
 "structFireForcing.html":[2,0,81],
-"structFireForcing.html#a02ca7d8dda9dd83f92ec82fb22fccf71":[2,0,81,4],
 "structFireForcing.html#a13e04b9ea9a8f4a5c8d72311c0364213":[2,0,81,3],
 "structFireForcing.html#a13fd8cd500cf3b41b34482dc172d3d70":[2,0,81,0],
 "structFireForcing.html#a3d1b01f4625f10352d78707a1cc4e882":[2,0,81,7],
 "structFireForcing.html#a6db8089202b4517eeddb2499358f9204":[2,0,81,6],
 "structFireForcing.html#a90fb3643333f7876cb02229c7319eb33":[2,0,81,1],
 "structFireForcing.html#a98f1455cae88ca194d9598791901c30e":[2,0,81,2],
+"structFireForcing.html#ae99a7b35838bba4fb7fffd62960306bf":[2,0,81,4],
 "structFireForcing.html#afc782ebf912a07732f6f5ff3ae9b3d87":[2,0,81,5],
 "structFireGrid.html":[2,0,82],
 "structFloodCouplingParams.html":[2,0,85],
@@ -247,7 +249,5 @@ var NAVTREEINDEX54 =
 "structInputSoundingData.html#a89d2902b7ae8d6fcd81fa256bb87add8":[2,0,108,35],
 "structInputSoundingData.html#a909a9876dabbbe90d4c03efa05d416f2":[2,0,108,2],
 "structInputSoundingData.html#a97f5d176dc708d70a1404c4d6d850a14":[2,0,108,14],
-"structInputSoundingData.html#aa015e8e9cc3f6ccf45e7327ce13cdce7":[2,0,108,4],
-"structInputSoundingData.html#aac5ecede08aff15cf8493358020b4bae":[2,0,108,27],
-"structInputSoundingData.html#ab077477d0d09c717322fc53d42c50e2d":[2,0,108,29]
+"structInputSoundingData.html#aa015e8e9cc3f6ccf45e7327ce13cdce7":[2,0,108,4]
 };

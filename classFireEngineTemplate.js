@@ -11,7 +11,7 @@ var classFireEngineTemplate =
     [ "needs_surface_layer", "classFireEngineTemplate.html#a586f40a1b88d3f2d3dc78444efbfee6c", null ],
     [ "plot_var", "classFireEngineTemplate.html#af79d7d06b22d5138e52a428c0db14290", null ],
     [ "plot_var_names", "classFireEngineTemplate.html#ab08a27bd6638e5ae0eaa738b097cd810", null ],
-    [ "read_checkpoint", "classFireEngineTemplate.html#a11d5e8e4427f854985d5c8c3bae09c48", null ],
+    [ "read_checkpoint", "classFireEngineTemplate.html#a644d820b3386ef6c13b889079dbedf68", null ],
     [ "reference_wind", "classFireEngineTemplate.html#a8f020148a199466ed4d24fd756345b09", null ],
     [ "reference_wind_height", "classFireEngineTemplate.html#acdf6a9e234f542377fa370419acb2587", null ],
     [ "roof_height_atm", "classFireEngineTemplate.html#a4b53fd9ddcf3d2b1b9ab8223a3eab8a2", null ],

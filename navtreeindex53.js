@@ -1,5 +1,7 @@
 var NAVTREEINDEX53 =
 {
+"namespacesurface__diagnostics.html#a447abb57813ef4c1ec77365e7a3e0554":[1,0,122,2],
+"namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccf":[1,0,122,0],
 "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa07c5fab4234d064a77db6f1c4d0903d9":[1,0,122,0,3],
 "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa2aee0be2678ee90fd327cc186826438e":[1,0,122,0,0],
 "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa31b342f23cb16952131736824b9ccdd1":[1,0,122,0,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX53 =
 "structERF_1_1DtEstimateInfo.html#a4fdf4cb05d5a0b35fa78f0a0bbfa041c":[2,0,66,2,2],
 "structERF_1_1DtEstimateInfo.html#ac89c2e42ec81cab0e2b5a21b28dbd864":[2,0,66,2,3],
 "structERF_1_1DtEstimateInfo.html#ad4c1f20b3ca5ccf8a252bf258cc4cfd6":[2,0,66,2,4],
-"structERF_1_1DtEstimateInfo.html#ae5ffef98b5ccc2d6a7a9f16135bfb5c0":[2,0,66,2,5],
-"structERF_1_1Plot3DScratch.html":[2,0,66,3],
-"structERF_1_1Plot3DScratch.html#a00a9df5d7286814f68c27c75688d1fab":[2,0,66,3,2]
+"structERF_1_1DtEstimateInfo.html#ae5ffef98b5ccc2d6a7a9f16135bfb5c0":[2,0,66,2,5]
 };

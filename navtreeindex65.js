@@ -1,5 +1,7 @@
 var NAVTREEINDEX65 =
 {
+"structerf__sbm_1_1SBMBoundaryLedger.html#ae0b7ef1cf15cb7627b12552c7cb5d16b":[2,0,14,28,0],
+"structerf__sbm_1_1SBMBoundaryLedger.html#aee49e1903f2e8e2ec380350f49049547":[2,0,14,28,5],
 "structerf__sbm_1_1SBMLayoutSpec.html":[2,0,14,23],
 "structerf__sbm_1_1SBMLayoutSpec.html#a0295717ac34e8283a979ebab6d333094":[2,0,14,23,1],
 "structerf__sbm_1_1SBMLayoutSpec.html#a03b1d2db54c1c16158827797d0dbdd84":[2,0,14,23,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX65 =
 "structib__wall_1_1WallState.html#a89c9e37e9397eb3aee3cd0f476b18b71":[2,0,20,1,0],
 "structib__wall_1_1WallState.html#aa8968c2cd7aaef20afe911bd837ed414":[2,0,20,1,3],
 "structib__wall_1_1WallState.html#af405399a578db74ef1508ed24b47be3a":[2,0,20,1,1],
-"structibseb_1_1RayMap.html":[2,0,21,0],
-"structibseb_1_1RayMap.html#a1ca4a39a522cb5859dc1618a60c40d08":[2,0,21,0,17],
-"structibseb_1_1RayMap.html#a1d30cb1bd2e553cf03aa9d9ead2f7fa0":[2,0,21,0,14]
+"structibseb_1_1RayMap.html":[2,0,21,0]
 };
