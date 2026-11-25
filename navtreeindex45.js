@@ -1,5 +1,11 @@
 var NAVTREEINDEX45 =
 {
+"namespaceerf__auxiliary.html#a4eafed90679495b6b748f1e9dff0264b":[1,0,10,62],
+"namespaceerf__auxiliary.html#a53a1c947c5857ce1cabf19be35f39fd0":[1,0,10,36],
+"namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622a":[1,0,10,26],
+"namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa37c5e33bbeb79e5a25c31162da17ebc4":[1,0,10,26,2],
+"namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa3956c6b08b3dc65198c71b8950938e50":[1,0,10,26,0],
+"namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa79e3b4cefbed88dc49a6781ab0320824":[1,0,10,26,1],
 "namespaceerf__auxiliary.html#a72565fcb8b90b8bb5b86e18a214a1154":[1,0,10,47],
 "namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85":[1,0,10,29],
 "namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85a3726b0350cccc330f38079b09dfb4f67":[1,0,10,29,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX45 =
 "namespaceerf__detail__ForestDrag.html#a919b81f87543804625e4d99c04d8c1ac":[1,0,26,1],
 "namespaceerf__detail__MakeNewArrays.html":[1,0,27],
 "namespaceerf__detail__MakeNewArrays.html#a5eb928f982e00399a6ada27244828695":[1,0,27,1],
-"namespaceerf__detail__MakeNewArrays.html#ae9a120cddeef93c0563477237fe9d5b2":[1,0,27,0],
-"namespaceerf__detail__MakeNewLevel.html":[1,0,28],
-"namespaceerf__detail__MakeNewLevel.html#a45a8c6ee4307c85a9e785eb29e541ea7":[1,0,28,0],
-"namespaceerf__detail__MakeNewLevel.html#a6f3a71654e447136d4e48495860c877b":[1,0,28,1],
-"namespaceerf__detail__MakeNewLevel.html#a7fc1c907ce7e1aa03e69d9a86e679bb8":[1,0,28,2],
-"namespaceerf__detail__PoissonWallDist.html":[1,0,29],
-"namespaceerf__detail__PoissonWallDist.html#a847c863fe70740478b1919a5329ed34f":[1,0,29,0]
+"namespaceerf__detail__MakeNewArrays.html#ae9a120cddeef93c0563477237fe9d5b2":[1,0,27,0]
 };

@@ -1,11 +1,11 @@
 var classERFPhysBCFunct__cons =
 [
-    [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html#aad9bc5ddcb7919a03da68223d85198f2", null ],
+    [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html#a4b27c9204b92c12e129919e220ecfe33", null ],
     [ "~ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html#ab1f895ffdda9477b380a088bdf48a6de", null ],
     [ "face_rho_is_extdir", "classERFPhysBCFunct__cons.html#a962224c4e037a51a7220de7a49672eb3", null ],
     [ "impose_inflow_profile_cons", "classERFPhysBCFunct__cons.html#afe3a8aa80d260ed9a7bddda3f06d6ac4", null ],
     [ "impose_lateral_cons_bcs", "classERFPhysBCFunct__cons.html#a8a208e8874c2a6ee75b935c3b82a655c", null ],
-    [ "impose_vertical_cons_bcs", "classERFPhysBCFunct__cons.html#a8467d70225a1e97d0a0ac8caa4c9a8f8", null ],
+    [ "impose_vertical_cons_bcs", "classERFPhysBCFunct__cons.html#a29c8a0f2b5a34848b06ac599386ce2a8", null ],
     [ "operator()", "classERFPhysBCFunct__cons.html#a7a8e5d304bc06be5c8d77e2e407ee5b8", null ],
     [ "set_inflow_profiles", "classERFPhysBCFunct__cons.html#a4619cb94c3a714743500a7b99435cc0d", null ],
     [ "set_pi_inflow_faces", "classERFPhysBCFunct__cons.html#a9859865610d838ee456a6601ee993704", null ],
@@ -17,6 +17,8 @@ var classERFPhysBCFunct__cons =
     [ "m_geom", "classERFPhysBCFunct__cons.html#a1a3121bc392962a3c3149a6e2db2791b", null ],
     [ "m_inflow_profiles", "classERFPhysBCFunct__cons.html#a7a50fab061b7b74c31463c0e6ee439a4", null ],
     [ "m_lev", "classERFPhysBCFunct__cons.html#ad393b48c02e838f75be60a655eed9fa6", null ],
+    [ "m_mapfac_x", "classERFPhysBCFunct__cons.html#a5e430688df8cd9c0f67d2800ff9fad38", null ],
+    [ "m_mapfac_y", "classERFPhysBCFunct__cons.html#a1e9746143f479edf5562ded6a8814551", null ],
     [ "m_pi_inflow_face", "classERFPhysBCFunct__cons.html#ae25a49cb33dbdbe20bd8ad4c94baa841", null ],
     [ "m_pi_inflow_theta", "classERFPhysBCFunct__cons.html#a238ddd13ee9275e8b4f17ef1c84c8222", null ],
     [ "m_terrain_type", "classERFPhysBCFunct__cons.html#ab3f926a00d34177a184d44097edfee53", null ],

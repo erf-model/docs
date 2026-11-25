@@ -1,5 +1,11 @@
 var NAVTREEINDEX67 =
 {
+"structrotate__flux.html#ad984a89ab8bc937ff6cba340750d394e":[2,0,174,3],
+"structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11":[2,0,174,5],
+"structrotate__flux.html#aee103547330a4333f4bd89a5c05d2bf2":[2,0,174,4],
+"structshoc_1_1ShocEnergyFixerView.html":[2,0,29,0],
+"structshoc_1_1ShocEnergyFixerView.html#a01457b420211fdf3562c7220db5e0778":[2,0,29,0,8],
+"structshoc_1_1ShocEnergyFixerView.html#a17f4f8e3dcca90745bc3d083a56b38b2":[2,0,29,0,4],
 "structshoc_1_1ShocEnergyFixerView.html#a1bea251d8b1f01dfeea5cc7fc2fc378f":[2,0,29,0,12],
 "structshoc_1_1ShocEnergyFixerView.html#a221340cd5611d5d3e938d9959e627897":[2,0,29,0,10],
 "structshoc_1_1ShocEnergyFixerView.html#a3acbbc2ea7cba157968603af683fd30b":[2,0,29,0,3],
