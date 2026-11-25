@@ -134,7 +134,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Start-up checks of the atmosphere side of the flood coupling. </p>
-<p>Verifies that <a class="el" href="classERF.html">ERF</a> is configured so that a flood grid can be coupled to it, whichever flood engine runs on that grid. Each engine checks its own inputs after these (<a class="el" href="classFloodEngine.html#a3e6ed8b2be826469f9bc770252de5919" title="Check the engine&#39;s own inputs against the ERF configuration.">FloodEngine::verify_prerequisites</a>). Every check aborts with a message that names the input to change. </p>
+<p>Verifies that <a class="el" href="classERF.html">ERF</a> is configured so that a flood grid can be coupled to it, whichever flood engine runs on that grid. Each engine checks its own inputs after these (<a class="el" href="classFloodEngine.html#a3e6ed8b2be826469f9bc770252de5919" title="Check the engine&#39;s own inputs against the ERF configuration.">FloodEngine::verify_prerequisites</a>). The checks are those of every surface coupling (ERF_SurfacePrerequisites.H); each aborts with a message that names the input to change. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a2bc8d83280884114c77ab7541c17414a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2bc8d83280884114c77ab7541c17414a">&#9670;&nbsp;</a></span>flood_anchor_level()</h2>
@@ -164,18 +164,25 @@ Functions</h2></td></tr>
 
 <p>The AMR level the flood grid refines: erf.flood.anchor_level, or the finest level when it is -1 (the default). </p>
 <p>Aborts, naming the input, when the level is above the finest level. </p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> lev = (anchor_level &lt; 0) ? finest_level : anchor_level;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">if</span> (lev &gt; finest_level) {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        Abort(<span class="stringliteral">&quot;[FLOOD] erf.flood.anchor_level = &quot;</span> + std::to_string(anchor_level)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;              + <span class="stringliteral">&quot; is above the finest level of this run (&quot;</span> + std::to_string(finest_level)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;              + <span class="stringliteral">&quot;). Set it to a level from 0 to &quot;</span> + std::to_string(finest_level)</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;              + <span class="stringliteral">&quot;, or leave it unset for the finest level.&quot;</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> lev;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__SurfacePrerequisites_8cpp.html#a116ae9fee8098d1529855943ad122115">surface_anchor_level</a>(anchor_level, finest_level, <a class="code" href="ERF__FloodGrid_8H.html#a38a975ac5ca1be957914ad8d04675de8">flood_coupling_names</a>());</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<div class="ttc" id="aERF__FloodGrid_8H_html_a38a975ac5ca1be957914ad8d04675de8"><div class="ttname"><a href="ERF__FloodGrid_8H.html#a38a975ac5ca1be957914ad8d04675de8">flood_coupling_names</a></div><div class="ttdeci">const SurfaceCouplingNames &amp; flood_coupling_names()</div><div class="ttdoc">The flood coupling's names: erf.flood.&lt;key&gt;, &quot;[FLOOD]&quot;, &quot;flood grid&quot;.</div><div class="ttdef"><b>Definition:</b> ERF_FloodGrid.H:26</div></div>
+<div class="ttc" id="aERF__SurfacePrerequisites_8cpp_html_a116ae9fee8098d1529855943ad122115"><div class="ttname"><a href="ERF__SurfacePrerequisites_8cpp.html#a116ae9fee8098d1529855943ad122115">surface_anchor_level</a></div><div class="ttdeci">int surface_anchor_level(int anchor_level, int finest_level, const SurfaceCouplingNames &amp;names)</div><div class="ttdoc">The level the surface grid refines: anchor_level, or the finest level when it is -1....</div><div class="ttdef"><b>Definition:</b> ERF_SurfacePrerequisites.cpp:10</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa8b243c093bd872b6f7592603ff97792">ERF::InitData_post()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__FloodPrerequisites_8H_a2bc8d83280884114c77ab7541c17414a_cgraph.png" border="0" usemap="#aERF__FloodPrerequisites_8H_a2bc8d83280884114c77ab7541c17414a_cgraph" alt=""/></div>
+<map name="aERF__FloodPrerequisites_8H_a2bc8d83280884114c77ab7541c17414a_cgraph" id="aERF__FloodPrerequisites_8H_a2bc8d83280884114c77ab7541c17414a_cgraph">
+<area shape="rect" title="The AMR level the flood grid refines: erf.flood.anchor_level, or the finest level when it is &#45;1 (the ..." alt="" coords="5,31,149,57"/>
+<area shape="rect" href="ERF__FloodGrid_8H.html#a38a975ac5ca1be957914ad8d04675de8" title="The flood coupling&#39;s names: erf.flood.&lt;key&gt;, &quot;[FLOOD]&quot;, &quot;flood grid&quot;." alt="" coords="197,5,364,32"/>
+<area shape="rect" href="ERF__SurfacePrerequisites_8cpp.html#a116ae9fee8098d1529855943ad122115" title="The level the surface grid refines: anchor_level, or the finest level when it is &#45;1...." alt="" coords="201,56,361,83"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#ae099dc4c8a95ca126afc47681bf89136" title="&quot;erf.fire.&quot; followed by key" alt="" coords="412,31,617,57"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#a12874502f9fd283de02478e4670505fb" title="&quot;[FIRE]&quot;" alt="" coords="413,81,616,108"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -223,18 +230,10 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__SurfacePrecipitation_8H.html#a3d69b2a5f8030d6adc75316746acbdb1">surface_precip_has_any_source</a>(sources)) { <span class="keywordflow">return</span>; }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::string moisture_model = <span class="stringliteral">&quot;None&quot;</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    ParmParse pp_erf(<span class="stringliteral">&quot;erf&quot;</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    pp_erf.query(<span class="stringliteral">&quot;moisture_model&quot;</span>, moisture_model);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    Abort(<span class="stringliteral">&quot;[FLOOD] The flood engine \&quot;&quot;</span> + engine_name + <span class="stringliteral">&quot;\&quot; takes the precipitation of every column from &quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;          <span class="stringliteral">&quot;the microphysics surface precipitation accumulators, but erf.moisture_model = \&quot;&quot;</span> + moisture_model</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;          + <span class="stringliteral">&quot;\&quot; provides none (Kessler, SAM, Morrison, WSM6 and WDM6 with precipitation do; Kessler_NoRain, &quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;          <span class="stringliteral">&quot;SatAdj, MoistNoCondensation and None do not). Choose one of those, or set the engine&#39;s inputs so &quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;          <span class="stringliteral">&quot;it does not read the precipitation.&quot;</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="ttc" id="aERF__SurfacePrecipitation_8H_html_a3d69b2a5f8030d6adc75316746acbdb1"><div class="ttname"><a href="ERF__SurfacePrecipitation_8H.html#a3d69b2a5f8030d6adc75316746acbdb1">surface_precip_has_any_source</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool surface_precip_has_any_source(const SurfacePrecipAccumulationSources &amp;src) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SurfacePrecipitation.H:62</div></div>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="ERF__SurfacePrerequisites_8cpp.html#a6488e007339509d9ad0fa236715a6e1f">verify_surface_precip_source</a>(engine_name, sources, <span class="stringliteral">&quot;precipitation&quot;</span>, <a class="code" href="ERF__FloodGrid_8H.html#a38a975ac5ca1be957914ad8d04675de8">flood_coupling_names</a>());</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="ttc" id="aERF__SurfacePrerequisites_8cpp_html_a6488e007339509d9ad0fa236715a6e1f"><div class="ttname"><a href="ERF__SurfacePrerequisites_8cpp.html#a6488e007339509d9ad0fa236715a6e1f">verify_surface_precip_source</a></div><div class="ttdeci">void verify_surface_precip_source(const std::string &amp;engine_name, const SurfacePrecipAccumulationSources &amp;sources, const std::string &amp;what, const SurfaceCouplingNames &amp;names)</div><div class="ttdoc">Aborts, naming erf.moisture_model, when no microphysics surface precipitation accumulator exists for ...</div><div class="ttdef"><b>Definition:</b> ERF_SurfacePrerequisites.cpp:23</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa8b243c093bd872b6f7592603ff97792">ERF::InitData_post()</a>.</p>
 <div class="dynheader">
@@ -242,9 +241,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__FloodPrerequisites_8H_af0681c2f27396ae64e1fc22b8579a86b_cgraph.png" border="0" usemap="#aERF__FloodPrerequisites_8H_af0681c2f27396ae64e1fc22b8579a86b_cgraph" alt=""/></div>
 <map name="aERF__FloodPrerequisites_8H_af0681c2f27396ae64e1fc22b8579a86b_cgraph" id="aERF__FloodPrerequisites_8H_af0681c2f27396ae64e1fc22b8579a86b_cgraph">
-<area shape="rect" title="Start&#45;up check for an engine that reads the precipitation (FloodEngine::wants_surface_precip): the mi..." alt="" coords="5,5,151,47"/>
-<area shape="rect" href="ERF__SurfacePrecipitation_8H.html#a3d69b2a5f8030d6adc75316746acbdb1" title=" " alt="" coords="199,5,345,47"/>
-<area shape="rect" href="ERF__SurfacePrecipitation_8H.html#a36bbd056d08cf4b0b76d135be8b2c76b" title=" " alt="" coords="393,5,540,47"/>
+<area shape="rect" title="Start&#45;up check for an engine that reads the precipitation (FloodEngine::wants_surface_precip): the mi..." alt="" coords="5,27,151,69"/>
+<area shape="rect" href="ERF__FloodGrid_8H.html#a38a975ac5ca1be957914ad8d04675de8" title="The flood coupling&#39;s names: erf.flood.&lt;key&gt;, &quot;[FLOOD]&quot;, &quot;flood grid&quot;." alt="" coords="199,5,365,32"/>
+<area shape="rect" href="ERF__SurfacePrerequisites_8cpp.html#a6488e007339509d9ad0fa236715a6e1f" title="Aborts, naming erf.moisture_model, when no microphysics surface precipitation accumulator exists for ..." alt="" coords="201,57,363,98"/>
+<area shape="rect" href="ERF__SurfacePrecipitation_8H.html#a3d69b2a5f8030d6adc75316746acbdb1" title=" " alt="" coords="441,27,588,69"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#a12874502f9fd283de02478e4670505fb" title="&quot;[FIRE]&quot;" alt="" coords="413,93,616,120"/>
+<area shape="rect" href="ERF__SurfacePrecipitation_8H.html#a36bbd056d08cf4b0b76d135be8b2c76b" title=" " alt="" coords="664,27,811,69"/>
 </map>
 </div>
 <div class="dynheader">
@@ -293,78 +295,29 @@ Here is the caller graph for this function:</div>
 <li>The level's boxes cover one rectangle in x and y</li>
 <li>The domain starts at index 0 in x, y and z </li>
 </ol>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// Check 1: the level the flood grid refines exists. flood_anchor_level()</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// resolves the input and aborts above the finest level; this is the backstop</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// for any other caller.</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (lev &lt; 0 || lev &gt; erf.finestLevel()) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        Abort(<span class="stringliteral">&quot;[FLOOD] Internal error: the flood grid&#39;s level &quot;</span> + std::to_string(lev)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;              + <span class="stringliteral">&quot; is outside 0..&quot;</span> + std::to_string(erf.finestLevel()));</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Check 2: static refinement. The flood grid is built once from the boxes</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// of its level, so the level must keep its boxes for the whole run. Level 0</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// never regrids.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (lev &gt; 0) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        ParmParse pp_erf(<span class="stringliteral">&quot;erf&quot;</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">int</span> regrid_int = -1;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        pp_erf.query(<span class="stringliteral">&quot;regrid_int&quot;</span>, regrid_int);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> (regrid_int &gt; 0) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            Abort(<span class="stringliteral">&quot;[FLOOD] The flood grid on level &quot;</span> + std::to_string(lev)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                  + <span class="stringliteral">&quot; is built once from that level&#39;s boxes, so the refinement must not change, but &quot;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                  <span class="stringliteral">&quot;erf.regrid_int = &quot;</span> + std::to_string(regrid_int) + <span class="stringliteral">&quot; regrids it. Use static refinement &quot;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                  <span class="stringliteral">&quot;boxes with erf.regrid_int = -1, or set erf.flood.anchor_level = 0.&quot;</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Check 3: no z decomposition. The precipitation and the plot fields live</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// on the k = 0 slab of each box of the level, one per box, paired box for</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// box with the flood grid.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> BoxArray&amp; ba = erf.boxArray(lev);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> Box&amp; domain  = erf.Geom(lev).Domain();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> domain_nz = domain.length(2);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ba.size(); ++i) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span> (ba[i].<a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a7817547f51392c7251d45619d61b1a39">length</a>(2) != domain_nz) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            Abort(<span class="stringliteral">&quot;[FLOOD] Every box on level &quot;</span> + std::to_string(lev)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                  + <span class="stringliteral">&quot; must span the level&#39;s full height, since the flood grid pairs one surface slab &quot;</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="stringliteral">&quot;with each box: leave amr.no_box_split_dir at its default of 2, or set &quot;</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <span class="stringliteral">&quot;amr.max_grid_size_z to at least &quot;</span> + std::to_string(domain_nz)</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                  + <span class="stringliteral">&quot;, and on a refined level use a refinement box that reaches the domain top&quot;</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Check 4: the boxes cover one rectangle. The flood grid treats the edges</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// of their bounding rectangle as its domain edges.</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        BoxList bl_2d;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ba.size(); ++i) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            Box b = ba[i];</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            b.setSmall(2, 0);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            b.setBig(2, 0);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            bl_2d.push_back(b);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">const</span> BoxArray ba_2d(std::move(bl_2d));</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">const</span> Box region = ba_2d.minimalBox();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> (region.numPts() != ba_2d.numPts()) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            Abort(<span class="stringliteral">&quot;[FLOOD] The boxes of level &quot;</span> + std::to_string(lev) + <span class="stringliteral">&quot; cover &quot;</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                  + std::to_string(ba_2d.numPts()) + <span class="stringliteral">&quot; of the &quot;</span> + std::to_string(region.numPts())</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                  + <span class="stringliteral">&quot; columns of their bounding rectangle, but the flood grid needs one rectangle. &quot;</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                  <span class="stringliteral">&quot;Refine one rectangle on that level (a single refinement box), or set &quot;</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                  <span class="stringliteral">&quot;erf.flood.anchor_level to a level whose boxes form one.&quot;</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Check 5: a zero-based domain. A flood cell maps back to its atmospheric</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// cell by i_a = i_f / C + atm_lo (ERF_FloodGrid.H); every AMReX level has a</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// zero-based domain, so this asserts the convention rather than relying on</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// it silently.</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> (domain.smallEnd(0) != 0 || domain.smallEnd(1) != 0 || domain.smallEnd(2) != 0) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        Abort(<span class="stringliteral">&quot;[FLOOD] Internal error: the flood coupling needs a domain that starts at index 0&quot;</span>);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a7817547f51392c7251d45619d61b1a39"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a7817547f51392c7251d45619d61b1a39">length</a></div><div class="ttdeci">const Real length</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_AnelasticWallDiffusion.H:16</div></div>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// The checks every surface coupling makes on the level its grid refines</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// (ERF_SurfacePrerequisites.H): the level exists, keeps its boxes above</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// level 0, its boxes span the full height and cover one rectangle, and its</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// domain starts at index 0.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="ERF__SurfacePrerequisites_8cpp.html#ab7fdcce317233360606de3f3e4af8efe">verify_surface_grid_level</a>(erf, lev, <a class="code" href="ERF__FloodGrid_8H.html#a38a975ac5ca1be957914ad8d04675de8">flood_coupling_names</a>());</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="ttc" id="aERF__SurfacePrerequisites_8cpp_html_ab7fdcce317233360606de3f3e4af8efe"><div class="ttname"><a href="ERF__SurfacePrerequisites_8cpp.html#ab7fdcce317233360606de3f3e4af8efe">verify_surface_grid_level</a></div><div class="ttdeci">void verify_surface_grid_level(const ERF &amp;erf, int lev, const SurfaceCouplingNames &amp;names)</div><div class="ttdoc">The checks on the level the surface grid refines, each naming the inputs to change.</div><div class="ttdef"><b>Definition:</b> ERF_SurfacePrerequisites.cpp:41</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classFloodCoupler.html#a1d594ae03b036a4dca7278db095e3b5e">FloodCoupler::initialize()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__FloodPrerequisites_8H_a6085ad7864f040a3a9c1a640471726f4_cgraph.png" border="0" usemap="#aERF__FloodPrerequisites_8H_a6085ad7864f040a3a9c1a640471726f4_cgraph" alt=""/></div>
+<map name="aERF__FloodPrerequisites_8H_a6085ad7864f040a3a9c1a640471726f4_cgraph" id="aERF__FloodPrerequisites_8H_a6085ad7864f040a3a9c1a640471726f4_cgraph">
+<area shape="rect" title="Verify the ERF configuration the flood coupling needs." alt="" coords="5,42,196,69"/>
+<area shape="rect" href="ERF__FloodGrid_8H.html#a38a975ac5ca1be957914ad8d04675de8" title="The flood coupling&#39;s names: erf.flood.&lt;key&gt;, &quot;[FLOOD]&quot;, &quot;flood grid&quot;." alt="" coords="244,13,411,39"/>
+<area shape="rect" href="ERF__SurfacePrerequisites_8cpp.html#ab7fdcce317233360606de3f3e4af8efe" title="The checks on the level the surface grid refines, each naming the inputs to change." alt="" coords="254,64,401,105"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#a740704feffd8816138265e4558956a6b" title="&quot;fire grid&quot;" alt="" coords="474,5,649,47"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#ae099dc4c8a95ca126afc47681bf89136" title="&quot;erf.fire.&quot; followed by key" alt="" coords="459,71,664,98"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#a12874502f9fd283de02478e4670505fb" title="&quot;[FIRE]&quot;" alt="" coords="460,122,663,149"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

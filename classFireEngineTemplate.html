@@ -475,7 +475,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The field <a class="el" href="classFireEngineTemplate.html#ab08a27bd6638e5ae0eaa738b097cd810">plot_var_names()</a> lists as name, on the fire grid. </p>
-<p>One component, on <a class="el" href="structFireGrid.html#a334293a2fecdf1218a92c09de6b36918" title="2D BoxArray (C*nx × C*ny × 1)">FireGrid::ba</a> and <a class="el" href="structFireGrid.html#a65d6874c65bc8f5344659c9746534164" title="Distribution map (x-y decomposition aligned with atm)">FireGrid::dm</a>, valid until the next <a class="el" href="classFireEngineTemplate.html#a69491ee523201b31696bafbbc7d293f2">advance()</a>. The coupler averages it over each atmospheric column (the grid_ratio^2 fire cells under it) and writes it into the k = 0 layer of the <a class="el" href="classERF.html">ERF</a> plotfile, zero elsewhere. nullptr writes zeros. </p>
+<p>One component, on <a class="el" href="structSurfaceGrid.html#a74874a02e5806856b528e68f25ab9446" title="2D BoxArray (C*nx x C*ny x 1), box n refines atmospheric box n">FireGrid::ba</a> and <a class="el" href="structSurfaceGrid.html#a76cdd5af7533b1d314b650b770f67adb" title="The atmospheric level&#39;s owners.">FireGrid::dm</a>, valid until the next <a class="el" href="classFireEngineTemplate.html#a69491ee523201b31696bafbbc7d293f2">advance()</a>. The coupler averages it over each atmospheric column (the grid_ratio^2 fire cells under it) and writes it into the k = 0 layer of the <a class="el" href="classERF.html">ERF</a> plotfile, zero elsewhere. nullptr writes zeros. </p>
 
 <p>Reimplemented from <a class="el" href="classFireEngine.html#a0e2f5ff5f44188e5fe2790fa43263c76">FireEngine</a>.</p>
 

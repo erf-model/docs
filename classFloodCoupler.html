@@ -97,24 +97,25 @@ Collaboration diagram for FloodCoupler:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFloodCoupler__coll__graph.png" border="0" usemap="#aFloodCoupler_coll__map" alt="Collaboration graph"/></div>
 <map name="aFloodCoupler_coll__map" id="aFloodCoupler_coll__map">
-<area shape="rect" title=" " alt="" coords="1009,443,1117,469"/>
-<area shape="rect" title=" " alt="" coords="293,41,379,68"/>
-<area shape="rect" href="structFloodGrid.html" title="2D horizontal flood grid" alt="" coords="675,192,760,219"/>
-<area shape="rect" title=" " alt="" coords="684,733,751,760"/>
-<area shape="rect" title=" " alt="" coords="603,683,832,709"/>
-<area shape="rect" title=" " alt="" coords="257,671,415,697"/>
-<area shape="rect" title=" " alt="" coords="629,617,805,658"/>
-<area shape="rect" title=" " alt="" coords="55,636,94,663"/>
-<area shape="rect" title=" " alt="" coords="271,620,401,647"/>
-<area shape="rect" title=" " alt="" coords="259,103,413,129"/>
-<area shape="rect" title=" " alt="" coords="317,356,355,383"/>
-<area shape="rect" href="structFloodCouplingParams.html" title=" " alt="" coords="636,443,799,469"/>
-<area shape="rect" title=" " alt="" coords="311,472,361,499"/>
-<area shape="rect" title=" " alt="" coords="303,173,369,200"/>
-<area shape="rect" title=" " alt="" coords="295,243,377,269"/>
-<area shape="rect" title=" " alt="" coords="624,565,811,592"/>
-<area shape="rect" title=" " alt="" coords="293,557,379,584"/>
-<area shape="rect" title=" " alt="" coords="5,550,144,591"/>
+<area shape="rect" title=" " alt="" coords="1025,396,1133,423"/>
+<area shape="rect" title=" " alt="" coords="39,192,126,219"/>
+<area shape="rect" href="structSurfaceGrid.html" title="2D horizontal surface grid" alt="" coords="303,223,401,249"/>
+<area shape="rect" title=" " alt="" coords="700,695,767,721"/>
+<area shape="rect" title=" " alt="" coords="619,644,848,671"/>
+<area shape="rect" title=" " alt="" coords="273,627,431,653"/>
+<area shape="rect" title=" " alt="" coords="645,578,821,619"/>
+<area shape="rect" title=" " alt="" coords="63,604,102,631"/>
+<area shape="rect" title=" " alt="" coords="287,576,417,603"/>
+<area shape="rect" title=" " alt="" coords="5,63,160,89"/>
+<area shape="rect" title=" " alt="" coords="63,311,102,337"/>
+<area shape="rect" href="structFloodCouplingParams.html" title=" " alt="" coords="652,396,815,423"/>
+<area shape="rect" title=" " alt="" coords="327,327,377,353"/>
+<area shape="rect" href="structFloodGrid.html" title="2D horizontal flood grid" alt="" coords="691,223,776,249"/>
+<area shape="rect" title=" " alt="" coords="49,128,116,155"/>
+<area shape="rect" title=" " alt="" coords="41,448,124,475"/>
+<area shape="rect" title=" " alt="" coords="640,527,827,553"/>
+<area shape="rect" title=" " alt="" coords="309,525,395,552"/>
+<area shape="rect" title=" " alt="" coords="13,518,152,559"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -443,18 +444,18 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    Box chk2 = chk_region;</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    chk2.setSmall(2, run_region.smallEnd(2));</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    chk2.setBig(2, run_region.bigEnd(2));</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordflow">if</span> (chk_lev == <a class="code" href="classFloodCoupler.html#ac3419e4b9ad36a86e143850b599e6468">m_lev</a> &amp;&amp; chk_ratio == <a class="code" href="classFloodCoupler.html#ab9112ce008080566f47724d1de25e56e">m_fg</a>.<a class="code" href="structFloodGrid.html#abd23427159d8a28e898381ce01b278c9">C</a> &amp;&amp; chk2 == run_region) { <span class="keywordflow">return</span> {}; }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordflow">if</span> (chk_lev == <a class="code" href="classFloodCoupler.html#ac3419e4b9ad36a86e143850b599e6468">m_lev</a> &amp;&amp; chk_ratio == <a class="code" href="classFloodCoupler.html#ab9112ce008080566f47724d1de25e56e">m_fg</a>.<a class="code" href="structSurfaceGrid.html#a8b19ee87542c02aa941e2b364bd30b06">C</a> &amp;&amp; chk2 == run_region) { <span class="keywordflow">return</span> {}; }</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    std::ostringstream msg;</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    msg &lt;&lt; <span class="stringliteral">&quot;holds flood state on level &quot;</span> &lt;&lt; chk_lev &lt;&lt; <span class="stringliteral">&quot; with erf.flood.grid_ratio = &quot;</span> &lt;&lt; chk_ratio</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; over the columns &quot;</span> &lt;&lt; chk2 &lt;&lt; <span class="stringliteral">&quot;, but this run&#39;s flood grid is on level &quot;</span> &lt;&lt; <a class="code" href="classFloodCoupler.html#ac3419e4b9ad36a86e143850b599e6468">m_lev</a></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; with erf.flood.grid_ratio = &quot;</span> &lt;&lt; <a class="code" href="classFloodCoupler.html#ab9112ce008080566f47724d1de25e56e">m_fg</a>.<a class="code" href="structFloodGrid.html#abd23427159d8a28e898381ce01b278c9">C</a> &lt;&lt; <span class="stringliteral">&quot; over the columns &quot;</span> &lt;&lt; run_region</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; with erf.flood.grid_ratio = &quot;</span> &lt;&lt; <a class="code" href="classFloodCoupler.html#ab9112ce008080566f47724d1de25e56e">m_fg</a>.<a class="code" href="structSurfaceGrid.html#a8b19ee87542c02aa941e2b364bd30b06">C</a> &lt;&lt; <span class="stringliteral">&quot; over the columns &quot;</span> &lt;&lt; run_region</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;. Restart with the erf.flood.anchor_level, erf.flood.grid_ratio and the refinement the&quot;</span></div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;           <span class="stringliteral">&quot; checkpoint was written with.&quot;</span>;</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">return</span> msg.str();</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;}</div>
 <div class="ttc" id="aclassFloodCoupler_html_ab9112ce008080566f47724d1de25e56e"><div class="ttname"><a href="classFloodCoupler.html#ab9112ce008080566f47724d1de25e56e">FloodCoupler::m_fg</a></div><div class="ttdeci">FloodGrid m_fg</div><div class="ttdef"><b>Definition:</b> ERF_FloodCoupler.H:181</div></div>
 <div class="ttc" id="aclassFloodCoupler_html_ac3419e4b9ad36a86e143850b599e6468"><div class="ttname"><a href="classFloodCoupler.html#ac3419e4b9ad36a86e143850b599e6468">FloodCoupler::m_lev</a></div><div class="ttdeci">int m_lev</div><div class="ttdef"><b>Definition:</b> ERF_FloodCoupler.H:182</div></div>
-<div class="ttc" id="astructFloodGrid_html_abd23427159d8a28e898381ce01b278c9"><div class="ttname"><a href="structFloodGrid.html#abd23427159d8a28e898381ce01b278c9">FloodGrid::C</a></div><div class="ttdeci">int C</div><div class="ttdef"><b>Definition:</b> ERF_FloodGrid.H:36</div></div>
+<div class="ttc" id="astructSurfaceGrid_html_a8b19ee87542c02aa941e2b364bd30b06"><div class="ttname"><a href="structSurfaceGrid.html#a8b19ee87542c02aa941e2b364bd30b06">SurfaceGrid::C</a></div><div class="ttdeci">int C</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceGrid.H:38</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classFloodCoupler.html#ac5f3d85aec0369db6dbad33496ff9400">read_checkpoint()</a>.</p>
 <div class="dynheader">
@@ -627,21 +628,26 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        });</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
-<div class="ttc" id="aERF__FloodGrid_8H_html_a20fac8d90e24792cad73518a83042f36"><div class="ttname"><a href="ERF__FloodGrid_8H.html#a20fac8d90e24792cad73518a83042f36">flood_same_columns</a></div><div class="ttdeci">bool flood_same_columns(const amrex::BoxArray &amp;a, const amrex::BoxArray &amp;b)</div><div class="ttdef"><b>Definition:</b> ERF_FloodGrid.H:73</div></div>
-<div class="ttc" id="aERF__FloodGrid_8H_html_a8f40019eb8866bfaaea6064e0596de99"><div class="ttname"><a href="ERF__FloodGrid_8H.html#a8f40019eb8866bfaaea6064e0596de99">coarsen_flood_to_atm</a></div><div class="ttdeci">void coarsen_flood_to_atm(amrex::MultiFab &amp;atm_out, const amrex::MultiFab &amp;flood, const FloodGrid &amp;fg)</div><div class="ttdef"><b>Definition:</b> ERF_FloodGrid.H:181</div></div>
+<div class="ttc" id="aERF__FloodGrid_8H_html_a20fac8d90e24792cad73518a83042f36"><div class="ttname"><a href="ERF__FloodGrid_8H.html#a20fac8d90e24792cad73518a83042f36">flood_same_columns</a></div><div class="ttdeci">bool flood_same_columns(const amrex::BoxArray &amp;a, const amrex::BoxArray &amp;b)</div><div class="ttdoc">surface_same_columns: box n of a and box n of b cover the same columns.</div><div class="ttdef"><b>Definition:</b> ERF_FloodGrid.H:62</div></div>
+<div class="ttc" id="aERF__FloodGrid_8H_html_a8f40019eb8866bfaaea6064e0596de99"><div class="ttname"><a href="ERF__FloodGrid_8H.html#a8f40019eb8866bfaaea6064e0596de99">coarsen_flood_to_atm</a></div><div class="ttdeci">void coarsen_flood_to_atm(amrex::MultiFab &amp;atm_out, const amrex::MultiFab &amp;flood, const FloodGrid &amp;fg)</div><div class="ttdef"><b>Definition:</b> ERF_FloodGrid.H:100</div></div>
 <div class="ttc" id="aERF__Plotfile2DCatalog_8cpp_html_a9b45b3e13bd9167aab02e17e08916231"><div class="ttname"><a href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DCatalog.cpp:139</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFloodCoupler_a3cab712e4fefe861f6ec13b8b407eef4_cgraph.png" border="0" usemap="#aclassFloodCoupler_a3cab712e4fefe861f6ec13b8b407eef4_cgraph" alt=""/></div>
 <map name="aclassFloodCoupler_a3cab712e4fefe861f6ec13b8b407eef4_cgraph" id="aclassFloodCoupler_a3cab712e4fefe861f6ec13b8b407eef4_cgraph">
-<area shape="rect" title="Fill component dcomp of an ERF plotfile MultiFab of level lev with the flood field name." alt="" coords="5,125,137,167"/>
-<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="399,5,581,47"/>
-<area shape="rect" href="ERF__FloodGrid_8H.html#a8f40019eb8866bfaaea6064e0596de99" title=" " alt="" coords="185,107,351,134"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="445,173,535,199"/>
-<area shape="rect" href="ERF__FloodGrid_8H.html#a20fac8d90e24792cad73518a83042f36" title=" " alt="" coords="189,209,347,235"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="399,71,581,98"/>
-<area shape="rect" href="ERF__FloodGrid_8H.html#ad4a1e02b9b68dbe63f185ffa4f8f1305" title=" " alt="" coords="409,122,571,149"/>
+<area shape="rect" title="Fill component dcomp of an ERF plotfile MultiFab of level lev with the flood field name." alt="" coords="5,188,137,229"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="638,5,821,47"/>
+<area shape="rect" href="ERF__FloodGrid_8H.html#a8f40019eb8866bfaaea6064e0596de99" title=" " alt="" coords="185,170,351,197"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="684,290,775,317"/>
+<area shape="rect" href="ERF__FloodGrid_8H.html#a20fac8d90e24792cad73518a83042f36" title="surface_same_columns: box n of a and box n of b cover the same columns." alt="" coords="189,271,347,298"/>
+<area shape="rect" href="ERF__FloodGrid_8H.html#a38a975ac5ca1be957914ad8d04675de8" title="The flood coupling&#39;s names: erf.flood.&lt;key&gt;, &quot;[FLOOD]&quot;, &quot;flood grid&quot;." alt="" coords="406,119,573,146"/>
+<area shape="rect" href="ERF__SurfaceGrid_8H.html#ad49a862da53967e435484b488bd85a51" title=" " alt="" coords="399,170,580,197"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="638,71,821,98"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#a740704feffd8816138265e4558956a6b" title="&quot;fire grid&quot;" alt="" coords="642,123,817,164"/>
+<area shape="rect" href="ERF__SurfaceGrid_8H.html#a1a1af45068b7eb7f9d2f5fbcc8997b5d" title=" " alt="" coords="641,189,818,215"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#a12874502f9fd283de02478e4670505fb" title="&quot;[FIRE]&quot;" alt="" coords="628,239,831,266"/>
+<area shape="rect" href="ERF__SurfaceGrid_8H.html#aaf6512e94b420553d1640ca8e0f2ea80" title=" " alt="" coords="402,271,577,298"/>
 </map>
 </div>
 
@@ -730,22 +736,28 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classFloodCoupler.html#a778df709289b5d0eeee317bae2d3080b">m_engine</a>-&gt;initialize(erf, lev, <a class="code" href="classFloodCoupler.html#ab9112ce008080566f47724d1de25e56e">m_fg</a>, z_phys_nd_atm);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="ttc" id="aERF__FloodGrid_8cpp_html_ad32f3cbd2c24ab89c6a0135a55236154"><div class="ttname"><a href="ERF__FloodGrid_8cpp.html#ad32f3cbd2c24ab89c6a0135a55236154">create_flood_grid</a></div><div class="ttdeci">FloodGrid create_flood_grid(const BoxArray &amp;ba_atm, const DistributionMapping &amp;dm_atm, const Geometry &amp;geom_atm, int C)</div><div class="ttdef"><b>Definition:</b> ERF_FloodGrid.cpp:7</div></div>
-<div class="ttc" id="aERF__FloodPrerequisites_8cpp_html_a6085ad7864f040a3a9c1a640471726f4"><div class="ttname"><a href="ERF__FloodPrerequisites_8cpp.html#a6085ad7864f040a3a9c1a640471726f4">verify_flood_prerequisites</a></div><div class="ttdeci">void verify_flood_prerequisites(const ERF &amp;erf, int lev)</div><div class="ttdoc">Verify the ERF configuration the flood coupling needs.</div><div class="ttdef"><b>Definition:</b> ERF_FloodPrerequisites.cpp:38</div></div>
+<div class="ttc" id="aERF__FloodGrid_8cpp_html_ad32f3cbd2c24ab89c6a0135a55236154"><div class="ttname"><a href="ERF__FloodGrid_8cpp.html#ad32f3cbd2c24ab89c6a0135a55236154">create_flood_grid</a></div><div class="ttdeci">FloodGrid create_flood_grid(const BoxArray &amp;ba_atm, const DistributionMapping &amp;dm_atm, const Geometry &amp;geom_atm, int C)</div><div class="ttdef"><b>Definition:</b> ERF_FloodGrid.cpp:6</div></div>
+<div class="ttc" id="aERF__FloodPrerequisites_8cpp_html_a6085ad7864f040a3a9c1a640471726f4"><div class="ttname"><a href="ERF__FloodPrerequisites_8cpp.html#a6085ad7864f040a3a9c1a640471726f4">verify_flood_prerequisites</a></div><div class="ttdeci">void verify_flood_prerequisites(const ERF &amp;erf, int lev)</div><div class="ttdoc">Verify the ERF configuration the flood coupling needs.</div><div class="ttdef"><b>Definition:</b> ERF_FloodPrerequisites.cpp:21</div></div>
 <div class="ttc" id="aclassFloodCoupler_html_a504eaad1a66631d8c0282b4cedc86842"><div class="ttname"><a href="classFloodCoupler.html#a504eaad1a66631d8c0282b4cedc86842">FloodCoupler::set_flood_grid</a></div><div class="ttdeci">void set_flood_grid(int lev, const FloodGrid &amp;fg, const amrex::BoxArray &amp;ba_atm, const amrex::DistributionMapping &amp;dm_atm, const amrex::Geometry &amp;geom_atm)</div><div class="ttdoc">Lay the coupling out on a flood grid: what initialize() does after its start-up checks and before it ...</div><div class="ttdef"><b>Definition:</b> ERF_FloodCoupler.cpp:87</div></div>
 <div class="ttc" id="anamespaceMORRInd_html_a5203b29054dbc5558f9dcd22c37793a3af93b8f7de8e707e3ec38715ac1c499ef"><div class="ttname"><a href="namespaceMORRInd.html#a5203b29054dbc5558f9dcd22c37793a3af93b8f7de8e707e3ec38715ac1c499ef">MORRInd::fg</a></div><div class="ttdeci">@ fg</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:111</div></div>
 <div class="ttc" id="astructFloodCouplingParams_html_a6df7e87e13d8a8a7bb12f715143d93e7"><div class="ttname"><a href="structFloodCouplingParams.html#a6df7e87e13d8a8a7bb12f715143d93e7">FloodCouplingParams::grid_ratio</a></div><div class="ttdeci">int grid_ratio</div><div class="ttdoc">erf.flood.grid_ratio: flood cells per atmospheric cell in x and y</div><div class="ttdef"><b>Definition:</b> ERF_FloodCouplingParams.H:27</div></div>
-<div class="ttc" id="astructFloodGrid_html"><div class="ttname"><a href="structFloodGrid.html">FloodGrid</a></div><div class="ttdoc">2D horizontal flood grid</div><div class="ttdef"><b>Definition:</b> ERF_FloodGrid.H:32</div></div>
+<div class="ttc" id="astructFloodGrid_html"><div class="ttname"><a href="structFloodGrid.html">FloodGrid</a></div><div class="ttdoc">2D horizontal flood grid</div><div class="ttdef"><b>Definition:</b> ERF_FloodGrid.H:42</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFloodCoupler_a1d594ae03b036a4dca7278db095e3b5e_cgraph.png" border="0" usemap="#aclassFloodCoupler_a1d594ae03b036a4dca7278db095e3b5e_cgraph" alt=""/></div>
 <map name="aclassFloodCoupler_a1d594ae03b036a4dca7278db095e3b5e_cgraph" id="aclassFloodCoupler_a1d594ae03b036a4dca7278db095e3b5e_cgraph">
-<area shape="rect" title="Check the configuration, build the flood grid and set the engine up." alt="" coords="5,63,177,90"/>
-<area shape="rect" href="ERF__FloodGrid_8cpp.html#ad32f3cbd2c24ab89c6a0135a55236154" title=" " alt="" coords="261,13,396,39"/>
-<area shape="rect" href="classFloodCoupler.html#a504eaad1a66631d8c0282b4cedc86842" title="Lay the coupling out on a flood grid: what initialize() does after its start&#45;up checks and before it ..." alt="" coords="225,63,432,90"/>
-<area shape="rect" href="ERF__FloodPrerequisites_8cpp.html#a6085ad7864f040a3a9c1a640471726f4" title="Verify the ERF configuration the flood coupling needs." alt="" coords="233,114,424,141"/>
-<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="480,5,663,47"/>
+<area shape="rect" title="Check the configuration, build the flood grid and set the engine up." alt="" coords="5,154,177,181"/>
+<area shape="rect" href="ERF__FloodGrid_8cpp.html#ad32f3cbd2c24ab89c6a0135a55236154" title=" " alt="" coords="261,103,396,130"/>
+<area shape="rect" href="classFloodCoupler.html#a504eaad1a66631d8c0282b4cedc86842" title="Lay the coupling out on a flood grid: what initialize() does after its start&#45;up checks and before it ..." alt="" coords="225,205,432,231"/>
+<area shape="rect" href="ERF__FloodPrerequisites_8cpp.html#a6085ad7864f040a3a9c1a640471726f4" title="Verify the ERF configuration the flood coupling needs." alt="" coords="233,154,424,181"/>
+<area shape="rect" href="ERF__SurfaceGrid_8cpp.html#a855ee05bbe6e47ce25adcea0958349f1" title=" " alt="" coords="488,78,639,105"/>
+<area shape="rect" href="ERF__FloodGrid_8H.html#a38a975ac5ca1be957914ad8d04675de8" title="The flood coupling&#39;s names: erf.flood.&lt;key&gt;, &quot;[FLOOD]&quot;, &quot;flood grid&quot;." alt="" coords="480,129,647,155"/>
+<area shape="rect" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a0ff1c019188789cc0c35749d6f523b86" title=" " alt="" coords="706,5,889,47"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#a740704feffd8816138265e4558956a6b" title="&quot;fire grid&quot;" alt="" coords="710,71,885,112"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#ae099dc4c8a95ca126afc47681bf89136" title="&quot;erf.fire.&quot; followed by key" alt="" coords="695,137,900,163"/>
+<area shape="rect" href="structSurfaceCouplingNames.html#a12874502f9fd283de02478e4670505fb" title="&quot;[FIRE]&quot;" alt="" coords="696,187,899,214"/>
+<area shape="rect" href="ERF__SurfacePrerequisites_8cpp.html#ab7fdcce317233360606de3f3e4af8efe" title="The checks on the level the surface grid refines, each naming the inputs to change." alt="" coords="490,180,637,221"/>
 </map>
 </div>
 
@@ -1121,7 +1133,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">if</span> (!amrex::UtilCreateDirectory(dir, 0755)) { amrex::CreateDirectoryFailed(dir); }</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keyword">const</span> Box region = <a class="code" href="classFloodCoupler.html#a44b6de4000649f12d6ee0a07ac24580a">m_ba_cols</a>.minimalBox();</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        std::ofstream os(dir + <span class="stringliteral">&quot;/FloodGrid&quot;</span>);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        os &lt;&lt; <a class="code" href="classFloodCoupler.html#ac3419e4b9ad36a86e143850b599e6468">m_lev</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classFloodCoupler.html#ab9112ce008080566f47724d1de25e56e">m_fg</a>.<a class="code" href="structFloodGrid.html#abd23427159d8a28e898381ce01b278c9">C</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        os &lt;&lt; <a class="code" href="classFloodCoupler.html#ac3419e4b9ad36a86e143850b599e6468">m_lev</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classFloodCoupler.html#ab9112ce008080566f47724d1de25e56e">m_fg</a>.<a class="code" href="structSurfaceGrid.html#a8b19ee87542c02aa941e2b364bd30b06">C</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;           &lt;&lt; region.smallEnd(0) &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; region.smallEnd(1) &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;           &lt;&lt; region.bigEnd(0)   &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; region.bigEnd(1)   &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">if</span> (!os) { amrex::FileOpenFailed(dir + <span class="stringliteral">&quot;/FloodGrid&quot;</span>); }</div>

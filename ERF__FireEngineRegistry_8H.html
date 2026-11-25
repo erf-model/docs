@@ -106,22 +106,24 @@ Include dependency graph for ERF_FireEngineRegistry.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__FireEngineRegistry_8H__incl.png" border="0" usemap="#aSource_2FireCoupling_2ERF__FireEngineRegistry_8H" alt=""/></div>
 <map name="aSource_2FireCoupling_2ERF__FireEngineRegistry_8H" id="aSource_2FireCoupling_2ERF__FireEngineRegistry_8H">
-<area shape="rect" title="The fire engines compiled into this executable." alt="" coords="337,5,529,47"/>
-<area shape="rect" href="ERF__FireCouplingParams_8H.html" title="The inputs of the atmosphere side of the fire coupling." alt="" coords="41,95,239,121"/>
-<area shape="rect" title=" " alt="" coords="5,169,64,196"/>
-<area shape="rect" href="ERF__FireEngine_8H.html" title="The interface between the fire coupling and a fire engine." alt="" coords="313,95,449,121"/>
-<area shape="rect" title=" " alt="" coords="235,169,317,196"/>
-<area shape="rect" title=" " alt="" coords="535,169,598,196"/>
-<area shape="rect" title=" " alt="" coords="525,95,611,121"/>
-<area shape="rect" title=" " alt="" coords="636,95,713,121"/>
-<area shape="rect" title=" " alt="" coords="738,95,830,121"/>
-<area shape="rect" title=" " alt="" coords="88,169,211,196"/>
-<area shape="rect" title=" " alt="" coords="135,244,281,271"/>
-<area shape="rect" href="ERF__FireGrid_8H.html" title="Fire grid data structure and construction." alt="" coords="393,169,511,196"/>
-<area shape="rect" title=" " alt="" coords="461,244,609,271"/>
-<area shape="rect" title=" " alt="" coords="633,244,855,271"/>
-<area shape="rect" title=" " alt="" coords="879,244,1033,271"/>
-<area shape="rect" title=" " alt="" coords="305,244,436,271"/>
+<area shape="rect" title="The fire engines compiled into this executable." alt="" coords="1121,5,1313,47"/>
+<area shape="rect" href="ERF__FireCouplingParams_8H.html" title="The inputs of the atmosphere side of the fire coupling." alt="" coords="1050,95,1247,121"/>
+<area shape="rect" title=" " alt="" coords="1179,393,1238,420"/>
+<area shape="rect" href="ERF__FireEngine_8H.html" title="The interface between the fire coupling and a fire engine." alt="" coords="839,95,975,121"/>
+<area shape="rect" title=" " alt="" coords="386,169,469,196"/>
+<area shape="rect" title=" " alt="" coords="987,169,1049,196"/>
+<area shape="rect" title=" " alt="" coords="1323,95,1409,121"/>
+<area shape="rect" title=" " alt="" coords="1434,95,1511,121"/>
+<area shape="rect" title=" " alt="" coords="1536,95,1628,121"/>
+<area shape="rect" title=" " alt="" coords="1074,169,1197,196"/>
+<area shape="rect" title=" " alt="" coords="5,319,151,345"/>
+<area shape="rect" href="ERF__FireGrid_8H.html" title="Fire grid data structure and construction." alt="" coords="712,169,831,196"/>
+<area shape="rect" href="ERF__SurfaceGrid_8H.html" title="The 2D surface grid of the fire and flood couplings, and the maps between it and the atmospheric colu..." alt="" coords="645,244,789,271"/>
+<area shape="rect" title=" " alt="" coords="752,319,900,345"/>
+<area shape="rect" title=" " alt="" coords="924,319,1147,345"/>
+<area shape="rect" title=" " alt="" coords="175,319,328,345"/>
+<area shape="rect" href="ERF__SurfaceCouplingNames_8H.html" title="The names a surface coupling uses in its inputs and messages." alt="" coords="352,319,572,345"/>
+<area shape="rect" title=" " alt="" coords="597,319,727,345"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -306,13 +308,22 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Names erf.fire.engine accepts, sorted; empty when no engine is compiled in. </p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::vector&lt;std::string&gt; names;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; kv : fire_engine_registry()) { names.push_back(kv.first); }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> names;   <span class="comment">// std::map keeps them sorted</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classSurfaceEngineRegistry.html#a898f16c94c61a31155334c43094cd3c2">FireRegistry::names</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="ttc" id="aclassSurfaceEngineRegistry_html_a898f16c94c61a31155334c43094cd3c2"><div class="ttname"><a href="classSurfaceEngineRegistry.html#a898f16c94c61a31155334c43094cd3c2">SurfaceEngineRegistry::names</a></div><div class="ttdeci">static std::vector&lt; std::string &gt; names()</div><div class="ttdoc">The registered names, sorted.</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceEngineRegistry.H:49</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structFireCouplingParams.html#a5d351d4570ef2aacd3693764a36cc023">FireCouplingParams::read()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__FireEngineRegistry_8H_ab8f34fba42ca48e92ee2e13fe19d2355_cgraph.png" border="0" usemap="#aERF__FireEngineRegistry_8H_ab8f34fba42ca48e92ee2e13fe19d2355_cgraph" alt=""/></div>
+<map name="aERF__FireEngineRegistry_8H_ab8f34fba42ca48e92ee2e13fe19d2355_cgraph" id="aERF__FireEngineRegistry_8H_ab8f34fba42ca48e92ee2e13fe19d2355_cgraph">
+<area shape="rect" title="Names erf.fire.engine accepts, sorted; empty when no engine is compiled in." alt="" coords="5,13,151,39"/>
+<area shape="rect" href="classSurfaceEngineRegistry.html#a898f16c94c61a31155334c43094cd3c2" title="The registered names, sorted." alt="" coords="199,5,368,47"/>
+<area shape="rect" href="classSurfaceEngineRegistry.html#a5e1934b3be68a397a38299749a4bcde5" title=" " alt="" coords="416,13,621,39"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -354,14 +365,22 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>The engine erf.fire.engine names, or nullptr when no engine has that name. </p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; registry = fire_engine_registry();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> it = registry.find(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (it == registry.end()) { <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> it-&gt;second(params);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classSurfaceEngineRegistry.html#a2674ac464b3b14e6b73a0ca5a5f31d31">FireRegistry::make</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>, params);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="ttc" id="aclassSurfaceEngineRegistry_html_a2674ac464b3b14e6b73a0ca5a5f31d31"><div class="ttname"><a href="classSurfaceEngineRegistry.html#a2674ac464b3b14e6b73a0ca5a5f31d31">SurfaceEngineRegistry::make</a></div><div class="ttdeci">static std::unique_ptr&lt; Engine &gt; make(const std::string &amp;name, const Params &amp;params)</div><div class="ttdoc">The engine registered under name, or nullptr.</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceEngineRegistry.H:57</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aac64d1275a51ed1bf2b9eb7e091ff2dd">ERF::initializeFire()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__FireEngineRegistry_8H_a632bf27a3b7548aa5a5063f9f31e07b0_cgraph.png" border="0" usemap="#aERF__FireEngineRegistry_8H_a632bf27a3b7548aa5a5063f9f31e07b0_cgraph" alt=""/></div>
+<map name="aERF__FireEngineRegistry_8H_a632bf27a3b7548aa5a5063f9f31e07b0_cgraph" id="aERF__FireEngineRegistry_8H_a632bf27a3b7548aa5a5063f9f31e07b0_cgraph">
+<area shape="rect" title="The engine erf.fire.engine names, or nullptr when no engine has that name." alt="" coords="5,13,143,39"/>
+<area shape="rect" href="classSurfaceEngineRegistry.html#a2674ac464b3b14e6b73a0ca5a5f31d31" title="The engine registered under name, or nullptr." alt="" coords="191,5,360,47"/>
+<area shape="rect" href="classSurfaceEngineRegistry.html#a5e1934b3be68a397a38299749a4bcde5" title=" " alt="" coords="408,13,613,39"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -403,19 +422,24 @@ Here is the caller graph for this function:</div>
 
 <p>Add an engine to the registry; aborts on a name registered twice. </p>
 <p>Called by ERF_REGISTER_FIRE_ENGINE; returns true so the macro can hold the result in a static variable. </p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">auto</span>&amp; registry = fire_engine_registry();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.empty()) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;[FIRE] ERF_REGISTER_FIRE_ENGINE: an engine registered an empty name&quot;</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span> (registry.count(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>) &gt; 0) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;[FIRE] ERF_REGISTER_FIRE_ENGINE: two engines registered the name \&quot;&quot;</span> + <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                     + <span class="stringliteral">&quot;\&quot;; each engine directory in the build must use its own name&quot;</span>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    registry.emplace(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>, std::move(creator));</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
-</div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classSurfaceEngineRegistry.html#a7885aea65870ece3e95a410cb6e65c95">FireRegistry::add</a>(<a class="code" href="ERF__FireGrid_8H.html#ad94134891b101d4e6fba9e7e343d6013">fire_coupling_names</a>(), <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>, std::move(creator));</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="ttc" id="aERF__FireGrid_8H_html_ad94134891b101d4e6fba9e7e343d6013"><div class="ttname"><a href="ERF__FireGrid_8H.html#ad94134891b101d4e6fba9e7e343d6013">fire_coupling_names</a></div><div class="ttdeci">const SurfaceCouplingNames &amp; fire_coupling_names()</div><div class="ttdoc">The fire coupling's names: erf.fire.&lt;key&gt;, &quot;[FIRE]&quot;, &quot;fire grid&quot;.</div><div class="ttdef"><b>Definition:</b> ERF_FireGrid.H:25</div></div>
+<div class="ttc" id="aclassSurfaceEngineRegistry_html_a7885aea65870ece3e95a410cb6e65c95"><div class="ttname"><a href="classSurfaceEngineRegistry.html#a7885aea65870ece3e95a410cb6e65c95">SurfaceEngineRegistry::add</a></div><div class="ttdeci">static bool add(const SurfaceCouplingNames &amp;names, const std::string &amp;name, Creator creator)</div><div class="ttdoc">Add an engine; aborts on an empty name or a name registered twice.</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceEngineRegistry.H:33</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__FireEngineRegistry_8H_a3255c70a5efc9107da7db675a00ea0c3_cgraph.png" border="0" usemap="#aERF__FireEngineRegistry_8H_a3255c70a5efc9107da7db675a00ea0c3_cgraph" alt=""/></div>
+<map name="aERF__FireEngineRegistry_8H_a3255c70a5efc9107da7db675a00ea0c3_cgraph" id="aERF__FireEngineRegistry_8H_a3255c70a5efc9107da7db675a00ea0c3_cgraph">
+<area shape="rect" title="Add an engine to the registry; aborts on a name registered twice." alt="" coords="5,31,156,57"/>
+<area shape="rect" href="classSurfaceEngineRegistry.html#a7885aea65870ece3e95a410cb6e65c95" title="Add an engine; aborts on an empty name or a name registered twice." alt="" coords="204,5,404,32"/>
+<area shape="rect" href="ERF__FireGrid_8H.html#ad94134891b101d4e6fba9e7e343d6013" title="The fire coupling&#39;s names: erf.fire.&lt;key&gt;, &quot;[FIRE]&quot;, &quot;fire grid&quot;." alt="" coords="226,56,382,83"/>
+<area shape="rect" href="classSurfaceEngineRegistry.html#a5e1934b3be68a397a38299749a4bcde5" title=" " alt="" coords="669,5,875,32"/>
+<area shape="rect" href="classSurfaceEngineRegistry.html#a898f16c94c61a31155334c43094cd3c2" title="The registered names, sorted." alt="" coords="452,27,621,69"/>
+</map>
+</div>
+
 </div>
 </div>
 </div><!-- contents -->

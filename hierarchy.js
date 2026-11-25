@@ -98,7 +98,6 @@ var hierarchy =
     ] ],
     [ "FireFluxes", "structFireFluxes.html", null ],
     [ "FireForcing", "structFireForcing.html", null ],
-    [ "FireGrid", "structFireGrid.html", null ],
     [ "erf_sbm::FixtureInitialStateCanonicality", "structerf__sbm_1_1FixtureInitialStateCanonicality.html", null ],
     [ "erf_sbm::FlattenedConstraintSet", "structerf__sbm_1_1FlattenedConstraintSet.html", null ],
     [ "FloodCoupler", "classFloodCoupler.html", null ],
@@ -107,7 +106,6 @@ var hierarchy =
       [ "FloodEngineTemplate", "classFloodEngineTemplate.html", null ]
     ] ],
     [ "FloodForcing", "structFloodForcing.html", null ],
-    [ "FloodGrid", "structFloodGrid.html", null ],
     [ "TwoStreamRadiation::FluxDiag", "structTwoStreamRadiation_1_1FluxDiag.html", null ],
     [ "noahmp_result_policy::FluxSelection", "structnoahmp__result__policy_1_1FluxSelection.html", null ],
     [ "ForceRestoreHydrology", "classForceRestoreHydrology.html", null ],
@@ -428,7 +426,13 @@ var hierarchy =
     [ "surface_temp_eb", "structsurface__temp__eb.html", null ],
     [ "surface_temp_mod_charnock", "structsurface__temp__mod__charnock.html", null ],
     [ "surface_temp_wave_coupled", "structsurface__temp__wave__coupled.html", null ],
+    [ "SurfaceCouplingNames", "structSurfaceCouplingNames.html", null ],
+    [ "SurfaceEngineRegistry< Engine, Params >", "classSurfaceEngineRegistry.html", null ],
     [ "SurfaceFluxView", "structSurfaceFluxView.html", null ],
+    [ "SurfaceGrid", "structSurfaceGrid.html", [
+      [ "FireGrid", "structFireGrid.html", null ],
+      [ "FloodGrid", "structFloodGrid.html", null ]
+    ] ],
     [ "SurfaceLayer", "classSurfaceLayer.html", null ],
     [ "SurfaceModel", "classSurfaceModel.html", null ],
     [ "SurfacePrecipAccumulationSource", "structSurfacePrecipAccumulationSource.html", null ],
