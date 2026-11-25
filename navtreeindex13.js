@@ -1,5 +1,10 @@
 var NAVTREEINDEX13 =
 {
+"ERF__ObsNudgingSeries_8H.html#a921cb9f3a74d99aa1abdfc9e2ca90927":[3,0,1,19,4,4],
+"ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3":[3,0,1,19,4,3],
+"ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3a207ee46baa1e2caed2e1faddce0adea3":[3,0,1,19,4,3,4],
+"ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3a3394ed80a5d683fc03bf6f03c2996a35":[3,0,1,19,4,3,0],
+"ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3a6c6c58a3a6d1e9287692208eb9b38ac0":[3,0,1,19,4,3,1],
 "ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3a80fe2d3c0e1c500f18541e5e62c9693f":[3,0,1,19,4,3,2],
 "ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3aa01b8f1486ffc86e6ea4423daadc6a01":[3,0,1,19,4,3,3],
 "ERF__ObsNudgingSeries_8H_source.html":[3,0,1,19,4],
@@ -244,10 +249,5 @@ var NAVTREEINDEX13 =
 "ERF__Plotfile2DInterpolator_8cpp.html#a1845e9d99634ff24b32f13bff60c8f46":[3,0,1,13,25,6],
 "ERF__Plotfile2DInterpolator_8cpp.html#a2a05c3070d75c9fca0bfbd5bb09da43d":[3,0,1,13,25,4],
 "ERF__Plotfile2DInterpolator_8cpp.html#a36bcc47b0201e19211031420f68b9dfb":[3,0,1,13,25,8],
-"ERF__Plotfile2DInterpolator_8cpp.html#a4f5874038942bdbd0e3e6bdb7fe03928":[3,0,1,13,25,2],
-"ERF__Plotfile2DInterpolator_8cpp.html#a963e3eb75a2bc7eb8352e57e44d2d2f9":[3,0,1,13,25,3],
-"ERF__Plotfile2DMetadata_8H.html":[3,0,1,13,28],
-"ERF__Plotfile2DMetadata_8H.html#a0700c1c9e33d7a696db78ad1091dac30":[3,0,1,13,28,2],
-"ERF__Plotfile2DMetadata_8H.html#a2356a303d260fa136faf416c864a5d44":[3,0,1,13,28,0],
-"ERF__Plotfile2DMetadata_8H.html#a3c4cde148efe55684e56346cc2bf7d4e":[3,0,1,13,28,1]
+"ERF__Plotfile2DInterpolator_8cpp.html#a4f5874038942bdbd0e3e6bdb7fe03928":[3,0,1,13,25,2]
 };

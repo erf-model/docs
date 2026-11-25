@@ -68,6 +68,7 @@ var hierarchy =
     [ "DirectionSelector< 0 >", "structDirectionSelector_3_010_01_4.html", null ],
     [ "DirectionSelector< 1 >", "structDirectionSelector_3_011_01_4.html", null ],
     [ "DirectionSelector< 2 >", "structDirectionSelector_3_012_01_4.html", null ],
+    [ "ERF::DtEstimateInfo", "structERF_1_1DtEstimateInfo.html", null ],
     [ "DustInit", "structDustInit.html", null ],
     [ "DustModel", "classDustModel.html", null ],
     [ "DustStep", "structDustStep.html", null ],

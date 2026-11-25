@@ -1,5 +1,10 @@
 var NAVTREEINDEX21 =
 {
+"ERF__UpdateRhoThetaSources__GATE_8H_source.html":[3,0,1,23,68],
+"ERF__UpdateRhoThetaSources__RICO_8H.html":[3,0,1,23,69],
+"ERF__UpdateRhoThetaSources__RICO_8H.html#a45f695eec02e78435d0b4bc9226cb9ca":[3,0,1,23,69,3],
+"ERF__UpdateRhoThetaSources__RICO_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb":[3,0,1,23,69,1],
+"ERF__UpdateRhoThetaSources__RICO_8H.html#aa1919e3b581c576a4b81226a9bd41eb7":[3,0,1,23,69,2],
 "ERF__UpdateRhoThetaSources__RICO_8H.html#ae03268e4f689346e184b321ceb2cde33":[3,0,1,23,69,0],
 "ERF__UpdateRhoThetaSources__RICO_8H_source.html":[3,0,1,23,69],
 "ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html":[3,0,1,23,71],
@@ -144,9 +149,9 @@ var NAVTREEINDEX21 =
 "ERF__Utils_8cpp.html#a81e410915ecae464b0108ade86e6ed95":[3,0,1,30,60,2],
 "ERF__Utils_8cpp.html#a91bab1e9e931065947d7c2a565afc0e2":[3,0,1,30,60,3],
 "ERF__Utils_8cpp.html#aabb9d66304d3cc9557d414a8f4d4bf21":[3,0,1,30,60,5],
-"ERF__VariableBetaSSwitch_8H.html":[3,0,1,27,30],
-"ERF__VariableBetaSSwitch_8H.html#a786ebf9844b47fafea35d09f6f288e50":[3,0,1,27,30,0],
-"ERF__VariableBetaSSwitch_8H_source.html":[3,0,1,27,30],
+"ERF__VariableBetaSSwitch_8H.html":[3,0,1,27,31],
+"ERF__VariableBetaSSwitch_8H.html#a786ebf9844b47fafea35d09f6f288e50":[3,0,1,27,31,0],
+"ERF__VariableBetaSSwitch_8H_source.html":[3,0,1,27,31],
 "ERF__VelocityToMomentum_8cpp.html":[3,0,1,30,62],
 "ERF__VelocityToMomentum_8cpp.html#a4cfe9a7638d2010942da4394318216d3":[3,0,1,30,62,0],
 "ERF__VolWgtSum_8cpp.html":[3,0,1,30,63],
@@ -244,10 +249,5 @@ var NAVTREEINDEX21 =
 "ERF__WriteERFBdy_8H.html#a4ba4c9f003c9d6d1e09a4f224081ee53":[3,0,1,13,62,1],
 "ERF__WriteERFBdy_8H_source.html":[3,0,1,13,62],
 "ERF__WriteERFBdy_8cpp.html":[3,0,1,13,61],
-"ERF__WriteERFBdy_8cpp.html#acfa5f40e12f677468e3be4eb5fa82021":[3,0,1,13,61,0],
-"ERF__WriteERFBdy_8cpp.html#adfb3afe2843b15ec78776cd84495424f":[3,0,1,13,61,1],
-"ERF__WriteJobInfo_8cpp.html":[3,0,1,13,63],
-"ERF__WriteScalarProfiles_8cpp.html":[3,0,1,13,64],
-"ERF__WriteSubvolume_8cpp.html":[3,0,1,13,65],
-"ERF__Wstar_8H.html":[3,0,1,30,65]
+"ERF__WriteERFBdy_8cpp.html#acfa5f40e12f677468e3be4eb5fa82021":[3,0,1,13,61,0]
 };

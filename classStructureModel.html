@@ -114,6 +114,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a72a05d794aeccc74ca7bc248c319244e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStructureModel.html#a72a05d794aeccc74ca7bc248c319244e">initialize</a> (const <a class="el" href="structStructureInit.html">StructureInit</a> &amp;init)=0</td></tr>
 <tr class="memdesc:a72a05d794aeccc74ca7bc248c319244e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the model up once the mesh and the initial state exist.  <a href="classStructureModel.html#a72a05d794aeccc74ca7bc248c319244e">More...</a><br /></td></tr>
 <tr class="separator:a72a05d794aeccc74ca7bc248c319244e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61bc3d93e2567eaf0bbbc2fd45af7612"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStructureModel.html#a61bc3d93e2567eaf0bbbc2fd45af7612">fixed_dt_changed</a> (int lev, double fixed_dt)</td></tr>
+<tr class="memdesc:a61bc3d93e2567eaf0bbbc2fd45af7612"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classERF.html">ERF</a> lowered the fixed step after <a class="el" href="classStructureModel.html#a72a05d794aeccc74ca7bc248c319244e" title="Set the model up once the mesh and the initial state exist.">initialize()</a>  <a href="classStructureModel.html#a61bc3d93e2567eaf0bbbc2fd45af7612">More...</a><br /></td></tr>
+<tr class="separator:a61bc3d93e2567eaf0bbbc2fd45af7612"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6ca9733bda52ea0d115b915d3e82309"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStructureModel.html#ae6ca9733bda52ea0d115b915d3e82309">advance</a> (const <a class="el" href="structStructureStep.html">StructureStep</a> &amp;step)=0</td></tr>
 <tr class="memdesc:ae6ca9733bda52ea0d115b915d3e82309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the structures over one step of <a class="el" href="classStructureModel.html#aea3eccca08db1897aa25e06d6b6b8e2d" title="The level the model couples to.">level()</a>  <a href="classStructureModel.html#ae6ca9733bda52ea0d115b915d3e82309">More...</a><br /></td></tr>
 <tr class="separator:ae6ca9733bda52ea0d115b915d3e82309"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -294,10 +297,10 @@ Public Member Functions</h2></td></tr>
 
 <p>Fill the field <a class="el" href="classStructureModel.html#a729c1d505278ce94ed92cff36676764c" title="Fields the ERF plotfile can carry, by name.">plot_var_names()</a> lists as name on level lev. </p>
 <p>One cell-centered component written into dst at component comp, on dst's boxes, with no ghost cells; zero where the model has nothing (for example on levels other than <a class="el" href="classStructureModel.html#aea3eccca08db1897aa25e06d6b6b8e2d" title="The level the model couples to.">level()</a>). </p>
-<div class="fragment"><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    {</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        amrex::ignore_unused(<a class="code" href="classStructureModel.html#ad209caf9b942ffde27b6aa98c1d806f9">name</a>, lev);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        dst.setVal(amrex::Real(0.0), comp, 1, 0);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        amrex::ignore_unused(<a class="code" href="classStructureModel.html#ad209caf9b942ffde27b6aa98c1d806f9">name</a>, lev);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        dst.setVal(amrex::Real(0.0), comp, 1, 0);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
 <div class="ttc" id="aclassStructureModel_html_ad209caf9b942ffde27b6aa98c1d806f9"><div class="ttname"><a href="classStructureModel.html#ad209caf9b942ffde27b6aa98c1d806f9">StructureModel::name</a></div><div class="ttdeci">virtual const char * name() const =0</div><div class="ttdoc">Name of the model, as erf.structures.model selects it.</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -336,7 +339,47 @@ Here is the call graph for this function:</div>
 
 <p>The run has ended normally. </p>
 <p>Called once, on every rank, after the last step, plotfile and checkpoint: the place to flush and close the model's own files or to shut down a solver it drives. Not called when the run aborts. The default does nothing. </p>
-<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a61bc3d93e2567eaf0bbbc2fd45af7612"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61bc3d93e2567eaf0bbbc2fd45af7612">&#9670;&nbsp;</a></span>fixed_dt_changed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void StructureModel::fixed_dt_changed </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>fixed_dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classERF.html">ERF</a> lowered the fixed step after <a class="el" href="classStructureModel.html#a72a05d794aeccc74ca7bc248c319244e" title="Set the model up once the mesh and the initial state exist.">initialize()</a> </p>
+<p>With erf.fixed_dt_cfl_limit, <a class="el" href="classERF.html">ERF</a> lowers the fixed step on all levels when a regrid makes grids on which it exceeds erf.cfl. fixed_dt is the new <a class="el" href="structStructureInit.html#a446a21f6562db583c44facf6bbc797d5">StructureInit::fixed_dt</a> of level lev (the level the model couples to); a step under way finishes at the old step. The default does nothing. </p>
+<div class="fragment"><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;{ amrex::ignore_unused(lev, fixed_dt); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -470,7 +513,7 @@ Here is the caller graph for this function:</div>
 
 <p>Fields the <a class="el" href="classERF.html">ERF</a> plotfile can carry, by name. </p>
 <p>The names the deck may list in erf.plot_vars_*; they start with the model's own prefix (for example "conductor_") so they never collide with an <a class="el" href="classERF.html">ERF</a> variable. <a class="el" href="classERF.html">ERF</a> stops the run on an empty name, a name listed twice, or a name <a class="el" href="classERF.html">ERF</a> or another model already uses. The answer depends on the model's inputs only. The default lists none. </p>
-<div class="fragment"><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;{ <span class="keywordflow">return</span> {}; }</div>
+<div class="fragment"><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;{ <span class="keywordflow">return</span> {}; }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__StructureModelRegistry_8cpp.html#aea0005b12c5d26dd520d00bda65d70a0">check_structure_plot_names()</a>.</p>
 <div class="dynheader">
@@ -539,7 +582,7 @@ Here is the caller graph for this function:</div>
 
 <p>The model restores its state in <a class="el" href="classStructureModel.html#a72a05d794aeccc74ca7bc248c319244e" title="Set the model up once the mesh and the initial state exist.">initialize()</a> on a restart. </p>
 <p>False by default: <a class="el" href="classERF.html">ERF</a> then stops a restart instead of letting the model continue from its initial state. </p>
-<div class="fragment"><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="fragment"><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -567,7 +610,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>The model wants <a class="el" href="structStructureInit.html#a810c15fa6e4755d216c5b8a9d98dd6ee">StructureInit::immersed_terrain_surface</a> (<a class="el" href="classERF.html">ERF</a> builds it only on request). </p>
-<div class="fragment"><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="fragment"><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -597,9 +640,9 @@ Here is the caller graph for this function:</div>
 
 <p>Write the model's state under the checkpoint directory. </p>
 <p>Everything the model carries from one step to the next, under checkpointname/&lt;<a class="el" href="classStructureModel.html#ad209caf9b942ffde27b6aa98c1d806f9" title="Name of the model, as erf.structures.model selects it.">name()</a>&gt;/ (the model creates that directory on the I/O rank). The default writes nothing, and <a class="el" href="classStructureModel.html#a706608b6005821da47db18b4643d54e9" title="The model restores its state in initialize() on a restart.">supports_restart()</a> must then stay false. </p>
-<div class="fragment"><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        amrex::ignore_unused(checkpointname);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        amrex::ignore_unused(checkpointname);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

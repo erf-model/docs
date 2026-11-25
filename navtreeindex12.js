@@ -1,5 +1,10 @@
 var NAVTREEINDEX12 =
 {
+"ERF__MicrophysicsConstants_8H.html#afb7d1700c60728d56ef525934fe6a098":[3,0,1,17,15,41],
+"ERF__MicrophysicsConstants_8H.html#afddfdf9f48fef3929914f786ce79022a":[3,0,1,17,15,3],
+"ERF__MicrophysicsConstants_8H_source.html":[3,0,1,17,15],
+"ERF__MicrophysicsUtils_8H.html":[3,0,1,30,33],
+"ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6":[3,0,1,30,33,17],
 "ERF__MicrophysicsUtils_8H.html#a2e94fb836d3c733ebac8263bfa479ca8":[3,0,1,30,33,3],
 "ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699":[3,0,1,30,33,8],
 "ERF__MicrophysicsUtils_8H.html#a45320981110c862bac93f657781eb79f":[3,0,1,30,33,2],
@@ -32,7 +37,7 @@ var NAVTREEINDEX12 =
 "ERF__MoistUtils_8H.html#aac240ae9b9b33e8d8e61174bcbfd61f0":[3,0,1,30,34,4],
 "ERF__MoistUtils_8H.html#acbb8654f9efd563c60f38460e0e3bdae":[3,0,1,30,34,2],
 "ERF__MoistUtils_8H_source.html":[3,0,1,30,34],
-"ERF__MomentumReflux_8cpp.html":[3,0,1,27,13],
+"ERF__MomentumReflux_8cpp.html":[3,0,1,27,14],
 "ERF__MomentumToVelocity_8cpp.html":[3,0,1,30,35],
 "ERF__MomentumToVelocity_8cpp.html#acb58339e6fba8c5e9ae99573444d3135":[3,0,1,30,35,0],
 "ERF__MorrisonGammaFunction_8H.html":[3,0,1,17,2,9],
@@ -244,10 +249,5 @@ var NAVTREEINDEX12 =
 "ERF__ObsNudgingKernel_8H_source.html":[3,0,1,19,2],
 "ERF__ObsNudgingSeries_8H.html":[3,0,1,19,4],
 "ERF__ObsNudgingSeries_8H.html#a46ac95a5144234706c279778f5cadaa0":[3,0,1,19,4,5],
-"ERF__ObsNudgingSeries_8H.html#a4c7ef4392d7c8c72198d6bad273f4c1e":[3,0,1,19,4,6],
-"ERF__ObsNudgingSeries_8H.html#a921cb9f3a74d99aa1abdfc9e2ca90927":[3,0,1,19,4,4],
-"ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3":[3,0,1,19,4,3],
-"ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3a207ee46baa1e2caed2e1faddce0adea3":[3,0,1,19,4,3,4],
-"ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3a3394ed80a5d683fc03bf6f03c2996a35":[3,0,1,19,4,3,0],
-"ERF__ObsNudgingSeries_8H.html#ae11e547a145f2106806cf961e1bcdcb3a6c6c58a3a6d1e9287692208eb9b38ac0":[3,0,1,19,4,3,1]
+"ERF__ObsNudgingSeries_8H.html#a4c7ef4392d7c8c72198d6bad273f4c1e":[3,0,1,19,4,6]
 };
