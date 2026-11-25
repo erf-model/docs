@@ -1,5 +1,12 @@
 var NAVTREEINDEX57 =
 {
+"structRefinementCriterion.html#a3a663c744bdae23a2786444ebf5b6d88":[2,0,171,0],
+"structRefinementCriterion.html#a3a663c744bdae23a2786444ebf5b6d88a5174d1309f275ba6f275db3af9eb3e18":[2,0,171,0,0],
+"structRefinementCriterion.html#a3a663c744bdae23a2786444ebf5b6d88abc5c5324bda977e3a8ac3fb884d4c048":[2,0,171,0,2],
+"structRefinementCriterion.html#a3a663c744bdae23a2786444ebf5b6d88ace898d62ed9ca7653a01fe0c781e97e9":[2,0,171,0,1],
+"structRefinementCriterion.html#a4bd2219947907bbc3d076dcb3c96e662":[2,0,171,6],
+"structRefinementCriterion.html#a61c5c05e1f07e2f386a87828ce5002bf":[2,0,171,8],
+"structRefinementCriterion.html#a99236fdadae38d576030b867517db7e0":[2,0,171,7],
 "structRefinementCriterion.html#a9af23219fddb0812b79b71ebc2430256":[2,0,171,5],
 "structRefinementCriterion.html#aacd0803c39f2e38eb645eac7aa89a474":[2,0,171,3],
 "structRefinementCriterion.html#aba62e3d5c866017957890af481c990dd":[2,0,171,2],
@@ -242,12 +249,5 @@ var NAVTREEINDEX57 =
 "structShocColumnData.html#a2f07668d1ddf205bc42d1d9154ee2112":[2,0,209,61],
 "structShocColumnData.html#a306c5e03896f4c1c0e56d26b3518fc2a":[2,0,209,45],
 "structShocColumnData.html#a3303135724099955d94c16124ae6e087":[2,0,209,60],
-"structShocColumnData.html#a3a954609570ba3de080d4eab899ddf8a":[2,0,209,58],
-"structShocColumnData.html#a3c410d0cefc4b0028cd93d316845d12f":[2,0,209,33],
-"structShocColumnData.html#a3cd9317196f1fe648c1f00cb0d0a1274":[2,0,209,53],
-"structShocColumnData.html#a3ff60ca9bf142fb71c1e92e74a70e476":[2,0,209,29],
-"structShocColumnData.html#a401443c47a4b5417ca467483e46ef644":[2,0,209,30],
-"structShocColumnData.html#a40f8b829913c9cde4d591f5f8cb07730":[2,0,209,56],
-"structShocColumnData.html#a4da501b0b44e1cf8ec063965f6a58e1f":[2,0,209,65],
-"structShocColumnData.html#a5b6a4bffca3c0253270cd43cecbbcac6":[2,0,209,26]
+"structShocColumnData.html#a3a954609570ba3de080d4eab899ddf8a":[2,0,209,58]
 };

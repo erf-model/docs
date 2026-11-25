@@ -21,7 +21,8 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     [ "ERF_InflowProfile.H", "ERF__InflowProfile_8H.html", "ERF__InflowProfile_8H" ],
     [ "ERF_MOSTAverage.cpp", "ERF__MOSTAverage_8cpp.html", null ],
     [ "ERF_MOSTAverage.H", "ERF__MOSTAverage_8H.html", [
-      [ "MOSTAverage", "classMOSTAverage.html", "classMOSTAverage" ]
+      [ "MOSTAverage", "classMOSTAverage.html", "classMOSTAverage" ],
+      [ "InterpStencilBounds", "structMOSTAverage_1_1InterpStencilBounds.html", "structMOSTAverage_1_1InterpStencilBounds" ]
     ] ],
     [ "ERF_MOSTStress.H", "ERF__MOSTStress_8H.html", "ERF__MOSTStress_8H" ],
     [ "ERF_MOSTUtils.H", "ERF__MOSTUtils_8H.html", "ERF__MOSTUtils_8H" ],

@@ -1,5 +1,6 @@
 var classMOSTAverage =
 [
+    [ "InterpStencilBounds", "structMOSTAverage_1_1InterpStencilBounds.html", "structMOSTAverage_1_1InterpStencilBounds" ],
     [ "MOSTAverage", "classMOSTAverage.html#a1e1c01afbe1138c100aaa526c0bdfc75", null ],
     [ "~MOSTAverage", "classMOSTAverage.html#ac755f71a35f1231c8add20993364832a", null ],
     [ "MOSTAverage", "classMOSTAverage.html#acfc77dc21a0821d4b446f7be289c64d6", null ],
@@ -24,8 +25,9 @@ var classMOSTAverage =
     [ "get_plane_average", "classMOSTAverage.html#a5c69c3bffb485f9fe0e32c6ccf1dfb5f", null ],
     [ "get_zref", "classMOSTAverage.html#a815d3e6377a2356c9859807874066d37", null ],
     [ "in_cell_z", "classMOSTAverage.html#aaf8ba26a674ef204580c6565d8eec1df", null ],
+    [ "interp_stencil_bounds", "classMOSTAverage.html#a6ab74eadc97ae18e0803f9857c8d10c1", null ],
     [ "k_index_below", "classMOSTAverage.html#a215719d573d21b73a4cdbd3a306a35ec", null ],
-    [ "make_MOSTAverage_at_level", "classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db", null ],
+    [ "make_MOSTAverage_at_level", "classMOSTAverage.html#a544ecfa76f4ce6a720917df1e62d3688", null ],
     [ "max_k_read", "classMOSTAverage.html#ac344f26a0cd5a8b073b70545d808782e", null ],
     [ "max_k_read_can_change", "classMOSTAverage.html#a6561564e4ccd9d6a1813af5bdfce80be", null ],
     [ "operator=", "classMOSTAverage.html#a56f533937767a348d7c1dff755989531", null ],
@@ -64,6 +66,7 @@ var classMOSTAverage =
     [ "m_j_indx", "classMOSTAverage.html#acdc75484e6ed5d2fadfb93573b6dded2", null ],
     [ "m_k_in", "classMOSTAverage.html#ad570edb25d41640aa2d52122ae303884", null ],
     [ "m_k_indx", "classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda", null ],
+    [ "m_mapfac", "classMOSTAverage.html#aa03a1baaca051f6276e26ef3f38a1be9", null ],
     [ "m_maxlev", "classMOSTAverage.html#abc66735142b394193e3b6934ea817015", null ],
     [ "m_mesh_type", "classMOSTAverage.html#acadf868a2179acfad54aa6808fee5c60", null ],
     [ "m_navg", "classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6", null ],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX44 =
 {
+"namespaceBaseState.html":[1,0,3],
+"namespaceERF.html":[1,0,8],
 "namespaceERFBCType.html":[1,0,66],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c":[1,0,66,0],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[1,0,66,0,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX44 =
 "namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622a":[1,0,10,26],
 "namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa37c5e33bbeb79e5a25c31162da17ebc4":[1,0,10,26,2],
 "namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa3956c6b08b3dc65198c71b8950938e50":[1,0,10,26,0],
-"namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa79e3b4cefbed88dc49a6781ab0320824":[1,0,10,26,1],
-"namespaceerf__auxiliary.html#a72565fcb8b90b8bb5b86e18a214a1154":[1,0,10,47],
-"namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85":[1,0,10,29]
+"namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa79e3b4cefbed88dc49a6781ab0320824":[1,0,10,26,1]
 };

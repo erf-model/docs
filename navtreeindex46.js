@@ -1,5 +1,7 @@
 var NAVTREEINDEX46 =
 {
+"namespaceerf__detail__SEBTurbulentFlux.html":[1,0,30],
+"namespaceerf__detail__SEBTurbulentFlux.html#a80cf79147648673db55a5c83f4cc9293":[1,0,30,0],
 "namespaceerf__detail__ShocDriver.html":[1,0,31],
 "namespaceerf__detail__ShocDriver.html#a001832192065f824a25551645c70d44b":[1,0,31,5],
 "namespaceerf__detail__ShocDriver.html#a319599affa53c8e3ee6e132805c131d2":[1,0,31,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX46 =
 "namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0c":[1,0,56,51],
 "namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca337b351a16eec0266760deed722bab69":[1,0,56,51,0],
 "namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca3a13ac2c152c8fb33c6ef585a4ceb85b":[1,0,56,51,1],
-"namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca3e26c9dd94428ed4f56d31010ab55df1":[1,0,56,51,5],
-"namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca5f0ec470eaa0c6d07d93ec56d517dc9c":[1,0,56,51,3],
-"namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca8b01c4ced3a5e115cd39425026d627be":[1,0,56,51,4]
+"namespaceerf__sbm.html#a10c9dba6bad5934a5a30e82837833f0ca3e26c9dd94428ed4f56d31010ab55df1":[1,0,56,51,5]
 };

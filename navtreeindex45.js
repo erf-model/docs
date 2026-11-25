@@ -1,5 +1,7 @@
 var NAVTREEINDEX45 =
 {
+"namespaceerf__auxiliary.html#a72565fcb8b90b8bb5b86e18a214a1154":[1,0,10,47],
+"namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85":[1,0,10,29],
 "namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85a3726b0350cccc330f38079b09dfb4f67":[1,0,10,29,0],
 "namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85a7ba201eb5e95abb7b2934e1538de5c88":[1,0,10,29,3],
 "namespaceerf__auxiliary.html#a75ec07616630fd421d869e5e25021e85a8f5c726a79d28111b32b6a4e3bc56dc5":[1,0,10,29,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX45 =
 "namespaceerf__detail__MakeNewLevel.html#a6f3a71654e447136d4e48495860c877b":[1,0,28,1],
 "namespaceerf__detail__MakeNewLevel.html#a7fc1c907ce7e1aa03e69d9a86e679bb8":[1,0,28,2],
 "namespaceerf__detail__PoissonWallDist.html":[1,0,29],
-"namespaceerf__detail__PoissonWallDist.html#a847c863fe70740478b1919a5329ed34f":[1,0,29,0],
-"namespaceerf__detail__SEBTurbulentFlux.html":[1,0,30],
-"namespaceerf__detail__SEBTurbulentFlux.html#a80cf79147648673db55a5c83f4cc9293":[1,0,30,0]
+"namespaceerf__detail__PoissonWallDist.html#a847c863fe70740478b1919a5329ed34f":[1,0,29,0]
 };

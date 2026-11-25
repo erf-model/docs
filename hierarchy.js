@@ -153,6 +153,7 @@ var hierarchy =
     ] ],
     [ "erf_grid_utils::InterpolationStencil", "structerf__grid__utils_1_1InterpolationStencil.html", null ],
     [ "LineSampler::InterpPlan", "structLineSampler_1_1InterpPlan.html", null ],
+    [ "MOSTAverage::InterpStencilBounds", "structMOSTAverage_1_1InterpStencilBounds.html", null ],
     [ "SurfaceModel::InterpTransfer", "structSurfaceModel_1_1InterpTransfer.html", null ],
     [ "erf_noahmp::InvariantPrecipCell", "structerf__noahmp_1_1InvariantPrecipCell.html", null ],
     [ "erf_sbm::InventoryRoundoff", "structerf__sbm_1_1InventoryRoundoff.html", null ],

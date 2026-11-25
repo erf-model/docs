@@ -1,5 +1,12 @@
 var NAVTREEINDEX60 =
 {
+"structSurfaceModel_1_1InterpTransfer.html#abe49504f4575f7f3c7a2443d11cd8ef8":[2,0,253,1,2],
+"structSurfaceModel_1_1RadiationField.html":[2,0,253,2],
+"structSurfaceModel_1_1RadiationField.html#ac348ef2c176b6c0686fc6124580851ba":[2,0,253,2,0],
+"structSurfaceModel_1_1RadiationField.html#ad1786e279986863ca45a3ee9698ee9fe":[2,0,253,2,1],
+"structSurfacePrecipAccumulationSource.html":[2,0,254],
+"structSurfacePrecipAccumulationSource.html#a49dd72622851cd384f0c2759d7dc9e5f":[2,0,254,0],
+"structSurfacePrecipAccumulationSource.html#ac5e954c65185f62925e8eae515672fca":[2,0,254,1],
 "structSurfacePrecipAccumulationSources.html":[2,0,255],
 "structSurfacePrecipAccumulationSources.html#a0b881bd50d3888266ef99223bfe95bc6":[2,0,255,2],
 "structSurfacePrecipAccumulationSources.html#a235ff6fbf1bac13f09f6af7e9888dfa8":[2,0,255,3],
@@ -242,12 +249,5 @@ var NAVTREEINDEX60 =
 "structTwoStreamCanopyView.html#a8be33fb7380e8c1cbcd1bb4ce13d5700":[2,0,265,2],
 "structTwoStreamCanopyView.html#a9b76b0ddf4076b1427e59814231ee66f":[2,0,265,0],
 "structTwoStreamCanopyView.html#afc00258e6561ba08584a3f4740fd5593":[2,0,265,4],
-"structTwoStreamFaceSky.html":[2,0,266],
-"structTwoStreamFaceSky.html#a1f089958127916619854e969e553edfe":[2,0,266,4],
-"structTwoStreamFaceSky.html#a54040a4f15fbd84b7aa7973eeda8dc9d":[2,0,266,0],
-"structTwoStreamFaceSky.html#a9d7d899391b03f00d6fe0b8bf4ac7ce0":[2,0,266,3],
-"structTwoStreamFaceSky.html#aaabf54d196d0bb6bf836746bd6cbe2e6":[2,0,266,2],
-"structTwoStreamFaceSky.html#ad8deac3e96b24a06bb90971cf33010cd":[2,0,266,1],
-"structTwoStreamLayerSW.html":[2,0,267],
-"structTwoStreamLayerSW.html#a0c07a989138e41f09489f9f39424ffef":[2,0,267,3]
+"structTwoStreamFaceSky.html":[2,0,266]
 };
