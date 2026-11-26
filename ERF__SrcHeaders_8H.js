@@ -5,12 +5,12 @@ var ERF__SrcHeaders_8H =
     [ "ApplySpongeZoneBCsForCC", "ERF__SrcHeaders_8H.html#aad9964c24e355093b3930768e4e80b2f", null ],
     [ "ApplySpongeZoneBCsForMom", "ERF__SrcHeaders_8H.html#af3c752479136ad9502f0bae7f6caaaaf", null ],
     [ "ApplySpongeZoneBCsForMom_ReadFromFile", "ERF__SrcHeaders_8H.html#acb54c33a007d2d0e105102983da18eac", null ],
-    [ "compute_gradp", "ERF__SrcHeaders_8H.html#a43c544fdc0bdd13ca5993185c835880e", null ],
+    [ "compute_gradp", "ERF__SrcHeaders_8H.html#ae5aea9f6abfbd72f5463fb22489f34cf", null ],
     [ "compute_gradp_hse", "ERF__SrcHeaders_8H.html#a8d4a546721efe80ba9782254d839afdd", null ],
     [ "compute_gradp_xy", "ERF__SrcHeaders_8H.html#ab99ba4f6e8dc4a8e8850ad2d159cdb6e", null ],
-    [ "compute_gradp_z", "ERF__SrcHeaders_8H.html#a59c38f0cb01f93b72b651193fde35876", null ],
+    [ "compute_gradp_z", "ERF__SrcHeaders_8H.html#a45dd23cc9471296e5427d30793b6995b", null ],
     [ "make_buoyancy", "ERF__SrcHeaders_8H.html#a6338f4278c3585195dc868c848a9a90a", null ],
-    [ "make_gradp_pert", "ERF__SrcHeaders_8H.html#ad8d4d05c343b775c2c991f13d97b71f9", null ],
+    [ "make_gradp_pert", "ERF__SrcHeaders_8H.html#a09552a73866af19d02852df412f4cb97", null ],
     [ "make_mom_sources", "ERF__SrcHeaders_8H.html#aee7e420e3bbe49700b2f048866c05454", null ],
     [ "make_sources", "ERF__SrcHeaders_8H.html#abf461a51a69698f07b9f8951709b0a3f", null ]
 ];

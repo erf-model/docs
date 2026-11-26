@@ -1,5 +1,9 @@
 var NAVTREEINDEX60 =
 {
+"structStructureInit.html#ad391915c2d0b28800518c7508d42a53d":[2,0,236,12],
+"structStructureInit.html#af6fad5b419e04d61ca81f37435c0fc63":[2,0,236,11],
+"structStructureInit.html#af9d29834fefaa5c878ea23aa537bfc37":[2,0,236,1],
+"structStructureStep.html":[2,0,238],
 "structStructureStep.html#a2dcfc9f7ac372d96ef5c7307f94cfe52":[2,0,238,0],
 "structStructureStep.html#a39c6d81d11177013168ce6d9abb6a20f":[2,0,238,5],
 "structStructureStep.html#a65998b686d7981f68b531bee72375e5e":[2,0,238,12],
@@ -245,9 +249,5 @@ var NAVTREEINDEX60 =
 "structTurbulentPerturbation.html#a314aea57f96107a126e87a76e5b6e9fd":[2,0,267,14],
 "structTurbulentPerturbation.html#a330d574ce9996923ede705a7f8a70ab7":[2,0,267,55],
 "structTurbulentPerturbation.html#a358e281dfc5ace007d3c69de99d1cd1c":[2,0,267,30],
-"structTurbulentPerturbation.html#a396b7d45f06d070abbebe2f88b86bfff":[2,0,267,12],
-"structTurbulentPerturbation.html#a3ca892477c3bd47a0b07ffc459cb0e3a":[2,0,267,17],
-"structTurbulentPerturbation.html#a3cc784a9d5955552947417455ff178e3":[2,0,267,29],
-"structTurbulentPerturbation.html#a443b9a9dcfc3d6cf3a26829be7efa2ac":[2,0,267,51],
-"structTurbulentPerturbation.html#a45ed4d0bb56bb6c180a288cce92b0b37":[2,0,267,20]
+"structTurbulentPerturbation.html#a396b7d45f06d070abbebe2f88b86bfff":[2,0,267,12]
 };

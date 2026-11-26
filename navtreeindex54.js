@@ -1,5 +1,9 @@
 var NAVTREEINDEX54 =
 {
+"structERF_1_1DtEstimateInfo.html":[2,0,66,2],
+"structERF_1_1DtEstimateInfo.html#a30a2ea55f30f11e4385e95d4967c2e4f":[2,0,66,2,0],
+"structERF_1_1DtEstimateInfo.html#a3c0701dd50792df53031db19fd997a70":[2,0,66,2,1],
+"structERF_1_1DtEstimateInfo.html#a4fdf4cb05d5a0b35fa78f0a0bbfa041c":[2,0,66,2,2],
 "structERF_1_1DtEstimateInfo.html#ac89c2e42ec81cab0e2b5a21b28dbd864":[2,0,66,2,3],
 "structERF_1_1DtEstimateInfo.html#ad4c1f20b3ca5ccf8a252bf258cc4cfd6":[2,0,66,2,4],
 "structERF_1_1DtEstimateInfo.html#ae5ffef98b5ccc2d6a7a9f16135bfb5c0":[2,0,66,2,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX54 =
 "structInputSoundingData.html#a57c91e9504d0b5857c22d93f2376b29a":[2,0,108,25],
 "structInputSoundingData.html#a5bad60733f17f04a84a66a144d9d9b5e":[2,0,108,23],
 "structInputSoundingData.html#a620e9fa369aabdf74d3dcaf158deee09":[2,0,108,26],
-"structInputSoundingData.html#a69082f3cc1ebb21e4c56a4f159ee3230":[2,0,108,22],
-"structInputSoundingData.html#a80066b762e6d881f62c428da415c162f":[2,0,108,6],
-"structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31":[2,0,108,1],
-"structInputSoundingData.html#a88b37b701b1b26c9c7e29f01cf46999b":[2,0,108,32],
-"structInputSoundingData.html#a89d2902b7ae8d6fcd81fa256bb87add8":[2,0,108,35]
+"structInputSoundingData.html#a69082f3cc1ebb21e4c56a4f159ee3230":[2,0,108,22]
 };

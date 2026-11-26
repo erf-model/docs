@@ -1,5 +1,9 @@
 var NAVTREEINDEX53 =
 {
+"namespaceshoc_1_1constants.html#a4642535dbd44ac0d337fe33b641d17b2":[1,0,113,0,2],
+"namespaceshoc_1_1constants.html#a4ba132855a9c0907d93e45d98bf3710d":[1,0,113,0,3],
+"namespaceshoc_1_1constants.html#a644eab268aa0c13ef2e8dc50045a53f2":[1,0,113,0,4],
+"namespaceshoc_1_1constants.html#a71403ba4360706ac5c4a08e71fa5c0cb":[1,0,113,0,0],
 "namespaceshoc_1_1constants.html#a7f5bd1d5cac1ea248afa4a35c7c97645":[1,0,113,0,5],
 "namespaceshoc_1_1constants.html#a80a94b75e90f4b0c2b05f0cb4f7e2414":[1,0,113,0,1],
 "namespacesurface__diagnostics.html":[1,0,122],
@@ -245,9 +249,5 @@ var NAVTREEINDEX53 =
 "structERF_1_1CFZFaceLayout.html#adc69dfbc498a39f96d34417931234c28":[2,0,66,1,14],
 "structERF_1_1CFZFaceLayout.html#ae3d2e39e63fbae94d6ca31f41c6336fb":[2,0,66,1,5],
 "structERF_1_1CFZFaceLayout.html#ae7cdff03adb35fecbbdab5f8b77c6173":[2,0,66,1,7],
-"structERF_1_1CFZFaceLayout.html#af38ac4bf1798dd4c287626bdfb954804":[2,0,66,1,0],
-"structERF_1_1DtEstimateInfo.html":[2,0,66,2],
-"structERF_1_1DtEstimateInfo.html#a30a2ea55f30f11e4385e95d4967c2e4f":[2,0,66,2,0],
-"structERF_1_1DtEstimateInfo.html#a3c0701dd50792df53031db19fd997a70":[2,0,66,2,1],
-"structERF_1_1DtEstimateInfo.html#a4fdf4cb05d5a0b35fa78f0a0bbfa041c":[2,0,66,2,2]
+"structERF_1_1CFZFaceLayout.html#af38ac4bf1798dd4c287626bdfb954804":[2,0,66,1,0]
 };

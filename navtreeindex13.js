@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"ERF__ObsNudgingKernel_8H.html#ae084b4f0e672d256f5d6d82ecc7b626b":[3,0,1,19,2,1],
 "ERF__ObsNudgingKernel_8H_source.html":[3,0,1,19,2],
 "ERF__ObsNudgingSeries_8H.html":[3,0,1,19,4],
 "ERF__ObsNudgingSeries_8H.html#a46ac95a5144234706c279778f5cadaa0":[3,0,1,19,4,5],
@@ -61,9 +62,9 @@ var NAVTREEINDEX13 =
 "ERF__ParFunctions_8H_source.html":[3,0,1,31,37],
 "ERF__ParticleData_8H.html":[3,0,1,20,0],
 "ERF__ParticleData_8H_source.html":[3,0,1,20,0],
-"ERF__PerturbationWind_8H.html":[3,0,1,12,19],
-"ERF__PerturbationWind_8H.html#a043b585d4a1e117d5b37a720c07ae9a7":[3,0,1,12,19,1],
-"ERF__PerturbationWind_8H_source.html":[3,0,1,12,19],
+"ERF__PerturbationWind_8H.html":[3,0,1,12,20],
+"ERF__PerturbationWind_8H.html#a043b585d4a1e117d5b37a720c07ae9a7":[3,0,1,12,20,1],
+"ERF__PerturbationWind_8H_source.html":[3,0,1,12,20],
 "ERF__PhysBCFunct_8H.html":[3,0,1,2,22],
 "ERF__PhysBCFunct_8H_source.html":[3,0,1,2,22],
 "ERF__PhysBCFunct_8cpp.html":[3,0,1,2,21],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "ERF__Plotfile2DInterpolator_8H.html#adecd0384772a0ed3e1b876fdaea7e395":[3,0,1,13,26,4],
 "ERF__Plotfile2DInterpolator_8H_source.html":[3,0,1,13,26],
 "ERF__Plotfile2DInterpolator_8cpp.html":[3,0,1,13,25],
-"ERF__Plotfile2DInterpolator_8cpp.html#a073895ca9c39f3b44353ce66bf6e53c0":[3,0,1,13,25,7],
-"ERF__Plotfile2DInterpolator_8cpp.html#a183a080bc18451317079b794f07f3cf7":[3,0,1,13,25,5]
+"ERF__Plotfile2DInterpolator_8cpp.html#a073895ca9c39f3b44353ce66bf6e53c0":[3,0,1,13,25,7]
 };
