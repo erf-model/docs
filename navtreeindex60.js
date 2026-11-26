@@ -1,5 +1,7 @@
 var NAVTREEINDEX60 =
 {
+"structStructureInit.html#ac91321c077190b2d99985ba5bef2191d":[2,0,236,14],
+"structStructureInit.html#ad22c4bcf918bbb728a023c183681a33a":[2,0,236,9],
 "structStructureInit.html#ad391915c2d0b28800518c7508d42a53d":[2,0,236,12],
 "structStructureInit.html#af6fad5b419e04d61ca81f37435c0fc63":[2,0,236,11],
 "structStructureInit.html#af9d29834fefaa5c878ea23aa537bfc37":[2,0,236,1],
@@ -66,10 +68,11 @@ var NAVTREEINDEX60 =
 "structSurfacePrecipAccumulationSource.html#a49dd72622851cd384f0c2759d7dc9e5f":[2,0,257,0],
 "structSurfacePrecipAccumulationSource.html#ac5e954c65185f62925e8eae515672fca":[2,0,257,1],
 "structSurfacePrecipAccumulationSources.html":[2,0,258],
+"structSurfacePrecipAccumulationSources.html#a093e02aab316889e1cee62e9e9586846":[2,0,258,3],
 "structSurfacePrecipAccumulationSources.html#a0b881bd50d3888266ef99223bfe95bc6":[2,0,258,2],
-"structSurfacePrecipAccumulationSources.html#a235ff6fbf1bac13f09f6af7e9888dfa8":[2,0,258,3],
+"structSurfacePrecipAccumulationSources.html#a235ff6fbf1bac13f09f6af7e9888dfa8":[2,0,258,4],
 "structSurfacePrecipAccumulationSources.html#a566187077c8f229e2b58bde461910d0f":[2,0,258,1],
-"structSurfacePrecipAccumulationSources.html#a9e1bb53e614e91fcf60aa23e396ac40a":[2,0,258,4],
+"structSurfacePrecipAccumulationSources.html#a9e1bb53e614e91fcf60aa23e396ac40a":[2,0,258,5],
 "structSurfacePrecipAccumulationSources.html#af8d49301963df4c9326ceb6c50215d3e":[2,0,258,0],
 "structTagCondition.html":[2,0,259],
 "structTagCondition.html#a71017e1f34addf156efd6ae833498f7d":[2,0,259,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX60 =
 "structTurbulentPerturbation.html#a23668c124f34cf7e8c43b36a7a16eab3":[2,0,267,44],
 "structTurbulentPerturbation.html#a2ad5d061e85280ed6ddceb571aaffc17":[2,0,267,42],
 "structTurbulentPerturbation.html#a2e4bfae6ab36ee68121e7b022ca41b32":[2,0,267,16],
-"structTurbulentPerturbation.html#a314aea57f96107a126e87a76e5b6e9fd":[2,0,267,14],
-"structTurbulentPerturbation.html#a330d574ce9996923ede705a7f8a70ab7":[2,0,267,55],
-"structTurbulentPerturbation.html#a358e281dfc5ace007d3c69de99d1cd1c":[2,0,267,30],
-"structTurbulentPerturbation.html#a396b7d45f06d070abbebe2f88b86bfff":[2,0,267,12]
+"structTurbulentPerturbation.html#a314aea57f96107a126e87a76e5b6e9fd":[2,0,267,14]
 };

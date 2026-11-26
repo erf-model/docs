@@ -12,6 +12,7 @@ var classFloodCoupler =
     [ "level", "classFloodCoupler.html#a4a15b2f64c7a24c462d8e0ff26d1bb86", null ],
     [ "params", "classFloodCoupler.html#a26eec08ca3899ebe597c87b6e76337b7", null ],
     [ "plot_var_names", "classFloodCoupler.html#a16436ccf880d65b44bb075aa7fd8b94f", null ],
+    [ "precip_ref_name", "classFloodCoupler.html#aa8d256a59631306e079ce9dd24875ed7", null ],
     [ "read_checkpoint", "classFloodCoupler.html#ac5f3d85aec0369db6dbad33496ff9400", null ],
     [ "set_fields_time", "classFloodCoupler.html#aca76b79c896a2940d80baeaa9c5f9f53", null ],
     [ "set_flood_grid", "classFloodCoupler.html#a504eaad1a66631d8c0282b4cedc86842", null ],
@@ -27,5 +28,6 @@ var classFloodCoupler =
     [ "m_lev", "classFloodCoupler.html#ac3419e4b9ad36a86e143850b599e6468", null ],
     [ "m_params", "classFloodCoupler.html#ac0f3d901d2dd20587fe876aa03849716", null ],
     [ "m_plot_var_names", "classFloodCoupler.html#a0d6c2e557f32dbcd15111ef5260565b7", null ],
-    [ "m_precip_prev", "classFloodCoupler.html#ac4a475c0ba802877266fdd57e57292b0", null ]
+    [ "m_precip_prev", "classFloodCoupler.html#ac4a475c0ba802877266fdd57e57292b0", null ],
+    [ "m_precip_rest_frozen", "classFloodCoupler.html#ad89b12f2308a029c79cc3702af50ff8e", null ]
 ];

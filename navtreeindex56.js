@@ -1,5 +1,7 @@
 var NAVTREEINDEX56 =
 {
+"structMaterialPropertiesCore.html#ae18da73944b5e6c4d2c7586581afc2df":[2,0,122,2],
+"structMaterialPropertiesCore.html#ae69eb2fc1cc20dd6df12cfa7aff4061b":[2,0,122,11],
 "structMaterialPropertiesCore.html#aed66c95ff85d807210ef99310a1bda54":[2,0,122,17],
 "structMaterialPropertiesCore.html#af8ef44bfde759566f97c19dac1ea640f":[2,0,122,4],
 "structMicrophysicsThermoState.html":[2,0,125],
@@ -247,7 +249,5 @@ var NAVTREEINDEX56 =
 "structRadChoice.html#aa9a1896f6734f4bc0b959f6585d0b01e":[2,0,165,18],
 "structRadChoice.html#aad6526416e8095fdb64bd6eeb687d7f5":[2,0,165,17],
 "structRadChoice.html#aae2e0933516452b9572479e8a97a1890":[2,0,165,65],
-"structRadChoice.html#aaf7dc851bb7430539e781ca4905e5a66":[2,0,165,35],
-"structRadChoice.html#aaff932f713d4d3de436c63d18f8b7367":[2,0,165,79],
-"structRadChoice.html#ab1ec97d7b209747ada0cc86b045f4e30":[2,0,165,1]
+"structRadChoice.html#aaf7dc851bb7430539e781ca4905e5a66":[2,0,165,35]
 };

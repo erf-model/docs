@@ -1,5 +1,7 @@
 var NAVTREEINDEX47 =
 {
+"namespaceerf__prob__heights.html#acd092bdf1a33662ddd2409b4f5f2f033":[1,0,52,3],
+"namespaceerf__prob__heights.html#afb3f86649e1934eb886d8c477df3d3be":[1,0,52,2],
 "namespaceerf__problem__dispatch.html":[1,0,53],
 "namespaceerf__problem__dispatch.html#a084bccc2b3a5b2dacd15f6ac65355034":[1,0,53,1],
 "namespaceerf__problem__dispatch.html#a96a71506ff56c48e90646db1761713f7":[1,0,53,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX47 =
 "namespaceerf__sbm_1_1remap__detail.html#a684b16d29f85402b6f14dfd56ba5abe3":[1,0,56,3,19],
 "namespaceerf__sbm_1_1remap__detail.html#a7cd188a8adce8a9bf84747cd9179cb17":[1,0,56,3,5],
 "namespaceerf__sbm_1_1remap__detail.html#a7d48ce6144947d257e83430e76f3274f":[1,0,56,3,14],
-"namespaceerf__sbm_1_1remap__detail.html#a935b712c95fbd88fd8818b85ee64a810":[1,0,56,3,16],
-"namespaceerf__sbm_1_1remap__detail.html#a95f1c1573e5a95e6703e89e6496c5145":[1,0,56,3,18],
-"namespaceerf__sbm_1_1remap__detail.html#aac78cd61cfa78470bb02e16db3d1252e":[1,0,56,3,6]
+"namespaceerf__sbm_1_1remap__detail.html#a935b712c95fbd88fd8818b85ee64a810":[1,0,56,3,16]
 };

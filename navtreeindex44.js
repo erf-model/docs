@@ -1,5 +1,7 @@
 var NAVTREEINDEX44 =
 {
+"globals_vars_k.html":[3,1,2,10],
+"globals_vars_l.html":[3,1,2,11],
 "globals_vars_m.html":[3,1,2,12],
 "globals_vars_n.html":[3,1,2,13],
 "globals_vars_o.html":[3,1,2,14],
@@ -247,7 +249,5 @@ var NAVTREEINDEX44 =
 "namespaceerf__actuator.html#a705e65e6d4fdb82c6f5ceb17f0a8691f":[1,0,9,41],
 "namespaceerf__actuator.html#a726bd7006144992ff12e8347bcc5e4e9":[1,0,9,50],
 "namespaceerf__actuator.html#a7672f719379c69578ef7ab3bc552cd72":[1,0,9,13],
-"namespaceerf__actuator.html#a76767a737e0354b940c61d49fcbc2cec":[1,0,9,52],
-"namespaceerf__actuator.html#a7e799084297822e366f419528da6ca16":[1,0,9,48],
-"namespaceerf__actuator.html#a84267661d8c7ae19c76c4fd42b1daf0c":[1,0,9,44]
+"namespaceerf__actuator.html#a76767a737e0354b940c61d49fcbc2cec":[1,0,9,52]
 };
