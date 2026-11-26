@@ -3758,26 +3758,26 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01985"></a><span class="lineno"> 1985</span>&#160;{</div>
-<div class="line"><a name="l01986"></a><span class="lineno"> 1986</span>&#160;    SBMStageMixingInputs inputs;</div>
-<div class="line"><a name="l01987"></a><span class="lineno"> 1987</span>&#160;    <span class="keywordflow">if</span> (transport.particle_mixing().policy == ParticleMixingPolicy::HostPassiveScalar) {</div>
-<div class="line"><a name="l01988"></a><span class="lineno"> 1988</span>&#160;        inputs.eddy_diffusivity = eddy_diffusivity;</div>
-<div class="line"><a name="l01989"></a><span class="lineno"> 1989</span>&#160;    }</div>
-<div class="line"><a name="l01990"></a><span class="lineno"> 1990</span>&#160;    <span class="keyword">auto</span>&amp; metrics = inputs.metrics;</div>
-<div class="line"><a name="l01991"></a><span class="lineno"> 1991</span>&#160;    metrics.mesh = transport.mixing_mesh();</div>
-<div class="line"><a name="l01992"></a><span class="lineno"> 1992</span>&#160;    metrics.mf_ux = mapfac[<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85baa4b935f173fee2d487101e302a5cfe18">MapFacType::u_x</a>].get();</div>
-<div class="line"><a name="l01993"></a><span class="lineno"> 1993</span>&#160;    metrics.mf_uy = mapfac[<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba784971ba75d56c0d71c4bc08c5ddc1f3">MapFacType::u_y</a>].get();</div>
-<div class="line"><a name="l01994"></a><span class="lineno"> 1994</span>&#160;    metrics.mf_vx = mapfac[<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba21e22c79b875be81696b36a623690388">MapFacType::v_x</a>].get();</div>
-<div class="line"><a name="l01995"></a><span class="lineno"> 1995</span>&#160;    metrics.mf_vy = mapfac[<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba90990e92021688dbfd1cec52b03fd182">MapFacType::v_y</a>].get();</div>
-<div class="line"><a name="l01996"></a><span class="lineno"> 1996</span>&#160;    metrics.mf_mx = mapfac[<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>].get();</div>
-<div class="line"><a name="l01997"></a><span class="lineno"> 1997</span>&#160;    metrics.mf_my = mapfac[<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">MapFacType::m_y</a>].get();</div>
-<div class="line"><a name="l01998"></a><span class="lineno"> 1998</span>&#160;    <span class="keywordflow">if</span> (metrics.mesh == <a class="code" href="namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575eca21cdea5fa8b087a59d028dcac881742e">erf_auxiliary::DiffusionMesh::StretchedDz</a>) {</div>
-<div class="line"><a name="l01999"></a><span class="lineno"> 1999</span>&#160;        metrics.ax = ax;</div>
-<div class="line"><a name="l02000"></a><span class="lineno"> 2000</span>&#160;        metrics.ay = ay;</div>
-<div class="line"><a name="l02001"></a><span class="lineno"> 2001</span>&#160;        metrics.stretched_dz = stretched_dz;</div>
-<div class="line"><a name="l02002"></a><span class="lineno"> 2002</span>&#160;    }</div>
-<div class="line"><a name="l02003"></a><span class="lineno"> 2003</span>&#160;    <span class="keywordflow">return</span> inputs;</div>
-<div class="line"><a name="l02004"></a><span class="lineno"> 2004</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01986"></a><span class="lineno"> 1986</span>&#160;{</div>
+<div class="line"><a name="l01987"></a><span class="lineno"> 1987</span>&#160;    SBMStageMixingInputs inputs;</div>
+<div class="line"><a name="l01988"></a><span class="lineno"> 1988</span>&#160;    <span class="keywordflow">if</span> (transport.particle_mixing().policy == ParticleMixingPolicy::HostPassiveScalar) {</div>
+<div class="line"><a name="l01989"></a><span class="lineno"> 1989</span>&#160;        inputs.eddy_diffusivity = eddy_diffusivity;</div>
+<div class="line"><a name="l01990"></a><span class="lineno"> 1990</span>&#160;    }</div>
+<div class="line"><a name="l01991"></a><span class="lineno"> 1991</span>&#160;    <span class="keyword">auto</span>&amp; metrics = inputs.metrics;</div>
+<div class="line"><a name="l01992"></a><span class="lineno"> 1992</span>&#160;    metrics.mesh = transport.mixing_mesh();</div>
+<div class="line"><a name="l01993"></a><span class="lineno"> 1993</span>&#160;    metrics.mf_ux = mapfac[<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85baa4b935f173fee2d487101e302a5cfe18">MapFacType::u_x</a>].get();</div>
+<div class="line"><a name="l01994"></a><span class="lineno"> 1994</span>&#160;    metrics.mf_uy = mapfac[<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba784971ba75d56c0d71c4bc08c5ddc1f3">MapFacType::u_y</a>].get();</div>
+<div class="line"><a name="l01995"></a><span class="lineno"> 1995</span>&#160;    metrics.mf_vx = mapfac[<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba21e22c79b875be81696b36a623690388">MapFacType::v_x</a>].get();</div>
+<div class="line"><a name="l01996"></a><span class="lineno"> 1996</span>&#160;    metrics.mf_vy = mapfac[<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba90990e92021688dbfd1cec52b03fd182">MapFacType::v_y</a>].get();</div>
+<div class="line"><a name="l01997"></a><span class="lineno"> 1997</span>&#160;    metrics.mf_mx = mapfac[<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>].get();</div>
+<div class="line"><a name="l01998"></a><span class="lineno"> 1998</span>&#160;    metrics.mf_my = mapfac[<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">MapFacType::m_y</a>].get();</div>
+<div class="line"><a name="l01999"></a><span class="lineno"> 1999</span>&#160;    <span class="keywordflow">if</span> (metrics.mesh == <a class="code" href="namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575eca21cdea5fa8b087a59d028dcac881742e">erf_auxiliary::DiffusionMesh::StretchedDz</a>) {</div>
+<div class="line"><a name="l02000"></a><span class="lineno"> 2000</span>&#160;        metrics.ax = ax;</div>
+<div class="line"><a name="l02001"></a><span class="lineno"> 2001</span>&#160;        metrics.ay = ay;</div>
+<div class="line"><a name="l02002"></a><span class="lineno"> 2002</span>&#160;        metrics.stretched_dz = stretched_dz;</div>
+<div class="line"><a name="l02003"></a><span class="lineno"> 2003</span>&#160;    }</div>
+<div class="line"><a name="l02004"></a><span class="lineno"> 2004</span>&#160;    <span class="keywordflow">return</span> inputs;</div>
+<div class="line"><a name="l02005"></a><span class="lineno"> 2005</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85ba21e22c79b875be81696b36a623690388"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba21e22c79b875be81696b36a623690388">v_x</a></div><div class="ttdeci">@ v_x</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:40</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85ba784971ba75d56c0d71c4bc08c5ddc1f3"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba784971ba75d56c0d71c4bc08c5ddc1f3">u_y</a></div><div class="ttdeci">@ u_y</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:41</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85ba90990e92021688dbfd1cec52b03fd182"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba90990e92021688dbfd1cec52b03fd182">v_y</a></div><div class="ttdeci">@ v_y</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:41</div></div>

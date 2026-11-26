@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['dtype_20283',['DType',['../structNDArray.html#a96033b69f69ea0ae537a24288715752d',1,'NDArray']]],
-  ['dustmodelcreator_20284',['DustModelCreator',['../ERF__DustModelRegistry_8H.html#a637b2bcb906e4475b14bb329db438209',1,'ERF_DustModelRegistry.H']]]
+  ['dtype_20285',['DType',['../structNDArray.html#a96033b69f69ea0ae537a24288715752d',1,'NDArray']]],
+  ['dustmodelcreator_20286',['DustModelCreator',['../ERF__DustModelRegistry_8H.html#a637b2bcb906e4475b14bb329db438209',1,'ERF_DustModelRegistry.H']]]
 ];

@@ -1,5 +1,8 @@
 var NAVTREEINDEX18 =
 {
+"ERF__ShocGpuUtils_8H_source.html":[3,0,1,21,0,9],
+"ERF__ShocImplicit_8H.html":[3,0,1,21,0,11],
+"ERF__ShocImplicit_8H_source.html":[3,0,1,21,0,11],
 "ERF__ShocImplicit_8cpp.html":[3,0,1,21,0,10],
 "ERF__ShocImplicit_8cpp.html#a136de4aed4f4df8e4f9ca33f6618d792":[3,0,1,21,0,10,3],
 "ERF__ShocImplicit_8cpp.html#a40eba52f230796ab438445979ce9cebd":[3,0,1,21,0,10,9],
@@ -246,8 +249,5 @@ var NAVTREEINDEX18 =
 "ERF__SuperDropletPCMassChange_8H_source.html":[3,0,1,20,13],
 "ERF__SuperDropletPCMassChange_8cpp.html":[3,0,1,20,12],
 "ERF__SuperDropletPCProcess_8H.html":[3,0,1,20,14],
-"ERF__SuperDropletPCProcess_8H_source.html":[3,0,1,20,14],
-"ERF__SuperDropletPCRecycle_8cpp.html":[3,0,1,20,15],
-"ERF__SuperDropletPCRiming_8H.html":[3,0,1,20,16],
-"ERF__SuperDropletPCRiming_8H_source.html":[3,0,1,20,16]
+"ERF__SuperDropletPCProcess_8H_source.html":[3,0,1,20,14]
 };

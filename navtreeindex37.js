@@ -1,5 +1,8 @@
 var NAVTREEINDEX37 =
 {
+"classShocEnergyFixer.html#ad2a2a58d9b8eeb3ca179176bea017503":[2,0,214,2],
+"classShocImplicit.html":[2,0,215],
+"classShocImplicit.html#a01432e72b65e3841dbaacdda27310d93":[2,0,215,5],
 "classShocImplicit.html#a0f6aaf1f0d7ce83b6643cc20998a80b8":[2,0,215,4],
 "classShocImplicit.html#a3622f3c77837f0729c7fcf81610ea131":[2,0,215,2],
 "classShocImplicit.html#a882877f70e2fa830b43bc03ce113a509":[2,0,215,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX37 =
 "classSurfaceLayer.html#a90e07b6e5e45fc5a33af4ddd572a2ea2":[2,0,255,144],
 "classSurfaceLayer.html#a9153bbd5e6d7527eef0c0c81a51800ca":[2,0,255,113],
 "classSurfaceLayer.html#a922e34bdb9f772969ed4e7d24b7e7d3d":[2,0,255,93],
-"classSurfaceLayer.html#a9525ef430eb742c528545d4bee7aa39c":[2,0,255,179],
-"classSurfaceLayer.html#a963c8f1509ce865ef53f366e43a74929":[2,0,255,124],
-"classSurfaceLayer.html#a96d8f94b856d55bc4c1d708b82376727":[2,0,255,15],
-"classSurfaceLayer.html#a96e58a052304c87d8c767bda9ed8da33":[2,0,255,48]
+"classSurfaceLayer.html#a9525ef430eb742c528545d4bee7aa39c":[2,0,255,179]
 };

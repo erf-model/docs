@@ -1,5 +1,8 @@
 var NAVTREEINDEX57 =
 {
+"structRadChoice.html#ac446626da82fdf2b03c8e21086950d74":[2,0,165,73],
+"structRadChoice.html#ac559d878296dddc2b0568e16152bd76c":[2,0,165,38],
+"structRadChoice.html#ac93956045c1a016d4fcc4cfb9a1570e6":[2,0,165,105],
 "structRadChoice.html#acad2db1dad0c0d259a88eeb649e69ca8":[2,0,165,6],
 "structRadChoice.html#acdfeb97aaea08e82f62d8700927d57b4":[2,0,165,61],
 "structRadChoice.html#acf7865c49b4b555b196f9f16896123eb":[2,0,165,87],
@@ -246,8 +249,5 @@ var NAVTREEINDEX57 =
 "structScalarDiffusionPrescribedFluxes.html#a2196e2d28547651ac4160d0b7bd6dcdd":[2,0,196,10],
 "structScalarDiffusionPrescribedFluxes.html#a324b152f5df6ffd6312c140204e9b85d":[2,0,196,2],
 "structScalarDiffusionPrescribedFluxes.html#a38a572542552e827547f0255f73d1972":[2,0,196,5],
-"structScalarDiffusionPrescribedFluxes.html#a491a944a84d42f54a081b8ad0f4a7033":[2,0,196,9],
-"structScalarDiffusionPrescribedFluxes.html#a852b8a26003c7a7acb04dcc066296107":[2,0,196,1],
-"structScalarDiffusionPrescribedFluxes.html#abf614b86abe46f5c42b3d9f566d6e65a":[2,0,196,8],
-"structScalarDiffusionPrescribedFluxes.html#ac75814031482e9f320f046f6400215fc":[2,0,196,0]
+"structScalarDiffusionPrescribedFluxes.html#a491a944a84d42f54a081b8ad0f4a7033":[2,0,196,9]
 };
