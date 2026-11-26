@@ -330,7 +330,7 @@ var classERF =
     [ "setSpongeRefFromSounding", "classERF.html#ae27a45d751287a887769df20dea60633", null ],
     [ "setSubVolVariables", "classERF.html#a87d5810a51d3eee73be510665803e68c", null ],
     [ "solve_with_flat_mlmg", "classERF.html#a473d631ab23e90db6dff51bdb213e55b", null ],
-    [ "solve_with_gmres", "classERF.html#a3b68b5272f89529e97680b891314e084", null ],
+    [ "solve_with_gmres", "classERF.html#a0fa4d8cd6dc95f87549209a923e65238", null ],
     [ "solve_with_if_gmres", "classERF.html#aedddd8ea21373542335a173ca3f7da3d", null ],
     [ "solve_with_if_mlmg", "classERF.html#a020a82fbc066faa19ff88dbe436f1fe7", null ],
     [ "solve_with_terrain_mlmg", "classERF.html#ad5433a58f2b8f0649f79588207205ee8", null ],
