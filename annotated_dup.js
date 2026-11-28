@@ -100,6 +100,7 @@ var annotated_dup =
     [ "erf_sbm", "namespaceerf__sbm.html", [
       [ "erf_detail_SBMTransport", "namespaceerf__sbm_1_1erf__detail__SBMTransport.html", [
         [ "DeviceGroupInfo", "structerf__sbm_1_1erf__detail__SBMTransport_1_1DeviceGroupInfo.html", "structerf__sbm_1_1erf__detail__SBMTransport_1_1DeviceGroupInfo" ],
+        [ "MatchingGroup", "structerf__sbm_1_1erf__detail__SBMTransport_1_1MatchingGroup.html", "structerf__sbm_1_1erf__detail__SBMTransport_1_1MatchingGroup" ],
         [ "LocalPropertySupport", "structerf__sbm_1_1erf__detail__SBMTransport_1_1LocalPropertySupport.html", "structerf__sbm_1_1erf__detail__SBMTransport_1_1LocalPropertySupport" ]
       ] ],
       [ "remap_detail", "namespaceerf__sbm_1_1remap__detail.html", [
@@ -147,6 +148,7 @@ var annotated_dup =
       [ "SBMAMRStageGhostProbe", "structerf__sbm_1_1SBMAMRStageGhostProbe.html", "structerf__sbm_1_1SBMAMRStageGhostProbe" ],
       [ "SBMAMRStageParent", "structerf__sbm_1_1SBMAMRStageParent.html", "structerf__sbm_1_1SBMAMRStageParent" ],
       [ "SBMStageMixingInputs", "structerf__sbm_1_1SBMStageMixingInputs.html", "structerf__sbm_1_1SBMStageMixingInputs" ],
+      [ "TerrainMixingQualification", "structerf__sbm_1_1TerrainMixingQualification.html", "structerf__sbm_1_1TerrainMixingQualification" ],
       [ "SBMTransport", "classerf__sbm_1_1SBMTransport.html", "classerf__sbm_1_1SBMTransport" ],
       [ "SpectralGridSpec", "structerf__sbm_1_1SpectralGridSpec.html", "structerf__sbm_1_1SpectralGridSpec" ],
       [ "GridValidation", "structerf__sbm_1_1GridValidation.html", "structerf__sbm_1_1GridValidation" ],

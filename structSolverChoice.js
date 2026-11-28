@@ -197,6 +197,7 @@ var structSolverChoice =
     [ "sbm_particle_mixing", "structSolverChoice.html#a37e8ab2cdba971eca0fc6de32cc931a5", null ],
     [ "sbm_particle_mixing_kh", "structSolverChoice.html#a918dd6425f59cce839a9b4d1608c8c14", null ],
     [ "sbm_particle_mixing_kv", "structSolverChoice.html#a84b82a6f1a5acc46051ad03cd3e18636", null ],
+    [ "sbm_particle_mixing_terrain_qualification", "structSolverChoice.html#a29d5fd9c63728b0094b463c95c845c2f", null ],
     [ "sbm_pivots", "structSolverChoice.html#a9018d585094f4af5bd5f48f2d78d4e4b", null ],
     [ "sbm_test_donor_cfl_fault", "structSolverChoice.html#abcd6c0eccde0f574104c6f1f0709dcf2", null ],
     [ "sbm_test_native_qc_write_fault", "structSolverChoice.html#a29e144a3e145c6eb7ee4b1f8430448fe", null ],

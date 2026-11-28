@@ -7,6 +7,7 @@ var classerf__sbm_1_1SBMTransport =
     [ "SBMTransport", "classerf__sbm_1_1SBMTransport.html#a54f20a1f491e52eed04e012b914575b5", null ],
     [ "accept_physical_step", "classerf__sbm_1_1SBMTransport.html#aedd6f276061619800d1b6384cd7ce15b", null ],
     [ "admission", "classerf__sbm_1_1SBMTransport.html#a15397dc89d7df8fb90e3c201941c9061", null ],
+    [ "admit_terrain_geometry", "classerf__sbm_1_1SBMTransport.html#a892fcbaceb8d04d7e630ed07c2ca8992", null ],
     [ "advance_stage", "classerf__sbm_1_1SBMTransport.html#a53cb5a5f24ed432234704f5526af7a36", null ],
     [ "advance_stage_from_host", "classerf__sbm_1_1SBMTransport.html#ab03788fe4354d913808eb8bbcd37698b", null ],
     [ "begin_physical_step", "classerf__sbm_1_1SBMTransport.html#ad3c7c6a3211140f58c07bee13a563df5", null ],
@@ -35,7 +36,7 @@ var classerf__sbm_1_1SBMTransport =
     [ "rebuild_static_measure", "classerf__sbm_1_1SBMTransport.html#ae3b6146416baf121208ce2f9491ac5b3", null ],
     [ "restore_boundary_ledger", "classerf__sbm_1_1SBMTransport.html#acb598728906d6217059cd3a2ff131a2e", null ],
     [ "set_amr_flux_registers", "classerf__sbm_1_1SBMTransport.html#a37982079b574ce50971f2511a39b7efe", null ],
-    [ "set_particle_mixing", "classerf__sbm_1_1SBMTransport.html#a33d60c40c73d58dbde542e8e1e89b468", null ],
+    [ "set_particle_mixing", "classerf__sbm_1_1SBMTransport.html#a54d0e3c4915106ef21dbb92b7fc7a931", null ],
     [ "set_physical_boundaries", "classerf__sbm_1_1SBMTransport.html#adfb11e87690ad8f9e876b6e9f7ed78c4", null ],
     [ "static_measure", "classerf__sbm_1_1SBMTransport.html#a0dc605cbbc7b8379cc603fb14368e26e", null ],
     [ "default_max_groups_per_chunk", "classerf__sbm_1_1SBMTransport.html#ab9ac745b79f84e02fe2adcf4bbb7db65", null ],
@@ -64,5 +65,6 @@ var classerf__sbm_1_1SBMTransport =
     [ "m_projection", "classerf__sbm_1_1SBMTransport.html#a5df4c7b2b4e0dda46fd2b7f03ff56c55", null ],
     [ "m_property_support", "classerf__sbm_1_1SBMTransport.html#a8fc73b39d2a83ed5426999f405c3043c", null ],
     [ "m_split_ghost_values_checked", "classerf__sbm_1_1SBMTransport.html#a914e9f8d6fb93633e9aeea3867008413", null ],
+    [ "m_terrain_match", "classerf__sbm_1_1SBMTransport.html#a0e32209077bfd7e2740e3d2d888e5822", null ],
     [ "m_zero_flow_diagnostics_enabled", "classerf__sbm_1_1SBMTransport.html#a3daf6979400831fa1cf1b9659cb24704", null ]
 ];

@@ -7,7 +7,8 @@ var ERF__AuxiliaryDiffusion_8H =
     [ "MappedFaceTransmissibility", "ERF__AuxiliaryDiffusion_8H.html#ad4e97695c6399e7c7fbbac345818f329", null ],
     [ "DiffusionMesh", "ERF__AuxiliaryDiffusion_8H.html#ab660070085b85c6e51ec41b439c575ec", [
       [ "ConstantDz", "ERF__AuxiliaryDiffusion_8H.html#ab660070085b85c6e51ec41b439c575eca395e59960cb2f91fa3ac93b5095c8c9c", null ],
-      [ "StretchedDz", "ERF__AuxiliaryDiffusion_8H.html#ab660070085b85c6e51ec41b439c575eca21cdea5fa8b087a59d028dcac881742e", null ]
+      [ "StretchedDz", "ERF__AuxiliaryDiffusion_8H.html#ab660070085b85c6e51ec41b439c575eca21cdea5fa8b087a59d028dcac881742e", null ],
+      [ "VariableDz", "ERF__AuxiliaryDiffusion_8H.html#ab660070085b85c6e51ec41b439c575ecaf7d522f9ab739b60a62dfe51d9b79d3e", null ]
     ] ],
     [ "BuildLowOrderDiffusionRate", "ERF__AuxiliaryDiffusion_8H.html#a76076e5f9a33fb047052c40da7fb9e7a", null ],
     [ "BuildMappedDiffusionTransmissibility", "ERF__AuxiliaryDiffusion_8H.html#aed47fb1b2c0b515b847565a133a3a78c", null ],

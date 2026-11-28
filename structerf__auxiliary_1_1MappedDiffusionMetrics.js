@@ -9,5 +9,6 @@ var structerf__auxiliary_1_1MappedDiffusionMetrics =
     [ "mf_uy", "structerf__auxiliary_1_1MappedDiffusionMetrics.html#a301c02eb534e330c61e0bd5b0bda736a", null ],
     [ "mf_vx", "structerf__auxiliary_1_1MappedDiffusionMetrics.html#a944015e57088c73564530bbfc9fbb2df", null ],
     [ "mf_vy", "structerf__auxiliary_1_1MappedDiffusionMetrics.html#aec6af46b2005ca203fd4f018dcf187ff", null ],
-    [ "stretched_dz", "structerf__auxiliary_1_1MappedDiffusionMetrics.html#a9ca768ddc1ac6e01f3a298929b4a1aea", null ]
+    [ "stretched_dz", "structerf__auxiliary_1_1MappedDiffusionMetrics.html#a9ca768ddc1ac6e01f3a298929b4a1aea", null ],
+    [ "z_nd", "structerf__auxiliary_1_1MappedDiffusionMetrics.html#ac35a3f830f4f41233e1a9eb68fbdfb8d", null ]
 ];

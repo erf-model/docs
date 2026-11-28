@@ -1,7 +1,8 @@
 var namespaceerf__auxiliary =
 [
     [ "erf_detail_AuxiliaryDiffusion", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html", [
-      [ "count_invalid_coefficient_reads", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#ae17ef3e1e4d1d50d40ec3b7159cb554a", null ],
+      [ "count_invalid_coefficient_reads", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a136f844fde7597a3aac85f1b2a6fa0b8", null ],
+      [ "count_invalid_terrain_metric_reads", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a4e9e3ed5114202fac3b4c5d135930a4c", null ],
       [ "fill_transmissibility", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a5af141a31ec9f597301c3fbb5b9cfaed", null ],
       [ "on_physical_face", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a4bbbbd63de66963fe556facf00763edf", null ],
       [ "same_face_layout", "namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#abcfac5ddea6aa64fca6ebd94bfa305a3", null ]
@@ -39,7 +40,8 @@ var namespaceerf__auxiliary =
     ] ],
     [ "DiffusionMesh", "namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575ec", [
       [ "ConstantDz", "namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575eca395e59960cb2f91fa3ac93b5095c8c9c", null ],
-      [ "StretchedDz", "namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575eca21cdea5fa8b087a59d028dcac881742e", null ]
+      [ "StretchedDz", "namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575eca21cdea5fa8b087a59d028dcac881742e", null ],
+      [ "VariableDz", "namespaceerf__auxiliary.html#ab660070085b85c6e51ec41b439c575ecaf7d522f9ab739b60a62dfe51d9b79d3e", null ]
     ] ],
     [ "HostIntegrator", "namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622a", [
       [ "CompressibleRK3", "namespaceerf__auxiliary.html#a6bb3d48f526c8560395d6fede7c3622aa3956c6b08b3dc65198c71b8950938e50", null ],

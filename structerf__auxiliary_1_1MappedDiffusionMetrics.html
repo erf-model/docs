@@ -96,7 +96,7 @@ Collaboration diagram for erf_auxiliary::MappedDiffusionMetrics:</div>
 <div class="dyncontent">
 <div class="center"><img src="structerf__auxiliary_1_1MappedDiffusionMetrics__coll__graph.png" border="0" usemap="#aerf__auxiliary_1_1MappedDiffusionMetrics_coll__map" alt="Collaboration graph"/></div>
 <map name="aerf__auxiliary_1_1MappedDiffusionMetrics_coll__map" id="aerf__auxiliary_1_1MappedDiffusionMetrics_coll__map">
-<area shape="rect" title=" " alt="" coords="77,197,299,239"/>
+<area shape="rect" title=" " alt="" coords="77,212,299,253"/>
 <area shape="rect" title=" " alt="" coords="5,5,120,32"/>
 <area shape="rect" title=" " alt="" coords="144,5,232,32"/>
 <area shape="rect" title=" " alt="" coords="257,5,319,32"/>
@@ -125,9 +125,11 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aba245275953f1fcd1f04e2ff8d338355"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ca768ddc1ac6e01f3a298929b4a1aea"><td class="memItemLeft" align="right" valign="top">const amrex::Real *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__auxiliary_1_1MappedDiffusionMetrics.html#a9ca768ddc1ac6e01f3a298929b4a1aea">stretched_dz</a> {nullptr}</td></tr>
 <tr class="separator:a9ca768ddc1ac6e01f3a298929b4a1aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac35a3f830f4f41233e1a9eb68fbdfb8d"><td class="memItemLeft" align="right" valign="top">const amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__auxiliary_1_1MappedDiffusionMetrics.html#ac35a3f830f4f41233e1a9eb68fbdfb8d">z_nd</a> {nullptr}</td></tr>
+<tr class="separator:ac35a3f830f4f41233e1a9eb68fbdfb8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Host metric views. Map factors are <a class="el" href="classERF.html">ERF</a>'s k=0 fields: u_x/u_y on x faces, v_x/v_y on y faces, m_x/m_y at cell centers. ax/ay and the device pointer to the stretched vertical spacing are read only for StretchedDz. </p>
+<div class="textblock"><p>Host metric views. Map factors are <a class="el" href="classERF.html">ERF</a>'s k=0 fields: u_x/u_y on x faces, v_x/v_y on y faces, m_x/m_y at cell centers. ax/ay are read for StretchedDz and VariableDz, the device pointer to the stretched vertical spacing only for StretchedDz, and z_nd, <a class="el" href="classERF.html">ERF</a>'s nodal physical heights on the cell layout with at least one ghost node in z, only for VariableDz. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a5ddbc6a666f19cee099eedb496727467"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5ddbc6a666f19cee099eedb496727467">&#9670;&nbsp;</a></span>ax</h2>
@@ -141,7 +143,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, and <a class="el" href="namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a5af141a31ec9f597301c3fbb5b9cfaed">erf_auxiliary::erf_detail_AuxiliaryDiffusion::fill_transmissibility()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, <a class="el" href="namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a4e9e3ed5114202fac3b4c5d135930a4c">erf_auxiliary::erf_detail_AuxiliaryDiffusion::count_invalid_terrain_metric_reads()</a>, <a class="el" href="namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a5af141a31ec9f597301c3fbb5b9cfaed">erf_auxiliary::erf_detail_AuxiliaryDiffusion::fill_transmissibility()</a>, and <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#af79d7c5dc9bf4932925ffa08760027bd">erf_sbm::erf_detail_SBMTransport::shared_metric_mismatch()</a>.</p>
 
 </div>
 </div>
@@ -157,7 +159,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, <a class="el" href="namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a4e9e3ed5114202fac3b4c5d135930a4c">erf_auxiliary::erf_detail_AuxiliaryDiffusion::count_invalid_terrain_metric_reads()</a>, and <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#af79d7c5dc9bf4932925ffa08760027bd">erf_sbm::erf_detail_SBMTransport::shared_metric_mismatch()</a>.</p>
 
 </div>
 </div>
@@ -173,7 +175,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a015a474401c1135c4359fee02b6577ed">erf_sbm::erf_detail_SBMTransport::add_high_order_mixing()</a>, <a class="el" href="classerf__sbm_1_1SBMTransport.html#a53cb5a5f24ed432234704f5526af7a36">erf_sbm::SBMTransport::advance_stage()</a>, <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, <a class="el" href="namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a5af141a31ec9f597301c3fbb5b9cfaed">erf_auxiliary::erf_detail_AuxiliaryDiffusion::fill_transmissibility()</a>, and <a class="el" href="namespaceerf__sbm.html#a2a56c9fc5146994ec07aa4ed22327756">erf_sbm::make_stage_mixing_inputs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a015a474401c1135c4359fee02b6577ed">erf_sbm::erf_detail_SBMTransport::add_high_order_mixing()</a>, <a class="el" href="classerf__sbm_1_1SBMTransport.html#a53cb5a5f24ed432234704f5526af7a36">erf_sbm::SBMTransport::advance_stage()</a>, <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, <a class="el" href="namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a5af141a31ec9f597301c3fbb5b9cfaed">erf_auxiliary::erf_detail_AuxiliaryDiffusion::fill_transmissibility()</a>, and <a class="el" href="namespaceerf__sbm.html#af5ab2a9e5b4afdfccd4a6771a641815b">erf_sbm::make_stage_mixing_inputs()</a>.</p>
 
 </div>
 </div>
@@ -189,7 +191,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, and <a class="el" href="namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a4e9e3ed5114202fac3b4c5d135930a4c">erf_auxiliary::erf_detail_AuxiliaryDiffusion::count_invalid_terrain_metric_reads()</a>.</p>
 
 </div>
 </div>
@@ -205,7 +207,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, and <a class="el" href="namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a4e9e3ed5114202fac3b4c5d135930a4c">erf_auxiliary::erf_detail_AuxiliaryDiffusion::count_invalid_terrain_metric_reads()</a>.</p>
 
 </div>
 </div>
@@ -221,7 +223,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, and <a class="el" href="namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a5af141a31ec9f597301c3fbb5b9cfaed">erf_auxiliary::erf_detail_AuxiliaryDiffusion::fill_transmissibility()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, <a class="el" href="namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a5af141a31ec9f597301c3fbb5b9cfaed">erf_auxiliary::erf_detail_AuxiliaryDiffusion::fill_transmissibility()</a>, and <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#af79d7c5dc9bf4932925ffa08760027bd">erf_sbm::erf_detail_SBMTransport::shared_metric_mismatch()</a>.</p>
 
 </div>
 </div>
@@ -237,7 +239,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, and <a class="el" href="namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a5af141a31ec9f597301c3fbb5b9cfaed">erf_auxiliary::erf_detail_AuxiliaryDiffusion::fill_transmissibility()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, <a class="el" href="namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a5af141a31ec9f597301c3fbb5b9cfaed">erf_auxiliary::erf_detail_AuxiliaryDiffusion::fill_transmissibility()</a>, and <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#af79d7c5dc9bf4932925ffa08760027bd">erf_sbm::erf_detail_SBMTransport::shared_metric_mismatch()</a>.</p>
 
 </div>
 </div>
@@ -253,7 +255,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, and <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#af79d7c5dc9bf4932925ffa08760027bd">erf_sbm::erf_detail_SBMTransport::shared_metric_mismatch()</a>.</p>
 
 </div>
 </div>
@@ -269,7 +271,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, and <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#af79d7c5dc9bf4932925ffa08760027bd">erf_sbm::erf_detail_SBMTransport::shared_metric_mismatch()</a>.</p>
 
 </div>
 </div>
@@ -286,6 +288,22 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, and <a class="el" href="namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a5af141a31ec9f597301c3fbb5b9cfaed">erf_auxiliary::erf_detail_AuxiliaryDiffusion::fill_transmissibility()</a>.</p>
+
+</div>
+</div>
+<a id="ac35a3f830f4f41233e1a9eb68fbdfb8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac35a3f830f4f41233e1a9eb68fbdfb8d">&#9670;&nbsp;</a></span>z_nd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const amrex::MultiFab* erf_auxiliary::MappedDiffusionMetrics::z_nd {nullptr}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classerf__sbm_1_1SBMTransport.html#a53cb5a5f24ed432234704f5526af7a36">erf_sbm::SBMTransport::advance_stage()</a>, <a class="el" href="namespaceerf__auxiliary.html#a3a3b17819c1a4ccd720f0289b68c5083">erf_auxiliary::BuildMappedDiffusionTransmissibility()</a>, <a class="el" href="namespaceerf__auxiliary_1_1erf__detail__AuxiliaryDiffusion.html#a4e9e3ed5114202fac3b4c5d135930a4c">erf_auxiliary::erf_detail_AuxiliaryDiffusion::count_invalid_terrain_metric_reads()</a>, and <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#af79d7c5dc9bf4932925ffa08760027bd">erf_sbm::erf_detail_SBMTransport::shared_metric_mismatch()</a>.</p>
 
 </div>
 </div>

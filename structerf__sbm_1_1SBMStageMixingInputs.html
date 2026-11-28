@@ -96,9 +96,9 @@ Collaboration diagram for erf_sbm::SBMStageMixingInputs:</div>
 <div class="dyncontent">
 <div class="center"><img src="structerf__sbm_1_1SBMStageMixingInputs__coll__graph.png" border="0" usemap="#aerf__sbm_1_1SBMStageMixingInputs_coll__map" alt="Collaboration graph"/></div>
 <map name="aerf__sbm_1_1SBMStageMixingInputs_coll__map" id="aerf__sbm_1_1SBMStageMixingInputs_coll__map">
-<area shape="rect" title=" " alt="" coords="5,301,239,328"/>
+<area shape="rect" title=" " alt="" coords="5,316,239,343"/>
 <area shape="rect" title=" " alt="" coords="115,5,203,32"/>
-<area shape="rect" href="structerf__auxiliary_1_1MappedDiffusionMetrics.html" title=" " alt="" coords="234,197,455,239"/>
+<area shape="rect" href="structerf__auxiliary_1_1MappedDiffusionMetrics.html" title=" " alt="" coords="234,212,455,253"/>
 <area shape="rect" title=" " alt="" coords="230,5,345,32"/>
 <area shape="rect" title=" " alt="" coords="369,5,432,32"/>
 </map>
@@ -110,9 +110,11 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a7079befb05b6280a794be7e26774c978"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affeb5a74b64e40cf036b2604d2f91f78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structerf__auxiliary_1_1MappedDiffusionMetrics.html">erf_auxiliary::MappedDiffusionMetrics</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1SBMStageMixingInputs.html#affeb5a74b64e40cf036b2604d2f91f78">metrics</a></td></tr>
 <tr class="separator:affeb5a74b64e40cf036b2604d2f91f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b7fe7966e4b330363164e3a12b323ca"><td class="memItemLeft" align="right" valign="top">const amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__sbm_1_1SBMStageMixingInputs.html#a8b7fe7966e4b330363164e3a12b323ca">z_cc</a> {nullptr}</td></tr>
+<tr class="separator:a8b7fe7966e4b330363164e3a12b323ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Host fields of a stage that mixes particles: <a class="el" href="classERF.html">ERF</a>'s eddy diffusivity as prepared for the current step (HostPassiveScalar only) and the level's metrics, whose mesh must be the one installed with the mixing policy. </p>
+<div class="textblock"><p>Host fields of a stage that mixes particles: <a class="el" href="classERF.html">ERF</a>'s eddy diffusivity as prepared for the current step (HostPassiveScalar only) and the level's metrics, whose mesh must be the one installed with the mixing policy. A terrain-fitted (VariableDz) stage also reads <a class="el" href="classERF.html">ERF</a>'s cell-centre heights, with two ghost cells, which its native high-order stencil reads. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a7079befb05b6280a794be7e26774c978"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7079befb05b6280a794be7e26774c978">&#9670;&nbsp;</a></span>eddy_diffusivity</h2>
@@ -126,7 +128,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a015a474401c1135c4359fee02b6577ed">erf_sbm::erf_detail_SBMTransport::add_high_order_mixing()</a>, <a class="el" href="classerf__sbm_1_1SBMTransport.html#a53cb5a5f24ed432234704f5526af7a36">erf_sbm::SBMTransport::advance_stage()</a>, and <a class="el" href="namespaceerf__sbm.html#a2a56c9fc5146994ec07aa4ed22327756">erf_sbm::make_stage_mixing_inputs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a015a474401c1135c4359fee02b6577ed">erf_sbm::erf_detail_SBMTransport::add_high_order_mixing()</a>, <a class="el" href="classerf__sbm_1_1SBMTransport.html#a53cb5a5f24ed432234704f5526af7a36">erf_sbm::SBMTransport::advance_stage()</a>, <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a3524ff0fd57315a0db2d5e80a35c3601">erf_sbm::erf_detail_SBMTransport::build_terrain_high_order_mixing()</a>, and <a class="el" href="namespaceerf__sbm.html#af5ab2a9e5b4afdfccd4a6771a641815b">erf_sbm::make_stage_mixing_inputs()</a>.</p>
 
 </div>
 </div>
@@ -142,7 +144,23 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a015a474401c1135c4359fee02b6577ed">erf_sbm::erf_detail_SBMTransport::add_high_order_mixing()</a>, <a class="el" href="classerf__sbm_1_1SBMTransport.html#a53cb5a5f24ed432234704f5526af7a36">erf_sbm::SBMTransport::advance_stage()</a>, and <a class="el" href="namespaceerf__sbm.html#a2a56c9fc5146994ec07aa4ed22327756">erf_sbm::make_stage_mixing_inputs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a015a474401c1135c4359fee02b6577ed">erf_sbm::erf_detail_SBMTransport::add_high_order_mixing()</a>, <a class="el" href="classerf__sbm_1_1SBMTransport.html#a53cb5a5f24ed432234704f5526af7a36">erf_sbm::SBMTransport::advance_stage()</a>, <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a3524ff0fd57315a0db2d5e80a35c3601">erf_sbm::erf_detail_SBMTransport::build_terrain_high_order_mixing()</a>, and <a class="el" href="namespaceerf__sbm.html#af5ab2a9e5b4afdfccd4a6771a641815b">erf_sbm::make_stage_mixing_inputs()</a>.</p>
+
+</div>
+</div>
+<a id="a8b7fe7966e4b330363164e3a12b323ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b7fe7966e4b330363164e3a12b323ca">&#9670;&nbsp;</a></span>z_cc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const amrex::MultiFab* erf_sbm::SBMStageMixingInputs::z_cc {nullptr}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classerf__sbm_1_1SBMTransport.html#a53cb5a5f24ed432234704f5526af7a36">erf_sbm::SBMTransport::advance_stage()</a>, <a class="el" href="namespaceerf__sbm_1_1erf__detail__SBMTransport.html#a3524ff0fd57315a0db2d5e80a35c3601">erf_sbm::erf_detail_SBMTransport::build_terrain_high_order_mixing()</a>, and <a class="el" href="namespaceerf__sbm.html#af5ab2a9e5b4afdfccd4a6771a641815b">erf_sbm::make_stage_mixing_inputs()</a>.</p>
 
 </div>
 </div>

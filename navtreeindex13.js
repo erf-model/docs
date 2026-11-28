@@ -1,5 +1,7 @@
 var NAVTREEINDEX13 =
 {
+"ERF__ObsNudgingKernel_8H.html":[3,0,1,19,2],
+"ERF__ObsNudgingKernel_8H.html#ad56e71b5e0aa7f3d79d91de506a9cc8f":[3,0,1,19,2,2],
 "ERF__ObsNudgingKernel_8H.html#ae084b4f0e672d256f5d6d82ecc7b626b":[3,0,1,19,2,1],
 "ERF__ObsNudgingKernel_8H_source.html":[3,0,1,19,2],
 "ERF__ObsNudgingSeries_8H.html":[3,0,1,19,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX13 =
 "ERF__Plotfile2DInterpolator_8H.html#a97ae807ae4ebeab33c03d65982f85146":[3,0,1,13,26,2],
 "ERF__Plotfile2DInterpolator_8H.html#aa7c8afd44c727285c8fc62581bdf265d":[3,0,1,13,26,3],
 "ERF__Plotfile2DInterpolator_8H.html#adecd0384772a0ed3e1b876fdaea7e395":[3,0,1,13,26,4],
-"ERF__Plotfile2DInterpolator_8H_source.html":[3,0,1,13,26],
-"ERF__Plotfile2DInterpolator_8cpp.html":[3,0,1,13,25],
-"ERF__Plotfile2DInterpolator_8cpp.html#a073895ca9c39f3b44353ce66bf6e53c0":[3,0,1,13,25,7]
+"ERF__Plotfile2DInterpolator_8H_source.html":[3,0,1,13,26]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"ERF__MicrophysicsConstants_8H.html#ae56996ced8497f129d813e2f9c94786e":[3,0,1,17,15,29],
+"ERF__MicrophysicsConstants_8H.html#aeb6d6f09d27c3f646bc4d91b7b88e570":[3,0,1,17,15,5],
 "ERF__MicrophysicsConstants_8H.html#aedc41c83fba50dcbd5e1385007d3edec":[3,0,1,17,15,12],
 "ERF__MicrophysicsConstants_8H.html#aee22c64edc9a6e972b3866ee44c575fc":[3,0,1,17,15,9],
 "ERF__MicrophysicsConstants_8H.html#af5689377f29be012360a846bd447e278":[3,0,1,17,15,20],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "ERF__NumericalDiffusion_8cpp.html":[3,0,1,26,19],
 "ERF__NumericalDiffusion_8cpp.html#a039b51c9e14293909a5c23499e347c35":[3,0,1,26,19,0],
 "ERF__NumericalDiffusion_8cpp.html#a9d69c534be99326262fcb0fca90c27a7":[3,0,1,26,19,2],
-"ERF__NumericalDiffusion_8cpp.html#af4bbc69f4c73b18f197564d9cece73e7":[3,0,1,26,19,1],
-"ERF__ObsNudgingKernel_8H.html":[3,0,1,19,2],
-"ERF__ObsNudgingKernel_8H.html#ad56e71b5e0aa7f3d79d91de506a9cc8f":[3,0,1,19,2,2]
+"ERF__NumericalDiffusion_8cpp.html#af4bbc69f4c73b18f197564d9cece73e7":[3,0,1,26,19,1]
 };

@@ -189,6 +189,7 @@ var hierarchy =
     [ "erf_auxiliary::MappedFaceFluxRateTag", "structerf__auxiliary_1_1MappedFaceFluxRateTag.html", null ],
     [ "erf_auxiliary::MappedFaceTransmissibilityTag", "structerf__auxiliary_1_1MappedFaceTransmissibilityTag.html", null ],
     [ "MassSource", "classMassSource.html", null ],
+    [ "erf_sbm::erf_detail_SBMTransport::MatchingGroup", "structerf__sbm_1_1erf__detail__SBMTransport_1_1MatchingGroup.html", null ],
     [ "MaterialPropertiesCore", "structMaterialPropertiesCore.html", [
       [ "MaterialProperties", "structMaterialProperties.html", null ]
     ] ],
@@ -446,6 +447,7 @@ var hierarchy =
     [ "erf_wall_thermodynamics::TemperaturePanel", "structerf__wall__thermodynamics_1_1TemperaturePanel.html", null ],
     [ "TerminalVelocity< RT >", "structTerminalVelocity.html", null ],
     [ "TerrainCellDrops", "structTerrainCellDrops.html", null ],
+    [ "erf_sbm::TerrainMixingQualification", "structerf__sbm_1_1TerrainMixingQualification.html", null ],
     [ "erf_wall_thermodynamics::ThermalBoundary", "structerf__wall__thermodynamics_1_1ThermalBoundary.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
     [ "TopographicShading", "classTopographicShading.html", null ],

@@ -32,5 +32,9 @@ var structerf__sbm_1_1SBMTransport_1_1LevelStorage =
     [ "projected_rate", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#affb1eb84198d9aa96d8d03e9311c0d0d", null ],
     [ "spectral_ledger", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a99cf92d2de75a6dccc7d2f3fd56808f8", null ],
     [ "target", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#ad310306ab9dcda8dea175de897f43234", null ],
+    [ "terrain_metrics_checked", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a30ad8a4a6bf1fb4c48a3cba0da4b2641", null ],
+    [ "terrain_raw", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a81396c7021cc60a125bf629c1ff91736", null ],
+    [ "terrain_scalar", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a7b3a0ee2d57d60f91e72062a9cddff31", null ],
+    [ "terrain_side_open", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#a6d5eea8145dcf93cd9f818147cefffcd", null ],
     [ "transmissibility", "structerf__sbm_1_1SBMTransport_1_1LevelStorage.html#abd3189462fe0742326a55a4bb43cae47", null ]
 ];
